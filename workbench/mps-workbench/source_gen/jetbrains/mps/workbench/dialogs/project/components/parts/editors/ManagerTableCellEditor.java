@@ -4,8 +4,6 @@ package jetbrains.mps.workbench.dialogs.project.components.parts.editors;
 
 import javax.swing.DefaultCellEditor;
 import javax.swing.JComboBox;
-
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.structure.model.ModelRootManager;
@@ -14,10 +12,17 @@ import java.awt.Component;
 import javax.swing.JList;
 import jetbrains.mps.util.NameUtil;
 import java.util.List;
+import jetbrains.mps.smodel.IOperationContext;
 import java.util.ArrayList;
-
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class ManagerTableCellEditor extends DefaultCellEditor {
@@ -61,7 +66,7 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
     final List<SNode> result = new ArrayList<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (Language l : (List<Language>) ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
+        for (Language l : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
           SModelDescriptor stubsAspect = LanguageAspect.STUBS.get(l);
           if (stubsAspect == null) {
             continue;

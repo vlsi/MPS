@@ -9,24 +9,40 @@ import java.util.HashMap;
 import jetbrains.mps.findUsages.UsagesList;
 import java.util.Set;
 import java.util.HashSet;
-
-import jetbrains.mps.smodel.*;
-
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import java.util.ArrayList;
-
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.StructureModificationData;
-
+import jetbrains.mps.smodel.SNodeId;
 import java.util.Collection;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.HackSNodeUtil;
+import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.lang.reflect.Constructor;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -618,7 +634,8 @@ public class RefactoringContext {
       String namespace = NameUtil.namespaceFromLongName(NameUtil.namespaceFromLongName(className));
       Language l = ModuleRepositoryFacade.getInstance().getModule(namespace, Language.class);
       if (l == null) {
-        l = ModuleRepositoryFacade.getInstance().getModule(ModuleReference.fromString("3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)"), Language.class);
+        ModuleReference ref = ModuleReference.fromString("3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)");
+        l = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
       }
       if (l == null) {
         LOG.errorWithTrace("can't find a language " + namespace);

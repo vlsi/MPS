@@ -24,10 +24,10 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.build.ant.FileMPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.make.ModuleMaker;
-import java.util.HashSet;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Language;
@@ -145,7 +145,7 @@ public class GeneratorWorker extends MpsWorker {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           ClassLoaderManager.getInstance().updateClassPath();
-          new ModuleMaker().make(new HashSet(MPSModuleRepository.getInstance().getAllModules()), new EmptyProgressMonitor());
+          new ModuleMaker().make(MPSModuleRepository.getInstance().getAllModules(), new EmptyProgressMonitor());
         }
       });
       ModelAccess.instance().runWriteAction(new Runnable() {

@@ -920,9 +920,9 @@
     <nodeInfo nodeId="4642981534832278929" fileName="Module_Behavior.java" startLine="222" startPosition="5" endLine="223" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4777659345279794572" fileName="Module_Behavior.java" startLine="228" startPosition="41" endLine="229" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1222444746702" fileName="Module_Behavior.java" startLine="241" startPosition="70" endLine="242" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1222444746712" fileName="Module_Behavior.java" startLine="243" startPosition="102" endLine="244" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1222444746727" fileName="Module_Behavior.java" startLine="246" startPosition="96" endLine="247" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1222444746742" fileName="Module_Behavior.java" startLine="249" startPosition="102" endLine="250" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222444746712" fileName="Module_Behavior.java" startLine="243" startPosition="114" endLine="244" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222444746727" fileName="Module_Behavior.java" startLine="246" startPosition="108" endLine="247" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222444746742" fileName="Module_Behavior.java" startLine="249" startPosition="114" endLine="250" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1222444746754" fileName="Module_Behavior.java" startLine="251" startPosition="5" endLine="252" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1235487938566" fileName="Module_Behavior.java" startLine="255" startPosition="78" endLine="256" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1235487864512" fileName="Module_Behavior.java" startLine="259" startPosition="72" endLine="260" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1027,9 +1027,9 @@
     <scopeInfo nodeId="4642981534832315517" fileName="Module_Behavior.java" startLine="214" startPosition="25" endLine="215" endPosition="82" />
     <scopeInfo nodeId="4642981534832278921" fileName="Module_Behavior.java" startLine="219" startPosition="118" endLine="220" endPosition="121" />
     <scopeInfo nodeId="4777659345279794571" fileName="Module_Behavior.java" startLine="228" startPosition="41" endLine="229" endPosition="68" />
-    <scopeInfo nodeId="1222444746711" fileName="Module_Behavior.java" startLine="243" startPosition="102" endLine="244" endPosition="55" />
-    <scopeInfo nodeId="1222444746726" fileName="Module_Behavior.java" startLine="246" startPosition="96" endLine="247" endPosition="53" />
-    <scopeInfo nodeId="1222444746741" fileName="Module_Behavior.java" startLine="249" startPosition="102" endLine="250" endPosition="55" />
+    <scopeInfo nodeId="1222444746711" fileName="Module_Behavior.java" startLine="243" startPosition="114" endLine="244" endPosition="55" />
+    <scopeInfo nodeId="1222444746726" fileName="Module_Behavior.java" startLine="246" startPosition="108" endLine="247" endPosition="53" />
+    <scopeInfo nodeId="1222444746741" fileName="Module_Behavior.java" startLine="249" startPosition="114" endLine="250" endPosition="55" />
     <scopeInfo nodeId="1235487584037" fileName="Module_Behavior.java" startLine="255" startPosition="78" endLine="256" endPosition="88" />
     <scopeInfo nodeId="1235487831797" fileName="Module_Behavior.java" startLine="259" startPosition="72" endLine="260" endPosition="53" />
     <scopeInfo nodeId="4777659345280330881" fileName="Module_Behavior.java" startLine="264" startPosition="36" endLine="265" endPosition="71" />

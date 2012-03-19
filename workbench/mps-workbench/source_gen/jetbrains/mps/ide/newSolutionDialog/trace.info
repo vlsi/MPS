@@ -6,7 +6,7 @@
     <nodeInfo nodeId="4543209876460425560" fileName="NewModuleUtil.java" startLine="32" startPosition="5" endLine="33" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4543209876460425571" fileName="NewModuleUtil.java" startLine="34" startPosition="26" endLine="35" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4543209876460425650" fileName="NewModuleUtil.java" startLine="37" startPosition="34" endLine="38" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4543209876460425653" fileName="NewModuleUtil.java" startLine="40" startPosition="78" endLine="41" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4543209876460425653" fileName="NewModuleUtil.java" startLine="40" startPosition="81" endLine="41" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4543209876460425660" fileName="NewModuleUtil.java" startLine="43" startPosition="66" endLine="44" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6456559845239236674" fileName="NewModuleUtil.java" startLine="45" startPosition="5" endLine="46" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6456559845239265222" fileName="NewModuleUtil.java" startLine="47" startPosition="131" endLine="48" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -49,7 +49,7 @@
     <scopeInfo nodeId="4543209876460447231" fileName="NewModuleUtil.java" startLine="30" startPosition="33" endLine="31" endPosition="40" />
     <scopeInfo nodeId="4543209876460425568" fileName="NewModuleUtil.java" startLine="34" startPosition="26" endLine="35" endPosition="21" />
     <scopeInfo nodeId="4543209876460425576" fileName="NewModuleUtil.java" startLine="37" startPosition="34" endLine="38" endPosition="45" />
-    <scopeInfo nodeId="4543209876460425588" fileName="NewModuleUtil.java" startLine="40" startPosition="78" endLine="41" endPosition="47" />
+    <scopeInfo nodeId="4543209876460425588" fileName="NewModuleUtil.java" startLine="40" startPosition="81" endLine="41" endPosition="47" />
     <scopeInfo nodeId="4543209876460425601" fileName="NewModuleUtil.java" startLine="43" startPosition="66" endLine="44" endPosition="37" />
     <scopeInfo nodeId="6456559845239236597" fileName="NewModuleUtil.java" startLine="47" startPosition="131" endLine="48" endPosition="52" />
     <scopeInfo nodeId="4543209876460423652" fileName="NewModuleUtil.java" startLine="61" startPosition="25" endLine="62" endPosition="22" />

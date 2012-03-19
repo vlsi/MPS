@@ -5,18 +5,23 @@ package jetbrains.mps.lang.stubs.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
-
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 
 public class LanguageRef_Editor extends DefaultNodeEditor {
@@ -47,8 +52,8 @@ public class LanguageRef_Editor extends DefaultNodeEditor {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      List<Language> langList = (List<Language>) ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
-      return ListSequence.fromList(langList).select(new ISelector<Language, String>() {
+      Iterable<Language> langList = ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
+      return Sequence.fromIterable(langList).select(new ISelector<Language, String>() {
         public String select(Language it) {
           return ((String) it.getModuleReference().getModuleId().toString());
         }

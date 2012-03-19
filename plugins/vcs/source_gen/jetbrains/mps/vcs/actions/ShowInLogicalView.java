@@ -8,10 +8,13 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.ModuleFileTracker;
 import com.intellij.openapi.actionSystem.Presentation;
 
 public class ShowInLogicalView extends AbstractVcsAction {

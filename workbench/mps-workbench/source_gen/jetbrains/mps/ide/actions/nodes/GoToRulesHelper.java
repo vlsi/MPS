@@ -4,19 +4,21 @@ package jetbrains.mps.ide.actions.nodes;
 
 import java.awt.Frame;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.*;
-
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-
+import jetbrains.mps.smodel.Language;
 import java.util.ArrayList;
-
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.kernel.model.SModelUtil;
 import javax.swing.JPopupMenu;
 import java.awt.Color;
@@ -89,7 +91,7 @@ public class GoToRulesHelper {
     if (languageFqName == null) {
       return null;
     }
-    return ModuleRepositoryFacade.getInstance().getModule(languageFqName,Language.class);
+    return ModuleRepositoryFacade.getInstance().getModule(languageFqName, Language.class);
   }
 
   private static boolean isApplicable(SNode ruleNode, SNode conceptDeclaration, boolean skipExact) {

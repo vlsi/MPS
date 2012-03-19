@@ -4,21 +4,21 @@ package jetbrains.mps.datatransfer;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
-
-import java.util.List;
 import java.util.Map;
-
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class CopyPasteManager extends AbstractManager implements CoreComponent {
@@ -97,7 +97,7 @@ public class CopyPasteManager extends AbstractManager implements CoreComponent {
     }
     myPostProcessors = MapSequence.fromMap(new HashMap<SNode, AbstractManager.Descriptor<PastePostProcessor>>());
     myPreProcessors = MapSequence.fromMap(new HashMap<SNode, AbstractManager.Descriptor<CopyPreProcessor>>());
-    for (Language language : (List<Language>) ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
+    for (Language language : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
       SModelDescriptor actionsModelDescriptor = language.getActionsModelDescriptor();
       if (actionsModelDescriptor == null) {
         continue;

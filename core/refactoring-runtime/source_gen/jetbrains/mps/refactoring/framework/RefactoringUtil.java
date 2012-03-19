@@ -4,27 +4,28 @@ package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.logging.Logger;
 import java.util.List;
-
-import jetbrains.mps.smodel.*;
-
+import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.ModelAccess;
 import java.util.Set;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-
+import java.util.Collection;
+import jetbrains.mps.smodel.Language;
 import java.util.HashSet;
-
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.lang.reflect.Constructor;
-import java.util.Collection;
 import java.util.Arrays;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
-
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.util.LinkedHashMap;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
@@ -64,7 +65,8 @@ public class RefactoringUtil {
 
   public static List<IRefactoring> getAllRefactorings() {
     List<IRefactoring> allRefactorings = new ArrayList<IRefactoring>();
-    for (Language language : (List<Language>) GlobalScope.getInstance().getVisibleLanguages()) {
+    Collection<Language> languages = GlobalScope.getInstance().getVisibleLanguages();
+    for (Language language : languages) {
       allRefactorings.addAll(RefactoringUtil.getRefactorings(language));
     }
     return allRefactorings;

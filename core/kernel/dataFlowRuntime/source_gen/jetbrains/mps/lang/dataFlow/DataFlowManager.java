@@ -5,13 +5,16 @@ package jetbrains.mps.lang.dataFlow;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.*;
-
-import java.util.List;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.lang.dataFlow.framework.Program;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.LanguageAspect;
 
 public class DataFlowManager implements CoreComponent {
   private static Logger LOG = Logger.getLogger(DataFlowManager.class);
@@ -73,7 +76,7 @@ public class DataFlowManager implements CoreComponent {
   }
 
   private void load() {
-    for (Language l : (List<Language>) ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
+    for (Language l : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
       SModelDescriptor dfaModel = LanguageAspect.DATA_FLOW.get(l);
       if (dfaModel != null && !(dfaModel.getSModel().rootsCount() == 0)) {
         String dfaBuildersClassName = dfaModel.getLongName() + ".DFABuilders";
