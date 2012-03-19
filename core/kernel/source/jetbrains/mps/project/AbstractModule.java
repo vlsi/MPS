@@ -588,6 +588,24 @@ public abstract class AbstractModule implements IModule {
     return null;
   }
 
+  protected static <T extends AbstractModule> T registerInRepository(T module, MPSModuleOwner moduleOwner) {
+    ModuleReference mref = module.getModuleReference();
+    MPSModuleRepository repo = MPSModuleRepository.getInstance();
+
+    T existing = ModuleRepositoryFacade.getInstance().getModule(mref, ((Class<T>) module.getClass()));
+    if (existing != null) {
+      repo.registerModule(existing, moduleOwner);
+      return existing;
+    }
+
+    IModule anyModule = repo.getModuleById(mref.getModuleId());
+    assert anyModule == null : "another module with the same id exists. Existing fqName=" + anyModule.getModuleFqName() + "; added fqName=" + module.getModuleReference().getModuleFqName();
+
+    repo.registerModule(module, moduleOwner);
+
+    return module;
+  }
+
   protected static IModule checkRegistered(ModuleReference ref, IFile fileToReport) {
     MPSModuleRepository repository = MPSModuleRepository.getInstance();
     if (!(repository.getModule(ref) != null)) return null;

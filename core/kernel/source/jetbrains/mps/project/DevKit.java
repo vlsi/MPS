@@ -47,7 +47,10 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
         DevkitDescriptorPersistence.saveDevKitDescriptor(descriptor, descriptorFile);
       }
     } else {
-      descriptor = createNewDescriptor(namespace, descriptorFile);
+      DevkitDescriptor d = new DevkitDescriptor();
+      d.setNamespace(namespace);
+      d.setId(ModuleId.regular());
+      descriptor = d;
     }
     devKit.myDescriptorFile = descriptorFile;
 
@@ -57,12 +60,12 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     }
 
     devKit.setDevKitDescriptor(descriptor, false);
-    MPSModuleRepository.getInstance().addModule(devKit, moduleOwner);
+    MPSModuleRepository.getInstance().registerModule(devKit, moduleOwner);
 
     return devKit;
   }
 
-  private static DevkitDescriptor createNewDescriptor(String namespace, IFile descriptorFile) {
+  private static DevkitDescriptor createNewDescriptor(String namespace) {
     DevkitDescriptor descriptor = new DevkitDescriptor();
     descriptor.setNamespace(namespace);
     descriptor.setId(ModuleId.regular());
@@ -92,20 +95,10 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
       devKitDescriptor = new DevkitDescriptor();
       devKitDescriptor.setId(ModuleId.regular());
     }
-
-
     result.myDescriptorFile = handle.getFile();
-
-    MPSModuleRepository repository = MPSModuleRepository.getInstance();
-    if (repository.getModule(devKitDescriptor.getModuleReference()) != null) {
-      LOG.error("Loading module " + devKitDescriptor.getNamespace() + " for the second time");
-      return ModuleRepositoryFacade.getInstance().getModule(devKitDescriptor.getModuleReference(), DevKit.class);
-    }
-
     result.setDevKitDescriptor(devKitDescriptor, false);
-    repository.addModule(result, moduleOwner);
 
-    return result;
+    return registerInRepository(result,moduleOwner);
   }
 
   private DevkitDescriptor myDescriptor;

@@ -18,7 +18,6 @@ package jetbrains.mps.project;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
@@ -30,9 +29,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import java.net.URL;
@@ -42,8 +39,6 @@ import java.net.URL;
  * Aug 26, 2005
  */
 public class Solution extends AbstractModule {
-  private static final Logger LOG = Logger.getLogger(Solution.class);
-
   private SolutionDescriptor mySolutionDescriptor;
   public static final String SOLUTION_MODELS = "models";
 
@@ -73,23 +68,13 @@ public class Solution extends AbstractModule {
     }
 
     solution.setSolutionDescriptor(descriptor, false);
-    MPSModuleRepository.getInstance().addModule(solution, moduleOwner);
+    MPSModuleRepository.getInstance().registerModule(solution, moduleOwner);
 
     return solution;
   }
 
   //this is for stubs framework & tests only. Can be later converted into subclass
   public static Solution newInstance(SolutionDescriptor descriptor, MPSModuleOwner moduleOwner) {
-    ModuleReference mref = descriptor.getModuleReference();
-    MPSModuleRepository repo = MPSModuleRepository.getInstance();
-    if (repo.getModule(mref) != null) {
-      IModule module = ModuleRepositoryFacade.getInstance().getModule(mref, Solution.class);
-      IFile file = FileSystem.getInstance().getFileByPath("NO FILE");
-      ModuleHandle handle = new ModuleHandle(file, module.getModuleDescriptor());
-      repo.registerModule(handle, moduleOwner);
-      return (Solution) module;
-    }
-
     Solution solution = new Solution() {
       public String getGeneratorOutputPath() {
         return null;
@@ -103,11 +88,9 @@ public class Solution extends AbstractModule {
         return getModuleDescriptor();
       }
     };
-
     solution.setSolutionDescriptor(descriptor, false);
-    repo.addModule(solution, moduleOwner);
 
-    return solution;
+    return registerInRepository(solution, moduleOwner);
   }
 
   @Deprecated
@@ -135,12 +118,10 @@ public class Solution extends AbstractModule {
     solution.myDescriptorFile = handle.getFile();
 
     IModule d = checkRegistered(descriptor.getModuleReference(), handle.getFile());
-    if (d != null) {
-      return (Solution) d;
-    }
+    if (d != null) return (Solution) d;
 
     solution.setSolutionDescriptor(descriptor, false);
-    MPSModuleRepository.getInstance().addModule(solution, moduleOwner);
+    MPSModuleRepository.getInstance().registerModule(solution, moduleOwner);
 
     return solution;
   }

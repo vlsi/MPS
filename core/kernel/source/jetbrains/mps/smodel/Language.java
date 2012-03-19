@@ -93,17 +93,9 @@ public class Language extends AbstractModule implements MPSModuleOwner {
         return null;
       }
     };
-
-    MPSModuleRepository repository = MPSModuleRepository.getInstance();
-    if (repository.getModule(descriptor.getModuleReference()) != null) {
-      LOG.error("Loading module " + descriptor.getNamespace() + " for the second time");
-      return ModuleRepositoryFacade.getInstance().getModule(descriptor.getModuleReference(),Language.class);
-    }
-
     language.setLanguageDescriptor(descriptor, false);
-    repository.addModule(language, moduleOwner);
 
-    return language;
+    return registerInRepository(language, moduleOwner);
   }
 
   public static Language createLanguage(String namespace, ModuleHandle handle, MPSModuleOwner moduleOwner) {
@@ -128,7 +120,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     language.myDescriptorFile = handle.getFile();
 
     language.setLanguageDescriptor(languageDescriptor, false);
-    repository.addModule(language, moduleOwner);
+    repository.registerModule(language, moduleOwner);
 
     LibrariesLoader.createLanguageLibs(moduleOwner, language, languageDescriptor, repository);
 
@@ -255,7 +247,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     myGenerators.clear();
     for (GeneratorDescriptor generatorDescriptor : getModuleDescriptor().getGenerators()) {
       Generator generator = new Generator(this, generatorDescriptor);
-      MPSModuleRepository.getInstance().addModule(generator, this);
+      MPSModuleRepository.getInstance().registerModule(generator, this);
       myGenerators.add(generator);
     }
   }

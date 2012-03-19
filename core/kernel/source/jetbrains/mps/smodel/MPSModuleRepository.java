@@ -19,11 +19,13 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.project.ProjectManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ManyToManyMap;
 import org.jetbrains.annotations.NotNull;
 
@@ -70,10 +72,10 @@ public class MPSModuleRepository implements CoreComponent {
     ModuleId moduleId = module.getModuleReference().getModuleId();
     String moduleFqName = module.getModuleFqName();
 
-    assert moduleId!=null:"module with nul id is added to repository: fqName="+moduleFqName+"; file="+module.getDescriptorFile();
+    assert moduleId != null : "module with nul id is added to repository: fqName=" + moduleFqName + "; file=" + module.getDescriptorFile();
 
     IModule existing = getModuleById(moduleId);
-    if (existing==null){
+    if (existing == null) {
       if (myFqNameToModulesMap.containsKey(moduleFqName)) {
         IModule m = myFqNameToModulesMap.get(moduleFqName);
         LOG.warning("duplicate module name " + moduleFqName + " : module with the same UID exists at " + m.getDescriptorFile() + " and " + module.getDescriptorFile(), m);
@@ -93,11 +95,11 @@ public class MPSModuleRepository implements CoreComponent {
   public void unregisterModule(IModule module, MPSModuleOwner owner) {
     ModelAccess.assertLegalWrite();
 
-    assert myModules.contains(module):"trying to unregister non-registered module: fqName="+module.getModuleFqName()+"; file="+module.getDescriptorFile();
+    assert myModules.contains(module) : "trying to unregister non-registered module: fqName=" + module.getModuleFqName() + "; file=" + module.getDescriptorFile();
 
-    myModuleToOwners.removeLink(module,owner);
+    myModuleToOwners.removeLink(module, owner);
     boolean remove = myModuleToOwners.getByFirst(module).isEmpty();
-    if (remove){
+    if (remove) {
       fireBeforeModuleRemoved(module);
       myModules.remove(module);
       myIdToModuleMap.remove(module.getModuleReference().getModuleId());
