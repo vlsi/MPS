@@ -588,6 +588,18 @@ public abstract class AbstractModule implements IModule {
     return null;
   }
 
+  protected static IModule checkRegistered(ModuleReference ref, IFile fileToReport) {
+    MPSModuleRepository repository = MPSModuleRepository.getInstance();
+    if (!(repository.getModule(ref) != null)) return null;
+    LOG.error(
+      "Attempting to load module " + ref.getModuleFqName() + " for the second time.\n" +
+        "Registered module is loaded from " + repository.getModule(ref).getDescriptorFile().getPath() + ";\n" +
+        "New module is loaded from " + fileToReport.getPath() + ".\n" +
+        "Returning registered module."
+    );
+    return repository.getModule(ref);
+  }
+
   public class ModuleScope extends DefaultScope {
     protected ModuleScope() {
 

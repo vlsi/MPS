@@ -172,20 +172,6 @@ public class MPSModuleRepository implements CoreComponent {
     fireRepositoryChanged();
   }
 
-  //----------------exists------------------------
-
-  public static IModule checkRegistered(ModuleReference ref, IFile fileToReport) {
-    MPSModuleRepository repository = getInstance();
-    if (!(repository.getModule(ref) != null)) return null;
-    LOG.error(
-      "Attempting to load module " + ref.getModuleFqName() + " for the second time.\n" +
-        "Registered module is loaded from " + repository.getModule(ref).getDescriptorFile().getPath() + ";\n" +
-        "New module is loaded from " + fileToReport.getPath() + ".\n" +
-        "Returning registered module."
-    );
-    return repository.getModule(ref);
-  }
-
   //---------------get by-----------------------------
 
   public Set<IModule> getAllModules() {
@@ -289,6 +275,7 @@ public class MPSModuleRepository implements CoreComponent {
     }
   }
 
+  //todo public?
   public void fireModuleChanged(IModule m) {
     if (!myModules.contains(m)) return;
 
@@ -301,6 +288,7 @@ public class MPSModuleRepository implements CoreComponent {
     }
   }
 
+  //todo public?
   public void fireModuleInitialized(IModule module) {
     assertCanRead();
 

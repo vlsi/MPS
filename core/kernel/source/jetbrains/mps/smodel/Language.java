@@ -119,7 +119,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     }
 
     MPSModuleRepository repository = MPSModuleRepository.getInstance();
-    IModule m = MPSModuleRepository.checkRegistered(languageDescriptor.getModuleReference(), handle.getFile());
+    IModule m = checkRegistered(languageDescriptor.getModuleReference(), handle.getFile());
     if (m != null) {
       return (Language) m;
     }

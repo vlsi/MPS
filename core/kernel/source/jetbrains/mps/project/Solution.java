@@ -67,7 +67,7 @@ public class Solution extends AbstractModule {
     }
     solution.myDescriptorFile = descriptorFile;
 
-    IModule d = MPSModuleRepository.checkRegistered(descriptor.getModuleReference(), descriptorFile);
+    IModule d = checkRegistered(descriptor.getModuleReference(), descriptorFile);
     if (d != null) {
       return (Solution) d;
     }
@@ -134,7 +134,7 @@ public class Solution extends AbstractModule {
     }
     solution.myDescriptorFile = handle.getFile();
 
-    IModule d = MPSModuleRepository.checkRegistered(descriptor.getModuleReference(), handle.getFile());
+    IModule d = checkRegistered(descriptor.getModuleReference(), handle.getFile());
     if (d != null) {
       return (Solution) d;
     }
