@@ -30,7 +30,7 @@ public class MacroReference_Constraints extends BaseConstraintsDescriptor {
       @Override
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "path";
-        return IMacroHolder_Behavior.call_evaluateMacro_1234975967990(SNodeOperations.getAncestor(node, "jetbrains.mps.build.packaging.structure.Layout", false, true), SPropertyOperations.getString(node, "name"));
+        return IMacroHolder_Behavior.call_evaluateMacro_1234975967990(SNodeOperations.getAncestor(node, "jetbrains.mps.build.packaging.structure.IMacroHolder", false, true), SPropertyOperations.getString(node, "name"));
       }
     });
     return properties;

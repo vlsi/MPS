@@ -13,16 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.testbench.CheckProjectStructureHelper;
-import jetbrains.mps.testbench.CheckProjectStructureHelper.Token;
 import jetbrains.mps.testbench.PerformanceMessenger;
 import jetbrains.mps.testbench.junit.Order;
 import jetbrains.mps.testbench.junit.runners.WatchingParameterizedWithMake;
-import jetbrains.mps.typesystem.MPSTypesystem;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -40,7 +38,6 @@ import java.util.List;
 public class Audit {
 
   private static CheckProjectStructureHelper HELPER;
-  private static Token TOKEN;
 
   private static String getDescription(ModuleHandle handle) {
     if (handle.getFile().getName().endsWith(".mpl")) {
@@ -48,19 +45,24 @@ public class Audit {
     } else if (handle.getFile().getName().endsWith(".msd")) {
       return handle.getDescriptor().getNamespace() + " [solution]";
     }
-    return handle.getFile().getName();
+    return handle.getFile().getName() + " - " + handle.getDescriptor().getNamespace();
   }
 
   @Parameters
   public static List<Object[]> filePaths() {
     HELPER = new CheckProjectStructureHelper();
-    TOKEN = HELPER.init(new String[][]{{"samples_home", System.getProperty("user.dir") + "/samples"}});
+    HELPER.init(new String[][]{{"samples_home", System.getProperty("user.dir") + "/samples"}});
 
     List<ModuleHandle> moduleHandles = ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), false);
 
     ArrayList<Object[]> res = new ArrayList<Object[]>();
     for (ModuleHandle moduleHandle : moduleHandles) {
-      res.add(new Object[]{getDescription(moduleHandle), moduleHandle.getFile()});
+      if (moduleHandle.getFile().getName().endsWith(".iml")) {
+        // temporary ignore .iml files
+        continue;
+      }
+
+      res.add(new Object[]{getDescription(moduleHandle), moduleHandle});
     }
 
     Collections.sort(res, new Comparator<Object[]>() {
@@ -74,17 +76,12 @@ public class Audit {
 
   @BeforeClass
   public static void init() {
-    List<ModuleHandle> moduleHandles = ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), false);
-    List<IFile> files = new ArrayList<IFile>();
-    for (ModuleHandle moduleHandle : moduleHandles) {
-      files.add(moduleHandle.getFile());
-    }
-    HELPER.load(files);
+    CheckProjectStructureHelper.loadModules(ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), false));
   }
 
   @AfterClass
   public static void cleanUp() {
-    HELPER.cleanUp(TOKEN);
+    HELPER.cleanUp();
     HELPER.dispose();
     PerformanceMessenger.getInstance().report("auditErrors", HELPER.getNumErrors());
     PerformanceMessenger.getInstance().report("auditWarnings", HELPER.getNumWarnings());
@@ -93,19 +90,20 @@ public class Audit {
     System.out.println(HELPER.getNumWarnings() + " warnings total");
   }
 
-  private IFile file;
+  /* module handle */
+  private ModuleHandle handle;
 
-  public Audit(String testName, IFile file) {
-    this.file = file;
+  public Audit(String testName, ModuleHandle handle) {
+    this.handle = handle;
   }
 
   @Test
   @Order(1)
   public void checkTypeSystem() {
-    List<String> errors = HELPER.checkTypeSystem(TOKEN, Collections.singletonList(file));
+    List<String> errors = HELPER.checkTypeSystem(handle);
     Assert.assertTrue("Type system errors:\n" + HELPER.formatErrors(errors), errors.isEmpty());
   }
-     /*
+  /*
   @Test
   @Order(2)
   public void checkConstraints() {

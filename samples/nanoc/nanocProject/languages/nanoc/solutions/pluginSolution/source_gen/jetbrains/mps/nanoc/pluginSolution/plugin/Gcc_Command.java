@@ -10,9 +10,10 @@ import com.intellij.execution.ExecutionException;
 import org.apache.commons.lang.StringUtils;
 import java.io.File;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.vfs.FileSystem;
@@ -49,8 +50,16 @@ public class Gcc_Command {
     if (!((sourceFile.exists()))) {
       throw new ExecutionException("Source file " + sourceFile + " does not exist. Can't compile it.");
     }
-    IFile executableFile = Gcc_Command.getExecutableFile(file);
-    executableFile.getParent().mkdirs();
+    final IFile executableFile = Gcc_Command.getExecutableFile(file);
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        ModelAccess.instance().requireWrite(new Runnable() {
+          public void run() {
+            executableFile.getParent().mkdirs();
+          }
+        });
+      }
+    });
 
     // -xc -- specifies source language (c) 
     // -g -- save debug information 

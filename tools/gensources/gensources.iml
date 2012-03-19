@@ -7,6 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../core/dependencies/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../languages">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/build/buildScript/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/baseLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/baseLanguageInternal/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/blTypes/source_gen" isTestSource="false" />
@@ -262,7 +263,7 @@
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="refactoring-runtime" />
     <orderEntry type="module" module-name="baseLanguage-search" />
-    <orderEntry type="module" module-name="runConfigurations" />
+    <orderEntry type="module" module-name="execution" />
     <orderEntry type="module" module-name="mps-workbench" />
     <orderEntry type="module" module-name="uiLanguage-runtime" />
     <orderEntry type="module" module-name="ant" />
