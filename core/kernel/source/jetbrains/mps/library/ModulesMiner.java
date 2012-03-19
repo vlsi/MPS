@@ -78,16 +78,7 @@ public class ModulesMiner {
     readModuleDescriptors(dir, new HashSet<IFile>(), result, refreshFiles, new DescriptorReader<IModule>() {
       @Override
       public IModule read(ModuleHandle handle) {
-        IModule module;
-        if (handle.getDescriptor() instanceof LanguageDescriptor) {
-          module = Language.createLanguage(handle.getDescriptor().getNamespace(), handle, owner);
-        } else if (handle.getDescriptor() instanceof SolutionDescriptor) {
-          module = Solution.newInstance(handle, owner);
-        } else if (handle.getDescriptor() instanceof DevkitDescriptor) {
-          module = DevKit.newInstance(handle, owner);
-        } else {
-          throw new IllegalArgumentException("Unknown module " + handle.getFile().getName());
-        }
+        IModule module = ModuleRepositoryFacade.createModule(handle,owner);
         MPSModuleRepository.getInstance().registerModule(module, owner);
         return module;
       }

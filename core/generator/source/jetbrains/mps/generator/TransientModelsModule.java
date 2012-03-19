@@ -41,6 +41,8 @@ public class TransientModelsModule extends AbstractModule {
   private Set<String> myModelsToKeep = new ConcurrentHashSet<String>();
   private Map<SModelFqName, SModelDescriptor> myModels = new ConcurrentHashMap<SModelFqName, SModelDescriptor>();
   private Set<SModelDescriptor> myPublished = new ConcurrentHashSet<SModelDescriptor>();
+  private final MPSModuleOwner myOwner = new MPSModuleOwner() {
+  };
 
   //the second parameter is needed because there is a time dependency -
   //MPSProject must be disposed after TransientModelsModule for
@@ -54,17 +56,12 @@ public class TransientModelsModule extends AbstractModule {
   }
 
   public void initModule() {
-    MPSModuleRepository.getInstance().addModule(TransientModelsModule.this, new MPSModuleOwner() {
-    });
+    MPSModuleRepository.getInstance().registerModule(TransientModelsModule.this, myOwner);
   }
 
   public void disposeModule() {
     clearAll();
-    MPSModuleRepository.getInstance().removeModule(TransientModelsModule.this);
-  }
-
-  public void releaseModule() {
-    MPSModuleRepository.getInstance().removeModule(TransientModelsModule.this);
+    MPSModuleRepository.getInstance().unregisterModule(TransientModelsModule.this, myOwner);
   }
 
   public Class getClass(String fqName) {
@@ -261,7 +258,7 @@ public class TransientModelsModule extends AbstractModule {
 
         TransientSwapSpace swap = myComponent.getTransientSwapSpace();
         if (swap == null) throw new IllegalStateException("no swap space");
-        
+
         SModel m = swap.restoreFromSwap(getSModelReference());
         if (m != null) return m;
 

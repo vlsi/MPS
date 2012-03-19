@@ -56,7 +56,7 @@ public class EvaluationAuxModule extends AbstractModule {
   }
 
   public void init() {
-    MPSModuleRepository.getInstance().addModule(EvaluationAuxModule.this, this.getMPSProject());
+    MPSModuleRepository.getInstance().registerModule(EvaluationAuxModule.this, this.getMPSProject());
   }
 
   public void dispose() {
@@ -64,7 +64,7 @@ public class EvaluationAuxModule extends AbstractModule {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         EvaluationAuxModule.this.clearAll();
-        MPSModuleRepository.getInstance().removeModule(EvaluationAuxModule.this);
+        MPSModuleRepository.getInstance().unregisterModule(EvaluationAuxModule.this,getMPSProject());
         SModelRepository.getInstance().unRegisterModelDescriptors(EvaluationAuxModule.this);
         SetSequence.fromSet(myStubPaths).clear();
         SetSequence.fromSet(myModelRoots).clear();

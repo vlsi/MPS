@@ -42,6 +42,8 @@ public class TestModule extends AbstractModule {
   private IModule myPeer;
   private Map<SModelFqName, SModelDescriptor> myModels = new ConcurrentHashMap<SModelFqName, SModelDescriptor>();
   private Map<SModelDescriptor, SModelDescriptor> myOriginalModels = new HashMap<SModelDescriptor, SModelDescriptor>();
+  private final MPSModuleOwner myOwner = new MPSModuleOwner() {
+  };
 
   public TestModule(String namespace, String moduleId, IModule peer) {
     myPeer = peer;
@@ -49,8 +51,7 @@ public class TestModule extends AbstractModule {
     setModuleReference(reference);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        MPSModuleRepository.getInstance().addModule(TestModule.this, new MPSModuleOwner() {
-        });
+        MPSModuleRepository.getInstance().registerModule(TestModule.this, myOwner);
       }
     });
   }
@@ -59,7 +60,7 @@ public class TestModule extends AbstractModule {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         clearAll();
-        MPSModuleRepository.getInstance().removeModule(TestModule.this);
+        MPSModuleRepository.getInstance().unregisterModule(TestModule.this,myOwner);
       }
     });
     super.dispose();

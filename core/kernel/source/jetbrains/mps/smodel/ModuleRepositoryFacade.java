@@ -15,8 +15,11 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.library.ModulesMiner.ModuleHandle;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -97,5 +100,19 @@ public class ModuleRepositoryFacade {
     for (MPSModuleOwner owner : REPO.getOwners(module)) {
       REPO.unregisterModule(module, owner);
     }
+  }
+
+  public static IModule createModule(ModuleHandle handle, MPSModuleOwner owner){
+    IModule module;
+    if (handle.getDescriptor() instanceof LanguageDescriptor) {
+      module = Language.createLanguage(handle.getDescriptor().getNamespace(), handle, owner);
+    } else if (handle.getDescriptor() instanceof SolutionDescriptor) {
+      module = Solution.newInstance(handle, owner);
+    } else if (handle.getDescriptor() instanceof DevkitDescriptor) {
+      module = DevKit.newInstance(handle, owner);
+    } else {
+      throw new IllegalArgumentException("Unknown module " + handle.getFile().getName());
+    }
+    return module;
   }
 }

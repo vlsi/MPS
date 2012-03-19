@@ -13,7 +13,7 @@ import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -25,12 +25,11 @@ import jetbrains.mps.project.ProjectManager;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.Generator;
+
 import java.util.ArrayList;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModuleFileTracker;
+
 import java.util.Collections;
 
 /*package*/ class ModuleFileProcessor extends EventProcessor {
@@ -58,7 +57,7 @@ import java.util.Collections;
     for (final IModule module : myDeletedModules) {
       indicator.setText2("Unloading removed module " + module.getModuleFqName());
       module.dispose();
-      MPSModuleRepository.getInstance().removeModule(module);
+      ModuleRepositoryFacade.getInstance().removeModuleForced(module);
       SetSequence.fromSet(myProcessedModules).addElement(module);
     }
     // update lib modules 
@@ -169,10 +168,11 @@ import java.util.Collections;
     });
   }
 
-  public List<IModule> addNewModules(Project p, List<ModulesMiner.ModuleHandle> modules) {
+  public List<IModule> addNewModules(Project p, List<ModulesMiner.ModuleHandle> handles) {
     ArrayList<IModule> result = new ArrayList<IModule>();
-    for (ModulesMiner.ModuleHandle m : modules) {
-      IModule module = MPSModuleRepository.getInstance().registerModule(m, p);
+    for (ModulesMiner.ModuleHandle handle : handles) {
+      IModule module = ModuleRepositoryFacade.createModule(handle, p);
+      MPSModuleRepository.getInstance().registerModule(module, p);
       ModuleReference mr = module.getModuleReference();
       p.addModule(mr);
       result.add(module);

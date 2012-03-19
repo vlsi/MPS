@@ -88,8 +88,9 @@ public class LibraryInitializer implements CoreComponent {
     assert owner != null;
 
     List<IModule> loaded = new ArrayList<IModule>();
-    for (ModuleHandle m : modules) {
-      IModule module = MPSModuleRepository.getInstance().registerModule(m, owner);
+    for (ModuleHandle handle : modules) {
+      IModule module = ModuleRepositoryFacade.createModule(handle, owner);
+      MPSModuleRepository.getInstance().registerModule(module, owner);
       module.onModuleLoad();
       loaded.add(module);
     }
