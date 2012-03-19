@@ -214,11 +214,13 @@ public class MPSModuleRepository implements CoreComponent {
   }
 
   public IModule getModuleByFqName(String fqName) {
+    //assertCanRead();
+
     return myFqNameToModulesMap.get(fqName);
   }
 
   public IModule getModuleById(ModuleId moduleId) {
-    assertCanRead();
+    //assertCanRead();
 
     if (moduleId == null) return null;
     return myIdToModuleMap.get(moduleId);
