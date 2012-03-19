@@ -29,6 +29,7 @@ import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
@@ -273,6 +274,7 @@ public class TestMakeOnRealProject {
     String fileName = runtimeSolutionDescriptorFile.getName();
     SolutionDescriptor solutionDescriptor = new SolutionDescriptor();
     String name = fileName.substring(0, fileName.length() - 4);
+    solutionDescriptor.setId(ModuleId.regular());
     solutionDescriptor.setNamespace(name);
 
     ModelRoot modelRoot = new ModelRoot();
@@ -303,6 +305,7 @@ public class TestMakeOnRealProject {
 
     SolutionDescriptor solutionDescriptor = new SolutionDescriptor();
     String name = fileName.substring(0, fileName.length() - 4);
+    solutionDescriptor.setId(ModuleId.regular());
     solutionDescriptor.setNamespace(name);
     solutionDescriptor.getUsedLanguages().add(myCreatedLanguage.getModuleReference());
 
