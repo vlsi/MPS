@@ -10,12 +10,23 @@ import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.vfs.IFile;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.project.structure.model.ModelRootManager;
+import jetbrains.mps.workbench.dialogs.project.components.parts.editors.ManagerTableCellEditor;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.util.NameUtil;
 
 public class StubRootChooser implements Computable<List<ModelRoot>> {
   private final IBindedDialog myOwner;
+  private List<ModelRoot> myRoots;
+  private boolean myJavaOnly;
 
-  public StubRootChooser(IBindedDialog owner) {
+  public StubRootChooser(IBindedDialog owner, List<ModelRoot> roots, boolean javaOnly) {
     myOwner = owner;
+    myRoots = roots;
+    myJavaOnly = javaOnly;
   }
 
   public List<ModelRoot> compute() {
@@ -27,8 +38,54 @@ public class StubRootChooser implements Computable<List<ModelRoot>> {
       ModelRoot sme = new ModelRoot();
       sme.setPath(file.getPath());
       sme.setManager(LanguageID.JAVA_MANAGER);
-      result.add(sme);
+      ListSequence.fromList(result).addElement(sme);
     }
+    if (ListSequence.fromList(result).isEmpty()) {
+      return result;
+    }
+
+
+    if (myJavaOnly) {
+      int res = Messages.showYesNoDialog(myOwner.getMainComponent(), "MPS can try creating models for the specified locations, so that class files can be referenced from MPS models directly. Would you like to import models for the specified locations?", "Model Roots", Messages.getQuestionIcon());
+      if (res == Messages.YES) {
+        ListSequence.fromList(myRoots).addSequence(ListSequence.fromList(result));
+      }
+    } else {
+      List<ModelRootManager> managers = ListSequence.fromList(ManagerTableCellEditor.getManagers(myOwner.getOperationContext())).where(new IWhereFilter<ModelRootManager>() {
+        public boolean accept(ModelRootManager it) {
+          return it != null;
+        }
+      }).toListSequence();
+      if (ListSequence.fromList(managers).isEmpty()) {
+        return result;
+      }
+
+      final List<String> managerNames = ListSequence.fromList(managers).select(new ISelector<ModelRootManager, String>() {
+        public String select(ModelRootManager it) {
+          return shortName(it);
+        }
+      }).toListSequence();
+      final int res = Messages.showChooseDialog(myOwner.getMainComponent(), "MPS can try creating models for the specified locations,\n" + "so that class files can be referenced from MPS models directly.\n" + "Would you like to import models for the specified locations?", "Model Roots", ListSequence.fromList(managerNames).toGenericArray(String.class), ListSequence.fromList(managerNames).first(), Messages.getQuestionIcon());
+      if (res >= 0) {
+        final ModelRootManager manager = ListSequence.fromList(managers).findFirst(new IWhereFilter<ModelRootManager>() {
+          public boolean accept(ModelRootManager it) {
+            return shortName(it).equals(ListSequence.fromList(managerNames).getElement(res));
+          }
+        });
+        ListSequence.fromList(myRoots).addSequence(ListSequence.fromList(result).select(new ISelector<ModelRoot, ModelRoot>() {
+          public ModelRoot select(ModelRoot it) {
+            ModelRoot copy = it.getCopy();
+            copy.setManager(manager);
+            return copy;
+          }
+        }));
+      }
+    }
+
     return result;
+  }
+
+  private String shortName(ModelRootManager it) {
+    return NameUtil.shortNameFromLongName(it.getClassName());
   }
 }
