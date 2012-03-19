@@ -47,33 +47,11 @@ public class Solution extends AbstractModule {
 
   }
 
-  //this is for stubs framework & tests only. Can be later converted into subclass
-  public static Solution newInstance(SolutionDescriptor descriptor, MPSModuleOwner moduleOwner) {
-    Solution solution = new Solution() {
-      public String getGeneratorOutputPath() {
-        return null;
-      }
-
-      public String getTestsGeneratorOutputPath() {
-        return null;
-      }
-
-      protected SolutionDescriptor loadDescriptor() {
-        return getModuleDescriptor();
-      }
-    };
-    solution.setSolutionDescriptor(descriptor, false);
-
-    MPSModuleRepository.getInstance().registerModule(solution, moduleOwner);
-
-    return solution;
-  }
-
   public static Solution newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
     Solution solution = new Solution();
     SolutionDescriptor descriptor = ((SolutionDescriptor) handle.getDescriptor());
     assert descriptor != null;
-    assert descriptor.getId()!=null;
+    assert descriptor.getId() != null;
 
     IModule d = checkRegistered(descriptor.getModuleReference(), handle.getFile());
     if (d != null) return (Solution) d;
@@ -125,12 +103,7 @@ public class Solution extends AbstractModule {
   }
 
   public void save() {
-    if (isStub()) return;
     SolutionDescriptorPersistence.saveSolutionDescriptor(myDescriptorFile, getModuleDescriptor());
-  }
-
-  public boolean isStub() {
-    return myDescriptorFile == null;
   }
 
   public String toString() {

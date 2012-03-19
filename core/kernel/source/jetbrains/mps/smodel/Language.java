@@ -21,6 +21,7 @@ import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.*;
+import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.project.dependency.LanguageDependenciesManager;
 import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
@@ -122,7 +123,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   protected void reloadAfterDescriptorChange() {
     ModuleRepositoryFacade.getInstance().unregisterModules(this, new Condition<IModule>() {
       public boolean met(IModule m) {
-        return !(m instanceof Solution && ((Solution) m).isStub());
+        return !(m instanceof Solution && ((Solution) m) instanceof StubSolution);
       }
     });
 

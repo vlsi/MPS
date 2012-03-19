@@ -120,7 +120,7 @@ public class DependenciesTests {
     String uuid = UUID.randomUUID().toString();
     d.setNamespace(uuid);
     d.setId(ModuleId.fromString(uuid));
-    return Solution.newInstance(d, OWNER);
+    return StubSolution.newInstance(d, OWNER);
   }
 
   private Language createLanguage() {
