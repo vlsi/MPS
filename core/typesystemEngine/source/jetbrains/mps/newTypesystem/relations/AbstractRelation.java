@@ -23,12 +23,6 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: 3/11/11
- * Time: 6:44 PM
- */
 public abstract class AbstractRelation {
   public abstract boolean accept(RelationKind kind);
 

@@ -46,13 +46,6 @@ import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: shatalin
- * Date: 1/24/12
- * Time: 4:52 PM
- * To change this template use File | Settings | File Templates.
- */
 public class NewModelAction extends AnAction {
     private String myModelPrefix;
     private Project myProject;

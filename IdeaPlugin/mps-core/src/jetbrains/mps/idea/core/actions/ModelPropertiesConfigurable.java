@@ -39,13 +39,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: shatalin
- * Date: 1/17/12
- * Time: 11:12 AM
- * To change this template use File | Settings | File Templates.
- */
 public class ModelPropertiesConfigurable implements Configurable, Disposable {
     private EditableSModelDescriptor myDescriptor;
     private UsedLanguagesTable myUsedLanguagesTable;

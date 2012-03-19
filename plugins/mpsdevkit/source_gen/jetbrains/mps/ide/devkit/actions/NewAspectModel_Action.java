@@ -15,7 +15,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.smodel.SModelDescriptor;
 import javax.swing.SwingUtilities;
@@ -56,7 +56,7 @@ public class NewAspectModel_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.MODULE));
     if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }

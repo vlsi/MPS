@@ -17,6 +17,7 @@ import jetbrains.mps.execution.api.commands.KeyValueCommandPart;
 import java.io.File;
 import com.intellij.openapi.application.PathManager;
 import java.util.List;
+import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.execution.api.commands.CommandPart;
 import com.intellij.openapi.application.PathMacros;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
@@ -144,6 +145,9 @@ public class Ant_Command {
         ListSequence.fromList(classPath).addElement(jarFile);
       }
     }
+
+    ListSequence.fromList(classPath).addElement(new File(CommonPaths.getToolsJar()));
+
     return classPath;
   }
 

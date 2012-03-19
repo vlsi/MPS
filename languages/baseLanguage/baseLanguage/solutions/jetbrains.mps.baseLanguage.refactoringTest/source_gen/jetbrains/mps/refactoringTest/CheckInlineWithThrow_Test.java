@@ -7,8 +7,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.Assert;
-import jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodRefactoringAnalyzer;
-import jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 @MPSLaunch
@@ -23,7 +22,7 @@ public class CheckInlineWithThrow_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_CheckInlineWithThrow() throws Exception {
       this.addNodeById("1230053187489");
-      Assert.assertNull(InlineMethodRefactoringAnalyzer.getErrors(new InlineMethodDialogModel(SNodeOperations.cast(this.getNodeById("1230053187517"), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), null)));
+      Assert.assertNull(new InlineMethodModel(SNodeOperations.cast(this.getNodeById("1230053187517"), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")).getErrors());
     }
   }
 }

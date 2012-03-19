@@ -17,12 +17,6 @@ package jetbrains.mps.newTypesystem;
 
 import jetbrains.mps.smodel.SNode;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Dec 20, 2010
- * Time: 4:21:54 PM
- */
 public interface INodeMatcher {
   public boolean matchesWith(SNode node);
 

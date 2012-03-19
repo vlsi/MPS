@@ -30,13 +30,6 @@ import jetbrains.mps.idea.core.make.MPSCompiler2;
 import jetbrains.mps.idea.core.make.MPSCompilerPaths;
 import jetbrains.mps.vfs.IFile;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 2/15/12
- * Time: 10:36 AM
- * To change this template use File | Settings | File Templates.
- */
 public class SimpleMakeTest extends AbstractMakeTest {
 
   @Override

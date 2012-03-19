@@ -52,13 +52,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: shatalin
- * Date: 11/10/11
- * Time: 1:17 PM
- * To change this template use File | Settings | File Templates.
- */
 public class MPSFacetSourcesTab {
     private static final Color BACKGROUND_COLOR = UIUtil.getListBackground();
 

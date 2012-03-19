@@ -33,6 +33,8 @@
     <orderEntry type="library" name="Commons-logging" level="project" />
     <orderEntry type="library" name="Commons-lang" level="project" />
     <orderEntry type="module" module-name="actions-runtime" />
+    <orderEntry type="module" module-name="refactoring-runtime" />
+    <orderEntry type="module" module-name="baseLanguage-util" />
   </component>
 </module>
 

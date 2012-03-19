@@ -165,45 +165,46 @@
     <nodeInfo nodeId="557142600900698158" fileName="DescriptorsIO_Test.java" startLine="83" startPosition="61" endLine="84" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="557142600900698172" fileName="DescriptorsIO_Test.java" startLine="89" startPosition="17" endLine="90" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5177508097213592233" fileName="DescriptorsIO_Test.java" startLine="91" startPosition="47" endLine="92" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="557142600900698180" fileName="DescriptorsIO_Test.java" startLine="97" startPosition="7" endLine="98" endPosition="318" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="557142600900656339" fileName="DescriptorsIO_Test.java" startLine="102" startPosition="50" endLine="103" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="557142600900656344" fileName="DescriptorsIO_Test.java" startLine="103" startPosition="55" endLine="104" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="557142600900656351" fileName="DescriptorsIO_Test.java" startLine="104" startPosition="84" endLine="105" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="557142600900656353" fileName="DescriptorsIO_Test.java" startLine="105" startPosition="31" endLine="106" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5177508097213614379" fileName="DescriptorsIO_Test.java" startLine="106" startPosition="69" endLine="107" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="557142600900656360" fileName="DescriptorsIO_Test.java" startLine="107" startPosition="84" endLine="108" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="557142600900656367" fileName="DescriptorsIO_Test.java" startLine="108" startPosition="54" endLine="109" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="557142600900656396" fileName="DescriptorsIO_Test.java" startLine="109" startPosition="79" endLine="110" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="557142600900656403" fileName="DescriptorsIO_Test.java" startLine="110" startPosition="58" endLine="111" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="557142600900702349" fileName="DescriptorsIO_Test.java" startLine="115" startPosition="51" endLine="116" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="557142600900702354" fileName="DescriptorsIO_Test.java" startLine="116" startPosition="56" endLine="117" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="557142600900704628" fileName="DescriptorsIO_Test.java" startLine="117" startPosition="56" endLine="118" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="557142600900702364" fileName="DescriptorsIO_Test.java" startLine="118" startPosition="65" endLine="119" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="557142600900702369" fileName="DescriptorsIO_Test.java" startLine="119" startPosition="60" endLine="120" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="557142600900702383" fileName="DescriptorsIO_Test.java" startLine="125" startPosition="17" endLine="126" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5177508097213592214" fileName="DescriptorsIO_Test.java" startLine="127" startPosition="47" endLine="128" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="557142600900702391" fileName="DescriptorsIO_Test.java" startLine="133" startPosition="7" endLine="134" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2154493920203854187" fileName="DescriptorsIO_Test.java" startLine="97" startPosition="7" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="557142600900698180" fileName="DescriptorsIO_Test.java" startLine="98" startPosition="0" endLine="99" endPosition="318" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="557142600900656339" fileName="DescriptorsIO_Test.java" startLine="103" startPosition="50" endLine="104" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="557142600900656344" fileName="DescriptorsIO_Test.java" startLine="104" startPosition="55" endLine="105" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="557142600900656351" fileName="DescriptorsIO_Test.java" startLine="105" startPosition="84" endLine="106" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="557142600900656353" fileName="DescriptorsIO_Test.java" startLine="106" startPosition="31" endLine="107" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5177508097213614379" fileName="DescriptorsIO_Test.java" startLine="107" startPosition="69" endLine="108" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="557142600900656360" fileName="DescriptorsIO_Test.java" startLine="108" startPosition="84" endLine="109" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="557142600900656367" fileName="DescriptorsIO_Test.java" startLine="109" startPosition="54" endLine="110" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="557142600900656396" fileName="DescriptorsIO_Test.java" startLine="110" startPosition="79" endLine="111" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="557142600900656403" fileName="DescriptorsIO_Test.java" startLine="111" startPosition="58" endLine="112" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="557142600900702349" fileName="DescriptorsIO_Test.java" startLine="116" startPosition="51" endLine="117" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="557142600900702354" fileName="DescriptorsIO_Test.java" startLine="117" startPosition="56" endLine="118" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="557142600900704628" fileName="DescriptorsIO_Test.java" startLine="118" startPosition="56" endLine="119" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="557142600900702364" fileName="DescriptorsIO_Test.java" startLine="119" startPosition="65" endLine="120" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="557142600900702369" fileName="DescriptorsIO_Test.java" startLine="120" startPosition="60" endLine="121" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="557142600900702383" fileName="DescriptorsIO_Test.java" startLine="126" startPosition="17" endLine="127" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5177508097213592214" fileName="DescriptorsIO_Test.java" startLine="128" startPosition="47" endLine="129" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="557142600900702391" fileName="DescriptorsIO_Test.java" startLine="134" startPosition="7" endLine="135" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5177508097213592252" fileName="DescriptorsIO_Test.java" startLine="49" startPosition="29" endLine="54" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="5177508097213592225" fileName="DescriptorsIO_Test.java" startLine="88" startPosition="29" endLine="93" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5177508097213592206" fileName="DescriptorsIO_Test.java" startLine="124" startPosition="29" endLine="129" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="5177508097213592206" fileName="DescriptorsIO_Test.java" startLine="125" startPosition="29" endLine="130" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="557142600900671241" fileName="DescriptorsIO_Test.java" startLine="48" startPosition="62" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="557142600900698170" fileName="DescriptorsIO_Test.java" startLine="87" startPosition="62" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="557142600900702381" fileName="DescriptorsIO_Test.java" startLine="123" startPosition="62" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="557142600900702381" fileName="DescriptorsIO_Test.java" startLine="124" startPosition="62" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="557142600900671240" fileName="DescriptorsIO_Test.java" startLine="47" startPosition="25" endLine="56" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="557142600900698169" fileName="DescriptorsIO_Test.java" startLine="86" startPosition="25" endLine="95" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="557142600900702380" fileName="DescriptorsIO_Test.java" startLine="122" startPosition="25" endLine="131" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="557142600900671356" fileName="DescriptorsIO_Test.java" startLine="46" startPosition="53" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="557142600900698167" fileName="DescriptorsIO_Test.java" startLine="85" startPosition="53" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="557142600900702378" fileName="DescriptorsIO_Test.java" startLine="121" startPosition="53" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="557142600900671352" fileName="DescriptorsIO_Test.java" startLine="45" startPosition="78" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="557142600900698165" fileName="DescriptorsIO_Test.java" startLine="84" startPosition="90" endLine="97" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="557142600900656335" fileName="DescriptorsIO_Test.java" startLine="100" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_devkitRead#()V" />
-    <nodeInfo nodeId="557142600900702376" fileName="DescriptorsIO_Test.java" startLine="120" startPosition="90" endLine="133" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="557142600900702380" fileName="DescriptorsIO_Test.java" startLine="123" startPosition="25" endLine="132" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2154493920203854184" fileName="DescriptorsIO_Test.java" startLine="46" startPosition="65" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="557142600900698167" fileName="DescriptorsIO_Test.java" startLine="85" startPosition="65" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="557142600900702378" fileName="DescriptorsIO_Test.java" startLine="122" startPosition="65" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2154493920203852961" fileName="DescriptorsIO_Test.java" startLine="45" startPosition="78" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2154493920203854188" fileName="DescriptorsIO_Test.java" startLine="84" startPosition="90" endLine="97" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="557142600900656335" fileName="DescriptorsIO_Test.java" startLine="101" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_devkitRead#()V" />
+    <nodeInfo nodeId="2154493920203854214" fileName="DescriptorsIO_Test.java" startLine="121" startPosition="90" endLine="134" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="557142600900560802" fileName="DescriptorsIO_Test.java" startLine="24" startPosition="50" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_solutionRead#()V" />
     <nodeInfo nodeId="557142600900634875" fileName="DescriptorsIO_Test.java" startLine="61" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_languageRead#()V" />
     <nodeInfo nodeId="557142600900658197" fileName="DescriptorsIO_Test.java" startLine="38" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_solutionWrite#()V" />
-    <nodeInfo nodeId="557142600900698139" fileName="DescriptorsIO_Test.java" startLine="77" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_languageWrite#()V" />
-    <nodeInfo nodeId="557142600900702345" fileName="DescriptorsIO_Test.java" startLine="113" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_devkitWrite#()V" />
+    <nodeInfo nodeId="557142600900702345" fileName="DescriptorsIO_Test.java" startLine="114" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_devkitWrite#()V" />
+    <nodeInfo nodeId="557142600900698139" fileName="DescriptorsIO_Test.java" startLine="77" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_languageWrite#()V" />
     <scopeInfo nodeId="5177508097213592253" fileName="DescriptorsIO_Test.java" startLine="50" startPosition="17" endLine="51" endPosition="44" />
     <scopeInfo nodeId="5177508097213592255" fileName="DescriptorsIO_Test.java" startLine="52" startPosition="0" endLine="53" endPosition="44">
       <varInfo nodeId="5177508097213592256" varName="e" />
@@ -214,42 +215,42 @@
       <varInfo nodeId="5177508097213592229" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="5177508097213592231" fileName="DescriptorsIO_Test.java" startLine="91" startPosition="47" endLine="92" endPosition="44" />
-    <scopeInfo nodeId="5177508097213592207" fileName="DescriptorsIO_Test.java" startLine="125" startPosition="17" endLine="126" endPosition="65" />
-    <scopeInfo nodeId="5177508097213592209" fileName="DescriptorsIO_Test.java" startLine="127" startPosition="0" endLine="128" endPosition="44">
+    <scopeInfo nodeId="5177508097213592207" fileName="DescriptorsIO_Test.java" startLine="126" startPosition="17" endLine="127" endPosition="65" />
+    <scopeInfo nodeId="5177508097213592209" fileName="DescriptorsIO_Test.java" startLine="128" startPosition="0" endLine="129" endPosition="44">
       <varInfo nodeId="5177508097213592210" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="5177508097213592212" fileName="DescriptorsIO_Test.java" startLine="127" startPosition="47" endLine="128" endPosition="44" />
+    <scopeInfo nodeId="5177508097213592212" fileName="DescriptorsIO_Test.java" startLine="128" startPosition="47" endLine="129" endPosition="44" />
     <scopeInfo nodeId="557142600900671242" fileName="DescriptorsIO_Test.java" startLine="49" startPosition="29" endLine="54" endPosition="13" />
     <scopeInfo nodeId="557142600900698171" fileName="DescriptorsIO_Test.java" startLine="88" startPosition="29" endLine="93" endPosition="13" />
-    <scopeInfo nodeId="557142600900702382" fileName="DescriptorsIO_Test.java" startLine="124" startPosition="29" endLine="129" endPosition="13" />
+    <scopeInfo nodeId="557142600900702382" fileName="DescriptorsIO_Test.java" startLine="125" startPosition="29" endLine="130" endPosition="13" />
     <scopeInfo nodeId="557142600900671241" fileName="DescriptorsIO_Test.java" startLine="48" startPosition="62" endLine="56" endPosition="0" />
     <scopeInfo nodeId="557142600900698170" fileName="DescriptorsIO_Test.java" startLine="87" startPosition="62" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="557142600900702381" fileName="DescriptorsIO_Test.java" startLine="123" startPosition="62" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="557142600900671357" fileName="DescriptorsIO_Test.java" startLine="47" startPosition="25" endLine="56" endPosition="11" />
+    <scopeInfo nodeId="557142600900702381" fileName="DescriptorsIO_Test.java" startLine="124" startPosition="62" endLine="132" endPosition="0" />
+    <scopeInfo nodeId="2154493920203854185" fileName="DescriptorsIO_Test.java" startLine="47" startPosition="25" endLine="56" endPosition="11" />
     <scopeInfo nodeId="557142600900698168" fileName="DescriptorsIO_Test.java" startLine="86" startPosition="25" endLine="95" endPosition="11" />
-    <scopeInfo nodeId="557142600900656338" fileName="DescriptorsIO_Test.java" startLine="102" startPosition="50" endLine="111" endPosition="186">
+    <scopeInfo nodeId="557142600900656338" fileName="DescriptorsIO_Test.java" startLine="103" startPosition="50" endLine="112" endPosition="186">
       <varInfo nodeId="557142600900656345" varName="diof" />
       <varInfo nodeId="557142600900656340" varName="dkFile" />
       <varInfo nodeId="557142600900656361" varName="dkd" />
       <varInfo nodeId="557142600900656354" varName="dkdio" />
     </scopeInfo>
-    <scopeInfo nodeId="557142600900702379" fileName="DescriptorsIO_Test.java" startLine="122" startPosition="25" endLine="131" endPosition="11" />
+    <scopeInfo nodeId="557142600900702379" fileName="DescriptorsIO_Test.java" startLine="123" startPosition="25" endLine="132" endPosition="11" />
     <scopeInfo nodeId="557142600900560805" fileName="DescriptorsIO_Test.java" startLine="26" startPosition="52" endLine="36" endPosition="192">
       <varInfo nodeId="557142600900561074" varName="diof" />
       <varInfo nodeId="557142600900561120" varName="sd" />
       <varInfo nodeId="557142600900561097" varName="sdio" />
       <varInfo nodeId="557142600900561064" varName="solFile" />
     </scopeInfo>
-    <scopeInfo nodeId="557142600900671356" fileName="DescriptorsIO_Test.java" startLine="46" startPosition="53" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="2154493920203854184" fileName="DescriptorsIO_Test.java" startLine="46" startPosition="65" endLine="58" endPosition="0" />
     <scopeInfo nodeId="557142600900634878" fileName="DescriptorsIO_Test.java" startLine="63" startPosition="52" endLine="75" endPosition="187">
       <varInfo nodeId="557142600900634884" varName="diof" />
       <varInfo nodeId="557142600900634880" varName="langFile" />
       <varInfo nodeId="557142600900634900" varName="ld" />
       <varInfo nodeId="557142600900634893" varName="ldio" />
     </scopeInfo>
-    <scopeInfo nodeId="557142600900698167" fileName="DescriptorsIO_Test.java" startLine="85" startPosition="53" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="557142600900702378" fileName="DescriptorsIO_Test.java" startLine="121" startPosition="53" endLine="133" endPosition="0" />
-    <scopeInfo nodeId="557142600900656335" fileName="DescriptorsIO_Test.java" startLine="100" startPosition="0" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="557142600900698167" fileName="DescriptorsIO_Test.java" startLine="85" startPosition="65" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="557142600900702378" fileName="DescriptorsIO_Test.java" startLine="122" startPosition="65" endLine="134" endPosition="0" />
+    <scopeInfo nodeId="557142600900656335" fileName="DescriptorsIO_Test.java" startLine="101" startPosition="0" endLine="114" endPosition="0" />
     <scopeInfo nodeId="557142600900560802" fileName="DescriptorsIO_Test.java" startLine="24" startPosition="50" endLine="38" endPosition="0" />
     <scopeInfo nodeId="557142600900634875" fileName="DescriptorsIO_Test.java" startLine="61" startPosition="0" endLine="77" endPosition="0" />
     <scopeInfo nodeId="557142600900658200" fileName="DescriptorsIO_Test.java" startLine="40" startPosition="53" endLine="59" endPosition="174">
@@ -258,26 +259,26 @@
       <varInfo nodeId="5177508097213614357" varName="sdio" />
       <varInfo nodeId="557142600900659242" varName="solFile" />
     </scopeInfo>
-    <scopeInfo nodeId="557142600900698142" fileName="DescriptorsIO_Test.java" startLine="79" startPosition="53" endLine="98" endPosition="318">
-      <varInfo nodeId="557142600900698159" varName="diof" />
-      <varInfo nodeId="557142600900698154" varName="langFile" />
-      <varInfo nodeId="557142600900698144" varName="ld" />
-    </scopeInfo>
-    <scopeInfo nodeId="557142600900702348" fileName="DescriptorsIO_Test.java" startLine="115" startPosition="51" endLine="134" endPosition="167">
+    <scopeInfo nodeId="557142600900702348" fileName="DescriptorsIO_Test.java" startLine="116" startPosition="51" endLine="135" endPosition="167">
       <varInfo nodeId="557142600900702370" varName="diof" />
       <varInfo nodeId="557142600900702365" varName="dkFile" />
       <varInfo nodeId="557142600900702350" varName="dkd" />
     </scopeInfo>
+    <scopeInfo nodeId="557142600900698142" fileName="DescriptorsIO_Test.java" startLine="79" startPosition="53" endLine="99" endPosition="318">
+      <varInfo nodeId="557142600900698159" varName="diof" />
+      <varInfo nodeId="557142600900698154" varName="langFile" />
+      <varInfo nodeId="557142600900698144" varName="ld" />
+    </scopeInfo>
     <scopeInfo nodeId="557142600900658197" fileName="DescriptorsIO_Test.java" startLine="38" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="557142600900698139" fileName="DescriptorsIO_Test.java" startLine="77" startPosition="0" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="557142600900702345" fileName="DescriptorsIO_Test.java" startLine="113" startPosition="0" endLine="136" endPosition="0" />
-    <unitInfo nodeId="557142600900560795" fileName="DescriptorsIO_Test.java" startLine="24" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.project.iotests.DescriptorsIO_Test" />
-    <unitInfo nodeId="557142600900671356" fileName="DescriptorsIO_Test.java" startLine="46" startPosition="41" endLine="58" endPosition="5" unitName="jetbrains.mps.project.iotests.DescriptorsIO_Test$1" />
+    <scopeInfo nodeId="557142600900702345" fileName="DescriptorsIO_Test.java" startLine="114" startPosition="0" endLine="137" endPosition="0" />
+    <scopeInfo nodeId="557142600900698139" fileName="DescriptorsIO_Test.java" startLine="77" startPosition="0" endLine="101" endPosition="0" />
+    <unitInfo nodeId="557142600900560795" fileName="DescriptorsIO_Test.java" startLine="24" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.project.iotests.DescriptorsIO_Test" />
+    <unitInfo nodeId="2154493920203854184" fileName="DescriptorsIO_Test.java" startLine="46" startPosition="53" endLine="58" endPosition="5" unitName="jetbrains.mps.project.iotests.DescriptorsIO_Test$1" />
     <unitInfo nodeId="557142600900671241" fileName="DescriptorsIO_Test.java" startLine="48" startPosition="50" endLine="56" endPosition="9" unitName="jetbrains.mps.project.iotests.DescriptorsIO_Test$2" />
-    <unitInfo nodeId="557142600900698167" fileName="DescriptorsIO_Test.java" startLine="85" startPosition="41" endLine="97" endPosition="5" unitName="jetbrains.mps.project.iotests.DescriptorsIO_Test$2" />
+    <unitInfo nodeId="557142600900698167" fileName="DescriptorsIO_Test.java" startLine="85" startPosition="53" endLine="97" endPosition="5" unitName="jetbrains.mps.project.iotests.DescriptorsIO_Test$2" />
     <unitInfo nodeId="557142600900698170" fileName="DescriptorsIO_Test.java" startLine="87" startPosition="50" endLine="95" endPosition="9" unitName="jetbrains.mps.project.iotests.DescriptorsIO_Test$3" />
-    <unitInfo nodeId="557142600900702378" fileName="DescriptorsIO_Test.java" startLine="121" startPosition="41" endLine="133" endPosition="5" unitName="jetbrains.mps.project.iotests.DescriptorsIO_Test$3" />
-    <unitInfo nodeId="557142600900702381" fileName="DescriptorsIO_Test.java" startLine="123" startPosition="50" endLine="131" endPosition="9" unitName="jetbrains.mps.project.iotests.DescriptorsIO_Test$4" />
+    <unitInfo nodeId="557142600900702378" fileName="DescriptorsIO_Test.java" startLine="122" startPosition="53" endLine="134" endPosition="5" unitName="jetbrains.mps.project.iotests.DescriptorsIO_Test$3" />
+    <unitInfo nodeId="557142600900702381" fileName="DescriptorsIO_Test.java" startLine="124" startPosition="50" endLine="132" endPosition="9" unitName="jetbrains.mps.project.iotests.DescriptorsIO_Test$4" />
   </root>
 </debugInfo>
 

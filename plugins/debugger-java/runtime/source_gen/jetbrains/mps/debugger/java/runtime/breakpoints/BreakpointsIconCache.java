@@ -16,11 +16,11 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debugger.java.runtime.DebugSession;
-import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUiComponent;
 import jetbrains.mps.cleanup.CleanupListener;
+import jetbrains.mps.cleanup.CleanupManager;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUiComponent;
 import jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debugger.api.ui.icons.Icons;
 import org.apache.commons.lang.StringUtils;
@@ -80,11 +80,18 @@ public class BreakpointsIconCache implements ProjectComponent {
     }
   };
   private final DebugSessionManagerComponent myDebugSessionManager;
+  private final BreakpointsUiComponent myBreakpointsUiComponent;
+  private final CleanupListener myCleanupListener = new CleanupListener() {
+    public void performCleanup() {
+      myUpdateFromCurrent.invoke();
+    }
+  };
 
-  public BreakpointsIconCache(Project project, BreakpointManagerComponent breakpointManager, DebugSessionManagerComponent debugSessionManager) {
+  public BreakpointsIconCache(Project project, BreakpointManagerComponent breakpointManager, DebugSessionManagerComponent debugSessionManager, BreakpointsUiComponent breakpointsUiComponent) {
     myProject = project;
     myBreakpointManager = breakpointManager;
     myDebugSessionManager = debugSessionManager;
+    myBreakpointsUiComponent = breakpointsUiComponent;
   }
 
   public void projectOpened() {
@@ -96,21 +103,18 @@ public class BreakpointsIconCache implements ProjectComponent {
   public void initComponent() {
     myBreakpointManager.addChangeListener(myBreakpointsManagerListener);
     myDebugSessionManager.addDebugSessionListener(myDebugSessionAdapter);
-    CleanupManager.getInstance().addCleanupListener(new CleanupListener() {
-      public void performCleanup() {
-        myUpdateFromCurrent.invoke();
-      }
-    });
+    CleanupManager.getInstance().addCleanupListener(myCleanupListener);
   }
 
   public void disposeComponent() {
+    CleanupManager.getInstance().removeCleanupListener(myCleanupListener);
     myDebugSessionManager.removeDebugSessionListener(myDebugSessionAdapter);
     myBreakpointManager.removeChangeListener(myBreakpointsManagerListener);
   }
 
   @Nullable
   private DebugSession currentSession() {
-    AbstractDebugSession session = myProject.getComponent(DebugSessionManagerComponent.class).getDebugSessionByCurrentTab();
+    AbstractDebugSession session = myDebugSessionManager.getDebugSessionByCurrentTab();
     if (session instanceof DebugSession) {
       return (DebugSession) session;
     }
@@ -131,7 +135,7 @@ public class BreakpointsIconCache implements ProjectComponent {
           }
         }
 
-        BreakpointsUiComponent.getInstance(myProject).repaintBreakpoints();
+        myBreakpointsUiComponent.repaintBreakpoints();
       }
     };
     if (session != null) {

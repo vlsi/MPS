@@ -21,7 +21,6 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpfo" modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
-  <import index="e04" modelUID="f:java_stub#985c8c6a-64b4-486d-a91e-7d4112742556#org.apache.commons.lang(org.apache.commons.lang@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8688590116724765630">
       <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
@@ -506,8 +505,8 @@
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8688590116724765748">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="e04.~StringUtils" resolveInfo="StringUtils" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e04.~StringUtils%dtrim(java%dlang%dString)%cjava%dlang%dString" resolveInfo="trim" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="aow2.~StringUtils" resolveInfo="StringUtils" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="aow2.~StringUtils%dtrim(java%dlang%dString)%cjava%dlang%dString" resolveInfo="trim" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8688590116724765749">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8688590116724765740" resolveInfo="text" />
               </node>

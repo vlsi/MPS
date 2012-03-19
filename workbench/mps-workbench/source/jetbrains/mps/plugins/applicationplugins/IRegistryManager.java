@@ -17,13 +17,6 @@ package jetbrains.mps.plugins.applicationplugins;
 
 import com.intellij.openapi.extensions.PluginId;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 12/9/11
- * Time: 2:31 PM
- * To change this template use File | Settings | File Templates.
- */
 public interface IRegistryManager{
 
   IActionsRegistry getActionsRegistry (PluginId id);

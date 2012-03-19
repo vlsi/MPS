@@ -18,12 +18,6 @@ package jetbrains.mps.ide.typesystem.trace.icons;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: 4/19/11
- * Time: 2:11 PM
- */
 public class Icons {
   public static final Icon ADD = new ImageIcon(Icons.class.getResource("add.png"));
   public static final Icon BLOCK = new ImageIcon(Icons.class.getResource("block.png"));

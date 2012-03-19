@@ -22,13 +22,8 @@ public abstract class RefactoringDialog extends DialogWrapper {
     myProject = project;
   }
 
-  private final Action getRefactorAction() {
+  protected final Action getRefactorAction() {
     return myRefactorAction;
-  }
-
-  @Override
-  protected void doOKAction() {
-    doRefactoringAction();
   }
 
   protected Action[] createActions() {
@@ -44,7 +39,13 @@ public abstract class RefactoringDialog extends DialogWrapper {
     myRefactorAction = new RefactoringDialog.RefactorAction();
   }
 
-  protected abstract void doRefactoringAction();
+  /**
+   * This method will be called on pressing "Refactor" button in dialog.
+   * 
+   */
+  protected void doRefactoringAction() {
+    close(OK_EXIT_CODE);
+  }
 
   private class RefactorAction extends AbstractAction {
     public RefactorAction() {

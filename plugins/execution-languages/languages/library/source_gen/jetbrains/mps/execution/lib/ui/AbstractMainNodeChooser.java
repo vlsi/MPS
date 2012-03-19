@@ -17,7 +17,9 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
+import jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog;
+import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.ide.DataManager;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
@@ -46,7 +48,9 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
           }
         });
 
-        SNode selectedNode = CommonChoosers.showDialogNodeChooser(AbstractMainNodeChooser.this, toChooseFrom.value);
+        NodeChooserDialog chooserDialog = new NodeChooserDialog(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext(AbstractMainNodeChooser.this)), toChooseFrom.value);
+        chooserDialog.show();
+        SNode selectedNode = chooserDialog.getResult();
         setNode(selectedNode);
       }
     });

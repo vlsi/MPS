@@ -77,7 +77,7 @@ public class StringChooserDialog extends RefactoringDialog {
 
   protected void doRefactoringAction() {
     myResultString = this.myTextField.getText();
-    this.dispose();
+    super.doRefactoringAction();
   }
 
   public static String getString(Project project, String title, String labelText, String initialValue) {

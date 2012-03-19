@@ -18,13 +18,6 @@ package jetbrains.mps.nodeEditor.selection;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Alexander Shatalin
- * Date: 1/25/11
- * Time: 7:26 PM
- * To change this template use File | Settings | File Templates.
- */
 public interface SingularSelection extends Selection {
   @NotNull
   EditorCell getEditorCell();

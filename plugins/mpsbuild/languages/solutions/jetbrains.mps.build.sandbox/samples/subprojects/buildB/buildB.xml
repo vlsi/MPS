@@ -1,0 +1,63 @@
+<project name="buildB" default="build">
+  <property name="build.dir" location="build" />
+  <property name="build.tmp" location="${build.dir}/tmp/buildB" />
+  <property name="build.layout" location="${build.dir}/artifacts/buildB" />
+  <property name="artifacts.buildA" location="../../build/artifacts/buildA" />
+  <property file="${artifacts.buildA}/variables.properties" prefix="import.buildA" />
+  <property name="buildA.aver" value="${import.buildA.buildA.aver}" />
+  
+  <target name="assemble" depends="classes, fetchDependencies">
+    <mkdir dir="${build.layout}/result" />
+    <mkdir dir="${build.layout}/result/A-${buildA.aver}" />
+    <copy todir="${build.layout}/result/A-${buildA.aver}/A">
+      <fileset dir="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/A" />
+    </copy>
+    <copy todir="${build.layout}/result/A-${buildA.aver}">
+      <fileset file="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/module-A.jar" />
+    </copy>
+    <copy todir="${build.layout}/result/A-${buildA.aver}">
+      <fileset file="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/abcde.jar" />
+    </copy>
+    <jar destfile="${build.layout}/result/A-${buildA.aver}/module-B.jar">
+      <fileset dir="${build.tmp}/java/out/module-B" />
+    </jar>
+    <echo file="${build.layout}/variables.properties">buildA.aver=${buildA.aver}</echo>
+  </target>
+  
+  <target name="buildDependents">
+    <ant antfile="../../buildA/buildA.xml" inheritAll="false" useNativeBasedir="true" />
+  </target>
+  
+  <target name="fetchDependencies">
+    <mkdir dir="${build.tmp}/deps/buildA/A-_dl_{aver}.zip" />
+    <unzip src="${artifacts.buildA}/result/A-${buildA.aver}.zip" dest="${build.tmp}/deps/buildA/A-_dl_{aver}.zip" />
+  </target>
+  
+  <target name="build" depends="assemble, check" />
+  
+  <target name="clean">
+    <delete dir="${build.dir}" />
+  </target>
+  
+  <target name="compileJava" depends="java.compile.module-B" />
+  
+  <target name="processResources" />
+  
+  <target name="classes" depends="compileJava, processResources" />
+  
+  <target name="test" depends="classes" />
+  
+  <target name="check" depends="test" />
+  
+  <target name="java.compile.module-B" depends="fetchDependencies">
+    <mkdir dir="${build.tmp}/java/out/module-B" />
+    <javac destdir="${build.tmp}/java/out/module-B">
+      <compilerarg value="-Xlint:none" />
+      <src path="${basedir}/moduleB/src" />
+      <classpath>
+        <fileset file="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/module-A.jar" />
+        <fileset file="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/abcde.jar" />
+      </classpath>
+    </javac>
+  </target>
+</project>

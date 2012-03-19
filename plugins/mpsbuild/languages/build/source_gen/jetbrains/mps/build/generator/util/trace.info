@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="5745174517193855235">
+    <nodeInfo nodeId="5745174517193855246" fileName="FetchDependenciesProcessor.java" startLine="25" startPosition="41" endLine="26" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="genContext" />
+    <nodeInfo nodeId="5745174517193856656" fileName="FetchDependenciesProcessor.java" startLine="26" startPosition="42" endLine="27" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="project" />
+    <nodeInfo nodeId="4701820937132266239" fileName="FetchDependenciesProcessor.java" startLine="27" startPosition="24" endLine="28" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="requiredArtifacts" />
+    <nodeInfo nodeId="5745174517193855249" fileName="FetchDependenciesProcessor.java" startLine="30" startPosition="85" endLine="31" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5745174517193856659" fileName="FetchDependenciesProcessor.java" startLine="31" startPosition="33" endLine="32" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4701820937132265049" fileName="FetchDependenciesProcessor.java" startLine="35" startPosition="25" endLine="36" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4701820937132265061" fileName="FetchDependenciesProcessor.java" startLine="36" startPosition="75" endLine="37" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4701820937132265885" fileName="FetchDependenciesProcessor.java" startLine="38" startPosition="143" endLine="39" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6547494638219607330" fileName="FetchDependenciesProcessor.java" startLine="40" startPosition="38" endLine="41" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="6547494638219610415" fileName="FetchDependenciesProcessor.java" startLine="42" startPosition="7" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4701820937132266084" fileName="FetchDependenciesProcessor.java" startLine="45" startPosition="59" endLine="46" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4701820937132266195" fileName="FetchDependenciesProcessor.java" startLine="46" startPosition="109" endLine="47" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4701820937132266226" fileName="FetchDependenciesProcessor.java" startLine="49" startPosition="42" endLine="50" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4701820937132266237" fileName="FetchDependenciesProcessor.java" startLine="50" startPosition="123" endLine="51" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4701820937132266251" fileName="FetchDependenciesProcessor.java" startLine="52" startPosition="9" endLine="53" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2590001334067673367" fileName="FetchDependenciesProcessor.java" startLine="55" startPosition="5" endLine="56" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7128123785277723699" fileName="FetchDependenciesProcessor.java" startLine="56" startPosition="85" endLine="57" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7128123785277841116" fileName="FetchDependenciesProcessor.java" startLine="57" startPosition="18" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7128123785277844863" fileName="FetchDependenciesProcessor.java" startLine="58" startPosition="0" endLine="59" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7128123785277844905" fileName="FetchDependenciesProcessor.java" startLine="60" startPosition="57" endLine="61" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7128123785277845028" fileName="FetchDependenciesProcessor.java" startLine="61" startPosition="142" endLine="62" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7128123785277845337" fileName="FetchDependenciesProcessor.java" startLine="62" startPosition="149" endLine="63" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7128123785277844965" fileName="FetchDependenciesProcessor.java" startLine="63" startPosition="180" endLine="64" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7128123785277845117" fileName="FetchDependenciesProcessor.java" startLine="64" startPosition="96" endLine="65" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6921160174096611575" fileName="FetchDependenciesProcessor.java" startLine="65" startPosition="145" endLine="66" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7128123785277845204" fileName="FetchDependenciesProcessor.java" startLine="66" startPosition="54" endLine="67" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7128123785277845274" fileName="FetchDependenciesProcessor.java" startLine="67" startPosition="102" endLine="68" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4640279023716880671" fileName="FetchDependenciesProcessor.java" startLine="68" startPosition="130" endLine="69" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7128123785277858387" fileName="FetchDependenciesProcessor.java" startLine="77" startPosition="31" endLine="78" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7128123785277858387" fileName="FetchDependenciesProcessor.java" startLine="78" startPosition="26" endLine="79" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7128123785277858387" fileName="FetchDependenciesProcessor.java" startLine="79" startPosition="67" endLine="80" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7128123785277858387" fileName="FetchDependenciesProcessor.java" startLine="81" startPosition="7" endLine="82" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7128123785277858387" fileName="FetchDependenciesProcessor.java" startLine="82" startPosition="168" endLine="83" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7128123785277858387" fileName="FetchDependenciesProcessor.java" startLine="83" startPosition="43" endLine="84" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7128123785277858387" fileName="FetchDependenciesProcessor.java" startLine="84" startPosition="234" endLine="85" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7128123785277858387" fileName="FetchDependenciesProcessor.java" startLine="86" startPosition="7" endLine="87" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7128123785277858387" fileName="FetchDependenciesProcessor.java" startLine="73" startPosition="55" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_t02zqv_a0a0c0h0a#()V" />
+    <nodeInfo nodeId="6547494638219607275" fileName="FetchDependenciesProcessor.java" startLine="39" startPosition="136" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5745174517193855237" fileName="FetchDependenciesProcessor.java" startLine="29" startPosition="0" endLine="33" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FetchDependenciesProcessor#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;)V" />
+    <nodeInfo nodeId="4701820937132265958" fileName="FetchDependenciesProcessor.java" startLine="44" startPosition="44" endLine="48" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4701820937132266188" fileName="FetchDependenciesProcessor.java" startLine="48" startPosition="9" endLine="52" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7128123785277858387" fileName="FetchDependenciesProcessor.java" startLine="80" startPosition="32" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7128123785277858387" fileName="FetchDependenciesProcessor.java" startLine="80" startPosition="32" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4701820937132265953" fileName="FetchDependenciesProcessor.java" startLine="43" startPosition="0" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7128123785277844871" fileName="FetchDependenciesProcessor.java" startLine="59" startPosition="52" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7128123785277858387" fileName="FetchDependenciesProcessor.java" startLine="76" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="4701820937132265814" fileName="FetchDependenciesProcessor.java" startLine="37" startPosition="24" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4701820937132157276" fileName="FetchDependenciesProcessor.java" startLine="34" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="process#()V" />
+    <scopeInfo nodeId="7128123785277858387" fileName="FetchDependenciesProcessor.java" startLine="74" startPosition="46" endLine="74" endPosition="46" />
+    <scopeInfo nodeId="6547494638219607276" fileName="FetchDependenciesProcessor.java" startLine="40" startPosition="38" endLine="41" endPosition="17" />
+    <scopeInfo nodeId="5745174517193855240" fileName="FetchDependenciesProcessor.java" startLine="30" startPosition="85" endLine="32" endPosition="27" />
+    <scopeInfo nodeId="4701820937132265960" fileName="FetchDependenciesProcessor.java" startLine="45" startPosition="59" endLine="47" endPosition="19" />
+    <scopeInfo nodeId="4701820937132266189" fileName="FetchDependenciesProcessor.java" startLine="49" startPosition="42" endLine="51" endPosition="19" />
+    <scopeInfo nodeId="7128123785277858387" fileName="FetchDependenciesProcessor.java" startLine="73" startPosition="55" endLine="75" endPosition="5" />
+    <scopeInfo nodeId="5745174517193855237" fileName="FetchDependenciesProcessor.java" startLine="29" startPosition="0" endLine="33" endPosition="3">
+      <varInfo nodeId="5745174517193855243" varName="genContext" />
+      <varInfo nodeId="5745174517193855241" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="7128123785277858387" fileName="FetchDependenciesProcessor.java" startLine="81" startPosition="7" endLine="85" endPosition="31">
+      <varInfo nodeId="7128123785277858387" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="7128123785277858387" fileName="FetchDependenciesProcessor.java" startLine="80" startPosition="32" endLine="86" endPosition="7" />
+    <scopeInfo nodeId="4701820937132265954" fileName="FetchDependenciesProcessor.java" startLine="44" startPosition="44" endLine="53" endPosition="36" />
+    <scopeInfo nodeId="7128123785277844872" fileName="FetchDependenciesProcessor.java" startLine="60" startPosition="57" endLine="69" endPosition="97">
+      <varInfo nodeId="7128123785277845118" varName="stask" />
+      <varInfo nodeId="7128123785277845029" varName="taskpart" />
+      <varInfo nodeId="7128123785277844906" varName="wf" />
+    </scopeInfo>
+    <scopeInfo nodeId="7128123785277858387" fileName="FetchDependenciesProcessor.java" startLine="77" startPosition="31" endLine="87" endPosition="20">
+      <varInfo nodeId="7128123785277858387" varName="_parameterValues_129834374" />
+      <varInfo nodeId="7128123785277858387" varName="quotedNode_1" />
+      <varInfo nodeId="7128123785277858387" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="4701820937132265953" fileName="FetchDependenciesProcessor.java" startLine="43" startPosition="0" endLine="54" endPosition="7">
+      <varInfo nodeId="4701820937132265955" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7128123785277858387" fileName="FetchDependenciesProcessor.java" startLine="76" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="4701820937132265815" fileName="FetchDependenciesProcessor.java" startLine="38" startPosition="143" endLine="54" endPosition="7">
+      <varInfo nodeId="4701820937132265886" varName="dependencyTargets" />
+    </scopeInfo>
+    <scopeInfo nodeId="4701820937132265814" fileName="FetchDependenciesProcessor.java" startLine="37" startPosition="24" endLine="55" endPosition="5">
+      <varInfo nodeId="4701820937132265817" varName="dep" />
+    </scopeInfo>
+    <scopeInfo nodeId="4701820937132157279" fileName="FetchDependenciesProcessor.java" startLine="35" startPosition="25" endLine="70" endPosition="5">
+      <varInfo nodeId="4701820937132265050" varName="artifacts" />
+      <varInfo nodeId="2590001334067673368" varName="helper" />
+      <varInfo nodeId="7128123785277844864" varName="statements" />
+    </scopeInfo>
+    <scopeInfo nodeId="4701820937132157276" fileName="FetchDependenciesProcessor.java" startLine="34" startPosition="0" endLine="72" endPosition="0" />
+    <unitInfo nodeId="5745174517193855235" fileName="FetchDependenciesProcessor.java" startLine="25" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.build.generator.util.FetchDependenciesProcessor" />
+    <unitInfo nodeId="7128123785277858387" fileName="FetchDependenciesProcessor.java" startLine="73" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.build.generator.util.FetchDependenciesProcessor$QuotationClass_t02zqv_a0a0c0h0a" />
+  </root>
+</debugInfo>
+

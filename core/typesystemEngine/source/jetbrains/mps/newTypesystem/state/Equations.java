@@ -33,12 +33,6 @@ import jetbrains.mps.util.Pair;
 import java.util.*;
 import java.util.Map.Entry;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbah
- * Date: Sep 10, 2010
- * Time: 4:33:42 PM
- */
 public class Equations {
   @StateObject
   private final Map<SNode, SNode> myRepresentatives = new THashMap<SNode, SNode>();

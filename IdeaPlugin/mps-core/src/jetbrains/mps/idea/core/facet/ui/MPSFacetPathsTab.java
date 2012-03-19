@@ -36,13 +36,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- * Created by IntelliJ IDEA.
- * User: shatalin
- * Date: 11/10/11
- * Time: 1:19 PM
- * To change this template use File | Settings | File Templates.
- */
 public class MPSFacetPathsTab {
     private JPanel myRootPanel;
     private JRadioButton myUseTransientOutputFolder;

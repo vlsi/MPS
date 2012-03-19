@@ -89,10 +89,6 @@
 
   <application-components>
     <component>
-      <implementation-class>jetbrains.mps.baseLanguage.index.ClassifierSuccessorsFinder</implementation-class>
-    </component>
-
-    <component>
       <interface-class>com.intellij.openapi.fileEditor.impl.text.TextEditorProvider</interface-class>
       <implementation-class>com.intellij.openapi.fileEditor.impl.text.TextEditorProvider</implementation-class>
     </component>

@@ -21,7 +21,6 @@
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="make-runtime" />
-    <orderEntry type="module" module-name="baseLanguageIndex" />
     <orderEntry type="module" module-name="baseLanguage-search" />
     <orderEntry type="module" module-name="MPSSupport" />
     <orderEntry type="module" module-name="typesystemEngine" />

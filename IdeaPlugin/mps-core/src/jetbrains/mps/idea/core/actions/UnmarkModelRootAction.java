@@ -36,13 +36,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: shatalin
- * Date: 11/22/11
- * Time: 12:55 PM
- * To change this template use File | Settings | File Templates.
- */
 public class UnmarkModelRootAction extends AnAction {
     public UnmarkModelRootAction() {
         super(MPSBundle.message("unmark.as.model.root.action"), null, null);

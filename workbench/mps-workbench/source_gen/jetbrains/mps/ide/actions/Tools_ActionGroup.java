@@ -30,6 +30,7 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
       }
       Tools_ActionGroup.this.addSeparator();
       Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowBookmarks_Action");
+      Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowTodoViewer_Action");
       {
         LabelledAnchor action = new LabelledAnchor(Tools_ActionGroup.LABEL_ID_customTools);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();

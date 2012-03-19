@@ -15,12 +15,6 @@
  */
 package jetbrains.mps.newTypesystem;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Oct 15, 2010
- * Time: 11:28:26 AM
- */
 public class VariableIdentifier {
   private char myVariableChar;
   private int myVariableIndex;

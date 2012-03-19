@@ -19,13 +19,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 12/9/11
- * Time: 4:41 PM
- * To change this template use File | Settings | File Templates.
- */
 public class PluginFactoriesRegistry {
 
   private static Collection<AbstractPluginFactory> myPluginFactories = Collections.synchronizedCollection(new ArrayList<AbstractPluginFactory>());
