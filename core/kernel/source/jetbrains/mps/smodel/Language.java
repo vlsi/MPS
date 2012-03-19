@@ -24,7 +24,6 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.project.dependency.LanguageDependenciesManager;
 import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
-import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -87,7 +86,10 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     };
     language.setLanguageDescriptor(descriptor, false);
 
-    return registerInRepository(language, moduleOwner);
+
+    MPSModuleRepository.getInstance().registerModule(language, moduleOwner);
+
+    return language;
   }
 
   public static Language newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {

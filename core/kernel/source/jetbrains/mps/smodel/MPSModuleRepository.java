@@ -72,7 +72,7 @@ public class MPSModuleRepository implements CoreComponent {
     ModuleId moduleId = module.getModuleReference().getModuleId();
     String moduleFqName = module.getModuleFqName();
 
-    assert moduleId != null : "module with nul id is added to repository: fqName=" + moduleFqName + "; file=" + module.getDescriptorFile();
+    assert moduleId != null : "module with null id is added to repository: fqName=" + moduleFqName + "; file=" + module.getDescriptorFile();
 
     IModule existing = getModuleById(moduleId);
     if (existing == null) {
