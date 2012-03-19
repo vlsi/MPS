@@ -16,11 +16,8 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.cleanup.CleanupListener;
-import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
@@ -33,9 +30,7 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -109,7 +104,7 @@ public class MPSModuleRepository implements CoreComponent {
   public void addModule(IModule module, MPSModuleOwner owner) {
     ModelAccess.assertLegalWrite();
 
-    if (existsModule(module.getModuleReference())) {
+    if (getModule(module.getModuleReference()) != null) {
       throw new IllegalStateException("Couldn't add module \"" + module.getModuleFqName() + "\" : this module is already registered with this very owner: " + owner);
     }
 
@@ -177,15 +172,11 @@ public class MPSModuleRepository implements CoreComponent {
     fireRepositoryChanged();
   }
 
-  //----------------exists-merge------------------------
-
-  public boolean existsModule(ModuleReference ref) {
-    return getModule(ref) != null;
-  }
+  //----------------exists------------------------
 
   public static IModule checkRegistered(ModuleReference ref, IFile fileToReport) {
     MPSModuleRepository repository = getInstance();
-    if (!repository.existsModule(ref)) return null;
+    if (!(repository.getModule(ref) != null)) return null;
     LOG.error(
       "Attempting to load module " + ref.getModuleFqName() + " for the second time.\n" +
         "Registered module is loaded from " + repository.getModule(ref).getDescriptorFile().getPath() + ";\n" +

@@ -82,7 +82,7 @@ public class Solution extends AbstractModule {
   public static Solution newInstance(SolutionDescriptor descriptor, MPSModuleOwner moduleOwner) {
     ModuleReference mref = descriptor.getModuleReference();
     MPSModuleRepository repo = MPSModuleRepository.getInstance();
-    if (repo.existsModule(mref)) {
+    if (repo.getModule(mref) != null) {
       IModule module = ModuleRepositoryFacade.getInstance().getModule(mref, Solution.class);
       IFile file = FileSystem.getInstance().getFileByPath("NO FILE");
       ModuleHandle handle = new ModuleHandle(file, module.getModuleDescriptor());

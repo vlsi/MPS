@@ -97,7 +97,7 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     result.myDescriptorFile = handle.getFile();
 
     MPSModuleRepository repository = MPSModuleRepository.getInstance();
-    if (repository.existsModule(devKitDescriptor.getModuleReference())) {
+    if (repository.getModule(devKitDescriptor.getModuleReference()) != null) {
       LOG.error("Loading module " + devKitDescriptor.getNamespace() + " for the second time");
       return ModuleRepositoryFacade.getInstance().getModule(devKitDescriptor.getModuleReference(), DevKit.class);
     }
