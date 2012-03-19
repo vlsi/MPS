@@ -18,6 +18,9 @@ editor/editor-runtime/classes
 editor/actions-runtime/classes
 editor/intentions-runtime/classes
 editor/typesystemIntegration/classes
+:platform
+workbench/mps-platform/classes
+workbench/mps-debugger/classes
 :workbench
 workbench/resources/classes
 workbench/resources_en/classes

@@ -57,6 +57,7 @@ public class ClasspathReader {
   public enum ClassType {
     CORE("core"),
     EDITOR("editor"),
+    PLATFORM("platform"),
     WORKBENCH("workbench");
 
     private String myTypeString;
