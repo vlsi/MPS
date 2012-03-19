@@ -26,9 +26,7 @@ import com.intellij.platform.ProjectBaseDirectory;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.project.*;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.NameUtil;
@@ -166,7 +164,7 @@ public class ProjectFactory {
     String descriptorPath = myOptions.getSolutionPath() + File.separator + descriptorFileName;
     IFile descriptorFile = FileSystem.getInstance().getFileByPath(descriptorPath);
 
-    return Solution.createSolution(myOptions.getSolutionNamespace(), descriptorFile, mpsProject);
+    return Solution.createNewSolution(myOptions.getSolutionNamespace(), descriptorFile, mpsProject);
   }
 
   private Language createNewLanguage(MPSProject mpsProject) {
