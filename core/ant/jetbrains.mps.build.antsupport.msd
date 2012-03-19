@@ -1,22 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.ant" uuid="77c9a130-703f-4530-bf21-6580757768d0" compileInMPS="false" generatorOutputPath="${solution_descriptor}/source_gen">
   <models>
-    <modelRoot path="${solution_descriptor}/classes">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
-    <modelRoot path="${mps_home}/lib/diffutils-1.2.1.jar">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
     <modelRoot path="${solution_descriptor}/models" />
   </models>
-  <stubModelEntries>
-    <stubModelEntry path="${solution_descriptor}/classes">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
-    <stubModelEntry path="${mps_home}/lib/diffutils-1.2.1.jar">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
-  </stubModelEntries>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
