@@ -36,13 +36,14 @@
     </stubModelEntry>
   </runtimeStubModels>
   <stubSolutions>
-    <stubSolution moduleName="MPS.Core" moduleId="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea" />
     <stubSolution moduleName="JDK" moduleId="6354ebe7-c22a-4a0f-ac54-50b52ab9b065" />
-    <stubSolution moduleName="MPS.Workbench" moduleId="86441d7a-e194-42da-81a5-2161ec62a379" />
-    <stubSolution moduleName="Testbench" moduleId="920eaa0e-ecca-46bc-bee7-4e5c59213dd6" />
-    <stubSolution moduleName="MPS.Classpath" moduleId="37a3367b-1fb2-44d8-aa6b-18075e74e003" />
-    <stubSolution moduleName="JDK.Tools" moduleId="fdb93da0-59ed-4001-b2aa-4fad79ec058e" />
     <stubSolution moduleName="MPS.Editor" moduleId="1ed103c3-3aa6-49b7-9c21-6765ee11f224" />
+    <stubSolution moduleName="JDK.Tools" moduleId="fdb93da0-59ed-4001-b2aa-4fad79ec058e" />
+    <stubSolution moduleName="MPS.Workbench" moduleId="86441d7a-e194-42da-81a5-2161ec62a379" />
+    <stubSolution moduleName="MPS.Platform" moduleId="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61" />
+    <stubSolution moduleName="MPS.Classpath" moduleId="37a3367b-1fb2-44d8-aa6b-18075e74e003" />
+    <stubSolution moduleName="MPS.Core" moduleId="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea" />
+    <stubSolution moduleName="Testbench" moduleId="920eaa0e-ecca-46bc-bee7-4e5c59213dd6" />
   </stubSolutions>
   <sourcePath />
   <dependencies>

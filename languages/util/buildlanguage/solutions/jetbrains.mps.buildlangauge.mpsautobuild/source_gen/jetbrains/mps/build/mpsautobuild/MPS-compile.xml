@@ -198,7 +198,9 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
@@ -756,7 +758,6 @@
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/analyzers/languages/analyzers/classes_gen" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -897,7 +898,6 @@
     <path path="${base_dir}/plugins/execution-configurations/languages/ant/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -1077,7 +1077,6 @@
     <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -1218,7 +1217,6 @@
     <path path="${base_dir}/languages/util/builders/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -1360,7 +1358,6 @@
     <path path="${base_dir}/languages/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -1502,7 +1499,6 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -1644,7 +1640,6 @@
     <path path="${base_dir}/languages/baseLanguage/constructors/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -1786,7 +1781,6 @@
     <path path="${base_dir}/languages/util/contracts/languages/contracts/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -1928,7 +1922,6 @@
     <path path="${base_dir}/languages/util/dates/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -2071,7 +2064,6 @@
     <path path="${base_dir}/languages/util/dates/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -2225,7 +2217,6 @@
     <path path="${base_dir}/languages/util/dates/internal/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -2418,7 +2409,6 @@
     <path path="${base_dir}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -2559,7 +2549,6 @@
     <path path="${base_dir}/languages/baseLanguage/jdk7/languages/jdk7/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -2701,7 +2690,6 @@
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -2842,7 +2830,6 @@
     <path path="${base_dir}/languages/util/math/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -3037,7 +3024,6 @@
     <path path="${base_dir}/languages/util/money/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -3185,7 +3171,6 @@
     <path path="${base_dir}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -3327,7 +3312,6 @@
     <path path="${base_dir}/languages/baseLanguage/baseLanguage/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -3470,7 +3454,6 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -3637,7 +3620,6 @@
     <path path="${base_dir}/plugins/execution-configurations/languages/unitTests/runtime/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -3783,7 +3765,6 @@
     <path path="${base_dir}/languages/util/bash/languages/bash/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -3925,7 +3906,6 @@
     <path path="${base_dir}/plugins/mpsbuild/languages/build/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -4070,7 +4050,6 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/custommps/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -4213,7 +4192,6 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/dependency/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -4355,7 +4333,6 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -4496,7 +4473,6 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -4637,7 +4613,6 @@
     <path path="${base_dir}/plugins/mpsbuild/languages/mps/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -4783,7 +4758,6 @@
     <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.mpsdist/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -4925,7 +4899,6 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/packaging/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -5067,7 +5040,6 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/reduced/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -5208,7 +5180,6 @@
     <path path="${base_dir}/plugins/mpsbuild/languages/workflow/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -5352,7 +5323,6 @@
     <path path="${base_dir}/languages/util/properties/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -5494,7 +5464,6 @@
     <path path="${base_dir}/languages/xml/xml/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -5636,7 +5605,6 @@
     <path path="${base_dir}/plugins/debugger-api-languages/languages/jetbrains.mps.debugger.api.lang/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -5778,7 +5746,6 @@
     <path path="${base_dir}/plugins/debugger-java/languages/customViewers/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -5920,7 +5887,6 @@
     <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -6061,7 +6027,6 @@
     <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -6202,7 +6167,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/commands/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -6347,7 +6311,6 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -6490,7 +6453,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/configurations/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -6637,7 +6599,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -6779,7 +6740,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -6920,7 +6880,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/configurations/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -7068,7 +7027,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -7209,7 +7167,6 @@
     <path path="${base_dir}/plugins/execution-configurations/languages/migration/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -7351,7 +7308,6 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -7495,7 +7451,6 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -7651,7 +7606,6 @@
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -7792,7 +7746,6 @@
     <path path="${base_dir}/languages/util/ideUiLanguage/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -7934,7 +7887,6 @@
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -8075,7 +8027,6 @@
     <path path="${base_dir}/languages/core/core/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -8217,7 +8168,6 @@
     <path path="${base_dir}/languages/languageDesign/dataFlow/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -8359,7 +8309,6 @@
     <path path="${base_dir}/languages/languageDesign/dataFlow/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -8501,7 +8450,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/descriptor/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -8643,7 +8591,6 @@
     <path path="${base_dir}/languages/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -8785,7 +8732,6 @@
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -8927,7 +8873,6 @@
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -9068,7 +9013,6 @@
     <path path="${base_dir}/languages/languageDesign/extension/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -9211,7 +9155,6 @@
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -9352,7 +9295,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -9494,7 +9436,6 @@
     <path path="${base_dir}/languages/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -9636,7 +9577,6 @@
     <path path="${base_dir}/languages/languageDesign/plugin/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -9778,7 +9718,6 @@
     <path path="${base_dir}/languages/languageDesign/quotation/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -9920,7 +9859,6 @@
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -10061,7 +9999,6 @@
     <path path="${base_dir}/languages/languageDesign/script/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -10203,7 +10140,6 @@
     <path path="${base_dir}/languages/languageDesign/smodel/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -10345,7 +10281,6 @@
     <path path="${base_dir}/languages/languageDesign/smodel/languages/smodelTests/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -10487,7 +10422,6 @@
     <path path="${base_dir}/languages/languageDesign/structure/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -10629,7 +10563,6 @@
     <path path="${base_dir}/languages/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -10770,7 +10703,6 @@
     <path path="${base_dir}/languages/languageDesign/test/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -10917,7 +10849,6 @@
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -11059,7 +10990,6 @@
     <path path="${base_dir}/languages/languageDesign/make/languages/facet/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -11207,7 +11137,6 @@
     <path path="${base_dir}/languages/languageDesign/make/languages/script/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -11349,7 +11278,6 @@
     <path path="${base_dir}/languages/util/mps-lite/languages/nanoj/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -11491,7 +11419,6 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -11683,7 +11610,6 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -11825,7 +11751,6 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -11968,7 +11893,6 @@
     <path path="${base_dir}/languages/util/ui/languages/ui/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -12112,7 +12036,6 @@
     <path path="${base_dir}/languages/util/ui/languages/gwt/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -12258,7 +12181,6 @@
     <path path="${base_dir}/languages/util/ui/languages/gwt/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -12404,7 +12326,6 @@
     <path path="${base_dir}/languages/util/ui/languages/internal/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -12549,7 +12470,6 @@
     <path path="${base_dir}/languages/util/ui/languages/meta/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -12691,7 +12611,6 @@
     <path path="${base_dir}/languages/util/ui/languages/meta/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -12834,7 +12753,6 @@
     <path path="${base_dir}/languages/util/ui/languages/ui/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -12976,7 +12894,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -13123,7 +13040,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -13277,7 +13193,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swt/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -13427,7 +13342,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swt/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -13581,7 +13495,6 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -13722,7 +13635,6 @@
     <path path="${base_dir}/languages/util/uiLanguage/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -13865,7 +13777,6 @@
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -14014,7 +13925,6 @@
     <path path="${base_dir}/languages/util/xml/xmlQuery/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -14160,7 +14070,6 @@
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -14302,7 +14211,6 @@
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -14445,7 +14353,6 @@
     <path path="${base_dir}/languages/util/ypath/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -14606,7 +14513,6 @@
     <path path="${base_dir}/languages/util/mps-lite/languages/mpslite/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -14754,7 +14660,6 @@
     <path path="${base_dir}/languages/util/ypath/solutions/main/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />
@@ -14898,7 +14803,6 @@
     <path path="${base_dir}/languages/util/ypath/solutions/test/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
     <path path="${base_dir}/core/kernel/classes" />

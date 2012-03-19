@@ -11,16 +11,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SReference;
 
-public class SplitMPSClasspath_MigrationScript extends BaseMigrationScript {
-  public SplitMPSClasspath_MigrationScript(IOperationContext operationContext) {
-    super("Split MPS.Classpath Stubs");
+public class UpdateMPSModules_MigrationScript extends BaseMigrationScript {
+  public UpdateMPSModules_MigrationScript(IOperationContext operationContext) {
+    super("Resolve broken stub references to MPS.Core/Editor/Platform/Workbench");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
-        return "MPS.Classpath -> MPS.Core / .Editor / .Workbench";
+        return "MPS.Workbench -> MPS.Core / .Editor / .Platform";
       }
 
       public String getAdditionalInfo() {
-        return "MPS.Classpath -> MPS.Core / .Editor / .Workbench";
+        return "MPS.Workbench -> MPS.Core / .Editor / .Platform";
       }
 
       public String getFqNameOfConceptToSearchInstances() {
@@ -30,10 +30,9 @@ public class SplitMPSClasspath_MigrationScript extends BaseMigrationScript {
       public boolean isApplicableInstanceNode(SNode node) {
         return Sequence.fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
-            return it.getTargetSModelReference().getSModelFqName().toString().contains("MPS.Classpath");
+            return it.getTargetNodeSilently() == null;
           }
         }).isNotEmpty();
-
       }
 
       public void doUpdateInstanceNode(SNode node) {
