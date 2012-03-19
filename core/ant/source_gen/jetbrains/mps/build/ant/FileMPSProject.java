@@ -94,7 +94,6 @@ public class FileMPSProject extends Project {
         if (descriptor != null) {
           ModuleHandle moduleHandle = new ModuleHandle(descriptorFile, descriptor);
           IModule m = ModuleRepositoryFacade.createModule(moduleHandle,this);
-          MPSModuleRepository.getInstance().registerModule(m, this);
           ModuleReference moduleReference = m.getModuleReference();
           if (!(existingModules.remove(moduleReference))) {
             super.addModule(moduleReference);

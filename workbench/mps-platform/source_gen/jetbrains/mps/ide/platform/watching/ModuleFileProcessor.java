@@ -172,7 +172,6 @@ import java.util.Collections;
     ArrayList<IModule> result = new ArrayList<IModule>();
     for (ModulesMiner.ModuleHandle handle : handles) {
       IModule module = ModuleRepositoryFacade.createModule(handle, p);
-      MPSModuleRepository.getInstance().registerModule(module, p);
       ModuleReference mr = module.getModuleReference();
       p.addModule(mr);
       result.add(module);

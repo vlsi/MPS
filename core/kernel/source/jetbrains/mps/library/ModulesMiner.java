@@ -79,7 +79,6 @@ public class ModulesMiner {
       @Override
       public IModule read(ModuleHandle handle) {
         IModule module = ModuleRepositoryFacade.createModule(handle,owner);
-        MPSModuleRepository.getInstance().registerModule(module, owner);
         return module;
       }
     });

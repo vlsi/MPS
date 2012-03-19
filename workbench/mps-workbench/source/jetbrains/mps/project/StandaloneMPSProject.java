@@ -168,7 +168,6 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
         if (descriptor != null) {
           ModuleHandle handle = new ModuleHandle(descriptorFile, descriptor);
           IModule module = ModuleRepositoryFacade.createModule(handle, this);
-          MPSModuleRepository.getInstance().registerModule(module, this);
           ModuleReference moduleReference = module.getModuleReference();
           if (!existingModules.remove(moduleReference)) {
             super.addModule(moduleReference);

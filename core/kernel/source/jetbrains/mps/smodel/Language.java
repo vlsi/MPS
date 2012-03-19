@@ -75,7 +75,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   private List<Language> myAllExtendedLanguages;
 
   public static Language newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
-    Language language = new Language();
     LanguageDescriptor descriptor = ((LanguageDescriptor) handle.getDescriptor());
     assert descriptor != null;
     assert descriptor.getId() != null;
@@ -83,6 +82,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     IModule d = checkRegistered(descriptor.getModuleReference(), handle.getFile());
     if (d != null) return (Language) d;
 
+    Language language = new Language();
     language.setLanguageDescriptor(descriptor, false);
     language.myDescriptorFile = handle.getFile();
 
