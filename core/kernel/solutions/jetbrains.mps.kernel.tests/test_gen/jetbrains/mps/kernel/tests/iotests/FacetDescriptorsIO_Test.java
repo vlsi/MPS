@@ -78,7 +78,7 @@ public class FacetDescriptorsIO_Test extends TestCase {
     Assert.assertEquals("$MODULE_DIR$/source_gen", mpsCfg.getGeneratorOutputPath());
     Assert.assertEquals(false, mpsCfg.getUseModuleSourceFolder());
     Assert.assertSame(1, SetSequence.fromSet(mpsCfg.getModelRoots()).count());
-    Assert.assertEquals("$MODULE_DIR$/models", SetSequence.fromSet(mpsCfg.getModelRoots()).first());
+    Assert.assertEquals("$MODULE_DIR$/models", SetSequence.fromSet(mpsCfg.getModelRoots()).first().getPath());
     Assert.assertSame(1, mpsCfg.getUsedLanguages().length);
     Assert.assertEquals(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), ModuleReference.fromString(mpsCfg.getUsedLanguages()[0]).getModuleId());
   }
