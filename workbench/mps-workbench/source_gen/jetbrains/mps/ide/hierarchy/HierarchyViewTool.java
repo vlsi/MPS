@@ -41,21 +41,10 @@ public class HierarchyViewTool extends AbstractHierarchyView {
   }
 
   @Override
-  public void initComponent() {
-    super.initComponent();
-    myModelListener = new HierarchyModelListener(this.myHierarchyTree);
-    AbstractModule.registerModelCreationListener(myCreationListener);
-  }
-
-  @Override
-  public void disposeComponent() {
-    AbstractModule.unregisterModelCreationListener(myCreationListener);
-    super.disposeComponent();
-  }
-
-  @Override
   public void projectOpened() {
     super.projectOpened();
+    myModelListener = new HierarchyModelListener(this.myHierarchyTree);
+    AbstractModule.registerModelCreationListener(myCreationListener);
     for (SModelDescriptor md : GlobalScope.getInstance().getModelDescriptors()) {
       if (LanguageAspect.STRUCTURE.is(md)) {
         myStructureModels.add(md);
@@ -67,6 +56,7 @@ public class HierarchyViewTool extends AbstractHierarchyView {
   public void projectClosed() {
     super.projectClosed();
     myStructureModels.clear();
+    AbstractModule.unregisterModelCreationListener(myCreationListener);
   }
 
   protected AbstractHierarchyTree createHierarchyTree(boolean isParentHierarchy) {
