@@ -573,7 +573,9 @@
     <scopeInfo nodeId="6062668769034853020" fileName="JUnitConfigEditor.java" startLine="368" startPosition="0" endLine="372" endPosition="0" />
     <scopeInfo nodeId="6062668769034853020" fileName="JUnitConfigEditor.java" startLine="121" startPosition="0" endLine="126" endPosition="0" />
     <scopeInfo nodeId="6062668769034853020" fileName="JUnitConfigEditor.java" startLine="126" startPosition="0" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="6062668769034853020" fileName="JUnitConfigEditor.java" startLine="135" startPosition="25" endLine="140" endPosition="5" />
+    <scopeInfo nodeId="6062668769034853020" fileName="JUnitConfigEditor.java" startLine="135" startPosition="25" endLine="140" endPosition="5">
+      <varInfo nodeId="6062668769034853020" varName="binding" />
+    </scopeInfo>
     <scopeInfo nodeId="6062668769034853020" fileName="JUnitConfigEditor.java" startLine="255" startPosition="52" endLine="260" endPosition="21">
       <varInfo nodeId="6062668769034853020" varName="component" />
     </scopeInfo>

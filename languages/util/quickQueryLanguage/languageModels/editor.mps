@@ -2,7 +2,6 @@
 <model modelUID="r:00000000-0000-4000-0000-011c8959050d(jetbrains.mps.quickQueryLanguage.editor)">
   <persistence version="7" />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
-  <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="tpfw" modelUID="r:00000000-0000-4000-0000-011c89590510(jetbrains.mps.quickQueryLanguage.structure)" version="-1" />
   <import index="tpen" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -12,7 +11,7 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpfw.1218793502081" resolveInfo="ModelQuery" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1219745771774">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpfw.1219745756351" resolveInfo="ReplaceQuery" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpfw.1219745756351" resolveInfo="ReplaceModelQuery" />
     </node>
   </roots>
   <root id="1218793625941">

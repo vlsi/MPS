@@ -13,16 +13,14 @@
         <generator generatorUID="ab777ef3-cd35-47a2-8db1-108b4d67986f(jetbrains.mps.build.packaging###1203014923802)" />
       </external-templates>
       <dependencies>
-        <dependency reexport="false">ab777ef3-cd35-47a2-8db1-108b4d67986f(jetbrains.mps.build.packaging###1203014923802)</dependency>
-        <dependency reexport="false">12ea451d-94b2-4e3a-8ff9-08f91d5769cd(jetbrains.mps.build.mpsautobuild)</dependency>
-        <dependency reexport="false">a79f53b6-9aaa-48eb-9fbb-aaec80a6da9a(jetbrains.mps.build.custommps)</dependency>
-        <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
-        <dependency reexport="false">4e6c5313-7662-4c44-9bc7-b488cec17508(jetbrains.mps.build.packaging)</dependency>
         <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
+        <dependency reexport="false">a79f53b6-9aaa-48eb-9fbb-aaec80a6da9a(jetbrains.mps.build.custommps)</dependency>
+        <dependency reexport="false">12ea451d-94b2-4e3a-8ff9-08f91d5769cd(jetbrains.mps.build.mpsautobuild)</dependency>
+        <dependency reexport="false">4e6c5313-7662-4c44-9bc7-b488cec17508(jetbrains.mps.build.packaging)</dependency>
       </dependencies>
       <usedLanguages>
-        <usedLanguage>a83c3bd0-2f7e-4ba1-8373-12d49e99f57e(jetbrains.mps.gtext)</usedLanguage>
         <usedLanguage>fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)</usedLanguage>
+        <usedLanguage>a83c3bd0-2f7e-4ba1-8373-12d49e99f57e(jetbrains.mps.gtext)</usedLanguage>
       </usedLanguages>
       <usedDevKits>
         <usedDevKit>e073aac8-8c71-4c23-be71-86bf7a6df0a2(jetbrains.mps.devkit.bootstrap-languages)</usedDevKit>
@@ -47,7 +45,6 @@
   </generators>
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
     <dependency reexport="false">a79f53b6-9aaa-48eb-9fbb-aaec80a6da9a(jetbrains.mps.build.custommps)</dependency>
     <dependency reexport="false">12ea451d-94b2-4e3a-8ff9-08f91d5769cd(jetbrains.mps.build.mpsautobuild)</dependency>
     <dependency reexport="false">2ec0a469-08d4-448b-8e4c-253069e98835(jetbrains.mps.build.packaging.mps#3583849467507867704)</dependency>

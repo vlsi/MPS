@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-fw3cgl1oetk1hrmjg612yw4y11tuhw">
+<dependencies version="2" modelHash="47excecw8v4oy3wz8ahj5uxezp0b48b">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="cllol0k6uon23imzi3i8ftyndeqrkqk" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-3g2jui8rirnxhruh8t7p7qk3adnr3f9" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="do4uh4fd3dqp1s55v9l4e6fg8bob2ht" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-7zc5n4l9a9zrjq93znk167hfo3dyd2v" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="3ogbc94405e1j8mrhp8fnrksbak1c2a" />
-  <common hash="-5ug33aq25mh61k4wkbtmt6kcfflieuj" />
+  <common hash="5p5vdkjs5asphbxilzxk4p4tfadf6o9" />
   <source id="7241381882860002146" name="ASMArrayType" hash="-4mp6vv6j47pjhjhvaojfhs103i68beq">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -18,7 +18,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ASMClassType.java" />
   </source>
-  <source id="7241381882860005690" name="ASMMethod" hash="-20zt0p25z4qw491jrs9dl19s890bpdc">
+  <source id="7241381882860005690" name="ASMMethod" hash="-do76jpjeaiq3tygg1qwp08kv9w17prq">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -32,7 +32,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ASMPrimitiveType.java" />
   </source>
-  <source id="7241381882860006793" name="ASMField" hash="-dtdimzkt85ofb87rwhpmw4edfin9rip">
+  <source id="7241381882860006793" name="ASMField" hash="-3anjrgjlpp4mztt7lhuh0n2czxt1r6p">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -40,7 +40,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ASMField.java" />
   </source>
-  <source id="7241381882860001929" name="SignatureVisitorAdapter" hash="-4tky0jh5z913wvu05pbu5632y08q41t">
+  <source id="7241381882860001929" name="SignatureVisitorAdapter" hash="-bjrx2nglbutbar1403weee3ef66hi8">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SignatureVisitorAdapter.java" />
@@ -51,7 +51,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ASMVarArgType.java" />
   </source>
-  <source id="7241381882860007196" name="NullSignatureVisitor" hash="9at0f4njs46zsru84rirogqgzsdt58a">
+  <source id="7241381882860007196" name="NullSignatureVisitor" hash="9osti06upr076flh3tptoy40wmtc4aa">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="NullSignatureVisitor.java" />
@@ -60,7 +60,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="ASMUnboundedType.java" />
   </source>
-  <source id="7241381882860007306" name="TypeUtil" hash="-73t4gn3n11ze6atwxteoqjrnxqttlhz">
+  <source id="7241381882860007306" name="TypeUtil" hash="-1tgz41ibsi224re10qd94aa9npjv4kr">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -112,7 +112,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ASMParameterizedType.java" />
   </source>
-  <source id="7241381882860009362" name="ASMClass" hash="-dac0zb860yesotsv07i3fp3ube5iyjn">
+  <source id="7241381882860009362" name="ASMClass" hash="dxex8x1nx905fr5lb2th7iqg6hgthbl">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -120,7 +120,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ASMClass.java" />
   </source>
-  <source id="6849912058625332189" name="ASMAnnotation" hash="57kwnet573znxzmwy542zfuns2yv4g4">
+  <source id="6849912058625332189" name="ASMAnnotation" hash="-ekijoo4cmg58y9ww9i8f4ps4z7r9lwq">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
