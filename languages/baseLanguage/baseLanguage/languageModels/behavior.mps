@@ -17964,8 +17964,8 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8871623299328377718">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8871623299328377753">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8871623299328377754">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fnmy.4748674287775003944" resolveInfo="getFromCache" />
             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fnmy.4748674287775003937" resolveInfo="TransactionCacheUtils" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fnmy.3660196414914466045" resolveInfo="getFromCache" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ConceptFqNameRefExpression" typeId="tp25.8339862546319741524" id="8871623299328377755">
               <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="tpee.1197027756228" resolveInfo="DotExpression" />
             </node>
