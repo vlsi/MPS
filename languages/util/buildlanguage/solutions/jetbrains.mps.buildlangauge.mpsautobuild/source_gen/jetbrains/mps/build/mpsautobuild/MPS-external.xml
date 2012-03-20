@@ -106,7 +106,6 @@
     <mkdir dir="${deploy.dir}/MPS/plugins/execution-languages/lib/execution-languages.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/plugins/execution-languages/lib" />
     <mkdir dir="${deploy.dir}/MPS/plugins/execution-languages/META-INF" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/execution-languages/lib" />
     <mkdir dir="${deploy.dir}/MPS/plugins/execution-languages/languages" />
     <mkdir dir="${deploy.dir}/MPS/plugins/execution-languages" />
     <mkdir dir="${deploy.dir}/MPS/plugins" />
@@ -536,7 +535,6 @@
     <antcall target="MPS-external.replace_a1r3a" />
     <mkdir dir="${deploy.dir}/MPS/plugins/execution-languages/META-INF" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.lib" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/execution-languages/lib" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.commands" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.configurations" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.configurations.pluginSolution" />

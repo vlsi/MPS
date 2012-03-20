@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.execution.lib" uuid="04b376d5-fc16-403b-a344-c68b30193c6a" pluginKind="PLUGIN_OTHER" compileInMPS="true">
+<solution name="jetbrains.mps.execution.lib" uuid="04b376d5-fc16-403b-a344-c68b30193c6a" pluginKind="PLUGIN_OTHER" compileInMPS="false">
   <models>
+    <modelRoot path="${mps_home}/plugins/execution-languages/classes">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </modelRoot>
     <modelRoot path="${solution_descriptor}/" />
   </models>
+  <stubModelEntries>
+    <stubModelEntry path="${mps_home}/plugins/execution-languages/classes">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+  </stubModelEntries>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
