@@ -1713,18 +1713,15 @@
                 <link role="property" roleId="tpee.1201385237847" targetNodeId="d3yv.3323419009397487066" />
               </node>
             </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.ArrayLengthOperation" typeId="tpee.1208890769693" id="7691797154759996373" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp2q.GetSizeOperation" typeId="tp2q.1162935959151" id="5753791343209549133" />
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertEquals" typeId="tpe3.1171978097730" id="7691797154759996374">
           <node role="expected" roleId="tpe3.8427750732757990724" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7691797154759996375">
             <property name="value" nameId="tpee.1070475926801" value="$MODULE_DIR$/models" />
           </node>
-          <node role="actual" roleId="tpe3.8427750732757990725" type="tpee.ArrayAccessExpression" typeId="tpee.1173175405605" id="7691797154759996376">
-            <node role="index" roleId="tpee.1173175577737" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7691797154759996377">
-              <property name="value" nameId="tpee.1068580320021" value="0" />
-            </node>
-            <node role="array" roleId="tpee.1173175590490" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7691797154759996378">
+          <node role="actual" roleId="tpe3.8427750732757990725" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5753791343209549151">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7691797154759996378">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7691797154759996379">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7691797154759996346" resolveInfo="mpsCfg" />
               </node>
@@ -1732,6 +1729,7 @@
                 <link role="property" roleId="tpee.1201385237847" targetNodeId="d3yv.3323419009397487066" />
               </node>
             </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp2q.GetFirstOperation" typeId="tp2q.1165525191778" id="5753791343209549157" />
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertSame" typeId="tpe3.1171985735491" id="7691797154759996381">

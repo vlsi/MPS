@@ -18,6 +18,7 @@ import junit.framework.Assert;
 import java.io.IOException;
 import org.jdom.JDOMException;
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -76,8 +77,8 @@ public class FacetDescriptorsIO_Test extends TestCase {
     Assert.assertEquals("4f50af0c-4cd4-11e1-a072-6cf049e62fe5", mpsCfg.getUUID());
     Assert.assertEquals("$MODULE_DIR$/source_gen", mpsCfg.getGeneratorOutputPath());
     Assert.assertEquals(false, mpsCfg.getUseModuleSourceFolder());
-    Assert.assertSame(1, mpsCfg.getModelRootPaths().length);
-    Assert.assertEquals("$MODULE_DIR$/models", mpsCfg.getModelRootPaths()[0]);
+    Assert.assertSame(1, SetSequence.fromSet(mpsCfg.getModelRootPaths()).count());
+    Assert.assertEquals("$MODULE_DIR$/models", SetSequence.fromSet(mpsCfg.getModelRootPaths()).first());
     Assert.assertSame(1, mpsCfg.getUsedLanguages().length);
     Assert.assertEquals(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), ModuleReference.fromString(mpsCfg.getUsedLanguages()[0]).getModuleId());
   }
