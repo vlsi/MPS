@@ -45,6 +45,11 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
     myRepository = repo;
   }
 
+  @Override
+  public void initComponent() {
+    LibraryInitializer.getInstance().addContributor(this);
+  }
+
   //-------libraries
 
   public final Set<String> getLibraries() {
@@ -148,8 +153,7 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
 
   private MyState myState = new MyState();
 
-  public void load() {
-    LibraryInitializer.getInstance().addContributor(this);
+  protected void loadLibraries() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         LibraryInitializer.getInstance().update(true);
