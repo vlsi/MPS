@@ -9,12 +9,12 @@
   <import index="f0dr" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.border(javax.swing.border@java_stub)" version="-1" />
   <import index="oj8w" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.text(javax.swing.text@java_stub)" version="-1" />
   <import index="msyo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" />
-  <import index="a9qh" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.application(MPS.Workbench/com.intellij.openapi.application@java_stub)" version="-1" />
-  <import index="zjpd" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.ide(MPS.Workbench/com.intellij.ide@java_stub)" version="-1" />
   <import index="68ai" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.annotations(MPS.Core/org.jetbrains.annotations@java_stub)" version="-1" />
-  <import index="y8n" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.util.ui(MPS.Workbench/com.intellij.util.ui@java_stub)" version="-1" />
-  <import index="y6zh" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.ui(MPS.Workbench/com.intellij.ui@java_stub)" version="-1" />
-  <import index="1bi5" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.components(MPS.Workbench/com.intellij.openapi.components@java_stub)" version="-1" />
+  <import index="btw8" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.ui(MPS.Platform/com.intellij.ui@java_stub)" version="-1" />
+  <import index="t7eg" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.components(MPS.Platform/com.intellij.openapi.components@java_stub)" version="-1" />
+  <import index="5cl8" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.util.ui(MPS.Platform/com.intellij.util.ui@java_stub)" version="-1" />
+  <import index="q9wm" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.ide(MPS.Platform/com.intellij.ide@java_stub)" version="-1" />
+  <import index="mepa" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.application(MPS.Platform/com.intellij.openapi.application@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <roots>
@@ -421,8 +421,8 @@
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~JScrollPane" resolveInfo="JScrollPane" />
               </node>
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2367479761865210999">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="y6zh.~ScrollPaneFactory" resolveInfo="ScrollPaneFactory" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y6zh.~ScrollPaneFactory%dcreateScrollPane(java%dawt%dComponent)%cjavax%dswing%dJScrollPane" resolveInfo="createScrollPane" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="btw8.~ScrollPaneFactory" resolveInfo="ScrollPaneFactory" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="btw8.~ScrollPaneFactory%dcreateScrollPane(java%dawt%dComponent)%cjavax%dswing%dJScrollPane" resolveInfo="createScrollPane" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2367479761865211000">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2367479761865211001">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1657638272963062312" resolveInfo="toolTipData" />
@@ -966,8 +966,8 @@
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1975624945529346134">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~JTextArea%dsetFont(java%dawt%dFont)%cvoid" resolveInfo="setFont" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2674021983123225977">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y8n.~UIUtil%dgetLabelFont()%cjava%dawt%dFont" resolveInfo="getLabelFont" />
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="y8n.~UIUtil" resolveInfo="UIUtil" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5cl8.~UIUtil%dgetLabelFont()%cjava%dawt%dFont" resolveInfo="getLabelFont" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="5cl8.~UIUtil" resolveInfo="UIUtil" />
                     </node>
                   </node>
                 </node>
@@ -1146,7 +1146,7 @@
       <property name="name" nameId="tpck.1169194664001" value="myIdeTooltip" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="6281853519869699211" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6281853519869717691">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zjpd.~IdeTooltip" resolveInfo="IdeTooltip" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="q9wm.~IdeTooltip" resolveInfo="IdeTooltip" />
       </node>
     </node>
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="2977221198762530052">
@@ -1165,11 +1165,11 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1657638272963450899">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1657638272963442227">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1657638272963439818">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="a9qh.~ApplicationManager%dgetApplication()%ccom%dintellij%dopenapi%dapplication%dApplication" resolveInfo="getApplication" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="a9qh.~ApplicationManager" resolveInfo="ApplicationManager" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mepa.~ApplicationManager%dgetApplication()%ccom%dintellij%dopenapi%dapplication%dApplication" resolveInfo="getApplication" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="mepa.~ApplicationManager" resolveInfo="ApplicationManager" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1657638272963449902">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1bi5.~ComponentManager%dgetComponent(java%dlang%dClass)%cjava%dlang%dObject" resolveInfo="getComponent" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t7eg.~ComponentManager%dgetComponent(java%dlang%dClass)%cjava%dlang%dObject" resolveInfo="getComponent" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="1657638272963449903">
                 <link role="classifier" roleId="tpee.1116615189566" targetNodeId="1657638272963439183" resolveInfo="MPSToolTipManager" />
               </node>
@@ -1185,7 +1185,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1657638272963439188" />
     </node>
     <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1657638272963439193">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1bi5.~ApplicationComponent" resolveInfo="ApplicationComponent" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="t7eg.~ApplicationComponent" resolveInfo="ApplicationComponent" />
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1657638272963439194">
       <property name="name" nameId="tpck.1169194664001" value="getComponentName" />
@@ -2043,8 +2043,8 @@
               <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="6281853519869761380">
                 <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="6281853519869761381">
                   <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
-                  <link role="classifier" roleId="tpee.1170346070688" targetNodeId="zjpd.~IdeTooltip" resolveInfo="IdeTooltip" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zjpd.~IdeTooltip%d&lt;init&gt;(java%dawt%dComponent,java%dawt%dPoint,javax%dswing%dJComponent,java%dlang%dObject%d%d%d)" resolveInfo="IdeTooltip" />
+                  <link role="classifier" roleId="tpee.1170346070688" targetNodeId="q9wm.~IdeTooltip" resolveInfo="IdeTooltip" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q9wm.~IdeTooltip%d&lt;init&gt;(java%dawt%dComponent,java%dawt%dPoint,javax%dswing%dJComponent,java%dlang%dObject%d%d%d)" resolveInfo="IdeTooltip" />
                   <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6281853519869761382" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6281853519869717700">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="78827631726060880" resolveInfo="component" />
@@ -2062,7 +2062,7 @@
                     <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6281853519869763018">
                       <property name="name" nameId="tpck.1169194664001" value="event" />
                       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6642915361308872732">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zjpd.~TooltipEvent" resolveInfo="TooltipEvent" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="q9wm.~TooltipEvent" resolveInfo="TooltipEvent" />
                       </node>
                     </node>
                     <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6281853519869763022">
@@ -2073,7 +2073,7 @@
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6281853519869763018" resolveInfo="event" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="921294185120869670">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zjpd.~TooltipEvent%disIsEventInsideBalloon()%cboolean" resolveInfo="isIsEventInsideBalloon" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q9wm.~TooltipEvent%disIsEventInsideBalloon()%cboolean" resolveInfo="isIsEventInsideBalloon" />
                             </node>
                           </node>
                         </node>
@@ -2091,11 +2091,11 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8917462567969266672">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8917462567969266676">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8917462567969266675">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zjpd.~IdeTooltipManager%dgetInstance()%ccom%dintellij%dide%dIdeTooltipManager" resolveInfo="getInstance" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zjpd.~IdeTooltipManager" resolveInfo="IdeTooltipManager" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q9wm.~IdeTooltipManager%dgetInstance()%ccom%dintellij%dide%dIdeTooltipManager" resolveInfo="getInstance" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="q9wm.~IdeTooltipManager" resolveInfo="IdeTooltipManager" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8917462567969266680">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zjpd.~IdeTooltipManager%dshow(com%dintellij%dide%dIdeTooltip,boolean)%ccom%dintellij%dide%dIdeTooltip" resolveInfo="show" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q9wm.~IdeTooltipManager%dshow(com%dintellij%dide%dIdeTooltip,boolean)%ccom%dintellij%dide%dIdeTooltip" resolveInfo="show" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="6281853519869761379">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6281853519869699210" resolveInfo="myIdeTooltip" />
               </node>
@@ -2148,7 +2148,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6281853519869699210" resolveInfo="myIdeTooltip" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6281853519869763049">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zjpd.~IdeTooltip%dhide()%cvoid" resolveInfo="hide" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q9wm.~IdeTooltip%dhide()%cvoid" resolveInfo="hide" />
                 </node>
               </node>
             </node>

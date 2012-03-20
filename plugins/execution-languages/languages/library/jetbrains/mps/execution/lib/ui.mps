@@ -15,23 +15,23 @@
   <import index="tpcu" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <import index="68ai" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.annotations(MPS.Core/org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="8q6x" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" version="-1" />
-  <import index="zw69" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.workbench.dialogs.choosers(MPS.Workbench/jetbrains.mps.workbench.dialogs.choosers@java_stub)" version="-1" />
   <import index="dbrf" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" version="-1" />
-  <import index="lq3" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.ui(MPS.Workbench/com.intellij.openapi.ui@java_stub)" version="-1" />
   <import index="1t7x" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" version="-1" />
-  <import index="fylj" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi(MPS.Workbench/com.intellij.openapi@java_stub)" version="-1" />
   <import index="oj8w" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.text(JDK/javax.swing.text@java_stub)" version="-1" />
-  <import index="xkfd" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.util(MPS.Workbench/com.intellij.openapi.util@java_stub)" version="-1" />
   <import index="vsqj" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" version="-1" />
   <import index="y5px" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator(MPS.Core/jetbrains.mps.generator@java_stub)" version="-1" />
   <import index="gqu6" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.dependency(MPS.Core/jetbrains.mps.project.dependency@java_stub)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
-  <import index="ya3c" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.fileChooser(MPS.Workbench/com.intellij.openapi.fileChooser@java_stub)" version="-1" />
-  <import index="zfwc" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.vfs(MPS.Workbench/com.intellij.openapi.vfs@java_stub)" version="-1" />
-  <import index="y6zh" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.ui(MPS.Workbench/com.intellij.ui@java_stub)" version="-1" />
   <import index="qfni" modelUID="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)" version="-1" />
   <import index="kt54" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.workbench(MPS.Workbench/jetbrains.mps.workbench@java_stub)" version="-1" />
-  <import index="zjpd" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.ide(MPS.Workbench/com.intellij.ide@java_stub)" version="-1" />
+  <import index="h12" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.ui(MPS.Platform/com.intellij.openapi.ui@java_stub)" version="-1" />
+  <import index="iwpw" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.util(MPS.Platform/com.intellij.openapi.util@java_stub)" version="-1" />
+  <import index="eh19" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.fileChooser(MPS.Platform/com.intellij.openapi.fileChooser@java_stub)" version="-1" />
+  <import index="oex8" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi(MPS.Platform/com.intellij.openapi@java_stub)" version="-1" />
+  <import index="btw8" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.ui(MPS.Platform/com.intellij.ui@java_stub)" version="-1" />
+  <import index="f6g1" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.vfs(MPS.Platform/com.intellij.openapi.vfs@java_stub)" version="-1" />
+  <import index="6tyf" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.actionSystem(MPS.Platform/com.intellij.openapi.actionSystem@java_stub)" version="-1" />
+  <import index="q9wm" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.ide(MPS.Platform/com.intellij.ide@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="-1" implicit="yes" />
   <import index="tphr" modelUID="r:00000000-0000-4000-0000-011c89590553(jetbrains.mps.uiLanguage.structure)" version="1" implicit="yes" />
@@ -41,7 +41,6 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="cx9y" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" implicit="yes" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
-  <import index="1qcs" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.actionSystem(MPS.Workbench/com.intellij.openapi.actionSystem@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1240470842553498753">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeChooser" />
@@ -767,17 +766,17 @@
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7032426736593775978">
                                   <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7032426736593775957">
                                     <link role="classifier" roleId="tpee.1144433057691" targetNodeId="kt54.~MPSDataKeys" resolveInfo="MPSDataKeys" />
-                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1qcs.~PlatformDataKeys%dPROJECT" resolveInfo="PROJECT" />
+                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6tyf.~PlatformDataKeys%dPROJECT" resolveInfo="PROJECT" />
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7032426736593775984">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1qcs.~DataKey%dgetData(com%dintellij%dopenapi%dactionSystem%dDataContext)%cjava%dlang%dObject" resolveInfo="getData" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6tyf.~DataKey%dgetData(com%dintellij%dopenapi%dactionSystem%dDataContext)%cjava%dlang%dObject" resolveInfo="getData" />
                                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7032426736593776020">
                                       <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7032426736593775996">
-                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zjpd.~DataManager%dgetInstance()%ccom%dintellij%dide%dDataManager" resolveInfo="getInstance" />
-                                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zjpd.~DataManager" resolveInfo="DataManager" />
+                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q9wm.~DataManager%dgetInstance()%ccom%dintellij%dide%dDataManager" resolveInfo="getInstance" />
+                                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="q9wm.~DataManager" resolveInfo="DataManager" />
                                       </node>
                                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7032426736593776029">
-                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zjpd.~DataManager%dgetDataContext(java%dawt%dComponent)%ccom%dintellij%dopenapi%dactionSystem%dDataContext" resolveInfo="getDataContext" />
+                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q9wm.~DataManager%dgetDataContext(java%dawt%dComponent)%ccom%dintellij%dopenapi%dactionSystem%dDataContext" resolveInfo="getDataContext" />
                                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="7032426736593776037">
                                           <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="1240470842553498753" resolveInfo="AbstractMainNodeChooser" />
                                         </node>
@@ -798,7 +797,7 @@
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7032426736593767827" resolveInfo="chooserDialog" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7032426736593776071">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lq3.~DialogWrapper%dshow()%cvoid" resolveInfo="show" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="h12.~DialogWrapper%dshow()%cvoid" resolveInfo="show" />
                             </node>
                           </node>
                         </node>
@@ -1076,7 +1075,7 @@
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1240470842553499188">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lq3.~TextFieldWithBrowseButton%dgetTextField()%cjavax%dswing%dJTextField" resolveInfo="getTextField" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="h12.~TextFieldWithBrowseButton%dgetTextField()%cjavax%dswing%dJTextField" resolveInfo="getTextField" />
             </node>
           </node>
         </node>
@@ -1091,7 +1090,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="1240470842553499194">
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1240470842553499195">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1240470842553499196">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lq3.~TextFieldWithBrowseButton$NoPathCompletion%d&lt;init&gt;(java%dawt%devent%dActionListener)" resolveInfo="TextFieldWithBrowseButton.NoPathCompletion" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="h12.~TextFieldWithBrowseButton$NoPathCompletion%d&lt;init&gt;(java%dawt%devent%dActionListener)" resolveInfo="TextFieldWithBrowseButton.NoPathCompletion" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1240470842553499197">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1240470842553499219" resolveInfo="browseListener" />
                 </node>
@@ -1158,7 +1157,7 @@
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1240470842553499221">
       <property name="name" nameId="tpck.1169194664001" value="getDisposableComponent" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1240470842553499222">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fylj.~Disposable" resolveInfo="Disposable" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="oex8.~Disposable" resolveInfo="Disposable" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1240470842553499223" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1240470842553499224">
@@ -1186,13 +1185,13 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1240470842553499233" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ArrayType" typeId="tpee.1070534760951" id="1240470842553499234">
         <node role="componentType" roleId="tpee.1070534760952" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1240470842553499235">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lq3.~TextFieldWithBrowseButton$NoPathCompletion" resolveInfo="TextFieldWithBrowseButton.NoPathCompletion" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="h12.~TextFieldWithBrowseButton$NoPathCompletion" resolveInfo="TextFieldWithBrowseButton.NoPathCompletion" />
         </node>
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1240470842553499236">
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ArrayCreatorWithInitializer" typeId="tpee.1154542696413" id="1240470842553499237">
           <node role="componentType" roleId="tpee.1154542793668" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1240470842553499238">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lq3.~TextFieldWithBrowseButton$NoPathCompletion" resolveInfo="TextFieldWithBrowseButton.NoPathCompletion" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="h12.~TextFieldWithBrowseButton$NoPathCompletion" resolveInfo="TextFieldWithBrowseButton.NoPathCompletion" />
           </node>
           <node role="initValue" roleId="tpee.1154542803372" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1240470842553499239" />
         </node>
@@ -1588,7 +1587,7 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1240470842553499426">
             <property name="name" nameId="tpck.1169194664001" value="disposable" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1240470842553499427">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fylj.~Disposable" resolveInfo="Disposable" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="oex8.~Disposable" resolveInfo="Disposable" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1240470842553499428">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1240470842553499429">
@@ -1611,8 +1610,8 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1240470842553499437">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1240470842553499438">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="xkfd.~Disposer" resolveInfo="Disposer" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xkfd.~Disposer%ddispose(com%dintellij%dopenapi%dDisposable)%cvoid" resolveInfo="dispose" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="iwpw.~Disposer" resolveInfo="Disposer" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="iwpw.~Disposer%ddispose(com%dintellij%dopenapi%dDisposable)%cvoid" resolveInfo="dispose" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1240470842553499439">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1240470842553499426" resolveInfo="disposable" />
             </node>
@@ -1639,7 +1638,7 @@
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1240470842553499447">
       <property name="name" nameId="tpck.1169194664001" value="getDisposableComponent" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1240470842553499448">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fylj.~Disposable" resolveInfo="Disposable" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="oex8.~Disposable" resolveInfo="Disposable" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1240470842553499449" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1240470842553499450">
@@ -1680,7 +1679,7 @@
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~JPanel" resolveInfo="JPanel" />
     </node>
     <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1240470842553499469">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fylj.~Disposable" resolveInfo="Disposable" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="oex8.~Disposable" resolveInfo="Disposable" />
     </node>
   </root>
   <root id="1240470842553499470">
@@ -3443,7 +3442,7 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1240470842553500248" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1240470842553500249">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lq3.~TextFieldWithBrowseButton%dsetEditable(boolean)%cvoid" resolveInfo="setEditable" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="h12.~TextFieldWithBrowseButton%dsetEditable(boolean)%cvoid" resolveInfo="setEditable" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1240470842553500250">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1240470842553500260" resolveInfo="editable" />
               </node>
@@ -3460,7 +3459,7 @@
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1240470842553500256" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1240470842553500257">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lq3.~ComponentWithBrowseButton%dgetButton()%ccom%dintellij%dopenapi%dui%dFixedSizeButton" resolveInfo="getButton" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="h12.~ComponentWithBrowseButton%dgetButton()%ccom%dintellij%dopenapi%dui%dFixedSizeButton" resolveInfo="getButton" />
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1240470842553500258">
@@ -3491,7 +3490,7 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1240470842553500270" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1240470842553500271">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lq3.~TextFieldWithBrowseButton%disEditable()%cboolean" resolveInfo="isEditable" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="h12.~TextFieldWithBrowseButton%disEditable()%cboolean" resolveInfo="isEditable" />
             </node>
           </node>
         </node>
@@ -3511,7 +3510,7 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1240470842553500280" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1240470842553500281">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ya3c.~FileChooserDescriptor%dsetTitle(java%dlang%dString)%cvoid" resolveInfo="setTitle" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eh19.~FileChooserDescriptor%dsetTitle(java%dlang%dString)%cvoid" resolveInfo="setTitle" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1240470842553500282">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1240470842553500283" resolveInfo="title" />
               </node>
@@ -3538,7 +3537,7 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1240470842553500293" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1240470842553500294">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ya3c.~FileChooserDescriptor%dgetTitle()%cjava%dlang%dString" resolveInfo="getTitle" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eh19.~FileChooserDescriptor%dgetTitle()%cjava%dlang%dString" resolveInfo="getTitle" />
             </node>
           </node>
         </node>
@@ -3560,7 +3559,7 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1240470842553500303" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1240470842553500304">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lq3.~TextFieldWithBrowseButton%dgetTextField()%cjavax%dswing%dJTextField" resolveInfo="getTextField" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="h12.~TextFieldWithBrowseButton%dgetTextField()%cjavax%dswing%dJTextField" resolveInfo="getTextField" />
             </node>
           </node>
         </node>
@@ -3569,7 +3568,7 @@
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1240470842553500305">
       <property name="name" nameId="tpck.1169194664001" value="getDisposableComponent" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1240470842553500306">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fylj.~Disposable" resolveInfo="Disposable" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="oex8.~Disposable" resolveInfo="Disposable" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1240470842553500307" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1240470842553500308">
@@ -3608,7 +3607,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="1240470842553500326">
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1240470842553500327">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1240470842553500328">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ya3c.~FileChooserDescriptor%d&lt;init&gt;(boolean,boolean,boolean,boolean,boolean,boolean)" resolveInfo="FileChooserDescriptor" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eh19.~FileChooserDescriptor%d&lt;init&gt;(boolean,boolean,boolean,boolean,boolean,boolean)" resolveInfo="FileChooserDescriptor" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1240470842553500329">
                   <property name="value" nameId="tpee.1068580123138" value="false" />
                 </node>
@@ -3641,7 +3640,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="1240470842553500339">
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1240470842553500340">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1240470842553500341">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lq3.~TextFieldWithBrowseButton$NoPathCompletion%d&lt;init&gt;(java%dawt%devent%dActionListener)" resolveInfo="TextFieldWithBrowseButton.NoPathCompletion" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="h12.~TextFieldWithBrowseButton$NoPathCompletion%d&lt;init&gt;(java%dawt%devent%dActionListener)" resolveInfo="TextFieldWithBrowseButton.NoPathCompletion" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1240470842553500342">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="1240470842553500343">
                     <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="1240470842553500344">
@@ -3665,15 +3664,15 @@
                             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1240470842553500353">
                               <property name="name" nameId="tpck.1169194664001" value="dialog" />
                               <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1240470842553500354">
-                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ya3c.~FileChooserDialog" resolveInfo="FileChooserDialog" />
+                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="eh19.~FileChooserDialog" resolveInfo="FileChooserDialog" />
                               </node>
                               <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1240470842553500355">
                                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1240470842553500356">
-                                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ya3c.~FileChooserFactory" resolveInfo="FileChooserFactory" />
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ya3c.~FileChooserFactory%dgetInstance()%ccom%dintellij%dopenapi%dfileChooser%dFileChooserFactory" resolveInfo="getInstance" />
+                                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eh19.~FileChooserFactory" resolveInfo="FileChooserFactory" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eh19.~FileChooserFactory%dgetInstance()%ccom%dintellij%dopenapi%dfileChooser%dFileChooserFactory" resolveInfo="getInstance" />
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1240470842553500357">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ya3c.~FileChooserFactory%dcreateFileChooser(com%dintellij%dopenapi%dfileChooser%dFileChooserDescriptor,java%dawt%dComponent)%ccom%dintellij%dopenapi%dfileChooser%dFileChooserDialog" resolveInfo="createFileChooser" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eh19.~FileChooserFactory%dcreateFileChooser(com%dintellij%dopenapi%dfileChooser%dFileChooserDescriptor,java%dawt%dComponent)%ccom%dintellij%dopenapi%dfileChooser%dFileChooserDialog" resolveInfo="createFileChooser" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1240470842553500358">
                                     <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="1240470842553500359">
                                       <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1240470842553500407" resolveInfo="myChooser" />
@@ -3694,7 +3693,7 @@
                               <property name="name" nameId="tpck.1169194664001" value="selectedFiles" />
                               <node role="type" roleId="tpee.5680397130376446158" type="tpee.ArrayType" typeId="tpee.1070534760951" id="1240470842553500364">
                                 <node role="componentType" roleId="tpee.1070534760952" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1240470842553500365">
-                                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zfwc.~VirtualFile" resolveInfo="VirtualFile" />
+                                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="f6g1.~VirtualFile" resolveInfo="VirtualFile" />
                                 </node>
                               </node>
                               <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1240470842553500366">
@@ -3702,7 +3701,7 @@
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1240470842553500353" resolveInfo="dialog" />
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1240470842553500368">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ya3c.~FileChooserDialog%dchoose(com%dintellij%dopenapi%dvfs%dVirtualFile,com%dintellij%dopenapi%dproject%dProject)%ccom%dintellij%dopenapi%dvfs%dVirtualFile[]" resolveInfo="choose" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eh19.~FileChooserDialog%dchoose(com%dintellij%dopenapi%dvfs%dVirtualFile,com%dintellij%dopenapi%dproject%dProject)%ccom%dintellij%dopenapi%dvfs%dVirtualFile[]" resolveInfo="choose" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1240470842553500369" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1240470842553500370" />
                                 </node>
@@ -3728,7 +3727,7 @@
                                         </node>
                                       </node>
                                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1240470842553500381">
-                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zfwc.~VirtualFile%dgetPath()%cjava%dlang%dString" resolveInfo="getPath" />
+                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f6g1.~VirtualFile%dgetPath()%cjava%dlang%dString" resolveInfo="getPath" />
                                       </node>
                                     </node>
                                   </node>
@@ -3800,7 +3799,7 @@
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1240470842553500405" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1240470842553500406">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lq3.~TextFieldWithBrowseButton$NoPathCompletion" resolveInfo="TextFieldWithBrowseButton.NoPathCompletion" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="h12.~TextFieldWithBrowseButton$NoPathCompletion" resolveInfo="TextFieldWithBrowseButton.NoPathCompletion" />
       </node>
     </node>
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="1240470842553500407">
@@ -3808,7 +3807,7 @@
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1240470842553500408" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1240470842553500409">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ya3c.~FileChooserDescriptor" resolveInfo="FileChooserDescriptor" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="eh19.~FileChooserDescriptor" resolveInfo="FileChooserDescriptor" />
       </node>
     </node>
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1240470842553500410">
@@ -3843,7 +3842,7 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1240470842553500426" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1240470842553500427">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lq3.~TextFieldWithBrowseButton%dgetTextField()%cjavax%dswing%dJTextField" resolveInfo="getTextField" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="h12.~TextFieldWithBrowseButton%dgetTextField()%cjavax%dswing%dJTextField" resolveInfo="getTextField" />
             </node>
           </node>
         </node>
@@ -3895,8 +3894,8 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1240470842553500451">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1240470842553500452">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1240470842553500453">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y6zh.~InsertPathAction%daddTo(javax%dswing%dtext%dJTextComponent,com%dintellij%dopenapi%dfileChooser%dFileChooserDescriptor)%cvoid" resolveInfo="addTo" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="y6zh.~InsertPathAction" resolveInfo="InsertPathAction" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="btw8.~InsertPathAction%daddTo(javax%dswing%dtext%dJTextComponent,com%dintellij%dopenapi%dfileChooser%dFileChooserDescriptor)%cvoid" resolveInfo="addTo" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="btw8.~InsertPathAction" resolveInfo="InsertPathAction" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1240470842553500454">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1240470842553500455">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="1240470842553500456">
@@ -3905,7 +3904,7 @@
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1240470842553500457" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1240470842553500458">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lq3.~TextFieldWithBrowseButton%dgetTextField()%cjavax%dswing%dJTextField" resolveInfo="getTextField" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="h12.~TextFieldWithBrowseButton%dgetTextField()%cjavax%dswing%dJTextField" resolveInfo="getTextField" />
               </node>
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1240470842553500459">
@@ -3917,14 +3916,14 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1240470842553500460">
         <property name="name" nameId="tpck.1169194664001" value="descriptor" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1240470842553500461">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ya3c.~FileChooserDescriptor" resolveInfo="FileChooserDescriptor" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="eh19.~FileChooserDescriptor" resolveInfo="FileChooserDescriptor" />
         </node>
       </node>
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1240470842553500462">
       <property name="name" nameId="tpck.1169194664001" value="getDisposableComponent" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1240470842553500463">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fylj.~Disposable" resolveInfo="Disposable" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="oex8.~Disposable" resolveInfo="Disposable" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1240470842553500464" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1240470842553500465">
@@ -3946,7 +3945,7 @@
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1240470842553500472" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1240470842553500473">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lq3.~TextFieldWithBrowseButton" resolveInfo="TextFieldWithBrowseButton" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="h12.~TextFieldWithBrowseButton" resolveInfo="TextFieldWithBrowseButton" />
       </node>
     </node>
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="1240470842553500474">
@@ -3976,7 +3975,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="1240470842553500489">
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1240470842553500490">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1240470842553500491">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lq3.~TextFieldWithBrowseButton%d&lt;init&gt;(java%dawt%devent%dActionListener)" resolveInfo="TextFieldWithBrowseButton" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="h12.~TextFieldWithBrowseButton%d&lt;init&gt;(java%dawt%devent%dActionListener)" resolveInfo="TextFieldWithBrowseButton" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1240470842553500492">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="1240470842553500493">
                     <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="1240470842553500494">
@@ -3998,8 +3997,8 @@
                         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1240470842553500501">
                           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1240470842553500502">
                             <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1240470842553500503">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lq3.~Messages%dshowTextAreaDialog(javax%dswing%dJTextField,java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="showTextAreaDialog" />
-                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lq3.~Messages" resolveInfo="Messages" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="h12.~Messages%dshowTextAreaDialog(javax%dswing%dJTextField,java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="showTextAreaDialog" />
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="h12.~Messages" resolveInfo="Messages" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1240470842553500504">
                                 <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1240470842553500505">
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="1240470842553500506">
@@ -4010,7 +4009,7 @@
                                   </node>
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1240470842553500508">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lq3.~TextFieldWithBrowseButton%dgetTextField()%cjavax%dswing%dJTextField" resolveInfo="getTextField" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="h12.~TextFieldWithBrowseButton%dgetTextField()%cjavax%dswing%dJTextField" resolveInfo="getTextField" />
                                 </node>
                               </node>
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1240470842553500509">
@@ -4094,7 +4093,7 @@
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1240470842553500539" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1240470842553500540">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lq3.~ComponentWithBrowseButton%dsetButtonIcon(javax%dswing%dIcon)%cvoid" resolveInfo="setButtonIcon" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="h12.~ComponentWithBrowseButton%dsetButtonIcon(javax%dswing%dIcon)%cvoid" resolveInfo="setButtonIcon" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1240470842553500541">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1240470842553500529" resolveInfo="icon" />
                   </node>
