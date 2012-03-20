@@ -612,10 +612,6 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       return true;
     }
 
-    @Override
-    public boolean isPostComplete() {
-      return true;
-    }
   }
 
   private static class MigrationsFinishedWithErrorsStep extends MyStep {
@@ -660,10 +656,6 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       return true;
     }
 
-    @Override
-    public boolean isPostComplete() {
-      return true;
-    }
   }
 
   private static class MyListCellRenderer extends DefaultListCellRenderer {
