@@ -25,7 +25,7 @@ import org.junit.runner.RunWith;
 
 
 @SuiteClassSymbols({
-  "jetbrains.mps.tests.TestModule_jetbrains_mps_kernel_test",
+  "jetbrains.mps.tests.TestModule_jetbrains_mps_kernel_tests",
   "jetbrains.mps.tests.TestModule_closures_test",
   "jetbrains.mps.tests.TestModule_collections_trove_test",
   "jetbrains.mps.tests.TestModule_collections_unittest",
