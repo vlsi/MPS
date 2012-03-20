@@ -16,6 +16,7 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.SModelRoot;
@@ -75,6 +76,43 @@ public class Module_Behavior {
         return LanguageID.JAVA_MANAGER.equals(it.getManager()) && !(it.getPath().endsWith(".jar"));
       }
     }).isNotEmpty();
+  }
+
+  public static List<SNode> call_getClassPathDirectoriesForModuleXml_2378354490355068224(final SNode thisNode) {
+    List<SNode> result = new ArrayList<SNode>();
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(thisNode, true)));
+
+    final AbstractModule module = (AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode);
+    if (!(module.isCompileInMPS())) {
+      // todo hack in order to make plugin modules know their classes location 
+      final String plugins = "plugins";
+      final String classes = "classes";
+      StubPath path = Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<StubPath>() {
+        public Iterable<StubPath> iterable() {
+          return Module_Behavior.call_getClassPathExcludingIdea_2000252915626233691(thisNode, module);
+        }
+      })).findFirst(new IWhereFilter<StubPath>() {
+        public boolean accept(StubPath it) {
+          return LanguageID.JAVA_MANAGER.equals(it.getManager()) && it.getPath().contains(plugins) && it.getPath().endsWith(classes);
+        }
+      });
+      if (path != null) {
+        String classesPath = path.getPath();
+        if (!(classesPath.startsWith(Module_Behavior.call_getModuleDescriptorPath_4777659345280330855(thisNode)))) {
+          classesPath = classesPath.replace("\\", Util.SEPARATOR).replace("/", Util.SEPARATOR);
+          int start = classesPath.indexOf(plugins) + plugins.length() + 1;
+          int end = classesPath.indexOf(classes) - 1;
+          if (start >= 0 && start < classesPath.length() && end >= 0 && end < classesPath.length() && start < end) {
+            String pluginName = classesPath.substring(start, end);
+            String pluginJar = classesPath.substring(0, start) + pluginName + Util.SEPARATOR + "lib" + Util.SEPARATOR + pluginName + ".jar";
+            ListSequence.fromList(result).addElement(PathHolder_Behavior.createPathHolder_7235580512916878209(pluginJar, thisNode));
+          }
+        }
+      }
+    }
+
+
+    return result;
   }
 
   public static List<SNode> call_getClassPathDirectories_1213877515083(SNode thisNode, boolean includeHomeLib) {
@@ -196,7 +234,7 @@ public class Module_Behavior {
   }
 
   public static String call_getModuleDescriptorPath_4777659345280330855(SNode thisNode) {
-    return check_835h7m_a0a81(Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().getPath(), File.separator, Util.SEPARATOR);
+    return check_835h7m_a0a91(Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().getPath(), File.separator, Util.SEPARATOR);
   }
 
   public static String call_getHomeLibPath_4642981534832311125(SNode thisNode) {
@@ -265,7 +303,7 @@ public class Module_Behavior {
     return name.replace("/", "_").replace("\\", "_");
   }
 
-  private static String check_835h7m_a0a81(String checkedDotOperand, String separator, String SEPARATOR) {
+  private static String check_835h7m_a0a91(String checkedDotOperand, String separator, String SEPARATOR) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.replace(File.separator, Util.SEPARATOR);
     }

@@ -241,7 +241,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1902360454495907451(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if (StringUtils.isEmpty(SPropertyOperations.getString(_context.getNode(), "moduleRelativePath"))) {
-      return Util.SEPARATOR + SPropertyOperations.getString(_context.getNode(), "fullPath");
+      if ((SLinkOperations.getTarget(_context.getNode(), "macro", false) == null) || eq_x583g4_a0a0a0a93(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "macro", false), "name"), Layout_Behavior.getBasedirName_1226509010730())) {
+        return Util.SEPARATOR + SPropertyOperations.getString(_context.getNode(), "fullPath");
+      }
+      return PathHolder_Behavior.call_getValue_1219231432401(_context.getNode());
     }
     return new File(SPropertyOperations.getString(_context.getNode(), "fullPath")).getName();
   }
@@ -1344,7 +1347,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1902360454495907423(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(_context.getNode(), true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(Module_Behavior.call_getClassPathDirectoriesForModuleXml_2378354490355068224(_context.getNode())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "fullPath").endsWith(".jar");
       }
@@ -1746,6 +1749,13 @@ __switch__:
         }
       }
     }
+  }
+
+  private static boolean eq_x583g4_a0a0a0a93(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 
   public static class QuotationClass_x583g4_a0a0a0a0a962 {

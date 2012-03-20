@@ -1105,6 +1105,7 @@
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
         <library jar="jetbrains.mps.debugger.api.api.jar" />
+        <library jar="/plugins/debugger-api/lib/debugger-api.jar" />
         <sources jar="jetbrains.mps.debugger.api.api-src.jar" descriptor="api.msd" />
       </module>
     </echoxml>
@@ -1647,6 +1648,7 @@
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
         <library jar="jetbrains.mps.debugger.java.api.jar" />
+        <library jar="/plugins/debugger-java/lib/debugger-java.jar" />
         <sources jar="jetbrains.mps.debugger.java.api-src.jar" descriptor="jetbrains.mps.debugger.java.api.msd" />
       </module>
     </echoxml>
