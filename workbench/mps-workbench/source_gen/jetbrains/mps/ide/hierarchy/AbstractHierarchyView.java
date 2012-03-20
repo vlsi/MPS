@@ -62,8 +62,14 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
     super(project, id, number, icon, ToolWindowAnchor.RIGHT, true);
   }
 
-  public void initComponent() {
-    super.initComponent();
+  @Override
+  public void projectClosed() {
+    super.projectClosed();
+    myHierarchyTree.dispose();
+  }
+
+  @Override
+  protected void createTool(boolean b) {
     myHierarchyTree = createHierarchyTree(false);
     myOccurenceNavigator = new OccurenceNavigatorSupport(myHierarchyTree) {
       @Nullable
@@ -116,11 +122,6 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
         panel.add(buttonsPanel, BorderLayout.WEST);
       }
     });
-  }
-
-  @Override
-  public void disposeComponent() {
-    myHierarchyTree.dispose();
   }
 
   protected abstract AbstractHierarchyTree createHierarchyTree(boolean isParentHierarchy);

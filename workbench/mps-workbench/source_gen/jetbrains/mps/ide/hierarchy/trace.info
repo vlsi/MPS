@@ -10,168 +10,168 @@
     <nodeInfo nodeId="5797068448049410912" fileName="AbstractHierarchyView.java" startLine="57" startPosition="40" endLine="58" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScrollPane" />
     <nodeInfo nodeId="3684544815287378997" fileName="AbstractHierarchyView.java" startLine="58" startPosition="34" endLine="59" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOccurenceNavigator" />
     <nodeInfo nodeId="4415621581132875728" fileName="AbstractHierarchyView.java" startLine="61" startPosition="83" endLine="62" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5797068448049410938" fileName="AbstractHierarchyView.java" startLine="65" startPosition="31" endLine="66" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049410940" fileName="AbstractHierarchyView.java" startLine="66" startPosition="26" endLine="67" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3684544815287379975" fileName="AbstractHierarchyView.java" startLine="71" startPosition="51" endLine="72" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3684544815287379983" fileName="AbstractHierarchyView.java" startLine="73" startPosition="9" endLine="74" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3684544815287379979" fileName="AbstractHierarchyView.java" startLine="74" startPosition="68" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3684544815287383658" fileName="AbstractHierarchyView.java" startLine="77" startPosition="41" endLine="78" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3684544815287383688" fileName="AbstractHierarchyView.java" startLine="79" startPosition="52" endLine="80" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3684544815287383691" fileName="AbstractHierarchyView.java" startLine="81" startPosition="13" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3684544815287383694" fileName="AbstractHierarchyView.java" startLine="82" startPosition="0" endLine="83" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3684544815287379980" fileName="AbstractHierarchyView.java" startLine="85" startPosition="11" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3684544815287383709" fileName="AbstractHierarchyView.java" startLine="87" startPosition="26" endLine="88" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3684544815287383712" fileName="AbstractHierarchyView.java" startLine="89" startPosition="9" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3684544815287383716" fileName="AbstractHierarchyView.java" startLine="90" startPosition="0" endLine="91" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3684544815287379955" fileName="AbstractHierarchyView.java" startLine="98" startPosition="54" endLine="99" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3684544815287379960" fileName="AbstractHierarchyView.java" startLine="102" startPosition="50" endLine="103" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5797068448049410945" fileName="AbstractHierarchyView.java" startLine="105" startPosition="6" endLine="106" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1466595955268231293" fileName="AbstractHierarchyView.java" startLine="106" startPosition="41" endLine="107" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049410950" fileName="AbstractHierarchyView.java" startLine="107" startPosition="50" endLine="108" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448049410957" fileName="AbstractHierarchyView.java" startLine="108" startPosition="56" endLine="109" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049410963" fileName="AbstractHierarchyView.java" startLine="109" startPosition="47" endLine="110" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049410969" fileName="AbstractHierarchyView.java" startLine="110" startPosition="71" endLine="111" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049410975" fileName="AbstractHierarchyView.java" startLine="111" startPosition="55" endLine="112" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411242" fileName="AbstractHierarchyView.java" startLine="114" startPosition="25" endLine="115" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448049411253" fileName="AbstractHierarchyView.java" startLine="115" startPosition="167" endLine="116" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1466595955268239431" fileName="AbstractHierarchyView.java" startLine="122" startPosition="34" endLine="123" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3684544815287383986" fileName="AbstractHierarchyView.java" startLine="128" startPosition="63" endLine="129" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411260" fileName="AbstractHierarchyView.java" startLine="134" startPosition="28" endLine="135" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411265" fileName="AbstractHierarchyView.java" startLine="135" startPosition="50" endLine="136" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411270" fileName="AbstractHierarchyView.java" startLine="140" startPosition="28" endLine="141" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411275" fileName="AbstractHierarchyView.java" startLine="141" startPosition="49" endLine="142" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411043" fileName="AbstractHierarchyView.java" startLine="144" startPosition="6" endLine="145" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448049411048" fileName="AbstractHierarchyView.java" startLine="145" startPosition="60" endLine="146" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411053" fileName="AbstractHierarchyView.java" startLine="146" startPosition="36" endLine="147" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411064" fileName="AbstractHierarchyView.java" startLine="148" startPosition="128" endLine="149" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelected" />
-    <nodeInfo nodeId="5797068448049411281" fileName="AbstractHierarchyView.java" startLine="151" startPosition="50" endLine="152" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5797068448049411284" fileName="AbstractHierarchyView.java" startLine="155" startPosition="63" endLine="156" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411288" fileName="AbstractHierarchyView.java" startLine="156" startPosition="27" endLine="157" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411088" fileName="AbstractHierarchyView.java" startLine="160" startPosition="158" endLine="161" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelected" />
-    <nodeInfo nodeId="5797068448049411295" fileName="AbstractHierarchyView.java" startLine="163" startPosition="50" endLine="164" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5797068448049411298" fileName="AbstractHierarchyView.java" startLine="167" startPosition="63" endLine="168" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411302" fileName="AbstractHierarchyView.java" startLine="168" startPosition="27" endLine="169" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411308" fileName="AbstractHierarchyView.java" startLine="173" startPosition="78" endLine="174" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411313" fileName="AbstractHierarchyView.java" startLine="178" startPosition="78" endLine="179" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411318" fileName="AbstractHierarchyView.java" startLine="183" startPosition="78" endLine="184" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411160" fileName="AbstractHierarchyView.java" startLine="186" startPosition="6" endLine="187" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5797068448049411323" fileName="AbstractHierarchyView.java" startLine="192" startPosition="78" endLine="193" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448049411345" fileName="AbstractHierarchyView.java" startLine="195" startPosition="88" endLine="196" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="5797068448049411346" fileName="AbstractHierarchyView.java" startLine="197" startPosition="11" endLine="198" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448049411354" fileName="AbstractHierarchyView.java" startLine="198" startPosition="99" endLine="199" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448049411374" fileName="AbstractHierarchyView.java" startLine="201" startPosition="49" endLine="202" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411392" fileName="AbstractHierarchyView.java" startLine="207" startPosition="43" endLine="208" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448049411397" fileName="AbstractHierarchyView.java" startLine="208" startPosition="125" endLine="209" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411193" fileName="AbstractHierarchyView.java" startLine="213" startPosition="6" endLine="214" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5797068448049411204" fileName="AbstractHierarchyView.java" startLine="217" startPosition="75" endLine="218" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411209" fileName="AbstractHierarchyView.java" startLine="218" startPosition="50" endLine="219" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411213" fileName="AbstractHierarchyView.java" startLine="219" startPosition="25" endLine="220" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411406" fileName="AbstractHierarchyView.java" startLine="222" startPosition="25" endLine="223" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448049411419" fileName="AbstractHierarchyView.java" startLine="224" startPosition="54" endLine="225" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5797068448049411420" fileName="AbstractHierarchyView.java" startLine="226" startPosition="9" endLine="227" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411429" fileName="AbstractHierarchyView.java" startLine="228" startPosition="33" endLine="229" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411438" fileName="AbstractHierarchyView.java" startLine="231" startPosition="34" endLine="232" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411233" fileName="AbstractHierarchyView.java" startLine="238" startPosition="38" endLine="239" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5797068448049411239" fileName="AbstractHierarchyView.java" startLine="242" startPosition="36" endLine="243" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3684544815287378992" fileName="AbstractHierarchyView.java" startLine="247" startPosition="24" endLine="248" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3684544815287384017" fileName="AbstractHierarchyView.java" startLine="279" startPosition="43" endLine="280" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3684544815287384002" fileName="AbstractHierarchyView.java" startLine="283" startPosition="39" endLine="284" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5797068448049410987" fileName="AbstractHierarchyView.java" startLine="125" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createHierarchyTree#(Z)Ljetbrains/mps/ide/hierarchy/AbstractHierarchyTree;" />
+    <nodeInfo nodeId="8360021381134305650" fileName="AbstractHierarchyView.java" startLine="66" startPosition="31" endLine="67" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1466595955268239431" fileName="AbstractHierarchyView.java" startLine="67" startPosition="26" endLine="68" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049410940" fileName="AbstractHierarchyView.java" startLine="72" startPosition="40" endLine="73" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3684544815287379975" fileName="AbstractHierarchyView.java" startLine="77" startPosition="51" endLine="78" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3684544815287379983" fileName="AbstractHierarchyView.java" startLine="79" startPosition="9" endLine="80" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3684544815287379979" fileName="AbstractHierarchyView.java" startLine="80" startPosition="68" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3684544815287383658" fileName="AbstractHierarchyView.java" startLine="83" startPosition="41" endLine="84" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3684544815287383688" fileName="AbstractHierarchyView.java" startLine="85" startPosition="52" endLine="86" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3684544815287383691" fileName="AbstractHierarchyView.java" startLine="87" startPosition="13" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3684544815287383694" fileName="AbstractHierarchyView.java" startLine="88" startPosition="0" endLine="89" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3684544815287379980" fileName="AbstractHierarchyView.java" startLine="91" startPosition="11" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3684544815287383709" fileName="AbstractHierarchyView.java" startLine="93" startPosition="26" endLine="94" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3684544815287383712" fileName="AbstractHierarchyView.java" startLine="95" startPosition="9" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3684544815287383716" fileName="AbstractHierarchyView.java" startLine="96" startPosition="0" endLine="97" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3684544815287379955" fileName="AbstractHierarchyView.java" startLine="104" startPosition="54" endLine="105" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3684544815287379960" fileName="AbstractHierarchyView.java" startLine="108" startPosition="50" endLine="109" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5797068448049410945" fileName="AbstractHierarchyView.java" startLine="111" startPosition="6" endLine="112" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1466595955268231293" fileName="AbstractHierarchyView.java" startLine="112" startPosition="41" endLine="113" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049410950" fileName="AbstractHierarchyView.java" startLine="113" startPosition="50" endLine="114" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5797068448049410957" fileName="AbstractHierarchyView.java" startLine="114" startPosition="56" endLine="115" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049410963" fileName="AbstractHierarchyView.java" startLine="115" startPosition="47" endLine="116" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049410969" fileName="AbstractHierarchyView.java" startLine="116" startPosition="71" endLine="117" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049410975" fileName="AbstractHierarchyView.java" startLine="117" startPosition="55" endLine="118" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411242" fileName="AbstractHierarchyView.java" startLine="120" startPosition="25" endLine="121" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5797068448049411253" fileName="AbstractHierarchyView.java" startLine="121" startPosition="167" endLine="122" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3684544815287383986" fileName="AbstractHierarchyView.java" startLine="129" startPosition="63" endLine="130" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411260" fileName="AbstractHierarchyView.java" startLine="135" startPosition="28" endLine="136" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411265" fileName="AbstractHierarchyView.java" startLine="136" startPosition="50" endLine="137" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411270" fileName="AbstractHierarchyView.java" startLine="141" startPosition="28" endLine="142" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411275" fileName="AbstractHierarchyView.java" startLine="142" startPosition="49" endLine="143" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411043" fileName="AbstractHierarchyView.java" startLine="145" startPosition="6" endLine="146" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5797068448049411048" fileName="AbstractHierarchyView.java" startLine="146" startPosition="60" endLine="147" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411053" fileName="AbstractHierarchyView.java" startLine="147" startPosition="36" endLine="148" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411064" fileName="AbstractHierarchyView.java" startLine="149" startPosition="128" endLine="150" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelected" />
+    <nodeInfo nodeId="5797068448049411281" fileName="AbstractHierarchyView.java" startLine="152" startPosition="50" endLine="153" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5797068448049411284" fileName="AbstractHierarchyView.java" startLine="156" startPosition="63" endLine="157" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411288" fileName="AbstractHierarchyView.java" startLine="157" startPosition="27" endLine="158" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411088" fileName="AbstractHierarchyView.java" startLine="161" startPosition="158" endLine="162" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelected" />
+    <nodeInfo nodeId="5797068448049411295" fileName="AbstractHierarchyView.java" startLine="164" startPosition="50" endLine="165" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5797068448049411298" fileName="AbstractHierarchyView.java" startLine="168" startPosition="63" endLine="169" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411302" fileName="AbstractHierarchyView.java" startLine="169" startPosition="27" endLine="170" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411308" fileName="AbstractHierarchyView.java" startLine="174" startPosition="78" endLine="175" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411313" fileName="AbstractHierarchyView.java" startLine="179" startPosition="78" endLine="180" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411318" fileName="AbstractHierarchyView.java" startLine="184" startPosition="78" endLine="185" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411160" fileName="AbstractHierarchyView.java" startLine="187" startPosition="6" endLine="188" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5797068448049411323" fileName="AbstractHierarchyView.java" startLine="193" startPosition="78" endLine="194" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5797068448049411345" fileName="AbstractHierarchyView.java" startLine="196" startPosition="88" endLine="197" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="5797068448049411346" fileName="AbstractHierarchyView.java" startLine="198" startPosition="11" endLine="199" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5797068448049411354" fileName="AbstractHierarchyView.java" startLine="199" startPosition="99" endLine="200" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5797068448049411374" fileName="AbstractHierarchyView.java" startLine="202" startPosition="49" endLine="203" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411392" fileName="AbstractHierarchyView.java" startLine="208" startPosition="43" endLine="209" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5797068448049411397" fileName="AbstractHierarchyView.java" startLine="209" startPosition="125" endLine="210" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411193" fileName="AbstractHierarchyView.java" startLine="214" startPosition="6" endLine="215" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5797068448049411204" fileName="AbstractHierarchyView.java" startLine="218" startPosition="75" endLine="219" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411209" fileName="AbstractHierarchyView.java" startLine="219" startPosition="50" endLine="220" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411213" fileName="AbstractHierarchyView.java" startLine="220" startPosition="25" endLine="221" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411406" fileName="AbstractHierarchyView.java" startLine="223" startPosition="25" endLine="224" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5797068448049411419" fileName="AbstractHierarchyView.java" startLine="225" startPosition="54" endLine="226" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5797068448049411420" fileName="AbstractHierarchyView.java" startLine="227" startPosition="9" endLine="228" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411429" fileName="AbstractHierarchyView.java" startLine="229" startPosition="33" endLine="230" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411438" fileName="AbstractHierarchyView.java" startLine="232" startPosition="34" endLine="233" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411233" fileName="AbstractHierarchyView.java" startLine="239" startPosition="38" endLine="240" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5797068448049411239" fileName="AbstractHierarchyView.java" startLine="243" startPosition="36" endLine="244" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3684544815287378992" fileName="AbstractHierarchyView.java" startLine="248" startPosition="24" endLine="249" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3684544815287384017" fileName="AbstractHierarchyView.java" startLine="280" startPosition="43" endLine="281" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3684544815287384002" fileName="AbstractHierarchyView.java" startLine="284" startPosition="39" endLine="285" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5797068448049410987" fileName="AbstractHierarchyView.java" startLine="126" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createHierarchyTree#(Z)Ljetbrains/mps/ide/hierarchy/AbstractHierarchyTree;" />
     <nodeInfo nodeId="5797068448049410915" fileName="AbstractHierarchyView.java" startLine="60" startPosition="0" endLine="63" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AbstractHierarchyView#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;ILjavax/swing/Icon;)V" />
-    <nodeInfo nodeId="3684544815287379963" fileName="AbstractHierarchyView.java" startLine="70" startPosition="82" endLine="73" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3684544815287383670" fileName="AbstractHierarchyView.java" startLine="78" startPosition="44" endLine="81" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3684544815287383700" fileName="AbstractHierarchyView.java" startLine="86" startPosition="0" endLine="89" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5797068448049411339" fileName="AbstractHierarchyView.java" startLine="194" startPosition="93" endLine="197" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5797068448049411368" fileName="AbstractHierarchyView.java" startLine="200" startPosition="66" endLine="203" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5797068448049411410" fileName="AbstractHierarchyView.java" startLine="223" startPosition="39" endLine="226" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5797068448049411424" fileName="AbstractHierarchyView.java" startLine="227" startPosition="37" endLine="230" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5797068448049411434" fileName="AbstractHierarchyView.java" startLine="230" startPosition="9" endLine="233" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3684544815287357817" fileName="AbstractHierarchyView.java" startLine="246" startPosition="71" endLine="249" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RootPanel#()V" />
-    <nodeInfo nodeId="3684544815287383969" fileName="AbstractHierarchyView.java" startLine="91" startPosition="91" endLine="95" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3684544815287379328" fileName="AbstractHierarchyView.java" startLine="97" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreviousOccurenceActionName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3684544815287379332" fileName="AbstractHierarchyView.java" startLine="101" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNextOccurenceActionName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5797068448049410994" fileName="AbstractHierarchyView.java" startLine="127" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="openNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)V" />
-    <nodeInfo nodeId="5797068448049411067" fileName="AbstractHierarchyView.java" startLine="150" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
-    <nodeInfo nodeId="5797068448049411091" fileName="AbstractHierarchyView.java" startLine="162" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
-    <nodeInfo nodeId="5797068448049411112" fileName="AbstractHierarchyView.java" startLine="172" startPosition="142" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="5797068448049411130" fileName="AbstractHierarchyView.java" startLine="177" startPosition="150" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="5797068448049411148" fileName="AbstractHierarchyView.java" startLine="182" startPosition="89" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="5797068448049411229" fileName="AbstractHierarchyView.java" startLine="237" startPosition="0" endLine="241" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isTreeInfinite#()Z" />
-    <nodeInfo nodeId="5797068448049411235" fileName="AbstractHierarchyView.java" startLine="241" startPosition="0" endLine="245" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="3684544815287384062" fileName="AbstractHierarchyView.java" startLine="251" startPosition="52" endLine="255" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3684544815287384053" fileName="AbstractHierarchyView.java" startLine="258" startPosition="48" endLine="262" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3684544815287384044" fileName="AbstractHierarchyView.java" startLine="265" startPosition="67" endLine="269" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3684544815287384025" fileName="AbstractHierarchyView.java" startLine="272" startPosition="63" endLine="276" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3684544815287378972" fileName="AbstractHierarchyView.java" startLine="278" startPosition="0" endLine="282" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasPreviousOccurence#()Z" />
-    <nodeInfo nodeId="3684544815287378976" fileName="AbstractHierarchyView.java" startLine="282" startPosition="0" endLine="286" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasNextOccurence#()Z" />
-    <nodeInfo nodeId="5797068448049410984" fileName="AbstractHierarchyView.java" startLine="113" startPosition="47" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1466595955268239423" fileName="AbstractHierarchyView.java" startLine="120" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="5797068448049411023" fileName="AbstractHierarchyView.java" startLine="133" startPosition="142" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#()V" />
-    <nodeInfo nodeId="5797068448049411036" fileName="AbstractHierarchyView.java" startLine="139" startPosition="135" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#()V" />
-    <nodeInfo nodeId="5797068448049411072" fileName="AbstractHierarchyView.java" startLine="154" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
-    <nodeInfo nodeId="5797068448049411096" fileName="AbstractHierarchyView.java" startLine="166" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
-    <nodeInfo nodeId="5797068448049411106" fileName="AbstractHierarchyView.java" startLine="171" startPosition="6" endLine="176" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448049411124" fileName="AbstractHierarchyView.java" startLine="176" startPosition="6" endLine="181" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448049411142" fileName="AbstractHierarchyView.java" startLine="181" startPosition="6" endLine="186" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448049411359" fileName="AbstractHierarchyView.java" startLine="199" startPosition="50" endLine="204" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5797068448049411386" fileName="AbstractHierarchyView.java" startLine="206" startPosition="97" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="5797068448049410979" fileName="AbstractHierarchyView.java" startLine="112" startPosition="36" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411017" fileName="AbstractHierarchyView.java" startLine="132" startPosition="53" endLine="138" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448049411030" fileName="AbstractHierarchyView.java" startLine="138" startPosition="6" endLine="144" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448049411379" fileName="AbstractHierarchyView.java" startLine="205" startPosition="9" endLine="211" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3684544815287378956" fileName="AbstractHierarchyView.java" startLine="250" startPosition="0" endLine="257" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreviousOccurenceActionName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3684544815287378960" fileName="AbstractHierarchyView.java" startLine="257" startPosition="0" endLine="264" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNextOccurenceActionName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3684544815287378964" fileName="AbstractHierarchyView.java" startLine="264" startPosition="0" endLine="271" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="goPreviousOccurence#()Lcom/intellij/ide/OccurenceNavigator/OccurenceInfo;" />
-    <nodeInfo nodeId="3684544815287378968" fileName="AbstractHierarchyView.java" startLine="271" startPosition="0" endLine="278" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="goNextOccurence#()Lcom/intellij/ide/OccurenceNavigator/OccurenceInfo;" />
-    <nodeInfo nodeId="3684544815287383645" fileName="AbstractHierarchyView.java" startLine="76" startPosition="96" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="3684544815287379998" fileName="AbstractHierarchyView.java" startLine="75" startPosition="0" endLine="85" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448049411058" fileName="AbstractHierarchyView.java" startLine="147" startPosition="34" endLine="159" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448049411082" fileName="AbstractHierarchyView.java" startLine="159" startPosition="6" endLine="171" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448049411330" fileName="AbstractHierarchyView.java" startLine="193" startPosition="51" endLine="205" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5797068448049411226" fileName="AbstractHierarchyView.java" startLine="221" startPosition="56" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5797068448049411219" fileName="AbstractHierarchyView.java" startLine="220" startPosition="43" endLine="235" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411196" fileName="AbstractHierarchyView.java" startLine="216" startPosition="0" endLine="237" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showItemInHierarchy#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)V" />
-    <nodeInfo nodeId="5797068448049411183" fileName="AbstractHierarchyView.java" startLine="191" startPosition="70" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="5797068448049411177" fileName="AbstractHierarchyView.java" startLine="190" startPosition="92" endLine="213" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448049411170" fileName="AbstractHierarchyView.java" startLine="189" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHierarchyForFoundConceptActionGroup#(Ljava/lang/String;)Lcom/intellij/openapi/actionSystem/ActionGroup;" />
-    <nodeInfo nodeId="3684544815287379321" fileName="AbstractHierarchyView.java" startLine="68" startPosition="75" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDescriptorForNode#(Ljavax/swing/tree/DefaultMutableTreeNode;)Lcom/intellij/pom/Navigatable;" />
-    <nodeInfo nodeId="3684544815287379002" fileName="AbstractHierarchyView.java" startLine="67" startPosition="49" endLine="105" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049410934" fileName="AbstractHierarchyView.java" startLine="64" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="5797068448049411013" fileName="AbstractHierarchyView.java" startLine="131" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createButtonsGroup#()Lcom/intellij/openapi/actionSystem/DefaultActionGroup;" />
+    <nodeInfo nodeId="3684544815287379963" fileName="AbstractHierarchyView.java" startLine="76" startPosition="82" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3684544815287383670" fileName="AbstractHierarchyView.java" startLine="84" startPosition="44" endLine="87" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3684544815287383700" fileName="AbstractHierarchyView.java" startLine="92" startPosition="0" endLine="95" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5797068448049411339" fileName="AbstractHierarchyView.java" startLine="195" startPosition="93" endLine="198" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5797068448049411368" fileName="AbstractHierarchyView.java" startLine="201" startPosition="66" endLine="204" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5797068448049411410" fileName="AbstractHierarchyView.java" startLine="224" startPosition="39" endLine="227" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5797068448049411424" fileName="AbstractHierarchyView.java" startLine="228" startPosition="37" endLine="231" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5797068448049411434" fileName="AbstractHierarchyView.java" startLine="231" startPosition="9" endLine="234" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3684544815287357817" fileName="AbstractHierarchyView.java" startLine="247" startPosition="71" endLine="250" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RootPanel#()V" />
+    <nodeInfo nodeId="3684544815287383969" fileName="AbstractHierarchyView.java" startLine="97" startPosition="91" endLine="101" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3684544815287379328" fileName="AbstractHierarchyView.java" startLine="103" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreviousOccurenceActionName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3684544815287379332" fileName="AbstractHierarchyView.java" startLine="107" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNextOccurenceActionName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5797068448049410994" fileName="AbstractHierarchyView.java" startLine="128" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="openNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <nodeInfo nodeId="5797068448049411067" fileName="AbstractHierarchyView.java" startLine="151" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
+    <nodeInfo nodeId="5797068448049411091" fileName="AbstractHierarchyView.java" startLine="163" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
+    <nodeInfo nodeId="5797068448049411112" fileName="AbstractHierarchyView.java" startLine="173" startPosition="142" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="5797068448049411130" fileName="AbstractHierarchyView.java" startLine="178" startPosition="150" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="5797068448049411148" fileName="AbstractHierarchyView.java" startLine="183" startPosition="89" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="5797068448049411229" fileName="AbstractHierarchyView.java" startLine="238" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isTreeInfinite#()Z" />
+    <nodeInfo nodeId="5797068448049411235" fileName="AbstractHierarchyView.java" startLine="242" startPosition="0" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="3684544815287384062" fileName="AbstractHierarchyView.java" startLine="252" startPosition="52" endLine="256" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3684544815287384053" fileName="AbstractHierarchyView.java" startLine="259" startPosition="48" endLine="263" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3684544815287384044" fileName="AbstractHierarchyView.java" startLine="266" startPosition="67" endLine="270" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3684544815287384025" fileName="AbstractHierarchyView.java" startLine="273" startPosition="63" endLine="277" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3684544815287378972" fileName="AbstractHierarchyView.java" startLine="279" startPosition="0" endLine="283" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasPreviousOccurence#()Z" />
+    <nodeInfo nodeId="3684544815287378976" fileName="AbstractHierarchyView.java" startLine="283" startPosition="0" endLine="287" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasNextOccurence#()Z" />
+    <nodeInfo nodeId="5797068448049410984" fileName="AbstractHierarchyView.java" startLine="119" startPosition="47" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5797068448049411023" fileName="AbstractHierarchyView.java" startLine="134" startPosition="142" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#()V" />
+    <nodeInfo nodeId="5797068448049411036" fileName="AbstractHierarchyView.java" startLine="140" startPosition="135" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#()V" />
+    <nodeInfo nodeId="5797068448049411072" fileName="AbstractHierarchyView.java" startLine="155" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
+    <nodeInfo nodeId="5797068448049411096" fileName="AbstractHierarchyView.java" startLine="167" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
+    <nodeInfo nodeId="5797068448049411106" fileName="AbstractHierarchyView.java" startLine="172" startPosition="6" endLine="177" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5797068448049411124" fileName="AbstractHierarchyView.java" startLine="177" startPosition="6" endLine="182" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5797068448049411142" fileName="AbstractHierarchyView.java" startLine="182" startPosition="6" endLine="187" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5797068448049411359" fileName="AbstractHierarchyView.java" startLine="200" startPosition="50" endLine="205" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5797068448049411386" fileName="AbstractHierarchyView.java" startLine="207" startPosition="97" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8360021381134305645" fileName="AbstractHierarchyView.java" startLine="64" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectClosed#()V" />
+    <nodeInfo nodeId="5797068448049410979" fileName="AbstractHierarchyView.java" startLine="118" startPosition="36" endLine="124" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411017" fileName="AbstractHierarchyView.java" startLine="133" startPosition="53" endLine="139" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5797068448049411030" fileName="AbstractHierarchyView.java" startLine="139" startPosition="6" endLine="145" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5797068448049411379" fileName="AbstractHierarchyView.java" startLine="206" startPosition="9" endLine="212" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3684544815287378956" fileName="AbstractHierarchyView.java" startLine="251" startPosition="0" endLine="258" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreviousOccurenceActionName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3684544815287378960" fileName="AbstractHierarchyView.java" startLine="258" startPosition="0" endLine="265" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNextOccurenceActionName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3684544815287378964" fileName="AbstractHierarchyView.java" startLine="265" startPosition="0" endLine="272" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="goPreviousOccurence#()Lcom/intellij/ide/OccurenceNavigator/OccurenceInfo;" />
+    <nodeInfo nodeId="3684544815287378968" fileName="AbstractHierarchyView.java" startLine="272" startPosition="0" endLine="279" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="goNextOccurence#()Lcom/intellij/ide/OccurenceNavigator/OccurenceInfo;" />
+    <nodeInfo nodeId="3684544815287383645" fileName="AbstractHierarchyView.java" startLine="82" startPosition="96" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="3684544815287379998" fileName="AbstractHierarchyView.java" startLine="81" startPosition="0" endLine="91" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5797068448049411058" fileName="AbstractHierarchyView.java" startLine="148" startPosition="34" endLine="160" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5797068448049411082" fileName="AbstractHierarchyView.java" startLine="160" startPosition="6" endLine="172" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5797068448049411330" fileName="AbstractHierarchyView.java" startLine="194" startPosition="51" endLine="206" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5797068448049411226" fileName="AbstractHierarchyView.java" startLine="222" startPosition="56" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5797068448049411219" fileName="AbstractHierarchyView.java" startLine="221" startPosition="43" endLine="236" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411196" fileName="AbstractHierarchyView.java" startLine="217" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showItemInHierarchy#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <nodeInfo nodeId="5797068448049411183" fileName="AbstractHierarchyView.java" startLine="192" startPosition="70" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="5797068448049411177" fileName="AbstractHierarchyView.java" startLine="191" startPosition="92" endLine="214" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5797068448049411170" fileName="AbstractHierarchyView.java" startLine="190" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHierarchyForFoundConceptActionGroup#(Ljava/lang/String;)Lcom/intellij/openapi/actionSystem/ActionGroup;" />
+    <nodeInfo nodeId="3684544815287379321" fileName="AbstractHierarchyView.java" startLine="74" startPosition="75" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDescriptorForNode#(Ljavax/swing/tree/DefaultMutableTreeNode;)Lcom/intellij/pom/Navigatable;" />
+    <nodeInfo nodeId="3684544815287379002" fileName="AbstractHierarchyView.java" startLine="73" startPosition="49" endLine="111" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8360021381134305606" fileName="AbstractHierarchyView.java" startLine="70" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTool#(Z)V" />
+    <nodeInfo nodeId="5797068448049411013" fileName="AbstractHierarchyView.java" startLine="132" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createButtonsGroup#()Lcom/intellij/openapi/actionSystem/DefaultActionGroup;" />
     <scopeInfo nodeId="5797068448049410926" fileName="AbstractHierarchyView.java" startLine="61" startPosition="83" endLine="62" endPosition="67" />
-    <scopeInfo nodeId="3684544815287379965" fileName="AbstractHierarchyView.java" startLine="71" startPosition="51" endLine="72" endPosition="22" />
-    <scopeInfo nodeId="3684544815287383671" fileName="AbstractHierarchyView.java" startLine="79" startPosition="52" endLine="80" endPosition="26" />
-    <scopeInfo nodeId="3684544815287383701" fileName="AbstractHierarchyView.java" startLine="87" startPosition="26" endLine="88" endPosition="22" />
-    <scopeInfo nodeId="3684544815287379331" fileName="AbstractHierarchyView.java" startLine="98" startPosition="54" endLine="99" endPosition="69" />
-    <scopeInfo nodeId="3684544815287379335" fileName="AbstractHierarchyView.java" startLine="102" startPosition="50" endLine="103" endPosition="65" />
-    <scopeInfo nodeId="1466595955268239426" fileName="AbstractHierarchyView.java" startLine="122" startPosition="34" endLine="123" endPosition="30" />
-    <scopeInfo nodeId="5797068448049411001" fileName="AbstractHierarchyView.java" startLine="128" startPosition="63" endLine="129" endPosition="72" />
-    <scopeInfo nodeId="5797068448049411280" fileName="AbstractHierarchyView.java" startLine="151" startPosition="50" endLine="152" endPosition="26" />
-    <scopeInfo nodeId="5797068448049411294" fileName="AbstractHierarchyView.java" startLine="163" startPosition="50" endLine="164" endPosition="26" />
-    <scopeInfo nodeId="5797068448049411307" fileName="AbstractHierarchyView.java" startLine="173" startPosition="78" endLine="174" endPosition="36" />
-    <scopeInfo nodeId="5797068448049411312" fileName="AbstractHierarchyView.java" startLine="178" startPosition="78" endLine="179" endPosition="38" />
-    <scopeInfo nodeId="5797068448049411317" fileName="AbstractHierarchyView.java" startLine="183" startPosition="78" endLine="184" endPosition="37" />
-    <scopeInfo nodeId="5797068448049411344" fileName="AbstractHierarchyView.java" startLine="195" startPosition="88" endLine="196" endPosition="21" />
-    <scopeInfo nodeId="5797068448049411373" fileName="AbstractHierarchyView.java" startLine="201" startPosition="49" endLine="202" endPosition="30" />
-    <scopeInfo nodeId="5797068448049411418" fileName="AbstractHierarchyView.java" startLine="224" startPosition="54" endLine="225" endPosition="17" />
-    <scopeInfo nodeId="5797068448049411428" fileName="AbstractHierarchyView.java" startLine="228" startPosition="33" endLine="229" endPosition="49" />
-    <scopeInfo nodeId="5797068448049411437" fileName="AbstractHierarchyView.java" startLine="231" startPosition="34" endLine="232" endPosition="38" />
-    <scopeInfo nodeId="5797068448049411232" fileName="AbstractHierarchyView.java" startLine="238" startPosition="38" endLine="239" endPosition="17" />
-    <scopeInfo nodeId="5797068448049411238" fileName="AbstractHierarchyView.java" startLine="242" startPosition="36" endLine="243" endPosition="23" />
-    <scopeInfo nodeId="3684544815287357820" fileName="AbstractHierarchyView.java" startLine="247" startPosition="24" endLine="248" endPosition="32" />
-    <scopeInfo nodeId="3684544815287378975" fileName="AbstractHierarchyView.java" startLine="279" startPosition="43" endLine="280" endPosition="89" />
-    <scopeInfo nodeId="3684544815287378979" fileName="AbstractHierarchyView.java" startLine="283" startPosition="39" endLine="284" endPosition="85" />
-    <scopeInfo nodeId="5797068448049411241" fileName="AbstractHierarchyView.java" startLine="114" startPosition="25" endLine="116" endPosition="51">
+    <scopeInfo nodeId="3684544815287379965" fileName="AbstractHierarchyView.java" startLine="77" startPosition="51" endLine="78" endPosition="22" />
+    <scopeInfo nodeId="3684544815287383671" fileName="AbstractHierarchyView.java" startLine="85" startPosition="52" endLine="86" endPosition="26" />
+    <scopeInfo nodeId="3684544815287383701" fileName="AbstractHierarchyView.java" startLine="93" startPosition="26" endLine="94" endPosition="22" />
+    <scopeInfo nodeId="3684544815287379331" fileName="AbstractHierarchyView.java" startLine="104" startPosition="54" endLine="105" endPosition="69" />
+    <scopeInfo nodeId="3684544815287379335" fileName="AbstractHierarchyView.java" startLine="108" startPosition="50" endLine="109" endPosition="65" />
+    <scopeInfo nodeId="5797068448049411001" fileName="AbstractHierarchyView.java" startLine="129" startPosition="63" endLine="130" endPosition="72" />
+    <scopeInfo nodeId="5797068448049411280" fileName="AbstractHierarchyView.java" startLine="152" startPosition="50" endLine="153" endPosition="26" />
+    <scopeInfo nodeId="5797068448049411294" fileName="AbstractHierarchyView.java" startLine="164" startPosition="50" endLine="165" endPosition="26" />
+    <scopeInfo nodeId="5797068448049411307" fileName="AbstractHierarchyView.java" startLine="174" startPosition="78" endLine="175" endPosition="36" />
+    <scopeInfo nodeId="5797068448049411312" fileName="AbstractHierarchyView.java" startLine="179" startPosition="78" endLine="180" endPosition="38" />
+    <scopeInfo nodeId="5797068448049411317" fileName="AbstractHierarchyView.java" startLine="184" startPosition="78" endLine="185" endPosition="37" />
+    <scopeInfo nodeId="5797068448049411344" fileName="AbstractHierarchyView.java" startLine="196" startPosition="88" endLine="197" endPosition="21" />
+    <scopeInfo nodeId="5797068448049411373" fileName="AbstractHierarchyView.java" startLine="202" startPosition="49" endLine="203" endPosition="30" />
+    <scopeInfo nodeId="5797068448049411418" fileName="AbstractHierarchyView.java" startLine="225" startPosition="54" endLine="226" endPosition="17" />
+    <scopeInfo nodeId="5797068448049411428" fileName="AbstractHierarchyView.java" startLine="229" startPosition="33" endLine="230" endPosition="49" />
+    <scopeInfo nodeId="5797068448049411437" fileName="AbstractHierarchyView.java" startLine="232" startPosition="34" endLine="233" endPosition="38" />
+    <scopeInfo nodeId="5797068448049411232" fileName="AbstractHierarchyView.java" startLine="239" startPosition="38" endLine="240" endPosition="17" />
+    <scopeInfo nodeId="5797068448049411238" fileName="AbstractHierarchyView.java" startLine="243" startPosition="36" endLine="244" endPosition="23" />
+    <scopeInfo nodeId="3684544815287357820" fileName="AbstractHierarchyView.java" startLine="248" startPosition="24" endLine="249" endPosition="32" />
+    <scopeInfo nodeId="3684544815287378975" fileName="AbstractHierarchyView.java" startLine="280" startPosition="43" endLine="281" endPosition="89" />
+    <scopeInfo nodeId="3684544815287378979" fileName="AbstractHierarchyView.java" startLine="284" startPosition="39" endLine="285" endPosition="85" />
+    <scopeInfo nodeId="8360021381134305648" fileName="AbstractHierarchyView.java" startLine="66" startPosition="31" endLine="68" endPosition="30" />
+    <scopeInfo nodeId="5797068448049411241" fileName="AbstractHierarchyView.java" startLine="120" startPosition="25" endLine="122" endPosition="51">
       <varInfo nodeId="5797068448049411243" varName="buttonsPanel" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448049410987" fileName="AbstractHierarchyView.java" startLine="125" startPosition="0" endLine="127" endPosition="0">
+    <scopeInfo nodeId="5797068448049410987" fileName="AbstractHierarchyView.java" startLine="126" startPosition="0" endLine="128" endPosition="0">
       <varInfo nodeId="5797068448049410991" varName="isParentHierarchy" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448049411259" fileName="AbstractHierarchyView.java" startLine="134" startPosition="28" endLine="136" endPosition="37" />
-    <scopeInfo nodeId="5797068448049411269" fileName="AbstractHierarchyView.java" startLine="140" startPosition="28" endLine="142" endPosition="37" />
-    <scopeInfo nodeId="5797068448049411283" fileName="AbstractHierarchyView.java" startLine="155" startPosition="63" endLine="157" endPosition="56" />
-    <scopeInfo nodeId="5797068448049411297" fileName="AbstractHierarchyView.java" startLine="167" startPosition="63" endLine="169" endPosition="59" />
-    <scopeInfo nodeId="5797068448049411391" fileName="AbstractHierarchyView.java" startLine="207" startPosition="43" endLine="209" endPosition="56">
+    <scopeInfo nodeId="5797068448049411259" fileName="AbstractHierarchyView.java" startLine="135" startPosition="28" endLine="137" endPosition="37" />
+    <scopeInfo nodeId="5797068448049411269" fileName="AbstractHierarchyView.java" startLine="141" startPosition="28" endLine="143" endPosition="37" />
+    <scopeInfo nodeId="5797068448049411283" fileName="AbstractHierarchyView.java" startLine="156" startPosition="63" endLine="158" endPosition="56" />
+    <scopeInfo nodeId="5797068448049411297" fileName="AbstractHierarchyView.java" startLine="168" startPosition="63" endLine="170" endPosition="59" />
+    <scopeInfo nodeId="5797068448049411391" fileName="AbstractHierarchyView.java" startLine="208" startPosition="43" endLine="210" endPosition="56">
       <varInfo nodeId="5797068448049411393" varName="operationContext" />
     </scopeInfo>
     <scopeInfo nodeId="5797068448049410915" fileName="AbstractHierarchyView.java" startLine="60" startPosition="0" endLine="63" endPosition="3">
@@ -180,107 +180,107 @@
       <varInfo nodeId="5797068448049410922" varName="number" />
       <varInfo nodeId="5797068448049410918" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448049411367" fileName="AbstractHierarchyView.java" startLine="200" startPosition="66" endLine="203" endPosition="13" />
-    <scopeInfo nodeId="3684544815287357817" fileName="AbstractHierarchyView.java" startLine="246" startPosition="71" endLine="249" endPosition="5" />
-    <scopeInfo nodeId="3684544815287379328" fileName="AbstractHierarchyView.java" startLine="97" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="3684544815287379332" fileName="AbstractHierarchyView.java" startLine="101" startPosition="0" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="5797068448049410994" fileName="AbstractHierarchyView.java" startLine="127" startPosition="0" endLine="131" endPosition="0">
+    <scopeInfo nodeId="5797068448049411367" fileName="AbstractHierarchyView.java" startLine="201" startPosition="66" endLine="204" endPosition="13" />
+    <scopeInfo nodeId="3684544815287357817" fileName="AbstractHierarchyView.java" startLine="247" startPosition="71" endLine="250" endPosition="5" />
+    <scopeInfo nodeId="3684544815287379328" fileName="AbstractHierarchyView.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="3684544815287379332" fileName="AbstractHierarchyView.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="5797068448049410994" fileName="AbstractHierarchyView.java" startLine="128" startPosition="0" endLine="132" endPosition="0">
       <varInfo nodeId="5797068448049410999" varName="context" />
       <varInfo nodeId="5797068448049410997" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448049411067" fileName="AbstractHierarchyView.java" startLine="150" startPosition="0" endLine="154" endPosition="0">
+    <scopeInfo nodeId="5797068448049411067" fileName="AbstractHierarchyView.java" startLine="151" startPosition="0" endLine="155" endPosition="0">
       <varInfo nodeId="5797068448049411070" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448049411091" fileName="AbstractHierarchyView.java" startLine="162" startPosition="0" endLine="166" endPosition="0">
+    <scopeInfo nodeId="5797068448049411091" fileName="AbstractHierarchyView.java" startLine="163" startPosition="0" endLine="167" endPosition="0">
       <varInfo nodeId="5797068448049411094" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448049411112" fileName="AbstractHierarchyView.java" startLine="172" startPosition="142" endLine="176" endPosition="0">
+    <scopeInfo nodeId="5797068448049411112" fileName="AbstractHierarchyView.java" startLine="173" startPosition="142" endLine="177" endPosition="0">
       <varInfo nodeId="5797068448049411117" varName="_params" />
       <varInfo nodeId="5797068448049411115" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448049411130" fileName="AbstractHierarchyView.java" startLine="177" startPosition="150" endLine="181" endPosition="0">
+    <scopeInfo nodeId="5797068448049411130" fileName="AbstractHierarchyView.java" startLine="178" startPosition="150" endLine="182" endPosition="0">
       <varInfo nodeId="5797068448049411135" varName="_params" />
       <varInfo nodeId="5797068448049411133" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448049411148" fileName="AbstractHierarchyView.java" startLine="182" startPosition="89" endLine="186" endPosition="0">
+    <scopeInfo nodeId="5797068448049411148" fileName="AbstractHierarchyView.java" startLine="183" startPosition="89" endLine="187" endPosition="0">
       <varInfo nodeId="5797068448049411153" varName="_params" />
       <varInfo nodeId="5797068448049411151" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448049411229" fileName="AbstractHierarchyView.java" startLine="237" startPosition="0" endLine="241" endPosition="0" />
-    <scopeInfo nodeId="5797068448049411235" fileName="AbstractHierarchyView.java" startLine="241" startPosition="0" endLine="245" endPosition="0" />
-    <scopeInfo nodeId="3684544815287378959" fileName="AbstractHierarchyView.java" startLine="251" startPosition="52" endLine="255" endPosition="8" />
-    <scopeInfo nodeId="3684544815287378963" fileName="AbstractHierarchyView.java" startLine="258" startPosition="48" endLine="262" endPosition="8" />
-    <scopeInfo nodeId="3684544815287378967" fileName="AbstractHierarchyView.java" startLine="265" startPosition="67" endLine="269" endPosition="8" />
-    <scopeInfo nodeId="3684544815287378971" fileName="AbstractHierarchyView.java" startLine="272" startPosition="63" endLine="276" endPosition="8" />
-    <scopeInfo nodeId="3684544815287378972" fileName="AbstractHierarchyView.java" startLine="278" startPosition="0" endLine="282" endPosition="0" />
-    <scopeInfo nodeId="3684544815287378976" fileName="AbstractHierarchyView.java" startLine="282" startPosition="0" endLine="286" endPosition="0" />
-    <scopeInfo nodeId="5797068448049410984" fileName="AbstractHierarchyView.java" startLine="113" startPosition="47" endLine="118" endPosition="0" />
-    <scopeInfo nodeId="1466595955268239423" fileName="AbstractHierarchyView.java" startLine="120" startPosition="0" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="5797068448049411023" fileName="AbstractHierarchyView.java" startLine="133" startPosition="142" endLine="138" endPosition="0" />
-    <scopeInfo nodeId="5797068448049411036" fileName="AbstractHierarchyView.java" startLine="139" startPosition="135" endLine="144" endPosition="0" />
-    <scopeInfo nodeId="5797068448049411072" fileName="AbstractHierarchyView.java" startLine="154" startPosition="0" endLine="159" endPosition="0">
+    <scopeInfo nodeId="5797068448049411229" fileName="AbstractHierarchyView.java" startLine="238" startPosition="0" endLine="242" endPosition="0" />
+    <scopeInfo nodeId="5797068448049411235" fileName="AbstractHierarchyView.java" startLine="242" startPosition="0" endLine="246" endPosition="0" />
+    <scopeInfo nodeId="3684544815287378959" fileName="AbstractHierarchyView.java" startLine="252" startPosition="52" endLine="256" endPosition="8" />
+    <scopeInfo nodeId="3684544815287378963" fileName="AbstractHierarchyView.java" startLine="259" startPosition="48" endLine="263" endPosition="8" />
+    <scopeInfo nodeId="3684544815287378967" fileName="AbstractHierarchyView.java" startLine="266" startPosition="67" endLine="270" endPosition="8" />
+    <scopeInfo nodeId="3684544815287378971" fileName="AbstractHierarchyView.java" startLine="273" startPosition="63" endLine="277" endPosition="8" />
+    <scopeInfo nodeId="3684544815287378972" fileName="AbstractHierarchyView.java" startLine="279" startPosition="0" endLine="283" endPosition="0" />
+    <scopeInfo nodeId="3684544815287378976" fileName="AbstractHierarchyView.java" startLine="283" startPosition="0" endLine="287" endPosition="0" />
+    <scopeInfo nodeId="5797068448049410984" fileName="AbstractHierarchyView.java" startLine="119" startPosition="47" endLine="124" endPosition="0" />
+    <scopeInfo nodeId="5797068448049411023" fileName="AbstractHierarchyView.java" startLine="134" startPosition="142" endLine="139" endPosition="0" />
+    <scopeInfo nodeId="5797068448049411036" fileName="AbstractHierarchyView.java" startLine="140" startPosition="135" endLine="145" endPosition="0" />
+    <scopeInfo nodeId="5797068448049411072" fileName="AbstractHierarchyView.java" startLine="155" startPosition="0" endLine="160" endPosition="0">
       <varInfo nodeId="5797068448049411075" varName="e" />
       <varInfo nodeId="5797068448049411077" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448049411096" fileName="AbstractHierarchyView.java" startLine="166" startPosition="0" endLine="171" endPosition="0">
+    <scopeInfo nodeId="5797068448049411096" fileName="AbstractHierarchyView.java" startLine="167" startPosition="0" endLine="172" endPosition="0">
       <varInfo nodeId="5797068448049411099" varName="e" />
       <varInfo nodeId="5797068448049411101" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448049411359" fileName="AbstractHierarchyView.java" startLine="199" startPosition="50" endLine="204" endPosition="11">
+    <scopeInfo nodeId="5797068448049411359" fileName="AbstractHierarchyView.java" startLine="200" startPosition="50" endLine="205" endPosition="11">
       <varInfo nodeId="5797068448049411365" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448049411386" fileName="AbstractHierarchyView.java" startLine="206" startPosition="97" endLine="211" endPosition="0">
+    <scopeInfo nodeId="5797068448049411386" fileName="AbstractHierarchyView.java" startLine="207" startPosition="97" endLine="212" endPosition="0">
       <varInfo nodeId="5797068448049411389" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3684544815287383648" fileName="AbstractHierarchyView.java" startLine="77" startPosition="41" endLine="83" endPosition="42">
+    <scopeInfo nodeId="8360021381134305645" fileName="AbstractHierarchyView.java" startLine="64" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="3684544815287383648" fileName="AbstractHierarchyView.java" startLine="83" startPosition="41" endLine="89" endPosition="42">
       <varInfo nodeId="3684544815287383659" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3684544815287378956" fileName="AbstractHierarchyView.java" startLine="250" startPosition="0" endLine="257" endPosition="0" />
-    <scopeInfo nodeId="3684544815287378960" fileName="AbstractHierarchyView.java" startLine="257" startPosition="0" endLine="264" endPosition="0" />
-    <scopeInfo nodeId="3684544815287378964" fileName="AbstractHierarchyView.java" startLine="264" startPosition="0" endLine="271" endPosition="0" />
-    <scopeInfo nodeId="3684544815287378968" fileName="AbstractHierarchyView.java" startLine="271" startPosition="0" endLine="278" endPosition="0" />
-    <scopeInfo nodeId="3684544815287383645" fileName="AbstractHierarchyView.java" startLine="76" startPosition="96" endLine="85" endPosition="0" />
-    <scopeInfo nodeId="5797068448049411338" fileName="AbstractHierarchyView.java" startLine="194" startPosition="93" endLine="204" endPosition="11">
+    <scopeInfo nodeId="3684544815287378956" fileName="AbstractHierarchyView.java" startLine="251" startPosition="0" endLine="258" endPosition="0" />
+    <scopeInfo nodeId="3684544815287378960" fileName="AbstractHierarchyView.java" startLine="258" startPosition="0" endLine="265" endPosition="0" />
+    <scopeInfo nodeId="3684544815287378964" fileName="AbstractHierarchyView.java" startLine="265" startPosition="0" endLine="272" endPosition="0" />
+    <scopeInfo nodeId="3684544815287378968" fileName="AbstractHierarchyView.java" startLine="272" startPosition="0" endLine="279" endPosition="0" />
+    <scopeInfo nodeId="3684544815287383645" fileName="AbstractHierarchyView.java" startLine="82" startPosition="96" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="5797068448049411338" fileName="AbstractHierarchyView.java" startLine="195" startPosition="93" endLine="205" endPosition="11">
       <varInfo nodeId="5797068448049411347" varName="decl" />
       <varInfo nodeId="5797068448049411355" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448049411405" fileName="AbstractHierarchyView.java" startLine="222" startPosition="25" endLine="233" endPosition="9">
+    <scopeInfo nodeId="5797068448049411405" fileName="AbstractHierarchyView.java" startLine="223" startPosition="25" endLine="234" endPosition="9">
       <varInfo nodeId="5797068448049411407" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448049411330" fileName="AbstractHierarchyView.java" startLine="193" startPosition="51" endLine="205" endPosition="9">
+    <scopeInfo nodeId="5797068448049411330" fileName="AbstractHierarchyView.java" startLine="194" startPosition="51" endLine="206" endPosition="9">
       <varInfo nodeId="5797068448049411336" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448049411226" fileName="AbstractHierarchyView.java" startLine="221" startPosition="56" endLine="235" endPosition="0" />
-    <scopeInfo nodeId="5797068448049411203" fileName="AbstractHierarchyView.java" startLine="217" startPosition="75" endLine="235" endPosition="7" />
-    <scopeInfo nodeId="5797068448049411322" fileName="AbstractHierarchyView.java" startLine="192" startPosition="78" endLine="211" endPosition="18">
+    <scopeInfo nodeId="5797068448049411226" fileName="AbstractHierarchyView.java" startLine="222" startPosition="56" endLine="236" endPosition="0" />
+    <scopeInfo nodeId="5797068448049411203" fileName="AbstractHierarchyView.java" startLine="218" startPosition="75" endLine="236" endPosition="7" />
+    <scopeInfo nodeId="5797068448049411322" fileName="AbstractHierarchyView.java" startLine="193" startPosition="78" endLine="212" endPosition="18">
       <varInfo nodeId="5797068448049411324" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448049411196" fileName="AbstractHierarchyView.java" startLine="216" startPosition="0" endLine="237" endPosition="0">
+    <scopeInfo nodeId="5797068448049411196" fileName="AbstractHierarchyView.java" startLine="217" startPosition="0" endLine="238" endPosition="0">
       <varInfo nodeId="5797068448049411201" varName="_context" />
       <varInfo nodeId="5797068448049411199" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448049411183" fileName="AbstractHierarchyView.java" startLine="191" startPosition="70" endLine="213" endPosition="0">
+    <scopeInfo nodeId="5797068448049411183" fileName="AbstractHierarchyView.java" startLine="192" startPosition="70" endLine="214" endPosition="0">
       <varInfo nodeId="5797068448049411188" varName="_params" />
       <varInfo nodeId="5797068448049411186" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448049411176" fileName="AbstractHierarchyView.java" startLine="190" startPosition="92" endLine="214" endPosition="48">
+    <scopeInfo nodeId="5797068448049411176" fileName="AbstractHierarchyView.java" startLine="191" startPosition="92" endLine="215" endPosition="48">
       <varInfo nodeId="5797068448049411178" varName="action" />
     </scopeInfo>
-    <scopeInfo nodeId="3684544815287379327" fileName="AbstractHierarchyView.java" startLine="70" startPosition="82" endLine="95" endPosition="10">
+    <scopeInfo nodeId="3684544815287379327" fileName="AbstractHierarchyView.java" startLine="76" startPosition="82" endLine="101" endPosition="10">
       <varInfo nodeId="3684544815287383717" varName="n" />
       <varInfo nodeId="3684544815287379999" varName="ptr" />
       <varInfo nodeId="3684544815287379984" varName="treeNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448049411170" fileName="AbstractHierarchyView.java" startLine="189" startPosition="0" endLine="216" endPosition="0">
+    <scopeInfo nodeId="5797068448049411170" fileName="AbstractHierarchyView.java" startLine="190" startPosition="0" endLine="217" endPosition="0">
       <varInfo nodeId="5797068448049411173" varName="conceptFqName" />
     </scopeInfo>
-    <scopeInfo nodeId="3684544815287379321" fileName="AbstractHierarchyView.java" startLine="68" startPosition="75" endLine="97" endPosition="0">
+    <scopeInfo nodeId="3684544815287379321" fileName="AbstractHierarchyView.java" startLine="74" startPosition="75" endLine="103" endPosition="0">
       <varInfo nodeId="3684544815287379324" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448049410937" fileName="AbstractHierarchyView.java" startLine="65" startPosition="31" endLine="118" endPosition="7">
+    <scopeInfo nodeId="8360021381134305611" fileName="AbstractHierarchyView.java" startLine="72" startPosition="40" endLine="124" endPosition="7">
       <varInfo nodeId="5797068448049410951" varName="panel" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448049411016" fileName="AbstractHierarchyView.java" startLine="132" startPosition="53" endLine="187" endPosition="182">
+    <scopeInfo nodeId="5797068448049411016" fileName="AbstractHierarchyView.java" startLine="133" startPosition="53" endLine="188" endPosition="182">
       <varInfo nodeId="5797068448049411018" varName="childrenAction" />
       <varInfo nodeId="5797068448049411125" varName="collapseAllAction" />
       <varInfo nodeId="5797068448049411107" varName="expandAllAction" />
@@ -290,23 +290,25 @@
       <varInfo nodeId="5797068448049411059" varName="thisModelAction" />
       <varInfo nodeId="5797068448049411044" varName="toggleGroup" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448049410934" fileName="AbstractHierarchyView.java" startLine="64" startPosition="0" endLine="120" endPosition="0" />
-    <scopeInfo nodeId="5797068448049411013" fileName="AbstractHierarchyView.java" startLine="131" startPosition="0" endLine="189" endPosition="0" />
-    <unitInfo nodeId="5797068448049410622" fileName="AbstractHierarchyView.java" startLine="52" startPosition="0" endLine="288" endPosition="0" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView" />
-    <unitInfo nodeId="3684544815287379319" fileName="AbstractHierarchyView.java" startLine="68" startPosition="31" endLine="105" endPosition="5" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$1" />
-    <unitInfo nodeId="5797068448049411182" fileName="AbstractHierarchyView.java" startLine="191" startPosition="28" endLine="213" endPosition="5" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$10" />
-    <unitInfo nodeId="5797068448049411384" fileName="AbstractHierarchyView.java" startLine="206" startPosition="56" endLine="211" endPosition="9" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$11" />
-    <unitInfo nodeId="5797068448049411225" fileName="AbstractHierarchyView.java" startLine="221" startPosition="44" endLine="235" endPosition="5" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$11" />
-    <unitInfo nodeId="5797068448049410983" fileName="AbstractHierarchyView.java" startLine="113" startPosition="35" endLine="118" endPosition="5" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$2" />
-    <unitInfo nodeId="3684544815287383643" fileName="AbstractHierarchyView.java" startLine="76" startPosition="68" endLine="85" endPosition="9" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$2" />
-    <unitInfo nodeId="5797068448049411022" fileName="AbstractHierarchyView.java" startLine="133" startPosition="45" endLine="138" endPosition="5" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$3" />
-    <unitInfo nodeId="5797068448049411035" fileName="AbstractHierarchyView.java" startLine="139" startPosition="43" endLine="144" endPosition="5" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$4" />
-    <unitInfo nodeId="5797068448049411063" fileName="AbstractHierarchyView.java" startLine="148" startPosition="39" endLine="159" endPosition="5" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$5" />
-    <unitInfo nodeId="5797068448049411087" fileName="AbstractHierarchyView.java" startLine="160" startPosition="45" endLine="171" endPosition="5" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$6" />
-    <unitInfo nodeId="5797068448049411111" fileName="AbstractHierarchyView.java" startLine="172" startPosition="37" endLine="176" endPosition="5" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$7" />
-    <unitInfo nodeId="5797068448049411129" fileName="AbstractHierarchyView.java" startLine="177" startPosition="39" endLine="181" endPosition="5" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$8" />
-    <unitInfo nodeId="5797068448049411147" fileName="AbstractHierarchyView.java" startLine="182" startPosition="35" endLine="186" endPosition="5" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$9" />
-    <unitInfo nodeId="3684544815287357815" fileName="AbstractHierarchyView.java" startLine="246" startPosition="0" endLine="287" endPosition="0" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$RootPanel" />
+    <scopeInfo nodeId="8360021381134305606" fileName="AbstractHierarchyView.java" startLine="70" startPosition="0" endLine="126" endPosition="0">
+      <varInfo nodeId="8360021381134305609" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="5797068448049411013" fileName="AbstractHierarchyView.java" startLine="132" startPosition="0" endLine="190" endPosition="0" />
+    <unitInfo nodeId="5797068448049410622" fileName="AbstractHierarchyView.java" startLine="52" startPosition="0" endLine="289" endPosition="0" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView" />
+    <unitInfo nodeId="3684544815287379319" fileName="AbstractHierarchyView.java" startLine="74" startPosition="31" endLine="111" endPosition="5" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$1" />
+    <unitInfo nodeId="5797068448049411182" fileName="AbstractHierarchyView.java" startLine="192" startPosition="28" endLine="214" endPosition="5" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$10" />
+    <unitInfo nodeId="5797068448049411384" fileName="AbstractHierarchyView.java" startLine="207" startPosition="56" endLine="212" endPosition="9" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$11" />
+    <unitInfo nodeId="5797068448049411225" fileName="AbstractHierarchyView.java" startLine="222" startPosition="44" endLine="236" endPosition="5" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$11" />
+    <unitInfo nodeId="5797068448049410983" fileName="AbstractHierarchyView.java" startLine="119" startPosition="35" endLine="124" endPosition="5" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$2" />
+    <unitInfo nodeId="3684544815287383643" fileName="AbstractHierarchyView.java" startLine="82" startPosition="68" endLine="91" endPosition="9" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$2" />
+    <unitInfo nodeId="5797068448049411022" fileName="AbstractHierarchyView.java" startLine="134" startPosition="45" endLine="139" endPosition="5" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$3" />
+    <unitInfo nodeId="5797068448049411035" fileName="AbstractHierarchyView.java" startLine="140" startPosition="43" endLine="145" endPosition="5" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$4" />
+    <unitInfo nodeId="5797068448049411063" fileName="AbstractHierarchyView.java" startLine="149" startPosition="39" endLine="160" endPosition="5" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$5" />
+    <unitInfo nodeId="5797068448049411087" fileName="AbstractHierarchyView.java" startLine="161" startPosition="45" endLine="172" endPosition="5" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$6" />
+    <unitInfo nodeId="5797068448049411111" fileName="AbstractHierarchyView.java" startLine="173" startPosition="37" endLine="177" endPosition="5" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$7" />
+    <unitInfo nodeId="5797068448049411129" fileName="AbstractHierarchyView.java" startLine="178" startPosition="39" endLine="182" endPosition="5" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$8" />
+    <unitInfo nodeId="5797068448049411147" fileName="AbstractHierarchyView.java" startLine="183" startPosition="35" endLine="187" endPosition="5" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$9" />
+    <unitInfo nodeId="3684544815287357815" fileName="AbstractHierarchyView.java" startLine="247" startPosition="0" endLine="288" endPosition="0" unitName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$RootPanel" />
   </root>
   <root nodeId="5797068448049410623">
     <nodeInfo nodeId="5797068448049414651" fileName="AbstractHierarchyTree.java" startLine="24" startPosition="61" endLine="25" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOperationContext" />
