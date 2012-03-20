@@ -523,112 +523,115 @@
   </root>
   <root nodeId="1453248744423273062">
     <nodeInfo nodeId="1453248744423273078" fileName="UnresolvedReferencesChecker.java" startLine="33" startPosition="146" endLine="34" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2253178666244634267" fileName="UnresolvedReferencesChecker.java" startLine="34" startPosition="124" endLine="35" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6550340959293398121" fileName="UnresolvedReferencesChecker.java" startLine="35" startPosition="75" endLine="36" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="377166553787518263" fileName="UnresolvedReferencesChecker.java" startLine="36" startPosition="104" endLine="37" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="377166553787518262" fileName="UnresolvedReferencesChecker.java" startLine="37" startPosition="28" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1453248744423273093" fileName="UnresolvedReferencesChecker.java" startLine="40" startPosition="33" endLine="41" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1453248744423273105" fileName="UnresolvedReferencesChecker.java" startLine="42" startPosition="7" endLine="43" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7208102873307995285" fileName="UnresolvedReferencesChecker.java" startLine="45" startPosition="233" endLine="46" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="1453248744423273125" fileName="UnresolvedReferencesChecker.java" startLine="50" startPosition="36" endLine="51" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209385276369" fileName="UnresolvedReferencesChecker.java" startLine="54" startPosition="9" endLine="55" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1222430244831" fileName="UnresolvedReferencesChecker.java" startLine="56" startPosition="26" endLine="57" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4723230619342965855" fileName="UnresolvedReferencesChecker.java" startLine="58" startPosition="9" endLine="59" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1209385301011" fileName="UnresolvedReferencesChecker.java" startLine="63" startPosition="119" endLine="64" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1209385306059" fileName="UnresolvedReferencesChecker.java" startLine="64" startPosition="88" endLine="65" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2253178666244647902" fileName="UnresolvedReferencesChecker.java" startLine="65" startPosition="110" endLine="66" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2253178666244647906" fileName="UnresolvedReferencesChecker.java" startLine="67" startPosition="15" endLine="68" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="377166553787518281" fileName="UnresolvedReferencesChecker.java" startLine="73" startPosition="5" endLine="74" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423273141" fileName="UnresolvedReferencesChecker.java" startLine="74" startPosition="19" endLine="75" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3953820665877456249" fileName="UnresolvedReferencesChecker.java" startLine="79" startPosition="36" endLine="80" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3953820665877456249" fileName="UnresolvedReferencesChecker.java" startLine="81" startPosition="5" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3953820665877456255" fileName="UnresolvedReferencesChecker.java" startLine="86" startPosition="36" endLine="87" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3953820665877456255" fileName="UnresolvedReferencesChecker.java" startLine="88" startPosition="5" endLine="89" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3953820665877456252" fileName="UnresolvedReferencesChecker.java" startLine="93" startPosition="36" endLine="94" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3953820665877456252" fileName="UnresolvedReferencesChecker.java" startLine="95" startPosition="5" endLine="96" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3953820665877456246" fileName="UnresolvedReferencesChecker.java" startLine="100" startPosition="36" endLine="101" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3953820665877456246" fileName="UnresolvedReferencesChecker.java" startLine="102" startPosition="5" endLine="103" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4865545450441062511" fileName="UnresolvedReferencesChecker.java" startLine="35" startPosition="112" endLine="36" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2253178666244634267" fileName="UnresolvedReferencesChecker.java" startLine="37" startPosition="5" endLine="38" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6550340959293398121" fileName="UnresolvedReferencesChecker.java" startLine="38" startPosition="75" endLine="39" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="377166553787518263" fileName="UnresolvedReferencesChecker.java" startLine="39" startPosition="104" endLine="40" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="377166553787518262" fileName="UnresolvedReferencesChecker.java" startLine="40" startPosition="28" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1453248744423273093" fileName="UnresolvedReferencesChecker.java" startLine="43" startPosition="33" endLine="44" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1453248744423273105" fileName="UnresolvedReferencesChecker.java" startLine="45" startPosition="7" endLine="46" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7208102873307995285" fileName="UnresolvedReferencesChecker.java" startLine="48" startPosition="233" endLine="49" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="1453248744423273125" fileName="UnresolvedReferencesChecker.java" startLine="53" startPosition="36" endLine="54" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1209385276369" fileName="UnresolvedReferencesChecker.java" startLine="57" startPosition="9" endLine="58" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1222430244831" fileName="UnresolvedReferencesChecker.java" startLine="59" startPosition="26" endLine="60" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4723230619342965855" fileName="UnresolvedReferencesChecker.java" startLine="61" startPosition="9" endLine="62" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1209385301011" fileName="UnresolvedReferencesChecker.java" startLine="66" startPosition="119" endLine="67" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1209385306059" fileName="UnresolvedReferencesChecker.java" startLine="67" startPosition="88" endLine="68" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2253178666244647902" fileName="UnresolvedReferencesChecker.java" startLine="68" startPosition="110" endLine="69" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2253178666244647906" fileName="UnresolvedReferencesChecker.java" startLine="70" startPosition="15" endLine="71" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="377166553787518281" fileName="UnresolvedReferencesChecker.java" startLine="76" startPosition="5" endLine="77" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423273141" fileName="UnresolvedReferencesChecker.java" startLine="77" startPosition="19" endLine="78" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3953820665877456249" fileName="UnresolvedReferencesChecker.java" startLine="82" startPosition="36" endLine="83" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3953820665877456249" fileName="UnresolvedReferencesChecker.java" startLine="84" startPosition="5" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3953820665877456255" fileName="UnresolvedReferencesChecker.java" startLine="89" startPosition="36" endLine="90" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3953820665877456255" fileName="UnresolvedReferencesChecker.java" startLine="91" startPosition="5" endLine="92" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3953820665877456252" fileName="UnresolvedReferencesChecker.java" startLine="96" startPosition="36" endLine="97" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3953820665877456252" fileName="UnresolvedReferencesChecker.java" startLine="98" startPosition="5" endLine="99" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3953820665877456246" fileName="UnresolvedReferencesChecker.java" startLine="103" startPosition="36" endLine="104" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3953820665877456246" fileName="UnresolvedReferencesChecker.java" startLine="105" startPosition="5" endLine="106" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1453248744423273063" fileName="UnresolvedReferencesChecker.java" startLine="29" startPosition="66" endLine="31" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnresolvedReferencesChecker#()V" />
-    <nodeInfo nodeId="1453248744423273091" fileName="UnresolvedReferencesChecker.java" startLine="39" startPosition="86" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7208102873307995271" fileName="UnresolvedReferencesChecker.java" startLine="44" startPosition="95" endLine="47" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1222430227713" fileName="UnresolvedReferencesChecker.java" startLine="55" startPosition="67" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3953820665877456249" fileName="UnresolvedReferencesChecker.java" startLine="78" startPosition="101" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3953820665877456255" fileName="UnresolvedReferencesChecker.java" startLine="85" startPosition="93" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3953820665877456252" fileName="UnresolvedReferencesChecker.java" startLine="92" startPosition="95" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3953820665877456246" fileName="UnresolvedReferencesChecker.java" startLine="99" startPosition="93" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1453248744423273123" fileName="UnresolvedReferencesChecker.java" startLine="49" startPosition="175" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFix#()Z" />
-    <nodeInfo nodeId="1453248744423273112" fileName="UnresolvedReferencesChecker.java" startLine="48" startPosition="50" endLine="53" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1209385300996" fileName="UnresolvedReferencesChecker.java" startLine="62" startPosition="36" endLine="67" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1453248744423273110" fileName="UnresolvedReferencesChecker.java" startLine="47" startPosition="9" endLine="54" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3953820665877456249" fileName="UnresolvedReferencesChecker.java" startLine="77" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_xiru3y_a1a0a5a0a5a2a5a0#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/smodel/SModelDescriptor;)V" />
-    <nodeInfo nodeId="3953820665877456255" fileName="UnresolvedReferencesChecker.java" startLine="84" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_xiru3y_a0a1a0a5a0a5a2a5a0#(Ljetbrains/mps/project/IModule;)Ljetbrains/mps/project/structure/modules/ModuleReference;" />
-    <nodeInfo nodeId="3953820665877456252" fileName="UnresolvedReferencesChecker.java" startLine="91" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_xiru3y_a0a0b0a0f0a0f0c0f0a#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/project/IModule;" />
-    <nodeInfo nodeId="3953820665877456246" fileName="UnresolvedReferencesChecker.java" startLine="98" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_xiru3y_a0b0a0f0a0f0c0f0a#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/project/IModule;" />
-    <nodeInfo nodeId="2253178666244634290" fileName="UnresolvedReferencesChecker.java" startLine="61" startPosition="184" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFix#()Z" />
-    <nodeInfo nodeId="2253178666244634279" fileName="UnresolvedReferencesChecker.java" startLine="60" startPosition="74" endLine="70" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1209385276375" fileName="UnresolvedReferencesChecker.java" startLine="59" startPosition="88" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1453248744423273107" fileName="UnresolvedReferencesChecker.java" startLine="43" startPosition="41" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1453248744423273088" fileName="UnresolvedReferencesChecker.java" startLine="38" startPosition="0" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1453248744423273069" fileName="UnresolvedReferencesChecker.java" startLine="32" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkModel#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/progress/ProgressMonitor;Ljetbrains/mps/smodel/IOperationContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="4865545450441062480" fileName="UnresolvedReferencesChecker.java" startLine="34" startPosition="124" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1453248744423273091" fileName="UnresolvedReferencesChecker.java" startLine="42" startPosition="86" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7208102873307995271" fileName="UnresolvedReferencesChecker.java" startLine="47" startPosition="95" endLine="50" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1222430227713" fileName="UnresolvedReferencesChecker.java" startLine="58" startPosition="67" endLine="61" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3953820665877456249" fileName="UnresolvedReferencesChecker.java" startLine="81" startPosition="101" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3953820665877456255" fileName="UnresolvedReferencesChecker.java" startLine="88" startPosition="93" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3953820665877456252" fileName="UnresolvedReferencesChecker.java" startLine="95" startPosition="95" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3953820665877456246" fileName="UnresolvedReferencesChecker.java" startLine="102" startPosition="93" endLine="105" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1453248744423273123" fileName="UnresolvedReferencesChecker.java" startLine="52" startPosition="175" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFix#()Z" />
+    <nodeInfo nodeId="1453248744423273112" fileName="UnresolvedReferencesChecker.java" startLine="51" startPosition="50" endLine="56" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1209385300996" fileName="UnresolvedReferencesChecker.java" startLine="65" startPosition="36" endLine="70" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1453248744423273110" fileName="UnresolvedReferencesChecker.java" startLine="50" startPosition="9" endLine="57" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3953820665877456249" fileName="UnresolvedReferencesChecker.java" startLine="80" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_xiru3y_a1a0a5a0a5a2a6a0#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/smodel/SModelDescriptor;)V" />
+    <nodeInfo nodeId="3953820665877456255" fileName="UnresolvedReferencesChecker.java" startLine="87" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_xiru3y_a0a1a0a5a0a5a2a6a0#(Ljetbrains/mps/project/IModule;)Ljetbrains/mps/project/structure/modules/ModuleReference;" />
+    <nodeInfo nodeId="3953820665877456252" fileName="UnresolvedReferencesChecker.java" startLine="94" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_xiru3y_a0a0b0a0f0a0f0c0g0a#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="3953820665877456246" fileName="UnresolvedReferencesChecker.java" startLine="101" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_xiru3y_a0b0a0f0a0f0c0g0a#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="2253178666244634290" fileName="UnresolvedReferencesChecker.java" startLine="64" startPosition="184" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFix#()Z" />
+    <nodeInfo nodeId="2253178666244634279" fileName="UnresolvedReferencesChecker.java" startLine="63" startPosition="74" endLine="73" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1209385276375" fileName="UnresolvedReferencesChecker.java" startLine="62" startPosition="88" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1453248744423273107" fileName="UnresolvedReferencesChecker.java" startLine="46" startPosition="41" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1453248744423273088" fileName="UnresolvedReferencesChecker.java" startLine="41" startPosition="0" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1453248744423273069" fileName="UnresolvedReferencesChecker.java" startLine="32" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkModel#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/progress/ProgressMonitor;Ljetbrains/mps/smodel/IOperationContext;)Ljava/util/List;" />
     <scopeInfo nodeId="1453248744423273066" fileName="UnresolvedReferencesChecker.java" startLine="30" startPosition="40" endLine="30" endPosition="40" />
-    <scopeInfo nodeId="1453248744423273092" fileName="UnresolvedReferencesChecker.java" startLine="40" startPosition="33" endLine="41" endPosition="14" />
-    <scopeInfo nodeId="7208102873307995272" fileName="UnresolvedReferencesChecker.java" startLine="45" startPosition="233" endLine="46" endPosition="19" />
-    <scopeInfo nodeId="1453248744423273124" fileName="UnresolvedReferencesChecker.java" startLine="50" startPosition="36" endLine="51" endPosition="62" />
-    <scopeInfo nodeId="1222430227714" fileName="UnresolvedReferencesChecker.java" startLine="56" startPosition="26" endLine="57" endPosition="19" />
-    <scopeInfo nodeId="3953820665877456249" fileName="UnresolvedReferencesChecker.java" startLine="79" startPosition="36" endLine="80" endPosition="116" />
-    <scopeInfo nodeId="3953820665877456255" fileName="UnresolvedReferencesChecker.java" startLine="86" startPosition="36" endLine="87" endPosition="52" />
-    <scopeInfo nodeId="3953820665877456252" fileName="UnresolvedReferencesChecker.java" startLine="93" startPosition="36" endLine="94" endPosition="43" />
-    <scopeInfo nodeId="3953820665877456246" fileName="UnresolvedReferencesChecker.java" startLine="100" startPosition="36" endLine="101" endPosition="43" />
+    <scopeInfo nodeId="4865545450441062481" fileName="UnresolvedReferencesChecker.java" startLine="35" startPosition="112" endLine="36" endPosition="21" />
+    <scopeInfo nodeId="1453248744423273092" fileName="UnresolvedReferencesChecker.java" startLine="43" startPosition="33" endLine="44" endPosition="14" />
+    <scopeInfo nodeId="7208102873307995272" fileName="UnresolvedReferencesChecker.java" startLine="48" startPosition="233" endLine="49" endPosition="19" />
+    <scopeInfo nodeId="1453248744423273124" fileName="UnresolvedReferencesChecker.java" startLine="53" startPosition="36" endLine="54" endPosition="62" />
+    <scopeInfo nodeId="1222430227714" fileName="UnresolvedReferencesChecker.java" startLine="59" startPosition="26" endLine="60" endPosition="19" />
+    <scopeInfo nodeId="3953820665877456249" fileName="UnresolvedReferencesChecker.java" startLine="82" startPosition="36" endLine="83" endPosition="116" />
+    <scopeInfo nodeId="3953820665877456255" fileName="UnresolvedReferencesChecker.java" startLine="89" startPosition="36" endLine="90" endPosition="52" />
+    <scopeInfo nodeId="3953820665877456252" fileName="UnresolvedReferencesChecker.java" startLine="96" startPosition="36" endLine="97" endPosition="43" />
+    <scopeInfo nodeId="3953820665877456246" fileName="UnresolvedReferencesChecker.java" startLine="103" startPosition="36" endLine="104" endPosition="43" />
     <scopeInfo nodeId="1453248744423273063" fileName="UnresolvedReferencesChecker.java" startLine="29" startPosition="66" endLine="31" endPosition="3" />
-    <scopeInfo nodeId="1209385301010" fileName="UnresolvedReferencesChecker.java" startLine="63" startPosition="119" endLine="66" endPosition="28">
+    <scopeInfo nodeId="1209385301010" fileName="UnresolvedReferencesChecker.java" startLine="66" startPosition="119" endLine="69" endPosition="28">
       <varInfo nodeId="1209385301012" varName="sm" />
     </scopeInfo>
-    <scopeInfo nodeId="1453248744423273123" fileName="UnresolvedReferencesChecker.java" startLine="49" startPosition="175" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="3953820665877456249" fileName="UnresolvedReferencesChecker.java" startLine="78" startPosition="101" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="3953820665877456255" fileName="UnresolvedReferencesChecker.java" startLine="85" startPosition="93" endLine="89" endPosition="16" />
-    <scopeInfo nodeId="3953820665877456252" fileName="UnresolvedReferencesChecker.java" startLine="92" startPosition="95" endLine="96" endPosition="16" />
-    <scopeInfo nodeId="3953820665877456246" fileName="UnresolvedReferencesChecker.java" startLine="99" startPosition="93" endLine="103" endPosition="16" />
-    <scopeInfo nodeId="1453248744423273111" fileName="UnresolvedReferencesChecker.java" startLine="48" startPosition="50" endLine="53" endPosition="13" />
-    <scopeInfo nodeId="2253178666244634291" fileName="UnresolvedReferencesChecker.java" startLine="62" startPosition="36" endLine="68" endPosition="27" />
-    <scopeInfo nodeId="3953820665877456249" fileName="UnresolvedReferencesChecker.java" startLine="77" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="1453248744423273123" fileName="UnresolvedReferencesChecker.java" startLine="52" startPosition="175" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="3953820665877456249" fileName="UnresolvedReferencesChecker.java" startLine="81" startPosition="101" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="3953820665877456255" fileName="UnresolvedReferencesChecker.java" startLine="88" startPosition="93" endLine="92" endPosition="16" />
+    <scopeInfo nodeId="3953820665877456252" fileName="UnresolvedReferencesChecker.java" startLine="95" startPosition="95" endLine="99" endPosition="16" />
+    <scopeInfo nodeId="3953820665877456246" fileName="UnresolvedReferencesChecker.java" startLine="102" startPosition="93" endLine="106" endPosition="16" />
+    <scopeInfo nodeId="1453248744423273111" fileName="UnresolvedReferencesChecker.java" startLine="51" startPosition="50" endLine="56" endPosition="13" />
+    <scopeInfo nodeId="2253178666244634291" fileName="UnresolvedReferencesChecker.java" startLine="65" startPosition="36" endLine="71" endPosition="27" />
+    <scopeInfo nodeId="3953820665877456249" fileName="UnresolvedReferencesChecker.java" startLine="80" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="3953820665877456249" varName="checkedDotOperand" />
       <varInfo nodeId="3953820665877456249" varName="sm" />
     </scopeInfo>
-    <scopeInfo nodeId="3953820665877456255" fileName="UnresolvedReferencesChecker.java" startLine="84" startPosition="0" endLine="91" endPosition="0">
+    <scopeInfo nodeId="3953820665877456255" fileName="UnresolvedReferencesChecker.java" startLine="87" startPosition="0" endLine="94" endPosition="0">
       <varInfo nodeId="3953820665877456255" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="3953820665877456252" fileName="UnresolvedReferencesChecker.java" startLine="91" startPosition="0" endLine="98" endPosition="0">
+    <scopeInfo nodeId="3953820665877456252" fileName="UnresolvedReferencesChecker.java" startLine="94" startPosition="0" endLine="101" endPosition="0">
       <varInfo nodeId="3953820665877456252" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="3953820665877456246" fileName="UnresolvedReferencesChecker.java" startLine="98" startPosition="0" endLine="105" endPosition="0">
+    <scopeInfo nodeId="3953820665877456246" fileName="UnresolvedReferencesChecker.java" startLine="101" startPosition="0" endLine="108" endPosition="0">
       <varInfo nodeId="3953820665877456246" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="2253178666244634290" fileName="UnresolvedReferencesChecker.java" startLine="61" startPosition="184" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="1209385276389" fileName="UnresolvedReferencesChecker.java" startLine="60" startPosition="74" endLine="70" endPosition="13" />
-    <scopeInfo nodeId="1453248744423273109" fileName="UnresolvedReferencesChecker.java" startLine="44" startPosition="95" endLine="71" endPosition="9">
+    <scopeInfo nodeId="2253178666244634290" fileName="UnresolvedReferencesChecker.java" startLine="64" startPosition="184" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="1209385276389" fileName="UnresolvedReferencesChecker.java" startLine="63" startPosition="74" endLine="73" endPosition="13" />
+    <scopeInfo nodeId="1453248744423273109" fileName="UnresolvedReferencesChecker.java" startLine="47" startPosition="95" endLine="74" endPosition="9">
       <varInfo nodeId="4723230619342965856" varName="descriptor" />
       <varInfo nodeId="1209385276370" varName="uid" />
     </scopeInfo>
-    <scopeInfo nodeId="1453248744423273107" fileName="UnresolvedReferencesChecker.java" startLine="43" startPosition="41" endLine="72" endPosition="7">
+    <scopeInfo nodeId="1453248744423273107" fileName="UnresolvedReferencesChecker.java" startLine="46" startPosition="41" endLine="75" endPosition="7">
       <varInfo nodeId="1453248744423273107" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="1453248744423273090" fileName="UnresolvedReferencesChecker.java" startLine="39" startPosition="86" endLine="72" endPosition="7" />
-    <scopeInfo nodeId="1453248744423273088" fileName="UnresolvedReferencesChecker.java" startLine="38" startPosition="0" endLine="73" endPosition="5">
+    <scopeInfo nodeId="1453248744423273090" fileName="UnresolvedReferencesChecker.java" startLine="42" startPosition="86" endLine="75" endPosition="7" />
+    <scopeInfo nodeId="1453248744423273088" fileName="UnresolvedReferencesChecker.java" startLine="41" startPosition="0" endLine="76" endPosition="5">
       <varInfo nodeId="1453248744423273088" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1453248744423273077" fileName="UnresolvedReferencesChecker.java" startLine="33" startPosition="146" endLine="75" endPosition="19">
+    <scopeInfo nodeId="1453248744423273077" fileName="UnresolvedReferencesChecker.java" startLine="33" startPosition="146" endLine="78" endPosition="19">
       <varInfo nodeId="1453248744423273079" varName="results" />
       <varInfo nodeId="2253178666244634268" varName="scope" />
       <varInfo nodeId="6550340959293398122" varName="title" />
     </scopeInfo>
-    <scopeInfo nodeId="1453248744423273069" fileName="UnresolvedReferencesChecker.java" startLine="32" startPosition="0" endLine="77" endPosition="0">
+    <scopeInfo nodeId="1453248744423273069" fileName="UnresolvedReferencesChecker.java" startLine="32" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="1453248744423273071" varName="model" />
       <varInfo nodeId="1453248744423273073" varName="monitor" />
       <varInfo nodeId="1453248744423273075" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="1453248744423273062" fileName="UnresolvedReferencesChecker.java" startLine="29" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.UnresolvedReferencesChecker" />
-    <unitInfo nodeId="1453248744423273123" fileName="UnresolvedReferencesChecker.java" startLine="49" startPosition="155" endLine="53" endPosition="11" unitName="jetbrains.mps.ide.modelchecker.actions.UnresolvedReferencesChecker$1" />
-    <unitInfo nodeId="2253178666244634290" fileName="UnresolvedReferencesChecker.java" startLine="61" startPosition="164" endLine="70" endPosition="11" unitName="jetbrains.mps.ide.modelchecker.actions.UnresolvedReferencesChecker$2" />
+    <unitInfo nodeId="1453248744423273062" fileName="UnresolvedReferencesChecker.java" startLine="29" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.UnresolvedReferencesChecker" />
+    <unitInfo nodeId="1453248744423273123" fileName="UnresolvedReferencesChecker.java" startLine="52" startPosition="155" endLine="56" endPosition="11" unitName="jetbrains.mps.ide.modelchecker.actions.UnresolvedReferencesChecker$1" />
+    <unitInfo nodeId="2253178666244634290" fileName="UnresolvedReferencesChecker.java" startLine="64" startPosition="164" endLine="73" endPosition="11" unitName="jetbrains.mps.ide.modelchecker.actions.UnresolvedReferencesChecker$2" />
   </root>
   <root nodeId="1453248744423273146">
     <nodeInfo nodeId="1453248744423273158" fileName="BrokenReferencesFinder.java" startLine="14" startPosition="57" endLine="15" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
