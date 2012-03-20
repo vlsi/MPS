@@ -22,13 +22,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Map;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 1/11/12
- * Time: 11:09 AM
- * To change this template use File | Settings | File Templates.
- */
 public class MPSMakeConfiguration {
     
     private final WhatToDo myWhatToDo = new WhatToDo();
@@ -43,7 +36,11 @@ public class MPSMakeConfiguration {
             myWhatToDo.putProperty(e.getKey(), e.getValue());
         }
     }
-    
+
+    public void addProperty (String key, String value) {
+        myWhatToDo.putProperty(key, value);
+    }
+
     public void setFailOnError(boolean failOnError) {
         myWhatToDo.updateFailOnError(failOnError);
     }

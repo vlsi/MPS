@@ -16,7 +16,7 @@ public class EndWithLineSelection_fromFirstCell_Test extends BaseTransformationT
 
   @Test
   public void test_EndWithLineSelection_fromFirstCell() throws Throwable {
-    this.initTest("${mps_home}/MPS.ipr", "r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)");
+    this.initTest("${mps_home}/MPS.mpr", "r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)");
     this.runTest("jetbrains.mps.lang.editor.selection.test.EndWithLineSelection_fromFirstCell_Test$TestBody", "testMethod", false);
   }
 

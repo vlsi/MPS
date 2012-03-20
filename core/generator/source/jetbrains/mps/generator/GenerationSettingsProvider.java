@@ -17,13 +17,6 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.components.CoreComponent;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 11/10/11
- * Time: 11:36 AM
- * To change this template use File | Settings | File Templates.
- */
 public class GenerationSettingsProvider implements CoreComponent {
 
   private static GenerationSettingsProvider INSTANCE;

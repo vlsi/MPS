@@ -19,12 +19,18 @@
     <component>
       <implementation-class>jetbrains.mps.debugger.java.JavaDebugger</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.debugger.java.runtime.ui.actions.Runtime_PluginInitializer</implementation-class>
+    </component>
   </application-components>
 
   <project-components>
     <!--runtime-->
     <component>
       <implementation-class>jetbrains.mps.debugger.java.runtime.VMEventsProcessorManagerComponent</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.debugger.java.runtime.breakpoints.BreakpointsIconCache</implementation-class>
     </component>
   </project-components>
 

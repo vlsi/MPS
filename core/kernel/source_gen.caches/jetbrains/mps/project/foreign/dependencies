@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.project.foreign.FacetConfigurationFormatException" file="FacetConfigurationFormatException.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode extendsClassName="java.lang.Exception" />
+  </dependency>
+  <dependency className="jetbrains.mps.project.foreign.IdeaModuleConfiguration" file="IdeaModuleConfiguration.java">
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.project.foreign.FacetConfigurationFormatException" />
+    <classNode dependClassName="jetbrains.mps.project.foreign.MPSFacetConfiguration" />
+    <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="jetbrains.mps.xmlQuery.runtime.AttributeUtils" />
+    <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="org.jdom.JDOMException" />
+  </dependency>
+  <dependency className="jetbrains.mps.project.foreign.IdeaModuleSolutionDescriptorIO" file="IdeaModuleSolutionDescriptorIO.java">
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Long" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.project.foreign.FacetConfigurationFormatException" />
+    <classNode dependClassName="jetbrains.mps.project.foreign.IdeaModuleConfiguration" />
+    <classNode dependClassName="jetbrains.mps.project.foreign.MPSFacetConfiguration" />
+    <classNode dependClassName="jetbrains.mps.project.foreign.MacroExpander" />
+    <classNode dependClassName="jetbrains.mps.project.foreign.ModuleMacroExpander" />
+    <classNode dependClassName="jetbrains.mps.project.io.DescriptorIOException" />
+    <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRoot" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.SolutionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="org.jdom.JDOMException" />
+    <classNode extendsClassName="jetbrains.mps.project.io.DescriptorIO" />
+  </dependency>
+  <dependency className="jetbrains.mps.project.foreign.MPSFacetConfiguration" file="MPSFacetConfiguration.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.IllegalAccessException" />
+    <classNode dependClassName="java.lang.IllegalArgumentException" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
+    <classNode dependClassName="java.lang.reflect.Method" />
+    <classNode dependClassName="java.lang.reflect.Modifier" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.project.foreign.FacetConfigurationFormatException" />
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="jetbrains.mps.xmlQuery.runtime.AttributeUtils" />
+    <classNode dependClassName="org.jdom.Element" />
+  </dependency>
+  <dependency className="jetbrains.mps.project.foreign.MacroExpander" file="MacroExpander.java">
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.project.foreign.ModuleMacroExpander" file="ModuleMacroExpander.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.regex.Matcher" />
+    <classNode dependClassName="jetbrains.mps.project.foreign.ProjectMacroExpander" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode extendsClassName="jetbrains.mps.project.foreign.MacroExpander" />
+  </dependency>
+  <dependency className="jetbrains.mps.project.foreign.ProjectMacroExpander" file="ProjectMacroExpander.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.project.foreign.MacroExpander" />
+  </dependency>
+</dependenciesRoot>
+

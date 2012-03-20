@@ -19,6 +19,7 @@ import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.ProjectViewPane;
 import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.fileEditor.FileEditor;
@@ -33,10 +34,14 @@ import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.components.JBScrollPane;
+import com.intellij.util.ui.update.MergingUpdateQueue;
+import com.intellij.util.ui.update.Update;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
+import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
+import jetbrains.mps.ide.platform.watching.FSChangesWatcher.IReloadListener;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectPaneTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper;
@@ -82,6 +87,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   };
 
   private MyScrollPane myScrollPane;
+  private MergingUpdateQueue myUpdateQueue = new MergingUpdateQueue("Project Pane Updates Queue", 500, true, myScrollPane,null,null,true);
 
   public static final String ID = ProjectViewPane.ID;
 
@@ -109,6 +115,18 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   public ProjectPane(Project project, ProjectView projectView) {
     super(project);
     myProjectView = projectView;
+    myUpdateQueue.setRestartTimerOnAdd(true);
+    ApplicationManager.getApplication().getComponent(FSChangesWatcher.class).addReloadListener(new IReloadListener() {
+      @Override
+      public void reloadStarted() {
+
+      }
+
+      @Override
+      public void reloadFinished() {
+        rebuild();
+      }
+    });
   }
 
   @Override
@@ -176,7 +194,11 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public ActionCallback updateFromRoot(boolean restoreExpandedPaths) {
-    getTree().rebuildLater();
+    myUpdateQueue.queue(new Update(null) {
+      public void run() {
+        getTree().rebuildNow();
+      }
+    });
     return new ActionCallback(); // todo
   }
 
@@ -212,8 +234,12 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public void rebuildTree() {
-    getTree().rebuildNow();
-    getTree().expandProjectNode();
+    myUpdateQueue.queue(new Update(null) {
+      public void run() {
+        getTree().rebuildNow();
+        getTree().expandProjectNode();
+      }
+    });
   }
 
   public void activate() {

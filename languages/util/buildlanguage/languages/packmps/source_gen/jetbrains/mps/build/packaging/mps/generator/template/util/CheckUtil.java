@@ -24,6 +24,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class CheckUtil {
@@ -86,7 +87,7 @@ public class CheckUtil {
 
       // if we are here, this means this solution is a part of MPS core 
       for (Language language : SetSequence.fromSet(solution.getDependenciesManager().getAllUsedLanguages())) {
-        for (ModuleReference mr : SetSequence.fromSet(language.getRuntimeModulesReferences())) {
+        for (ModuleReference mr : CollectionSequence.fromCollection(language.getRuntimeModulesReferences())) {
           IModule module = MPSModuleRepository.getInstance().getModule(mr);
           if (module.getDescriptorFile() == null) {
             // for filtering out modules like MPS.Classpath 

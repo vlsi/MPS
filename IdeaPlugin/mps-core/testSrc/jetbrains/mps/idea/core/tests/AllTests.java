@@ -22,7 +22,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({ProjectViewTests.class, FacetTests.class, EditorTests.class, MakeTests.class})
+@Suite.SuiteClasses({ProjectViewTests.class, FacetTests.class, EditorTests.class, MainMakeTests.class, SimpleMakeTest.class, ComplicatedMakeTests.class, BrokenMakeTest.class})
 public class AllTests {
     @BeforeClass
     public static void setTestMode() {

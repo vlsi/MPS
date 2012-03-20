@@ -36,13 +36,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 1/10/12
- * Time: 2:58 PM
- * To change this template use File | Settings | File Templates.
- */
 public class MPSMakeLauncher {
 
     private static final Logger LOG = Logger.getInstance(MPSMakeLauncher.class);
@@ -78,7 +71,7 @@ public class MPSMakeLauncher {
 
         GeneralCommandLine gcl = new GeneralCommandLine(myCommandLine);
         gcl.setWorkDirectory(myProject.getBaseDir().getPath());
-        final TextEventProcessor tep = new TextEventProcessor(myProject, "Make") {
+        final TextEventProcessor tep = new TextEventProcessor(myProject, "MPS") {
             @Override
             public void reportWrittenFile(String file) {
                 LOG.debug("written file: " + file);
@@ -86,9 +79,21 @@ public class MPSMakeLauncher {
             }
 
             @Override
+            public void reportDeletedFile(String file) {
+              LOG.debug("deleted file: " + file);
+              callback.fileDeleted(file);
+            }
+
+            @Override
             public void error(String text) {
                 LOG.debug("error: " + text);
                 callback.error(text);
+            }
+
+            @Override
+            public void info(String text) {
+                LOG.info("info: " + text);
+                callback.info(text);
             }
         };
         try {
@@ -107,12 +112,12 @@ public class MPSMakeLauncher {
 
             processHandler.waitFor();
             if (processHandler.getProcess().exitValue() != 0) {
-                MessagesViewTool.log(myProject, MessageKind.ERROR, "External process returned non-zero");
+                callback.error("External process returned non-zero");
             }
 
         } catch (ExecutionException e) {
             LOG.debug(e);
-            MessagesViewTool.log(myProject, MessageKind.ERROR, "Error running process: " + e.getMessage());
+            callback.error("Error running process: " + e.getMessage());
         }
     }
 
@@ -132,7 +137,7 @@ public class MPSMakeLauncher {
 
         if ("true".equalsIgnoreCase(System.getProperty("mps.make.debug"))) {
             commandLine.add("-Xdebug");
-            commandLine.add("-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005");
+            commandLine.add("-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5006");
         }
 
         commandLine.add(AntBootstrap.class.getCanonicalName());
@@ -233,6 +238,7 @@ public class MPSMakeLauncher {
 
     public abstract static class TextEventProcessor {
         public static final String WRITTEN = "##WRITTEN##";
+        public static final String DELETED = "##DELETED##";
         private Project myProject;
         private String myPrefix;
 
@@ -247,8 +253,10 @@ public class MPSMakeLauncher {
                 String line = s.nextLine();
                 if (line.indexOf(WRITTEN) == 0) {
                     reportWrittenFile(line.substring(WRITTEN.length()));
+                }else if (line.indexOf(DELETED) == 0) {
+                  reportDeletedFile(line.substring(DELETED.length()));
                 } else {
-                    logOutput(line);
+                    info(myPrefix + " - " + line);
                 }
             }
         }
@@ -256,22 +264,16 @@ public class MPSMakeLauncher {
         public void processStderr(String text) {
             Scanner s = new Scanner(text);
             while (s.hasNextLine()) {
-                logError(s.nextLine());
+                error(myPrefix + " - " + s.nextLine());
             }
         }
 
         public abstract void reportWrittenFile(String file);
 
+        public abstract void reportDeletedFile(String file);
+
         public abstract void error(String text);
 
-        protected void logOutput(String line) {
-            MessagesViewTool.log(myProject, MessageKind.INFORMATION, myPrefix + " - " + line);
-        }
-
-        protected void logError(String line) {
-            error(line);
-            MessagesViewTool.log(myProject, MessageKind.ERROR, myPrefix + " - " + line);
-        }
-
+        public abstract void info(String text);
     }
 }

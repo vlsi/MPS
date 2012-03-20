@@ -37,6 +37,10 @@ public class MPSBundle {
         return CommonBundle.message(getBundle(), key, params);
     }
 
+    public static String getString(@PropertyKey(resourceBundle = BUNDLE) String key, Object... params) {
+        return CommonBundle.message(getBundle(), key, params);
+    }
+
     private static ResourceBundle getBundle() {
         ResourceBundle bundle = null;
 

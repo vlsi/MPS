@@ -4,6 +4,7 @@ package jetbrains.mps.ide.make.actions;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.ide.actions.ToolsInternal_ActionGroup;
 import jetbrains.mps.ide.actions.ProjectActions_ActionGroup;
 import jetbrains.mps.ide.actions.CommonModuleActions_ActionGroup;
 import jetbrains.mps.ide.actions.Build_ActionGroup;
@@ -26,6 +27,11 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
+    addAction(new BuildAllBehaviors_Action());
+    addAction(new BuildAllConstraints_Action());
+    addAction(new BuildAllGenerators_Action());
+    addAction(new BuildAllLanguageDescriptors_Action());
+    addAction(new BuildAllStructures_Action());
     addAction(new CheckModelsBeforeGeneration_Action());
     addAction(new CleanModule_Action());
     addAction(new CleanProject_Action());
@@ -37,6 +43,7 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new Options_Action());
     addAction(new RebuildModule_Action());
     addAction(new RebuildProject_Action());
+    addAction(new RebuildRequiredModels_Action());
     addAction(new RebuildSelectedModels_Action());
     addAction(new RebuildSelectedModules_Action());
     addAction(new RecompileProject_Action());
@@ -46,6 +53,7 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new GenerateOptions_ActionGroup());
     addGroup(new GlobalMake_ActionGroup());
     addGroup(new JavaModuleActions_ActionGroup());
+    addGroup(new MakeAddition_ActionGroup());
     addGroup(new Make_ActionGroup());
     addGroup(new NamespaceMake_ActionGroup());
     addGroup(new ProjectCompileActions_ActionGroup());
@@ -56,6 +64,7 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
+    insertGroupIntoAnother(MakeAddition_ActionGroup.ID, ToolsInternal_ActionGroup.ID, null);
     insertGroupIntoAnother(ProjectCompileActions_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_compileJava);
     insertGroupIntoAnother(JavaModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_compileJava);
     insertGroupIntoAnother(GenerateOptions_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_options);

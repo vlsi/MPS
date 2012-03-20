@@ -27,13 +27,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Alexander Shatalin
- * Date: 1/13/11
- * Time: 6:21 PM
- * To change this template use File | Settings | File Templates.
- */
 public class SelectionManager {
   private static final Logger LOG = Logger.getLogger(SelectionManager.class);
 

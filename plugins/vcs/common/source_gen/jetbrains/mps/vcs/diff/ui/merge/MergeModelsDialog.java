@@ -43,6 +43,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.openapi.ui.Messages;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.vcs.diff.changes.MetadataChange;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -101,13 +102,13 @@ public class MergeModelsDialog extends DialogWrapper {
     myPanel.add(ScrollPaneFactory.createScrollPane(myMergeTree), BorderLayout.CENTER);
     final Dimension size = DimensionService.getInstance().getSize(getDimensionServiceKey());
     if (size == null) {
-      DimensionService.getInstance().setSize(getDimensionServiceKey(), new Dimension(500, 450));
+      myPanel.setPreferredSize(new Dimension(500, 450));
     }
     init();
   }
 
   public String getDimensionServiceKey() {
-    return "#jetbrains.mps.vcs.diff.ui.merge.MergeModelsdialog";
+    return getClass().getName();
   }
 
   protected void doOKAction() {
@@ -228,15 +229,15 @@ public class MergeModelsDialog extends DialogWrapper {
     }
 
     if (conflictsOnly) {
-      Messages.showInfoMessage(this.getWindow(), "You have unresolved model property conflicts. Please resolve them manually using \"Accept Theirs\" or \"Accept Yours\":" + sb.toString(), "Model Properites Changes");
+      Messages.showInfoMessage(this.getOwner(), "You have unresolved model property conflicts. Please resolve them manually using \"Accept Theirs\" or \"Accept Yours\":" + sb.toString(), "Model Properites Changes");
     } else if (allResolved) {
       if (sb.length() == 0) {
-        Messages.showInfoMessage(this.getWindow(), "You have excluded all model property changes.", "Model Properites Changes");
+        Messages.showInfoMessage(this.getOwner(), "You have excluded all model property changes.", "Model Properites Changes");
       } else {
-        Messages.showInfoMessage(this.getWindow(), "You have applied the following changes:" + sb.toString(), "Model Properites Changes");
+        Messages.showInfoMessage(this.getOwner(), "You have applied the following changes:" + sb.toString(), "Model Properites Changes");
       }
     } else {
-      int ans = Messages.showYesNoCancelDialog(this.getWindow(), "There are pending model properties changes:" + sb.toString() + "\n\nDo you want to apply them all?", "Merge Model Properties", Messages.getQuestionIcon());
+      int ans = Messages.showYesNoCancelDialog(this.getOwner(), "There are pending model properties changes:" + sb.toString() + "\n\nDo you want to apply them all?", "Merge Model Properties", Messages.getQuestionIcon());
       if (ans == Messages.YES) {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
@@ -267,8 +268,12 @@ public class MergeModelsDialog extends DialogWrapper {
         mergeRootsDialog.value = new MergeRootsDialog(MergeModelsDialog.this, myMergeSession, rootId, myMergeTree.getNameForRoot(rootId));
       }
     });
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        mergeRootsDialog.value.toFront();
+      }
+    });
     mergeRootsDialog.value.show();
-    mergeRootsDialog.value.toFront();
   }
 
   public boolean isAcceptYoursTheirsEnabled() {

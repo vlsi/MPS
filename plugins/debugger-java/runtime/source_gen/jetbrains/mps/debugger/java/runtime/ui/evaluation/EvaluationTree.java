@@ -9,6 +9,8 @@ import java.util.Map;
 import jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import org.jetbrains.annotations.Nullable;
+import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
 import org.jetbrains.annotations.NotNull;
@@ -16,30 +18,31 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NonNls;
 import javax.swing.tree.TreePath;
-import com.intellij.openapi.actionSystem.ActionGroup;
+import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.debugger.api.ui.tree.VariablesTree;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.io.StringWriter;
 import java.io.PrintWriter;
 import jetbrains.mps.debug.runtime.java.programState.watchables.CalculatedWatchable;
 import jetbrains.mps.debugger.api.ui.tree.WatchableNode;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.Separator;
+import jetbrains.mps.workbench.action.BaseGroup;
+import com.intellij.openapi.actionSystem.ActionManager;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.awt.Color;
 import jetbrains.mps.ide.messages.Icons;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
-import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 
 /*package*/ class EvaluationTree extends MPSTree implements DataProvider {
   private String myClassFqName;
   private ThreadReference myThreadReference;
   private Map<AbstractEvaluationModel, EvaluationTree.EvaluationState> myStates = MapSequence.fromMap(new HashMap<AbstractEvaluationModel, EvaluationTree.EvaluationState>());
+  @Nullable
+  private ActionGroup myActionGroup = null;
 
   public EvaluationTree() {
     super();
@@ -112,22 +115,40 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
   }
 
   @Nullable
-  public Object getData(@NonNls String dataId) {
-    if (dataId.equals(EvaluationUi.EVALUATION_MODEL.getName())) {
-      TreePath path = getSelectionPath();
-      if (path != null) {
-        Object component = path.getLastPathComponent();
-        if (component instanceof EvaluationTree.EvaluationModelNode) {
-          return ((EvaluationTree.EvaluationModelNode) component).getModel();
-        }
+  private MPSTreeNode findSelectedNode() {
+    TreePath path = getSelectionPath();
+    if (path != null) {
+      Object component = path.getLastPathComponent();
+      if (component instanceof MPSTreeNode) {
+        return (MPSTreeNode) component;
       }
     }
     return null;
   }
 
   @Nullable
-  protected ActionGroup getTreeActionGroup() {
+  public Object getData(@NonNls String dataId) {
+    if (dataId.equals(EvaluationUi.EVALUATION_MODEL.getName())) {
+      MPSTreeNode node = findSelectedNode();
+      if (node != null && node instanceof EvaluationTree.EvaluationModelNode) {
+        return ((EvaluationTree.EvaluationModelNode) node).getModel();
+      }
+    } else if (dataId.equals(VariablesTree.MPS_DEBUGGER_VALUE.getName())) {
+      MPSTreeNode node = findSelectedNode();
+      if (node != null && node instanceof EvaluationTree.ResultState.MyWatchableNode) {
+        return ((EvaluationTree.ResultState.MyWatchableNode) node).getValue();
+      }
+    } else if (dataId.equals(MPSCommonDataKeys.EXCEPTION.getName())) {
+      MPSTreeNode node = findSelectedNode();
+      if (node != null && node instanceof EvaluationTree.ErrorTreeNode) {
+        return ((EvaluationTree.ErrorTreeNode) node).getThrowable();
+      }
+    }
     return null;
+  }
+
+  public void setActionGroup(ActionGroup group) {
+    myActionGroup = group;
   }
 
   public static String[] getStackTrace(Throwable t) {
@@ -211,24 +232,19 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
         myModel = model;
       }
 
-      @Override
-      public ActionGroup getActionGroup() {
-        ActionGroup group = super.getActionGroup();
-        ActionGroup treeActionGroup = getTreeActionGroup();
-        if (group == null) {
-          if (treeActionGroup != null) {
-            return treeActionGroup;
-          }
-          return null;
-        }
-        if (treeActionGroup != null) {
-          return new DefaultActionGroup(group, treeActionGroup);
-        }
-        return group;
-      }
-
       public AbstractEvaluationModel getModel() {
         return myModel;
+      }
+
+      @Override
+      public ActionGroup getActionGroup() {
+        DefaultActionGroup group = new DefaultActionGroup();
+        if (myActionGroup != null) {
+          group.add(myActionGroup);
+          group.add(new Separator());
+        }
+        group.add(((BaseGroup) ActionManager.getInstance().getAction("jetbrains.mps.debugger.api.ui.actions.AbstractWatchableNodeActions_ActionGroup")));
+        return group;
       }
     }
   }
@@ -258,6 +274,7 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
   private class ErrorTreeNode extends TextTreeNode implements EvaluationTree.EvaluationModelNode {
     private final List<String> myExtendedMessage = ListSequence.fromList(new ArrayList<String>());
     private final AbstractEvaluationModel myModel;
+    private Throwable myThrowable;
 
     public ErrorTreeNode(AbstractEvaluationModel model, @NotNull String text, String... extendedMessage) {
       super(model.getPresentation() + " = " + text);
@@ -276,6 +293,7 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
         t.toString() :
         t.getMessage()
       ), getStackTrace(t));
+      myThrowable = t;
     }
 
     @Override
@@ -305,28 +323,23 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
       }
     }
 
-    @Override
-    public ActionGroup getActionGroup() {
-      DefaultActionGroup defaultActionGroup = new DefaultActionGroup();
-      defaultActionGroup.add(new AnAction("Copy Stacktrace To Clipboard") {
-        public void actionPerformed(AnActionEvent event) {
-          CopyPasteUtil.copyTextToClipboard(getText() + ListSequence.fromList(myExtendedMessage).foldLeft("", new ILeftCombinator<String, String>() {
-            public String combine(String s, String it) {
-              return s + "\n" + it;
-            }
-          }));
-        }
-      });
-      ActionGroup treeActionGroup = getTreeActionGroup();
-      if (treeActionGroup != null) {
-        defaultActionGroup.addSeparator();
-        defaultActionGroup.add(treeActionGroup);
-      }
-      return defaultActionGroup;
-    }
-
     public AbstractEvaluationModel getModel() {
       return myModel;
+    }
+
+    public Throwable getThrowable() {
+      return myThrowable;
+    }
+
+    @Override
+    public ActionGroup getActionGroup() {
+      DefaultActionGroup group = new DefaultActionGroup();
+      if (myActionGroup != null) {
+        group.add(myActionGroup);
+        group.add(new Separator());
+      }
+      group.add(((BaseGroup) ActionManager.getInstance().getAction("jetbrains.mps.debugger.api.ui.actions.AbstractWatchableNodeActions_ActionGroup")));
+      return group;
     }
   }
 

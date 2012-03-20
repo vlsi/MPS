@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.actions.runtime.impl.ChildSubstituteActionsUtil;
 import jetbrains.mps.actions.runtime.impl.NodeIconUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.scope.Scope;
@@ -133,8 +134,13 @@ public class ChildSubstituteActionsHelper {
       resultActions = ChildSubstituteActionsUtil.applyActionFilter(builder, resultActions, parentNode, currentChild, childConcept, context);
     }
 
-    if (childSetter instanceof DefaultChildNodeSetter) {
-      DefaultChildNodeSetter setter = (DefaultChildNodeSetter) childSetter;
+    if (childSetter instanceof DefaultChildNodeSetter || childSetter instanceof AbstractCellMenuPart_ReplaceNode_CustomNodeConcept && currentChild != null) {
+      SNode linkDeclaration;
+      if(childSetter instanceof DefaultChildNodeSetter) {
+        linkDeclaration = ((DefaultChildNodeSetter) childSetter).myLinkDeclaration;
+      } else {
+        linkDeclaration = currentChild.getRoleLink();
+      }
 
       Iterator<INodeSubstituteAction> it = resultActions.iterator();
       while (it.hasNext()) {
@@ -145,7 +151,7 @@ public class ChildSubstituteActionsHelper {
           continue;
         }
 
-        if (!ModelConstraintsManager.canBeParent(parentNode, conceptNode, setter.myLinkDeclaration, context) ||
+        if (!ModelConstraintsManager.canBeParent(parentNode, conceptNode, linkDeclaration, context) ||
           !ModelConstraintsManager.canBeAncestor(parentNode, conceptNode, context)) {
           it.remove();
         }

@@ -87,6 +87,13 @@
         <path path="${base_dir}/languages/baseLanguage/tuples/runtime/source_gen"/>
       </src>
     </javac>
+    <mkdir dir="${build_dir}/mpstuples_jar/modules/jetbrains.mps.baseLanguage.tuples.runtime"/>
+    <copy todir="${build_dir}/mpstuples_jar/modules/jetbrains.mps.baseLanguage.tuples.runtime" flatten="false">
+      <fileset dir="${base_dir}/languages/baseLanguage/tuples/runtime">
+        <include name="*.msd"/>
+        <include name="jetbrains/**/*.mps"/>
+      </fileset>
+    </copy>
     <jar destfile="${dist.dir}/mps-core/lib/mps-tuples.jar">
       <fileset dir="${build_dir}/mpstuples_jar"/>
       <manifest>
@@ -108,6 +115,13 @@
         <path path="${base_dir}/languages/baseLanguage/closures/runtime/source_gen"/>
       </src>
     </javac>
+    <mkdir dir="${build_dir}/mpsclosures_jar/modules/closures.runtime"/>
+    <copy todir="${build_dir}/mpsclosures_jar/modules/closures.runtime" flatten="false">
+      <fileset dir="${base_dir}/languages/baseLanguage/closures/runtime">
+        <include name="*.msd"/>
+        <include name="jetbrains/**/*.mps"/>
+      </fileset>
+    </copy>
     <jar destfile="${dist.dir}/mps-core/lib/mps-closures.jar">
       <fileset dir="${build_dir}/mpsclosures_jar"/>
       <manifest>
@@ -132,6 +146,13 @@
         <pathelement location="${dist.dir}/mps-core/lib/mps-closures.jar"/>
       </classpath>
     </javac>
+    <mkdir dir="${build_dir}/mpscollections_jar/modules/collections.runtime"/>
+    <copy todir="${build_dir}/mpscollections_jar/modules/collections.runtime" flatten="false">
+      <fileset dir="${base_dir}/languages/baseLanguage/collections/runtime">
+        <include name="*.msd"/>
+        <include name="jetbrains/**/*.mps"/>
+      </fileset>
+    </copy>
     <jar destfile="${dist.dir}/mps-core/lib/mps-collections.jar">
       <fileset dir="${build_dir}/mpscollections_jar"/>
       <manifest>
@@ -404,9 +425,56 @@
       </manifest>
     </jar>
 
-    <!-- VCS plugin -->
-    <mkdir dir="${build_dir}/mpsvcs_jar"/>
-    <javac2 destdir="${build_dir}/mpsvcs_jar" fork="true"
+    <!-- VCS core plugin -->
+    <mkdir dir="${dist.dir}/mps-vcs/lib"/>
+
+    <mkdir dir="${build_dir}/mpsvcscore_jar"/>
+    <path id="mps.vcscore.libraries">
+      <fileset dir="${ideaPath}/lib">
+        <include name="jdom.jar"/>
+        <include name="log4j.jar"/>
+        <include name="trove4j.jar"/>
+        <include name="annotations.jar"/>
+        <include name="commons-lang-2.4.jar"/>
+        <include name="commons-logging-1.1.1.jar"/>
+      </fileset>
+      <fileset dir="${base_dir}/lib">
+        <include name="asm.jar"/>
+        <include name="diffutils-1.2.1.jar"/>
+      </fileset>
+      <fileset dir="${dist.dir}/mps-core/lib">
+        <include name="mps-closures.jar"/>
+        <include name="mps-collections.jar"/>
+        <include name="mps-tuples.jar"/>
+        <include name="mps-core.jar"/>
+      </fileset>
+      <fileset dir="${ideaPath}/plugins/svn4ideaOld/lib">
+        <include name="sequence-library.jar"/>
+        <include name="svnkit.jar"/>
+      </fileset>
+    </path>
+    <javac classpathref="mps.vcscore.libraries" destdir="${build_dir}/mpsvcscore_jar" fork="true"
+           memorymaximumsize="1024m"
+           includeantruntime="false"
+           debug="${javac.debug}" debuglevel="lines,vars,source">
+    <compilerarg value="-Xlint:none"/>
+    <src>
+      <path path="${base_dir}/plugins/vcs-core/core/source_gen"/>
+    </src>
+    </javac>
+    <jar destfile="${dist.dir}/mps-vcs/lib/mps-vcs-core.jar">
+      <fileset dir="${build_dir}/mpsvcscore_jar"/>
+      <manifest>
+        <attribute name="Built-By" value="${user.name}"/>
+        <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
+        <attribute name="Implementation-Title" value="MPS Version Control support"/>
+        <attribute name="Implementation-Version" value="1.0"/>
+      </manifest>
+    </jar>
+
+    <!-- VCS platform plugin -->
+    <mkdir dir="${build_dir}/mpsvcsplatform_jar"/>
+    <javac2 destdir="${build_dir}/mpsvcsplatform_jar" fork="true"
             memorymaximumsize="1024m"
             includeantruntime="false"
             debug="${javac.debug}" debuglevel="lines,vars,source">
@@ -417,17 +485,18 @@
       </src>
       <classpath>
         <fileset dir="${dist.dir}/mps-core/lib" includes="*.jar"/>
+        <fileset dir="${dist.dir}/mps-vcs/lib" includes="*.jar"/>
         <fileset dir="${ideaPath}/lib" includes="*.jar"/>
         <fileset dir="${ideaPath}/plugins/git4idea/lib" includes="*.jar"/>
         <fileset dir="${ideaPath}/plugins/svn4ideaOld/lib" includes="*.jar"/>
       </classpath>
     </javac2>
-    <copy includeemptydirs="false" todir="${build_dir}/mpsvcs_jar">
+    <copy includeemptydirs="false" todir="${build_dir}/mpsvcsplatform_jar">
       <fileset dir="${base_dir}/plugins/vcs/common/source_gen" includes="**/*.png, **/*.properties, **/*.xml"/>
       <fileset dir="${base_dir}/plugins/vcs/common/source" includes="**/*.png, **/*.properties, **/*.xml"/>
     </copy>
     <copy file="${base_dir}/IdeaPlugin/mps-vcs/META-INF/plugin.xml"
-          tofile="${build_dir}/mpsvcs_jar/META-INF/plugin.xml">
+          tofile="${build_dir}/mpsvcsplatform_jar/META-INF/plugin.xml">
       <filterchain>
         <tokenfilter>
           <replaceregex pattern="../classes/META-INF/" replace="" flags="gi"/>
@@ -435,12 +504,54 @@
         </tokenfilter>
       </filterchain>
     </copy>
-    <jar destfile="${dist.dir}/mps-vcs.jar">
-      <fileset dir="${build_dir}/mpsvcs_jar"/>
+    <jar destfile="${dist.dir}/mps-vcs/lib/mps-vcs-platform.jar">
+      <fileset dir="${build_dir}/mpsvcsplatform_jar"/>
       <manifest>
         <attribute name="Built-By" value="${user.name}"/>
         <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
         <attribute name="Implementation-Title" value="MPS Version Control support"/>
+        <attribute name="Implementation-Version" value="1.0"/>
+      </manifest>
+    </jar>
+
+    <!-- mps java plugin -->
+    <mkdir dir="${build_dir}/mpsjava_jar"/>
+    <javac2 destdir="${build_dir}/mpsjava_jar" fork="true"
+            memorymaximumsize="1024m"
+            includeantruntime="false"
+            debug="${javac.debug}" debuglevel="lines,vars,source">
+      <compilerarg value="-Xlint:none"/>
+      <src>
+        <path path="${base_dir}/workbench/mps-debugger/source_gen"/>
+        <path path="${base_dir}/IdeaPlugin/mps-java/debugger/src"/>
+        <path path="${base_dir}/plugins/mpsjava/platform/source_gen"/>
+      </src>
+      <classpath>
+        <fileset dir="${dist.dir}/mps-core/lib" includes="*.jar"/>
+        <fileset dir="${ideaPath}/lib" includes="*.jar"/>
+        <fileset file="${base_dir}/lib/tools.jar"/>
+      </classpath>
+    </javac2>
+    <copy includeemptydirs="false" todir="${build_dir}/mpsjava_jar">
+      <fileset dir="${base_dir}/workbench/mps-debugger/source_gen" includes="**/*.png, **/*.properties, **/*.xml"/>
+      <fileset dir="${base_dir}/IdeaPlugin/mps-java/debugger/src" includes="**/*.png, **/*.properties, **/*.xml"/>
+      <fileset dir="${base_dir}/plugins/mpsjava/platform/source_gen" includes="**/*.png, **/*.properties, **/*.xml"/>
+    </copy>
+    <copy file="${base_dir}/IdeaPlugin/mps-java/META-INF/plugin.xml"
+          tofile="${build_dir}/mpsjava_jar/META-INF/plugin.xml">
+      <filterchain>
+        <tokenfilter>
+          <replaceregex pattern="../classes/META-INF/" replace="" flags="gi"/>
+          <replaceregex pattern="../classes/jetbrains/" replace="../jetbrains/" flags="gi"/>
+        </tokenfilter>
+      </filterchain>
+    </copy>
+    <jar destfile="${dist.dir}/mps-java.jar">
+      <fileset dir="${build_dir}/mpsjava_jar"/>
+      <manifest>
+        <attribute name="Built-By" value="${user.name}"/>
+        <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
+        <attribute name="Implementation-Title" value="MPS BaseLanguage support"/>
         <attribute name="Implementation-Version" value="1.0"/>
       </manifest>
     </jar>
@@ -551,8 +662,21 @@
         <include name="models/test.mps"/>
       </fileset>
       <fileset dir="${base_dir}/IdeaPlugin/tests/blProject">
-        <include name="blProject.msd"/>
+        <include name="blProject.iml"/>
         <include name="models/main.mps"/>
+      </fileset>
+      <fileset dir="${base_dir}/IdeaPlugin/tests/simple">
+        <include name="simple.iml"/>
+        <include name="models/simple.mps"/>
+      </fileset>
+      <fileset dir="${base_dir}/IdeaPlugin/tests/makeTests">
+        <include name="makeTests.iml"/>
+        <include name="models/**/*"/>
+        <include name="src/**/*"/>
+      </fileset>
+      <fileset dir="${base_dir}/IdeaPlugin/tests/makeTestBroken">
+        <include name="makeTestBroken.iml"/>
+        <include name="models/**/*"/>
       </fileset>
     </copy>
     <jar destfile="${dist.dir}/mps-core/lib/mps-plugin-tests.jar">
@@ -618,6 +742,7 @@
         <exclude name="lib/*-tests.jar"/>
       </zipfileset>
       <zipfileset file="${dist.dir}/mps-vcs.jar"/>
+      <zipfileset file="${dist.dir}/mps-java.jar"/>
     </zip>
   </target>
 
@@ -626,8 +751,9 @@
     <copy todir="${pluginPath}/mps-core">
       <fileset dir="${dist.dir}/mps-core"/>
     </copy>
-    <copy tofile="${pluginPath}/mps-vcs.jar"
-          file="${dist.dir}/mps-vcs.jar"/>
+    <copy todir="${pluginPath}/mps-vcs">
+      <fileset dir="${dist.dir}/mps-vcs"/>
+    </copy>
   </target>
 
   <target name="uninstall-plugin">

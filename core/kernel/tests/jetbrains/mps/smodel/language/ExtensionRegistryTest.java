@@ -25,17 +25,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import static org.junit.Assert.*;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 20.01.2012
- * Time: 21:30
- * To change this template use File | Settings | File Templates.
- */
+import static org.junit.Assert.*;
+
 @RunWith(JMock.class)
 public class ExtensionRegistryTest {
 
@@ -49,13 +43,13 @@ public class ExtensionRegistryTest {
   public void createContext() {
     context = new Mockery();
     if (ExtensionRegistry.getInstance() == null) {
-      myExtensionRegistry = new ExtensionRegistry();
+      myExtensionRegistry = new ExtensionRegistry(null, null);
       myExtensionRegistry.init();
     }
   }
-  
+
   @After
-  public void checkAndCleanup () {
+  public void checkAndCleanup() {
     context.assertIsSatisfied();
     if (myExtensionRegistry != null) {
       assert myExtensionRegistry == ExtensionRegistry.getInstance();
@@ -66,7 +60,7 @@ public class ExtensionRegistryTest {
   }
 
   @Test
-  public void singleExtension () {
+  public void singleExtension() {
     ExtensionPoint ep1 = mockExtensionPoint("ep1", EP1);
     ExtensionDescriptor ed = mockExtensionDescriptor("ed1",
       new ExtensionPoint[]{ep1},
@@ -77,9 +71,9 @@ public class ExtensionRegistryTest {
     ExtensionRegistry.getInstance().unregisterExtensionDescriptor(ed);
     assertNull(ExtensionRegistry.getInstance().getExtensionPoint(EP1, Object.class));
   }
-  
+
   @Test
-  public void regularExtensions () {
+  public void regularExtensions() {
     ExtensionPoint ep1 = mockExtensionPoint("ep1", EP1);
     ExtensionDescriptor ed1 = mockExtensionDescriptor("ed1",
       new ExtensionPoint[]{ep1},
@@ -96,7 +90,7 @@ public class ExtensionRegistryTest {
   }
 
   @Test
-  public void reversedExtensions () {
+  public void reversedExtensions() {
     ExtensionPoint ep1 = mockExtensionPoint("ep1", EP1);
     ExtensionDescriptor ed1 = mockExtensionDescriptor("ed1",
       new ExtensionPoint[]{ep1},
@@ -113,7 +107,7 @@ public class ExtensionRegistryTest {
   }
 
   @Test
-  public void stripedExtensions () {
+  public void stripedExtensions() {
     ExtensionPoint ep1 = mockExtensionPoint("ep1", EP1);
     ExtensionDescriptor ed1 = mockExtensionDescriptor("ed1",
       new ExtensionPoint[]{ep1},
@@ -130,7 +124,7 @@ public class ExtensionRegistryTest {
   }
 
   @Test
-  public void reversedStripedExtensions () {
+  public void reversedStripedExtensions() {
     ExtensionPoint ep1 = mockExtensionPoint("ep1", EP1);
     ExtensionDescriptor ed1 = mockExtensionDescriptor("ed1",
       new ExtensionPoint[]{ep1},
@@ -147,7 +141,7 @@ public class ExtensionRegistryTest {
   }
 
   @Test
-  public void allExtensions () {
+  public void allExtensions() {
     ExtensionPoint ep1 = mockExtensionPoint("ep1", EP1);
     ExtensionDescriptor ed1 = mockExtensionDescriptor("ed1",
       new ExtensionPoint[]{ep1},
@@ -166,8 +160,8 @@ public class ExtensionRegistryTest {
     ExtensionRegistry.getInstance().registerExtensionDescriptor(ed1);
 
     Iterable<Extension<?>> extensions = ep1.getExtensions();
-    List<Extension>  extensionList = new ArrayList();
-    for (Iterator<Extension> it = ExtensionRegistry.getInstance().getExtensions(ep1).iterator(); it.hasNext();) {
+    List<Extension> extensionList = new ArrayList();
+    for (Iterator<Extension> it = ExtensionRegistry.getInstance().getExtensions(ep1).iterator(); it.hasNext(); ) {
       extensionList.add(it.next());
     }
     assertSame(2, extensionList.size());
@@ -184,21 +178,21 @@ public class ExtensionRegistryTest {
     ExtensionRegistry.getInstance().unregisterExtensionDescriptor(ed1);
   }
 
-  private ExtensionDescriptor mockExtensionDescriptor (String name, final ExtensionPoint[] extensionPoints, final Extension[] extensions) {
+  private ExtensionDescriptor mockExtensionDescriptor(String name, final ExtensionPoint[] extensionPoints, final Extension[] extensions) {
     final ExtensionDescriptor ed = context.mock(ExtensionDescriptor.class, name);
     context.checking(new Expectations() {
       {
         atLeast(1).of(ed).getExtensionPoints();
         will(returnValue(Arrays.asList(extensionPoints)));
-        
+
         atLeast(1).of(ed).getExtensions();
         will(returnValue(Arrays.asList(extensions)));
       }
-    });    
+    });
     return ed;
   }
 
-  private Extension mockExtension (String name, final String id) {
+  private Extension mockExtension(String name, final String id) {
     final Extension e = context.mock(Extension.class, name);
     context.checking(new Expectations() {
       {
@@ -212,10 +206,10 @@ public class ExtensionRegistryTest {
     });
     return e;
   }
-  
-  private ExtensionPoint mockExtensionPoint (String name, final String id) {
+
+  private ExtensionPoint mockExtensionPoint(String name, final String id) {
     final ExtensionPoint ep = new ExtensionPoint(id);
     return ep;
   }
-   
+
 }

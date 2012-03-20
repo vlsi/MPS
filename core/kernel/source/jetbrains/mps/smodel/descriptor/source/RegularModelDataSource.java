@@ -21,9 +21,10 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.StructureModificationLog;
-import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
@@ -50,11 +51,11 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
 
   private IFile myFile;
 
-  public RegularModelDataSource(@NotNull IFile file) {
+  public RegularModelDataSource(ModuleReference origin, @NotNull IFile file) {
+    super(origin);
     myFile = file;
   }
 
-  @Deprecated  //todo remove
   public IFile getFile() {
     return myFile;
   }
@@ -224,7 +225,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
 
   public static RegularModelDataSource createSourceForModelUID(ModelRoot root, SModelFqName fqName, IModule module) {
     IFile file = createFileForModelUID(root, fqName, isLanguageAspect(root, module, fqName));
-    return new RegularModelDataSource(file);
+    return new RegularModelDataSource(module.getModuleReference(), file);
   }
 
   public static boolean isLanguageAspect(ModelRoot root, IModule module, SModelFqName modelFqName) {
@@ -233,7 +234,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     if (!NameUtil.namespaceFromLongName(modelFqName.getLongName()).equals(module.getModuleFqName())) return false;
     //is aspect model name
     String name = NameUtil.shortNameFromLongName(modelFqName.getLongName());
-    for (LanguageAspect la:LanguageAspect.values()){
+    for (LanguageAspect la : LanguageAspect.values()) {
       if (la.getName().equals(name)) return true;
     }
     return false;
@@ -245,7 +246,8 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     //in language
     if (!(module instanceof Language)) return false;
     //is under languageModels
-    if (!FileSystem.getInstance().getFileByPath(root.getPath()).getName().equals(Language.LANGUAGE_MODELS)) return false;
+    if (!FileSystem.getInstance().getFileByPath(root.getPath()).getName().equals(Language.LANGUAGE_MODELS))
+      return false;
     return true;
   }
 }

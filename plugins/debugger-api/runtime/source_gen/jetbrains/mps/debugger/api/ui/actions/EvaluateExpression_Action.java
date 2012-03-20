@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
+import jetbrains.mps.nodeEditor.selection.EditorCellSelection;
 import jetbrains.mps.nodeEditor.selection.MultipleSelection;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -73,7 +74,7 @@ public class EvaluateExpression_Action extends BaseAction {
         final List<SNodePointer> nodePointers = ListSequence.fromList(new ArrayList<SNodePointer>());
         if (((EditorComponent) MapSequence.fromMap(_params).get("component")) != null) {
           final Selection selection = ((EditorComponent) MapSequence.fromMap(_params).get("component")).getSelectionManager().getSelection();
-          if ((selection instanceof EditorCellLabelSelection && ((EditorCellLabelSelection) selection).hasNonTrivialSelection()) || (selection instanceof MultipleSelection)) {
+          if ((selection instanceof EditorCellLabelSelection && ((EditorCellLabelSelection) selection).hasNonTrivialSelection()) || (selection instanceof EditorCellSelection && !((selection instanceof EditorCellLabelSelection))) || (selection instanceof MultipleSelection)) {
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
                 ListSequence.fromList(nodePointers).addSequence(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SNode>() {

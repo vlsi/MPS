@@ -65,7 +65,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1199462157225(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "keystroke", true), "jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke"), "call_getKeyStroke_1213877273475", new Class[]{SNode.class}));
+    return ((String) BehaviorManager.getInstance().invoke(Object.class, SLinkOperations.getTarget(_context.getNode(), "keystroke", true), "call_getKeyStroke_1213877273475", new Class[]{SNode.class}));
   }
 
   public static Object propertyMacro_GetPropertyValue_1199462256696(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -121,7 +121,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4192433084863764062(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "finderDeclaration", false), "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"), "call_getGeneratedClassLongName_1213877240120", new Class[]{SNode.class}));
+    return ((String) BehaviorManager.getInstance().invoke(Object.class, SLinkOperations.getTarget(_context.getNode(), "finderDeclaration", false), "call_getGeneratedClassLongName_1213877240120", new Class[]{SNode.class}));
   }
 
   public static Object propertyMacro_GetPropertyValue_478744034994714493(final IOperationContext operationContext, final PropertyMacroContext _context) {

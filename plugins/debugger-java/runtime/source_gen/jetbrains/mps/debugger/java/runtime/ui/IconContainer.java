@@ -10,6 +10,10 @@ public class IconContainer {
   protected static Icon ICON_a1 = IconUtil.getIcon("db_disabled_exception_breakpoint.png");
   protected static Icon ICON_a2 = IconUtil.getIcon("db_method_breakpoint.png");
   protected static Icon ICON_a3 = IconUtil.getIcon("db_disabled_method_breakpoint.png");
-  protected static Icon ICON_a4 = IconUtil.getIcon("db_field_breakpoint.png");
-  protected static Icon ICON_a5 = IconUtil.getIcon("db_disabled_field_breakpoint.png");
+  protected static Icon ICON_a4 = IconUtil.getIcon("db_invalid_method_breakpoint.png");
+  protected static Icon ICON_a5 = IconUtil.getIcon("db_muted_method_breakpoint.png");
+  protected static Icon ICON_a6 = IconUtil.getIcon("db_field_breakpoint.png");
+  protected static Icon ICON_a7 = IconUtil.getIcon("db_disabled_field_breakpoint.png");
+  protected static Icon ICON_a8 = IconUtil.getIcon("db_invalid_field_breakpoint.png");
+  protected static Icon ICON_a9 = IconUtil.getIcon("db_muted_field_breakpoint.png");
 }

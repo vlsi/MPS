@@ -15,12 +15,14 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.ClasspathReader;
+import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 
+import java.io.IOException;
 import java.util.*;
 
 public class ClasspathCollector {
@@ -53,7 +55,13 @@ public class ClasspathCollector {
       //this is needed because we can use this class before these stub solutions are loaded
       result.add(CommonPaths.getJDKClassPath());
       result.add(CommonPaths.getMPSClassPath());
-      result.add(CommonPaths.getTestbenchClassPath());
+      for (String s : CommonPaths.getMPSPaths(ClasspathReader.ClassType.TEST)) {
+        try {
+          result.add(ClassPathFactory.getInstance().createFromPath(s, null));
+        } catch (IOException e) {
+          // LOG?
+        }
+      }
 
 /*
       for (Solution s : MPSModuleRepository.getInstance().getAllSolutions()) {

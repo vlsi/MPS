@@ -16,6 +16,7 @@ import java.util.Arrays;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.Set;
@@ -118,7 +119,7 @@ public class Map_Test extends Util_Test {
   public void test_mps4050() throws Exception {
     /*
       Map<Foo, List<Bar>> mmap = MapSequence.fromMap(new HashMap<Foo, List<Bar>>());
-      for (List<Bar> lst : Sequence.fromIterable(mmap.values())) {
+      for (List<Bar> lst : CollectionSequence.fromCollection(mmap.values())) {
         lst.<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.AbstractOperation'!>;
       }
     */

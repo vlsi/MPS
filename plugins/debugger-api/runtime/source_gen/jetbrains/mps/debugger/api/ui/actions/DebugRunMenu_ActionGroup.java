@@ -4,10 +4,14 @@ package jetbrains.mps.debugger.api.ui.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 
 public class DebugRunMenu_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(DebugRunMenu_ActionGroup.class);
   public static final String ID = "jetbrains.mps.debugger.api.ui.actions.DebugRunMenu_ActionGroup";
+  public static final String LABEL_ID_steps = ID + "steps";
 
   public DebugRunMenu_ActionGroup() {
     super("DebugRunMenu", ID);
@@ -15,9 +19,12 @@ public class DebugRunMenu_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       DebugRunMenu_ActionGroup.this.addSeparator();
-      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.debugger.api.ui.actions.StepOver_Action");
-      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.debugger.api.ui.actions.StepInto_Action");
-      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.debugger.api.ui.actions.StepOut_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(DebugRunMenu_ActionGroup.LABEL_ID_steps);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.debugger.api.runtime"));
+        DebugRunMenu_ActionGroup.this.addAction(action);
+      }
       DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.debugger.api.ui.actions.Resume_Action");
       DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.debugger.api.ui.actions.Pause_Action");
       DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.debugger.api.ui.actions.EvaluateExpression_Action");

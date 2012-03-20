@@ -11,7 +11,8 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
@@ -30,13 +31,13 @@ public class check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule exte
       return;
     }
     List<SNode> superConcepts = AbstractConceptDeclaration_Behavior.call_getImmediateSuperconcepts_1222430305282(cd);
-    List<Language> extendedLanguages = language.getAllExtendedLanguages();
+    Collection<Language> extendedLanguages = language.getAllExtendedLanguages();
     for (SNode superConcept : superConcepts) {
       Language conceptLanguage = SModelUtil.getDeclaringLanguage(superConcept);
       if (conceptLanguage == null) {
         continue;
       }
-      if (conceptLanguage != language && !(ListSequence.fromList(extendedLanguages).contains(conceptLanguage))) {
+      if (conceptLanguage != language && !(CollectionSequence.fromCollection(extendedLanguages).contains(conceptLanguage))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           errorTarget = new PropertyMessageTarget("name");

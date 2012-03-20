@@ -34,7 +34,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
 
   @Test
   public void testIncSolution1() throws IOException {
-    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/languages/languageDesign/generator/generator.ipr"));
+    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/languages/languageDesign/generator/generator.mpr"));
     SModelDescriptor descr = findModel(p, "test_Closure");
 
     doTestIncrementalGeneration(p, descr,
@@ -60,7 +60,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
 
   @Test
   public void testIdeActions() throws IOException {
-    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/MPS.ipr"));
+    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/MPS.mpr"));
     SModelDescriptor descr = findModel(p, "jetbrains.mps.ide.actions");
 
     doTestIncrementalGeneration(p, descr,
@@ -78,7 +78,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
 
   @Test
   public void testBaseLanguageStructure() throws IOException {
-    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/languages/baseLanguage/baseLanguage/baseLanguage.ipr"));
+    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/languages/baseLanguage/baseLanguage/baseLanguage.mpr"));
     SModelDescriptor descr = findModel(p, "jetbrains.mps.baseLanguage.structure");
 
     doTestIncrementalGeneration(p, descr,
@@ -96,7 +96,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
 
   @Test
   public void testBaseLanguageEditor() throws IOException {
-    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/languages/baseLanguage/baseLanguage/baseLanguage.ipr"));
+    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/languages/baseLanguage/baseLanguage/baseLanguage.mpr"));
     SModelDescriptor descr = findModel(p, "jetbrains.mps.baseLanguage.editor");
 
     doTestIncrementalGeneration(p, descr,

@@ -16,7 +16,7 @@ public class InsertRowBefore_Test extends BaseTransformationTest {
 
   @Test
   public void test_InsertRowBefore() throws Throwable {
-    this.initTest("${mps_home}/MPS.ipr", "r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test)");
+    this.initTest("${mps_home}/MPS.mpr", "r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test)");
     this.runTest("jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowBefore_Test$TestBody", "testMethod", false);
   }
 

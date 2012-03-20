@@ -19,18 +19,15 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.project.structure.modules.StubSolution;
+import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class LibrariesLoader implements CoreComponent {
   private static final Logger LOG = Logger.getLogger(LibrariesLoader.class);
@@ -43,7 +40,7 @@ public class LibrariesLoader implements CoreComponent {
 
   private MPSModuleRepository myModuleRepository;
 
-  private List<String> myLoadedSolutions = new ArrayList<String>();
+  private Map<ModuleId, ModuleReference> myLoadedSolutions = new HashMap<ModuleId, ModuleReference>();
   private List<ModuleReference> myLoadedModules = new ArrayList<ModuleReference>();
 
   public LibrariesLoader(MPSModuleRepository moduleRepository) {
@@ -58,19 +55,22 @@ public class LibrariesLoader implements CoreComponent {
     INSTANCE = this;
   }
 
+  public Map<ModuleId, ModuleReference> getLoadedSolutions() {
+    return Collections.unmodifiableMap(myLoadedSolutions);
+  }
+
   public void dispose() {
     myLoadedSolutions.clear();
-
     INSTANCE = null;
   }
 
-  public void reload() {
+  public void loadNewLibs() {
     loadNewLanguageLibs();
     for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
       if (!(m instanceof AbstractModule)) continue;
       if (myLoadedModules.contains(m.getModuleReference())) continue;
       myLoadedModules.add(m.getModuleReference());
-      ((AbstractModule) m).loadNewModels();
+      ((AbstractModule) m).updateModelsSet();
     }
   }
 
@@ -87,7 +87,7 @@ public class LibrariesLoader implements CoreComponent {
     List<SolutionDescriptor> result = new ArrayList<SolutionDescriptor>();
     for (StubSolution ss : ld.getStubSolutions()) {
       SolutionDescriptor descriptor = new SolutionDescriptor();
-      descriptor.setUUID(ss.getId().toString());
+      descriptor.setId(ss.getId());
       descriptor.setNamespace(ss.getName());
 
       descriptor.setCompileInMPS(false);
@@ -98,10 +98,12 @@ public class LibrariesLoader implements CoreComponent {
   }
 
   private void loadNewLanguageLibs() {
-    for (BaseLibStubDescriptor d : createLibDescrs()) {
-      if (myLoadedSolutions.contains(d.getModuleId())) continue;
+    Map<BaseLibStubDescriptor, ModuleReference> libDescrs = createLibDescrs();
+    for (BaseLibStubDescriptor d : libDescrs.keySet()) {
+      ModuleId id = ModuleId.fromString(d.getModuleId());
+      if (myLoadedSolutions.containsKey(id)) continue;
 
-      myLoadedSolutions.add(d.getModuleId());
+      myLoadedSolutions.put(id, libDescrs.get(d));
       Solution library = myModuleRepository.getSolution(new ModuleReference(d.getModuleName(), d.getModuleId()));
       assert library != null : d.getModuleName();
 
@@ -121,8 +123,8 @@ public class LibrariesLoader implements CoreComponent {
     }
   }
 
-  private List<BaseLibStubDescriptor> createLibDescrs() {
-    List<BaseLibStubDescriptor> result = new ArrayList<BaseLibStubDescriptor>();
+  private Map<BaseLibStubDescriptor, ModuleReference> createLibDescrs() {
+    Map<BaseLibStubDescriptor, ModuleReference> result = new HashMap<BaseLibStubDescriptor, ModuleReference>();
 
     List<Language> languages = myModuleRepository.getAllLanguages();
     for (Language l : languages) {
@@ -142,7 +144,7 @@ public class LibrariesLoader implements CoreComponent {
 
         try {
           BaseLibStubDescriptor descr = (BaseLibStubDescriptor) descrClass.newInstance();
-          result.add(descr);
+          result.put(descr, l.getModuleReference());
         } catch (Throwable t) {
           LOG.error(t);
         }

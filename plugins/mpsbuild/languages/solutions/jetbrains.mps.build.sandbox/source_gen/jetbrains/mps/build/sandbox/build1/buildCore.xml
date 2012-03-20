@@ -1,0 +1,76 @@
+<project name="buildCore" default="build" basedir="../">
+  <property file="${ant.file.buildCore}/../buildCore.properties" />
+  <property name="build.dir" location="build" />
+  <property name="build.tmp" location="${build.dir}/tmp/buildCore" />
+  <property name="build.layout" location="${build.dir}/artifacts/buildCore" />
+  <property name="mps_home" location="${basedir}/../../../.." />
+  <property name="build_langs" location="${mps_home}/languages/build" />
+  <property name="MPS" value="MPS-${build.number}" />
+  
+  <path id="path.java.library.apache-collections">
+    <fileset file="${build_langs}/build.jar" />
+    <fileset dir="${mps_home}">
+      <include name="**/*.jar" />
+    </fileset>
+  </path>
+  
+  <target name="assemble" depends="classes">
+    <mkdir dir="${build.layout}/default" />
+    <mkdir dir="${build.tmp}/default/release.zip" />
+    <mkdir dir="${build.tmp}/default/inrelease.zip" />
+    <mkdir dir="${build.tmp}/default/mps-core_dl_{ver}.jar" />
+    <mkdir dir="${build.tmp}/default/mps-core_dl_{ver}.jar/abc" />
+    <mkdir dir="${build.tmp}/default/mps-core_dl_{ver}.jar/abc/edf" />
+    <zip destfile="${build.tmp}/default/mps-core_dl_{ver}.jar/abc/edf/aaa"></zip>
+    <jar destfile="${build.tmp}/default/inrelease.zip/mps-core${ver}.jar">
+      <fileset dir="${build.tmp}/java/out/mps-core" />
+      <fileset dir="${build.tmp}/default/mps-core_dl_{ver}.jar" />
+    </jar>
+    <zip destfile="${build.tmp}/default/release.zip/inrelease.zip">
+      <fileset file="${mps_home}/MPS.ipr" />
+      <fileset dir="${basedir}/source_gen/">
+        <include name="**/*.java" />
+      </fileset>
+      <fileset dir="${build.tmp}/default/inrelease.zip" />
+    </zip>
+    <mkdir dir="${build.tmp}/default/release.zip/aaa" />
+    <mkdir dir="${build.tmp}/default/release.zip/aaa/bbb" />
+    <copy todir="${build.tmp}/default/release.zip/aaa/bbb">
+      <fileset file="${mps_home}/about.txt" />
+    </copy>
+    <zip destfile="${build.layout}/default/release.zip">
+      <fileset dir="${build.tmp}/default/release.zip" />
+    </zip>
+    <echo file="${build.layout}/variables.properties">buildCore.build.number=${build.number}
+        buildCore.ver=${ver}
+        buildCore.MPS=${MPS}</echo>
+  </target>
+  
+  <target name="build" depends="assemble, check" />
+  
+  <target name="clean">
+    <delete dir="${build.dir}" />
+  </target>
+  
+  <target name="compileJava" depends="java.compile.mps-core" />
+  
+  <target name="processResources" />
+  
+  <target name="classes" depends="compileJava, processResources" />
+  
+  <target name="test" depends="classes" />
+  
+  <target name="check" depends="test" />
+  
+  <target name="java.compile.mps-core">
+    <mkdir dir="${build.tmp}/java/out/mps-core" />
+    <javac destdir="${build.tmp}/java/out/mps-core">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <pathelement path="${mps_home}/core/source" />
+        <pathelement path="${mps_home}/core/source_gen" />
+      </src>
+      <classpath refid="path.java.library.apache-collections" />
+    </javac>
+  </target>
+</project>

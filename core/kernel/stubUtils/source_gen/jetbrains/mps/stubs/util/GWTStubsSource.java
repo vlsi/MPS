@@ -4,13 +4,13 @@ package jetbrains.mps.stubs.util;
 
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import java.util.List;
@@ -38,7 +38,8 @@ import jetbrains.mps.smodel.SModelFqName;
 public class GWTStubsSource extends StubModelDataSource {
   private ModelRoot root;
 
-  public GWTStubsSource(ModelRoot root) {
+  public GWTStubsSource(ModuleReference origin, ModelRoot root) {
+    super(origin);
     this.root = root;
   }
 

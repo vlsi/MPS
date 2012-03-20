@@ -32,13 +32,6 @@ import jetbrains.mps.vfs.IFile;
 import javax.swing.*;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: shatalin
- * Date: 1/13/12
- * Time: 2:46 PM
- * To change this template use File | Settings | File Templates.
- */
 public class OpenModelPropertiesAction extends AnAction {
     private IFile myModelFile;
     private Project myProject;

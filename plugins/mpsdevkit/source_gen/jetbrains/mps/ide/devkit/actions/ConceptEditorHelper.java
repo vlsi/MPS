@@ -30,7 +30,7 @@ public class ConceptEditorHelper {
     for (SNode root : SModelOperations.getRoots(structureModel, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
       if (SConceptOperations.isSubConceptOf(root, "jetbrains.mps.lang.structure.structure.IConceptAspect") && SPropertyOperations.getBoolean(root, "rootable")) {
         SNode candidate = (SNode) root;
-        if (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(SNodeOperations.cast(SConceptOperations.createNewNode(NameUtil.nodeFQName(candidate), null), "jetbrains.mps.lang.structure.structure.IConceptAspect"), "jetbrains.mps.lang.structure.structure.IConceptAspect"), "virtual_isApplicable_7839831476331657915", new Class[]{SNode.class, SNode.class}, node))) {
+        if (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(SConceptOperations.createNewNode(NameUtil.nodeFQName(candidate), null), "jetbrains.mps.lang.structure.structure.IConceptAspect"), "virtual_isApplicable_7839831476331657915", new Class[]{SNode.class, SNode.class}, node))) {
           ListSequence.fromList(result).addElement(candidate);
         }
       }
@@ -48,7 +48,7 @@ public class ConceptEditorHelper {
 
   public static SNode createNewConceptAspectInstance(SNode applicableNode, SNode concept, SModel model) {
     SNode conceptAspect = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(concept), null);
-    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(conceptAspect, "jetbrains.mps.lang.structure.structure.IConceptAspect"), "virtual_setBaseConcept_6261424444345963020", new Class[]{SNode.class, SNode.class}, applicableNode);
+    BehaviorManager.getInstance().invoke(Object.class, conceptAspect, "virtual_setBaseConcept_6261424444345963020", new Class[]{SNode.class, SNode.class}, applicableNode);
     SModelOperations.addRootNode(model, conceptAspect);
 
     return conceptAspect;

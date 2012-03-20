@@ -29,6 +29,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import jetbrains.mps.lang.test.runtime.TransformationTestRunner;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -39,13 +40,6 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 12/12/11
- * Time: 5:04 PM
- * To change this template use File | Settings | File Templates.
- */
 public class EditorTests extends DataMPSFixtureTestCase {
 
     private List<BaseTransformationTest> tests = new ArrayList<BaseTransformationTest>();
@@ -63,8 +57,10 @@ public class EditorTests extends DataMPSFixtureTestCase {
 
     @Override
     protected void prepareTestData(MPSFacetConfiguration configuration) throws  Exception {
-        IFile test = copyResource("models", "test.mps", "/tests/editorTests/models/test.mps");
-        configuration.getState().setModelRootPaths(test.getParent().getPath());
+        IFile test = copyResource("models", "test.mps", "test.mps", "/tests/editorTests/models/test.mps");
+      ArrayList<ModelRoot> roots = new ArrayList<ModelRoot>();
+      roots.add(new ModelRoot(test.getParent().getPath()));
+      configuration.getState().setModelRoots(roots);
     }
 
     @Override

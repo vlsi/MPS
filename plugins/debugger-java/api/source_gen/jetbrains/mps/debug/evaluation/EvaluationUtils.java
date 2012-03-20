@@ -90,6 +90,8 @@ public abstract class EvaluationUtils {
 
   public abstract PrimitiveValueProxy unboxValue(IObjectValueProxy valueProxy) throws EvaluationException;
 
+  public abstract String getStringPresentation(@NotNull Value value, ThreadReference reference);
+
   public static EvaluationUtils getInstance() {
     synchronized (LOCK) {
       return INSTANCE;
@@ -242,9 +244,8 @@ public abstract class EvaluationUtils {
         log.info("", e);
       }
     } catch (EvaluationException e) {
-      // some unknown exception -- better inform about it 
-      if (log.isErrorEnabled()) {
-        log.error("", e);
+      if (log.isDebugEnabled()) {
+        log.debug("", e);
       }
     }
     return failure;

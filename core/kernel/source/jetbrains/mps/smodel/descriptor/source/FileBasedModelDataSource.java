@@ -17,7 +17,9 @@ package jetbrains.mps.smodel.descriptor.source;
 
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.progress.SubProgressKind;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.descriptor.source.changes.ModelFileWatcher;
+import jetbrains.mps.vfs.IFile;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -27,7 +29,18 @@ public abstract class FileBasedModelDataSource implements ModelDataSource {
   private final Object LOCK = new Object();
   private List<ChangeListener> myListeners = new ArrayList<ChangeListener>();
   private boolean myInvalidated = false;
+  private final ModuleReference myOrigin;
 
+  protected FileBasedModelDataSource(ModuleReference origin) {
+    myOrigin = origin;
+  }
+
+  public ModuleReference getOrigin() {
+    return myOrigin;
+  }
+
+  public abstract IFile getFile ();
+  
   public void startListening(ChangeListener l) {
     synchronized (LOCK) {
       if (myListeners.isEmpty()) {
@@ -74,7 +87,7 @@ public abstract class FileBasedModelDataSource implements ModelDataSource {
   public void invalidate() {
     myInvalidated = true;
   }
-
+  
   protected void sourceFilesChanged(){
     invalidate();
     ModelFileWatcher.getInstance().stopListening(this);

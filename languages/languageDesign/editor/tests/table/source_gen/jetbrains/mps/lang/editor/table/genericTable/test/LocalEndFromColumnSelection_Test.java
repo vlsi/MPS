@@ -16,7 +16,7 @@ public class LocalEndFromColumnSelection_Test extends BaseTransformationTest {
 
   @Test
   public void test_LocalEndFromColumnSelection() throws Throwable {
-    this.initTest("${mps_home}/MPS.ipr", "r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)");
+    this.initTest("${mps_home}/MPS.mpr", "r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)");
     this.runTest("jetbrains.mps.lang.editor.table.genericTable.test.LocalEndFromColumnSelection_Test$TestBody", "testMethod", false);
   }
 

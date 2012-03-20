@@ -22,7 +22,7 @@ public class StubSolutionChooser implements Computable<StubSolution> {
     }
     StubSolution solution = new StubSolution();
     solution.setName(name);
-    solution.setId(ModuleId.generate());
+    solution.setId(ModuleId.regular());
     return solution;
   }
 }

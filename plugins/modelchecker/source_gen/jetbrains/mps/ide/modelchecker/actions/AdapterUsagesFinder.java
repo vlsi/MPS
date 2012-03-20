@@ -48,7 +48,7 @@ public class AdapterUsagesFinder extends ModelCheckerIssueFinder {
           if (targetSModelReference != null && targetSModelReference.getStereotype().equals("java_stub")) {
             SNode target = SLinkOperations.getTargetNode(ref);
             if ((target != null) && SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-              String qualifiedName = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
+              String qualifiedName = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
               if ("jetbrains.mps.smodel.INodeAdapter".equals(qualifiedName) || "jetbrains.mps.smodel.BaseAdapter".equals(qualifiedName)) {
                 addIssue(results, node, "Reference to " + qualifiedName + " in role `" + SLinkOperations.getRole(ref) + "'", ModelChecker.SEVERITY_ERROR, "adapter class usage", null);
               }

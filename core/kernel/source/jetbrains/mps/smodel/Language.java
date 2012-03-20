@@ -33,7 +33,6 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.stubs.LibrariesLoader;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
@@ -111,8 +110,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     LanguageDescriptor languageDescriptor;
     if (handle.getDescriptor() != null) {
       languageDescriptor = (LanguageDescriptor) handle.getDescriptor();
-      if (languageDescriptor.getUUID() == null) {
-        languageDescriptor.setUUID(UUID.randomUUID().toString());
+      if (languageDescriptor.getId() == null) {
+        languageDescriptor.setId(ModuleId.regular());
         LanguageDescriptorPersistence.saveLanguageDescriptor(handle.getFile(), languageDescriptor);
       }
     } else {
@@ -182,7 +181,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  public List<Language> getAllExtendedLanguages() {
+  public Collection<Language> getAllExtendedLanguages() {
     if (myAllExtendedLanguages == null) {
       Set<Language> set = new LinkedHashSet<Language>();
       collectAllExtendedLanguages(set);
@@ -216,7 +215,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  public Set<ModuleReference> getRuntimeModulesReferences() {
+  public Collection<ModuleReference> getRuntimeModulesReferences() {
     LanguageDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return Collections.emptySet();
     return Collections.unmodifiableSet(descriptor.getRuntimeModules());
@@ -287,7 +286,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   public void setLanguageDescriptor(final LanguageDescriptor newDescriptor, boolean reloadClasses) {
     myLanguageDescriptor = newDescriptor;
 
-    ModuleReference reference = new ModuleReference(myLanguageDescriptor.getNamespace(), myLanguageDescriptor.getUUID());
+    ModuleReference reference = new ModuleReference(myLanguageDescriptor.getNamespace(), myLanguageDescriptor.getId());
     setModuleReference(reference);
 
     reloadAfterDescriptorChange();
@@ -352,7 +351,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  public Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
+  public Collection<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
     Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>(super.getImplicitlyImportedModelsFor(sm));
 
     LanguageAspect aspect = Language.getModelAspect(sm);
@@ -386,7 +385,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  public Set<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
+  public Collection<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
     Set<Language> result = new LinkedHashSet<Language>(super.getImplicitlyImportedLanguages(sm));
 
     LanguageAspect aspect = Language.getModelAspect(sm);
@@ -429,7 +428,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return LanguageAspect.TEXT_GEN.get(this);
   }
 
-  public Set<EditableSModelDescriptor> getAspectModelDescriptors() {
+  public Collection<EditableSModelDescriptor> getAspectModelDescriptors() {
     Set<EditableSModelDescriptor> result = new HashSet<EditableSModelDescriptor>();
     for (LanguageAspect aspect : LanguageAspect.values()) {
       EditableSModelDescriptor asp = aspect.get(this);
@@ -578,8 +577,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   //-----------stubs--------------
 
-  public Set<StubPath> getRuntimeStubPaths() {
-    Set<StubPath> result = new HashSet<StubPath>();
+  public Collection<StubPath> getRuntimeStubPaths() {
+    Set<StubPath> result = new LinkedHashSet<StubPath>();
 
     for (ModelRoot me : getRuntimeModelsEntries()) {
       result.add(new StubPath(me.getPath(), me.getManager()));
@@ -688,7 +687,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return false;
   }
 
-  protected Set<ModelRoot> getRuntimeModelsEntries() {
+  protected Collection<ModelRoot> getRuntimeModelsEntries() {
     return myLanguageDescriptor.getRuntimeStubModels();
   }
 
@@ -696,14 +695,17 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return !myLanguageDescriptor.isDoNotGenerateAdapters();
   }
 
-  protected Set<ModelRoot> getStubModelEntriesToIncludeOrExclude() {
-    return CollectionUtil.union(super.getStubModelEntriesToIncludeOrExclude(), getRuntimeModelsEntries());
+  protected Collection<ModelRoot> getStubModelEntriesToIncludeOrExclude() {
+    LinkedHashSet<ModelRoot> res = new LinkedHashSet<ModelRoot>();
+    res.addAll(super.getStubModelEntriesToIncludeOrExclude());
+    res.addAll(getRuntimeModelsEntries());
+    return res;
   }
 
   private static LanguageDescriptor createNewDescriptor(String languageNamespace, IFile descriptorFile) {
     LanguageDescriptor languageDescriptor = new LanguageDescriptor();
     languageDescriptor.setNamespace(languageNamespace);
-    languageDescriptor.setUUID(UUID.randomUUID().toString());
+    languageDescriptor.setId(ModuleId.regular());
 
     IFile languageModels = descriptorFile.getParent().getDescendant(LANGUAGE_MODELS);
     if (languageModels.exists()) {

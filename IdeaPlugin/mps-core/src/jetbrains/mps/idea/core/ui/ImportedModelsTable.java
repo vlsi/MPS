@@ -30,13 +30,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: shatalin
- * Date: 1/18/12
- * Time: 10:48 AM
- * To change this template use File | Settings | File Templates.
- */
 public class ImportedModelsTable extends MpsElementsTable<SModelReference> {
     public static Comparator<SModelReference> MODEL_REFERENCE_COMPARATOR = new ModelReferenceComparator();
 

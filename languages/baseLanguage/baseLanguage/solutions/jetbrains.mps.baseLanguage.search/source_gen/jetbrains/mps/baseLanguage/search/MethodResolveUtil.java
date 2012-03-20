@@ -95,7 +95,7 @@ public class MethodResolveUtil {
           } else {
             SNode desc = SNodeOperations.getAncestor(methodCall, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
             SNode anc = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-            if (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_isDescendant_7165541881557222913", new Class[]{SNode.class, SNode.class}, anc))) {
+            if (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, desc, "virtual_isDescendant_7165541881557222913", new Class[]{SNode.class, SNode.class}, anc))) {
               goodMethods.add(method);
             } else {
               badMethods.add(method);

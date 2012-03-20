@@ -31,7 +31,7 @@ public class SEnumOperations {
   }
 
   public static String getEnumMemberName(SNode member) {
-    return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(((SNode) member), "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration"), "call_getName_1240169660918", new Class[]{SNode.class}));
+    return ((String) BehaviorManager.getInstance().invoke(Object.class, ((SNode) member), "call_getName_1240169660918", new Class[]{SNode.class}));
   }
 
   public static String getEnumMemberValue(SNode member) {
@@ -42,14 +42,14 @@ public class SEnumOperations {
     SNode enumNode = (SNode) enumm;
     return ((SNode) ListSequence.fromList(SLinkOperations.getTargets(enumNode, "member", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration"), "call_getName_1240169660918", new Class[]{SNode.class})).equals(name);
+        return ((String) BehaviorManager.getInstance().invoke(Object.class, it, "call_getName_1240169660918", new Class[]{SNode.class})).equals(name);
       }
     }));
   }
 
   public static SNode enumMemberForValue(SNode enumm, final String value) {
     if (value == null) {
-      return ((SNode) ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(enumm, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), "call_getDefaultMember_1213877397785", new Class[]{SNode.class})));
+      return ((SNode) ((SNode) BehaviorManager.getInstance().invoke(Object.class, enumm, "call_getDefaultMember_1213877397785", new Class[]{SNode.class})));
     }
     return ((SNode) ListSequence.fromList(SLinkOperations.getTargets(enumm, "member", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

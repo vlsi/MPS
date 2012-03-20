@@ -39,7 +39,9 @@ import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.compiler.CompilationResultAdapter;
+import org.eclipse.jdt.internal.compiler.CompilationResult;
+import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import java.util.Map;
 import jetbrains.mps.generator.GenerationCacheContainer;
@@ -123,6 +125,8 @@ public abstract class AbstractEvaluationModel {
 
       final String fullClassName = this.myAuxModel.getLongName() + "." + AbstractEvaluationModel.EVALUATOR_NAME;
       InMemoryJavaGenerationHandler handler = new MyInMemoryJavaGenerationHandler(false, true, myGenerationListeners);
+      AbstractEvaluationModel.MyCompilationResultAdapter compilationResult = new AbstractEvaluationModel.MyCompilationResultAdapter();
+      handler.setCompilationListener(compilationResult);
       Project ideaProject = this.myAuxModule.getMPSProject().getProject();
       DefaultMessageHandler messageHandler = new DefaultMessageHandler(ideaProject);
       ProgressWindow progressWindow = new ProgressWindow(false, ideaProject);
@@ -148,7 +152,13 @@ public abstract class AbstractEvaluationModel {
         }
         return evaluator;
       } else if (StringUtils.isNotEmpty(source) && !(successful)) {
-        throw new EvaluationException("Errors during compilation.");
+        String text = "Errors during compilation";
+        if (compilationResult.hasErrors()) {
+          text += ":\n" + compilationResult.getMessage();
+        } else {
+          text += ".";
+        }
+        throw new EvaluationException(text);
       } else {
         throw new EvaluationException("Errors during generation.");
       }
@@ -171,9 +181,36 @@ public abstract class AbstractEvaluationModel {
   public String getPresentation() {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
-        return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(getNodeToShow(), "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept"), "virtual_getEvaluatorPresentation_9172312269976647295", new Class[]{SNode.class}));
+        return ((String) BehaviorManager.getInstance().invoke(Object.class, getNodeToShow(), "virtual_getEvaluatorPresentation_9172312269976647295", new Class[]{SNode.class}));
       }
     });
+  }
+
+  public class MyCompilationResultAdapter extends CompilationResultAdapter {
+    private final StringBuffer myBuffer = new StringBuffer();
+    private boolean myHasErrors;
+
+    public MyCompilationResultAdapter() {
+    }
+
+    @Override
+    public void onCompilationResult(CompilationResult result) {
+      if (result.hasErrors()) {
+        myHasErrors = true;
+        for (CategorizedProblem error : result.getErrors()) {
+          myBuffer.append(error.getMessage());
+          myBuffer.append("\n");
+        }
+      }
+    }
+
+    public boolean hasErrors() {
+      return myHasErrors;
+    }
+
+    public String getMessage() {
+      return myBuffer.toString();
+    }
   }
 
   private class MyIncrementalGenerationStrategy implements IncrementalGenerationStrategy {

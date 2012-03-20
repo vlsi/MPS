@@ -26,8 +26,8 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 public interface IModule extends ModelOwner {
   @NotNull
@@ -58,14 +58,14 @@ public interface IModule extends ModelOwner {
    *
    * @return
    */
-  Set<ModuleReference> getUsedLanguagesReferences();
+  Collection<ModuleReference> getUsedLanguagesReferences();
 
   /**
    * Explicitly used devkits
    *
    * @return
    */
-  Set<ModuleReference> getUsedDevkitReferences();
+  Collection<ModuleReference> getUsedDevkitReferences();
 
   void addDependency(ModuleReference moduleRef, boolean reexport);
 
@@ -81,7 +81,7 @@ public interface IModule extends ModelOwner {
 
   List<SModelDescriptor> getHiddenModelDescriptors();
 
-  Set<SModelRoot> getSModelRoots();
+  Collection<SModelRoot> getSModelRoots();
 
   String getOutputFor(SModelDescriptor model);
 
@@ -129,10 +129,10 @@ public interface IModule extends ModelOwner {
   String getModuleFqName();
 
   //todo move to model
-  Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm);
+  Collection<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm);
 
   //todo move to model
-  Set<Language> getImplicitlyImportedLanguages(SModelDescriptor sm);
+  Collection<Language> getImplicitlyImportedLanguages(SModelDescriptor sm);
 
   //todo used only in language,generator,solution
   String getGeneratorOutputPath();

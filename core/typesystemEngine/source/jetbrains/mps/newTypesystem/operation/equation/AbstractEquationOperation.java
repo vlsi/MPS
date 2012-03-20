@@ -23,12 +23,6 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Oct 8, 2010
- * Time: 1:17:32 PM
- */
 public abstract class AbstractEquationOperation extends AbstractOperation {
   final SNode myChild;
   final SNode myParent;

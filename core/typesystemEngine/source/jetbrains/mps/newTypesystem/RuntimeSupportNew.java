@@ -21,12 +21,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Dec 13, 2010
- * Time: 1:27:52 PM
- */
 public class RuntimeSupportNew extends RuntimeSupport {
   protected TypeChecker myTypeChecker;
 

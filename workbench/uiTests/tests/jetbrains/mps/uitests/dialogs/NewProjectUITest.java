@@ -26,15 +26,15 @@ import jetbrains.mps.workbench.dialogs.project.newproject.SolutionStep;
 import junit.extensions.jfcunit.finder.DialogFinder;
 import org.apache.commons.lang.ObjectUtils;
 
-import java.awt.Component;
+import java.awt.*;
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 public class NewProjectUITest extends NoProjectUITestsBase {
   public void testInitialValues() throws InvocationTargetException, InterruptedException {
-    Component dialog = TestUtil.openNewProjectDialog(this,null);
+    Component dialog = TestUtil.openNewProjectDialog(this, null);
 
     checkProjectStep();
     pressButton(dialog, "Next");
@@ -76,10 +76,10 @@ public class NewProjectUITest extends NoProjectUITestsBase {
 
     Solution solution = ps.get(0);
     Language language = pl.get(0);
-    Set<ModuleReference> languages = solution.getModuleDescriptor().getUsedLanguages();
+    Collection<ModuleReference> languages = solution.getModuleDescriptor().getUsedLanguages();
     boolean imported = false;
-    for (ModuleReference langRef:languages){
-      if (ObjectUtils.equals(langRef.getModuleFqName(),language.getModuleFqName())){
+    for (ModuleReference langRef : languages) {
+      if (ObjectUtils.equals(langRef.getModuleFqName(), language.getModuleFqName())) {
         imported = true;
       }
     }

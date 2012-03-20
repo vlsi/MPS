@@ -16,7 +16,7 @@ public class InsertPrevSiblingOperation_Focus_Test extends BaseTransformationTes
 
   @Test
   public void test_InsertPrevSiblingOperation_Focus() throws Throwable {
-    this.initTest("${mps_home}/MPS.ipr", "r:3deabf90-227b-4dd7-a1b3-e4735e4a0270(jetbrains.mps.lang.smodel.test)");
+    this.initTest("${mps_home}/MPS.mpr", "r:3deabf90-227b-4dd7-a1b3-e4735e4a0270(jetbrains.mps.lang.smodel.test)");
     this.runTest("jetbrains.mps.lang.smodel.test.InsertPrevSiblingOperation_Focus_Test$TestBody", "testMethod", false);
   }
 

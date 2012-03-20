@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 public class ForBreakUnreachable_Test extends BaseTransformationTest {
   @Test
   public void test_TypesCheck9092976468699800071() throws Throwable {
-    this.initTest("${mps_home}/MPS.ipr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
+    this.initTest("${mps_home}/MPS.mpr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
     this.runTest("jetbrains.mps.baseLanguage.test.ForBreakUnreachable_Test$TestBody", "test_TypesCheck9092976468699800071", true);
   }
 
@@ -22,7 +22,7 @@ public class ForBreakUnreachable_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_TypesCheck9092976468699800071() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("9092976468699800071"), "jetbrains.mps.lang.test.structure.NodeOperation");
-      BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_perform_1215601182156", new Class[]{SNode.class, SNode.class}, this.getRealNodeById("9092976468699800032"));
+      BehaviorManager.getInstance().invoke(Object.class, operation, "virtual_perform_1215601182156", new Class[]{SNode.class, SNode.class}, this.getRealNodeById("9092976468699800032"));
     }
   }
 }

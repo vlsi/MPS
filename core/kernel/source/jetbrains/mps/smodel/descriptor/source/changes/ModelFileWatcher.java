@@ -16,12 +16,8 @@
 package jetbrains.mps.smodel.descriptor.source.changes;
 
 import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
-import org.jetbrains.annotations.NotNull;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class ModelFileWatcher {
 
@@ -37,27 +33,20 @@ public class ModelFileWatcher {
     return INSTANCE;
   }
 
-  //-----------component stuff----------
-
-  private ModelFileWatcherProvider myProvider = new IOModelFileWatcherProvider();
-
-  public void setProvider(@NotNull ModelFileWatcherProvider provider) {
-    myProvider = provider;
-  }
-
   //-----------real stuff----------
 
-  private Map<FileBasedModelDataSource,Collection<String>> mySource2Files = new HashMap<FileBasedModelDataSource, Collection<String>>();
+  private Map<FileBasedModelDataSource, Collection<String>> mySources2Files = new HashMap<FileBasedModelDataSource, Collection<String>>();
+
+  public Map<FileBasedModelDataSource, Collection<String>> getSources2Files() {
+    return Collections.unmodifiableMap(mySources2Files);
+  }
 
   public void startListening(FileBasedModelDataSource source) {
-    assert !mySource2Files.containsKey(source);
-    Collection<String> files = source.getFilesToListen();
-    mySource2Files.put(source, files);
-    myProvider.startListening(source,files);
+    assert !mySources2Files.containsKey(source);
+    mySources2Files.put(source, source.getFilesToListen());
   }
 
   public void stopListening(FileBasedModelDataSource source) {
-    assert mySource2Files.containsKey(source);
-    myProvider.stopListening(source,mySource2Files.remove(source));
+    mySources2Files.remove(source);
   }
 }

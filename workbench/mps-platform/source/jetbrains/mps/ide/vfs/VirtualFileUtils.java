@@ -44,7 +44,7 @@ public class VirtualFileUtils {
     if (f.getFileSystem() instanceof LocalFileSystem) {
       return new File(f.getPath());
     } else {
-      throw new RuntimeException("Attempt to get File for non local file.");
+      throw new RuntimeException("Attempt to get File for non local file." + f.getPath());
     }
   }
 

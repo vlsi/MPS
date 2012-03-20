@@ -36,18 +36,12 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- * Created by IntelliJ IDEA.
- * User: shatalin
- * Date: 11/10/11
- * Time: 1:19 PM
- * To change this template use File | Settings | File Templates.
- */
 public class MPSFacetPathsTab {
     private JPanel myRootPanel;
+    private JRadioButton myUseTransientOutputFolder;
     private JRadioButton myUseModuleSourceFolderRadioButton;
     private JRadioButton myUseCustomFolderRadioButton;
-    private JComboBox myModuleReferenceCompo;
+    private JComboBox myModuleReferenceCombo;
     private JLabel mySourceFolderLabel;
     private JLabel myOutputFolderLabel;
     private CommitableFieldPanel myFieldPanel;
@@ -56,15 +50,23 @@ public class MPSFacetPathsTab {
     private FacetEditorContext myContext;
 
     public MPSFacetPathsTab(FacetEditorContext context) {
-        ActionListener listener = new ActionListener() {
+        ActionListener radioButtonHandler = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                handleUseModuleSourceFolderSwitched(isUseModuleSourceFolder());
+                myModuleReferenceCombo.setEnabled(isUseModuleSourceFolder());
+                mySourceFolderLabel.setEnabled(isUseModuleSourceFolder());
+                myFieldPanel.setEnabled(!isUseModuleSourceFolder() && !isUseTransientOutputFolder());
+                myOutputFolderLabel.setEnabled(!isUseModuleSourceFolder() && !isUseTransientOutputFolder());
             }
         };
-        myUseModuleSourceFolderRadioButton.addActionListener(listener);
-        myUseCustomFolderRadioButton.addActionListener(listener);
+        myUseTransientOutputFolder.addActionListener(radioButtonHandler);
+        myUseModuleSourceFolderRadioButton.addActionListener(radioButtonHandler);
+        myUseCustomFolderRadioButton.addActionListener(radioButtonHandler);
         myContext = context;
+    }
+
+    private boolean isUseTransientOutputFolder() {
+        return myUseTransientOutputFolder.isSelected();
     }
 
     private boolean isUseModuleSourceFolder() {
@@ -72,14 +74,7 @@ public class MPSFacetPathsTab {
     }
 
     private String getGeneratorOutputPath() {
-        return isUseModuleSourceFolder() ? (String) myModuleReferenceCompo.getSelectedItem() : myFieldPanel.getText();
-    }
-
-    private void handleUseModuleSourceFolderSwitched(boolean useModuleSourceFolder) {
-        myModuleReferenceCompo.setEnabled(useModuleSourceFolder);
-        mySourceFolderLabel.setEnabled(useModuleSourceFolder);
-        myFieldPanel.setEnabled(!useModuleSourceFolder);
-        myOutputFolderLabel.setEnabled(!useModuleSourceFolder);
+        return isUseModuleSourceFolder() ? (String) myModuleReferenceCombo.getSelectedItem() : myFieldPanel.getText();
     }
 
     public JPanel getRootPanel() {
@@ -87,7 +82,9 @@ public class MPSFacetPathsTab {
     }
 
     public void setData(MPSConfigurationBean data) {
-        if (data.isUseModuleSourceFolder()) {
+        if (data.isUseTransientOutputFolder()) {
+            myUseTransientOutputFolder.doClick();
+        } else if (data.isUseModuleSourceFolder()) {
             myUseModuleSourceFolderRadioButton.doClick();
         } else {
             myUseCustomFolderRadioButton.doClick();
@@ -96,11 +93,15 @@ public class MPSFacetPathsTab {
     }
 
     public void getData(MPSConfigurationBean data) {
+        data.setUseTransientOutputFolder(isUseTransientOutputFolder());
         data.setUseModuleSourceFolder(isUseModuleSourceFolder());
         data.setGeneratorOutputPath(getGeneratorOutputPath());
     }
 
     public boolean isModified(MPSConfigurationBean data) {
+        if (data.isUseTransientOutputFolder() != isUseTransientOutputFolder()) {
+            return true;
+        }
         if (data.isUseModuleSourceFolder() != isUseModuleSourceFolder()) {
             return true;
         }
@@ -113,28 +114,28 @@ public class MPSFacetPathsTab {
     public void onTabEntering() {
         String oldSelection = null;
         if (isUseModuleSourceFolder()) {
-            oldSelection = myModuleReferenceCompo.getItemCount() == 0 ? myFieldPanel.getText() : (String) myModuleReferenceCompo.getSelectedItem();
+            oldSelection = myModuleReferenceCombo.getItemCount() == 0 ? myFieldPanel.getText() : (String) myModuleReferenceCombo.getSelectedItem();
         }
 
         boolean hasOldItem = false;
-        myModuleReferenceCompo.removeAllItems();
+        myModuleReferenceCombo.removeAllItems();
         for (ContentEntry entry : myContext.getRootModel().getContentEntries()) {
             for (SourceFolder sourceFolder : entry.getSourceFolders()) {
                 if (sourceFolder.getFile() == null) {
                     continue;
                 }
                 String path = sourceFolder.getFile().getPath();
-                myModuleReferenceCompo.addItem(path);
+                myModuleReferenceCombo.addItem(path);
                 if (path.equals(oldSelection)) {
                     hasOldItem = true;
                 }
             }
         }
-        limitWidth(myModuleReferenceCompo);
+        limitWidth(myModuleReferenceCombo);
 
         if (oldSelection != null) {
             if (hasOldItem) {
-                myModuleReferenceCompo.setSelectedItem(oldSelection);
+                myModuleReferenceCombo.setSelectedItem(oldSelection);
             } else {
                 myUseCustomFolderRadioButton.doClick();
                 myFieldPanel.setText(oldSelection);

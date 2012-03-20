@@ -29,71 +29,78 @@ import com.intellij.openapi.roots.SourceFolder;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
+import java.util.Collection;
 
 /**
  * evgeny, 10/26/11
  */
 public class MPSFrameworkSupportProvider extends FacetBasedFrameworkSupportProvider {
+  private MPSFrameworkSupportConfigurable myConfigurable;
 
-    private MPSFrameworkSupportConfigurable myConfigurable;
+  public MPSFrameworkSupportProvider() {
+    super(FacetTypeRegistry.getInstance().findFacetType(MPSFacetType.ID));
+  }
 
-    public MPSFrameworkSupportProvider() {
-        super(FacetTypeRegistry.getInstance().findFacetType(MPSFacetType.ID));
+  @Override
+  protected void setupConfiguration(Facet facet, ModifiableRootModel modifiableRootModel, FrameworkVersion frameworkVersion) {
+    assert myConfigurable != null;
+
+    // TODO: find better way to detect how to get proper content entry/sourceFolder from modifiableRootModel
+    ContentEntry contentEntry = getContentEntry(modifiableRootModel);
+    SourceFolder sourceFolder = getSourceFolder(contentEntry);
+
+    final String modelDirectoryPath = myConfigurable.getModelDirectoryPath();
+    new File(modelDirectoryPath.replace('/', File.separatorChar)).mkdirs();
+    VirtualFile modelDirectory = ApplicationManager.getApplication().runWriteAction(new Computable<VirtualFile>() {
+      public VirtualFile compute() {
+        return LocalFileSystem.getInstance().refreshAndFindFileByPath(modelDirectoryPath);
+      }
+    });
+
+    MPSFacet mpsFacet = (MPSFacet) facet;
+    MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getState();
+    ModelRoot mr = new ModelRoot();
+    mr.setPath(modelDirectoryPath);
+    Collection<ModelRoot> oldRoots = configurationBean.getModelRoots();
+    oldRoots.add(mr);
+    configurationBean.setModelRoots(oldRoots);
+
+    if (sourceFolder != null) {
+      configurationBean.setGeneratorOutputPath(sourceFolder.getFile().getPath());
+      configurationBean.setUseModuleSourceFolder(true);
+      configurationBean.setUseTransientOutputFolder(false);
     }
+    mpsFacet.setConfiguration(configurationBean);
 
-    @Override
-    protected void setupConfiguration(Facet facet, ModifiableRootModel modifiableRootModel, FrameworkVersion frameworkVersion) {
-        assert myConfigurable != null;
-
-        // TODO: find better way to detect how to get proper content entry/sourceFolder from modifiableRootModel
-        ContentEntry contentEntry = getContentEntry(modifiableRootModel);
-        SourceFolder sourceFolder = getSourceFolder(contentEntry);
-
-        final String modelDirectoryPath = myConfigurable.getModelDirectoryPath();
-        new File(modelDirectoryPath.replace('/', File.separatorChar)).mkdirs();
-        VirtualFile modelDirectory = ApplicationManager.getApplication().runWriteAction(new Computable<VirtualFile>() {
-            public VirtualFile compute() {
-                return LocalFileSystem.getInstance().refreshAndFindFileByPath(modelDirectoryPath);
-            }
-        });
-
-        MPSFacet mpsFacet = (MPSFacet) facet;
-        MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getState();
-        configurationBean.setModelRootPaths(modelDirectoryPath);
-        if (sourceFolder != null) {
-            configurationBean.setGeneratorOutputPath(sourceFolder.getFile().getPath());
-            configurationBean.setUseModuleSourceFolder(true);
-        }
-        mpsFacet.setConfiguration(configurationBean);
-
-        if (contentEntry != null) {
-            contentEntry.addSourceFolder(modelDirectory, false);
-        }
+    if (contentEntry != null) {
+      contentEntry.addSourceFolder(modelDirectory, false);
     }
+  }
 
-    private ContentEntry getContentEntry(ModifiableRootModel rootModel) {
-        for (ContentEntry contentEntry : rootModel.getContentEntries()) {
-            return contentEntry;
-        }
-        return null;
+  private ContentEntry getContentEntry(ModifiableRootModel rootModel) {
+    for (ContentEntry contentEntry : rootModel.getContentEntries()) {
+      return contentEntry;
     }
+    return null;
+  }
 
-    private SourceFolder getSourceFolder(ContentEntry contentEntry) {
-        if (contentEntry == null) {
-            return null;
-        }
-        for (SourceFolder sourceFolder : contentEntry.getSourceFolders()) {
-            return sourceFolder;
-        }
-        return null;
+  private SourceFolder getSourceFolder(ContentEntry contentEntry) {
+    if (contentEntry == null) {
+      return null;
     }
+    for (SourceFolder sourceFolder : contentEntry.getSourceFolders()) {
+      return sourceFolder;
+    }
+    return null;
+  }
 
-    @NotNull
-    @Override
-    public FrameworkSupportConfigurableBase createConfigurable(@NotNull FrameworkSupportModel model) {
-        return myConfigurable = new MPSFrameworkSupportConfigurable(this, model, getVersions(), getVersionLabelText());
-    }
+  @NotNull
+  @Override
+  public FrameworkSupportConfigurableBase createConfigurable(@NotNull FrameworkSupportModel model) {
+    return myConfigurable = new MPSFrameworkSupportConfigurable(this, model, getVersions(), getVersionLabelText());
+  }
 }

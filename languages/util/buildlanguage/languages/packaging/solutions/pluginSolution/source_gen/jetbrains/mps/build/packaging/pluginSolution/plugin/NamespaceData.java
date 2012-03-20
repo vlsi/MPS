@@ -7,7 +7,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import java.util.ArrayList;
 import javax.swing.Icon;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 
 public class NamespaceData implements NodeData {
   private String myText;
@@ -32,8 +32,8 @@ public class NamespaceData implements NodeData {
 
   public Icon getIcon(boolean expanded) {
     return (expanded ?
-      Icons.OPENED_FOLDER :
-      Icons.CLOSED_FOLDER
+      IdeIcons.OPENED_FOLDER :
+      IdeIcons.CLOSED_FOLDER
     );
   }
 

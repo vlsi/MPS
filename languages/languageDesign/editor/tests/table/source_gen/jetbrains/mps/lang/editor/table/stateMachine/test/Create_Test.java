@@ -16,7 +16,7 @@ public class Create_Test extends BaseTransformationTest {
 
   @Test
   public void test_Create() throws Throwable {
-    this.initTest("${mps_home}/MPS.ipr", "r:dc1400b5-0aa4-448e-8f15-11fb0ccb5c23(jetbrains.mps.lang.editor.table.stateMachine.test)");
+    this.initTest("${mps_home}/MPS.mpr", "r:dc1400b5-0aa4-448e-8f15-11fb0ccb5c23(jetbrains.mps.lang.editor.table.stateMachine.test)");
     this.runTest("jetbrains.mps.lang.editor.table.stateMachine.test.Create_Test$TestBody", "testMethod", false);
   }
 

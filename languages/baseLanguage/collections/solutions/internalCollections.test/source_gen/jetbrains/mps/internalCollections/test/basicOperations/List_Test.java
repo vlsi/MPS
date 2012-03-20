@@ -26,6 +26,7 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.backports.Deque;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 public class List_Test extends Util_Test {
   public void test_listCreator() throws Exception {
@@ -389,9 +390,9 @@ __switch__:
   public void test_collection() throws Exception {
     List<String> ls = ListSequence.fromListAndArray(new ArrayList<String>(), "a", "b");
     Collection<String> cs = ls;
-    Assert.assertEquals("a b", IterableUtils.join(Sequence.fromIterable(cs), " "));
+    Assert.assertEquals("a b", IterableUtils.join(CollectionSequence.fromCollection(cs), " "));
     ListSequence.fromList(ls).addElement("c");
-    Assert.assertEquals("a b c", IterableUtils.join(Sequence.fromIterable(cs), " "));
+    Assert.assertEquals("a b c", IterableUtils.join(CollectionSequence.fromCollection(cs), " "));
   }
 
   public void test_unmodifiable() throws Exception {

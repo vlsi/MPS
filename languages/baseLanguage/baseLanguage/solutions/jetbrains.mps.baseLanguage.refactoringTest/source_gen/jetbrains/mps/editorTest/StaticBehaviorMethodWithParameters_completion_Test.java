@@ -18,7 +18,7 @@ public class StaticBehaviorMethodWithParameters_completion_Test extends BaseTran
 
   @Test
   public void test_StaticBehaviorMethodWithParameters_completion() throws Throwable {
-    this.initTest("${mps_home}/MPS.ipr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
+    this.initTest("${mps_home}/MPS.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
     this.runTest("jetbrains.mps.editorTest.StaticBehaviorMethodWithParameters_completion_Test$TestBody", "testMethod", false);
   }
 

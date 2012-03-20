@@ -34,7 +34,7 @@ public class ExtractComponentUtil {
         SModel model = SNodeOperations.getModel(node);
         SNode component = SModelOperations.createNewRootNode(model, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration", null);
         SPropertyOperations.set(component, "name", componentName);
-        SLinkOperations.setTarget(component, "conceptDeclaration", ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(container, "jetbrains.mps.lang.editor.structure.AbstractComponent"), "virtual_getConceptDeclaration_7055725856388417603", new Class[]{SNode.class})), false);
+        SLinkOperations.setTarget(component, "conceptDeclaration", ((SNode) BehaviorManager.getInstance().invoke(Object.class, container, "virtual_getConceptDeclaration_7055725856388417603", new Class[]{SNode.class})), false);
         SLinkOperations.setTarget(component, "cellModel", SNodeOperations.copyNode(node), true);
         SNode toReplace = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Component", null);
         SLinkOperations.setTarget(toReplace, "editorComponent", component, false);

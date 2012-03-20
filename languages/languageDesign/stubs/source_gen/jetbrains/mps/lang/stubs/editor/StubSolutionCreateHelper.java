@@ -36,7 +36,7 @@ public class StubSolutionCreateHelper {
     String solutionName = JOptionPane.showInputDialog("NewSolution");
 
     final StubSolution stubSolution = new StubSolution();
-    stubSolution.setId(ModuleId.generate());
+    stubSolution.setId(ModuleId.regular());
     stubSolution.setName(solutionName);
 
     SPropertyOperations.set(node, "moduleName", solutionName);

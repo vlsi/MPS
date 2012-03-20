@@ -36,7 +36,6 @@ import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import javax.swing.plaf.basic.BasicSliderUI.ActionScroller;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.File;
@@ -154,24 +153,24 @@ public class BlameDialog extends DialogWrapper {
         }
       }
     });
-    Dimension size = DimensionService.getInstance().getSize(getDimensionServiceKey(), myProject);
+    Dimension size = DimensionService.getInstance().getSize(getDimensionServiceKey());
     if (size == null) {
-      DimensionService.getInstance().setSize(getDimensionServiceKey(), new Dimension(750, 550));
+      myPanel.setPreferredSize(new Dimension(750, 550));
     }
 
 
     Point location = DimensionService.getInstance().getLocation(getDimensionServiceKey(), myProject);
     if (location == null) {
-      DimensionService.getInstance().setLocation(getDimensionServiceKey(), new Point(200, 200));
+      setLocation(200, 200);
     }
     setOKButtonText("Send");
     setOKButtonMnemonic('C');
     init();
   }
 
-
+  @NotNull
   protected String getDimensionServiceKey() {
-    return "#jetbrains.mps.ide.blame.dialog.blameDialog";
+    return getClass().getName();
   }
 
   private Query createQuery() {

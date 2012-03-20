@@ -21,6 +21,8 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
@@ -36,6 +38,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class SModelRepository implements CoreComponent {
   private static final Logger LOG = Logger.getLogger(SModelRepository.class);
+  private ClassLoaderManager myManager;
+  private final ReloadAdapter myHandler;
 
   public static SModelRepository getInstance() {
     return MPSCore.getInstance().getModelRepository();
@@ -54,15 +58,21 @@ public class SModelRepository implements CoreComponent {
 
   private SModelListener myModelsListener = new ModelChangeListener();
 
-  public SModelRepository() {
+  public SModelRepository(ClassLoaderManager manager) {
+    myManager = manager;
+    myHandler = new ReloadAdapter() {
+      public void unload() {
+        refreshModels();
+      }
+    };
   }
 
   public void init() {
-
+    myManager.addReloadHandler(myHandler);
   }
 
   public void dispose() {
-
+    myManager.removeReloadHandler(myHandler);
   }
 
   public void refreshModels() {

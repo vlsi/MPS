@@ -44,12 +44,12 @@ public class Generator extends AbstractModule {
       myGeneratorDescriptor.setGeneratorUID(generateGeneratorUID(mySourceLanguage));
     }
 
-    String uuid = myGeneratorDescriptor.getUUID();
+    ModuleId uuid = myGeneratorDescriptor.getId();
     if (uuid == null) {
-      uuid = UUID.randomUUID().toString();
-      myGeneratorDescriptor.setUUID(uuid);
+      uuid = ModuleId.regular();
+      myGeneratorDescriptor.setId(uuid);
     }
-    ModuleReference mp = new ModuleReference(myGeneratorDescriptor.getGeneratorUID(), ModuleId.fromString(uuid));
+    ModuleReference mp = new ModuleReference(myGeneratorDescriptor.getGeneratorUID(), uuid);
     setModuleReference(mp);
 
     upgradeGeneratorDescriptor();
@@ -107,7 +107,8 @@ public class Generator extends AbstractModule {
     return getSourceLanguage().isPackaged();
   }
 
-  public Set<StubPath> getStubPaths() {
+  @Override
+  public Collection<StubPath> getStubPaths() {
     return getSourceLanguage().getRuntimeStubPaths();
   }
 
@@ -212,8 +213,9 @@ public class Generator extends AbstractModule {
     return null;
   }
 
-  public Set<ModuleReference> getUsedLanguagesReferences() {
-    Set<ModuleReference> result = new HashSet<ModuleReference>(super.getUsedLanguagesReferences());
+  @Override
+  public Collection<ModuleReference> getUsedLanguagesReferences() {
+    Set<ModuleReference> result = new LinkedHashSet<ModuleReference>(super.getUsedLanguagesReferences());
     for (Language l : LibraryInitializer.getInstance().getBootstrapModules(Language.class)) {
       if (!result.contains(l.getModuleReference())) {
         result.add(l.getModuleReference());
@@ -234,7 +236,7 @@ public class Generator extends AbstractModule {
     return mySourceLanguage.getClassesGen();
   }
 
-  public Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
+  public Collection<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
     Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>(super.getImplicitlyImportedModelsFor(sm));
 
     SModelDescriptor structureModelDescriptor = getSourceLanguage().getStructureModelDescriptor();
@@ -290,7 +292,7 @@ public class Generator extends AbstractModule {
     };
   }
 
-  public Set<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
+  public Collection<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
     Set<Language> result = new LinkedHashSet<Language>(super.getImplicitlyImportedLanguages(sm));
     if (SModelStereotype.isGeneratorModel(sm)) {
       result.add(getSourceLanguage());

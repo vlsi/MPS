@@ -5,11 +5,16 @@ package jetbrains.mps.debug.api;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.NonNls;
+import org.apache.commons.lang.ObjectUtils;
+import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.programState.ILocation;
 import jetbrains.mps.debug.api.programState.NullLocation;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
-import org.apache.commons.lang.ObjectUtils;
 
 public class DebuggableFramesSelector implements IDebuggableFramesSelector {
   public DebuggableFramesSelector() {
@@ -45,18 +50,12 @@ public class DebuggableFramesSelector implements IDebuggableFramesSelector {
 
   @Override
   public boolean isDebuggableFrame(@NotNull IStackFrame frame) {
-    ILocation location = frame.getLocation();
-    if (location instanceof NullLocation) {
-      return false;
-    }
-    SNode node = TraceInfoUtil.getNode(location.getUnitName(), location.getFileName(), location.getLineNumber());
-    return node != null;
+    return getSNodePointer(frame.getLocation()) != null;
   }
 
   @Override
-  public boolean isDebuggablePosition(String unitName, String fileName, int position) {
-    SNode node = TraceInfoUtil.getNode(unitName, fileName, position);
-    return node != null;
+  public boolean isDebuggablePosition(@NonNls String unitName, @NonNls String fileName, int position) {
+    return getSNodePointer(unitName, fileName, position) != null;
   }
 
   @Override
@@ -64,8 +63,49 @@ public class DebuggableFramesSelector implements IDebuggableFramesSelector {
     if (ObjectUtils.equals(lastUnitName, nextUnitName) && lastLineNumber == nextLineNumber && lastFrameCount == nextFrameCount) {
       return true;
     }
-    SNode lastNode = TraceInfoUtil.getNode(lastUnitName, lastFileName, lastLineNumber);
-    SNode nextNode = TraceInfoUtil.getNode(nextUnitName, nextFileName, nextLineNumber);
-    return lastNode == nextNode;
+    SNodePointer lastPointer = getSNodePointer(lastUnitName, lastFileName, lastLineNumber);
+    SNodePointer nextPointer = getSNodePointer(nextUnitName, nextFileName, nextLineNumber);
+    return eq_xhry8p_a0d0e(lastPointer, nextPointer);
+  }
+
+  @Nullable
+  public SNodePointer getSNodePointer(@Nullable ILocation location) {
+    if (location == null || location instanceof NullLocation) {
+      return null;
+    }
+    return getSNodePointer(location.getUnitName(), location.getFileName(), location.getLineNumber());
+  }
+
+  @Nullable
+  public SNodePointer getSNodePointer(@NonNls final String unitName, @NonNls final String fileName, final int position) {
+    return ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
+      public SNodePointer compute() {
+        SNode node = getNode(unitName, fileName, position);
+        if (node == null) {
+          return null;
+        }
+        return new SNodePointer(node);
+      }
+    });
+  }
+
+  @Nullable
+  public SNode getNode(@Nullable ILocation location) {
+    if (location == null || location instanceof NullLocation) {
+      return null;
+    }
+    return getNode(location.getUnitName(), location.getFileName(), location.getLineNumber());
+  }
+
+  @Nullable
+  public SNode getNode(@NonNls String unitName, @NonNls String fileName, int position) {
+    return TraceInfoUtil.getNode(unitName, fileName, position);
+  }
+
+  private static boolean eq_xhry8p_a0d0e(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

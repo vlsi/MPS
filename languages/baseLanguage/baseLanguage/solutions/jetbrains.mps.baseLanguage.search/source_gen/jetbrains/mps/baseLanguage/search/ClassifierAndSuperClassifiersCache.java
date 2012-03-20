@@ -386,7 +386,7 @@ forEachInAllMethods:
           result.append(',');
         }
         if (type != null) {
-          result.append(((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_getErasureSignature_1213877337313", new Class[]{SNode.class})));
+          result.append(((String) BehaviorManager.getInstance().invoke(Object.class, type, "virtual_getErasureSignature_1213877337313", new Class[]{SNode.class})));
         } else {
           result.append("");
         }

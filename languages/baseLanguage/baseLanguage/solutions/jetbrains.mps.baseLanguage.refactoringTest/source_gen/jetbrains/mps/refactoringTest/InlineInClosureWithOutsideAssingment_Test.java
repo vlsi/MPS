@@ -6,8 +6,8 @@ import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
-import jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineVariableRefactoring;
-import jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineVariableReferenceRefactoring;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableRefactoring;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableReferenceRefactoring;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.SNode;
 public class InlineInClosureWithOutsideAssingment_Test extends BaseTransformationTest {
   @Test
   public void test_InlineInClosureWithOutsideAssingmentTest() throws Throwable {
-    this.initTest("${mps_home}/MPS.ipr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
+    this.initTest("${mps_home}/MPS.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest("jetbrains.mps.refactoringTest.InlineInClosureWithOutsideAssingment_Test$TestBody", "test_InlineInClosureWithOutsideAssingmentTest", true);
   }
 

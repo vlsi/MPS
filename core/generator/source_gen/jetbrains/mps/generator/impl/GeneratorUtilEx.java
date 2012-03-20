@@ -59,7 +59,7 @@ public class GeneratorUtilEx {
   }
 
   public static String getPatternVariableName(SNode ref) {
-    return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(ref, "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef"), "virtual_getVariableName_2902001550281937661", new Class[]{SNode.class}));
+    return ((String) BehaviorManager.getInstance().invoke(Object.class, ref, "virtual_getVariableName_2902001550281937661", new Class[]{SNode.class}));
   }
 
   public static List<SNode> getTemplateFragments(@NotNull SNode template) {

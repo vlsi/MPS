@@ -38,7 +38,7 @@
       <implementation-class>com.intellij.psi.stubs.SerializationManagerImpl</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.watching.ModelChangesWatcher</implementation-class>
+      <implementation-class>jetbrains.mps.ide.platform.watching.FSChangesWatcher</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.watching.ModelFocusSynchronizer</implementation-class>
@@ -47,7 +47,7 @@
       <implementation-class>jetbrains.mps.watching.WatchedRoots</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.watching.ModelCacheReloader</implementation-class>
+      <implementation-class>jetbrains.mps.ide.platform.watching.ModelCacheReloader</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.refactoring.RefactoringAccessImpl</implementation-class>
@@ -85,10 +85,6 @@
   <xi:include href="/META-INF/MPSEditor.xml" xpointer="xpointer(/components/*)"/>
 
   <application-components>
-    <component>
-      <implementation-class>jetbrains.mps.baseLanguage.index.ClassifierSuccessorsFinder</implementation-class>
-    </component>
-
     <component>
       <interface-class>com.intellij.openapi.fileEditor.impl.text.TextEditorProvider</interface-class>
       <implementation-class>com.intellij.openapi.fileEditor.impl.text.TextEditorProvider</implementation-class>
@@ -160,6 +156,10 @@
 
     <component>
       <implementation-class>jetbrains.mps.ide.generator.index.IndexBasedModelDigest</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.generator.index.IndexBasedLanguageModelDigest</implementation-class>
     </component>
 
     <component>

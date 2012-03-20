@@ -104,7 +104,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createCollection_6rl195_c2b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_6rl195_c2b0a");
     {
       Style style = editorCell.getStyle();

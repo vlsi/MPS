@@ -56,6 +56,8 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
   private final Map<String, String> mySources = new HashMap<String, String>();
   private final Set<String> myJavaSources = new HashSet<String>();
   private Set<IModule> myContextModules = new HashSet<IModule>();
+  @Nullable
+  private CompilationResultListener myCompilationListener;
 
   public InMemoryJavaGenerationHandler(boolean reloadClasses, boolean keepSources) {
     myReloadClasses = reloadClasses;
@@ -96,7 +98,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
   public boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ProgressMonitor monitor) throws IOException, GenerationCanceledException {
     try {
       monitor.start("compiling in memory..", 1);
-      return compile(monitor, null);
+      return compile(monitor, myCompilationListener);
     } finally {
       monitor.done();
     }
@@ -151,7 +153,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
 
   @Deprecated
   public boolean compile(ProgressMonitor progress) {
-    return compile(progress, null);
+    return compile(progress, myCompilationListener);
   }
 
   public boolean compile(ProgressMonitor progress, @Nullable CompilationResultListener listener) {
@@ -224,6 +226,10 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     LOG.info(sb.toString());
 
     return result;
+  }
+
+  public void setCompilationListener(CompilationResultListener compilationListener) {
+    myCompilationListener = compilationListener;
   }
 
   public void clean() {

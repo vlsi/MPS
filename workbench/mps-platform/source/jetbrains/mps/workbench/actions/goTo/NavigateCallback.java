@@ -20,13 +20,6 @@ import com.intellij.navigation.NavigationItem;
 
 import javax.swing.SwingUtilities;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Alexander Shatalin
- * Date: 2/23/11
- * Time: 1:02 PM
- * To change this template use File | Settings | File Templates.
- */
 public class NavigateCallback extends ChooseByNamePopupComponent.Callback {
   private NavigationItem myNavigationItem;
 

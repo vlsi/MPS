@@ -25,8 +25,9 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.generator.GenerationFacade;
 import java.util.Collection;
-import jetbrains.mps.util.Computable;
+import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.util.Computable;
 import java.util.Collections;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.library.ModulesMiner;
@@ -223,8 +224,7 @@ public abstract class MpsWorker {
   }
 
   private void processModuleFile(final File moduleFile, final Set<IModule> modules) {
-    String path = moduleFile.getAbsolutePath();
-    if (!(path.endsWith(MPSExtentions.DOT_LANGUAGE)) && !(path.endsWith(MPSExtentions.DOT_SOLUTION)) && !(path.endsWith(MPSExtentions.DOT_DEVKIT))) {
+    if (DescriptorIOFacade.getInstance().fromFileType(FileSystem.getInstance().getFileByPath(moduleFile.getPath())) == null) {
       return;
     }
     List<IModule> tmpmodules;
@@ -288,7 +288,7 @@ public abstract class MpsWorker {
         modelReference = SModelReference.fromPath(ifile.getPath());
       }
       info("Read model " + modelReference);
-      DescriptorLoadResult d = new RegularModelDataSource(ifile).loadDescriptor(null, modelReference.getSModelFqName());
+      DescriptorLoadResult d = new RegularModelDataSource(null, ifile).loadDescriptor(null, modelReference.getSModelFqName());
       SModelDescriptor existingDescr = SModelRepository.getInstance().getModelDescriptor(d.getHeader().getModelReference());
       if (existingDescr == null) {
         error("Module for " + ifile.getPath() + " was not found. Use \"library\" tag to load required modules.");

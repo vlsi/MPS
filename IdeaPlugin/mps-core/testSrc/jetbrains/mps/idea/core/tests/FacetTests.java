@@ -32,6 +32,7 @@ import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
@@ -40,197 +41,199 @@ import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.NonNls;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: shatalin
- * Date: 11/22/11
- * Time: 6:37 PM
- * To change this template use File | Settings | File Templates.
- */
 public class FacetTests extends AbstractMPSFixtureTestCase {
 
-    public void testFacetInitialized() {
-        FacetManager facetManager = FacetManager.getInstance(myModule);
-        Collection<MPSFacet> mpsFacets = facetManager.getFacetsByType(MPSFacetType.ID);
-        assertEquals(1, mpsFacets.size());
-        assertEquals(myFacet, mpsFacets.iterator().next());
-        assertEquals(myFacet, facetManager.getFacetByType(MPSFacetType.ID));
+  public void testFacetInitialized() {
+    FacetManager facetManager = FacetManager.getInstance(myModule);
+    Collection<MPSFacet> mpsFacets = facetManager.getFacetsByType(MPSFacetType.ID);
+    assertEquals(1, mpsFacets.size());
+    assertEquals(myFacet, mpsFacets.iterator().next());
+    assertEquals(myFacet, facetManager.getFacetByType(MPSFacetType.ID));
 
-        assertTrue(myFacet.wasInitialized());
+    assertTrue(myFacet.wasInitialized());
 
-        // Default Solution settings
-        Solution solution = myFacet.getSolution();
-        assertEmpty(solution.getSModelRoots());
-        assertEmpty(solution.getDependencies());
-        assertEmpty(solution.getUsedLanguagesReferences());
+    // Default Solution settings
+    Solution solution = myFacet.getSolution();
+    assertEmpty(solution.getSModelRoots());
+    assertEmpty(solution.getDependencies());
+    assertEmpty(solution.getUsedLanguagesReferences());
 
-        assertEquals(getModuleHome() + "/source_gen", solution.getGeneratorOutputPath());
+    assertEquals(getModuleHome() + "/source_gen", solution.getGeneratorOutputPath());
 
-        Solution repositorySolution = MPSModuleRepository.getInstance().getSolution(solution.getModuleReference());
-        assertEquals(solution, repositorySolution);
-        assertEquals(myModule.getName(), solution.getModuleDescriptor().getNamespace());
+    Solution repositorySolution = MPSModuleRepository.getInstance().getSolution(solution.getModuleReference());
+    assertEquals(solution, repositorySolution);
+    assertEquals(myModule.getName(), solution.getModuleDescriptor().getNamespace());
+  }
+
+  public void testSolutionRemovedOnFacetDeletion() {
+    ModuleReference solutionReference = myFacet.getSolution().getModuleReference();
+
+    ApplicationManager.getApplication().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        ModifiableFacetModel modifiableModel = FacetManager.getInstance(myModule).createModifiableModel();
+        MPSFacet mpsFacet = modifiableModel.getFacetByType(MPSFacetType.ID);
+        modifiableModel.removeFacet(mpsFacet);
+        modifiableModel.commit();
+      }
+    });
+
+    Solution repositorySolution = MPSModuleRepository.getInstance().getSolution(solutionReference);
+    assertNull(repositorySolution);
+  }
+
+  public void testSolutionRemovedOnModuleDeletion() {
+
+    ModuleReference solutionReference = myFacet.getSolution().getModuleReference();
+
+    ApplicationManager.getApplication().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        ModuleManager moduleManager = ModuleManager.getInstance(myModule.getProject());
+        ModifiableModuleModel modifiableModel = moduleManager.getModifiableModel();
+        modifiableModel.disposeModule(myModule);
+        modifiableModel.commit();
+      }
+    });
+
+    Solution repositorySolution = MPSModuleRepository.getInstance().getSolution(solutionReference);
+    assertNull(repositorySolution);
+  }
+
+  public void testAddRemoveModelRoot() throws InterruptedException {
+    @NonNls final File modelRootDir = new File(getModuleHome(), "modelRoot");
+    assertTrue(modelRootDir.mkdir());
+
+    ModuleReference solutionReference = myFacet.getSolution().getModuleReference();
+
+    String modelRootPath = modelRootDir.getPath();
+    MPSConfigurationBean configurationBean = myFacet.getConfiguration().getState();
+    ArrayList<ModelRoot> roots = new ArrayList<ModelRoot>();
+    roots.add(new ModelRoot(modelRootPath));
+    configurationBean.setModelRoots(roots);
+    myFacet.setConfiguration(configurationBean);
+    flushEDT();
+
+    Solution repositorySolution = MPSModuleRepository.getInstance().getSolution(solutionReference);
+    assertEquals(myFacet.getSolution(), repositorySolution);
+    Collection<SModelRoot> modelRoots = repositorySolution.getSModelRoots();
+    assertEquals(1, modelRoots.size());
+    SModelRoot theModelRoot = modelRoots.iterator().next();
+    assertEquals(modelRootDir.getPath(), theModelRoot.getPath());
+
+    configurationBean = myFacet.getConfiguration().getState();
+    configurationBean.setModelRoots(new ArrayList<ModelRoot>());
+    myFacet.setConfiguration(configurationBean);
+    flushEDT();
+
+    assertEmpty(repositorySolution.getSModelRoots());
+  }
+
+  public void testAddRemoveUsedLanguage() throws InterruptedException {
+    Language baseLanguage = MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.baseLanguage");
+    assertNotNull(baseLanguage);
+    Language editorLanguage = MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.lang.editor");
+    assertNotNull(editorLanguage);
+
+    String[] usedLanguageStrings = new String[]{baseLanguage.toString(), editorLanguage.toString()};
+    Language[] usedLanguages = new Language[]{baseLanguage, editorLanguage};
+
+    MPSConfigurationBean configurationBean = myFacet.getConfiguration().getState();
+    configurationBean.setUsedLanguages(usedLanguageStrings);
+    myFacet.setConfiguration(configurationBean);
+    flushEDT();
+
+    Collection<ModuleReference> solutionUsedLanguageRefs = myFacet.getSolution().getUsedLanguagesReferences();
+    Set<Language> solutionUsedLanguages = new HashSet<Language>();
+    for (ModuleReference solutionUsedLanguageRef : solutionUsedLanguageRefs) {
+      solutionUsedLanguages.add(MPSModuleRepository.getInstance().getLanguage(solutionUsedLanguageRef));
+    }
+    assertEquals(usedLanguages.length, solutionUsedLanguages.size());
+    for (Language usedLanguage : usedLanguages) {
+      assertTrue(solutionUsedLanguages.contains(usedLanguage));
     }
 
-    public void testSolutionRemovedOnFacetDeletion() {
-        ModuleReference solutionReference = myFacet.getSolution().getModuleReference();
+    configurationBean.setUsedLanguages(new String[0]);
+    myFacet.setConfiguration(configurationBean);
+    flushEDT();
 
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-            @Override
-            public void run() {
-                ModifiableFacetModel modifiableModel = FacetManager.getInstance(myModule).createModifiableModel();
-                MPSFacet mpsFacet = modifiableModel.getFacetByType(MPSFacetType.ID);
-                modifiableModel.removeFacet(mpsFacet);
-                modifiableModel.commit();
-            }
-        });
+    assertEmpty(myFacet.getSolution().getUsedLanguagesReferences());
+  }
 
-        Solution repositorySolution = MPSModuleRepository.getInstance().getSolution(solutionReference);
-        assertNull(repositorySolution);
-    }
+  public void testSetGeneratorOutputPath() throws InterruptedException {
+    @NonNls String generatorOutputPath = getModuleHome() + "/generatorOut";
+    MPSConfigurationBean configurationBean = myFacet.getConfiguration().getState();
+    configurationBean.setGeneratorOutputPath(generatorOutputPath);
+    myFacet.setConfiguration(configurationBean);
+    flushEDT();
 
-    public void testSolutionRemovedOnModuleDeletion() {
+    assertEquals(generatorOutputPath, myFacet.getSolution().getGeneratorOutputPath());
+  }
 
-        ModuleReference solutionReference = myFacet.getSolution().getModuleReference();
+  public void testDefaultOutput() {
+    MPSConfigurationBean configurationBean = myFacet.getConfiguration().getState();
+    assertFalse(configurationBean.isUseTransientOutputFolder());
+    assertFalse(configurationBean.isUseModuleSourceFolder());
+  }
 
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-            @Override
-            public void run() {
-                ModuleManager moduleManager = ModuleManager.getInstance(myModule.getProject());
-                ModifiableModuleModel modifiableModel = moduleManager.getModifiableModel();
-                modifiableModel.disposeModule(myModule);
-                modifiableModel.commit();
-            }
-        });
+  public void testAddRemoveDependencies() throws Exception {
+    final Module module2 = addModuleAndSetupFixture(myProjectBuilder);
+    MPSFacet mpsFacet2 = addMPSFacet(module2);
 
-        Solution repositorySolution = MPSModuleRepository.getInstance().getSolution(solutionReference);
-        assertNull(repositorySolution);
-    }
+    ApplicationManager.getApplication().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        ModifiableRootModel rootModel = ModuleRootManager.getInstance(module2).getModifiableModel();
+        rootModel.addModuleOrderEntry(myModule);
+        rootModel.commit();
+      }
+    });
+    flushEDT();
 
-    public void testAddRemoveModelRoot() throws InterruptedException {
-        @NonNls final File modelRootDir = new File(getModuleHome(), "modelRoot");
-        assertTrue(modelRootDir.mkdir());
+    List<Dependency> solution2Dependencies = mpsFacet2.getSolution().getDependencies();
+    assertEquals(1, solution2Dependencies.size());
+    assertEquals(myFacet.getSolution().getModuleReference(), solution2Dependencies.get(0).getModuleRef());
 
-        ModuleReference solutionReference = myFacet.getSolution().getModuleReference();
-
-        String modelRootPath = modelRootDir.getPath();
-        MPSConfigurationBean configurationBean = myFacet.getConfiguration().getState();
-        configurationBean.setModelRootPaths(modelRootPath);
-        myFacet.setConfiguration(configurationBean);
-        flushEDT();
-
-        Solution repositorySolution = MPSModuleRepository.getInstance().getSolution(solutionReference);
-        assertEquals(myFacet.getSolution(), repositorySolution);
-        Set<SModelRoot> modelRoots = repositorySolution.getSModelRoots();
-        assertEquals(1, modelRoots.size());
-        SModelRoot theModelRoot = modelRoots.iterator().next();
-        assertEquals(modelRootDir.getPath(), theModelRoot.getPath());
-
-        configurationBean = myFacet.getConfiguration().getState();
-        configurationBean.setModelRootPaths();
-        myFacet.setConfiguration(configurationBean);
-        flushEDT();
-
-        assertEmpty(repositorySolution.getSModelRoots());
-    }
-
-    public void testAddRemoveUsedLanguage() throws InterruptedException {
-        Language baseLanguage = MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.baseLanguage");
-        assertNotNull(baseLanguage);
-        Language editorLanguage = MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.lang.editor");
-        assertNotNull(editorLanguage);
-
-        String[] usedLanguageStrings = new String[]{baseLanguage.toString(), editorLanguage.toString()};
-        Language[] usedLanguages = new Language[]{baseLanguage, editorLanguage};
-
-        MPSConfigurationBean configurationBean = myFacet.getConfiguration().getState();
-        configurationBean.setUsedLanguages(usedLanguageStrings);
-        myFacet.setConfiguration(configurationBean);
-        flushEDT();
-
-        Set<ModuleReference> solutionUsedLanguageRefs = myFacet.getSolution().getUsedLanguagesReferences();
-        Set<Language> solutionUsedLanguages = new HashSet<Language>();
-        for (ModuleReference solutionUsedLanguageRef : solutionUsedLanguageRefs) {
-            solutionUsedLanguages.add(MPSModuleRepository.getInstance().getLanguage(solutionUsedLanguageRef));
+    ApplicationManager.getApplication().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        ModifiableRootModel rootModel = ModuleRootManager.getInstance(module2).getModifiableModel();
+        for (OrderEntry orderEntry : rootModel.getOrderEntries()) {
+          if (orderEntry instanceof ModuleOrderEntry && myModule.equals(((ModuleOrderEntry) orderEntry).getModule())) {
+            rootModel.removeOrderEntry(orderEntry);
+            break;
+          }
         }
-        assertEquals(usedLanguages.length, solutionUsedLanguages.size());
-        for (Language usedLanguage : usedLanguages) {
-            assertTrue(solutionUsedLanguages.contains(usedLanguage));
+        rootModel.commit();
+      }
+    });
+    flushEDT();
+
+    assertEmpty(mpsFacet2.getSolution().getDependencies());
+  }
+
+  public void testUpdateNamespaceOnModuleRename() throws InterruptedException {
+    final String newModuleName = "newModuleName__";
+    ApplicationManager.getApplication().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        ModifiableModuleModel modifiableModel = ModuleManager.getInstance(myModule.getProject()).getModifiableModel();
+        try {
+          modifiableModel.renameModule(myModule, newModuleName);
+        } catch (ModuleWithNameAlreadyExists moduleWithNameAlreadyExists) {
+          fail(moduleWithNameAlreadyExists.getMessage());
         }
+        modifiableModel.commit();
+      }
+    });
+    flushEDT();
 
-        configurationBean.setUsedLanguages(new String[0]);
-        myFacet.setConfiguration(configurationBean);
-        flushEDT();
-
-        assertEmpty(myFacet.getSolution().getUsedLanguagesReferences());
-    }
-
-    public void testSetGeneratorOutputPath() throws InterruptedException {
-        @NonNls String generatorOutputPath = getModuleHome() + "/generatorOut";
-        MPSConfigurationBean configurationBean = myFacet.getConfiguration().getState();
-        configurationBean.setGeneratorOutputPath(generatorOutputPath);
-        myFacet.setConfiguration(configurationBean);
-        flushEDT();
-
-        assertEquals(generatorOutputPath, myFacet.getSolution().getGeneratorOutputPath());
-    }
-
-    public void testAddRemoveDependencies() throws Exception {
-        final Module module2 = addModuleAndSetupFixture(myProjectBuilder);
-        MPSFacet mpsFacet2 = addMPSFacet(module2);
-
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-            @Override
-            public void run() {
-                ModifiableRootModel rootModel = ModuleRootManager.getInstance(module2).getModifiableModel();
-                rootModel.addModuleOrderEntry(myModule);
-                rootModel.commit();
-            }
-        });
-        flushEDT();
-
-        List<Dependency> solution2Dependencies = mpsFacet2.getSolution().getDependencies();
-        assertEquals(1, solution2Dependencies.size());
-        assertEquals(myFacet.getSolution().getModuleReference(), solution2Dependencies.get(0).getModuleRef());
-
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-            @Override
-            public void run() {
-                ModifiableRootModel rootModel = ModuleRootManager.getInstance(module2).getModifiableModel();
-                for (OrderEntry orderEntry : rootModel.getOrderEntries()) {
-                    if (orderEntry instanceof ModuleOrderEntry && myModule.equals(((ModuleOrderEntry) orderEntry).getModule())) {
-                        rootModel.removeOrderEntry(orderEntry);
-                        break;
-                    }
-                }
-                rootModel.commit();
-            }
-        });
-        flushEDT();
-
-        assertEmpty(mpsFacet2.getSolution().getDependencies());
-    }
-
-    public void testUpdateNamespaceOnModuleRename() throws InterruptedException {
-        final String newModuleName = "newModuleName__";
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-            @Override
-            public void run() {
-                ModifiableModuleModel modifiableModel = ModuleManager.getInstance(myModule.getProject()).getModifiableModel();
-                try {
-                    modifiableModel.renameModule(myModule, newModuleName);
-                } catch (ModuleWithNameAlreadyExists moduleWithNameAlreadyExists) {
-                    fail(moduleWithNameAlreadyExists.getMessage());
-                }
-                modifiableModel.commit();
-            }
-        });
-        flushEDT();
-
-        assertEquals(newModuleName, myModule.getName());
-        assertEquals(newModuleName, myFacet.getSolution().getModuleDescriptor().getNamespace());
-    }
+    assertEquals(newModuleName, myModule.getName());
+    assertEquals(newModuleName, myFacet.getSolution().getModuleDescriptor().getNamespace());
+  }
 }

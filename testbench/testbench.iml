@@ -21,12 +21,10 @@
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="make-runtime" />
-    <orderEntry type="module" module-name="baseLanguageIndex" />
     <orderEntry type="module" module-name="baseLanguage-search" />
     <orderEntry type="module" module-name="MPSSupport" />
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="trove.runtime" />
-    <orderEntry type="module" module-name="resources" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="vcs" />
     <orderEntry type="module" module-name="miscTests" />
@@ -52,6 +50,7 @@
     <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="module" module-name="debugger-java" scope="RUNTIME" />
     <orderEntry type="module" module-name="debugger-api" scope="RUNTIME" />
+    <orderEntry type="library" name="xmlunit" level="project" />
     <orderEntry type="module" module-name="findUsages-runtime" />
   </component>
 </module>

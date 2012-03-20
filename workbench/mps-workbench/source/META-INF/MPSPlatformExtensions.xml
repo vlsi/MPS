@@ -165,6 +165,8 @@
   <applicationService serviceInterface="com.intellij.openapi.roots.ui.FileAppearanceService"
                       serviceImplementation="com.intellij.openapi.roots.ui.FileAppearanceServiceImpl"/>
 
+  <applicationService serviceImplementation="com.intellij.internal.statistic.UsageTrigger"/>
+
   <projectService serviceInterface="com.intellij.openapi.vfs.ReadonlyStatusHandler"
                   serviceImplementation="com.intellij.openapi.vcs.readOnlyHandler.ReadonlyStatusHandlerImpl"/>
   <projectService serviceInterface="com.intellij.openapi.startup.StartupManager"

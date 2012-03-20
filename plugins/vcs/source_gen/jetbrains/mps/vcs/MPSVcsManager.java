@@ -18,8 +18,9 @@ import com.intellij.openapi.vcs.changes.ChangeProvider;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.vcs.VcsException;
 import jetbrains.mps.smodel.DiskMemoryConflictResolver;
+import jetbrains.mps.vcs.platform.integration.DiskMemoryConflictResolverImpl;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.vcs.mergedriver.MergeDriverNotification;
+import jetbrains.mps.vcs.platform.mergedriver.MergeDriverNotification;
 import com.intellij.openapi.vcs.VcsListener;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.ide.vcs.SourceRevision;
@@ -33,6 +34,7 @@ import java.util.Arrays;
 import java.util.List;
 import com.intellij.openapi.vcs.changes.ChangeListManagerImpl;
 import com.intellij.openapi.vcs.changes.ChangeListManagerGate;
+import java.io.File;
 import com.intellij.openapi.vcs.changes.LocalChangeList;
 import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
@@ -158,6 +160,10 @@ public class MPSVcsManager implements ProjectComponent {
 
   public static class StubChangeListManagerGate implements ChangeListManagerGate {
     public StubChangeListManagerGate() {
+    }
+
+    public FileStatus getStatus(File file) {
+      return null;
     }
 
     public List<LocalChangeList> getListsCopy() {

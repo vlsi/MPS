@@ -18,7 +18,7 @@ public class LT_DotExpression_with_Not_Test extends BaseTransformationTest {
 
   @Test
   public void test_LT_DotExpression_with_Not() throws Throwable {
-    this.initTest("${mps_home}/MPS.ipr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
+    this.initTest("${mps_home}/MPS.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
     this.runTest("jetbrains.mps.editorTest.LT_DotExpression_with_Not_Test$TestBody", "testMethod", false);
   }
 

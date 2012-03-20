@@ -28,6 +28,7 @@ import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.make.script.IConfig;
 import java.util.Map;
 import jetbrains.mps.make.script.IPropertiesPool;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class CopyTraceInfo_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -76,6 +77,9 @@ public class CopyTraceInfo_Facet extends IFacet.Stub {
           Iterable<IResource> _output_zgz0lb_a0a = null;
           switch (0) {
             case 0:
+              if (Boolean.TRUE.equals(pa.global().properties(Target_copyTraceInfo.this.getName(), CopyTraceInfo_Facet.Target_copyTraceInfo.Parameters.class).skipCopying())) {
+                return new IResult.SUCCESS(_output_zgz0lb_a0a);
+              }
               final List<IFile> toCreate = ListSequence.fromList(new ArrayList<IFile>());
               final List<Tuples._2<IFile, IFile>> toCopy = ListSequence.fromList(new ArrayList<Tuples._2<IFile, IFile>>());
               for (IResource resource : input) {
@@ -167,12 +171,38 @@ public class CopyTraceInfo_Facet extends IFacet.Stub {
     }
 
     public <T> T createParameters(Class<T> cls) {
-      return null;
+      return cls.cast(new Parameters());
     }
 
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
+      if (t != null) {
+        ((Tuples._1) t).assign((Tuples._1) copyFrom);
+      }
       return t;
+    }
+
+    public static class Parameters extends MultiTuple._1<Boolean> {
+      public Parameters() {
+        super();
+      }
+
+      public Parameters(Boolean skipCopying) {
+        super(skipCopying);
+      }
+
+      public Boolean skipCopying(Boolean value) {
+        return super._0(value);
+      }
+
+      public Boolean skipCopying() {
+        return super._0();
+      }
+
+      @SuppressWarnings(value = "unchecked")
+      public CopyTraceInfo_Facet.Target_copyTraceInfo.Parameters assignFrom(Tuples._1<Boolean> from) {
+        return (CopyTraceInfo_Facet.Target_copyTraceInfo.Parameters) super.assign(from);
+      }
     }
   }
 
@@ -181,10 +211,24 @@ public class CopyTraceInfo_Facet extends IFacet.Stub {
     }
 
     public void storeValues(Map<String, String> store, IPropertiesPool properties) {
+      {
+        ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.traceable.CopyTraceInfo.copyTraceInfo");
+        if (properties.hasProperties(name)) {
+          CopyTraceInfo_Facet.Target_copyTraceInfo.Parameters props = properties.properties(name, CopyTraceInfo_Facet.Target_copyTraceInfo.Parameters.class);
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.traceable.CopyTraceInfo.copyTraceInfo.skipCopying", String.valueOf(props.skipCopying()));
+        }
+      }
     }
 
     public void loadValues(Map<String, String> store, IPropertiesPool properties) {
       try {
+        {
+          ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.traceable.CopyTraceInfo.copyTraceInfo");
+          CopyTraceInfo_Facet.Target_copyTraceInfo.Parameters props = properties.properties(name, CopyTraceInfo_Facet.Target_copyTraceInfo.Parameters.class);
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.traceable.CopyTraceInfo.copyTraceInfo.skipCopying")) {
+            props.skipCopying(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.lang.traceable.CopyTraceInfo.copyTraceInfo.skipCopying")));
+          }
+        }
       } catch (RuntimeException re) {
       }
     }

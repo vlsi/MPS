@@ -15,13 +15,6 @@
  */
 package jetbrains.mps.generator;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 11/10/11
- * Time: 11:08 AM
- * To change this template use File | Settings | File Templates.
- */
 public interface IModifiableGenerationSettings extends IGenerationSettings {
   boolean isSaveTransientModels();
 

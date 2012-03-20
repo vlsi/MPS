@@ -18,8 +18,12 @@ editor/editor-runtime/classes
 editor/actions-runtime/classes
 editor/intentions-runtime/classes
 editor/typesystemIntegration/classes
+:platform
+workbench/mps-platform/classes
+workbench/mps-debugger/classes
 :workbench
-workbench/idea-patch/classes
+workbench/resources/classes
+workbench/resources_en/classes
 languages/languageDesign/test/classes_gen
 languages/util/runConfigurations/classes
 languages/util/uiLanguage/runtime/classes
@@ -27,6 +31,7 @@ workbench/typesystemUi/classes
 workbench/mps-editor/classes
 workbench/mps-workbench/classes
 MPSPlugin/apiclasses
-workbench/baseLanguageIndex/classes_gen
 workbench/mps-platform/classes
 workbench/mps-debugger/classes
+:test
+testbench/classes

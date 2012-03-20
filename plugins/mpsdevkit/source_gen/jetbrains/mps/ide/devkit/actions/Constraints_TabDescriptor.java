@@ -64,7 +64,7 @@ public class Constraints_TabDescriptor extends EditorTabDescriptor {
   }
 
   public SNode getNode(SNode node) {
-    List<SNode> nodes = ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_findConceptAspectCollection_1567570417158062208", new Class[]{SNode.class, LanguageAspect.class}, LanguageAspect.CONSTRAINTS));
+    List<SNode> nodes = ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, node, "call_findConceptAspectCollection_1567570417158062208", new Class[]{SNode.class, LanguageAspect.class}, LanguageAspect.CONSTRAINTS));
     return (ListSequence.fromList(nodes).isEmpty() ?
       null :
       ListSequence.fromList(nodes).first()

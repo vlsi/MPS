@@ -15,47 +15,60 @@
  */
 package jetbrains.mps.project.structure.modules;
 
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.model.ModelRoot;
 
+import java.util.Collection;
 import java.util.Comparator;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.LinkedHashSet;
 import java.util.TreeSet;
 
 public class ModuleDescriptor {
   private static final ModuleReferenceComparator MODULE_REFERENCE_COMPARATOR = new ModuleReferenceComparator();
   private static final DependencyComparator DEPENDENCY_COMPARATOR = new DependencyComparator(MODULE_REFERENCE_COMPARATOR);
 
-  private String myUUID;
+  private ModuleId myId;
   private String myNamespace;
   private String myTimestamp;
   private boolean myCompileInMPS = true;
 
-  private Set<jetbrains.mps.project.structure.model.ModelRoot> myModelRoots;
-  private Set<Dependency> myDependencies;
-  private Set<ModuleReference> myUsedLanguages;
-  private Set<ModuleReference> myUsedDevkits;
-  private Set<ModelRoot> myStubModels;
-  private Set<String> mySourcePaths;
+  private Collection<jetbrains.mps.project.structure.model.ModelRoot> myModelRoots;
+  private Collection<Dependency> myDependencies;
+  private Collection<ModuleReference> myUsedLanguages;
+  private Collection<ModuleReference> myUsedDevkits;
+  private Collection<ModelRoot> myStubModels;
+  private Collection<String> mySourcePaths;
   private DeploymentDescriptor myDeploymentDescriptor;
 
   private Throwable myLoadException;
+  private boolean myUseTransientOutput;
 
   public ModuleDescriptor() {
-    myModelRoots = new HashSet<ModelRoot>();
+    myModelRoots = new LinkedHashSet<ModelRoot>();
     myDependencies = new TreeSet<Dependency>(DEPENDENCY_COMPARATOR);
     myUsedLanguages = new TreeSet<ModuleReference>(MODULE_REFERENCE_COMPARATOR);
     myUsedDevkits = new TreeSet<ModuleReference>(MODULE_REFERENCE_COMPARATOR);
-    myStubModels = new HashSet<ModelRoot>();
-    mySourcePaths = new HashSet<String>();
+    myStubModels = new LinkedHashSet<ModelRoot>();
+    mySourcePaths = new LinkedHashSet<String>();
   }
 
+  @Deprecated //replaced with ModuleId
   public String getUUID() {
-    return myUUID;
+    ModuleId id = getId();
+    return id == null ? null : id.toString();
   }
 
+  @Deprecated //replaced with ModuleId
   public void setUUID(String UUID) {
-    myUUID = UUID;
+    setId(ModuleId.fromString(UUID));
+  }
+
+  public ModuleId getId() {
+    return myId;
+  }
+
+  public void setId(ModuleId id) {
+    myId = id;
   }
 
   public String getNamespace() {
@@ -67,7 +80,7 @@ public class ModuleDescriptor {
   }
 
   public ModuleReference getModuleReference() {
-    return new ModuleReference(getNamespace(), myUUID);
+    return new ModuleReference(getNamespace(), myId);
   }
 
   public String getTimestamp() {
@@ -86,27 +99,27 @@ public class ModuleDescriptor {
     myCompileInMPS = compileInMPS;
   }
 
-  public Set<ModelRoot> getModelRoots() {
+  public Collection<ModelRoot> getModelRoots() {
     return myModelRoots;
   }
 
-  public Set<Dependency> getDependencies() {
+  public Collection<Dependency> getDependencies() {
     return myDependencies;
   }
 
-  public Set<ModuleReference> getUsedLanguages() {
+  public Collection<ModuleReference> getUsedLanguages() {
     return myUsedLanguages;
   }
 
-  public Set<ModuleReference> getUsedDevkits() {
+  public Collection<ModuleReference> getUsedDevkits() {
     return myUsedDevkits;
   }
 
-  public Set<ModelRoot> getStubModelEntries() {
+  public Collection<ModelRoot> getStubModelEntries() {
     return myStubModels;
   }
 
-  public Set<String> getSourcePaths() {
+  public Collection<String> getSourcePaths() {
     return mySourcePaths;
   }
 
@@ -164,5 +177,13 @@ public class ModuleDescriptor {
     public int compare(Dependency dependency1, Dependency dependency2) {
       return myModuleRefComparator.compare(dependency1.getModuleRef(), dependency2.getModuleRef());
     }
+  }
+
+  public boolean isUseTransientOutput() {
+    return myUseTransientOutput;
+  }
+
+  public void setUseTransientOutput(boolean useTransientOutput) {
+    myUseTransientOutput = useTransientOutput;
   }
 }

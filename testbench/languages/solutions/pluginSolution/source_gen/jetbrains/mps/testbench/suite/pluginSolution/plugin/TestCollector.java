@@ -197,7 +197,7 @@ public class TestCollector {
                 public boolean accept(SNode cann) {
                   return SLinkOperations.getTarget(cann, "annotation", false) == ignoreAnn;
                 }
-              })) && Classifier_Behavior.call_isDescendant_7165541881557222913(cls, SLinkOperations.getTarget(new TestCollector.JUnit3TestCollector.QuotationClass_rpw6il_a0a0a0a0a0a0a2a0a0c0a2().createNode(), "classifier", false));
+              })) && Classifier_Behavior.call_isDescendant_7165541881557222913(cls, SLinkOperations.getTarget(new TestCollector.JUnit3TestCollector.QuotationClass_rpw6il_a0b0a0a0a0a0c0a0a2a0c().createNode(), "classifier", false));
             }
           }).toListSequence();
         }
@@ -235,8 +235,8 @@ public class TestCollector {
       }
     }
 
-    public static class QuotationClass_rpw6il_a0a0a0a0a0a0a2a0a0c0a2 {
-      public QuotationClass_rpw6il_a0a0a0a0a0a0a2a0a0c0a2() {
+    public static class QuotationClass_rpw6il_a0b0a0a0a0a0c0a0a2a0c {
+      public QuotationClass_rpw6il_a0b0a0a0a0a0c0a0a2a0c() {
       }
 
       public SNode createNode() {

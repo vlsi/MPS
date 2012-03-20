@@ -31,12 +31,6 @@ import jetbrains.mps.util.Pair;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: 1/31/11
- * Time: 4:40 PM
- */
 class NonTypeSystemComponent extends CheckingComponent {
 
   private boolean myInvalidationResultNT = false;

@@ -94,6 +94,12 @@ public class ReportFiles_Facet extends IFacet.Stub {
                       ListSequence.fromList(pa.global().properties(Target_report.this.getName(), ReportFiles_Facet.Target_report.Parameters.class).writtenFiles()).addElement(file.getPath());
                       return true;
                     }
+
+                    @Override
+                    public boolean acceptDeleted(IFile file) {
+                      ListSequence.fromList(pa.global().properties(Target_report.this.getName(), ReportFiles_Facet.Target_report.Parameters.class).deletedFiles()).addElement(file.getPath());
+                      return true;
+                    }
                   });
                 }
               });
@@ -156,30 +162,38 @@ public class ReportFiles_Facet extends IFacet.Stub {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((Tuples._1) t).assign((Tuples._1) copyFrom);
+        ((Tuples._2) t).assign((Tuples._2) copyFrom);
       }
       return t;
     }
 
-    public static class Parameters extends MultiTuple._1<List<String>> {
+    public static class Parameters extends MultiTuple._2<List<String>, List<String>> {
       public Parameters() {
         super();
       }
 
-      public Parameters(List<String> writtenFiles) {
-        super(writtenFiles);
+      public Parameters(List<String> writtenFiles, List<String> deletedFiles) {
+        super(writtenFiles, deletedFiles);
       }
 
       public List<String> writtenFiles(List<String> value) {
         return super._0(value);
       }
 
+      public List<String> deletedFiles(List<String> value) {
+        return super._1(value);
+      }
+
       public List<String> writtenFiles() {
         return super._0();
       }
 
+      public List<String> deletedFiles() {
+        return super._1();
+      }
+
       @SuppressWarnings(value = "unchecked")
-      public ReportFiles_Facet.Target_report.Parameters assignFrom(Tuples._1<List<String>> from) {
+      public ReportFiles_Facet.Target_report.Parameters assignFrom(Tuples._2<List<String>, List<String>> from) {
         return (ReportFiles_Facet.Target_report.Parameters) super.assign(from);
       }
     }
@@ -195,6 +209,7 @@ public class ReportFiles_Facet extends IFacet.Stub {
         if (properties.hasProperties(name)) {
           ReportFiles_Facet.Target_report.Parameters props = properties.properties(name, ReportFiles_Facet.Target_report.Parameters.class);
           MapSequence.fromMap(store).put("jetbrains.mps.build.reduced.ReportFiles.report.writtenFiles", null);
+          MapSequence.fromMap(store).put("jetbrains.mps.build.reduced.ReportFiles.report.deletedFiles", null);
         }
       }
     }
@@ -206,6 +221,9 @@ public class ReportFiles_Facet extends IFacet.Stub {
           ReportFiles_Facet.Target_report.Parameters props = properties.properties(name, ReportFiles_Facet.Target_report.Parameters.class);
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.build.reduced.ReportFiles.report.writtenFiles")) {
             props.writtenFiles(null);
+          }
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.build.reduced.ReportFiles.report.deletedFiles")) {
+            props.deletedFiles(null);
           }
         }
       } catch (RuntimeException re) {

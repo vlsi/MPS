@@ -13,11 +13,11 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Collection;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.Macros;
@@ -89,7 +89,7 @@ public class ModuleDescriptorPersistence {
 
     if (!(descriptor.getUsedLanguages().isEmpty())) {
       final Element result_dxyzb6_a0a2a0a2 = new Element("usedLanguages");
-      for (ModuleReference langRef : SetSequence.fromSet(descriptor.getUsedLanguages())) {
+      for (ModuleReference langRef : CollectionSequence.fromCollection(descriptor.getUsedLanguages())) {
         final Element result_dxyzb6_a0a0a0a2a0a2 = new Element("usedLanguage");
         final String result_dxyzb6_a0a0a0a0a2a0a2 = langRef.toString();
         result_dxyzb6_a0a0a0a2a0a2.setText(result_dxyzb6_a0a0a0a0a2a0a2);
@@ -100,7 +100,7 @@ public class ModuleDescriptorPersistence {
 
     if (!(descriptor.getUsedDevkits().isEmpty())) {
       final Element result_dxyzb6_a0a4a0a2 = new Element("usedDevKits");
-      for (ModuleReference dkRef : SetSequence.fromSet(descriptor.getUsedDevkits())) {
+      for (ModuleReference dkRef : CollectionSequence.fromCollection(descriptor.getUsedDevkits())) {
         final Element result_dxyzb6_a0a0a0a4a0a2 = new Element("usedDevKit");
         final String result_dxyzb6_a0a0a0a0a4a0a2 = dkRef.toString();
         result_dxyzb6_a0a0a0a4a0a2.setText(result_dxyzb6_a0a0a0a0a4a0a2);
@@ -144,7 +144,7 @@ public class ModuleDescriptorPersistence {
 
   private static void saveDependencyList(Element depElement, Collection<Dependency> dependencies) {
     Element result_dxyzb6_a0a4 = depElement;
-    for (Dependency md : Sequence.fromIterable(dependencies)) {
+    for (Dependency md : CollectionSequence.fromCollection(dependencies)) {
       final Element result_dxyzb6_a0a0a0a4 = new Element("dependency");
       final String result_dxyzb6_a0a0a0a0a4 = md.getModuleRef().toString();
       result_dxyzb6_a0a0a0a4.setText(result_dxyzb6_a0a0a0a0a4);
@@ -224,9 +224,9 @@ public class ModuleDescriptorPersistence {
     }.invoke();
   }
 
-  public static void saveModelRoots(Element modelsElement, Set<ModelRoot> modelRoots, IFile file, Macros macros) {
+  public static void saveModelRoots(Element modelsElement, Collection<ModelRoot> modelRoots, IFile file, Macros macros) {
     Element result_dxyzb6_a0a01 = modelsElement;
-    for (ModelRoot root : SetSequence.fromSet(modelRoots)) {
+    for (ModelRoot root : CollectionSequence.fromCollection(modelRoots)) {
       final Element result_dxyzb6_a0a0a0a01 = new Element("modelRoot");
       final String result_dxyzb6_a0a0a0a0a01 = macros.shrinkPath((root.getPath() == null ?
         "" :
@@ -245,9 +245,9 @@ public class ModuleDescriptorPersistence {
     }
   }
 
-  public static void saveStubModelEntries(Element modelsElement, Set<ModelRoot> modelRoots, IFile file, Macros macros) {
+  public static void saveStubModelEntries(Element modelsElement, Collection<ModelRoot> modelRoots, IFile file, Macros macros) {
     Element result_dxyzb6_a0a11 = modelsElement;
-    for (ModelRoot root : SetSequence.fromSet(modelRoots)) {
+    for (ModelRoot root : CollectionSequence.fromCollection(modelRoots)) {
       final Element result_dxyzb6_a0a0a0a11 = new Element("stubModelEntry");
       final String result_dxyzb6_a0a0a0a0a11 = macros.shrinkPath((root.getPath() == null ?
         "" :

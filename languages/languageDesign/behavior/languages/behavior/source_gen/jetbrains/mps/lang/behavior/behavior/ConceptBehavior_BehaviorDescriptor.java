@@ -11,8 +11,8 @@ import jetbrains.mps.lang.structure.behavior.IConceptAspect_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
 import java.util.List;
-import jetbrains.mps.baseLanguage.behavior.IStaticContainerProcessor;
-import jetbrains.mps.baseLanguage.behavior.IExtractMethodRefactoringProcessor;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.IStaticContainerProcessor;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.IExtractMethodRefactoringProcessor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class ConceptBehavior_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IMemberContainer_BehaviorDescriptor, IExtractMethodAvailable_BehaviorDescriptor, IStaticContainerForMethods_BehaviorDescriptor, IConceptAspect_BehaviorDescriptor {

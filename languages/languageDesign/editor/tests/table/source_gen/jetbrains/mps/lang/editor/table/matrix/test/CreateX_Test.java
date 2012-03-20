@@ -16,7 +16,7 @@ public class CreateX_Test extends BaseTransformationTest {
 
   @Test
   public void test_CreateX() throws Throwable {
-    this.initTest("${mps_home}/MPS.ipr", "r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test)");
+    this.initTest("${mps_home}/MPS.mpr", "r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test)");
     this.runTest("jetbrains.mps.lang.editor.table.matrix.test.CreateX_Test$TestBody", "testMethod", false);
   }
 

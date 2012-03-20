@@ -87,7 +87,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
       if (stackFrame != null) {
         try {
           Location location = stackFrame.location();
-          locationNode = TraceInfoUtil.getNode(location.declaringType().name(), location.sourceName(), location.lineNumber());
+          locationNode = TraceInfoUtil.getJavaNode(location.declaringType().name(), location.sourceName(), location.lineNumber());
         } catch (Throwable t) {
           if (log.isErrorEnabled()) {
             log.error("", t);
@@ -224,9 +224,9 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     SNode lowLevelType = createClassifierType.invoke(unitType);
     SNode highLevelNode = getStaticContextNode();
     if ((highLevelNode != null) && SNodeOperations.isInstanceOf(highLevelNode, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-      SLinkOperations.setTarget(result, "debuggedType", VariableDescription.createDebuggedType(lowLevelType, ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(highLevelNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_getThisType_3305065273710880775", new Class[]{SNode.class}))), true);
+      SLinkOperations.setTarget(result, "debuggedType", VariableDescription.createDebuggedType(lowLevelType, ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(highLevelNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_getThisType_3305065273710880775", new Class[]{SNode.class}))), true);
     } else if ((highLevelNode != null) && SNodeOperations.isInstanceOf(highLevelNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier")) {
-      SLinkOperations.setTarget(result, "debuggedType", VariableDescription.createDebuggedType(lowLevelType, ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(highLevelNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), "virtual_createType_1213877527970", new Class[]{SNode.class}))), true);
+      SLinkOperations.setTarget(result, "debuggedType", VariableDescription.createDebuggedType(lowLevelType, ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(highLevelNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), "virtual_createType_1213877527970", new Class[]{SNode.class}))), true);
     } else {
       SLinkOperations.setTarget(result, "debuggedType", VariableDescription.createDebuggedType(lowLevelType, null), true);
     }
@@ -348,7 +348,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     if (StringUtils.isEmpty(staticContextTypeName)) {
       return false;
     }
-    return staticContextTypeName.equals(((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(staticContextType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class})));
+    return staticContextTypeName.equals(((String) BehaviorManager.getInstance().invoke(Object.class, SLinkOperations.getTarget(SNodeOperations.cast(staticContextType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "virtual_getFqName_1213877404258", new Class[]{SNode.class})));
   }
 
   private static SNodeId check_4zsmpx_a0a0g0h(SNode checkedDotOperand) {

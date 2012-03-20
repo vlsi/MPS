@@ -48,7 +48,7 @@ public class CellReference {
 
   public void setupSelection(Editor editor) {
     NodeEditorComponent editorComponent = ((NodeEditorComponent) editor.getCurrentEditorComponent());
-    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(this.myAnnotation, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation"), "call_setupSelection_6268941039745707957", new Class[]{SNode.class, NodeEditorComponent.class, SNode.class, Map.class}, editorComponent, this.myNode, this.myMap);
+    BehaviorManager.getInstance().invoke(Object.class, this.myAnnotation, "call_setupSelection_6268941039745707957", new Class[]{SNode.class, NodeEditorComponent.class, SNode.class, Map.class}, editorComponent, this.myNode, this.myMap);
   }
 
   public void assertEditor(Editor editor, Map<SNode, SNode> map) {

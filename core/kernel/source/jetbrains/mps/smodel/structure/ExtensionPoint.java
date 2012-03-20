@@ -17,13 +17,6 @@ package jetbrains.mps.smodel.structure;
 
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 1/20/12
- * Time: 4:24 PM
- * To change this template use File | Settings | File Templates.
- */
 public class ExtensionPoint<T> {
 
   private final String myId;

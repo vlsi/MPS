@@ -18,7 +18,7 @@ public class RemoveHeaderRow_FromFirstCell_Test extends BaseTransformationTest {
 
   @Test
   public void test_RemoveHeaderRow_FromFirstCell() throws Throwable {
-    this.initTest("${mps_home}/MPS.ipr", "r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test)");
+    this.initTest("${mps_home}/MPS.mpr", "r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test)");
     this.runTest("jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderRow_FromFirstCell_Test$TestBody", "testMethod", false);
   }
 

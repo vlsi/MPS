@@ -14,10 +14,10 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.ArrayList;
 import org.jdom.Element;
 import java.util.Arrays;
@@ -105,56 +105,7 @@ public class DebugInfo {
         return it;
       }
     }, true);
-    final TraceablePositionInfo firstPositionInfo = Sequence.fromIterable(sorted).first();
-    String nodeId = firstPositionInfo.getNodeId();
-    // here we do some magic to fix the following bug: 
-    // each node in base language owns a '\n' symbol in a previous line 
-    // in the following code we will never get 'for' node quering line 1: 
-    // 1.  for (...) { 
-    // 2.    some statement 
-    // 3.  } 
-    // since 'some statement' takes lines 1-2 instead of just line 2 
-    // TODO actually, this mega-hack might not work for other languages 
-    // we should seriously consider fixing debug info generation instead 
-    if (Sequence.fromIterable(sorted).count() > 1 && firstPositionInfo.getStartLine() == line && firstPositionInfo.getLineDistance() > 0) {
-      nodeId = ListSequence.fromList(Sequence.fromIterable(sorted).toListSequence()).getElement(1).getNodeId();
-    }
-    // here we have another example of how not to write code 
-    // this is a hack fixing MPS-8644 
-    // the problem is with the BlockStatement which sometimes generates to nothing, but is still present in .debug 
-    // so in the code like this: 
-    // 1. { 
-    // 2. statement 
-    // 3. } 
-    // block statement occupy the same place as "statement" because this code generates into: 
-    // 1. statement 
-    // the solution is simple: 
-    // among all node with same position we select the deepest 
-    if (Sequence.fromIterable(sorted).count() > 1) {
-      Iterable<TraceablePositionInfo> sameSpacePositions = Sequence.fromIterable(sorted).where(new IWhereFilter<TraceablePositionInfo>() {
-        public boolean accept(TraceablePositionInfo it) {
-          return firstPositionInfo.isOccupyTheSameSpace(it);
-        }
-      });
-      if (Sequence.fromIterable(sameSpacePositions).count() > 1) {
-        SNode currentNode = model.getNodeById(firstPositionInfo.getNodeId());
-        boolean finished = false;
-        while (!(finished)) {
-          finished = true;
-          for (TraceablePositionInfo otherPos : Sequence.fromIterable(sameSpacePositions)) {
-            SNode otherNode = model.getNodeById(otherPos.getNodeId());
-            if ((otherNode != null) && otherNode.isDescendantOf(currentNode, false)) {
-              currentNode = otherNode;
-              finished = false;
-              break;
-            }
-          }
-        }
-        return currentNode;
-      }
-    }
-    // TODO seriously, instead of adding another hack do something with textgen 
-    return model.getNodeById(nodeId);
+    return model.getNodeById(Sequence.fromIterable(sorted).first().getNodeId());
   }
 
   @Nullable
@@ -279,7 +230,11 @@ public class DebugInfo {
         ListSequence.fromList(resultList).addElement(element);
       }
     }
-    return resultList;
+    return ListSequence.fromList(resultList).sort(new ISelector<T, Comparable<?>>() {
+      public Comparable<?> select(T it) {
+        return it.getStartLine();
+      }
+    }, false).toListSequence();
   }
 
   @NotNull
@@ -307,6 +262,18 @@ public class DebugInfo {
         return root.getUnitPositions();
       }
     });
+  }
+
+  public String getNodeIdForFileName(final String file) {
+    return check_exfyrk_a0a81(Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).translate(new ITranslator2<DebugInfoRoot, UnitPositionInfo>() {
+      public Iterable<UnitPositionInfo> translate(DebugInfoRoot it) {
+        return it.getUnitPositions();
+      }
+    }).findFirst(new IWhereFilter<UnitPositionInfo>() {
+      public boolean accept(UnitPositionInfo it) {
+        return eq_exfyrk_a0a0a0a0a0a0a81(it.getFileName(), file);
+      }
+    }));
   }
 
   public List<String> getRoots() {
@@ -359,6 +326,13 @@ public class DebugInfo {
     return info;
   }
 
+  private static String check_exfyrk_a0a81(UnitPositionInfo checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getNodeId();
+    }
+    return null;
+  }
+
   private static boolean eq_exfyrk_a0a1a0a5a8(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
@@ -374,6 +348,13 @@ public class DebugInfo {
   }
 
   private static boolean eq_exfyrk_a0a0a0a0a0a0a11(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_exfyrk_a0a0a0a0a0a0a81(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

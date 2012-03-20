@@ -53,6 +53,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.sun.jdi.InvalidStackFrameException;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.extensions.PluginId;
 import com.intellij.ide.plugins.PluginManager;
@@ -86,7 +87,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
             myAuxModule.addStubPath(it);
           }
         });
-        myAuxModule.loadNewModels();
+        myAuxModule.updateModelsSet();
       }
     });
 
@@ -239,7 +240,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
           return false;
         }
 
-        String nodesUnitName = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.UnitConcept"), "jetbrains.mps.lang.traceable.structure.UnitConcept"), "virtual_getUnitName_5067982036267369911", new Class[]{SNode.class}));
+        String nodesUnitName = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.UnitConcept"), "virtual_getUnitName_5067982036267369911", new Class[]{SNode.class}));
         if (StringUtils.isEmpty(nodesUnitName)) {
           return false;
         }
@@ -277,7 +278,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
         }
       });
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         fillVariables();
       }
@@ -343,7 +344,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   @Override
   public List<Language> getRequiredLanguages() {
     SModelDescriptor descriptor = SNodeOperations.getModel(myEvaluationContext.getLocationNode()).getModelDescriptor();
-    return ListSequence.fromList(super.getRequiredLanguages()).union(SetSequence.fromSet(descriptor.getModule().getImplicitlyImportedLanguages(descriptor))).toListSequence();
+    return ListSequence.fromList(super.getRequiredLanguages()).union(CollectionSequence.fromCollection(descriptor.getModule().getImplicitlyImportedLanguages(descriptor))).toListSequence();
   }
 
   private boolean needUpdateVariables() {

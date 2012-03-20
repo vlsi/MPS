@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.ide.ui.CheckBoxNodeRenderer;
+import jetbrains.mps.ide.platform.ui.CheckBoxNodeRenderer;
 import java.awt.Color;
 import javax.swing.UIManager;
 
@@ -145,7 +145,7 @@ import javax.swing.UIManager;
       return null;
     }
     Object node = path.getLastPathComponent();
-    if (BreakpointsView.MPS_BREAKPOINT.is(dataId)) {
+    if (BreakpointsUtil.MPS_BREAKPOINT.is(dataId)) {
       if (node instanceof AbstractBreakpointsTree.BreakpointTreeNode) {
         AbstractBreakpointsTree.BreakpointTreeNode breakpointNode = (AbstractBreakpointsTree.BreakpointTreeNode) node;
         return ((AbstractBreakpointsTree.BreakpointNodeData) breakpointNode.getUserObject()).myBreakpoint;

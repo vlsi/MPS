@@ -27,7 +27,7 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import java.util.Collection;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 public class EvaluationAuxModule extends AbstractModule {
   public static boolean JAVA_STUBS = true;
@@ -148,7 +148,7 @@ public class EvaluationAuxModule extends AbstractModule {
   }
 
   @Override
-  public void loadNewModels() {
+  public void updateModelsSet() {
     SetSequence.fromSet(myModelRoots).clear();
 
     for (StubPath stub : SetSequence.fromSet(myStubPaths)) {
@@ -158,7 +158,7 @@ public class EvaluationAuxModule extends AbstractModule {
       try {
         SModelRoot smodelRoot = new SModelRoot(root);
         Collection<SModelDescriptor> loaded = smodelRoot.getManager().load(root, this);
-        for (SModelDescriptor descriptor : Sequence.fromIterable(loaded)) {
+        for (SModelDescriptor descriptor : CollectionSequence.fromCollection(loaded)) {
           if (SModelRepository.getInstance().getModelDescriptor(descriptor.getSModelReference()) == null) {
             SModelRepository.getInstance().registerModelDescriptor(descriptor, this);
           }

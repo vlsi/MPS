@@ -104,7 +104,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowNodeInInspector_Action());
     addAction(new ShowNodeInfo_Action());
     addAction(new ShowParameters_Action());
-    addAction(new ShowStructure_Action());
+    addAction(new ShowTodoViewer_Action());
     addAction(new SubmitToTracker_Action());
     // groups 
     addGroup(new AbstractFileActions_ActionGroup());
@@ -113,7 +113,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new Analyze_ActionGroup());
     addGroup(new Bookmarks_ActionGroup());
     addGroup(new Build_ActionGroup());
-    addGroup(new Code_ActionGroup());
     addGroup(new CommonModuleActions_ActionGroup());
     addGroup(new CreateRootNode_ActionGroup());
     addGroup(new DebugActions_ActionGroup());
@@ -177,6 +176,11 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertInterfaceGroupIntoAnother("VcsGroup", ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_ideavcs);
     insertInterfaceGroupIntoAnother("VcsGroup", "EditorPopup_ActionGroupvcs", null);
     insertInterfaceGroupIntoAnother("NavbarPopupMenu", AbstractFileActions_ActionGroup.ID, AbstractFileActions_ActionGroup.LABEL_ID_ideaActions);
+    insertInterfaceGroupIntoAnother("jetbrains.mps.ide.java.actions.SolutionActionsEx_ActionGroup", SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_contents);
+    insertInterfaceGroupIntoAnother("jetbrains.mps.ide.java.workbench.actions.ModelNewActions_ActionGroup", GeneratorNewActions_ActionGroup.ID, GeneratorNewActions_ActionGroup.LABEL_ID_newModel);
+    insertInterfaceGroupIntoAnother("jetbrains.mps.ide.java.workbench.actions.ModelNewActions_ActionGroup", LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newModel);
+    insertInterfaceGroupIntoAnother("jetbrains.mps.ide.java.workbench.actions.ModelNewActions_ActionGroup", SolutionNewActions_ActionGroup.ID, SolutionNewActions_ActionGroup.LABEL_ID_newModel);
+    insertInterfaceGroupIntoAnother("jetbrains.mps.ide.java.actions.ModelActions_ActionGroup", ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_paste);
     insertInterfaceGroupIntoAnother("RunContextGroup", CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_run);
     insertInterfaceGroupIntoAnother("RunContextGroup", EditorTabActions_ActionGroup.ID, null);
     insertInterfaceGroupIntoAnother("RunContextGroup", JUnitTestCaseActions_ActionGroup.ID, null);
@@ -231,7 +235,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(MessagesViewActions_ActionGroup.ID, "MPS.MessagesView", null);
     insertGroupIntoAnother(PrintNodePosition_Addition_ActionGroup.ID, EditorInternal_ActionGroup.ID, null);
     insertGroupIntoAnother(Search_ActionGroup.ID, "FindMenuGroup", null);
-    insertGroupIntoAnother(Code_ActionGroup.ID, "CodeMenu", null);
     insertGroupIntoAnother(FavoritesPopupWrapper_ActionGroup.ID, Favorites_ActionGroup.ID, Favorites_ActionGroup.LABEL_ID_popup);
     insertGroupIntoAnother(Favorites_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_favorites);
     insertGroupIntoAnother(Favorites_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_favorites);

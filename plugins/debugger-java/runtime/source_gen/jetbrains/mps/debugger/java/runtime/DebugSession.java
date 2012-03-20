@@ -5,6 +5,11 @@ package jetbrains.mps.debugger.java.runtime;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.debug.api.DebuggableFramesSelector;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand;
 import java.util.Set;
@@ -22,6 +27,13 @@ public class DebugSession extends AbstractDebugSession<JavaUiStateImpl> {
     myEventsProcessor = eventsProcessor;
     myEventsProcessor.setDebuggableFramesSelector(getDebuggableFramesSelector());
     eventsProcessor.getMulticaster().addListener(new DebugSession.MyDebugProcessAdapter());
+    myDebuggableFramesSelector = new DebuggableFramesSelector() {
+      @Nullable
+      @Override
+      public SNode getNode(@NonNls String unitName, @NonNls String fileName, int position) {
+        return TraceInfoUtil.getJavaNode(unitName, fileName, position);
+      }
+    };
   }
 
   protected JavaUiStateImpl createUiState() {

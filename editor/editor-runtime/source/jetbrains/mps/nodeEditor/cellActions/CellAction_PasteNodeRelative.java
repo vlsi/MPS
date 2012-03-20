@@ -71,7 +71,7 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
 
     PasteNodeData pasteNodeData = CopyPasteUtil.getPasteNodeDataFromClipboard(anchorNode.getModel());
     if (pasteNodeData == null || pasteNodeData.getNodes().isEmpty()) {
-      pasteNodeData = CopyPasteUtil.getConvertedFromClipboard(anchorNode.getModel());
+      pasteNodeData = CopyPasteUtil.getConvertedFromClipboard(anchorNode.getModel(), context.getOperationContext().getProject());
       if (pasteNodeData == null) return;
     }
     List<SNode> pasteNodes = pasteNodeData.getNodes();

@@ -641,8 +641,8 @@
                   </node>
                 </node>
               </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5493844864801816247">
-                <property name="value" nameId="tpee.1070475926801" value="" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.SuperMethodCall" typeId="tpee.1073063089578" id="7358518220351445080">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y3sp.3432969378036014458" resolveInfo="getValuePresentation" />
               </node>
             </node>
           </node>

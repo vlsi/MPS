@@ -15,24 +15,47 @@
  */
 package jetbrains.mps.cleanup;
 
+import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.ModelAccess;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CleanupManager {
-
-  private static final CleanupManager INSTANCE = new CleanupManager();
+public class CleanupManager implements CoreComponent{
+  private static CleanupManager INSTANCE;
+  private ClassLoaderManager myManager;
+  private ReloadAdapter myHandler;
 
   public static CleanupManager getInstance() {
     return INSTANCE;
   }
 
-  private CleanupManager() {
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+    myHandler = new ReloadAdapter() {
+      public void unload() {
+        cleanup();
+      }
+    };
+    myManager.addReloadHandler(myHandler);
+    INSTANCE = this;
+  }
+
+  public void dispose() {
+    INSTANCE = null;
+    myManager.removeReloadHandler(myHandler);
   }
 
   private final Object myLock = new Object();
   private List<CleanupListener> myCleanupListeners = new ArrayList<CleanupListener>();
+
+  public CleanupManager(ClassLoaderManager manager) {
+    myManager = manager;
+  }
 
   public void addCleanupListener(CleanupListener l) {
     synchronized (myLock) {

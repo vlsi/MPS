@@ -17,7 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.compiler.IClassesData;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import java.util.List;
+import java.util.Collection;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import java.awt.Dimension;
 import javax.swing.JComponent;
@@ -60,7 +60,7 @@ public class ReplaceDialog extends BaseDialog {
       }
     });
     this.myEditor.addLanguageStructureModel(language);
-    final Wrappers._T<List<Language>> languageList = new Wrappers._T<List<Language>>();
+    final Wrappers._T<Collection<Language>> languageList = new Wrappers._T<Collection<Language>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         languageList.value = language.getAllExtendedLanguages();

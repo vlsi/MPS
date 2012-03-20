@@ -37,123 +37,130 @@ import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JComponent;
 
 /**
  * evgeny, 10/26/11
  */
 public class MPSFacetConfiguration implements FacetConfiguration, PersistentStateComponent<MPSConfigurationBean> {
-    private static final String FILE_SEPARATOR = "/";
-    @NonNls
-    private static final String SOURCE_GEN = "source_gen";
-    private MPSConfigurationBean myConfigurationBean = new MPSConfigurationBean();
-    private MPSFacet myMpsFacet;
+  private static final String FILE_SEPARATOR = "/";
+  @NonNls
+  private static final String SOURCE_GEN = "source_gen";
+  private MPSConfigurationBean myConfigurationBean = new MPSConfigurationBean();
+  private MPSFacet myMpsFacet;
 
-    public void readExternal(Element element) throws InvalidDataException {
-        // ignore
+  public void readExternal(Element element) throws InvalidDataException {
+    // ignore
+  }
+
+  public void writeExternal(Element element) throws WriteExternalException {
+    // ignore
+  }
+
+  public MPSConfigurationBean getState() {
+    return myConfigurationBean;
+  }
+
+  public void loadState(MPSConfigurationBean state) {
+    XmlSerializerUtil.copyBean(state, myConfigurationBean);
+  }
+
+  public FacetEditorTab[] createEditorTabs(FacetEditorContext facetEditorContext, FacetValidatorsManager facetValidatorsManager) {
+    return new FacetEditorTab[]{new MPSFacetCommonTab(facetEditorContext)};
+  }
+
+  public void setFacet(MPSFacet mpsFacet) {
+    myMpsFacet = mpsFacet;
+    setConfigurationDefaults();
+  }
+
+  private void setConfigurationDefaults() {
+    if (myConfigurationBean.isUseTransientOutputFolder()) {
+      myConfigurationBean.setUseModuleSourceFolder(false);
+    } else if (myConfigurationBean.isUseModuleSourceFolder()) {
+      myConfigurationBean.setUseTransientOutputFolder(false);
+    }
+    if (myConfigurationBean.getGeneratorOutputPath() == null) {
+      String moduleDirPath = PathUtil.getParentPath(myMpsFacet.getModule().getModuleFilePath());
+      if (moduleDirPath != null) {
+        myConfigurationBean.setGeneratorOutputPath(moduleDirPath + FILE_SEPARATOR + SOURCE_GEN);
+        myConfigurationBean.setUseTransientOutputFolder(false);
+        myConfigurationBean.setUseModuleSourceFolder(false);
+      }
+    }
+    if (myConfigurationBean.getUsedLanguages() == null) {
+      myConfigurationBean.setUsedLanguages(new String[]{BootstrapLanguages.BASE_LANGUAGE.toString()});
+    }
+  }
+
+  public MPSFacet getFacet() {
+    return myMpsFacet;
+  }
+
+  public class MPSFacetCommonTab extends FacetEditorTab implements Disposable {
+
+    private MPSFacetCommonTabUI myForm;
+    private FacetEditorContext myContext;
+
+    public MPSFacetCommonTab(FacetEditorContext context) {
+      myContext = context;
     }
 
-    public void writeExternal(Element element) throws WriteExternalException {
-        // ignore
+    @Override
+    public Icon getIcon() {
+      return MPSIcons.MPS_ICON;
     }
 
-    public MPSConfigurationBean getState() {
-        return myConfigurationBean;
+    @Nls
+    public String getDisplayName() {
+      return "Common";
     }
 
-    public void loadState(MPSConfigurationBean state) {
-        XmlSerializerUtil.copyBean(state, myConfigurationBean);
+    public JComponent createComponent() {
+      if (myForm == null) {
+        myForm = new MPSFacetCommonTabUI(myContext, this);
+      }
+      return myForm.getRootPanel();
     }
 
-    public FacetEditorTab[] createEditorTabs(FacetEditorContext facetEditorContext, FacetValidatorsManager facetValidatorsManager) {
-        return new FacetEditorTab[]{new MPSFacetCommonTab(facetEditorContext)};
+    public boolean isModified() {
+      return myForm != null && myForm.isModified(myConfigurationBean);
     }
 
-    public void setFacet(MPSFacet mpsFacet) {
-        myMpsFacet = mpsFacet;
-        setConfigurationDefaults();
+    @Override
+    public void apply() throws ConfigurationException {
+      if (myForm != null) {
+        myForm.getData(myConfigurationBean);
+      }
     }
 
-    private void setConfigurationDefaults() {
-        if (myConfigurationBean.getGeneratorOutputPath() == null) {
-            String moduleDirPath = PathUtil.getParentPath(myMpsFacet.getModule().getModuleFilePath());
-            if (moduleDirPath != null) {
-                myConfigurationBean.setGeneratorOutputPath(moduleDirPath + FILE_SEPARATOR + SOURCE_GEN);
-                myConfigurationBean.setUseModuleSourceFolder(false);
-            }
-        }
-        if (myConfigurationBean.getUsedLanguages() == null) {
-            myConfigurationBean.setUsedLanguages(new String[]{BootstrapLanguages.BASE_LANGUAGE.toString()});
-        }
+    public void reset() {
+      if (myForm != null) {
+        myForm.setData(myConfigurationBean);
+      }
     }
 
-    public MPSFacet getFacet() {
-        return myMpsFacet;
+    public void disposeUIResources() {
+      Disposer.dispose(this);
+      myForm = null;
     }
 
-    public class MPSFacetCommonTab extends FacetEditorTab implements Disposable {
-
-        private MPSFacetCommonTabUI myForm;
-        private FacetEditorContext myContext;
-
-        public MPSFacetCommonTab(FacetEditorContext context) {
-            myContext = context;
-        }
-
-        @Override
-        public Icon getIcon() {
-            return MPSIcons.MPS_ICON;
-        }
-
-        @Nls
-        public String getDisplayName() {
-            return "Common";
-        }
-
-        public JComponent createComponent() {
-            if (myForm == null) {
-                myForm = new MPSFacetCommonTabUI(myContext, this);
-            }
-            return myForm.getRootPanel();
-        }
-
-        public boolean isModified() {
-            return myForm != null && myForm.isModified(myConfigurationBean);
-        }
-
-        @Override
-        public void apply() throws ConfigurationException {
-            if (myForm != null) {
-                myForm.getData(myConfigurationBean);
-            }
-        }
-
-        public void reset() {
-            if (myForm != null) {
-                myForm.setData(myConfigurationBean);
-            }
-        }
-
-        public void disposeUIResources() {
-            Disposer.dispose(this);
-            myForm = null;
-        }
-
-        @Override
-        public void onFacetInitialized(@NotNull Facet facet) {
-            super.onFacetInitialized(facet);
-            MPSFacet mpsFacet = (MPSFacet) facet;
-            mpsFacet.setConfiguration(myConfigurationBean);
-        }
-
-        @Override
-        public void onTabEntering() {
-            myForm.onTabEntering();
-        }
-
-        @Override
-        public void dispose() {
-        }
+    @Override
+    public void onFacetInitialized(@NotNull Facet facet) {
+      super.onFacetInitialized(facet);
+      MPSFacet mpsFacet = (MPSFacet) facet;
+      mpsFacet.setConfiguration(myConfigurationBean);
     }
+
+    @Override
+    public void onTabEntering() {
+      myForm.onTabEntering();
+    }
+
+    @Override
+    public void dispose() {
+    }
+  }
 
 }

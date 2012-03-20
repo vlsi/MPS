@@ -26,7 +26,6 @@
     <xi:include href="/META-INF/MPSPlatformExtensions.xml" xpointer="xpointer(/extensions/*)"/>
     <xi:include href="/META-INF/VcsExtensions.xml" xpointer="xpointer(/extensions/*)"/>
 
-    <lang.fileViewProviderFactory language="MPS" implementationClass="jetbrains.mps.MPSFileViewProviderFactory"/>
 
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
 
@@ -103,8 +102,8 @@
 
 
     <fileBasedIndex implementation="com.intellij.psi.impl.cache.impl.id.IdIndex"/>
-    <fileBasedIndex implementation="jetbrains.mps.baseLanguage.index.ClassifierSuccessorsIndexer"/>
     <!--        <fileBasedIndex implementation="NamedNodeIndex"/> -->
+    <fileBasedIndex implementation="jetbrains.mps.ide.generator.index.LanguageModelDigestIndex"/>
     <fileBasedIndex implementation="jetbrains.mps.ide.generator.index.ModelDigestIndex"/>
     <fileBasedIndex implementation="com.intellij.psi.search.FilenameIndex"/>
 

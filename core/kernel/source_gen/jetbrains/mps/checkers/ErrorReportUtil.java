@@ -23,12 +23,12 @@ public class ErrorReportUtil {
     }
     SNode parent = _node.value;
     while (parent != null) {
-      if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.core.structure.ISuppressErrors") && ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(SNodeOperations.cast(parent, "jetbrains.mps.lang.core.structure.ISuppressErrors"), "jetbrains.mps.lang.core.structure.ISuppressErrors"), "virtual_suppress_3393165121846091591", new Class[]{SNode.class, SNode.class}, _node.value))) {
+      if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.core.structure.ISuppressErrors") && ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(parent, "jetbrains.mps.lang.core.structure.ISuppressErrors"), "virtual_suppress_3393165121846091591", new Class[]{SNode.class, SNode.class}, _node.value))) {
         return false;
       }
       if (ListSequence.fromList(AttributeOperations.getAttributeList(parent, new IAttributeDescriptor.AllAttributes())).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode attr) {
-          return SNodeOperations.isInstanceOf(attr, "jetbrains.mps.lang.core.structure.ISuppressErrors") && ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(SNodeOperations.cast(attr, "jetbrains.mps.lang.core.structure.ISuppressErrors"), "jetbrains.mps.lang.core.structure.ISuppressErrors"), "virtual_suppress_3393165121846091591", new Class[]{SNode.class, SNode.class}, _node.value));
+          return SNodeOperations.isInstanceOf(attr, "jetbrains.mps.lang.core.structure.ISuppressErrors") && ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(attr, "jetbrains.mps.lang.core.structure.ISuppressErrors"), "virtual_suppress_3393165121846091591", new Class[]{SNode.class, SNode.class}, _node.value));
         }
       })) {
         return false;

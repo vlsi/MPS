@@ -16,7 +16,7 @@ public class HomeWithLineSelection_fromFirstCell_Test extends BaseTransformation
 
   @Test
   public void test_HomeWithLineSelection_fromFirstCell() throws Throwable {
-    this.initTest("${mps_home}/MPS.ipr", "r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)");
+    this.initTest("${mps_home}/MPS.mpr", "r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)");
     this.runTest("jetbrains.mps.lang.editor.selection.test.HomeWithLineSelection_fromFirstCell_Test$TestBody", "testMethod", false);
   }
 

@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.Project;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -69,7 +68,7 @@ public class MPSProjectITestsSuite extends Suite {
         for (SModelDescriptor modelDescriptor : ListSequence.fromList(modelDescriptors)) {
           SModel sModel = modelDescriptor.getSModel();
           for (SNode testCase : ListSequence.fromList(SModelOperations.getRoots(sModel, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
-            ListSequence.fromList(testClassDescriptors).addElement(MultiTuple.<String,IModule>from(((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(testCase, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "virtual_getClassName_1216136193905", new Class[]{SNode.class})), modelDescriptor.getModule()));
+            ListSequence.fromList(testClassDescriptors).addElement(MultiTuple.<String,IModule>from(((String) BehaviorManager.getInstance().invoke(Object.class, testCase, "virtual_getClassName_1216136193905", new Class[]{SNode.class})), modelDescriptor.getModule()));
           }
         }
       }

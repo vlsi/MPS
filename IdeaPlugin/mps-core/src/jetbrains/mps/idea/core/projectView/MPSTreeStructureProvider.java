@@ -26,13 +26,11 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiElement;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
-import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -57,17 +55,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
         if (model == null) return;
 
         for (SNode root : model.roots()) {
-          String name;
-          try {
-            name = root.getName();
-          } catch (Exception ex) {
-            name = "exc: " + ex.getMessage();
-          }
-          if (name == null) {
-            name = "unnamed";
-          }
-          Icon rootIcon = IconManager.getIconFor(root);
-          newChildren.add(new MPSProjectViewNode(parent.getProject(), name, rootIcon, new SNodePointer(root), settings));
+          newChildren.add(new MPSProjectViewNode(parent.getProject(), new SNodePointer(root), settings));
         }
       }
     });

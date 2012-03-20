@@ -25,7 +25,7 @@ import junit.framework.Assert;
 public class TestPluginsDependency_Test extends BaseTransformationTest {
   @Test
   public void test_pluginDependencyComplete() throws Throwable {
-    this.initTest("${mps_home}/MPS.ipr", "r:53c4b5ce-bc17-4454-a907-f9ec447f3644(jetbrains.mps.build.mpsautobuild.test@tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:53c4b5ce-bc17-4454-a907-f9ec447f3644(jetbrains.mps.build.mpsautobuild.test@tests)");
     this.runTest("jetbrains.mps.build.mpsautobuild.test.TestPluginsDependency_Test$TestBody", "test_pluginDependencyComplete", true);
   }
 

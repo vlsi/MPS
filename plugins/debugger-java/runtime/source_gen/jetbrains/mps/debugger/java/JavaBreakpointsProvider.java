@@ -5,17 +5,10 @@ package jetbrains.mps.debugger.java;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;
 import jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpoint;
 import jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpointKind;
-import java.util.Map;
-import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
-import javax.swing.Icon;
-import java.util.HashMap;
-import jetbrains.mps.debug.api.breakpoints.IBreakpointListener;
-import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.project.ProjectManagerAdapter;
-import com.intellij.openapi.project.Project;
 import java.util.List;
 import java.util.Arrays;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.debugger.java.runtime.ui.breakpoints.ExceptionChooserDialog;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.debugger.java.runtime.breakpoints.ExceptionBreakpoint;
@@ -26,13 +19,13 @@ import jetbrains.mps.debugger.java.runtime.breakpoints.FieldBreakpoint;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointPropertiesUi;
 import org.jetbrains.annotations.Nullable;
 import org.jdom.Element;
+import jetbrains.mps.debugger.java.runtime.breakpoints.BreakpointsIconCache;
 import jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpointInfo;
 import com.intellij.util.xmlb.XmlSerializer;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.debug.api.breakpoints.BreakpointLocation;
+import javax.swing.Icon;
 import jetbrains.mps.debug.api.AbstractDebugSession;
-import jetbrains.mps.debugger.api.ui.icons.Icons;
-import com.intellij.openapi.project.ProjectManager;
 import javax.swing.JPanel;
 import javax.swing.JCheckBox;
 import javax.swing.JRadioButton;
@@ -45,42 +38,6 @@ import javax.swing.JComponent;
 import com.sun.jdi.request.EventRequest;
 
 public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpoint, JavaBreakpointKind> {
-  private final Map<IBreakpoint, Icon> myBreakpointsIconsCache = new HashMap<IBreakpoint, Icon>();
-  private final IBreakpointListener myBreakpointListener = new IBreakpointListener() {
-    @Override
-    public void breakpointEnabledStateToggled(IBreakpoint breakpoint, boolean enabled) {
-      myBreakpointsIconsCache.remove(breakpoint);
-      // todo centralize all listeners 
-    }
-  };
-  private final BreakpointManagerComponent.IBreakpointManagerListener myBreakpointsManagerListener = new BreakpointManagerComponent.IBreakpointManagerListener() {
-    @Override
-    public void breakpointAdded(@NotNull IBreakpoint breakpoint) {
-      breakpoint.addBreakpointListener(myBreakpointListener);
-    }
-
-    @Override
-    public void breakpointRemoved(@NotNull IBreakpoint breakpoint) {
-      breakpoint.removeBreakpointListener(myBreakpointListener);
-      myBreakpointsIconsCache.remove(breakpoint);
-    }
-  };
-  private final ProjectManagerAdapter myProjectListener = new ProjectManagerAdapter() {
-    @Override
-    public void projectOpened(Project project) {
-      BreakpointManagerComponent.getInstance(project).addChangeListener(myBreakpointsManagerListener);
-    }
-
-    @Override
-    public void projectClosed(Project project) {
-    }
-
-    @Override
-    public void projectClosing(Project project) {
-      BreakpointManagerComponent.getInstance(project).removeChangeListener(myBreakpointsManagerListener);
-    }
-  };
-
   public JavaBreakpointsProvider() {
   }
 
@@ -137,7 +94,7 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
   @Nullable
   public JavaBreakpoint loadFromState(Element state, JavaBreakpointKind kind, final Project project) {
     final JavaBreakpoint javaBreakpoint = loadFromStateInternal(state, kind, project);
-    javaBreakpoint.addBreakpointListener(myBreakpointListener);
+    javaBreakpoint.addBreakpointListener(BreakpointsIconCache.getInstance(project).getBreakpointListener());
     return javaBreakpoint;
   }
 
@@ -217,59 +174,13 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
 
   @Override
   public Icon getIcon(@NotNull JavaBreakpoint breakpoint, @Nullable AbstractDebugSession session) {
-    if (session != null && session.isMute()) {
-      return Icons.MUTED_BREAKPOINT;
-    }
-    Icon icon = myBreakpointsIconsCache.get(breakpoint);
-    if (icon == null) {
-      icon = getIconInternal(breakpoint);
-      myBreakpointsIconsCache.put(breakpoint, icon);
-    }
-    return icon;
-  }
-
-  private Icon getIconInternal(JavaBreakpoint breakpoint) {
-    switch (breakpoint.getKind()) {
-      case EXCEPTION_BREAKPOINT:
-        return (breakpoint.isEnabled() ?
-          jetbrains.mps.debugger.java.runtime.ui.Icons.EXCEPTION_BREAKPOINT :
-          jetbrains.mps.debugger.java.runtime.ui.Icons.DISABLED_EXCEPTION_BREAKPOINT
-        );
-      case LINE_BREAKPOINT:
-        return (breakpoint.isValid() ?
-          ((breakpoint.isEnabled() ?
-            Icons.BREAKPOINT :
-            Icons.DISABLED_BREAKPOINT
-          )) :
-          Icons.INV_BREAKPOINT
-        );
-      case METHOD_BREAKPOINT:
-        return (breakpoint.isValid() ?
-          ((breakpoint.isEnabled() ?
-            jetbrains.mps.debugger.java.runtime.ui.Icons.METHOD_BREAKPOINT :
-            jetbrains.mps.debugger.java.runtime.ui.Icons.DISABLED_METHOD_BREAKPOINT
-          )) :
-          Icons.INV_BREAKPOINT
-        );
-      case FIELD_BREAKPOINT:
-        return (breakpoint.isValid() ?
-          ((breakpoint.isEnabled() ?
-            jetbrains.mps.debugger.java.runtime.ui.Icons.FIELD_BREAKPOINT :
-            jetbrains.mps.debugger.java.runtime.ui.Icons.DISABLED_FIELD_BREAKPOINT
-          )) :
-          Icons.INV_BREAKPOINT
-        );
-      default:
-    }
-    return null;
+    return BreakpointsIconCache.getInstance(breakpoint.getProject()).getIcon(breakpoint, session);
   }
 
   public void init() {
-    ProjectManager.getInstance().addProjectManagerListener(myProjectListener);
   }
 
   public void dispose() {
-    ProjectManager.getInstance().removeProjectManagerListener(myProjectListener);
   }
 
   private static class MyIBreakpointPropertiesUi implements IBreakpointPropertiesUi<JavaBreakpoint> {

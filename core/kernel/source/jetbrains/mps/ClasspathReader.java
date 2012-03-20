@@ -32,7 +32,7 @@ public class ClasspathReader {
     if (!acp.exists()) return;
 
     List<String> sTypes = new ArrayList<String>(3);
-    for (ClassType type:types){
+    for (ClassType type : types) {
       sTypes.add(type.getTypeString());
     }
 
@@ -57,7 +57,9 @@ public class ClasspathReader {
   public enum ClassType {
     CORE("core"),
     EDITOR("editor"),
-    WORKBENCH("workbench");
+    PLATFORM("platform"),
+    WORKBENCH("workbench"),
+    TEST("test");
 
     private String myTypeString;
 

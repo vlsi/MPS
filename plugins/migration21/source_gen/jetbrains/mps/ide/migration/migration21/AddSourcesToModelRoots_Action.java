@@ -13,7 +13,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import java.util.Set;
+import java.util.Collection;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.project.ModuleId;
@@ -56,7 +56,7 @@ public class AddSourcesToModelRoots_Action extends BaseAction {
           continue;
         }
 
-        Set<String> sp = descriptor.getSourcePaths();
+        Collection<String> sp = descriptor.getSourcePaths();
         if (sp == null || sp.isEmpty()) {
           continue;
         }
@@ -65,7 +65,7 @@ public class AddSourcesToModelRoots_Action extends BaseAction {
         mr.setPath(module.getClassesGen().getPath());
         mr.setManager(new ModelRootManager(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816")).getModuleReference().getModuleId().toString(), "jetbrains.mps.baseLanguage.stubs.JavaStubs"));
 
-        Set<ModelRoot> mrs = descriptor.getModelRoots();
+        Collection<ModelRoot> mrs = descriptor.getModelRoots();
         if (!(mrs.contains(mr))) {
           mrs.add(mr);
         }

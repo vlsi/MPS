@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.ProgressMonitor;
@@ -24,7 +23,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.runtime.RBundle;
 import jetbrains.mps.runtime.RuntimeEnvironment;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.stubs.LibrariesLoader;
@@ -38,11 +36,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ClassLoaderManager implements CoreComponent {
   private static final Logger LOG = Logger.getLogger(ClassLoaderManager.class);
-  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
-    public void unload() {
-      myRepository.invalidateCaches();
-    }
-  };
 
   private static ClassLoaderManager INSTANCE;
 
@@ -54,10 +47,9 @@ public class ClassLoaderManager implements CoreComponent {
 
   private final Object myLock = new Object();
   private RuntimeEnvironment<ModuleReference> myRuntimeEnvironment;
-  private MPSModuleRepository myRepository;
 
-  public ClassLoaderManager(MPSModuleRepository repository) {
-    myRepository = repository;
+  public ClassLoaderManager() {
+
   }
 
   public void init() {
@@ -65,12 +57,9 @@ public class ClassLoaderManager implements CoreComponent {
       throw new IllegalStateException("double initialization");
     }
     INSTANCE = this;
-
-    addReloadHandler(myReloadHandler);
   }
 
   public void dispose() {
-    removeReloadHandler(myReloadHandler);
     INSTANCE = null;
   }
 
@@ -115,22 +104,10 @@ public class ClassLoaderManager implements CoreComponent {
   public void reloadAll(@NotNull ProgressMonitor monitor) {
     LOG.assertCanWrite();
 
-    monitor.start("Reloading classes...", 8);
+    monitor.start("Reloading classes...", 5);
     try {
-      monitor.step("Performing cleanup...");
-      CleanupManager.getInstance().cleanup();
-      monitor.advance(1);
-
       monitor.step("Updating classpath...");
       updateClassPath();
-      monitor.advance(1);
-
-      monitor.step("Refreshing models...");
-      SModelRepository.getInstance().refreshModels();
-      monitor.advance(1);
-
-      monitor.step("Updating stub models...");
-      LibrariesLoader.getInstance().reload();
       monitor.advance(1);
 
       monitor.step("Disposing old classes...");
@@ -141,20 +118,12 @@ public class ClassLoaderManager implements CoreComponent {
       });
       monitor.advance(1);
 
+      monitor.step("Updating stub models...");
+      LibrariesLoader.getInstance().loadNewLibs();
+      monitor.advance(1);
+
       monitor.step("Updating language registry...");
       LanguageRegistry.getInstance().reloadLanguages();
-      monitor.advance(1);
-
-      monitor.step("Updating extensions...");
-      ExtensionRegistry.getInstance().reloadExtensionDescriptors();
-      monitor.advance(1);
-
-      monitor.step("Reloading classes...");
-      callListeners(new ListenerCaller() {
-        public void call(ReloadListener l) {
-          l.load();
-        }
-      });
       monitor.advance(1);
 
       monitor.step("Rebuilding ui...");
@@ -186,13 +155,14 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   public void updateClassPath() {
+    MPSModuleRepository repo = MPSModuleRepository.getInstance();
     synchronized (myLock) {
       if (myRuntimeEnvironment == null) {
         myRuntimeEnvironment = createRuntimeEnvironment();
       }
 
       Set<ModuleReference> added = new HashSet<ModuleReference>();
-      for (IModule m : myRepository.getAllModules()) {
+      for (IModule m : repo.getAllModules()) {
         boolean containsBundle;
         synchronized (myLock) {
           containsBundle = myRuntimeEnvironment.get(m.getModuleReference()) != null;
@@ -204,7 +174,7 @@ public class ClassLoaderManager implements CoreComponent {
         }
       }
 
-      for (IModule m : myRepository.getAllModules()) {
+      for (IModule m : repo.getAllModules()) {
         RBundle<ModuleReference> b = myRuntimeEnvironment.get(m.getModuleReference());
         assert b != null : "There is no budle for module " + m.getModuleFqName();
         b.clearDependencies();
@@ -222,7 +192,7 @@ public class ClassLoaderManager implements CoreComponent {
 
       List<RBundle> toRemove = new ArrayList<RBundle>();
       for (RBundle<ModuleReference> b : myRuntimeEnvironment.getBundles()) {
-        if (myRepository.getModule(b.getId()) == null) {
+        if (repo.getModule(b.getId()) == null) {
           toRemove.add(b);
         }
       }
@@ -236,7 +206,7 @@ public class ClassLoaderManager implements CoreComponent {
 
   private void addModule(ModuleReference ref) {
     synchronized (myLock) {
-      IModule module = myRepository.getModule(ref);
+      IModule module = MPSModuleRepository.getInstance().getModule(ref);
 
       if (module == null) {
         throw new RuntimeException("Can't find module : " + ref.getModuleFqName());

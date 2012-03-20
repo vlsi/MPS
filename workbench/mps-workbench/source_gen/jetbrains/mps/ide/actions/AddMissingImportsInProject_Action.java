@@ -16,7 +16,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import java.awt.Frame;
+import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 
@@ -49,10 +49,6 @@ public class AddMissingImportsInProject_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
-      return false;
-    }
     return true;
   }
 
@@ -70,7 +66,7 @@ public class AddMissingImportsInProject_Action extends BaseAction {
             continue;
           }
 
-          new MissingDependenciesFixer(((Frame) MapSequence.fromMap(_params).get("frame")), model).fix(false);
+          new MissingDependenciesFixer(model).fix(false);
           module.invalidateCaches();
         }
       }

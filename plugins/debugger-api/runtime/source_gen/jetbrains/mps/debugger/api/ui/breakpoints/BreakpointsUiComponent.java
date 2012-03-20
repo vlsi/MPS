@@ -4,6 +4,7 @@ package jetbrains.mps.debugger.api.ui.breakpoints;
 
 import jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
+import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import com.intellij.openapi.components.ProjectComponent;
 import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.project.Project;
@@ -15,7 +16,6 @@ import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.Set;
@@ -40,7 +40,7 @@ import jetbrains.mps.debug.api.breakpoints.IBreakpointListener;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.SessionChangeAdapter;
 
-public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint> implements ProjectComponent {
+public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint, ILocationBreakpoint> implements ProjectComponent {
   private static final Logger LOG = Logger.getLogger(BreakpointsUiComponent.class);
   private static final String BREAKPOINT_ELEMENT = "breakpoint";
   private static final String KIND_TAG = "kind";
@@ -70,6 +70,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
 
   @Override
   public void initComponent() {
+    super.init();
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       @Override
       public void run() {
@@ -86,6 +87,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
     myBreakpointsManagerComponent.removeChangeListener(myBreakpointManagerListener);
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
     component.removeDebugSessionListener(myDebugSessionListener);
+    super.dispose();
   }
 
   public void editBreakpointProperties(final ILocationBreakpoint breakpoint) {
@@ -170,7 +172,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
     return null;
   }
 
-  protected void toggleBreakpoint(@NotNull SNode node, boolean handleRemoveBreakpoint) {
+  protected void toggleBreakpoint(@NotNull SNode node) {
     SNode root = node.getContainingRoot();
     if (root == null) {
       return;
@@ -186,9 +188,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
       }
     }
     if (breakpoint != null) {
-      if (handleRemoveBreakpoint) {
-        myBreakpointsManagerComponent.removeBreakpoint(breakpoint);
-      }
+      myBreakpointsManagerComponent.removeBreakpoint(breakpoint);
     } else {
       ILocationBreakpoint newBreakpoint = myDebugInfoManager.createBreakpoint(node, myProject);
       if (newBreakpoint != null) {
@@ -223,11 +223,11 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
     return Collections.emptyList();
   }
 
-  protected BreakpointIconRenderrerEx<ILocationBreakpoint> createRenderrer(IBreakpoint breakpoint, EditorComponent component) {
-    return new BreakpointIconRenderer((ILocationBreakpoint) breakpoint, component);
+  protected BreakpointIconRenderrerEx<ILocationBreakpoint> createRenderrer(ILocationBreakpoint breakpoint, EditorComponent component) {
+    return new BreakpointIconRenderer(breakpoint, component);
   }
 
-  protected BreakpointPainterEx<IBreakpoint> createPainter(IBreakpoint breakpoint) {
+  protected BreakpointPainterEx<ILocationBreakpoint> createPainter(ILocationBreakpoint breakpoint) {
     return new BreakpointPainter(breakpoint);
   }
 

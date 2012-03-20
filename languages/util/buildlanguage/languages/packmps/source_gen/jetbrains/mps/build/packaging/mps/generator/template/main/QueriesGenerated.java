@@ -53,6 +53,14 @@ public class QueriesGenerated {
     return CompositePathComponent_Behavior.call_getPath_1220983419344(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.build.packaging.structure.Copy"), "sourcePath", true), "compositePathComponent", true));
   }
 
+  public static Object propertyMacro_GetPropertyValue_5581699163570199688(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ":" + ClasspathReader.ClassType.PLATFORM.getTypeString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5581699163570199706(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return CompositePathComponent_Behavior.call_getPath_1220983419344(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.build.packaging.structure.Copy"), "sourcePath", true), "compositePathComponent", true));
+  }
+
   public static Object propertyMacro_GetPropertyValue_5428983789738262478(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ":" + ClasspathReader.ClassType.WORKBENCH.getTypeString();
   }
@@ -61,11 +69,23 @@ public class QueriesGenerated {
     return CompositePathComponent_Behavior.call_getPath_1220983419344(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.build.packaging.structure.Copy"), "sourcePath", true), "compositePathComponent", true));
   }
 
+  public static Object propertyMacro_GetPropertyValue_4155373682043613520(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return CompositePathComponent_Behavior.call_getPath_1220983419344(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.build.packaging.structure.Copy"), "sourcePath", true), "compositePathComponent", true));
+  }
+
   public static Object propertyMacro_GetPropertyValue_5428983789737856709(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return CompositePathComponent_Behavior.call_getPath_1220983419344(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.build.packaging.structure.Copy"), "sourcePath", true), "compositePathComponent", true));
   }
 
-  public static Object propertyMacro_GetPropertyValue_6700426045796524728(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_1967068695236067388(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return CompositePathComponent_Behavior.call_getPath_1220983419344(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.build.packaging.structure.Copy"), "sourcePath", true), "compositePathComponent", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1864513465247672267(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ":" + ClasspathReader.ClassType.TEST.getTypeString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1864513465247672228(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return CompositePathComponent_Behavior.call_getPath_1220983419344(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.build.packaging.structure.Copy"), "sourcePath", true), "compositePathComponent", true));
   }
 
@@ -117,8 +137,24 @@ public class QueriesGenerated {
     });
   }
 
+  public static Iterable sourceNodesQuery_5581699163570199718(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "6700426045796013947"), "entry", true)).first(), "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.packaging.structure.Copy");
+      }
+    });
+  }
+
   public static Iterable sourceNodesQuery_8037435193861318531(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "8431776905956472694"), "entry", true)).first(), "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.packaging.structure.Copy");
+      }
+    });
+  }
+
+  public static Iterable sourceNodesQuery_4155373682043613532(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "4155373682043500272"), "entry", true)).first(), "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.packaging.structure.Copy");
       }
@@ -133,8 +169,16 @@ public class QueriesGenerated {
     });
   }
 
-  public static Iterable sourceNodesQuery_6700426045796524740(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1967068695236067400(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "6700426045796013947"), "entry", true)).first(), "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.packaging.structure.Copy");
+      }
+    });
+  }
+
+  public static Iterable sourceNodesQuery_1864513465247672240(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "5358686142361317193"), "entry", true)).first(), "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.packaging.structure.Copy");
       }

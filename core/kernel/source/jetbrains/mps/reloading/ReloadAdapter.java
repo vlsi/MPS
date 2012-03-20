@@ -20,10 +20,6 @@ public class ReloadAdapter implements ReloadListener {
 
   }
 
-  public void load() {
-
-  }
-
   public void onAfterReload() {
 
   }

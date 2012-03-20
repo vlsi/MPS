@@ -16,7 +16,7 @@
 package jetbrains.mps.project;
 
 public class MPSExtentions {
-  public static final String MPS_PROJECT = "ipr";
+  public static final String MPS_PROJECT = "mpr";
   public static final String IDEAWORKSPACE = "iws";
   public static final String WORKSPACE = "mws";
   public static final String IDEAMODULE = "iml";
@@ -28,7 +28,7 @@ public class MPSExtentions {
   public static final String REFACTORINGS = "history";
   public static final String JAVAFILE = "java";
   public static final String CLASSFILE = "class";
-  public static final String IDEA_PROJECT = "ipr";
+  public static final String IDEA_PROJECT = "mpr";
 
   public static final String MPS_ARCH = "jar";
   public static final String RUNTIME_ARCH = "runtime.jar";

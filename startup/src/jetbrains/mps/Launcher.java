@@ -44,8 +44,6 @@ public class Launcher {
         System.setProperty(fsNotifierKey, PathManager.getBinPath() + File.separatorChar + getFsNotifierDir() + File.separatorChar + getFsNotifierName());
       }
     }
-
-
     Bootstrap.main(args, "jetbrains.mps.MPSMainImpl", "start", getAdditionalMPSClasspath());
   }
 
@@ -77,13 +75,13 @@ public class Launcher {
     List<URL> result = new ArrayList<URL>();
     String homePath = PathManager.getHomePath();
     try {
-      Class<Bootstrap> clazz = Bootstrap.class;
-      String selfRoot = PathManager.getResourceRoot(clazz, "/" + clazz.getName().replace('.', '/') + ".class");
-      URL selfRootUrl = new File(selfRoot).getAbsoluteFile().toURL();
+      addMPSBootstrapJars(result, homePath);
 
-      addMPSBootstrapJars(result, homePath, selfRootUrl);
       if (result.isEmpty()) {
         // we're probably running from the sources, let's add the class dirs to the classpath
+        Class<Bootstrap> clazz = Bootstrap.class;
+        String selfRoot = PathManager.getResourceRoot(clazz, "/" + clazz.getName().replace('.', '/') + ".class");
+        URL selfRootUrl = new File(selfRoot).getAbsoluteFile().toURL();
         addMPSBootstrapClassFolders(result, homePath, selfRootUrl);
       }
     } catch (MalformedURLException e) {
@@ -92,24 +90,11 @@ public class Launcher {
     return result;
   }
 
-  private static void addMPSBootstrapJars(List<URL> classPath, String homePath, URL selfRootUrl) throws MalformedURLException {
-    File ideaPatchJar = new File(homePath + File.separator + "lib" + File.separator + "idea-patch.jar");
-    if (ideaPatchJar.exists()) {
-      classPath.add(ideaPatchJar.toURI().toURL());
-    }
-
+  private static void addMPSBootstrapJars(List<URL> classPath, String homePath) throws MalformedURLException {
     File mpsJar = new File(homePath + File.separator + "lib" + File.separator + "mps.jar");
     if (mpsJar.exists()) {
       classPath.add(mpsJar.toURI().toURL());
     }
-
-    // WF?
-
-    File baseLanguageFolder = new File(homePath + File.separator + "core" + File.separator + "baseLanguage");
-    ClassloaderUtil.addLibraries(classPath, baseLanguageFolder, selfRootUrl);
-
-    File languageDesignFolder = new File(homePath + File.separator + "core" + File.separator + "languageDesign");
-    ClassloaderUtil.addLibraries(classPath, languageDesignFolder, selfRootUrl);
   }
 
   private static void addMPSBootstrapClassFolders(List<URL> classPath, String homePath, URL selfRootUrl) throws MalformedURLException {
