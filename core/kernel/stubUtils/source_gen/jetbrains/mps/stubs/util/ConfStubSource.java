@@ -5,6 +5,7 @@ package jetbrains.mps.stubs.util;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import java.util.List;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
@@ -13,7 +14,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -37,7 +37,8 @@ import jetbrains.mps.smodel.SModelFqName;
 public class ConfStubSource extends StubModelDataSource {
   private List<ModelRoot> roots;
 
-  public ConfStubSource(ModelRoot root) {
+  public ConfStubSource(ModuleReference origin, ModelRoot root) {
+    super(origin);
     this.roots = ListSequence.fromList(new ArrayList<ModelRoot>());
     ListSequence.fromList(this.roots).addElement(root);
   }

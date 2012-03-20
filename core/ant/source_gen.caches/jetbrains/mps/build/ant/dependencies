@@ -297,7 +297,6 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.build.ant.generation.TestGenerationOnTeamcity" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="org.apache.tools.ant.BuildException" />
     <classNode dependClassName="org.apache.tools.ant.Project" />

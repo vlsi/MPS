@@ -19,6 +19,7 @@ import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.ProjectViewPane;
 import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.fileEditor.FileEditor;
@@ -39,6 +40,8 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
+import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
+import jetbrains.mps.ide.platform.watching.FSChangesWatcher.IReloadListener;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectPaneTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper;
@@ -113,6 +116,17 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     super(project);
     myProjectView = projectView;
     myUpdateQueue.setRestartTimerOnAdd(true);
+    ApplicationManager.getApplication().getComponent(FSChangesWatcher.class).addReloadListener(new IReloadListener() {
+      @Override
+      public void reloadStarted() {
+
+      }
+
+      @Override
+      public void reloadFinished() {
+        rebuild();
+      }
+    });
   }
 
   @Override

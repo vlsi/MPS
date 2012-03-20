@@ -97,6 +97,7 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="javax.swing.event.TreeSelectionEvent" />
     <classNode dependClassName="javax.swing.event.TreeSelectionListener" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
@@ -168,6 +169,7 @@
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="java.awt.HeadlessException" />
     <classNode dependClassName="java.awt.Insets" />
+    <classNode dependClassName="java.awt.Point" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />

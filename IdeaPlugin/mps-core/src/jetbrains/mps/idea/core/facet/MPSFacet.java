@@ -20,7 +20,13 @@ import com.intellij.facet.Facet;
 import com.intellij.facet.FacetType;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
+import com.intellij.openapi.roots.LibraryOrderEntry;
+import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.roots.OrderEntry;
+import com.intellij.openapi.roots.OrderRootType;
+import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.startup.StartupManager;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
@@ -28,7 +34,9 @@ import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
@@ -37,8 +45,8 @@ import org.jetbrains.annotations.NotNull;
  * evgeny, 10/26/11
  */
 public class MPSFacet extends Facet<MPSFacetConfiguration> {
-    private static final Logger LOG = Logger.getInstance(MPSFacet.class);
-    private Solution mySolution;
+  private static final Logger LOG = Logger.getInstance(MPSFacet.class);
+  private Solution mySolution;
 
   public MPSFacet(@NotNull FacetType facetType, @NotNull Module module, @NotNull String name, @NotNull MPSFacetConfiguration configuration, Facet underlyingFacet) {
     super(facetType, module, name, configuration, underlyingFacet);

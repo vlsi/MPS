@@ -29,6 +29,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import jetbrains.mps.lang.test.runtime.TransformationTestRunner;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -57,7 +58,9 @@ public class EditorTests extends DataMPSFixtureTestCase {
     @Override
     protected void prepareTestData(MPSFacetConfiguration configuration) throws  Exception {
         IFile test = copyResource("models", "test.mps", "test.mps", "/tests/editorTests/models/test.mps");
-        configuration.getState().setModelRootPaths(new String[]{test.getParent().getPath()});
+      ArrayList<ModelRoot> roots = new ArrayList<ModelRoot>();
+      roots.add(new ModelRoot(test.getParent().getPath()));
+      configuration.getState().setModelRoots(roots);
     }
 
     @Override

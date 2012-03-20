@@ -31,6 +31,7 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.ui.ScrollPaneFactory;
 import java.awt.Dimension;
 import com.intellij.openapi.util.DimensionService;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
@@ -46,6 +47,7 @@ import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.wm.WindowManager;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import jetbrains.mps.workbench.action.BaseAction;
 import java.util.Arrays;
@@ -87,10 +89,15 @@ public class ModelDifferenceDialog extends DialogWrapper {
     toolbar.updateActionsImmediately();
     myPanel.add(toolbar.getComponent(), BorderLayout.NORTH);
     myPanel.add(ScrollPaneFactory.createScrollPane(myTree), BorderLayout.CENTER);
-    final Dimension size = DimensionService.getInstance().getSize(getDimensionServiceKey(), myProject);
+    Dimension size = DimensionService.getInstance().getSize(getDimensionServiceKey());
     if (size == null) {
-      DimensionService.getInstance().setSize(getDimensionServiceKey(), new Dimension(500, 700));
+      myPanel.setPreferredSize(new Dimension(500, 700));
     }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        setTitle("Difference for model: " + SModelOperations.getModelName(oldModel));
+      }
+    });
     init();
   }
 
@@ -108,7 +115,7 @@ public class ModelDifferenceDialog extends DialogWrapper {
   }
 
   public String getDimensionServiceKey() {
-    return "#jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog";
+    return getClass().getName();
   }
 
   private void fillRootToChange() {
@@ -214,8 +221,12 @@ public class ModelDifferenceDialog extends DialogWrapper {
         }
       }
     });
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        rootDialog.value.toFront();
+      }
+    });
     rootDialog.value.show();
-    rootDialog.value.toFront();
   }
 
   /*package*/ void rootDialogClosed() {

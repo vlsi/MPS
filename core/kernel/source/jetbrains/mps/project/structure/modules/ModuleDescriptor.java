@@ -15,15 +15,19 @@
  */
 package jetbrains.mps.project.structure.modules;
 
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.model.ModelRoot;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.LinkedHashSet;
+import java.util.TreeSet;
 
 public class ModuleDescriptor {
   private static final ModuleReferenceComparator MODULE_REFERENCE_COMPARATOR = new ModuleReferenceComparator();
   private static final DependencyComparator DEPENDENCY_COMPARATOR = new DependencyComparator(MODULE_REFERENCE_COMPARATOR);
 
-  private String myUUID;
+  private ModuleId myId;
   private String myNamespace;
   private String myTimestamp;
   private boolean myCompileInMPS = true;
@@ -48,12 +52,23 @@ public class ModuleDescriptor {
     mySourcePaths = new LinkedHashSet<String>();
   }
 
+  @Deprecated //replaced with ModuleId
   public String getUUID() {
-    return myUUID;
+    ModuleId id = getId();
+    return id == null ? null : id.toString();
   }
 
+  @Deprecated //replaced with ModuleId
   public void setUUID(String UUID) {
-    myUUID = UUID;
+    setId(ModuleId.fromString(UUID));
+  }
+
+  public ModuleId getId() {
+    return myId;
+  }
+
+  public void setId(ModuleId id) {
+    myId = id;
   }
 
   public String getNamespace() {
@@ -65,7 +80,7 @@ public class ModuleDescriptor {
   }
 
   public ModuleReference getModuleReference() {
-    return new ModuleReference(getNamespace(), myUUID);
+    return new ModuleReference(getNamespace(), myId);
   }
 
   public String getTimestamp() {

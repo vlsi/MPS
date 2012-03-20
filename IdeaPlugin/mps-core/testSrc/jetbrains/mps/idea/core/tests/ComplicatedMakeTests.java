@@ -18,21 +18,17 @@ package jetbrains.mps.idea.core.tests;
 
 import com.intellij.compiler.CompilerManagerImpl;
 import com.intellij.openapi.compiler.CompilerManager;
-import com.intellij.openapi.compiler.CompilerPaths;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.util.io.ZipUtil;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.make.MPSCompiler2;
 import jetbrains.mps.idea.core.make.MPSCompilerPaths;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.vfs.IFile;
-import org.junit.ClassRule;
-import org.junit.rules.TestRule;
-import org.junit.runner.Description;
-import org.junit.runners.model.Statement;
 
 import java.io.File;
+import java.util.ArrayList;
 
 public class ComplicatedMakeTests extends AbstractMakeTest {
 
@@ -45,7 +41,9 @@ public class ComplicatedMakeTests extends AbstractMakeTest {
     final IFile dataModel = copyResource("models", "data.mps", "data.mps", "/tests/makeTests/models/data.mps");
     final IFile code2Model = copyResource("models", "code2.mps", "code2.mps", "/tests/makeTests/models/code2.mps");
     final IFile data2Model = copyResource("models", "data2.mps", "data2.mps", "/tests/makeTests/models/data2.mps");
-    configuration.getState().setModelRootPaths(codeModel.getParent().getPath());
+    ArrayList<ModelRoot> roots = new ArrayList<ModelRoot>();
+    roots.add(new ModelRoot(codeModel.getParent().getPath()));
+    configuration.getState().setModelRoots(roots);
     prepareTestData(configuration, codeModel.getParent());
   }
 

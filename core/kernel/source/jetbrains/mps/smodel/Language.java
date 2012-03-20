@@ -110,8 +110,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     LanguageDescriptor languageDescriptor;
     if (handle.getDescriptor() != null) {
       languageDescriptor = (LanguageDescriptor) handle.getDescriptor();
-      if (languageDescriptor.getUUID() == null) {
-        languageDescriptor.setUUID(UUID.randomUUID().toString());
+      if (languageDescriptor.getId() == null) {
+        languageDescriptor.setId(ModuleId.regular());
         LanguageDescriptorPersistence.saveLanguageDescriptor(handle.getFile(), languageDescriptor);
       }
     } else {
@@ -286,7 +286,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   public void setLanguageDescriptor(final LanguageDescriptor newDescriptor, boolean reloadClasses) {
     myLanguageDescriptor = newDescriptor;
 
-    ModuleReference reference = new ModuleReference(myLanguageDescriptor.getNamespace(), myLanguageDescriptor.getUUID());
+    ModuleReference reference = new ModuleReference(myLanguageDescriptor.getNamespace(), myLanguageDescriptor.getId());
     setModuleReference(reference);
 
     reloadAfterDescriptorChange();
@@ -705,7 +705,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   private static LanguageDescriptor createNewDescriptor(String languageNamespace, IFile descriptorFile) {
     LanguageDescriptor languageDescriptor = new LanguageDescriptor();
     languageDescriptor.setNamespace(languageNamespace);
-    languageDescriptor.setUUID(UUID.randomUUID().toString());
+    languageDescriptor.setId(ModuleId.regular());
 
     IFile languageModels = descriptorFile.getParent().getDescendant(LANGUAGE_MODELS);
     if (languageModels.exists()) {

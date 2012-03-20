@@ -79,6 +79,6 @@ public class CommitUtil {
     if (res == JOptionPane.YES_OPTION) {
       refactorRenameNode(editorContext.getOperationContext(), node, newValue);
     }
-    return res != JOptionPane.NO_OPTION;
+    return (res != JOptionPane.NO_OPTION && res != JOptionPane.CLOSED_OPTION);
   }
 }

@@ -9,7 +9,6 @@ import java.util.Map;
 import java.util.List;
 import java.util.LinkedHashMap;
 import org.apache.tools.ant.Project;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -44,7 +43,7 @@ public class WhatToDo {
   private final Map<String, String> myMacro = new LinkedHashMap<String, String>();
   private int myLogLevel = Project.MSG_INFO;
   private final Map<String, String> myProperties = new LinkedHashMap<String, String>();
-  private final List<String> myParameters = ListSequence.fromList(new ArrayList<String>());
+  private final List<String> myParameters = new ArrayList<String>();
 
   public WhatToDo() {
   }
@@ -173,7 +172,7 @@ public class WhatToDo {
   }
 
   public void addParameter(String parameter) {
-    ListSequence.fromList(myParameters).addElement(parameter);
+    myParameters.add(parameter);
   }
 
   public List<String> getParameters() {
@@ -181,7 +180,7 @@ public class WhatToDo {
   }
 
   public void updateParameters(List<String> parameters) {
-    ListSequence.fromList(myParameters).addSequence(ListSequence.fromList(parameters));
+    myParameters.addAll(parameters);
   }
 
   public void cloneTo(Object dest) {

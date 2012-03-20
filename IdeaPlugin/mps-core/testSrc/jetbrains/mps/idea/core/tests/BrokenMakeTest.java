@@ -21,13 +21,13 @@ import com.intellij.openapi.compiler.CompilerManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.util.io.ZipUtil;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.make.MPSCompiler2;
 import jetbrains.mps.idea.core.make.MPSCompilerPaths;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.vfs.IFile;
 
-import java.io.File;
+import java.util.ArrayList;
 
 public class BrokenMakeTest extends AbstractMakeTest {
   @Override
@@ -36,7 +36,9 @@ public class BrokenMakeTest extends AbstractMakeTest {
     String moduleFileName = module.getModuleFilePath();
     copyResource(moduleFileName, "makeTestBroken.iml", "/tests/makeTestBroken/makeTestBroken.iml");
     final IFile brokenModel = copyResource("models", "broken.mps", "broken.mps", "/tests/makeTestBroken/models/broken.mps");
-    configuration.getState().setModelRootPaths(brokenModel.getParent().getPath());
+    ArrayList<ModelRoot> roots = new ArrayList<ModelRoot>();
+    roots.add(new ModelRoot(brokenModel.getParent().getPath()));
+    configuration.getState().setModelRoots(roots);
     prepareTestData(configuration, brokenModel.getParent());
   }
 

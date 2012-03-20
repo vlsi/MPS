@@ -58,7 +58,7 @@ public class MergeConfirmation {
 
   private static int showUnresolvedConflictsConfirmation(DialogWrapper dialog, int changes) {
     String msg = String.format("You have %s left. You need to resolve them manually.\n" + "Are you sure want to close merge dialog without resolving them?", NameUtil.formatNumericalString(changes, "unresolved conflicting change"));
-    if (Messages.showYesNoDialog(dialog.getWindow(), msg, "Unresolved Conflicting Changes", Messages.getWarningIcon()) == 0) {
+    if (Messages.showYesNoDialog(dialog.getOwner(), msg, "Unresolved Conflicting Changes", Messages.getWarningIcon()) == 0) {
       return MergeConfirmation.SAVE_AS_IS;
     } else {
       return MergeConfirmation.RETURN;
@@ -74,7 +74,7 @@ public class MergeConfirmation {
       "s" :
       ""
     ));
-    int answer = Messages.showYesNoCancelDialog(dialog.getWindow(), message, title, Messages.getQuestionIcon());
+    int answer = Messages.showYesNoCancelDialog(dialog.getOwner(), message, title, Messages.getQuestionIcon());
     if (answer == 0) {
       return MergeConfirmation.RESOLVE_AUTOMATICALLY;
     } else if (answer == 1) {
