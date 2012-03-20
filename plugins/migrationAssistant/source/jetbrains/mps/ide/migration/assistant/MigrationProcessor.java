@@ -19,6 +19,8 @@ import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.ui.*;
 import com.intellij.util.ui.Timer;
+import jetbrains.mps.project.MPSProjectVersion;
+import jetbrains.mps.project.Version;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -90,6 +92,7 @@ public class MigrationProcessor extends AbstractProjectComponent{
 
     new Timer("foo", 300) {
       int myStep = 0;
+      boolean failedone;
       @Override
       protected void onTimer() throws InterruptedException {
         final int step = myStep++;
@@ -107,7 +110,14 @@ public class MigrationProcessor extends AbstractProjectComponent{
             @Override
             public void run() {
               fireStartingAction(actionsCopy.get(step));
-              fireFinishedAction(actionsCopy.get(step));
+              Version version = myProject.getComponent(MPSProjectVersion.class).getVersion();
+              if(!failedone && version.toString().endsWith("5")) {
+                fireFailedAction(actionsCopy.get(step));
+                failedone = true;
+              }
+              else {
+                fireFinishedAction(actionsCopy.get(step));
+              }
             }
           });
         }
@@ -135,6 +145,12 @@ public class MigrationProcessor extends AbstractProjectComponent{
     }
   }
 
+  private void fireFailedAction(Object migration) {
+    for (Callback callback: myCallbacks) {
+      callback.failedAction(migration);
+    }
+  }
+
   private void fireFinishedAll() {
     for (Callback callback: myCallbacks) {
       callback.finishedAll();
@@ -143,6 +159,7 @@ public class MigrationProcessor extends AbstractProjectComponent{
 
   public static interface Callback {
     void startingAction(Object action);
+    void failedAction(Object action);
     void finishedAction(Object action);
     void finishedAll ();
   }

@@ -34,7 +34,6 @@ import jetbrains.mps.ide.migration.assistant.MigrationProcessor.Callback;
 import jetbrains.mps.project.MPSProjectMigrationState;
 
 import javax.swing.*;
-import javax.swing.border.EtchedBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
@@ -55,10 +54,11 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
   private static final List<String> STEP_IDS = new ArrayList<String>();
 
-  private static Icon ICON = new ImageIcon(MigrationAssistantWizard.class.getResource("newProject.png"));
-  private static Icon EXCLUDE = new ImageIcon(MigrationAssistantWizard.class.getResource("cross.png"));
-  private static Icon CHECK = new ImageIcon(MigrationAssistantWizard.class.getResource("check.png"));
-  private static Icon EMPTY = new Icon() {
+  private static Icon WIZARD_ICON = new ImageIcon(MigrationAssistantWizard.class.getResource("newProject.png"));
+  private static Icon EXCLUDE_ICON = new ImageIcon(MigrationAssistantWizard.class.getResource("cross.png"));
+  private static Icon CHECK_ICON = new ImageIcon(MigrationAssistantWizard.class.getResource("check.png"));
+  private static Icon ERROR_ICON = new ImageIcon(MigrationAssistantWizard.class.getResource("error.png"));
+  private static Icon EMPTY_ICON = new Icon() {
     @Override
     public void paintIcon(Component component, Graphics graphics, int i, int i1) {
     }
@@ -80,7 +80,8 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       new InitialStep(project),
       new MigrationsActionsStep(project),
       new MigrationsProgressStep(project),
-      new MigrationsFinishedStep((project))));
+      new MigrationsFinishedStep(project),
+      new MigrationsFinishedWithErrorsStep(project)));
   }
 
   @Override
@@ -157,7 +158,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
     @Override
     public Icon getIcon() {
-      return ICON;
+      return WIZARD_ICON;
     }
 
     @Override
@@ -274,7 +275,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
           updateButtons();
         }
       });
-      myList.setCellRenderer(new MyListCellRenderer(myExcludedActions, Collections.emptySet()));
+      myList.setCellRenderer(new MyListCellRenderer(myExcludedActions, Collections.emptySet(), Collections.emptySet()));
 
       JPanel listPanel = new JPanel(new BorderLayout(5,5));
       listPanel.setBorder(BorderFactory.createCompoundBorder(
@@ -449,6 +450,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     private InlineProgressIndicator myProgressIndicator;
     private final Set<Object> myMarked = Collections.synchronizedSet(new HashSet<Object>());;
     private final Set<Object> myExcluded = Collections.synchronizedSet(new HashSet<Object>());
+    private final Set<Object> myFailed = Collections.synchronizedSet(new HashSet<Object>());
     private JBList myList;
 
     public MigrationsProgressStep(Project project) {
@@ -466,7 +468,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       myComponent.add(new JLabel("Applying migration actions:"), BorderLayout.NORTH);
 
       myList = new JBList(processor.getActions());
-      myList.setCellRenderer(new MyListCellRenderer(myExcluded, myMarked));
+      myList.setCellRenderer(new MyListCellRenderer(myExcluded, myMarked, myFailed));
 
       JPanel listPanel = new JPanel(new BorderLayout(5, 5));
       listPanel.setBorder(BorderFactory.createCompoundBorder(
@@ -495,10 +497,14 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
             @Override
             public void finishedAction(Object action) {
-              indicator.setFraction((double) (actions.indexOf(action)+1) / actions.size());
               myMarked.add(action);
-              myList.ensureIndexIsVisible(actions.indexOf(action));
-              myList.repaint();
+              advance(action);
+            }
+
+            @Override
+            public void failedAction(Object action) {
+              myFailed.add(action);
+              advance(action);
             }
 
             @Override
@@ -507,6 +513,12 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
               indicator.setFraction(1.0);
               myFinished = true;
               fireStateChanged();
+            }
+
+            private void advance(Object action) {
+              indicator.setFraction((double) (actions.indexOf(action) + 1) / actions.size());
+              myList.ensureIndexIsVisible(actions.indexOf(action));
+              myList.repaint();
             }
           });
           indicator.setIndeterminate(true);
@@ -543,6 +555,11 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     }
 
     @Override
+    public Object getNextStepId() {
+      return myFailed.isEmpty() ? super.getNextStepId() : super.getSkipNextStepId();
+    }
+
+    @Override
     public boolean isComplete() {
       return myStarted && myFinished;
     }
@@ -554,8 +571,6 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
   }
 
   private static class MigrationsFinishedStep extends MyStep {
-
-    private boolean myShown;
 
     public MigrationsFinishedStep(Project project) {
       super(project, "Migration Finished", "finished");
@@ -587,14 +602,51 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     }
 
     @Override
-    public JComponent getComponent() {
-      return myComponent;
+    public Object getPreviousStepId() {
+      // too late for that
+      return null;
     }
 
     @Override
-    public void _init() {
-      super._init();
-      this.myShown = true;
+    public boolean isComplete() {
+      return true;
+    }
+
+    @Override
+    public boolean isPostComplete() {
+      return true;
+    }
+  }
+
+  private static class MigrationsFinishedWithErrorsStep extends MyStep {
+
+    public MigrationsFinishedWithErrorsStep(Project project) {
+      super(project, "Migration Finished With Errors", "finishedWithErrors");
+      createComponent();
+    }
+
+    @Override
+    protected final void createComponent() {
+      super.createComponent();
+
+      JPanel infoHolder = new JPanel(new BorderLayout());
+      infoHolder.setBorder(BorderFactory.createEmptyBorder(2,2,2,2));
+
+      JTextArea info = new JTextArea(
+        "Warning! Although migration has completed, there were some errors during the process. Please review the errors log." +
+          "\n\n" +
+          "Your project files have been upgraded to be used with the latest version of MPS." +
+          "\n\n" +
+          "The wizard can now be closed and your project will be loaded.",
+        15, 40);
+      info.setLineWrap(true);
+      info.setWrapStyleWord(true);
+      info.setEditable(false);
+      info.setBorder(BorderFactory.createLoweredBevelBorder());
+
+      infoHolder.add(info, BorderLayout.CENTER);
+
+      myComponent.add(infoHolder, BorderLayout.CENTER);
     }
 
     @Override
@@ -605,42 +657,50 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
     @Override
     public boolean isComplete() {
-      return myShown;
+      return true;
     }
 
     @Override
     public boolean isPostComplete() {
-      return myShown;
+      return true;
     }
   }
 
   private static class MyListCellRenderer extends DefaultListCellRenderer {
 
+    private Font myErrorFont;
     private Font myStrikeFont;
-    private Font myFont;
+    private Font myOriginalFont;
     private final Set<?> myExcluded;
     private final Set<?> myMarked;
+    private final Set<?> myFailed;
 
-    public MyListCellRenderer(Set<?> excluded, Set<?> marked) {
+    public MyListCellRenderer(Set<?> excluded, Set<?> marked, Set<?> failed) {
       myExcluded = excluded;
       myMarked = marked;
+      myFailed = failed;
     }
 
     @Override
     public Component getListCellRendererComponent(JList list, Object value, int index, boolean iss, boolean chf) {
       super.getListCellRendererComponent(list, value, index, iss, chf);
       if (myExcluded.contains(value)) {
-        setIcon(EXCLUDE);
+        setIcon(EXCLUDE_ICON);
         setEnabled(false);
         setFont(getStrikeFont());
       }
       else if (myMarked.contains(value)) {
-        setIcon(CHECK);
+        setIcon(CHECK_ICON);
         setEnabled(true);
         setFont(getOriginalFont());
       }
+      else if (myFailed.contains(value)) {
+        setIcon(ERROR_ICON);
+        setEnabled(true);
+        setFont(getErrorFont());
+      }
       else {
-        setIcon(EMPTY);
+        setIcon(EMPTY_ICON);
         setEnabled(true);
         setFont(getOriginalFont());
       }
@@ -651,17 +711,25 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       if (myStrikeFont == null) {
         Map<TextAttribute,Object> attributes = new HashMap<TextAttribute, Object>(getFont().getAttributes());
         attributes.put(TextAttribute.STRIKETHROUGH, TextAttribute.STRIKETHROUGH_ON);
-        myFont = getFont();
-        myStrikeFont = myFont.deriveFont(attributes);
+        myStrikeFont = getOriginalFont().deriveFont(attributes);
       }
       return myStrikeFont;
     }
 
-    private Font getOriginalFont () {
-      if (myFont == null) {
-        this.myFont = getFont();
+    private Font getErrorFont() {
+      if (myErrorFont == null) {
+        Map<TextAttribute,Object> attributes = new HashMap<TextAttribute, Object>(getFont().getAttributes());
+        attributes.put(TextAttribute.FOREGROUND, Color.RED);
+        myErrorFont = getOriginalFont().deriveFont(attributes);
       }
-      return myFont;
+      return myErrorFont;
+    }
+
+    private Font getOriginalFont () {
+      if (myOriginalFont == null) {
+        this.myOriginalFont = getFont();
+      }
+      return myOriginalFont;
     }
   }
 
