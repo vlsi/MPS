@@ -11,10 +11,11 @@
   <import index="msyo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" />
   <import index="68ai" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.annotations(MPS.Core/org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="9it7" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.extensions(MPS.Workbench/com.intellij.openapi.extensions@java_stub)" version="-1" />
-  <import index="k795" modelUID="f:java_stub#6fd1293f-7f65-4ffd-99dc-4719eca7c171#git4idea(jetbrains.mps.vcs.platform/git4idea@java_stub)" version="-1" />
+  <import index="wcn7" modelUID="f:java_stub#6fd1293f-7f65-4ffd-99dc-4719eca7c171#git4idea(jetbrains.mps.vcs.platform/git4idea@java_stub)" version="-1" />
   <import index="olyr" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.ide.plugins(MPS.Workbench/com.intellij.ide.plugins@java_stub)" version="-1" />
-  <import index="y9lp" modelUID="f:java_stub#6fd1293f-7f65-4ffd-99dc-4719eca7c171#git4idea.commands(jetbrains.mps.vcs.platform/git4idea.commands@java_stub)" version="-1" />
+  <import index="xl3n" modelUID="f:java_stub#6fd1293f-7f65-4ffd-99dc-4719eca7c171#git4idea.commands(jetbrains.mps.vcs.platform/git4idea.commands@java_stub)" version="-1" />
   <import index="ur19" modelUID="r:d58d9938-2526-431c-a5fe-6bbbfeb64ac2(jetbrains.mps.vcs.util)" version="-1" />
+  <import index="4rb9" modelUID="r:e4939376-be00-4167-9510-67715eca6425(jetbrains.mps.vcs.platform.util)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" implicit="yes" />
   <import index="pxpg" modelUID="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" version="-1" implicit="yes" />
@@ -37,11 +38,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4346819404427368286">
             <property name="name" nameId="tpck.1169194664001" value="h" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4346819404427368287">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="y9lp.~GitSimpleHandler" resolveInfo="GitSimpleHandler" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xl3n.~GitSimpleHandler" resolveInfo="GitSimpleHandler" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4346819404427368288">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4346819404427368289">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y9lp.~GitSimpleHandler%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject,com%dintellij%dopenapi%dvfs%dVirtualFile,git4idea%dcommands%dGitCommand)" resolveInfo="GitSimpleHandler" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xl3n.~GitSimpleHandler%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject,com%dintellij%dopenapi%dvfs%dVirtualFile,git4idea%dcommands%dGitCommand)" resolveInfo="GitSimpleHandler" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4346819404427368290">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4346819404427368315" resolveInfo="project" />
                 </node>
@@ -49,8 +50,8 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4346819404427368317" resolveInfo="root" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4346819404427368292">
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="y9lp.~GitCommand" resolveInfo="GitCommand" />
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="y9lp.~GitCommand%dLOG" resolveInfo="LOG" />
+                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="xl3n.~GitCommand" resolveInfo="GitCommand" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="xl3n.~GitCommand%dLOG" resolveInfo="LOG" />
                 </node>
               </node>
             </node>
@@ -62,7 +63,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4346819404427368286" resolveInfo="h" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4346819404427368296">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y9lp.~GitHandler%dsetNoSSH(boolean)%cvoid" resolveInfo="setNoSSH" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xl3n.~GitHandler%dsetNoSSH(boolean)%cvoid" resolveInfo="setNoSSH" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4346819404427368297">
                 <property name="value" nameId="tpee.1068580123138" value="true" />
               </node>
@@ -75,7 +76,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4346819404427368286" resolveInfo="h" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4346819404427368301">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y9lp.~GitHandler%dsetSilent(boolean)%cvoid" resolveInfo="setSilent" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xl3n.~GitHandler%dsetSilent(boolean)%cvoid" resolveInfo="setSilent" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4346819404427368302">
                 <property name="value" nameId="tpee.1068580123138" value="true" />
               </node>
@@ -88,7 +89,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4346819404427368286" resolveInfo="h" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4346819404427368306">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y9lp.~GitHandler%daddParameters(java%dlang%dString%d%d%d)%cvoid" resolveInfo="addParameters" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xl3n.~GitHandler%daddParameters(java%dlang%dString%d%d%d)%cvoid" resolveInfo="addParameters" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4346819404427368307">
                 <property name="value" nameId="tpee.1070475926801" value="--max-count=1" />
               </node>
@@ -105,7 +106,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4346819404427368286" resolveInfo="h" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4346819404427368313">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y9lp.~GitSimpleHandler%drun()%cjava%dlang%dString" resolveInfo="run" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xl3n.~GitSimpleHandler%drun()%cjava%dlang%dString" resolveInfo="run" />
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4346819404427368314">
@@ -151,11 +152,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4346819404427368329">
             <property name="name" nameId="tpck.1169194664001" value="h" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4346819404427368330">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="y9lp.~GitSimpleHandler" resolveInfo="GitSimpleHandler" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xl3n.~GitSimpleHandler" resolveInfo="GitSimpleHandler" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4346819404427368331">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4346819404427368332">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y9lp.~GitSimpleHandler%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject,com%dintellij%dopenapi%dvfs%dVirtualFile,git4idea%dcommands%dGitCommand)" resolveInfo="GitSimpleHandler" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xl3n.~GitSimpleHandler%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject,com%dintellij%dopenapi%dvfs%dVirtualFile,git4idea%dcommands%dGitCommand)" resolveInfo="GitSimpleHandler" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4346819404427368333">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4346819404427368321" resolveInfo="project" />
                 </node>
@@ -163,8 +164,8 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4346819404427368323" resolveInfo="root" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4346819404427368335">
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="y9lp.~GitCommand" resolveInfo="GitCommand" />
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="y9lp.~GitCommand%dMERGE_BASE" resolveInfo="MERGE_BASE" />
+                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="xl3n.~GitCommand" resolveInfo="GitCommand" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="xl3n.~GitCommand%dMERGE_BASE" resolveInfo="MERGE_BASE" />
                 </node>
               </node>
             </node>
@@ -176,7 +177,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4346819404427368329" resolveInfo="h" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4346819404427368339">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y9lp.~GitHandler%dsetNoSSH(boolean)%cvoid" resolveInfo="setNoSSH" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xl3n.~GitHandler%dsetNoSSH(boolean)%cvoid" resolveInfo="setNoSSH" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4346819404427368340">
                 <property name="value" nameId="tpee.1068580123138" value="true" />
               </node>
@@ -189,7 +190,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4346819404427368329" resolveInfo="h" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4346819404427368344">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y9lp.~GitHandler%dsetSilent(boolean)%cvoid" resolveInfo="setSilent" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xl3n.~GitHandler%dsetSilent(boolean)%cvoid" resolveInfo="setSilent" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4346819404427368345">
                 <property name="value" nameId="tpee.1068580123138" value="true" />
               </node>
@@ -202,7 +203,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4346819404427368329" resolveInfo="h" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4346819404427368349">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y9lp.~GitHandler%daddParameters(java%dlang%dString%d%d%d)%cvoid" resolveInfo="addParameters" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xl3n.~GitHandler%daddParameters(java%dlang%dString%d%d%d)%cvoid" resolveInfo="addParameters" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4346819404427368350">
                 <property name="value" nameId="tpee.1070475926801" value="origin/master" />
               </node>
@@ -221,7 +222,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4346819404427368329" resolveInfo="h" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4346819404427368357">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y9lp.~GitSimpleHandler%drun()%cjava%dlang%dString" resolveInfo="run" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xl3n.~GitSimpleHandler%drun()%cjava%dlang%dString" resolveInfo="run" />
               </node>
             </node>
           </node>
@@ -292,11 +293,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4346819404427368385">
             <property name="name" nameId="tpck.1169194664001" value="h" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4346819404427368386">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="y9lp.~GitSimpleHandler" resolveInfo="GitSimpleHandler" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xl3n.~GitSimpleHandler" resolveInfo="GitSimpleHandler" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4346819404427368387">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4346819404427368388">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y9lp.~GitSimpleHandler%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject,com%dintellij%dopenapi%dvfs%dVirtualFile,git4idea%dcommands%dGitCommand)" resolveInfo="GitSimpleHandler" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xl3n.~GitSimpleHandler%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject,com%dintellij%dopenapi%dvfs%dVirtualFile,git4idea%dcommands%dGitCommand)" resolveInfo="GitSimpleHandler" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4346819404427368389">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4346819404427368377" resolveInfo="project" />
                 </node>
@@ -304,8 +305,8 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4346819404427368379" resolveInfo="root" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4346819404427368391">
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="y9lp.~GitCommand" resolveInfo="GitCommand" />
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="y9lp.~GitCommand%dREV_LIST" resolveInfo="REV_LIST" />
+                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="xl3n.~GitCommand" resolveInfo="GitCommand" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="xl3n.~GitCommand%dREV_LIST" resolveInfo="REV_LIST" />
                 </node>
               </node>
             </node>
@@ -317,7 +318,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4346819404427368385" resolveInfo="h" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4346819404427368395">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y9lp.~GitHandler%dsetNoSSH(boolean)%cvoid" resolveInfo="setNoSSH" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xl3n.~GitHandler%dsetNoSSH(boolean)%cvoid" resolveInfo="setNoSSH" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4346819404427368396">
                 <property name="value" nameId="tpee.1068580123138" value="true" />
               </node>
@@ -330,7 +331,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4346819404427368385" resolveInfo="h" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4346819404427368400">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y9lp.~GitHandler%dsetSilent(boolean)%cvoid" resolveInfo="setSilent" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xl3n.~GitHandler%dsetSilent(boolean)%cvoid" resolveInfo="setSilent" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4346819404427368401">
                 <property name="value" nameId="tpee.1068580123138" value="true" />
               </node>
@@ -343,7 +344,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4346819404427368385" resolveInfo="h" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4346819404427368405">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y9lp.~GitHandler%daddParameters(java%dlang%dString%d%d%d)%cvoid" resolveInfo="addParameters" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xl3n.~GitHandler%daddParameters(java%dlang%dString%d%d%d)%cvoid" resolveInfo="addParameters" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4346819404427368406">
                 <property name="value" nameId="tpee.1070475926801" value="origin/master..HEAD" />
               </node>
@@ -362,7 +363,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4346819404427368385" resolveInfo="h" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4346819404427368413">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y9lp.~GitSimpleHandler%drun()%cjava%dlang%dString" resolveInfo="run" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xl3n.~GitSimpleHandler%drun()%cjava%dlang%dString" resolveInfo="run" />
               </node>
             </node>
           </node>
@@ -420,8 +421,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="4346819404427368435">
           <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="4346819404427368436">
             <node role="expression" roleId="tpee.1081516765348" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4346819404427368437">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ur19.8230098746512673113" resolveInfo="isGitPluginEnabled" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ur19.8230098746512673082" resolveInfo="PluginUtil" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4rb9.6933307669479741751" resolveInfo="isGitPluginEnabled" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4rb9.6933307669479741720" resolveInfo="PluginUtil" />
             </node>
           </node>
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="4346819404427368438">
@@ -494,8 +495,8 @@
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="4346819404427368467" />
                 <node role="initializer" roleId="tpee.1068431790190" type="pxpg.CheckedDotExpression" typeId="pxpg.4079382982702596667" id="4346819404427368468">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4346819404427368469">
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="k795.~GitBranch" resolveInfo="GitBranch" />
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k795.~GitBranch%dcurrent(com%dintellij%dopenapi%dproject%dProject,com%dintellij%dopenapi%dvfs%dVirtualFile)%cgit4idea%dGitBranch" resolveInfo="current" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wcn7.~GitBranch" resolveInfo="GitBranch" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wcn7.~GitBranch%dcurrent(com%dintellij%dopenapi%dproject%dProject,com%dintellij%dopenapi%dvfs%dVirtualFile)%cgit4idea%dGitBranch" resolveInfo="current" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4346819404427368470">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4346819404427368456" resolveInfo="project" />
                     </node>
@@ -504,7 +505,7 @@
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4346819404427368472">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k795.~GitReference%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wcn7.~GitReference%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
                   </node>
                 </node>
               </node>
@@ -685,11 +686,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4346819404427345647">
             <property name="name" nameId="tpck.1169194664001" value="h" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4346819404427345648">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="y9lp.~GitSimpleHandler" resolveInfo="GitSimpleHandler" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xl3n.~GitSimpleHandler" resolveInfo="GitSimpleHandler" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4346819404427345649">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4346819404427345650">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y9lp.~GitSimpleHandler%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject,com%dintellij%dopenapi%dvfs%dVirtualFile,git4idea%dcommands%dGitCommand)" resolveInfo="GitSimpleHandler" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xl3n.~GitSimpleHandler%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject,com%dintellij%dopenapi%dvfs%dVirtualFile,git4idea%dcommands%dGitCommand)" resolveInfo="GitSimpleHandler" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4346819404427345651">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4346819404427342453" resolveInfo="project" />
                 </node>
@@ -697,8 +698,8 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4346819404427342450" resolveInfo="gitRoot" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4346819404427345653">
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="y9lp.~GitCommand" resolveInfo="GitCommand" />
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="y9lp.~GitCommand%dRESET" resolveInfo="RESET" />
+                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="xl3n.~GitCommand" resolveInfo="GitCommand" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="xl3n.~GitCommand%dRESET" resolveInfo="RESET" />
                 </node>
               </node>
             </node>
@@ -710,7 +711,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4346819404427345647" resolveInfo="h" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4346819404427345659">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y9lp.~GitHandler%daddParameters(java%dlang%dString%d%d%d)%cvoid" resolveInfo="addParameters" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xl3n.~GitHandler%daddParameters(java%dlang%dString%d%d%d)%cvoid" resolveInfo="addParameters" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4346819404427345660">
                 <property name="value" nameId="tpee.1070475926801" value="--mixed" />
               </node>
@@ -726,7 +727,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4346819404427345647" resolveInfo="h" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3907542737155185419">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y9lp.~GitHandler%dsetNoSSH(boolean)%cvoid" resolveInfo="setNoSSH" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xl3n.~GitHandler%dsetNoSSH(boolean)%cvoid" resolveInfo="setNoSSH" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3907542737155185420">
                 <property name="value" nameId="tpee.1068580123138" value="true" />
               </node>
@@ -739,7 +740,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4346819404427345647" resolveInfo="h" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4346819404427345670">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y9lp.~GitSimpleHandler%drun()%cjava%dlang%dString" resolveInfo="run" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xl3n.~GitSimpleHandler%drun()%cjava%dlang%dString" resolveInfo="run" />
             </node>
           </node>
         </node>

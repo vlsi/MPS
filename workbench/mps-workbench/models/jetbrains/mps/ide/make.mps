@@ -66,6 +66,7 @@
   <import index="rk9m" modelUID="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)" version="-1" />
   <import index="lrx" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.wm(MPS.Workbench/com.intellij.openapi.wm@java_stub)" version="-1" />
   <import index="1bi5" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.components(MPS.Workbench/com.intellij.openapi.components@java_stub)" version="-1" />
+  <import index="2eq1" modelUID="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="vvvw" modelUID="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)" version="1" implicit="yes" />
@@ -7211,7 +7212,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="173672751428924028">
         <property name="name" nameId="tpck.1169194664001" value="watcher" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="173672751428924029">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9hkw.4707157387247362638" resolveInfo="ModelChangesWatcher" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2eq1.8474613039627890958" resolveInfo="ModelChangesWatcher" />
         </node>
       </node>
     </node>
@@ -7310,7 +7311,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="173672751428924848" resolveInfo="watcher" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="173672751428924073">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9hkw.5223983216300081305" resolveInfo="setMakeService" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2eq1.8474613039627891486" resolveInfo="setMakeService" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="173672751428924074" />
             </node>
           </node>
@@ -7358,7 +7359,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="173672751428924848" resolveInfo="watcher" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="173672751428924092">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9hkw.5223983216300081305" resolveInfo="setMakeService" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2eq1.8474613039627891486" resolveInfo="setMakeService" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="173672751428924093" />
             </node>
           </node>
@@ -9156,7 +9157,7 @@
       <property name="name" nameId="tpck.1169194664001" value="watcher" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="173672751428924849" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="173672751428924850">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9hkw.4707157387247362638" resolveInfo="ModelChangesWatcher" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2eq1.8474613039627890958" resolveInfo="ModelChangesWatcher" />
       </node>
     </node>
   </root>

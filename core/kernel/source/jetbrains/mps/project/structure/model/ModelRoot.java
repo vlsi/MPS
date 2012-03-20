@@ -16,13 +16,28 @@
 package jetbrains.mps.project.structure.model;
 
 import org.apache.commons.lang.ObjectUtils;
+import org.jetbrains.annotations.Nullable;
 
-public class ModelRoot {
+//should implement Comparable in order to be saved from idea-plugin
+public class ModelRoot implements Comparable<ModelRoot> {
   public static final String PATH = "path";
   public static final String MANAGER = "manager";
 
   private String myPath;
   private ModelRootManager myManager;
+
+  public ModelRoot() {
+
+  }
+
+  public ModelRoot(String path) {
+    myPath = path;
+  }
+
+  public ModelRoot(String path, ModelRootManager manager) {
+    myPath = path;
+    myManager = manager;
+  }
 
   public String getPath() {
     return myPath;
@@ -64,5 +79,35 @@ public class ModelRoot {
     result.myManager = myManager == null ? null : myManager.getCopy();
 
     return result;
+  }
+
+  @Override
+  public int compareTo(ModelRoot o) {
+    if (myPath == null && o.myPath != null) return -1;
+    if (myPath!=null){
+      int pc = myPath.compareTo(o.myPath);
+      if (pc != 0) return pc;
+    }
+
+    if (myManager == null && o.myManager != null) return -1;
+    if (myManager!=null){
+      String c1 = myManager.getClassName();
+      String c2 = o.myManager.getClassName();
+
+      if (c1 == null && c2 != null) return -1;
+      if (c1!=null){
+        int pc = c1.compareTo(c2);
+        if (pc != 0) return pc;
+      }
+
+      String mi1 = myManager.getModuleId();
+      String mi2 = o.myManager.getModuleId();
+      if (mi1!=null){
+        int pc = mi1.compareTo(mi2);
+        if (pc != 0) return pc;
+      }
+    }
+
+    return 0;
   }
 }

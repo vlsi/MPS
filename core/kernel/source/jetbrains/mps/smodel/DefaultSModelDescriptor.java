@@ -89,7 +89,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   @Deprecated //todo remove
   public DefaultSModelDescriptor(IModule module, IFile modelFile, SModelReference modelReference) {
-    this(module, new RegularModelDataSource(modelFile), modelReference, new DescriptorLoadResult(), true);
+    this(module, new RegularModelDataSource(module.getModuleReference(), modelFile), modelReference, new DescriptorLoadResult(), true);
   }
 
   public DefaultSModelDescriptor(IModule module, ModelDataSource source, SModelReference modelReference, DescriptorLoadResult d) {

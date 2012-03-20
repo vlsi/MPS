@@ -20,7 +20,7 @@
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
-    <classNode dependClassName="jetbrains.mps.vcs.util.PluginUtil" />
+    <classNode dependClassName="jetbrains.mps.vcs.platform.util.PluginUtil" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.ide.vcs.SourceRevision" />
   </dependency>

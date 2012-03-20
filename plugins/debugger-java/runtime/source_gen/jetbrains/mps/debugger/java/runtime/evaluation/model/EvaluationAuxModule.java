@@ -148,7 +148,7 @@ public class EvaluationAuxModule extends AbstractModule {
   }
 
   @Override
-  public void loadNewModels() {
+  public void updateModelsSet() {
     SetSequence.fromSet(myModelRoots).clear();
 
     for (StubPath stub : SetSequence.fromSet(myStubPaths)) {

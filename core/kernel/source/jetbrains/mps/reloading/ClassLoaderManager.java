@@ -57,7 +57,6 @@ public class ClassLoaderManager implements CoreComponent {
       throw new IllegalStateException("double initialization");
     }
     INSTANCE = this;
-
   }
 
   public void dispose() {

@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class JarEntryFile implements IFileEx {
@@ -61,9 +62,7 @@ public class JarEntryFile implements IFileEx {
   }
 
   public List<IFile> getChildren() {
-    if (!isDirectory()) {
-      return null;
-    }
+    if (!isDirectory()) return Collections.emptyList();
 
     List<IFile> result = new ArrayList<IFile>();
     for (String e : myJarFileData.getSubdirectories(myEntryPath)) {

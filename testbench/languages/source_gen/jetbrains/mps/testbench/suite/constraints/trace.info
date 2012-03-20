@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.testbench.suite.constraints.ConstraintsAspectDescriptor" />
-  <unitInfo fileName="ModuleSuite_Constraints.java" startLine="15" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.testbench.suite.constraints.ModuleSuite_Constraints" />
-  <unitInfo fileName="ModuleSuite_Constraints.java" startLine="23" startPosition="31" endLine="34" endPosition="5" unitName="jetbrains.mps.testbench.suite.constraints.ModuleSuite_Constraints$1" />
-  <unitInfo fileName="TestCaseRef_Constraints.java" startLine="21" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.testbench.suite.constraints.TestCaseRef_Constraints" />
-  <unitInfo fileName="TestCaseRef_Constraints.java" startLine="31" startPosition="35" endLine="56" endPosition="5" unitName="jetbrains.mps.testbench.suite.constraints.TestCaseRef_Constraints$1" />
-  <unitInfo fileName="TestCaseRef_Constraints.java" startLine="40" startPosition="19" endLine="54" endPosition="9" unitName="jetbrains.mps.testbench.suite.constraints.TestCaseRef_Constraints$2" />
   <root nodeId="1280144168199457725">
     <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="36" startPosition="78" endLine="37" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_qx1fe9_a0a1a0a0a1a0b0a1a0" />
     <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="39" startPosition="42" endLine="40" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

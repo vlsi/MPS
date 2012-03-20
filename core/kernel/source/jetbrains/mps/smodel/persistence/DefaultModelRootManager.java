@@ -42,7 +42,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
 
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     for (ModelHandle handle : models) {
-      SModelDescriptor modelDescriptor = getInstance(module, new RegularModelDataSource(handle.getFile()), handle.getReference(), handle.getLoadResult());
+      SModelDescriptor modelDescriptor = getInstance(module, new RegularModelDataSource(module.getModuleReference(), handle.getFile()), handle.getReference(), handle.getLoadResult());
       LOG.debug("Read model descriptor " + modelDescriptor.getSModelReference() + "\n" + "Model root is " + root.getPath());
       result.add(modelDescriptor);
     }

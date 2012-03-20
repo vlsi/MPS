@@ -122,13 +122,21 @@
     <classNode extendsClassName="jetbrains.mps.util.Computable" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubRootChooser" file="StubRootChooser.java">
+    <classNode dependClassName="com.intellij.openapi.ui.Messages" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRoot" />
+    <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootManager" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageID" />
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.IBindedDialog" />
+    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.ManagerTableCellEditor" />
     <classNode extendsClassName="jetbrains.mps.util.Computable" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubSolutionChooser" file="StubSolutionChooser.java">

@@ -16,7 +16,7 @@ import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.ide.structureView.StructureView;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
-import jetbrains.mps.ide.devkit.structureview.FileStructureDialog;
+import com.intellij.ide.util.FileStructureDialog;
 import com.intellij.openapi.vfs.VirtualFile;
 
 public class ShowStructure_Action extends BaseAction {

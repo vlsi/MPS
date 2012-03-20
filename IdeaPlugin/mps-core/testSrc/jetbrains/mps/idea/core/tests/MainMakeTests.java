@@ -17,15 +17,12 @@
 package jetbrains.mps.idea.core.tests;
 
 import com.intellij.compiler.CompilerManagerImpl;
-import com.intellij.openapi.compiler.CompileContext;
-import com.intellij.openapi.compiler.CompileStatusNotification;
 import com.intellij.openapi.compiler.CompilerManager;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileManager;
-import com.intellij.openapi.vfs.VirtualFileSystem;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.make.*;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.IFile;
 
@@ -42,7 +39,9 @@ public class MainMakeTests extends AbstractMakeTest {
     copyResource(moduleFileName, "blProject.iml", "/tests/blProject/blProject.iml");
     final IFile model = copyResource("models", "main.mps", "main.mps", "/tests/blProject/models/main.mps");
     final IFile source = model.getParent();
-    configuration.getState().setModelRootPaths(model.getParent().getPath());
+    ArrayList<ModelRoot> roots = new ArrayList<ModelRoot>();
+    roots.add(new ModelRoot(model.getParent().getPath()));
+    configuration.getState().setModelRoots(roots);
     prepareTestData(configuration, source);
   }
 

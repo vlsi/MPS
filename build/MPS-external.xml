@@ -56,8 +56,11 @@
     <mkdir dir="${deploy.dir}/MPS/license" />
     <mkdir dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp/META-INF" />
     <mkdir dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/vcs.jar.tmp/META-INF" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/vcs.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/vcs/lib/vcs.jar.tmp/META-INF" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/vcs/lib/vcs.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/vcs/lib/mps-vcs-core.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/vcs/lib" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/vcs" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsdevkit/META-INF" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsdevkit/lib" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsdevkit" />
@@ -365,15 +368,24 @@
       <fileset dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp" excludes="" />
     </jar>
     <delete dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp" />
-    <copy todir="${deploy.dir}/MPS/plugins/vcs.jar.tmp">
+    <copy todir="${deploy.dir}/MPS/plugins/vcs/lib/vcs.jar.tmp">
       <fileset dir="${mps_home}/plugins/vcs/classes" />
     </copy>
-    <antcall target="MPS-external.replace_a1b3a" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/vcs.jar.tmp/META-INF" />
-    <jar destfile="${deploy.dir}/MPS/plugins/vcs.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}/MPS/plugins/vcs.jar.tmp" excludes="" />
+    <antcall target="MPS-external.replace_a1a0b3a" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/vcs/lib/vcs.jar.tmp/META-INF" />
+    <jar destfile="${deploy.dir}/MPS/plugins/vcs/lib/vcs.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/plugins/vcs/lib/vcs.jar.tmp" excludes="" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/plugins/vcs.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/vcs/lib/vcs.jar.tmp" />
+    <copy todir="${deploy.dir}/MPS/plugins/vcs/lib/mps-vcs-core.jar.tmp">
+      <fileset dir="${mps_home}/plugins/vcs/lib/classes" />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS/plugins/vcs/lib/mps-vcs-core.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/plugins/vcs/lib/mps-vcs-core.jar.tmp" excludes="" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS/plugins/vcs/lib/mps-vcs-core.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/vcs/lib" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/vcs" />
     <copy todir="${deploy.dir}/MPS/plugins/mpsdevkit/META-INF">
       <fileset dir="${mps_home}/plugins/mpsdevkit/META-INF" excludes="**/*.zip, " includes="**/plugin.xml, " />
     </copy>
@@ -778,7 +790,8 @@
     <delete dir="${deploy.dir}/MPS/lib/mps-tuples.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-backend.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp" />
-    <delete dir="${deploy.dir}/MPS/plugins/vcs.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/vcs/lib/vcs.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/vcs/lib/mps-vcs-core.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/mpsmake.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/migration.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/mpsjava.jar.tmp" />
@@ -799,9 +812,10 @@
     <copy file="${mps_home}/plugins/ideaIntegration/META-INF/plugin.xml" tofile="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp/META-INF/plugin.xml" />
     <replace file="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp/META-INF/plugin.xml" token="../classes/" value="/" />
   </target>
-  <target name="replace_a1b3a">
-    <copy file="${mps_home}/plugins/vcs/META-INF/plugin.xml" tofile="${deploy.dir}/MPS/plugins/vcs.jar.tmp/META-INF/plugin.xml" />
-    <replace file="${deploy.dir}/MPS/plugins/vcs.jar.tmp/META-INF/plugin.xml" token="../classes/" value="/" />
+  <target name="replace_a1a0b3a">
+    <copy file="${mps_home}/plugins/vcs/META-INF/plugin.xml" tofile="${deploy.dir}/MPS/plugins/vcs/lib/vcs.jar.tmp/META-INF/plugin.xml" />
+    <replace file="${deploy.dir}/MPS/plugins/vcs/lib/vcs.jar.tmp/META-INF/plugin.xml" token="../classes/jetbrains/" value="../jetbrains/" />
+    <replace file="${deploy.dir}/MPS/plugins/vcs/lib/vcs.jar.tmp/META-INF/plugin.xml" token="../classes/META-INF/" value="./" />
   </target>
   <target name="replace_a1d3a">
     <copy file="${mps_home}/plugins/mpsmake/META-INF/plugin.xml" tofile="${deploy.dir}/MPS/plugins/mpsmake.jar.tmp/META-INF/plugin.xml" />

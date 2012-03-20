@@ -119,7 +119,7 @@ public class DependenciesTests {
     SolutionDescriptor d = new SolutionDescriptor();
     String uuid = UUID.randomUUID().toString();
     d.setNamespace(uuid);
-    d.setUUID(uuid);
+    d.setId(ModuleId.fromString(uuid));
     return Solution.newInstance(d, OWNER);
   }
 
@@ -127,7 +127,7 @@ public class DependenciesTests {
     LanguageDescriptor d = new LanguageDescriptor();
     String uuid = UUID.randomUUID().toString();
     d.setNamespace(uuid);
-    d.setUUID(uuid);
+    d.setId(ModuleId.fromString(uuid));
     return Language.newInstance(d, OWNER);
   }
 }

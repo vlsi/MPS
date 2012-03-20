@@ -20,6 +20,7 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.project.IModule;
 import java.util.List;
+import java.util.Collections;
 import java.util.ArrayList;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import org.jdom.Document;
@@ -34,7 +35,6 @@ import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
 import jetbrains.mps.project.structure.project.testconfigurations.ModelsTestConfiguration;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
-import java.util.Collections;
 
 public class FileMPSProject extends Project {
   private static Logger LOG = Logger.getLogger(FileMPSProject.class);
@@ -137,6 +137,10 @@ public class FileMPSProject extends Project {
 
   public FileMPSProject.ProjectDescriptor getDescriptor() {
     return myDescriptor;
+  }
+
+  public List<String> getWatchedModulesPaths() {
+    return Collections.emptyList();
   }
 
   public static class ProjectDescriptor {

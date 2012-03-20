@@ -92,31 +92,33 @@ public class ModulesMiner {
     return result;
   }
 
-  private <T> void readModuleDescriptors(IFile dir, Set<IFile> excludes, List<T> result, boolean refreshFiles, DescriptorReader<T> reader) {
+  private <T> void readModuleDescriptors(IFile file, Set<IFile> excludes, List<T> result, boolean refreshFiles, DescriptorReader<T> reader) {
     if (refreshFiles) {
-      FileSystem.getInstance().refresh(dir);
+      FileSystem.getInstance().refresh(file);
     }
 
-    String dirName = dir.getName();
+    List<IFile> files;
 
-    if (FileSystem.getInstance().isFileIgnored(dirName)) return;
+    if (file.isDirectory()) {
+      String dirName = file.getName();
 
-    List<IFile> files = dir.getChildren();
-    if (files == null) {
-      return;
+      if (FileSystem.getInstance().isFileIgnored(dirName)) return;
+
+      files = file.getChildren();
+    } else {
+      files = Collections.singletonList(file);
     }
 
-    for (IFile file : files) {
-      if (isModuleFile(file)) {
-        ModuleDescriptor moduleDescriptor = loadDescriptorOnly_internal(file, excludes);
-        if (moduleDescriptor != null) {
-          T descriptor = reader.read(new ModuleHandle(file, moduleDescriptor));
-          if (descriptor != null) {
-            result.add(descriptor);
-          }
-        }
-      }
+    for (IFile f : files) {
+      if (!isModuleFile(f)) continue;
+      ModuleDescriptor moduleDescriptor = loadDescriptorOnly_internal(f, excludes);
+      if (moduleDescriptor == null) continue;
+      T descriptor = reader.read(new ModuleHandle(f, moduleDescriptor));
+      if (descriptor == null) continue;
+      result.add(descriptor);
     }
+
+    if (!file.isDirectory()) return;
 
     for (IFile childDir : files) {
       if (FileSystem.getInstance().isFileIgnored(childDir.getName())) continue;
@@ -208,7 +210,7 @@ public class ModulesMiner {
     }
 
     for (jetbrains.mps.project.structure.model.ModelRoot root : descriptor.getModelRoots()) {
-      if(root.getManager() != null && root.getManager() != LanguageID.JAVA_MANAGER) {
+      if (root.getManager() != null && root.getManager() != LanguageID.JAVA_MANAGER) {
         continue;
       }
 
@@ -221,7 +223,7 @@ public class ModulesMiner {
     }
 
     for (ModelRoot entry : descriptor.getStubModelEntries()) {
-      if(entry.getManager() != LanguageID.JAVA_MANAGER) {
+      if (entry.getManager() != LanguageID.JAVA_MANAGER) {
         continue;
       }
 
