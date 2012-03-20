@@ -34,6 +34,7 @@ import jetbrains.mps.ide.migration.assistant.MigrationProcessor.Callback;
 import jetbrains.mps.project.MPSProjectMigrationState;
 
 import javax.swing.*;
+import javax.swing.border.EtchedBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
@@ -74,8 +75,8 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
   };
 
   
-  public MigrationAssistantWizard(String title, Project project) {
-    super(title, project, Arrays.asList(
+  public MigrationAssistantWizard(Project project) {
+    super("Migration Assistant Wizard", project, Arrays.asList(
       new InitialStep(project),
       new MigrationsActionsStep(project),
       new MigrationsProgressStep(project),
@@ -100,7 +101,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
   public void doCancelAction() {
     super.doCancelAction();
     if (!canCancel()) {
-      Messages.showErrorDialog(getContentPane(), "Can't cancel.");
+      Messages.showErrorDialog(getContentPane(), "Migration can't be cancelled at this point. Please select Finish.", "Migration Assistant");
     }
   }
 
@@ -185,7 +186,8 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
     protected void createComponent() {
       this.myComponent = new JPanel(new BorderLayout(5,5));
-      myComponent.setBorder(BorderFactory.createEtchedBorder());
+      myComponent.setBorder(BorderFactory.createCompoundBorder(
+        BorderFactory.createEtchedBorder(), BorderFactory.createEmptyBorder(2, 2, 2, 2)));
     }
   }
   
@@ -201,8 +203,27 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     @Override
     protected final void createComponent() {
       super.createComponent();
-      JLabel label = new JLabel("Welcome to Migration Assistant!");
-      myComponent.add(label, BorderLayout.NORTH);
+
+      JPanel infoHolder = new JPanel(new BorderLayout());
+      infoHolder.setBorder(BorderFactory.createEmptyBorder(2,2,2,2));
+
+      JTextArea info = new JTextArea(
+        "Welcome to Migration Assistant!" +
+          "\n\n" +
+          "MPS has detected that your project requires migration before it can be used with this version of the product." +
+          "\n\n" +
+          "This wizard will guide you through the migration process. It's going to take a while." +
+          "\n\n" +
+          "Select Next to proceed with migration or Cancel if you wish to postpone it.",
+        15, 40);
+      info.setLineWrap(true);
+      info.setWrapStyleWord(true);
+      info.setEditable(false);
+      info.setBorder(BorderFactory.createLoweredBevelBorder());
+
+      infoHolder.add(info, BorderLayout.CENTER);
+
+      myComponent.add(infoHolder, BorderLayout.NORTH);
 
       mySelectActions = new JBCheckBox("Select Migration Actions");
       mySelectActions.setSelected(false);
@@ -231,7 +252,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     private final Set<Object> myAllActions = Collections.synchronizedSet(new HashSet<Object>());
 
     public MigrationsActionsStep(Project project) {
-      super(project, "List Of Migration Actions", "actionsList");
+      super(project, "Select Migration Actions", "actionsList");
       createComponent();
 
     }
@@ -243,11 +264,11 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       myExcludedActions.addAll(processor.getActions());
       myExcludedActions.removeAll(processor.getSelectedActions());
 
-      JLabel label = new JLabel("List of migrations");
+      JLabel label = new JLabel("Select actions to be included in the migration process:");
       myComponent.add(label, BorderLayout.NORTH);
 
       myList = new JBList(processor.getActions());
-        myList.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+      myList.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
         @Override
         public void valueChanged(ListSelectionEvent e) {
           updateButtons();
@@ -256,10 +277,14 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       myList.setCellRenderer(new MyListCellRenderer(myExcludedActions, Collections.emptySet()));
 
       JPanel listPanel = new JPanel(new BorderLayout(5,5));
+      listPanel.setBorder(BorderFactory.createCompoundBorder(
+        BorderFactory.createEmptyBorder(2,0,0,0),
+        BorderFactory.createEtchedBorder()));
       listPanel.add(new JBScrollPane(myList), BorderLayout.CENTER);
 
       JPanel buttonsPanel = createButtonsPanel();
       listPanel.add(buttonsPanel, BorderLayout.EAST);
+
       myComponent.add(listPanel, BorderLayout.CENTER);
     }
 
@@ -267,7 +292,8 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       GridBagLayout layout = new GridBagLayout();
       JPanel buttonsPanel = new JPanel(layout);
 
-      GridBagConstraints gbc = new GridBagConstraints(0, 0,1,1,1.,0.,GridBagConstraints.FIRST_LINE_START, GridBagConstraints.HORIZONTAL, new Insets(0,0,0,0), 0, 0);
+      Insets insets = new Insets(2, 2, 2, 2);
+      GridBagConstraints gbc = new GridBagConstraints(0, 0,1,1,1.,0.,GridBagConstraints.FIRST_LINE_START, GridBagConstraints.HORIZONTAL, insets, 0, 0);
 
       myIncludeBtn = new JButton("Include");
       myIncludeBtn.setMnemonic('I');
@@ -426,7 +452,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     private JBList myList;
 
     public MigrationsProgressStep(Project project) {
-      super(project, "Migration progress", "progress");
+      super(project, "Migration In Progress", "progress");
       myTask = createTask();
       myProgressIndicator = new InlineProgressIndicator(true, myTask);
       createComponent();
@@ -437,10 +463,19 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       super.createComponent();
       MigrationProcessor processor = myProject.getComponent(MigrationProcessor.class);
 
-      myComponent.add(new JLabel("Migration progress"), BorderLayout.NORTH);
+      myComponent.add(new JLabel("Applying migration actions:"), BorderLayout.NORTH);
+
       myList = new JBList(processor.getActions());
       myList.setCellRenderer(new MyListCellRenderer(myExcluded, myMarked));
-      myComponent.add(new JBScrollPane(myList), BorderLayout.CENTER);
+
+      JPanel listPanel = new JPanel(new BorderLayout(5, 5));
+      listPanel.setBorder(BorderFactory.createCompoundBorder(
+        BorderFactory.createEmptyBorder(0, 0, 2, 0),
+        BorderFactory.createEtchedBorder()));
+      listPanel.add(new JBScrollPane(myList), BorderLayout.CENTER);
+
+      myComponent.add(listPanel, BorderLayout.CENTER);
+
       myComponent.add(myProgressIndicator.getComponent(), BorderLayout.SOUTH);
     }
 
@@ -520,12 +555,35 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
   private static class MigrationsFinishedStep extends MyStep {
 
-    private final JLabel myComponent;
     private boolean myShown;
 
     public MigrationsFinishedStep(Project project) {
-      super(project, "Migration finished", "finished");
-      myComponent = new JLabel("Congratulations!");
+      super(project, "Migration Finished", "finished");
+      createComponent();
+    }
+
+    @Override
+    protected final void createComponent() {
+      super.createComponent();
+
+      JPanel infoHolder = new JPanel(new BorderLayout());
+      infoHolder.setBorder(BorderFactory.createEmptyBorder(2,2,2,2));
+
+      JTextArea info = new JTextArea(
+        "Congratulations! Migration has completed successfully." +
+          "\n\n" +
+          "Your project files have been upgraded to be used with the latest version of MPS." +
+          "\n\n" +
+          "The wizard can now be closed and your project will be loaded.",
+        15, 40);
+      info.setLineWrap(true);
+      info.setWrapStyleWord(true);
+      info.setEditable(false);
+      info.setBorder(BorderFactory.createLoweredBevelBorder());
+
+      infoHolder.add(info, BorderLayout.CENTER);
+
+      myComponent.add(infoHolder, BorderLayout.CENTER);
     }
 
     @Override

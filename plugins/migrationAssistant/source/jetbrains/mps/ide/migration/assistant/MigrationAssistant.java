@@ -62,7 +62,7 @@ public class MigrationAssistant extends AbstractProjectComponent {
   private void initiateMigration(final MPSProjectMigrationState migrationState) {
     StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
       public void run() {
-        MigrationAssistantWizard wizard = new MigrationAssistantWizard("Migration", myProject);
+        MigrationAssistantWizard wizard = new MigrationAssistantWizard(myProject);
         AsyncResult<Boolean> result = wizard.showAndGetOk();
         result.doWhenDone(new Handler<Boolean>() {
           @Override
