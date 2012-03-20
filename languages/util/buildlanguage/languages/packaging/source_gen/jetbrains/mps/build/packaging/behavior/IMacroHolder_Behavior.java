@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.PathMacros;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -20,6 +21,7 @@ public class IMacroHolder_Behavior {
   private static Class[] PARAMETERS_1234976932856 = {SNode.class};
   private static Class[] PARAMETERS_1234975567387 = {SNode.class, Boolean.TYPE};
   private static Class[] PARAMETERS_1234975967990 = {SNode.class, String.class};
+  private static Class[] PARAMETERS_1107726059764558743 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -52,7 +54,25 @@ public class IMacroHolder_Behavior {
     if (macroName.equals(Layout_Behavior.getMPSHomeName_1226508944077())) {
       return PathManager.getHomePath();
     }
+    if (macroName.equals(Layout_Behavior.getScriptsDirName_462257719548547202())) {
+      return "";
+    }
     return PathMacros.getInstance().getValue(macroName);
+  }
+
+  public static List<SNode> virtual_getMacro_1107726059764558743(SNode thisNode) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "macro", true)).isNotEmpty()) {
+      return SLinkOperations.getTargets(thisNode, "macro", true);
+    }
+    List<String> allMacroNames = IMacroHolder_Behavior.call_getAllMacroNames_1234975567387(thisNode, true);
+    List<SNode> result = new ArrayList<SNode>();
+    for (String macroName : ListSequence.fromList(allMacroNames)) {
+      SNode macro = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Macro", null);
+      SPropertyOperations.set(macro, "name", macroName);
+      SPropertyOperations.set(macro, "path", IMacroHolder_Behavior.call_evaluateMacro_1234975967990(thisNode, macroName).replace("\\", Util.SEPARATOR));
+      ListSequence.fromList(result).addElement(macro);
+    }
+    return result;
   }
 
   public static String call_getPath_1234976932856(SNode thisNode) {
@@ -70,6 +90,11 @@ public class IMacroHolder_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder"), "virtual_evaluateMacro_1234975967990", PARAMETERS_1234975967990, macroName);
   }
 
+  public static List<SNode> call_getMacro_1107726059764558743(SNode thisNode) {
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder"), "virtual_getMacro_1107726059764558743", PARAMETERS_1107726059764558743);
+  }
+
   public static String callSuper_getPath_1234976932856(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder"), callerConceptFqName, "virtual_getPath_1234976932856", PARAMETERS_1234976932856);
   }
@@ -80,5 +105,9 @@ public class IMacroHolder_Behavior {
 
   public static String callSuper_evaluateMacro_1234975967990(SNode thisNode, String callerConceptFqName, String macroName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder"), callerConceptFqName, "virtual_evaluateMacro_1234975967990", PARAMETERS_1234975967990, macroName);
+  }
+
+  public static List<SNode> callSuper_getMacro_1107726059764558743(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder"), callerConceptFqName, "virtual_getMacro_1107726059764558743", PARAMETERS_1107726059764558743);
   }
 }

@@ -1695,14 +1695,8 @@ __switch__:
   public static void mappingScript_CodeBlock_1219229087938(final IOperationContext operationContext, final MappingScriptContext _context) {
     List<SNode> holders = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.IMacroHolder");
     for (SNode holder : ListSequence.fromList(holders)) {
-      List<String> allMAcroNames = IMacroHolder_Behavior.call_getAllMacroNames_1234975567387(holder, true);
-      SLinkOperations.removeAllChildren(holder, "macro");
-      for (String macroName : ListSequence.fromList(allMAcroNames)) {
-        SNode macro = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Macro", null);
-        SPropertyOperations.set(macro, "name", macroName);
-        SPropertyOperations.set(macro, "path", IMacroHolder_Behavior.call_evaluateMacro_1234975967990(holder, macroName).replace("\\", Util.SEPARATOR));
-        SLinkOperations.addChild(holder, "macro", macro);
-      }
+      ListSequence.fromList(SLinkOperations.getTargets(holder, "macro", true)).clear();
+      ListSequence.fromList(SLinkOperations.getTargets(holder, "macro", true)).addSequence(ListSequence.fromList(IMacroHolder_Behavior.call_getMacro_1107726059764558743(holder)));
     }
   }
 

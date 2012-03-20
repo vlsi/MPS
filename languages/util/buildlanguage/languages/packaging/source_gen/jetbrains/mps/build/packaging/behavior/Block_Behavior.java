@@ -26,6 +26,13 @@ public class Block_Behavior {
     return "";
   }
 
+  public static String virtual_evaluateMacro_1234975967990(SNode thisNode, String macroName) {
+    if ((SLinkOperations.getTarget(thisNode, "layout", false) != null)) {
+      return IMacroHolder_Behavior.call_evaluateMacro_1234975967990(SLinkOperations.getTarget(thisNode, "layout", false), macroName);
+    }
+    return IMacroHolder_Behavior.callSuper_evaluateMacro_1234975967990(thisNode, "jetbrains.mps.build.packaging.structure.Block", macroName);
+  }
+
   public static List<SNode> virtual_getAllVariable_1234864693585(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "layout", false) != null)) {
       return IVariableHolder_Behavior.call_getAllVariable_1234864693585(SLinkOperations.getTarget(thisNode, "layout", false));

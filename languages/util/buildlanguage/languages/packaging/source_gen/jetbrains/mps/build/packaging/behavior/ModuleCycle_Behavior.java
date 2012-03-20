@@ -42,7 +42,7 @@ public class ModuleCycle_Behavior {
       }
     }).distinct().toListSequence();
     // creating path holders to use in generator 
-    return ModuleCycle_Behavior.createPathHolders_1218716903754(stringClasspath, ModuleCycle_Behavior.call_getBasedir_1218647622991(thisNode), SLinkOperations.getTargets(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.Layout", true, true), "macro", true));
+    return ModuleCycle_Behavior.createPathHolders_1218716903754(stringClasspath, ModuleCycle_Behavior.call_getBasedir_1218647622991(thisNode), IMacroHolder_Behavior.call_getMacro_1107726059764558743(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder", true, true)));
   }
 
   public static List<SNode> getMPSClassPath_1218716245482(String homePath, List<SNode> macro) {
