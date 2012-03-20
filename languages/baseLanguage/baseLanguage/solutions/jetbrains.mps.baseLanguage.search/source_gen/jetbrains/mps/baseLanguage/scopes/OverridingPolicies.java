@@ -44,7 +44,7 @@ public class OverridingPolicies {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
       Iterable<SNode> nonAbstractMethods = ListSequence.fromList(equalSignatureMembers).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return !(((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_isAbstract_1232982539764", new Class[]{SNode.class})));
+          return !(((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "virtual_isAbstract_1232982539764", new Class[]{SNode.class})));
         }
       }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {

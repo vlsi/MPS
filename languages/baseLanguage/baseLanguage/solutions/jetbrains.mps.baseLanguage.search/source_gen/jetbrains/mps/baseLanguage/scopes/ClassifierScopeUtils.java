@@ -7,7 +7,6 @@ import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.GenericTypesUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -32,7 +31,7 @@ public class ClassifierScopeUtils {
         result.append(',');
       }
       if (type != null) {
-        result.append(((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_getErasureSignature_1213877337313", new Class[]{SNode.class})));
+        result.append(((String) BehaviorManager.getInstance().invoke(Object.class, type, "virtual_getErasureSignature_1213877337313", new Class[]{SNode.class})));
       } else {
         result.append("");
       }
@@ -86,7 +85,7 @@ public class ClassifierScopeUtils {
         }
       }
 
-      for (SNode superType : ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_getExtendedClassifierTypes_2201875424516179426", new Class[]{SNode.class}))) {
+      for (SNode superType : ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, classifier, "virtual_getExtendedClassifierTypes_2201875424516179426", new Class[]{SNode.class}))) {
         collectImplementedAndExtended(SLinkOperations.getTarget(superType, "classifier", false), SLinkOperations.getTargets(superType, "parameter", true));
       }
     }

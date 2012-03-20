@@ -97,7 +97,7 @@ public class LocalVariablesScope extends AbstractSearchScope {
   }
 
   private void _populateLocalVariablesFromList(SNode statementList, SNode beforeStatement, List<SNode> result) {
-    for (SNode sNode : ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(statementList, "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList"), "virtual_getLocalVariableElements_1238805763253", new Class[]{SNode.class}))) {
+    for (SNode sNode : ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, statementList, "virtual_getLocalVariableElements_1238805763253", new Class[]{SNode.class}))) {
       // todo: bad code =( 
       if (ListSequence.fromList(SNodeOperations.getAncestors(beforeStatement, null, false)).contains(sNode)) {
         break;
@@ -109,7 +109,7 @@ public class LocalVariablesScope extends AbstractSearchScope {
       if (!(SNodeOperations.isInstanceOf(sNode, "jetbrains.mps.baseLanguage.structure.ILocalVariableElement"))) {
         continue;
       }
-      SNode declNode = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(sNode, "jetbrains.mps.baseLanguage.structure.ILocalVariableElement"), "virtual_getLocalVariableDeclaration_1238803857389", new Class[]{SNode.class}));
+      SNode declNode = ((SNode) BehaviorManager.getInstance().invoke(Object.class, sNode, "virtual_getLocalVariableDeclaration_1238803857389", new Class[]{SNode.class}));
       if (declNode != null) {
         result.add(declNode);
       }
