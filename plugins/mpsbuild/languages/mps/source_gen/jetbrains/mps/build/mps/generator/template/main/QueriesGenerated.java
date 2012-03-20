@@ -10,6 +10,7 @@ import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.build.util.Context;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -27,6 +28,7 @@ public class QueriesGenerated {
         _context.showErrorMessage(project, "no working dir for " + SPropertyOperations.getString(project, "name"));
         continue;
       }
+      PathConverter pathConverter = new PathConverter(workingDir);
 
       VisibleModules visibleModules = new VisibleModules(project, _context);
       visibleModules.collect();
@@ -40,7 +42,7 @@ public class QueriesGenerated {
           continue;
         }
 
-        new ModuleLoader(module, visibleModules, workingDir, _context).loadAndCheck();
+        new ModuleLoader(module, visibleModules, pathConverter, _context).loadAndCheck();
       }
     }
   }
