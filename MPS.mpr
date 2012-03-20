@@ -319,6 +319,7 @@
       <modulePath path="${project}/plugins/execution-configurations/languages/migration/migration.mpl" folder="languages.execution.usages" />
       <modulePath path="${project}/plugins/execution-configurations/languages/plugin/plugin.msd" folder="languages.execution.usages" />
       <modulePath path="${project}/plugins/execution-configurations/languages/unitTests/runtime/jetbrains.mps.baseLanguage.unitTest.runtime.msd" folder="languages.execution.usages.unitTests" />
+      <modulePath path="${project}/plugins/execution-configurations/languages/unitTests/startup/startup.msd" folder="languages.execution.usages.unitTests" />
       <modulePath path="${project}/plugins/execution-languages/languages/commands/commands.mpl" folder="languages.execution" />
       <modulePath path="${project}/plugins/execution-languages/languages/configurations/configurations.mpl" folder="languages.execution" />
       <modulePath path="${project}/plugins/execution-languages/languages/configurations/solutions/pluginSolution/pluginSolution.msd" folder="languages.execution" />

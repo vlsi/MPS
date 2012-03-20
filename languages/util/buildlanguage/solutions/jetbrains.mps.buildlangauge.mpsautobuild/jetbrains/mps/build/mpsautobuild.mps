@@ -3176,6 +3176,10 @@
           <property name="id" nameId="tps4.1222447189012" value="5b247b59-8fd0-4475-a767-9e9ff6a9d01c" />
           <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.baseLanguage.execution.startup" />
         </node>
+        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="8122769659779118790">
+          <property name="id" nameId="tps4.1222447189012" value="8b958198-128f-4136-80e5-ca9777caa869" />
+          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.baseLanguage.unitTest.execution.startup" />
+        </node>
         <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="284197515057120968">
           <property name="name" nameId="tps4.1223641503366" value="languages" />
         </node>
