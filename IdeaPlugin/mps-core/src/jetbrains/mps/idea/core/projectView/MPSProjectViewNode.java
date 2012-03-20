@@ -23,6 +23,7 @@ import com.intellij.ide.util.treeView.AbstractTreeNode;
 import com.intellij.ide.util.treeView.ValidateableNode;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Queryable;
+import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.editor.MPSEditorOpener;
 import jetbrains.mps.ide.icons.IconManager;
@@ -37,6 +38,7 @@ import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.Collection;
 import java.util.Collections;
 
@@ -101,6 +103,15 @@ public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> implements
 
     presentation.setPresentableText(name[0]);
     presentation.setIcons(myIcon);
+    Color statusColor = getNodeColor();
+    presentation.setForcedTextForeground(statusColor);
+  }
+
+  private Color getNodeColor() {
+    final FileStatusManager fileStatusManager = FileStatusManager.getInstance(myProject);
+    Color statusColor = fileStatusManager != null ? fileStatusManager.getStatus(getVirtualFile()).getColor() : Color.BLACK;
+    if (statusColor == null) statusColor = Color.BLACK;
+    return statusColor;
   }
 
   @Override

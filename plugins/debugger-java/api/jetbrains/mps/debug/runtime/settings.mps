@@ -2,8 +2,8 @@
 <model modelUID="r:4032b78d-911f-4395-b88c-ccb50cb24300(jetbrains.mps.debug.runtime.settings)">
   <persistence version="7" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <import index="goje" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.util.net(MPS.Workbench/com.intellij.util.net@java_stub)" version="-1" />
   <import index="1l1h" modelUID="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" version="-1" />
+  <import index="2er9" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.util.net(MPS.Platform/com.intellij.util.net@java_stub)" version="-1" />
   <import index="68ai" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" implicit="yes" />
@@ -1076,8 +1076,8 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3432969378036017453" resolveInfo="freePort" />
                     </node>
                     <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3432969378036245591">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="goje.~NetUtils%dfindAvailableSocketPort()%cint" resolveInfo="findAvailableSocketPort" />
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="goje.~NetUtils" resolveInfo="NetUtils" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2er9.~NetUtils%dfindAvailableSocketPort()%cint" resolveInfo="findAvailableSocketPort" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="2er9.~NetUtils" resolveInfo="NetUtils" />
                     </node>
                   </node>
                 </node>

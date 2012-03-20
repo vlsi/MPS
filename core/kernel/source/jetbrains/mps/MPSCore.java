@@ -23,6 +23,7 @@ import jetbrains.mps.datatransfer.CopyPasteManager;
 import jetbrains.mps.datatransfer.PasteWrappersManager;
 import jetbrains.mps.findUsages.ProxyFindUsagesManager;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
+import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.GlobalScope;
@@ -76,6 +77,7 @@ public class MPSCore extends ComponentPlugin {
     myGlobalSModelEventsManager = init(new GlobalSModelEventsManager(myModelRepository));
 
     init(new PathMacros());
+    init(new LibraryInitializer(myModuleRepository, classLoaderManager));
     init(new GlobalScope(myModuleRepository, myModelRepository));
     init(new GlobalScopeMinusTransient(myModuleRepository, myModelRepository));
     init(new AuxilaryRuntimeModel(myModelRepository));

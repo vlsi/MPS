@@ -137,6 +137,18 @@ public class MPSModuleRepository implements CoreComponent {
     return myCanonicalFileToModuleMap.get(IFileUtils.getCanonicalPath(file));
   }
 
+  public List<IModule> findModulesUnderDir(String dirPath) {
+    assertCanRead();
+
+    List<IModule> result = new ArrayList<IModule>();
+    for (String path : myCanonicalFileToModuleMap.keySet()) {
+      if (path.startsWith(dirPath)) {
+        result.add(myCanonicalFileToModuleMap.get(path));
+      }
+    }
+    return result;
+  }
+
   //todo rename to getByFqName
   public IModule getModuleByUID(String moduleUID) {
     return myFqNameToModulesMap.get(moduleUID);
@@ -457,21 +469,6 @@ public class MPSModuleRepository implements CoreComponent {
       }
     }
     return result;
-  }
-
-  public IModule getModuleForModelFile(String path) {
-    assertCanRead();
-
-    for (IModule module : getAllModules()) {
-      Collection<SModelRoot> smodelRoots = module.getSModelRoots();
-      for (SModelRoot root : smodelRoots) {
-        String rootPath = root.getPath();
-        if (path.startsWith(rootPath)) {
-          return module;
-        }
-      }
-    }
-    return null;
   }
 
   private void assertCanRead() {

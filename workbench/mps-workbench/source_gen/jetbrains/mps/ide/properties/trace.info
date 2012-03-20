@@ -75,8 +75,8 @@
     <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="95" startPosition="114" endLine="96" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="96" startPosition="76" endLine="97" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="97" startPosition="70" endLine="98" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="98" startPosition="133" endLine="99" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="99" startPosition="152" endLine="100" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="98" startPosition="133" endLine="99" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="99" startPosition="195" endLine="100" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="100" startPosition="74" endLine="101" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="101" startPosition="114" endLine="102" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="102" startPosition="76" endLine="103" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -89,8 +89,8 @@
     <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="109" startPosition="114" endLine="110" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="110" startPosition="76" endLine="111" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="111" startPosition="70" endLine="112" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="112" startPosition="133" endLine="113" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="113" startPosition="167" endLine="114" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="112" startPosition="133" endLine="113" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="113" startPosition="211" endLine="114" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="114" startPosition="74" endLine="115" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="115" startPosition="114" endLine="116" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="116" startPosition="76" endLine="117" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -266,8 +266,8 @@
     <nodeInfo nodeId="901357770590749719" fileName="StandardDialogs.java" startLine="307" startPosition="114" endLine="308" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="901357770590749719" fileName="StandardDialogs.java" startLine="308" startPosition="76" endLine="309" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="901357770590749719" fileName="StandardDialogs.java" startLine="309" startPosition="70" endLine="310" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="901357770590749719" fileName="StandardDialogs.java" startLine="310" startPosition="133" endLine="311" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="901357770590749719" fileName="StandardDialogs.java" startLine="311" startPosition="152" endLine="312" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="901357770590749719" fileName="StandardDialogs.java" startLine="310" startPosition="133" endLine="311" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="901357770590749719" fileName="StandardDialogs.java" startLine="311" startPosition="196" endLine="312" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="901357770590749719" fileName="StandardDialogs.java" startLine="312" startPosition="74" endLine="313" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="901357770590749719" fileName="StandardDialogs.java" startLine="313" startPosition="114" endLine="314" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2896881808974479840" fileName="StandardDialogs.java" startLine="315" startPosition="25" endLine="316" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -707,8 +707,8 @@
     <nodeInfo nodeId="7355563316698764193" fileName="StandardComponents.java" startLine="256" startPosition="63" endLine="257" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="257" startPosition="36" endLine="258" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7355563316698764203" fileName="StandardComponents.java" startLine="265" startPosition="39" endLine="266" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7355563316698764203" fileName="StandardComponents.java" startLine="266" startPosition="96" endLine="267" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7355563316698764203" fileName="StandardComponents.java" startLine="267" startPosition="78" endLine="268" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7355563316698764203" fileName="StandardComponents.java" startLine="266" startPosition="96" endLine="267" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7355563316698764203" fileName="StandardComponents.java" startLine="267" startPosition="99" endLine="268" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7355563316698764212" fileName="StandardComponents.java" startLine="268" startPosition="74" endLine="269" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7355563316698764203" fileName="StandardComponents.java" startLine="269" startPosition="0" endLine="270" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7355563316698764203" fileName="StandardComponents.java" startLine="270" startPosition="115" endLine="271" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -916,7 +916,7 @@
     <nodeInfo nodeId="4060390951635973269" fileName="StandardComponents.java" startLine="187" startPosition="0" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createSourcePathsPanel#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/util/List;)Ljavax/swing/JPanel;" />
     <nodeInfo nodeId="7355563316698764023" fileName="StandardComponents.java" startLine="202" startPosition="118" endLine="216" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7355563316698764097" fileName="StandardComponents.java" startLine="219" startPosition="123" endLine="233" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7355563316698764202" fileName="StandardComponents.java" startLine="263" startPosition="122" endLine="277" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7355563316698764202" fileName="StandardComponents.java" startLine="263" startPosition="179" endLine="277" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4060390951635974723" fileName="StandardComponents.java" startLine="440" startPosition="0" endLine="454" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createProjectModulesPathsList#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/util/List;)Ljavax/swing/JPanel;" />
     <nodeInfo nodeId="7355563316698763894" fileName="StandardComponents.java" startLine="118" startPosition="172" endLine="133" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4060390951635974374" fileName="StandardComponents.java" startLine="365" startPosition="0" endLine="380" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createLegendPanel#()Ljavax/swing/JPanel;" />
@@ -926,7 +926,7 @@
     <nodeInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="412" startPosition="87" endLine="428" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doEdit#()V" />
     <nodeInfo nodeId="1809539929827629313" fileName="StandardComponents.java" startLine="201" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createDepsPanel#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/util/List;)Ljavax/swing/JPanel;" />
     <nodeInfo nodeId="1809539929827629486" fileName="StandardComponents.java" startLine="218" startPosition="0" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createModelRootsPanel#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/util/List;)Ljavax/swing/JPanel;" />
-    <nodeInfo nodeId="1809539929827629623" fileName="StandardComponents.java" startLine="262" startPosition="0" endLine="279" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createStubRootsPanel#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/util/List;)Ljavax/swing/JPanel;" />
+    <nodeInfo nodeId="1809539929827629623" fileName="StandardComponents.java" startLine="262" startPosition="0" endLine="279" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createStubRootsPanel#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;ZLjava/lang/String;Ljava/util/List;Ljava/util/List;)Ljavax/swing/JPanel;" />
     <nodeInfo nodeId="8175648731696670213" fileName="StandardComponents.java" startLine="281" startPosition="80" endLine="298" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/workbench/dialogs/project/components/parts/boundpanels/BoundTablePanel;" />
     <nodeInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="411" startPosition="71" endLine="428" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7355563316698763848" fileName="StandardComponents.java" startLine="97" startPosition="63" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/workbench/dialogs/project/components/parts/boundpanels/BoundListPanel;" />
@@ -981,7 +981,9 @@
       <varInfo nodeId="1747818952411874074" varName="list" />
       <varInfo nodeId="1747818952411874070" varName="owner" />
     </scopeInfo>
-    <scopeInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="404" startPosition="52" endLine="408" endPosition="13" />
+    <scopeInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="404" startPosition="52" endLine="408" endPosition="13">
+      <varInfo nodeId="3416087927885130128" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="4060390951635974672" fileName="StandardComponents.java" startLine="436" startPosition="0" endLine="440" endPosition="0">
       <varInfo nodeId="4060390951635974677" varName="caption" />
       <varInfo nodeId="4060390951635974679" varName="list" />
@@ -1151,7 +1153,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1809539929827629323" fileName="StandardComponents.java" startLine="202" startPosition="118" endLine="216" endPosition="15" />
     <scopeInfo nodeId="1809539929827629496" fileName="StandardComponents.java" startLine="219" startPosition="123" endLine="233" endPosition="15" />
-    <scopeInfo nodeId="1809539929827629633" fileName="StandardComponents.java" startLine="263" startPosition="122" endLine="277" endPosition="15" />
+    <scopeInfo nodeId="1809539929827629633" fileName="StandardComponents.java" startLine="263" startPosition="179" endLine="277" endPosition="15" />
     <scopeInfo nodeId="8175648731696670213" fileName="StandardComponents.java" startLine="282" startPosition="39" endLine="296" endPosition="37">
       <varInfo nodeId="8175648731696670213" varName="result_wf5hwp_a0a0a0a0l" />
       <varInfo nodeId="8175648731696670213" varName="result_wf5hwp_a0a0a0l" />
@@ -1204,7 +1206,9 @@
     </scopeInfo>
     <scopeInfo nodeId="1809539929827629623" fileName="StandardComponents.java" startLine="262" startPosition="0" endLine="279" endPosition="0">
       <varInfo nodeId="1809539929827629628" varName="caption" />
-      <varInfo nodeId="1809539929827629630" varName="list" />
+      <varInfo nodeId="3986605908471601967" varName="javaLib" />
+      <varInfo nodeId="1809539929827629630" varName="libs" />
+      <varInfo nodeId="3986605908471588794" varName="modelRoots" />
       <varInfo nodeId="1809539929827629626" varName="owner" />
     </scopeInfo>
     <scopeInfo nodeId="8175648731696670213" fileName="StandardComponents.java" startLine="281" startPosition="80" endLine="298" endPosition="0" />

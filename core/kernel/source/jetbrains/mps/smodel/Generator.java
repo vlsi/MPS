@@ -44,12 +44,12 @@ public class Generator extends AbstractModule {
       myGeneratorDescriptor.setGeneratorUID(generateGeneratorUID(mySourceLanguage));
     }
 
-    String uuid = myGeneratorDescriptor.getUUID();
+    ModuleId uuid = myGeneratorDescriptor.getId();
     if (uuid == null) {
-      uuid = UUID.randomUUID().toString();
-      myGeneratorDescriptor.setUUID(uuid);
+      uuid = ModuleId.regular();
+      myGeneratorDescriptor.setId(uuid);
     }
-    ModuleReference mp = new ModuleReference(myGeneratorDescriptor.getGeneratorUID(), ModuleId.fromString(uuid));
+    ModuleReference mp = new ModuleReference(myGeneratorDescriptor.getGeneratorUID(), uuid);
     setModuleReference(mp);
 
     upgradeGeneratorDescriptor();

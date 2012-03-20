@@ -39,6 +39,11 @@ public abstract class TabbedUsagesTool extends BaseProjectTool {
     super(project, id, number, icon, anchor, canCloseContent);
   }
 
+  @Override
+  protected void createTool() {
+
+  }
+
   public void doRegister() {
     myContentListener = new ContentManagerAdapter() {
       public void contentRemoved(ContentManagerEvent event) {

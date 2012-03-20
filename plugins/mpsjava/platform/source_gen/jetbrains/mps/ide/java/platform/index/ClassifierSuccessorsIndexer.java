@@ -22,7 +22,6 @@ import jetbrains.mps.workbench.actions.goTo.index.BaseSNodeDescriptorIndex;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SReference;
 import java.util.ArrayList;
 
@@ -94,7 +93,7 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
                 safeMap(implementedInterface, classNode);
               }
               if (isInstanceOfAnonymousClassConcept(classNode)) {
-                safeMap(classNode.getReference(SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass", "classifier"), "role")), classNode);
+                safeMap(classNode.getReference("classifier"), classNode);
               }
             } else if (isInstanceOfInterfaceConcept(nextNode)) {
               SNode interfaceNode = (SNode) nextNode;

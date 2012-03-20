@@ -21,30 +21,27 @@ import com.intellij.facet.Facet;
 import com.intellij.facet.FacetManager;
 import com.intellij.facet.FacetManagerAdapter;
 import com.intellij.openapi.module.Module;
-import com.intellij.openapi.roots.CompilerModuleExtension;
-import com.intellij.openapi.roots.ModuleRootEvent;
-import com.intellij.openapi.roots.ModuleRootListener;
-import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.roots.*;
+import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.messages.MessageBusConnection;
+import jetbrains.mps.idea.core.facet.LibHelper;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.stubs.LibrariesLoader;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class SolutionIdea extends Solution {
   @NotNull
@@ -93,6 +90,7 @@ public class SolutionIdea extends Solution {
   @Override
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor, boolean reloadClasses) {
     newDescriptor.setNamespace(myModule.getName());
+    addLibs(newDescriptor);
     super.setSolutionDescriptor(newDescriptor, reloadClasses);
   }
 
@@ -118,16 +116,16 @@ public class SolutionIdea extends Solution {
       // TODO: move to Solution descriptor & try to use common Solution implementation here?
       myDependencies = new ArrayList<Dependency>();
       ArrayList<Module> usedModules = new ArrayList<Module>(Arrays.asList(ModuleRootManager.getInstance(myModule).getDependencies()));
-      for (Map.Entry<ModuleId, ModuleReference> e:LibrariesLoader.getInstance().getLoadedSolutions().entrySet()){
+      for (Map.Entry<ModuleId, ModuleReference> e : LibrariesLoader.getInstance().getLoadedSolutions().entrySet()) {
         ModuleReference lang = e.getValue();
-        if (getUsedLanguagesReferences().contains(lang)){
+        if (getUsedLanguagesReferences().contains(lang)) {
           Dependency dep = new Dependency();
           dep.setModuleRef(new ModuleReference(null, e.getKey()));
           dep.setReexport(false);
           myDependencies.add(dep);
         }
       }
-      for (Module usedModule : usedModules) {
+      for (Module usedModule: usedModules) {
         MPSFacet usedModuleMPSFacet = FacetManager.getInstance(usedModule).getFacetByType(MPSFacetType.ID);
         if (usedModuleMPSFacet != null && usedModuleMPSFacet.wasInitialized()) {
           Dependency dep = new Dependency();
@@ -135,6 +133,10 @@ public class SolutionIdea extends Solution {
           dep.setReexport(false);
           myDependencies.add(dep);
         }
+      }
+
+      for (Solution s : LibHelper.getAllLibsToImport(myModule)) {
+        myDependencies.add(new Dependency(s.getModuleReference(), false));
       }
     }
     return myDependencies;
@@ -188,18 +190,45 @@ public class SolutionIdea extends Solution {
     return true;
   }
 
-    @Override
-    public IFile getClassesGen() {
-        IFile descriptorFile = getDescriptorFile();
-        if (descriptorFile != null && descriptorFile.isReadOnly()) {
-            return super.getClassesGen();
-        }
-
-        CompilerModuleExtension compilerModuleExtension = ModuleRootManager.getInstance(myModule).getModuleExtension(CompilerModuleExtension.class);
-        VirtualFile compilerOutputPath = compilerModuleExtension.getCompilerOutputPath();
-        if (compilerOutputPath == null) {
-            return null;
-        }
-        return FileSystem.getInstance().getFileByPath(compilerOutputPath.getPath());
+  @Override
+  public IFile getClassesGen() {
+    IFile descriptorFile = getDescriptorFile();
+    if (descriptorFile != null && descriptorFile.isReadOnly()) {
+      return super.getClassesGen();
     }
+
+    CompilerModuleExtension compilerModuleExtension = ModuleRootManager.getInstance(myModule).getModuleExtension(CompilerModuleExtension.class);
+    VirtualFile compilerOutputPath = compilerModuleExtension.getCompilerOutputPath();
+    if (compilerOutputPath == null) {
+      return null;
+    }
+    return FileSystem.getInstance().getFileByPath(compilerOutputPath.getPath());
+  }
+
+  private void addLibs(SolutionDescriptor solutionDescriptor) {
+    for (Iterator<ModelRoot> i = solutionDescriptor.getModelRoots().iterator(); i.hasNext(); ) {
+      if (i.next().getManager() == null) continue;//regular model
+      i.remove();
+    }
+
+    for (OrderEntry e : ModuleRootManager.getInstance(myModule).getOrderEntries()) {
+      if (!(e instanceof LibraryOrderEntry)) continue;
+
+      LibraryOrderEntry loe = (LibraryOrderEntry) e;
+      if (!loe.isModuleLevel()) continue;
+
+      Library library = loe.getLibrary();
+      if (library == null) continue;
+
+      for (VirtualFile f : library.getFiles(OrderRootType.CLASSES)) {
+        ModelRoot mr = new ModelRoot();
+        mr.setPath(LibHelper.getLocalPath(f));
+        mr.setManager(LanguageID.JAVA_MANAGER);
+
+        if (solutionDescriptor.getModelRoots().contains(mr)) continue;
+        solutionDescriptor.getModelRoots().add(mr);
+      }
+    }
+  }
+
 }

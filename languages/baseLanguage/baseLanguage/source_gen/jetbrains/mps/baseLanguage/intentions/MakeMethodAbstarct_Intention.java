@@ -12,6 +12,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MakeMethodAbstarct_Intention extends BaseIntention implements Intention {
   public MakeMethodAbstarct_Intention() {
@@ -67,6 +68,7 @@ public class MakeMethodAbstarct_Intention extends BaseIntention implements Inten
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SPropertyOperations.set(node, "isAbstract", "" + !(SPropertyOperations.getBoolean(node, "isAbstract")));
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "body", true), "statement", true)).clear();
   }
 
   public String getLocationString() {

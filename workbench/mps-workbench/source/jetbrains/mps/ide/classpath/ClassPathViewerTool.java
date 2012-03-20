@@ -42,13 +42,19 @@ import java.util.Collections;
 import java.util.List;
 
 public class ClassPathViewerTool extends BaseProjectTool {
-  private MyClassPathTree myTree = new MyClassPathTree();
-  private JPanel myComponent = new JPanel(new BorderLayout());
+  private MyClassPathTree myTree;
+  private JPanel myComponent;
   private IModule myInspectedModule;
 
   public ClassPathViewerTool(Project project) {
     super(project, "Classpath Explorer", -1, IconManager.EMPTY_ICON, ToolWindowAnchor.BOTTOM, true);
 
+  }
+
+  @Override
+  protected void createTool() {
+    this.myComponent = new JPanel(new BorderLayout());
+    this.myTree = new MyClassPathTree();
     myComponent.add(ScrollPaneFactory.createScrollPane(myTree), BorderLayout.CENTER);
 
     SwingUtilities.invokeLater(new Runnable() {
@@ -58,10 +64,6 @@ public class ClassPathViewerTool extends BaseProjectTool {
         myComponent.add(toolbar, BorderLayout.WEST);
       }
     });
-  }
-
-  public void initComponent() {
-    super.initComponent();
     myTree.rebuildLater();
   }
 

@@ -29,7 +29,10 @@ import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.projectView.MPSTreeStructureProvider;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import junit.framework.Assert;
+
+import java.util.ArrayList;
 
 /**
  * evgeny, 1/25/12
@@ -37,44 +40,47 @@ import junit.framework.Assert;
 @SuppressWarnings({"HardCodedStringLiteral"})
 public class ProjectViewTests extends BaseProjectViewTestCase {
 
-    public void testShowRoots() throws Exception {
-        getProjectTreeStructure().setProviders(new MPSTreeStructureProvider());
-        myPrintInfo = new Queryable.PrintInfo();
-        assertStructureEqual(getPackageDirectory(), "package1\n" +
-                " main.mps\n" +
-                "  ConcoleUtil\n" +
-                "  MainClass\n" +
-                "  ProjectKind\n" +
-                "  SimpleMarker\n");
-    }
+  public void testShowRoots() throws Exception {
+    getProjectTreeStructure().setProviders(new MPSTreeStructureProvider());
+    myPrintInfo = new Queryable.PrintInfo();
+    assertStructureEqual(getPackageDirectory(), "package1\n" +
+      " main.mps\n" +
+      "  ConcoleUtil\n" +
+      "  MainClass\n" +
+      "  ProjectKind\n" +
+      "  SimpleMarker\n");
+  }
 
-    @Override
-    protected String getTestDataPath() {
-        return System.getProperty("idea.plugins.path") + "/tests";
-    }
+  @Override
+  protected String getTestDataPath() {
+    return System.getProperty("idea.plugins.path") + "/tests";
+  }
 
-    @Override
-    protected void setUp() throws Exception {
-        super.setUp();
-        addMPSFacet(getModule());
-    }
+  @Override
+  protected void setUp() throws Exception {
+    super.setUp();
+    addMPSFacet(getModule());
+  }
 
-    protected MPSFacet addMPSFacet(Module module) {
-        FacetManager facetManager = FacetManager.getInstance(module);
-        FacetType<MPSFacet, MPSFacetConfiguration> facetType = FacetTypeRegistry.getInstance().findFacetType(MPSFacetType.ID);
-        Assert.assertNotNull("MPS facet type is not found", facetType);
-        MPSFacet facet = facetManager.createFacet(facetType, "MPS", null);
-        final MPSFacetConfiguration configuration = facet.getConfiguration();
-        configuration.getState().setModelRootPaths(VirtualFileManager.extractPath(getContentRoot().findChild("src").getUrl()));
+  protected MPSFacet addMPSFacet(Module module) {
+    FacetManager facetManager = FacetManager.getInstance(module);
+    FacetType<MPSFacet, MPSFacetConfiguration> facetType = FacetTypeRegistry.getInstance().findFacetType(MPSFacetType.ID);
+    Assert.assertNotNull("MPS facet type is not found", facetType);
+    MPSFacet facet = facetManager.createFacet(facetType, "MPS", null);
+    final MPSFacetConfiguration configuration = facet.getConfiguration();
+    String path = VirtualFileManager.extractPath(getContentRoot().findChild("src").getUrl());
+    ArrayList<ModelRoot> roots = new ArrayList<ModelRoot>();
+    roots.add(new ModelRoot(path));
+    configuration.getState().setModelRoots(roots);
 
-        final ModifiableFacetModel facetModel = facetManager.createModifiableModel();
-        facetModel.addFacet(facet);
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-            @Override
-            public void run() {
-                facetModel.commit();
-            }
-        });
-        return facet;
-    }
+    final ModifiableFacetModel facetModel = facetManager.createModifiableModel();
+    facetModel.addFacet(facet);
+    ApplicationManager.getApplication().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        facetModel.commit();
+      }
+    });
+    return facet;
+  }
 }

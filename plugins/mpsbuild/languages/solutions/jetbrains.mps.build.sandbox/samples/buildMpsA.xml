@@ -1,0 +1,32 @@
+<project name="buildMpsA" default="build" basedir="../../">
+  <property name="build.dir" location="build" />
+  <property name="build.tmp" location="${build.dir}/tmp/buildMpsA" />
+  <property name="build.layout" location="${build.dir}/artifacts/buildMpsA" />
+  
+  <target name="assemble" depends="classes" />
+  
+  <target name="build" depends="assemble, check" />
+  
+  <target name="clean">
+    <delete dir="${build.dir}" />
+  </target>
+  
+  <target name="compileJava" depends="java.compile.javamod" />
+  
+  <target name="processResources" />
+  
+  <target name="classes" depends="compileJava, processResources" />
+  
+  <target name="test" depends="classes" />
+  
+  <target name="check" depends="test" />
+  
+  <target name="java.compile.javamod">
+    <mkdir dir="${build.tmp}/java/out/javamod" />
+    <javac destdir="${build.tmp}/java/out/javamod">
+      <compilerarg value="-Xlint:none" />
+      <src></src>
+      <classpath></classpath>
+    </javac>
+  </target>
+</project>

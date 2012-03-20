@@ -35,7 +35,6 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.misc.hash.HashMap;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
@@ -43,10 +42,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
-import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 /**
@@ -63,7 +61,6 @@ import java.util.Set;
   reloadable = false
 )
 public class StandaloneMPSProject extends MPSProject implements PersistentStateComponent<Element> {
-
   private static final Logger LOG = Logger.getLogger(StandaloneMPSProject.class);
 
   // project data
@@ -75,9 +72,17 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     super(project);
   }
 
+  public List<String> getWatchedModulesPaths() {
+    List<String> result = new ArrayList<String>();
+    for (Path p : getAllModulePaths()) {
+      result.add(p.getPath());
+    }
+    return result;
+  }
+
   public Element getState() {
-    if (myProject.getPresentableUrl() == null) {
-      return new Element("state");
+    if (myProject.getPresentableUrl() == null || myProjectDescriptor == null) {
+      return myProjectElement;
     }
 
     return ModelAccess.instance().runReadAction(new Computable<Element>() {
@@ -95,6 +100,35 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
 
   public void initComponent() {
     super.initComponent();
+  }
+
+  public void disposeComponent() {
+    super.disposeComponent();
+  }
+
+  @Override
+  public void projectOpened() {
+    super.projectOpened();
+    final MPSProjectMigrationState migrationState = myProject.getComponent(MPSProjectMigrationState.class);
+    if (migrationState.isMigrationRequired() && migrationState.hasMigrationAgent()) {
+      migrationState.addMigrationListener(new MPSProjectMigrationListener.DEFAULT() {
+        @Override
+        public void migrationFinished(Project mpsProject) {
+          migrationState.removeMigrationListener(this);
+          initProject();
+        }
+        @Override
+        public void migrationAborted(Project project) {
+          migrationState.removeMigrationListener(this);
+        }
+      });
+    }
+    else {
+      initProject();
+    }
+  }
+
+  private void initProject() {
     String url = myProject.getPresentableUrl();
     ProjectDescriptor descriptor = new ProjectDescriptor();
     if (url != null) {
@@ -104,11 +138,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     init(descriptor);
   }
 
-  public void disposeComponent() {
-    super.disposeComponent();
-  }
-
-
+  // public for tests only!
   public void init(final ProjectDescriptor projectDescriptor) {
     if (myProject.isDefault()) return;
 
@@ -165,7 +195,8 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
       if (descriptorFile.exists()) {
         ModuleDescriptor descriptor = ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
         if (descriptor != null) {
-          IModule module = MPSModuleRepository.getInstance().registerModule(new ModuleHandle(descriptorFile, descriptor), this);
+          ModuleHandle handle = new ModuleHandle(descriptorFile, descriptor);
+          IModule module = MPSModuleRepository.getInstance().registerModule(handle, this);
           ModuleReference moduleReference = module.getModuleReference();
           if (!existingModules.remove(moduleReference)) {
             super.addModule(moduleReference);

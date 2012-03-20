@@ -18,7 +18,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.vcs.impl.projectlevelman.AllVcses;
 import com.intellij.openapi.vcs.VcsShowConfirmationOption;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.watching.ModelChangesWatcher;
+import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
@@ -36,7 +36,6 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.vcs.changesmanager.roots.NodeFileStatusMapping;
 import java.util.List;
 import java.util.Arrays;
 import jetbrains.mps.smodel.ModelAccess;
@@ -132,7 +131,7 @@ public class ChangesManagerTest {
 
     myUtilVirtualFile = VirtualFileUtils.getVirtualFile(myUtilDiff.getModelDescriptor().getModelFile());
 
-    ModelChangesWatcher.instance().addReloadListener(new ChangesManagerTest.MyReloadListener());
+    FSChangesWatcher.instance().addReloadListener(new ChangesManagerTest.MyReloadListener());
 
     myRegistry.getCommandQueue().setHadExceptions(false);
 
@@ -961,7 +960,7 @@ public class ChangesManagerTest {
     Registry.get("vcs.showConsole").setValue(false);
 
     ourProject = TestMain.startTestOnProjectCopy(PROJECT_ARCHIVE, DESTINATION_PROJECT_DIR, PROJECT_FILE, "jetbrains.mps.vcs", "Git4Idea", "jetbrains.mps.ide.make");
-    ModelChangesWatcher.instance().initComponent(true);
+    FSChangesWatcher.instance().initComponent(true);
   }
 
   @AfterClass
@@ -1074,7 +1073,7 @@ public class ChangesManagerTest {
 
   }
 
-  private class MyReloadListener implements ModelChangesWatcher.IReloadListener {
+  private class MyReloadListener implements FSChangesWatcher.IReloadListener {
     public MyReloadListener() {
     }
 

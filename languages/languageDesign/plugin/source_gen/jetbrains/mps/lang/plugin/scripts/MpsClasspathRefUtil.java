@@ -26,7 +26,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
   }
 
   /*package*/ static void updateReferencesToMpsClasspath(SNode node) {
-    IModule[] modules = {MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("1ed103c3-3aa6-49b7-9c21-6765ee11f224")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("86441d7a-e194-42da-81a5-2161ec62a379"))};
+    IModule[] modules = {MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("1ed103c3-3aa6-49b7-9c21-6765ee11f224")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("742f6602-5a2f-4313-aa6e-ae1cd4ffdc61")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("86441d7a-e194-42da-81a5-2161ec62a379"))};
 
     SModel model = SNodeOperations.getModel(node);
     IModule module = check_xpwqv8_a0d0a(model.getModelDescriptor());
@@ -44,6 +44,9 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
         if (modelRef == null) {
           continue;
         }
+        if (modelRef.equals(oldModelRef)) {
+          break;
+        }
         ref.setTargetSModelReference(modelRef);
         // check reference - sometimes same package can be in several modules 
         if ((SLinkOperations.getTargetNode(ref) == null)) {
@@ -58,13 +61,14 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
           Collection<Dependency> dependencies = module.getModuleDescriptor().getDependencies();
           Dependency dep = CollectionSequence.fromCollection(((Collection<Dependency>) dependencies)).findFirst(new IWhereFilter<Dependency>() {
             public boolean accept(Dependency it) {
-              return it.getModuleRef().equals(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("37a3367b-1fb2-44d8-aa6b-18075e74e003")).getModuleReference());
+              return it.getModuleRef().getModuleFqName().contains("MPS.Classpath");
             }
           });
           // get re-export from MPS.Classpath, then should be checked manually 
           module.addDependency(newModule.getModuleReference(), dep != null && dep.isReexport());
-          dependencies.remove(dep);
-          // <node> 
+          if (dep != null) {
+            dependencies.remove(dep);
+          }
         }
         break;
       }

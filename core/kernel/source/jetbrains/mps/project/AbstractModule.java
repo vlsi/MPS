@@ -276,6 +276,7 @@ public abstract class AbstractModule implements IModule {
       descriptor.getDeploymentDescriptor().getLibraries().add(bundleHomeFile.getName());
     }
 
+    // stub libraries
     List<ModelRoot> toRemove = new ArrayList<ModelRoot>();
     for (ModelRoot sme : descriptor.getStubModelEntries()) {
       String path = sme.getPath();
@@ -286,6 +287,19 @@ public abstract class AbstractModule implements IModule {
       toRemove.add(sme);
     }
     descriptor.getStubModelEntries().removeAll(toRemove);
+
+    // stub model roots
+    toRemove.clear();
+    for (ModelRoot sme : descriptor.getModelRoots()) {
+      if (!LanguageID.JAVA_MANAGER.equals(sme.getManager())) continue;
+
+      String path = sme.getPath();
+      if (packagedSourcesPath == null || !FileUtil.getCanonicalPath(path).toLowerCase().startsWith(packagedSourcesPath)) {
+        String shrinked = MacrosFactory.moduleDescriptor(this).shrinkPath(path, getDescriptorFile());
+        if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
+      }
+      toRemove.add(sme);
+    }
     descriptor.getModelRoots().removeAll(toRemove);
 
     DeploymentDescriptor dd = descriptor.getDeploymentDescriptor();
@@ -360,7 +374,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   protected void reloadAfterDescriptorChange() {
-    loadNewModels();
+    updateModelsSet();
 
     updatePackagedDescriptorClasspath();
     invalidateClassPath();
@@ -445,9 +459,10 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
-  public void loadNewModels() {
+  public void updateModelsSet() {
     mySModelRoots.clear();
 
+    List<SModelReference> allLoadedModels = new ArrayList<SModelReference>();
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
       SModelRepository smRepo = SModelRepository.getInstance();
@@ -457,19 +472,27 @@ public abstract class AbstractModule implements IModule {
           SModelRoot root = new SModelRoot(modelRoot);
           mySModelRoots.add(root);
           IModelRootManager manager = root.getManager();
-          if (manager != null) {
-            for (SModelDescriptor model : manager.load(root.getModelRoot(), this)) {
-              if (smRepo.getModelDescriptor(model.getSModelReference()) == null) {
-                smRepo.registerModelDescriptor(model, this);
-              }
+          if (manager == null) continue;
+          //model with model root manager not yet loaded - should be loaded after classes reloading
+
+          Collection<SModelDescriptor> models = manager.load(root.getModelRoot(), this);
+          for (SModelDescriptor model : models) {
+            allLoadedModels.add(model.getSModelReference());
+            if (smRepo.getModelDescriptor(model.getSModelReference()) == null) {
+              smRepo.registerModelDescriptor(model, this);
             }
           }
-          //model with model root manager not yet loaded - should be loaded after classes reloading
         } catch (ManagerNotFoundException e) {
           //LOG.warning("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
         } catch (Exception e) {
           LOG.error("Error loading models from root: " + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
         }
+      }
+
+      for (SModelDescriptor md : smRepo.getModelDescriptors(this)) {
+        if (allLoadedModels.contains(md.getSModelReference())) continue;
+        if (!(md instanceof BaseSModelDescriptorWithSource)) continue;
+        smRepo.unRegisterModelDescriptor(md, this);
       }
     }
 

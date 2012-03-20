@@ -25,6 +25,7 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.testbench.WriteAction;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
@@ -196,7 +197,7 @@ public class ModuleDependenciesTest {
     SolutionDescriptor d = new SolutionDescriptor();
     String uuid = UUID.randomUUID().toString();
     d.setNamespace(uuid);
-    d.setUUID(uuid);
+    d.setId(ModuleId.fromString(uuid));
     return Solution.newInstance(d, OWNER);
   }
 
@@ -204,7 +205,7 @@ public class ModuleDependenciesTest {
     LanguageDescriptor d = new LanguageDescriptor();
     String uuid = UUID.randomUUID().toString();
     d.setNamespace(uuid);
-    d.setUUID(uuid);
+    d.setId(ModuleId.fromString(uuid));
     return Language.newInstance(d, OWNER);
   }
 
@@ -212,7 +213,7 @@ public class ModuleDependenciesTest {
     DevkitDescriptor d = new DevkitDescriptor();
     String uuid = UUID.randomUUID().toString();
     d.setNamespace(uuid);
-    d.setUUID(uuid);
+    d.setId(ModuleId.fromString(uuid));
     return DevKit.newInstance(new ModuleHandle(null, d), OWNER);
   }
 

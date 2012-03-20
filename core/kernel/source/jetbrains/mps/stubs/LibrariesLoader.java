@@ -22,10 +22,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.project.structure.modules.StubSolution;
+import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
@@ -73,7 +70,7 @@ public class LibrariesLoader implements CoreComponent {
       if (!(m instanceof AbstractModule)) continue;
       if (myLoadedModules.contains(m.getModuleReference())) continue;
       myLoadedModules.add(m.getModuleReference());
-      ((AbstractModule) m).loadNewModels();
+      ((AbstractModule) m).updateModelsSet();
     }
   }
 
@@ -90,7 +87,7 @@ public class LibrariesLoader implements CoreComponent {
     List<SolutionDescriptor> result = new ArrayList<SolutionDescriptor>();
     for (StubSolution ss : ld.getStubSolutions()) {
       SolutionDescriptor descriptor = new SolutionDescriptor();
-      descriptor.setUUID(ss.getId().toString());
+      descriptor.setId(ss.getId());
       descriptor.setNamespace(ss.getName());
 
       descriptor.setCompileInMPS(false);

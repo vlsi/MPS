@@ -27,7 +27,7 @@
   <component name="MPSProject">
     <projectModules>
       <modulePath path="${mps_home}/languages/baseLanguage/unitTest/unitTest.mpl" />
-      <modulePath path="${mps_home}/core/generator/solutions/jetbrains.mps.generator.msd" folder="" />
+      <modulePath path="${mps_home}/core/generator/solutions/generator/jetbrains.mps.generator.msd" folder="" />
       <modulePath path="${mps_home}/core/kernel/patternRuntime/runtime.msd" folder="" />
       <modulePath path="${mps_home}/languages/languageDesign/plugin/plugin.mpl" />
       <modulePath path="${project}/languages/descriptor/descriptor.mpl" folder="" />

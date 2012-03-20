@@ -1,0 +1,35 @@
+<project name="buildLanguage-default" default="main">
+  <property file="${ant.file.buildLanguage-default}/../buildLanguage.properties" />
+  <import file="${ant.file.buildLanguage-default}/../buildLanguage-compile.xml" />
+  <import file="${ant.file.buildLanguage-default}/../buildLanguage-languages.xml" />
+  <target name="main" depends="compile,clean.before,folders.create,do.the.job,clean.after" />
+  <target name="compile">
+    <antcall target="compile.all" />
+  </target>
+  <target name="clean">
+    <property name="to.clean" value="${deploy.dir}" />
+    <echo>Removing directory ${to.clean}</echo>
+    <delete dir="${to.clean}" />
+  </target>
+  <target name="clean.before" depends="compile">
+    <tstamp />
+  </target>
+  <target name="folders.create" depends="clean.before">
+    <mkdir dir="${deploy.dir}" />
+    <mkdir dir="${deploy.dir}/mps-build/languages" />
+    <mkdir dir="${deploy.dir}/mps-build/META-INF" />
+    <mkdir dir="${deploy.dir}/mps-build" />
+  </target>
+  <target name="do.the.job" depends="folders.create">
+    <antcall target="buildLanguage-languages.pack.jetbrains.mps.core.xml" />
+    <antcall target="buildLanguage-languages.pack.jetbrains.mps.core.properties" />
+    <antcall target="buildLanguage-languages.pack.jetbrains.mps.build" />
+    <antcall target="buildLanguage-languages.pack.jetbrains.mps.build.workflow" />
+    <mkdir dir="${deploy.dir}/mps-build/languages" />
+    <copy todir="${deploy.dir}/mps-build/META-INF">
+      <fileset dir="${base_dir}/deploySolution/META-INF" />
+    </copy>
+    <mkdir dir="${deploy.dir}/mps-build" />
+  </target>
+  <target name="clean.after" depends="do.the.job" />
+</project>

@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import java.io.File;
-import jetbrains.mps.vcs.util.MergeBackupUtil;
+import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import jetbrains.mps.vcs.util.MergeVersion;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import com.intellij.openapi.diff.MergeRequest;
