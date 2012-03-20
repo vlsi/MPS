@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.scopes.ScopeUtils;
 import jetbrains.mps.baseLanguage.scopes.CompositeWithParentScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 
 public class AbstractForStatement_Behavior {
   public static void init(SNode thisNode) {
@@ -19,6 +20,6 @@ public class AbstractForStatement_Behavior {
         return CompositeWithParentScope.from(SLinkOperations.getTarget(thisNode, "variable", true), thisNode, kind);
       }
     }
-    return null;
+    return ScopeProvider_Behavior.callSuper_getScope_3734116213129936182(thisNode, "jetbrains.mps.baseLanguage.structure.AbstractForStatement", kind, child);
   }
 }

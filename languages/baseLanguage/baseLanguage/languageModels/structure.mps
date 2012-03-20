@@ -1140,6 +1140,11 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="scopes" />
       <property name="name" nameId="tpck.1169194664001" value="SuperMethodKind" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5944356402132654733">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="scopes" />
+      <property name="name" nameId="tpck.1169194664001" value="LocalToMethodKind" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
   </roots>
   <root id="1068498886294">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1107215415034">
@@ -4356,5 +4361,6 @@
   <root id="2406048883599609633" />
   <root id="2406048883599831972" />
   <root id="6617045035157661092" />
+  <root id="5944356402132654733" />
 </model>
 

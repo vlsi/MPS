@@ -21,6 +21,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.baseLanguage.scopes.ScopeUtils;
 import jetbrains.mps.baseLanguage.scopes.CompositeWithParentScope;
+import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
@@ -241,6 +242,8 @@ public class BaseMethodDeclaration_Behavior {
       } else {
         return null;
       }
+    } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.LocalToMethodKind")) {
+      return new EmptyScope();
     }
     return ScopeProvider_Behavior.callSuper_getScope_3734116213129936182(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", kind, child);
   }

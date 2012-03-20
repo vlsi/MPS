@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BaseLanguage_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BaseLanguage_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="521" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="523" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StructureAspectDescriptor" />
   <root nodeId="1023687332192347378">
     <nodeInfo nodeId="1023687332192347378" fileName="IVariableReference.java" startLine="7" startPosition="58" endLine="8" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <unitInfo nodeId="1023687332192347378" fileName="IVariableReference.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IVariableReference" />
@@ -11690,6 +11690,29 @@
       <varInfo nodeId="5862977038373003187" varName="sm" />
     </scopeInfo>
     <unitInfo nodeId="5862977038373003187" fileName="LocalPropertyReference.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.LocalPropertyReference" />
+  </root>
+  <root nodeId="5944356402132654733">
+    <nodeInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="11" startPosition="52" endLine="12" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="14" startPosition="40" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="18" startPosition="72" endLine="19" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="22" startPosition="58" endLine="23" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LocalToMethodKind#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/baseLanguage/structure/LocalToMethodKind;" />
+    <nodeInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/structure/LocalToMethodKind;" />
+    <scopeInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="14" startPosition="40" endLine="15" endPosition="16" />
+    <scopeInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="18" startPosition="72" endLine="19" endPosition="184" />
+    <scopeInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="22" startPosition="58" endLine="23" endPosition="52" />
+    <scopeInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="5944356402132654733" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="5944356402132654733" varName="init" />
+      <varInfo nodeId="5944356402132654733" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="5944356402132654733" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.LocalToMethodKind" />
   </root>
   <root nodeId="6329021646629104954">
     <nodeInfo nodeId="6329021646629104954" fileName="SingleLineComment.java" startLine="14" startPosition="75" endLine="15" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
