@@ -87,7 +87,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
             myAuxModule.addStubPath(it);
           }
         });
-        myAuxModule.updateModelsSet();
+        myAuxModule.doUpdateModelsSet();
       }
     });
 

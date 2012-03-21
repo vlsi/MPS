@@ -11,13 +11,13 @@ import java.util.ArrayList;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNodePointer;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationDialog;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.EditWatchDialog;
@@ -70,7 +70,7 @@ public class EvaluationProvider implements IEvaluationProvider {
   private synchronized void dispose() {
     final EvaluationAuxModule module = myAuxModule;
     myAuxModule = null;
-    MPSModuleRepository.getInstance().unregisterModule(module,getDebugSession().getProject().getComponent(MPSProject.class));
+    MPSModuleRepository.getInstance().unregisterModule(module, getDebugSession().getProject().getComponent(MPSProject.class));
   }
 
   @Override
