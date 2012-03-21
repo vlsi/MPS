@@ -37,8 +37,8 @@ import java.awt.event.MouseEvent;
 
 // FIXME get rid of
 public class OutputViewTool extends BaseProjectTool {
-  private JPanel myComponent = new JPanel(new BorderLayout());
-  private JTextArea myTextArea = new JTextArea();
+  private JPanel myComponent;
+  private JTextArea myTextArea;
   private String myLastSearchPattern = null;
   private AbstractAction myFindAction;
   private AbstractAction myFindNextAction;
@@ -48,8 +48,10 @@ public class OutputViewTool extends BaseProjectTool {
     super(project, "Output", 6, Icons.OUTPUT_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
   }
 
-  public void initComponent() {
-    super.initComponent();
+  @Override
+  protected void createTool() {
+    this.myComponent = new JPanel(new BorderLayout());
+    this.myTextArea = new JTextArea();
     myTextArea.setEditable(false);
 
     myFindAction = new AbstractActionWithEmptyIcon("Find") {

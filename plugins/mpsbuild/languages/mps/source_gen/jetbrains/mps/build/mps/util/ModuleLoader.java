@@ -33,19 +33,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.project.ProjectPathUtil;
-import org.apache.commons.lang.StringUtils;
 
 public class ModuleLoader {
-  private final String myWorkingDirectory;
   private final TemplateQueryContext genContext;
   private final SNode myModule;
   private SNode myOriginalModule;
   private ModuleDescriptor myModuleDescriptor;
   private IFile myModuleFile;
   private VisibleModules visible;
+  private PathConverter pathConverter;
 
-  public ModuleLoader(SNode module, VisibleModules visible, String workingDirectory, TemplateQueryContext genContext) {
-    this.myWorkingDirectory = normalizePath(workingDirectory, true);
+  public ModuleLoader(SNode module, VisibleModules visible, PathConverter pathConverter, TemplateQueryContext genContext) {
     this.genContext = genContext;
     this.myModule = module;
     this.myOriginalModule = SNodeOperations.as(DependenciesHelper.getOriginalNode(module, genContext), "jetbrains.mps.build.mps.structure.BuildMps_Module");
@@ -53,6 +51,7 @@ public class ModuleLoader {
       this.myOriginalModule = module;
     }
     this.visible = visible;
+    this.pathConverter = pathConverter;
   }
 
   public void importRequired() {
@@ -549,30 +548,12 @@ public class ModuleLoader {
   }
 
   private SNode convertPath(String path, SNode anchor) {
-    path = normalizePath(path, false);
-    if (path.length() < myWorkingDirectory.length()) {
-      path = normalizePath(path, true);
-    }
-    if (!(path.startsWith(myWorkingDirectory))) {
-      report("source path (" + path + ") should be under working directory (" + myWorkingDirectory + ")", anchor);
+    try {
+      return pathConverter.convertPath(path, SNodeOperations.getModel(myModule));
+    } catch (PathConverter.PathConvertException ex) {
+      report(ex.getMessage(), anchor);
       return null;
     }
-    path = path.substring(myWorkingDirectory.length());
-    SNode plp = SModelOperations.createNewNode(SNodeOperations.getModel(myModule), "jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null);
-    SNode last = null;
-    for (String fname : path.split("/")) {
-      if (StringUtils.isNotEmpty(fname)) {
-        SNode npath = SModelOperations.createNewNode(SNodeOperations.getModel(myModule), "jetbrains.mps.build.structure.BuildCompositePath", null);
-        SPropertyOperations.set(npath, "head", fname);
-        if (last == null) {
-          SLinkOperations.setTarget(plp, "compositePart", npath, true);
-        } else {
-          SLinkOperations.setTarget(last, "tail", npath, true);
-        }
-        last = npath;
-      }
-    }
-    return plp;
   }
 
   protected void report(String message, SNode node) {
@@ -581,19 +562,6 @@ public class ModuleLoader {
     }
 
     genContext.showErrorMessage(node, message);
-  }
-
-  private static String normalizePath(String path, boolean addSlash) {
-    path = path.replace("\\", "/");
-    try {
-      path = new File(path).getCanonicalPath();
-    } catch (IOException ignore) {
-      // ignore 
-    }
-    if (addSlash && !(path.endsWith("/"))) {
-      path = path + "/";
-    }
-    return path;
   }
 
   private static boolean neq_a6ewnz_a0c0f(Object a, Object b) {

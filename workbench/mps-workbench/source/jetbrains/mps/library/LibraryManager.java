@@ -48,24 +48,16 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     super(coreComponents.getModuleRepository());
   }
 
-  private boolean myInitializing = false;
   private Map<String, Library> myCustomBuiltInLibraries = new HashMap<String, Library>();
   private Set<Library> myLibs = createLibs();
 
   public void initComponent() {
-    //todo hack
-    if (myInitializing) return;
-    myInitializing = true;
-    try {
-      myCustomBuiltInLibraries = BuiltInLibrariesIO.readBuiltInLibraries();
-      load();
-    } finally {
-      myInitializing = false;
-    }
+    myCustomBuiltInLibraries = BuiltInLibrariesIO.readBuiltInLibraries();
+    super.initComponent();
   }
 
+  @Override
   public void disposeComponent() {
-
   }
 
   public Set<Library> getUILibraries() {
