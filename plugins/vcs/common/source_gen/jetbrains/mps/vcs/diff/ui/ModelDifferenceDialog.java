@@ -203,7 +203,7 @@ public class ModelDifferenceDialog extends DialogWrapper {
         }
         sb.append(mc);
       }
-      Messages.showInfoMessage(this.getOwner(), sb.toString(), "Model Properties Difference");
+      Messages.showInfoMessage(myPanel, sb.toString(), "Model Properties Difference");
       return;
     }
     if (myRootsDialogInvoked) {
