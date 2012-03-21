@@ -20,6 +20,7 @@ import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 public class MakeActionParameters {
   private IOperationContext context;
@@ -254,7 +255,7 @@ __switch__:
       }
     });
     if (module instanceof Language) {
-      for (Generator gen : ListSequence.fromIterable(((Language) module).getGenerators())) {
+      for (Generator gen : CollectionSequence.fromCollection(((Language) module).getGenerators())) {
         models = Sequence.fromIterable(models).concat(Sequence.fromIterable(modelsToMake(gen)));
       }
     }
