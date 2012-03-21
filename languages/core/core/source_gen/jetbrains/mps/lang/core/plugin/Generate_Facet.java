@@ -56,7 +56,6 @@ import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.make.delta.IInternalDelta;
 import jetbrains.mps.make.delta.IDeltaVisitor;
 import jetbrains.mps.make.script.IPropertiesPool;
-import jetbrains.mps.util.Computable;
 
 public class Generate_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -504,18 +503,18 @@ public class Generate_Facet extends IFacet.Stub {
                   tracer.discardTracing();
                 }
               }
-              final Map<IModule, Iterable<SModelDescriptor>> retainedModels = ModelAccess.instance().runReadAction(new Computable<Map<IModule, Iterable<SModelDescriptor>>>() {
-                @Override
-                public Map<IModule, Iterable<SModelDescriptor>> compute() {
-                  return RetainedUtil.collectModelsToRetain(input);
+              final Wrappers._T<Map<IModule, Iterable<SModelDescriptor>>> retainedModels = new Wrappers._T<Map<IModule, Iterable<SModelDescriptor>>>();
 
+              ModelAccess.instance().runReadAction(new Runnable() {
+                public void run() {
+                  retainedModels.value = RetainedUtil.collectModelsToRetain(input);
                 }
               });
 
               IGenerationHandler gh = new MakeGenerationHandler(new _FunctionTypes._return_P1_E0<Boolean, GResource>() {
                 public Boolean invoke(GResource data) {
                   monitor.currentProgress().advanceWork("Generating", 1000);
-                  data.retainedModels(MapSequence.fromMap(retainedModels).get(data.module()));
+                  data.retainedModels(MapSequence.fromMap(retainedModels.value).get(data.module()));
                   _output_fi61u2_a0d.value = Sequence.fromIterable(_output_fi61u2_a0d.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(data)));
                   return true;
                 }

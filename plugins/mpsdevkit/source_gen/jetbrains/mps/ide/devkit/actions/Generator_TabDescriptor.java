@@ -32,10 +32,8 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.ArrayList;
+import jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog;
 import jetbrains.mps.generator.GenerationFacade;
 import javax.swing.JOptionPane;
 import jetbrains.mps.ide.actions.MappingDialog;
@@ -134,15 +132,15 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
       }
     });
 
-    final Iterable<Generator> genList = language.value.getGenerators();
-    if (Sequence.fromIterable(genList).isEmpty()) {
+    final List<Generator> genList = ListSequence.fromListWithValues(new ArrayList<Generator>(), language.value.getGenerators());
+    if (ListSequence.fromList(genList).isEmpty()) {
       NewGeneratorDialog dialog = new NewGeneratorDialog(frame, language.value);
       dialog.showDialog();
       Generator createdGenerator = dialog.getResult();
       if (createdGenerator == null) {
         return null;
       }
-      CollectionSequence.fromCollection(genList).addElement(createdGenerator);
+      ListSequence.fromList(genList).addElement(createdGenerator);
     }
 
     final List<SNode> mappings = new ArrayList<SNode>();
