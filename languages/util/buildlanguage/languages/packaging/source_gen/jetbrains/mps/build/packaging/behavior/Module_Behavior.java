@@ -97,9 +97,8 @@ public class Module_Behavior {
         }
       });
       if (path != null) {
-        String classesPath = path.getPath();
+        String classesPath = path.getPath().replace("\\", Util.SEPARATOR).replace("/", Util.SEPARATOR);
         if (!(classesPath.startsWith(Module_Behavior.call_getModuleDescriptorPath_4777659345280330855(thisNode)))) {
-          classesPath = classesPath.replace("\\", Util.SEPARATOR).replace("/", Util.SEPARATOR);
           int start = classesPath.indexOf(plugins) + plugins.length() + 1;
           int end = classesPath.indexOf(classes) - 1;
           if (start >= 0 && start < classesPath.length() && end >= 0 && end < classesPath.length() && start < end) {
