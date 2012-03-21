@@ -7,8 +7,6 @@ import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-
-import java.util.List;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -21,6 +19,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.devkit.util.DeleteGeneratorHelper;
 
 public class DeleteGenerator_Action extends BaseAction {
@@ -82,10 +81,9 @@ public class DeleteGenerator_Action extends BaseAction {
         public void run() {
           Generator generator = ((Generator) ((IModule) MapSequence.fromMap(_params).get("module")));
           Language sourceLanguage = generator.getSourceLanguage();
-          List<GeneratorDescriptor> generators = sourceLanguage.getModuleDescriptor().getGenerators();
-          for (GeneratorDescriptor g:generators){
-            if (generator.getModuleReference().getModuleId().equals(g.getId())){
-              DeleteGeneratorHelper.deleteGenerator(((Project) MapSequence.fromMap(_params).get("project")), sourceLanguage, generator, g, dialog.isSafe(), dialog.isDeleteFiles());
+          for (GeneratorDescriptor gen : ListSequence.fromList(sourceLanguage.getModuleDescriptor().getGenerators())) {
+            if (generator.getModuleReference().getModuleId().equals(gen.getId())) {
+              DeleteGeneratorHelper.deleteGenerator(((Project) MapSequence.fromMap(_params).get("project")), sourceLanguage, generator, gen, dialog.isSafe(), dialog.isDeleteFiles());
               break;
             }
           }

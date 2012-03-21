@@ -23,6 +23,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 public class ConceptEditorHelper {
   public static List<SNode> getAvailableConceptAspects(SModel structureModel, SNode node) {
@@ -99,7 +100,7 @@ public class ConceptEditorHelper {
     }
 
     public boolean met(SModelDescriptor modelDescriptor) {
-      for (Generator generator : ListSequence.fromIterable(this.myLanguage.getGenerators())) {
+      for (Generator generator : CollectionSequence.fromCollection(this.myLanguage.getGenerators())) {
         if (generator.getOwnTemplateModels().contains(modelDescriptor)) {
           return true;
         }
