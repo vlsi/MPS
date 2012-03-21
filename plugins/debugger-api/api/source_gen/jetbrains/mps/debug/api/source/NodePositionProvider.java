@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
+import jetbrains.mps.debug.api.AbstractDebugSession;
 
 public class NodePositionProvider implements IPositionProvider<NodeSourcePosition> {
   public NodePositionProvider() {
@@ -70,5 +71,9 @@ public class NodePositionProvider implements IPositionProvider<NodeSourcePositio
   @Nullable
   public SNode getNode(@NonNls String unitName, @NonNls String fileName, int position) {
     return TraceInfoUtil.getNode(unitName, fileName, position);
+  }
+
+  public boolean accepts(AbstractDebugSession session) {
+    return true;
   }
 }

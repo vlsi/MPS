@@ -10,6 +10,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.common.FileOpenUtil;
 import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.debug.api.AbstractDebugSession;
 
 public class TextPositionProvider implements IPositionProvider<TextSourcePosition> {
   private Project myProject;
@@ -50,5 +51,9 @@ public class TextPositionProvider implements IPositionProvider<TextSourcePositio
   @Nullable
   public VirtualFile getFile(@NonNls String unitName, @NonNls String fileName) {
     return FileOpenUtil.findFile(myProject, unitName, fileName);
+  }
+
+  public boolean accepts(AbstractDebugSession session) {
+    return true;
   }
 }

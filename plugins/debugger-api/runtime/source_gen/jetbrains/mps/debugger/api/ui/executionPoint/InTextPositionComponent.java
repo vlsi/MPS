@@ -22,6 +22,7 @@ import jetbrains.mps.ide.common.FileOpenUtil;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.source.SourcePosition;
+import jetbrains.mps.debug.api.source.PositionProvider;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.fileEditor.FileDocumentManager;
 import com.intellij.openapi.editor.markup.TextAttributes;
@@ -169,7 +170,7 @@ public class InTextPositionComponent implements ProjectComponent {
   public TextSourcePosition getLocation(AbstractDebugSession session) {
     IStackFrame stackFrame = session.getUiState().getStackFrame();
     if (stackFrame != null) {
-      SourcePosition position = session.getDebuggableFramesSelector().getPositionProvider().getPosition(stackFrame.getLocation());
+      SourcePosition position = PositionProvider.getInstance(myProject).getPosition(stackFrame.getLocation(), session);
       if (position instanceof TextSourcePosition) {
         return ((TextSourcePosition) position);
       }

@@ -5,9 +5,6 @@ package jetbrains.mps.debugger.java.runtime;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.debug.api.DebuggableFramesSelector;
-import jetbrains.mps.debug.api.source.CompositePositionProvider;
-import jetbrains.mps.debug.api.source.TextPositionProvider;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand;
 import java.util.Set;
@@ -21,7 +18,7 @@ public class DebugSession extends AbstractDebugSession<JavaUiStateImpl> {
   private IEvaluationProvider myEvaluationProvider;
 
   public DebugSession(DebugVMEventsProcessor eventsProcessor, final Project p) {
-    super(p, new DebuggableFramesSelector(p, new CompositePositionProvider(new JavaNodePositionProvider(), new TextPositionProvider(p))));
+    super(p);
     myEventsProcessor = eventsProcessor;
     myEventsProcessor.setDebuggableFramesSelector(getDebuggableFramesSelector());
     eventsProcessor.getMulticaster().addListener(new DebugSession.MyDebugProcessAdapter());
