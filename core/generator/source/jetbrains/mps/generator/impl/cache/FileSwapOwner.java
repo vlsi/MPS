@@ -207,8 +207,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     public static final int NODE_ID = 1;
     public static final int MODEL_ID = 2;
     public static final int MODEL_REFERENCE = 3;
-    public static final int NODE = 4;
-    public static final int SERIALIZABLE = 5;
+    public static final int SERIALIZABLE = 4;
 
     public NodesAndUserObjectsWriter(@NotNull SModelReference modelReference) {
       super(modelReference);
@@ -249,10 +248,6 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
       } else if (object instanceof SModelReference) {
         os.writeInt(MODEL_REFERENCE);
         os.writeModelReference((SModelReference) object);
-      } else if (object instanceof SNode) {
-        os.writeInt(NODE);
-        os.writeModelReference(((SNode) object).getModel().getSModelReference());
-        os.writeNodeId(((SNode) object).getSNodeId());
       } else if (object instanceof Serializable) {
         os.writeInt(SERIALIZABLE);
         ObjectOutputStream objectOutput = new ObjectOutputStream(os);
@@ -261,7 +256,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     }
 
     private static boolean isKnownUserObject(Object object) {
-      return object != null && (object instanceof Serializable || object instanceof SNode || object instanceof SNodePointer || object instanceof SNodeId || object instanceof SModelId || object instanceof SModelReference);
+      return object != null && (object instanceof Serializable || object instanceof SNodePointer || object instanceof SNodeId || object instanceof SModelId || object instanceof SModelReference);
     }
   }
 
@@ -297,23 +292,6 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
           return is.readModelID();
         case NodesAndUserObjectsWriter.MODEL_REFERENCE:
           return is.readModelReference();
-        case NodesAndUserObjectsWriter.NODE:
-          SModel tmodel = null;
-          SModelReference modelRef = is.readModelReference();
-          SNodeId nodeId = is.readNodeId();
-          if (LOCAL.equals(modelRef)) {
-            tmodel = model;
-          } else {
-            SModelDescriptor mdesc = SModelRepository.getInstance().getModelDescriptor(modelRef);
-            if (mdesc != null) {
-              tmodel = mdesc.getSModel();
-            }
-          }
-          if (tmodel != null) {
-            return tmodel.getNodeById(nodeId);
-          } else {
-            throw new IOException("couldn't load user object");
-          }
         case NodesAndUserObjectsWriter.SERIALIZABLE:
           ObjectInputStream stream = new ObjectInputStream(is);
           try {
