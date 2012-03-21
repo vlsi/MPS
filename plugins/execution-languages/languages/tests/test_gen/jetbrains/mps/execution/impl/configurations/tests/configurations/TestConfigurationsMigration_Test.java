@@ -8,6 +8,7 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jdom.Element;
 import junit.framework.Assert;
+import jetbrains.mps.execution.configurations.implementation.plugin.plugin.RunConfigurationsInitializer_CustomApplicationPlugin;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.execution.impl.RunManagerImpl;
@@ -49,30 +50,37 @@ public class TestConfigurationsMigration_Test extends BaseTransformationTest {
       final Element element = XslTest.readAndTransform(configFile, xslFile);
       Assert.assertTrue(element.getChildren().size() > 0);
 
-      Project project = ProjectManager.getInstance().getOpenProjects()[0];
-      RunManagerImpl runManagerImpl = RunManagerImpl.getInstanceImpl(project);
-      runManagerImpl.initializeConfigurationTypes(RunConfigurationsStateManager.getConfigurationTypes());
+      // this inits run configurations 
+      RunConfigurationsInitializer_CustomApplicationPlugin plugin = new RunConfigurationsInitializer_CustomApplicationPlugin();
+      plugin.init();
+      try {
+        Project project = ProjectManager.getInstance().getOpenProjects()[0];
+        RunManagerImpl runManagerImpl = RunManagerImpl.getInstanceImpl(project);
+        runManagerImpl.initializeConfigurationTypes(RunConfigurationsStateManager.getConfigurationTypes());
 
-      for (Object child : element.getChildren()) {
-        RunnerAndConfigurationSettingsImpl settings = new RunnerAndConfigurationSettingsImpl(runManagerImpl);
-        try {
-          settings.readExternal((Element) child);
-          Assert.assertFalse(new _FunctionTypes._return_P0_E0<String>() {
-            public String invoke() {
-              StringWriter writer = new StringWriter();
-              Document resultDocument = new Document(element);
-              try {
-                JDOMUtil.writeDocument(resultDocument, writer);
-                return writer.toString();
-              } catch (IOException e) {
-                return e.getMessage();
+        for (Object child : element.getChildren()) {
+          RunnerAndConfigurationSettingsImpl settings = new RunnerAndConfigurationSettingsImpl(runManagerImpl);
+          try {
+            settings.readExternal((Element) child);
+            Assert.assertFalse(new _FunctionTypes._return_P0_E0<String>() {
+              public String invoke() {
+                StringWriter writer = new StringWriter();
+                Document resultDocument = new Document(element);
+                try {
+                  JDOMUtil.writeDocument(resultDocument, writer);
+                  return writer.toString();
+                } catch (IOException e) {
+                  return e.getMessage();
+                }
               }
-            }
-          }.invoke(), settings.getConfiguration().getType() instanceof UnknownConfigurationType);
-        } catch (InvalidDataException e) {
-          e.printStackTrace();
-          Assert.fail(e.getMessage());
+            }.invoke(), settings.getConfiguration().getType() instanceof UnknownConfigurationType);
+          } catch (InvalidDataException e) {
+            e.printStackTrace();
+            Assert.fail(e.getMessage());
+          }
         }
+      } finally {
+        plugin.dispose();
       }
     }
   }
