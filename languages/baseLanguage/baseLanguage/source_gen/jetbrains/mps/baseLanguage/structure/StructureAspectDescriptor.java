@@ -424,11 +424,11 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 203:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", "jetbrains.mps.baseLanguage.structure.VariableDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.VariableDeclaration", "jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.lang.core.structure.IResolveInfo", "jetbrains.mps.baseLanguage.structure.IBLDeprecatable", "jetbrains.mps.lang.traceable.structure.TraceableConcept"}, new String[]{}, new String[]{});
       case 204:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{"jetbrains.mps.baseLanguage.structure.VariableReference", "jetbrains.mps.lang.core.structure.ScopeProvider"}, new String[]{}, new String[]{"classifier", "staticFieldDeclaration"});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{"jetbrains.mps.baseLanguage.structure.VariableReference"}, new String[]{}, new String[]{"classifier", "staticFieldDeclaration"});
       case 205:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.StaticInitializer", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 206:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "jetbrains.mps.baseLanguage.structure.BaseMethodCall", false, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodCall", "jetbrains.mps.lang.core.structure.ScopeProvider"}, new String[]{}, new String[]{"classConcept", "staticMethodDeclaration"});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "jetbrains.mps.baseLanguage.structure.BaseMethodCall", false, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodCall"}, new String[]{}, new String[]{"classConcept", "staticMethodDeclaration"});
       case 207:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.lang.core.structure.IResolveInfo"}, new String[]{}, new String[]{});
       case 208:

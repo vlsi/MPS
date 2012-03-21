@@ -9,6 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.scopes.ScopeUtils;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.scopes.CompositeWithParentScope;
@@ -36,36 +37,42 @@ public class SwitchStatement_Behavior {
       childStatement = SNodeOperations.getParent(childStatement);
     }
 
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
-      Scope nextScope = Scope.getScope(SNodeOperations.getParent(thisNode), child, kind);
-      if (SLinkOperations.getTarget(thisNode, "expression", true) == childStatement) {
-        return nextScope;
-      }
+    {
+      SNode concept_d0b;
+      concept_d0b = kind;
+      if (SConceptOperations.isSubConceptOf(concept_d0b, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+        {
+          if (SLinkOperations.getTarget(thisNode, "expression", true) == childStatement) {
+            return ScopeUtils.parentScope(thisNode, kind);
+          }
 
-      List<SNode> variables = new ArrayList<SNode>();
-      for (SNode caseNode : SLinkOperations.getTargets(thisNode, "case", true)) {
-        if (caseNode == childStatement) {
-          break;
+          List<SNode> variables = new ArrayList<SNode>();
+          for (SNode caseNode : SLinkOperations.getTargets(thisNode, "case", true)) {
+            if (caseNode == childStatement) {
+              break;
+            }
+            ListSequence.fromList(variables).addSequence(ListSequence.fromList(StatementList_Behavior.call_getLocalVariableDeclarations_3986960521977638556(SLinkOperations.getTarget(caseNode, "body", true), null)));
+          }
+          return CompositeWithParentScope.from(variables, thisNode, kind);
         }
-        ListSequence.fromList(variables).addSequence(ListSequence.fromList(StatementList_Behavior.call_getLocalVariableDeclarations_3986960521977638556(SLinkOperations.getTarget(caseNode, "body", true), null)));
       }
-      return CompositeWithParentScope.from(variables, thisNode, kind);
-    }
+      if (SConceptOperations.isSubConceptOf(concept_d0b, "jetbrains.mps.baseLanguage.structure.LoopLabel")) {
+        {
+          List<SNode> parameter = new ArrayList<SNode>();
+          if ((SLinkOperations.getTarget(thisNode, "switchLabel", true) != null)) {
+            ListSequence.fromList(parameter).addElement(SLinkOperations.getTarget(thisNode, "switchLabel", true));
+          }
+          SNode[] nodesInScope = new SNode[ListSequence.fromList(SLinkOperations.getTargets(thisNode, "case", true)).count() + 1];
+          for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(thisNode, "case", true)).count(); i++) {
+            nodesInScope[i] = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "case", true)).getElement(i);
+          }
+          nodesInScope[nodesInScope.length - 1] = SLinkOperations.getTarget(thisNode, "defaultBlock", true);
 
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.LoopLabel")) {
-      List<SNode> parameter = new ArrayList<SNode>();
-      if ((SLinkOperations.getTarget(thisNode, "switchLabel", true) != null)) {
-        ListSequence.fromList(parameter).addElement(SLinkOperations.getTarget(thisNode, "switchLabel", true));
-      }
-      SNode[] nodesInScope = new SNode[ListSequence.fromList(SLinkOperations.getTargets(thisNode, "case", true)).count() + 1];
-      for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(thisNode, "case", true)).count(); i++) {
-        nodesInScope[i] = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "case", true)).getElement(i);
-      }
-      nodesInScope[nodesInScope.length - 1] = SLinkOperations.getTarget(thisNode, "defaultBlock", true);
-
-      // todo: how to generialize? 
-      if (Arrays.asList(nodesInScope).contains(child)) {
-        return CompositeWithParentScope.from(parameter, thisNode, kind);
+          // todo: how to generialize? 
+          if (Arrays.asList(nodesInScope).contains(child)) {
+            return CompositeWithParentScope.from(parameter, thisNode, kind);
+          }
+        }
       }
     }
     return null;

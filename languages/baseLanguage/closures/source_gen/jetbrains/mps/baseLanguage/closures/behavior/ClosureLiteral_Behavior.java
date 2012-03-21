@@ -82,7 +82,6 @@ public class ClosureLiteral_Behavior {
         return CompositeWithParentScope.from(SLinkOperations.getTargets(thisNode, "parameter", true), thisNode, kind);
       }
     }
-
     return null;
   }
 

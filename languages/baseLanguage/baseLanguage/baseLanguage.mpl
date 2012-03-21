@@ -36,11 +36,11 @@
     </stubModelEntry>
   </runtimeStubModels>
   <stubSolutions>
-    <stubSolution moduleName="Testbench" moduleId="920eaa0e-ecca-46bc-bee7-4e5c59213dd6" />
-    <stubSolution moduleName="MPS.Editor" moduleId="1ed103c3-3aa6-49b7-9c21-6765ee11f224" />
-    <stubSolution moduleName="MPS.Core" moduleId="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea" />
-    <stubSolution moduleName="MPS.Platform" moduleId="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61" />
     <stubSolution moduleName="JDK" moduleId="6354ebe7-c22a-4a0f-ac54-50b52ab9b065" />
+    <stubSolution moduleName="MPS.Editor" moduleId="1ed103c3-3aa6-49b7-9c21-6765ee11f224" />
+    <stubSolution moduleName="MPS.Platform" moduleId="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61" />
+    <stubSolution moduleName="Testbench" moduleId="920eaa0e-ecca-46bc-bee7-4e5c59213dd6" />
+    <stubSolution moduleName="MPS.Core" moduleId="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea" />
     <stubSolution moduleName="MPS.Workbench" moduleId="86441d7a-e194-42da-81a5-2161ec62a379" />
     <stubSolution moduleName="JDK.Tools" moduleId="fdb93da0-59ed-4001-b2aa-4fad79ec058e" />
   </stubSolutions>
@@ -62,6 +62,7 @@
     <dependency reexport="false">b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)</dependency>
     <dependency reexport="false">28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</dependency>
     <dependency reexport="false">3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)</dependency>
+    <dependency reexport="false">d8f591ec-4d86-4af2-9f92-a9e93c803ffa(jetbrains.mps.lang.scopes)</dependency>
     <dependency reexport="false">7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</dependency>
     <dependency reexport="false">c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)</dependency>
     <dependency reexport="false">9ded098b-ad6a-4657-bfd9-48636cfe8bc3(jetbrains.mps.lang.traceable)</dependency>
@@ -82,6 +83,7 @@
     <usedLanguage>3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)</usedLanguage>
     <usedLanguage>64d34fcd-ad02-4e73-aff8-a581124c2e30(jetbrains.mps.lang.findUsages)</usedLanguage>
     <usedLanguage>d7a92d38-f7db-40d0-8431-763b0c3c9f20(jetbrains.mps.lang.intentions)</usedLanguage>
+    <usedLanguage>d8f591ec-4d86-4af2-9f92-a9e93c803ffa(jetbrains.mps.lang.scopes)</usedLanguage>
     <usedLanguage>0eddeefa-c2d6-4437-bc2c-de50fd4ce470(jetbrains.mps.lang.script)</usedLanguage>
     <usedLanguage>7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)</usedLanguage>
     <usedLanguage>696c1165-4a59-463b-bc5d-902caab85dd0(jetbrains.mps.make.facet)</usedLanguage>

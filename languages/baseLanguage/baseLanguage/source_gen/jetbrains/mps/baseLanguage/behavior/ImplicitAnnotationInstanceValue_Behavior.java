@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.scope.Scope;
+import jetbrains.mps.baseLanguage.scopes.ScopeUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.scope.EmptyScope;
 
@@ -12,9 +13,8 @@ public class ImplicitAnnotationInstanceValue_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    Scope original = Scope.getScope(Scope.parent(thisNode), thisNode, kind);
-    if (original != null && (int) ListSequence.fromList(original.getAvailableElements(null)).count() == 1) {
-      return original;
+    if (ScopeUtils.parentScope(thisNode, kind) != null && (int) ListSequence.fromList(ScopeUtils.parentScope(thisNode, kind).getAvailableElements(null)).count() == 1) {
+      return ScopeUtils.parentScope(thisNode, kind);
     } else {
       return new EmptyScope();
     }

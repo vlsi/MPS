@@ -14,7 +14,6 @@ import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.scope.Scope;
 
 public class StaticMethodCall_Behavior {
   public static void init(SNode thisNode) {
@@ -43,10 +42,5 @@ public class StaticMethodCall_Behavior {
     for (SNode actualArgument : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true))) {
       ListSequence.fromList(SLinkOperations.getTargets(localStaticMethodCall, "actualArgument", true)).addElement(actualArgument);
     }
-  }
-
-  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    // <node> 
-    return null;
   }
 }

@@ -38,6 +38,7 @@ import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.baseLanguage.scopes.CompositeWithParentScope;
+import jetbrains.mps.baseLanguage.scopes.ScopeUtils;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -384,19 +385,22 @@ public class Classifier_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration")) {
-      while (SNodeOperations.getParent(child) != thisNode) {
-        child = SNodeOperations.getParent(child);
+    {
+      SNode concept_a0cb;
+      concept_a0cb = kind;
+      if (SConceptOperations.isSubConceptOf(concept_a0cb, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration")) {
+        while (SNodeOperations.getParent(child) != thisNode) {
+          child = SNodeOperations.getParent(child);
+        }
+        if (!(SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember") && ClassifierMember_Behavior.call_isStatic_8986964027630462944(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember")))) {
+          return CompositeWithParentScope.from(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true), thisNode, kind);
+        }
       }
-      if (!(SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember") && ClassifierMember_Behavior.call_isStatic_8986964027630462944(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember")))) {
-        return CompositeWithParentScope.from(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true), thisNode, kind);
+      if (SConceptOperations.isSubConceptOf(concept_a0cb, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
+        return CompositeWithParentScope.from(Classifier_Behavior.call_getVisibleMembers_8083692786967356611(thisNode, child, kind), thisNode, kind);
       }
-    } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
-      // todo: go up? 
-      return CompositeWithParentScope.from(Classifier_Behavior.call_getVisibleMembers_8083692786967356611(thisNode, child, kind), thisNode, kind);
-      // <node> 
     }
-    return null;
+    return ScopeUtils.parentScope(thisNode, kind);
   }
 
   public static List<Icon> call_getMarkIcons_5039675756633081868(SNode thisNode) {

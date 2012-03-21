@@ -236,15 +236,21 @@ public class BaseMethodDeclaration_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
-      if (ScopeUtils.comeFrom("body", thisNode, child)) {
-        return CompositeWithParentScope.from(SLinkOperations.getTargets(thisNode, "parameter", true), thisNode, kind);
-      } else {
-        return null;
+    {
+      SNode concept_a0y;
+      concept_a0y = kind;
+      if (SConceptOperations.isSubConceptOf(concept_a0y, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
+        if (ScopeUtils.comeFrom("body", thisNode, child)) {
+          return CompositeWithParentScope.from(SLinkOperations.getTargets(thisNode, "parameter", true), thisNode, kind);
+        } else {
+          return ScopeUtils.parentScope(thisNode, kind);
+        }
       }
-    } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.LocalToMethodKind")) {
-      return new EmptyScope();
+      if (SConceptOperations.isSubConceptOf(concept_a0y, "jetbrains.mps.baseLanguage.structure.LocalToMethodKind")) {
+        return new EmptyScope();
+      }
     }
+
     return ScopeProvider_Behavior.callSuper_getScope_3734116213129936182(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", kind, child);
   }
 

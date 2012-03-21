@@ -31,7 +31,7 @@ public class ForStatement_Behavior {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
       // todo: change logic =( 
       List<SNode> variables = new ArrayList<SNode>();
-      if ((SLinkOperations.getTarget(thisNode, "variable", true) != null) && !(ScopeUtils.comeFrom("variable", thisNode, child))) {
+      if (!(ScopeUtils.comeFrom("variable", thisNode, child))) {
         ListSequence.fromList(variables).addElement(SLinkOperations.getTarget(thisNode, "variable", true));
       }
       if (ScopeUtils.comeFrom("body", thisNode, child)) {

@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.scopes;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.scope.Scope;
 
 public class ScopeUtils {
   private ScopeUtils() {
@@ -18,5 +19,9 @@ public class ScopeUtils {
 
   public static boolean comeFrom(String expectedRole, SNode thisNode, String role, int index) {
     return expectedRole.equals(role);
+  }
+
+  public static Scope parentScope(SNode node, SNode kind) {
+    return Scope.getScope(Scope.parent(node), node, kind);
   }
 }

@@ -13,6 +13,7 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.baseLanguage.scopes.ScopeUtils;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -117,13 +118,17 @@ public class ConceptFunction_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
-      return new EmptyScope();
+    {
+      SNode concept_a0l;
+      concept_a0l = kind;
+      if (SConceptOperations.isSubConceptOf(concept_a0l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+        return new EmptyScope();
+      }
+      if (SConceptOperations.isSubConceptOf(concept_a0l, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
+        return new EmptyScope();
+      }
     }
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
-      return new EmptyScope();
-    }
-    return null;
+    return ScopeUtils.parentScope(thisNode, kind);
   }
 
   public static boolean call_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
