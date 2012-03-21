@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.scopes.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="ComeFromExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.scopes.behavior.ComeFromExpression_BehaviorDescriptor" />
+  <unitInfo fileName="CompositeWithParentScopeExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.scopes.behavior.CompositeWithParentScopeExpression_BehaviorDescriptor" />
+  <unitInfo fileName="ParentScope_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.scopes.behavior.ParentScope_BehaviorDescriptor" />
+</debugInfo>
+
