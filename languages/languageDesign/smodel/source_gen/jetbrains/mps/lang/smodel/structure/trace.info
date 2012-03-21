@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Smodel_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Smodel_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="329" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="333" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.StructureAspectDescriptor" />
   <root nodeId="1138055754698">
     <nodeInfo nodeId="1138055754698" fileName="SNodeType.java" startLine="12" startPosition="37" endLine="13" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1138055754698" fileName="SNodeType.java" startLine="13" startPosition="87" endLine="14" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONCEPT" />
@@ -6079,6 +6079,111 @@
       <varInfo nodeId="5897605856268838718" varName="sm" />
     </scopeInfo>
     <unitInfo nodeId="5897605856268838718" fileName="ConceptPropertyNameRefExpression.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.ConceptPropertyNameRefExpression" />
+  </root>
+  <root nodeId="5944356402132808749">
+    <nodeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="14" startPosition="55" endLine="15" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="15" startPosition="100" endLine="16" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPRESSION" />
+    <nodeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="16" startPosition="55" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CASE" />
+    <nodeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="19" startPosition="45" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="23" startPosition="37" endLine="24" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="27" startPosition="46" endLine="28" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="31" startPosition="30" endLine="32" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="35" startPosition="55" endLine="36" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="39" startPosition="54" endLine="40" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="43" startPosition="56" endLine="44" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="47" startPosition="92" endLine="48" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="51" startPosition="77" endLine="52" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="55" startPosition="63" endLine="56" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="18" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConceptSwitchStatement#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExpression#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setExpression#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCasesCount#()I" />
+    <nodeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="cases#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCases#()Ljava/util/List;" />
+    <nodeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addCase#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertCase#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/lang/smodel/structure/ConceptSwitchStatement;" />
+    <nodeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/lang/smodel/structure/ConceptSwitchStatement;" />
+    <scopeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="19" startPosition="45" endLine="20" endPosition="16" />
+    <scopeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="23" startPosition="37" endLine="24" endPosition="91" />
+    <scopeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="27" startPosition="46" endLine="28" endPosition="60" />
+    <scopeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="31" startPosition="30" endLine="32" endPosition="59" />
+    <scopeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="35" startPosition="55" endLine="36" endPosition="88" />
+    <scopeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="39" startPosition="54" endLine="40" endPosition="91" />
+    <scopeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="43" startPosition="56" endLine="44" endPosition="53" />
+    <scopeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="47" startPosition="92" endLine="48" endPosition="62" />
+    <scopeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="51" startPosition="77" endLine="52" endPosition="193" />
+    <scopeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="55" startPosition="63" endLine="56" endPosition="57" />
+    <scopeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="18" startPosition="0" endLine="21" endPosition="3">
+      <varInfo nodeId="5944356402132808749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="5944356402132808749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="5944356402132808749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="5944356402132808749" varName="node" />
+      <varInfo nodeId="5944356402132808749" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="50" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="5944356402132808749" varName="init" />
+      <varInfo nodeId="5944356402132808749" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="5944356402132808749" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="5944356402132808749" fileName="ConceptSwitchStatement.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.ConceptSwitchStatement" />
+  </root>
+  <root nodeId="5944356402132808754">
+    <nodeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="12" startPosition="61" endLine="13" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="13" startPosition="104" endLine="14" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONCEPT" />
+    <nodeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="14" startPosition="49" endLine="15" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="BODY" />
+    <nodeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="17" startPosition="49" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="21" startPosition="40" endLine="22" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="25" startPosition="49" endLine="26" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="29" startPosition="34" endLine="30" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="33" startPosition="43" endLine="34" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="37" startPosition="81" endLine="38" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="41" startPosition="67" endLine="42" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="16" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConceptSwitchStatementCase#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setConcept#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBody#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setBody#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/lang/smodel/structure/ConceptSwitchStatementCase;" />
+    <nodeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/lang/smodel/structure/ConceptSwitchStatementCase;" />
+    <scopeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="17" startPosition="49" endLine="18" endPosition="16" />
+    <scopeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="21" startPosition="40" endLine="22" endPosition="104" />
+    <scopeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="25" startPosition="49" endLine="26" endPosition="61" />
+    <scopeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="29" startPosition="34" endLine="30" endPosition="95" />
+    <scopeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="33" startPosition="43" endLine="34" endPosition="58" />
+    <scopeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="37" startPosition="81" endLine="38" endPosition="201" />
+    <scopeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="41" startPosition="67" endLine="42" endPosition="61" />
+    <scopeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="16" startPosition="0" endLine="19" endPosition="3">
+      <varInfo nodeId="5944356402132808754" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="5944356402132808754" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="5944356402132808754" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="5944356402132808754" varName="init" />
+      <varInfo nodeId="5944356402132808754" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="5944356402132808754" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="5944356402132808754" fileName="ConceptSwitchStatementCase.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.ConceptSwitchStatementCase" />
   </root>
   <root nodeId="6407023681583031218">
     <nodeInfo nodeId="6407023681583031218" fileName="AttributeAccess.java" startLine="13" startPosition="76" endLine="14" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

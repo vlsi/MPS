@@ -8,6 +8,8 @@ import jetbrains.mps.lang.dataFlow.DataFlowManager;
 public class DFABuilders extends DataFlowBuilders {
   public void install(DataFlowManager manager) {
     manager.register("jetbrains.mps.lang.smodel.structure.AttributeAccess", new AttributeAccess_DataFlow());
+    manager.register("jetbrains.mps.lang.smodel.structure.ConceptSwitchStatement", new ConceptSwitchStatement_DataFlow());
+    manager.register("jetbrains.mps.lang.smodel.structure.ConceptSwitchStatementCase", new ConceptSwitchStatementCase_DataFlow());
     manager.register("jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation", new Concept_IsSubConceptOfOperation_DataFlow());
     manager.register("jetbrains.mps.lang.smodel.structure.Concept_IsSuperConceptOfOperation", new Concept_IsSuperConceptOfOperation_DataFlow());
     manager.register("jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement", new IfInstanceOfStatement_DataFlow());
