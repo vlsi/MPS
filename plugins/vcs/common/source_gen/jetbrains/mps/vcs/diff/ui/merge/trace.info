@@ -1177,9 +1177,9 @@
     <nodeInfo nodeId="708166622413812778" fileName="MergeConfirmation.java" startLine="53" startPosition="61" endLine="54" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="708166622413812789" fileName="MergeConfirmation.java" startLine="55" startPosition="5" endLine="56" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="708166622413812794" fileName="MergeConfirmation.java" startLine="59" startPosition="93" endLine="60" endPosition="231" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="708166622413812806" fileName="MergeConfirmation.java" startLine="61" startPosition="125" endLine="62" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413812806" fileName="MergeConfirmation.java" startLine="61" startPosition="131" endLine="62" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="708166622413812816" fileName="MergeConfirmation.java" startLine="63" startPosition="12" endLine="64" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413812855" fileName="MergeConfirmation.java" startLine="76" startPosition="7" endLine="77" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="708166622413812855" fileName="MergeConfirmation.java" startLine="76" startPosition="7" endLine="77" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="708166622413812865" fileName="MergeConfirmation.java" startLine="78" startPosition="22" endLine="79" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="708166622413812871" fileName="MergeConfirmation.java" startLine="80" startPosition="29" endLine="81" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="708166622413812873" fileName="MergeConfirmation.java" startLine="81" startPosition="52" endLine="82" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1197,7 +1197,7 @@
     <nodeInfo nodeId="708166622413812763" fileName="MergeConfirmation.java" startLine="50" startPosition="7" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="708166622413812804" fileName="MergeConfirmation.java" startLine="60" startPosition="231" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="708166622413812704" fileName="MergeConfirmation.java" startLine="30" startPosition="67" endLine="36" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413812863" fileName="MergeConfirmation.java" startLine="77" startPosition="111" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="708166622413812863" fileName="MergeConfirmation.java" startLine="77" startPosition="117" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="708166622413812790" fileName="MergeConfirmation.java" startLine="58" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showUnresolvedConflictsConfirmation#(Lcom/intellij/openapi/ui/DialogWrapper;I)I" />
     <nodeInfo nodeId="708166622413812688" fileName="MergeConfirmation.java" startLine="26" startPosition="107" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="708166622413812664" fileName="MergeConfirmation.java" startLine="24" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showMergeConfirmationAndTakeAction#(Lcom/intellij/openapi/ui/DialogWrapper;Ljetbrains/mps/vcs/diff/merge/MergeSession;Ljava/lang/Iterable;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
@@ -1210,7 +1210,7 @@
     <scopeInfo nodeId="708166622413812753" fileName="MergeConfirmation.java" startLine="47" startPosition="45" endLine="48" endPosition="86" />
     <scopeInfo nodeId="708166622413812764" fileName="MergeConfirmation.java" startLine="51" startPosition="64" endLine="52" endPosition="107" />
     <scopeInfo nodeId="708166622413812777" fileName="MergeConfirmation.java" startLine="53" startPosition="61" endLine="54" endPosition="95" />
-    <scopeInfo nodeId="708166622413812805" fileName="MergeConfirmation.java" startLine="61" startPosition="125" endLine="62" endPosition="42" />
+    <scopeInfo nodeId="708166622413812805" fileName="MergeConfirmation.java" startLine="61" startPosition="131" endLine="62" endPosition="42" />
     <scopeInfo nodeId="708166622413812815" fileName="MergeConfirmation.java" startLine="63" startPosition="12" endLine="64" endPosition="38" />
     <scopeInfo nodeId="708166622413812864" fileName="MergeConfirmation.java" startLine="78" startPosition="22" endLine="79" endPosition="53" />
     <scopeInfo nodeId="708166622413812878" fileName="MergeConfirmation.java" startLine="83" startPosition="12" endLine="84" endPosition="38" />
