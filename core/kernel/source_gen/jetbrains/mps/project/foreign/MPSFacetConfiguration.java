@@ -72,11 +72,21 @@ public class MPSFacetConfiguration {
   private Set<ModelRoot> readModelRoots(Element array) {
     Set<ModelRoot> res = SetSequence.fromSet(new HashSet<ModelRoot>());
     for (Element o : AttributeUtils.elementChildren(array, "ModelRoot")) {
-      String path = ListSequence.fromList(AttributeUtils.elementChildren(o, "option")).first().getAttributeValue("value");
-
-      SetSequence.fromSet(res).addElement(new ModelRoot(path, null));
+      String path = getPath(o);
+      if (path != null) {
+        SetSequence.fromSet(res).addElement(new ModelRoot(path, null));
+      }
     }
     return res;
+  }
+
+  private String getPath(Element modelRootElement) {
+    for (Element optionChild : ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "option"))) {
+      if ("path".equals(optionChild.getAttributeValue("name")) && optionChild.getAttributeValue("value") != null) {
+        return optionChild.getAttributeValue("value");
+      }
+    }
+    return null;
   }
 
   private String[] readArray(Element array) {
