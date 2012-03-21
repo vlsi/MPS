@@ -56,6 +56,7 @@ import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.make.delta.IInternalDelta;
 import jetbrains.mps.make.delta.IDeltaVisitor;
 import jetbrains.mps.make.script.IPropertiesPool;
+import jetbrains.mps.util.Computable;
 
 public class Generate_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -503,7 +504,13 @@ public class Generate_Facet extends IFacet.Stub {
                   tracer.discardTracing();
                 }
               }
-              final Map<IModule, Iterable<SModelDescriptor>> retainedModels = RetainedUtil.collectModelsToRetain(input);
+              final Map<IModule, Iterable<SModelDescriptor>> retainedModels = ModelAccess.instance().runReadAction(new Computable<Map<IModule, Iterable<SModelDescriptor>>>() {
+                @Override
+                public Map<IModule, Iterable<SModelDescriptor>> compute() {
+                  return RetainedUtil.collectModelsToRetain(input);
+
+                }
+              });
 
               IGenerationHandler gh = new MakeGenerationHandler(new _FunctionTypes._return_P1_E0<Boolean, GResource>() {
                 public Boolean invoke(GResource data) {
