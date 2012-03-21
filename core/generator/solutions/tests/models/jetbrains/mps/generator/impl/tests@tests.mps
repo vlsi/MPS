@@ -636,8 +636,13 @@
               <node role="map" roleId="tp2q.1197932505799" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3541188775018139683">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3541188775018139672" resolveInfo="userObjects" />
               </node>
-              <node role="key" roleId="tp2q.1197932525128" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="3541188775018139710">
-                <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="1732396662099564454" resolveInfo="testNode" />
+              <node role="key" roleId="tp2q.1197932525128" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5126834850431632644">
+                <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5126834850431632645">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode)" resolveInfo="SNodePointer" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="5126834850431632646">
+                    <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="1732396662099564454" resolveInfo="testNode" />
+                  </node>
+                </node>
               </node>
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3541188775018139712">
@@ -701,8 +706,13 @@
                 </node>
               </node>
             </node>
-            <node role="rValue" roleId="tpee.1068498886297" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="3541188775018177595">
-              <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="1732396662099564454" resolveInfo="testNode" />
+            <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5126834850431632638">
+              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5126834850431632639">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode)" resolveInfo="SNodePointer" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="5126834850431632640">
+                  <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="1732396662099564454" resolveInfo="testNode" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
