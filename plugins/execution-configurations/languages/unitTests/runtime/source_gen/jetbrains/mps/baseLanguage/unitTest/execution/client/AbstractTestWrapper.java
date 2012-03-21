@@ -13,10 +13,9 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.reloading.ClasspathStringCollector;
+import jetbrains.mps.baseLanguage.execution.api.Java_Command;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeWrapper<N> {
@@ -127,10 +126,7 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
   }
 
   public static Tuples._3<String, List<String>, List<String>> getDefaultRunParameters() {
-    ClasspathStringCollector collector = new ClasspathStringCollector();
-    MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("8b958198-128f-4136-80e5-ca9777caa869")).getClassPathItem().accept(collector);
-    List<String> classpath = ListSequence.fromList(new ArrayList<String>());
-    ListSequence.fromList(classpath).addSequence(SetSequence.fromSet(collector.getClasspath()));
-    return MultiTuple.<String,List<String>,List<String>>from("jetbrains.mps.baseLanguage.unitTest.execution.server.TestRunner", ListSequence.fromList(new ArrayList<String>()), classpath);
+    List<String> startupPath = Java_Command.getClasspath(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("8b958198-128f-4136-80e5-ca9777caa869")), true);
+    return MultiTuple.<String,List<String>,List<String>>from("jetbrains.mps.baseLanguage.unitTest.execution.server.TestRunner", ListSequence.fromList(new ArrayList<String>()), startupPath);
   }
 }
