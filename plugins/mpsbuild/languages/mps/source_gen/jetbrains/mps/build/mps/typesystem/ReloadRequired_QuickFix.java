@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.build.util.Context;
 import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.ModuleLoader;
 
@@ -37,12 +38,12 @@ public class ReloadRequired_QuickFix extends QuickFix_Runtime {
     if (StringUtils.isEmpty(workingDir)) {
       return;
     }
-
+    PathConverter pathConverter = new PathConverter(workingDir);
 
     try {
       VisibleModules visible = new VisibleModules(project, null);
       visible.collect();
-      new ModuleLoader(module, visible, workingDir, null).importRequired();
+      new ModuleLoader(module, visible, pathConverter, null).importRequired();
     } catch (ModuleLoader.ModuleLoaderException ex) {
       LOG.error(ex.getMessage());
       // TODO report? 

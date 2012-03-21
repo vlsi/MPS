@@ -301,6 +301,5 @@
     <classNode dependClassName="org.apache.tools.ant.BuildException" />
     <classNode dependClassName="org.apache.tools.ant.Project" />
   </dependency>
-  <dependency className="jetbrains.mps.build.ant.antlib" file="antlib.xml" />
 </dependenciesRoot>
 
