@@ -260,11 +260,11 @@ public class StandardComponents {
     }.invoke();
   }
 
-  public static JPanel createStubRootsPanel(final IBindedDialog owner, final String caption, final List<ModelRoot> list) {
+  public static JPanel createStubRootsPanel(final IBindedDialog owner, final boolean javaLib, final String caption, final List<ModelRoot> libs, final List<ModelRoot> modelRoots) {
     return new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
       public BoundTablePanel invoke() {
-        final BoundTablePanel result_wf5hwp_a0a0a01 = new BoundTablePanel(owner, caption, list);
-        final Computable result_wf5hwp_a0a0a0a01 = new StubRootChooser(owner);
+        final BoundTablePanel result_wf5hwp_a0a0a01 = new BoundTablePanel(owner, caption, libs);
+        final Computable result_wf5hwp_a0a0a0a01 = new StubRootChooser(owner, modelRoots, javaLib);
         result_wf5hwp_a0a0a01.setMultipleChooser(result_wf5hwp_a0a0a0a01);
 
         final ColumnDescriptor result_wf5hwp_a2a0a0a01 = new StringPathDescriptor(ClassPathEntry.PATH, "Path", -1);

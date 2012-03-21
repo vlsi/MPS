@@ -15,5 +15,5 @@ else
     exit;
 fi
 
-mkdir $mps_home/help
-ant -f test.xml -Dmps_home=$mps_home -Dbuild.number=28 -Djava.io.tmpdir=/Volumes/SSD/MPS.artifacts
+#mkdir $mps_home/help
+ant -f test.xml -Dmps_home=$mps_home -Dbuild.number=MPS-0 -Dversion=SNAPSHOT

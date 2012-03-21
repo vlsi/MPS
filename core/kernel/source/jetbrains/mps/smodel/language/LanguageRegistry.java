@@ -171,7 +171,7 @@ public class LanguageRegistry implements CoreComponent {
 
   @Nullable
   public LanguageRuntime getLanguage(String namespace) {
-    return myLanguages.get(namespace);
+    return myLanguages == null ? null : myLanguages.get(namespace);
   }
 
   public LanguageRuntime getLanguage(Language language) {

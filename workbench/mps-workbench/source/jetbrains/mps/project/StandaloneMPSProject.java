@@ -82,8 +82,8 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   }
 
   public Element getState() {
-    if (myProject.getPresentableUrl() == null) {
-      return new Element("state");
+    if (myProject.getPresentableUrl() == null || myProjectDescriptor == null) {
+      return myProjectElement;
     }
 
     return ModelAccess.instance().runReadAction(new Computable<Element>() {
@@ -101,6 +101,35 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
 
   public void initComponent() {
     super.initComponent();
+  }
+
+  public void disposeComponent() {
+    super.disposeComponent();
+  }
+
+  @Override
+  public void projectOpened() {
+    super.projectOpened();
+    final MPSProjectMigrationState migrationState = myProject.getComponent(MPSProjectMigrationState.class);
+    if (migrationState.isMigrationRequired() && migrationState.hasMigrationAgent()) {
+      migrationState.addMigrationListener(new MPSProjectMigrationListener.DEFAULT() {
+        @Override
+        public void migrationFinished(Project mpsProject) {
+          migrationState.removeMigrationListener(this);
+          initProject();
+        }
+        @Override
+        public void migrationAborted(Project project) {
+          migrationState.removeMigrationListener(this);
+        }
+      });
+    }
+    else {
+      initProject();
+    }
+  }
+
+  private void initProject() {
     String url = myProject.getPresentableUrl();
     ProjectDescriptor descriptor = new ProjectDescriptor();
     if (url != null) {
@@ -110,6 +139,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     init(descriptor);
   }
 
+  // public for tests only!
   public void init(final ProjectDescriptor projectDescriptor) {
     if (myProject.isDefault()) return;
 

@@ -2,8 +2,6 @@
 <model modelUID="r:559d3790-e362-4356-8802-ce09ca282dd8(jetbrains.mps.baseLanguage.contracts.structure)" version="1">
   <persistence version="7" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
-  <language namespace="c1b26490-e316-44a3-bb8e-c9120732af93(jetbrains.mps.baseLanguage.contracts)" />
-  <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -16,7 +14,7 @@
     <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="332248429538005857">
       <property name="role" nameId="tpce.1204740973143" value="PreconditionLink" />
       <link role="source" roleId="tpce.1149608246500" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="332248429538005856" resolveInfo="MethodPreconditions" />
+      <link role="target" roleId="tpce.1204741097161" targetNodeId="332248429538005856" resolveInfo="MethodConditions" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="332248429538012435">
       <property name="name" nameId="tpck.1169194664001" value="Precondition" />

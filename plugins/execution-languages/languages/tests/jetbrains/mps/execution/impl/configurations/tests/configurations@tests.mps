@@ -14,13 +14,13 @@
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
   <import index="bmea" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.xml.transform(JDK/javax.xml.transform@java_stub)" version="-1" />
   <import index="9m8c" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.xml.transform.stream(JDK/javax.xml.transform.stream@java_stub)" version="-1" />
-  <import index="lye4" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.execution.configurations(MPS.Workbench/com.intellij.execution.configurations@java_stub)" version="-1" />
   <import index="zwkq" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jdom(MPS.Core/org.jdom@java_stub)" version="-1" />
   <import index="msyo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" />
   <import index="elgo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jdom.transform(MPS.Core/org.jdom.transform@java_stub)" version="-1" />
-  <import index="8wsf" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.execution.impl(MPS.Workbench/com.intellij.execution.impl@java_stub)" version="-1" />
-  <import index="xkfd" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.util(MPS.Workbench/com.intellij.openapi.util@java_stub)" version="-1" />
-  <import index="vehe" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.project(MPS.Workbench/com.intellij.openapi.project@java_stub)" version="-1" />
+  <import index="ydef" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.execution.configurations(MPS.Platform/com.intellij.execution.configurations@java_stub)" version="-1" />
+  <import index="4mnu" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.execution.impl(MPS.Platform/com.intellij.execution.impl@java_stub)" version="-1" />
+  <import index="ph2v" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.project(MPS.Platform/com.intellij.openapi.project@java_stub)" version="-1" />
+  <import index="iwpw" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.util(MPS.Platform/com.intellij.openapi.util@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
@@ -151,16 +151,16 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8128243960970298606">
             <property name="name" nameId="tpck.1169194664001" value="project" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8128243960970298607">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vehe.~Project" resolveInfo="Project" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ph2v.~Project" resolveInfo="Project" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.ArrayAccessExpression" typeId="tpee.1173175405605" id="8128243960970298608">
               <node role="array" roleId="tpee.1173175590490" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8128243960970298609">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8128243960970298610">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vehe.~ProjectManager%dgetInstance()%ccom%dintellij%dopenapi%dproject%dProjectManager" resolveInfo="getInstance" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="vehe.~ProjectManager" resolveInfo="ProjectManager" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ph2v.~ProjectManager%dgetInstance()%ccom%dintellij%dopenapi%dproject%dProjectManager" resolveInfo="getInstance" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ph2v.~ProjectManager" resolveInfo="ProjectManager" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8128243960970298611">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vehe.~ProjectManager%dgetOpenProjects()%ccom%dintellij%dopenapi%dproject%dProject[]" resolveInfo="getOpenProjects" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ph2v.~ProjectManager%dgetOpenProjects()%ccom%dintellij%dopenapi%dproject%dProject[]" resolveInfo="getOpenProjects" />
                 </node>
               </node>
               <node role="index" roleId="tpee.1173175577737" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="8128243960970298612">
@@ -173,11 +173,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8128243960970298614">
             <property name="name" nameId="tpck.1169194664001" value="runManagerImpl" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8128243960970298615">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8wsf.~RunManagerImpl" resolveInfo="RunManagerImpl" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4mnu.~RunManagerImpl" resolveInfo="RunManagerImpl" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8128243960970298616">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8wsf.~RunManagerImpl%dgetInstanceImpl(com%dintellij%dopenapi%dproject%dProject)%ccom%dintellij%dexecution%dimpl%dRunManagerImpl" resolveInfo="getInstanceImpl" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="8wsf.~RunManagerImpl" resolveInfo="RunManagerImpl" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4mnu.~RunManagerImpl%dgetInstanceImpl(com%dintellij%dopenapi%dproject%dProject)%ccom%dintellij%dexecution%dimpl%dRunManagerImpl" resolveInfo="getInstanceImpl" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4mnu.~RunManagerImpl" resolveInfo="RunManagerImpl" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8128243960970298617">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8128243960970298606" resolveInfo="project" />
               </node>
@@ -190,7 +190,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8128243960970298614" resolveInfo="runManagerImpl" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8128243960970298621">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8wsf.~RunManagerImpl%dinitializeConfigurationTypes(com%dintellij%dexecution%dconfigurations%dConfigurationType[])%cvoid" resolveInfo="initializeConfigurationTypes" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4mnu.~RunManagerImpl%dinitializeConfigurationTypes(com%dintellij%dexecution%dconfigurations%dConfigurationType[])%cvoid" resolveInfo="initializeConfigurationTypes" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8128243960970298622">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zr3i.5145867626676112949" resolveInfo="getConfigurationTypes" />
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zr3i.5145867626676099642" resolveInfo="RunConfigurationsStateManager" />
@@ -208,11 +208,11 @@
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8128243960970298628">
                 <property name="name" nameId="tpck.1169194664001" value="settings" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8128243960970298629">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8wsf.~RunnerAndConfigurationSettingsImpl" resolveInfo="RunnerAndConfigurationSettingsImpl" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4mnu.~RunnerAndConfigurationSettingsImpl" resolveInfo="RunnerAndConfigurationSettingsImpl" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8128243960970298630">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8128243960970298631">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8wsf.~RunnerAndConfigurationSettingsImpl%d&lt;init&gt;(com%dintellij%dexecution%dimpl%dRunManagerImpl)" resolveInfo="RunnerAndConfigurationSettingsImpl" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4mnu.~RunnerAndConfigurationSettingsImpl%d&lt;init&gt;(com%dintellij%dexecution%dimpl%dRunManagerImpl)" resolveInfo="RunnerAndConfigurationSettingsImpl" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8128243960970298632">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8128243960970298614" resolveInfo="runManagerImpl" />
                     </node>
@@ -228,7 +228,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8128243960970298628" resolveInfo="settings" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8128243960970298638">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8wsf.~RunnerAndConfigurationSettingsImpl%dreadExternal(org%djdom%dElement)%cvoid" resolveInfo="readExternal" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4mnu.~RunnerAndConfigurationSettingsImpl%dreadExternal(org%djdom%dElement)%cvoid" resolveInfo="readExternal" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.CastExpression" typeId="tpee.1070534934090" id="8128243960970298639">
                         <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8128243960970298640">
                           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zwkq.~Element" resolveInfo="Element" />
@@ -243,7 +243,7 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertFalse" typeId="tpe3.1171983834376" id="8128243960970298642">
                   <node role="condition" roleId="tpe3.1171983854940" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="8128243960970298643">
                     <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8128243960970298644">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lye4.~UnknownConfigurationType" resolveInfo="UnknownConfigurationType" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ydef.~UnknownConfigurationType" resolveInfo="UnknownConfigurationType" />
                     </node>
                     <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8128243960970298645">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8128243960970298646">
@@ -251,11 +251,11 @@
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8128243960970298628" resolveInfo="settings" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8128243960970298648">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8wsf.~RunnerAndConfigurationSettingsImpl%dgetConfiguration()%ccom%dintellij%dexecution%dconfigurations%dRunConfiguration" resolveInfo="getConfiguration" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4mnu.~RunnerAndConfigurationSettingsImpl%dgetConfiguration()%ccom%dintellij%dexecution%dconfigurations%dRunConfiguration" resolveInfo="getConfiguration" />
                         </node>
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8128243960970298649">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lye4.~RunConfiguration%dgetType()%ccom%dintellij%dexecution%dconfigurations%dConfigurationType" resolveInfo="getType" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ydef.~RunConfiguration%dgetType()%ccom%dintellij%dexecution%dconfigurations%dConfigurationType" resolveInfo="getType" />
                       </node>
                     </node>
                   </node>
@@ -349,7 +349,7 @@
                 <node role="throwable" roleId="tpee.1164903359217" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8128243960970298651">
                   <property name="name" nameId="tpck.1169194664001" value="e" />
                   <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8128243960970298652">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xkfd.~InvalidDataException" resolveInfo="InvalidDataException" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="iwpw.~InvalidDataException" resolveInfo="InvalidDataException" />
                   </node>
                 </node>
                 <node role="catchBody" roleId="tpee.1164903359218" type="tpee.StatementList" typeId="tpee.1068580123136" id="8128243960970298653">

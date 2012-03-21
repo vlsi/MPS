@@ -84,33 +84,38 @@ public class ProjectFactory {
     //noinspection ConstantConditions
     final MPSProject mpsProject = myCreatedProject.getComponent(MPSProject.class);
 
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    StartupManager.getInstance(myCreatedProject).registerPostStartupActivity(new Runnable() {
+      @Override
       public void run() {
-        if (myOptions.getCreateNewLanguage()) {
-          myCreatedLanguage = createNewLanguage(mpsProject);
-          mpsProject.addModule(myCreatedLanguage.getModuleReference());
-          myCreatedLanguage.save();
-        }
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            if (myOptions.getCreateNewLanguage()) {
+              myCreatedLanguage = createNewLanguage(mpsProject);
+              mpsProject.addModule(myCreatedLanguage.getModuleReference());
+              myCreatedLanguage.save();
+            }
 
-        if (myOptions.getCreateNewSolution()) {
-          myCreatedSolution = createNewSolution(mpsProject);
-          myCreatedSolution.save();
-          mpsProject.addModule(myCreatedSolution.getModuleReference());
-        }
+            if (myOptions.getCreateNewSolution()) {
+              myCreatedSolution = createNewSolution(mpsProject);
+              myCreatedSolution.save();
+              mpsProject.addModule(myCreatedSolution.getModuleReference());
+            }
 
-        if (myCreatedSolution != null && myCreatedLanguage != null) {
-          myCreatedSolution.addUsedLanguage(myCreatedLanguage.getModuleReference());
-          myCreatedSolution.save();
+            if (myCreatedSolution != null && myCreatedLanguage != null) {
+              myCreatedSolution.addUsedLanguage(myCreatedLanguage.getModuleReference());
+              myCreatedSolution.save();
 
-          if (myOptions.getCreateModel()) {
-            EditableSModelDescriptor model = myCreatedSolution.createModel(SModelFqName.fromString(myCreatedSolution.getModuleReference().getModuleFqName() + ".sandbox"), myCreatedSolution.getSModelRoots().iterator().next(), null);
-            model.getSModel().addLanguage(myCreatedLanguage.getModuleReference());
-            model.save();
+              if (myOptions.getCreateModel()) {
+                EditableSModelDescriptor model = myCreatedSolution.createModel(SModelFqName.fromString(myCreatedSolution.getModuleReference().getModuleFqName() + ".sandbox"), myCreatedSolution.getSModelRoots().iterator().next(), null);
+                model.getSModel().addLanguage(myCreatedLanguage.getModuleReference());
+                model.save();
+              }
+            }
+            if(myOptions.getCreateNewSolution() || myOptions.getCreateNewLanguage()) {
+              ((StandaloneMPSProject) mpsProject).update();
+            }
           }
-        }
-        if(myOptions.getCreateNewSolution() || myOptions.getCreateNewLanguage()) {
-          ((StandaloneMPSProject) mpsProject).update();
-        }
+        });
       }
     });
     return myCreatedProject;

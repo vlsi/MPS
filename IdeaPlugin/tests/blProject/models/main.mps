@@ -17,9 +17,6 @@
     <node type="tpee.Interface" typeId="tpee.1107796713796" id="7015818220060279086">
       <property name="name" nameId="tpck.1169194664001" value="SimpleMarker" />
     </node>
-    <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8639875392258181213">
-      <property name="name" nameId="tpck.1169194664001" value="Fdfasdfasdfasdf" />
-    </node>
   </roots>
   <root id="7015818220060178316">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7015818220060178317" />
@@ -113,14 +110,6 @@
   </root>
   <root id="7015818220060279086">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7015818220060279087" />
-  </root>
-  <root id="8639875392258181213">
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8639875392258181214" />
-    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="8639875392258181215">
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="8639875392258181216" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8639875392258181217" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8639875392258181218" />
-    </node>
   </root>
 </model>
 

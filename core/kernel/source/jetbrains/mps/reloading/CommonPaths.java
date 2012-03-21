@@ -49,15 +49,15 @@ public class CommonPaths {
         addCoreJars(result);
       } else if (type == ClassType.EDITOR) {
         addEditorJars(result);
-      } else if (type == ClassType.WORKBENCH) {
+      } else if (type == ClassType.PLATFORM) {
         addIdeaJars(result);
+      } else if (type == ClassType.WORKBENCH) {
+        addWorkbenchJars(result);
+      } else if (type == ClassType.TEST) {
+        addTestJars(result);
       }
     }
     return itemToPath(result);
-  }
-
-  public static List<String> getTestbenchPaths() {
-    return itemToPath(getTestbenchClassPath());
   }
 
   public static List<String> getJDKPath() {
@@ -139,6 +139,7 @@ public class CommonPaths {
     addCoreJars(result);
     addEditorJars(result);
     addIdeaJars(result);
+    addWorkbenchJars(result);
     addToolsJar(result);
     addClasses(result, PathManager.getHomePath());
     return result;
@@ -169,14 +170,21 @@ public class CommonPaths {
 
   private static void addIdeaJars(CompositeClassPathItem result) {
     addIfExists(result, "/lib/mps-platform.jar");
-    addIfExists(result, "/lib/mps-workbench.jar");
     addIfExists(result, "/lib/platform-api.jar");
     addIfExists(result, "/lib/platform.jar");
     addIfExists(result, "/lib/execution-api.jar");
     addIfExists(result, "/lib/util.jar");
     addIfExists(result, "/lib/extensions.jar");
-    addIfExists(result, "/lib/junit-4.8.2.jar");
     addIfExists(result, "/lib/picocontainer.jar");
+  }
+
+  private static void addWorkbenchJars(CompositeClassPathItem result) {
+    addIfExists(result, "/lib/mps-workbench.jar");
+    addIfExists(result, "/lib/junit-4.8.2.jar");
+  }
+
+  private static void addTestJars(CompositeClassPathItem result) {
+    addIfExists(result, "/lib/mps-test.jar");
   }
 
   private static void addToolsJar(CompositeClassPathItem result) {
@@ -200,17 +208,6 @@ public class CommonPaths {
   private static String libPath() {
     return PathManager.getHomePath() + File.separator + "lib"
       + File.separator;
-  }
-
-  //------classpaths : Testbench--------
-
-  public static IClassPathItem getTestbenchClassPath() {
-    CompositeClassPathItem result = new CompositeClassPathItem();
-
-    addIfExists(result, "/testbench/classes");
-    addIfExists(result, "/testbench/testclasses");
-
-    return result;
   }
 
   private static void addIfExists(CompositeClassPathItem item, String path) {

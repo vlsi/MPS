@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DependencyValidationManager">
+    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
+  </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="MPSProject">
+    <projectModules>
+      <modulePath path="${project}/build/build.mpl" />
+      <modulePath path="${project}/deploySolution/deploy.msd" />
+      <modulePath path="${project}/mps/mps.mpl" folder="" />
+      <modulePath path="${project}/solutions/jetbrains.mps.build.mps.pluginSolution/pluginSolution.msd" folder="" />
+      <modulePath path="${project}/solutions/jetbrains.mps.build.sandbox/sandbox.msd" />
+      <modulePath path="${project}/solutions/jetbrains.mps.build.tests/tests.msd" folder="" />
+      <modulePath path="${project}/workflow/workflow.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/../../../IdeaPlugin/buildScript/plugin.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/../temp/jetbrains.mps.build.pluginSolution/pluginSolution.msd" />
+    </projectModules>
+    <genConfs />
+  </component>
+  <component name="ProjectRootManager" version="2" />
+  <component name="ProjectVersion">
+    <option name="version" value="2.0" />
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/../../.." vcs="Git" />
+  </component>
+</project>
+

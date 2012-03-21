@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.ImportAllModulesFromFolder_Action" file="ImportAllModulesFromFolder_Action.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="java.awt.Frame" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildProject_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.ImportModuleHelper" />
+    <classNode dependClassName="jetbrains.mps.build.mps.util.PathConverter" />
+    <classNode dependClassName="jetbrains.mps.build.mps.util.VisibleModules" />
+    <classNode dependClassName="jetbrains.mps.build.util.Context" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.library.ModulesMiner" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.util.IconUtil" />
+    <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.ImportModuleHelper" file="ImportModuleHelper.java">
+    <classNode dependClassName="jetbrains.mps.build.mps.util.ModuleLoader" />
+    <classNode dependClassName="jetbrains.mps.build.mps.util.PathConverter" />
+    <classNode dependClassName="jetbrains.mps.build.mps.util.VisibleModules" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.DevkitDescriptor" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.LanguageDescriptor" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.SolutionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.IntentionsEx_ActionGroup" file="IntentionsEx_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.ImportAllModulesFromFolder_Action" />
+    <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.IntentionsEx_ActionGroup" />
+    <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
+  </dependency>
+</dependenciesRoot>
+

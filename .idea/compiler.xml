@@ -273,6 +273,7 @@
       <directory url="file://$PROJECT_DIR$/languages/util/ypath/solutions/test/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/smodel/solutions/jetbrains.mps.lang.smodel.unittest/tests_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/ypath/solutions/main/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/build/buildScript/source_gen" includeSubdirectories="true" />
     </excludeFromCompile>
     <resourceExtensions>
       <entry name=".+\.(properties|xml|html|dtd|tld)" />

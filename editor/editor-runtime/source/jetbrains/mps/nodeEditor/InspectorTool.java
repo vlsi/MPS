@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
@@ -26,6 +27,7 @@ import com.intellij.ui.LightColors;
 import com.intellij.ui.HyperlinkLabel;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.ide.tools.BaseTool;
 import jetbrains.mps.openapi.editor.EditorInspector;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -34,7 +36,6 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.tools.BaseProjectTool;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
@@ -44,12 +45,12 @@ import javax.swing.event.HyperlinkListener;
 import javax.swing.event.HyperlinkEvent;
 import java.awt.BorderLayout;
 
-public class InspectorTool extends BaseProjectTool implements EditorInspector {
+public class InspectorTool extends BaseTool implements EditorInspector, ProjectComponent {
   public static final String ID = "Inspector";
 
   private JPanel myComponent;
   private InspectorEditorComponent myInspectorComponent;
-  private MyMessagePanel myMessagePanel = new MyMessagePanel();
+  private MyMessagePanel myMessagePanel;
   private FileEditor myFileEditor;
 
   public InspectorTool(Project project) {
@@ -57,12 +58,37 @@ public class InspectorTool extends BaseProjectTool implements EditorInspector {
   }
 
   public void initComponent() {
-    super.initComponent();
+    createTool();
+    StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
+      public void run() {
+        registerLater();
+      }
+    });
+  }
+
+  public void disposeComponent() {
+    if (myInspectorComponent == null) return;
+    myInspectorComponent.dispose();
+    unregister();
+  }
+
+  @Override
+  public void projectOpened() {
+
+  }
+
+  @Override
+  public void projectClosed() {
+
+  }
+
+  protected void createTool() {
     StartupManager.getInstance(getProject()).registerStartupActivity(new Runnable() {
       @Override
       public void run() {
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
+            InspectorTool.this.myMessagePanel = new MyMessagePanel();
             myComponent = new MyPanel();
             myInspectorComponent = new InspectorEditorComponent();
             myComponent.add(myInspectorComponent.getExternalComponent(), BorderLayout.CENTER);
@@ -72,11 +98,6 @@ public class InspectorTool extends BaseProjectTool implements EditorInspector {
         });
       }
     });
-  }
-
-  public void disposeComponent() {
-    if (myInspectorComponent == null) return;
-    myInspectorComponent.dispose();
   }
 
   protected boolean isInitiallyAvailable() {

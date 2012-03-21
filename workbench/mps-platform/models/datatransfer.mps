@@ -15,17 +15,17 @@
   <import index="vsqj" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" version="-1" />
   <import index="k04z" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.datatransfer(MPS.Core/jetbrains.mps.datatransfer@java_stub)" version="-1" />
   <import index="68ai" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.annotations(MPS.Core/org.jetbrains.annotations@java_stub)" version="-1" />
-  <import index="zjpd" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.ide(MPS.Workbench/com.intellij.ide@java_stub)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
-  <import index="8iu6" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.project(MPS.Workbench/jetbrains.mps.ide.project@java_stub)" version="-1" />
-  <import index="1gw" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.datatransfer(MPS.Workbench/jetbrains.mps.ide.datatransfer@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="q9wm" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.ide(MPS.Platform/com.intellij.ide@java_stub)" version="-1" />
+  <import index="s0yd" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.datatransfer(MPS.Platform/jetbrains.mps.ide.datatransfer@java_stub)" version="-1" />
+  <import index="pt5l" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.project(MPS.Platform/jetbrains.mps.ide.project@java_stub)" version="-1" />
+  <import index="h12" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.ui(MPS.Platform/com.intellij.openapi.ui@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
   <import index="m373" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" implicit="yes" />
-  <import index="lq3" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.ui(MPS.Workbench/com.intellij.openapi.ui@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6299533519672638253">
       <property name="name" nameId="tpck.1169194664001" value="CopyPasteUtil" />
@@ -2352,11 +2352,11 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6299533519672650634">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6299533519672650635">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="654866607438450853">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zjpd.~CopyPasteManagerEx%dgetInstanceEx()%ccom%dintellij%dide%dCopyPasteManagerEx" resolveInfo="getInstanceEx" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zjpd.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q9wm.~CopyPasteManagerEx%dgetInstanceEx()%ccom%dintellij%dide%dCopyPasteManagerEx" resolveInfo="getInstanceEx" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="q9wm.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6299533519672650637">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zjpd.~CopyPasteManagerEx%dsetContents(java%dawt%ddatatransfer%dTransferable)%cvoid" resolveInfo="setContents" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q9wm.~CopyPasteManagerEx%dsetContents(java%dawt%ddatatransfer%dTransferable)%cvoid" resolveInfo="setContents" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6299533519672650638">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6299533519672650639">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tt4m.~StringSelection%d&lt;init&gt;(java%dlang%dString)" resolveInfo="StringSelection" />
@@ -2546,11 +2546,11 @@
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3237530507069949327">
                           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3237530507069949331">
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="654866607438450854">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zjpd.~CopyPasteManagerEx%dgetInstanceEx()%ccom%dintellij%dide%dCopyPasteManagerEx" resolveInfo="getInstanceEx" />
-                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zjpd.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q9wm.~CopyPasteManagerEx%dgetInstanceEx()%ccom%dintellij%dide%dCopyPasteManagerEx" resolveInfo="getInstanceEx" />
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="q9wm.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3237530507069949335">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zjpd.~CopyPasteManagerEx%dremoveContent(java%dawt%ddatatransfer%dTransferable)%cvoid" resolveInfo="removeContent" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q9wm.~CopyPasteManagerEx%dremoveContent(java%dawt%ddatatransfer%dTransferable)%cvoid" resolveInfo="removeContent" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3237530507069949336">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3237530507069942626" resolveInfo="existingContent" />
                               </node>
@@ -2562,11 +2562,11 @@
                   </node>
                   <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3237530507069942663">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="654866607438450856">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zjpd.~CopyPasteManagerEx%dgetInstanceEx()%ccom%dintellij%dide%dCopyPasteManagerEx" resolveInfo="getInstanceEx" />
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zjpd.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q9wm.~CopyPasteManagerEx%dgetInstanceEx()%ccom%dintellij%dide%dCopyPasteManagerEx" resolveInfo="getInstanceEx" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="q9wm.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3237530507069942667">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zjpd.~CopyPasteManagerEx%dgetAllContents()%cjava%dawt%ddatatransfer%dTransferable[]" resolveInfo="getAllContents" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q9wm.~CopyPasteManagerEx%dgetAllContents()%cjava%dawt%ddatatransfer%dTransferable[]" resolveInfo="getAllContents" />
                     </node>
                   </node>
                 </node>
@@ -2577,11 +2577,11 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3237530507069949348">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3237530507069949351">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="654866607438450860">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zjpd.~CopyPasteManagerEx%dgetInstanceEx()%ccom%dintellij%dide%dCopyPasteManagerEx" resolveInfo="getInstanceEx" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zjpd.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q9wm.~CopyPasteManagerEx%dgetInstanceEx()%ccom%dintellij%dide%dCopyPasteManagerEx" resolveInfo="getInstanceEx" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="q9wm.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3237530507069949355">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zjpd.~CopyPasteManagerEx%dsetContents(java%dawt%ddatatransfer%dTransferable)%cvoid" resolveInfo="setContents" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q9wm.~CopyPasteManagerEx%dsetContents(java%dawt%ddatatransfer%dTransferable)%cvoid" resolveInfo="setContents" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3237530507069949356">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3237530507069942598" resolveInfo="content" />
               </node>
@@ -2938,11 +2938,11 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ForeachStatement" typeId="tpee.1144226303539" id="6299533519672650785">
           <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6299533519672650786">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="654866607438450858">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zjpd.~CopyPasteManagerEx%dgetInstanceEx()%ccom%dintellij%dide%dCopyPasteManagerEx" resolveInfo="getInstanceEx" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zjpd.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q9wm.~CopyPasteManagerEx%dgetInstanceEx()%ccom%dintellij%dide%dCopyPasteManagerEx" resolveInfo="getInstanceEx" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="q9wm.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6299533519672650788">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zjpd.~CopyPasteManagerEx%dgetAllContents()%cjava%dawt%ddatatransfer%dTransferable[]" resolveInfo="getAllContents" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q9wm.~CopyPasteManagerEx%dgetAllContents()%cjava%dawt%ddatatransfer%dTransferable[]" resolveInfo="getAllContents" />
             </node>
           </node>
           <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6299533519672650789">
@@ -3542,14 +3542,14 @@
                 <property name="name" nameId="tpck.1169194664001" value="dialog" />
                 <property name="isFinal" nameId="tpee.1176718929932" value="false" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1772930020684535806">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1gw.~AddRequiredImportsDialog" resolveInfo="AddRequiredImportsDialog" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="s0yd.~AddRequiredImportsDialog" resolveInfo="AddRequiredImportsDialog" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1772930020683121444">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1772930020683121445">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1gw.~AddRequiredImportsDialog%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject,jetbrains%dmps%dsmodel%dSModelReference[],jetbrains%dmps%dproject%dstructure%dmodules%dModuleReference[])" resolveInfo="AddRequiredImportsDialog" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="s0yd.~AddRequiredImportsDialog%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject,jetbrains%dmps%dsmodel%dSModelReference[],jetbrains%dmps%dproject%dstructure%dmodules%dModuleReference[])" resolveInfo="AddRequiredImportsDialog" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1772930020683146523">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8iu6.~ProjectHelper%dtoIdeaProject(jetbrains%dmps%dproject%dProject)%ccom%dintellij%dopenapi%dproject%dProject" resolveInfo="toIdeaProject" />
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="8iu6.~ProjectHelper" resolveInfo="ProjectHelper" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="pt5l.~ProjectHelper%dtoIdeaProject(jetbrains%dmps%dproject%dProject)%ccom%dintellij%dopenapi%dproject%dProject" resolveInfo="toIdeaProject" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="pt5l.~ProjectHelper" resolveInfo="ProjectHelper" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1772930020683152847">
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1772930020683152846">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6299533519672650890" resolveInfo="context" />
@@ -3619,7 +3619,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1772930020683121442" resolveInfo="dialog" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1772930020683121475">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lq3.~DialogWrapper%dshow()%cvoid" resolveInfo="show" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="h12.~DialogWrapper%dshow()%cvoid" resolveInfo="show" />
                 </node>
               </node>
             </node>
@@ -3629,7 +3629,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1772930020683121442" resolveInfo="dialog" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1772930020683121479">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lq3.~DialogWrapper%disOK()%cboolean" resolveInfo="isOK" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="h12.~DialogWrapper%disOK()%cboolean" resolveInfo="isOK" />
                 </node>
               </node>
               <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1772930020683121480">
@@ -3652,7 +3652,7 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1772930020683121442" resolveInfo="dialog" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1772930020683152877">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1gw.~AddRequiredImportsDialog%dgetSelectedLanguages()%cjetbrains%dmps%dproject%dstructure%dmodules%dModuleReference[]" resolveInfo="getSelectedLanguages" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="s0yd.~AddRequiredImportsDialog%dgetSelectedLanguages()%cjetbrains%dmps%dproject%dstructure%dmodules%dModuleReference[]" resolveInfo="getSelectedLanguages" />
                       </node>
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1772930020683152880">
@@ -3660,7 +3660,7 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1772930020683121442" resolveInfo="dialog" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1772930020683152884">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1gw.~AddRequiredImportsDialog%dgetSelectedImports()%cjetbrains%dmps%dsmodel%dSModelReference[]" resolveInfo="getSelectedImports" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="s0yd.~AddRequiredImportsDialog%dgetSelectedImports()%cjetbrains%dmps%dsmodel%dSModelReference[]" resolveInfo="getSelectedImports" />
                       </node>
                     </node>
                   </node>
@@ -4211,11 +4211,11 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ForeachStatement" typeId="tpee.1144226303539" id="6299533519672650978">
           <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6299533519672650979">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="654866607438450859">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zjpd.~CopyPasteManagerEx%dgetInstanceEx()%ccom%dintellij%dide%dCopyPasteManagerEx" resolveInfo="getInstanceEx" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zjpd.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q9wm.~CopyPasteManagerEx%dgetInstanceEx()%ccom%dintellij%dide%dCopyPasteManagerEx" resolveInfo="getInstanceEx" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="q9wm.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6299533519672650981">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zjpd.~CopyPasteManagerEx%dgetAllContents()%cjava%dawt%ddatatransfer%dTransferable[]" resolveInfo="getAllContents" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q9wm.~CopyPasteManagerEx%dgetAllContents()%cjava%dawt%ddatatransfer%dTransferable[]" resolveInfo="getAllContents" />
             </node>
           </node>
           <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6299533519672650982">
@@ -5433,11 +5433,11 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ForeachStatement" typeId="tpee.1144226303539" id="6299533519672652348">
           <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6299533519672652349">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="654866607438450861">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zjpd.~CopyPasteManagerEx%dgetInstanceEx()%ccom%dintellij%dide%dCopyPasteManagerEx" resolveInfo="getInstanceEx" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zjpd.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q9wm.~CopyPasteManagerEx%dgetInstanceEx()%ccom%dintellij%dide%dCopyPasteManagerEx" resolveInfo="getInstanceEx" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="q9wm.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6299533519672652351">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zjpd.~CopyPasteManagerEx%dgetAllContents()%cjava%dawt%ddatatransfer%dTransferable[]" resolveInfo="getAllContents" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q9wm.~CopyPasteManagerEx%dgetAllContents()%cjava%dawt%ddatatransfer%dTransferable[]" resolveInfo="getAllContents" />
             </node>
           </node>
           <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6299533519672652352">
@@ -5513,11 +5513,11 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ForeachStatement" typeId="tpee.1144226303539" id="6299533519672652382">
           <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6299533519672652383">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="654866607438450862">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zjpd.~CopyPasteManagerEx%dgetInstanceEx()%ccom%dintellij%dide%dCopyPasteManagerEx" resolveInfo="getInstanceEx" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zjpd.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q9wm.~CopyPasteManagerEx%dgetInstanceEx()%ccom%dintellij%dide%dCopyPasteManagerEx" resolveInfo="getInstanceEx" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="q9wm.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6299533519672652385">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zjpd.~CopyPasteManagerEx%dgetAllContents()%cjava%dawt%ddatatransfer%dTransferable[]" resolveInfo="getAllContents" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q9wm.~CopyPasteManagerEx%dgetAllContents()%cjava%dawt%ddatatransfer%dTransferable[]" resolveInfo="getAllContents" />
             </node>
           </node>
           <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6299533519672652386">

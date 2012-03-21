@@ -10,17 +10,17 @@
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
   <import index="n55e" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.language(MPS.Core/jetbrains.mps.smodel.language@java_stub)" version="-1" />
   <import index="to5d" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)" version="-1" />
-  <import index="y6zh" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.ui(MPS.Workbench/com.intellij.ui@java_stub)" version="-1" />
   <import index="68ai" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.annotations(MPS.Core/org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="msyo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" />
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="vsqj" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" version="-1" />
   <import index="59et" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(MPS.Core/jetbrains.mps.vfs@java_stub)" version="-1" />
   <import index="fwv2" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)" version="-1" />
-  <import index="5mvf" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.util(MPS.Workbench/com.intellij.util@java_stub)" version="-1" />
   <import index="jpli" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.kernel.model(MPS.Core/jetbrains.mps.kernel.model@java_stub)" version="-1" />
-  <import index="tz4y" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.project(MPS.Workbench/jetbrains.mps.project@java_stub)" version="-1" />
-  <import index="amqn" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.icons(MPS.Workbench/jetbrains.mps.ide.icons@java_stub)" version="-1" />
+  <import index="jrbx" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.project(MPS.Platform/jetbrains.mps.project@java_stub)" version="-1" />
+  <import index="esue" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.util(MPS.Platform/com.intellij.util@java_stub)" version="-1" />
+  <import index="btw8" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.ui(MPS.Platform/com.intellij.ui@java_stub)" version="-1" />
+  <import index="ai1m" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.icons(MPS.Platform/jetbrains.mps.ide.icons@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="1t7x" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" version="-1" implicit="yes" />
@@ -305,8 +305,8 @@
                           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2434140849679605153">
                             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2434140849679605154">
                               <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2434140849679605155">
-                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dUNKNOWN_ICON" resolveInfo="UNKNOWN_ICON" />
-                                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dUNKNOWN_ICON" resolveInfo="UNKNOWN_ICON" />
+                                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
                               </node>
                             </node>
                           </node>
@@ -475,8 +475,8 @@
                                 <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="2434140849679605247">
                                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2434140849679605248">
                                     <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2434140849679605249">
-                                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dDEFAULT_NODE_ICON" resolveInfo="DEFAULT_NODE_ICON" />
-                                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+                                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dDEFAULT_NODE_ICON" resolveInfo="DEFAULT_NODE_ICON" />
+                                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
                                     </node>
                                   </node>
                                 </node>
@@ -484,8 +484,8 @@
                               <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2434140849679605250">
                                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2434140849679605251">
                                   <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2434140849679605252">
-                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dDEFAULT_ROOT_ICON" resolveInfo="DEFAULT_ROOT_ICON" />
-                                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dDEFAULT_ROOT_ICON" resolveInfo="DEFAULT_ROOT_ICON" />
+                                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
                                   </node>
                                 </node>
                               </node>
@@ -582,13 +582,13 @@
                                 </node>
                                 <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2434140849679605274">
                                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2434140849679605275">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y6zh.~LayeredIcon%d&lt;init&gt;(javax%dswing%dIcon%d%d%d)" resolveInfo="LayeredIcon" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="btw8.~LayeredIcon%d&lt;init&gt;(javax%dswing%dIcon%d%d%d)" resolveInfo="LayeredIcon" />
                                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2434140849679605276">
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2434140849679605147" resolveInfo="mainIcon" />
                                     </node>
                                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2434140849679605277">
-                                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5mvf.~Icons" resolveInfo="Icons" />
-                                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5mvf.~PlatformIcons%dLOCKED_ICON" resolveInfo="LOCKED_ICON" />
+                                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="esue.~PlatformIcons%dLOCKED_ICON" resolveInfo="LOCKED_ICON" />
+                                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="esue.~Icons" resolveInfo="Icons" />
                                     </node>
                                   </node>
                                 </node>
@@ -600,11 +600,11 @@
                           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2434140849679605279">
                             <property name="name" nameId="tpck.1169194664001" value="result" />
                             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2434140849679605280">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="y6zh.~RowIcon" resolveInfo="RowIcon" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="btw8.~RowIcon" resolveInfo="RowIcon" />
                             </node>
                             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2434140849679605281">
                               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2434140849679605282">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y6zh.~RowIcon%d&lt;init&gt;(int)" resolveInfo="RowIcon" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="btw8.~RowIcon%d&lt;init&gt;(int)" resolveInfo="RowIcon" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="2434140849679605283">
                                   <property name="value" nameId="tpee.1068580320021" value="2" />
                                 </node>
@@ -618,7 +618,7 @@
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2434140849679605279" resolveInfo="result" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2434140849679605287">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y6zh.~RowIcon%dsetIcon(javax%dswing%dIcon,int)%cvoid" resolveInfo="setIcon" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="btw8.~RowIcon%dsetIcon(javax%dswing%dIcon,int)%cvoid" resolveInfo="setIcon" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2434140849679605288">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2434140849679605147" resolveInfo="mainIcon" />
                               </node>
@@ -641,7 +641,7 @@
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2434140849679605279" resolveInfo="result" />
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2434140849679605297">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y6zh.~RowIcon%dsetIcon(javax%dswing%dIcon,int)%cvoid" resolveInfo="setIcon" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="btw8.~RowIcon%dsetIcon(javax%dswing%dIcon,int)%cvoid" resolveInfo="setIcon" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2132621643644161812">
                                     <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2132621643644161805">
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2434140849679604480" resolveInfo="node" />
@@ -691,11 +691,11 @@
                               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2434140849679605313">
                                 <property name="name" nameId="tpck.1169194664001" value="layeredIcon" />
                                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2434140849679605314">
-                                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="y6zh.~LayeredIcon" resolveInfo="LayeredIcon" />
+                                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="btw8.~LayeredIcon" resolveInfo="LayeredIcon" />
                                 </node>
                                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2434140849679605315">
                                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2434140849679605316">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y6zh.~LayeredIcon%d&lt;init&gt;(int)" resolveInfo="LayeredIcon" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="btw8.~LayeredIcon%d&lt;init&gt;(int)" resolveInfo="LayeredIcon" />
                                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="2434140849679605317">
                                       <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2434140849679605318">
                                         <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2434140849679605319">
@@ -719,7 +719,7 @@
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2434140849679605313" resolveInfo="layeredIcon" />
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2434140849679605325">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y6zh.~LayeredIcon%dsetIcon(javax%dswing%dIcon,int)%cvoid" resolveInfo="setIcon" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="btw8.~LayeredIcon%dsetIcon(javax%dswing%dIcon,int)%cvoid" resolveInfo="setIcon" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2434140849679605326">
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2434140849679605279" resolveInfo="result" />
                                   </node>
@@ -762,7 +762,7 @@
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2434140849679605313" resolveInfo="layeredIcon" />
                                     </node>
                                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2434140849679605343">
-                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y6zh.~LayeredIcon%dsetIcon(javax%dswing%dIcon,int)%cvoid" resolveInfo="setIcon" />
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="btw8.~LayeredIcon%dsetIcon(javax%dswing%dIcon,int)%cvoid" resolveInfo="setIcon" />
                                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2434140849679605344">
                                         <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2434140849679605345">
                                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2434140849679605302" resolveInfo="markIcons" />
@@ -1118,8 +1118,8 @@
                 <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="2434140849679604631">
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2434140849679604632">
                     <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2434140849679604633">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dDEFAULT_NODE_ICON" resolveInfo="DEFAULT_NODE_ICON" />
-                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dDEFAULT_NODE_ICON" resolveInfo="DEFAULT_NODE_ICON" />
+                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
                     </node>
                   </node>
                 </node>
@@ -1127,8 +1127,8 @@
               <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2434140849679604634">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2434140849679604635">
                   <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2434140849679604636">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dDEFAULT_ROOT_ICON" resolveInfo="DEFAULT_ROOT_ICON" />
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dDEFAULT_ROOT_ICON" resolveInfo="DEFAULT_ROOT_ICON" />
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
                   </node>
                 </node>
               </node>
@@ -1394,8 +1394,8 @@
               <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2194967571179864569">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2194967571179864576">
                   <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2194967571179864578">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dTEMPLATES_MODEL_ICON" resolveInfo="TEMPLATES_MODEL_ICON" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dTEMPLATES_MODEL_ICON" resolveInfo="TEMPLATES_MODEL_ICON" />
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
                   </node>
                 </node>
               </node>
@@ -1417,8 +1417,8 @@
                 <node role="statementList" roleId="tpee.1206060644605" type="tpee.StatementList" typeId="tpee.1068580123136" id="2194967571179864581">
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2194967571179864586">
                     <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2194967571179864589">
-                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dTEST_MODEL_ICON" resolveInfo="TEST_MODEL_ICON" />
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dTEST_MODEL_ICON" resolveInfo="TEST_MODEL_ICON" />
+                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
                     </node>
                   </node>
                 </node>
@@ -1434,8 +1434,8 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2194967571179864564">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2194967571179864566">
-            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dMODEL_ICON" resolveInfo="MODEL_ICON" />
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dMODEL_ICON" resolveInfo="MODEL_ICON" />
+            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
           </node>
         </node>
       </node>
@@ -1519,8 +1519,8 @@
                     <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2434140849679604760">
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2434140849679604761">
                         <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2434140849679604762">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dTEST_MODEL_ICON" resolveInfo="TEST_MODEL_ICON" />
-                          <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dTEST_MODEL_ICON" resolveInfo="TEST_MODEL_ICON" />
+                          <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
                         </node>
                       </node>
                     </node>
@@ -1528,8 +1528,8 @@
                   <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2434140849679604763">
                     <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2434140849679604764">
                       <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2434140849679604765">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dACCESSORY_MODEL_ICON" resolveInfo="ACCESSORY_MODEL_ICON" />
-                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dACCESSORY_MODEL_ICON" resolveInfo="ACCESSORY_MODEL_ICON" />
+                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
                       </node>
                     </node>
                   </node>
@@ -1537,8 +1537,8 @@
                 <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2434140849679604766">
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2434140849679604767">
                     <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2434140849679604768">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dTEMPLATES_MODEL_ICON" resolveInfo="TEMPLATES_MODEL_ICON" />
-                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dTEMPLATES_MODEL_ICON" resolveInfo="TEMPLATES_MODEL_ICON" />
+                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
                     </node>
                   </node>
                 </node>
@@ -1558,8 +1558,8 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2434140849679604773">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2434140849679604774">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dMODEL_ICON" resolveInfo="MODEL_ICON" />
-            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dMODEL_ICON" resolveInfo="MODEL_ICON" />
+            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
           </node>
         </node>
       </node>
@@ -1589,8 +1589,8 @@
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2434140849679604785">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2434140849679604786">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2434140849679604787">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dGENERATOR_ICON" resolveInfo="GENERATOR_ICON" />
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dGENERATOR_ICON" resolveInfo="GENERATOR_ICON" />
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
               </node>
             </node>
           </node>
@@ -1607,8 +1607,8 @@
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2434140849679604792">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2434140849679604793">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2434140849679604794">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dPROJECT_LANGUAGE_ICON" resolveInfo="PROJECT_LANGUAGE_ICON" />
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dPROJECT_LANGUAGE_ICON" resolveInfo="PROJECT_LANGUAGE_ICON" />
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
               </node>
             </node>
           </node>
@@ -1625,8 +1625,8 @@
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2434140849679604799">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2434140849679604800">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2434140849679604801">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dSOLUTION_ICON" resolveInfo="SOLUTION_ICON" />
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dSOLUTION_ICON" resolveInfo="SOLUTION_ICON" />
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
               </node>
             </node>
           </node>
@@ -1643,16 +1643,16 @@
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2434140849679604806">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2434140849679604807">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2434140849679604808">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dDEVKIT_ICON" resolveInfo="DEVKIT_ICON" />
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dDEVKIT_ICON" resolveInfo="DEVKIT_ICON" />
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
               </node>
             </node>
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2434140849679604809">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2434140849679604810">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dDEFAULT_ICON" resolveInfo="DEFAULT_ICON" />
-            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dDEFAULT_ICON" resolveInfo="DEFAULT_ICON" />
+            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
           </node>
         </node>
       </node>
@@ -1676,14 +1676,14 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2434140849679604814" resolveInfo="owner" />
             </node>
             <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2434140849679604820">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tz4y.~MPSProject" resolveInfo="MPSProject" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jrbx.~MPSProject" resolveInfo="MPSProject" />
             </node>
           </node>
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2434140849679604821">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2434140849679604822">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2434140849679604823">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dPROJECT_ICON" resolveInfo="PROJECT_ICON" />
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dPROJECT_ICON" resolveInfo="PROJECT_ICON" />
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
               </node>
             </node>
           </node>
@@ -1715,8 +1715,8 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2434140849679604834">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2434140849679604835">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dDEFAULT_ICON" resolveInfo="DEFAULT_ICON" />
-            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dDEFAULT_ICON" resolveInfo="DEFAULT_ICON" />
+            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
           </node>
         </node>
       </node>
@@ -2169,8 +2169,8 @@
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="189703917320704794">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="189703917320704954">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="189703917320704974">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dMODEL_ICON" resolveInfo="MODEL_ICON" />
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dMODEL_ICON" resolveInfo="MODEL_ICON" />
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
               </node>
             </node>
           </node>
@@ -2223,8 +2223,8 @@
               </node>
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="189703917320704838">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dACTIONS_MODEL_ICON" resolveInfo="ACTIONS_MODEL_ICON" />
-              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dACTIONS_MODEL_ICON" resolveInfo="ACTIONS_MODEL_ICON" />
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
             </node>
           </node>
         </node>
@@ -2240,8 +2240,8 @@
               </node>
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="189703917320704844">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dBEHAVIOR_MODEL_ICON" resolveInfo="BEHAVIOR_MODEL_ICON" />
-              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dBEHAVIOR_MODEL_ICON" resolveInfo="BEHAVIOR_MODEL_ICON" />
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
             </node>
           </node>
         </node>
@@ -2257,8 +2257,8 @@
               </node>
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="189703917320704850">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dCONSTRAINTS_MODEL_ICON" resolveInfo="CONSTRAINTS_MODEL_ICON" />
-              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dCONSTRAINTS_MODEL_ICON" resolveInfo="CONSTRAINTS_MODEL_ICON" />
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
             </node>
           </node>
         </node>
@@ -2274,8 +2274,8 @@
               </node>
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="189703917320704856">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dDATA_FLOW_MODEL_ICON" resolveInfo="DATA_FLOW_MODEL_ICON" />
-              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dDATA_FLOW_MODEL_ICON" resolveInfo="DATA_FLOW_MODEL_ICON" />
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
             </node>
           </node>
         </node>
@@ -2291,8 +2291,8 @@
               </node>
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="189703917320704862">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dEDITOR_MODEL_ICON" resolveInfo="EDITOR_MODEL_ICON" />
-              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dEDITOR_MODEL_ICON" resolveInfo="EDITOR_MODEL_ICON" />
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
             </node>
           </node>
         </node>
@@ -2308,8 +2308,8 @@
               </node>
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="189703917320704868">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dFIND_USAGES_MODEL_ICON" resolveInfo="FIND_USAGES_MODEL_ICON" />
-              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dFIND_USAGES_MODEL_ICON" resolveInfo="FIND_USAGES_MODEL_ICON" />
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
             </node>
           </node>
         </node>
@@ -2325,8 +2325,8 @@
               </node>
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="189703917320704874">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dINTENTIONS_MODEL_ICON" resolveInfo="INTENTIONS_MODEL_ICON" />
-              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dINTENTIONS_MODEL_ICON" resolveInfo="INTENTIONS_MODEL_ICON" />
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
             </node>
           </node>
         </node>
@@ -2342,8 +2342,8 @@
               </node>
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="189703917320704880">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dPLUGIN_MODEL_ICON" resolveInfo="PLUGIN_MODEL_ICON" />
-              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dPLUGIN_MODEL_ICON" resolveInfo="PLUGIN_MODEL_ICON" />
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
             </node>
           </node>
         </node>
@@ -2359,8 +2359,8 @@
               </node>
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="189703917320704886">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dREFACTORINGS_MODEL_ICON" resolveInfo="REFACTORINGS_MODEL_ICON" />
-              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dREFACTORINGS_MODEL_ICON" resolveInfo="REFACTORINGS_MODEL_ICON" />
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
             </node>
           </node>
         </node>
@@ -2376,8 +2376,8 @@
               </node>
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="189703917320704892">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dMODEL_ICON" resolveInfo="MODEL_ICON" />
-              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dMODEL_ICON" resolveInfo="MODEL_ICON" />
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
             </node>
           </node>
         </node>
@@ -2393,8 +2393,8 @@
               </node>
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="189703917320704898">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dSTRUCTURE_MODEL_ICON" resolveInfo="STRUCTURE_MODEL_ICON" />
-              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dSTRUCTURE_MODEL_ICON" resolveInfo="STRUCTURE_MODEL_ICON" />
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
             </node>
           </node>
         </node>
@@ -2410,8 +2410,8 @@
               </node>
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="189703917320704904">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dSTUBS_MODEL_ICON" resolveInfo="STUBS_MODEL_ICON" />
-              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dSTUBS_MODEL_ICON" resolveInfo="STUBS_MODEL_ICON" />
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
             </node>
           </node>
         </node>
@@ -2427,8 +2427,8 @@
               </node>
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="189703917320704910">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dTEST_MODEL_ICON" resolveInfo="TEST_MODEL_ICON" />
-              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dTEST_MODEL_ICON" resolveInfo="TEST_MODEL_ICON" />
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
             </node>
           </node>
         </node>
@@ -2444,8 +2444,8 @@
               </node>
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="189703917320704916">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dTEXT_GEN_MODEL_ICON" resolveInfo="TEXT_GEN_MODEL_ICON" />
-              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dTEXT_GEN_MODEL_ICON" resolveInfo="TEXT_GEN_MODEL_ICON" />
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
             </node>
           </node>
         </node>
@@ -2461,8 +2461,8 @@
               </node>
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="189703917320704922">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dTYPESYSTEM_MODEL_ICON" resolveInfo="TYPESYSTEM_MODEL_ICON" />
-              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dTYPESYSTEM_MODEL_ICON" resolveInfo="TYPESYSTEM_MODEL_ICON" />
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
             </node>
           </node>
         </node>

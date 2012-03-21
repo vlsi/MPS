@@ -4,8 +4,6 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
-  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
-  <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="j1at" modelUID="r:896f64dd-7cfe-4bc4-b401-38e2a027e9ae(jetbrains.mps.build.custommps.structure)" version="-1" />
@@ -17,9 +15,8 @@
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="vsqj" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" version="-1" />
   <import index="kqhl" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
-  <import index="59et" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(MPS.Core/jetbrains.mps.vfs@java_stub)" version="-1" />
   <import index="msyo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" />
-  <import index="xkfd" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.util(MPS.Workbench/com.intellij.openapi.util@java_stub)" version="-1" />
+  <import index="iwpw" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.util(MPS.Platform/com.intellij.openapi.util@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -407,11 +404,11 @@
                 <property name="name" nameId="tpck.1169194664001" value="runningBuild" />
                 <property name="isFinal" nameId="tpee.1176718929932" value="false" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3127508963967142122">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xkfd.~BuildNumber" resolveInfo="BuildNumber" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="iwpw.~BuildNumber" resolveInfo="BuildNumber" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3127508963967142128">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xkfd.~BuildNumber%dfromString(java%dlang%dString)%ccom%dintellij%dopenapi%dutil%dBuildNumber" resolveInfo="fromString" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="xkfd.~BuildNumber" resolveInfo="BuildNumber" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="iwpw.~BuildNumber%dfromString(java%dlang%dString)%ccom%dintellij%dopenapi%dutil%dBuildNumber" resolveInfo="fromString" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="iwpw.~BuildNumber" resolveInfo="BuildNumber" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3127508963967142130">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3127508963967142129">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3127508963967133362" resolveInfo="properties" />
@@ -433,7 +430,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3127508963967137129" resolveInfo="runningBuild" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3127508963967142145">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xkfd.~BuildNumber%disSnapshot()%cboolean" resolveInfo="isSnapshot" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="iwpw.~BuildNumber%disSnapshot()%cboolean" resolveInfo="isSnapshot" />
                   </node>
                 </node>
               </node>

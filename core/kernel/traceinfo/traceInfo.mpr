@@ -27,7 +27,7 @@
   <component name="MPSProject">
     <projectModules>
       <modulePath path="${mps_home}/languages/baseLanguage/baseLanguage/baseLanguage.mpl" />
-      <modulePath path="${mps_home}/core/generator/solutions/traceInfo/jetbrains.mps.traceInfo.test.msd" folder="" />
+      <modulePath path="${mps_home}/core/generator/solutions/traceInfo/tests/jetbrains.mps.traceInfo.test.msd" folder="" />
       <modulePath path="${mps_home}/languages/languageDesign/plugin/plugin.mpl" />
       <modulePath path="${mps_home}/languages/languageDesign/textGen/textGen.mpl" />
       <modulePath path="${project}/languages/testWeavingGenerated.data/testWeavingGenerated.data.mpl" />

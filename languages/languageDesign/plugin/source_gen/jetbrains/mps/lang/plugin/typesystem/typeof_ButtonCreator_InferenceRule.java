@@ -60,7 +60,7 @@ public class typeof_ButtonCreator_InferenceRule extends AbstractInferenceRule_Ru
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.actionSystem.impl(MPS.Workbench/com.intellij.openapi.actionSystem.impl@java_stub)"), SNodeId.fromString("~ActionButton")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.actionSystem.impl(MPS.Platform/com.intellij.openapi.actionSystem.impl@java_stub)"), SNodeId.fromString("~ActionButton")));
         result = quotedNode1_2;
       }
       return result;
@@ -73,7 +73,7 @@ public class typeof_ButtonCreator_InferenceRule extends AbstractInferenceRule_Ru
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.actionSystem.impl(MPS.Workbench/com.intellij.openapi.actionSystem.impl@java_stub)"), SNodeId.fromString("~ActionButton")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.actionSystem.impl(MPS.Platform/com.intellij.openapi.actionSystem.impl@java_stub)"), SNodeId.fromString("~ActionButton")));
         result = quotedNode1_2;
       }
       return result;
@@ -91,7 +91,7 @@ public class typeof_ButtonCreator_InferenceRule extends AbstractInferenceRule_Ru
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.actionSystem(MPS.Workbench/com.intellij.openapi.actionSystem@java_stub)"), SNodeId.fromString("~AnAction")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.actionSystem(MPS.Platform/com.intellij.openapi.actionSystem@java_stub)"), SNodeId.fromString("~AnAction")));
         result = quotedNode1_2;
       }
       return result;
@@ -104,7 +104,7 @@ public class typeof_ButtonCreator_InferenceRule extends AbstractInferenceRule_Ru
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.actionSystem(MPS.Workbench/com.intellij.openapi.actionSystem@java_stub)"), SNodeId.fromString("~AnAction")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.actionSystem(MPS.Platform/com.intellij.openapi.actionSystem@java_stub)"), SNodeId.fromString("~AnAction")));
         result = quotedNode1_2;
       }
       return result;

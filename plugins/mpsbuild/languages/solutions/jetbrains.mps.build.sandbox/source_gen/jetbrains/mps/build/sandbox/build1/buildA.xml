@@ -1,0 +1,54 @@
+<project name="buildA" default="build" basedir="../">
+  <property name="build.dir" location="build" />
+  <property name="build.tmp" location="${build.dir}/tmp/buildA" />
+  <property name="build.layout" location="${build.dir}/artifacts/buildA" />
+  <property name="aver" value="12.10" />
+  
+  <path id="path.java.library.abcde-lib">
+    <fileset file="${basedir}/buildA/abcde.jar" />
+  </path>
+  
+  <target name="assemble" depends="classes">
+    <mkdir dir="${build.layout}/result" />
+    <mkdir dir="${build.tmp}/default/A-_dl_{aver}.zip" />
+    <jar destfile="${build.tmp}/default/A-_dl_{aver}.zip/module-A.jar">
+      <fileset dir="${build.tmp}/java/out/module-A" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/A-_dl_{aver}.zip/A" />
+    <copy todir="${build.tmp}/default/A-_dl_{aver}.zip/A">
+      <fileset file="${basedir}/testdata/a.txt" />
+    </copy>
+    <copy todir="${build.tmp}/default/A-_dl_{aver}.zip">
+      <fileset file="${basedir}/buildA/abcde.jar" />
+    </copy>
+    <zip destfile="${build.layout}/result/A-${aver}.zip">
+      <fileset dir="${build.tmp}/default/A-_dl_{aver}.zip" />
+    </zip>
+    <echo file="${build.layout}/variables.properties">buildA.aver=${aver}</echo>
+  </target>
+  
+  <target name="build" depends="assemble, check" />
+  
+  <target name="clean">
+    <delete dir="${build.dir}" />
+  </target>
+  
+  <target name="compileJava" depends="java.compile.module-A" />
+  
+  <target name="processResources" />
+  
+  <target name="classes" depends="compileJava, processResources" />
+  
+  <target name="test" depends="classes" />
+  
+  <target name="check" depends="test" />
+  
+  <target name="java.compile.module-A">
+    <mkdir dir="${build.tmp}/java/out/module-A" />
+    <javac destdir="${build.tmp}/java/out/module-A">
+      <compilerarg value="-Xlint:none" />
+      <src path="${basedir}/buildA/src" />
+      <classpath refid="path.java.library.abcde-lib" />
+    </javac>
+  </target>
+</project>

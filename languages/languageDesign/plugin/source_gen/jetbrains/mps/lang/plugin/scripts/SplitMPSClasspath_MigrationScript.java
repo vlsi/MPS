@@ -10,12 +10,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModel;
 
 public class SplitMPSClasspath_MigrationScript extends BaseMigrationScript {
   public SplitMPSClasspath_MigrationScript(IOperationContext operationContext) {
@@ -36,9 +30,10 @@ public class SplitMPSClasspath_MigrationScript extends BaseMigrationScript {
       public boolean isApplicableInstanceNode(SNode node) {
         return Sequence.fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
-            return check_ylpn3n_a0a0a0a0a0a0(check_ylpn3n_a0a0a0a0a0a0a(SNodeOperations.getModel(SLinkOperations.getTargetNode(it)))) == MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("37a3367b-1fb2-44d8-aa6b-18075e74e003"));
+            return it.getTargetSModelReference().getSModelFqName().toString().contains("MPS.Classpath");
           }
         }).isNotEmpty();
+
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -49,19 +44,5 @@ public class SplitMPSClasspath_MigrationScript extends BaseMigrationScript {
         return false;
       }
     });
-  }
-
-  private static IModule check_ylpn3n_a0a0a0a0a0a0(SModelDescriptor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
-    }
-    return null;
-  }
-
-  private static SModelDescriptor check_ylpn3n_a0a0a0a0a0a0a(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelDescriptor();
-    }
-    return null;
   }
 }

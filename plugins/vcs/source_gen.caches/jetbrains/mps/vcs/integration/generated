@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="cv25sxdzc4ojt5jdnx8k0fragvfil18">
-  <dep model="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.vcs(MPS.Workbench/com.intellij.openapi.vcs@java_stub)" />
-  <dep model="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.vcs.merge(MPS.Workbench/com.intellij.openapi.vcs.merge@java_stub)" />
+<dependencies version="2" modelHash="adqj6uftroyohgwklnvy6ms390cb9c1">
+  <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.vcs(MPS.Platform/com.intellij.openapi.vcs@java_stub)" />
+  <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.vcs.merge(MPS.Platform/com.intellij.openapi.vcs.merge@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="cllol0k6uon23imzi3i8ftyndeqrkqk" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-3g2jui8rirnxhruh8t7p7qk3adnr3f9" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="do4uh4fd3dqp1s55v9l4e6fg8bob2ht" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-z9apu2jgvnwo2rksn2wr6ei9vh9scw" />
-  <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="-3g4fta9o4d3w9y4dy58rjr9kyogy36t" />
+  <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="cbcpcerjnsmxda1mwcduoforvzs9xuf" />
   <dep model="r:b45707fc-ff12-4ef7-8bef-69287f7e33f2(jetbrains.mps.baseLanguage.checkedDots.generator.template.main@generator)" hash="c0aom5mt81qzw56hxxcrccoj87ejgai" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-7zc5n4l9a9zrjq93znk167hfo3dyd2v" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="3ogbc94405e1j8mrhp8fnrksbak1c2a" />
-  <common hash="5sdsb4fh12purvfqvdcylfj3kdbc7uu" />
-  <source id="3521790172251160903" name="ProjectCheckoutListener" hash="c7mpm6matvdj3pce2np01joxenkmudj">
+  <common hash="caqz1scuuqzhm7oxx3gvc1ywgjmrz93" />
+  <source id="3521790172251160903" name="ProjectCheckoutListener" hash="-11rdvdt4eqzcoks2co79yhsed3vy65q">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -19,7 +19,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ProjectCheckoutListener.java" />
   </source>
-  <source id="3521790172251226878" name="ModuleVcsPathPresenter" hash="2mk6dihqutxxvi32ov0d8dv31cwz6ui">
+  <source id="3521790172251226878" name="ModuleVcsPathPresenter" hash="8pc3qfitnvyfq5majzws1xgfbt7hvph">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -27,7 +27,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ModuleVcsPathPresenter.java" />
   </source>
-  <source id="4093906047203397429" name="GeneratedFilesExcludePolicy" hash="-bmus4hzey91qbp043rfl36k45bsf5rp">
+  <source id="4093906047203397429" name="GeneratedFilesExcludePolicy" hash="ehort3acpgljp15k176usulj5cw8u2n">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -36,9 +36,9 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GeneratedFilesExcludePolicy.java" />
   </source>
-  <source id="6203974263416579308" name="GeneratedFileConflictResolving" hash="-2bxmdiymo36xve1xfof19hgu39iln8b">
-    <dep model="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.vcs(MPS.Workbench/com.intellij.openapi.vcs@java_stub)" />
-    <dep model="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.vcs.merge(MPS.Workbench/com.intellij.openapi.vcs.merge@java_stub)" />
+  <source id="6203974263416579308" name="GeneratedFileConflictResolving" hash="-51jh3jziylk347tefx6jcge0rnv36y2">
+    <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.vcs(MPS.Platform/com.intellij.openapi.vcs@java_stub)" />
+    <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.vcs.merge(MPS.Platform/com.intellij.openapi.vcs.merge@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />

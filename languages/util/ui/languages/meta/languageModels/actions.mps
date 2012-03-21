@@ -5,11 +5,8 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
-  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="8a448bd0-1380-4c01-9820-0f051d33888c(jetbrains.mps.ui.modeling)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
-  <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
-  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="sqp9" modelUID="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" version="2" />
@@ -188,7 +185,7 @@
   <root id="8508807536211371506">
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="8508807536211371507">
       <property name="transformTag" nameId="tpdg.1140829165817" value="ext_1_RTransform" />
-      <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="sqp9.8508807536211371477" resolveInfo="XCellLayoutConstraint" />
+      <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="sqp9.8508807536211371477" resolveInfo="ColumnLayoutConstraint" />
       <node role="precondition" roleId="tpdg.1154622757656" type="tpdg.SideTransformHintSubstitutePreconditionFunction" typeId="tpdg.1154622616118" id="8508807536211371508">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8508807536211371509">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8508807536211439766">
@@ -205,7 +202,7 @@
         </node>
       </node>
       <node role="part" roleId="tpdg.1177442283389" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="8508807536211441117">
-        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="sqp9.8508807536211371477" resolveInfo="XCellLayoutConstraint" />
+        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="sqp9.8508807536211371477" resolveInfo="ColumnLayoutConstraint" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.SimpleSideTransformMenuPart" typeId="tpdg.1177498013932" id="8508807536211441118">
           <node role="handler" roleId="tpdg.1177498207384" type="tpdg.QueryFunction_SideTransform_Handler" typeId="tpdg.1177498227294" id="8508807536211441119">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8508807536211441120">
@@ -233,7 +230,7 @@
     </node>
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="8508807536211441142">
       <property name="transformTag" nameId="tpdg.1140829165817" value="ext_1_RTransform" />
-      <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="sqp9.8508807536211371480" resolveInfo="YCellLayoutConstraint" />
+      <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="sqp9.8508807536211371480" resolveInfo="RowLayoutConstraint" />
       <node role="precondition" roleId="tpdg.1154622757656" type="tpdg.SideTransformHintSubstitutePreconditionFunction" typeId="tpdg.1154622616118" id="8508807536211441143">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8508807536211441144">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8508807536211441145">
@@ -250,7 +247,7 @@
         </node>
       </node>
       <node role="part" roleId="tpdg.1177442283389" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="8508807536211441157">
-        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="sqp9.8508807536211371480" resolveInfo="YCellLayoutConstraint" />
+        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="sqp9.8508807536211371480" resolveInfo="RowLayoutConstraint" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.SimpleSideTransformMenuPart" typeId="tpdg.1177498013932" id="8508807536211441158">
           <node role="handler" roleId="tpdg.1177498207384" type="tpdg.QueryFunction_SideTransform_Handler" typeId="tpdg.1177498227294" id="8508807536211441159">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8508807536211441160">
