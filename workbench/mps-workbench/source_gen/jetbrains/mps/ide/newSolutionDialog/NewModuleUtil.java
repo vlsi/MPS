@@ -5,25 +5,30 @@ package jetbrains.mps.ide.newSolutionDialog;
 import javax.lang.model.SourceVersion;
 import jetbrains.mps.ide.NewModuleCheckUtil;
 import java.io.File;
-
-import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.project.*;
-import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
-import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
-import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
-import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.modules.DevkitDescriptor;
-import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
+import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
+import jetbrains.mps.project.structure.modules.DevkitDescriptor;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 
 public class NewModuleUtil {
   public NewModuleUtil() {
@@ -93,39 +98,33 @@ public class NewModuleUtil {
   }
 
   public static Solution createNewSolution(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
-    assert !descriptorFile.exists();
-
+    assert !(descriptorFile.exists());
     SolutionDescriptor descriptor = createNewSolutionDescriptor(namespace, descriptorFile);
     SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, descriptor);
-
-    return Solution.newInstance(ModulesMiner.getInstance().loadModuleHandle(descriptorFile),moduleOwner);
+    return Solution.newInstance(ModulesMiner.getInstance().loadModuleHandle(descriptorFile), moduleOwner);
   }
 
   private static SolutionDescriptor createNewSolutionDescriptor(String namespace, IFile descriptorFile) {
     SolutionDescriptor descriptor = new SolutionDescriptor();
     descriptor.setNamespace(namespace);
     descriptor.setId(ModuleId.regular());
-
     IFile modelsDir = descriptorFile.getParent().getDescendant(Solution.SOLUTION_MODELS);
     if (modelsDir.exists() && modelsDir.getChildren().size() != 0) {
       throw new IllegalStateException("Trying to create a solution in an existing solution's directory");
     } else {
       modelsDir.mkdirs();
     }
-
-    // default descriptorModel roots
+    //  default descriptorModel roots 
     ModelRoot modelRoot = new ModelRoot();
     modelRoot.setPath(modelsDir.getPath());
     descriptor.getModelRoots().add(modelRoot);
     return descriptor;
   }
-  
-  public static Language createNewLanguage(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
-    assert !descriptorFile.exists();
 
+  public static Language createNewLanguage(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
+    assert !(descriptorFile.exists());
     LanguageDescriptor descriptor = createNewLanguageDescriptor(namespace, descriptorFile);
     LanguageDescriptorPersistence.saveLanguageDescriptor(descriptorFile, descriptor);
-
     return Language.newInstance(ModulesMiner.getInstance().loadModuleHandle(descriptorFile), moduleOwner);
   }
 
@@ -133,14 +132,12 @@ public class NewModuleUtil {
     LanguageDescriptor languageDescriptor = new LanguageDescriptor();
     languageDescriptor.setNamespace(languageNamespace);
     languageDescriptor.setId(ModuleId.regular());
-
     IFile languageModels = descriptorFile.getParent().getDescendant(Language.LANGUAGE_MODELS);
     if (languageModels.exists()) {
       throw new IllegalStateException("Trying to create a language in an existing language's directory");
     }
-
-    // default descriptorModel roots
-    ModelRoot modelRoot = new jetbrains.mps.project.structure.model.ModelRoot();
+    //  default descriptorModel roots 
+    ModelRoot modelRoot = new ModelRoot();
     modelRoot.setPath(languageModels.getPath());
     languageDescriptor.getModelRoots().add(modelRoot);
     return languageDescriptor;
@@ -154,13 +151,9 @@ public class NewModuleUtil {
   }
 
   public static DevKit createNewDevkit(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
-    assert !descriptorFile.exists();
-
+    assert !(descriptorFile.exists());
     DevkitDescriptor descriptor = createNewDevkitDescriptor(namespace);
     DevkitDescriptorPersistence.saveDevKitDescriptor(descriptorFile, descriptor);
-
     return DevKit.newInstance(ModulesMiner.getInstance().loadModuleHandle(descriptorFile), moduleOwner);
   }
-
-
 }
