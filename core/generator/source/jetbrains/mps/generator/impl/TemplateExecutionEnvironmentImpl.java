@@ -330,11 +330,11 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   private void fillOriginalNode(SNode inputNode, SNode outputNode) {
     if (inputNode.getModel() == getGenerator().getGeneratorSessionContext().getOriginalInputModel()) {
-      outputNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode);
+      TemplateQueryContext.putInputNode(outputNode, inputNode);
     } else {
-      Object userObject = inputNode.getUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE);
-      if (userObject != null) {
-        outputNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, userObject);
+      SNodePointer originalInput = TemplateQueryContext.getInput(inputNode);
+      if (originalInput != null) {
+        TemplateQueryContext.putInput(outputNode, originalInput);
       }
     }
   }
