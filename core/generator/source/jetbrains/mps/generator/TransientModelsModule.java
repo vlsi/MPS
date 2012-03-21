@@ -20,6 +20,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
@@ -49,7 +50,8 @@ public class TransientModelsModule extends AbstractModule {
   public TransientModelsModule(IModule original, TransientModelsProvider component) {
     myComponent = component;
     myOriginalModule = original;
-    ModuleReference reference = ModuleReference.fromString(original.getModuleFqName() + "@transient" + ourModuleCounter.getAndIncrement());
+    String fqName = original.getModuleFqName() + "@transient" + ourModuleCounter.getAndIncrement();
+    ModuleReference reference = new ModuleReference(fqName, ModuleId.regular());
     setModuleReference(reference);
   }
 
