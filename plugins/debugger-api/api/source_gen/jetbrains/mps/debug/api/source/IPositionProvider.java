@@ -6,9 +6,9 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.programState.ILocation;
 import org.jetbrains.annotations.NotNull;
 
-public interface IPositionProvider {
+public interface IPositionProvider<P extends SourcePosition> {
   @Nullable
-  public SourcePosition getPosition(@Nullable ILocation location);
+  public P getPosition(@Nullable ILocation location);
   @Nullable
-  public SourcePosition getPosition(@NotNull String unitName, @NotNull String fileName, int lineNumber);
+  public P getPosition(@NotNull String unitName, @NotNull String fileName, int lineNumber);
 }

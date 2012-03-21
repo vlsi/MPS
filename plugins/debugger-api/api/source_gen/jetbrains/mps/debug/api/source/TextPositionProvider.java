@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.common.FileOpenUtil;
 import org.jetbrains.annotations.NonNls;
 
-public class TextPositionProvider implements IPositionProvider {
+public class TextPositionProvider implements IPositionProvider<TextSourcePosition> {
   private Project myProject;
 
   public TextPositionProvider(Project project) {
@@ -19,7 +19,7 @@ public class TextPositionProvider implements IPositionProvider {
   }
 
   @Nullable
-  public SourcePosition getPosition(@Nullable ILocation location) {
+  public TextSourcePosition getPosition(@Nullable ILocation location) {
     if (location == null || location instanceof NullLocation) {
       return null;
     }
@@ -31,7 +31,7 @@ public class TextPositionProvider implements IPositionProvider {
   }
 
   @Nullable
-  public SourcePosition getPosition(@NotNull String unitName, @NotNull String fileName, int lineNumber) {
+  public TextSourcePosition getPosition(@NotNull String unitName, @NotNull String fileName, int lineNumber) {
     VirtualFile file = getFile(unitName, fileName);
     if (file != null) {
       return new TextSourcePosition(file, lineNumber);

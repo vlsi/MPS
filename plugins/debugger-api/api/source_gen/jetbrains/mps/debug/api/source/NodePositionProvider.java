@@ -13,12 +13,12 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 
-public class NodePositionProvider implements IPositionProvider {
+public class NodePositionProvider implements IPositionProvider<NodeSourcePosition> {
   public NodePositionProvider() {
   }
 
   @Nullable
-  public SourcePosition getPosition(@Nullable ILocation location) {
+  public NodeSourcePosition getPosition(@Nullable ILocation location) {
     if (location == null || location instanceof NullLocation) {
       return null;
     }
@@ -30,7 +30,7 @@ public class NodePositionProvider implements IPositionProvider {
   }
 
   @Nullable
-  public SourcePosition getPosition(@NotNull String unitName, @NotNull String fileName, int lineNumber) {
+  public NodeSourcePosition getPosition(@NotNull String unitName, @NotNull String fileName, int lineNumber) {
     SNodePointer node = getSNodePointer(unitName, fileName, lineNumber);
     if (node != null) {
       return new NodeSourcePosition(node);

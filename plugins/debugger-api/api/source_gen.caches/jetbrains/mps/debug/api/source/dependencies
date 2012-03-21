@@ -26,7 +26,6 @@
     <classNode dependClassName="jetbrains.mps.debug.api.programState.ILocation" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.NullLocation" />
     <classNode dependClassName="jetbrains.mps.debug.api.source.NodeSourcePosition" />
-    <classNode dependClassName="jetbrains.mps.debug.api.source.SourcePosition" />
     <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -51,7 +50,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.ILocation" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.NullLocation" />
-    <classNode dependClassName="jetbrains.mps.debug.api.source.SourcePosition" />
     <classNode dependClassName="jetbrains.mps.debug.api.source.TextSourcePosition" />
     <classNode dependClassName="jetbrains.mps.ide.common.FileOpenUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
