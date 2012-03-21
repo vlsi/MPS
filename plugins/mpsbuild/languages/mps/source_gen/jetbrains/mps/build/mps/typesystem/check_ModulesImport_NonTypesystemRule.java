@@ -20,6 +20,7 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.build.mps.util.ModuleLoader;
+import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -52,7 +53,7 @@ public class check_ModulesImport_NonTypesystemRule extends AbstractNonTypesystem
         }
       }
       final StringBuilder messages = new StringBuilder();
-      new ModuleLoader(module, visible, workingDir, null) {
+      new ModuleLoader(module, visible, new PathConverter(workingDir), null) {
         @Override
         protected void report(String message, SNode node) {
           if (messages.length() > 0) {

@@ -169,10 +169,10 @@
     <unitInfo nodeId="3186742424690919238" fileName="TestModule_jetbrains_mps_generator_tests.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_generator_tests" />
   </root>
   <root nodeId="3323419009398480325">
-    <nodeInfo nodeId="3323419009398480325" fileName="TestModule_jetbrains_mps_kernel.java" startLine="11" startPosition="46" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_kernel#()V" />
-    <scopeInfo nodeId="3323419009398480325" fileName="TestModule_jetbrains_mps_kernel.java" startLine="12" startPosition="44" endLine="12" endPosition="44" />
-    <scopeInfo nodeId="3323419009398480325" fileName="TestModule_jetbrains_mps_kernel.java" startLine="11" startPosition="46" endLine="13" endPosition="3" />
-    <unitInfo nodeId="3323419009398480325" fileName="TestModule_jetbrains_mps_kernel.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_kernel" />
+    <nodeInfo nodeId="3323419009398480325" fileName="TestModule_jetbrains_mps_kernel_tests.java" startLine="11" startPosition="52" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_kernel_tests#()V" />
+    <scopeInfo nodeId="3323419009398480325" fileName="TestModule_jetbrains_mps_kernel_tests.java" startLine="12" startPosition="50" endLine="12" endPosition="50" />
+    <scopeInfo nodeId="3323419009398480325" fileName="TestModule_jetbrains_mps_kernel_tests.java" startLine="11" startPosition="52" endLine="13" endPosition="3" />
+    <unitInfo nodeId="3323419009398480325" fileName="TestModule_jetbrains_mps_kernel_tests.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_kernel_tests" />
   </root>
   <root nodeId="5934496548013521234">
     <nodeInfo nodeId="5934496548013521234" fileName="TestModule_jetbrains_mps_transformation_test_inputModels.java" startLine="11" startPosition="71" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_transformation_test_inputModels#()V" />

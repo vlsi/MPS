@@ -255,7 +255,9 @@
     <scopeInfo nodeId="1203684597238" fileName="NewLanguageDialog.java" startLine="79" startPosition="0" endLine="84" endPosition="0" />
     <scopeInfo nodeId="1203684597238" fileName="NewLanguageDialogContentPane.java" startLine="82" startPosition="0" endLine="87" endPosition="0" />
     <scopeInfo nodeId="1203684597238" fileName="NewLanguageDialogContentPane.java" startLine="87" startPosition="0" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="1203684597238" fileName="NewLanguageDialogContentPane.java" startLine="114" startPosition="25" endLine="119" endPosition="5" />
+    <scopeInfo nodeId="1203684597238" fileName="NewLanguageDialogContentPane.java" startLine="114" startPosition="25" endLine="119" endPosition="5">
+      <varInfo nodeId="1203684597238" varName="binding" />
+    </scopeInfo>
     <scopeInfo nodeId="1203684597238" fileName="NewLanguageDialogContentPane.java" startLine="128" startPosition="0" endLine="134" endPosition="0" />
     <scopeInfo nodeId="1203684597238" fileName="NewLanguageDialogContentPane.java" startLine="141" startPosition="0" endLine="147" endPosition="0" />
     <scopeInfo nodeId="1203684597238" fileName="NewLanguageDialogContentPane.java" startLine="188" startPosition="0" endLine="194" endPosition="0">

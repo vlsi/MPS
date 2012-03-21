@@ -31,6 +31,7 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -170,11 +171,16 @@ public abstract class ModelCheckerViewer extends JPanel {
   }
 
   private void runCheck() {
-    ProgressManager.getInstance().run(new Task.Modal(myProject, myCheckProgressTitle, true) {
-      public void run(@NotNull ProgressIndicator indicator) {
-        myUsagesView.run(indicator);
-      }
-    });
+    try {
+      ProgressManager.getInstance().run(new Task.Modal(myProject, myCheckProgressTitle, true) {
+        public void run(@NotNull ProgressIndicator indicator) {
+          myUsagesView.run(indicator);
+        }
+      });
+    } catch (Throwable t) {
+      Logger.getLogger(ModelCheckerViewer.class).error("An error occured while model checking:\n" + t);
+    }
+
   }
 
   public void prepareAndCheckModules(List<IModule> modules, String taskTargetTitle, Icon taskIcon) {

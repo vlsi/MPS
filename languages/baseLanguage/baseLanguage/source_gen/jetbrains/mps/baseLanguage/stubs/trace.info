@@ -17,25 +17,6 @@
     <scopeInfo nodeId="2754592889269290385" fileName="Tools_StubDescriptor.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <unitInfo nodeId="2754592889269290385" fileName="Tools_StubDescriptor.java" startLine="17" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.stubs.Tools_StubDescriptor" />
   </root>
-  <root nodeId="2974122604715433683">
-    <nodeInfo nodeId="2974122604715433683" fileName="MPS_StubDescriptor.java" startLine="19" startPosition="31" endLine="20" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="625258459142332573" fileName="MPS_StubDescriptor.java" startLine="23" startPosition="49" endLine="24" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2105650034491746498" fileName="MPS_StubDescriptor.java" startLine="24" startPosition="125" endLine="25" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="625258459142332620" fileName="MPS_StubDescriptor.java" startLine="25" startPosition="188" endLine="26" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5428983789738434400" fileName="MPS_StubDescriptor.java" startLine="29" startPosition="34" endLine="30" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2974122604715433683" fileName="MPS_StubDescriptor.java" startLine="18" startPosition="63" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPS_StubDescriptor#()V" />
-    <nodeInfo nodeId="2974122604715433683" fileName="MPS_StubDescriptor.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPaths#()Ljava/util/List;" />
-    <nodeInfo nodeId="2974122604715433683" fileName="MPS_StubDescriptor.java" startLine="22" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljetbrains/mps/project/structure/modules/SolutionDescriptor;)V" />
-    <scopeInfo nodeId="2974122604715433683" fileName="MPS_StubDescriptor.java" startLine="19" startPosition="31" endLine="20" endPosition="175" />
-    <scopeInfo nodeId="2974122604715433685" fileName="MPS_StubDescriptor.java" startLine="29" startPosition="34" endLine="30" endPosition="129" />
-    <scopeInfo nodeId="2974122604715433683" fileName="MPS_StubDescriptor.java" startLine="18" startPosition="63" endLine="21" endPosition="3" />
-    <scopeInfo nodeId="625258459142332529" fileName="MPS_StubDescriptor.java" startLine="23" startPosition="49" endLine="26" endPosition="167" />
-    <scopeInfo nodeId="2974122604715433683" fileName="MPS_StubDescriptor.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="2974122604715433683" fileName="MPS_StubDescriptor.java" startLine="22" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="2974122604715433683" varName="solution" />
-    </scopeInfo>
-    <unitInfo nodeId="2974122604715433683" fileName="MPS_StubDescriptor.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.stubs.MPS_StubDescriptor" />
-  </root>
   <root nodeId="4063774604867744443">
     <nodeInfo nodeId="4063774604867752371" fileName="JavaStubs.java" startLine="31" startPosition="85" endLine="32" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4063774604867752378" fileName="JavaStubs.java" startLine="32" startPosition="93" endLine="33" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

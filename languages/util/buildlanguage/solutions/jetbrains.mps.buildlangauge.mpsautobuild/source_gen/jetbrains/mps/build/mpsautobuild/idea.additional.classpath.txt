@@ -31,7 +31,5 @@ workbench/typesystemUi/classes
 workbench/mps-editor/classes
 workbench/mps-workbench/classes
 MPSPlugin/apiclasses
-workbench/mps-platform/classes
-workbench/mps-debugger/classes
 :test
 testbench/classes

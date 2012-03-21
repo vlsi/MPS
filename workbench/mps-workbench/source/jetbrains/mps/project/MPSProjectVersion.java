@@ -29,8 +29,9 @@ import jetbrains.mps.project.MPSProjectVersion.MyState;
   }
 )
 public class MPSProjectVersion extends AbstractProjectComponent implements PersistentStateComponent<MyState>{
-  public static final String CURRENT = "2.0";
-  private String myVersion = "1.5";
+  public static final Version CURRENT = Version.fromString("2.0");
+  private static final Version DEFAULT = Version.fromString("1.5");
+  private Version myVersion = DEFAULT;
 
   protected MPSProjectVersion(Project project) {
     super(project);
@@ -38,19 +39,24 @@ public class MPSProjectVersion extends AbstractProjectComponent implements Persi
 
   public MyState getState() {
     MyState res = new MyState();
-    res.version = myVersion;
+    res.version = myVersion.toString();
     return res;
   }
 
   public void loadState(MyState state) {
-    myVersion = state.version;
+    try {
+      myVersion = Version.fromString(state.version);
+    }
+    catch (IllegalArgumentException e) {
+      myVersion = DEFAULT;
+    }
   }
 
-  public String getVersion() {
+  public Version getVersion() {
     return myVersion;
   }
 
-  public void setVersion(String version) {
+  public void setVersion(Version version) {
     myVersion = version;
   }
 

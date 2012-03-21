@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="idea.additional.classpath.txt" startLine="1" startPosition="0" endLine="38" endPosition="0" unitName="idea.additional.classpath.txt" />
+  <unitInfo fileName="idea.additional.classpath.txt" startLine="1" startPosition="0" endLine="36" endPosition="0" unitName="idea.additional.classpath.txt" />
   <unitInfo fileName="installer.nsi" startLine="1" startPosition="0" endLine="117" endPosition="4" unitName="installer.nsi" />
   <unitInfo fileName="mps.bat" startLine="1" startPosition="0" endLine="44" endPosition="0" unitName="mps.bat" />
   <unitInfo fileName="mps.sh" startLine="1" startPosition="0" endLine="60" endPosition="0" unitName="mps.sh" />

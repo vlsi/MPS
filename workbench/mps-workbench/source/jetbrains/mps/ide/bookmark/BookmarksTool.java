@@ -49,7 +49,8 @@ public class BookmarksTool extends BaseProjectTool implements PersistentStateCom
     super(project, "Bookmarks", -1, null, ToolWindowAnchor.BOTTOM, true);
   }
 
-  public void initComponent() {
+  @Override
+  protected void createTool() {
     myBookmarkManager = getProject().getComponent(BookmarkManager.class);
     myTree = new BookmarksTree(ProjectHelper.toMPSProject(getProject()), myBookmarkManager);
     myComponent = ScrollPaneFactory.createScrollPane(myTree);
@@ -68,7 +69,10 @@ public class BookmarksTool extends BaseProjectTool implements PersistentStateCom
   }
 
   public MyState getState() {
-    return new MyState(myTree.saveState());
+    if (myTree != null) {
+      this.myTreeState = myTree.saveState();
+    }
+    return new MyState(myTreeState);
   }
 
   public void loadState(final MyState state) {

@@ -52,7 +52,6 @@ public class CommonPaths {
       } else if (type == ClassType.PLATFORM) {
         addIdeaJars(result);
       } else if (type == ClassType.WORKBENCH) {
-        addIdeaJars(result);
         addWorkbenchJars(result);
       } else if (type == ClassType.TEST) {
         addTestJars(result);

@@ -5,10 +5,12 @@
       <configuration>
         <option name="UUID" value="dddb28f1-4c41-4142-8e1c-dfb645190482" />
         <option name="generatorOutputPath" value="$MODULE_DIR$/source_gen" />
-        <option name="modelRootPaths">
-          <array>
-            <option value="$MODULE_DIR$/models" />
-          </array>
+        <option name="modelRoots">
+          <set>
+            <ModelRoot>
+              <option name="path" value="$MODULE_DIR$/models" />
+            </ModelRoot>
+          </set>
         </option>
         <option name="usedLanguages">
           <array>

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="IErrorHandler.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.build.packaging.pluginSolution.plugin.IErrorHandler" />
-  <unitInfo fileName="NodeData.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.build.packaging.pluginSolution.plugin.NodeData" />
   <unitInfo fileName="PluginSolution_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.build.packaging.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
   <root nodeId="5487985028841936100">
     <nodeInfo nodeId="5487985028841936108" fileName="PackagingLanguageGenerator.java" startLine="20" startPosition="55" endLine="21" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

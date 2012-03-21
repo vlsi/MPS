@@ -361,8 +361,8 @@
               <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="3232404296906910603">
                 <property name="path" nameId="tps4.1220974398640" value="plugins" />
               </node>
-              <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="3232404296906910605">
-                <property name="path" nameId="tps4.1220974398640" value="migration" />
+              <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="1082125823648355375">
+                <property name="path" nameId="tps4.1220974398640" value="migrationAssistant" />
               </node>
             </node>
           </node>
