@@ -21,12 +21,13 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import java.util.Collections;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
+import java.util.Collections;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.generator.GenerationFacade;
 import java.util.Set;
@@ -136,9 +137,9 @@ public class ProjectTestHelper {
       public boolean accept(IModule it) {
         return it instanceof Language;
       }
-    }).translate(new ITranslator2<IModule, IModule>() {
-      public Iterable<IModule> translate(IModule it) {
-        return Collections.<IModule>unmodifiableCollection(((Language) it).getGenerators());
+    }).translate(new ITranslator2<IModule, Generator>() {
+      public Iterable<Generator> translate(IModule it) {
+        return ((Language) it).getGenerators();
       }
     }));
   }
