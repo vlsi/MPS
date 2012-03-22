@@ -10947,21 +10947,21 @@
     <unitInfo nodeId="3425520165286454670" fileName="IAnonymousClass.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IAnonymousClass" />
   </root>
   <root nodeId="363746191845175146">
-    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="15" startPosition="69" endLine="16" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
-    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="16" startPosition="88" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
-    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
-    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="18" startPosition="68" endLine="19" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
-    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="19" startPosition="45" endLine="20" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
-    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="20" startPosition="64" endLine="21" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
+    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="15" startPosition="88" endLine="16" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="16" startPosition="88" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
+    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
+    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="18" startPosition="45" endLine="19" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
+    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="19" startPosition="64" endLine="20" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
+    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="20" startPosition="43" endLine="21" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
     <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="23" startPosition="32" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="27" startPosition="27" endLine="28" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="31" startPosition="37" endLine="32" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="35" startPosition="39" endLine="36" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="39" startPosition="49" endLine="40" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="43" startPosition="28" endLine="44" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="47" startPosition="38" endLine="48" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="51" startPosition="37" endLine="52" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="55" startPosition="47" endLine="56" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="27" startPosition="39" endLine="28" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="31" startPosition="49" endLine="32" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="35" startPosition="28" endLine="36" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="39" startPosition="38" endLine="40" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="43" startPosition="37" endLine="44" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="47" startPosition="47" endLine="48" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="51" startPosition="27" endLine="52" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="55" startPosition="37" endLine="56" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="59" startPosition="41" endLine="60" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="63" startPosition="49" endLine="64" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="67" startPosition="48" endLine="68" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -10970,14 +10970,14 @@
     <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="79" startPosition="64" endLine="80" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="83" startPosition="50" endLine="84" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="22" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LoopLabel#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setName#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
-    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
-    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
+    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setName#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
     <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
     <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
@@ -10986,14 +10986,14 @@
     <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/baseLanguage/structure/LoopLabel;" />
     <nodeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/structure/LoopLabel;" />
     <scopeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="23" startPosition="32" endLine="24" endPosition="16" />
-    <scopeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="27" startPosition="27" endLine="28" endPosition="44" />
-    <scopeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="31" startPosition="37" endLine="32" endPosition="44" />
-    <scopeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="35" startPosition="39" endLine="36" endPosition="57" />
-    <scopeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="39" startPosition="49" endLine="40" endPosition="57" />
-    <scopeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="43" startPosition="28" endLine="44" endPosition="45" />
-    <scopeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="47" startPosition="38" endLine="48" endPosition="45" />
-    <scopeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="51" startPosition="37" endLine="52" endPosition="55" />
-    <scopeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="55" startPosition="47" endLine="56" endPosition="55" />
+    <scopeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="27" startPosition="39" endLine="28" endPosition="57" />
+    <scopeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="31" startPosition="49" endLine="32" endPosition="57" />
+    <scopeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="35" startPosition="28" endLine="36" endPosition="45" />
+    <scopeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="39" startPosition="38" endLine="40" endPosition="45" />
+    <scopeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="43" startPosition="37" endLine="44" endPosition="55" />
+    <scopeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="47" startPosition="47" endLine="48" endPosition="55" />
+    <scopeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="51" startPosition="27" endLine="52" endPosition="44" />
+    <scopeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="55" startPosition="37" endLine="56" endPosition="44" />
     <scopeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="59" startPosition="41" endLine="60" endPosition="58" />
     <scopeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="63" startPosition="49" endLine="64" endPosition="70" />
     <scopeInfo nodeId="363746191845175146" fileName="LoopLabel.java" startLine="67" startPosition="48" endLine="68" endPosition="73" />
@@ -11340,6 +11340,10 @@
     </scopeInfo>
     <unitInfo nodeId="4972933694980447171" fileName="BaseVariableDeclaration.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" />
   </root>
+  <root nodeId="501006281268604400">
+    <nodeInfo nodeId="501006281268604400" fileName="LocalToMethodKind.java" startLine="7" startPosition="57" endLine="8" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <unitInfo nodeId="501006281268604400" fileName="LocalToMethodKind.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.LocalToMethodKind" />
+  </root>
   <root nodeId="5205855332950442198">
     <nodeInfo nodeId="5205855332950442198" fileName="ArrayCloneOperation.java" startLine="14" startPosition="76" endLine="15" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5205855332950442198" fileName="ArrayCloneOperation.java" startLine="15" startPosition="98" endLine="16" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -11572,29 +11576,6 @@
       <varInfo nodeId="5862977038373003187" varName="sm" />
     </scopeInfo>
     <unitInfo nodeId="5862977038373003187" fileName="LocalPropertyReference.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.LocalPropertyReference" />
-  </root>
-  <root nodeId="5944356402132654733">
-    <nodeInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="11" startPosition="52" endLine="12" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
-    <nodeInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="14" startPosition="40" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="18" startPosition="72" endLine="19" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="22" startPosition="58" endLine="23" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LocalToMethodKind#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/baseLanguage/structure/LocalToMethodKind;" />
-    <nodeInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/structure/LocalToMethodKind;" />
-    <scopeInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="14" startPosition="40" endLine="15" endPosition="16" />
-    <scopeInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="18" startPosition="72" endLine="19" endPosition="184" />
-    <scopeInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="22" startPosition="58" endLine="23" endPosition="52" />
-    <scopeInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
-      <varInfo nodeId="5944356402132654733" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="5944356402132654733" varName="init" />
-      <varInfo nodeId="5944356402132654733" varName="sm" />
-    </scopeInfo>
-    <scopeInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="5944356402132654733" varName="sm" />
-    </scopeInfo>
-    <unitInfo nodeId="5944356402132654733" fileName="LocalToMethodKind.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.LocalToMethodKind" />
   </root>
   <root nodeId="6329021646629104954">
     <nodeInfo nodeId="6329021646629104954" fileName="SingleLineComment.java" startLine="14" startPosition="75" endLine="15" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

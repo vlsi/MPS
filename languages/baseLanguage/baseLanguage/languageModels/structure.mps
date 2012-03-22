@@ -1140,10 +1140,9 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="scopes" />
       <property name="name" nameId="tpck.1169194664001" value="SuperMethodKind" />
     </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5944356402132654733">
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="501006281268604400">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="scopes" />
       <property name="name" nameId="tpck.1169194664001" value="LocalToMethodKind" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
   </roots>
   <root id="1068498886294">
@@ -4105,6 +4104,9 @@
     </node>
   </root>
   <root id="363746191845175146">
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="501006281268604404">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="501006281268604400" resolveInfo="LocalToMethodKind" />
+    </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="363746191845175147">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
@@ -4355,6 +4357,6 @@
   <root id="2406048883599609633" />
   <root id="2406048883599831972" />
   <root id="6617045035157661092" />
-  <root id="5944356402132654733" />
+  <root id="501006281268604400" />
 </model>
 

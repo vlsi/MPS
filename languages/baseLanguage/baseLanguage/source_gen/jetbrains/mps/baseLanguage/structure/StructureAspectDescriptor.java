@@ -312,7 +312,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 147:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", "jetbrains.mps.baseLanguage.structure.BaseMethodCall", false, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodCall"}, new String[]{}, new String[]{"staticMethodDeclaration"});
       case 148:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.LocalToMethodKind", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.LocalToMethodKind", null, true, new String[]{}, new String[]{}, new String[]{});
       case 149:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", "jetbrains.mps.baseLanguage.structure.VariableDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.VariableDeclaration", "jetbrains.mps.lang.core.structure.IResolveInfo", "jetbrains.mps.baseLanguage.structure.IVariableAssignment", "jetbrains.mps.baseLanguage.structure.IVariableDeclaration", "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"}, new String[]{}, new String[]{});
       case 150:
@@ -324,7 +324,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 153:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.LongType", "jetbrains.mps.baseLanguage.structure.PrimitiveType", false, new String[]{"jetbrains.mps.baseLanguage.structure.PrimitiveType"}, new String[]{}, new String[]{});
       case 154:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.LoopLabel", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.LoopLabel", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.LocalToMethodKind", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
       case 155:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.LoopLabelReference", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"loopLabel"});
       case 156:
