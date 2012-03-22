@@ -9,6 +9,7 @@ import java.util.List;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
 
@@ -22,7 +23,7 @@ public class FilteringScope extends Scope {
   }
 
   public List<SNode> getAvailableElements(@Nullable String prefix) {
-    return ListSequence.fromListWithValues(new ArrayList(), ListSequence.fromList(inner.getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromListWithValues(new ArrayList(), Sequence.fromIterable(inner.getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return predicate.invoke(it);
       }
