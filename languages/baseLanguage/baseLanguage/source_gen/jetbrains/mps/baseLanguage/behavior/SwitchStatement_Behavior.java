@@ -9,10 +9,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.scopes.ScopeUtils;
+import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.scopes.CompositeWithParentScope;
+import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
 import java.util.Arrays;
 
 public class SwitchStatement_Behavior {

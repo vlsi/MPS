@@ -13,7 +13,7 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.ArrayList;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.baseLanguage.scopes.CompositeWithParentScope;
+import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.scope.CompositeScope;
