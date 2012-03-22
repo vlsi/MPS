@@ -291,7 +291,8 @@ public class Solution extends AbstractModule {
   }
 
   public boolean reloadClassesAfterGeneration() {
-    return false;
+    SolutionDescriptor descriptor = getModuleDescriptor();
+    return descriptor != null && descriptor.getKind() != SolutionKind.NONE;
   }
 
   @Override
