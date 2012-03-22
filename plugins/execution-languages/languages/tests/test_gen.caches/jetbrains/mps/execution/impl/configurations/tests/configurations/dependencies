@@ -15,6 +15,7 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" />
     <classNode dependClassName="jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager" />
     <classNode dependClassName="jetbrains.mps.execution.impl.configurations.tests.configurations.XslTest" />
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />

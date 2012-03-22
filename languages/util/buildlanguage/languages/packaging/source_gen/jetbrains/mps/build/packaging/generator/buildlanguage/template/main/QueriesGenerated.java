@@ -241,7 +241,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1902360454495907451(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if (StringUtils.isEmpty(SPropertyOperations.getString(_context.getNode(), "moduleRelativePath"))) {
-      return Util.SEPARATOR + SPropertyOperations.getString(_context.getNode(), "fullPath");
+      if ((SLinkOperations.getTarget(_context.getNode(), "macro", false) == null) || eq_x583g4_a0a0a0a93(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "macro", false), "name"), Layout_Behavior.getBasedirName_1226509010730())) {
+        return Util.SEPARATOR + SPropertyOperations.getString(_context.getNode(), "fullPath");
+      }
+      return PathHolder_Behavior.call_getValue_1219231432401(_context.getNode());
     }
     return new File(SPropertyOperations.getString(_context.getNode(), "fullPath")).getName();
   }
@@ -1344,7 +1347,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1902360454495907423(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(_context.getNode(), true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(Module_Behavior.call_getClassPathDirectoriesForModuleXml_2378354490355068224(_context.getNode())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "fullPath").endsWith(".jar");
       }
@@ -1695,14 +1698,8 @@ __switch__:
   public static void mappingScript_CodeBlock_1219229087938(final IOperationContext operationContext, final MappingScriptContext _context) {
     List<SNode> holders = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.IMacroHolder");
     for (SNode holder : ListSequence.fromList(holders)) {
-      List<String> allMAcroNames = IMacroHolder_Behavior.call_getAllMacroNames_1234975567387(holder, true);
-      SLinkOperations.removeAllChildren(holder, "macro");
-      for (String macroName : ListSequence.fromList(allMAcroNames)) {
-        SNode macro = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Macro", null);
-        SPropertyOperations.set(macro, "name", macroName);
-        SPropertyOperations.set(macro, "path", IMacroHolder_Behavior.call_evaluateMacro_1234975967990(holder, macroName).replace("\\", Util.SEPARATOR));
-        SLinkOperations.addChild(holder, "macro", macro);
-      }
+      ListSequence.fromList(SLinkOperations.getTargets(holder, "macro", true)).clear();
+      ListSequence.fromList(SLinkOperations.getTargets(holder, "macro", true)).addSequence(ListSequence.fromList(IMacroHolder_Behavior.call_getMacro_1107726059764558743(holder)));
     }
   }
 
@@ -1752,6 +1749,13 @@ __switch__:
         }
       }
     }
+  }
+
+  private static boolean eq_x583g4_a0a0a0a93(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 
   public static class QuotationClass_x583g4_a0a0a0a0a962 {

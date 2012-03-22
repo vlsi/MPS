@@ -47,8 +47,8 @@ public class PluginModule_Behavior {
   }
 
   public static SNode call_createPluginXmlPathHolder_989489456094459829(SNode thisNode) {
-    SNode layout = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.Layout", true, true);
-    return PathHolder_Behavior.createPathHolder_55204148067446946(PluginModule_Behavior.call_getFullPathToPluginXml_989489456094444401(thisNode), SLinkOperations.getTargets(layout, "macro", true), AbstractProjectComponent_Behavior.call_getHomeFile_1213877333764(thisNode).getPath(), thisNode);
+    SNode layout = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder", true, true);
+    return PathHolder_Behavior.createPathHolder_55204148067446946(PluginModule_Behavior.call_getFullPathToPluginXml_989489456094444401(thisNode), IMacroHolder_Behavior.call_getMacro_1107726059764558743(layout), AbstractProjectComponent_Behavior.call_getHomeFile_1213877333764(thisNode).getPath(), thisNode);
   }
 
   public static String virtual_getChildrenTargetDir_1237389224202(SNode thisNode) {
