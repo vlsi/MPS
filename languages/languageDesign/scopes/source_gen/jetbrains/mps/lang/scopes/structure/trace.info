@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Scopes_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.scopes.structure.Scopes_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.scopes.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.scopes.structure.StructureAspectDescriptor" />
+  <root nodeId="2995585510566823808">
+    <nodeInfo nodeId="2995585510566823808" fileName="UniformScopeProvider.java" startLine="7" startPosition="61" endLine="8" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <unitInfo nodeId="2995585510566823808" fileName="UniformScopeProvider.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.scopes.structure.UniformScopeProvider" />
+  </root>
   <root nodeId="8077936094962850237">
     <nodeInfo nodeId="8077936094962850237" fileName="CompositeWithParentScopeExpression.java" startLine="11" startPosition="68" endLine="12" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="8077936094962850237" fileName="CompositeWithParentScopeExpression.java" startLine="12" startPosition="112" endLine="13" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPR" />
