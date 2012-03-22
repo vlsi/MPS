@@ -744,7 +744,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3660196414915367473">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3660196414915371193">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3660196414915371196">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fnmy.3660196414915369161" resolveInfo="doClassLikeOverride" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fnmy.3660196414915369161" resolveInfo="doClassLikeOverriding" />
             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fnmy.3660196414915369148" resolveInfo="OverridingPolicies" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="3660196414915371197" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3660196414915371199">

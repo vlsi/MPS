@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+//import jetbrains.mps.lang.scopes.runtime.SimpleScope;
 
 public class BLCachedScopes {
   private BLCachedScopes() {
@@ -19,7 +20,7 @@ public class BLCachedScopes {
       public Scope invoke(Tuples._2<SNode, SNode> key) {
         Scope scope = scopeCreator.invoke();
         if (doFlat) {
-          scope = new SimpleScope(scope.getAvailableElements(null));
+//          scope = new SimpleScope(scope.getAvailableElements(null));
         }
         return scope;
       }

@@ -36,13 +36,13 @@
     </stubModelEntry>
   </runtimeStubModels>
   <stubSolutions>
-    <stubSolution moduleName="JDK" moduleId="6354ebe7-c22a-4a0f-ac54-50b52ab9b065" />
-    <stubSolution moduleName="MPS.Editor" moduleId="1ed103c3-3aa6-49b7-9c21-6765ee11f224" />
-    <stubSolution moduleName="MPS.Platform" moduleId="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61" />
-    <stubSolution moduleName="Testbench" moduleId="920eaa0e-ecca-46bc-bee7-4e5c59213dd6" />
-    <stubSolution moduleName="MPS.Core" moduleId="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea" />
     <stubSolution moduleName="MPS.Workbench" moduleId="86441d7a-e194-42da-81a5-2161ec62a379" />
+    <stubSolution moduleName="JDK" moduleId="6354ebe7-c22a-4a0f-ac54-50b52ab9b065" />
+    <stubSolution moduleName="MPS.Core" moduleId="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea" />
     <stubSolution moduleName="JDK.Tools" moduleId="fdb93da0-59ed-4001-b2aa-4fad79ec058e" />
+    <stubSolution moduleName="Testbench" moduleId="920eaa0e-ecca-46bc-bee7-4e5c59213dd6" />
+    <stubSolution moduleName="MPS.Platform" moduleId="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61" />
+    <stubSolution moduleName="MPS.Editor" moduleId="1ed103c3-3aa6-49b7-9c21-6765ee11f224" />
   </stubSolutions>
   <sourcePath />
   <dependencies>
@@ -54,6 +54,7 @@
     <dependency reexport="false">af19274f-5f89-42dd-8f3c-c9932448f7f2(jetbrains.mps.analyzers.runtime)</dependency>
     <dependency reexport="false">985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)</dependency>
     <dependency reexport="false">f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)</dependency>
+    <dependency reexport="false">e39e4a59-8cb6-498e-860e-8fa8361c0d90(jetbrains.mps.baseLanguage.scopes)</dependency>
     <dependency reexport="false">a0c108f0-1637-416e-a249-3effbaa4c998(jetbrains.mps.baseLanguage.search)</dependency>
     <dependency reexport="false">c7d01124-66d5-486d-8b50-7fdccb60b839(jetbrains.mps.baseLanguage.util)</dependency>
     <dependency reexport="false">2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)</dependency>

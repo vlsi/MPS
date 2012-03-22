@@ -5,7 +5,6 @@ package jetbrains.mps.lang.scopes.runtime;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.scope.CompositeScope;
-import jetbrains.mps.baseLanguage.scopes.SimpleScope;
 import jetbrains.mps.scope.SimpleRoleScope;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;

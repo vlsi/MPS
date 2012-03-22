@@ -811,29 +811,29 @@
     <unitInfo nodeId="590757823759247528" fileName="NonTypesystemRule_Behavior.java" startLine="13" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.NonTypesystemRule_Behavior" />
   </root>
   <root nodeId="6640659353039802498">
-    <nodeInfo nodeId="7362994916699696775" fileName="MultipleForeachLoop_Behavior.java" startLine="23" startPosition="43" endLine="24" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7362994916699696775" fileName="MultipleForeachLoop_Behavior.java" startLine="27" startPosition="41" endLine="28" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3938050118718700863" fileName="MultipleForeachLoop_Behavior.java" startLine="23" startPosition="43" endLine="24" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3938050118718700863" fileName="MultipleForeachLoop_Behavior.java" startLine="27" startPosition="41" endLine="28" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7362994916699696730" fileName="MultipleForeachLoop_Behavior.java" startLine="32" startPosition="5" endLine="33" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6640659353039802498" fileName="MultipleForeachLoop_Behavior.java" startLine="15" startPosition="43" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="7362994916699696775" fileName="MultipleForeachLoop_Behavior.java" startLine="22" startPosition="160" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="7362994916699696775" fileName="MultipleForeachLoop_Behavior.java" startLine="26" startPosition="49" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7362994916699696756" fileName="MultipleForeachLoop_Behavior.java" startLine="21" startPosition="57" endLine="30" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7362994916699696732" fileName="MultipleForeachLoop_Behavior.java" startLine="20" startPosition="115" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3938050118718700863" fileName="MultipleForeachLoop_Behavior.java" startLine="22" startPosition="160" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="3938050118718700863" fileName="MultipleForeachLoop_Behavior.java" startLine="26" startPosition="49" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="3938050118718700818" fileName="MultipleForeachLoop_Behavior.java" startLine="21" startPosition="57" endLine="30" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3938050118718700812" fileName="MultipleForeachLoop_Behavior.java" startLine="20" startPosition="115" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7362994916699696713" fileName="MultipleForeachLoop_Behavior.java" startLine="19" startPosition="101" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6640659353039802498" fileName="MultipleForeachLoop_Behavior.java" startLine="18" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/scope/Scope;" />
     <scopeInfo nodeId="6640659353039802500" fileName="MultipleForeachLoop_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
-    <scopeInfo nodeId="7362994916699696775" fileName="MultipleForeachLoop_Behavior.java" startLine="23" startPosition="43" endLine="24" endPosition="77" />
-    <scopeInfo nodeId="7362994916699696775" fileName="MultipleForeachLoop_Behavior.java" startLine="27" startPosition="41" endLine="28" endPosition="67" />
+    <scopeInfo nodeId="3938050118718700863" fileName="MultipleForeachLoop_Behavior.java" startLine="23" startPosition="43" endLine="24" endPosition="77" />
+    <scopeInfo nodeId="3938050118718700863" fileName="MultipleForeachLoop_Behavior.java" startLine="27" startPosition="41" endLine="28" endPosition="67" />
     <scopeInfo nodeId="6640659353039802498" fileName="MultipleForeachLoop_Behavior.java" startLine="15" startPosition="43" endLine="18" endPosition="0">
       <varInfo nodeId="6640659353039802498" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7362994916699696775" fileName="MultipleForeachLoop_Behavior.java" startLine="22" startPosition="160" endLine="26" endPosition="0">
-      <varInfo nodeId="7362994916699696775" varName="it" />
+    <scopeInfo nodeId="3938050118718700863" fileName="MultipleForeachLoop_Behavior.java" startLine="22" startPosition="160" endLine="26" endPosition="0">
+      <varInfo nodeId="3938050118718700863" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="7362994916699696775" fileName="MultipleForeachLoop_Behavior.java" startLine="26" startPosition="49" endLine="30" endPosition="0">
-      <varInfo nodeId="7362994916699696775" varName="it" />
+    <scopeInfo nodeId="3938050118718700863" fileName="MultipleForeachLoop_Behavior.java" startLine="26" startPosition="49" endLine="30" endPosition="0">
+      <varInfo nodeId="3938050118718700863" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="7362994916699696733" fileName="MultipleForeachLoop_Behavior.java" startLine="21" startPosition="57" endLine="30" endPosition="28" />
+    <scopeInfo nodeId="3938050118718700813" fileName="MultipleForeachLoop_Behavior.java" startLine="21" startPosition="57" endLine="30" endPosition="28" />
     <scopeInfo nodeId="7362994916699696714" fileName="MultipleForeachLoop_Behavior.java" startLine="20" startPosition="115" endLine="31" endPosition="7" />
     <scopeInfo nodeId="7362994916699696698" fileName="MultipleForeachLoop_Behavior.java" startLine="19" startPosition="101" endLine="33" endPosition="16" />
     <scopeInfo nodeId="6640659353039802498" fileName="MultipleForeachLoop_Behavior.java" startLine="18" startPosition="0" endLine="35" endPosition="0">
@@ -842,8 +842,8 @@
       <varInfo nodeId="6640659353039802498" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="6640659353039802498" fileName="MultipleForeachLoop_Behavior.java" startLine="15" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MultipleForeachLoop_Behavior" />
-    <unitInfo nodeId="7362994916699696775" fileName="MultipleForeachLoop_Behavior.java" startLine="22" startPosition="137" endLine="26" endPosition="9" unitName="jetbrains.mps.lang.typesystem.behavior.MultipleForeachLoop_Behavior$1" />
-    <unitInfo nodeId="7362994916699696775" fileName="MultipleForeachLoop_Behavior.java" startLine="26" startPosition="22" endLine="30" endPosition="9" unitName="jetbrains.mps.lang.typesystem.behavior.MultipleForeachLoop_Behavior$2" />
+    <unitInfo nodeId="3938050118718700863" fileName="MultipleForeachLoop_Behavior.java" startLine="22" startPosition="137" endLine="26" endPosition="9" unitName="jetbrains.mps.lang.typesystem.behavior.MultipleForeachLoop_Behavior$1" />
+    <unitInfo nodeId="3938050118718700863" fileName="MultipleForeachLoop_Behavior.java" startLine="26" startPosition="22" endLine="30" endPosition="9" unitName="jetbrains.mps.lang.typesystem.behavior.MultipleForeachLoop_Behavior$2" />
   </root>
   <root nodeId="7342618720440051596">
     <nodeInfo nodeId="7342618720440051596" fileName="DefaultGroupReference_Behavior.java" startLine="11" startPosition="45" endLine="12" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_7342618720440051599" />

@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.scopes.SimpleScope;
+import jetbrains.mps.lang.scopes.runtime.SimpleScope;
 
 public class EnumClass_Behavior {
   public static void init(SNode thisNode) {

@@ -27,10 +27,10 @@ import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.scopes.SimpleScope;
+import jetbrains.mps.lang.scopes.runtime.SimpleScope;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.baseLanguage.scopes.FilteringScope;
+import jetbrains.mps.lang.scopes.runtime.FilteringScope;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 import jetbrains.mps.baseLanguage.scopes.OverridingPolicies;
@@ -290,7 +290,7 @@ public class ClassConcept_Behavior {
   }
 
   public static Iterable<SNode> virtual_doOverride_7343816061617019844(SNode thisNode, SNode kind, List<SNode> equalSignatureMembers) {
-    return OverridingPolicies.doClassLikeOverride(thisNode, kind, equalSignatureMembers);
+    return OverridingPolicies.doClassLikeOverriding(thisNode, kind, equalSignatureMembers);
   }
 
   public static boolean call_isRunnable_7941158526576616766(SNode thisNode) {

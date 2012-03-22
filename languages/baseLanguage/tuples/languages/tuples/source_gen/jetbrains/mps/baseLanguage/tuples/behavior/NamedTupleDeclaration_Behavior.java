@@ -65,7 +65,7 @@ public class NamedTupleDeclaration_Behavior {
   }
 
   public static Iterable<SNode> virtual_doOverride_7343816061617019844(SNode thisNode, SNode kind, List<SNode> equalSignatureMembers) {
-    return OverridingPolicies.doClassLikeOverride(thisNode, kind, equalSignatureMembers);
+    return OverridingPolicies.doClassLikeOverriding(thisNode, kind, equalSignatureMembers);
   }
 
   public static SNode virtual_getThisType_3305065273710880775(SNode thisNode) {
