@@ -266,10 +266,12 @@
       <compilerarg value="-Xlint:none"/>
       <src>
         <path path="${base_dir}/core/ant/source_gen"/>
+        <path path="${base_dir}/core/ant/resources"/>
       </src>
     </javac>
     <copy includeemptydirs="false" todir="${build_dir}/mpsbackend_jar">
       <fileset dir="${base_dir}/core/ant/source_gen" includes="**/*.png"/>
+      <fileset dir="${base_dir}/core/ant/resources" includes="**/*.xml"/>
     </copy>
     <jar destfile="${dist.dir}/mps-core/lib/mps-backend.jar">
       <fileset dir="${build_dir}/mpsbackend_jar"/>

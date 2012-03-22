@@ -25,6 +25,10 @@ public class Layout_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor im
     return Layout_Behavior.virtual_getAllVariable_1234864693585(thisNode);
   }
 
+  public List<SNode> virtual_getMacro_1107726059764558743(SNode thisNode) {
+    return IMacroHolder_Behavior.virtual_getMacro_1107726059764558743(thisNode);
+  }
+
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }

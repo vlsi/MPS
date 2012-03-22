@@ -17,11 +17,13 @@
 package jetbrains.mps.idea.core.tests;
 
 import com.intellij.compiler.CompilerManagerImpl;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.compiler.CompilerManager;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.make.*;
+import jetbrains.mps.library.contributor.PluginLibrariesContributor;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.IFile;
@@ -63,6 +65,12 @@ public class MainMakeTests extends AbstractMakeTest {
     makeConfiguration.addConfiguredModels(modelsToMake);
     makeConfiguration.addConfiguredLibrary(myModule.getProject().getName(),
         new File(myModule.getProject().getBaseDir().getPath()), false);
+
+    PluginLibrariesContributor pluginLibContributor = ApplicationManager.getApplication().getComponent(PluginLibrariesContributor.class);
+    for (String library : pluginLibContributor.getLibraries()) {
+      makeConfiguration.addConfiguredLibrary(library, new File(library), false);
+    }
+
     MPSMakeLauncher gl = new MPSMakeLauncher(makeConfiguration, myModule.getProject());
     gl.validate();
     assertTrue(gl.isValid());

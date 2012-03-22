@@ -70,7 +70,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
   private DefaultActionGroup myActionGroup;
 
   public RootDifferenceDialog(ModelDifferenceDialog modelDialog, SNodeId rootId, String rootName, @Nullable Bounds firstChange) {
-    super(modelDialog.getOwner(), true);
+    super(modelDialog.getWindow(), true);
     setTitle("Difference for " + rootName);
     init(modelDialog, rootId, firstChange);
   }

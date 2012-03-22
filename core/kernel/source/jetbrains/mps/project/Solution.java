@@ -20,6 +20,7 @@ import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -28,6 +29,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vfs.IFile;
 
@@ -126,6 +128,33 @@ public class Solution extends AbstractModule {
     IFile file = getDescriptorFile();
     assert file != null;
     return (SolutionDescriptor) ModulesMiner.getInstance().loadModuleDescriptor(file);
+  }
+
+  private static SolutionDescriptor createNewDescriptor(String namespace, IFile descriptorFile) {
+    SolutionDescriptor descriptor = new SolutionDescriptor();
+    descriptor.setNamespace(namespace);
+    descriptor.setId(ModuleId.regular());
+
+    final IFile modelsDir = descriptorFile.getParent().getDescendant(SOLUTION_MODELS);
+    if (modelsDir.exists() && modelsDir.getChildren().size() != 0) {
+      throw new IllegalStateException("Trying to create a solution in an existing solution's directory");
+    } else {
+      if (ModelAccess.instance().isInEDT()) {
+        modelsDir.mkdirs();
+      } else {
+        ModelAccess.instance().writeFilesInEDT(new Runnable() {
+          public void run() {
+            modelsDir.mkdirs();
+          }
+        });
+      }
+    }
+
+    // default descriptorModel roots
+    ModelRoot modelRoot = new ModelRoot();
+    modelRoot.setPath(modelsDir.getPath());
+    descriptor.getModelRoots().add(modelRoot);
+    return descriptor;
   }
 
   public BytecodeLocator getBytecodeLocator() {

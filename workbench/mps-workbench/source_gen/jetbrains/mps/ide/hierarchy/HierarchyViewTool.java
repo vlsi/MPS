@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -20,7 +19,6 @@ public class HierarchyViewTool extends AbstractHierarchyView {
   private List<SModelDescriptor> myStructureModels = new ArrayList<SModelDescriptor>();
   private SModelListener myModelListener;
   private MPSCoreComponents myCoreComponents;
-  private LanguageHierarchyCache myCache;
   private ModelCreationListener myCreationListener;
 
   public HierarchyViewTool(Project project, MPSCoreComponents coreComponents) {
@@ -61,7 +59,6 @@ public class HierarchyViewTool extends AbstractHierarchyView {
   @Override
   protected void createTool() {
     super.createTool();
-    myCache = myCoreComponents.getLanguageHierarchyCache();
     myModelListener = new HierarchyModelListener(this.myHierarchyTree);
     this.myCreationListener = new ModelCreationListener() {
       public boolean isApplicable(SModelDescriptor m) {
@@ -76,7 +73,7 @@ public class HierarchyViewTool extends AbstractHierarchyView {
   }
 
   protected AbstractHierarchyTree createHierarchyTree(boolean isParentHierarchy) {
-    return new ConceptHierarchyTree(myCache, this, isParentHierarchy);
+    return new ConceptHierarchyTree(myCoreComponents.getLanguageHierarchyCache(), this, isParentHierarchy);
   }
 
   protected void doRegister() {

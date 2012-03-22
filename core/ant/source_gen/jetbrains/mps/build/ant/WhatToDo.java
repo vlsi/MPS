@@ -32,6 +32,7 @@ public class WhatToDo {
   private static final String LOG_LEVEL = "LOG_LEVEL";
   private static final String LIBRARY_COMPILE = "LIBRARY_COMPILE";
   private static final String MPS_PARAMETER = "MPS_PARAMETER";
+  private static final String LOAD_BOOTSTAP_LIBRARIES = "LOAD_BOOTSTAP_LIBRARIES";
 
   private final Set<File> myModels = new LinkedHashSet<File>();
   private final Set<File> myModules = new LinkedHashSet<File>();
@@ -44,6 +45,7 @@ public class WhatToDo {
   private int myLogLevel = Project.MSG_INFO;
   private final Map<String, String> myProperties = new LinkedHashMap<String, String>();
   private final List<String> myParameters = new ArrayList<String>();
+  private boolean myLoadBootstrapLibraries = true;
 
   public WhatToDo() {
   }
@@ -183,6 +185,14 @@ public class WhatToDo {
     myParameters.addAll(parameters);
   }
 
+  public boolean isLoadBootstrapLibraries() {
+    return myLoadBootstrapLibraries;
+  }
+
+  public void setLoadBootstrapLibraries(boolean load) {
+    myLoadBootstrapLibraries = load;
+  }
+
   public void cloneTo(Object dest) {
     Class<? extends WhatToDo> srcClass = this.getClass();
     Class<? extends Object> destClass = dest.getClass();
@@ -276,6 +286,11 @@ public class WhatToDo {
     sb.append("=");
     sb.append(myLogLevel);
     sb.append(" ");
+    sb.append(LOAD_BOOTSTAP_LIBRARIES);
+    sb.append("=");
+    sb.append(myLoadBootstrapLibraries);
+    sb.append(" ");
+
     return sb.toString();
   }
 
@@ -377,13 +392,13 @@ public class WhatToDo {
         } else
         if (propertyValuePair[0].equals(FAIL_ON_ERROR)) {
           whatToDo.myFailOnError = Boolean.parseBoolean(propertyValuePair[1]);
-        } else
-        if (propertyValuePair[0].equals(LOG_LEVEL)) {
+        } else if (propertyValuePair[0].equals(LOG_LEVEL)) {
           whatToDo.myLogLevel = Integer.parseInt(propertyValuePair[1]);
         } else if (propertyValuePair[0].equals(MPS_PARAMETER)) {
           whatToDo.addParameter(propertyValuePair[1]);
-        } else
-        if (propertyValuePair.length == 2) {
+        } else if (propertyValuePair[0].equals(LOAD_BOOTSTAP_LIBRARIES)) {
+          whatToDo.myLoadBootstrapLibraries = Boolean.parseBoolean(propertyValuePair[1]);
+        } else if (propertyValuePair.length == 2) {
           whatToDo.putProperty(propertyValuePair[0], propertyValuePair[1]);
         } else {
           //           System.err.println("ERROR: Don't know what to do: [" + s + "]"); 
