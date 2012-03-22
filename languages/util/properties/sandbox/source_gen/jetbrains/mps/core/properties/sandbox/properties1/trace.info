@@ -1,3 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <root nodeId="6896005762093430084">
+    <unitInfo nodeId="6896005762093430084" fileName="build1.properties" startLine="1" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.core.properties.sandbox.properties1.build1" />
+  </root>
+</debugInfo>
 
