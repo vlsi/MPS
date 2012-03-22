@@ -182,6 +182,7 @@ public class GeneratorWorker extends MpsWorker {
       doneSomething = true;
     }
     if (!(doneSomething)) {
+
       error("Could not find anything to generate.");
       myTestFailed = true;
     }
@@ -197,7 +198,7 @@ public class GeneratorWorker extends MpsWorker {
       }
     }).translate(new ITranslator2<IModule, IModule>() {
       public Iterable<IModule> translate(IModule it) {
-        return Collections.<IModule>unmodifiableCollection(((Language) it).getGenerators());
+        return (List<IModule>) (List) ((Language) it).getGenerators();
       }
     }));
   }
