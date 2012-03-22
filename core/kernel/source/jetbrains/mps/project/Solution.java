@@ -130,33 +130,6 @@ public class Solution extends AbstractModule {
     return (SolutionDescriptor) ModulesMiner.getInstance().loadModuleDescriptor(file);
   }
 
-  private static SolutionDescriptor createNewDescriptor(String namespace, IFile descriptorFile) {
-    SolutionDescriptor descriptor = new SolutionDescriptor();
-    descriptor.setNamespace(namespace);
-    descriptor.setId(ModuleId.regular());
-
-    final IFile modelsDir = descriptorFile.getParent().getDescendant(SOLUTION_MODELS);
-    if (modelsDir.exists() && modelsDir.getChildren().size() != 0) {
-      throw new IllegalStateException("Trying to create a solution in an existing solution's directory");
-    } else {
-      if (ModelAccess.instance().isInEDT()) {
-        modelsDir.mkdirs();
-      } else {
-        ModelAccess.instance().writeFilesInEDT(new Runnable() {
-          public void run() {
-            modelsDir.mkdirs();
-          }
-        });
-      }
-    }
-
-    // default descriptorModel roots
-    ModelRoot modelRoot = new ModelRoot();
-    modelRoot.setPath(modelsDir.getPath());
-    descriptor.getModelRoots().add(modelRoot);
-    return descriptor;
-  }
-
   public BytecodeLocator getBytecodeLocator() {
     return new ModuleBytecodeLocator() {
       public byte[] find(String fqName) {

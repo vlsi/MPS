@@ -108,12 +108,21 @@ public class NewModuleUtil {
     SolutionDescriptor descriptor = new SolutionDescriptor();
     descriptor.setNamespace(namespace);
     descriptor.setId(ModuleId.regular());
-    IFile modelsDir = descriptorFile.getParent().getDescendant(Solution.SOLUTION_MODELS);
+    final IFile modelsDir = descriptorFile.getParent().getDescendant(Solution.SOLUTION_MODELS);
     if (modelsDir.exists() && modelsDir.getChildren().size() != 0) {
       throw new IllegalStateException("Trying to create a solution in an existing solution's directory");
     } else {
-      modelsDir.mkdirs();
+      if (ModelAccess.instance().isInEDT()) {
+        modelsDir.mkdirs();
+      } else {
+        ModelAccess.instance().writeFilesInEDT(new Runnable() {
+          public void run() {
+            modelsDir.mkdirs();
+          }
+        });
+      }
     }
+
     //  default descriptorModel roots 
     ModelRoot modelRoot = new ModelRoot();
     modelRoot.setPath(modelsDir.getPath());
