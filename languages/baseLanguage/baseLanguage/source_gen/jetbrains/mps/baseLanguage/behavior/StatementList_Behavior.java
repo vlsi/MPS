@@ -14,9 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.ArrayList;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
-import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
-import jetbrains.mps.scope.CompositeScope;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -149,14 +146,8 @@ public class StatementList_Behavior {
 
   public static Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
-      Scope currentScope = new ISearchScope.Adapter(new SimpleSearchScope(StatementList_Behavior.call_getLocalVariableDeclarations_9165170089438554320(thisNode, role, index)));
-      Scope nextScope = Scope.getScope(SNodeOperations.getParent(thisNode), thisNode, kind);
-      return (nextScope == null ?
-        currentScope :
-        new CompositeScope(currentScope, nextScope)
-      );
+      return CompositeWithParentScope.from(StatementList_Behavior.call_getLocalVariableDeclarations_9165170089438554320(thisNode, role, index), thisNode, kind);
     }
-
     return null;
   }
 

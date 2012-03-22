@@ -25,11 +25,10 @@ public class AnnotationInstance_Behavior {
         return new SimpleScope(methods);
       }
       if (SConceptOperations.isSubConceptOf(concept_c0a, "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationMethodKind")) {
-        if ((int) Sequence.fromIterable(methods).count() == 1) {
-          return new SimpleScope(methods);
-        } else {
-          return new EmptyScope();
-        }
+        return ((int) Sequence.fromIterable(methods).count() == 1 ?
+          new SimpleScope(methods) :
+          new EmptyScope()
+        );
       }
     }
 

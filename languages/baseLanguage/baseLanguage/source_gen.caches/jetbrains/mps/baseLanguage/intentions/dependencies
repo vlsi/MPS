@@ -198,6 +198,30 @@
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
     <classNode extendsClassName="jetbrains.mps.intentions.Intention" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.intentions.ConvertIfConditionToTernaryOperator_Intention" file="ConvertIfConditionToTernaryOperator_Intention.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.IntentionUtils" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.Intention" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.intentions.ConvertIfReturnConditionToTernaryOperator_Intention" file="ConvertIfReturnConditionToTernaryOperator_Intention.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.IntentionUtils" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.Intention" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.intentions.ConvertToArrayType_Intention" file="ConvertToArrayType_Intention.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -367,6 +391,13 @@
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
     <classNode extendsClassName="jetbrains.mps.intentions.Intention" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.intentions.IntentionUtils" file="IntentionUtils.java">
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.AddAnnotation_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.AddCastStatement_Intention" />
@@ -385,6 +416,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.ConvertClassCreatorToAnonimous_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.ConvertElseToElseIf_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.ConvertElsifToNewIfStatement_Intention" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.ConvertIfConditionToTernaryOperator_Intention" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.ConvertIfReturnConditionToTernaryOperator_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.ConvertToArrayType_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.ConvertToClosure_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.ConvertToReturnStatement_Intention" />
