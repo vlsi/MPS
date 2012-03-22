@@ -80,12 +80,15 @@ public class MPSModuleRepository implements CoreComponent {
       return (T) existing;
     }
 
-    if (myFqNameToModulesMap.containsKey(moduleFqName)) {
-      IModule m = myFqNameToModulesMap.get(moduleFqName);
-      LOG.warning("duplicate module name " + moduleFqName + " : module with the same UID exists at " + m.getDescriptorFile() + " and " + module.getDescriptorFile(), m);
+    if (moduleFqName != null) {
+      if (myFqNameToModulesMap.containsKey(moduleFqName)) {
+        IModule m = myFqNameToModulesMap.get(moduleFqName);
+        LOG.warning("duplicate module name " + moduleFqName + " : module with the same UID exists at " + m.getDescriptorFile() + " and " + module.getDescriptorFile(), m);
+      }
+
+      myFqNameToModulesMap.put(moduleFqName, module);
     }
 
-    myFqNameToModulesMap.put(moduleFqName, module);
     myIdToModuleMap.put(module.getModuleReference().getModuleId(), module);
     myModules.add(module);
 
@@ -109,7 +112,7 @@ public class MPSModuleRepository implements CoreComponent {
       myFqNameToModulesMap.remove(module.getModuleFqName());
       invalidateCaches();
       fireModuleRemoved(module);
-      
+
       module.dispose();
     } else {
       invalidateCaches();
