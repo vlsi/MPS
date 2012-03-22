@@ -2,7 +2,6 @@
 <model modelUID="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)">
   <persistence version="7" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="823d79c6-2e26-4b0e-92a0-e1884a10bba9(jetbrains.mps.xml.deprecated)" />
   <language namespace="132aa4d8-a3f7-441c-a7eb-3fce23492c6a(jetbrains.mps.baseLanguage.builders)" />
   <language namespace="a8fdde77-2e6c-41f6-ac79-8e9b6449c271(jetbrains.mps.xmlQuery)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
@@ -46,7 +45,6 @@
   <import index="xqpa" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(java.lang.reflect@java_stub)" version="-1" implicit="yes" />
   <import index="22fg" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.net(java.net@java_stub)" version="-1" implicit="yes" />
   <import index="2ylj" modelUID="f:java_stub#fba399db-f591-45dc-a279-e2a2a986e262#org.apache.tools.ant.taskdefs(org.apache.tools.ant.taskdefs@java_stub)" version="-1" implicit="yes" />
-  <import index="tpkv" modelUID="r:00000000-0000-4000-0000-011c895905a3(jetbrains.mps.xml.deprecated.structure)" version="0" implicit="yes" />
   <import index="kgxg" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.components(MPS.Core/jetbrains.mps.components@java_stub)" version="-1" implicit="yes" />
   <import index="pmg0" modelUID="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)" version="0" implicit="yes" />
   <import index="mlj4" modelUID="r:bd6e2c7d-3a5d-4eed-9ff9-27f23ecb34e2(jetbrains.mps.xmlQuery.structure)" version="4" implicit="yes" />
@@ -114,10 +112,6 @@
       <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
       <property name="isFinal" nameId="tpee.1221565133444" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="TeamCityMessageFormat" />
-    </node>
-    <node type="tpkv.Document" typeId="tpkv.1119976146404" id="2862682737715394935">
-      <property name="extension" nameId="tpkv.1234428502488" value="xml" />
-      <property name="name" nameId="tpck.1169194664001" value="antlib" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3449270742160220910">
       <property name="name" nameId="tpck.1169194664001" value="ExcludeNested" />
@@ -12606,44 +12600,11 @@
                             </node>
                           </node>
                           <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.IfStatement" typeId="tpee.1068580123159" id="4003657351907893137">
-                            <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4003657351907893138">
-                              <node role="operand" roleId="tpee.1197027771414" type="tpee.ArrayAccessExpression" typeId="tpee.1173175405605" id="4003657351907893139">
-                                <node role="array" roleId="tpee.1173175590490" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4003657351907893140">
-                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4003657351907893095" resolveInfo="propertyValuePair" />
-                                </node>
-                                <node role="index" roleId="tpee.1173175577737" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4003657351907893141">
-                                  <property name="value" nameId="tpee.1068580320021" value="0" />
-                                </node>
-                              </node>
-                              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4003657351907893142">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
-                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="4003657351907893143">
-                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4003657351907892181" resolveInfo="FAIL_ON_ERROR" />
-                                </node>
-                              </node>
-                            </node>
-                            <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="4003657351907893180">
-                              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4003657351907893181">
-                                <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="4003657351907893182">
-                                  <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4003657351907893183">
-                                    <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="4003657351907893184">
-                                      <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="4003657351907892128" resolveInfo="myFailOnError" />
-                                    </node>
-                                    <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4003657351907893185">
-                                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4003657351907893072" resolveInfo="whatToDo" />
-                                    </node>
-                                  </node>
-                                  <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4003657351907893186">
-                                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="e2lb.~Boolean" resolveInfo="Boolean" />
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Boolean%dparseBoolean(java%dlang%dString)%cboolean" resolveInfo="parseBoolean" />
-                                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ArrayAccessExpression" typeId="tpee.1173175405605" id="4003657351907893187">
-                                      <node role="array" roleId="tpee.1173175590490" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4003657351907893188">
-                                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4003657351907893095" resolveInfo="propertyValuePair" />
-                                      </node>
-                                      <node role="index" roleId="tpee.1173175577737" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4003657351907893189">
-                                        <property name="value" nameId="tpee.1068580320021" value="1" />
-                                      </node>
-                                    </node>
+                            <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="6531903762260748554">
+                              <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="6531903762260748555">
+                                <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="4003657351907894276">
+                                  <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="4003657351907894277">
+                                    <property name="text" nameId="tpee.6329021646629104958" value="          System.err.println(&quot;ERROR: Don't know what to do: [&quot; + s + &quot;]&quot;);" />
                                   </node>
                                 </node>
                               </node>
@@ -12815,11 +12776,44 @@
                                 </node>
                               </node>
                             </node>
-                            <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="6531903762260748554">
-                              <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="6531903762260748555">
-                                <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="4003657351907894276">
-                                  <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="4003657351907894277">
-                                    <property name="text" nameId="tpee.6329021646629104958" value="          System.err.println(&quot;ERROR: Don't know what to do: [&quot; + s + &quot;]&quot;);" />
+                            <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4003657351907893138">
+                              <node role="operand" roleId="tpee.1197027771414" type="tpee.ArrayAccessExpression" typeId="tpee.1173175405605" id="4003657351907893139">
+                                <node role="array" roleId="tpee.1173175590490" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4003657351907893140">
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4003657351907893095" resolveInfo="propertyValuePair" />
+                                </node>
+                                <node role="index" roleId="tpee.1173175577737" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4003657351907893141">
+                                  <property name="value" nameId="tpee.1068580320021" value="0" />
+                                </node>
+                              </node>
+                              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4003657351907893142">
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
+                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="4003657351907893143">
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4003657351907892181" resolveInfo="FAIL_ON_ERROR" />
+                                </node>
+                              </node>
+                            </node>
+                            <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="4003657351907893180">
+                              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4003657351907893181">
+                                <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="4003657351907893182">
+                                  <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4003657351907893183">
+                                    <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="4003657351907893184">
+                                      <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="4003657351907892128" resolveInfo="myFailOnError" />
+                                    </node>
+                                    <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4003657351907893185">
+                                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4003657351907893072" resolveInfo="whatToDo" />
+                                    </node>
+                                  </node>
+                                  <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4003657351907893186">
+                                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="e2lb.~Boolean" resolveInfo="Boolean" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Boolean%dparseBoolean(java%dlang%dString)%cboolean" resolveInfo="parseBoolean" />
+                                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ArrayAccessExpression" typeId="tpee.1173175405605" id="4003657351907893187">
+                                      <node role="array" roleId="tpee.1173175590490" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4003657351907893188">
+                                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4003657351907893095" resolveInfo="propertyValuePair" />
+                                      </node>
+                                      <node role="index" roleId="tpee.1173175577737" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4003657351907893189">
+                                        <property name="value" nameId="tpee.1068580320021" value="1" />
+                                      </node>
+                                    </node>
                                   </node>
                                 </node>
                               </node>
@@ -14419,155 +14413,6 @@
               </node>
             </node>
           </node>
-        </node>
-      </node>
-    </node>
-  </root>
-  <root id="2862682737715394935">
-    <node role="rootElement" roleId="tpkv.1119976595358" type="tpkv.Element" typeId="tpkv.1107866778860" id="2862682737715394939">
-      <property name="name" nameId="tpck.1169194664001" value="antlib" />
-      <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2862682737715394936">
-        <property name="name" nameId="tpck.1169194664001" value="taskdef" />
-        <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394937">
-          <property name="name" nameId="tpck.1169194664001" value="name" />
-          <property name="value" nameId="tpkv.1107866755246" value="mps.generate" />
-        </node>
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394938">
-          <property name="name" nameId="tpck.1169194664001" value="classname" />
-          <property name="value" nameId="tpkv.1107866755246" value="jetbrains.mps.build.ant.generation.GenerateTask" />
-        </node>
-      </node>
-      <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2862682737715394947">
-        <property name="name" nameId="tpck.1169194664001" value="taskdef" />
-        <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394948">
-          <property name="name" nameId="tpck.1169194664001" value="name" />
-          <property name="value" nameId="tpkv.1107866755246" value="mps.make" />
-        </node>
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394949">
-          <property name="name" nameId="tpck.1169194664001" value="classname" />
-          <property name="value" nameId="tpkv.1107866755246" value="jetbrains.mps.build.ant.make.MakeTask" />
-        </node>
-      </node>
-      <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2862682737715394951">
-        <property name="name" nameId="tpck.1169194664001" value="taskdef" />
-        <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394952">
-          <property name="name" nameId="tpck.1169194664001" value="name" />
-          <property name="value" nameId="tpkv.1107866755246" value="mps.test.generation" />
-        </node>
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394953">
-          <property name="name" nameId="tpck.1169194664001" value="classname" />
-          <property name="value" nameId="tpkv.1107866755246" value="jetbrains.mps.build.ant.generation.TestGenerationOnTeamcity" />
-        </node>
-      </node>
-      <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2862682737715394955">
-        <property name="name" nameId="tpck.1169194664001" value="taskdef" />
-        <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394956">
-          <property name="name" nameId="tpck.1169194664001" value="name" />
-          <property name="value" nameId="tpkv.1107866755246" value="mps.test.broken.references" />
-        </node>
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394957">
-          <property name="name" nameId="tpck.1169194664001" value="classname" />
-          <property name="value" nameId="tpkv.1107866755246" value="jetbrains.mps.build.ant.brokenRefs.TestBrokenReferencesOnTeamcity" />
-        </node>
-      </node>
-      <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2862682737715394959">
-        <property name="name" nameId="tpck.1169194664001" value="typedef" />
-        <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394960">
-          <property name="name" nameId="tpck.1169194664001" value="name" />
-          <property name="value" nameId="tpkv.1107866755246" value="model" />
-        </node>
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394961">
-          <property name="name" nameId="tpck.1169194664001" value="classname" />
-          <property name="value" nameId="tpkv.1107866755246" value="org.apache.tools.ant.types.FileSet" />
-        </node>
-      </node>
-      <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2862682737715394963">
-        <property name="name" nameId="tpck.1169194664001" value="typedef" />
-        <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394964">
-          <property name="name" nameId="tpck.1169194664001" value="name" />
-          <property name="value" nameId="tpkv.1107866755246" value="module" />
-        </node>
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394965">
-          <property name="name" nameId="tpck.1169194664001" value="classname" />
-          <property name="value" nameId="tpkv.1107866755246" value="org.apache.tools.ant.types.FileSet" />
-        </node>
-      </node>
-      <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2862682737715394967">
-        <property name="name" nameId="tpck.1169194664001" value="typedef" />
-        <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394968">
-          <property name="name" nameId="tpck.1169194664001" value="name" />
-          <property name="value" nameId="tpkv.1107866755246" value="project" />
-        </node>
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394969">
-          <property name="name" nameId="tpck.1169194664001" value="classname" />
-          <property name="value" nameId="tpkv.1107866755246" value="jetbrains.mps.build.ant.ProjectNested" />
-        </node>
-      </node>
-      <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2862682737715394971">
-        <property name="name" nameId="tpck.1169194664001" value="typedef" />
-        <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394972">
-          <property name="name" nameId="tpck.1169194664001" value="name" />
-          <property name="value" nameId="tpkv.1107866755246" value="library" />
-        </node>
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394973">
-          <property name="name" nameId="tpck.1169194664001" value="classname" />
-          <property name="value" nameId="tpkv.1107866755246" value="jetbrains.mps.build.ant.LibraryDataType" />
-        </node>
-      </node>
-      <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2862682737715394975">
-        <property name="name" nameId="tpck.1169194664001" value="typedef" />
-        <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394976">
-          <property name="name" nameId="tpck.1169194664001" value="name" />
-          <property name="value" nameId="tpkv.1107866755246" value="jvmarg" />
-        </node>
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394977">
-          <property name="name" nameId="tpck.1169194664001" value="classname" />
-          <property name="value" nameId="tpkv.1107866755246" value="jetbrains.mps.build.ant.Arg" />
-        </node>
-      </node>
-      <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2862682737715394979">
-        <property name="name" nameId="tpck.1169194664001" value="typedef" />
-        <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394980">
-          <property name="name" nameId="tpck.1169194664001" value="name" />
-          <property name="value" nameId="tpkv.1107866755246" value="jvmargs" />
-        </node>
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394981">
-          <property name="name" nameId="tpck.1169194664001" value="classname" />
-          <property name="value" nameId="tpkv.1107866755246" value="jetbrains.mps.build.ant.JvmArgs" />
-        </node>
-      </node>
-      <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2862682737715394983">
-        <property name="name" nameId="tpck.1169194664001" value="typedef" />
-        <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394984">
-          <property name="name" nameId="tpck.1169194664001" value="name" />
-          <property name="value" nameId="tpkv.1107866755246" value="macro" />
-        </node>
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394985">
-          <property name="name" nameId="tpck.1169194664001" value="classname" />
-          <property name="value" nameId="tpkv.1107866755246" value="jetbrains.mps.build.ant.Macro" />
-        </node>
-      </node>
-      <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2862682737715394987">
-        <property name="name" nameId="tpck.1169194664001" value="typedef" />
-        <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394988">
-          <property name="name" nameId="tpck.1169194664001" value="name" />
-          <property name="value" nameId="tpkv.1107866755246" value="perfomancereport" />
-        </node>
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394989">
-          <property name="name" nameId="tpck.1169194664001" value="classname" />
-          <property name="value" nameId="tpkv.1107866755246" value="jetbrains.mps.build.ant.generation.PerfomanceReport" />
         </node>
       </node>
     </node>
