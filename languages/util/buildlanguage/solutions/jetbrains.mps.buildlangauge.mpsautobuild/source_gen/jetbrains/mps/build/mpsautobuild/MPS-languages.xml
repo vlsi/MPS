@@ -179,6 +179,30 @@
       <fileset dir="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
   </target>
+  <target name="pack.JDK">
+    <fail unless="base_dir" message="Property base_dir unspecified." />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp/modules/JDK" />
+    <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp/modules/JDK">
+      <fileset file="${base_dir}/languages/core/stub/JDK/JDK.msd" />
+      <fileset dir="${base_dir}/languages/core/stub/JDK" includes="icons/**, resources/**" />
+    </copy>
+  </target>
+  <target name="pack.JDK.Tools">
+    <fail unless="base_dir" message="Property base_dir unspecified." />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp/modules/JDK.Tools" />
+    <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp/modules/JDK.Tools">
+      <fileset file="${base_dir}/languages/core/stub/JDK.Tools/Tools.msd" />
+      <fileset dir="${base_dir}/languages/core/stub/JDK.Tools" includes="icons/**, resources/**" />
+    </copy>
+  </target>
+  <target name="pack.MPS.Core">
+    <fail unless="base_dir" message="Property base_dir unspecified." />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp/modules/MPS.Core" />
+    <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp/modules/MPS.Core">
+      <fileset file="${base_dir}/languages/core/stub/MPS.Core/Core.msd" />
+      <fileset dir="${base_dir}/languages/core/stub/MPS.Core" includes="icons/**, resources/**" />
+    </copy>
+  </target>
   <target name="pack.jetbrains.mps.baseLanguage.util">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp/modules/jetbrains.mps.baseLanguage.util" />
@@ -188,6 +212,14 @@
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp/modules/jetbrains.mps.baseLanguage.util/solution">
       <fileset dir="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/solution" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
+  <target name="pack.MPS.Editor">
+    <fail unless="base_dir" message="Property base_dir unspecified." />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp/modules/MPS.Editor" />
+    <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp/modules/MPS.Editor">
+      <fileset file="${base_dir}/languages/core/stub/MPS.Editor/Editor.msd" />
+      <fileset dir="${base_dir}/languages/core/stub/MPS.Editor" includes="icons/**, resources/**" />
     </copy>
   </target>
   <target name="pack.jetbrains.mps.editor.runtime">
@@ -201,6 +233,14 @@
       <fileset dir="${base_dir}/editor/editor-runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
   </target>
+  <target name="pack.MPS.Platform">
+    <fail unless="base_dir" message="Property base_dir unspecified." />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp/modules/MPS.Platform" />
+    <copy todir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp/modules/MPS.Platform">
+      <fileset file="${base_dir}/languages/core/stub/MPS.Platform/Platform.msd" />
+      <fileset dir="${base_dir}/languages/core/stub/MPS.Platform" includes="icons/**, resources/**" />
+    </copy>
+  </target>
   <target name="pack.jetbrains.mps.ide.platform">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp/modules/jetbrains.mps.ide.platform" />
@@ -210,6 +250,14 @@
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp/modules/jetbrains.mps.ide.platform/models">
       <fileset dir="${base_dir}/workbench/mps-platform/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
+  <target name="pack.MPS.Workbench">
+    <fail unless="base_dir" message="Property base_dir unspecified." />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/MPS.Workbench" />
+    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/MPS.Workbench">
+      <fileset file="${base_dir}/languages/core/stub/MPS.Workbench/Workbench.msd" />
+      <fileset dir="${base_dir}/languages/core/stub/MPS.Workbench" includes="icons/**, resources/**" />
     </copy>
   </target>
   <target name="pack.jetbrains.mps.ide">
@@ -243,6 +291,14 @@
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.ide.uiLanguage.runtime">
       <fileset dir="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
+  <target name="pack.Testbench">
+    <fail unless="base_dir" message="Property base_dir unspecified." />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-test.jar.tmp/modules/Testbench" />
+    <copy todir="${deploy.dir}/MPS/lib/mps-test.jar.tmp/modules/Testbench">
+      <fileset file="${base_dir}/languages/core/stub/Testbench/Testbench.msd" />
+      <fileset dir="${base_dir}/languages/core/stub/Testbench" includes="icons/**, resources/**" />
     </copy>
   </target>
   <target name="pack.collections.runtime">
@@ -291,7 +347,6 @@
   </target>
   <target name="pack.jetbrains.mps.ide.mpsdevkit">
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/plugins/mpsdevkit/classes" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsdevkit/lib/jetbrains.mps.ide.mpsdevkit.jar.jtmp" />
     <echoxml file="${deploy.dir}/MPS/plugins/mpsdevkit/lib/jetbrains.mps.ide.mpsdevkit.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.ide.mpsdevkit" uuid="cac2fef0-41a6-4fcd-923f-f893d536b2ab" type="solution">
@@ -460,7 +515,6 @@
     <jar destfile="${deploy.dir}/MPS/plugins/mpsdevkit/lib/jetbrains.mps.ide.mpsdevkit.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/plugins/mpsdevkit/lib/jetbrains.mps.ide.mpsdevkit.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/plugins/mpsdevkit" includes="icons/**, resources/**" />
-      <zipfileset dir="${base_dir}/plugins/mpsdevkit/classes" />
     </jar>
     <delete dir="${deploy.dir}/MPS/plugins/mpsdevkit/lib/jetbrains.mps.ide.mpsdevkit.jar.jtmp" />
   </target>
@@ -14146,7 +14200,6 @@
   </target>
   <target name="pack.jetbrains.mps.devkit.general-purpose">
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/core/devkits/classes_gen" />
     <mkdir dir="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.general-purpose.jar.jtmp" />
     <echoxml file="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.general-purpose.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.devkit.general-purpose" uuid="fbc25dd2-5da4-483a-8b19-70928e1b62d7" type="unknown">
@@ -14160,13 +14213,11 @@
     <jar destfile="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.general-purpose.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.general-purpose.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/core/devkits" includes="icons/**, resources/**" />
-      <zipfileset dir="${base_dir}/core/devkits/classes_gen" />
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.general-purpose.jar.jtmp" />
   </target>
   <target name="pack.jetbrains.mps.devkit.language-design">
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/core/devkits/classes_gen" />
     <mkdir dir="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.language-design.jar.jtmp" />
     <echoxml file="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.language-design.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.devkit.language-design" uuid="2677cb18-f558-4e33-bc38-a5139cee06dc" type="unknown">
@@ -14180,13 +14231,11 @@
     <jar destfile="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.language-design.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.language-design.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/core/devkits" includes="icons/**, resources/**" />
-      <zipfileset dir="${base_dir}/core/devkits/classes_gen" />
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.language-design.jar.jtmp" />
   </target>
   <target name="pack.jetbrains.mps.devkit.bootstrap-languages">
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/core/devkits/classes_gen" />
     <mkdir dir="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.bootstrap-languages.jar.jtmp" />
     <echoxml file="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.bootstrap-languages.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.devkit.bootstrap-languages" uuid="e073aac8-8c71-4c23-be71-86bf7a6df0a2" type="unknown">
@@ -14200,7 +14249,6 @@
     <jar destfile="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.bootstrap-languages.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.bootstrap-languages.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/core/devkits" includes="icons/**, resources/**" />
-      <zipfileset dir="${base_dir}/core/devkits/classes_gen" />
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.bootstrap-languages.jar.jtmp" />
   </target>
@@ -26202,7 +26250,7 @@
   </target>
   <target name="pack.collections_trove.runtime">
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
+    <mkdir dir="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <mkdir dir="${deploy.dir}/MPS/languages/util/collections_trove.runtime/collections_trove.runtime.jar.jtmp" />
     <echoxml file="${deploy.dir}/MPS/languages/util/collections_trove.runtime/collections_trove.runtime.jar.jtmp/module.xml">
       <module namespace="collections_trove.runtime" uuid="134ef213-c518-42b0-b12c-c109aa13d320" type="solution">
@@ -26228,7 +26276,7 @@
     <jar destfile="${deploy.dir}/MPS/languages/util/collections_trove.runtime/collections_trove.runtime.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/languages/util/collections_trove.runtime/collections_trove.runtime.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime" includes="icons/**, resources/**" />
-      <zipfileset dir="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes" />
+      <zipfileset dir="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/util/collections_trove.runtime/collections_trove.runtime.jar.jtmp" />
   </target>
