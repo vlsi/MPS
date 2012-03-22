@@ -30,6 +30,8 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -279,6 +281,7 @@ public class TestMakeOnRealProject {
     modelRoot.setPath(runtimeSolutionDescriptorFile.getParent().getPath());
 
     solutionDescriptor.getModelRoots().add(modelRoot);
+    solutionDescriptor.getDependencies().add(new Dependency(new ModuleReference("JDK"), true));
     runtimeSolutionDescriptorFile.createNewFile();
     SolutionDescriptorPersistence.saveSolutionDescriptor(runtimeSolutionDescriptorFile, solutionDescriptor);
     return Solution.newInstance(runtimeSolutionDescriptorFile, myModuleOwner);
