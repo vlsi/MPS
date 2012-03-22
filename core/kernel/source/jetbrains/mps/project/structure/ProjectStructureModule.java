@@ -25,7 +25,6 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -171,7 +170,6 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         removeAll();
-        SModelRepository.getInstance().unRegisterModelDescriptors(ProjectStructureModule.this);
         invalidateCaches();
         myModels.clear();
       }
@@ -216,7 +214,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
 
   private void removeModel(SModelDescriptor md) {
     if (myModels.remove(md.getSModelReference()) != null) {
-      SModelRepository.getInstance().removeModelDescriptor(md);
+      SModelRepository.getInstance().unRegisterModelDescriptor(md, this);
       if (md instanceof ProjectStructureSModelDescriptor) {
         ((ProjectStructureSModelDescriptor) md).dropModel();
       }
