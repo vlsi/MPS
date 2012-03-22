@@ -5,6 +5,7 @@ package jetbrains.mps.kernel.model;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.Collection;
@@ -27,7 +28,7 @@ public class TemporaryModelOwner extends AbstractModule {
   private MPSModuleOwner myOwner = new MPSModuleOwner() {};
 
   public TemporaryModelOwner() {
-    setModuleReference(ModuleReference.fromString("TemporaryModelOwner #" + System.identityHashCode(this)));
+    setModuleReference(new ModuleReference("TemporaryModelOwner #" + System.identityHashCode(this), ModuleId.regular()));
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         MPSModuleRepository.getInstance().registerModule(TemporaryModelOwner.this, TemporaryModelOwner.this.myOwner);
