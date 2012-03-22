@@ -82,7 +82,8 @@ public class ModuleRepositoryFacade {
   }
 
   public void unregisterModules(MPSModuleOwner owner, Condition<IModule> condition) {
-    for (IModule module : REPO.getModules(owner)) {
+    Set<IModule> modules = new HashSet<IModule>(REPO.getModules(owner));
+    for (IModule module : modules) {
       if (condition.met(module)) {
         REPO.unregisterModule(module, owner);
       }
@@ -90,14 +91,16 @@ public class ModuleRepositoryFacade {
   }
 
   public void unregisterModules(MPSModuleOwner owner) {
-    for (IModule module : REPO.getModules(owner)) {
+    Set<IModule> modules = new HashSet<IModule>(REPO.getModules(owner));
+    for (IModule module : modules) {
       REPO.unregisterModule(module, owner);
     }
   }
 
   //intended to use only when module is removed physically
   public void removeModuleForced(IModule module) {
-    for (MPSModuleOwner owner : REPO.getOwners(module)) {
+    Set<MPSModuleOwner> owners = new HashSet<MPSModuleOwner>(REPO.getOwners(module));
+    for (MPSModuleOwner owner : owners) {
       REPO.unregisterModule(module, owner);
     }
   }
