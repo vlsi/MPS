@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BaseLanguage_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BaseLanguage_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="523" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="525" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StructureAspectDescriptor" />
   <root nodeId="1023687332192347378">
     <nodeInfo nodeId="1023687332192347378" fileName="IVariableReference.java" startLine="7" startPosition="58" endLine="8" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <unitInfo nodeId="1023687332192347378" fileName="IVariableReference.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IVariableReference" />
@@ -10740,86 +10740,27 @@
     <unitInfo nodeId="2406048883599831972" fileName="ThisConstructorKind.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ThisConstructorKind" />
   </root>
   <root nodeId="2580416627845338977">
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="14" startPosition="103" endLine="15" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="15" startPosition="110" endLine="16" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="16" startPosition="68" endLine="17" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="17" startPosition="45" endLine="18" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="18" startPosition="64" endLine="19" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="21" startPosition="54" endLine="22" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="25" startPosition="39" endLine="26" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="29" startPosition="49" endLine="30" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="33" startPosition="28" endLine="34" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="37" startPosition="38" endLine="38" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="41" startPosition="37" endLine="42" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="45" startPosition="47" endLine="46" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="49" startPosition="41" endLine="50" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="53" startPosition="49" endLine="54" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="57" startPosition="48" endLine="58" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="61" startPosition="50" endLine="62" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="65" startPosition="69" endLine="66" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="69" startPosition="86" endLine="70" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="73" startPosition="72" endLine="74" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="20" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ImplicitAnnotationInstanceValue#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/baseLanguage/structure/ImplicitAnnotationInstanceValue;" />
-    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/structure/ImplicitAnnotationInstanceValue;" />
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="21" startPosition="54" endLine="22" endPosition="16" />
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="25" startPosition="39" endLine="26" endPosition="79" />
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="29" startPosition="49" endLine="30" endPosition="79" />
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="33" startPosition="28" endLine="34" endPosition="67" />
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="37" startPosition="38" endLine="38" endPosition="67" />
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="41" startPosition="37" endLine="42" endPosition="77" />
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="45" startPosition="47" endLine="46" endPosition="77" />
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="49" startPosition="41" endLine="50" endPosition="80" />
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="53" startPosition="49" endLine="54" endPosition="92" />
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="57" startPosition="48" endLine="58" endPosition="95" />
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="61" startPosition="50" endLine="62" endPosition="74" />
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="65" startPosition="69" endLine="66" endPosition="83" />
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="69" startPosition="86" endLine="70" endPosition="212" />
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="73" startPosition="72" endLine="74" endPosition="66" />
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="20" startPosition="0" endLine="23" endPosition="3">
+    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="10" startPosition="78" endLine="11" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="13" startPosition="54" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="17" startPosition="86" endLine="18" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="21" startPosition="72" endLine="22" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ImplicitAnnotationInstanceValue#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/baseLanguage/structure/ImplicitAnnotationInstanceValue;" />
+    <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/structure/ImplicitAnnotationInstanceValue;" />
+    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="13" startPosition="54" endLine="14" endPosition="16" />
+    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="17" startPosition="86" endLine="18" endPosition="212" />
+    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="21" startPosition="72" endLine="22" endPosition="66" />
+    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
       <varInfo nodeId="2580416627845338977" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="2580416627845338977" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="2580416627845338977" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
-      <varInfo nodeId="2580416627845338977" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="60" startPosition="0" endLine="64" endPosition="0">
-      <varInfo nodeId="2580416627845338977" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
-      <varInfo nodeId="2580416627845338977" varName="node" />
-      <varInfo nodeId="2580416627845338977" varName="prev" />
-    </scopeInfo>
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="68" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="2580416627845338977" varName="init" />
       <varInfo nodeId="2580416627845338977" varName="sm" />
     </scopeInfo>
-    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="72" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="2580416627845338977" varName="sm" />
     </scopeInfo>
-    <unitInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue" />
+    <unitInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue" />
   </root>
   <root nodeId="2948164764175055168">
     <nodeInfo nodeId="2948164764175055168" fileName="UnresolvedNameReference.java" startLine="10" startPosition="57" endLine="11" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
@@ -11838,6 +11779,10 @@
   <root nodeId="6617045035157661092">
     <nodeInfo nodeId="6617045035157661092" fileName="SuperMethodKind.java" startLine="7" startPosition="55" endLine="8" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <unitInfo nodeId="6617045035157661092" fileName="SuperMethodKind.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.SuperMethodKind" />
+  </root>
+  <root nodeId="6694311595176645018">
+    <nodeInfo nodeId="6694311595176645018" fileName="ImplicitAnnotationMethodKind.java" startLine="7" startPosition="68" endLine="8" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <unitInfo nodeId="6694311595176645018" fileName="ImplicitAnnotationMethodKind.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ImplicitAnnotationMethodKind" />
   </root>
   <root nodeId="6734604082923916973">
     <nodeInfo nodeId="6734604082923916973" fileName="_HexNumberValue_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

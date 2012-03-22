@@ -4,18 +4,35 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.scopes.runtime.SimpleScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 
 public class AnnotationInstance_Behavior {
   public static void init(SNode thisNode) {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration")) {
-      return new SimpleScope(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "annotation", false), "method", true));
+    Iterable<SNode> methods = SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "annotation", false), "method", true);
+
+    {
+      SNode concept_c0a;
+      concept_c0a = kind;
+      if (SConceptOperations.isSubConceptOf(concept_c0a, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration")) {
+        return new SimpleScope(methods);
+      }
+      if (SConceptOperations.isSubConceptOf(concept_c0a, "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationMethodKind")) {
+        if ((int) Sequence.fromIterable(methods).count() == 1) {
+          return new SimpleScope(methods);
+        } else {
+          return new EmptyScope();
+        }
+      }
     }
-    return null;
+
+    return ScopeUtils.parentScope(thisNode, kind);
   }
 }

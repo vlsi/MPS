@@ -130,7 +130,8 @@
   <unitInfo fileName="IVisible_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IVisible_BehaviorDescriptor" />
   <unitInfo fileName="IWillBeClassifier_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_BehaviorDescriptor" />
   <unitInfo fileName="IfStatement_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IfStatement_BehaviorDescriptor" />
-  <unitInfo fileName="ImplicitAnnotationInstanceValue_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ImplicitAnnotationInstanceValue_BehaviorDescriptor" />
+  <unitInfo fileName="ImplicitAnnotationInstanceValue_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ImplicitAnnotationInstanceValue_BehaviorDescriptor" />
+  <unitInfo fileName="ImplicitAnnotationMethodKind_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ImplicitAnnotationMethodKind_BehaviorDescriptor" />
   <unitInfo fileName="InstanceInitializer_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.InstanceInitializer_BehaviorDescriptor" />
   <unitInfo fileName="InstanceMethodCallOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.InstanceMethodCallOperation_BehaviorDescriptor" />
   <unitInfo fileName="InstanceMethodDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.InstanceMethodDeclaration_BehaviorDescriptor" />
@@ -6495,23 +6496,46 @@
     <unitInfo nodeId="1213877417754" fileName="ClosureParameterReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ClosureParameterReference_Behavior" />
   </root>
   <root nodeId="1213877419060">
-    <nodeInfo nodeId="8461667031989955113" fileName="AnnotationInstance_Behavior.java" startLine="16" startPosition="118" endLine="17" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8461667031989955152" fileName="AnnotationInstance_Behavior.java" startLine="18" startPosition="5" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877419060" fileName="AnnotationInstance_Behavior.java" startLine="11" startPosition="42" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="8461667031989954589" fileName="AnnotationInstance_Behavior.java" startLine="15" startPosition="101" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877419060" fileName="AnnotationInstance_Behavior.java" startLine="14" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/scope/Scope;" />
-    <scopeInfo nodeId="1228124415662" fileName="AnnotationInstance_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
-    <scopeInfo nodeId="8461667031989954590" fileName="AnnotationInstance_Behavior.java" startLine="16" startPosition="118" endLine="17" endPosition="131" />
-    <scopeInfo nodeId="1213877419060" fileName="AnnotationInstance_Behavior.java" startLine="11" startPosition="42" endLine="14" endPosition="0">
+    <nodeInfo nodeId="6694311595176807417" fileName="AnnotationInstance_Behavior.java" startLine="18" startPosition="101" endLine="19" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6694311595176807427" fileName="AnnotationInstance_Behavior.java" startLine="19" startPosition="131" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6694311595176645020" fileName="AnnotationInstance_Behavior.java" startLine="21" startPosition="5" endLine="22" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6694311595176645020" fileName="AnnotationInstance_Behavior.java" startLine="22" startPosition="24" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6694311595176645020" fileName="AnnotationInstance_Behavior.java" startLine="24" startPosition="127" endLine="25" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8461667031989955113" fileName="AnnotationInstance_Behavior.java" startLine="24" startPosition="127" endLine="25" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6694311595176807407" fileName="AnnotationInstance_Behavior.java" startLine="28" startPosition="64" endLine="29" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6694311595176807441" fileName="AnnotationInstance_Behavior.java" startLine="30" startPosition="16" endLine="31" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6694311595176807431" fileName="AnnotationInstance_Behavior.java" startLine="34" startPosition="5" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6694311595176645034" fileName="AnnotationInstance_Behavior.java" startLine="35" startPosition="0" endLine="36" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6694311595176807438" fileName="AnnotationInstance_Behavior.java" startLine="30" startPosition="14" endLine="32" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877419060" fileName="AnnotationInstance_Behavior.java" startLine="14" startPosition="42" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="6694311595176645020" fileName="AnnotationInstance_Behavior.java" startLine="23" startPosition="25" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6694311595176645020" fileName="AnnotationInstance_Behavior.java" startLine="27" startPosition="128" endLine="32" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6694311595176807250" fileName="AnnotationInstance_Behavior.java" startLine="27" startPosition="128" endLine="32" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6694311595176645020" fileName="AnnotationInstance_Behavior.java" startLine="26" startPosition="7" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6694311595176645020" fileName="AnnotationInstance_Behavior.java" startLine="20" startPosition="0" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877419060" fileName="AnnotationInstance_Behavior.java" startLine="17" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/scope/Scope;" />
+    <scopeInfo nodeId="1228124415662" fileName="AnnotationInstance_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="6694311595176645020" fileName="AnnotationInstance_Behavior.java" startLine="24" startPosition="127" endLine="25" endPosition="40" />
+    <scopeInfo nodeId="6694311595176645025" fileName="AnnotationInstance_Behavior.java" startLine="24" startPosition="127" endLine="25" endPosition="40" />
+    <scopeInfo nodeId="6694311595176807251" fileName="AnnotationInstance_Behavior.java" startLine="28" startPosition="64" endLine="29" endPosition="42" />
+    <scopeInfo nodeId="6694311595176807439" fileName="AnnotationInstance_Behavior.java" startLine="30" startPosition="16" endLine="31" endPosition="34" />
+    <scopeInfo nodeId="1213877419060" fileName="AnnotationInstance_Behavior.java" startLine="14" startPosition="42" endLine="17" endPosition="0">
       <varInfo nodeId="1213877419060" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8461667031989954574" fileName="AnnotationInstance_Behavior.java" startLine="15" startPosition="101" endLine="19" endPosition="16" />
-    <scopeInfo nodeId="1213877419060" fileName="AnnotationInstance_Behavior.java" startLine="14" startPosition="0" endLine="21" endPosition="0">
+    <scopeInfo nodeId="6694311595176645020" fileName="AnnotationInstance_Behavior.java" startLine="27" startPosition="128" endLine="32" endPosition="9" />
+    <scopeInfo nodeId="6694311595176645028" fileName="AnnotationInstance_Behavior.java" startLine="27" startPosition="128" endLine="32" endPosition="9" />
+    <scopeInfo nodeId="6694311595176645020" fileName="AnnotationInstance_Behavior.java" startLine="21" startPosition="5" endLine="33" endPosition="7">
+      <varInfo nodeId="6694311595176645020" varName="concept_c0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="8461667031989954574" fileName="AnnotationInstance_Behavior.java" startLine="18" startPosition="101" endLine="36" endPosition="50">
+      <varInfo nodeId="6694311595176807418" varName="methods" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877419060" fileName="AnnotationInstance_Behavior.java" startLine="17" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="8461667031989954577" varName="child" />
       <varInfo nodeId="8461667031989954575" varName="kind" />
       <varInfo nodeId="1213877419060" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1213877419060" fileName="AnnotationInstance_Behavior.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AnnotationInstance_Behavior" />
+    <unitInfo nodeId="1213877419060" fileName="AnnotationInstance_Behavior.java" startLine="14" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AnnotationInstance_Behavior" />
   </root>
   <root nodeId="1213877420728">
     <nodeInfo nodeId="1213877420731" fileName="ByteType_Behavior.java" startLine="18" startPosition="76" endLine="19" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -11834,27 +11858,6 @@
       <varInfo nodeId="6307653274956830892" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="6307653274956830892" fileName="ParenthesizedExpression_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ParenthesizedExpression_Behavior" />
-  </root>
-  <root nodeId="6576458051556219447">
-    <nodeInfo nodeId="6576458051556226158" fileName="ImplicitAnnotationInstanceValue_Behavior.java" startLine="16" startPosition="168" endLine="17" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6576458051556226490" fileName="ImplicitAnnotationInstanceValue_Behavior.java" startLine="18" startPosition="12" endLine="19" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6576458051556226488" fileName="ImplicitAnnotationInstanceValue_Behavior.java" startLine="18" startPosition="10" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6576458051556219447" fileName="ImplicitAnnotationInstanceValue_Behavior.java" startLine="11" startPosition="55" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="6576458051556226145" fileName="ImplicitAnnotationInstanceValue_Behavior.java" startLine="15" startPosition="101" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6576458051556219447" fileName="ImplicitAnnotationInstanceValue_Behavior.java" startLine="14" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/scope/Scope;" />
-    <scopeInfo nodeId="6576458051556219449" fileName="ImplicitAnnotationInstanceValue_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
-    <scopeInfo nodeId="6576458051556226146" fileName="ImplicitAnnotationInstanceValue_Behavior.java" startLine="16" startPosition="168" endLine="17" endPosition="52" />
-    <scopeInfo nodeId="6576458051556226489" fileName="ImplicitAnnotationInstanceValue_Behavior.java" startLine="18" startPosition="12" endLine="19" endPosition="30" />
-    <scopeInfo nodeId="6576458051556219447" fileName="ImplicitAnnotationInstanceValue_Behavior.java" startLine="11" startPosition="55" endLine="14" endPosition="0">
-      <varInfo nodeId="6576458051556219447" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="6576458051556219514" fileName="ImplicitAnnotationInstanceValue_Behavior.java" startLine="15" startPosition="101" endLine="20" endPosition="5" />
-    <scopeInfo nodeId="6576458051556219447" fileName="ImplicitAnnotationInstanceValue_Behavior.java" startLine="14" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="6576458051556219517" varName="child" />
-      <varInfo nodeId="6576458051556219515" varName="kind" />
-      <varInfo nodeId="6576458051556219447" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="6576458051556219447" fileName="ImplicitAnnotationInstanceValue_Behavior.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ImplicitAnnotationInstanceValue_Behavior" />
   </root>
   <root nodeId="7236590470026154810">
     <nodeInfo nodeId="7236590470026154819" fileName="TextCommentPart_Behavior.java" startLine="12" startPosition="76" endLine="13" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
