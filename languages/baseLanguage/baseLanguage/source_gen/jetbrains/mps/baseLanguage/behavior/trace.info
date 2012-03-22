@@ -94,7 +94,7 @@
   <unitInfo fileName="FloatingPointConstant_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.FloatingPointConstant_BehaviorDescriptor" />
   <unitInfo fileName="FloatingPointFloatConstant_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.FloatingPointFloatConstant_BehaviorDescriptor" />
   <unitInfo fileName="ForStatement_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ForStatement_BehaviorDescriptor" />
-  <unitInfo fileName="ForeachStatement_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ForeachStatement_BehaviorDescriptor" />
+  <unitInfo fileName="ForeachStatement_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ForeachStatement_BehaviorDescriptor" />
   <unitInfo fileName="GenericDeclaration_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.GenericDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="GenericNewExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.GenericNewExpression_BehaviorDescriptor" />
   <unitInfo fileName="GetAccessor_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.GetAccessor_BehaviorDescriptor" />
@@ -10626,48 +10626,35 @@
     <unitInfo nodeId="2254597628748958058" fileName="IsNotEmptyOperation_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IsNotEmptyOperation_Behavior" />
   </root>
   <root nodeId="2496361171403550946">
-    <nodeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="20" startPosition="40" endLine="21" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_2496361171403550949" />
-    <nodeInfo nodeId="2496361171403550952" fileName="ForeachStatement_Behavior.java" startLine="26" startPosition="91" endLine="27" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2832018561209150895" fileName="ForeachStatement_Behavior.java" startLine="32" startPosition="57" endLine="33" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5944356402132654868" fileName="ForeachStatement_Behavior.java" startLine="35" startPosition="5" endLine="36" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="39" startPosition="88" endLine="40" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="40" startPosition="113" endLine="41" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="44" startPosition="121" endLine="45" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="2832018561209150890" fileName="ForeachStatement_Behavior.java" startLine="31" startPosition="115" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScopeVariables_5067982036267369894#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getScopeVariables_2496361171403550949#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/List;" />
-    <nodeInfo nodeId="4022826484892163653" fileName="ForeachStatement_Behavior.java" startLine="30" startPosition="101" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="38" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getScopeVariables_2496361171403550949#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="29" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/scope/Scope;" />
-    <scopeInfo nodeId="2496361171403550948" fileName="ForeachStatement_Behavior.java" startLine="23" startPosition="43" endLine="23" endPosition="43" />
-    <scopeInfo nodeId="2496361171403550951" fileName="ForeachStatement_Behavior.java" startLine="26" startPosition="91" endLine="27" endPosition="120" />
-    <scopeInfo nodeId="2832018561209150891" fileName="ForeachStatement_Behavior.java" startLine="32" startPosition="57" endLine="33" endPosition="116" />
-    <scopeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="44" startPosition="121" endLine="45" endPosition="272" />
-    <scopeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="39" startPosition="88" endLine="41" endPosition="227">
+    <nodeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="15" startPosition="40" endLine="16" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_2496361171403550949" />
+    <nodeInfo nodeId="2496361171403550952" fileName="ForeachStatement_Behavior.java" startLine="21" startPosition="91" endLine="22" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="25" startPosition="88" endLine="26" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="26" startPosition="113" endLine="27" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="30" startPosition="121" endLine="31" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScopeVariables_5067982036267369894#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getScopeVariables_2496361171403550949#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/List;" />
+    <nodeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="24" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getScopeVariables_2496361171403550949#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
+    <scopeInfo nodeId="2496361171403550948" fileName="ForeachStatement_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
+    <scopeInfo nodeId="2496361171403550951" fileName="ForeachStatement_Behavior.java" startLine="21" startPosition="91" endLine="22" endPosition="120" />
+    <scopeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="30" startPosition="121" endLine="31" endPosition="272" />
+    <scopeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="25" startPosition="88" endLine="27" endPosition="227">
       <varInfo nodeId="2496361171403550946" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
+    <scopeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="2496361171403550946" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4022826484892163654" fileName="ForeachStatement_Behavior.java" startLine="31" startPosition="115" endLine="34" endPosition="7" />
-    <scopeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="2496361171403550946" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="2496361171403550946" varName="callerConceptFqName" />
       <varInfo nodeId="2496361171403550946" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="38" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="24" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="2496361171403550946" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7362994916699130177" fileName="ForeachStatement_Behavior.java" startLine="30" startPosition="101" endLine="36" endPosition="153" />
-    <scopeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="29" startPosition="0" endLine="38" endPosition="0">
-      <varInfo nodeId="7362994916699130180" varName="child" />
-      <varInfo nodeId="7362994916699130178" varName="kind" />
-      <varInfo nodeId="2496361171403550946" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="20" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ForeachStatement_Behavior" />
+    <unitInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="15" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ForeachStatement_Behavior" />
   </root>
   <root nodeId="2496361171403550962">
     <nodeInfo nodeId="2496361171403550962" fileName="ForStatement_Behavior.java" startLine="20" startPosition="36" endLine="21" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_2496361171403550965" />
