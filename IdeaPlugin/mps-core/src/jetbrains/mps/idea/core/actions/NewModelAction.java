@@ -192,7 +192,7 @@ public class NewModelAction extends AnAction {
             myIcon = icon;
 
             for (String languageNamespace : languagesToImport) {
-                Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
+                Language language = ModuleRepositoryFacade.getInstance().getModule(languageNamespace,Language.class);
                 assert language != null : "Language required by model template is not in repository";
                 myLanguagesToImport.add(language.getModuleReference());
             }

@@ -45,8 +45,8 @@ public class LibHelper {
   }
 
   public static Solution findSolutionForLibrary(Library library) {
-    ModuleReference ref = new ModuleReference(null, ModuleId.foreign(library.getName()));
-    return MPSModuleRepository.getInstance().getSolution(ref);
+    ModuleId id = ModuleId.foreign(library.getName());
+    return (Solution) MPSModuleRepository.getInstance().getModuleById(id);
   }
 
   public static String getLocalPath(VirtualFile f) {
