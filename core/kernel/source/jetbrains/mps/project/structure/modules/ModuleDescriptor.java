@@ -30,7 +30,6 @@ public class ModuleDescriptor {
   private ModuleId myId;
   private String myNamespace;
   private String myTimestamp;
-  private boolean myCompileInMPS = true;
 
   private Collection<jetbrains.mps.project.structure.model.ModelRoot> myModelRoots;
   private Collection<Dependency> myDependencies;
@@ -92,11 +91,11 @@ public class ModuleDescriptor {
   }
 
   public boolean getCompileInMPS() {
-    return myCompileInMPS;
+    throw new UnsupportedOperationException();
   }
 
   public void setCompileInMPS(boolean compileInMPS) {
-    myCompileInMPS = compileInMPS;
+    throw new UnsupportedOperationException();
   }
 
   public Collection<ModelRoot> getModelRoots() {

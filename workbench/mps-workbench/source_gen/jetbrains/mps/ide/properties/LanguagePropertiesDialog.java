@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.JPanel;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.InternalFlag;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.Project;
@@ -33,10 +32,7 @@ public class LanguagePropertiesDialog extends BasePropertiesDialog {
 
   public JPanel createCheckboxPanel() {
     List<StandardComponents.CheckboxDescriptor> list = new ArrayList<StandardComponents.CheckboxDescriptor>();
-    list.add(new StandardComponents.CheckboxDescriptor(myProperties, ModuleProperties.COMPILE_IN_MPS, "Compile in MPS"));
-    if (InternalFlag.isInternalMode()) {
-      list.add(new StandardComponents.CheckboxDescriptor(myProperties, LanguageProperties.DO_NOT_GENERATE_ADAPTERS, "Do Not Generate Adapters"));
-    }
+    list.add(new StandardComponents.CheckboxDescriptor(myProperties, LanguageProperties.DO_NOT_GENERATE_ADAPTERS, "Do Not Generate Adapters"));
     return StandardComponents.createCheckboxPanel(this, list);
   }
 

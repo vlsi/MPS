@@ -28,6 +28,7 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.runtime.BytecodeLocator;
+import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -36,7 +37,8 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import java.net.URL;
-import java.util.UUID;
+import java.util.Collection;
+import java.util.Collections;
 
 /**
  * Igor Alshannikov
@@ -199,6 +201,32 @@ public class Solution extends AbstractModule {
     assert myDescriptorFile != null;
     namespace = myDescriptorFile.getName();
     return namespace;
+  }
+
+  @Override
+  public Collection<StubPath> getOwnStubPaths() {
+    if (isPackaged()) {
+      return Collections.singletonList(
+        new StubPath(
+          FileSystem.getInstance().getBundleHome(getDescriptorFile()).getPath(),
+          LanguageID.JAVA_MANAGER));
+    }
+
+    if (!isCompileInMPS()) {
+      IFile classes = ProjectPathUtil.getClassesFolder(getDescriptorFile());
+      if (classes != null && classes.exists()) {
+        return Collections.singletonList(new StubPath(classes.getPath(), LanguageID.JAVA_MANAGER));
+      }
+      return Collections.emptyList();
+    }
+
+    return super.getOwnStubPaths();
+  }
+
+  @Override
+  public boolean isCompileInMPS() {
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    return descriptor != null && descriptor.getCompileInMPS();
   }
 
   public String getGeneratorOutputPath() {

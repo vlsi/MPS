@@ -104,12 +104,10 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="jetbrains.mps.InternalFlag" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.ProjectPane" />
     <classNode dependClassName="jetbrains.mps.ide.properties.LanguageProperties" />
-    <classNode dependClassName="jetbrains.mps.ide.properties.ModuleProperties" />
     <classNode dependClassName="jetbrains.mps.ide.properties.StandardComponents" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
@@ -244,7 +242,6 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="jetbrains.mps.ide.properties.ModuleProperties" />
     <classNode dependClassName="jetbrains.mps.ide.properties.SolutionProperties" />
     <classNode dependClassName="jetbrains.mps.ide.properties.StandardComponents" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />

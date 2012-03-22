@@ -207,11 +207,6 @@ public abstract class AbstractModule implements IModule {
     IFile classFolder = getClassesGen();
     if (classFolder == null) return Collections.emptyList();
 
-    String file = classFolder.getPath();
-    if (file.endsWith("!/")) {
-      file = file.substring(0, file.length() - 2);
-    }
-
     return Collections.singletonList(new StubPath(classFolder.getPath(), LanguageID.JAVA_MANAGER));
   }
 
@@ -272,10 +267,6 @@ public abstract class AbstractModule implements IModule {
       packagedSourcesPath = null;
     }
 
-    if (addBundleAsLibrary() && descriptor.getDeploymentDescriptor() != null) {
-      descriptor.getDeploymentDescriptor().getLibraries().add(bundleHomeFile.getName());
-    }
-
     // stub libraries
     List<ModelRoot> toRemove = new ArrayList<ModelRoot>();
     for (ModelRoot sme : descriptor.getStubModelEntries()) {
@@ -317,18 +308,6 @@ public abstract class AbstractModule implements IModule {
         descriptor.getModelRoots().add(mr);
       }
     }
-  }
-
-  protected boolean addBundleAsLibrary() {
-    if (getModuleDescriptor() != null && !getModuleDescriptor().getCompileInMPS()) {
-      for (ModelRoot sme : getModuleDescriptor().getStubModelEntries()) {
-        if (sme.getManager().getClassName().startsWith("JavaStubs") &&
-          (MacrosFactory.SOLUTION_DESCRIPTOR + "/classes").equals(sme.getPath())) {
-          return true;
-        }
-      }
-    }
-    return false;
   }
 
   public IClassPathItem getClassPathItem() {
@@ -517,8 +496,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   public boolean isCompileInMPS() {
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    return descriptor != null && descriptor.getCompileInMPS();
+    return false;
   }
 
   public boolean reloadClassesAfterGeneration() {

@@ -206,7 +206,8 @@ public class Generator extends AbstractModule {
   }
 
   public boolean isCompileInMPS() {
-    return mySourceLanguage.isCompileInMPS();
+    // generator is always compiled in MPS
+    return true;
   }
 
   public IFile getBundleHome() {
