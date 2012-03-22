@@ -6,8 +6,8 @@ import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.apache.commons.lang.StringUtils;
@@ -30,6 +30,9 @@ public class CheckAnnotationInstanceValueScopes_MigrationScript extends BaseMigr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
+        if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue")) {
+          return false;
+        }
         String excludingPrefix = "123collection";
         String startsFrom = "";
 

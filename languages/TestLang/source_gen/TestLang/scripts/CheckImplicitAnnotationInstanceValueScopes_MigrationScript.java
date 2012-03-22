@@ -53,12 +53,12 @@ public class CheckImplicitAnnotationInstanceValueScopes_MigrationScript extends 
           return false;
         }
 
-        return !(Utils.checkScopes(node, Utils.getOldScopeFromRef(ref), Utils.getNewScopeFromRef(ref, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration")), true));
+        return !(Utils.checkScopes(node, Utils.getOldScopeFromRef(ref), Utils.getNewScopeFromRef(ref, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ImplicitAnnotationMethodKind")), true));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SReference ref = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", "key"));
-        Utils.checkScopes(node, Utils.getOldScopeFromRef(ref), Utils.getNewScopeFromRef(ref, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration")), true);
+        Utils.checkScopes(node, Utils.getOldScopeFromRef(ref), Utils.getNewScopeFromRef(ref, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ImplicitAnnotationMethodKind")), true);
       }
 
       public boolean isShowAsIntention() {
