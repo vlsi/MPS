@@ -268,7 +268,14 @@ public class Classifier_Behavior {
   }
 
   public static boolean call_isStatic_521412098689998668(SNode thisNode) {
-    return (!(SPropertyOperations.getBoolean(thisNode, "nonStatic")) && !(SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) || SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.Interface");
+    // todo: make virtual and right 
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.Interface")) {
+      return false;
+    }
+    if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+      return false;
+    }
+    return !(SPropertyOperations.getBoolean(thisNode, "nonStatic"));
   }
 
   public static boolean call_isInner_521412098689998677(SNode thisNode) {
@@ -389,11 +396,15 @@ public class Classifier_Behavior {
       SNode concept_a0cb;
       concept_a0cb = kind;
       if (SConceptOperations.isSubConceptOf(concept_a0cb, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration")) {
-        while (SNodeOperations.getParent(child) != thisNode) {
-          child = SNodeOperations.getParent(child);
-        }
-        if (!(SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember") && ClassifierMember_Behavior.call_isStatic_8986964027630462944(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember")))) {
-          return CompositeWithParentScope.from(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true), thisNode, kind);
+        {
+          while (SNodeOperations.getParent(child) != thisNode) {
+            child = SNodeOperations.getParent(child);
+          }
+          // todo: Cloassifier should be ClassifierMember! 
+          boolean isStaticContext = (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember") && ClassifierMember_Behavior.call_isStatic_8986964027630462944(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) || (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.Classifier") && Classifier_Behavior.call_isStatic_521412098689998668(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.Classifier")));
+          if (!(isStaticContext)) {
+            return CompositeWithParentScope.from(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true), thisNode, kind);
+          }
         }
       }
       if (SConceptOperations.isSubConceptOf(concept_a0cb, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
