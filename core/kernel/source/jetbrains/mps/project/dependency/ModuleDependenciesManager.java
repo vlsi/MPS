@@ -18,6 +18,7 @@ package jetbrains.mps.project.dependency;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.IterableUtil;
@@ -77,6 +78,17 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
     for (IModule m : ModuleUtil.getDependencies(myModule)) {
       if (!dependencies.contains(m)) {
         m.getDependenciesManager().collectAllCompileTimeDependencies(dependencies, languagesWithRuntime);
+      }
+    }
+
+    if (myModule instanceof Language) {
+      // 1. Generator is always compiled together with the language (???)
+      // 2. Generator may have its own compile time dependencies (imports in the generated queries)
+      // 3. Let's not ignore them
+      for (Generator generator : ((Language) myModule).getGenerators()) {
+        if (!dependencies.contains(generator)) {
+          generator.getDependenciesManager().collectAllCompileTimeDependencies(dependencies, languagesWithRuntime);
+        }
       }
     }
 
