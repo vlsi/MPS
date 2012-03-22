@@ -39,7 +39,7 @@
     <nodeInfo nodeId="5164231775618799580" fileName="DescriptorsIO_Test.java" startLine="89" startPosition="17" endLine="90" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5164231775618799592" fileName="DescriptorsIO_Test.java" startLine="91" startPosition="47" endLine="92" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="5164231775618799596" fileName="DescriptorsIO_Test.java" startLine="97" startPosition="7" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5164231775618799597" fileName="DescriptorsIO_Test.java" startLine="98" startPosition="0" endLine="99" endPosition="318" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5164231775618799597" fileName="DescriptorsIO_Test.java" startLine="98" startPosition="0" endLine="99" endPosition="296" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5164231775618799617" fileName="DescriptorsIO_Test.java" startLine="103" startPosition="50" endLine="104" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5164231775618799622" fileName="DescriptorsIO_Test.java" startLine="104" startPosition="55" endLine="105" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5164231775618799628" fileName="DescriptorsIO_Test.java" startLine="105" startPosition="84" endLine="106" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -137,7 +137,7 @@
       <varInfo nodeId="5164231775618799697" varName="dkFile" />
       <varInfo nodeId="5164231775618799682" varName="dkd" />
     </scopeInfo>
-    <scopeInfo nodeId="5164231775618799542" fileName="DescriptorsIO_Test.java" startLine="79" startPosition="53" endLine="99" endPosition="318">
+    <scopeInfo nodeId="5164231775618799542" fileName="DescriptorsIO_Test.java" startLine="79" startPosition="53" endLine="99" endPosition="296">
       <varInfo nodeId="5164231775618799564" varName="diof" />
       <varInfo nodeId="5164231775618799559" varName="langFile" />
       <varInfo nodeId="5164231775618799544" varName="ld" />
