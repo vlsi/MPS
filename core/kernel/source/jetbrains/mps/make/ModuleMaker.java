@@ -303,7 +303,7 @@ public class ModuleMaker {
   private IClassPathItem computeDependenciesClassPath(Set<IModule> modules) {
     ttrace.push("dependencies classpath", false);
     try {
-      return AbstractModule.getDependenciesClasspath(modules, false);
+      return AbstractModule.getDependenciesClasspath(modules, true);
     } finally {
       ttrace.pop();
     }

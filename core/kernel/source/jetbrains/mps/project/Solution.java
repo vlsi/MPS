@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.ClasspathReader;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
@@ -22,11 +23,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.project.structure.modules.SolutionKind;
+import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -37,8 +36,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import java.net.URL;
-import java.util.Collection;
-import java.util.Collections;
+import java.util.*;
 
 /**
  * Igor Alshannikov
@@ -49,6 +47,27 @@ public class Solution extends AbstractModule {
 
   private SolutionDescriptor mySolutionDescriptor;
   public static final String SOLUTION_MODELS = "models";
+
+  private static Map<ModuleReference, ClasspathReader.ClassType> bootstrapCP = initBootstrapSolutions();
+
+  private static Map<ModuleReference, ClasspathReader.ClassType> initBootstrapSolutions() {
+    Map<ModuleReference, ClasspathReader.ClassType> result = new HashMap<ModuleReference, ClasspathReader.ClassType>();
+    result.put(new ModuleReference("JDK",
+      ModuleId.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065")), ClasspathReader.ClassType.JDK);
+    result.put(new ModuleReference("JDK.Tools",
+      ModuleId.fromString("fdb93da0-59ed-4001-b2aa-4fad79ec058e")), ClasspathReader.ClassType.JDK_TOOLS);
+    result.put(new ModuleReference("MPS.Core",
+      ModuleId.fromString("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea")), ClasspathReader.ClassType.CORE);
+    result.put(new ModuleReference("MPS.Editor",
+      ModuleId.fromString("1ed103c3-3aa6-49b7-9c21-6765ee11f224")), ClasspathReader.ClassType.EDITOR);
+    result.put(new ModuleReference("MPS.Platform",
+      ModuleId.fromString("742f6602-5a2f-4313-aa6e-ae1cd4ffdc61")), ClasspathReader.ClassType.PLATFORM);
+    result.put(new ModuleReference("MPS.Workbench",
+      ModuleId.fromString("86441d7a-e194-42da-81a5-2161ec62a379")), ClasspathReader.ClassType.WORKBENCH);
+    result.put(new ModuleReference("Testbench",
+      ModuleId.fromString("920eaa0e-ecca-46bc-bee7-4e5c59213dd6")), ClasspathReader.ClassType.TEST);
+    return result;
+  }
 
   // -------------------------------------------------------------------
 
@@ -189,6 +208,38 @@ public class Solution extends AbstractModule {
   public void save() {
     if (isStub()) return;
     SolutionDescriptorPersistence.saveSolutionDescriptor(myDescriptorFile, getModuleDescriptor());
+  }
+
+  @Override
+  protected void reloadAfterDescriptorChange() {
+    super.reloadAfterDescriptorChange();
+    updateBootstrapSolutionLibraries();
+  }
+
+  @Override
+  public void onModuleLoad() {
+    super.onModuleLoad();
+    updateBootstrapSolutionLibraries();
+  }
+
+  private void updateBootstrapSolutionLibraries() {
+    // temp HACK
+
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor == null) return;
+
+    ClasspathReader.ClassType classType = bootstrapCP.get(descriptor.getModuleReference());
+    if (classType == null) return;
+
+    List<String> javaCP = CommonPaths.getMPSPaths(classType);
+
+    for (String path : javaCP) {
+      ClassPathEntry entry = new ClassPathEntry();
+      entry.setPath(path);
+      ModelRoot mr = jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(entry);
+      descriptor.getStubModelEntries().add(mr);
+      descriptor.getModelRoots().add(mr);
+    }
   }
 
   public boolean isStub() {
