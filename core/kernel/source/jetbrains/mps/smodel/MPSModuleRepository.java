@@ -127,7 +127,7 @@ public class MPSModuleRepository implements CoreComponent {
   }
 
   public Set<IModule> getModules(MPSModuleOwner moduleOwner) {
-    assertCanRead();
+    //todo assertCanRead();
 
     return Collections.unmodifiableSet(myModuleToOwners.getBySecond(moduleOwner));
   }
@@ -139,13 +139,13 @@ public class MPSModuleRepository implements CoreComponent {
   }
 
   public IModule getModuleByFqName(String fqName) {
-    //assertCanRead();
+    //todo assertCanRead();
 
     return myFqNameToModulesMap.get(fqName);
   }
 
   public IModule getModuleById(ModuleId moduleId) {
-    //assertCanRead();
+    //todo assertCanRead();
 
     if (moduleId == null) return null;
     return myIdToModuleMap.get(moduleId);
