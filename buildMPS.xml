@@ -1,9 +1,9 @@
-<project name="build" default="build">
+<project name="buildMPS" default="build">
   <property name="build.dir" location="build" />
-  <property name="build.tmp" location="${build.dir}/tmp/build" />
-  <property name="build.layout" location="${build.dir}/artifacts/build" />
+  <property name="build.tmp" location="${build.dir}/tmp/buildMPS" />
+  <property name="build.layout" location="${build.dir}/artifacts/buildMPS" />
   <property name="idea_home" location="" />
-  <property name="mps_home" location="${basedir}/../.." />
+  <property name="mps_home" location="${basedir}" />
   <property name="mps_libs" location="${mps_home}/lib" />
   <property name="mps_langs" location="${mps_home}/languages" />
   <property name="mps_core" location="${mps_home}/core" />
