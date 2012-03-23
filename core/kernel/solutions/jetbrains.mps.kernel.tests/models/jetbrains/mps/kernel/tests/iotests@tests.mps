@@ -166,7 +166,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5164231775618799341" resolveInfo="sd" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5164231775618799355">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="kqhl.~ModuleDescriptor%dgetCompileInMPS()%cboolean" resolveInfo="getCompileInMPS" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="kqhl.~SolutionDescriptor%dgetCompileInMPS()%cboolean" resolveInfo="getCompileInMPS" />
               </node>
             </node>
           </node>
@@ -526,7 +526,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5164231775618799479" resolveInfo="ld" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5164231775618799493">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="kqhl.~ModuleDescriptor%dgetCompileInMPS()%cboolean" resolveInfo="getCompileInMPS" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="kqhl.~LanguageDescriptor%dgetCompileInMPS()%cboolean" resolveInfo="getCompileInMPS" />
               </node>
             </node>
           </node>
@@ -814,10 +814,6 @@
                   <node role="attribute" roleId="mass.5266766379151914059" type="mass.Attribute" typeId="mass.5266766379151914050" id="5164231775618799607">
                     <property name="name" nameId="tpck.1169194664001" value="uuid" />
                     <property name="value" nameId="mass.5266766379151914052" value="defe1a08-4c21-11e1-b31b-6cf049e62fe5" />
-                  </node>
-                  <node role="attribute" roleId="mass.5266766379151914059" type="mass.Attribute" typeId="mass.5266766379151914050" id="5164231775618799608">
-                    <property name="name" nameId="tpck.1169194664001" value="compileInMPS" />
-                    <property name="value" nameId="mass.5266766379151914052" value="true" />
                   </node>
                   <node role="attribute" roleId="mass.5266766379151914059" type="mass.Attribute" typeId="mass.5266766379151914050" id="5164231775618799609">
                     <property name="name" nameId="tpck.1169194664001" value="doNotGenerateAdapters" />

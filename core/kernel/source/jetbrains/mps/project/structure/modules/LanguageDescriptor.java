@@ -85,6 +85,11 @@ public class LanguageDescriptor extends ModuleDescriptor {
   }
 
   @Override
+  public boolean getCompileInMPS() {
+    return true;
+  }
+
+  @Override
   public boolean updateModelRefs() {
     return RefUpdateUtil.composeUpdates(
       super.updateModelRefs(),

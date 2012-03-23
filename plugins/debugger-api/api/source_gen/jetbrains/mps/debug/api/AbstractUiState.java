@@ -36,33 +36,7 @@ public abstract class AbstractUiState {
 
   protected abstract AbstractUiState selectThreadInternal(@Nullable IThread thread);
 
-  @Deprecated
-  protected AbstractUiState selectFrameInternal(@Nullable IStackFrame frame) {
-    //  is going to be removed, implement selectFrameInternal(int) 
-    return this;
-  }
-
-  protected AbstractUiState selectFrameInternal(int frame) {
-    //  this implementation is going to be removed 
-    //  the method is going to be abstract 
-    //  it is here for not breaking existing user code 
-    if (frame == NO_FRAME) {
-      return selectFrameInternal(null);
-    } else {
-      return selectFrameInternal(getThread().getFrames().get(frame));
-    }
-  }
-
-  @Nullable
-  @Deprecated
-  protected IStackFrame findStackFrame() {
-    // impl 
-    int index = findStackFrameIndex();
-    if (index == NO_FRAME) {
-      return null;
-    }
-    return getThread().getFrames().get(index);
-  }
+  protected abstract AbstractUiState selectFrameInternal(int frame);
 
   protected int findStackFrameIndex() {
     // impl 

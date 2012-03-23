@@ -210,11 +210,6 @@ public abstract class AbstractModule implements IModule {
     IFile classFolder = getClassesGen();
     if (classFolder == null) return Collections.emptyList();
 
-    String file = classFolder.getPath();
-    if (file.endsWith("!/")) {
-      file = file.substring(0, file.length() - 2);
-    }
-
     return Collections.singletonList(new StubPath(classFolder.getPath(), LanguageID.JAVA_MANAGER));
   }
 
@@ -262,7 +257,7 @@ public abstract class AbstractModule implements IModule {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return;
 
-    IFile bundleHomeFile = getBundleHome();
+    final IFile bundleHomeFile = getBundleHome();
     if (bundleHomeFile == null) return;
 
     IFile bundleParent = bundleHomeFile.getParent();
@@ -275,9 +270,7 @@ public abstract class AbstractModule implements IModule {
       packagedSourcesPath = null;
     }
 
-    if (addBundleAsLibrary() && descriptor.getDeploymentDescriptor() != null) {
-      descriptor.getDeploymentDescriptor().getLibraries().add(bundleHomeFile.getName());
-    }
+    boolean addBundleAsModelRoot = false;
 
     // stub libraries
     List<ModelRoot> toRemove = new ArrayList<ModelRoot>();
@@ -296,6 +289,16 @@ public abstract class AbstractModule implements IModule {
     for (ModelRoot sme : descriptor.getModelRoots()) {
       if (!LanguageID.JAVA_MANAGER.equals(sme.getManager())) continue;
 
+      if (!descriptor.getCompileInMPS()) {
+        if (sme.getPath().endsWith("/classes")) {
+          IFile parent = getDescriptorFile().getParent();
+          IFile classes = parent != null ? parent.getDescendant("classes") : null;
+          addBundleAsModelRoot = classes != null && classes.getPath().equalsIgnoreCase(sme.getPath());
+        } else if (bundleHomeFile.getPath().equalsIgnoreCase(sme.getPath())) {
+          addBundleAsModelRoot = true;
+        }
+      }
+
       String path = sme.getPath();
       if (packagedSourcesPath == null || !FileUtil.getCanonicalPath(path).toLowerCase().startsWith(packagedSourcesPath)) {
         String shrinked = MacrosFactory.moduleDescriptor(this).shrinkPath(path, getDescriptorFile());
@@ -306,7 +309,17 @@ public abstract class AbstractModule implements IModule {
     descriptor.getModelRoots().removeAll(toRemove);
 
     DeploymentDescriptor dd = descriptor.getDeploymentDescriptor();
-    if (dd == null) return;
+    if (dd == null) {
+      if (addBundleAsModelRoot) {
+        ClassPathEntry jarEntry = new ClassPathEntry();
+        jarEntry.setPath(bundleHomeFile.getPath());
+        ModelRoot mr = jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(jarEntry);
+        if (!descriptor.getModelRoots().contains(mr)) {
+          descriptor.getModelRoots().add(mr);
+        }
+      }
+      return;
+    }
 
     for (String jarFile : dd.getLibraries()) {
       IFile jar = jarFile.startsWith("/")
@@ -320,18 +333,6 @@ public abstract class AbstractModule implements IModule {
         descriptor.getModelRoots().add(mr);
       }
     }
-  }
-
-  protected boolean addBundleAsLibrary() {
-    if (getModuleDescriptor() != null && !getModuleDescriptor().getCompileInMPS()) {
-      for (ModelRoot sme : getModuleDescriptor().getStubModelEntries()) {
-        if (sme.getManager().getClassName().startsWith("JavaStubs") &&
-          (MacrosFactory.SOLUTION_DESCRIPTOR + "/classes").equals(sme.getPath())) {
-          return true;
-        }
-      }
-    }
-    return false;
   }
 
   public IClassPathItem getClassPathItem() {
@@ -377,9 +378,8 @@ public abstract class AbstractModule implements IModule {
   }
 
   protected void reloadAfterDescriptorChange() {
-    updateModelsSet();
-
     updatePackagedDescriptorClasspath();
+    updateModelsSet();
     invalidateClassPath();
   }
 
@@ -387,9 +387,7 @@ public abstract class AbstractModule implements IModule {
     updateSModelReferences();
     updateModuleReferences();
 
-    if (isPackaged()) {
-      updatePackagedDescriptorClasspath();
-    } else {
+    if (!isPackaged()) {
       Set<ModelRoot> visited = new HashSet<ModelRoot>();
       List<ModelRoot> remove = new ArrayList<ModelRoot>();
       for (ModelRoot e : getModuleDescriptor().getStubModelEntries()) {
@@ -524,8 +522,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   public boolean isCompileInMPS() {
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    return descriptor != null && descriptor.getCompileInMPS();
+    return false;
   }
 
   public boolean reloadClassesAfterGeneration() {

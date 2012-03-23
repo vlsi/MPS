@@ -19,6 +19,7 @@ public class SolutionDescriptor extends ModuleDescriptor {
 
   private String myOutputPath;
   private SolutionKind myKind = SolutionKind.NONE;
+  private boolean myCompileInMPS = true;
 
   public String getOutputPath() {
     return myOutputPath;
@@ -34,5 +35,15 @@ public class SolutionDescriptor extends ModuleDescriptor {
 
   public void setKind(SolutionKind kind) {
     myKind = kind;
+  }
+
+  @Override
+  public boolean getCompileInMPS() {
+    return myCompileInMPS;
+  }
+
+  @Override
+  public void setCompileInMPS(boolean compileInMPS) {
+    myCompileInMPS = compileInMPS;
   }
 }

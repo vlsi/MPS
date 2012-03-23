@@ -33,9 +33,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -61,7 +59,6 @@ public class TestMakeOnRealProject {
   private MPSModuleOwner myModuleOwner = new MPSModuleOwner() {
 
   };
-
 
   @Before
   public void setUp() throws IOException {
@@ -282,6 +279,7 @@ public class TestMakeOnRealProject {
     modelRoot.setPath(runtimeSolutionDescriptorFile.getParent().getPath());
 
     solutionDescriptor.getModelRoots().add(modelRoot);
+    solutionDescriptor.getDependencies().add(new Dependency(new ModuleReference("JDK"), true));
     runtimeSolutionDescriptorFile.createNewFile();
     SolutionDescriptorPersistence.saveSolutionDescriptor(runtimeSolutionDescriptorFile, solutionDescriptor);
     ModuleHandle handle = ModulesMiner.getInstance().loadModuleHandle(runtimeSolutionDescriptorFile);

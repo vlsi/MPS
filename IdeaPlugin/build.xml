@@ -755,12 +755,8 @@
     <copy todir="${pluginPath}/mps-core">
       <fileset dir="${dist.dir}/mps-core"/>
     </copy>
-    <copy todir="${pluginPath}/mps-vcs">
-      <fileset dir="${dist.dir}/mps-vcs"/>
-    </copy>
-    <copy todir="${pluginPath}">
-      <fileset file="${dist.dir}/mps-java.jar"/>
-    </copy>
+    <copy tofile="${pluginPath}/mps-vcs.jar"
+          file="${dist.dir}/mps-vcs.jar"/>
   </target>
 
   <target name="uninstall-plugin">

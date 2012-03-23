@@ -122,6 +122,13 @@
       <modulePath path="${project}/languages/build/solutions/runtime.msd" folder="build" />
       <modulePath path="${project}/languages/core/core/languageDescriptor.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/core/core/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
+      <modulePath path="${project}/languages/core/stub/JDK.Tools/Tools.msd" folder="core.stub" />
+      <modulePath path="${project}/languages/core/stub/JDK/JDK.msd" folder="core.stub" />
+      <modulePath path="${project}/languages/core/stub/MPS.Core/Core.msd" folder="core.stub" />
+      <modulePath path="${project}/languages/core/stub/MPS.Editor/Editor.msd" folder="core.stub" />
+      <modulePath path="${project}/languages/core/stub/MPS.Platform/Platform.msd" folder="core.stub" />
+      <modulePath path="${project}/languages/core/stub/MPS.Workbench/Workbench.msd" folder="core.stub" />
+      <modulePath path="${project}/languages/core/stub/Testbench/Testbench.msd" folder="core.stub" />
       <modulePath path="${project}/languages/languageDesign/actions/languageDescriptor.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/behavior/languages/behavior/behavior.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/constraints/constraints.mpl" folder="core.language-design" />

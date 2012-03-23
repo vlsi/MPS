@@ -530,20 +530,26 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  public List<StubPath> getOwnStubPaths() {
-    List<StubPath> result = new ArrayList<StubPath>();
-    if (isCompileInMPS()) {
-      IFile classesGen = getClassesGen();
-      if (classesGen != null) {
-        result.add(new StubPath(classesGen.getPath(), LanguageID.JAVA_MANAGER));
-      }
-    } else {
-      IFile classes = ProjectPathUtil.getClassesFolder(getDescriptorFile());
-      if (classes != null) {
-        result.add(new StubPath(classes.getPath(), LanguageID.JAVA_MANAGER));
-      }
+  @Override
+  public boolean isCompileInMPS() {
+    // language is always compiled in MPS
+    return true;
+  }
+
+  @Override
+  public Collection<StubPath> getOwnStubPaths() {
+    if (isPackaged()) {
+      return Collections.singletonList(
+        new StubPath(
+          FileSystem.getInstance().getBundleHome(getDescriptorFile()).getPath(),
+          LanguageID.JAVA_MANAGER));
     }
-    return result;
+
+    IFile classesGen = ProjectPathUtil.getClassesGenFolder(getDescriptorFile());
+    if (classesGen != null) {
+      return Collections.singletonList(new StubPath(classesGen.getPath(), LanguageID.JAVA_MANAGER));
+    }
+    return Collections.emptyList();
   }
 
   protected void invalidateClassPath() {
@@ -623,11 +629,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
         }
       }
     }
-  }
-
-  @Override
-  protected boolean addBundleAsLibrary() {
-    return false;
   }
 
   protected Collection<ModelRoot> getRuntimeModelsEntries() {
