@@ -17,7 +17,7 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
   public IdeaModuleSolutionDescriptorIO() {
   }
 
-  public SolutionDescriptor readFromFile(IFile file) throws DescriptorIOException {
+  public SolutionDescriptor readFromFile(final IFile file) throws DescriptorIOException {
     final MPSFacetConfiguration mpsConf = this.readMPSFacetConf(file);
     if (mpsConf == null) {
       return null;
@@ -28,7 +28,7 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
       public SolutionDescriptor invoke() {
         final SolutionDescriptor result_56japk_a0a0e0a = new SolutionDescriptor();
         // TODO: namespace 
-        final String result_56japk_a1a0a0e0a = null;
+        final String result_56japk_a1a0a0e0a = file.getName();
         result_56japk_a0a0e0a.setNamespace(result_56japk_a1a0a0e0a);
 
         final String result_56japk_a3a0a0e0a = mpsConf.getUUID();
