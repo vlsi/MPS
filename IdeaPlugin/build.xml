@@ -743,7 +743,9 @@
       <zipfileset dir="${dist.dir}/mps-core" prefix="mps-core${plugin.prefix}">
         <exclude name="lib/*-tests.jar"/>
       </zipfileset>
-      <zipfileset file="${dist.dir}/mps-vcs.jar"/>
+      <zipfileset dir="${dist.dir}/mps-vcs" prefix="mps-vcs${plugin.prefix}">
+        <exclude name="lib/*-tests.jar"/>
+      </zipfileset>
       <zipfileset file="${dist.dir}/mps-java.jar"/>
     </zip>
   </target>
@@ -753,13 +755,18 @@
     <copy todir="${pluginPath}/mps-core">
       <fileset dir="${dist.dir}/mps-core"/>
     </copy>
-    <copy tofile="${pluginPath}/mps-vcs.jar"
-          file="${dist.dir}/mps-vcs.jar"/>
+    <copy todir="${pluginPath}/mps-vcs">
+      <fileset dir="${dist.dir}/mps-vcs"/>
+    </copy>
+    <copy todir="${pluginPath}">
+      <fileset file="${dist.dir}/mps-java.jar"/>
+    </copy>
   </target>
 
   <target name="uninstall-plugin">
     <property name="pluginPath" value="${home.idea_ce.plugins}"/>
     <delete dir="${pluginPath}/mps-core"/>
-    <delete file="${pluginPath}/mps-vcs.jar"/>
+    <delete dir="${pluginPath}/mps-vcs"/>
+    <delete file="${pluginPath}/mps-java.jar"/>
   </target>
 </project>
