@@ -1604,9 +1604,12 @@
   <dependency className="jetbrains.mps.ide.actions.JavaStackTraceFilter" file="JavaStackTraceFilter.java">
     <classNode dependClassName="com.intellij.execution.filters.HyperlinkInfo" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.NumberFormatException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoUtil" />
+    <classNode dependClassName="jetbrains.mps.ide.common.FileOpenUtil" />
     <classNode dependClassName="jetbrains.mps.ide.navigation.NodeNavigatable" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />

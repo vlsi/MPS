@@ -769,7 +769,8 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vstq.~ConsoleView%daddMessageFilter(com%dintellij%dexecution%dfilters%dFilter)%cvoid" resolveInfo="addMessageFilter" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6062668769033909666">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6062668769033909667">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="on5u.~JavaStackTraceFilter%d&lt;init&gt;()" resolveInfo="JavaStackTraceFilter" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tprs.2162966196216183922" resolveInfo="JavaStackTraceFilter" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="uhxm.Project_Parameter" typeId="uhxm.7684700299064179245" id="345913128620980291" />
                 </node>
               </node>
             </node>
@@ -1836,7 +1837,8 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vstq.~ConsoleView%daddMessageFilter(com%dintellij%dexecution%dfilters%dFilter)%cvoid" resolveInfo="addMessageFilter" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6062668769034010949">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6062668769034010950">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="on5u.~JavaStackTraceFilter%d&lt;init&gt;()" resolveInfo="JavaStackTraceFilter" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tprs.2162966196216183922" resolveInfo="JavaStackTraceFilter" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="uhxm.Project_Parameter" typeId="uhxm.7684700299064179245" id="345913128620980290" />
                 </node>
               </node>
             </node>
@@ -6584,7 +6586,8 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vstq.~ConsoleView%daddMessageFilter(com%dintellij%dexecution%dfilters%dFilter)%cvoid" resolveInfo="addMessageFilter" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6062668769034024395">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6062668769034024396">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="on5u.~JavaStackTraceFilter%d&lt;init&gt;()" resolveInfo="JavaStackTraceFilter" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tprs.2162966196216183922" resolveInfo="JavaStackTraceFilter" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="uhxm.Project_Parameter" typeId="uhxm.7684700299064179245" id="345913128620963708" />
                 </node>
               </node>
             </node>
@@ -7177,6 +7180,7 @@
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6391517972808447607">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6391517972808447608">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tprs.2162966196216183922" resolveInfo="JavaStackTraceFilter" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="uhxm.Project_Parameter" typeId="uhxm.7684700299064179245" id="345913128620956797" />
                 </node>
               </node>
             </node>

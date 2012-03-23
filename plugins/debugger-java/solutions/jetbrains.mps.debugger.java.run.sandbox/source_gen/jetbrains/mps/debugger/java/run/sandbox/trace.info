@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeId="1331672133304136819">
+    <nodeInfo nodeId="1331672133304136839" fileName="TestTextSource.java" startLine="11" startPosition="42" endLine="12" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1331672133304136821" fileName="TestTextSource.java" startLine="7" startPosition="29" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestTextSource#()V" />
+    <nodeInfo nodeId="1331672133304136825" fileName="TestTextSource.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
+    <scopeInfo nodeId="1331672133304136824" fileName="TestTextSource.java" startLine="8" startPosition="27" endLine="8" endPosition="27" />
+    <scopeInfo nodeId="1331672133304136831" fileName="TestTextSource.java" startLine="11" startPosition="42" endLine="12" endPosition="51" />
+    <scopeInfo nodeId="1331672133304136821" fileName="TestTextSource.java" startLine="7" startPosition="29" endLine="9" endPosition="3" />
+    <scopeInfo nodeId="1331672133304136825" fileName="TestTextSource.java" startLine="10" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="1331672133304136826" varName="args" />
+    </scopeInfo>
+    <unitInfo nodeId="1331672133304136819" fileName="TestTextSource.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.debugger.java.run.sandbox.TestTextSource" />
+  </root>
   <root nodeId="1876713722539579910">
     <nodeInfo nodeId="6814978825597953741" fileName="SeveralThreads.java" startLine="15" startPosition="25" endLine="16" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3921561759367115246" fileName="SeveralThreads.java" startLine="16" startPosition="18" endLine="17" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

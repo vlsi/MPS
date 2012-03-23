@@ -10,6 +10,7 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.File;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.util.annotation.ToRemove;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
@@ -56,11 +57,13 @@ public class ProcessHandlerBuilder {
   }
 
   @Deprecated
+  @ToRemove(version = 2.1)
   public ProcessHandlerBuilder appendKey(@Nullable String key, @Nullable String parameter) {
     return append(new KeyValueCommandPart(key, parameter));
   }
 
   @Deprecated
+  @ToRemove(version = 2.1)
   public ProcessHandlerBuilder appendKey(@Nullable String key, String... parameter) {
     if (StringUtils.isNotEmpty(key) && parameter.length > 0) {
       return append("-" + key).append(parameter);
@@ -69,6 +72,7 @@ public class ProcessHandlerBuilder {
   }
 
   @Deprecated
+  @ToRemove(version = 2.1)
   public ProcessHandlerBuilder appendKey(@Nullable String key, @NotNull List<String> parameters) {
     if (StringUtils.isNotEmpty(key) && ListSequence.fromList(parameters).isNotEmpty()) {
       return append("-" + key).append(parameters);

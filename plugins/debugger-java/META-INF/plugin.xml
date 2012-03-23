@@ -20,11 +20,16 @@
       <implementation-class>jetbrains.mps.debugger.java.JavaDebugger</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.debugger.java.runtime.ui.actions.Runtime_PluginInitializer</implementation-class>
+      <implementation-class>jetbrains.mps.debugger.java.runtime.ui.actions.Runtime_PluginInitializer
+      </implementation-class>
     </component>
   </application-components>
 
   <project-components>
+    <!--api-->
+    <component>
+      <implementation-class>jetbrains.mps.debugger.java.runtime.JavaNodePositionProvider</implementation-class>
+    </component>
     <!--runtime-->
     <component>
       <implementation-class>jetbrains.mps.debugger.java.runtime.VMEventsProcessorManagerComponent</implementation-class>
