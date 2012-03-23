@@ -546,7 +546,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="602731281382637725">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="602731281382637726">
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="602731281382637727">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp6m.1217253486858" resolveInfo="initTest" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp6m.262412979073677796" resolveInfo="initTest" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="602731281382637728">
                 <property name="value" nameId="tpee.1070475926801" value="project path" />
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="602731281382637729">
@@ -603,7 +603,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="602731281382637752">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="602731281382637753">
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="602731281382637754">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp6m.1221572156036" resolveInfo="runTest" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp6m.262412979073677870" resolveInfo="runTest" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="602731281382637755">
                 <property name="value" nameId="tpee.1070475926801" value="TestCaseName$TestBody" />
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="602731281382637756">
@@ -700,8 +700,8 @@
         </node>
       </node>
     </node>
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="602731281382637685">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tp6m.1215696484420" resolveInfo="BaseTransformationTest" />
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="262412979073795388">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tp6m.262412979073677743" resolveInfo="BaseTransformationTest4" />
     </node>
     <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="602731281382638154">
       <link role="annotation" roleId="tpee.1188208074048" targetNodeId="89ww.8492459591399146889" resolveInfo="MPSLaunch" />
