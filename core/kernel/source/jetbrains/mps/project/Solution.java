@@ -211,15 +211,9 @@ public class Solution extends AbstractModule {
   }
 
   @Override
-  protected void reloadAfterDescriptorChange() {
-    super.reloadAfterDescriptorChange();
+  public void updateModelsSet() {
     updateBootstrapSolutionLibraries();
-  }
-
-  @Override
-  public void onModuleLoad() {
-    super.onModuleLoad();
-    updateBootstrapSolutionLibraries();
+    super.updateModelsSet();
   }
 
   private void updateBootstrapSolutionLibraries() {
@@ -232,6 +226,8 @@ public class Solution extends AbstractModule {
     if (classType == null) return;
 
     List<String> javaCP = CommonPaths.getMPSPaths(classType);
+    descriptor.getModelRoots().clear();
+    descriptor.getStubModelEntries().clear();
 
     for (String path : javaCP) {
       ClassPathEntry entry = new ClassPathEntry();
