@@ -51,7 +51,7 @@
     <nodeInfo nodeId="2906110183022177243" fileName="SNodeGetReferenceOperation_Test.java" startLine="99" startPosition="46" endLine="100" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2906110183022177246" fileName="SNodeGetReferenceOperation_Test.java" startLine="100" startPosition="46" endLine="101" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2906110183022177252" fileName="SNodeGetReferenceOperation_Test.java" startLine="101" startPosition="150" endLine="102" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2906110183022090591" fileName="SNodeGetReferenceOperation_Test.java" startLine="17" startPosition="77" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_empty#()V" />
+    <nodeInfo nodeId="2906110183022090591" fileName="SNodeGetReferenceOperation_Test.java" startLine="17" startPosition="78" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_empty#()V" />
     <nodeInfo nodeId="2906110183022090591" fileName="SNodeGetReferenceOperation_Test.java" startLine="23" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_byLinkDeclaration#()V" />
     <nodeInfo nodeId="2906110183022090591" fileName="SNodeGetReferenceOperation_Test.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_bySpecializedLinkDeclaration#()V" />
     <nodeInfo nodeId="2906110183022090591" fileName="SNodeGetReferenceOperation_Test.java" startLine="35" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_forNull#()V" />
@@ -70,7 +70,7 @@
     <scopeInfo nodeId="2906110183022177243" fileName="SNodeGetReferenceOperation_Test.java" startLine="97" startPosition="64" endLine="102" endPosition="214">
       <varInfo nodeId="2906110183022177247" varName="invalidLinkDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="2906110183022090591" fileName="SNodeGetReferenceOperation_Test.java" startLine="17" startPosition="77" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="2906110183022090591" fileName="SNodeGetReferenceOperation_Test.java" startLine="17" startPosition="78" endLine="23" endPosition="0" />
     <scopeInfo nodeId="2906110183022090591" fileName="SNodeGetReferenceOperation_Test.java" startLine="23" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="2906110183022090591" fileName="SNodeGetReferenceOperation_Test.java" startLine="29" startPosition="0" endLine="35" endPosition="0" />
     <scopeInfo nodeId="2906110183022090591" fileName="SNodeGetReferenceOperation_Test.java" startLine="35" startPosition="0" endLine="41" endPosition="0" />
@@ -230,7 +230,7 @@
     <nodeInfo nodeId="2906110183022432363" fileName="SNodeGetReferencesOperation_Test.java" startLine="182" startPosition="63" endLine="187" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2906110183022440094" fileName="SNodeGetReferencesOperation_Test.java" startLine="208" startPosition="211" endLine="213" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2906110183022440126" fileName="SNodeGetReferencesOperation_Test.java" startLine="215" startPosition="227" endLine="220" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2906110183022219806" fileName="SNodeGetReferencesOperation_Test.java" startLine="21" startPosition="78" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_size#()V" />
+    <nodeInfo nodeId="2906110183022219806" fileName="SNodeGetReferencesOperation_Test.java" startLine="21" startPosition="79" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_size#()V" />
     <nodeInfo nodeId="2906110183022219806" fileName="SNodeGetReferencesOperation_Test.java" startLine="27" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_target#()V" />
     <nodeInfo nodeId="2906110183022219806" fileName="SNodeGetReferencesOperation_Test.java" startLine="33" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_linkDeclaration#()V" />
     <nodeInfo nodeId="2906110183022219806" fileName="SNodeGetReferencesOperation_Test.java" startLine="39" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_forSpecializedLink#()V" />
@@ -311,7 +311,7 @@
     <scopeInfo nodeId="2906110183022440135" fileName="SNodeGetReferencesOperation_Test.java" startLine="216" startPosition="263" endLine="220" endPosition="0">
       <varInfo nodeId="2906110183022440135" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="2906110183022219806" fileName="SNodeGetReferencesOperation_Test.java" startLine="21" startPosition="78" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="2906110183022219806" fileName="SNodeGetReferencesOperation_Test.java" startLine="21" startPosition="79" endLine="27" endPosition="0" />
     <scopeInfo nodeId="2906110183022219806" fileName="SNodeGetReferencesOperation_Test.java" startLine="27" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="2906110183022219806" fileName="SNodeGetReferencesOperation_Test.java" startLine="33" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="2906110183022219806" fileName="SNodeGetReferencesOperation_Test.java" startLine="39" startPosition="0" endLine="45" endPosition="0" />
@@ -463,7 +463,7 @@
     <nodeInfo nodeId="1433948805480825417" fileName="SNodeGetChildrenOperation_Test.java" startLine="76" startPosition="46" endLine="81" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2906110183022478502" fileName="SNodeGetChildrenOperation_Test.java" startLine="94" startPosition="46" endLine="99" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9203425869796418391" fileName="SNodeGetChildrenOperation_Test.java" startLine="109" startPosition="215" endLine="114" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8758390115028789531" fileName="SNodeGetChildrenOperation_Test.java" startLine="22" startPosition="76" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_childContainingLinks#()V" />
+    <nodeInfo nodeId="8758390115028789531" fileName="SNodeGetChildrenOperation_Test.java" startLine="22" startPosition="77" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_childContainingLinks#()V" />
     <nodeInfo nodeId="8758390115028789531" fileName="SNodeGetChildrenOperation_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_childContaininLinksForSpecializedChildren#()V" />
     <nodeInfo nodeId="8758390115028789531" fileName="SNodeGetChildrenOperation_Test.java" startLine="34" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_childContainingRoles#()V" />
     <nodeInfo nodeId="8758390115028789531" fileName="SNodeGetChildrenOperation_Test.java" startLine="40" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_unspecifiedChildren#()V" />
@@ -505,7 +505,7 @@
       <varInfo nodeId="9203425869796418406" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="2600026384779198864" fileName="SNodeGetChildrenOperation_Test.java" startLine="141" startPosition="78" endLine="146" endPosition="441" />
-    <scopeInfo nodeId="8758390115028789531" fileName="SNodeGetChildrenOperation_Test.java" startLine="22" startPosition="76" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="8758390115028789531" fileName="SNodeGetChildrenOperation_Test.java" startLine="22" startPosition="77" endLine="28" endPosition="0" />
     <scopeInfo nodeId="8758390115028789531" fileName="SNodeGetChildrenOperation_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="8758390115028789531" fileName="SNodeGetChildrenOperation_Test.java" startLine="34" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="8758390115028789531" fileName="SNodeGetChildrenOperation_Test.java" startLine="40" startPosition="0" endLine="46" endPosition="0" />

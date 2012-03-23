@@ -53,7 +53,7 @@
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest4" />
   </dependency>
   <dependency className="jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test" file="JavaCommand_Test.java">
     <classNode dependClassName="com.intellij.execution.process.ProcessAdapter" />
@@ -87,7 +87,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest4" />
   </dependency>
   <dependency className="jetbrains.mps.execution.impl.configurations.tests.commands.SplitCommandInParts_Test" file="SplitCommandInParts_Test.java">
     <classNode dependClassName="java.lang.Exception" />

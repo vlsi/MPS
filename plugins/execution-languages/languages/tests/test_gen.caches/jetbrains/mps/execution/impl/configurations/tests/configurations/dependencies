@@ -24,7 +24,7 @@
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest4" />
   </dependency>
   <dependency className="jetbrains.mps.execution.impl.configurations.tests.configurations.XslTest" file="XslTest.java">
     <classNode dependClassName="java.io.IOException" />
