@@ -15,28 +15,27 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
+import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.project.StubModelsResolver;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 
-public class StubModelDescriptors {
+public abstract class StubModelDescriptors {
   private String stubStereotype;
   private Iterable<ModelRoot> modelRoot;
   private IModule module;
-  private boolean gwt;
 
-  public StubModelDescriptors(String stereotype, ModelRoot mr, IModule module, boolean gwt) {
-    this(stereotype, Sequence.<ModelRoot>singleton(mr), module, gwt);
+  public StubModelDescriptors(String stereotype, ModelRoot mr, IModule module) {
+    this(stereotype, Sequence.<ModelRoot>singleton(mr), module);
   }
 
-  public StubModelDescriptors(String stereotype, Iterable<ModelRoot> roots, IModule module, boolean gwt) {
+  public StubModelDescriptors(String stereotype, Iterable<ModelRoot> roots, IModule module) {
     this.stubStereotype = stereotype;
     this.modelRoot = roots;
     this.module = module;
-    this.gwt = gwt;
   }
 
   public Set<BaseStubModelDescriptor> getDescriptors(_FunctionTypes._return_P1_E0<? extends PathItem, ? super String> getPathItem) {
@@ -57,14 +56,11 @@ public class StubModelDescriptors {
           assert descById.getModule() == module;
           SetSequence.fromSet(result).addElement(((BaseStubModelDescriptor) descById));
           ModelDataSource dataSource = ((BaseStubModelDescriptor) descById).getSource();
-          if (dataSource instanceof ConfStubSource) {
-            ((ConfStubSource) dataSource).addRoot(loc);
+          if (dataSource instanceof MultiRootModelDataSource) {
+            ((MultiRootModelDataSource) dataSource).addRoot(loc);
           }
         } else {
-          BaseStubModelDescriptor desc = new BaseStubModelDescriptor(smref, (gwt ?
-            new GWTStubsSource(module.getModuleReference(), loc) :
-            new ConfStubSource(module.getModuleReference(), loc)
-          ), module);
+          BaseStubModelDescriptor desc = new BaseStubModelDescriptor(smref, createStubsSource(module.getModuleReference(), loc), module);
           SModelRepository.getInstance().registerModelDescriptor(desc, module);
           SetSequence.fromSet(result).addElement(desc);
         }
@@ -74,6 +70,8 @@ public class StubModelDescriptors {
       collectDescriptors(mr, subpkg, getPathItem, result);
     }
   }
+
+  public abstract StubModelDataSource createStubsSource(ModuleReference origin, ModelRoot root);
 
   public SModelReference smodelRefWithId(String pkg) {
     SModelFqName fqname = new SModelFqName(module.getModuleFqName(), pkg, stubStereotype);
