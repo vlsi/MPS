@@ -154,8 +154,10 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   }
 
   @Override
+  //it is disposed as CoreComponent
   public void dispose() {
     if (INSTANCE == null) return;
+    INSTANCE = null;
     clearAll();
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
@@ -163,7 +165,6 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       }
     });
     MPSModuleRepository.getInstance().removeModuleRepositoryListener(myListener);
-    INSTANCE = null;
   }
 
   public void clearAll() {
