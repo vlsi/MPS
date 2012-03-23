@@ -1133,6 +1133,77 @@
     <unitInfo nodeId="8461667031990053629" fileName="CheckClosureParameterScopes_MigrationScript.java" startLine="16" startPosition="0" endLine="70" endPosition="0" unitName="TestLang.scripts.CheckClosureParameterScopes_MigrationScript" />
     <unitInfo nodeId="8461667031990053629" fileName="CheckClosureParameterScopes_MigrationScript.java" startLine="19" startPosition="28" endLine="67" endPosition="5" unitName="TestLang.scripts.CheckClosureParameterScopes_MigrationScript$1" />
   </root>
+  <root nodeId="869906464959471161">
+    <nodeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="17" startPosition="101" endLine="18" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="20" startPosition="31" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="24" startPosition="41" endLine="25" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="28" startPosition="59" endLine="29" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="869906464959471184" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="32" startPosition="59" endLine="33" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="869906464959471188" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="33" startPosition="49" endLine="34" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="869906464959471192" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="34" startPosition="31" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="869906464959471193" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="35" startPosition="0" endLine="36" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="869906464959471201" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="36" startPosition="185" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="869906464959471204" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="38" startPosition="26" endLine="39" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="869906464959471211" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="41" startPosition="38" endLine="42" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="869906464959471215" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="43" startPosition="9" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="869906464959471216" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="44" startPosition="0" endLine="45" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="869906464959471226" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="46" startPosition="40" endLine="47" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="869906464959471233" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="49" startPosition="47" endLine="50" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="869906464959471241" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="52" startPosition="45" endLine="53" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="869906464959471248" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="54" startPosition="9" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="869906464959533407" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="55" startPosition="0" endLine="56" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="869906464959471249" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="56" startPosition="18" endLine="57" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="869906464959471165" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="60" startPosition="52" endLine="61" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="869906464959471173" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="61" startPosition="185" endLine="62" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="65" startPosition="42" endLine="66" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="869906464959471202" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="37" startPosition="0" endLine="40" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="869906464959471209" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="40" startPosition="9" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="869906464959471224" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="45" startPosition="123" endLine="48" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="869906464959471231" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="48" startPosition="9" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="869906464959471239" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="51" startPosition="9" endLine="54" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="19" startPosition="76" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="59" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="31" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="18" startPosition="57" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="16" startPosition="97" endLine="69" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckLocalInstanceFieldReferenceScopes_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <scopeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="20" startPosition="31" endLine="21" endPosition="25" />
+    <scopeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="24" startPosition="41" endLine="25" endPosition="25" />
+    <scopeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="28" startPosition="59" endLine="29" endPosition="82" />
+    <scopeInfo nodeId="869906464959471203" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="38" startPosition="26" endLine="39" endPosition="23" />
+    <scopeInfo nodeId="869906464959471210" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="41" startPosition="38" endLine="42" endPosition="23" />
+    <scopeInfo nodeId="869906464959471225" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="46" startPosition="40" endLine="47" endPosition="23" />
+    <scopeInfo nodeId="869906464959471232" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="49" startPosition="47" endLine="50" endPosition="23" />
+    <scopeInfo nodeId="869906464959471240" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="52" startPosition="45" endLine="53" endPosition="23" />
+    <scopeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="65" startPosition="42" endLine="66" endPosition="21" />
+    <scopeInfo nodeId="869906464959471164" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="60" startPosition="52" endLine="62" endPosition="200">
+      <varInfo nodeId="869906464959471166" varName="ref" />
+    </scopeInfo>
+    <scopeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="19" startPosition="76" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="59" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="869906464959471161" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="869906464959471183" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="32" startPosition="59" endLine="57" endPosition="210">
+      <varInfo nodeId="869906464959471185" varName="excludingPrefix" />
+      <varInfo nodeId="869906464959471217" varName="name" />
+      <varInfo nodeId="869906464959471194" varName="ref" />
+      <varInfo nodeId="869906464959471189" varName="startsFrom" />
+    </scopeInfo>
+    <scopeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="31" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="869906464959471161" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="17" startPosition="101" endLine="68" endPosition="7" />
+    <scopeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="16" startPosition="97" endLine="69" endPosition="3">
+      <varInfo nodeId="869906464959471161" varName="operationContext" />
+    </scopeInfo>
+    <unitInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="16" startPosition="0" endLine="71" endPosition="0" unitName="TestLang.scripts.CheckLocalInstanceFieldReferenceScopes_MigrationScript" />
+    <unitInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="19" startPosition="28" endLine="68" endPosition="5" unitName="TestLang.scripts.CheckLocalInstanceFieldReferenceScopes_MigrationScript$1" />
+  </root>
   <root nodeId="8757051003975554568">
     <nodeInfo nodeId="1965068273729163622" fileName="Utils.java" startLine="24" startPosition="20" endLine="25" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="watchingLock" />
     <nodeInfo nodeId="1965068273729159049" fileName="Utils.java" startLine="25" startPosition="58" endLine="26" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="timeSummary" />
@@ -1170,38 +1241,46 @@
     <nodeInfo nodeId="8682571714413412916" fileName="Utils.java" startLine="115" startPosition="29" endLine="116" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1965068273729153821" fileName="Utils.java" startLine="116" startPosition="117" endLine="117" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2995585510566192956" fileName="Utils.java" startLine="125" startPosition="31" endLine="126" endPosition="358" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1965068273729153839" fileName="Utils.java" startLine="131" startPosition="29" endLine="132" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7837958418564010911" fileName="Utils.java" startLine="139" startPosition="29" endLine="140" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4869768833579765751" fileName="Utils.java" startLine="140" startPosition="41" endLine="141" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7375789380263280187" fileName="Utils.java" startLine="141" startPosition="180" endLine="142" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8757051003975555797" fileName="Utils.java" startLine="147" startPosition="49" endLine="148" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8826502219009005161" fileName="Utils.java" startLine="132" startPosition="31" endLine="133" endPosition="359" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8826502219009091688" fileName="Utils.java" startLine="139" startPosition="31" endLine="140" endPosition="360" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8826502219009005153" fileName="Utils.java" startLine="143" startPosition="5" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1965068273729153839" fileName="Utils.java" startLine="146" startPosition="29" endLine="147" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7837958418564010911" fileName="Utils.java" startLine="154" startPosition="29" endLine="155" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4869768833579765751" fileName="Utils.java" startLine="155" startPosition="41" endLine="156" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7375789380263280187" fileName="Utils.java" startLine="156" startPosition="180" endLine="157" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8757051003975555797" fileName="Utils.java" startLine="162" startPosition="49" endLine="163" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8757051003975554570" fileName="Utils.java" startLine="30" startPosition="0" endLine="32" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Utils#()V" />
     <nodeInfo nodeId="6345924993424885674" fileName="Utils.java" startLine="108" startPosition="10" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8833053705482722269" fileName="Utils.java" startLine="88" startPosition="45" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1965068273729159206" fileName="Utils.java" startLine="67" startPosition="39" endLine="71" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1965068273729155967" fileName="Utils.java" startLine="80" startPosition="43" endLine="84" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2995585510566192951" fileName="Utils.java" startLine="124" startPosition="87" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="1965068273729153836" fileName="Utils.java" startLine="130" startPosition="85" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="8757051003975555781" fileName="Utils.java" startLine="146" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInComment#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="8826502219009005159" fileName="Utils.java" startLine="131" startPosition="87" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="8826502219009091686" fileName="Utils.java" startLine="138" startPosition="87" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="1965068273729153836" fileName="Utils.java" startLine="145" startPosition="85" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="8757051003975555781" fileName="Utils.java" startLine="161" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInComment#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="1965068273729159178" fileName="Utils.java" startLine="52" startPosition="15" endLine="57" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="1965068273729153804" fileName="Utils.java" startLine="114" startPosition="76" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/scope/Scope;" />
     <nodeInfo nodeId="2995585510566192945" fileName="Utils.java" startLine="123" startPosition="172" endLine="128" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1965068273729153834" fileName="Utils.java" startLine="129" startPosition="5" endLine="134" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8826502219009005156" fileName="Utils.java" startLine="130" startPosition="172" endLine="135" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8826502219009091683" fileName="Utils.java" startLine="137" startPosition="172" endLine="142" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1965068273729153834" fileName="Utils.java" startLine="144" startPosition="0" endLine="149" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1061587096433693056" fileName="Utils.java" startLine="100" startPosition="99" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1965068273729153802" fileName="Utils.java" startLine="113" startPosition="69" endLine="119" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1965068273729153849" fileName="Utils.java" startLine="138" startPosition="92" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="1965068273729153849" fileName="Utils.java" startLine="153" startPosition="92" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/scope/Scope;" />
     <nodeInfo nodeId="1965068273729159127" fileName="Utils.java" startLine="43" startPosition="80" endLine="50" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1965068273729159198" fileName="Utils.java" startLine="66" startPosition="28" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="2995585510566192911" fileName="Utils.java" startLine="122" startPosition="87" endLine="129" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1965068273729153847" fileName="Utils.java" startLine="137" startPosition="93" endLine="144" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8826502219009005154" fileName="Utils.java" startLine="129" startPosition="5" endLine="136" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8826502219009091681" fileName="Utils.java" startLine="136" startPosition="5" endLine="143" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1965068273729153847" fileName="Utils.java" startLine="152" startPosition="93" endLine="159" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1965068273729159110" fileName="Utils.java" startLine="42" startPosition="49" endLine="51" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1965068273729155939" fileName="Utils.java" startLine="78" startPosition="43" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="8757051003975555533" fileName="Utils.java" startLine="112" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getOldScopeFromRef#(Ljetbrains/mps/smodel/SReference;)Ljava/util/Set;" />
-    <nodeInfo nodeId="7837958418564010901" fileName="Utils.java" startLine="136" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNewScopeForIOperation#(Ljetbrains/mps/smodel/SReference;Ljetbrains/mps/smodel/SNode;)Ljava/util/Set;" />
+    <nodeInfo nodeId="7837958418564010901" fileName="Utils.java" startLine="151" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNewScopeForIOperation#(Ljetbrains/mps/smodel/SReference;Ljetbrains/mps/smodel/SNode;)Ljava/util/Set;" />
     <nodeInfo nodeId="1965068273729159166" fileName="Utils.java" startLine="41" startPosition="26" endLine="52" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="1965068273729159188" fileName="Utils.java" startLine="64" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addDataToProfile#(Ljava/lang/String;J)V" />
     <nodeInfo nodeId="8757051003975554628" fileName="Utils.java" startLine="99" startPosition="81" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8757051003975555558" fileName="Utils.java" startLine="121" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNewScopeFromRef#(Ljetbrains/mps/smodel/SReference;Ljetbrains/mps/smodel/SNode;)Ljava/util/Set;" />
     <nodeInfo nodeId="8757051003975554593" fileName="Utils.java" startLine="95" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkScopes#(Ljetbrains/mps/smodel/SNode;Ljava/util/Set;Ljava/util/Set;Z)Z" />
     <nodeInfo nodeId="1965068273729159106" fileName="Utils.java" startLine="40" startPosition="29" endLine="58" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="8757051003975554574" fileName="Utils.java" startLine="75" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNodes#(Ljava/lang/String;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;Ljetbrains/mps/smodel/SReference;)Ljava/util/Set;" />
@@ -1209,6 +1288,7 @@
     <nodeInfo nodeId="1965068273729159083" fileName="Utils.java" startLine="38" startPosition="45" endLine="60" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1965068273729163639" fileName="Utils.java" startLine="35" startPosition="33" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1965068273729163619" fileName="Utils.java" startLine="34" startPosition="46" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="8757051003975555558" fileName="Utils.java" startLine="121" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNewScopeFromRef#(Ljetbrains/mps/smodel/SReference;Ljetbrains/mps/smodel/SNode;)Ljava/util/Set;" />
     <nodeInfo nodeId="1965068273729163609" fileName="Utils.java" startLine="33" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="startWatchingIfNeeded#()V" />
     <scopeInfo nodeId="8757051003975554573" fileName="Utils.java" startLine="31" startPosition="18" endLine="31" endPosition="18" />
     <scopeInfo nodeId="1965068273729159179" fileName="Utils.java" startLine="53" startPosition="19" endLine="54" endPosition="35" />
@@ -1223,19 +1303,23 @@
     <scopeInfo nodeId="8833053705482722270" fileName="Utils.java" startLine="89" startPosition="26" endLine="90" endPosition="190" />
     <scopeInfo nodeId="6345924993424885675" fileName="Utils.java" startLine="108" startPosition="12" endLine="109" endPosition="18" />
     <scopeInfo nodeId="2995585510566192952" fileName="Utils.java" startLine="125" startPosition="31" endLine="126" endPosition="358" />
-    <scopeInfo nodeId="1965068273729153837" fileName="Utils.java" startLine="131" startPosition="29" endLine="132" endPosition="78" />
-    <scopeInfo nodeId="8757051003975555784" fileName="Utils.java" startLine="147" startPosition="49" endLine="148" endPosition="253" />
+    <scopeInfo nodeId="8826502219009005160" fileName="Utils.java" startLine="132" startPosition="31" endLine="133" endPosition="359" />
+    <scopeInfo nodeId="8826502219009091687" fileName="Utils.java" startLine="139" startPosition="31" endLine="140" endPosition="360" />
+    <scopeInfo nodeId="1965068273729153837" fileName="Utils.java" startLine="146" startPosition="29" endLine="147" endPosition="78" />
+    <scopeInfo nodeId="8757051003975555784" fileName="Utils.java" startLine="162" startPosition="49" endLine="163" endPosition="253" />
     <scopeInfo nodeId="8757051003975554570" fileName="Utils.java" startLine="30" startPosition="0" endLine="32" endPosition="3" />
     <scopeInfo nodeId="1965068273729153805" fileName="Utils.java" startLine="115" startPosition="29" endLine="117" endPosition="37">
       <varInfo nodeId="8682571714413412917" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="1965068273729153850" fileName="Utils.java" startLine="139" startPosition="29" endLine="142" endPosition="171">
+    <scopeInfo nodeId="1965068273729153850" fileName="Utils.java" startLine="154" startPosition="29" endLine="157" endPosition="171">
       <varInfo nodeId="4869768833579765752" varName="dotExpression" />
     </scopeInfo>
     <scopeInfo nodeId="1061587096433693057" fileName="Utils.java" startLine="101" startPosition="22" endLine="105" endPosition="54" />
     <scopeInfo nodeId="2995585510566192951" fileName="Utils.java" startLine="124" startPosition="87" endLine="128" endPosition="0" />
-    <scopeInfo nodeId="1965068273729153836" fileName="Utils.java" startLine="130" startPosition="85" endLine="134" endPosition="0" />
-    <scopeInfo nodeId="8757051003975555781" fileName="Utils.java" startLine="146" startPosition="0" endLine="150" endPosition="0">
+    <scopeInfo nodeId="8826502219009005159" fileName="Utils.java" startLine="131" startPosition="87" endLine="135" endPosition="0" />
+    <scopeInfo nodeId="8826502219009091686" fileName="Utils.java" startLine="138" startPosition="87" endLine="142" endPosition="0" />
+    <scopeInfo nodeId="1965068273729153836" fileName="Utils.java" startLine="145" startPosition="85" endLine="149" endPosition="0" />
+    <scopeInfo nodeId="8757051003975555781" fileName="Utils.java" startLine="161" startPosition="0" endLine="165" endPosition="0">
       <varInfo nodeId="8757051003975555786" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1965068273729159129" fileName="Utils.java" startLine="44" startPosition="76" endLine="49" endPosition="26" />
@@ -1245,17 +1329,19 @@
     </scopeInfo>
     <scopeInfo nodeId="1965068273729153804" fileName="Utils.java" startLine="114" startPosition="76" endLine="119" endPosition="0" />
     <scopeInfo nodeId="2995585510566192912" fileName="Utils.java" startLine="123" startPosition="172" endLine="128" endPosition="14" />
+    <scopeInfo nodeId="8826502219009005155" fileName="Utils.java" startLine="130" startPosition="172" endLine="135" endPosition="14" />
+    <scopeInfo nodeId="8826502219009091682" fileName="Utils.java" startLine="137" startPosition="172" endLine="142" endPosition="14" />
     <scopeInfo nodeId="8757051003975555536" fileName="Utils.java" startLine="113" startPosition="69" endLine="119" endPosition="12" />
-    <scopeInfo nodeId="1965068273729153849" fileName="Utils.java" startLine="138" startPosition="92" endLine="144" endPosition="0" />
+    <scopeInfo nodeId="1965068273729153849" fileName="Utils.java" startLine="153" startPosition="92" endLine="159" endPosition="0" />
     <scopeInfo nodeId="1965068273729159112" fileName="Utils.java" startLine="43" startPosition="80" endLine="50" endPosition="19" />
     <scopeInfo nodeId="8757051003975554629" fileName="Utils.java" startLine="100" startPosition="99" endLine="107" endPosition="19" />
-    <scopeInfo nodeId="7837958418564010904" fileName="Utils.java" startLine="137" startPosition="93" endLine="144" endPosition="12" />
+    <scopeInfo nodeId="7837958418564010904" fileName="Utils.java" startLine="152" startPosition="93" endLine="159" endPosition="12" />
     <scopeInfo nodeId="1965068273729159191" fileName="Utils.java" startLine="65" startPosition="62" endLine="73" endPosition="5" />
     <scopeInfo nodeId="1965068273729159168" fileName="Utils.java" startLine="42" startPosition="49" endLine="51" endPosition="17" />
     <scopeInfo nodeId="8757051003975555533" fileName="Utils.java" startLine="112" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="8757051003975555538" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="7837958418564010901" fileName="Utils.java" startLine="136" startPosition="0" endLine="146" endPosition="0">
+    <scopeInfo nodeId="7837958418564010901" fileName="Utils.java" startLine="151" startPosition="0" endLine="161" endPosition="0">
       <varInfo nodeId="7837958418564010908" varName="kind" />
       <varInfo nodeId="7837958418564010906" varName="ref" />
     </scopeInfo>
@@ -1263,13 +1349,8 @@
       <varInfo nodeId="1965068273729159192" varName="key" />
       <varInfo nodeId="1965068273729159195" varName="time" />
     </scopeInfo>
-    <scopeInfo nodeId="8757051003975555561" fileName="Utils.java" startLine="122" startPosition="87" endLine="134" endPosition="12" />
     <scopeInfo nodeId="8757051003975554596" fileName="Utils.java" startLine="96" startPosition="110" endLine="110" endPosition="5">
       <varInfo nodeId="8757051003975554608" varName="intersect" />
-    </scopeInfo>
-    <scopeInfo nodeId="8757051003975555558" fileName="Utils.java" startLine="121" startPosition="0" endLine="136" endPosition="0">
-      <varInfo nodeId="8757051003975555593" varName="kind" />
-      <varInfo nodeId="8757051003975555563" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="1965068273729159108" fileName="Utils.java" startLine="41" startPosition="26" endLine="57" endPosition="15" />
     <scopeInfo nodeId="8757051003975554577" fileName="Utils.java" startLine="76" startPosition="134" endLine="93" endPosition="18">
@@ -1291,14 +1372,92 @@
     <scopeInfo nodeId="1965068273729159094" fileName="Utils.java" startLine="39" startPosition="35" endLine="60" endPosition="0" />
     <scopeInfo nodeId="1965068273729163641" fileName="Utils.java" startLine="36" startPosition="31" endLine="60" endPosition="19" />
     <scopeInfo nodeId="1965068273729163621" fileName="Utils.java" startLine="35" startPosition="33" endLine="61" endPosition="7" />
+    <scopeInfo nodeId="8757051003975555561" fileName="Utils.java" startLine="122" startPosition="87" endLine="149" endPosition="12" />
     <scopeInfo nodeId="1965068273729163612" fileName="Utils.java" startLine="34" startPosition="46" endLine="62" endPosition="5" />
+    <scopeInfo nodeId="8757051003975555558" fileName="Utils.java" startLine="121" startPosition="0" endLine="151" endPosition="0">
+      <varInfo nodeId="8757051003975555593" varName="kind" />
+      <varInfo nodeId="8757051003975555563" varName="ref" />
+    </scopeInfo>
     <scopeInfo nodeId="1965068273729163609" fileName="Utils.java" startLine="33" startPosition="0" endLine="64" endPosition="0" />
-    <unitInfo nodeId="8757051003975554568" fileName="Utils.java" startLine="24" startPosition="0" endLine="151" endPosition="0" unitName="TestLang.scripts.Utils" />
+    <unitInfo nodeId="8757051003975554568" fileName="Utils.java" startLine="24" startPosition="0" endLine="166" endPosition="0" unitName="TestLang.scripts.Utils" />
     <unitInfo nodeId="1965068273729159092" fileName="Utils.java" startLine="39" startPosition="23" endLine="60" endPosition="9" unitName="TestLang.scripts.Utils$1" />
     <unitInfo nodeId="1965068273729153804" fileName="Utils.java" startLine="114" startPosition="37" endLine="119" endPosition="5" unitName="TestLang.scripts.Utils$2" />
     <unitInfo nodeId="2995585510566192951" fileName="Utils.java" startLine="124" startPosition="48" endLine="128" endPosition="7" unitName="TestLang.scripts.Utils$3" />
-    <unitInfo nodeId="1965068273729153836" fileName="Utils.java" startLine="130" startPosition="46" endLine="134" endPosition="5" unitName="TestLang.scripts.Utils$4" />
-    <unitInfo nodeId="1965068273729153849" fileName="Utils.java" startLine="138" startPosition="53" endLine="144" endPosition="5" unitName="TestLang.scripts.Utils$5" />
+    <unitInfo nodeId="8826502219009005159" fileName="Utils.java" startLine="131" startPosition="48" endLine="135" endPosition="7" unitName="TestLang.scripts.Utils$4" />
+    <unitInfo nodeId="8826502219009091686" fileName="Utils.java" startLine="138" startPosition="48" endLine="142" endPosition="7" unitName="TestLang.scripts.Utils$5" />
+    <unitInfo nodeId="1965068273729153836" fileName="Utils.java" startLine="145" startPosition="46" endLine="149" endPosition="5" unitName="TestLang.scripts.Utils$6" />
+    <unitInfo nodeId="1965068273729153849" fileName="Utils.java" startLine="153" startPosition="53" endLine="159" endPosition="5" unitName="TestLang.scripts.Utils$7" />
+  </root>
+  <root nodeId="8826502219009126426">
+    <nodeInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="17" startPosition="97" endLine="18" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="20" startPosition="31" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="24" startPosition="41" endLine="25" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="28" startPosition="59" endLine="29" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8826502219009126449" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="32" startPosition="59" endLine="33" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8826502219009126453" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="33" startPosition="49" endLine="34" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8826502219009126457" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="34" startPosition="31" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8826502219009126458" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="35" startPosition="0" endLine="36" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8826502219009126466" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="36" startPosition="190" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8826502219009126469" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="38" startPosition="26" endLine="39" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8826502219009126476" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="41" startPosition="38" endLine="42" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8826502219009126480" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="43" startPosition="9" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8826502219009126481" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="44" startPosition="0" endLine="45" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8826502219009126491" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="46" startPosition="40" endLine="47" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8826502219009126498" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="49" startPosition="47" endLine="50" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8826502219009126506" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="52" startPosition="45" endLine="53" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8826502219009126513" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="54" startPosition="9" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="869906464959555365" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="55" startPosition="0" endLine="56" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8826502219009126514" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="56" startPosition="18" endLine="57" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8826502219009126430" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="60" startPosition="52" endLine="61" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8826502219009126438" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="61" startPosition="190" endLine="62" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="65" startPosition="42" endLine="66" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8826502219009126467" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="37" startPosition="0" endLine="40" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8826502219009126474" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="40" startPosition="9" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8826502219009126489" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="45" startPosition="125" endLine="48" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8826502219009126496" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="48" startPosition="9" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8826502219009126504" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="51" startPosition="9" endLine="54" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="19" startPosition="76" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="59" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="31" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="18" startPosition="53" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="16" startPosition="93" endLine="69" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckLocalInstanceMethodCallScopes_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <scopeInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="20" startPosition="31" endLine="21" endPosition="25" />
+    <scopeInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="24" startPosition="41" endLine="25" endPosition="25" />
+    <scopeInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="28" startPosition="59" endLine="29" endPosition="78" />
+    <scopeInfo nodeId="8826502219009126468" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="38" startPosition="26" endLine="39" endPosition="23" />
+    <scopeInfo nodeId="8826502219009126475" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="41" startPosition="38" endLine="42" endPosition="23" />
+    <scopeInfo nodeId="8826502219009126490" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="46" startPosition="40" endLine="47" endPosition="23" />
+    <scopeInfo nodeId="8826502219009126497" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="49" startPosition="47" endLine="50" endPosition="23" />
+    <scopeInfo nodeId="8826502219009126505" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="52" startPosition="45" endLine="53" endPosition="23" />
+    <scopeInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="65" startPosition="42" endLine="66" endPosition="21" />
+    <scopeInfo nodeId="8826502219009126429" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="60" startPosition="52" endLine="62" endPosition="209">
+      <varInfo nodeId="8826502219009126431" varName="ref" />
+    </scopeInfo>
+    <scopeInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="19" startPosition="76" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="59" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="8826502219009126426" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8826502219009126448" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="32" startPosition="59" endLine="57" endPosition="219">
+      <varInfo nodeId="8826502219009126450" varName="excludingPrefix" />
+      <varInfo nodeId="8826502219009126482" varName="name" />
+      <varInfo nodeId="8826502219009126459" varName="ref" />
+      <varInfo nodeId="8826502219009126454" varName="startsFrom" />
+    </scopeInfo>
+    <scopeInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="31" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="8826502219009126426" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="17" startPosition="97" endLine="68" endPosition="7" />
+    <scopeInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="16" startPosition="93" endLine="69" endPosition="3">
+      <varInfo nodeId="8826502219009126426" varName="operationContext" />
+    </scopeInfo>
+    <unitInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="16" startPosition="0" endLine="71" endPosition="0" unitName="TestLang.scripts.CheckLocalInstanceMethodCallScopes_MigrationScript" />
+    <unitInfo nodeId="8826502219009126426" fileName="CheckLocalInstanceMethodCallScopes_MigrationScript.java" startLine="19" startPosition="28" endLine="68" endPosition="5" unitName="TestLang.scripts.CheckLocalInstanceMethodCallScopes_MigrationScript$1" />
   </root>
   <root nodeId="8967654016644251092">
     <nodeInfo nodeId="8967654016644251092" fileName="CheckLoopLabelScopes_MigrationScript.java" startLine="17" startPosition="83" endLine="18" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

@@ -127,6 +127,21 @@ public class Utils {
         }
       }, ref);
     }
+    if (ref.getSourceNode().isInstanceOfConcept(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1070533707846"))) {
+      return getNodes("new scope/from ref", new _FunctionTypes._return_P0_E0<Scope>() {
+        public Scope invoke() {
+          return Classifier_Behavior.call_getVisibleMembers_8083692786967356611(SLinkOperations.getTarget(SNodeOperations.cast(ref.getSourceNode(), "jetbrains.mps.baseLanguage.structure.StaticFieldReference"), "classifier", false), ref.getSourceNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"));
+        }
+      }, ref);
+    }
+    if (ref.getSourceNode().isInstanceOfConcept(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1083260308424"))) {
+      return getNodes("new scope/from ref", new _FunctionTypes._return_P0_E0<Scope>() {
+        public Scope invoke() {
+          return Classifier_Behavior.call_getVisibleMembers_8083692786967356611(SLinkOperations.getTarget(SNodeOperations.cast(ref.getSourceNode(), "jetbrains.mps.baseLanguage.structure.EnumConstantReference"), "enumClass", false), ref.getSourceNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"));
+        }
+      }, ref);
+    }
+
     return getNodes("new scope/from ref", new _FunctionTypes._return_P0_E0<Scope>() {
       public Scope invoke() {
         return Scope.getScope(ref.getSourceNode(), ref.getSourceNode(), kind);

@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="8682571714413416098">
-    <nodeInfo nodeId="8682571714413416578" fileName="LocalVariableDeclarationTest.java" startLine="7" startPosition="41" endLine="8" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8682571714413416104" fileName="LocalVariableDeclarationTest.java" startLine="9" startPosition="5" endLine="10" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8682571714413416110" fileName="LocalVariableDeclarationTest.java" startLine="10" startPosition="16" endLine="11" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8682571714413416115" fileName="LocalVariableDeclarationTest.java" startLine="11" startPosition="16" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8682571714413416117" fileName="LocalVariableDeclarationTest.java" startLine="12" startPosition="0" endLine="13" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8682571714413416128" fileName="LocalVariableDeclarationTest.java" startLine="13" startPosition="25" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8682571714413416130" fileName="LocalVariableDeclarationTest.java" startLine="14" startPosition="0" endLine="15" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8682571714413416126" fileName="LocalVariableDeclarationTest.java" startLine="8" startPosition="14" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8682571714413416100" fileName="LocalVariableDeclarationTest.java" startLine="6" startPosition="43" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LocalVariableDeclarationTest#()V" />
-    <scopeInfo nodeId="8682571714413416127" fileName="LocalVariableDeclarationTest.java" startLine="9" startPosition="5" endLine="15" endPosition="19">
+    <nodeInfo nodeId="8826502219008260962" fileName="LocalVariableDeclarationTest.java" startLine="6" startPosition="43" endLine="7" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="v" />
+    <nodeInfo nodeId="8682571714413416578" fileName="LocalVariableDeclarationTest.java" startLine="9" startPosition="41" endLine="10" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8682571714413416104" fileName="LocalVariableDeclarationTest.java" startLine="11" startPosition="5" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8682571714413416110" fileName="LocalVariableDeclarationTest.java" startLine="12" startPosition="16" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8682571714413416115" fileName="LocalVariableDeclarationTest.java" startLine="13" startPosition="16" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8682571714413416117" fileName="LocalVariableDeclarationTest.java" startLine="14" startPosition="0" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8682571714413416128" fileName="LocalVariableDeclarationTest.java" startLine="15" startPosition="25" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8682571714413416130" fileName="LocalVariableDeclarationTest.java" startLine="16" startPosition="0" endLine="17" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8826502219008260968" fileName="LocalVariableDeclarationTest.java" startLine="17" startPosition="19" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8826502219008280064" fileName="LocalVariableDeclarationTest.java" startLine="18" startPosition="0" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8826502219008280063" fileName="LocalVariableDeclarationTest.java" startLine="19" startPosition="16" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8826502219008260970" fileName="LocalVariableDeclarationTest.java" startLine="20" startPosition="0" endLine="21" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8682571714413416126" fileName="LocalVariableDeclarationTest.java" startLine="10" startPosition="14" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8682571714413416100" fileName="LocalVariableDeclarationTest.java" startLine="8" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LocalVariableDeclarationTest#()V" />
+    <scopeInfo nodeId="8682571714413416127" fileName="LocalVariableDeclarationTest.java" startLine="11" startPosition="5" endLine="21" endPosition="28">
       <varInfo nodeId="8682571714413416105" varName="a" />
       <varInfo nodeId="8682571714413416111" varName="b" />
       <varInfo nodeId="8682571714413416118" varName="test239V" />
+      <varInfo nodeId="8826502219008280065" varName="v" />
     </scopeInfo>
-    <scopeInfo nodeId="8682571714413416103" fileName="LocalVariableDeclarationTest.java" startLine="7" startPosition="41" endLine="16" endPosition="5" />
-    <scopeInfo nodeId="8682571714413416100" fileName="LocalVariableDeclarationTest.java" startLine="6" startPosition="43" endLine="17" endPosition="3" />
-    <unitInfo nodeId="8682571714413416098" fileName="LocalVariableDeclarationTest.java" startLine="6" startPosition="0" endLine="19" endPosition="0" unitName="TestLang.structure.LocalVariableDeclarationTest" />
+    <scopeInfo nodeId="8682571714413416103" fileName="LocalVariableDeclarationTest.java" startLine="9" startPosition="41" endLine="22" endPosition="5" />
+    <scopeInfo nodeId="8682571714413416100" fileName="LocalVariableDeclarationTest.java" startLine="8" startPosition="0" endLine="23" endPosition="3" />
+    <unitInfo nodeId="8682571714413416098" fileName="LocalVariableDeclarationTest.java" startLine="6" startPosition="0" endLine="25" endPosition="0" unitName="TestLang.structure.LocalVariableDeclarationTest" />
   </root>
 </debugInfo>
 

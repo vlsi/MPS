@@ -4,6 +4,8 @@ package TestLang.structure;
 
 
 public class LocalVariableDeclarationTest {
+  private static int v = 1;
+
   public LocalVariableDeclarationTest() {
     // <node> 
     {
@@ -13,6 +15,10 @@ public class LocalVariableDeclarationTest {
       int test239V = 239;
 
       test239V = 5;
+
+      int v = 1;
+
+      System.out.println(v);
     }
   }
 }
