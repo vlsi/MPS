@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ga8wocb788fe1jslznns7hrezfdehd">
+<dependencies version="2" modelHash="-2idu0k3zjx0c1k15hx2b4xo09nnwnwf">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-5p0rdl0tgxw43gzmkd4qcpqszqapgi2" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-z9apu2jgvnwo2rksn2wr6ei9vh9scw" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-ad6sacrydlyivgq1a8s9zj6b37xpgsf" />
@@ -93,7 +93,7 @@
   <source id="8431776905956472400" name="MPS-src.zip" hash="-73rv39a05wqowqnfejf1hxi0a1eoi0v" />
   <source id="8431776905956472682" name="mps-backend.jar" hash="7csh21b2zbprux5jz09mlomrqu5mnj7" />
   <source id="8431776905956472694" name="mps-resources.jar" hash="1eg79qn0am7cye4gbz75znjh2qhovlv" />
-  <source id="8431776905956472723" name="mps-core.jar" hash="8wihdo53ubbanaggtr30gq2ywhelbaw" />
+  <source id="8431776905956472723" name="mps-core.jar" hash="2kjby9ze3oitg34tyxgu7dh4rfd3aql" />
   <source id="8431776905956472858" name="core" hash="cm60spf9vn15z5k1bg0njnsp9hczujh">
     <dep model="r:00000000-0000-4000-0000-011c895904d9(jetbrains.mps.build.packaging.generator.buildlanguage.template.main@generator)" />
   </source>
@@ -115,7 +115,7 @@
   <source id="2738111162319948310" name="core.execution" hash="9ur9egqb83y2nivknvigcmfm3yb2meh" />
   <source id="5358686142361317193" name="mps-test.jar" hash="5hps3e0pbymmb5f9dpeja3fk5psu7y1" />
   <source id="6108265972537541352" name="branding" hash="emlz9nqgndw5l0uwzfphkh2i4ok88n5" />
-  <source id="5428983789737854526" name="mps-workbench.jar" hash="5e8y9fl2bcsoql10rl1dag7xkj0cxnu" />
+  <source id="5428983789737854526" name="mps-workbench.jar" hash="-fnf4h82w40wzkrr7hqg92rt39fknrg" />
   <source id="5428983789737854768" name="mps-editor.jar" hash="e6gfmq0fgeff1mgcuixn2rfpf1h4t3y" />
   <source id="2901107368280525965" name="redist" hash="-5y1micluv26ldpxuf61kxk1r7u4f6yx" />
   <source id="6700426045796013947" name="mps-platform.jar" hash="cbdl1pyr3qyb2pn3jg87fhv7lcm4krd" />
