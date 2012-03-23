@@ -36,7 +36,7 @@ public class CheckMethodCallScopes_MigrationScript extends BaseMigrationScript {
         }
 
         String excludingPrefix = "123collection";
-        String startsFrom = "";
+        String startsFrom = "v";
 
         SReference ref = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "instanceMethodDeclaration"));
 
