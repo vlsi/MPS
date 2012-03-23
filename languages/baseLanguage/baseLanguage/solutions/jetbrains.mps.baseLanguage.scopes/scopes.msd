@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.baseLanguage.scopes" uuid="e39e4a59-8cb6-498e-860e-8fa8361c0d90" compileInMPS="true">
+<solution name="jetbrains.mps.baseLanguage.scopes" uuid="e39e4a59-8cb6-498e-860e-8fa8361c0d90" pluginKind="PLUGIN_CORE" compileInMPS="true">
   <models>
     <modelRoot path="${solution_descriptor}/models" />
   </models>

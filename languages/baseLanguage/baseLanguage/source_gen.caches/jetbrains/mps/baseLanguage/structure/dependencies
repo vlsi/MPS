@@ -2039,6 +2039,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ClassifierMember" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.StaticKind" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.VariableDeclaration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Visibility" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
@@ -2070,6 +2071,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.structure.StaticKind" file="StaticKind.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.structure.StaticMethodCall" file="StaticMethodCall.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.BaseMethodCall" />
@@ -2087,6 +2092,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ClassifierMember" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.StaticKind" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Visibility" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.IResolveInfo" />

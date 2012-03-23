@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import javax.swing.Icon;
 
-public class StaticMethodDeclaration_BehaviorDescriptor extends BaseMethodDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor {
+public class StaticMethodDeclaration_BehaviorDescriptor extends BaseMethodDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, StaticKind_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor {
   public StaticMethodDeclaration_BehaviorDescriptor() {
   }
 

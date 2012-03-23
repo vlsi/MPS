@@ -51,8 +51,8 @@ public class ClassifierScopeUtils {
   }
 
   private static ClassifierScopeUtils.ClassifierAndSuperClassifiersData getClassifierAndSuperClassifiersData(final SNode classifier) {
-    return TransactionCacheUtils.getFromCache(ClassifierScopeUtils.class, classifier, new _FunctionTypes._return_P1_E0<ClassifierScopeUtils.ClassifierAndSuperClassifiersData, SNode>() {
-      public ClassifierScopeUtils.ClassifierAndSuperClassifiersData invoke(SNode classifier) {
+    return TransactionCacheUtils.getFromCache(ClassifierScopeUtils.class, classifier, new _FunctionTypes._return_P0_E0<ClassifierScopeUtils.ClassifierAndSuperClassifiersData>() {
+      public ClassifierScopeUtils.ClassifierAndSuperClassifiersData invoke() {
         return new ClassifierScopeUtils.ClassifierAndSuperClassifiersData(classifier);
       }
     });

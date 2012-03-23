@@ -30,9 +30,9 @@ public class DotExpression_Behavior {
     return SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(DotExpression_Behavior.call_getOperandType_8871623299328377715(thisNode), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false), "classifier", false);
   }
 
-  public static SNode call_getOperandType_8871623299328377715(SNode thisNode) {
-    return TransactionCacheUtils.getFromCache("jetbrains.mps.baseLanguage.structure.DotExpression", thisNode, new _FunctionTypes._return_P1_E0<SNode, SNode>() {
-      public SNode invoke(SNode thisNode) {
+  public static SNode call_getOperandType_8871623299328377715(final SNode thisNode) {
+    return TransactionCacheUtils.getFromCache("jetbrains.mps.baseLanguage.structure.DotExpression", thisNode, new _FunctionTypes._return_P0_E0<SNode>() {
+      public SNode invoke() {
         // long calculation 
         return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "operand", true));
       }

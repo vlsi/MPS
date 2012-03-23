@@ -1148,6 +1148,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="scopes" />
       <property name="name" nameId="tpck.1169194664001" value="ImplicitAnnotationMethodKind" />
     </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="4790782560812794334">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="scopes" />
+      <property name="name" nameId="tpck.1169194664001" value="StaticKind" />
+    </node>
   </roots>
   <root id="1068498886294">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1107215415034">
@@ -1731,6 +1735,9 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1178291753349">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4790782560812794338">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="4790782560812794334" resolveInfo="StaticKind" />
+    </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1209513556145">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1196978630214" resolveInfo="IResolveInfo" />
     </node>
@@ -1995,6 +2002,9 @@
   <root id="1081236700938">
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1178289092936">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4790782560812794336">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="4790782560812794334" resolveInfo="StaticKind" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1210110243243">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1196978630214" resolveInfo="IResolveInfo" />
@@ -4360,5 +4370,6 @@
   <root id="6617045035157661092" />
   <root id="501006281268604400" />
   <root id="6694311595176645018" />
+  <root id="4790782560812794334" />
 </model>
 

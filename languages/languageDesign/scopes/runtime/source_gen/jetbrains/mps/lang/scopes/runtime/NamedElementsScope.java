@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.List;
 
 public abstract class NamedElementsScope extends Scope {
   public NamedElementsScope() {
@@ -40,7 +41,7 @@ public abstract class NamedElementsScope extends Scope {
     );
   }
 
-  public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
-    return getElements(prefix);
+  public List<SNode> getAvailableElements(@Nullable String prefix) {
+    return Sequence.fromIterable(getElements(prefix)).toListSequence();
   }
 }

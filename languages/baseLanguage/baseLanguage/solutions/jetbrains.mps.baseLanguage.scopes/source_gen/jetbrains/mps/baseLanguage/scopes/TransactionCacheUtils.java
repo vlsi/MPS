@@ -10,20 +10,20 @@ public class TransactionCacheUtils {
   private TransactionCacheUtils() {
   }
 
-  public static <K, V> V getFromCache(TransactionCache<K, V> cache, K key, _FunctionTypes._return_P1_E0<? extends V, ? super K> creator) {
+  public static <K, V> V getFromCache(TransactionCache<K, V> cache, K key, _FunctionTypes._return_P0_E0<? extends V> creator) {
     V v = cache.get(key);
     if (v != null) {
       return v;
     }
-    v = creator.invoke(key);
+    v = creator.invoke();
     return cache.put(key, v);
   }
 
-  public static <K, V> V getFromCache(Class clazz, K key, _FunctionTypes._return_P1_E0<? extends V, ? super K> creator) {
+  public static <K, V> V getFromCache(Class clazz, K key, _FunctionTypes._return_P0_E0<? extends V> creator) {
     return getFromCache(ModelAccess.instance().<K,V>getTransactionCache(clazz), key, creator);
   }
 
-  public static <K, V> V getFromCache(String cacheName, K key, _FunctionTypes._return_P1_E0<? extends V, ? super K> creator) {
+  public static <K, V> V getFromCache(String cacheName, K key, _FunctionTypes._return_P0_E0<? extends V> creator) {
     return getFromCache(ModelAccess.instance().<K,V>getTransactionCache(cacheName), key, creator);
   }
 }
