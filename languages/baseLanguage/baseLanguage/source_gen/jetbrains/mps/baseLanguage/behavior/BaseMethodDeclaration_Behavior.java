@@ -19,9 +19,9 @@ import jetbrains.mps.reloading.ReflectionUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
-import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
 import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
+import jetbrains.mps.baseLanguage.scopes.HidingByNameScope;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
@@ -239,15 +239,18 @@ public class BaseMethodDeclaration_Behavior {
     {
       SNode concept_a0y;
       concept_a0y = kind;
+      if (SConceptOperations.isSubConceptOf(concept_a0y, "jetbrains.mps.baseLanguage.structure.LocalToMethodKind")) {
+        return new EmptyScope();
+      }
       if (SConceptOperations.isSubConceptOf(concept_a0y, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
         if (ScopeUtils.comeFrom("body", thisNode, child)) {
-          return CompositeWithParentScope.from(SLinkOperations.getTargets(thisNode, "parameter", true), thisNode, kind);
+          return HidingByNameScope.create(SLinkOperations.getTargets(thisNode, "parameter", true), ScopeUtils.parentScope(thisNode, kind), false);
         } else {
           return ScopeUtils.parentScope(thisNode, kind);
         }
       }
-      if (SConceptOperations.isSubConceptOf(concept_a0y, "jetbrains.mps.baseLanguage.structure.LocalToMethodKind")) {
-        return new EmptyScope();
+      if (SConceptOperations.isSubConceptOf(concept_a0y, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
+        return HidingByNameScope.create(SLinkOperations.getTargets(thisNode, "parameter", true), ScopeUtils.parentScope(thisNode, kind), true);
       }
     }
 

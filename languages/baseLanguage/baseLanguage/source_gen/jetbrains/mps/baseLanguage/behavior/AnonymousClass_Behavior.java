@@ -12,6 +12,9 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
+import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -97,6 +100,13 @@ public class AnonymousClass_Behavior {
       result += SPropertyOperations.getString(containingMethod, "name") + "() in ";
     }
     return result;
+  }
+
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    if (ScopeUtils.comeFrom("actualArgument", thisNode, child)) {
+      return ScopeUtils.parentScope(thisNode, kind);
+    }
+    return ScopeProvider_Behavior.callSuper_getScope_3734116213129936182(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass", kind, child);
   }
 
   public static String call_getUnitName_2496361171403550994(SNode thisNode) {
