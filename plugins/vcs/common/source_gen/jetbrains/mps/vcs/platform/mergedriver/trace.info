@@ -48,44 +48,50 @@
     <nodeInfo nodeId="8869411891375799192" fileName="CommandLineGenerator.java" startLine="136" startPosition="37" endLine="137" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6006585546800338955" fileName="CommandLineGenerator.java" startLine="139" startPosition="8" endLine="140" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6006585546800338959" fileName="CommandLineGenerator.java" startLine="140" startPosition="96" endLine="141" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6006585546800341876" fileName="CommandLineGenerator.java" startLine="142" startPosition="32" endLine="143" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4416609728987298329" fileName="CommandLineGenerator.java" startLine="146" startPosition="39" endLine="147" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3042807695808132425" fileName="CommandLineGenerator.java" startLine="149" startPosition="8" endLine="150" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4780468374548788153" fileName="CommandLineGenerator.java" startLine="150" startPosition="26" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="80916483499265421" fileName="CommandLineGenerator.java" startLine="154" startPosition="62" endLine="155" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7974019835130465312" fileName="CommandLineGenerator.java" startLine="142" startPosition="32" endLine="143" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7974019835130465340" fileName="CommandLineGenerator.java" startLine="145" startPosition="35" endLine="146" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6006585546800341876" fileName="CommandLineGenerator.java" startLine="148" startPosition="14" endLine="149" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4416609728987298329" fileName="CommandLineGenerator.java" startLine="153" startPosition="39" endLine="154" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3042807695808132425" fileName="CommandLineGenerator.java" startLine="156" startPosition="8" endLine="157" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4780468374548788153" fileName="CommandLineGenerator.java" startLine="157" startPosition="26" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="80916483499265421" fileName="CommandLineGenerator.java" startLine="161" startPosition="62" endLine="162" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1016968294606525393" fileName="CommandLineGenerator.java" startLine="36" startPosition="0" endLine="38" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CommandLineGenerator#()V" />
+    <nodeInfo nodeId="7974019835130465342" fileName="CommandLineGenerator.java" startLine="148" startPosition="12" endLine="150" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="80916483499265388" fileName="CommandLineGenerator.java" startLine="49" startPosition="111" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1903565688283063471" fileName="CommandLineGenerator.java" startLine="88" startPosition="83" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4780468374548787930" fileName="CommandLineGenerator.java" startLine="111" startPosition="0" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7566850531967206381" fileName="CommandLineGenerator.java" startLine="127" startPosition="44" endLine="130" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7566850531967206381" fileName="CommandLineGenerator.java" startLine="127" startPosition="44" endLine="130" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6006585546800338970" fileName="CommandLineGenerator.java" startLine="141" startPosition="92" endLine="144" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7974019835130465340" fileName="CommandLineGenerator.java" startLine="144" startPosition="34" endLine="147" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7974019835130465340" fileName="CommandLineGenerator.java" startLine="144" startPosition="34" endLine="147" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3042807695808133921" fileName="CommandLineGenerator.java" startLine="43" startPosition="85" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="8688150419538752866" fileName="CommandLineGenerator.java" startLine="92" startPosition="128" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="4416609728987298289" fileName="CommandLineGenerator.java" startLine="97" startPosition="128" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="8688150419538752799" fileName="CommandLineGenerator.java" startLine="105" startPosition="127" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="8869411891375799190" fileName="CommandLineGenerator.java" startLine="135" startPosition="122" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/Class;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4416609728987298327" fileName="CommandLineGenerator.java" startLine="145" startPosition="126" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="80916483499265399" fileName="CommandLineGenerator.java" startLine="153" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="adaptPathForMsysGit#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4416609728987298327" fileName="CommandLineGenerator.java" startLine="152" startPosition="126" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="80916483499265399" fileName="CommandLineGenerator.java" startLine="160" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="adaptPathForMsysGit#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="3042807695808133904" fileName="CommandLineGenerator.java" startLine="42" startPosition="40" endLine="47" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8688150419538752817" fileName="CommandLineGenerator.java" startLine="91" startPosition="7" endLine="96" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4416609728987298283" fileName="CommandLineGenerator.java" startLine="96" startPosition="10" endLine="101" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8688150419538753101" fileName="CommandLineGenerator.java" startLine="104" startPosition="0" endLine="109" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3042807695808132383" fileName="CommandLineGenerator.java" startLine="134" startPosition="46" endLine="139" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4416609728987298321" fileName="CommandLineGenerator.java" startLine="144" startPosition="5" endLine="149" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4416609728987298321" fileName="CommandLineGenerator.java" startLine="151" startPosition="5" endLine="156" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1016968294606525527" fileName="CommandLineGenerator.java" startLine="57" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSvnkitJar#()Ljava/lang/String;" />
     <nodeInfo nodeId="7944298491757518918" fileName="CommandLineGenerator.java" startLine="63" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getTextMergerJar#()Ljava/lang/String;" />
     <nodeInfo nodeId="6006585546800309873" fileName="CommandLineGenerator.java" startLine="69" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getVCSCoreJar#()Ljava/lang/String;" />
     <nodeInfo nodeId="6006585546800341847" fileName="CommandLineGenerator.java" startLine="75" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMPSCorePluginPath#()Ljava/lang/String;" />
     <nodeInfo nodeId="3042807695808133893" fileName="CommandLineGenerator.java" startLine="41" startPosition="74" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7974019835130465331" fileName="CommandLineGenerator.java" startLine="143" startPosition="105" endLine="150" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7566850531967206370" fileName="CommandLineGenerator.java" startLine="124" startPosition="38" endLine="132" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6006585546800338970" fileName="CommandLineGenerator.java" startLine="141" startPosition="92" endLine="151" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7566850531967206368" fileName="CommandLineGenerator.java" startLine="123" startPosition="90" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/Class;" />
     <nodeInfo nodeId="7464741641936367237" fileName="CommandLineGenerator.java" startLine="122" startPosition="139" endLine="134" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6006585546800309799" fileName="CommandLineGenerator.java" startLine="86" startPosition="10" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1016968294606525398" fileName="CommandLineGenerator.java" startLine="39" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getCommandLine#(I)Ljava/lang/String;" />
     <nodeInfo nodeId="6006585546800309790" fileName="CommandLineGenerator.java" startLine="83" startPosition="82" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4780468374548783329" fileName="CommandLineGenerator.java" startLine="118" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getClasspathInternal#()Ljava/util/Set;" />
     <nodeInfo nodeId="3042807695808132371" fileName="CommandLineGenerator.java" startLine="81" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getClasspath#(Z)Ljava/util/Set;" />
+    <nodeInfo nodeId="4780468374548783329" fileName="CommandLineGenerator.java" startLine="118" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getClasspathInternal#()Ljava/util/Set;" />
     <scopeInfo nodeId="1016968294606525396" fileName="CommandLineGenerator.java" startLine="37" startPosition="34" endLine="37" endPosition="34" />
     <scopeInfo nodeId="3042807695808133922" fileName="CommandLineGenerator.java" startLine="44" startPosition="43" endLine="45" endPosition="38" />
     <scopeInfo nodeId="80916483499265389" fileName="CommandLineGenerator.java" startLine="50" startPosition="31" endLine="51" endPosition="68" />
@@ -98,9 +104,10 @@
     <scopeInfo nodeId="7566850531967206371" fileName="CommandLineGenerator.java" startLine="125" startPosition="13" endLine="126" endPosition="43" />
     <scopeInfo nodeId="7566850531967206381" fileName="CommandLineGenerator.java" startLine="128" startPosition="37" endLine="129" endPosition="29" />
     <scopeInfo nodeId="8869411891375799191" fileName="CommandLineGenerator.java" startLine="136" startPosition="37" endLine="137" endPosition="46" />
-    <scopeInfo nodeId="6006585546800338971" fileName="CommandLineGenerator.java" startLine="142" startPosition="32" endLine="143" endPosition="51" />
-    <scopeInfo nodeId="4416609728987298328" fileName="CommandLineGenerator.java" startLine="146" startPosition="39" endLine="147" endPosition="57" />
-    <scopeInfo nodeId="80916483499265402" fileName="CommandLineGenerator.java" startLine="154" startPosition="62" endLine="155" endPosition="71" />
+    <scopeInfo nodeId="7974019835130465340" fileName="CommandLineGenerator.java" startLine="145" startPosition="35" endLine="146" endPosition="57" />
+    <scopeInfo nodeId="7974019835130465343" fileName="CommandLineGenerator.java" startLine="148" startPosition="14" endLine="149" endPosition="79" />
+    <scopeInfo nodeId="4416609728987298328" fileName="CommandLineGenerator.java" startLine="153" startPosition="39" endLine="154" endPosition="57" />
+    <scopeInfo nodeId="80916483499265402" fileName="CommandLineGenerator.java" startLine="161" startPosition="62" endLine="162" endPosition="71" />
     <scopeInfo nodeId="1016968294606525393" fileName="CommandLineGenerator.java" startLine="36" startPosition="0" endLine="38" endPosition="3" />
     <scopeInfo nodeId="1016968294606525530" fileName="CommandLineGenerator.java" startLine="58" startPosition="40" endLine="61" endPosition="88">
       <varInfo nodeId="1016968294606525535" varName="svnPlugin" />
@@ -115,6 +122,8 @@
       <varInfo nodeId="6006585546800309813" varName="mpsCorePlugin" />
     </scopeInfo>
     <scopeInfo nodeId="7566850531967206381" fileName="CommandLineGenerator.java" startLine="127" startPosition="44" endLine="130" endPosition="11" />
+    <scopeInfo nodeId="7974019835130465332" fileName="CommandLineGenerator.java" startLine="144" startPosition="34" endLine="147" endPosition="9" />
+    <scopeInfo nodeId="7974019835130465340" fileName="CommandLineGenerator.java" startLine="144" startPosition="34" endLine="147" endPosition="9" />
     <scopeInfo nodeId="3042807695808133921" fileName="CommandLineGenerator.java" startLine="43" startPosition="85" endLine="47" endPosition="0">
       <varInfo nodeId="3042807695808133921" varName="cpi" />
     </scopeInfo>
@@ -134,10 +143,10 @@
     <scopeInfo nodeId="8869411891375799190" fileName="CommandLineGenerator.java" startLine="135" startPosition="122" endLine="139" endPosition="0">
       <varInfo nodeId="8869411891375799190" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="4416609728987298327" fileName="CommandLineGenerator.java" startLine="145" startPosition="126" endLine="149" endPosition="0">
+    <scopeInfo nodeId="4416609728987298327" fileName="CommandLineGenerator.java" startLine="152" startPosition="126" endLine="156" endPosition="0">
       <varInfo nodeId="4416609728987298327" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="80916483499265399" fileName="CommandLineGenerator.java" startLine="153" startPosition="0" endLine="157" endPosition="0">
+    <scopeInfo nodeId="80916483499265399" fileName="CommandLineGenerator.java" startLine="160" startPosition="0" endLine="164" endPosition="0">
       <varInfo nodeId="80916483499265405" varName="path" />
     </scopeInfo>
     <scopeInfo nodeId="3042807695808133894" fileName="CommandLineGenerator.java" startLine="42" startPosition="40" endLine="47" endPosition="87" />
@@ -146,6 +155,9 @@
     <scopeInfo nodeId="6006585546800309873" fileName="CommandLineGenerator.java" startLine="69" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="6006585546800341847" fileName="CommandLineGenerator.java" startLine="75" startPosition="0" endLine="81" endPosition="0" />
     <scopeInfo nodeId="7566850531967206369" fileName="CommandLineGenerator.java" startLine="124" startPosition="38" endLine="132" endPosition="9" />
+    <scopeInfo nodeId="6006585546800338971" fileName="CommandLineGenerator.java" startLine="142" startPosition="32" endLine="150" endPosition="7">
+      <varInfo nodeId="7974019835130465313" varName="mpsCorePlugin" />
+    </scopeInfo>
     <scopeInfo nodeId="7566850531967206368" fileName="CommandLineGenerator.java" startLine="123" startPosition="90" endLine="134" endPosition="0">
       <varInfo nodeId="7566850531967206368" varName="cn" />
     </scopeInfo>
@@ -162,28 +174,28 @@
     <scopeInfo nodeId="1016968294606525398" fileName="CommandLineGenerator.java" startLine="39" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="80916483499250388" varName="vcs" />
     </scopeInfo>
-    <scopeInfo nodeId="4780468374548783332" fileName="CommandLineGenerator.java" startLine="119" startPosition="53" endLine="151" endPosition="0">
+    <scopeInfo nodeId="3042807695808132374" fileName="CommandLineGenerator.java" startLine="82" startPosition="62" endLine="116" endPosition="26">
+      <varInfo nodeId="4780468374548783339" varName="classpathItems" />
+    </scopeInfo>
+    <scopeInfo nodeId="3042807695808132371" fileName="CommandLineGenerator.java" startLine="81" startPosition="0" endLine="118" endPosition="0">
+      <varInfo nodeId="3042807695808132421" varName="withSvnkit" />
+    </scopeInfo>
+    <scopeInfo nodeId="4780468374548783332" fileName="CommandLineGenerator.java" startLine="119" startPosition="53" endLine="158" endPosition="0">
       <varInfo nodeId="7464741641936367220" varName="OTHER_CLASSES" />
       <varInfo nodeId="2454870935687413358" varName="classes" />
       <varInfo nodeId="3042807695808132377" varName="classpathItems" />
       <varInfo nodeId="6006585546800338960" varName="diffUtils" />
       <varInfo nodeId="6006585546800338956" varName="diffUtilsPath" />
     </scopeInfo>
-    <scopeInfo nodeId="3042807695808132374" fileName="CommandLineGenerator.java" startLine="82" startPosition="62" endLine="116" endPosition="26">
-      <varInfo nodeId="4780468374548783339" varName="classpathItems" />
-    </scopeInfo>
-    <scopeInfo nodeId="4780468374548783329" fileName="CommandLineGenerator.java" startLine="118" startPosition="0" endLine="153" endPosition="0" />
-    <scopeInfo nodeId="3042807695808132371" fileName="CommandLineGenerator.java" startLine="81" startPosition="0" endLine="118" endPosition="0">
-      <varInfo nodeId="3042807695808132421" varName="withSvnkit" />
-    </scopeInfo>
-    <unitInfo nodeId="1016968294606525391" fileName="CommandLineGenerator.java" startLine="31" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator" />
+    <scopeInfo nodeId="4780468374548783329" fileName="CommandLineGenerator.java" startLine="118" startPosition="0" endLine="160" endPosition="0" />
+    <unitInfo nodeId="1016968294606525391" fileName="CommandLineGenerator.java" startLine="31" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator" />
     <unitInfo nodeId="3042807695808133921" fileName="CommandLineGenerator.java" startLine="43" startPosition="61" endLine="47" endPosition="7" unitName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator$1" />
     <unitInfo nodeId="8688150419538752866" fileName="CommandLineGenerator.java" startLine="92" startPosition="99" endLine="96" endPosition="7" unitName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator$2" />
     <unitInfo nodeId="4416609728987298289" fileName="CommandLineGenerator.java" startLine="97" startPosition="99" endLine="101" endPosition="7" unitName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator$3" />
     <unitInfo nodeId="8688150419538752799" fileName="CommandLineGenerator.java" startLine="105" startPosition="98" endLine="109" endPosition="5" unitName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator$4" />
     <unitInfo nodeId="7566850531967206368" fileName="CommandLineGenerator.java" startLine="123" startPosition="62" endLine="134" endPosition="5" unitName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator$5" />
     <unitInfo nodeId="8869411891375799190" fileName="CommandLineGenerator.java" startLine="135" startPosition="94" endLine="139" endPosition="5" unitName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator$6" />
-    <unitInfo nodeId="4416609728987298327" fileName="CommandLineGenerator.java" startLine="145" startPosition="97" endLine="149" endPosition="5" unitName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator$7" />
+    <unitInfo nodeId="4416609728987298327" fileName="CommandLineGenerator.java" startLine="152" startPosition="97" endLine="156" endPosition="5" unitName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator$7" />
   </root>
   <root nodeId="1376744028423385490">
     <nodeInfo nodeId="1376744028423385512" fileName="AbstractInstaller.java" startLine="8" startPosition="46" endLine="9" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
