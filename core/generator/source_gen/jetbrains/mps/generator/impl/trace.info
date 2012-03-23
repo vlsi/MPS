@@ -563,7 +563,7 @@
     <nodeInfo nodeId="8341644365990768023" fileName="TemplateModelScanner.java" startLine="34" startPosition="170" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8341644365990771475" fileName="TemplateModelScanner.java" startLine="42" startPosition="14" endLine="45" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="710840960717478274" fileName="TemplateModelScanner.java" startLine="48" startPosition="89" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1571936477005979106" fileName="TemplateModelScanner.java" startLine="54" startPosition="45" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1571936477005979106" fileName="TemplateModelScanner.java" startLine="54" startPosition="47" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5644445207311224990" fileName="TemplateModelScanner.java" startLine="60" startPosition="94" endLine="63" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1571936477005979113" fileName="TemplateModelScanner.java" startLine="73" startPosition="52" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8341644365990767762" fileName="TemplateModelScanner.java" startLine="80" startPosition="5" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -645,7 +645,7 @@
     <scopeInfo nodeId="8341644365990767755" fileName="TemplateModelScanner.java" startLine="72" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="8341644365990767760" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8341644365990734901" fileName="TemplateModelScanner.java" startLine="54" startPosition="45" endLine="70" endPosition="5" />
+    <scopeInfo nodeId="8341644365990734901" fileName="TemplateModelScanner.java" startLine="54" startPosition="47" endLine="70" endPosition="5" />
     <scopeInfo nodeId="8341644365990734305" fileName="TemplateModelScanner.java" startLine="28" startPosition="48" endLine="46" endPosition="7" />
     <scopeInfo nodeId="8341644365990734339" fileName="TemplateModelScanner.java" startLine="86" startPosition="44" endLine="104" endPosition="5" />
     <scopeInfo nodeId="8341644365990734898" fileName="TemplateModelScanner.java" startLine="53" startPosition="0" endLine="72" endPosition="0">
@@ -832,8 +832,8 @@
       <varInfo nodeId="3381130103055954275" varName="template" />
     </scopeInfo>
     <scopeInfo nodeId="3381130103055956037" fileName="GeneratorUtilEx.java" startLine="78" startPosition="31" endLine="88" endPosition="7">
-      <varInfo nodeId="3381130103055956048" varName="parent" />
       <varInfo nodeId="3381130103055956054" varName="role" />
+      <varInfo nodeId="3381130103055956048" varName="parent" />
       <varInfo nodeId="3381130103055956039" varName="templateNode" />
     </scopeInfo>
     <scopeInfo nodeId="3381130103055922309" fileName="GeneratorUtilEx.java" startLine="135" startPosition="127" endLine="147" endPosition="7">
@@ -877,8 +877,8 @@
     <scopeInfo nodeId="3381130103055922230" fileName="GeneratorUtilEx.java" startLine="92" startPosition="0" endLine="153" endPosition="0">
       <varInfo nodeId="3381130103055922236" varName="ruleConsequence" />
       <varInfo nodeId="3381130103055922244" varName="generator" />
-      <varInfo nodeId="3381130103055922240" varName="ruleNode" />
       <varInfo nodeId="3381130103055922242" varName="reductionContext" />
+      <varInfo nodeId="3381130103055922240" varName="ruleNode" />
       <varInfo nodeId="3381130103055922238" varName="inputNode" />
     </scopeInfo>
     <unitInfo nodeId="894226751621690778" fileName="GeneratorUtilEx.java" startLine="21" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.generator.impl.GeneratorUtilEx" />

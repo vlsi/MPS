@@ -107,6 +107,7 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     } else {
       ListSequence.fromList(specificCheckers).addElement(new UnavailableConceptsChecker());
       ListSequence.fromList(specificCheckers).addElement(new ModelPropertiesChecker());
+      ListSequence.fromList(specificCheckers).addElement(new GeneratorTemplatesChecker());
       if (isCheckUnresolvedReferences()) {
         ListSequence.fromList(specificCheckers).addElement(new UnresolvedReferencesChecker());
       }
