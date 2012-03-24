@@ -2441,11 +2441,20 @@
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
     <path path="${base_dir}/lib/ecj.jar" />
+    <path path="${base_dir}/lib/extensions.jar" />
     <path path="${base_dir}/lib/guava-r09.jar" />
     <path path="${base_dir}/lib/jdom.jar" />
     <path path="${base_dir}/lib/log4j.jar" />
+    <path path="${base_dir}/lib/picocontainer.jar" />
+    <path path="${base_dir}/lib/platform-api.jar" />
+    <path path="${base_dir}/lib/platform.jar" />
+    <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/trove4j.jar" />
+    <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.math.runtime_tjc.classpaths">
