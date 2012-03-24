@@ -222,6 +222,17 @@
       <fileset dir="${base_dir}/languages/core/stub/MPS.Editor" includes="icons/**, resources/**" />
     </copy>
   </target>
+  <target name="pack.jetbrains.mps.ide.editor">
+    <fail unless="base_dir" message="Property base_dir unspecified." />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp/modules/jetbrains.mps.ide.editor" />
+    <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp/modules/jetbrains.mps.ide.editor">
+      <fileset file="${base_dir}/workbench/mps-editor/jetbrains.mps.ide.editor.msd" />
+      <fileset dir="${base_dir}/workbench/mps-editor" includes="icons/**, resources/**" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp/modules/jetbrains.mps.ide.editor/solution">
+      <fileset dir="${base_dir}/workbench/mps-editor/solution" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
   <target name="pack.jetbrains.mps.editor.runtime">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp/modules/jetbrains.mps.editor.runtime" />
@@ -269,17 +280,6 @@
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.ide/models">
       <fileset dir="${base_dir}/workbench/mps-workbench/models" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-  </target>
-  <target name="pack.jetbrains.mps.ide.editor">
-    <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.ide.editor" />
-    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.ide.editor">
-      <fileset file="${base_dir}/workbench/mps-editor/jetbrains.mps.ide.editor.msd" />
-      <fileset dir="${base_dir}/workbench/mps-editor" includes="icons/**, resources/**" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.ide.editor/solution">
-      <fileset dir="${base_dir}/workbench/mps-editor/solution" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
   </target>
   <target name="pack.jetbrains.mps.ide.uiLanguage.runtime">

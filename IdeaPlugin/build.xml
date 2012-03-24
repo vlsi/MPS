@@ -312,15 +312,14 @@
       </manifest>
     </jar>
 
-    <!-- IDEA workbench -->
-    <mkdir dir="${build_dir}/mpsworkbench_jar"/>
-    <javac destdir="${build_dir}/mpsworkbench_jar" fork="true"
+    <!-- MPS platform -->
+    <mkdir dir="${build_dir}/mpsplatform_jar"/>
+    <javac destdir="${build_dir}/mpsplatform_jar" fork="true"
            memorymaximumsize="1024m"
            includeantruntime="false"
            debug="${javac.debug}" debuglevel="lines,vars,source">
       <compilerarg value="-Xlint:none"/>
       <src>
-        <!-- idea-workbench -->
         <path path="${base_dir}/workbench/mps-platform/source"/>
         <path path="${base_dir}/workbench/mps-platform/source_gen"/>
       </src>
@@ -329,11 +328,11 @@
         <fileset dir="${ideaPath}/lib" includes="*.jar"/>
       </classpath>
     </javac>
-    <copy includeemptydirs="false" todir="${build_dir}/mpsworkbench_jar">
+    <copy includeemptydirs="false" todir="${build_dir}/mpsplatform_jar">
       <fileset dir="${base_dir}/workbench/mps-platform/source" includes="**/*.png"/>
     </copy>
-    <jar destfile="${dist.dir}/mps-core/lib/mps-workbench.jar">
-      <fileset dir="${build_dir}/mpsworkbench_jar"/>
+    <jar destfile="${dist.dir}/mps-core/lib/mps-platform.jar">
+      <fileset dir="${build_dir}/mpsplatform_jar"/>
       <manifest>
         <attribute name="Built-By" value="${user.name}"/>
         <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
@@ -342,7 +341,7 @@
       </manifest>
     </jar>
 
-    <!-- IDEA editor -->
+    <!-- MPS editor -->
     <mkdir dir="${build_dir}/mpseditor_jar"/>
     <javac destdir="${build_dir}/mpseditor_jar" fork="true"
            memorymaximumsize="1024m"

@@ -2871,21 +2871,6 @@
         </node>
       </node>
     </node>
-    <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Solution" typeId="kdzh.3189788309731840247" id="8939513996048536520">
-      <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.dependencies" />
-      <property name="uuid" nameId="kdzh.322010710375892619" value="3fd20bbb-7c73-461b-af20-a79009ee5639" />
-      <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="8939513996048536521">
-        <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8939513996048536522">
-          <property name="head" nameId="3ior.8618885170173601779" value="core" />
-          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8939513996048536523">
-            <property name="head" nameId="3ior.8618885170173601779" value="dependencies" />
-            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8939513996048536524">
-              <property name="head" nameId="3ior.8618885170173601779" value="dependencies.msd" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Solution" typeId="kdzh.3189788309731840247" id="8939513996048536525">
       <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.findUsages.runtime" />
       <property name="uuid" nameId="kdzh.322010710375892619" value="bfbdd672-7ff5-403f-af4f-16da5226f34c" />
