@@ -14,5 +14,4 @@
     <exclude name="J*.java"/>
   </source>
   <entry-point class="jetbrains.mps.ui.sandbox.gwt.GWTDemo"/>
-  <inherits name="jetbrains.mps.baseLanguage.closures.runtime"/>
 </module>

@@ -5,7 +5,4 @@
 >
 <module>
   <source path=""/>
-  <inherits name="jetbrains.mps.internal.collections.runtime"/>
-  <inherits name="jetbrains.mps.baseLanguage.closures.runtime"/>
-  <inherits name="jetbrains.mps.baseLanguage.tuples.runtime"/>
 </module>
