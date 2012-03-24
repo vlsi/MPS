@@ -45,9 +45,9 @@ public class PathConverter {
   }
 
   private static String normalizePath(String path, boolean addSlash) {
-    path = path.replace("\\", "/");
     try {
       path = new File(path).getCanonicalPath();
+      path = path.replace("\\", "/");
     } catch (IOException ignore) {
       // ignore 
     }
