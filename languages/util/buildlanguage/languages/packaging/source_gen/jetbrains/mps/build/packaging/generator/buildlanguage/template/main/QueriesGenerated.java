@@ -1726,7 +1726,12 @@ __switch__:
           return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.packaging.structure.PluginModule"));
         }
       })) {
-        MapSequence.fromMap(modules).put(Module_Behavior.call_getModule_1213877515148(m), m);
+        IModule module = Module_Behavior.call_getModule_1213877515148(m);
+        if (module == null) {
+          _context.showErrorMessage(m, "module is not found: " + SPropertyOperations.getString(m, "name") + "(" + SPropertyOperations.getString(m, "id") + ")");
+          continue;
+        }
+        MapSequence.fromMap(modules).put(module, m);
       }
 
       Map<IModule, Iterable<IModule>> missing = CheckFullDependencyUtil.checkFullDependency(modules);
