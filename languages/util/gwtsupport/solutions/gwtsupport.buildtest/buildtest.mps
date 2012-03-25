@@ -13,37 +13,15 @@
   <import index="vibg" modelUID="f:gwt_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.user(com.google.gwt.user@gwt_stub)" version="-1" />
   <import index="jxw0" modelUID="f:gwt_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.core(com.google.gwt.core@gwt_stub)" version="-1" />
   <import index="dn91" modelUID="r:ab8aa33b-a984-44fa-94d6-fd9eb7f4fbaa(collections)" version="-1" />
-  <import index="k1iy" modelUID="r:940623f0-75cf-4f64-98fc-aef3fadfaedd(jetbrains.mps.gwt.client.structure)" version="0" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <roots>
-    <node type="k1iy.GWTModule" typeId="k1iy.1572321421811286040" id="3789315678729139397">
-      <property name="name" nameId="tpck.1169194664001" value="buildtest" />
-    </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3789315678729139399">
       <property name="name" nameId="tpck.1169194664001" value="SampleModule" />
     </node>
   </roots>
-  <root id="3789315678729139397">
-    <node role="element" roleId="k1iy.1572321421811416508" type="k1iy.Inherits" typeId="k1iy.1572321421811299552" id="3789315678729222221">
-      <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="jxw0.~Core" resolveInfo="Core" />
-    </node>
-    <node role="element" roleId="k1iy.1572321421811416508" type="k1iy.Inherits" typeId="k1iy.1572321421811299552" id="3789315678729222222">
-      <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="vibg.~User" resolveInfo="User" />
-    </node>
-    <node role="element" roleId="k1iy.1572321421811416508" type="k1iy.Inherits" typeId="k1iy.1572321421811299552" id="3789315678729139406">
-      <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="dn91.2413200550064256033" resolveInfo="runtime-gwt" />
-    </node>
-    <node role="element" roleId="k1iy.1572321421811416508" type="k1iy.Inherits" typeId="k1iy.1572321421811299552" id="3789315678729139408">
-      <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="nva4.1624295421069327411" resolveInfo="runtime" />
-    </node>
-    <node role="element" roleId="k1iy.1572321421811416508" type="k1iy.Source" typeId="k1iy.1572321421811416498" id="3789315678729139398" />
-    <node role="element" roleId="k1iy.1572321421811416508" type="k1iy.EntryPoint" typeId="k1iy.1572321421811292807" id="3789315678729222698">
-      <link role="entryPoint" roleId="k1iy.1572321421811292808" targetNodeId="3789315678729139399" resolveInfo="SampleModule" />
-    </node>
-  </root>
   <root id="3789315678729139399">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3789315678729139400" />
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="3789315678729139401">

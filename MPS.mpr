@@ -122,6 +122,7 @@
       <modulePath path="${project}/languages/build/solutions/runtime.msd" folder="build" />
       <modulePath path="${project}/languages/core/core/languageDescriptor.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/core/core/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
+      <modulePath path="${project}/languages/core/stub/Ant/Ant.msd" folder="core.stub" />
       <modulePath path="${project}/languages/core/stub/JDK.Tools/Tools.msd" folder="core.stub" />
       <modulePath path="${project}/languages/core/stub/JDK/JDK.msd" folder="core.stub" />
       <modulePath path="${project}/languages/core/stub/MPS.Core/Core.msd" folder="core.stub" />
@@ -208,7 +209,6 @@
       <modulePath path="${project}/languages/util/buildlanguage/languages/generictasks/generictasks.mpl" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/pluginSolution.msd" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/languages/gentest/gentest.mpl" folder="languages.build" />
-      <modulePath path="${project}/languages/util/buildlanguage/languages/gentest/solutions/pluginSolution/pluginSolution.msd" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/languages/packaging/packaging.mpl" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/languages/packaging/solutions/pluginSolution/pluginSolution.msd" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/languages/packmps/packmps.mpl" folder="languages.build" />

@@ -140,7 +140,14 @@ public class CommandLineGenerator {
     final Wrappers._T<String> diffUtilsPath = new Wrappers._T<String>(PathManager.getLibPath());
     File diffUtils = new File(diffUtilsPath.value + File.separator + "diffutils-1.2.1.jar");
     if (!(diffUtils.exists())) {
-      diffUtilsPath.value = getMPSCorePluginPath();
+      IdeaPluginDescriptor mpsCorePlugin = PluginManager.getPlugin(PluginId.getId("jetbrains.mps.core"));
+      if (mpsCorePlugin == null) {
+        if (log.isErrorEnabled()) {
+          log.error("couldn't find diffutils-1.2.1.jar");
+        }
+      } else {
+        diffUtilsPath.value = mpsCorePlugin.getPath() + File.separator + "lib";
+      }
     }
     SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(mpsAddJars).select(new ISelector<String, String>() {
       public String select(String it) {

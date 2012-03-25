@@ -28,9 +28,9 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.ide.editor.MPSEditorOpener;
-import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import com.intellij.openapi.fileEditor.FileEditorManager;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -158,8 +158,7 @@ public class BaseEditorTestBody extends BaseTestBody {
 
   public static Editor openEditor(Project project, SModelDescriptor model, SNode node) {
     IOperationContext context = new ModuleContext(model.getModule(), project);
-    MPSEditorOpener opener = new MPSEditorOpener(ProjectHelper.toIdeaProject(project));
-    return opener.editNode(node, context);
+    return NavigationSupport.getInstance().openNode(context, node, true, !(node.isRoot()));
   }
 
   public static void closeEditor(Project project, SNode node) {

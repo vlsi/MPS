@@ -20,6 +20,5 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
     <classNode extendsClassName="com.google.gwt.core.client.EntryPoint" />
   </dependency>
-  <dependency className="buildtest.buildtest" file="buildtest.gwt.xml" />
 </dependenciesRoot>
 

@@ -17,7 +17,6 @@
   <import index="rk9m" modelUID="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)" version="-1" />
   <import index="hfuk" modelUID="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)" version="-1" />
   <import index="53gy" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(JDK/java.util.concurrent@java_stub)" version="-1" />
-  <import index="kp22" modelUID="f:java_stub#fba399db-f591-45dc-a279-e2a2a986e262#org.apache.tools.ant(jetbrains.mps.build.generictasks/org.apache.tools.ant@java_stub)" version="-1" />
   <import index="tpcq" modelUID="r:00000000-0000-4000-0000-011c89590286(jetbrains.mps.lang.core.plugin)" version="-1" />
   <import index="tpec" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
   <import index="bgxn" modelUID="r:01d327ba-040c-402c-a2b6-8832116588df(jetbrains.mps.lang.plugin.plugin)" version="-1" />
@@ -47,6 +46,7 @@
   <import index="41zh" modelUID="r:f8a06b4b-9088-41e6-bae2-4b34baea9294(jetbrains.mps.generator.info)" version="-1" />
   <import index="n8sb" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.model(MPS.Core/jetbrains.mps.project.structure.model@java_stub)" version="-1" />
   <import index="3hjd" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs.impl(MPS.Core/jetbrains.mps.vfs.impl@java_stub)" version="-1" />
+  <import index="d3gt" modelUID="f:java_stub#847a3235-09f9-403c-b6a9-1c294a212e92#org.apache.tools.ant(Ant/org.apache.tools.ant@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -971,7 +971,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7795897115019498722">
         <property name="name" nameId="tpck.1169194664001" value="component" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7795897115019498723">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="kp22.~ProjectComponent" resolveInfo="ProjectComponent" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="d3gt.~ProjectComponent" resolveInfo="ProjectComponent" />
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7795897115019498724">
@@ -7421,7 +7421,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ThrowStatement" typeId="tpee.1164991038168" id="7795897115019501208">
               <node role="throwable" roleId="tpee.1164991057263" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7795897115019501209">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7795897115019501210">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="kp22.~BuildException%d&lt;init&gt;(java%dlang%dString)" resolveInfo="BuildException" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d3gt.~BuildException%d&lt;init&gt;(java%dlang%dString)" resolveInfo="BuildException" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7795897115019501211">
                     <property name="value" nameId="tpee.1070475926801" value="Tests Failed" />
                   </node>
