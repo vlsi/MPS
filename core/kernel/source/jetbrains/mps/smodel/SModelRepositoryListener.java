@@ -35,7 +35,5 @@ public interface SModelRepositoryListener {
   void modelOwnerRemoved(SModelDescriptor modelDescriptor, ModelOwner owner);
 
   void modelFileChanged(SModelDescriptor modelDescriptor, IFile from);
-
-  void beforeModelFileChanged(SModelDescriptor modelDescriptor);
 }
 

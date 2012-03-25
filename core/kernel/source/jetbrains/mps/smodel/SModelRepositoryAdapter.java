@@ -59,11 +59,6 @@ public abstract class SModelRepositoryAdapter implements SModelRepositoryListene
     modelRepositoryChanged(modelDescriptor);
   }
 
-  public void beforeModelFileChanged(SModelDescriptor modelDescriptor) {
-    modelRepositoryChanged();
-    modelRepositoryChanged(modelDescriptor);
-  }
-
   public void modelRepositoryChanged() {
   }
 

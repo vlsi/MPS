@@ -431,16 +431,6 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
-  private void fireBeforeModelFileChangedEvent(SModelDescriptor modelDescriptor) {
-    for (SModelRepositoryListener listener : listeners()) {
-      try {
-        listener.beforeModelFileChanged(modelDescriptor);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
   //-------todo: changed functionality - is better to be moved to SModelDescriptor fully
 
   @Deprecated
