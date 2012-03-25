@@ -15,20 +15,41 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.modules.*;
+import jetbrains.mps.project.structure.modules.DevkitDescriptor;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-public class ModuleRepositoryFacade {
-  private static final ModuleRepositoryFacade INSTANCE = new ModuleRepositoryFacade();
-  private static final MPSModuleRepository REPO = MPSModuleRepository.getInstance();
+public class ModuleRepositoryFacade implements CoreComponent {
+  private static ModuleRepositoryFacade INSTANCE;
+
+  private final MPSModuleRepository REPO;
+
+  public ModuleRepositoryFacade(MPSModuleRepository repo) {
+    REPO = repo;
+  }
+
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+
+    INSTANCE = this;
+  }
+
+  public void dispose() {
+    INSTANCE = null;
+  }
 
   public static ModuleRepositoryFacade getInstance() {
     return INSTANCE;
@@ -105,7 +126,7 @@ public class ModuleRepositoryFacade {
     }
   }
 
-  public static IModule createModule(ModuleHandle handle, MPSModuleOwner owner){
+  public static IModule createModule(ModuleHandle handle, MPSModuleOwner owner) {
     IModule module;
     if (handle.getDescriptor() instanceof LanguageDescriptor) {
       module = Language.newInstance(handle, owner);
