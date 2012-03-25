@@ -85,6 +85,10 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "member", false), "map_ClassifierMethod");
   }
 
+  public static Object referenceMacro_GetReferent_8307046163197876896(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return "updateModel";
+  }
+
   public static Object referenceMacro_GetReferent_2856649189863698970(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return AbstractModelCreator_Behavior.call_getGeneratedName_5553449326502826657(SLinkOperations.getTarget(_context.getNode(), "creator", false));
   }

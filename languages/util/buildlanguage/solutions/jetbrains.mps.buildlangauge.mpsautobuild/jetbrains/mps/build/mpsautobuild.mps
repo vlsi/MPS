@@ -2697,7 +2697,7 @@
       <node role="fullName" roleId="tps4.6108265972537372848" type="tps4.CompositeString" typeId="tps4.1205342812422" id="437343344535644754">
         <node role="right" roleId="tps4.1205342834160" type="tps4.CompositeString" typeId="tps4.1205342812422" id="437343344535644758">
           <node role="right" roleId="tps4.1205342834160" type="tps4.SimpleString" typeId="tps4.1205339044029" id="3690850548079628667">
-            <property name="name" nameId="tps4.1223641503366" value="2.0.4" />
+            <property name="name" nameId="tps4.1223641503366" value="2.0.6" />
           </node>
           <node role="left" roleId="tps4.1205342829799" type="tps4.CompositeString" typeId="tps4.1205342812422" id="437343344535981773">
             <node role="right" roleId="tps4.1205342834160" type="tps4.Space" typeId="tps4.1234531699390" id="437343344535981776" />
