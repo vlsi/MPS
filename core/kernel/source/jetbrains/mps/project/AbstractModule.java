@@ -32,17 +32,15 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.*;
-import jetbrains.mps.util.misc.hash.*;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
 
 public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
@@ -271,14 +269,20 @@ public abstract class AbstractModule implements IModule {
     }
 
     boolean addBundleAsModelRoot = false;
+    final DeploymentDescriptor dd = descriptor.getDeploymentDescriptor();
+    String libPath = dd == null ? FileUtil.getCanonicalPath(PathManager.getHomePath() + File.separator + "lib").toLowerCase() : null;
 
     // stub libraries
     List<ModelRoot> toRemove = new ArrayList<ModelRoot>();
     for (ModelRoot sme : descriptor.getStubModelEntries()) {
       String path = sme.getPath();
-      if (packagedSourcesPath == null || !FileUtil.getCanonicalPath(path).toLowerCase().startsWith(packagedSourcesPath)) {
+      String canonicalPath = FileUtil.getCanonicalPath(path).toLowerCase();
+      if (packagedSourcesPath == null || !canonicalPath.startsWith(packagedSourcesPath)) {
         String shrinked = MacrosFactory.moduleDescriptor(this).shrinkPath(path, getDescriptorFile());
         if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
+      }
+      if (dd == null && canonicalPath.startsWith(libPath)) {
+        continue;
       }
       toRemove.add(sme);
     }
@@ -300,15 +304,18 @@ public abstract class AbstractModule implements IModule {
       }
 
       String path = sme.getPath();
-      if (packagedSourcesPath == null || !FileUtil.getCanonicalPath(path).toLowerCase().startsWith(packagedSourcesPath)) {
+      String canonicalPath = FileUtil.getCanonicalPath(path).toLowerCase();
+      if (packagedSourcesPath == null || !canonicalPath.startsWith(packagedSourcesPath)) {
         String shrinked = MacrosFactory.moduleDescriptor(this).shrinkPath(path, getDescriptorFile());
         if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
+      }
+      if (dd == null && canonicalPath.startsWith(libPath)) {
+        continue;
       }
       toRemove.add(sme);
     }
     descriptor.getModelRoots().removeAll(toRemove);
 
-    DeploymentDescriptor dd = descriptor.getDeploymentDescriptor();
     if (dd == null) {
       if (addBundleAsModelRoot) {
         ClassPathEntry jarEntry = new ClassPathEntry();
