@@ -31,6 +31,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
@@ -298,6 +299,8 @@ public class TestMakeOnRealProject {
     IFile languageModels = descriptorFile.getParent().getDescendant(Language.LANGUAGE_MODELS);
     modelRoot.setPath(languageModels.getPath());
     d.getModelRoots().add(modelRoot);
+
+    LanguageDescriptorPersistence.saveLanguageDescriptor(descriptorFile, d);
 
     ModuleHandle handle = ModulesMiner.getInstance().loadModuleHandle(descriptorFile);
     return Language.newInstance(handle, myModuleOwner);
