@@ -381,16 +381,6 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
-  private void fireModelFileChanged(SModelDescriptor modelDescriptor, IFile from) {
-    for (SModelRepositoryListener l : listeners()) {
-      try {
-        l.modelFileChanged(modelDescriptor, from);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
   private void fireModelOwnerAdded(SModelDescriptor modelDescriptor, ModelOwner owner) {
     for (SModelRepositoryListener l : listeners()) {
       try {
