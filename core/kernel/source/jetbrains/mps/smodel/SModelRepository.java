@@ -129,7 +129,6 @@ public class SModelRepository implements CoreComponent {
       if (!owners.remove(owner)) throw new IllegalStateException();
       Set<SModelDescriptor> ownerModels = myModelsByOwner.get(owner);
       if (!ownerModels.remove(md)) throw new IllegalStateException();
-      fireModelOwnerRemoved(md, owner);
 
       if (owners.isEmpty()) {
         removeModelDescriptor(md);
@@ -375,26 +374,6 @@ public class SModelRepository implements CoreComponent {
     for (SModelRepositoryListener l : listeners()) {
       try {
         l.modelRenamed(modelDescriptor);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  private void fireModelOwnerAdded(SModelDescriptor modelDescriptor, ModelOwner owner) {
-    for (SModelRepositoryListener l : listeners()) {
-      try {
-        l.modelOwnerAdded(modelDescriptor, owner);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  private void fireModelOwnerRemoved(SModelDescriptor modelDescriptor, ModelOwner owner) {
-    for (SModelRepositoryListener l : listeners()) {
-      try {
-        l.modelOwnerRemoved(modelDescriptor, owner);
       } catch (Throwable t) {
         LOG.error(t);
       }
