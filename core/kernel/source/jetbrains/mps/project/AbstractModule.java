@@ -290,7 +290,7 @@ public abstract class AbstractModule implements IModule {
       if (!LanguageID.JAVA_MANAGER.equals(sme.getManager())) continue;
 
       if (!descriptor.getCompileInMPS()) {
-        if (sme.getPath().endsWith("/classes")) {
+        if (sme.getPath().endsWith("classes")) {
           IFile parent = getDescriptorFile().getParent();
           IFile classes = parent != null ? parent.getDescendant("classes") : null;
           addBundleAsModelRoot = classes != null && classes.getPath().equalsIgnoreCase(sme.getPath());
