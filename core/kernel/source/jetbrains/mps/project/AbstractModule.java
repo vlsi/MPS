@@ -461,7 +461,7 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
-  public final void updateModelsSet() {
+  public void updateModelsSet() {
     mySModelRoots = doUpdateModelsSet();
     fireModuleInitialized();
   }

@@ -19,6 +19,7 @@ import jetbrains.mps.ClasspathReader;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
@@ -65,7 +66,7 @@ public class Solution extends AbstractModule {
       ModuleId.fromString("920eaa0e-ecca-46bc-bee7-4e5c59213dd6")), ClasspathReader.ClassType.TEST);
     return result;
   }
-  
+
   public static Solution newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
     SolutionDescriptor descriptor = ((SolutionDescriptor) handle.getDescriptor());
     assert descriptor != null;
@@ -122,6 +123,34 @@ public class Solution extends AbstractModule {
 
   public void save() {
     SolutionDescriptorPersistence.saveSolutionDescriptor(myDescriptorFile, getModuleDescriptor());
+  }
+
+  @Override
+  public void updateModelsSet() {
+    updateBootstrapSolutionLibraries();
+    super.updateModelsSet();
+  }
+
+  private void updateBootstrapSolutionLibraries() {
+    // temp HACK
+
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor == null) return;
+
+    ClasspathReader.ClassType classType = bootstrapCP.get(descriptor.getModuleReference());
+    if (classType == null) return;
+
+    List<String> javaCP = CommonPaths.getMPSPaths(classType);
+    descriptor.getModelRoots().clear();
+    descriptor.getStubModelEntries().clear();
+
+    for (String path : javaCP) {
+      ClassPathEntry entry = new ClassPathEntry();
+      entry.setPath(path);
+      ModelRoot mr = jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(entry);
+      descriptor.getStubModelEntries().add(mr);
+      descriptor.getModelRoots().add(mr);
+    }
   }
 
   public String toString() {
