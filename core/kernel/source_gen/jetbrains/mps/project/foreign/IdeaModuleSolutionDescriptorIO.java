@@ -51,6 +51,7 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
             mrp.setPath(mex.expandMacros(mrp.getPath()));
             result_56japk_a0a0e0a.getModelRoots().add(mrp);
           }
+
         }
 
         // TODO: stub model entries 
