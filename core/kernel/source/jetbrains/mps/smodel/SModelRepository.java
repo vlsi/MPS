@@ -118,7 +118,7 @@ public class SModelRepository implements CoreComponent {
       if (modelDescriptor instanceof EditableSModelDescriptor) {
         addModelToFileCache(((EditableSModelDescriptor) modelDescriptor));
       }
-      addListeners(modelDescriptor);
+      modelDescriptor.addModelListener(myModelsListener);
     }
     fireModelAdded(modelDescriptor);
   }
@@ -158,7 +158,7 @@ public class SModelRepository implements CoreComponent {
         boolean result = removeModelFromFileCache(((EditableSModelDescriptor) md));
         LOG.assertLog(result, "model " + md + " do not have a path in file cache");
       }
-      removeListeners(md);
+      md.removeModelListener(myModelsListener);
       fireModelRemoved(md);
       md.dispose();
     }
@@ -330,14 +330,6 @@ public class SModelRepository implements CoreComponent {
     synchronized (myListenersLock) {
       return new ArrayList<SModelRepositoryListener>(mySModelRepositoryListeners);
     }
-  }
-
-  private void addListeners(SModelDescriptor modelDescriptor) {
-    modelDescriptor.addModelListener(myModelsListener);
-  }
-
-  private void removeListeners(SModelDescriptor modelDescriptor) {
-    modelDescriptor.removeModelListener(myModelsListener);
   }
 
   private void fireBeforeModelRemoved(SModelDescriptor modelDescriptor) {
