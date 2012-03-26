@@ -28,33 +28,37 @@ import org.jetbrains.annotations.Nullable;
 
 public class MacrosFactory {
   public static final String SOLUTION_DESCRIPTOR = "${solution_descriptor}";
+  @Deprecated
   public static final String LIBRARY_DESCRIPTOR = "${library_descriptor}";
   public static final String DEVKIT_DESCRIPTOR = "${devkit_descriptor}";
   public static final String LANGUAGE_DESCRIPTOR = "${language_descriptor}";
+  public static final String PACKAGED_MODULE_DESCRIPTOR = "${module_descriptor}";
   public static final String PROJECT = "${project}";
 
   public static boolean containsNonMPSMacros(String path) {
     return path.contains("${") && !MacrosFactory.containsMPSMacros(path);
   }
 
-  public static boolean containsMPSMacros(String path){
-    return path.contains(SOLUTION_DESCRIPTOR)||
-      path.contains(LIBRARY_DESCRIPTOR)||
-      path.contains(DEVKIT_DESCRIPTOR)||
-      path.contains(LANGUAGE_DESCRIPTOR)||
-      path.contains(PROJECT)||
+  public static boolean containsMPSMacros(String path) {
+    return path.contains(SOLUTION_DESCRIPTOR) ||
+      path.contains(LIBRARY_DESCRIPTOR) ||
+      path.contains(DEVKIT_DESCRIPTOR) ||
+      path.contains(LANGUAGE_DESCRIPTOR) ||
+      path.contains(PROJECT) ||
       path.contains(Macros.MPS_HOME);
   }
-  
+
   public static MacroHelper forModuleFile(IFile moduleFile) {
-    String name = moduleFile.getName().toLowerCase();
+    String name = moduleFile.getPath().toLowerCase();
     Macros macros;
-    if(name.endsWith(MPSExtentions.DOT_SOLUTION)) {
+    if (name.endsWith(MPSExtentions.DOT_SOLUTION) || name.endsWith(MPSExtentions.DOT_IDEMODULE)) {
       macros = new DescriptorMacros(SOLUTION_DESCRIPTOR);
-    } else if(name.endsWith(MPSExtentions.DOT_DEVKIT)) {
+    } else if (name.endsWith(MPSExtentions.DOT_DEVKIT)) {
       macros = new DescriptorMacros(DEVKIT_DESCRIPTOR);
-    } else if(name.endsWith(MPSExtentions.DOT_LANGUAGE)) {
+    } else if (name.endsWith(MPSExtentions.DOT_LANGUAGE)) {
       macros = new DescriptorMacros(LANGUAGE_DESCRIPTOR);
+    } else if (name.endsWith(MPSExtentions.PACKAGED_MODULE)) {
+      macros = new PackagedDescriptorMacros();
     } else {
       return null;
     }
@@ -64,9 +68,10 @@ public class MacrosFactory {
   public static MacroHelper forProjectFile(IFile projectFile) {
     return new MacroHelperImpl(projectFile, new ProjectDescriptorMacros());
   }
-  
+
   public static MacroHelper getGlobal() {
-    return new MacroHelperImpl(null, new Macros() { });
+    return new MacroHelperImpl(null, new Macros() {
+    });
   }
 
   /**
@@ -114,7 +119,8 @@ public class MacrosFactory {
    */
   @Deprecated
   public static Macros mpsHomeMacros() {
-    return new Macros() { };
+    return new Macros() {
+    };
   }
 
   /**
@@ -153,9 +159,6 @@ public class MacrosFactory {
     protected String expandPath_internal(String path, IFile anchorFile) {
       if (path.startsWith(myMacroString)) {
         IFile anchorFolder = anchorFile.getParent();
-        if(anchorFile.getPath().endsWith(ModulesMiner.META_INF_MODULE_XML)) {
-          anchorFolder = anchorFolder.getParent();
-        }
         String modelRelativePath = removePrefix(path, myMacroString);
         return IFileUtils.getCanonicalPath(anchorFolder.getDescendant(modelRelativePath));
       }
@@ -164,14 +167,45 @@ public class MacrosFactory {
 
     protected String shrinkPath_internal(String absolutePath, IFile anchorFile) {
       IFile anchorFolder = anchorFile.getParent();
-      if(anchorFile.getPath().endsWith(ModulesMiner.META_INF_MODULE_XML)) {
+      String prefix = IFileUtils.getCanonicalPath(anchorFolder);
+      if (pathStartsWith(absolutePath, prefix)) {
+        String relationalPath = shrink(absolutePath, prefix);
+        return myMacroString + relationalPath;
+      }
+      return super.shrinkPath_internal(absolutePath, anchorFile);
+    }
+  }
+  
+  private static class PackagedDescriptorMacros extends Macros {
+    private PackagedDescriptorMacros() {
+    }
+
+    protected String expandPath_internal(String path, IFile anchorFile) {
+      String macroString =
+        path.startsWith(LANGUAGE_DESCRIPTOR) ? LANGUAGE_DESCRIPTOR :
+        path.startsWith(SOLUTION_DESCRIPTOR) ? SOLUTION_DESCRIPTOR :
+          PACKAGED_MODULE_DESCRIPTOR;
+      if (path.startsWith(macroString)) {
+        IFile anchorFolder = anchorFile.getParent();
+        if (anchorFile.getPath().endsWith(ModulesMiner.META_INF_MODULE_XML)) {
+          anchorFolder = anchorFolder.getParent();
+        }
+        String modelRelativePath = removePrefix(path, macroString);
+        return IFileUtils.getCanonicalPath(anchorFolder.getDescendant(modelRelativePath));
+      }
+      return super.expandPath_internal(path, anchorFile);
+    }
+
+    protected String shrinkPath_internal(String absolutePath, IFile anchorFile) {
+      IFile anchorFolder = anchorFile.getParent();
+      if (anchorFile.getPath().endsWith(ModulesMiner.META_INF_MODULE_XML)) {
         anchorFolder = anchorFolder.getParent();
       }
 
       String prefix = IFileUtils.getCanonicalPath(anchorFolder);
       if (pathStartsWith(absolutePath, prefix)) {
         String relationalPath = shrink(absolutePath, prefix);
-        return myMacroString + relationalPath;
+        return PACKAGED_MODULE_DESCRIPTOR + relationalPath;
       }
       return super.shrinkPath_internal(absolutePath, anchorFile);
     }
@@ -203,7 +237,7 @@ public class MacrosFactory {
   }
 
   private static class MacroHelperImpl implements MacroHelper {
-    
+
     final IFile anchorFile;
     final Macros macros;
 
