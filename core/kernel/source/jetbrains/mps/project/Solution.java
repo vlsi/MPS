@@ -120,7 +120,7 @@ public class Solution extends AbstractModule {
   }
 
   public void save() {
-    SolutionDescriptorPersistence.saveSolutionDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.solutionDescriptor());
+    SolutionDescriptorPersistence.saveSolutionDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.forModuleFile(myDescriptorFile));
   }
 
   @Override

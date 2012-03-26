@@ -7,7 +7,7 @@ import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import org.jdom.Element;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.util.Macros;
+import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -28,7 +28,7 @@ public class GeneratorDescriptorPersistence {
   private GeneratorDescriptorPersistence() {
   }
 
-  public static GeneratorDescriptor loadGeneratorDescriptor(final Element generatorElement, final IFile file, final Macros macros) {
+  public static GeneratorDescriptor loadGeneratorDescriptor(final Element generatorElement, IFile file, final MacroHelper macroHelper) {
     GeneratorDescriptor descriptor = new _FunctionTypes._return_P0_E0<GeneratorDescriptor>() {
       public GeneratorDescriptor invoke() {
         final GeneratorDescriptor result_wk2vdq_a0a0a0a = new GeneratorDescriptor();
@@ -49,10 +49,10 @@ public class GeneratorDescriptorPersistence {
         }
 
         if (ListSequence.fromList(AttributeUtils.elementChildren(generatorElement, "models")).isNotEmpty()) {
-          result_wk2vdq_a0a0a0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(generatorElement, "models")).first(), "modelRoot"), file, macros));
+          result_wk2vdq_a0a0a0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(generatorElement, "models")).first(), "modelRoot"), macroHelper));
         } else {
           // old - for backwards compatibility 
-          result_wk2vdq_a0a0a0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(AttributeUtils.elementChildren(generatorElement, "modelRoot"), file, macros));
+          result_wk2vdq_a0a0a0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(AttributeUtils.elementChildren(generatorElement, "modelRoot"), macroHelper));
         }
 
 
@@ -94,7 +94,7 @@ public class GeneratorDescriptorPersistence {
     return descriptor;
   }
 
-  public static void saveGeneratorDescriptor(Element languageGeneratorsElement, GeneratorDescriptor descriptor, IFile file, Macros macros) {
+  public static void saveGeneratorDescriptor(Element languageGeneratorsElement, GeneratorDescriptor descriptor, MacroHelper macroHelper) {
     Element result_wk2vdq_a0a1 = languageGeneratorsElement;
     final Element result_wk2vdq_a0a0a1 = new Element("generator");
     if (descriptor.getNamespace() != null) {
@@ -115,7 +115,7 @@ public class GeneratorDescriptorPersistence {
     }
 
     final Element result_wk2vdq_a5a0a0a1 = new Element("models");
-    ModuleDescriptorPersistence.saveModelRoots(result_wk2vdq_a5a0a0a1, descriptor.getModelRoots(), file, macros);
+    ModuleDescriptorPersistence.saveModelRoots(result_wk2vdq_a5a0a0a1, descriptor.getModelRoots(), macroHelper);
     result_wk2vdq_a0a0a1.addContent(result_wk2vdq_a5a0a0a1);
 
     // "depends on" generators 

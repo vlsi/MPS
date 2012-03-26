@@ -89,8 +89,8 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     return ModelAccess.instance().runReadAction(new Computable<Element>() {
       public Element compute() {
         ProjectDescriptor descriptor = getProjectDescriptor();
-        File file = new File(myProject.getPresentableUrl());
-        return ProjectDescriptorPersistence.saveProjectDescriptorToElement(descriptor, file);
+        return ProjectDescriptorPersistence.saveProjectDescriptorToElement(descriptor,
+          FileSystem.getInstance().getFileByPath(myProject.getPresentableUrl()));
       }
     });
   }
@@ -133,7 +133,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     String url = myProject.getPresentableUrl();
     ProjectDescriptor descriptor = new ProjectDescriptor();
     if (url != null) {
-      final File projectFile = new File(url);
+      final IFile projectFile = FileSystem.getInstance().getFileByPath(url);
       ProjectDescriptorPersistence.loadProjectDescriptorFromElement(descriptor, projectFile, myProjectElement);
     }
     init(descriptor);

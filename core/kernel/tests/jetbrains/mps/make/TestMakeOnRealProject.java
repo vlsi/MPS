@@ -283,7 +283,7 @@ public class TestMakeOnRealProject {
     solutionDescriptor.getModelRoots().add(modelRoot);
     solutionDescriptor.getDependencies().add(new Dependency(new ModuleReference("JDK"), true));
     runtimeSolutionDescriptorFile.createNewFile();
-    SolutionDescriptorPersistence.saveSolutionDescriptor(runtimeSolutionDescriptorFile, solutionDescriptor, MacrosFactory.solutionDescriptor());
+    SolutionDescriptorPersistence.saveSolutionDescriptor(runtimeSolutionDescriptorFile, solutionDescriptor, MacrosFactory.forModuleFile(runtimeSolutionDescriptorFile));
     ModuleHandle handle = ModulesMiner.getInstance().loadModuleHandle(runtimeSolutionDescriptorFile);
     return Solution.newInstance(handle, myModuleOwner);
   }
@@ -301,7 +301,7 @@ public class TestMakeOnRealProject {
     modelRoot.setPath(languageModels.getPath());
     d.getModelRoots().add(modelRoot);
 
-    LanguageDescriptorPersistence.saveLanguageDescriptor(descriptorFile, d, MacrosFactory.languageDescriptor());
+    LanguageDescriptorPersistence.saveLanguageDescriptor(descriptorFile, d, MacrosFactory.forModuleFile(descriptorFile));
 
     ModuleHandle handle = ModulesMiner.getInstance().loadModuleHandle(descriptorFile);
     return Language.newInstance(handle, myModuleOwner);
@@ -323,7 +323,7 @@ public class TestMakeOnRealProject {
 
     solutionDescriptor.getModelRoots().add(modelRoot);
     
-    SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, solutionDescriptor, MacrosFactory.solutionDescriptor());
+    SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, solutionDescriptor, MacrosFactory.forModuleFile(descriptorFile));
 
     ModuleHandle handle = ModulesMiner.getInstance().loadModuleHandle(descriptorFile);
     return Solution.newInstance(handle, myModuleOwner);

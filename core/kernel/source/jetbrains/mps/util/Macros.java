@@ -26,6 +26,11 @@ import org.jetbrains.annotations.Nullable;
 import java.io.File;
 import java.util.Set;
 
+/**
+ * TODO rewrite
+ * @deprecated Use MacroHelper
+ */
+@Deprecated
 public abstract class Macros {
   private static final Logger LOG = Logger.getLogger(Macros.class);
   static final char SEPARATOR_CHAR = '/';

@@ -435,7 +435,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       LOG.warning("Trying to save packaged language " + getModuleFqName(), new Exception());
       return;
     }
-    LanguageDescriptorPersistence.saveLanguageDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.languageDescriptor());
+    LanguageDescriptorPersistence.saveLanguageDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.forModuleFile(myDescriptorFile));
   }
 
   public List<SModelDescriptor> getAccessoryModels() {

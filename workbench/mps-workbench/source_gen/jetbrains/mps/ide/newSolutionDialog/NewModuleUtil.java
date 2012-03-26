@@ -101,7 +101,7 @@ public class NewModuleUtil {
   public static Solution createNewSolution(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
     assert !(descriptorFile.exists());
     SolutionDescriptor descriptor = createNewSolutionDescriptor(namespace, descriptorFile);
-    SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, descriptor, MacrosFactory.solutionDescriptor());
+    SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, descriptor, MacrosFactory.forModuleFile(descriptorFile));
     return Solution.newInstance(ModulesMiner.getInstance().loadModuleHandle(descriptorFile), moduleOwner);
   }
 
@@ -134,7 +134,7 @@ public class NewModuleUtil {
   public static Language createNewLanguage(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
     assert !(descriptorFile.exists());
     LanguageDescriptor descriptor = createNewLanguageDescriptor(namespace, descriptorFile);
-    LanguageDescriptorPersistence.saveLanguageDescriptor(descriptorFile, descriptor, MacrosFactory.languageDescriptor());
+    LanguageDescriptorPersistence.saveLanguageDescriptor(descriptorFile, descriptor, MacrosFactory.forModuleFile(descriptorFile));
     return Language.newInstance(ModulesMiner.getInstance().loadModuleHandle(descriptorFile), moduleOwner);
   }
 

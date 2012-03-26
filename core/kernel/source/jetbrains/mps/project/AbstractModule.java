@@ -278,7 +278,7 @@ public abstract class AbstractModule implements IModule {
       String path = sme.getPath();
       String canonicalPath = FileUtil.getCanonicalPath(path).toLowerCase();
       if (packagedSourcesPath == null || !canonicalPath.startsWith(packagedSourcesPath)) {
-        String shrinked = MacrosFactory.moduleDescriptor(this).shrinkPath(path, getDescriptorFile());
+        String shrinked = MacrosFactory.forModuleFile(getDescriptorFile()).shrinkPath(path);
         if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
       }
       if (dd == null && canonicalPath.startsWith(libPath)) {
@@ -307,7 +307,7 @@ public abstract class AbstractModule implements IModule {
 
 
       if (packagedSourcesPath == null || !canonicalPath.startsWith(packagedSourcesPath)) {
-        String shrinked = MacrosFactory.moduleDescriptor(this).shrinkPath(path, getDescriptorFile());
+        String shrinked = MacrosFactory.forModuleFile(getDescriptorFile()).shrinkPath(path);
         if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
       }
       if (dd == null && canonicalPath.startsWith(libPath)) {

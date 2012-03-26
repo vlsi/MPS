@@ -76,11 +76,11 @@ public class ClassPathTest extends BaseMPSTest {
   */
   public void testMPSSolutionsAreNotLoadingClasses() {
     ProjectDescriptor projectDescriptor = new ProjectDescriptor();
-    ProjectDescriptorPersistence.loadProjectDescriptor(projectDescriptor, new File(MPS_CORE_PROJECT));
+    ProjectDescriptorPersistence.loadProjectDescriptor(projectDescriptor, FileSystem.getInstance().getFileByPath(MPS_CORE_PROJECT));
     for (Path path : projectDescriptor.getModules()) {
       if (!path.getPath().endsWith(MPSExtentions.DOT_SOLUTION)) continue;
       IFile solutionFile = FileSystem.getInstance().getFileByPath(path.getPath());
-      SolutionDescriptor solutionDescriptor = SolutionDescriptorPersistence.loadSolutionDescriptor(solutionFile, MacrosFactory.solutionDescriptor());
+      SolutionDescriptor solutionDescriptor = SolutionDescriptorPersistence.loadSolutionDescriptor(solutionFile, MacrosFactory.forModuleFile(solutionFile));
       assertTrue("Solution " + solutionDescriptor.getNamespace() + " is contained by core project, but has \"Don't load classes\" disabled", !solutionDescriptor.getCompileInMPS());
     }
   }
