@@ -8396,28 +8396,40 @@
                 </node>
                 <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4003657351907891331">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ArrayCreatorWithInitializer" typeId="tpee.1154542696413" id="4003657351907891332">
-                    <node role="initValue" roleId="tpee.1154542803372" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="6690493898470425811">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6690493898470423554" resolveInfo="absolutePath" />
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6690493898470425818">
-                        <property name="value" nameId="tpee.1070475926801" value="core" />
-                      </node>
-                    </node>
                     <node role="initValue" roleId="tpee.1154542803372" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="6690493898470425838">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6690493898470423554" resolveInfo="absolutePath" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6690493898470425845">
-                        <property name="value" nameId="tpee.1070475926801" value="workbench/classes" />
+                        <property name="value" nameId="tpee.1070475926801" value="core/ant/classes" />
                       </node>
                     </node>
-                    <node role="initValue" roleId="tpee.1154542803372" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="6690493898470425859">
+                    <node role="initValue" roleId="tpee.1154542803372" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="6690493898470431430">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6690493898470423554" resolveInfo="absolutePath" />
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6690493898470425866">
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6690493898470431431">
                         <property name="value" nameId="tpee.1070475926801" value="lib" />
                       </node>
                     </node>
-                    <node role="initValue" roleId="tpee.1154542803372" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="6690493898470425880">
+                    <node role="initValue" roleId="tpee.1154542803372" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="6690493898470432879">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6690493898470423554" resolveInfo="absolutePath" />
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6690493898470425887">
-                        <property name="value" nameId="tpee.1070475926801" value="platform/buildlanguage/ant" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6690493898470432880">
+                        <property name="value" nameId="tpee.1070475926801" value="plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.runtime/classes_gen" />
+                      </node>
+                    </node>
+                    <node role="initValue" roleId="tpee.1154542803372" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="6690493898470454621">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6690493898470423554" resolveInfo="absolutePath" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6690493898470454622">
+                        <property name="value" nameId="tpee.1070475926801" value="languages/baseLanguage/closures/runtime/classes" />
+                      </node>
+                    </node>
+                    <node role="initValue" roleId="tpee.1154542803372" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="6690493898470456036">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6690493898470423554" resolveInfo="absolutePath" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6690493898470456037">
+                        <property name="value" nameId="tpee.1070475926801" value="languages/baseLanguage/collections/runtime/classes" />
+                      </node>
+                    </node>
+                    <node role="initValue" roleId="tpee.1154542803372" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="6690493898470457451">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6690493898470423554" resolveInfo="absolutePath" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6690493898470457452">
+                        <property name="value" nameId="tpee.1070475926801" value="languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes" />
                       </node>
                     </node>
                     <node role="initValue" roleId="tpee.1154542803372" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="6690493898470425911">
