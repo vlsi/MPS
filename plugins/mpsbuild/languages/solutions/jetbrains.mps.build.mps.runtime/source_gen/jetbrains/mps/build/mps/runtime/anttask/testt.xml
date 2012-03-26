@@ -13,13 +13,10 @@
   </target>
   <target name="test">
     <taskdef file="${curdir}/antlib.xml" classpathref="anttask.classpath" />
-    <taskdef name="mps.hello.world" classname="jetbrains.mps.build.mps.runtime.anttask.HelloTask" classpath="${basedir}"></taskdef>
-    <echo message="fdsa">asdf</echo>
-    <mps.hello.world message="mike">test "Hello World"
-        &lt;innertTag message="test2">xxx&lt;/innerTag>
-        <!--innerTag message="test2">xxx</innerTag--></mps.hello.world>
     <mps.gen.module.xml>
-      <GenModule ref="e66371a5-aa14-4edb-9b59-d3136a19ad71(jetbrains.mps.build.mps.runtime)" dest="module.xml">&lt;sources jar="aaa" descriptor="xxx" /></GenModule>
+      <GenModule ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" dest="module.xml">
+          &lt;sources jar="${mps.home}/languages/baseLanguage/collections/source_gen" descriptor="${basedir}/xxx.msd" /&gt;
+          </GenModule>
     </mps.gen.module.xml>
   </target>
 </project>

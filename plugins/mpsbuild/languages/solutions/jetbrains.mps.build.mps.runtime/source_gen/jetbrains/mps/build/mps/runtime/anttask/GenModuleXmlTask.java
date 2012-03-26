@@ -4,105 +4,42 @@ package jetbrains.mps.build.mps.runtime.anttask;
 
 import jetbrains.mps.build.ant.MpsLoadTask;
 import jetbrains.mps.build.ant.MpsWorker;
-import jetbrains.mps.build.ant.WhatToDo;
-import jetbrains.mps.project.Project;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.FileSystem;
-import org.jdom.Element;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.Language;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.util.JDOMUtil;
-import org.jdom.Document;
-import java.io.IOException;
+import java.net.URLEncoder;
+import java.net.URLDecoder;
 
 public class GenModuleXmlTask extends MpsLoadTask {
   public GenModuleXmlTask() {
   }
 
   protected Class<? extends MpsWorker> getWorkerClass() {
-    return GenModuleXmlTask.GenModuleXmlWorker.class;
+    return GenModuleXmlWorker.class;
   }
 
-  public static class GenModuleXmlWorker extends MpsWorker {
-    public GenModuleXmlWorker(WhatToDo whatToDo) {
-      super(whatToDo);
+  public void addConfiguredGenModule(ModuleXml moduleXml) {
+    myWhatToDo.addParameter(encode(moduleXml));
+  }
+
+  public static String encode(ModuleXml moduleXml) {
+    StringBuilder sb = new StringBuilder();
+    sb.append(moduleXml.getRef()).append("\n").append(moduleXml.getDest());
+    for (String line : moduleXml.getExtraText()) {
+      sb.append("\n").append(line);
     }
+    return URLEncoder.encode(sb.toString());
+  }
 
-    protected void executeTask(Project project, MpsWorker.ObjectsToProcess go) {
+  public static ModuleXml decode(String s) {
+    ModuleXml result = new ModuleXml(false);
+    String[] param = URLDecoder.decode(s).split("\n");
+    if (param.length > 0) {
+      result.setRef(param[0]);
     }
-
-    protected void showStatistic() {
+    if (param.length > 1) {
+      result.setDest(param[1]);
     }
-
-    public void addConfiguredGenModule(ModuleXml moduleXml) {
-      myWhatToDo.addParameter(moduleXml.getRef() + "," + moduleXml.getDest());
+    for (int i = 2; i < param.length; ++i) {
+      result.addText(param[i]);
     }
-
-    @Override
-    public void work() {
-      setupEnvironment();
-      final Project project = createDummyProject();
-      reload();
-      List<String> parameters = myWhatToDo.getParameters();
-      for (String parameter : ListSequence.fromList(parameters)) {
-        processParameter(project, parameter);
-      }
-      dispose();
-      showStatistic();
-    }
-
-    public void processParameter(Project project, String parameter) {
-      String[] parts = parameter.split(",");
-      if (parts.length < 2) {
-        error("Wrong parameter " + parameter);
-        return;
-      }
-
-      final ModuleReference moduleRef = ModuleReference.fromString(parts[0]);
-      IModule module = ModelAccess.instance().runReadAction(new Computable<IModule>() {
-        public IModule compute() {
-          return MPSModuleRepository.getInstance().getModule(moduleRef);
-        }
-      });
-      String xmlfilePath = parts[1];
-      IFile xmlfile = FileSystem.getInstance().getFileByPath(xmlfilePath);
-
-      Element moduleElem = new Element("module");
-      moduleElem.setAttribute("namespace", moduleRef.getModuleFqName());
-      moduleElem.setAttribute("uuid", moduleRef.getModuleId().toString());
-      moduleElem.setAttribute("type", (module instanceof Solution ?
-        "solution" :
-        (module instanceof Language ?
-          "language" :
-          "unknown"
-        )
-      ));
-      Element depElem = new Element("dependencies");
-      moduleElem.addContent(depElem);
-
-      List<IModule> dependencies = ListSequence.fromListWithValues(new ArrayList<IModule>(), module.getDependenciesManager().getAllRequiredModules());
-      for (ModuleReference ref : ListSequence.fromList(dependencies).select(new ISelector<IModule, ModuleReference>() {
-        public ModuleReference select(IModule it) {
-          return it.getModuleReference();
-        }
-      })) {
-        depElem.addContent(new Element("module").setAttribute("ref", ref.toString()));
-      }
-
-      try {
-        JDOMUtil.writeDocument(new Document(moduleElem), xmlfile);
-      } catch (IOException e) {
-        error("Error writing to " + xmlfilePath);
-      }
-    }
+    return result;
   }
 }

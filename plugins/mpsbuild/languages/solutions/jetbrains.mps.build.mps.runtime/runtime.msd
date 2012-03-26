@@ -5,6 +5,7 @@
   </models>
   <sourcePath />
   <dependencies>
+    <dependency reexport="false">847a3235-09f9-403c-b6a9-1c294a212e92(Ant)</dependency>
     <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
     <dependency reexport="false">77c9a130-703f-4530-bf21-6580757768d0(jetbrains.mps.ant)</dependency>
   </dependencies>

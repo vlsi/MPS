@@ -1,19 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.build.mps.runtime.anttask.GenModuleXmlTask" file="GenModuleXmlTask.java">
-    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.StringBuilder" />
+    <classNode dependClassName="java.net.URLDecoder" />
+    <classNode dependClassName="java.net.URLEncoder" />
+    <classNode dependClassName="jetbrains.mps.build.ant.MpsWorker" />
+    <classNode dependClassName="jetbrains.mps.build.mps.runtime.anttask.GenModuleXmlWorker" />
+    <classNode dependClassName="jetbrains.mps.build.mps.runtime.anttask.ModuleXml" />
+    <classNode extendsClassName="jetbrains.mps.build.ant.MpsLoadTask" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.mps.runtime.anttask.GenModuleXmlWorker" file="GenModuleXmlWorker.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.PrintStream" />
+    <classNode dependClassName="java.io.PrintWriter" />
+    <classNode dependClassName="java.io.StringReader" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.lang.StringBuilder" />
+    <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.build.ant.Environment" />
     <classNode dependClassName="jetbrains.mps.build.ant.WhatToDo" />
+    <classNode dependClassName="jetbrains.mps.build.mps.runtime.anttask.GenModuleXmlTask" />
     <classNode dependClassName="jetbrains.mps.build.mps.runtime.anttask.ModuleXml" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.project.Solution" />
+    <classNode dependClassName="jetbrains.mps.project.dependency.DependenciesManager" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
@@ -22,21 +38,18 @@
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.apache.tools.ant.ProjectComponent" />
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.Element" />
-    <classNode extendsClassName="jetbrains.mps.build.ant.MpsLoadTask" />
+    <classNode dependClassName="org.jdom.JDOMException" />
+    <classNode dependClassName="org.jdom.input.SAXBuilder" />
     <classNode extendsClassName="jetbrains.mps.build.ant.MpsWorker" />
-  </dependency>
-  <dependency className="jetbrains.mps.build.mps.runtime.anttask.HelloTask" file="HelloTask.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.runtime.anttask.ModuleXml" file="ModuleXml.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
+    <classNode extendsClassName="org.apache.tools.ant.ProjectComponent" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.runtime.anttask.antlib" file="antlib.xml" />
   <dependency className="jetbrains.mps.build.mps.runtime.anttask.testt" file="testt.xml" />
