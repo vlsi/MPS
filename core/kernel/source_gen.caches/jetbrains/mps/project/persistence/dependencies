@@ -178,7 +178,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.LanguageID" />
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
     <classNode dependClassName="jetbrains.mps.util.Macros" />
-    <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.xmlQuery.runtime.AttributeUtils" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />

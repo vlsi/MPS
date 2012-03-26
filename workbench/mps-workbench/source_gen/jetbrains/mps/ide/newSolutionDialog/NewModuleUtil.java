@@ -21,6 +21,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.model.ModelRoot;
@@ -100,7 +101,7 @@ public class NewModuleUtil {
   public static Solution createNewSolution(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
     assert !(descriptorFile.exists());
     SolutionDescriptor descriptor = createNewSolutionDescriptor(namespace, descriptorFile);
-    SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, descriptor);
+    SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, descriptor, MacrosFactory.solutionDescriptor());
     return Solution.newInstance(ModulesMiner.getInstance().loadModuleHandle(descriptorFile), moduleOwner);
   }
 
@@ -133,7 +134,7 @@ public class NewModuleUtil {
   public static Language createNewLanguage(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
     assert !(descriptorFile.exists());
     LanguageDescriptor descriptor = createNewLanguageDescriptor(namespace, descriptorFile);
-    LanguageDescriptorPersistence.saveLanguageDescriptor(descriptorFile, descriptor);
+    LanguageDescriptorPersistence.saveLanguageDescriptor(descriptorFile, descriptor, MacrosFactory.languageDescriptor());
     return Language.newInstance(ModulesMiner.getInstance().loadModuleHandle(descriptorFile), moduleOwner);
   }
 

@@ -8,12 +8,12 @@ import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.persistence.ModuleDescriptorPersistence;
 import org.jdom.Element;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.persistence.GeneratorDescriptorPersistence;
-import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 
 public class StandardDescriptorIOProvider implements DescriptorIOProvider {
@@ -47,7 +47,7 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
 
     public SolutionDescriptor readFromFile(IFile file) throws DescriptorIOException {
       try {
-        return SolutionDescriptorPersistence.loadSolutionDescriptor(file);
+        return SolutionDescriptorPersistence.loadSolutionDescriptor(file, MacrosFactory.solutionDescriptor());
       } catch (ModuleReadException ex) {
         SolutionDescriptor sd = new SolutionDescriptor();
         ModuleDescriptorPersistence.loadBrokenModule(sd, file, ex);
@@ -56,7 +56,7 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
     }
 
     public void writeToFile(SolutionDescriptor sd, IFile file) {
-      SolutionDescriptorPersistence.saveSolutionDescriptor(file, sd);
+      SolutionDescriptorPersistence.saveSolutionDescriptor(file, sd, MacrosFactory.solutionDescriptor());
     }
 
     public void writeToXml(SolutionDescriptor sd, Element element, IFile anchorFile) {
@@ -74,7 +74,7 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
 
     public LanguageDescriptor readFromFile(IFile file) throws DescriptorIOException {
       try {
-        return LanguageDescriptorPersistence.loadLanguageDescriptor(file);
+        return LanguageDescriptorPersistence.loadLanguageDescriptor(file, MacrosFactory.languageDescriptor());
       } catch (ModuleReadException ex) {
         LanguageDescriptor ld = new LanguageDescriptor();
         ModuleDescriptorPersistence.loadBrokenModule(ld, file, ex);
@@ -83,7 +83,7 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
     }
 
     public void writeToFile(LanguageDescriptor ld, IFile file) {
-      LanguageDescriptorPersistence.saveLanguageDescriptor(file, ld);
+      LanguageDescriptorPersistence.saveLanguageDescriptor(file, ld, MacrosFactory.languageDescriptor());
     }
 
     public void writeToXml(LanguageDescriptor ld, Element element, IFile anchorFile) {

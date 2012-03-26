@@ -42,6 +42,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -79,7 +80,7 @@ public class ClassPathTest extends BaseMPSTest {
     for (Path path : projectDescriptor.getModules()) {
       if (!path.getPath().endsWith(MPSExtentions.DOT_SOLUTION)) continue;
       IFile solutionFile = FileSystem.getInstance().getFileByPath(path.getPath());
-      SolutionDescriptor solutionDescriptor = SolutionDescriptorPersistence.loadSolutionDescriptor(solutionFile);
+      SolutionDescriptor solutionDescriptor = SolutionDescriptorPersistence.loadSolutionDescriptor(solutionFile, MacrosFactory.solutionDescriptor());
       assertTrue("Solution " + solutionDescriptor.getNamespace() + " is contained by core project, but has \"Don't load classes\" disabled", !solutionDescriptor.getCompileInMPS());
     }
   }

@@ -3580,18 +3580,6 @@
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="842994667883031170" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="842994667883031171">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="842994667883031172">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="842994667883031173">
-            <property name="name" nameId="tpck.1169194664001" value="macros" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="842994667883031174">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="msyo.~Macros" resolveInfo="Macros" />
-            </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1511970355012210365">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~MacrosFactory%dlanguageDescriptor()%cjetbrains%dmps%dutil%dMacros" resolveInfo="languageDescriptor" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyo.~MacrosFactory" resolveInfo="MacrosFactory" />
-            </node>
-          </node>
-        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="842994667883031176">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="842994667883031177">
             <property name="name" nameId="tpck.1169194664001" value="descriptor" />
@@ -3700,8 +3688,8 @@
                             <node role="builder" roleId="pmg0.4797501453850567416" type="pmg0.BeanPropertyBuilder" typeId="pmg0.2679357232283750087" id="842994667883031232">
                               <link role="setter" roleId="pmg0.2679357232283750088" targetNodeId="kqhl.~LanguageDescriptor%dsetGenPath(java%dlang%dString)%cvoid" resolveInfo="setGenPath" />
                               <node role="value" roleId="pmg0.2679357232283750106" type="tpee.DotExpression" typeId="tpee.1197027756228" id="842994667883031233">
-                                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="842994667883031234">
-                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883031173" resolveInfo="macros" />
+                                <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7414871074591383079">
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414871074591383076" resolveInfo="macros" />
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="842994667883031235">
                                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~Macros%dexpandPath(java%dlang%dString,jetbrains%dmps%dvfs%dIFile)%cjava%dlang%dString" resolveInfo="expandPath" />
@@ -3768,8 +3756,8 @@
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="842994667883031262">
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883031480" resolveInfo="file" />
                                   </node>
-                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="842994667883031263">
-                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883031173" resolveInfo="macros" />
+                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7414871074591383084">
+                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414871074591383076" resolveInfo="macros" />
                                   </node>
                                 </node>
                               </node>
@@ -3818,8 +3806,8 @@
                                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="842994667883031283">
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883031480" resolveInfo="file" />
                                     </node>
-                                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="842994667883031284">
-                                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883031173" resolveInfo="macros" />
+                                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7414871074591383085">
+                                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414871074591383076" resolveInfo="macros" />
                                     </node>
                                   </node>
                                 </node>
@@ -4021,8 +4009,8 @@
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="842994667883031368">
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883031480" resolveInfo="file" />
                                   </node>
-                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="842994667883031369">
-                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883031173" resolveInfo="macros" />
+                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7414871074591383086">
+                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414871074591383076" resolveInfo="macros" />
                                   </node>
                                 </node>
                               </node>
@@ -4098,8 +4086,8 @@
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7168227884262543297">
                                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n8sb.~ModelRoot%dsetPath(java%dlang%dString)%cvoid" resolveInfo="setPath" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7168227884262543298">
-                                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7168227884262543299">
-                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883031173" resolveInfo="macros" />
+                                  <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7414871074591383087">
+                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414871074591383076" resolveInfo="macros" />
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7168227884262543300">
                                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~Macros%dexpandPath(java%dlang%dString,jetbrains%dmps%dvfs%dIFile)%cjava%dlang%dString" resolveInfo="expandPath" />
@@ -4176,8 +4164,8 @@
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2896881808974360401">
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883031480" resolveInfo="file" />
                                 </node>
-                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2896881808974360402">
-                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883031173" resolveInfo="macros" />
+                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7414871074591383092">
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414871074591383076" resolveInfo="macros" />
                                 </node>
                               </node>
                             </node>
@@ -4254,8 +4242,8 @@
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7168227884262543347">
                                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n8sb.~ModelRoot%dsetPath(java%dlang%dString)%cvoid" resolveInfo="setPath" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7168227884262543348">
-                                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7168227884262543349">
-                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883031173" resolveInfo="macros" />
+                                  <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7414871074591383093">
+                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414871074591383076" resolveInfo="macros" />
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7168227884262543350">
                                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~Macros%dexpandPath(java%dlang%dString,jetbrains%dmps%dvfs%dIFile)%cjava%dlang%dString" resolveInfo="expandPath" />
@@ -4338,8 +4326,8 @@
                                     <node role="builder" roleId="pmg0.4797501453850567416" type="pmg0.BeanPropertyBuilder" typeId="pmg0.2679357232283750087" id="5813837646596418985">
                                       <link role="setter" roleId="pmg0.2679357232283750088" targetNodeId="n8sb.~ModelRoot%dsetPath(java%dlang%dString)%cvoid" resolveInfo="setPath" />
                                       <node role="value" roleId="pmg0.2679357232283750106" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5813837646596418986">
-                                        <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5813837646596418987">
-                                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883031173" resolveInfo="macros" />
+                                        <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7414871074591383098">
+                                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414871074591383076" resolveInfo="macros" />
                                         </node>
                                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5813837646596418988">
                                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~Macros%dexpandPath(java%dlang%dString,jetbrains%dmps%dvfs%dIFile)%cjava%dlang%dString" resolveInfo="expandPath" />
@@ -4574,8 +4562,8 @@
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="842994667883031449">
                                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~Collection%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="842994667883031450">
-                                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="842994667883031451">
-                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883031173" resolveInfo="macros" />
+                                  <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7414871074591383103">
+                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414871074591383076" resolveInfo="macros" />
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="842994667883031452">
                                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~Macros%dexpandPath(java%dlang%dString,jetbrains%dmps%dvfs%dIFile)%cjava%dlang%dString" resolveInfo="expandPath" />
@@ -4671,6 +4659,12 @@
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="59et.~IFile" resolveInfo="IFile" />
         </node>
       </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7414871074591383076">
+        <property name="name" nameId="tpck.1169194664001" value="macros" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7414871074591383078">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="msyo.~Macros" resolveInfo="Macros" />
+        </node>
+      </node>
     </node>
     <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="842994667883031482">
       <property name="name" nameId="tpck.1169194664001" value="saveLanguageDescriptor" />
@@ -4699,6 +4693,10 @@
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="842994667883031490">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883031493" resolveInfo="descriptor" />
+            </node>
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1511970355012210365">
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyo.~MacrosFactory" resolveInfo="MacrosFactory" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~MacrosFactory%dlanguageDescriptor()%cjetbrains%dmps%dutil%dMacros" resolveInfo="languageDescriptor" />
             </node>
           </node>
         </node>
@@ -4751,18 +4749,6 @@
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="842994667883031507" />
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="842994667883031508">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="842994667883031509">
-            <property name="name" nameId="tpck.1169194664001" value="macros" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="842994667883031510">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="msyo.~Macros" resolveInfo="Macros" />
-            </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1511970355012361863">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~MacrosFactory%dlanguageDescriptor()%cjetbrains%dmps%dutil%dMacros" resolveInfo="languageDescriptor" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyo.~MacrosFactory" resolveInfo="MacrosFactory" />
-            </node>
-          </node>
-        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="842994667883031512">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="842994667883031513">
             <property name="name" nameId="tpck.1169194664001" value="languageElement" />
@@ -4822,8 +4808,8 @@
                         <node role="builder" roleId="pmg0.4797501453850567416" type="mlj4.AttributeBuilder" typeId="mlj4.7225751495667376018" id="842994667883031541">
                           <link role="attributeDeclaration" roleId="mlj4.7225751495667376019" targetNodeId="842994667883029811" resolveInfo="generatorOutputPath" />
                           <node role="value" roleId="mlj4.7225751495667403566" type="tpee.DotExpression" typeId="tpee.1197027756228" id="842994667883031542">
-                            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="842994667883031543">
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883031509" resolveInfo="macros" />
+                            <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7414871074591383135">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414871074591383132" resolveInfo="macros" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="842994667883031544">
                               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~Macros%dshrinkPath(java%dlang%dString,jetbrains%dmps%dvfs%dIFile)%cjava%dlang%dString" resolveInfo="shrinkPath" />
@@ -4874,8 +4860,8 @@
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="842994667883031567">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883031737" resolveInfo="file" />
                           </node>
-                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="842994667883031568">
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883031509" resolveInfo="macros" />
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7414871074591383140">
+                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414871074591383132" resolveInfo="macros" />
                           </node>
                         </node>
                       </node>
@@ -4955,8 +4941,8 @@
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="842994667883031602">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883031737" resolveInfo="file" />
                               </node>
-                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="842994667883031603">
-                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883031509" resolveInfo="macros" />
+                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7414871074591383141">
+                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414871074591383132" resolveInfo="macros" />
                               </node>
                             </node>
                           </node>
@@ -4989,8 +4975,8 @@
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="702807520180571634">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883031737" resolveInfo="file" />
                               </node>
-                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="702807520180571635">
-                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883031509" resolveInfo="macros" />
+                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7414871074591383142">
+                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414871074591383132" resolveInfo="macros" />
                               </node>
                             </node>
                           </node>
@@ -5042,8 +5028,8 @@
                                     <node role="builder" roleId="pmg0.4797501453850567416" type="mlj4.AttributeBuilder" typeId="mlj4.7225751495667376018" id="5813837646596424117">
                                       <link role="attributeDeclaration" roleId="mlj4.7225751495667376019" targetNodeId="2574803278448809964" resolveInfo="path" />
                                       <node role="value" roleId="mlj4.7225751495667403566" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5813837646596424118">
-                                        <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5813837646596424119">
-                                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883031509" resolveInfo="macros" />
+                                        <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7414871074591383143">
+                                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414871074591383132" resolveInfo="macros" />
                                         </node>
                                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5813837646596424120">
                                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~Macros%dshrinkPath(java%dlang%dString,jetbrains%dmps%dvfs%dIFile)%cjava%dlang%dString" resolveInfo="shrinkPath" />
@@ -5241,8 +5227,8 @@
                                 <node role="builder" roleId="pmg0.4797501453850567416" type="mlj4.AttributeBuilder" typeId="mlj4.7225751495667376018" id="842994667883031670">
                                   <link role="attributeDeclaration" roleId="mlj4.7225751495667376019" targetNodeId="2574803278448810045" resolveInfo="path" />
                                   <node role="value" roleId="mlj4.7225751495667403566" type="tpee.DotExpression" typeId="tpee.1197027756228" id="842994667883031671">
-                                    <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="842994667883031672">
-                                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883031509" resolveInfo="macros" />
+                                    <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7414871074591383148">
+                                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414871074591383132" resolveInfo="macros" />
                                     </node>
                                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="842994667883031673">
                                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~Macros%dshrinkPath(java%dlang%dString,jetbrains%dmps%dvfs%dIFile)%cjava%dlang%dString" resolveInfo="shrinkPath" />
@@ -5424,6 +5410,12 @@
         <property name="name" nameId="tpck.1169194664001" value="descriptor" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="842994667883031740">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="kqhl.~LanguageDescriptor" resolveInfo="LanguageDescriptor" />
+        </node>
+      </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7414871074591383132">
+        <property name="name" nameId="tpck.1169194664001" value="macros" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7414871074591383134">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="msyo.~Macros" resolveInfo="Macros" />
         </node>
       </node>
     </node>
@@ -8879,18 +8871,6 @@
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="842994667883032845" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="842994667883032846">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="842994667883032847">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="842994667883032848">
-            <property name="name" nameId="tpck.1169194664001" value="macros" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="842994667883032849">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="msyo.~Macros" resolveInfo="Macros" />
-            </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1511970355012210368">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~MacrosFactory%dsolutionDescriptor()%cjetbrains%dmps%dutil%dMacros" resolveInfo="solutionDescriptor" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyo.~MacrosFactory" resolveInfo="MacrosFactory" />
-            </node>
-          </node>
-        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="842994667883032851">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="842994667883032852">
             <property name="name" nameId="tpck.1169194664001" value="descriptor" />
@@ -9065,7 +9045,7 @@
                       <node role="statement" roleId="tpee.1068581517665" type="pmg0.BuilderStatement" typeId="pmg0.7057666463730155299" id="842994667883032917">
                         <node role="body" roleId="pmg0.4797501453849924252" type="tpee.StatementList" typeId="tpee.1068580123136" id="842994667883032918" />
                         <node role="builder" roleId="pmg0.4797501453850567416" type="pmg0.BeanPropertyBuilder" typeId="pmg0.2679357232283750087" id="842994667883032919">
-                          <link role="setter" roleId="pmg0.2679357232283750088" targetNodeId="kqhl.~ModuleDescriptor%dsetCompileInMPS(boolean)%cvoid" resolveInfo="setCompileInMPS" />
+                          <link role="setter" roleId="pmg0.2679357232283750088" targetNodeId="kqhl.~SolutionDescriptor%dsetCompileInMPS(boolean)%cvoid" resolveInfo="setCompileInMPS" />
                           <node role="value" roleId="pmg0.2679357232283750106" type="tpee.DotExpression" typeId="tpee.1197027756228" id="842994667883032920">
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="842994667883032921">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883032868" resolveInfo="solutionElement" />
@@ -9084,8 +9064,8 @@
                             <node role="builder" roleId="pmg0.4797501453850567416" type="pmg0.BeanPropertyBuilder" typeId="pmg0.2679357232283750087" id="842994667883032934">
                               <link role="setter" roleId="pmg0.2679357232283750088" targetNodeId="kqhl.~SolutionDescriptor%dsetOutputPath(java%dlang%dString)%cvoid" resolveInfo="setOutputPath" />
                               <node role="value" roleId="pmg0.2679357232283750106" type="tpee.DotExpression" typeId="tpee.1197027756228" id="842994667883032935">
-                                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="842994667883032936">
-                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883032848" resolveInfo="macros" />
+                                <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7414871074591353611">
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414871074591352979" resolveInfo="macros" />
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="842994667883032937">
                                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~Macros%dexpandPath(java%dlang%dString,jetbrains%dmps%dvfs%dIFile)%cjava%dlang%dString" resolveInfo="expandPath" />
@@ -9150,8 +9130,8 @@
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="842994667883032962">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883033045" resolveInfo="file" />
                               </node>
-                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="842994667883032963">
-                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883032848" resolveInfo="macros" />
+                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7414871074591353616">
+                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414871074591352979" resolveInfo="macros" />
                               </node>
                             </node>
                           </node>
@@ -9182,8 +9162,8 @@
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2896881808974360376">
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883033045" resolveInfo="file" />
                                 </node>
-                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2896881808974360377">
-                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883032848" resolveInfo="macros" />
+                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7414871074591353617">
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414871074591352979" resolveInfo="macros" />
                                 </node>
                               </node>
                             </node>
@@ -9259,8 +9239,8 @@
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7168227884262543431">
                                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n8sb.~ModelRoot%dsetPath(java%dlang%dString)%cvoid" resolveInfo="setPath" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7168227884262543451">
-                                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7168227884262543452">
-                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883032848" resolveInfo="macros" />
+                                  <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7414871074591353618">
+                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414871074591352979" resolveInfo="macros" />
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7168227884262543453">
                                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~Macros%dexpandPath(java%dlang%dString,jetbrains%dmps%dvfs%dIFile)%cjava%dlang%dString" resolveInfo="expandPath" />
@@ -9381,8 +9361,8 @@
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="842994667883033023">
                                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~Collection%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="842994667883033024">
-                                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="842994667883033025">
-                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883032848" resolveInfo="macros" />
+                                  <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7414871074591353623">
+                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414871074591352979" resolveInfo="macros" />
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="842994667883033026">
                                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~Macros%dexpandPath(java%dlang%dString,jetbrains%dmps%dvfs%dIFile)%cjava%dlang%dString" resolveInfo="expandPath" />
@@ -9461,6 +9441,12 @@
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="59et.~IFile" resolveInfo="IFile" />
         </node>
       </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7414871074591352979">
+        <property name="name" nameId="tpck.1169194664001" value="macros" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7414871074591353580">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="msyo.~Macros" resolveInfo="Macros" />
+        </node>
+      </node>
     </node>
     <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="842994667883033047">
       <property name="name" nameId="tpck.1169194664001" value="saveSolutionDescriptor" />
@@ -9498,18 +9484,6 @@
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="842994667883033059" />
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="842994667883033060">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="842994667883033061">
-            <property name="name" nameId="tpck.1169194664001" value="macros" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="842994667883033062">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="msyo.~Macros" resolveInfo="Macros" />
-            </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1511970355012210369">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~MacrosFactory%dsolutionDescriptor()%cjetbrains%dmps%dutil%dMacros" resolveInfo="solutionDescriptor" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyo.~MacrosFactory" resolveInfo="MacrosFactory" />
-            </node>
-          </node>
-        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="842994667883033064">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="842994667883033065">
             <property name="name" nameId="tpck.1169194664001" value="solElem" />
@@ -9624,7 +9598,7 @@
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883033236" resolveInfo="descriptor" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="842994667883033116">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="kqhl.~ModuleDescriptor%dgetCompileInMPS()%cboolean" resolveInfo="getCompileInMPS" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="kqhl.~SolutionDescriptor%dgetCompileInMPS()%cboolean" resolveInfo="getCompileInMPS" />
                         </node>
                       </node>
                     </node>
@@ -9636,8 +9610,8 @@
                         <node role="builder" roleId="pmg0.4797501453850567416" type="mlj4.AttributeBuilder" typeId="mlj4.7225751495667376018" id="842994667883033127">
                           <link role="attributeDeclaration" roleId="mlj4.7225751495667376019" targetNodeId="842994667883030028" resolveInfo="generatorOutputPath" />
                           <node role="value" roleId="mlj4.7225751495667403566" type="tpee.DotExpression" typeId="tpee.1197027756228" id="842994667883033128">
-                            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="842994667883033129">
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883033061" resolveInfo="macros" />
+                            <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7414871074591353639">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414871074591353636" resolveInfo="macros" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="842994667883033130">
                               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~Macros%dshrinkPath(java%dlang%dString,jetbrains%dmps%dvfs%dIFile)%cjava%dlang%dString" resolveInfo="shrinkPath" />
@@ -9688,8 +9662,8 @@
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="842994667883033147">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883033234" resolveInfo="file" />
                           </node>
-                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="842994667883033148">
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883033061" resolveInfo="macros" />
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7414871074591353644">
+                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414871074591353636" resolveInfo="macros" />
                           </node>
                         </node>
                       </node>
@@ -9719,8 +9693,8 @@
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="702807520180571712">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883033234" resolveInfo="file" />
                               </node>
-                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="702807520180571713">
-                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883033061" resolveInfo="macros" />
+                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7414871074591353645">
+                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414871074591353636" resolveInfo="macros" />
                               </node>
                             </node>
                           </node>
@@ -9770,8 +9744,8 @@
                                 <node role="builder" roleId="pmg0.4797501453850567416" type="mlj4.AttributeBuilder" typeId="mlj4.7225751495667376018" id="842994667883033192">
                                   <link role="attributeDeclaration" roleId="mlj4.7225751495667376019" targetNodeId="2574803278448810045" resolveInfo="path" />
                                   <node role="value" roleId="mlj4.7225751495667403566" type="tpee.DotExpression" typeId="tpee.1197027756228" id="842994667883033193">
-                                    <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="842994667883033194">
-                                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883033061" resolveInfo="macros" />
+                                    <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7414871074591353646">
+                                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414871074591353636" resolveInfo="macros" />
                                     </node>
                                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="842994667883033195">
                                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~Macros%dshrinkPath(java%dlang%dString,jetbrains%dmps%dvfs%dIFile)%cjava%dlang%dString" resolveInfo="shrinkPath" />
@@ -9896,6 +9870,12 @@
         <property name="name" nameId="tpck.1169194664001" value="descriptor" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="842994667883033237">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="kqhl.~SolutionDescriptor" resolveInfo="SolutionDescriptor" />
+        </node>
+      </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7414871074591353636">
+        <property name="name" nameId="tpck.1169194664001" value="macros" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7414871074591353638">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="msyo.~Macros" resolveInfo="Macros" />
         </node>
       </node>
     </node>
