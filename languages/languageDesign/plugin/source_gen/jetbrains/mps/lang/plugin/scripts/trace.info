@@ -878,7 +878,7 @@
     <nodeInfo nodeId="5538333046911349083" fileName="ConvertActionParameterCondition_MigrationScript.java" startLine="20" startPosition="31" endLine="21" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5538333046911349083" fileName="ConvertActionParameterCondition_MigrationScript.java" startLine="24" startPosition="41" endLine="25" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5538333046911349083" fileName="ConvertActionParameterCondition_MigrationScript.java" startLine="28" startPosition="59" endLine="29" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5538333046911357472" fileName="ConvertActionParameterCondition_MigrationScript.java" startLine="32" startPosition="59" endLine="33" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4326044153948318700" fileName="ConvertActionParameterCondition_MigrationScript.java" startLine="32" startPosition="59" endLine="33" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5538333046911430949" fileName="ConvertActionParameterCondition_MigrationScript.java" startLine="36" startPosition="52" endLine="37" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5538333046911349083" fileName="ConvertActionParameterCondition_MigrationScript.java" startLine="40" startPosition="42" endLine="41" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5538333046911430959" fileName="ConvertActionParameterCondition_MigrationScript.java" startLine="50" startPosition="31" endLine="51" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -904,7 +904,7 @@
     <scopeInfo nodeId="5538333046911349083" fileName="ConvertActionParameterCondition_MigrationScript.java" startLine="20" startPosition="31" endLine="21" endPosition="51" />
     <scopeInfo nodeId="5538333046911349083" fileName="ConvertActionParameterCondition_MigrationScript.java" startLine="24" startPosition="41" endLine="25" endPosition="51" />
     <scopeInfo nodeId="5538333046911349083" fileName="ConvertActionParameterCondition_MigrationScript.java" startLine="28" startPosition="59" endLine="29" endPosition="69" />
-    <scopeInfo nodeId="5538333046911349091" fileName="ConvertActionParameterCondition_MigrationScript.java" startLine="32" startPosition="59" endLine="33" endPosition="75" />
+    <scopeInfo nodeId="5538333046911349091" fileName="ConvertActionParameterCondition_MigrationScript.java" startLine="32" startPosition="59" endLine="33" endPosition="109" />
     <scopeInfo nodeId="5538333046911349086" fileName="ConvertActionParameterCondition_MigrationScript.java" startLine="36" startPosition="52" endLine="37" endPosition="164" />
     <scopeInfo nodeId="5538333046911349083" fileName="ConvertActionParameterCondition_MigrationScript.java" startLine="40" startPosition="42" endLine="41" endPosition="21" />
     <scopeInfo nodeId="5538333046911430959" fileName="ConvertActionParameterCondition_MigrationScript.java" startLine="46" startPosition="60" endLine="48" endPosition="5" />
