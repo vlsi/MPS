@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.generator.impl.CloneUtil;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
-import java.lang.reflect.InvocationTargetException;
 
 public abstract class BaseTransformationTest4 implements ProjectTest {
   public static final String PATH_MACRO_PREFIX = "path.macro.";
@@ -58,30 +57,12 @@ public abstract class BaseTransformationTest4 implements ProjectTest {
     myRunner.runTest(this, className, methodName, runInCommand);
   }
 
-  private Throwable tryToRunTest(Class clazz, String methodName, Object obj) {
-    Throwable exception = null;
-    try {
-      clazz.getMethod(methodName).invoke(obj);
-    } catch (NoSuchMethodException e) {
-      e.printStackTrace();
-    } catch (IllegalAccessException e) {
-      e.printStackTrace();
-    } catch (InvocationTargetException e) {
-      exception = e.getTargetException();
-    }
-    return exception;
-  }
-
   public SModelDescriptor getModelDescriptor() {
     return myModel;
   }
 
   public SModelDescriptor getTransientModelDescriptor() {
     return myTransientModel;
-  }
-
-  public void setTransientModelDescriptor(SModelDescriptor transientModel) {
-    myTransientModel = transientModel;
   }
 
   public Project getProject() {
@@ -94,9 +75,5 @@ public abstract class BaseTransformationTest4 implements ProjectTest {
 
   public TemporaryModelOwner getModelOwner() {
     return myModelOwner;
-  }
-
-  public void setModelOwner(TemporaryModelOwner modelOwner) {
-    myModelOwner = modelOwner;
   }
 }

@@ -11,8 +11,6 @@ public interface ProjectTest {
   public Project getProject();
   public void setModelDescriptor(SModelDescriptor descriptor);
   public SModelDescriptor getModelDescriptor();
-  public void setTransientModelDescriptor(SModelDescriptor descriptor);
   public SModelDescriptor getTransientModelDescriptor();
-  public void setModelOwner(TemporaryModelOwner modelOwner);
   public TemporaryModelOwner getModelOwner();
 }
