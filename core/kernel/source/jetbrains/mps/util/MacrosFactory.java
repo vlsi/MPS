@@ -159,6 +159,9 @@ public class MacrosFactory {
     protected String expandPath_internal(String path, IFile anchorFile) {
       if (path.startsWith(myMacroString)) {
         IFile anchorFolder = anchorFile.getParent();
+        if (anchorFile.getPath().endsWith(ModulesMiner.META_INF_MODULE_XML)) {
+          anchorFolder = anchorFolder.getParent();
+        }
         String modelRelativePath = removePrefix(path, myMacroString);
         return IFileUtils.getCanonicalPath(anchorFolder.getDescendant(modelRelativePath));
       }
@@ -167,6 +170,9 @@ public class MacrosFactory {
 
     protected String shrinkPath_internal(String absolutePath, IFile anchorFile) {
       IFile anchorFolder = anchorFile.getParent();
+      if (anchorFile.getPath().endsWith(ModulesMiner.META_INF_MODULE_XML)) {
+        anchorFolder = anchorFolder.getParent();
+      }
       String prefix = IFileUtils.getCanonicalPath(anchorFolder);
       if (pathStartsWith(absolutePath, prefix)) {
         String relationalPath = shrink(absolutePath, prefix);
