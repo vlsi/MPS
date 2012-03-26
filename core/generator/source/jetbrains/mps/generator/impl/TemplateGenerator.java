@@ -277,7 +277,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
       if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
         for (SNode outputNode : outputNodes) {
-          outputNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode);
+          TemplateQueryContext.putInputNode(outputNode, inputNode);
         }
       }
 
@@ -422,7 +422,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
                 reducedNode.putUserObjects(inputNode);
                 // keep track of 'original input node'
                 if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
-                  reducedNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode);
+                  TemplateQueryContext.putInputNode(reducedNode, inputNode);
                 }
               }
             }
@@ -518,7 +518,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     outputNode.putUserObjects(inputNode);
     // keep track of 'original input node'
     if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
-      outputNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode);
+      TemplateQueryContext.putInputNode(outputNode, inputNode);
     }
 
     for (SReference inputReference : inputNode.getReferencesIterable()) {
