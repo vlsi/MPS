@@ -116,7 +116,7 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
           VisibleModules visible = new VisibleModules(((SNode) MapSequence.fromMap(_params).get("node")), null);
           visible.collect();
 
-          PathConverter converter = new PathConverter(basePath.value);
+          PathConverter converter = new PathConverter(((SNode) MapSequence.fromMap(_params).get("node")));
 
           List<ImportModuleHelper> helpers = new ArrayList<ImportModuleHelper>();
           for (ModulesMiner.ModuleHandle handle : modules) {

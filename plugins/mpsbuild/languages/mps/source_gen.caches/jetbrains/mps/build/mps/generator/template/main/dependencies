@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.build.mps.generator.template.main.QueriesGenerated" file="QueriesGenerated.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.build.behavior.BuildProject_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.ModuleLoader" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.PathConverter" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.VisibleModules" />
-    <classNode dependClassName="jetbrains.mps.build.util.Context" />
     <classNode dependClassName="jetbrains.mps.generator.template.MappingScriptContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
@@ -14,7 +11,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
   </dependency>
 </dependenciesRoot>
 

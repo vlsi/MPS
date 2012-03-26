@@ -7,11 +7,11 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.build.util.Context;
@@ -29,6 +29,10 @@ public class check_ModulesImport_NonTypesystemRule extends AbstractNonTypesystem
   }
 
   public void applyRule(final SNode buildProject, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    if (SNodeOperations.getModel(buildProject).isTransient()) {
+      return;
+    }
+
     VisibleModules visible = null;
     String workingDir = null;
     for (final SNode module : ListSequence.fromList(SLinkOperations.getTargets(buildProject, "parts", true)).where(new IWhereFilter<SNode>() {
@@ -53,7 +57,7 @@ public class check_ModulesImport_NonTypesystemRule extends AbstractNonTypesystem
         }
       }
       final StringBuilder messages = new StringBuilder();
-      new ModuleLoader(module, visible, new PathConverter(workingDir), null) {
+      new ModuleLoader(module, visible, new PathConverter(buildProject), null) {
         @Override
         protected void report(String message, SNode node) {
           if (messages.length() > 0) {

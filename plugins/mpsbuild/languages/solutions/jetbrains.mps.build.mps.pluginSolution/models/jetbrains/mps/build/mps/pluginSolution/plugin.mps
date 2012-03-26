@@ -330,8 +330,11 @@
                       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2617896750899030081">
                         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2617896750899030083">
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tken.2617896750899006654" resolveInfo="PathConverter" />
-                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2617896750899030084">
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2617896750899030034" resolveInfo="basePath" />
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8757919848289147474">
+                            <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="8757919848289146912" />
+                            <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionParameterReferenceOperation" typeId="tp4k.1206092561075" id="8757919848289147479">
+                              <link role="member" roleId="tp4f.1205756909548" targetNodeId="6937807405124299248" resolveInfo="node" />
+                            </node>
                           </node>
                         </node>
                       </node>
