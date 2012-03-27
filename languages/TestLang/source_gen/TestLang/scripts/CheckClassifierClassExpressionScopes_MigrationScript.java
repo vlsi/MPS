@@ -58,7 +58,7 @@ public class CheckClassifierClassExpressionScopes_MigrationScript extends BaseMi
 
         return !(Utils.checkScopes(node, Utils.getOldScopeFromRef(ref), Utils.getNodes("new scope/from ioperation", new _FunctionTypes._return_P0_E0<Scope>() {
           public Scope invoke() {
-            return ClassifierScopes.getVisibleClassifiersScope(ref.getSourceNode(), GlobalScope.getInstance());
+            return ClassifierScopes.getWithClassExpressionClassifiers(ref.getSourceNode(), GlobalScope.getInstance());
           }
         }, ref), true));
       }
@@ -67,7 +67,7 @@ public class CheckClassifierClassExpressionScopes_MigrationScript extends BaseMi
         final SReference ref = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", "classifier"));
         Utils.checkScopes(node, Utils.getOldScopeFromRef(ref), Utils.getNodes("new scope/from ioperation", new _FunctionTypes._return_P0_E0<Scope>() {
           public Scope invoke() {
-            return ClassifierScopes.getVisibleClassifiersScope(ref.getSourceNode(), GlobalScope.getInstance());
+            return ClassifierScopes.getWithClassExpressionClassifiers(ref.getSourceNode(), GlobalScope.getInstance());
           }
         }, ref), true);
       }
