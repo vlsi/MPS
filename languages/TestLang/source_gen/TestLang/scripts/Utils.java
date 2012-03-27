@@ -87,10 +87,16 @@ public class Utils {
     }
     time = System.currentTimeMillis() - time;
     if (time > 2 * 1000) {
-      LOG.warning("too long... " + time + "@" + profilerKey + ":" + ref.getSourceNode().getModel().getSModelFqName().getLongName() + "/" + ref.getSourceNode().getId() + "/" + ref.getRole());
+      if (ref != null) {
+        LOG.warning("too long... " + time + "@" + profilerKey + ":" + ref.getSourceNode().getModel().getSModelFqName().getLongName() + "/" + ref.getSourceNode().getId() + "/" + ref.getRole());
+      }
     }
     addDataToProfile(profilerKey, time);
     return result;
+  }
+
+  public static Set<SNode> getNodes(String profilerKey, _FunctionTypes._return_P0_E0<? extends Scope> scopeProvider) {
+    return getNodes(profilerKey, scopeProvider, null);
   }
 
   public static boolean checkScopes(SNode node, Set<SNode> oldNodes, Set<SNode> newNodes, boolean debugInfo) {
