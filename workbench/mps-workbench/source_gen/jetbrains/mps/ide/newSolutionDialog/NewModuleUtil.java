@@ -18,7 +18,6 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -77,22 +76,15 @@ public class NewModuleUtil {
     return null;
   }
 
-  public static <T extends IModule> T createModule(String extension, String namespace, String rootPath, MPSProject project, _FunctionTypes._return_P3_E0<? extends T, ? super String, ? super IFile, ? super MPSProject> creator, _FunctionTypes._void_P1_E0<? super ModuleDescriptor> adjuster, boolean reload) {
+  public static <T extends IModule> T createModule(String extension, String namespace, String rootPath, MPSProject project, _FunctionTypes._return_P3_E0<? extends T, ? super String, ? super IFile, ? super MPSProject> creator, _FunctionTypes._void_P1_E0<? super ModuleDescriptor> descAdjuster) {
     IFile descriptorFile = NewModuleUtil.getModuleFile(namespace, rootPath, extension);
-    final IModule module = creator.invoke(namespace, descriptorFile, project);
+    T module = creator.invoke(namespace, descriptorFile, project);
     ModuleDescriptor d = module.getModuleDescriptor();
-    adjuster.invoke(d);
-    module.setModuleDescriptor(d, reload);
-    ModelAccess.instance().writeFilesInEDT(new Runnable() {
-      public void run() {
-        module.save();
-      }
-    });
+    descAdjuster.invoke(d);
+    module.setModuleDescriptor(d, false);
     project.addModule(module.getModuleReference());
-    if (reload) {
-      ((StandaloneMPSProject) project).update();
-    }
-    return ((T) module);
+    module.save();
+    return module;
   }
 
   private static IFile getModuleFile(String namespace, String rootPath, String extension) {
@@ -101,7 +93,7 @@ public class NewModuleUtil {
     return FileSystem.getInstance().getFileByPath(path);
   }
 
-  public static Solution createSolution(String namespace, String rootPath, MPSProject p, boolean reload) {
+  public static Solution createSolution(String namespace, String rootPath, MPSProject p) {
     return NewModuleUtil.createModule(MPSExtentions.DOT_SOLUTION, namespace, rootPath, p, new _FunctionTypes._return_P3_E0<Solution, String, IFile, MPSProject>() {
       public Solution invoke(String s, IFile f, MPSProject p) {
         return createNewSolution(s, f, p);
@@ -109,7 +101,7 @@ public class NewModuleUtil {
     }, new _FunctionTypes._void_P1_E0<ModuleDescriptor>() {
       public void invoke(ModuleDescriptor d) {
       }
-    }, reload);
+    });
   }
 
   public static Solution createNewSolution(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {

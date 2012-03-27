@@ -17,7 +17,6 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.ModuleId" />
     <classNode dependClassName="jetbrains.mps.project.Solution" />
-    <classNode dependClassName="jetbrains.mps.project.StandaloneMPSProject" />
     <classNode dependClassName="jetbrains.mps.project.persistence.DevkitDescriptorPersistence" />
     <classNode dependClassName="jetbrains.mps.project.persistence.LanguageDescriptorPersistence" />
     <classNode dependClassName="jetbrains.mps.project.persistence.SolutionDescriptorPersistence" />

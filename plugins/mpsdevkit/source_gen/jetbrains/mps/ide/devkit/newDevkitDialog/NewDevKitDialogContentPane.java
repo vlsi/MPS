@@ -197,7 +197,7 @@ public class NewDevKitDialogContentPane extends JPanel {
         }, new _FunctionTypes._void_P1_E0<ModuleDescriptor>() {
           public void invoke(ModuleDescriptor d) {
           }
-        }, true));
+        }));
       }
     });
   }

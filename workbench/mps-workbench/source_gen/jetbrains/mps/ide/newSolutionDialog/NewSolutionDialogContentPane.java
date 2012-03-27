@@ -187,7 +187,7 @@ public class NewSolutionDialogContentPane extends JPanel {
     myThis.getDialog().dispose();
     NewModuleUtil.runModuleCreation(myThis.getProject().getProject(), new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        myThis.setResult(NewModuleUtil.createSolution(myThis.getSolutionName(), myThis.getSolutionPath(), myThis.getProject(), true));
+        myThis.setResult(NewModuleUtil.createSolution(myThis.getSolutionName(), myThis.getSolutionPath(), myThis.getProject()));
       }
     });
   }

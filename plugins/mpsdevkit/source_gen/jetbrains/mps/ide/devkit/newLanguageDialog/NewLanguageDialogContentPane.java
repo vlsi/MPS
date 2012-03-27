@@ -264,21 +264,21 @@ public class NewLanguageDialogContentPane extends JPanel {
         ModuleReference devkitRef = LanguageDesign_DevKit.MODULE_REFERENCE;
         d.getUsedDevkits().add(devkitRef);
       }
-    }, true));
+    }));
     return myThis.getResult();
   }
 
   /*package*/ Solution createRuntimeSolution() {
     String basePath = myThis.getLanguagePath() + File.separator + "runtime";
     String namespace = myThis.getLanguageNamespace() + ".runtime";
-    Solution solution = NewModuleUtil.createSolution(namespace, basePath, myThis.getProject(), true);
+    Solution solution = NewModuleUtil.createSolution(namespace, basePath, myThis.getProject());
     return solution;
   }
 
   /*package*/ Solution createSandboxSolution() {
     String basePath = myThis.getLanguagePath() + File.separator + "sandbox";
     String namespace = myThis.getLanguageNamespace() + ".sandbox";
-    Solution solution = NewModuleUtil.createSolution(namespace, basePath, myThis.getProject(), true);
+    Solution solution = NewModuleUtil.createSolution(namespace, basePath, myThis.getProject());
     return solution;
   }
 
