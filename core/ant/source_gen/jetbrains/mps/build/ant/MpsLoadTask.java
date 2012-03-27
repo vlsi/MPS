@@ -279,7 +279,7 @@ public abstract class MpsLoadTask extends Task {
       //         absolutePath("core/kernel/xmlQuery/runtime"), 
       //         absolutePath("platform/gtext"), 
       //         absolutePath("platform/builders"), 
-      pathsToLook = new File[]{absolutePath("core/ant/classes"), absolutePath("lib"), absolutePath("plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.runtime/classes_gen"), absolutePath("languages/baseLanguage/closures/runtime/classes"), absolutePath("languages/baseLanguage/collections/runtime/classes"), absolutePath("languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes"), absolutePath("workbench/typesystemUi/classes"), absolutePath("MPSPlugin/apiclasses")};
+      pathsToLook = new File[]{absolutePath("core"), absolutePath("lib"), absolutePath("plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.runtime"), absolutePath("languages/baseLanguage/closures/runtime"), absolutePath("languages/baseLanguage/collections/runtime"), absolutePath("languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search"), absolutePath("workbench/typesystemUi/classes"), absolutePath("MPSPlugin/apiclasses")};
     } else {
       pathsToLook = new File[]{absolutePath("lib"), absolutePath("plugin"), absolutePath("plugins")};
     }
@@ -294,7 +294,7 @@ public abstract class MpsLoadTask extends Task {
         gatherAllClassesAndJarsUnder(path, classPaths);
       }
     }
-    File mpsClasses = new File(myMpsHome + File.separator + "classes");
+    File mpsClasses = absolutePath("classes");
     if (mpsClasses.exists()) {
       classPaths.add(mpsClasses);
     }
