@@ -1,0 +1,21 @@
+<project name="test-genxml" basedir="./../../../../..">
+  <property name="mps.home" value="${basedir}/../../../../../.."></property>
+  <property name="runtime.dir" value="${mps.home}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.runtime/classes_gen"></property>
+  
+  <target name="test">
+    <path id="anttask.classpath">
+      <path path="${runtime.dir}" />
+      <path path="${mps.home}/core/ant/classes"></path>
+    </path>
+    <taskdef file="${runtime.dir}/jetbrains/mps/build/mps/runtime/anttask/antlib.xml" classpathref="anttask.classpath" />
+    
+    <mps.gen.module.xml>
+      <GenModule ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" dest="module.xml">
+          &lt;sources jar="${mps.home}/languages/xxx/yyy.jar" descriptor="${basedir}/xxx.msd" />
+          &lt;library jar="${mps.home}/lib.jar" />
+          </GenModule>
+      <GenModule ref="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" dest="bL.xml"></GenModule>
+    </mps.gen.module.xml>
+    
+  </target>
+</project>
