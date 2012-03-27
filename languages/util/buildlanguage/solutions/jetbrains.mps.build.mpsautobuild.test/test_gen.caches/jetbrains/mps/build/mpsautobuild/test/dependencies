@@ -8,7 +8,7 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Layout_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Module_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.generator.util.CheckFullDependencyUtil" />

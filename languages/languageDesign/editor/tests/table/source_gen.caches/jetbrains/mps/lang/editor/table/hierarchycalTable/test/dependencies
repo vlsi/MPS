@@ -6,7 +6,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
@@ -18,7 +18,7 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
     <classNode dependClassName="org.junit.Test" />
@@ -29,7 +29,7 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
     <classNode dependClassName="org.junit.Test" />
@@ -40,7 +40,7 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
     <classNode dependClassName="org.junit.Test" />
@@ -51,7 +51,7 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
     <classNode dependClassName="org.junit.Test" />
@@ -62,7 +62,7 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
     <classNode dependClassName="org.junit.Test" />
@@ -73,7 +73,7 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
     <classNode dependClassName="org.junit.Test" />
@@ -84,7 +84,7 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
     <classNode dependClassName="org.junit.Test" />
@@ -95,7 +95,7 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
     <classNode dependClassName="org.junit.Test" />
@@ -106,7 +106,7 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
     <classNode dependClassName="org.junit.Test" />
@@ -117,7 +117,7 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
     <classNode dependClassName="org.junit.Test" />
@@ -128,7 +128,7 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
     <classNode dependClassName="org.junit.Test" />
@@ -141,7 +141,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
@@ -155,7 +155,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
@@ -167,7 +167,7 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
     <classNode dependClassName="org.junit.Test" />

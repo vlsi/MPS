@@ -22,6 +22,7 @@
   <import index="jhs5" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jdom.output(MPS.Core/org.jdom.output@java_stub)" version="-1" />
   <import index="d3yv" modelUID="r:c56dc30e-0a5f-4dee-a0d4-1316cfe1aba1(jetbrains.mps.project.foreign)" version="-1" />
   <import index="n8sb" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.model(MPS.Core/jetbrains.mps.project.structure.model@java_stub)" version="-1" />
+  <import index="hxfr" modelUID="f:java_stub#920eaa0e-ecca-46bc-bee7-4e5c59213dd6#jetbrains.mps(Testbench/jetbrains.mps@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" implicit="yes" />
   <import index="tpe3" modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" version="-1" implicit="yes" />
@@ -229,7 +230,7 @@
           </node>
         </node>
         <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="557142600900564235">
-          <link role="annotation" roleId="tpee.1188208074048" targetNodeId="89ww.8492459591399146889" resolveInfo="MPSLaunch" />
+          <link role="annotation" roleId="tpee.1188208074048" targetNodeId="hxfr.~MPSLaunch" resolveInfo="MPSLaunch" />
         </node>
       </node>
       <node role="testMethod" roleId="tpe3.1171931858462" type="tpe3.TestMethod" typeId="tpe3.1171931690126" id="557142600900658197">
@@ -407,7 +408,7 @@
           </node>
         </node>
         <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="557142600900658201">
-          <link role="annotation" roleId="tpee.1188208074048" targetNodeId="89ww.8492459591399146889" resolveInfo="MPSLaunch" />
+          <link role="annotation" roleId="tpee.1188208074048" targetNodeId="hxfr.~MPSLaunch" resolveInfo="MPSLaunch" />
         </node>
       </node>
       <node role="testMethod" roleId="tpe3.1171931858462" type="tpe3.TestMethod" typeId="tpe3.1171931690126" id="557142600900634875">
@@ -641,7 +642,7 @@
           </node>
         </node>
         <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="557142600900634928">
-          <link role="annotation" roleId="tpee.1188208074048" targetNodeId="89ww.8492459591399146889" resolveInfo="MPSLaunch" />
+          <link role="annotation" roleId="tpee.1188208074048" targetNodeId="hxfr.~MPSLaunch" resolveInfo="MPSLaunch" />
         </node>
       </node>
       <node role="testMethod" roleId="tpe3.1171931858462" type="tpe3.TestMethod" typeId="tpe3.1171931690126" id="557142600900698139">
@@ -836,7 +837,7 @@
           </node>
         </node>
         <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="557142600900698190">
-          <link role="annotation" roleId="tpee.1188208074048" targetNodeId="89ww.8492459591399146889" resolveInfo="MPSLaunch" />
+          <link role="annotation" roleId="tpee.1188208074048" targetNodeId="hxfr.~MPSLaunch" resolveInfo="MPSLaunch" />
         </node>
       </node>
       <node role="testMethod" roleId="tpe3.1171931858462" type="tpe3.TestMethod" typeId="tpe3.1171931690126" id="557142600900656335">
@@ -1003,7 +1004,7 @@
           </node>
         </node>
         <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="557142600900656414">
-          <link role="annotation" roleId="tpee.1188208074048" targetNodeId="89ww.8492459591399146889" resolveInfo="MPSLaunch" />
+          <link role="annotation" roleId="tpee.1188208074048" targetNodeId="hxfr.~MPSLaunch" resolveInfo="MPSLaunch" />
         </node>
       </node>
       <node role="testMethod" roleId="tpe3.1171931858462" type="tpe3.TestMethod" typeId="tpe3.1171931690126" id="557142600900702345">
@@ -1174,7 +1175,7 @@
           </node>
         </node>
         <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="557142600900702406">
-          <link role="annotation" roleId="tpee.1188208074048" targetNodeId="89ww.8492459591399146889" resolveInfo="MPSLaunch" />
+          <link role="annotation" roleId="tpee.1188208074048" targetNodeId="hxfr.~MPSLaunch" resolveInfo="MPSLaunch" />
         </node>
       </node>
     </node>
@@ -1358,7 +1359,7 @@
           </node>
         </node>
         <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="3323419009397602809">
-          <link role="annotation" roleId="tpee.1188208074048" targetNodeId="89ww.8492459591399146889" resolveInfo="MPSLaunch" />
+          <link role="annotation" roleId="tpee.1188208074048" targetNodeId="hxfr.~MPSLaunch" resolveInfo="MPSLaunch" />
         </node>
       </node>
       <node role="testMethod" roleId="tpe3.1171931858462" type="tpe3.TestMethod" typeId="tpe3.1171931690126" id="7691797154759996303">
@@ -1422,7 +1423,7 @@
           </node>
         </node>
         <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="7691797154759996307">
-          <link role="annotation" roleId="tpee.1188208074048" targetNodeId="89ww.8492459591399146889" resolveInfo="MPSLaunch" />
+          <link role="annotation" roleId="tpee.1188208074048" targetNodeId="hxfr.~MPSLaunch" resolveInfo="MPSLaunch" />
         </node>
       </node>
       <node role="testMethod" roleId="tpe3.1171931858462" type="tpe3.TestMethod" typeId="tpe3.1171931690126" id="9081946191808729942">
@@ -1519,7 +1520,7 @@
           </node>
         </node>
         <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="9081946191808734408">
-          <link role="annotation" roleId="tpee.1188208074048" targetNodeId="89ww.8492459591399146889" resolveInfo="MPSLaunch" />
+          <link role="annotation" roleId="tpee.1188208074048" targetNodeId="hxfr.~MPSLaunch" resolveInfo="MPSLaunch" />
         </node>
       </node>
       <node role="testMethod" roleId="tpe3.1171931858462" type="tpe3.TestMethod" typeId="tpe3.1171931690126" id="1500771540769465748">
@@ -1610,7 +1611,7 @@
           </node>
         </node>
         <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="1500771540769465783">
-          <link role="annotation" roleId="tpee.1188208074048" targetNodeId="89ww.8492459591399146889" resolveInfo="MPSLaunch" />
+          <link role="annotation" roleId="tpee.1188208074048" targetNodeId="hxfr.~MPSLaunch" resolveInfo="MPSLaunch" />
         </node>
       </node>
     </node>

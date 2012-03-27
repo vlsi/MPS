@@ -567,7 +567,7 @@ public class TestMain {
             if (Modifier.isAbstract(testClass.getModifiers()) || Modifier.isInterface(testClass.getModifiers()))
               continue;
             if (Modifier.isPrivate(testClass.getModifiers())) continue;
-            if (testClass.getAnnotation(classLoader.loadClass("jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch")) != null)
+            if (testClass.getAnnotation(classLoader.loadClass("jetbrains.mps.MPSLaunch")) != null)
               continue;
 
             List<Method> testMethods = new ArrayList<Method>();
