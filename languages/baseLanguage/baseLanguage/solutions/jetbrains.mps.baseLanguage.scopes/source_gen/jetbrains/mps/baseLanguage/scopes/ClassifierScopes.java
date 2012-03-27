@@ -32,6 +32,15 @@ public class ClassifierScopes {
     };
   }
 
+  public static Scope getAnnotationClassifiersScope(SNode contextNode, IScope scope) {
+    return new FilteringScope(getVisibleClassifiersScope(contextNode, scope)) {
+      @Override
+      public boolean isExcluded(SNode node) {
+        return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Annotation"));
+      }
+    };
+  }
+
   public static void getThrowablesScope(@NotNull SNode contextNode, IScope scope) {
     new FilteringScope(getVisibleClassifiersScope(contextNode, scope)) {
       @Override
