@@ -1152,6 +1152,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="scopes" />
       <property name="name" nameId="tpck.1169194664001" value="StaticKind" />
     </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="229277139747537782">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="scopes" />
+      <property name="name" nameId="tpck.1169194664001" value="ContextClassifierKind" />
+    </node>
   </roots>
   <root id="1068498886294">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1107215415034">
@@ -4374,5 +4378,6 @@
   <root id="501006281268604400" />
   <root id="6694311595176645018" />
   <root id="4790782560812794334" />
+  <root id="229277139747537782" />
 </model>
 

@@ -410,6 +410,9 @@ public class Classifier_Behavior {
     {
       SNode concept_d0cb;
       concept_d0cb = kind;
+      if (SConceptOperations.isSubConceptOf(concept_d0cb, "jetbrains.mps.baseLanguage.structure.ContextClassifierKind")) {
+        return CompositeWithParentScope.from(thisNode, thisNode, kind);
+      }
       if (SConceptOperations.isSubConceptOf(concept_d0cb, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration")) {
         while (SNodeOperations.getParent(child) != thisNode) {
           child = SNodeOperations.getParent(child);

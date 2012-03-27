@@ -7496,6 +7496,18 @@
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tp25.ConceptSwitchStatement" typeId="tp25.5944356402132808749" id="2832018561209150554">
+          <node role="case" roleId="tp25.5944356402132808753" type="tp25.ConceptSwitchStatementCase" typeId="tp25.5944356402132808754" id="229277139747537790">
+            <node role="concept" roleId="tp25.1163670677455" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="229277139747537793">
+              <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpee.229277139747537782" resolveInfo="ContextClassifierKind" />
+            </node>
+            <node role="body" roleId="tp25.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="229277139747537792">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="229277139747537794">
+                <node role="expression" roleId="tpee.1068581517676" type="genb.CompositeWithParentScopeExpression" typeId="genb.8077936094962850237" id="229277139747537796">
+                  <node role="expr" roleId="genb.8077936094962969171" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="229277139747537798" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="case" roleId="tp25.5944356402132808753" type="tp25.ConceptSwitchStatementCase" typeId="tp25.5944356402132808754" id="2832018561209150560">
             <node role="concept" roleId="tp25.1163670677455" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="2832018561209150563">
               <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpee.1109279763828" resolveInfo="TypeVariableDeclaration" />
