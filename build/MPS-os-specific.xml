@@ -36,7 +36,7 @@
     <fixcrlf file="${input.dir}/${mps.exe.vmoptions}" eof="asis" eol="dos" />
     <zip destfile="${output.dir}/${build.number}.zip">
       <zipfileset dir="${input.dir}/${MPS}" prefix="${dist.folder.name}" excludes="**/bin/mac/fsnotifier, **/bin/linux/fsnotifier, **/bin/linux/fsnotifier64" />
-      <zipfileset file="${mps.sh}" prefix="${dist.folder.name}" filemode="755" />
+      <zipfileset file="${input.dir}/${mps.sh}" prefix="${dist.folder.name}" filemode="755" />
       <zipfileset file="${input.dir}/bin/mac/fsnotifier" prefix="${dist.folder.name}/bin/mac" filemode="755" />
       <zipfileset file="${input.dir}/bin/linux/fsnotifier" prefix="${dist.folder.name}/bin/linux" filemode="755" />
       <zipfileset file="${input.dir}/bin/linux/fsnotifier64" prefix="${dist.folder.name}/bin/linux" filemode="755" />
