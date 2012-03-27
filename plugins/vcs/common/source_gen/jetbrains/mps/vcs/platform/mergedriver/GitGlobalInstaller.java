@@ -13,6 +13,9 @@ import com.intellij.openapi.ui.Messages;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import com.intellij.ide.plugins.IdeaPluginDescriptor;
+import com.intellij.ide.plugins.PluginManager;
+import com.intellij.openapi.extensions.PluginId;
 import com.intellij.openapi.util.SystemInfo;
 import jetbrains.mps.util.StringsIO;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -58,6 +61,10 @@ import java.io.FileNotFoundException;
       return packerState;
     }
 
+    IdeaPluginDescriptor svnPlugin = PluginManager.getPlugin(PluginId.getId("Subversion"));
+    if (svnPlugin == null) {
+      Messages.showWarningDialog(myProject, "Svn plugin", "Svn plugin is not available, so text files will not be merged automatically");
+    }
     AbstractInstaller.State createScriptResult = ScriptGenerator.generateScript(myProject, ScriptGenerator.GIT, myScriptFile, dryRun);
     if (createScriptResult != AbstractInstaller.State.INSTALLED) {
       return createScriptResult;
@@ -97,7 +104,7 @@ import java.io.FileNotFoundException;
       boolean equal = (int) ListSequence.fromList(section).count() == (int) ListSequence.fromList(newConfigLines).count();
       if (equal) {
         for (int i = 0; i < ListSequence.fromList(section).count(); i++) {
-          if (neq_btx4zt_a0a0a0g0u0a(ListSequence.fromList(section).getElement(i), ListSequence.fromList(newConfigLines).getElement(i))) {
+          if (neq_btx4zt_a0a0a0g0w0a(ListSequence.fromList(section).getElement(i), ListSequence.fromList(newConfigLines).getElement(i))) {
             equal = false;
             break;
           }
@@ -146,7 +153,7 @@ import java.io.FileNotFoundException;
     return "Git";
   }
 
-  private static boolean neq_btx4zt_a0a0a0g0u0a(Object a, Object b) {
+  private static boolean neq_btx4zt_a0a0a0g0w0a(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b

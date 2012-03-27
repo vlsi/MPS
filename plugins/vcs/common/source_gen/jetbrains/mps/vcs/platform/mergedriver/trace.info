@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1016968294606525391">
-    <nodeInfo nodeId="8688150419538752721" fileName="CommandLineGenerator.java" startLine="31" startPosition="35" endLine="32" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="mpsLibJars" />
-    <nodeInfo nodeId="4416609728987298261" fileName="CommandLineGenerator.java" startLine="32" startPosition="144" endLine="33" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="mpsAddJars" />
-    <nodeInfo nodeId="8688150419538752755" fileName="CommandLineGenerator.java" startLine="33" startPosition="95" endLine="34" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ideaLibJars" />
-    <nodeInfo nodeId="1016968294606525391" fileName="CommandLineGenerator.java" startLine="34" startPosition="180" endLine="35" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="8688150419538752721" fileName="CommandLineGenerator.java" startLine="30" startPosition="35" endLine="31" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="mpsLibJars" />
+    <nodeInfo nodeId="4416609728987298261" fileName="CommandLineGenerator.java" startLine="31" startPosition="144" endLine="32" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="mpsAddJars" />
+    <nodeInfo nodeId="8688150419538752755" fileName="CommandLineGenerator.java" startLine="32" startPosition="95" endLine="33" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ideaLibJars" />
+    <nodeInfo nodeId="3532702333854217714" fileName="CommandLineGenerator.java" startLine="33" startPosition="180" endLine="34" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="svnJars" />
+    <nodeInfo nodeId="1016968294606525391" fileName="CommandLineGenerator.java" startLine="34" startPosition="102" endLine="35" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="3042807695808133885" fileName="CommandLineGenerator.java" startLine="40" startPosition="48" endLine="41" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3042807695808133925" fileName="CommandLineGenerator.java" startLine="44" startPosition="43" endLine="45" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7745158536326881946" fileName="CommandLineGenerator.java" startLine="48" startPosition="5" endLine="49" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -12,12 +13,9 @@
     <nodeInfo nodeId="7745158536326881992" fileName="CommandLineGenerator.java" startLine="52" startPosition="5" endLine="53" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4971460776563927970" fileName="CommandLineGenerator.java" startLine="53" startPosition="117" endLine="54" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4971460776563927951" fileName="CommandLineGenerator.java" startLine="54" startPosition="114" endLine="55" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1016968294606525534" fileName="CommandLineGenerator.java" startLine="58" startPosition="40" endLine="59" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7486222757620534111" fileName="CommandLineGenerator.java" startLine="59" startPosition="91" endLine="60" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1016968294606525582" fileName="CommandLineGenerator.java" startLine="60" startPosition="29" endLine="61" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7944298491757518921" fileName="CommandLineGenerator.java" startLine="64" startPosition="44" endLine="65" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7944298491757518927" fileName="CommandLineGenerator.java" startLine="65" startPosition="91" endLine="66" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="7944298491757518931" fileName="CommandLineGenerator.java" startLine="66" startPosition="29" endLine="67" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3532702333854217695" fileName="CommandLineGenerator.java" startLine="58" startPosition="48" endLine="59" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3532702333854217754" fileName="CommandLineGenerator.java" startLine="62" startPosition="41" endLine="63" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3532702333854217920" fileName="CommandLineGenerator.java" startLine="66" startPosition="5" endLine="67" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6006585546800309876" fileName="CommandLineGenerator.java" startLine="70" startPosition="41" endLine="71" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6006585546800309882" fileName="CommandLineGenerator.java" startLine="71" startPosition="102" endLine="72" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="6006585546800309886" fileName="CommandLineGenerator.java" startLine="72" startPosition="33" endLine="73" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -34,98 +32,94 @@
     <nodeInfo nodeId="6006585546800309899" fileName="CommandLineGenerator.java" startLine="101" startPosition="10" endLine="102" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6006585546800341897" fileName="CommandLineGenerator.java" startLine="103" startPosition="5" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8688150419538752803" fileName="CommandLineGenerator.java" startLine="106" startPosition="39" endLine="107" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6006585546800309924" fileName="CommandLineGenerator.java" startLine="109" startPosition="8" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4452305126578631139" fileName="CommandLineGenerator.java" startLine="110" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4780468374548787932" fileName="CommandLineGenerator.java" startLine="112" startPosition="21" endLine="113" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4780468374548787938" fileName="CommandLineGenerator.java" startLine="114" startPosition="5" endLine="115" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4780468374548783351" fileName="CommandLineGenerator.java" startLine="115" startPosition="71" endLine="116" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3042807695808132376" fileName="CommandLineGenerator.java" startLine="119" startPosition="53" endLine="120" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7464741641936367219" fileName="CommandLineGenerator.java" startLine="120" startPosition="82" endLine="121" endPosition="503" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2454870935687413357" fileName="CommandLineGenerator.java" startLine="121" startPosition="503" endLine="122" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7566850531967206372" fileName="CommandLineGenerator.java" startLine="125" startPosition="13" endLine="126" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7566850531967206381" fileName="CommandLineGenerator.java" startLine="128" startPosition="37" endLine="129" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7566850531967206384" fileName="CommandLineGenerator.java" startLine="130" startPosition="11" endLine="131" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8869411891375799192" fileName="CommandLineGenerator.java" startLine="136" startPosition="37" endLine="137" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6006585546800338955" fileName="CommandLineGenerator.java" startLine="139" startPosition="8" endLine="140" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6006585546800338959" fileName="CommandLineGenerator.java" startLine="140" startPosition="96" endLine="141" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7974019835130465312" fileName="CommandLineGenerator.java" startLine="142" startPosition="32" endLine="143" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7974019835130465340" fileName="CommandLineGenerator.java" startLine="145" startPosition="35" endLine="146" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6006585546800341876" fileName="CommandLineGenerator.java" startLine="148" startPosition="14" endLine="149" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4416609728987298329" fileName="CommandLineGenerator.java" startLine="153" startPosition="39" endLine="154" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3042807695808132425" fileName="CommandLineGenerator.java" startLine="156" startPosition="8" endLine="157" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4780468374548788153" fileName="CommandLineGenerator.java" startLine="157" startPosition="26" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="80916483499265421" fileName="CommandLineGenerator.java" startLine="161" startPosition="62" endLine="162" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7378694391485143389" fileName="CommandLineGenerator.java" startLine="109" startPosition="8" endLine="110" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3532702333854217814" fileName="CommandLineGenerator.java" startLine="110" startPosition="44" endLine="111" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4780468374548783351" fileName="CommandLineGenerator.java" startLine="111" startPosition="89" endLine="112" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3042807695808132376" fileName="CommandLineGenerator.java" startLine="115" startPosition="53" endLine="116" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7464741641936367219" fileName="CommandLineGenerator.java" startLine="116" startPosition="82" endLine="117" endPosition="503" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2454870935687413357" fileName="CommandLineGenerator.java" startLine="117" startPosition="503" endLine="118" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7566850531967206372" fileName="CommandLineGenerator.java" startLine="121" startPosition="13" endLine="122" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7566850531967206381" fileName="CommandLineGenerator.java" startLine="124" startPosition="37" endLine="125" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7566850531967206384" fileName="CommandLineGenerator.java" startLine="126" startPosition="11" endLine="127" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8869411891375799192" fileName="CommandLineGenerator.java" startLine="132" startPosition="37" endLine="133" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6006585546800338955" fileName="CommandLineGenerator.java" startLine="135" startPosition="8" endLine="136" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6006585546800338959" fileName="CommandLineGenerator.java" startLine="136" startPosition="96" endLine="137" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7974019835130465312" fileName="CommandLineGenerator.java" startLine="138" startPosition="32" endLine="139" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7974019835130465340" fileName="CommandLineGenerator.java" startLine="141" startPosition="35" endLine="142" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6006585546800341876" fileName="CommandLineGenerator.java" startLine="144" startPosition="14" endLine="145" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4416609728987298329" fileName="CommandLineGenerator.java" startLine="149" startPosition="39" endLine="150" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3042807695808132425" fileName="CommandLineGenerator.java" startLine="152" startPosition="8" endLine="153" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4780468374548788153" fileName="CommandLineGenerator.java" startLine="153" startPosition="26" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="80916483499265421" fileName="CommandLineGenerator.java" startLine="157" startPosition="62" endLine="158" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1016968294606525393" fileName="CommandLineGenerator.java" startLine="36" startPosition="0" endLine="38" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CommandLineGenerator#()V" />
-    <nodeInfo nodeId="7974019835130465342" fileName="CommandLineGenerator.java" startLine="148" startPosition="12" endLine="150" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7974019835130465342" fileName="CommandLineGenerator.java" startLine="144" startPosition="12" endLine="146" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="80916483499265388" fileName="CommandLineGenerator.java" startLine="49" startPosition="111" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1903565688283063471" fileName="CommandLineGenerator.java" startLine="88" startPosition="83" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4780468374548787930" fileName="CommandLineGenerator.java" startLine="111" startPosition="0" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7566850531967206381" fileName="CommandLineGenerator.java" startLine="127" startPosition="44" endLine="130" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7566850531967206381" fileName="CommandLineGenerator.java" startLine="127" startPosition="44" endLine="130" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7974019835130465340" fileName="CommandLineGenerator.java" startLine="144" startPosition="34" endLine="147" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7974019835130465340" fileName="CommandLineGenerator.java" startLine="144" startPosition="34" endLine="147" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7566850531967206381" fileName="CommandLineGenerator.java" startLine="123" startPosition="44" endLine="126" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7566850531967206381" fileName="CommandLineGenerator.java" startLine="123" startPosition="44" endLine="126" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7974019835130465340" fileName="CommandLineGenerator.java" startLine="140" startPosition="34" endLine="143" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7974019835130465340" fileName="CommandLineGenerator.java" startLine="140" startPosition="34" endLine="143" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3042807695808133921" fileName="CommandLineGenerator.java" startLine="43" startPosition="85" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="3532702333854217750" fileName="CommandLineGenerator.java" startLine="61" startPosition="84" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="8688150419538752866" fileName="CommandLineGenerator.java" startLine="92" startPosition="128" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="4416609728987298289" fileName="CommandLineGenerator.java" startLine="97" startPosition="128" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="8688150419538752799" fileName="CommandLineGenerator.java" startLine="105" startPosition="127" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="8869411891375799190" fileName="CommandLineGenerator.java" startLine="135" startPosition="122" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/Class;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4416609728987298327" fileName="CommandLineGenerator.java" startLine="152" startPosition="126" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="80916483499265399" fileName="CommandLineGenerator.java" startLine="160" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="adaptPathForMsysGit#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="8869411891375799190" fileName="CommandLineGenerator.java" startLine="131" startPosition="122" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/Class;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4416609728987298327" fileName="CommandLineGenerator.java" startLine="148" startPosition="126" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="80916483499265399" fileName="CommandLineGenerator.java" startLine="156" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="adaptPathForMsysGit#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="3042807695808133904" fileName="CommandLineGenerator.java" startLine="42" startPosition="40" endLine="47" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3532702333854217725" fileName="CommandLineGenerator.java" startLine="60" startPosition="28" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8688150419538752817" fileName="CommandLineGenerator.java" startLine="91" startPosition="7" endLine="96" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4416609728987298283" fileName="CommandLineGenerator.java" startLine="96" startPosition="10" endLine="101" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8688150419538753101" fileName="CommandLineGenerator.java" startLine="104" startPosition="0" endLine="109" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3042807695808132383" fileName="CommandLineGenerator.java" startLine="134" startPosition="46" endLine="139" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4416609728987298321" fileName="CommandLineGenerator.java" startLine="151" startPosition="5" endLine="156" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1016968294606525527" fileName="CommandLineGenerator.java" startLine="57" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSvnkitJar#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7944298491757518918" fileName="CommandLineGenerator.java" startLine="63" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getTextMergerJar#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3042807695808132383" fileName="CommandLineGenerator.java" startLine="130" startPosition="46" endLine="135" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4416609728987298321" fileName="CommandLineGenerator.java" startLine="147" startPosition="5" endLine="152" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6006585546800309873" fileName="CommandLineGenerator.java" startLine="69" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getVCSCoreJar#()Ljava/lang/String;" />
     <nodeInfo nodeId="6006585546800341847" fileName="CommandLineGenerator.java" startLine="75" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMPSCorePluginPath#()Ljava/lang/String;" />
     <nodeInfo nodeId="3042807695808133893" fileName="CommandLineGenerator.java" startLine="41" startPosition="74" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7974019835130465331" fileName="CommandLineGenerator.java" startLine="143" startPosition="105" endLine="150" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7566850531967206370" fileName="CommandLineGenerator.java" startLine="124" startPosition="38" endLine="132" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6006585546800338970" fileName="CommandLineGenerator.java" startLine="141" startPosition="92" endLine="151" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7566850531967206368" fileName="CommandLineGenerator.java" startLine="123" startPosition="90" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/Class;" />
-    <nodeInfo nodeId="7464741641936367237" fileName="CommandLineGenerator.java" startLine="122" startPosition="139" endLine="134" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3532702333854217702" fileName="CommandLineGenerator.java" startLine="59" startPosition="97" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7974019835130465331" fileName="CommandLineGenerator.java" startLine="139" startPosition="105" endLine="146" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7566850531967206370" fileName="CommandLineGenerator.java" startLine="120" startPosition="38" endLine="128" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6006585546800338970" fileName="CommandLineGenerator.java" startLine="137" startPosition="92" endLine="147" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7566850531967206368" fileName="CommandLineGenerator.java" startLine="119" startPosition="90" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/Class;" />
+    <nodeInfo nodeId="3532702333854217690" fileName="CommandLineGenerator.java" startLine="57" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSvnJars#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="7464741641936367237" fileName="CommandLineGenerator.java" startLine="118" startPosition="124" endLine="130" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6006585546800309799" fileName="CommandLineGenerator.java" startLine="86" startPosition="10" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1016968294606525398" fileName="CommandLineGenerator.java" startLine="39" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getCommandLine#(I)Ljava/lang/String;" />
     <nodeInfo nodeId="6006585546800309790" fileName="CommandLineGenerator.java" startLine="83" startPosition="82" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3042807695808132371" fileName="CommandLineGenerator.java" startLine="81" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getClasspath#(Z)Ljava/util/Set;" />
-    <nodeInfo nodeId="4780468374548783329" fileName="CommandLineGenerator.java" startLine="118" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getClasspathInternal#()Ljava/util/Set;" />
+    <nodeInfo nodeId="3042807695808132371" fileName="CommandLineGenerator.java" startLine="81" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getClasspath#(Z)Ljava/util/Set;" />
+    <nodeInfo nodeId="4780468374548783329" fileName="CommandLineGenerator.java" startLine="114" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getClasspathInternal#()Ljava/util/Set;" />
     <scopeInfo nodeId="1016968294606525396" fileName="CommandLineGenerator.java" startLine="37" startPosition="34" endLine="37" endPosition="34" />
     <scopeInfo nodeId="3042807695808133922" fileName="CommandLineGenerator.java" startLine="44" startPosition="43" endLine="45" endPosition="38" />
     <scopeInfo nodeId="80916483499265389" fileName="CommandLineGenerator.java" startLine="50" startPosition="31" endLine="51" endPosition="68" />
+    <scopeInfo nodeId="3532702333854217751" fileName="CommandLineGenerator.java" startLine="62" startPosition="41" endLine="63" endPosition="84" />
     <scopeInfo nodeId="6006585546800309791" fileName="CommandLineGenerator.java" startLine="84" startPosition="40" endLine="85" endPosition="99" />
     <scopeInfo nodeId="1903565688283063472" fileName="CommandLineGenerator.java" startLine="89" startPosition="32" endLine="90" endPosition="51" />
     <scopeInfo nodeId="8688150419538752867" fileName="CommandLineGenerator.java" startLine="93" startPosition="41" endLine="94" endPosition="57" />
     <scopeInfo nodeId="4416609728987298290" fileName="CommandLineGenerator.java" startLine="98" startPosition="41" endLine="99" endPosition="57" />
     <scopeInfo nodeId="8688150419538752800" fileName="CommandLineGenerator.java" startLine="106" startPosition="39" endLine="107" endPosition="62" />
-    <scopeInfo nodeId="4780468374548787931" fileName="CommandLineGenerator.java" startLine="112" startPosition="21" endLine="113" endPosition="69" />
-    <scopeInfo nodeId="7566850531967206371" fileName="CommandLineGenerator.java" startLine="125" startPosition="13" endLine="126" endPosition="43" />
-    <scopeInfo nodeId="7566850531967206381" fileName="CommandLineGenerator.java" startLine="128" startPosition="37" endLine="129" endPosition="29" />
-    <scopeInfo nodeId="8869411891375799191" fileName="CommandLineGenerator.java" startLine="136" startPosition="37" endLine="137" endPosition="46" />
-    <scopeInfo nodeId="7974019835130465340" fileName="CommandLineGenerator.java" startLine="145" startPosition="35" endLine="146" endPosition="57" />
-    <scopeInfo nodeId="7974019835130465343" fileName="CommandLineGenerator.java" startLine="148" startPosition="14" endLine="149" endPosition="79" />
-    <scopeInfo nodeId="4416609728987298328" fileName="CommandLineGenerator.java" startLine="153" startPosition="39" endLine="154" endPosition="57" />
-    <scopeInfo nodeId="80916483499265402" fileName="CommandLineGenerator.java" startLine="161" startPosition="62" endLine="162" endPosition="71" />
+    <scopeInfo nodeId="7566850531967206371" fileName="CommandLineGenerator.java" startLine="121" startPosition="13" endLine="122" endPosition="43" />
+    <scopeInfo nodeId="7566850531967206381" fileName="CommandLineGenerator.java" startLine="124" startPosition="37" endLine="125" endPosition="29" />
+    <scopeInfo nodeId="8869411891375799191" fileName="CommandLineGenerator.java" startLine="132" startPosition="37" endLine="133" endPosition="46" />
+    <scopeInfo nodeId="7974019835130465340" fileName="CommandLineGenerator.java" startLine="141" startPosition="35" endLine="142" endPosition="57" />
+    <scopeInfo nodeId="7974019835130465343" fileName="CommandLineGenerator.java" startLine="144" startPosition="14" endLine="145" endPosition="79" />
+    <scopeInfo nodeId="4416609728987298328" fileName="CommandLineGenerator.java" startLine="149" startPosition="39" endLine="150" endPosition="57" />
+    <scopeInfo nodeId="80916483499265402" fileName="CommandLineGenerator.java" startLine="157" startPosition="62" endLine="158" endPosition="71" />
     <scopeInfo nodeId="1016968294606525393" fileName="CommandLineGenerator.java" startLine="36" startPosition="0" endLine="38" endPosition="3" />
-    <scopeInfo nodeId="1016968294606525530" fileName="CommandLineGenerator.java" startLine="58" startPosition="40" endLine="61" endPosition="88">
-      <varInfo nodeId="1016968294606525535" varName="svnPlugin" />
-    </scopeInfo>
-    <scopeInfo nodeId="7944298491757518920" fileName="CommandLineGenerator.java" startLine="64" startPosition="44" endLine="67" endPosition="98">
-      <varInfo nodeId="7944298491757518922" varName="svnPlugin" />
-    </scopeInfo>
     <scopeInfo nodeId="6006585546800309875" fileName="CommandLineGenerator.java" startLine="70" startPosition="41" endLine="73" endPosition="98">
       <varInfo nodeId="6006585546800309877" varName="vcsCorePlugin" />
     </scopeInfo>
     <scopeInfo nodeId="6006585546800341850" fileName="CommandLineGenerator.java" startLine="76" startPosition="48" endLine="79" endPosition="60">
       <varInfo nodeId="6006585546800309813" varName="mpsCorePlugin" />
     </scopeInfo>
-    <scopeInfo nodeId="7566850531967206381" fileName="CommandLineGenerator.java" startLine="127" startPosition="44" endLine="130" endPosition="11" />
-    <scopeInfo nodeId="7974019835130465332" fileName="CommandLineGenerator.java" startLine="144" startPosition="34" endLine="147" endPosition="9" />
-    <scopeInfo nodeId="7974019835130465340" fileName="CommandLineGenerator.java" startLine="144" startPosition="34" endLine="147" endPosition="9" />
+    <scopeInfo nodeId="7566850531967206381" fileName="CommandLineGenerator.java" startLine="123" startPosition="44" endLine="126" endPosition="11" />
+    <scopeInfo nodeId="7974019835130465332" fileName="CommandLineGenerator.java" startLine="140" startPosition="34" endLine="143" endPosition="9" />
+    <scopeInfo nodeId="7974019835130465340" fileName="CommandLineGenerator.java" startLine="140" startPosition="34" endLine="143" endPosition="9" />
     <scopeInfo nodeId="3042807695808133921" fileName="CommandLineGenerator.java" startLine="43" startPosition="85" endLine="47" endPosition="0">
       <varInfo nodeId="3042807695808133921" varName="cpi" />
+    </scopeInfo>
+    <scopeInfo nodeId="3532702333854217750" fileName="CommandLineGenerator.java" startLine="61" startPosition="84" endLine="65" endPosition="0">
+      <varInfo nodeId="3532702333854217750" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="8688150419538752866" fileName="CommandLineGenerator.java" startLine="92" startPosition="128" endLine="96" endPosition="0">
       <varInfo nodeId="8688150419538752866" varName="it" />
@@ -136,31 +130,34 @@
     <scopeInfo nodeId="8688150419538752799" fileName="CommandLineGenerator.java" startLine="105" startPosition="127" endLine="109" endPosition="0">
       <varInfo nodeId="8688150419538752799" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="7566850531967206377" fileName="CommandLineGenerator.java" startLine="127" startPosition="0" endLine="131" endPosition="22">
+    <scopeInfo nodeId="7566850531967206377" fileName="CommandLineGenerator.java" startLine="123" startPosition="0" endLine="127" endPosition="22">
       <varInfo nodeId="7566850531967206378" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7566850531967206380" fileName="CommandLineGenerator.java" startLine="127" startPosition="44" endLine="131" endPosition="22" />
-    <scopeInfo nodeId="8869411891375799190" fileName="CommandLineGenerator.java" startLine="135" startPosition="122" endLine="139" endPosition="0">
+    <scopeInfo nodeId="7566850531967206380" fileName="CommandLineGenerator.java" startLine="123" startPosition="44" endLine="127" endPosition="22" />
+    <scopeInfo nodeId="8869411891375799190" fileName="CommandLineGenerator.java" startLine="131" startPosition="122" endLine="135" endPosition="0">
       <varInfo nodeId="8869411891375799190" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="4416609728987298327" fileName="CommandLineGenerator.java" startLine="152" startPosition="126" endLine="156" endPosition="0">
+    <scopeInfo nodeId="4416609728987298327" fileName="CommandLineGenerator.java" startLine="148" startPosition="126" endLine="152" endPosition="0">
       <varInfo nodeId="4416609728987298327" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="80916483499265399" fileName="CommandLineGenerator.java" startLine="160" startPosition="0" endLine="164" endPosition="0">
+    <scopeInfo nodeId="80916483499265399" fileName="CommandLineGenerator.java" startLine="156" startPosition="0" endLine="160" endPosition="0">
       <varInfo nodeId="80916483499265405" varName="path" />
     </scopeInfo>
     <scopeInfo nodeId="3042807695808133894" fileName="CommandLineGenerator.java" startLine="42" startPosition="40" endLine="47" endPosition="87" />
-    <scopeInfo nodeId="1016968294606525527" fileName="CommandLineGenerator.java" startLine="57" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="7944298491757518918" fileName="CommandLineGenerator.java" startLine="63" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="3532702333854217703" fileName="CommandLineGenerator.java" startLine="60" startPosition="28" endLine="65" endPosition="9" />
     <scopeInfo nodeId="6006585546800309873" fileName="CommandLineGenerator.java" startLine="69" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="6006585546800341847" fileName="CommandLineGenerator.java" startLine="75" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="7566850531967206369" fileName="CommandLineGenerator.java" startLine="124" startPosition="38" endLine="132" endPosition="9" />
-    <scopeInfo nodeId="6006585546800338971" fileName="CommandLineGenerator.java" startLine="142" startPosition="32" endLine="150" endPosition="7">
+    <scopeInfo nodeId="7566850531967206369" fileName="CommandLineGenerator.java" startLine="120" startPosition="38" endLine="128" endPosition="9" />
+    <scopeInfo nodeId="6006585546800338971" fileName="CommandLineGenerator.java" startLine="138" startPosition="32" endLine="146" endPosition="7">
       <varInfo nodeId="7974019835130465313" varName="mpsCorePlugin" />
     </scopeInfo>
-    <scopeInfo nodeId="7566850531967206368" fileName="CommandLineGenerator.java" startLine="123" startPosition="90" endLine="134" endPosition="0">
+    <scopeInfo nodeId="3532702333854217693" fileName="CommandLineGenerator.java" startLine="58" startPosition="48" endLine="67" endPosition="16">
+      <varInfo nodeId="3532702333854217696" varName="svnPlugin" />
+    </scopeInfo>
+    <scopeInfo nodeId="7566850531967206368" fileName="CommandLineGenerator.java" startLine="119" startPosition="90" endLine="130" endPosition="0">
       <varInfo nodeId="7566850531967206368" varName="cn" />
     </scopeInfo>
+    <scopeInfo nodeId="3532702333854217690" fileName="CommandLineGenerator.java" startLine="57" startPosition="0" endLine="69" endPosition="0" />
     <scopeInfo nodeId="1016968294606525401" fileName="CommandLineGenerator.java" startLine="40" startPosition="48" endLine="55" endPosition="173">
       <varInfo nodeId="3042807695808133886" varName="classpath" />
       <varInfo nodeId="7745158536326881993" varName="classpathString" />
@@ -174,28 +171,30 @@
     <scopeInfo nodeId="1016968294606525398" fileName="CommandLineGenerator.java" startLine="39" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="80916483499250388" varName="vcs" />
     </scopeInfo>
-    <scopeInfo nodeId="3042807695808132374" fileName="CommandLineGenerator.java" startLine="82" startPosition="62" endLine="116" endPosition="26">
+    <scopeInfo nodeId="3042807695808132374" fileName="CommandLineGenerator.java" startLine="82" startPosition="62" endLine="112" endPosition="26">
       <varInfo nodeId="4780468374548783339" varName="classpathItems" />
+      <varInfo nodeId="7378694391485143390" varName="svnJars" />
     </scopeInfo>
-    <scopeInfo nodeId="3042807695808132371" fileName="CommandLineGenerator.java" startLine="81" startPosition="0" endLine="118" endPosition="0">
+    <scopeInfo nodeId="3042807695808132371" fileName="CommandLineGenerator.java" startLine="81" startPosition="0" endLine="114" endPosition="0">
       <varInfo nodeId="3042807695808132421" varName="withSvnkit" />
     </scopeInfo>
-    <scopeInfo nodeId="4780468374548783332" fileName="CommandLineGenerator.java" startLine="119" startPosition="53" endLine="158" endPosition="0">
+    <scopeInfo nodeId="4780468374548783332" fileName="CommandLineGenerator.java" startLine="115" startPosition="53" endLine="154" endPosition="0">
       <varInfo nodeId="7464741641936367220" varName="OTHER_CLASSES" />
       <varInfo nodeId="2454870935687413358" varName="classes" />
       <varInfo nodeId="3042807695808132377" varName="classpathItems" />
       <varInfo nodeId="6006585546800338960" varName="diffUtils" />
       <varInfo nodeId="6006585546800338956" varName="diffUtilsPath" />
     </scopeInfo>
-    <scopeInfo nodeId="4780468374548783329" fileName="CommandLineGenerator.java" startLine="118" startPosition="0" endLine="160" endPosition="0" />
-    <unitInfo nodeId="1016968294606525391" fileName="CommandLineGenerator.java" startLine="31" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator" />
+    <scopeInfo nodeId="4780468374548783329" fileName="CommandLineGenerator.java" startLine="114" startPosition="0" endLine="156" endPosition="0" />
+    <unitInfo nodeId="1016968294606525391" fileName="CommandLineGenerator.java" startLine="30" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator" />
     <unitInfo nodeId="3042807695808133921" fileName="CommandLineGenerator.java" startLine="43" startPosition="61" endLine="47" endPosition="7" unitName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator$1" />
-    <unitInfo nodeId="8688150419538752866" fileName="CommandLineGenerator.java" startLine="92" startPosition="99" endLine="96" endPosition="7" unitName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator$2" />
-    <unitInfo nodeId="4416609728987298289" fileName="CommandLineGenerator.java" startLine="97" startPosition="99" endLine="101" endPosition="7" unitName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator$3" />
-    <unitInfo nodeId="8688150419538752799" fileName="CommandLineGenerator.java" startLine="105" startPosition="98" endLine="109" endPosition="5" unitName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator$4" />
-    <unitInfo nodeId="7566850531967206368" fileName="CommandLineGenerator.java" startLine="123" startPosition="62" endLine="134" endPosition="5" unitName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator$5" />
-    <unitInfo nodeId="8869411891375799190" fileName="CommandLineGenerator.java" startLine="135" startPosition="94" endLine="139" endPosition="5" unitName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator$6" />
-    <unitInfo nodeId="4416609728987298327" fileName="CommandLineGenerator.java" startLine="152" startPosition="97" endLine="156" endPosition="5" unitName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator$7" />
+    <unitInfo nodeId="3532702333854217750" fileName="CommandLineGenerator.java" startLine="61" startPosition="55" endLine="65" endPosition="7" unitName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator$2" />
+    <unitInfo nodeId="8688150419538752866" fileName="CommandLineGenerator.java" startLine="92" startPosition="99" endLine="96" endPosition="7" unitName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator$3" />
+    <unitInfo nodeId="4416609728987298289" fileName="CommandLineGenerator.java" startLine="97" startPosition="99" endLine="101" endPosition="7" unitName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator$4" />
+    <unitInfo nodeId="8688150419538752799" fileName="CommandLineGenerator.java" startLine="105" startPosition="98" endLine="109" endPosition="5" unitName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator$5" />
+    <unitInfo nodeId="7566850531967206368" fileName="CommandLineGenerator.java" startLine="119" startPosition="62" endLine="130" endPosition="5" unitName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator$6" />
+    <unitInfo nodeId="8869411891375799190" fileName="CommandLineGenerator.java" startLine="131" startPosition="94" endLine="135" endPosition="5" unitName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator$7" />
+    <unitInfo nodeId="4416609728987298327" fileName="CommandLineGenerator.java" startLine="148" startPosition="97" endLine="152" endPosition="5" unitName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator$8" />
   </root>
   <root nodeId="1376744028423385490">
     <nodeInfo nodeId="1376744028423385512" fileName="AbstractInstaller.java" startLine="8" startPosition="46" endLine="9" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
@@ -911,179 +910,184 @@
     <unitInfo nodeId="1400826623542832129" fileName="GitRepositoriesInstaller.java" startLine="82" startPosition="73" endLine="86" endPosition="5" unitName="jetbrains.mps.vcs.platform.mergedriver.GitRepositoriesInstaller$7" />
   </root>
   <root nodeId="572687202609936946">
-    <nodeInfo nodeId="572687202609936946" fileName="GitGlobalInstaller.java" startLine="23" startPosition="64" endLine="24" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
-    <nodeInfo nodeId="5332772916083873951" fileName="GitGlobalInstaller.java" startLine="25" startPosition="0" endLine="26" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConfigFile" />
-    <nodeInfo nodeId="5332772916083875940" fileName="GitGlobalInstaller.java" startLine="26" startPosition="28" endLine="27" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScriptFile" />
-    <nodeInfo nodeId="1376744028423395417" fileName="GitGlobalInstaller.java" startLine="29" startPosition="46" endLine="30" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5332772916083873954" fileName="GitGlobalInstaller.java" startLine="30" startPosition="19" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5332772916083874993" fileName="GitGlobalInstaller.java" startLine="31" startPosition="93" endLine="32" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7486222757620534139" fileName="GitGlobalInstaller.java" startLine="37" startPosition="45" endLine="38" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8098913440253443810" fileName="GitGlobalInstaller.java" startLine="39" startPosition="5" endLine="40" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1376744028423385403" fileName="GitGlobalInstaller.java" startLine="42" startPosition="19" endLine="43" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8561058222510326390" fileName="GitGlobalInstaller.java" startLine="44" startPosition="14" endLine="45" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8561058222510326440" fileName="GitGlobalInstaller.java" startLine="46" startPosition="105" endLine="47" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1376744028423385409" fileName="GitGlobalInstaller.java" startLine="50" startPosition="5" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4260228291666538906" fileName="GitGlobalInstaller.java" startLine="51" startPosition="0" endLine="52" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1376744028423385435" fileName="GitGlobalInstaller.java" startLine="52" startPosition="81" endLine="53" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1376744028423385440" fileName="GitGlobalInstaller.java" startLine="53" startPosition="72" endLine="54" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5332772916083854907" fileName="GitGlobalInstaller.java" startLine="54" startPosition="82" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5332772916083854888" fileName="GitGlobalInstaller.java" startLine="55" startPosition="0" endLine="56" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5332772916083854895" fileName="GitGlobalInstaller.java" startLine="57" startPosition="59" endLine="58" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5332772916083876647" fileName="GitGlobalInstaller.java" startLine="59" startPosition="5" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5332772916083876649" fileName="GitGlobalInstaller.java" startLine="60" startPosition="0" endLine="61" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5332772916083876659" fileName="GitGlobalInstaller.java" startLine="62" startPosition="66" endLine="63" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5332772916083854908" fileName="GitGlobalInstaller.java" startLine="64" startPosition="5" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="80916483499267233" fileName="GitGlobalInstaller.java" startLine="65" startPosition="0" endLine="66" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="80916483499267252" fileName="GitGlobalInstaller.java" startLine="67" startPosition="31" endLine="68" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1376744028423385453" fileName="GitGlobalInstaller.java" startLine="69" startPosition="5" endLine="70" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4260228291666538905" fileName="GitGlobalInstaller.java" startLine="70" startPosition="125" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1376744028423385410" fileName="GitGlobalInstaller.java" startLine="71" startPosition="0" endLine="72" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4260228291666538957" fileName="GitGlobalInstaller.java" startLine="74" startPosition="42" endLine="75" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8576722175271097912" fileName="GitGlobalInstaller.java" startLine="78" startPosition="29" endLine="79" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4260228291666539038" fileName="GitGlobalInstaller.java" startLine="79" startPosition="36" endLine="80" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4260228291666539079" fileName="GitGlobalInstaller.java" startLine="82" startPosition="44" endLine="83" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8576722175271097894" fileName="GitGlobalInstaller.java" startLine="86" startPosition="29" endLine="87" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8576722175271097932" fileName="GitGlobalInstaller.java" startLine="87" startPosition="24" endLine="88" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8576722175271097898" fileName="GitGlobalInstaller.java" startLine="89" startPosition="14" endLine="90" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1455830106452731692" fileName="GitGlobalInstaller.java" startLine="93" startPosition="44" endLine="94" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4260228291666539177" fileName="GitGlobalInstaller.java" startLine="96" startPosition="26" endLine="97" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4260228291666539227" fileName="GitGlobalInstaller.java" startLine="100" startPosition="138" endLine="101" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4260228291666539234" fileName="GitGlobalInstaller.java" startLine="101" startPosition="26" endLine="102" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="4260228291666539241" fileName="GitGlobalInstaller.java" startLine="106" startPosition="18" endLine="107" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4260228291666539251" fileName="GitGlobalInstaller.java" startLine="109" startPosition="21" endLine="110" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4260228291666539292" fileName="GitGlobalInstaller.java" startLine="111" startPosition="16" endLine="112" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1826900917522039041" fileName="GitGlobalInstaller.java" startLine="116" startPosition="19" endLine="117" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1826900917522039038" fileName="GitGlobalInstaller.java" startLine="118" startPosition="7" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1376744028423395624" fileName="GitGlobalInstaller.java" startLine="119" startPosition="0" endLine="120" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4260228291666538920" fileName="GitGlobalInstaller.java" startLine="120" startPosition="56" endLine="121" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1376744028423385460" fileName="GitGlobalInstaller.java" startLine="122" startPosition="5" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1376744028423385463" fileName="GitGlobalInstaller.java" startLine="124" startPosition="9" endLine="125" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1376744028423395660" fileName="GitGlobalInstaller.java" startLine="125" startPosition="54" endLine="126" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1376744028423395654" fileName="GitGlobalInstaller.java" startLine="126" startPosition="153" endLine="127" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1376744028423385474" fileName="GitGlobalInstaller.java" startLine="129" startPosition="33" endLine="130" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4073558277537640129" fileName="GitGlobalInstaller.java" startLine="131" startPosition="7" endLine="132" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4073558277537640149" fileName="GitGlobalInstaller.java" startLine="133" startPosition="71" endLine="134" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1376744028423385477" fileName="GitGlobalInstaller.java" startLine="135" startPosition="7" endLine="136" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1376744028423385488" fileName="GitGlobalInstaller.java" startLine="136" startPosition="112" endLine="137" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5130910134095704432" fileName="GitGlobalInstaller.java" startLine="141" startPosition="34" endLine="142" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6989360587248027378" fileName="GitGlobalInstaller.java" startLine="145" startPosition="38" endLine="146" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8576722175271097896" fileName="GitGlobalInstaller.java" startLine="89" startPosition="12" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4260228291666539255" fileName="GitGlobalInstaller.java" startLine="111" startPosition="14" endLine="113" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7486222757620534137" fileName="GitGlobalInstaller.java" startLine="36" startPosition="61" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8561058222510326435" fileName="GitGlobalInstaller.java" startLine="45" startPosition="133" endLine="48" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5332772916083854893" fileName="GitGlobalInstaller.java" startLine="56" startPosition="85" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5332772916083876657" fileName="GitGlobalInstaller.java" startLine="61" startPosition="134" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="80916483499267247" fileName="GitGlobalInstaller.java" startLine="66" startPosition="55" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1826900917522039039" fileName="GitGlobalInstaller.java" startLine="115" startPosition="12" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1376744028423385474" fileName="GitGlobalInstaller.java" startLine="128" startPosition="29" endLine="131" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1376744028423385474" fileName="GitGlobalInstaller.java" startLine="128" startPosition="29" endLine="131" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4073558277537640147" fileName="GitGlobalInstaller.java" startLine="132" startPosition="40" endLine="135" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4260228291666538955" fileName="GitGlobalInstaller.java" startLine="73" startPosition="139" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="4260228291666539077" fileName="GitGlobalInstaller.java" startLine="81" startPosition="131" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="1455830106452731688" fileName="GitGlobalInstaller.java" startLine="92" startPosition="129" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="4260228291666539210" fileName="GitGlobalInstaller.java" startLine="99" startPosition="74" endLine="103" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5130910134095704428" fileName="GitGlobalInstaller.java" startLine="140" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getActionTitle#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6989360587248027370" fileName="GitGlobalInstaller.java" startLine="144" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedVcsName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4312697819658956470" fileName="GitGlobalInstaller.java" startLine="149" startPosition="69" endLine="153" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="572687202609936948" fileName="GitGlobalInstaller.java" startLine="28" startPosition="0" endLine="33" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GitGlobalInstaller#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="8561058222510312777" fileName="GitGlobalInstaller.java" startLine="44" startPosition="12" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4260228291666538941" fileName="GitGlobalInstaller.java" startLine="72" startPosition="65" endLine="77" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4260228291666539068" fileName="GitGlobalInstaller.java" startLine="80" startPosition="81" endLine="85" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4260228291666539119" fileName="GitGlobalInstaller.java" startLine="91" startPosition="7" endLine="96" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4260228291666539247" fileName="GitGlobalInstaller.java" startLine="108" startPosition="14" endLine="113" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8576722175271097885" fileName="GitGlobalInstaller.java" startLine="85" startPosition="10" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4260228291666539190" fileName="GitGlobalInstaller.java" startLine="98" startPosition="18" endLine="104" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="4260228291666539245" fileName="GitGlobalInstaller.java" startLine="108" startPosition="12" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1826900917522039036" fileName="GitGlobalInstaller.java" startLine="115" startPosition="10" endLine="122" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4312697819658956470" fileName="GitGlobalInstaller.java" startLine="148" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_btx4zt_a0a0a0g0u0a#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1376744028423395609" fileName="GitGlobalInstaller.java" startLine="41" startPosition="35" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4260228291666539144" fileName="GitGlobalInstaller.java" startLine="97" startPosition="122" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4260228291666539236" fileName="GitGlobalInstaller.java" startLine="105" startPosition="7" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1376744028423385396" fileName="GitGlobalInstaller.java" startLine="40" startPosition="51" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1376744028423385461" fileName="GitGlobalInstaller.java" startLine="123" startPosition="0" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1376744028423385416" fileName="GitGlobalInstaller.java" startLine="77" startPosition="8" endLine="122" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1376744028423385378" fileName="GitGlobalInstaller.java" startLine="34" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="install#(Z)Ljetbrains/mps/vcs/platform/mergedriver/AbstractInstaller/State;" />
-    <scopeInfo nodeId="7486222757620534138" fileName="GitGlobalInstaller.java" startLine="37" startPosition="45" endLine="38" endPosition="47" />
-    <scopeInfo nodeId="8561058222510312776" fileName="GitGlobalInstaller.java" startLine="42" startPosition="19" endLine="43" endPosition="53" />
-    <scopeInfo nodeId="8561058222510326436" fileName="GitGlobalInstaller.java" startLine="46" startPosition="105" endLine="47" endPosition="55" />
-    <scopeInfo nodeId="5332772916083854894" fileName="GitGlobalInstaller.java" startLine="57" startPosition="59" endLine="58" endPosition="25" />
-    <scopeInfo nodeId="5332772916083876658" fileName="GitGlobalInstaller.java" startLine="62" startPosition="66" endLine="63" endPosition="32" />
-    <scopeInfo nodeId="80916483499267248" fileName="GitGlobalInstaller.java" startLine="67" startPosition="31" endLine="68" endPosition="72" />
-    <scopeInfo nodeId="4260228291666538956" fileName="GitGlobalInstaller.java" startLine="74" startPosition="42" endLine="75" endPosition="61" />
-    <scopeInfo nodeId="4260228291666539078" fileName="GitGlobalInstaller.java" startLine="82" startPosition="44" endLine="83" endPosition="45" />
-    <scopeInfo nodeId="8576722175271097897" fileName="GitGlobalInstaller.java" startLine="89" startPosition="14" endLine="90" endPosition="41" />
-    <scopeInfo nodeId="1455830106452731689" fileName="GitGlobalInstaller.java" startLine="93" startPosition="44" endLine="94" endPosition="42" />
-    <scopeInfo nodeId="4260228291666539237" fileName="GitGlobalInstaller.java" startLine="106" startPosition="18" endLine="107" endPosition="49" />
-    <scopeInfo nodeId="4260228291666539249" fileName="GitGlobalInstaller.java" startLine="109" startPosition="21" endLine="110" endPosition="50" />
-    <scopeInfo nodeId="4260228291666539256" fileName="GitGlobalInstaller.java" startLine="111" startPosition="16" endLine="112" endPosition="201" />
-    <scopeInfo nodeId="1826900917522039040" fileName="GitGlobalInstaller.java" startLine="116" startPosition="19" endLine="117" endPosition="53" />
-    <scopeInfo nodeId="1376744028423385474" fileName="GitGlobalInstaller.java" startLine="129" startPosition="33" endLine="130" endPosition="54" />
-    <scopeInfo nodeId="4073558277537640148" fileName="GitGlobalInstaller.java" startLine="133" startPosition="71" endLine="134" endPosition="84" />
-    <scopeInfo nodeId="5130910134095704431" fileName="GitGlobalInstaller.java" startLine="141" startPosition="34" endLine="142" endPosition="60" />
-    <scopeInfo nodeId="6989360587248027373" fileName="GitGlobalInstaller.java" startLine="145" startPosition="38" endLine="146" endPosition="17" />
-    <scopeInfo nodeId="8576722175271097886" fileName="GitGlobalInstaller.java" startLine="86" startPosition="29" endLine="88" endPosition="64" />
-    <scopeInfo nodeId="4260228291666539211" fileName="GitGlobalInstaller.java" startLine="100" startPosition="138" endLine="102" endPosition="18" />
-    <scopeInfo nodeId="572687202609936951" fileName="GitGlobalInstaller.java" startLine="29" startPosition="46" endLine="32" endPosition="92" />
-    <scopeInfo nodeId="1376744028423385462" fileName="GitGlobalInstaller.java" startLine="124" startPosition="9" endLine="127" endPosition="47" />
-    <scopeInfo nodeId="1376744028423385474" fileName="GitGlobalInstaller.java" startLine="128" startPosition="29" endLine="131" endPosition="7" />
-    <scopeInfo nodeId="1376744028423395610" fileName="GitGlobalInstaller.java" startLine="44" startPosition="14" endLine="48" endPosition="9">
+    <nodeInfo nodeId="572687202609936946" fileName="GitGlobalInstaller.java" startLine="26" startPosition="64" endLine="27" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="5332772916083873951" fileName="GitGlobalInstaller.java" startLine="28" startPosition="0" endLine="29" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConfigFile" />
+    <nodeInfo nodeId="5332772916083875940" fileName="GitGlobalInstaller.java" startLine="29" startPosition="28" endLine="30" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScriptFile" />
+    <nodeInfo nodeId="1376744028423395417" fileName="GitGlobalInstaller.java" startLine="32" startPosition="46" endLine="33" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5332772916083873954" fileName="GitGlobalInstaller.java" startLine="33" startPosition="19" endLine="34" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5332772916083874993" fileName="GitGlobalInstaller.java" startLine="34" startPosition="93" endLine="35" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7486222757620534139" fileName="GitGlobalInstaller.java" startLine="40" startPosition="45" endLine="41" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8098913440253443810" fileName="GitGlobalInstaller.java" startLine="42" startPosition="5" endLine="43" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1376744028423385403" fileName="GitGlobalInstaller.java" startLine="45" startPosition="19" endLine="46" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8561058222510326390" fileName="GitGlobalInstaller.java" startLine="47" startPosition="14" endLine="48" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8561058222510326440" fileName="GitGlobalInstaller.java" startLine="49" startPosition="105" endLine="50" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1376744028423385409" fileName="GitGlobalInstaller.java" startLine="53" startPosition="5" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4260228291666538906" fileName="GitGlobalInstaller.java" startLine="54" startPosition="0" endLine="55" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1376744028423385435" fileName="GitGlobalInstaller.java" startLine="55" startPosition="81" endLine="56" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1376744028423385440" fileName="GitGlobalInstaller.java" startLine="56" startPosition="72" endLine="57" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5332772916083854907" fileName="GitGlobalInstaller.java" startLine="57" startPosition="82" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5332772916083854888" fileName="GitGlobalInstaller.java" startLine="58" startPosition="0" endLine="59" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5332772916083854895" fileName="GitGlobalInstaller.java" startLine="60" startPosition="59" endLine="61" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="168733612940446684" fileName="GitGlobalInstaller.java" startLine="62" startPosition="5" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6933307669479741724" fileName="GitGlobalInstaller.java" startLine="63" startPosition="0" endLine="64" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="168733612940446637" fileName="GitGlobalInstaller.java" startLine="65" startPosition="28" endLine="66" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5332772916083876649" fileName="GitGlobalInstaller.java" startLine="67" startPosition="5" endLine="68" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5332772916083876659" fileName="GitGlobalInstaller.java" startLine="69" startPosition="66" endLine="70" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5332772916083854908" fileName="GitGlobalInstaller.java" startLine="71" startPosition="5" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="80916483499267233" fileName="GitGlobalInstaller.java" startLine="72" startPosition="0" endLine="73" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="80916483499267252" fileName="GitGlobalInstaller.java" startLine="74" startPosition="31" endLine="75" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1376744028423385453" fileName="GitGlobalInstaller.java" startLine="76" startPosition="5" endLine="77" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4260228291666538905" fileName="GitGlobalInstaller.java" startLine="77" startPosition="125" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1376744028423385410" fileName="GitGlobalInstaller.java" startLine="78" startPosition="0" endLine="79" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4260228291666538957" fileName="GitGlobalInstaller.java" startLine="81" startPosition="42" endLine="82" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8576722175271097912" fileName="GitGlobalInstaller.java" startLine="85" startPosition="29" endLine="86" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4260228291666539038" fileName="GitGlobalInstaller.java" startLine="86" startPosition="36" endLine="87" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4260228291666539079" fileName="GitGlobalInstaller.java" startLine="89" startPosition="44" endLine="90" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8576722175271097894" fileName="GitGlobalInstaller.java" startLine="93" startPosition="29" endLine="94" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8576722175271097932" fileName="GitGlobalInstaller.java" startLine="94" startPosition="24" endLine="95" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8576722175271097898" fileName="GitGlobalInstaller.java" startLine="96" startPosition="14" endLine="97" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1455830106452731692" fileName="GitGlobalInstaller.java" startLine="100" startPosition="44" endLine="101" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4260228291666539177" fileName="GitGlobalInstaller.java" startLine="103" startPosition="26" endLine="104" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4260228291666539227" fileName="GitGlobalInstaller.java" startLine="107" startPosition="138" endLine="108" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4260228291666539234" fileName="GitGlobalInstaller.java" startLine="108" startPosition="26" endLine="109" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="4260228291666539241" fileName="GitGlobalInstaller.java" startLine="113" startPosition="18" endLine="114" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4260228291666539251" fileName="GitGlobalInstaller.java" startLine="116" startPosition="21" endLine="117" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4260228291666539292" fileName="GitGlobalInstaller.java" startLine="118" startPosition="16" endLine="119" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1826900917522039041" fileName="GitGlobalInstaller.java" startLine="123" startPosition="19" endLine="124" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1826900917522039038" fileName="GitGlobalInstaller.java" startLine="125" startPosition="7" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1376744028423395624" fileName="GitGlobalInstaller.java" startLine="126" startPosition="0" endLine="127" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4260228291666538920" fileName="GitGlobalInstaller.java" startLine="127" startPosition="56" endLine="128" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1376744028423385460" fileName="GitGlobalInstaller.java" startLine="129" startPosition="5" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1376744028423385463" fileName="GitGlobalInstaller.java" startLine="131" startPosition="9" endLine="132" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1376744028423395660" fileName="GitGlobalInstaller.java" startLine="132" startPosition="54" endLine="133" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1376744028423395654" fileName="GitGlobalInstaller.java" startLine="133" startPosition="153" endLine="134" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1376744028423385474" fileName="GitGlobalInstaller.java" startLine="136" startPosition="33" endLine="137" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4073558277537640129" fileName="GitGlobalInstaller.java" startLine="138" startPosition="7" endLine="139" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4073558277537640149" fileName="GitGlobalInstaller.java" startLine="140" startPosition="71" endLine="141" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1376744028423385477" fileName="GitGlobalInstaller.java" startLine="142" startPosition="7" endLine="143" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1376744028423385488" fileName="GitGlobalInstaller.java" startLine="143" startPosition="112" endLine="144" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5130910134095704432" fileName="GitGlobalInstaller.java" startLine="148" startPosition="34" endLine="149" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6989360587248027378" fileName="GitGlobalInstaller.java" startLine="152" startPosition="38" endLine="153" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8576722175271097896" fileName="GitGlobalInstaller.java" startLine="96" startPosition="12" endLine="98" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4260228291666539255" fileName="GitGlobalInstaller.java" startLine="118" startPosition="14" endLine="120" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7486222757620534137" fileName="GitGlobalInstaller.java" startLine="39" startPosition="61" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8561058222510326435" fileName="GitGlobalInstaller.java" startLine="48" startPosition="133" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5332772916083854893" fileName="GitGlobalInstaller.java" startLine="59" startPosition="85" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="168733612940446611" fileName="GitGlobalInstaller.java" startLine="64" startPosition="91" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5332772916083876657" fileName="GitGlobalInstaller.java" startLine="68" startPosition="134" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="80916483499267247" fileName="GitGlobalInstaller.java" startLine="73" startPosition="55" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1826900917522039039" fileName="GitGlobalInstaller.java" startLine="122" startPosition="12" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1376744028423385474" fileName="GitGlobalInstaller.java" startLine="135" startPosition="29" endLine="138" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1376744028423385474" fileName="GitGlobalInstaller.java" startLine="135" startPosition="29" endLine="138" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4073558277537640147" fileName="GitGlobalInstaller.java" startLine="139" startPosition="40" endLine="142" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4260228291666538955" fileName="GitGlobalInstaller.java" startLine="80" startPosition="139" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="4260228291666539077" fileName="GitGlobalInstaller.java" startLine="88" startPosition="131" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="1455830106452731688" fileName="GitGlobalInstaller.java" startLine="99" startPosition="129" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="4260228291666539210" fileName="GitGlobalInstaller.java" startLine="106" startPosition="74" endLine="110" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5130910134095704428" fileName="GitGlobalInstaller.java" startLine="147" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getActionTitle#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6989360587248027370" fileName="GitGlobalInstaller.java" startLine="151" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedVcsName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4312697819658956470" fileName="GitGlobalInstaller.java" startLine="156" startPosition="69" endLine="160" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="572687202609936948" fileName="GitGlobalInstaller.java" startLine="31" startPosition="0" endLine="36" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GitGlobalInstaller#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="8561058222510312777" fileName="GitGlobalInstaller.java" startLine="47" startPosition="12" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4260228291666538941" fileName="GitGlobalInstaller.java" startLine="79" startPosition="65" endLine="84" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4260228291666539068" fileName="GitGlobalInstaller.java" startLine="87" startPosition="81" endLine="92" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4260228291666539119" fileName="GitGlobalInstaller.java" startLine="98" startPosition="7" endLine="103" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4260228291666539247" fileName="GitGlobalInstaller.java" startLine="115" startPosition="14" endLine="120" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8576722175271097885" fileName="GitGlobalInstaller.java" startLine="92" startPosition="10" endLine="98" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4260228291666539190" fileName="GitGlobalInstaller.java" startLine="105" startPosition="18" endLine="111" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="4260228291666539245" fileName="GitGlobalInstaller.java" startLine="115" startPosition="12" endLine="121" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1826900917522039036" fileName="GitGlobalInstaller.java" startLine="122" startPosition="10" endLine="129" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4312697819658956470" fileName="GitGlobalInstaller.java" startLine="155" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_btx4zt_a0a0a0g0w0a#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="1376744028423395609" fileName="GitGlobalInstaller.java" startLine="44" startPosition="35" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4260228291666539144" fileName="GitGlobalInstaller.java" startLine="104" startPosition="122" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4260228291666539236" fileName="GitGlobalInstaller.java" startLine="112" startPosition="7" endLine="121" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1376744028423385396" fileName="GitGlobalInstaller.java" startLine="43" startPosition="51" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1376744028423385461" fileName="GitGlobalInstaller.java" startLine="130" startPosition="0" endLine="145" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1376744028423385416" fileName="GitGlobalInstaller.java" startLine="84" startPosition="8" endLine="129" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1376744028423385378" fileName="GitGlobalInstaller.java" startLine="37" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="install#(Z)Ljetbrains/mps/vcs/platform/mergedriver/AbstractInstaller/State;" />
+    <scopeInfo nodeId="7486222757620534138" fileName="GitGlobalInstaller.java" startLine="40" startPosition="45" endLine="41" endPosition="47" />
+    <scopeInfo nodeId="8561058222510312776" fileName="GitGlobalInstaller.java" startLine="45" startPosition="19" endLine="46" endPosition="53" />
+    <scopeInfo nodeId="8561058222510326436" fileName="GitGlobalInstaller.java" startLine="49" startPosition="105" endLine="50" endPosition="55" />
+    <scopeInfo nodeId="5332772916083854894" fileName="GitGlobalInstaller.java" startLine="60" startPosition="59" endLine="61" endPosition="25" />
+    <scopeInfo nodeId="168733612940446612" fileName="GitGlobalInstaller.java" startLine="65" startPosition="28" endLine="66" endPosition="137" />
+    <scopeInfo nodeId="5332772916083876658" fileName="GitGlobalInstaller.java" startLine="69" startPosition="66" endLine="70" endPosition="32" />
+    <scopeInfo nodeId="80916483499267248" fileName="GitGlobalInstaller.java" startLine="74" startPosition="31" endLine="75" endPosition="72" />
+    <scopeInfo nodeId="4260228291666538956" fileName="GitGlobalInstaller.java" startLine="81" startPosition="42" endLine="82" endPosition="61" />
+    <scopeInfo nodeId="4260228291666539078" fileName="GitGlobalInstaller.java" startLine="89" startPosition="44" endLine="90" endPosition="45" />
+    <scopeInfo nodeId="8576722175271097897" fileName="GitGlobalInstaller.java" startLine="96" startPosition="14" endLine="97" endPosition="41" />
+    <scopeInfo nodeId="1455830106452731689" fileName="GitGlobalInstaller.java" startLine="100" startPosition="44" endLine="101" endPosition="42" />
+    <scopeInfo nodeId="4260228291666539237" fileName="GitGlobalInstaller.java" startLine="113" startPosition="18" endLine="114" endPosition="49" />
+    <scopeInfo nodeId="4260228291666539249" fileName="GitGlobalInstaller.java" startLine="116" startPosition="21" endLine="117" endPosition="50" />
+    <scopeInfo nodeId="4260228291666539256" fileName="GitGlobalInstaller.java" startLine="118" startPosition="16" endLine="119" endPosition="201" />
+    <scopeInfo nodeId="1826900917522039040" fileName="GitGlobalInstaller.java" startLine="123" startPosition="19" endLine="124" endPosition="53" />
+    <scopeInfo nodeId="1376744028423385474" fileName="GitGlobalInstaller.java" startLine="136" startPosition="33" endLine="137" endPosition="54" />
+    <scopeInfo nodeId="4073558277537640148" fileName="GitGlobalInstaller.java" startLine="140" startPosition="71" endLine="141" endPosition="84" />
+    <scopeInfo nodeId="5130910134095704431" fileName="GitGlobalInstaller.java" startLine="148" startPosition="34" endLine="149" endPosition="60" />
+    <scopeInfo nodeId="6989360587248027373" fileName="GitGlobalInstaller.java" startLine="152" startPosition="38" endLine="153" endPosition="17" />
+    <scopeInfo nodeId="8576722175271097886" fileName="GitGlobalInstaller.java" startLine="93" startPosition="29" endLine="95" endPosition="64" />
+    <scopeInfo nodeId="4260228291666539211" fileName="GitGlobalInstaller.java" startLine="107" startPosition="138" endLine="109" endPosition="18" />
+    <scopeInfo nodeId="572687202609936951" fileName="GitGlobalInstaller.java" startLine="32" startPosition="46" endLine="35" endPosition="92" />
+    <scopeInfo nodeId="1376744028423385462" fileName="GitGlobalInstaller.java" startLine="131" startPosition="9" endLine="134" endPosition="47" />
+    <scopeInfo nodeId="1376744028423385474" fileName="GitGlobalInstaller.java" startLine="135" startPosition="29" endLine="138" endPosition="7" />
+    <scopeInfo nodeId="1376744028423395610" fileName="GitGlobalInstaller.java" startLine="47" startPosition="14" endLine="51" endPosition="9">
       <varInfo nodeId="8561058222510326391" varName="msg" />
     </scopeInfo>
-    <scopeInfo nodeId="4260228291666538955" fileName="GitGlobalInstaller.java" startLine="73" startPosition="139" endLine="77" endPosition="0">
+    <scopeInfo nodeId="4260228291666538955" fileName="GitGlobalInstaller.java" startLine="80" startPosition="139" endLine="84" endPosition="0">
       <varInfo nodeId="4260228291666538955" varName="line" />
     </scopeInfo>
-    <scopeInfo nodeId="4260228291666539077" fileName="GitGlobalInstaller.java" startLine="81" startPosition="131" endLine="85" endPosition="0">
+    <scopeInfo nodeId="4260228291666539077" fileName="GitGlobalInstaller.java" startLine="88" startPosition="131" endLine="92" endPosition="0">
       <varInfo nodeId="4260228291666539077" varName="line" />
     </scopeInfo>
-    <scopeInfo nodeId="1455830106452731688" fileName="GitGlobalInstaller.java" startLine="92" startPosition="129" endLine="96" endPosition="0">
+    <scopeInfo nodeId="1455830106452731688" fileName="GitGlobalInstaller.java" startLine="99" startPosition="129" endLine="103" endPosition="0">
       <varInfo nodeId="1455830106452731688" varName="line" />
     </scopeInfo>
-    <scopeInfo nodeId="4260228291666539191" fileName="GitGlobalInstaller.java" startLine="99" startPosition="74" endLine="103" endPosition="11" />
-    <scopeInfo nodeId="5130910134095704428" fileName="GitGlobalInstaller.java" startLine="140" startPosition="0" endLine="144" endPosition="0" />
-    <scopeInfo nodeId="6989360587248027370" fileName="GitGlobalInstaller.java" startLine="144" startPosition="0" endLine="148" endPosition="0" />
-    <scopeInfo nodeId="4312697819658956470" fileName="GitGlobalInstaller.java" startLine="149" startPosition="69" endLine="153" endPosition="7" />
-    <scopeInfo nodeId="572687202609936948" fileName="GitGlobalInstaller.java" startLine="28" startPosition="0" endLine="33" endPosition="3">
+    <scopeInfo nodeId="4260228291666539191" fileName="GitGlobalInstaller.java" startLine="106" startPosition="74" endLine="110" endPosition="11" />
+    <scopeInfo nodeId="5130910134095704428" fileName="GitGlobalInstaller.java" startLine="147" startPosition="0" endLine="151" endPosition="0" />
+    <scopeInfo nodeId="6989360587248027370" fileName="GitGlobalInstaller.java" startLine="151" startPosition="0" endLine="155" endPosition="0" />
+    <scopeInfo nodeId="4312697819658956470" fileName="GitGlobalInstaller.java" startLine="156" startPosition="69" endLine="160" endPosition="7" />
+    <scopeInfo nodeId="572687202609936948" fileName="GitGlobalInstaller.java" startLine="31" startPosition="0" endLine="36" endPosition="3">
       <varInfo nodeId="1376744028423385335" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="4260228291666539246" fileName="GitGlobalInstaller.java" startLine="108" startPosition="14" endLine="113" endPosition="9" />
-    <scopeInfo nodeId="4260228291666539145" fileName="GitGlobalInstaller.java" startLine="98" startPosition="18" endLine="104" endPosition="9" />
-    <scopeInfo nodeId="4260228291666539190" fileName="GitGlobalInstaller.java" startLine="98" startPosition="18" endLine="104" endPosition="9">
+    <scopeInfo nodeId="4260228291666539246" fileName="GitGlobalInstaller.java" startLine="115" startPosition="14" endLine="120" endPosition="9" />
+    <scopeInfo nodeId="4260228291666539145" fileName="GitGlobalInstaller.java" startLine="105" startPosition="18" endLine="111" endPosition="9" />
+    <scopeInfo nodeId="4260228291666539190" fileName="GitGlobalInstaller.java" startLine="105" startPosition="18" endLine="111" endPosition="9">
       <varInfo nodeId="4260228291666539193" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1826900917522039037" fileName="GitGlobalInstaller.java" startLine="115" startPosition="12" endLine="121" endPosition="92" />
-    <scopeInfo nodeId="4312697819658956470" fileName="GitGlobalInstaller.java" startLine="148" startPosition="0" endLine="155" endPosition="0">
+    <scopeInfo nodeId="1826900917522039037" fileName="GitGlobalInstaller.java" startLine="122" startPosition="12" endLine="128" endPosition="92" />
+    <scopeInfo nodeId="4312697819658956470" fileName="GitGlobalInstaller.java" startLine="155" startPosition="0" endLine="162" endPosition="0">
       <varInfo nodeId="4312697819658956470" varName="a" />
       <varInfo nodeId="4312697819658956470" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="1376744028423385397" fileName="GitGlobalInstaller.java" startLine="41" startPosition="35" endLine="49" endPosition="7" />
-    <scopeInfo nodeId="1376744028423385470" fileName="GitGlobalInstaller.java" startLine="128" startPosition="0" endLine="137" endPosition="51">
+    <scopeInfo nodeId="1376744028423385397" fileName="GitGlobalInstaller.java" startLine="44" startPosition="35" endLine="52" endPosition="7" />
+    <scopeInfo nodeId="1376744028423385470" fileName="GitGlobalInstaller.java" startLine="135" startPosition="0" endLine="144" endPosition="51">
       <varInfo nodeId="1376744028423385471" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="1376744028423385473" fileName="GitGlobalInstaller.java" startLine="128" startPosition="29" endLine="137" endPosition="51">
+    <scopeInfo nodeId="1376744028423385473" fileName="GitGlobalInstaller.java" startLine="135" startPosition="29" endLine="144" endPosition="51">
       <varInfo nodeId="4073558277537640130" varName="msg" />
     </scopeInfo>
-    <scopeInfo nodeId="1376744028423385417" fileName="GitGlobalInstaller.java" startLine="78" startPosition="29" endLine="114" endPosition="7">
+    <scopeInfo nodeId="1376744028423385417" fileName="GitGlobalInstaller.java" startLine="85" startPosition="29" endLine="121" endPosition="7">
       <varInfo nodeId="4260228291666539178" varName="equal" />
       <varInfo nodeId="4260228291666539120" varName="section" />
       <varInfo nodeId="4260228291666539069" varName="sectionEnd" />
       <varInfo nodeId="4260228291666539039" varName="skipped" />
       <varInfo nodeId="8576722175271097913" varName="toSkip" />
     </scopeInfo>
-    <scopeInfo nodeId="1376744028423385380" fileName="GitGlobalInstaller.java" startLine="36" startPosition="61" endLine="138" endPosition="5">
+    <scopeInfo nodeId="1376744028423385380" fileName="GitGlobalInstaller.java" startLine="39" startPosition="61" endLine="145" endPosition="5">
       <varInfo nodeId="1376744028423385411" varName="configLines" />
       <varInfo nodeId="5332772916083876650" varName="createScriptResult" />
       <varInfo nodeId="4260228291666538907" varName="newConfigLines" />
       <varInfo nodeId="5332772916083854889" varName="packerState" />
       <varInfo nodeId="80916483499267234" varName="scriptPath" />
       <varInfo nodeId="4260228291666538942" varName="sectionStart" />
+      <varInfo nodeId="6933307669479741725" varName="svnPlugin" />
     </scopeInfo>
-    <scopeInfo nodeId="1376744028423385378" fileName="GitGlobalInstaller.java" startLine="34" startPosition="0" endLine="140" endPosition="0">
+    <scopeInfo nodeId="1376744028423385378" fileName="GitGlobalInstaller.java" startLine="37" startPosition="0" endLine="147" endPosition="0">
       <varInfo nodeId="1376744028423385562" varName="dryRun" />
     </scopeInfo>
-    <unitInfo nodeId="572687202609936946" fileName="GitGlobalInstaller.java" startLine="23" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.vcs.platform.mergedriver.GitGlobalInstaller" />
-    <unitInfo nodeId="4260228291666538955" fileName="GitGlobalInstaller.java" startLine="73" startPosition="115" endLine="77" endPosition="5" unitName="jetbrains.mps.vcs.platform.mergedriver.GitGlobalInstaller$1" />
-    <unitInfo nodeId="4260228291666539077" fileName="GitGlobalInstaller.java" startLine="81" startPosition="107" endLine="85" endPosition="7" unitName="jetbrains.mps.vcs.platform.mergedriver.GitGlobalInstaller$2" />
-    <unitInfo nodeId="1455830106452731688" fileName="GitGlobalInstaller.java" startLine="92" startPosition="105" endLine="96" endPosition="7" unitName="jetbrains.mps.vcs.platform.mergedriver.GitGlobalInstaller$3" />
+    <unitInfo nodeId="572687202609936946" fileName="GitGlobalInstaller.java" startLine="26" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.vcs.platform.mergedriver.GitGlobalInstaller" />
+    <unitInfo nodeId="4260228291666538955" fileName="GitGlobalInstaller.java" startLine="80" startPosition="115" endLine="84" endPosition="5" unitName="jetbrains.mps.vcs.platform.mergedriver.GitGlobalInstaller$1" />
+    <unitInfo nodeId="4260228291666539077" fileName="GitGlobalInstaller.java" startLine="88" startPosition="107" endLine="92" endPosition="7" unitName="jetbrains.mps.vcs.platform.mergedriver.GitGlobalInstaller$2" />
+    <unitInfo nodeId="1455830106452731688" fileName="GitGlobalInstaller.java" startLine="99" startPosition="105" endLine="103" endPosition="7" unitName="jetbrains.mps.vcs.platform.mergedriver.GitGlobalInstaller$3" />
   </root>
   <root nodeId="6124943338883990550">
     <nodeInfo nodeId="6124943338883990643" fileName="MergeDriverOptionsDialog.java" startLine="23" startPosition="61" endLine="24" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />

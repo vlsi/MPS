@@ -17,21 +17,21 @@ import jetbrains.mps.vcs.core.mergedriver.MergeDriverMain;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.diff.merge.MergeSession;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.ide.IdeMain;
 import com.intellij.util.PathUtil;
 
 public class CommandLineGenerator {
   private static final Iterable<String> mpsLibJars = Arrays.asList("mps-closures.jar", "mps-collections.jar", "mps-tuples.jar", "mps-core.jar");
   private static Iterable<String> mpsAddJars = Arrays.asList("asm.jar", "diffutils-1.2.1.jar");
   private static final Iterable<String> ideaLibJars = Arrays.asList("jdom.jar", "log4j.jar", "trove4j.jar", "annotations.jar", "commons-lang-2.4.jar", "commons-logging-1.1.1.jar");
+  private static final Iterable<String> svnJars = Arrays.asList("svnkit.jar", "sequence-library.jar");
   protected static Log log = LogFactory.getLog(CommandLineGenerator.class);
 
   private CommandLineGenerator() {
@@ -55,16 +55,16 @@ public class CommandLineGenerator {
     return String.format("\"%s\" -D%s=\"%s\" -cp \"%s\" %s", javaExecutable, MergeDriverMain.LOG_PROPERTY, escapedLogPath, classpathString, MergeDriverMain.class.getName());
   }
 
-  private static String getSvnkitJar() {
-    IdeaPluginDescriptor svnPlugin = PluginManager.getPlugin(PluginId.getId("Subversion"));
-    assert svnPlugin != null;
-    return svnPlugin.getPath() + File.separator + "lib" + File.separator + "svnkit.jar";
-  }
-
-  private static String getTextMergerJar() {
-    IdeaPluginDescriptor svnPlugin = PluginManager.getPlugin(PluginId.getId("Subversion"));
-    assert svnPlugin != null;
-    return svnPlugin.getPath() + File.separator + "lib" + File.separator + "sequence-library.jar";
+  private static Iterable<String> getSvnJars() {
+    final IdeaPluginDescriptor svnPlugin = PluginManager.getPlugin(PluginId.getId("Subversion"));
+    if (svnPlugin != null) {
+      return Sequence.fromIterable(svnJars).select(new ISelector<String, String>() {
+        public String select(String it) {
+          return svnPlugin.getPath() + File.separator + "lib" + File.separator + it;
+        }
+      });
+    }
+    return null;
   }
 
   private static String getVCSCoreJar() {
@@ -107,19 +107,15 @@ public class CommandLineGenerator {
         return PathManager.getLibPath() + File.separator + it;
       }
     }));
-
-
-    if (withSvnkit) {
-      SetSequence.fromSet(classpathItems).addElement(getSvnkitJar());
-    }
-    SetSequence.fromSet(classpathItems).addElement(getTextMergerJar());
+    Iterable<String> svnJars = getSvnJars();
+    SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(getSvnJars()));
     return classpathItems;
   }
 
   private static Set<String> getClasspathInternal() {
     Set<String> classpathItems = SetSequence.fromSet(new LinkedHashSet<String>());
     final Iterable<String> OTHER_CLASSES = Arrays.asList("jetbrains.mps.internal.collections.runtime.ListSequence", "jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes", "jetbrains.mps.typesystem.inference.TypeChecker", "jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager", "jetbrains.mps.intentions.IntentionsManager", "jetbrains.mps.ide.findusages.FindersManager", "jetbrains.mps.analyzers.runtime.framework.CustomAnalyzerRunner", "jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple");
-    Iterable<Class> classes = Arrays.<Class>asList(MergeDriverMain.class, FileUtil.class, MergeSession.class, SModel.class, IdeMain.class);
+    Iterable<Class> classes = Arrays.<Class>asList(MergeDriverMain.class, FileUtil.class, MergeSession.class, SModel.class);
     classes = Sequence.fromIterable(OTHER_CLASSES).select(new ISelector<String, Class>() {
       public Class select(String cn) {
         try {

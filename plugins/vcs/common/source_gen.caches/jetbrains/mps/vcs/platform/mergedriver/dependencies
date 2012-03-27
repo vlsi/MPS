@@ -23,7 +23,6 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.InternalFlag" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.ide.IdeMain" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -56,7 +55,10 @@
     <classNode extendsClassName="jetbrains.mps.vcs.platform.mergedriver.AbstractInstaller" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.platform.mergedriver.GitGlobalInstaller" file="GitGlobalInstaller.java">
+    <classNode dependClassName="com.intellij.ide.plugins.IdeaPluginDescriptor" />
+    <classNode dependClassName="com.intellij.ide.plugins.PluginManager" />
     <classNode dependClassName="com.intellij.openapi.application.PathManager" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="com.intellij.openapi.util.SystemInfo" />
