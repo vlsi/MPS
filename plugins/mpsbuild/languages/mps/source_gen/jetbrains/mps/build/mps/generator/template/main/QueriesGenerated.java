@@ -11,6 +11,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.build.mps.util.ModuleLoader;
 
 public class QueriesGenerated {
@@ -30,7 +33,17 @@ public class QueriesGenerated {
       VisibleModules visibleModules = new VisibleModules(project, _context);
       visibleModules.collect();
 
-      for (SNode part : SLinkOperations.getTargets(project, "parts", true)) {
+      Iterable<SNode> parts = SLinkOperations.getTargets(project, "parts", true);
+      parts = Sequence.fromIterable(parts).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_Group");
+        }
+      }).translate(new ITranslator2<SNode, SNode>() {
+        public Iterable<SNode> translate(SNode it) {
+          return SLinkOperations.getTargets(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_Group"), "modules", true);
+        }
+      }).union(Sequence.fromIterable(parts));
+      for (SNode part : parts) {
         if (!(SNodeOperations.isInstanceOf(part, "jetbrains.mps.build.mps.structure.BuildMps_Module"))) {
           continue;
         }
