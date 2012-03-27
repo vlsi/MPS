@@ -21,8 +21,10 @@ import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.libraries.LibraryTable;
 import com.intellij.openapi.roots.libraries.LibraryTable.Listener;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -49,7 +51,7 @@ public abstract class BaseLibImporter implements MPSModuleOwner {
     getLibTable().removeListener(myListener);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        MPSModuleRepository.getInstance().unRegisterModules(BaseLibImporter.this);
+        ModuleRepositoryFacade.getInstance().unregisterModules(BaseLibImporter.this);
       }
     });
   }
@@ -67,15 +69,15 @@ public abstract class BaseLibImporter implements MPSModuleOwner {
       ModelRoot modelRoot = new ModelRoot(LibHelper.getLocalPath(f), LanguageID.JAVA_MANAGER);
       sd.getModelRoots().add(modelRoot);
     }
-    Solution.newInstance(sd, this);
+    StubSolution.newInstance(sd, this);
   }
 
   protected void removeModuleForLibrary(Library l) {
     ModuleReference ref = new ModuleReference(null, ModuleId.foreign(l.getName()));
     MPSModuleRepository repo = MPSModuleRepository.getInstance();
-    Solution s = repo.getSolution(ref);
-    if (s==null) return;
-    repo.removeModule(s);
+    IModule m = repo.getModule(ref);
+    if (m == null) return;
+    repo.unregisterModule(m, this);
   }
 
   private class MyListener implements Listener {

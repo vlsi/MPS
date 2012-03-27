@@ -40,14 +40,14 @@ public class ModulesOnlyScope extends BaseScope {
   }
 
   public Language getLanguage(ModuleReference moduleReference) {
-    Language lang = MPSModuleRepository.getInstance().getLanguage(moduleReference);
+    Language lang = ModuleRepositoryFacade.getInstance().getModule(moduleReference, Language.class);
     if (lang == null) return null;
     if (myModules.contains(lang)) return lang;
     return null;
   }
 
   public DevKit getDevKit(ModuleReference ref) {
-    DevKit dk = MPSModuleRepository.getInstance().getDevKit(ref);
+    DevKit dk = ModuleRepositoryFacade.getInstance().getModule(ref, DevKit.class);
     if (dk == null) return null;
     if (myModules.contains(dk)) return dk;
     return null;

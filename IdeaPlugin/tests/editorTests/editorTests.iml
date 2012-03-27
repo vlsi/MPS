@@ -5,12 +5,13 @@
       <configuration>
         <option name="UUID" value="648f16ff-cde3-44e7-ac17-6e597e40f922" />
         <option name="generatorOutputPath" value="$MODULE_DIR$/source_gen" />
-        <option name="modelRootPaths">
-          <array>
-            <option value="$MODULE_DIR$/models" />
-          </array>
+        <option name="modelRoots">
+          <set>
+            <ModelRoot>
+              <option name="path" value="$MODULE_DIR$/models" />
+            </ModelRoot>
+          </set>
         </option>
-        <option name="useModuleSourceFolder" value="false" />
         <option name="usedLanguages">
           <array>
             <option value="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />

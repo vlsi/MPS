@@ -12,6 +12,7 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
 
@@ -75,7 +76,7 @@ public class DataFlowManager implements CoreComponent {
   }
 
   private void load() {
-    for (Language l : this.myModuleRepository.getAllLanguages()) {
+    for (Language l : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
       SModelDescriptor dfaModel = LanguageAspect.DATA_FLOW.get(l);
       if (dfaModel != null && !(dfaModel.getSModel().rootsCount() == 0)) {
         String dfaBuildersClassName = dfaModel.getLongName() + ".DFABuilders";

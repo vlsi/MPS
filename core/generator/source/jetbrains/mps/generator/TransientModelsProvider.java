@@ -17,6 +17,8 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.Computable;
@@ -24,7 +26,6 @@ import jetbrains.mps.util.Computable;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -36,6 +37,8 @@ public class TransientModelsProvider {
   private int myKeptModels;
   private final TransientSwapOwner myTransientSwapOwner;
   private String mySessionId;
+  private final MPSModuleOwner myOwner = new MPSModuleOwner() {
+  };
 
   public TransientModelsProvider(Project project, TransientSwapOwner owner) {
     myProject = project;
@@ -48,7 +51,7 @@ public class TransientModelsProvider {
         List<TransientModelsModule> toRemove = new ArrayList<TransientModelsModule>(myModuleMap.values());
         myModuleMap.clear();
         for (TransientModelsModule m : toRemove) {
-          m.disposeModule();
+          MPSModuleRepository.getInstance().unregisterModule(m, myOwner);
         }
       }
     });
@@ -76,7 +79,7 @@ public class TransientModelsProvider {
     }
 
     final TransientModelsModule transientModelsModule = new TransientModelsModule(module, TransientModelsProvider.this);
-    transientModelsModule.initModule();
+    MPSModuleRepository.getInstance().registerModule(transientModelsModule, myOwner);
     myModuleMap.put(module, transientModelsModule);
   }
 

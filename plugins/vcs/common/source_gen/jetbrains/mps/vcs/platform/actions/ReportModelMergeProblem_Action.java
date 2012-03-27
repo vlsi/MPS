@@ -119,6 +119,9 @@ public class ReportModelMergeProblem_Action extends BaseAction {
           ReportModelMergeProblem_Action.this.showNoBackupsAvailable(_params);
         } else {
           int selectedIndex = Messages.showChooseDialog(((Project) MapSequence.fromMap(_params).get("project")), "Choose merge backup file to attach", "Model Merge Problem", Messages.getQuestionIcon(), zipNames, zipNames[0]);
+          if (selectedIndex < 0) {
+            return;
+          }
           blameDialog.addFile(new File(backupDir, zipNames[selectedIndex]));
           blameDialog.show();
         }

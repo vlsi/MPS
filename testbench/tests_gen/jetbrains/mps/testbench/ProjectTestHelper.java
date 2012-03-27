@@ -21,12 +21,12 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import java.util.Collections;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
+import java.util.Collections;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.generator.GenerationFacade;
 import java.util.Set;
@@ -138,7 +138,7 @@ public class ProjectTestHelper {
       }
     }).translate(new ITranslator2<IModule, IModule>() {
       public Iterable<IModule> translate(IModule it) {
-        return Collections.<IModule>unmodifiableList(((Language) it).getGenerators());
+        return (List<IModule>) (List) ((Language) it).getGenerators();
       }
     }));
   }

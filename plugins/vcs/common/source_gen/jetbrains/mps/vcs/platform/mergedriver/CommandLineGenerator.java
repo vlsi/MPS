@@ -67,11 +67,28 @@ public class CommandLineGenerator {
     return svnPlugin.getPath() + File.separator + "lib" + File.separator + "sequence-library.jar";
   }
 
+  private static String getVCSCoreJar() {
+    IdeaPluginDescriptor vcsCorePlugin = PluginManager.getPlugin(PluginId.getId("jetbrains.mps.vcs"));
+    assert vcsCorePlugin != null;
+    return vcsCorePlugin.getPath() + File.separator + "lib" + File.separator + "mps-vcs-core.jar";
+  }
+
+  private static String getMPSCorePluginPath() {
+    IdeaPluginDescriptor mpsCorePlugin = PluginManager.getPlugin(PluginId.getId("jetbrains.mps.core"));
+    assert mpsCorePlugin != null;
+    return mpsCorePlugin.getPath() + File.separator + "lib";
+  }
+
   public static Set<String> getClasspath(boolean withSvnkit) {
     Set<String> classpathItems = SetSequence.fromSet(new LinkedHashSet<String>());
-    final Wrappers._T<String> mpsCorePath = new Wrappers._T<String>(PathManager.getLibPath());
-    File mpsCore = new File(mpsCorePath.value + File.separator + "mps-core.jar");
-    if (mpsCore.exists()) {
+    if (InternalFlag.isInternalMode()) {
+      SetSequence.fromSet(classpathItems).addSequence(SetSequence.fromSet(getClasspathInternal()));
+    } else {
+      final Wrappers._T<String> mpsCorePath = new Wrappers._T<String>(PathManager.getLibPath());
+      File mpsCore = new File(mpsCorePath.value + File.separator + "mps-core.jar");
+      if (!(mpsCore.exists())) {
+        mpsCorePath.value = getMPSCorePluginPath();
+      }
       SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(mpsLibJars).select(new ISelector<String, String>() {
         public String select(String it) {
           return mpsCorePath.value + File.separator + it;
@@ -82,26 +99,9 @@ public class CommandLineGenerator {
           return mpsCorePath.value + File.separator + it;
         }
       }));
-      SetSequence.fromSet(classpathItems).addElement(PathManager.getHomePath() + File.separator + "plugins" + File.separator + "vcs" + File.separator + "lib" + File.separator + "mps-vcs-core.jar");
-    } else {
-      mpsCorePath.value = PathManager.getPluginsPath() + File.separator + "mps-core" + File.separator + "lib";
-      mpsCore = new File(mpsCorePath.value + File.separator + "mps-core.jar");
-      if (mpsCore.exists()) {
-        SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(mpsLibJars).select(new ISelector<String, String>() {
-          public String select(String it) {
-            return mpsCorePath.value + File.separator + it;
-          }
-        }));
-        SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(mpsAddJars).select(new ISelector<String, String>() {
-          public String select(String it) {
-            return mpsCorePath.value + File.separator + it;
-          }
-        }));
-        SetSequence.fromSet(classpathItems).addElement(PathManager.getPluginsPath() + File.separator + "mps-vcs" + File.separator + "lib" + File.separator + "mps-vcs-core.jar");
-      } else {
-        SetSequence.fromSet(classpathItems).addSequence(SetSequence.fromSet(getClasspathInternal()));
-      }
+      SetSequence.fromSet(classpathItems).addElement(getVCSCoreJar());
     }
+
     SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(ideaLibJars).select(new ISelector<String, String>() {
       public String select(String it) {
         return PathManager.getLibPath() + File.separator + it;
@@ -116,7 +116,7 @@ public class CommandLineGenerator {
     return classpathItems;
   }
 
-  public static Set<String> getClasspathInternal() {
+  private static Set<String> getClasspathInternal() {
     Set<String> classpathItems = SetSequence.fromSet(new LinkedHashSet<String>());
     final Iterable<String> OTHER_CLASSES = Arrays.asList("jetbrains.mps.internal.collections.runtime.ListSequence", "jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes", "jetbrains.mps.typesystem.inference.TypeChecker", "jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager", "jetbrains.mps.intentions.IntentionsManager", "jetbrains.mps.ide.findusages.FindersManager", "jetbrains.mps.analyzers.runtime.framework.CustomAnalyzerRunner", "jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple");
     Iterable<Class> classes = Arrays.<Class>asList(MergeDriverMain.class, FileUtil.class, MergeSession.class, SModel.class, IdeMain.class);
@@ -137,9 +137,21 @@ public class CommandLineGenerator {
         return PathUtil.getJarPathForClass(c);
       }
     }));
+    final Wrappers._T<String> diffUtilsPath = new Wrappers._T<String>(PathManager.getLibPath());
+    File diffUtils = new File(diffUtilsPath.value + File.separator + "diffutils-1.2.1.jar");
+    if (!(diffUtils.exists())) {
+      IdeaPluginDescriptor mpsCorePlugin = PluginManager.getPlugin(PluginId.getId("jetbrains.mps.core"));
+      if (mpsCorePlugin == null) {
+        if (log.isErrorEnabled()) {
+          log.error("couldn't find diffutils-1.2.1.jar");
+        }
+      } else {
+        diffUtilsPath.value = mpsCorePlugin.getPath() + File.separator + "lib";
+      }
+    }
     SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(mpsAddJars).select(new ISelector<String, String>() {
       public String select(String it) {
-        return PathManager.getLibPath() + File.separator + it;
+        return diffUtilsPath.value + File.separator + it;
       }
     }));
     return classpathItems;

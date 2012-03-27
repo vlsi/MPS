@@ -237,23 +237,6 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.actionSystem.DataProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.breakpoints.CurrentLinePositionComponent" file="CurrentLinePositionComponent.java">
-    <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorManager" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
-    <classNode dependClassName="jetbrains.mps.debug.api.DebugSessionManagerComponent" />
-    <classNode dependClassName="jetbrains.mps.debug.api.SessionChangeListener" />
-    <classNode dependClassName="jetbrains.mps.debug.api.programState.ILocation" />
-    <classNode dependClassName="jetbrains.mps.debug.api.programState.IStackFrame" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
-    <classNode extendsClassName="jetbrains.mps.debug.api.DebugSessionListener" />
-    <classNode extendsClassName="jetbrains.mps.debug.api.SessionChangeAdapter" />
-    <classNode extendsClassName="jetbrains.mps.debugger.core.CurrentLinePositionComponentEx" />
-  </dependency>
   <dependency className="jetbrains.mps.debugger.api.ui.breakpoints.GroupedTree" file="GroupedTree.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Object" />

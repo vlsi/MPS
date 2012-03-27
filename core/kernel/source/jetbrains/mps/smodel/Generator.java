@@ -112,12 +112,6 @@ public class Generator extends AbstractModule {
     return getSourceLanguage().getRuntimeStubPaths();
   }
 
-  public void dispose() {
-    super.dispose();
-    SModelRepository.getInstance().unRegisterModelDescriptors(this);
-    MPSModuleRepository.getInstance().removeModule(this);
-  }
-
   public List<SModelDescriptor> getOwnTemplateModels() {
     List<SModelDescriptor> templateModels = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor modelDescriptor : getOwnModelDescriptors()) {
@@ -206,7 +200,8 @@ public class Generator extends AbstractModule {
   }
 
   public boolean isCompileInMPS() {
-    return mySourceLanguage.isCompileInMPS();
+    // generator is always compiled in MPS
+    return true;
   }
 
   public IFile getBundleHome() {

@@ -20,6 +20,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
@@ -49,22 +50,9 @@ public class TransientModelsModule extends AbstractModule {
   public TransientModelsModule(IModule original, TransientModelsProvider component) {
     myComponent = component;
     myOriginalModule = original;
-    ModuleReference reference = ModuleReference.fromString(original.getModuleFqName() + "@transient" + ourModuleCounter.getAndIncrement());
+    String fqName = original.getModuleFqName() + "@transient" + ourModuleCounter.getAndIncrement();
+    ModuleReference reference = new ModuleReference(fqName, ModuleId.regular());
     setModuleReference(reference);
-  }
-
-  public void initModule() {
-    MPSModuleRepository.getInstance().addModule(TransientModelsModule.this, new MPSModuleOwner() {
-    });
-  }
-
-  public void disposeModule() {
-    clearAll();
-    MPSModuleRepository.getInstance().removeModule(TransientModelsModule.this);
-  }
-
-  public void releaseModule() {
-    MPSModuleRepository.getInstance().removeModule(TransientModelsModule.this);
   }
 
   public Class getClass(String fqName) {
@@ -105,7 +93,6 @@ public class TransientModelsModule extends AbstractModule {
 
   public void clearAll() {
     removeAll();
-    SModelRepository.getInstance().unRegisterModelDescriptors(this);
     invalidateCaches();
     myModelsToKeep.clear();
     myPublished.clear();
@@ -261,7 +248,7 @@ public class TransientModelsModule extends AbstractModule {
 
         TransientSwapSpace swap = myComponent.getTransientSwapSpace();
         if (swap == null) throw new IllegalStateException("no swap space");
-        
+
         SModel m = swap.restoreFromSwap(getSModelReference());
         if (m != null) return m;
 

@@ -24,17 +24,19 @@ import jetbrains.mps.TestMain;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.structure.modules.*;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
@@ -60,7 +62,6 @@ public class TestMakeOnRealProject {
 
   };
 
-
   @Before
   public void setUp() throws IOException {
     createTmpModules();
@@ -70,7 +71,7 @@ public class TestMakeOnRealProject {
   public void tearDown() throws Exception {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        MPSModuleRepository.getInstance().unRegisterModules(myModuleOwner);
+        ModuleRepositoryFacade.getInstance().unregisterModules(myModuleOwner);
         CleanupManager.getInstance().cleanup();
       }
     });
@@ -273,26 +274,37 @@ public class TestMakeOnRealProject {
     String fileName = runtimeSolutionDescriptorFile.getName();
     SolutionDescriptor solutionDescriptor = new SolutionDescriptor();
     String name = fileName.substring(0, fileName.length() - 4);
+    solutionDescriptor.setId(ModuleId.regular());
     solutionDescriptor.setNamespace(name);
 
     ModelRoot modelRoot = new ModelRoot();
     modelRoot.setPath(runtimeSolutionDescriptorFile.getParent().getPath());
 
     solutionDescriptor.getModelRoots().add(modelRoot);
+    solutionDescriptor.getDependencies().add(new Dependency(new ModuleReference("JDK"), true));
     runtimeSolutionDescriptorFile.createNewFile();
-    SolutionDescriptorPersistence.saveSolutionDescriptor(runtimeSolutionDescriptorFile, solutionDescriptor);
-    return Solution.newInstance(runtimeSolutionDescriptorFile, myModuleOwner);
+    SolutionDescriptorPersistence.saveSolutionDescriptor(runtimeSolutionDescriptorFile, solutionDescriptor, MacrosFactory.forModuleFile(runtimeSolutionDescriptorFile));
+    ModuleHandle handle = ModulesMiner.getInstance().loadModuleHandle(runtimeSolutionDescriptorFile);
+    return Solution.newInstance(handle, myModuleOwner);
   }
 
   private Language createNewLanguage() {
     String languageNamespace = "TestLanguage";
     IFile descriptorFile = myTmpDir.getDescendant(languageNamespace + File.separator + languageNamespace + MPSExtentions.DOT_LANGUAGE);
-    Language language = Language.createLanguage(languageNamespace, descriptorFile, myModuleOwner);
-    language.getModuleDescriptor().getRuntimeModules().add(myCreatedRuntimeSolution.getModuleReference());
-    descriptorFile.createNewFile();
-    language.save();
+    LanguageDescriptor d = new LanguageDescriptor();
+    d.setId(ModuleId.regular());
+    d.setNamespace(languageNamespace);
+    d.getRuntimeModules().add(myCreatedRuntimeSolution.getModuleReference());
 
-    return language;
+    ModelRoot modelRoot = new ModelRoot();
+    IFile languageModels = descriptorFile.getParent().getDescendant(Language.LANGUAGE_MODELS);
+    modelRoot.setPath(languageModels.getPath());
+    d.getModelRoots().add(modelRoot);
+
+    LanguageDescriptorPersistence.saveLanguageDescriptor(descriptorFile, d, MacrosFactory.forModuleFile(descriptorFile));
+
+    ModuleHandle handle = ModulesMiner.getInstance().loadModuleHandle(descriptorFile);
+    return Language.newInstance(handle, myModuleOwner);
   }
 
   private Solution createNewSolution() {
@@ -301,6 +313,7 @@ public class TestMakeOnRealProject {
     String fileName = descriptorFile.getName();
 
     SolutionDescriptor solutionDescriptor = new SolutionDescriptor();
+    solutionDescriptor.setId(ModuleId.regular());
     String name = fileName.substring(0, fileName.length() - 4);
     solutionDescriptor.setNamespace(name);
     solutionDescriptor.getUsedLanguages().add(myCreatedLanguage.getModuleReference());
@@ -310,11 +323,10 @@ public class TestMakeOnRealProject {
 
     solutionDescriptor.getModelRoots().add(modelRoot);
     
-    descriptorFile.createNewFile();
+    SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, solutionDescriptor, MacrosFactory.forModuleFile(descriptorFile));
 
-    SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, solutionDescriptor);
-
-    return Solution.newInstance(descriptorFile, myModuleOwner);
+    ModuleHandle handle = ModulesMiner.getInstance().loadModuleHandle(descriptorFile);
+    return Solution.newInstance(handle, myModuleOwner);
   }
 
 }

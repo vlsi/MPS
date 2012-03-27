@@ -36,8 +36,8 @@ public class GenerateBuildWizard extends AbstractWizard {
   }
 
   protected void updateStep() {
-    super.updateStep();
     this.getFinishButton().setEnabled((this.getCurrentStep() == this.mySteps.size() - 1) && this.myGenerator.isValid());
+    super.updateStep();
   }
 
   protected void doOKAction() {

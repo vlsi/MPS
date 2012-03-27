@@ -12,12 +12,10 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 
 public class ModuleProperties {
   public static final String NAMESPACE = "namespace";
-  public static final String COMPILE_IN_MPS = "compileInMPS";
   public static final String USED_LANGUAGES = "usedLanguages";
   public static final String USED_DEVKITS = "usedDevkits";
 
   private String myNamespace;
-  private boolean myCompileInMPS;
   private List<ModelRoot> myModelRoots;
   private List<Dependency> myDependencies;
   private List<ModuleReference> myUsedLanguages;
@@ -42,14 +40,6 @@ public class ModuleProperties {
 
   public void setNamespace(String namespace) {
     myNamespace = namespace;
-  }
-
-  public boolean isCompileInMPS() {
-    return myCompileInMPS;
-  }
-
-  public void setCompileInMPS(boolean compileInMPS) {
-    myCompileInMPS = compileInMPS;
   }
 
   public List<ModelRoot> getModelRoots() {
@@ -110,7 +100,6 @@ public class ModuleProperties {
 
   public void loadFrom(ModuleDescriptor descriptor) {
     myNamespace = descriptor.getNamespace();
-    myCompileInMPS = descriptor.getCompileInMPS();
     for (ModelRoot root : descriptor.getModelRoots()) {
       myModelRoots.add((root != null ?
         root.getCopy() :
@@ -138,7 +127,6 @@ public class ModuleProperties {
 
   public void saveTo(ModuleDescriptor descriptor) {
     descriptor.setNamespace(myNamespace);
-    descriptor.setCompileInMPS(myCompileInMPS);
     descriptor.getModelRoots().clear();
     descriptor.getModelRoots().addAll(myModelRoots);
     descriptor.getDependencies().clear();

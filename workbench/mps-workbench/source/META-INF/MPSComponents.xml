@@ -72,6 +72,9 @@
       <implementation-class>jetbrains.mps.project.MPSProjectVersion</implementation-class>
     </component>
     <component>
+      <implementation-class>jetbrains.mps.project.MPSProjectMigrationState</implementation-class>
+    </component>
+    <component>
       <interface-class>com.intellij.codeInsight.highlighting.HighlightManager</interface-class>
       <implementation-class>com.intellij.codeInsight.highlighting.HighlightManagerImpl</implementation-class>
       <skipForDummyProject/>

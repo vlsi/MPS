@@ -290,7 +290,7 @@
     <nodeInfo nodeId="4543209876460447788" fileName="NewDevKitDialogContentPane.java" startLine="192" startPosition="5" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3734045384532741041" fileName="NewDevKitDialogContentPane.java" startLine="193" startPosition="0" endLine="194" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217961860098" fileName="NewDevKitDialogContentPane.java" startLine="194" startPosition="33" endLine="195" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4543209876460447825" fileName="NewDevKitDialogContentPane.java" startLine="199" startPosition="65" endLine="200" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="581120860896078173" fileName="NewDevKitDialogContentPane.java" startLine="199" startPosition="65" endLine="200" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3734045384532741036" fileName="NewDevKitDialogContentPane.java" startLine="210" startPosition="31" endLine="211" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1204027196562" fileName="NewDevKitDialogContentPane.java" startLine="215" startPosition="38" endLine="216" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1204027187688" fileName="NewDevKitDialogContentPane.java" startLine="217" startPosition="5" endLine="218" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -308,7 +308,7 @@
     <nodeInfo nodeId="8115509433044634442" fileName="NewDevKitDialogContentPane.java" startLine="195" startPosition="59" endLine="207" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1204027050087" fileName="NewDevKitDialogContentPane.java" startLine="186" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onOk#()V" />
     <scopeInfo nodeId="4543209876460447837" fileName="NewDevKitDialogContentPane.java" startLine="203" startPosition="50" endLine="203" endPosition="50" />
-    <scopeInfo nodeId="4543209876460447824" fileName="NewDevKitDialogContentPane.java" startLine="199" startPosition="65" endLine="200" endPosition="48" />
+    <scopeInfo nodeId="4543209876460447824" fileName="NewDevKitDialogContentPane.java" startLine="199" startPosition="65" endLine="200" endPosition="58" />
     <scopeInfo nodeId="1204027087628" fileName="NewDevKitDialogContentPane.java" startLine="210" startPosition="31" endLine="211" endPosition="33" />
     <scopeInfo nodeId="1204027191788" fileName="NewDevKitDialogContentPane.java" startLine="215" startPosition="38" endLine="216" endPosition="13" />
     <scopeInfo nodeId="1204027305860" fileName="NewDevKitDialogContentPane.java" startLine="220" startPosition="90" endLine="221" endPosition="59" />

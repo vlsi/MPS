@@ -26,6 +26,9 @@ public class MPSMakeConfiguration {
     
     private final WhatToDo myWhatToDo = new WhatToDo();
 
+    public MPSMakeConfiguration() {
+      myWhatToDo.setLoadBootstrapLibraries(false);
+    }
     
     public File dumpToFile () throws FileNotFoundException {
         return myWhatToDo.dumpToTmpFile();

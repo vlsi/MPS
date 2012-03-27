@@ -327,7 +327,6 @@
     <orderEntry type="library" name="Idea-plaform" level="project" />
     <orderEntry type="module" module-name="mps-editor" />
     <orderEntry type="module" module-name="debugger-api" />
-    <orderEntry type="module" module-name="trove.runtime" />
   </component>
 </module>
 

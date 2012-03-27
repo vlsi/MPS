@@ -87,7 +87,7 @@ public class SelectionInfo {
     try {
       Class<Selection> selectionClass;
       if (myModuleID != null) {
-        IModule module = MPSModuleRepository.getInstance().getModuleByUID(myModuleID);
+        IModule module = MPSModuleRepository.getInstance().getModuleByFqName(myModuleID);
         if (module == null) {
           LOG.error("Specified selection class module was not found by ID: " + myModuleID);
           return null;

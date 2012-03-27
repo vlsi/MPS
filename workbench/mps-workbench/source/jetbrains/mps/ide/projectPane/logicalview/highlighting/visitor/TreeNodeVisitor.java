@@ -23,6 +23,8 @@ import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -38,22 +40,31 @@ public abstract class TreeNodeVisitor {
     }
     myExecutor.execute(new Runnable() {
       public void run() {
-        if (!TreeNodeUpdater.checkDisposed(node)) return;
+        boolean disposed = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+          public Boolean compute() {
+            return !TreeNodeUpdater.checkDisposed(node);
+          }
+        });
+        if (disposed) return;
 
         Project project = ProjectHelper.toIdeaProject(node.getOperationContext().getProject());
         if (project != null) {
           DumbService.getInstance(project).waitForSmartMode();
         }
 
-        if (node instanceof SModelTreeNode) {
-          visitModelNode(((SModelTreeNode) node));
-        }
-        if (node instanceof ProjectModuleTreeNode) {
-          visitModuleNode(((ProjectModuleTreeNode) node));
-        }
-        if (node instanceof ProjectTreeNode) {
-          visitProjectNode(((ProjectTreeNode) node));
-        }
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            if (node instanceof SModelTreeNode) {
+              visitModelNode(((SModelTreeNode) node));
+            }
+            if (node instanceof ProjectModuleTreeNode) {
+              visitModuleNode(((ProjectModuleTreeNode) node));
+            }
+            if (node instanceof ProjectTreeNode) {
+              visitProjectNode(((ProjectTreeNode) node));
+            }
+          }
+        });
       }
     });
   }

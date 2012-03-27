@@ -267,7 +267,7 @@ public class NewLanguageDialogContentPane extends JPanel {
   /*package*/ Language createNewLanguage() {
     myThis.setResult(NewModuleUtil.createModule(MPSExtentions.DOT_LANGUAGE, myThis.getLanguageNamespace(), myThis.getLanguagePath(), myThis.getProject(), new _FunctionTypes._return_P3_E0<Language, String, IFile, MPSProject>() {
       public Language invoke(String s, IFile f, MPSProject p) {
-        return Language.createLanguage(s, f, p);
+        return NewModuleUtil.createNewLanguage(s, f, p);
       }
     }, new _FunctionTypes._void_P1_E0<ModuleDescriptor>() {
       public void invoke(ModuleDescriptor d) {

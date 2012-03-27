@@ -266,10 +266,12 @@
       <compilerarg value="-Xlint:none"/>
       <src>
         <path path="${base_dir}/core/ant/source_gen"/>
+        <path path="${base_dir}/core/ant/resources"/>
       </src>
     </javac>
     <copy includeemptydirs="false" todir="${build_dir}/mpsbackend_jar">
       <fileset dir="${base_dir}/core/ant/source_gen" includes="**/*.png"/>
+      <fileset dir="${base_dir}/core/ant/resources" includes="**/*.xml"/>
     </copy>
     <jar destfile="${dist.dir}/mps-core/lib/mps-backend.jar">
       <fileset dir="${build_dir}/mpsbackend_jar"/>
@@ -310,15 +312,14 @@
       </manifest>
     </jar>
 
-    <!-- IDEA workbench -->
-    <mkdir dir="${build_dir}/mpsworkbench_jar"/>
-    <javac destdir="${build_dir}/mpsworkbench_jar" fork="true"
+    <!-- MPS platform -->
+    <mkdir dir="${build_dir}/mpsplatform_jar"/>
+    <javac destdir="${build_dir}/mpsplatform_jar" fork="true"
            memorymaximumsize="1024m"
            includeantruntime="false"
            debug="${javac.debug}" debuglevel="lines,vars,source">
       <compilerarg value="-Xlint:none"/>
       <src>
-        <!-- idea-workbench -->
         <path path="${base_dir}/workbench/mps-platform/source"/>
         <path path="${base_dir}/workbench/mps-platform/source_gen"/>
       </src>
@@ -327,11 +328,11 @@
         <fileset dir="${ideaPath}/lib" includes="*.jar"/>
       </classpath>
     </javac>
-    <copy includeemptydirs="false" todir="${build_dir}/mpsworkbench_jar">
+    <copy includeemptydirs="false" todir="${build_dir}/mpsplatform_jar">
       <fileset dir="${base_dir}/workbench/mps-platform/source" includes="**/*.png"/>
     </copy>
-    <jar destfile="${dist.dir}/mps-core/lib/mps-workbench.jar">
-      <fileset dir="${build_dir}/mpsworkbench_jar"/>
+    <jar destfile="${dist.dir}/mps-core/lib/mps-platform.jar">
+      <fileset dir="${build_dir}/mpsplatform_jar"/>
       <manifest>
         <attribute name="Built-By" value="${user.name}"/>
         <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
@@ -340,7 +341,7 @@
       </manifest>
     </jar>
 
-    <!-- IDEA editor -->
+    <!-- MPS editor -->
     <mkdir dir="${build_dir}/mpseditor_jar"/>
     <javac destdir="${build_dir}/mpseditor_jar" fork="true"
            memorymaximumsize="1024m"
@@ -741,7 +742,9 @@
       <zipfileset dir="${dist.dir}/mps-core" prefix="mps-core${plugin.prefix}">
         <exclude name="lib/*-tests.jar"/>
       </zipfileset>
-      <zipfileset file="${dist.dir}/mps-vcs.jar"/>
+      <zipfileset dir="${dist.dir}/mps-vcs" prefix="mps-vcs${plugin.prefix}">
+        <exclude name="lib/*-tests.jar"/>
+      </zipfileset>
       <zipfileset file="${dist.dir}/mps-java.jar"/>
     </zip>
   </target>
@@ -754,11 +757,15 @@
     <copy todir="${pluginPath}/mps-vcs">
       <fileset dir="${dist.dir}/mps-vcs"/>
     </copy>
+    <copy todir="${pluginPath}">
+      <fileset file="${dist.dir}/mps-java.jar"/>
+    </copy>
   </target>
 
   <target name="uninstall-plugin">
     <property name="pluginPath" value="${home.idea_ce.plugins}"/>
     <delete dir="${pluginPath}/mps-core"/>
-    <delete file="${pluginPath}/mps-vcs.jar"/>
+    <delete dir="${pluginPath}/mps-vcs"/>
+    <delete file="${pluginPath}/mps-java.jar"/>
   </target>
 </project>

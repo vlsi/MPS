@@ -99,7 +99,7 @@
     <nodeInfo nodeId="1058093769519026456" fileName="CopyPasteManager.java" startLine="95" startPosition="19" endLine="96" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1058093769519026370" fileName="CopyPasteManager.java" startLine="97" startPosition="5" endLine="98" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5948027493682745690" fileName="CopyPasteManager.java" startLine="98" startPosition="113" endLine="99" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1058093769519026214" fileName="CopyPasteManager.java" startLine="100" startPosition="83" endLine="101" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1058093769519026214" fileName="CopyPasteManager.java" startLine="100" startPosition="98" endLine="101" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2197509460969615726" fileName="CopyPasteManager.java" startLine="102" startPosition="43" endLine="103" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="2197509460969624901" fileName="CopyPasteManager.java" startLine="106" startPosition="40" endLine="107" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2197509460969624961" fileName="CopyPasteManager.java" startLine="111" startPosition="194" endLine="112" endPosition="395" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -208,7 +208,7 @@
       <varInfo nodeId="5948027493683571741" varName="copy" />
       <varInfo nodeId="5948027493683571804" varName="newNodesToSourceNodes" />
     </scopeInfo>
-    <scopeInfo nodeId="1058093769519026213" fileName="CopyPasteManager.java" startLine="100" startPosition="83" endLine="118" endPosition="7">
+    <scopeInfo nodeId="1058093769519026213" fileName="CopyPasteManager.java" startLine="100" startPosition="98" endLine="118" endPosition="7">
       <varInfo nodeId="1058093769519026215" varName="actionsModelDescriptor" />
       <varInfo nodeId="2197509460969615847" varName="roots" />
     </scopeInfo>

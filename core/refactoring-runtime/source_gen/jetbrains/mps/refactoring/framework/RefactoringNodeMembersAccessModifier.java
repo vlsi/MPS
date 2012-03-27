@@ -14,9 +14,9 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.refactoring.StructureModificationData;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.util.List;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 
@@ -85,7 +85,8 @@ public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessMod
     if (role != null) {
       return role;
     }
-    Language language = MPSModuleRepository.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(conceptFQName));
+    String fqName = NameUtil.namespaceFromConceptFQName(conceptFQName);
+    Language language = ModuleRepositoryFacade.getInstance().getModule(fqName, Language.class);
     if (language == null) {
       return null;
     }

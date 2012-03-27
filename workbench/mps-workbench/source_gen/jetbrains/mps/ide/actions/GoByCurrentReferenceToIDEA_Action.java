@@ -18,7 +18,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.StubSolution;
 import java.util.Set;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -99,7 +99,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
       SModel model = node.getModel();
       IModule module = model.getModelDescriptor().getModule();
       assert module != null;
-      if (module instanceof Solution && ((Solution) module).isStub()) {
+      if (module instanceof StubSolution) {
         Set<MPSModuleOwner> owners = MPSModuleRepository.getInstance().getOwners(module);
         assert !(owners.isEmpty());
         module = ((IModule) owners.iterator().next());

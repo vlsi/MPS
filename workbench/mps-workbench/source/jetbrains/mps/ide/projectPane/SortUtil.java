@@ -22,10 +22,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Comparing;
 import jetbrains.mps.util.ToStringComparator;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class SortUtil {
   public static List<SModelDescriptor> sortModels(List<SModelDescriptor> modelDescriptors) {
@@ -53,7 +50,7 @@ public class SortUtil {
     return sortedModels;
   }
 
-  public static List<IModule> sortModules(List<IModule> modules) {
+  public static List<IModule> sortModules(Collection<IModule> modules) {
     List<IModule> sortedModules = new ArrayList<IModule>(modules);
     Collections.sort(sortedModules, new Comparator() {
       public int compare(Object o1, Object o2) {

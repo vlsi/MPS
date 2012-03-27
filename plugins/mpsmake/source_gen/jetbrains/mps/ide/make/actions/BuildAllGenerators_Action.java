@@ -17,7 +17,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IOperationContext;
 
 public class BuildAllGenerators_Action extends BaseAction {
@@ -61,7 +62,7 @@ public class BuildAllGenerators_Action extends BaseAction {
       final Wrappers._T<List<IModule>> m = new Wrappers._T<List<IModule>>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          m.value = ListSequence.fromListWithValues(new ArrayList<IModule>(), MPSModuleRepository.getInstance().getAllGenerators());
+          m.value = ListSequence.fromListWithValues(new ArrayList<IModule>(), ModuleRepositoryFacade.getInstance().getAllModules(Generator.class));
         }
       });
 

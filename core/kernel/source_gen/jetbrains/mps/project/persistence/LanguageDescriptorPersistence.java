@@ -6,8 +6,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.util.Macros;
-import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.util.MacroHelper;
 import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Element;
@@ -23,8 +22,6 @@ import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.project.ModuleId;
-import java.io.File;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.io.OutputStream;
@@ -35,8 +32,7 @@ public class LanguageDescriptorPersistence {
   private LanguageDescriptorPersistence() {
   }
 
-  public static LanguageDescriptor loadLanguageDescriptor(final IFile file) {
-    final Macros macros = MacrosFactory.languageDescriptor();
+  public static LanguageDescriptor loadLanguageDescriptor(final IFile file, final MacroHelper macroHelper) {
     LanguageDescriptor descriptor;
 
     try {
@@ -45,30 +41,30 @@ public class LanguageDescriptorPersistence {
 
       descriptor = new _FunctionTypes._return_P0_E0<LanguageDescriptor>() {
         public LanguageDescriptor invoke() {
-          final LanguageDescriptor result_v3r4p8_a0a0d0d0a = new LanguageDescriptor();
-          final String result_v3r4p8_a0a0a0d0d0a = languageElement.getAttributeValue("namespace");
-          result_v3r4p8_a0a0d0d0a.setNamespace(result_v3r4p8_a0a0a0d0d0a);
+          final LanguageDescriptor result_v3r4p8_a0a0d0c0a = new LanguageDescriptor();
+          final String result_v3r4p8_a0a0a0d0c0a = languageElement.getAttributeValue("namespace");
+          result_v3r4p8_a0a0d0c0a.setNamespace(result_v3r4p8_a0a0a0d0c0a);
           if (languageElement.getAttributeValue("uuid") != null) {
-            final String result_v3r4p8_a0a1a0a0d0d0a = languageElement.getAttributeValue("uuid");
-            result_v3r4p8_a0a0d0d0a.setUUID(result_v3r4p8_a0a1a0a0d0d0a);
+            final String result_v3r4p8_a0a1a0a0d0c0a = languageElement.getAttributeValue("uuid");
+            result_v3r4p8_a0a0d0c0a.setUUID(result_v3r4p8_a0a1a0a0d0c0a);
           }
 
           if (languageElement.getAttributeValue("generatorOutputPath") != null) {
-            final String result_v3r4p8_a0a3a0a0d0d0a = macros.expandPath(languageElement.getAttributeValue("generatorOutputPath"), file);
-            result_v3r4p8_a0a0d0d0a.setGenPath(result_v3r4p8_a0a3a0a0d0d0a);
+            final String result_v3r4p8_a0a3a0a0d0c0a = macroHelper.expandPath(languageElement.getAttributeValue("generatorOutputPath"));
+            result_v3r4p8_a0a0d0c0a.setGenPath(result_v3r4p8_a0a3a0a0d0c0a);
           }
 
           if (ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "models")).isNotEmpty()) {
-            result_v3r4p8_a0a0d0d0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "models")).first(), "modelRoot"), file, macros));
+            result_v3r4p8_a0a0d0c0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "models")).first(), "modelRoot"), macroHelper));
           } else {
             // old - for backwards compatibility 
-            result_v3r4p8_a0a0d0d0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(AttributeUtils.elementChildren(languageElement, "modelRoot"), file, macros));
+            result_v3r4p8_a0a0d0c0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(AttributeUtils.elementChildren(languageElement, "modelRoot"), macroHelper));
           }
 
-          ModuleDescriptorPersistence.loadDependencies(result_v3r4p8_a0a0d0d0a, languageElement);
+          ModuleDescriptorPersistence.loadDependencies(result_v3r4p8_a0a0d0c0a, languageElement);
 
           for (Element extendedLanguage : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "extendedLanguages")).first(), "extendedLanguage"))) {
-            result_v3r4p8_a0a0d0d0a.getExtendedLanguages().add(ModuleReference.fromString(extendedLanguage.getText()));
+            result_v3r4p8_a0a0d0c0a.getExtendedLanguages().add(ModuleReference.fromString(extendedLanguage.getText()));
           }
 
           Element autoImports = ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "accessoryModels")).first();
@@ -77,71 +73,69 @@ public class LanguageDescriptorPersistence {
             autoImports = ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "library")).first();
           }
           for (Element modelElement : ListSequence.fromList(AttributeUtils.elementChildren(autoImports, "model"))) {
-            result_v3r4p8_a0a0d0d0a.getAccessoryModels().add(SModelReference.fromString(modelElement.getAttributeValue("modelUID")));
+            result_v3r4p8_a0a0d0c0a.getAccessoryModels().add(SModelReference.fromString(modelElement.getAttributeValue("modelUID")));
           }
 
           for (Element generatorElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "generators")).first(), "generator"))) {
-            result_v3r4p8_a0a0d0d0a.getGenerators().add(GeneratorDescriptorPersistence.loadGeneratorDescriptor(generatorElement, file, macros));
+            result_v3r4p8_a0a0d0c0a.getGenerators().add(GeneratorDescriptorPersistence.loadGeneratorDescriptor(generatorElement, file, macroHelper));
           }
 
           for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "classPath")).first(), "entry")).concat(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "runtimeClassPath")).first(), "entry")))) {
             // runtimeClassPath was left for compatibility 
             ModelRoot entry = new ModelRoot();
-            entry.setPath(macros.expandPath(entryElement.getAttributeValue("path"), file));
+            entry.setPath(macroHelper.expandPath(entryElement.getAttributeValue("path")));
             entry.setManager(LanguageID.JAVA_MANAGER);
-            result_v3r4p8_a0a0d0d0a.getStubModelEntries().add(entry);
+            result_v3r4p8_a0a0d0c0a.getStubModelEntries().add(entry);
           }
 
           if (ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "stubModelEntries")).isNotEmpty()) {
-            List<ModelRoot> roots = ModuleDescriptorPersistence.loadStubModelEntries(AttributeUtils.elementChildren(languageElement, "stubModelEntries"), file, macros);
-            result_v3r4p8_a0a0d0d0a.getStubModelEntries().addAll(roots);
+            List<ModelRoot> roots = ModuleDescriptorPersistence.loadStubModelEntries(AttributeUtils.elementChildren(languageElement, "stubModelEntries"), macroHelper);
+            result_v3r4p8_a0a0d0c0a.getStubModelEntries().addAll(roots);
           }
 
           for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "languageRuntimeClassPath")).first(), "entry"))) {
             ModelRoot entry = new ModelRoot();
-            entry.setPath(macros.expandPath(entryElement.getAttributeValue("path"), file));
+            entry.setPath(macroHelper.expandPath(entryElement.getAttributeValue("path")));
             entry.setManager(LanguageID.JAVA_MANAGER);
-            result_v3r4p8_a0a0d0d0a.getRuntimeStubModels().add(entry);
+            result_v3r4p8_a0a0d0c0a.getRuntimeStubModels().add(entry);
           }
 
           if (ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "runtimeStubModels")).isNotEmpty()) {
             for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "runtimeStubModels")).first(), "stubModelEntry"))) {
-              final ModelRoot result_v3r4p8_a0a0a32a0a0d0d0a = new ModelRoot();
-              final String result_v3r4p8_a0a0a0a32a0a0d0d0a = macros.expandPath(entryElement.getAttributeValue("path"), file);
-              result_v3r4p8_a0a0a32a0a0d0d0a.setPath(result_v3r4p8_a0a0a0a32a0a0d0d0a);
-              final ModelRootManager result_v3r4p8_a1a0a0a32a0a0d0d0a = new ModelRootManager();
-              final String result_v3r4p8_a0a1a0a0a32a0a0d0d0a = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(entryElement, "manager")).first().getAttributeValue("moduleId"), "");
-              result_v3r4p8_a1a0a0a32a0a0d0d0a.setModuleId(result_v3r4p8_a0a1a0a0a32a0a0d0d0a);
-              final String result_v3r4p8_a1a1a0a0a32a0a0d0d0a = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(entryElement, "manager")).first().getAttributeValue("className"), "");
-              result_v3r4p8_a1a0a0a32a0a0d0d0a.setClassName(result_v3r4p8_a1a1a0a0a32a0a0d0d0a);
-              result_v3r4p8_a0a0a32a0a0d0d0a.setManager(result_v3r4p8_a1a0a0a32a0a0d0d0a);
-              result_v3r4p8_a0a0d0d0a.getRuntimeStubModels().add(result_v3r4p8_a0a0a32a0a0d0d0a);
+              final ModelRoot result_v3r4p8_a0a0a32a0a0d0c0a = new ModelRoot();
+              final String result_v3r4p8_a0a0a0a32a0a0d0c0a = macroHelper.expandPath(entryElement.getAttributeValue("path"));
+              result_v3r4p8_a0a0a32a0a0d0c0a.setPath(result_v3r4p8_a0a0a0a32a0a0d0c0a);
+              final ModelRootManager result_v3r4p8_a1a0a0a32a0a0d0c0a = new ModelRootManager();
+              final String result_v3r4p8_a0a1a0a0a32a0a0d0c0a = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(entryElement, "manager")).first().getAttributeValue("moduleId"), "");
+              result_v3r4p8_a1a0a0a32a0a0d0c0a.setModuleId(result_v3r4p8_a0a1a0a0a32a0a0d0c0a);
+              final String result_v3r4p8_a1a1a0a0a32a0a0d0c0a = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(entryElement, "manager")).first().getAttributeValue("className"), "");
+              result_v3r4p8_a1a0a0a32a0a0d0c0a.setClassName(result_v3r4p8_a1a1a0a0a32a0a0d0c0a);
+              result_v3r4p8_a0a0a32a0a0d0c0a.setManager(result_v3r4p8_a1a0a0a32a0a0d0c0a);
+              result_v3r4p8_a0a0d0c0a.getRuntimeStubModels().add(result_v3r4p8_a0a0a32a0a0d0c0a);
             }
-            for (GeneratorDescriptor gd : ListSequence.fromList(result_v3r4p8_a0a0d0d0a.getGenerators())) {
-              gd.getModelRoots().addAll(result_v3r4p8_a0a0d0d0a.getRuntimeStubModels());
+            for (GeneratorDescriptor gd : ListSequence.fromList(result_v3r4p8_a0a0d0c0a.getGenerators())) {
+              gd.getModelRoots().addAll(result_v3r4p8_a0a0d0c0a.getRuntimeStubModels());
             }
           }
 
           if (ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "stubSolutions")).isNotEmpty()) {
             for (Element solutionElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "stubSolutions")).first(), "stubSolution"))) {
-              final StubSolution result_v3r4p8_a0a0a52a0a0d0d0a = new StubSolution();
-              final String result_v3r4p8_a0a0a0a52a0a0d0d0a = AttributeUtils.stringWithDefault(solutionElement.getAttributeValue("moduleName"), "");
-              result_v3r4p8_a0a0a52a0a0d0d0a.setName(result_v3r4p8_a0a0a0a52a0a0d0d0a);
-              final ModuleId result_v3r4p8_a1a0a0a52a0a0d0d0a = ModuleId.fromString(AttributeUtils.stringWithDefault(solutionElement.getAttributeValue("moduleId"), ""));
-              result_v3r4p8_a0a0a52a0a0d0d0a.setId(result_v3r4p8_a1a0a0a52a0a0d0d0a);
-              result_v3r4p8_a0a0d0d0a.getStubSolutions().add(result_v3r4p8_a0a0a52a0a0d0d0a);
+              final StubSolution result_v3r4p8_a0a0a52a0a0d0c0a = new StubSolution();
+              final String result_v3r4p8_a0a0a0a52a0a0d0c0a = AttributeUtils.stringWithDefault(solutionElement.getAttributeValue("moduleName"), "");
+              result_v3r4p8_a0a0a52a0a0d0c0a.setName(result_v3r4p8_a0a0a0a52a0a0d0c0a);
+              final ModuleId result_v3r4p8_a1a0a0a52a0a0d0c0a = ModuleId.fromString(AttributeUtils.stringWithDefault(solutionElement.getAttributeValue("moduleId"), ""));
+              result_v3r4p8_a0a0a52a0a0d0c0a.setId(result_v3r4p8_a1a0a0a52a0a0d0c0a);
+              result_v3r4p8_a0a0d0c0a.getStubSolutions().add(result_v3r4p8_a0a0a52a0a0d0c0a);
             }
           }
 
           for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "sourcePath")).first(), "source"))) {
-            result_v3r4p8_a0a0d0d0a.getSourcePaths().add(macros.expandPath(entryElement.getAttributeValue("path"), file));
+            result_v3r4p8_a0a0d0c0a.getSourcePaths().add(macroHelper.expandPath(entryElement.getAttributeValue("path")));
           }
 
-          final boolean result_v3r4p8_a92a0a0d0d0a = AttributeUtils.booleanWithDefault(languageElement.getAttributeValue("compileInMPS"), false);
-          result_v3r4p8_a0a0d0d0a.setCompileInMPS(result_v3r4p8_a92a0a0d0d0a);
-          final boolean result_v3r4p8_a03a0a0d0d0a = AttributeUtils.booleanWithDefault(languageElement.getAttributeValue("doNotGenerateAdapters"), false);
-          result_v3r4p8_a0a0d0d0a.setDoNotGenerateAdapters(result_v3r4p8_a03a0a0d0d0a);
-          return result_v3r4p8_a0a0d0d0a;
+          final boolean result_v3r4p8_a92a0a0d0c0a = AttributeUtils.booleanWithDefault(languageElement.getAttributeValue("doNotGenerateAdapters"), false);
+          result_v3r4p8_a0a0d0c0a.setDoNotGenerateAdapters(result_v3r4p8_a92a0a0d0c0a);
+          return result_v3r4p8_a0a0d0c0a;
         }
       }.invoke();
     } catch (Exception e) {
@@ -152,11 +146,7 @@ public class LanguageDescriptorPersistence {
     return descriptor;
   }
 
-  public static void saveLanguageDescriptor(File file, LanguageDescriptor descriptor) {
-    saveLanguageDescriptor(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()), descriptor);
-  }
-
-  public static void saveLanguageDescriptor(final IFile file, final LanguageDescriptor descriptor) {
+  public static void saveLanguageDescriptor(IFile file, final LanguageDescriptor descriptor, final MacroHelper macroHelper) {
     if (file.isReadOnly()) {
       if (log.isErrorEnabled()) {
         log.error("Cant't save " + file.getPath());
@@ -164,103 +154,100 @@ public class LanguageDescriptorPersistence {
       return;
     }
 
-    final Macros macros = MacrosFactory.languageDescriptor();
     Element languageElement = new _FunctionTypes._return_P0_E0<Element>() {
       public Element invoke() {
-        final Element result_v3r4p8_a0a0d0c = new Element("language");
-        final String result_v3r4p8_a0a0a0d0c = descriptor.getNamespace();
-        result_v3r4p8_a0a0d0c.setAttribute("namespace", "" + result_v3r4p8_a0a0a0d0c);
+        final Element result_v3r4p8_a0a0c0b = new Element("language");
+        final String result_v3r4p8_a0a0a0c0b = descriptor.getNamespace();
+        result_v3r4p8_a0a0c0b.setAttribute("namespace", "" + result_v3r4p8_a0a0a0c0b);
         if (descriptor.getUUID() != null) {
-          final String result_v3r4p8_a0a1a0a0d0c = descriptor.getUUID();
-          result_v3r4p8_a0a0d0c.setAttribute("uuid", "" + result_v3r4p8_a0a1a0a0d0c);
+          final String result_v3r4p8_a0a1a0a0c0b = descriptor.getUUID();
+          result_v3r4p8_a0a0c0b.setAttribute("uuid", "" + result_v3r4p8_a0a1a0a0c0b);
         }
         if (descriptor.getGenPath() != null) {
-          final String result_v3r4p8_a0a2a0a0d0c = macros.shrinkPath(descriptor.getGenPath(), file);
-          result_v3r4p8_a0a0d0c.setAttribute("generatorOutputPath", "" + result_v3r4p8_a0a2a0a0d0c);
+          final String result_v3r4p8_a0a2a0a0c0b = macroHelper.shrinkPath(descriptor.getGenPath());
+          result_v3r4p8_a0a0c0b.setAttribute("generatorOutputPath", "" + result_v3r4p8_a0a2a0a0c0b);
         }
 
-        final Element result_v3r4p8_a4a0a0d0c = new Element("models");
-        ModuleDescriptorPersistence.saveModelRoots(result_v3r4p8_a4a0a0d0c, descriptor.getModelRoots(), file, macros);
-        result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a4a0a0d0c);
+        final Element result_v3r4p8_a4a0a0c0b = new Element("models");
+        ModuleDescriptorPersistence.saveModelRoots(result_v3r4p8_a4a0a0c0b, descriptor.getModelRoots(), macroHelper);
+        result_v3r4p8_a0a0c0b.addContent(result_v3r4p8_a4a0a0c0b);
 
-        final Element result_v3r4p8_a6a0a0d0c = new Element("accessoryModels");
+        final Element result_v3r4p8_a6a0a0c0b = new Element("accessoryModels");
         for (SModelReference model : SetSequence.fromSet(descriptor.getAccessoryModels())) {
-          final Element result_v3r4p8_a0a0a6a0a0d0c = new Element("model");
-          final String result_v3r4p8_a0a0a0a6a0a0d0c = model.toString();
-          result_v3r4p8_a0a0a6a0a0d0c.setAttribute("modelUID", "" + result_v3r4p8_a0a0a0a6a0a0d0c);
-          result_v3r4p8_a6a0a0d0c.addContent(result_v3r4p8_a0a0a6a0a0d0c);
+          final Element result_v3r4p8_a0a0a6a0a0c0b = new Element("model");
+          final String result_v3r4p8_a0a0a0a6a0a0c0b = model.toString();
+          result_v3r4p8_a0a0a6a0a0c0b.setAttribute("modelUID", "" + result_v3r4p8_a0a0a0a6a0a0c0b);
+          result_v3r4p8_a6a0a0c0b.addContent(result_v3r4p8_a0a0a6a0a0c0b);
         }
-        result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a6a0a0d0c);
+        result_v3r4p8_a0a0c0b.addContent(result_v3r4p8_a6a0a0c0b);
 
-        final Element result_v3r4p8_a8a0a0d0c = new Element("generators");
+        final Element result_v3r4p8_a8a0a0c0b = new Element("generators");
         for (GeneratorDescriptor generatorDescriptor : ListSequence.fromList(descriptor.getGenerators())) {
-          GeneratorDescriptorPersistence.saveGeneratorDescriptor(result_v3r4p8_a8a0a0d0c, generatorDescriptor, file, macros);
+          GeneratorDescriptorPersistence.saveGeneratorDescriptor(result_v3r4p8_a8a0a0c0b, generatorDescriptor, macroHelper);
         }
-        result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a8a0a0d0c);
+        result_v3r4p8_a0a0c0b.addContent(result_v3r4p8_a8a0a0c0b);
 
 
         if (!(descriptor.getStubModelEntries().isEmpty())) {
-          final Element result_v3r4p8_a0a11a0a0d0c = new Element("stubModelEntries");
-          ModuleDescriptorPersistence.saveStubModelEntries(result_v3r4p8_a0a11a0a0d0c, descriptor.getStubModelEntries(), file, macros);
-          result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a0a11a0a0d0c);
+          final Element result_v3r4p8_a0a11a0a0c0b = new Element("stubModelEntries");
+          ModuleDescriptorPersistence.saveStubModelEntries(result_v3r4p8_a0a11a0a0c0b, descriptor.getStubModelEntries(), macroHelper);
+          result_v3r4p8_a0a0c0b.addContent(result_v3r4p8_a0a11a0a0c0b);
         }
 
 
         if (!(descriptor.getRuntimeStubModels().isEmpty())) {
-          final Element result_v3r4p8_a0a41a0a0d0c = new Element("runtimeStubModels");
+          final Element result_v3r4p8_a0a41a0a0c0b = new Element("runtimeStubModels");
           for (ModelRoot entry : SetSequence.fromSet(descriptor.getRuntimeStubModels())) {
-            final Element result_v3r4p8_a0a0a0a41a0a0d0c = new Element("stubModelEntry");
-            final String result_v3r4p8_a0a0a0a0a41a0a0d0c = macros.shrinkPath(entry.getPath(), file);
-            result_v3r4p8_a0a0a0a41a0a0d0c.setAttribute("path", "" + result_v3r4p8_a0a0a0a0a41a0a0d0c);
-            final Element result_v3r4p8_a1a0a0a0a41a0a0d0c = new Element("manager");
-            final String result_v3r4p8_a0a1a0a0a0a41a0a0d0c = entry.getManager().getModuleId();
-            result_v3r4p8_a1a0a0a0a41a0a0d0c.setAttribute("moduleId", "" + result_v3r4p8_a0a1a0a0a0a41a0a0d0c);
-            final String result_v3r4p8_a1a1a0a0a0a41a0a0d0c = entry.getManager().getClassName();
-            result_v3r4p8_a1a0a0a0a41a0a0d0c.setAttribute("className", "" + result_v3r4p8_a1a1a0a0a0a41a0a0d0c);
-            result_v3r4p8_a0a0a0a41a0a0d0c.addContent(result_v3r4p8_a1a0a0a0a41a0a0d0c);
-            result_v3r4p8_a0a41a0a0d0c.addContent(result_v3r4p8_a0a0a0a41a0a0d0c);
+            final Element result_v3r4p8_a0a0a0a41a0a0c0b = new Element("stubModelEntry");
+            final String result_v3r4p8_a0a0a0a0a41a0a0c0b = macroHelper.shrinkPath(entry.getPath());
+            result_v3r4p8_a0a0a0a41a0a0c0b.setAttribute("path", "" + result_v3r4p8_a0a0a0a0a41a0a0c0b);
+            final Element result_v3r4p8_a1a0a0a0a41a0a0c0b = new Element("manager");
+            final String result_v3r4p8_a0a1a0a0a0a41a0a0c0b = entry.getManager().getModuleId();
+            result_v3r4p8_a1a0a0a0a41a0a0c0b.setAttribute("moduleId", "" + result_v3r4p8_a0a1a0a0a0a41a0a0c0b);
+            final String result_v3r4p8_a1a1a0a0a0a41a0a0c0b = entry.getManager().getClassName();
+            result_v3r4p8_a1a0a0a0a41a0a0c0b.setAttribute("className", "" + result_v3r4p8_a1a1a0a0a0a41a0a0c0b);
+            result_v3r4p8_a0a0a0a41a0a0c0b.addContent(result_v3r4p8_a1a0a0a0a41a0a0c0b);
+            result_v3r4p8_a0a41a0a0c0b.addContent(result_v3r4p8_a0a0a0a41a0a0c0b);
           }
-          result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a0a41a0a0d0c);
+          result_v3r4p8_a0a0c0b.addContent(result_v3r4p8_a0a41a0a0c0b);
         }
 
         if (!(descriptor.getStubSolutions().isEmpty())) {
-          final Element result_v3r4p8_a0a61a0a0d0c = new Element("stubSolutions");
+          final Element result_v3r4p8_a0a61a0a0c0b = new Element("stubSolutions");
           for (StubSolution entry : SetSequence.fromSet(descriptor.getStubSolutions())) {
-            final Element result_v3r4p8_a0a0a0a61a0a0d0c = new Element("stubSolution");
-            final String result_v3r4p8_a0a0a0a0a61a0a0d0c = entry.getName();
-            result_v3r4p8_a0a0a0a61a0a0d0c.setAttribute("moduleName", "" + result_v3r4p8_a0a0a0a0a61a0a0d0c);
-            final String result_v3r4p8_a1a0a0a0a61a0a0d0c = entry.getId().toString();
-            result_v3r4p8_a0a0a0a61a0a0d0c.setAttribute("moduleId", "" + result_v3r4p8_a1a0a0a0a61a0a0d0c);
-            result_v3r4p8_a0a61a0a0d0c.addContent(result_v3r4p8_a0a0a0a61a0a0d0c);
+            final Element result_v3r4p8_a0a0a0a61a0a0c0b = new Element("stubSolution");
+            final String result_v3r4p8_a0a0a0a0a61a0a0c0b = entry.getName();
+            result_v3r4p8_a0a0a0a61a0a0c0b.setAttribute("moduleName", "" + result_v3r4p8_a0a0a0a0a61a0a0c0b);
+            final String result_v3r4p8_a1a0a0a0a61a0a0c0b = entry.getId().toString();
+            result_v3r4p8_a0a0a0a61a0a0c0b.setAttribute("moduleId", "" + result_v3r4p8_a1a0a0a0a61a0a0c0b);
+            result_v3r4p8_a0a61a0a0c0b.addContent(result_v3r4p8_a0a0a0a61a0a0c0b);
           }
-          result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a0a61a0a0d0c);
+          result_v3r4p8_a0a0c0b.addContent(result_v3r4p8_a0a61a0a0c0b);
         }
 
-        final Element result_v3r4p8_a81a0a0d0c = new Element("sourcePath");
+        final Element result_v3r4p8_a81a0a0c0b = new Element("sourcePath");
         for (String p : CollectionSequence.fromCollection(descriptor.getSourcePaths())) {
-          final Element result_v3r4p8_a0a0a81a0a0d0c = new Element("source");
-          final String result_v3r4p8_a0a0a0a81a0a0d0c = macros.shrinkPath(p, file);
-          result_v3r4p8_a0a0a81a0a0d0c.setAttribute("path", "" + result_v3r4p8_a0a0a0a81a0a0d0c);
-          result_v3r4p8_a81a0a0d0c.addContent(result_v3r4p8_a0a0a81a0a0d0c);
+          final Element result_v3r4p8_a0a0a81a0a0c0b = new Element("source");
+          final String result_v3r4p8_a0a0a0a81a0a0c0b = macroHelper.shrinkPath(p);
+          result_v3r4p8_a0a0a81a0a0c0b.setAttribute("path", "" + result_v3r4p8_a0a0a0a81a0a0c0b);
+          result_v3r4p8_a81a0a0c0b.addContent(result_v3r4p8_a0a0a81a0a0c0b);
         }
-        result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a81a0a0d0c);
+        result_v3r4p8_a0a0c0b.addContent(result_v3r4p8_a81a0a0c0b);
 
-        final boolean result_v3r4p8_a02a0a0d0c = descriptor.getCompileInMPS();
-        result_v3r4p8_a0a0d0c.setAttribute("compileInMPS", "" + result_v3r4p8_a02a0a0d0c);
-        final boolean result_v3r4p8_a12a0a0d0c = descriptor.isDoNotGenerateAdapters();
-        result_v3r4p8_a0a0d0c.setAttribute("doNotGenerateAdapters", "" + result_v3r4p8_a12a0a0d0c);
+        final boolean result_v3r4p8_a02a0a0c0b = descriptor.isDoNotGenerateAdapters();
+        result_v3r4p8_a0a0c0b.setAttribute("doNotGenerateAdapters", "" + result_v3r4p8_a02a0a0c0b);
 
-        ModuleDescriptorPersistence.saveDependencies(result_v3r4p8_a0a0d0c, descriptor);
+        ModuleDescriptorPersistence.saveDependencies(result_v3r4p8_a0a0c0b, descriptor);
 
-        final Element result_v3r4p8_a52a0a0d0c = new Element("extendedLanguages");
+        final Element result_v3r4p8_a42a0a0c0b = new Element("extendedLanguages");
         for (ModuleReference ref : SetSequence.fromSet(descriptor.getExtendedLanguages())) {
-          final Element result_v3r4p8_a0a0a52a0a0d0c = new Element("extendedLanguage");
-          final String result_v3r4p8_a0a0a0a52a0a0d0c = ref.toString();
-          result_v3r4p8_a0a0a52a0a0d0c.setText(result_v3r4p8_a0a0a0a52a0a0d0c);
-          result_v3r4p8_a52a0a0d0c.addContent(result_v3r4p8_a0a0a52a0a0d0c);
+          final Element result_v3r4p8_a0a0a42a0a0c0b = new Element("extendedLanguage");
+          final String result_v3r4p8_a0a0a0a42a0a0c0b = ref.toString();
+          result_v3r4p8_a0a0a42a0a0c0b.setText(result_v3r4p8_a0a0a0a42a0a0c0b);
+          result_v3r4p8_a42a0a0c0b.addContent(result_v3r4p8_a0a0a42a0a0c0b);
         }
-        result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a52a0a0d0c);
-        return result_v3r4p8_a0a0d0c;
+        result_v3r4p8_a0a0c0b.addContent(result_v3r4p8_a42a0a0c0b);
+        return result_v3r4p8_a0a0c0b;
       }
     }.invoke();
 

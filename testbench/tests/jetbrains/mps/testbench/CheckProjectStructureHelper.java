@@ -47,7 +47,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.*;
+import javax.swing.SwingUtilities;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -81,7 +81,7 @@ public class CheckProjectStructureHelper {
                   continue;
                 }
 
-                MPSModuleRepository.getInstance().registerModule(handle, mpsModuleOwner);
+                ModuleRepositoryFacade.createModule(handle, mpsModuleOwner);
               }
 
               ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());

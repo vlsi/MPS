@@ -88,8 +88,8 @@ public class LibraryInitializer implements CoreComponent {
     assert owner != null;
 
     List<IModule> loaded = new ArrayList<IModule>();
-    for (ModuleHandle m : modules) {
-      IModule module = MPSModuleRepository.getInstance().registerModule(m, owner);
+    for (ModuleHandle handle : modules) {
+      IModule module = ModuleRepositoryFacade.createModule(handle, owner);
       module.onModuleLoad();
       loaded.add(module);
     }
@@ -103,7 +103,7 @@ public class LibraryInitializer implements CoreComponent {
     HashSet<String> toUnload = new HashSet<String>(loadedLibs);
     toUnload.removeAll(newLibs);
     for (String unloadLib : toUnload) {
-      myRepo.unRegisterModules(myLibsToOwners.remove(unloadLib));
+      ModuleRepositoryFacade.getInstance().unregisterModules(myLibsToOwners.remove(unloadLib));
     }
 
     //load new
@@ -140,9 +140,9 @@ public class LibraryInitializer implements CoreComponent {
   public <M extends IModule> Set<M> getBootstrapModules(Class<M> cls) {
     List<M> result = new ArrayList<M>();
     for (String path : PathManager.getBootstrapPaths()) {
-      result.addAll(myRepo.getModules(myLibsToOwners.get(path), cls));
+      result.addAll(ModuleRepositoryFacade.getInstance().getModules(myLibsToOwners.get(path), cls));
     }
-    result.addAll(myRepo.getModules(myLibsToOwners.get(PathManager.getLanguagesPath()), cls));
+    result.addAll(ModuleRepositoryFacade.getInstance().getModules(myLibsToOwners.get(PathManager.getLanguagesPath()), cls));
 
     addGenerators(cls, result);
 

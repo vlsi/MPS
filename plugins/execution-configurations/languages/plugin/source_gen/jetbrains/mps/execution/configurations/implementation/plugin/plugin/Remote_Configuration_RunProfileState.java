@@ -52,7 +52,7 @@ public class Remote_Configuration_RunProfileState extends DebuggerRunProfileStat
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
     ConsoleView console = ConsoleCreator.createConsoleView(project, false);
-    console.addMessageFilter(new JavaStackTraceFilter());
+    console.addMessageFilter(new JavaStackTraceFilter(project));
     {
       ProcessHandler _processHandler = new RemoteProcessHandler(project);
       final ConsoleView _consoleView = console;

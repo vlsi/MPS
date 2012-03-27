@@ -5,7 +5,7 @@ package jetbrains.mps.build.generictasks.pluginSolution.plugin;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModel;
 
 public class ImportAntStuffUtil {
@@ -27,7 +27,7 @@ public class ImportAntStuffUtil {
   }
 
   public static Language getLanguageReference() {
-    return MPSModuleRepository.getInstance().getLanguage(LANGUAGE_NAMESPACE);
+    return ModuleRepositoryFacade.getInstance().getModule(LANGUAGE_NAMESPACE, Language.class);
   }
 
   public static SModel[] getAllModels(Language l) {

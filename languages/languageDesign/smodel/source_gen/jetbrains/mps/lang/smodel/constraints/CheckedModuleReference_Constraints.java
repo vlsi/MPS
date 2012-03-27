@@ -55,7 +55,7 @@ public class CheckedModuleReference_Constraints extends BaseConstraintsDescripto
       public void setValue(SNode node, String propertyValue, IScope scope) {
         String propertyName = "moduleId";
         {
-          IModule module = MPSModuleRepository.getInstance().getModuleByUID((SPropertyOperations.getString(propertyValue)));
+          IModule module = MPSModuleRepository.getInstance().getModuleByFqName((SPropertyOperations.getString(propertyValue)));
           SPropertyOperations.set(node, "moduleId", module.getModuleReference().toString());
         }
       }
@@ -69,7 +69,7 @@ public class CheckedModuleReference_Constraints extends BaseConstraintsDescripto
       public boolean validateValue(SNode node, String propertyValue, IScope scope) {
         String propertyName = "moduleId";
         {
-          IModule module = MPSModuleRepository.getInstance().getModuleByUID((SPropertyOperations.getString(propertyValue)));
+          IModule module = MPSModuleRepository.getInstance().getModuleByFqName((SPropertyOperations.getString(propertyValue)));
           return module != null;
         }
       }

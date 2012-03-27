@@ -10,7 +10,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 
@@ -25,8 +25,8 @@ public class DevKitChooser implements Computable<List<ModuleReference>> {
     final Wrappers._T<List<ModuleReference>> dkRefs = new Wrappers._T<List<ModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        List<DevKit> devkits = GlobalScope.getInstance().getVisibleDevkits();
-        dkRefs.value = ListSequence.fromList(devkits).select(new ISelector<DevKit, ModuleReference>() {
+        Iterable<DevKit> devkits = GlobalScope.getInstance().getVisibleDevkits();
+        dkRefs.value = Sequence.fromIterable(devkits).select(new ISelector<DevKit, ModuleReference>() {
           public ModuleReference select(DevKit it) {
             return it.getModuleReference();
           }

@@ -23,7 +23,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.build.gentest.pluginSolution.plugin.Differ;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.make.script.IFeedback;

@@ -11,8 +11,7 @@ import jetbrains.mps.util.PathManager;
 import java.io.File;
 import java.util.List;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.smodel.ModuleFileTracker;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
@@ -21,11 +20,15 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Collection;
 
 public class CheckUtil {
   protected static Log log = LogFactory.getLog(CheckUtil.class);
@@ -44,7 +47,7 @@ public class CheckUtil {
     }
 
     String samplesPath = PathManager.getHomePath() + File.separator + "samples";
-    List<IModule> sampleModules = MPSModuleRepository.getInstance().getAllModulesInDirectory(FileSystem.getInstance().getFileByPath(samplesPath));
+    List<IModule> sampleModules = ModuleFileTracker.getInstance().findModulesUnderDir(samplesPath);
     for (IModule module : ListSequence.fromList(sampleModules)) {
       if (!(module.isCompileInMPS())) {
         String msg = "Module " + module.getModuleFqName() + " is a sample, but is not compiled in MPS";
@@ -77,8 +80,8 @@ public class CheckUtil {
       }
     });
 
-    for (Solution solution : ListSequence.fromList(MPSModuleRepository.getInstance().getAllSolutions())) {
-      if (solution.isStub()) {
+    for (Solution solution : CollectionSequence.fromCollection(ModuleRepositoryFacade.getInstance().getAllModules(Solution.class))) {
+      if (solution instanceof StubSolution) {
         continue;
       }
       if (solution.getModuleDescriptor().getCompileInMPS()) {
@@ -104,7 +107,7 @@ public class CheckUtil {
   }
 
   public static void checkIncludedLanguage() {
-    List<Language> langs = MPSModuleRepository.getInstance().getAllLanguages();
+    Collection<Language> langs = ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
     for (SNode moduleNode : ListSequence.fromList(SModelOperations.getNodes(SNodeOperations.getModel(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "8431776905956472858")), "jetbrains.mps.build.packaging.structure.Module"))) {
       IModule module = Module_Behavior.call_getModule_1213877515148(moduleNode);
       if (!(module instanceof Language)) {
@@ -117,7 +120,7 @@ public class CheckUtil {
     if (log.isInfoEnabled()) {
       log.info("Check finished");
     }
-    for (Language l : ListSequence.fromList(langs)) {
+    for (Language l : CollectionSequence.fromCollection(langs)) {
       if (log.isWarnEnabled()) {
         log.warn(l.getModuleFqName());
       }

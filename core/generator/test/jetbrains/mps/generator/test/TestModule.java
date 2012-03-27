@@ -47,21 +47,10 @@ public class TestModule extends AbstractModule {
     myPeer = peer;
     ModuleReference reference = new ModuleReference(namespace, moduleId);
     setModuleReference(reference);
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        MPSModuleRepository.getInstance().addModule(TestModule.this, new MPSModuleOwner() {
-        });
-      }
-    });
   }
 
   public void dispose() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        clearAll();
-        MPSModuleRepository.getInstance().removeModule(TestModule.this);
-      }
-    });
+    clearAll();
     super.dispose();
   }
 
@@ -101,7 +90,6 @@ public class TestModule extends AbstractModule {
   }
 
   private void clearAll() {
-    SModelRepository.getInstance().unRegisterModelDescriptors(this);
     invalidateCaches();
     myPeer = null;
     myModels.clear();

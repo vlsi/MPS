@@ -35,7 +35,7 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
-import java.util.List;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -194,8 +194,8 @@ public class NewGeneratorDialog extends BaseDialog {
         language.save();
       }
     });
-    List<Generator> generators = language.getGenerators();
-    return generators.get(generators.size() - 1);
+
+    return (Generator) MPSModuleRepository.getInstance().getModuleById(generatorDescriptor.getId());
   }
 
   private String getTemplateModelPrefix(Language sourceLanguage) {

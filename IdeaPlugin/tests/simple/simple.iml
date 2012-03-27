@@ -5,10 +5,12 @@
       <configuration>
         <option name="UUID" value="d0f4bd7b-61e2-4fa9-8e5c-05dad95b4507" />
         <option name="generatorOutputPath" value="$MODULE_DIR$/src" />
-        <option name="modelRootPaths">
-          <array>
-            <option value="$MODULE_DIR$/models" />
-          </array>
+        <option name="modelRoots">
+          <set>
+            <ModelRoot>
+              <option name="path" value="$MODULE_DIR$/models" />
+            </ModelRoot>
+          </set>
         </option>
         <option name="useTransientOutputFolder" value="true" />
         <option name="usedLanguages">

@@ -37,6 +37,7 @@ import jetbrains.mps.vfs.IFile;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
@@ -207,11 +208,6 @@ public abstract class AbstractModule implements IModule {
     IFile classFolder = getClassesGen();
     if (classFolder == null) return Collections.emptyList();
 
-    String file = classFolder.getPath();
-    if (file.endsWith("!/")) {
-      file = file.substring(0, file.length() - 2);
-    }
-
     return Collections.singletonList(new StubPath(classFolder.getPath(), LanguageID.JAVA_MANAGER));
   }
 
@@ -259,7 +255,7 @@ public abstract class AbstractModule implements IModule {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return;
 
-    IFile bundleHomeFile = getBundleHome();
+    final IFile bundleHomeFile = getBundleHome();
     if (bundleHomeFile == null) return;
 
     IFile bundleParent = bundleHomeFile.getParent();
@@ -272,17 +268,21 @@ public abstract class AbstractModule implements IModule {
       packagedSourcesPath = null;
     }
 
-    if (addBundleAsLibrary() && descriptor.getDeploymentDescriptor() != null) {
-      descriptor.getDeploymentDescriptor().getLibraries().add(bundleHomeFile.getName());
-    }
+    boolean addBundleAsModelRoot = false;
+    final DeploymentDescriptor dd = descriptor.getDeploymentDescriptor();
+    String libPath = dd == null ? FileUtil.getCanonicalPath(PathManager.getHomePath() + File.separator + "lib").toLowerCase() : null;
 
     // stub libraries
     List<ModelRoot> toRemove = new ArrayList<ModelRoot>();
     for (ModelRoot sme : descriptor.getStubModelEntries()) {
       String path = sme.getPath();
-      if (packagedSourcesPath == null || !FileUtil.getCanonicalPath(path).toLowerCase().startsWith(packagedSourcesPath)) {
-        String shrinked = MacrosFactory.moduleDescriptor(this).shrinkPath(path, getDescriptorFile());
+      String canonicalPath = FileUtil.getCanonicalPath(path).toLowerCase();
+      if (packagedSourcesPath == null || !canonicalPath.startsWith(packagedSourcesPath)) {
+        String shrinked = MacrosFactory.forModuleFile(getDescriptorFile()).shrinkPath(path);
         if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
+      }
+      if (dd == null && canonicalPath.startsWith(libPath)) {
+        continue;
       }
       toRemove.add(sme);
     }
@@ -292,18 +292,42 @@ public abstract class AbstractModule implements IModule {
     toRemove.clear();
     for (ModelRoot sme : descriptor.getModelRoots()) {
       if (!LanguageID.JAVA_MANAGER.equals(sme.getManager())) continue;
-
       String path = sme.getPath();
-      if (packagedSourcesPath == null || !FileUtil.getCanonicalPath(path).toLowerCase().startsWith(packagedSourcesPath)) {
-        String shrinked = MacrosFactory.moduleDescriptor(this).shrinkPath(path, getDescriptorFile());
+      String canonicalPath = FileUtil.getCanonicalPath(path).toLowerCase();
+
+      if (!descriptor.getCompileInMPS()) {
+        if (canonicalPath.endsWith("classes")) {
+          IFile parent = getDescriptorFile().getParent();
+          IFile classes = parent != null ? parent.getDescendant("classes") : null;
+          addBundleAsModelRoot = classes != null && FileUtil.getCanonicalPath(classes.getPath()).equalsIgnoreCase(canonicalPath);
+        } else if (FileUtil.getCanonicalPath(bundleHomeFile.getPath()).equalsIgnoreCase(canonicalPath)) {
+          addBundleAsModelRoot = true;
+        }
+      }
+
+
+      if (packagedSourcesPath == null || !canonicalPath.startsWith(packagedSourcesPath)) {
+        String shrinked = MacrosFactory.forModuleFile(getDescriptorFile()).shrinkPath(path);
         if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
+      }
+      if (dd == null && canonicalPath.startsWith(libPath)) {
+        continue;
       }
       toRemove.add(sme);
     }
     descriptor.getModelRoots().removeAll(toRemove);
 
-    DeploymentDescriptor dd = descriptor.getDeploymentDescriptor();
-    if (dd == null) return;
+    if (dd == null) {
+      if (addBundleAsModelRoot) {
+        ClassPathEntry jarEntry = new ClassPathEntry();
+        jarEntry.setPath(bundleHomeFile.getPath());
+        ModelRoot mr = jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(jarEntry);
+        if (!descriptor.getModelRoots().contains(mr)) {
+          descriptor.getModelRoots().add(mr);
+        }
+      }
+      return;
+    }
 
     for (String jarFile : dd.getLibraries()) {
       IFile jar = jarFile.startsWith("/")
@@ -317,18 +341,6 @@ public abstract class AbstractModule implements IModule {
         descriptor.getModelRoots().add(mr);
       }
     }
-  }
-
-  protected boolean addBundleAsLibrary() {
-    if (getModuleDescriptor() != null && !getModuleDescriptor().getCompileInMPS()) {
-      for (ModelRoot sme : getModuleDescriptor().getStubModelEntries()) {
-        if (sme.getManager().getClassName().startsWith("JavaStubs") &&
-          (MacrosFactory.SOLUTION_DESCRIPTOR + "/classes").equals(sme.getPath())) {
-          return true;
-        }
-      }
-    }
-    return false;
   }
 
   public IClassPathItem getClassPathItem() {
@@ -374,9 +386,8 @@ public abstract class AbstractModule implements IModule {
   }
 
   protected void reloadAfterDescriptorChange() {
-    updateModelsSet();
-
     updatePackagedDescriptorClasspath();
+    updateModelsSet();
     invalidateClassPath();
   }
 
@@ -384,9 +395,7 @@ public abstract class AbstractModule implements IModule {
     updateSModelReferences();
     updateModuleReferences();
 
-    if (isPackaged()) {
-      updatePackagedDescriptorClasspath();
-    } else {
+    if (!isPackaged()) {
       Set<ModelRoot> visited = new HashSet<ModelRoot>();
       List<ModelRoot> remove = new ArrayList<ModelRoot>();
       for (ModelRoot e : getModuleDescriptor().getStubModelEntries()) {
@@ -440,6 +449,7 @@ public abstract class AbstractModule implements IModule {
 
   public void dispose() {
     mySModelRoots.clear();
+    SModelRepository.getInstance().unRegisterModelDescriptors(this);
   }
 
   public List<String> getSourcePaths() {
@@ -460,17 +470,21 @@ public abstract class AbstractModule implements IModule {
   }
 
   public void updateModelsSet() {
-    mySModelRoots.clear();
+    mySModelRoots = doUpdateModelsSet();
+    fireModuleInitialized();
+  }
 
+  protected Set<SModelRoot> doUpdateModelsSet() {
     List<SModelReference> allLoadedModels = new ArrayList<SModelReference>();
     ModuleDescriptor descriptor = getModuleDescriptor();
+    Set<SModelRoot> result = new jetbrains.mps.util.misc.hash.HashSet<SModelRoot>();
     if (descriptor != null) {
       SModelRepository smRepo = SModelRepository.getInstance();
       Collection<ModelRoot> roots = descriptor.getModelRoots();
       for (ModelRoot modelRoot : roots) {
         try {
           SModelRoot root = new SModelRoot(modelRoot);
-          mySModelRoots.add(root);
+          result.add(root);
           IModelRootManager manager = root.getManager();
           if (manager == null) continue;
           //model with model root manager not yet loaded - should be loaded after classes reloading
@@ -495,8 +509,7 @@ public abstract class AbstractModule implements IModule {
         smRepo.unRegisterModelDescriptor(md, this);
       }
     }
-
-    fireModuleInitialized();
+    return result;
   }
 
   protected void fireModuleInitialized() {
@@ -517,8 +530,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   public boolean isCompileInMPS() {
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    return descriptor != null && descriptor.getCompileInMPS();
+    return false;
   }
 
   public boolean reloadClassesAfterGeneration() {

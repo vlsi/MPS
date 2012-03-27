@@ -95,7 +95,7 @@ public class LanguageRegistry implements CoreComponent {
     notifyUnload(myLanguages.values(), true);
     myLanguages.clear();
     Set<Language> existing = new HashSet<Language>(myLanguageToNamespace.keySet());
-    for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
+    for (Language l : (List<Language>) ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
       String namespace = l.getModuleFqName();
       if (!myLanguages.containsKey(namespace)) {
         existing.remove(l);

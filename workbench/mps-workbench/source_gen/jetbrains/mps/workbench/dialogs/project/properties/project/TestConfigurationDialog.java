@@ -31,13 +31,15 @@ import java.awt.Component;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import java.util.List;
+import java.util.Set;
 import jetbrains.mps.project.IModule;
+import java.util.List;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelReference;
@@ -232,7 +234,7 @@ public class TestConfigurationDialog extends BaseDialog {
       myModuleUID = new JTextField();
       JButton button = new JButton(new AbstractAction("Select") {
         public void actionPerformed(ActionEvent e) {
-          final Wrappers._T<List<IModule>> modules = new Wrappers._T<List<IModule>>();
+          final Wrappers._T<Set<IModule>> modules = new Wrappers._T<Set<IModule>>();
           final Wrappers._T<List<IModule>> projectModules = new Wrappers._T<List<IModule>>();
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
@@ -245,7 +247,7 @@ public class TestConfigurationDialog extends BaseDialog {
               return it.getModuleReference();
             }
           }).toListSequence();
-          List<ModuleReference> moduleRefs = ListSequence.fromList(modules.value).select(new ISelector<IModule, ModuleReference>() {
+          List<ModuleReference> moduleRefs = SetSequence.fromSet(modules.value).select(new ISelector<IModule, ModuleReference>() {
             public ModuleReference select(IModule it) {
               return it.getModuleReference();
             }

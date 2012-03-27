@@ -37,6 +37,8 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.WindowManager;
@@ -194,8 +196,8 @@ public class CollectTests_Action extends BaseAction {
   }
 
   private List<ModuleReference> allSolutions(final Map<String, Object> _params) {
-    List<Solution> allSolutions = MPSModuleRepository.getInstance().getAllSolutions();
-    return ListSequence.fromList(allSolutions).select(new ISelector<Solution, ModuleReference>() {
+    Iterable<Solution> allSolutions = ModuleRepositoryFacade.getInstance().getAllModules(Solution.class);
+    return Sequence.fromIterable(allSolutions).select(new ISelector<Solution, ModuleReference>() {
       public ModuleReference select(Solution s) {
         return s.getModuleReference();
       }

@@ -197,7 +197,7 @@ public class NewDevKitDialogContentPane extends JPanel {
       public void run(ProgressMonitor indicator) {
         myThis.setResult(NewModuleUtil.createModule(MPSExtentions.DOT_DEVKIT, myThis.getDevkitName(), myThis.getDevkitDir(), myThis.getProject(), new _FunctionTypes._return_P3_E0<DevKit, String, IFile, MPSProject>() {
           public DevKit invoke(String s, IFile f, MPSProject p) {
-            return DevKit.createDevkit(s, f, p);
+            return NewModuleUtil.createNewDevkit(s, f, p);
           }
         }, new _FunctionTypes._void_P1_E0<ModuleDescriptor>() {
           public void invoke(ModuleDescriptor d) {

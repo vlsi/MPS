@@ -20,13 +20,7 @@ import com.intellij.facet.Facet;
 import com.intellij.facet.FacetType;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
-import com.intellij.openapi.roots.LibraryOrderEntry;
-import com.intellij.openapi.roots.ModuleRootManager;
-import com.intellij.openapi.roots.OrderEntry;
-import com.intellij.openapi.roots.OrderRootType;
-import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.startup.StartupManager;
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
@@ -34,11 +28,10 @@ import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -47,6 +40,7 @@ import org.jetbrains.annotations.NotNull;
 public class MPSFacet extends Facet<MPSFacetConfiguration> {
   private static final Logger LOG = Logger.getInstance(MPSFacet.class);
   private Solution mySolution;
+  private Project myMpsProject;
 
   public MPSFacet(@NotNull FacetType facetType, @NotNull Module module, @NotNull String name, @NotNull MPSFacetConfiguration configuration, Facet underlyingFacet) {
     super(facetType, module, name, configuration, underlyingFacet);
@@ -64,16 +58,16 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
             SolutionDescriptor solutionDescriptor = getConfiguration().getState().getSolutionDescriptor();
             Solution solution = new SolutionIdea(getModule(), solutionDescriptor);
             com.intellij.openapi.project.Project project = getModule().getProject();
-            Project mpsProject = ProjectHelper.toMPSProject(project);
+            myMpsProject = ProjectHelper.toMPSProject(project);
 
             MPSModuleRepository repository = MPSModuleRepository.getInstance();
-            if (repository.existsModule(solutionDescriptor.getModuleReference())) {
+            if (ModuleRepositoryFacade.getInstance().getModule(solutionDescriptor.getModuleReference()) !=null) {
               MessagesViewTool.log(project, MessageKind.ERROR, MPSBundle.message("facet.cannot.load.second.module", solutionDescriptor.getNamespace()));
               return;
             }
 
-            repository.addModule(mySolution = solution, mpsProject);
-            mpsProject.addModule(mySolution.getModuleReference());
+            repository.registerModule(mySolution = solution, myMpsProject);
+            myMpsProject.addModule(mySolution.getModuleReference());
             LOG.info(MPSBundle.message("facet.module.loaded", MPSFacet.this.mySolution.getModuleFqName()));
           }
         });
@@ -87,7 +81,7 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
       @Override
       public void run() {
         LOG.info(MPSBundle.message("facet.module.unloaded", mySolution.getModuleFqName()));
-        MPSModuleRepository.getInstance().removeModule(mySolution);
+        MPSModuleRepository.getInstance().unregisterModule(mySolution, myMpsProject);
         mySolution = null;
       }
     });

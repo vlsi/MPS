@@ -264,7 +264,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     checkLoaded();
     ModuleReference ref = myIntentionsLanguages.get(intention.getClass());
     if (ref == null) return null;
-    return MPSModuleRepository.getInstance().getLanguage(ref);
+    return ModuleRepositoryFacade.getInstance().getModule(ref,Language.class);
   }
 
   @Nullable
@@ -306,7 +306,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   private void load() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        List<Language> allLanguages = MPSModuleRepository.getInstance().getAllLanguages();
+        List<Language> allLanguages = (List<Language>) ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
         for (Language language : allLanguages) {
           String className = getDescriptorClassName(language.getModuleReference());
           initIntentionsDescriptor(language, LanguageAspect.INTENTIONS, className);

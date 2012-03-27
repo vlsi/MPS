@@ -13,7 +13,9 @@ import jetbrains.mps.smodel.Language;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -42,9 +44,9 @@ import jetbrains.mps.smodel.SModelFqName;
   @Override
   public List<Language> getVisibleLanguages() {
     Set<Language> result = SetSequence.fromSet(new HashSet<Language>());
-    SetSequence.fromSet(result).addSequence(ListSequence.fromList(super.getVisibleLanguages()));
+    SetSequence.fromSet(result).addSequence(CollectionSequence.fromCollection(super.getVisibleLanguages()));
     for (ModuleReference ref : SetSequence.fromSet(myModule.getUsedLanguagesReferences())) {
-      Language language = MPSModuleRepository.getInstance().getLanguage(ref);
+      Language language = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
       if (!(SetSequence.fromSet(result).contains(language))) {
         SetSequence.fromSet(result).addElement(language);
       }

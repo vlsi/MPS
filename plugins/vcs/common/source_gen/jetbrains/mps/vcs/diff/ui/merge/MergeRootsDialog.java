@@ -75,7 +75,7 @@ public class MergeRootsDialog extends DialogWrapper {
   private DefaultActionGroup myActionGroup;
 
   public MergeRootsDialog(MergeModelsDialog mergeModelsDialog, MergeSession mergeSession, SNodeId rootId, String rootName) {
-    super(mergeModelsDialog.getOwner(), true);
+    super(mergeModelsDialog.getWindow(), true);
     setTitle("Merging " + rootName);
     myConflictChecker = new ChangeEditorMessage.ConflictChecker() {
       public boolean isChangeConflicted(ModelChange ch) {

@@ -255,9 +255,7 @@
     <scopeInfo nodeId="1203684597238" fileName="NewLanguageDialog.java" startLine="79" startPosition="0" endLine="84" endPosition="0" />
     <scopeInfo nodeId="1203684597238" fileName="NewLanguageDialogContentPane.java" startLine="82" startPosition="0" endLine="87" endPosition="0" />
     <scopeInfo nodeId="1203684597238" fileName="NewLanguageDialogContentPane.java" startLine="87" startPosition="0" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="1203684597238" fileName="NewLanguageDialogContentPane.java" startLine="114" startPosition="25" endLine="119" endPosition="5">
-      <varInfo nodeId="1203684597238" varName="binding" />
-    </scopeInfo>
+    <scopeInfo nodeId="1203684597238" fileName="NewLanguageDialogContentPane.java" startLine="114" startPosition="25" endLine="119" endPosition="5" />
     <scopeInfo nodeId="1203684597238" fileName="NewLanguageDialogContentPane.java" startLine="128" startPosition="0" endLine="134" endPosition="0" />
     <scopeInfo nodeId="1203684597238" fileName="NewLanguageDialogContentPane.java" startLine="141" startPosition="0" endLine="147" endPosition="0" />
     <scopeInfo nodeId="1203684597238" fileName="NewLanguageDialogContentPane.java" startLine="188" startPosition="0" endLine="194" endPosition="0">
@@ -332,7 +330,7 @@
     <nodeInfo nodeId="3365295161442892847" fileName="NewLanguageDialogContentPane.java" startLine="250" startPosition="72" endLine="251" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3734045384532741040" fileName="NewLanguageDialogContentPane.java" startLine="259" startPosition="31" endLine="260" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5890305283801272108" fileName="NewLanguageDialogContentPane.java" startLine="263" startPosition="40" endLine="264" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4543209876460447521" fileName="NewLanguageDialogContentPane.java" startLine="269" startPosition="63" endLine="270" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4543209876460447521" fileName="NewLanguageDialogContentPane.java" startLine="269" startPosition="63" endLine="270" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4543209876460447534" fileName="NewLanguageDialogContentPane.java" startLine="273" startPosition="46" endLine="274" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4543209876460447538" fileName="NewLanguageDialogContentPane.java" startLine="274" startPosition="75" endLine="275" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4543209876460474635" fileName="NewLanguageDialogContentPane.java" startLine="277" startPosition="14" endLine="278" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -376,7 +374,7 @@
     <scopeInfo nodeId="3365295161442892826" fileName="NewLanguageDialogContentPane.java" startLine="250" startPosition="72" endLine="251" endPosition="53" />
     <scopeInfo nodeId="1203685144414" fileName="NewLanguageDialogContentPane.java" startLine="259" startPosition="31" endLine="260" endPosition="33" />
     <scopeInfo nodeId="5890305283801272103" fileName="NewLanguageDialogContentPane.java" startLine="263" startPosition="40" endLine="264" endPosition="73" />
-    <scopeInfo nodeId="4543209876460447520" fileName="NewLanguageDialogContentPane.java" startLine="269" startPosition="63" endLine="270" endPosition="48" />
+    <scopeInfo nodeId="4543209876460447520" fileName="NewLanguageDialogContentPane.java" startLine="269" startPosition="63" endLine="270" endPosition="56" />
     <scopeInfo nodeId="1203685860407" fileName="NewLanguageDialogContentPane.java" startLine="296" startPosition="38" endLine="297" endPosition="13" />
     <scopeInfo nodeId="1203685988419" fileName="NewLanguageDialogContentPane.java" startLine="301" startPosition="96" endLine="302" endPosition="101" />
     <scopeInfo nodeId="4543209876460446067" fileName="NewLanguageDialogContentPane.java" startLine="216" startPosition="26" endLine="218" endPosition="13" />

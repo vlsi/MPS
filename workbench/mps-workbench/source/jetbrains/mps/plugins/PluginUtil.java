@@ -23,7 +23,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.ModuleNameUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
@@ -41,9 +41,9 @@ public class PluginUtil {
     Set<IModule> modules = new HashSet<IModule>();
 
     //todo this line should be removed as long as we move plugins out from languages
-    modules.addAll(MPSModuleRepository.getInstance().getAllLanguages());
+    modules.addAll(ModuleRepositoryFacade.getInstance().getAllModules(Language.class));
 
-    for (Solution s : MPSModuleRepository.getInstance().getAllSolutions()) {
+    for (Solution s : (List<Solution>) ModuleRepositoryFacade.getInstance().getAllModules(Solution.class)) {
       if (s.getModuleDescriptor().getKind() == SolutionKind.NONE) continue;
 //      if (s.getModuleDescriptor().getKind() == SolutionKind.PLUGIN_OTHER && MPSCore.getInstance().isTestMode()) continue;
       modules.add(s);

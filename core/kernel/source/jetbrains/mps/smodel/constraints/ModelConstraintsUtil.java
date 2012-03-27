@@ -300,6 +300,76 @@ public class ModelConstraintsUtil {
     return new DefaultReferencePresentation(context, referentConstraintContext, scopeProvider);
   }
 
+  @Deprecated
+  public static ISearchScope createDefaultScope(SModel model, IOperationContext context) {
+    return SModelSearchUtil.createModelAndImportedModelsScope(model, false, context.getScope());
+  }
+
+  @Deprecated
+  public static SearchScopeStatus createSearchScope(final INodeReferentSearchScopeProvider scopeProvider,
+                                                    SModel model,
+                                                    SNode enclosingNode,
+                                                    SNode referenceNode,
+                                                    SNode linkTarget,
+                                                    SNode containingLinkDeclaration,
+                                                    final IOperationContext context) {
+    if (scopeProvider == null) return new OK(createDefaultScope(model, context), null, true, null);
+    final ReferentConstraintContext referentConstraintContext = new ReferentConstraintContext(model, enclosingNode, referenceNode, linkTarget, containingLinkDeclaration);
+    try {
+      ISearchScope searchScope = TypeContextManager.getInstance().runResolveAction(new Computable<ISearchScope>() {
+        @Override
+        public ISearchScope compute() {
+          return scopeProvider.createNodeReferentSearchScope(context, referentConstraintContext);
+        }
+      });
+      if (searchScope instanceof UndefinedSearchScope) {
+        return new OK(createDefaultScope(model, context), null, true, null);
+      } else {
+        return new OK(searchScope, null, false, scopeProvider.getSearchScopeValidatorNodePointer());
+      }
+    } catch (Throwable t) {
+      return new SearchScopeStatus.ERROR(t.getMessage());
+    }
+  }
+  @Deprecated
+  public static INodeReferentSearchScopeProvider getSearchScopeProvider(SNode referenceNodeConcept, String linkRole) {
+    // todo: rewrite it
+    final ReferenceScopeProvider provider = ModelConstraintsManager.getNodeReferentSearchScopeProvider(referenceNodeConcept, linkRole);
+
+    if (provider == null) {
+      return null;
+    }
+
+    return new INodeReferentSearchScopeProvider() {
+      @Override
+      public ISearchScope createNodeReferentSearchScope(IOperationContext operationContext, ReferentConstraintContext _context) {
+        return provider.createSearchScope(operationContext, _context);
+      }
+
+      @Override
+      public boolean hasPresentation() {
+        return provider.hasPresentation();
+      }
+
+      @Override
+      public String getPresentation(IOperationContext operationContext, PresentationReferentConstraintContext _context) {
+        return provider.getPresentation(operationContext, _context);
+      }
+
+      @Override
+      public SNodePointer getSearchScopeValidatorNodePointer() {
+        return provider.getSearchScopeValidatorNode();
+      }
+
+      @Override
+      public void registerSelf(ModelConstraintsManager manager) {
+      }
+
+      @Override
+      public void unRegisterSelf(ModelConstraintsManager manager) {
+      }
+    };
+  }
 
   @Deprecated
   private static OK newOK(ISearchScope searchScope, IReferencePresentation presentation, boolean isDefault, SNodePointer searchScopeFactory) {

@@ -20,7 +20,9 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -52,7 +54,7 @@ public class BaseModuleValidator<T extends IModule> implements ModuleValidator {
       }
     }
     for (ModuleReference reference : myModule.getUsedLanguagesReferences()) {
-      if (MPSModuleRepository.getInstance().getLanguage(reference) == null) {
+      if (ModuleRepositoryFacade.getInstance().getModule(reference, Language.class) == null) {
         errors.add("Can't find used language: " + reference.getModuleFqName());
       }
     }

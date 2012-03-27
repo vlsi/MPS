@@ -34,6 +34,7 @@ import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -81,15 +82,15 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   }
 
   public Element getState() {
-    if (myProject.getPresentableUrl() == null) {
-      return new Element("state");
+    if (myProject.getPresentableUrl() == null || myProjectDescriptor == null) {
+      return myProjectElement;
     }
 
     return ModelAccess.instance().runReadAction(new Computable<Element>() {
       public Element compute() {
         ProjectDescriptor descriptor = getProjectDescriptor();
-        File file = new File(myProject.getPresentableUrl());
-        return ProjectDescriptorPersistence.saveProjectDescriptorToElement(descriptor, file);
+        return ProjectDescriptorPersistence.saveProjectDescriptorToElement(descriptor,
+          FileSystem.getInstance().getFileByPath(myProject.getPresentableUrl()));
       }
     });
   }
@@ -100,15 +101,45 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
 
   public void initComponent() {
     super.initComponent();
+  }
+
+  public void disposeComponent() {
+    super.disposeComponent();
+  }
+
+  @Override
+  public void projectOpened() {
+    super.projectOpened();
+    final MPSProjectMigrationState migrationState = myProject.getComponent(MPSProjectMigrationState.class);
+    if (migrationState.isMigrationRequired() && migrationState.hasMigrationAgent()) {
+      migrationState.addMigrationListener(new MPSProjectMigrationListener.DEFAULT() {
+        @Override
+        public void migrationFinished(Project mpsProject) {
+          migrationState.removeMigrationListener(this);
+          initProject();
+        }
+        @Override
+        public void migrationAborted(Project project) {
+          migrationState.removeMigrationListener(this);
+        }
+      });
+    }
+    else {
+      initProject();
+    }
+  }
+
+  private void initProject() {
     String url = myProject.getPresentableUrl();
     ProjectDescriptor descriptor = new ProjectDescriptor();
     if (url != null) {
-      final File projectFile = new File(url);
+      final IFile projectFile = FileSystem.getInstance().getFileByPath(url);
       ProjectDescriptorPersistence.loadProjectDescriptorFromElement(descriptor, projectFile, myProjectElement);
     }
     init(descriptor);
   }
 
+  // public for tests only!
   public void init(final ProjectDescriptor projectDescriptor) {
     if (myProject.isDefault()) return;
 
@@ -166,7 +197,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
         ModuleDescriptor descriptor = ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
         if (descriptor != null) {
           ModuleHandle handle = new ModuleHandle(descriptorFile, descriptor);
-          IModule module = MPSModuleRepository.getInstance().registerModule(handle, this);
+          IModule module = ModuleRepositoryFacade.createModule(handle, this);
           ModuleReference moduleReference = module.getModuleReference();
           if (!existingModules.remove(moduleReference)) {
             super.addModule(moduleReference);
@@ -207,7 +238,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   }
 
   public void update() {
-    MPSModuleRepository.getInstance().unRegisterModules(this);
+    ModuleRepositoryFacade.getInstance().unregisterModules(this);
 
     readModules();
     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
@@ -245,7 +276,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
       public void run() {
         ClassLoaderManager.getInstance().unloadAll(new EmptyProgressMonitor());
 
-        MPSModuleRepository.getInstance().unRegisterModules(StandaloneMPSProject.this);
+        ModuleRepositoryFacade.getInstance().unregisterModules(StandaloneMPSProject.this);
 
         CleanupManager.getInstance().cleanup();
 

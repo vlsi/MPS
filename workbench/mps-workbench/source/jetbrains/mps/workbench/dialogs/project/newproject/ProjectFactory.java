@@ -23,12 +23,11 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.platform.ProjectBaseDirectory;
+import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.project.*;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.NameUtil;
@@ -85,33 +84,38 @@ public class ProjectFactory {
     //noinspection ConstantConditions
     final MPSProject mpsProject = myCreatedProject.getComponent(MPSProject.class);
 
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    StartupManager.getInstance(myCreatedProject).registerPostStartupActivity(new Runnable() {
+      @Override
       public void run() {
-        if (myOptions.getCreateNewLanguage()) {
-          myCreatedLanguage = createNewLanguage(mpsProject);
-          mpsProject.addModule(myCreatedLanguage.getModuleReference());
-          myCreatedLanguage.save();
-        }
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            if (myOptions.getCreateNewLanguage()) {
+              myCreatedLanguage = createNewLanguage(mpsProject);
+              mpsProject.addModule(myCreatedLanguage.getModuleReference());
+              myCreatedLanguage.save();
+            }
 
-        if (myOptions.getCreateNewSolution()) {
-          myCreatedSolution = createNewSolution(mpsProject);
-          myCreatedSolution.save();
-          mpsProject.addModule(myCreatedSolution.getModuleReference());
-        }
+            if (myOptions.getCreateNewSolution()) {
+              myCreatedSolution = createNewSolution(mpsProject);
+              myCreatedSolution.save();
+              mpsProject.addModule(myCreatedSolution.getModuleReference());
+            }
 
-        if (myCreatedSolution != null && myCreatedLanguage != null) {
-          myCreatedSolution.addUsedLanguage(myCreatedLanguage.getModuleReference());
-          myCreatedSolution.save();
+            if (myCreatedSolution != null && myCreatedLanguage != null) {
+              myCreatedSolution.addUsedLanguage(myCreatedLanguage.getModuleReference());
+              myCreatedSolution.save();
 
-          if (myOptions.getCreateModel()) {
-            EditableSModelDescriptor model = myCreatedSolution.createModel(SModelFqName.fromString(myCreatedSolution.getModuleReference().getModuleFqName() + ".sandbox"), myCreatedSolution.getSModelRoots().iterator().next(), null);
-            model.getSModel().addLanguage(myCreatedLanguage.getModuleReference());
-            model.save();
+              if (myOptions.getCreateModel()) {
+                EditableSModelDescriptor model = myCreatedSolution.createModel(SModelFqName.fromString(myCreatedSolution.getModuleReference().getModuleFqName() + ".sandbox"), myCreatedSolution.getSModelRoots().iterator().next(), null);
+                model.getSModel().addLanguage(myCreatedLanguage.getModuleReference());
+                model.save();
+              }
+            }
+            if(myOptions.getCreateNewSolution() || myOptions.getCreateNewLanguage()) {
+              ((StandaloneMPSProject) mpsProject).update();
+            }
           }
-        }
-        if(myOptions.getCreateNewSolution() || myOptions.getCreateNewLanguage()) {
-          ((StandaloneMPSProject) mpsProject).update();
-        }
+        });
       }
     });
     return myCreatedProject;
@@ -166,7 +170,7 @@ public class ProjectFactory {
     String descriptorPath = myOptions.getSolutionPath() + File.separator + descriptorFileName;
     IFile descriptorFile = FileSystem.getInstance().getFileByPath(descriptorPath);
 
-    return Solution.createSolution(myOptions.getSolutionNamespace(), descriptorFile, mpsProject);
+    return NewModuleUtil.createNewSolution(myOptions.getSolutionNamespace(), descriptorFile, mpsProject);
   }
 
   private Language createNewLanguage(MPSProject mpsProject) {
@@ -174,7 +178,7 @@ public class ProjectFactory {
     String descriptorPath = myOptions.getLanguagePath() + File.separator + descriptorFileName;
     IFile descriptorFile = FileSystem.getInstance().getFileByPath(descriptorPath);
 
-    Language language = Language.createLanguage(myOptions.getLanguageNamespace(), descriptorFile, mpsProject);
+    Language language = NewModuleUtil.createNewLanguage(myOptions.getLanguageNamespace(), descriptorFile, mpsProject);
     LanguageDescriptor languageDescriptor = language.getModuleDescriptor();
     languageDescriptor.getUsedDevkits().add(LanguageDesign_DevKit.MODULE_REFERENCE);
     

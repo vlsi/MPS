@@ -20,7 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import com.intellij.openapi.project.Project;
@@ -32,8 +32,8 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog;
 import java.util.ArrayList;
+import jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog;
 import jetbrains.mps.generator.GenerationFacade;
 import javax.swing.JOptionPane;
 import jetbrains.mps.ide.actions.MappingDialog;
@@ -99,7 +99,7 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
       }
       if (isNeedRootTemplate) {
         for (ModuleReference moduleRef : SNodeOperations.getModel(node).importedLanguages()) {
-          Language language = MPSModuleRepository.getInstance().getLanguage(moduleRef);
+          Language language = ModuleRepositoryFacade.getInstance().getModule(moduleRef, Language.class);
           if (language == null) {
             continue;
           }
@@ -132,7 +132,7 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
       }
     });
 
-    final List<Generator> genList = language.value.getGenerators();
+    final List<Generator> genList = ListSequence.fromListWithValues(new ArrayList<Generator>(), language.value.getGenerators());
     if (ListSequence.fromList(genList).isEmpty()) {
       NewGeneratorDialog dialog = new NewGeneratorDialog(frame, language.value);
       dialog.showDialog();

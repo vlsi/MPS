@@ -22,7 +22,10 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.modules.*;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
@@ -75,28 +78,6 @@ public class LibrariesLoader implements CoreComponent {
   }
 
 
-  public static void createLanguageLibs(MPSModuleOwner moduleOwner, Language language, LanguageDescriptor languageDescriptor, MPSModuleRepository repository) {
-    List<SolutionDescriptor> solutionDescriptors = createLanguageLibraryDescriptors(languageDescriptor);
-
-    for (SolutionDescriptor sd : solutionDescriptors) {
-      Solution.newInstance(sd, language);
-    }
-  }
-
-  private static List<SolutionDescriptor> createLanguageLibraryDescriptors(LanguageDescriptor ld) {
-    List<SolutionDescriptor> result = new ArrayList<SolutionDescriptor>();
-    for (StubSolution ss : ld.getStubSolutions()) {
-      SolutionDescriptor descriptor = new SolutionDescriptor();
-      descriptor.setId(ss.getId());
-      descriptor.setNamespace(ss.getName());
-
-      descriptor.setCompileInMPS(false);
-
-      result.add(descriptor);
-    }
-    return result;
-  }
-
   private void loadNewLanguageLibs() {
     Map<BaseLibStubDescriptor, ModuleReference> libDescrs = createLibDescrs();
     for (BaseLibStubDescriptor d : libDescrs.keySet()) {
@@ -104,7 +85,8 @@ public class LibrariesLoader implements CoreComponent {
       if (myLoadedSolutions.containsKey(id)) continue;
 
       myLoadedSolutions.put(id, libDescrs.get(d));
-      Solution library = myModuleRepository.getSolution(new ModuleReference(d.getModuleName(), d.getModuleId()));
+      ModuleId moduleId = ModuleId.fromString(d.getModuleId());
+      Solution library = (Solution) MPSModuleRepository.getInstance().getModuleById(moduleId);
       assert library != null : d.getModuleName();
 
       SolutionDescriptor sd = library.getModuleDescriptor();
@@ -126,7 +108,7 @@ public class LibrariesLoader implements CoreComponent {
   private Map<BaseLibStubDescriptor, ModuleReference> createLibDescrs() {
     Map<BaseLibStubDescriptor, ModuleReference> result = new HashMap<BaseLibStubDescriptor, ModuleReference>();
 
-    List<Language> languages = myModuleRepository.getAllLanguages();
+    List<Language> languages = (List<Language>) ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
     for (Language l : languages) {
       SModelDescriptor descriptor = LanguageAspect.STUBS.get(l);
       if (descriptor == null) continue;

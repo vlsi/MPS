@@ -10,7 +10,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 
@@ -25,8 +25,8 @@ public class LanguageChooser implements Computable<List<ModuleReference>> {
     final Wrappers._T<List<ModuleReference>> langRefs = new Wrappers._T<List<ModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        List<Language> langs = GlobalScope.getInstance().getVisibleLanguages();
-        langRefs.value = ListSequence.fromList(langs).select(new ISelector<Language, ModuleReference>() {
+        Iterable<Language> langs = GlobalScope.getInstance().getVisibleLanguages();
+        langRefs.value = Sequence.fromIterable(langs).select(new ISelector<Language, ModuleReference>() {
           public ModuleReference select(Language it) {
             return it.getModuleReference();
           }

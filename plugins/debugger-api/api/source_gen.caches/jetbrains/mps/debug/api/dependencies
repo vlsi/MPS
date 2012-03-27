@@ -41,7 +41,6 @@
     <classNode extendsClassName="jetbrains.mps.debug.api.IDebugger" />
   </dependency>
   <dependency className="jetbrains.mps.debug.api.AbstractUiState" file="AbstractUiState.java">
-    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
@@ -132,23 +131,19 @@
     <classNode extendsClassName="jetbrains.mps.debug.api.DebugSessionListener" />
   </dependency>
   <dependency className="jetbrains.mps.debug.api.DebuggableFramesSelector" file="DebuggableFramesSelector.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractUiState" />
-    <classNode dependClassName="jetbrains.mps.debug.api.programState.ILocation" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IStackFrame" />
-    <classNode dependClassName="jetbrains.mps.debug.api.programState.NullLocation" />
-    <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.util.Computable" />
+    <classNode dependClassName="jetbrains.mps.debug.api.source.PositionProvider" />
+    <classNode dependClassName="jetbrains.mps.debug.api.source.SourcePosition" />
     <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.debug.api.IDebuggableFramesSelector" />
   </dependency>
   <dependency className="jetbrains.mps.debug.api.DebuggerNotPresentException" file="DebuggerNotPresentException.java">
@@ -178,9 +173,7 @@
   <dependency className="jetbrains.mps.debug.api.IDebuggableFramesSelector" file="IDebuggableFramesSelector.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.debug.api.programState.ILocation" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IStackFrame" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

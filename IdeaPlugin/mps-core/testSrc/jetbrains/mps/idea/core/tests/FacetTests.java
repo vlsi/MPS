@@ -37,6 +37,7 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.NonNls;
 
@@ -65,7 +66,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
 
     assertEquals(getModuleHome() + "/source_gen", solution.getGeneratorOutputPath());
 
-    Solution repositorySolution = MPSModuleRepository.getInstance().getSolution(solution.getModuleReference());
+    Solution repositorySolution = ModuleRepositoryFacade.getInstance().getModule(solution.getModuleReference(), Solution.class);
     assertEquals(solution, repositorySolution);
     assertEquals(myModule.getName(), solution.getModuleDescriptor().getNamespace());
   }
@@ -74,7 +75,6 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     ModuleReference solutionReference = myFacet.getSolution().getModuleReference();
 
     ApplicationManager.getApplication().runWriteAction(new Runnable() {
-      @Override
       public void run() {
         ModifiableFacetModel modifiableModel = FacetManager.getInstance(myModule).createModifiableModel();
         MPSFacet mpsFacet = modifiableModel.getFacetByType(MPSFacetType.ID);
@@ -83,7 +83,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
       }
     });
 
-    Solution repositorySolution = MPSModuleRepository.getInstance().getSolution(solutionReference);
+    Solution repositorySolution = ModuleRepositoryFacade.getInstance().getModule(solutionReference, Solution.class);
     assertNull(repositorySolution);
   }
 
@@ -92,7 +92,6 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     ModuleReference solutionReference = myFacet.getSolution().getModuleReference();
 
     ApplicationManager.getApplication().runWriteAction(new Runnable() {
-      @Override
       public void run() {
         ModuleManager moduleManager = ModuleManager.getInstance(myModule.getProject());
         ModifiableModuleModel modifiableModel = moduleManager.getModifiableModel();
@@ -101,7 +100,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
       }
     });
 
-    Solution repositorySolution = MPSModuleRepository.getInstance().getSolution(solutionReference);
+    Solution repositorySolution = ModuleRepositoryFacade.getInstance().getModule(solutionReference, Solution.class);
     assertNull(repositorySolution);
   }
 
@@ -119,7 +118,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     myFacet.setConfiguration(configurationBean);
     flushEDT();
 
-    Solution repositorySolution = MPSModuleRepository.getInstance().getSolution(solutionReference);
+    Solution repositorySolution = ModuleRepositoryFacade.getInstance().getModule(solutionReference, Solution.class);
     assertEquals(myFacet.getSolution(), repositorySolution);
     Collection<SModelRoot> modelRoots = repositorySolution.getSModelRoots();
     assertEquals(1, modelRoots.size());
@@ -135,9 +134,9 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
   }
 
   public void testAddRemoveUsedLanguage() throws InterruptedException {
-    Language baseLanguage = MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.baseLanguage");
+    Language baseLanguage = ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage",Language.class);
     assertNotNull(baseLanguage);
-    Language editorLanguage = MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.lang.editor");
+    Language editorLanguage = ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.lang.editor", Language.class);
     assertNotNull(editorLanguage);
 
     String[] usedLanguageStrings = new String[]{baseLanguage.toString(), editorLanguage.toString()};
@@ -151,7 +150,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     Collection<ModuleReference> solutionUsedLanguageRefs = myFacet.getSolution().getUsedLanguagesReferences();
     Set<Language> solutionUsedLanguages = new HashSet<Language>();
     for (ModuleReference solutionUsedLanguageRef : solutionUsedLanguageRefs) {
-      solutionUsedLanguages.add(MPSModuleRepository.getInstance().getLanguage(solutionUsedLanguageRef));
+      solutionUsedLanguages.add(ModuleRepositoryFacade.getInstance().getModule(solutionUsedLanguageRef, Language.class));
     }
     assertEquals(usedLanguages.length, solutionUsedLanguages.size());
     for (Language usedLanguage : usedLanguages) {

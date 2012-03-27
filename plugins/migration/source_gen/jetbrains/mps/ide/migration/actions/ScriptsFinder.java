@@ -7,7 +7,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModel;
@@ -23,7 +24,7 @@ public class ScriptsFinder {
 
   public static List<SNodePointer> find() {
     List<SNodePointer> list = ListSequence.fromList(new ArrayList<SNodePointer>());
-    for (Language l : ListSequence.fromList(MPSModuleRepository.getInstance().getAllLanguages())) {
+    for (Language l : CollectionSequence.fromCollection(ModuleRepositoryFacade.getInstance().getAllModules(Language.class))) {
       EditableSModelDescriptor smd = LanguageAspect.SCRIPTS.get(l);
       if (smd == null) {
         continue;

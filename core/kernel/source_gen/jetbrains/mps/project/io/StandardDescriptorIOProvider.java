@@ -4,22 +4,19 @@ package jetbrains.mps.project.io;
 
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.persistence.ModuleDescriptorPersistence;
 import org.jdom.Element;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
-import jetbrains.mps.project.persistence.GeneratorDescriptorPersistence;
-import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 
 public class StandardDescriptorIOProvider implements DescriptorIOProvider {
   private static final StandardDescriptorIOProvider.SolutionDescriptorIO SOLUTION = new StandardDescriptorIOProvider.SolutionDescriptorIO();
   private static final StandardDescriptorIOProvider.LanguageDescriptorIO LANGUAGE = new StandardDescriptorIOProvider.LanguageDescriptorIO();
-  private static final StandardDescriptorIOProvider.GeneratorDescriptorIO GENERATOR = new StandardDescriptorIOProvider.GeneratorDescriptorIO();
   private static final StandardDescriptorIOProvider.DevkitDescriptorIO DEVKIT = new StandardDescriptorIOProvider.DevkitDescriptorIO();
 
   /*package*/ StandardDescriptorIOProvider() {
@@ -33,10 +30,6 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
     return LANGUAGE;
   }
 
-  public DescriptorIO<GeneratorDescriptor> generatorDescriptorIO() {
-    return GENERATOR;
-  }
-
   public DescriptorIO<DevkitDescriptor> devkitDescriptorIO() {
     return DEVKIT;
   }
@@ -47,7 +40,7 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
 
     public SolutionDescriptor readFromFile(IFile file) throws DescriptorIOException {
       try {
-        return SolutionDescriptorPersistence.loadSolutionDescriptor(file);
+        return SolutionDescriptorPersistence.loadSolutionDescriptor(file, MacrosFactory.forModuleFile(file));
       } catch (ModuleReadException ex) {
         SolutionDescriptor sd = new SolutionDescriptor();
         ModuleDescriptorPersistence.loadBrokenModule(sd, file, ex);
@@ -56,7 +49,7 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
     }
 
     public void writeToFile(SolutionDescriptor sd, IFile file) {
-      SolutionDescriptorPersistence.saveSolutionDescriptor(file, sd);
+      SolutionDescriptorPersistence.saveSolutionDescriptor(file, sd, MacrosFactory.forModuleFile(file));
     }
 
     public void writeToXml(SolutionDescriptor sd, Element element, IFile anchorFile) {
@@ -74,7 +67,7 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
 
     public LanguageDescriptor readFromFile(IFile file) throws DescriptorIOException {
       try {
-        return LanguageDescriptorPersistence.loadLanguageDescriptor(file);
+        return LanguageDescriptorPersistence.loadLanguageDescriptor(file, MacrosFactory.forModuleFile(file));
       } catch (ModuleReadException ex) {
         LanguageDescriptor ld = new LanguageDescriptor();
         ModuleDescriptorPersistence.loadBrokenModule(ld, file, ex);
@@ -83,7 +76,7 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
     }
 
     public void writeToFile(LanguageDescriptor ld, IFile file) {
-      LanguageDescriptorPersistence.saveLanguageDescriptor(file, ld);
+      LanguageDescriptorPersistence.saveLanguageDescriptor(file, ld, MacrosFactory.forModuleFile(file));
     }
 
     public void writeToXml(LanguageDescriptor ld, Element element, IFile anchorFile) {
@@ -92,27 +85,6 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
 
     public LanguageDescriptor readFromXml(Element element, IFile anchorFile) {
       throw new UnsupportedOperationException();
-    }
-  }
-
-  public static class GeneratorDescriptorIO implements DescriptorIO<GeneratorDescriptor> {
-    public GeneratorDescriptorIO() {
-    }
-
-    public GeneratorDescriptor readFromFile(IFile file) {
-      throw new UnsupportedOperationException();
-    }
-
-    public void writeToFile(GeneratorDescriptor gd, IFile file) {
-      throw new UnsupportedOperationException();
-    }
-
-    public void writeToXml(GeneratorDescriptor gd, Element element, IFile anchorFile) {
-      GeneratorDescriptorPersistence.saveGeneratorDescriptor(element, gd, anchorFile, MacrosFactory.languageDescriptor());
-    }
-
-    public GeneratorDescriptor readFromXml(Element element, IFile anchorFile) {
-      return GeneratorDescriptorPersistence.loadGeneratorDescriptor(element, anchorFile, MacrosFactory.languageDescriptor());
     }
   }
 
@@ -131,7 +103,7 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
     }
 
     public void writeToFile(DevkitDescriptor dd, IFile file) {
-      DevkitDescriptorPersistence.saveDevKitDescriptor(dd, file);
+      DevkitDescriptorPersistence.saveDevKitDescriptor(file, dd);
     }
 
     public DevkitDescriptor readFromXml(Element element, IFile anchorFile) {

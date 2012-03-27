@@ -14,9 +14,10 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.stubs.util.StubModelDescriptors;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.stubs.util.PathItem;
-import jetbrains.mps.stubs.util.GWTModulePathItem;
 
 public class GWTModuleStubs extends AbstractModelRootManager {
   public GWTModuleStubs() {
@@ -24,7 +25,11 @@ public class GWTModuleStubs extends AbstractModelRootManager {
 
   public Collection<SModelDescriptor> load(@NotNull ModelRoot root, IModule module) {
     List<SModelDescriptor> res = ListSequence.fromList(new ArrayList<SModelDescriptor>());
-    ListSequence.fromList(res).addSequence(SetSequence.fromSet(new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("gwt"), root, module, true).getDescriptors(new _FunctionTypes._return_P1_E0<PathItem, String>() {
+    ListSequence.fromList(res).addSequence(SetSequence.fromSet(new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("gwt"), root, module) {
+      public StubModelDataSource createStubsSource(ModuleReference origin, ModelRoot loc) {
+        return new GWTStubsSource(origin, loc);
+      }
+    }.getDescriptors(new _FunctionTypes._return_P1_E0<PathItem, String>() {
       public PathItem invoke(String path) {
         return GWTModulePathItem.getPathItem(path);
       }

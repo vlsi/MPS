@@ -20,6 +20,7 @@ import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 
@@ -54,15 +55,11 @@ public class DeleteModuleHelper {
         DeleteModelHelper.delete(module, model, true);
       }
       module.getDescriptorFile().delete();
-      MPSModuleRepository.getInstance().removeModule(module);
+      ModuleRepositoryFacade.getInstance().removeModuleForced(module);
     }
   }
 
   private static void safeDelete(Project project, IModule module, boolean deleteFiles) {
     LOG.error("SAFE DELETE MODULE - NOT IMPLEMENTED", new Throwable());
-  }
-
-  private static void reportUnsupportedModuleType(IModule module) {
-    LOG.warning("Module type " + module.getClass().getSimpleName() + " is not supported by delete refactoring.");
   }
 }

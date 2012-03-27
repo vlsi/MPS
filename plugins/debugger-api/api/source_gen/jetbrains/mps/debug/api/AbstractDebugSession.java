@@ -17,11 +17,12 @@ public abstract class AbstractDebugSession<State extends AbstractUiState> {
   private final List<SessionChangeListener> myListeners = new ArrayList<SessionChangeListener>();
   protected AbstractDebugSession.ExecutionState myExecutionState = AbstractDebugSession.ExecutionState.WaitingAttach;
   protected final AtomicReference<State> myUiState = new AtomicReference<State>(createUiState());
-  protected IDebuggableFramesSelector myDebuggableFramesSelector = new DebuggableFramesSelector();
-  protected Project myProject;
+  protected final IDebuggableFramesSelector myDebuggableFramesSelector;
+  protected final Project myProject;
 
   public AbstractDebugSession(Project p) {
     myProject = p;
+    myDebuggableFramesSelector = new DebuggableFramesSelector(p, this);
   }
 
   protected abstract State createUiState();

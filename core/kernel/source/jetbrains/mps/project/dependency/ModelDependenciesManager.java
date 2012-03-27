@@ -18,7 +18,7 @@ package jetbrains.mps.project.dependency;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModel;
 
 import java.util.LinkedHashSet;
@@ -35,7 +35,7 @@ public class ModelDependenciesManager {
     Set<ModuleReference> result = new LinkedHashSet<ModuleReference>();
     result.addAll(myModel.importedLanguages());
     for (ModuleReference dk : myModel.importedDevkits()) {
-      DevKit devkit = MPSModuleRepository.getInstance().getDevKit(dk);
+      DevKit devkit = ModuleRepositoryFacade.getInstance().getModule(dk, DevKit.class);
       if (devkit == null) continue;
       for (Language l : devkit.getAllExportedLanguages()) {
         result.add(l.getModuleReference());

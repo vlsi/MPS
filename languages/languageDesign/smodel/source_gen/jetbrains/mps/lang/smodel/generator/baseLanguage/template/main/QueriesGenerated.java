@@ -814,7 +814,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_4357968816427531029(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String moduleFqName = SPropertyOperations.getString(_context.getNode(), "moduleId");
-    IModule module = MPSModuleRepository.getInstance().getModuleByUID(moduleFqName);
+    IModule module = MPSModuleRepository.getInstance().getModuleByFqName(moduleFqName);
     if (module == null) {
       _context.showErrorMessage(_context.getNode(), "module `" + moduleFqName + "` is not found");
       return "";

@@ -25,7 +25,6 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -44,6 +43,34 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   private Map<SModelReference, ProjectStructureSModelDescriptor> myModels = new ConcurrentHashMap<SModelReference, ProjectStructureSModelDescriptor>();
 
   private static ProjectStructureModule INSTANCE;
+  private final MPSModuleOwner myOwner = new MPSModuleOwner() {
+  };
+  private final ModuleRepositoryAdapter myListener = new ModuleRepositoryAdapter() {
+    @Override
+    public void moduleAdded(IModule module) {
+      refreshModule(module, false);
+    }
+
+    @Override
+    public void moduleRemoved(IModule module) {
+      refreshModule(module, true);
+    }
+
+    @Override
+    public void moduleInitialized(IModule module) {
+      refreshModule(module, false);
+    }
+
+    @Override
+    public void moduleChanged(IModule module) {
+      refreshModule(module, false);
+    }
+
+    @Override
+    public void repositoryChanged() {
+      refresh();
+    }
+  };
 
   public static ProjectStructureModule getInstance() {
     return INSTANCE;
@@ -51,32 +78,6 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
 
   public ProjectStructureModule(MPSModuleRepository repository, SModelRepository modelRepository) {
     setModuleReference(MODULE_REFERENCE);
-    repository.addModuleRepositoryListener(new ModuleRepositoryAdapter() {
-      @Override
-      public void moduleAdded(IModule module) {
-        refreshModule(module, false);
-      }
-
-      @Override
-      public void moduleRemoved(IModule module) {
-        refreshModule(module, true);
-      }
-
-      @Override
-      public void moduleInitialized(IModule module) {
-        refreshModule(module, false);
-      }
-
-      @Override
-      public void moduleChanged(IModule module) {
-        refreshModule(module, false);
-      }
-
-      @Override
-      public void repositoryChanged() {
-        refresh();
-      }
-    });
   }
 
   private void refreshModule(IModule module, boolean isDeleted) {
@@ -144,32 +145,32 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     }
 
     INSTANCE = this;
+    MPSModuleRepository.getInstance().addModuleRepositoryListener(myListener);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        MPSModuleRepository.getInstance().addModule(ProjectStructureModule.this, new MPSModuleOwner() {
-        });
+        MPSModuleRepository.getInstance().registerModule(ProjectStructureModule.this, myOwner);
       }
     });
   }
 
   @Override
+  //it is disposed as CoreComponent
   public void dispose() {
     if (INSTANCE == null) return;
+    INSTANCE = null;
     clearAll();
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        ProjectStructureModule.super.dispose();
-        MPSModuleRepository.getInstance().removeModule(ProjectStructureModule.this);
+        MPSModuleRepository.getInstance().unregisterModule(ProjectStructureModule.this, myOwner);
       }
     });
-    INSTANCE = null;
+    MPSModuleRepository.getInstance().removeModuleRepositoryListener(myListener);
   }
 
   public void clearAll() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         removeAll();
-        SModelRepository.getInstance().unRegisterModelDescriptors(ProjectStructureModule.this);
         invalidateCaches();
         myModels.clear();
       }
@@ -214,7 +215,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
 
   private void removeModel(SModelDescriptor md) {
     if (myModels.remove(md.getSModelReference()) != null) {
-      SModelRepository.getInstance().removeModelDescriptor(md);
+      SModelRepository.getInstance().unRegisterModelDescriptor(md, this);
       if (md instanceof ProjectStructureSModelDescriptor) {
         ((ProjectStructureSModelDescriptor) md).dropModel();
       }

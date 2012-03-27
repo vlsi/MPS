@@ -10,6 +10,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -38,7 +39,7 @@ public class ModelCheckerUtils {
     }
     if (module instanceof Language) {
       Language language = (Language) module;
-      for (Generator generator : ListSequence.fromList(language.getGenerators())) {
+      for (Generator generator : CollectionSequence.fromCollection(language.getGenerators())) {
         ListSequence.fromList(modelDescrpitors).addSequence(ListSequence.fromList(getModelDescriptors(generator)));
       }
     }

@@ -18,8 +18,6 @@ import java.util.Collections;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import java.util.ArrayList;
 import jetbrains.mps.debug.api.programState.IStackFrame;
-import com.sun.jdi.Value;
-import com.sun.jdi.LocalVariable;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import com.sun.jdi.event.EventSet;
 import jetbrains.mps.debugger.java.runtime.watchables.EventWatchablesCreator;
@@ -229,15 +227,6 @@ public class JavaUiStateImpl extends JavaUiState {
 
   private AbstractDebugSession.ExecutionState getExecutionState() {
     return myDebugSession.getExecutionState();
-  }
-
-  @Deprecated
-  public Value getVariableValue(LocalVariable variable) {
-    JavaStackFrame stackFrame = getStackFrame();
-    if (stackFrame != null) {
-      return stackFrame.getStackFrame().getValue(variable);
-    }
-    return null;
   }
 
   @NotNull

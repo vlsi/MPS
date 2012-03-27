@@ -12,7 +12,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.java.util.JavaPaster;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -31,7 +32,7 @@ public class PasteAsJavaClass_Action extends BaseAction {
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SModel m = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel();
-    return m != null && SModelOperations.hasLanguage(m, MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.baseLanguage").getModuleReference()) && JavaPaster.areDataAvailableInClipboard();
+    return m != null && SModelOperations.hasLanguage(m, ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage", Language.class).getModuleReference()) && JavaPaster.areDataAvailableInClipboard();
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {

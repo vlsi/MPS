@@ -240,8 +240,8 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.nanoc.debug.ProgramsLocationUtil" />
-    <classNode dependClassName="jetbrains.mps.nanoc.jetbrains.mps.nanoc.pluginutil.ProgramsLocationEditor" />
     <classNode dependClassName="jetbrains.mps.nanoc.pluginSolution.plugin.ProgramsLocationComponent_PreferencesComponent" />
+    <classNode dependClassName="jetbrains.mps.nanoc.pluginutil.ProgramsLocationEditor" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent" />
     <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.prefs.BasePrefsPage" />

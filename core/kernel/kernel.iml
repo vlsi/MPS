@@ -17,8 +17,6 @@
       <sourceFolder url="file://$MODULE_DIR$/dataFlowRuntime/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/dataFlowRuntime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/patternRuntime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/kernelSolution/test_gen" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/kernelSolution/testdata" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -47,6 +45,7 @@
     <orderEntry type="module" module-name="mps-platform" scope="TEST" />
     <orderEntry type="module" module-name="execution" scope="TEST" />
     <orderEntry type="library" scope="TEST" name="xmlunit" level="project" />
+    <orderEntry type="module" module-name="MPS-platform" scope="TEST" />
   </component>
 </module>
 
