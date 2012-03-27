@@ -103,7 +103,7 @@
     <nodeInfo nodeId="3541188775018139367" fileName="FileSwapOwnerTests_Test.java" startLine="194" startPosition="0" endLine="197" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="215" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testUserObjectsSaving#(Ljava/util/Map;)V" />
     <nodeInfo nodeId="759291420779681191" fileName="FileSwapOwnerTests_Test.java" startLine="202" startPosition="82" endLine="207" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="30" startPosition="69" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_justWrite#()V" />
+    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="30" startPosition="70" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_justWrite#()V" />
     <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="36" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_stringUserObjects#()V" />
     <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="42" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_intUserObjects#()V" />
     <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="48" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_charUserObjects#()V" />
@@ -160,7 +160,7 @@
       <varInfo nodeId="3677173588536240823" varName="userObjects" />
     </scopeInfo>
     <scopeInfo nodeId="3541188775018139392" fileName="FileSwapOwnerTests_Test.java" startLine="202" startPosition="82" endLine="207" endPosition="11" />
-    <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="30" startPosition="69" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="30" startPosition="70" endLine="36" endPosition="0" />
     <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="36" startPosition="0" endLine="42" endPosition="0" />
     <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="42" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="48" startPosition="0" endLine="54" endPosition="0" />

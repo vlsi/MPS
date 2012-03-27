@@ -38,7 +38,7 @@ public class TransformationTestRunner {
   public TransformationTestRunner() {
   }
 
-  public void initTest(final BaseTransformationTest btt, @NotNull String projectName, final String model) throws Exception {
+  public void initTest(final ProjectTest projectTest, @NotNull String projectName, final String model) throws Exception {
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
     TestMain.configureMPS();
     // we do not want to save our project, see MPS-13352 
@@ -49,22 +49,22 @@ public class TransformationTestRunner {
     if (StringUtils.isEmpty(projectName)) {
       for (Project project : ProjectManager.getInstance().getOpenProjects()) {
         if (project != null) {
-          btt.setMyProject(project);
+          projectTest.setProject(project);
           break;
         }
       }
-      if (btt.getMyProject() == null) {
+      if (projectTest.getProject() == null) {
         Assert.fail("MPS Project was not specfied in test class, no currently open project was not found");
       }
     } else {
-      btt.setMyProject(TestMain.PROJECT_CONTAINER.getProject(MacrosFactory.mpsHomeMacros().expandPath(projectName, ((IFile) null))));
+      projectTest.setProject(TestMain.PROJECT_CONTAINER.getProject(MacrosFactory.mpsHomeMacros().expandPath(projectName, ((IFile) null))));
     }
     SwingUtilities.invokeAndWait(new Runnable() {
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(model));
-            btt.setModelDescriptor(modelDescriptor);
+            projectTest.setModelDescriptor(modelDescriptor);
           }
         });
       }
@@ -72,19 +72,19 @@ public class TransformationTestRunner {
     ModelAccess.instance().flushEventQueue();
   }
 
-  public void runTest(final BaseTransformationTest btt, final String className, final String methodName, final boolean runInCommand) throws Throwable {
+  public void runTest(final ProjectTest projectTest, final String className, final String methodName, final boolean runInCommand) throws Throwable {
     final Wrappers._T<Class> clazz = new Wrappers._T<Class>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        clazz.value = btt.getMyModel().getModule().getClass(className);
+        clazz.value = projectTest.getModelDescriptor().getModule().getClass(className);
         String classloader = clazz.value.getClassLoader().toString();
-        String module = btt.getMyModel().getModule().getModuleFqName();
+        String module = projectTest.getModelDescriptor().getModule().getModuleFqName();
         assert classloader.contains(module) : "class: " + clazz.value + "; classloader: " + classloader + "; module: " + module;
       }
     });
     final Object obj = clazz.value.newInstance();
-    clazz.value.getField("myModel").set(obj, btt.getMyTransidentModel());
-    clazz.value.getField("myProject").set(obj, btt.getMyProject());
+    clazz.value.getField("myModel").set(obj, projectTest.getTransientModelDescriptor());
+    clazz.value.getField("myProject").set(obj, projectTest.getProject());
     final Throwable[] exception = new Throwable[1];
     if (runInCommand) {
       SwingUtilities.invokeAndWait(new Runnable() {
@@ -101,8 +101,8 @@ public class TransformationTestRunner {
     }
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        SModelRepository.getInstance().removeModelDescriptor(btt.getMyTransidentModel());
-        btt.getMyModelOwner().unregisterModelOwner();
+        SModelRepository.getInstance().removeModelDescriptor(projectTest.getTransientModelDescriptor());
+        projectTest.getModelOwner().unregisterModelOwner();
       }
     });
     if (exception[0] != null) {
@@ -119,12 +119,12 @@ public class TransformationTestRunner {
     for (IMapping<Object, Object> property : MapSequence.fromMap(System.getProperties())) {
       if (property.key() instanceof String) {
         String key = (((String) property.key()));
-        if (StringUtils.isNotEmpty(key) && key.startsWith(BaseTransformationTest.PATH_MACRO_PREFIX)) {
+        if (StringUtils.isNotEmpty(key) && key.startsWith(BaseTransformationTest4.PATH_MACRO_PREFIX)) {
           if (property.value() instanceof String) {
             String canonicalPath = PathUtil.getCanonicalPath(((String) property.value()));
             File file = new File(canonicalPath);
             if (file.exists() && file.isDirectory()) {
-              MapSequence.fromMap(macros).put(key.substring(BaseTransformationTest.PATH_MACRO_PREFIX.length()), canonicalPath);
+              MapSequence.fromMap(macros).put(key.substring(BaseTransformationTest4.PATH_MACRO_PREFIX.length()), canonicalPath);
             }
           }
         }

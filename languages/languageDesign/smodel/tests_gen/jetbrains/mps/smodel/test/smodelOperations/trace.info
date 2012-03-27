@@ -149,7 +149,7 @@
     <nodeInfo nodeId="2282909602806462626" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="276" startPosition="195" endLine="277" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2282909602806523757" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="235" startPosition="226" endLine="239" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="2282909602806523751" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="234" startPosition="328" endLine="239" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2282909602806268536" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="22" startPosition="89" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_add#()V" />
+    <nodeInfo nodeId="2282909602806268536" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="22" startPosition="90" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_add#()V" />
     <nodeInfo nodeId="2282909602806268536" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_addAll#()V" />
     <nodeInfo nodeId="2282909602806268536" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="34" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_addAllWithIndex#()V" />
     <nodeInfo nodeId="2282909602806268536" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="40" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_addFirst#()V" />
@@ -202,7 +202,7 @@
       <varInfo nodeId="2282909602806380907" varName="addition" />
     </scopeInfo>
     <scopeInfo nodeId="2282909602806462583" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="272" startPosition="47" endLine="277" endPosition="216" />
-    <scopeInfo nodeId="2282909602806268536" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="22" startPosition="89" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="2282909602806268536" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="22" startPosition="90" endLine="28" endPosition="0" />
     <scopeInfo nodeId="2282909602806268536" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="2282909602806268536" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="34" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="2282909602806268536" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="40" startPosition="0" endLine="46" endPosition="0" />
@@ -381,7 +381,7 @@
     <nodeInfo nodeId="7199441945722556017" fileName="SLinkImplicitSelect_Test.java" startLine="181" startPosition="10" endLine="186" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="34342663959152995" fileName="SLinkImplicitSelect_Test.java" startLine="221" startPosition="46" endLine="226" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="278471160714203832" fileName="SLinkImplicitSelect_Test.java" startLine="230" startPosition="106" endLine="235" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="278471160714179981" fileName="SLinkImplicitSelect_Test.java" startLine="23" startPosition="70" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_empty#()V" />
+    <nodeInfo nodeId="278471160714179981" fileName="SLinkImplicitSelect_Test.java" startLine="23" startPosition="71" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_empty#()V" />
     <nodeInfo nodeId="278471160714179981" fileName="SLinkImplicitSelect_Test.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_singleChild#()V" />
     <nodeInfo nodeId="278471160714179981" fileName="SLinkImplicitSelect_Test.java" startLine="35" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_multipleChildren#()V" />
     <nodeInfo nodeId="278471160714179981" fileName="SLinkImplicitSelect_Test.java" startLine="41" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_operationsOnList#()V" />
@@ -530,7 +530,7 @@
     <scopeInfo nodeId="278471160714203836" fileName="SLinkImplicitSelect_Test.java" startLine="231" startPosition="70" endLine="235" endPosition="0">
       <varInfo nodeId="278471160714203836" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="278471160714179981" fileName="SLinkImplicitSelect_Test.java" startLine="23" startPosition="70" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="278471160714179981" fileName="SLinkImplicitSelect_Test.java" startLine="23" startPosition="71" endLine="29" endPosition="0" />
     <scopeInfo nodeId="278471160714179981" fileName="SLinkImplicitSelect_Test.java" startLine="29" startPosition="0" endLine="35" endPosition="0" />
     <scopeInfo nodeId="278471160714179981" fileName="SLinkImplicitSelect_Test.java" startLine="35" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="278471160714179981" fileName="SLinkImplicitSelect_Test.java" startLine="41" startPosition="0" endLine="47" endPosition="0" />

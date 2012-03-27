@@ -21,7 +21,7 @@
     <nodeInfo nodeId="3033860308392767440" fileName="TestPluginsDependency_Test.java" startLine="58" startPosition="7" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3033860308392767513" fileName="TestPluginsDependency_Test.java" startLine="59" startPosition="0" endLine="60" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6572468330876779198" fileName="TestPluginsDependency_Test.java" startLine="38" startPosition="131" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="3033860308392767423" fileName="TestPluginsDependency_Test.java" startLine="25" startPosition="72" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_pluginDependencyComplete#()V" />
+    <nodeInfo nodeId="3033860308392767423" fileName="TestPluginsDependency_Test.java" startLine="25" startPosition="73" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_pluginDependencyComplete#()V" />
     <nodeInfo nodeId="1238427563285" fileName="TestPluginsDependency_Test.java" startLine="37" startPosition="87" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3033860308390351690" fileName="TestPluginsDependency_Test.java" startLine="49" startPosition="58" endLine="57" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3033860308390351664" fileName="TestPluginsDependency_Test.java" startLine="47" startPosition="43" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -32,7 +32,7 @@
     <scopeInfo nodeId="6572468330876779198" fileName="TestPluginsDependency_Test.java" startLine="38" startPosition="131" endLine="42" endPosition="0">
       <varInfo nodeId="6572468330876779198" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3033860308392767423" fileName="TestPluginsDependency_Test.java" startLine="25" startPosition="72" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="3033860308392767423" fileName="TestPluginsDependency_Test.java" startLine="25" startPosition="73" endLine="31" endPosition="0" />
     <scopeInfo nodeId="3033860308390351693" fileName="TestPluginsDependency_Test.java" startLine="50" startPosition="105" endLine="56" endPosition="26" />
     <scopeInfo nodeId="1238427563285" fileName="TestPluginsDependency_Test.java" startLine="37" startPosition="87" endLine="44" endPosition="7">
       <varInfo nodeId="1238427563285" varName="m" />
