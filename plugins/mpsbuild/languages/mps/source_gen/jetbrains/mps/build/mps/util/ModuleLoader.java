@@ -9,6 +9,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -22,7 +23,6 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -67,6 +67,7 @@ public class ModuleLoader {
       SPropertyOperations.set(myModule, "name", myModuleDescriptor.getModuleReference().getModuleFqName());
 
       if (SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module")) {
+        SPropertyOperations.set(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "doNotCompile", "" + (myModuleDescriptor instanceof SolutionDescriptor && !(((SolutionDescriptor) myModuleDescriptor).getCompileInMPS())));
         ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "dependencies", true)).clear();
         importDependencies();
         if (SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language") && myModuleDescriptor instanceof LanguageDescriptor) {
@@ -199,6 +200,13 @@ public class ModuleLoader {
     if (neq_a6ewnz_a0d0g(SPropertyOperations.getString(myModule, "uuid"), moduleReference.getModuleId().toString())) {
       report("module id in import doesn't match file content " + SPropertyOperations.getString(myModule, "name") + ", should be: " + moduleReference.getModuleId().toString(), myOriginalModule);
       success = false;
+    }
+    if (SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module")) {
+      boolean inFile = myModuleDescriptor instanceof SolutionDescriptor && !(((SolutionDescriptor) myModuleDescriptor).getCompileInMPS());
+      if (SPropertyOperations.getBoolean(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "doNotCompile") != inFile) {
+        report("compile in MPS flag doesn't match file content " + SPropertyOperations.getString(myModule, "name") + ", should be: " + inFile, myOriginalModule);
+        success = false;
+      }
     }
     return success;
   }
