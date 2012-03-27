@@ -97,7 +97,7 @@ public class Utils {
     Set<SNode> intersect = SetSequence.fromSetWithValues(new HashSet(), SetSequence.fromSet(oldNodes).intersect(SetSequence.fromSet(newNodes)));
     SetSequence.fromSet(oldNodes).removeSequence(SetSequence.fromSet(intersect));
     SetSequence.fromSet(newNodes).removeSequence(SetSequence.fromSet(intersect));
-    if (SetSequence.fromSet(oldNodes).count() != 0 || SetSequence.fromSet(newNodes).count() != 0) {
+    if (SetSequence.fromSet(newNodes).isNotEmpty() || SetSequence.fromSet(oldNodes).isNotEmpty()) {
       if (debugInfo) {
         LOG.warning("Something wrong with " + node + " with id " + node.getId());
         LOG.warning("in common size " + SetSequence.fromSet(intersect).count());
