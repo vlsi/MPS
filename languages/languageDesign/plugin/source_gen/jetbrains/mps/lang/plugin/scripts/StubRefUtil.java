@@ -49,9 +49,23 @@ public class StubRefUtil {
     return expectedString.equals(getTargetStringFromReference(reference));
   }
 
+  /*package*/ static boolean isReferenceToField(@Nullable SReference reference, @NotNull String field) {
+    if (reference == null || !(isReferenceToJavaStub(reference))) {
+      return false;
+    }
+    int packageClassDot = field.lastIndexOf(".", field.lastIndexOf(".") - 1);
+    String expectedString = field.substring(0, packageClassDot) + "/~" + field.substring(packageClassDot + 1);
+    return expectedString.equals(getTargetStringFromReference(reference));
+  }
+
   /*package*/ static boolean isStaticMethodCall(SNode staticMethodCall, @NotNull String methodSignature) {
     String classFqName = NameUtil.namespaceFromLongName(methodSignature.substring(0, methodSignature.indexOf("(")));
     return isReferenceToClass(SNodeOperations.getReference(staticMethodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "classConcept")), classFqName) && isReferenceToMethod(SNodeOperations.getReference(staticMethodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "staticMethodDeclaration")), methodSignature);
+  }
+
+  /*package*/ static boolean isStaticFieldReference(SNode staticFieldRef, @NotNull String field) {
+    String classFqName = NameUtil.namespaceFromLongName(field);
+    return isReferenceToClass(SNodeOperations.getReference(staticFieldRef, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "classifier")), classFqName) && isReferenceToField(SNodeOperations.getReference(staticFieldRef, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "staticFieldDeclaration")), field);
   }
 
   private static boolean isReferenceTo(@Nullable SReference ref, @NotNull SModelReference targetModel, @NotNull SNodeId targetId) {
@@ -91,8 +105,8 @@ public class StubRefUtil {
       SModelReference targetModelRef = ref.getTargetSModelReference();
       model.addModelImport(targetModelRef, false);
 
-      IModule sourceModule = check_4tnolf_a0d0a0m(model.getModelDescriptor());
-      IModule targetModule = check_4tnolf_a0e0a0m(SModelRepository.getInstance().getModelDescriptor(targetModelRef));
+      IModule sourceModule = check_4tnolf_a0d0a0o(model.getModelDescriptor());
+      IModule targetModule = check_4tnolf_a0e0a0o(SModelRepository.getInstance().getModelDescriptor(targetModelRef));
       if (sourceModule != null && targetModule != null) {
         if (!(sourceModule.getDependenciesManager().getAllVisibleModules().contains(targetModule))) {
           sourceModule.addDependency(targetModule.getModuleReference(), false);
@@ -149,14 +163,14 @@ public class StubRefUtil {
     return null;
   }
 
-  private static IModule check_4tnolf_a0d0a0m(SModelDescriptor checkedDotOperand) {
+  private static IModule check_4tnolf_a0d0a0o(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static IModule check_4tnolf_a0e0a0m(SModelDescriptor checkedDotOperand) {
+  private static IModule check_4tnolf_a0e0a0o(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
