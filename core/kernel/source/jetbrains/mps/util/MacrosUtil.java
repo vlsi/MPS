@@ -30,6 +30,7 @@ public class MacrosUtil {
         moduleDescriptorFile = module.getDescriptorFile();
       }
     }
+    if (moduleDescriptorFile == null) return null;
     return MacrosFactory.forModuleFile(moduleDescriptorFile).expandPath(path);
   }
 }
