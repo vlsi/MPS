@@ -107,14 +107,13 @@ public class CommandLineGenerator {
         return PathManager.getLibPath() + File.separator + it;
       }
     }));
-    Iterable<String> svnJars = getSvnJars();
     SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(getSvnJars()));
     return classpathItems;
   }
 
   private static Set<String> getClasspathInternal() {
     Set<String> classpathItems = SetSequence.fromSet(new LinkedHashSet<String>());
-    final Iterable<String> OTHER_CLASSES = Arrays.asList("jetbrains.mps.internal.collections.runtime.ListSequence", "jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes", "jetbrains.mps.typesystem.inference.TypeChecker", "jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager", "jetbrains.mps.intentions.IntentionsManager", "jetbrains.mps.ide.findusages.FindersManager", "jetbrains.mps.analyzers.runtime.framework.CustomAnalyzerRunner", "jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple");
+    final Iterable<String> OTHER_CLASSES = Arrays.asList("jetbrains.mps.internal.collections.runtime.ListSequence", "jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes", "jetbrains.mps.typesystem.inference.TypeChecker", "jetbrains.mps.ide.findusages.FindersManager", "jetbrains.mps.analyzers.runtime.framework.CustomAnalyzerRunner", "jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple");
     Iterable<Class> classes = Arrays.<Class>asList(MergeDriverMain.class, FileUtil.class, MergeSession.class, SModel.class);
     classes = Sequence.fromIterable(OTHER_CLASSES).select(new ISelector<String, Class>() {
       public Class select(String cn) {
