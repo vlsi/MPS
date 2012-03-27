@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ClassifierScopes {
   private ClassifierScopes() {
@@ -50,12 +51,22 @@ public class ClassifierScopes {
     return filterVisibleClassifiersScope(contextNode, new ClassifiersScope(SNodeOperations.getModel(contextNode), scope, "jetbrains.mps.baseLanguage.structure.Annotation"));
   }
 
-  public static void getThrowablesScope(@NotNull SNode contextNode, IScope scope) {
-    new FilteringScope(new ClassifiersScope(SNodeOperations.getModel(contextNode), scope, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+  public static Scope getThrowablesScope(@NotNull SNode contextNode, IScope scope) {
+    return new FilteringScope(new ClassifiersScope(SNodeOperations.getModel(contextNode), scope, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       @Override
       public boolean isExcluded(SNode node) {
         // todo: change it! need only extended classes here 
         return !(SetSequence.fromSet(ClassifierScopeUtils.getExtendedClassifiers(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"))).contains(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Throwable")));
+      }
+    };
+  }
+
+  public static Scope getClassesForExtends(@NotNull SNode contextNode, IScope scope) {
+    // not final ClassConcepts 
+    return new FilteringScope(filterWithClassExpressionClassifiers(new ClassifiersScope(SNodeOperations.getModel(contextNode), scope, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+      @Override
+      public boolean isExcluded(SNode node) {
+        return SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "isFinal");
       }
     };
   }
