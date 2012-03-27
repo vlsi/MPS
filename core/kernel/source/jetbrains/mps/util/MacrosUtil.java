@@ -22,7 +22,7 @@ import jetbrains.mps.vfs.IFile;
 public class MacrosUtil {
   public static String expandPath(String path, String nodeModuleUID) {
     IFile moduleDescriptorFile = null;
-    IModule module = null;
+    IModule module;
 
     if (nodeModuleUID != null) {
       module = MPSModuleRepository.getInstance().getModuleByFqName(nodeModuleUID);
@@ -30,6 +30,6 @@ public class MacrosUtil {
         moduleDescriptorFile = module.getDescriptorFile();
       }
     }
-    return MacrosFactory.moduleDescriptor(module).expandPath(path, moduleDescriptorFile);
+    return MacrosFactory.forModuleFile(moduleDescriptorFile).expandPath(path);
   }
 }

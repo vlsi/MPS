@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.ModuleFileTracker;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -84,7 +85,7 @@ public class BuildGeneratorUtil {
     ModelRoot mr = new ModelRoot();
     mr.setPath(solutionDescriptorFile.getParent().getPath());
     descriptor.getModelRoots().add(mr);
-    SolutionDescriptorPersistence.saveSolutionDescriptor(solutionDescriptorFile, descriptor);
+    SolutionDescriptorPersistence.saveSolutionDescriptor(solutionDescriptorFile, descriptor, MacrosFactory.forModuleFile(solutionDescriptorFile));
     ModulesMiner.ModuleHandle handle = new ModulesMiner.ModuleHandle(solutionDescriptorFile, descriptor);
     return (Solution) ModuleRepositoryFacade.createModule(handle, mpsProject);
   }

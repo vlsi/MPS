@@ -16,10 +16,8 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -157,7 +155,7 @@ public class TemplateQueryContext {
 
   public SNode getOriginalCopiedInputNode(SNode node) {
     if (node == null || node.isDisposed()) return null;
-    SNode result = (SNode) node.getUserObject(ORIGINAL_INPUT_NODE);
+    SNode result = getInputNode(node);
     return result != null ? result : node;
   }
 
@@ -229,5 +227,27 @@ public class TemplateQueryContext {
 
   public SNode getRuleNodeForLogging() {
     return null;
+  }
+
+  @Nullable
+  public static SNodePointer getInput(SNode output) {
+    return (SNodePointer) output.getUserObject(ORIGINAL_INPUT_NODE);
+  }
+
+  public static void putInput(SNode output, SNodePointer input) {
+    output.putUserObject(ORIGINAL_INPUT_NODE, input);
+  }
+
+  @Nullable
+  public static SNode getInputNode(SNode output) {
+    SNodePointer inputNodePointer = (SNodePointer) output.getUserObject(ORIGINAL_INPUT_NODE);
+    if (inputNodePointer == null) {
+      return null;
+    }
+    return inputNodePointer.getNode();
+  }
+
+  public static void putInputNode(SNode output, SNode input) {
+    output.putUserObject(ORIGINAL_INPUT_NODE, new SNodePointer(input));
   }
 }

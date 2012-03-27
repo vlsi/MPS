@@ -52,7 +52,7 @@
     <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.RuleType" />
-    <classNode dependClassName="jetbrains.mps.util.Macros" />
+    <classNode dependClassName="jetbrains.mps.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.xmlQuery.runtime.AttributeUtils" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
@@ -60,7 +60,6 @@
     <classNode dependClassName="org.jdom.Element" />
   </dependency>
   <dependency className="jetbrains.mps.project.persistence.LanguageDescriptorPersistence" file="LanguageDescriptorPersistence.java">
-    <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
@@ -82,9 +81,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.LanguageID" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
-    <classNode dependClassName="jetbrains.mps.util.Macros" />
-    <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
-    <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
+    <classNode dependClassName="jetbrains.mps.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.xmlQuery.runtime.AttributeUtils" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
@@ -119,7 +116,7 @@
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
-    <classNode dependClassName="jetbrains.mps.util.Macros" />
+    <classNode dependClassName="jetbrains.mps.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.xmlQuery.runtime.AttributeUtils" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
@@ -132,8 +129,7 @@
     <classNode extendsClassName="java.lang.RuntimeException" />
   </dependency>
   <dependency className="jetbrains.mps.project.persistence.ProjectDescriptorPersistence" file="ProjectDescriptorPersistence.java">
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.io.FileOutputStream" />
+    <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="java.lang.Comparable" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -154,8 +150,9 @@
     <classNode dependClassName="jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
-    <classNode dependClassName="jetbrains.mps.util.Macros" />
+    <classNode dependClassName="jetbrains.mps.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.xmlQuery.runtime.AttributeUtils" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
@@ -177,8 +174,7 @@
     <classNode dependClassName="jetbrains.mps.project.structure.modules.SolutionKind" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageID" />
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
-    <classNode dependClassName="jetbrains.mps.util.Macros" />
-    <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
+    <classNode dependClassName="jetbrains.mps.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.xmlQuery.runtime.AttributeUtils" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />

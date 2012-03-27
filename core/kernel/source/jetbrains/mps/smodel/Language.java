@@ -34,6 +34,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.vfs.FileSystem;
@@ -434,7 +435,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       LOG.warning("Trying to save packaged language " + getModuleFqName(), new Exception());
       return;
     }
-    LanguageDescriptorPersistence.saveLanguageDescriptor(myDescriptorFile, getModuleDescriptor());
+    LanguageDescriptorPersistence.saveLanguageDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.forModuleFile(myDescriptorFile));
   }
 
   public List<SModelDescriptor> getAccessoryModels() {

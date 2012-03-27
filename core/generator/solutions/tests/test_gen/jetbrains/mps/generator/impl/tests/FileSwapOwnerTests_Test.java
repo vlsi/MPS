@@ -76,6 +76,18 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
     this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_baseLanguageStructure", true);
   }
 
+  @Test
+  public void test_testOverloadedOperatorsSandbox() throws Throwable {
+    this.initTest("${mps_home}/MPS.mpr", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)");
+    this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_testOverloadedOperatorsSandbox", true);
+  }
+
+  @Test
+  public void test_testSkipNodesWhileSaving() throws Throwable {
+    this.initTest("${mps_home}/MPS.mpr", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)");
+    this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_testSkipNodesWhileSaving", true);
+  }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_justWrite() throws Exception {
@@ -138,9 +150,9 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
     public void test_mpsUserObjects() throws Exception {
       this.addNodeById("1732396662099564446");
       Map<Object, Object> userObjects = MapSequence.fromMap(new LinkedHashMap<Object, Object>(16, (float) 0.75, false));
-      MapSequence.fromMap(userObjects).put(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), new SNodePointer(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
+      MapSequence.fromMap(userObjects).put(new SNodePointer(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")), new SNodePointer(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
       MapSequence.fromMap(userObjects).put(SNodeOperations.getModel(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")).getSModelReference(), SModelRepository.getInstance().getModelDescriptor(new SModelReference("java.lang", "java_stub")).getSModel().getSModelReference());
-      MapSequence.fromMap(userObjects).put(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement").getSNodeId(), SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"));
+      MapSequence.fromMap(userObjects).put(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement").getSNodeId(), new SNodePointer(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
       MapSequence.fromMap(userObjects).put(SNodeOperations.getModel(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")).getSModelId(), SNodeOperations.getModel(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")).getSModelReference());
       this.testUserObjectsSaving(userObjects);
     }
@@ -154,7 +166,29 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
       Assert.assertNull(matchNodes);
     }
 
-    public void testUserObjectsSaving(Map<Object, Object> userObjects) {
+    public void test_testOverloadedOperatorsSandbox() throws Exception {
+      this.addNodeById("1732396662099564446");
+      SModel sampleModel = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test", "")).getSModel();
+      SModel resultModel = FileSwapOwner.writeAndReadModel(sampleModel);
+
+      ArrayList<NodeDifference> matchNodes = NodesMatcher.matchNodes(SModelOperations.getRoots(sampleModel, null), SModelOperations.getRoots(resultModel, null));
+      Assert.assertNull(matchNodes);
+    }
+
+    public void test_testSkipNodesWhileSaving() throws Exception {
+      this.addNodeById("1732396662099564446");
+      Map<Object, Object> userObjects = MapSequence.fromMap(new LinkedHashMap<Object, Object>(16, (float) 0.75, false));
+      MapSequence.fromMap(userObjects).put("1", "1");
+      MapSequence.fromMap(userObjects).put(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"));
+      MapSequence.fromMap(userObjects).put("2", "2");
+
+      Map<Object, Object> userObjectsToSkip = MapSequence.fromMap(new LinkedHashMap<Object, Object>(16, (float) 0.75, false));
+      MapSequence.fromMap(userObjectsToSkip).put(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"));
+
+      this.testUserObjectsSaving(userObjects, userObjectsToSkip);
+    }
+
+    public void testUserObjectsSaving(Map<Object, Object> userObjects, Map<Object, Object> userObjectsToLoose) {
       SNode var1732396662099564454 = this.getNodeById("1732396662099564449");
       try {
 
@@ -166,13 +200,21 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
         Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), readNode)));
 
         for (IMapping<Object, Object> object : MapSequence.fromMap(userObjects)) {
-          Assert.assertEquals("User object " + object + " was lost.", object.value(), readNode.getUserObject(object.key()));
+          if (MapSequence.fromMap(userObjectsToLoose).contains(object)) {
+            Assert.assertNull("User object " + object + " should have been lost.", readNode.getUserObject(object.key()));
+          } else {
+            Assert.assertEquals("User object " + object + " was lost.", object.value(), readNode.getUserObject(object.key()));
+          }
         }
 
       } catch (IOException e) {
         e.printStackTrace();
         org.junit.Assert.fail(e.getMessage());
       }
+    }
+
+    public void testUserObjectsSaving(Map<Object, Object> userObjects) {
+      this.testUserObjectsSaving(userObjects, MapSequence.fromMap(new HashMap<Object, Object>()));
     }
   }
 }

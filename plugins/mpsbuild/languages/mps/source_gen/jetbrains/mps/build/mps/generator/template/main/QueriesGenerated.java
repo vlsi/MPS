@@ -6,14 +6,11 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.build.behavior.BuildProject_Behavior;
-import jetbrains.mps.build.util.Context;
-import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.mps.util.ModuleLoader;
 
 public class QueriesGenerated {
@@ -23,12 +20,12 @@ public class QueriesGenerated {
         continue;
       }
 
-      String workingDir = BuildProject_Behavior.call_getBasePath_4959435991187146924(project, Context.defaultContext(_context));
-      if (StringUtils.isEmpty(workingDir)) {
-        _context.showErrorMessage(project, "no working dir for " + SPropertyOperations.getString(project, "name"));
+      SNode originalProject = SNodeOperations.as(_context.getOriginalCopiedInputNode(project), "jetbrains.mps.build.structure.BuildProject");
+      if ((originalProject == null)) {
+        _context.showErrorMessage(project, "no original project is found for " + SPropertyOperations.getString(project, "name"));
         continue;
       }
-      PathConverter pathConverter = new PathConverter(workingDir);
+      PathConverter pathConverter = new PathConverter(originalProject);
 
       VisibleModules visibleModules = new VisibleModules(project, _context);
       visibleModules.collect();
