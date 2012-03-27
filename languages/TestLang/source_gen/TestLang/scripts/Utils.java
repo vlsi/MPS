@@ -113,7 +113,7 @@ public class Utils {
   public static Set<SNode> getOldScopeFromRef(final SReference ref) {
     return getNodes("old scope", new _FunctionTypes._return_P0_E0<Scope>() {
       public Scope invoke() {
-        ModelConstraintsUtil.ReferenceDescriptor descriptor = ModelConstraintsUtil.getReferenceDescriptor(ref, null);
+        ModelConstraintsUtil.ReferenceDescriptor descriptor = ModelConstraintsUtil.getReferenceDescriptor(ref, new MockIOperationContext());
         return descriptor.getScope();
       }
     }, ref);
