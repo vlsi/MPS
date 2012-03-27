@@ -1133,6 +1133,86 @@
     <unitInfo nodeId="8461667031990053629" fileName="CheckClosureParameterScopes_MigrationScript.java" startLine="16" startPosition="0" endLine="70" endPosition="0" unitName="TestLang.scripts.CheckClosureParameterScopes_MigrationScript" />
     <unitInfo nodeId="8461667031990053629" fileName="CheckClosureParameterScopes_MigrationScript.java" startLine="19" startPosition="28" endLine="67" endPosition="5" unitName="TestLang.scripts.CheckClosureParameterScopes_MigrationScript$1" />
   </root>
+  <root nodeId="8483743094179642270">
+    <nodeInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="19" startPosition="99" endLine="20" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="22" startPosition="31" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="26" startPosition="41" endLine="27" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="30" startPosition="59" endLine="31" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8483743094179642293" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="34" startPosition="59" endLine="35" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8483743094179642297" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="35" startPosition="49" endLine="36" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8483743094179642301" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="36" startPosition="31" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8483743094179642302" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="37" startPosition="0" endLine="38" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8483743094179642310" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="38" startPosition="183" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8483743094179642313" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="40" startPosition="26" endLine="41" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8483743094179642320" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="43" startPosition="38" endLine="44" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8483743094179642324" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="45" startPosition="9" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8483743094179642325" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="46" startPosition="0" endLine="47" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8483743094179642335" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="48" startPosition="40" endLine="49" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8483743094179642342" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="51" startPosition="47" endLine="52" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8483743094179642350" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="54" startPosition="45" endLine="55" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8483743094179642357" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="56" startPosition="9" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8483743094179644026" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="59" startPosition="33" endLine="60" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8483743094179642274" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="65" startPosition="52" endLine="66" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8483743094179644055" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="68" startPosition="33" endLine="69" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="74" startPosition="42" endLine="75" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8483743094179642311" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="39" startPosition="0" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8483743094179642318" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="42" startPosition="9" endLine="45" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8483743094179642333" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="47" startPosition="114" endLine="50" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8483743094179642340" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="50" startPosition="9" endLine="53" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8483743094179642348" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="53" startPosition="9" endLine="56" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="21" startPosition="76" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8483743094179643955" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="58" startPosition="159" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="8483743094179644053" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="67" startPosition="150" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="8483743094179642358" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="57" startPosition="0" endLine="62" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8483743094179644063" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="66" startPosition="183" endLine="71" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="64" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="33" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="20" startPosition="54" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="18" startPosition="95" endLine="78" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckClassifierClassExpressionScopes_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <scopeInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="22" startPosition="31" endLine="23" endPosition="25" />
+    <scopeInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="26" startPosition="41" endLine="27" endPosition="25" />
+    <scopeInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="30" startPosition="59" endLine="31" endPosition="80" />
+    <scopeInfo nodeId="8483743094179642312" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="40" startPosition="26" endLine="41" endPosition="23" />
+    <scopeInfo nodeId="8483743094179642319" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="43" startPosition="38" endLine="44" endPosition="23" />
+    <scopeInfo nodeId="8483743094179642334" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="48" startPosition="40" endLine="49" endPosition="23" />
+    <scopeInfo nodeId="8483743094179642341" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="51" startPosition="47" endLine="52" endPosition="23" />
+    <scopeInfo nodeId="8483743094179642349" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="54" startPosition="45" endLine="55" endPosition="23" />
+    <scopeInfo nodeId="8483743094179643956" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="59" startPosition="33" endLine="60" endPosition="90" />
+    <scopeInfo nodeId="8483743094179644054" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="68" startPosition="33" endLine="69" endPosition="90" />
+    <scopeInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="74" startPosition="42" endLine="75" endPosition="21" />
+    <scopeInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="21" startPosition="76" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="8483743094179643955" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="58" startPosition="159" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="8483743094179644053" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="67" startPosition="150" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="8483743094179642273" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="65" startPosition="52" endLine="71" endPosition="23">
+      <varInfo nodeId="8483743094179642275" varName="ref" />
+    </scopeInfo>
+    <scopeInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="64" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="8483743094179642270" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8483743094179642292" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="34" startPosition="59" endLine="62" endPosition="24">
+      <varInfo nodeId="8483743094179642294" varName="excludingPrefix" />
+      <varInfo nodeId="8483743094179642326" varName="name" />
+      <varInfo nodeId="8483743094179642303" varName="ref" />
+      <varInfo nodeId="8483743094179642298" varName="startsFrom" />
+    </scopeInfo>
+    <scopeInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="33" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="8483743094179642270" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="19" startPosition="99" endLine="77" endPosition="7" />
+    <scopeInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="18" startPosition="95" endLine="78" endPosition="3">
+      <varInfo nodeId="8483743094179642270" varName="operationContext" />
+    </scopeInfo>
+    <unitInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="18" startPosition="0" endLine="80" endPosition="0" unitName="TestLang.scripts.CheckClassifierClassExpressionScopes_MigrationScript" />
+    <unitInfo nodeId="8483743094179642270" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="21" startPosition="28" endLine="77" endPosition="5" unitName="TestLang.scripts.CheckClassifierClassExpressionScopes_MigrationScript$1" />
+    <unitInfo nodeId="8483743094179643955" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="58" startPosition="120" endLine="62" endPosition="9" unitName="TestLang.scripts.CheckClassifierClassExpressionScopes_MigrationScript$2" />
+    <unitInfo nodeId="8483743094179644053" fileName="CheckClassifierClassExpressionScopes_MigrationScript.java" startLine="67" startPosition="111" endLine="71" endPosition="9" unitName="TestLang.scripts.CheckClassifierClassExpressionScopes_MigrationScript$2" />
+  </root>
   <root nodeId="869906464959471161">
     <nodeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="17" startPosition="101" endLine="18" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="869906464959471161" fileName="CheckLocalInstanceFieldReferenceScopes_MigrationScript.java" startLine="20" startPosition="31" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
