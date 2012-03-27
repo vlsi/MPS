@@ -516,6 +516,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "fileset", true);
   }
 
+  public static SNode sourceNodeQuery_1500819558096269424(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "resset", true);
+  }
+
   public static SNode sourceNodeQuery_5248329904288198651(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "resset", true);
   }
