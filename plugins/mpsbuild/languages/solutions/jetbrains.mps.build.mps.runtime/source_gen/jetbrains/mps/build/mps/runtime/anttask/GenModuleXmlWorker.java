@@ -18,7 +18,7 @@ import jetbrains.mps.vfs.FileSystem;
 import org.jdom.Element;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.project.dependency.DependenciesManager;
+import java.util.Collection;
 import org.jdom.input.SAXBuilder;
 import org.jdom.Document;
 import java.io.StringReader;
@@ -27,6 +27,8 @@ import org.jdom.JDOMException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.PrintStream;
+import jetbrains.mps.project.dependency.DependenciesManager;
+import java.util.Set;
 import java.io.File;
 
 public class GenModuleXmlWorker extends MpsWorker {
@@ -76,7 +78,7 @@ public class GenModuleXmlWorker extends MpsWorker {
     });
     IFile xmlfile = FileSystem.getInstance().getFileByPath(params.getDest());
 
-    writeFile0(xmlfile, moduleRef, module, params.getExtraText());
+    writeFile(xmlfile, moduleRef, module, params.getExtraText());
   }
 
   public void writeFile0(IFile file, ModuleReference moduleRef, IModule module, List<String> extraText) {
@@ -93,13 +95,13 @@ public class GenModuleXmlWorker extends MpsWorker {
     Element depElem = new Element("dependencies");
     moduleElem.addContent(depElem);
 
-    DependenciesManager depManager = check_7yxogc_a0h0e(module);
-    if (depManager == null) {
+    Collection<IModule> dependencies = getDepenencies(module);
+    if (dependencies == null) {
       System.out.println("module " + moduleRef + " was not found in repository");
       // <node> 
       return;
     }
-    for (IModule m : depManager.getAllRequiredModules()) {
+    for (IModule m : dependencies) {
       depElem.addContent(new Element("module").setAttribute("ref", m.getModuleReference().toString()));
     }
 
@@ -133,13 +135,13 @@ public class GenModuleXmlWorker extends MpsWorker {
       )) + "\">");
       wr.println("<dependencies>");
 
-      DependenciesManager depManager = check_7yxogc_a0e0b0f(module);
-      if (depManager == null) {
+      Collection<IModule> dependencies = getDepenencies(module);
+      if (dependencies == null) {
         System.out.println("module " + moduleRef + " was not found in repository");
         // <node> 
         return;
       }
-      for (IModule m : depManager.getAllRequiredModules()) {
+      for (IModule m : dependencies) {
         wr.println("<module ref=\"" + m.getModuleReference().toString() + "\" />");
       }
 
@@ -158,18 +160,23 @@ public class GenModuleXmlWorker extends MpsWorker {
     }
   }
 
+  private Collection<IModule> getDepenencies(IModule module) {
+    final DependenciesManager depManager = check_7yxogc_a0a0g(module);
+    if (depManager == null) {
+      return null;
+    }
+    return ModelAccess.instance().runReadAction(new Computable<Set<IModule>>() {
+      public Set<IModule> compute() {
+        return depManager.getAllRequiredModules();
+      }
+    });
+  }
+
   public static void main(String[] args) {
     new GenModuleXmlWorker(WhatToDo.fromDumpInFile(new File(args[0])), new MpsWorker.LogLogger()).workFromMain();
   }
 
-  private static DependenciesManager check_7yxogc_a0h0e(IModule checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getDependenciesManager();
-    }
-    return null;
-  }
-
-  private static DependenciesManager check_7yxogc_a0e0b0f(IModule checkedDotOperand) {
+  private static DependenciesManager check_7yxogc_a0a0g(IModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getDependenciesManager();
     }
