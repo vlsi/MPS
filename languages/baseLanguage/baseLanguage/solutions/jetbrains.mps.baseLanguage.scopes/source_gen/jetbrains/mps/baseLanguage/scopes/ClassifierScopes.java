@@ -26,8 +26,8 @@ public class ClassifierScopes {
       @Override
       public boolean isExcluded(SNode node) {
         // todo: ! 
-        // todo: anonymous? why? 
-        return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AnonymousClass") || !(VisibilityUtil.isVisible(contextNode, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IVisible")));
+        // todo: anonymous? why? and tuples why??? 
+        return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AnonymousClass") || !(VisibilityUtil.isVisible(contextNode, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IVisible")));
       }
     };
   }
