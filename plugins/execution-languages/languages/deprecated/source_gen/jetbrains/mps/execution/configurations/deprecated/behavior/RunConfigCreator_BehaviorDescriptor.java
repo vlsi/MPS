@@ -11,14 +11,6 @@ public abstract class RunConfigCreator_BehaviorDescriptor extends BaseConcept_Be
   public RunConfigCreator_BehaviorDescriptor() {
   }
 
-  public SNode virtual_getFunction_314981645427004503(SNode thisNode) {
-    return RunConfigCreator_Behavior.virtual_getFunction_314981645427004503(thisNode);
-  }
-
-  public SNode virtual_getCreatorTypeParameter_314981645427004497(SNode thisNode) {
-    return RunConfigCreator_Behavior.virtual_getCreatorTypeParameter_314981645427004497(thisNode);
-  }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
