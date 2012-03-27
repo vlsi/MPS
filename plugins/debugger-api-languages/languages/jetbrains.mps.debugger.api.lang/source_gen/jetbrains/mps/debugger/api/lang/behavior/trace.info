@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BreakpointCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.BreakpointCreator_BehaviorDescriptor" />
   <unitInfo fileName="BreakpointableNodeItem_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.BreakpointableNodeItem_BehaviorDescriptor" />
   <unitInfo fileName="ConceptDeclarationReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.ConceptDeclarationReference_BehaviorDescriptor" />
@@ -10,7 +10,6 @@
   <unitInfo fileName="ConceptFunctionParameter_ScopeNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_ScopeNode_BehaviorDescriptor" />
   <unitInfo fileName="ConceptFunctionParameter_UnitNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_UnitNode_BehaviorDescriptor" />
   <unitInfo fileName="ConceptFunction_CreateBreakpoint_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_CreateBreakpoint_BehaviorDescriptor" />
-  <unitInfo fileName="ConceptFunction_CreateBreakpoint_Deprecated_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_CreateBreakpoint_Deprecated_BehaviorDescriptor" />
   <unitInfo fileName="ConceptFunction_GetUnitName_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_GetUnitName_BehaviorDescriptor" />
   <unitInfo fileName="ConceptFunction_GetVariables_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_GetVariables_BehaviorDescriptor" />
   <unitInfo fileName="ConceptFunction_PropertyStringGetter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_PropertyStringGetter_BehaviorDescriptor" />
