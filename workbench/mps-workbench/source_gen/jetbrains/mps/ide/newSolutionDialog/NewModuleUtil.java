@@ -4,8 +4,8 @@ package jetbrains.mps.ide.newSolutionDialog;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.application.ApplicationManager;
 import javax.lang.model.SourceVersion;
 import jetbrains.mps.ide.NewModuleCheckUtil;
 import java.io.File;
@@ -37,13 +37,10 @@ public class NewModuleUtil {
   }
 
   public static void runModuleCreation(Project p, final _FunctionTypes._void_P0_E0 r) {
-    ApplicationManager.getApplication().runWriteAction(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        ModelAccess.instance().runWriteAction(new Runnable() {
-          public void run() {
-            r.invoke();
-          }
-        });
+        ApplicationManager.getApplication().assertWriteAccessAllowed();
+        r.invoke();
       }
     });
   }
