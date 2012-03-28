@@ -1983,6 +1983,10 @@
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="8431776905956472925">
         <property name="id" nameId="tps4.1222447189012" value="28f9e497-3b42-4291-aeba-0a1039153ab1" />
       </node>
+      <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="4844813484173135547">
+        <property name="id" nameId="tps4.1222447189012" value="fe9d76d7-5809-45c9-ae28-a40915b4d6ff" />
+        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.lang.checkedName" />
+      </node>
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="2179941572620253449">
         <property name="id" nameId="tps4.1222447189012" value="982eb8df-2c96-4bd7-9963-11712ea622e5" />
         <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.lang.resources" />

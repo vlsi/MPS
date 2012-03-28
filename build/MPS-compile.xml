@@ -75,6 +75,7 @@
   <property name="jetbrains.mps.lang.access.classes" value="${base_dir}/languages/languageDesign/access/classes_gen" />
   <property name="jetbrains.mps.lang.actions.classes" value="${base_dir}/languages/languageDesign/actions/classes_gen" />
   <property name="jetbrains.mps.lang.behavior.classes" value="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+  <property name="jetbrains.mps.lang.checkedName.classes" value="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
   <property name="jetbrains.mps.lang.constraints.classes" value="${base_dir}/languages/languageDesign/constraints/classes_gen" />
   <property name="jetbrains.mps.lang.core.classes" value="${base_dir}/languages/core/core/classes_gen" />
   <property name="jetbrains.mps.lang.core.pluginSolution.classes" value="${base_dir}/languages/core/core/solutions/pluginSolution/classes_gen" />
@@ -234,6 +235,8 @@
     <path path="${base_dir}/languages/baseLanguage/baseLanguageInternal/test_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/source_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/test_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/source_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/test_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/source_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/test_gen" />
     <path path="${base_dir}/languages/core/core/source_gen" />
@@ -809,6 +812,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/dataFlow/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
@@ -901,6 +905,7 @@
     <path path="${base_dir}/languages/baseLanguage/unitTest/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
@@ -963,6 +968,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -1087,6 +1093,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -1213,6 +1220,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -1338,6 +1346,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -1463,6 +1472,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -1587,6 +1597,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -1712,6 +1723,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -1838,6 +1850,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -1975,6 +1988,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -2107,6 +2121,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -2231,6 +2246,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -2355,6 +2371,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -2542,6 +2559,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -2674,6 +2692,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -2799,6 +2818,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/dataFlow/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
@@ -2924,6 +2944,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -3074,6 +3095,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -3203,6 +3225,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -3329,6 +3352,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -3457,6 +3481,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -3593,6 +3618,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -3731,6 +3757,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -3866,6 +3893,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -3997,6 +4025,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -4121,6 +4150,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -4250,6 +4280,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -4375,6 +4406,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -4508,6 +4540,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -4642,6 +4675,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -4766,6 +4800,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -4900,6 +4935,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -5027,6 +5063,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -5152,6 +5189,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -5277,6 +5315,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -5402,6 +5441,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -5527,6 +5567,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -5651,6 +5692,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -5775,6 +5817,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -5905,6 +5948,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -6031,6 +6075,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -6161,6 +6206,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -6287,6 +6333,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -6418,6 +6465,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -6543,6 +6591,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -6670,6 +6719,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -6795,6 +6845,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -6934,6 +6985,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -7065,6 +7117,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -7191,6 +7244,7 @@
     <path path="${base_dir}/languages/languageDesign/access/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -7315,6 +7369,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -7440,6 +7495,7 @@
     <path path="${base_dir}/languages/core/core/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -7564,6 +7620,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/dataFlow/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
@@ -7689,6 +7746,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/dataFlow/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
@@ -7814,6 +7872,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -7939,6 +7998,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/editorTest/classes_gen" />
@@ -8064,6 +8124,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/classes_gen" />
@@ -8189,6 +8250,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -8313,6 +8375,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -8439,6 +8502,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -8563,6 +8627,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -8688,6 +8753,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -8813,6 +8879,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -8938,6 +9005,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -9063,6 +9131,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -9187,6 +9256,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -9312,6 +9382,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -9437,6 +9508,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -9562,6 +9634,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -9687,6 +9760,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -9811,6 +9885,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -9936,6 +10011,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -10066,6 +10142,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -10191,6 +10268,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -10322,6 +10400,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -10447,6 +10526,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -10572,6 +10652,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -10733,6 +10814,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -10858,6 +10940,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -10984,6 +11067,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -11112,6 +11196,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -11248,6 +11333,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -11378,6 +11464,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -11506,6 +11593,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -11631,6 +11719,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -11757,6 +11846,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -11882,6 +11972,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -12019,6 +12110,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -12157,6 +12249,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -12297,6 +12390,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -12435,6 +12529,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -12559,6 +12654,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -12685,6 +12781,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -12813,6 +12910,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -12943,6 +13041,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -13073,6 +13172,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -13198,6 +13298,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -13328,6 +13429,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -13472,6 +13574,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -13603,6 +13706,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -13730,6 +13834,7 @@
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/checkedName/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
@@ -13883,6 +13988,8 @@
     <mkdir dir="${base_dir}/languages/baseLanguage/baseLanguageInternal/test_gen" />
     <mkdir dir="${base_dir}/languages/languageDesign/behavior/languages/behavior/source_gen" />
     <mkdir dir="${base_dir}/languages/languageDesign/behavior/languages/behavior/test_gen" />
+    <mkdir dir="${base_dir}/languages/languageDesign/checkedName/source_gen" />
+    <mkdir dir="${base_dir}/languages/languageDesign/checkedName/test_gen" />
     <mkdir dir="${base_dir}/languages/languageDesign/constraints/source_gen" />
     <mkdir dir="${base_dir}/languages/languageDesign/constraints/test_gen" />
     <mkdir dir="${base_dir}/languages/core/core/source_gen" />
@@ -13933,6 +14040,7 @@
     <mkdir dir="${jetbrains.mps.baseLanguage.unitTest.classes}" />
     <mkdir dir="${jetbrains.mps.baseLanguageInternal.classes}" />
     <mkdir dir="${jetbrains.mps.lang.behavior.classes}" />
+    <mkdir dir="${jetbrains.mps.lang.checkedName.classes}" />
     <mkdir dir="${jetbrains.mps.lang.constraints.classes}" />
     <mkdir dir="${jetbrains.mps.lang.core.classes}" />
     <mkdir dir="${jetbrains.mps.lang.editor.classes}" />
@@ -13998,6 +14106,10 @@
     <copy todir="${jetbrains.mps.lang.behavior.classes}">
       <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/behavior/languages/behavior/source_gen" />
       <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/behavior/languages/behavior/test_gen" />
+    </copy>
+    <copy todir="${jetbrains.mps.lang.checkedName.classes}">
+      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/checkedName/source_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/checkedName/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.lang.constraints.classes}">
       <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/constraints/source_gen" />
@@ -14139,6 +14251,12 @@
       <src>
         <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/source_gen" />
         <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/test_gen" />
+      </src>
+    </javac>
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.checkedName.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
+      <src>
+        <path path="${base_dir}/languages/languageDesign/checkedName/source_gen" />
+        <path path="${base_dir}/languages/languageDesign/checkedName/test_gen" />
       </src>
     </javac>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.constraints.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
@@ -16923,6 +17041,7 @@
     <delete dir="${jetbrains.mps.baseLanguage.unitTest.classes}" />
     <delete dir="${jetbrains.mps.baseLanguageInternal.classes}" />
     <delete dir="${jetbrains.mps.lang.behavior.classes}" />
+    <delete dir="${jetbrains.mps.lang.checkedName.classes}" />
     <delete dir="${jetbrains.mps.lang.constraints.classes}" />
     <delete dir="${jetbrains.mps.lang.core.classes}" />
     <delete dir="${jetbrains.mps.lang.editor.classes}" />
