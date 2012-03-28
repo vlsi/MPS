@@ -5,12 +5,14 @@ package jetbrains.mps.lang.resources;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
+import jetbrains.mps.lang.resources.typesystem.TypesystemDescriptor;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class Language extends LanguageRuntime {
-  public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("9a4f6d8e-4591-48f3-a47d-f73d185069dd(jetbrains.mps.lang.resources)");
+  public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("982eb8df-2c96-4bd7-9963-11712ea622e5(jetbrains.mps.lang.resources)");
 
   public Language() {
 
@@ -22,7 +24,7 @@ public class Language extends LanguageRuntime {
 
   @Override
   public IHelginsDescriptor getTypesystem() {
-    return null;
+    return new TypesystemDescriptor();
   }
 
   @Override
@@ -31,6 +33,6 @@ public class Language extends LanguageRuntime {
   }
 
   public Collection<TemplateModule> getGenerators() {
-    return null;
+    return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "fba22dff-95de-42ab-9335-5963e5f5fc3f(jetbrains.mps.lang.resources#8974276187400288250)"));
   }
 }
