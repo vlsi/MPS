@@ -13,7 +13,7 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.ArrayList;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.baseLanguage.scopes.HidingByNameScope;
+import jetbrains.mps.baseLanguage.scopes.VariablesScope;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
@@ -139,29 +139,15 @@ public class StatementList_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    {
-      SNode concept_a0k;
-      concept_a0k = kind;
-      if (SConceptOperations.isSubConceptOf(concept_a0k, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
-        return HidingByNameScope.create(StatementList_Behavior.call_getLocalVariableDeclarations_3986960521977638556(thisNode, child), ScopeUtils.parentScope(thisNode, kind), false);
-      }
-      if (SConceptOperations.isSubConceptOf(concept_a0k, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
-        return HidingByNameScope.create(StatementList_Behavior.call_getLocalVariableDeclarations_3986960521977638556(thisNode, child), ScopeUtils.parentScope(thisNode, kind), true);
-      }
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration")) {
+      return new VariablesScope(kind, StatementList_Behavior.call_getLocalVariableDeclarations_3986960521977638556(thisNode, child), ScopeUtils.parentScope(thisNode, kind));
     }
     return null;
   }
 
   public static Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
-    {
-      SNode concept_a0l;
-      concept_a0l = kind;
-      if (SConceptOperations.isSubConceptOf(concept_a0l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
-        return HidingByNameScope.create(StatementList_Behavior.call_getLocalVariableDeclarations_9165170089438554320(thisNode, role, index), ScopeUtils.parentScope(thisNode, kind), false);
-      }
-      if (SConceptOperations.isSubConceptOf(concept_a0l, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
-        return HidingByNameScope.create(StatementList_Behavior.call_getLocalVariableDeclarations_9165170089438554320(thisNode, role, index), ScopeUtils.parentScope(thisNode, kind), true);
-      }
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration")) {
+      return new VariablesScope(kind, StatementList_Behavior.call_getLocalVariableDeclarations_9165170089438554320(thisNode, role, index), ScopeUtils.parentScope(thisNode, kind));
     }
     return null;
   }

@@ -20,7 +20,7 @@ public class SingleLineComment_Behavior {
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.StatementList")) {
-        System.out.println("!");
+        // <node> 
         return Scope.getScope(SNodeOperations.getParent(thisNode), ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.StatementList"))).last(), kind);
       } else {
         return null;

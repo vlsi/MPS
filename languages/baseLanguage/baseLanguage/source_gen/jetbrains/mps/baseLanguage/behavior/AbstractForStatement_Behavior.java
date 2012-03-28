@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
-import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
+import jetbrains.mps.baseLanguage.scopes.VariablesScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 
@@ -15,9 +15,11 @@ public class AbstractForStatement_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration")) {
       if (ScopeUtils.comeFrom("body", thisNode, child)) {
-        return CompositeWithParentScope.from(SLinkOperations.getTarget(thisNode, "variable", true), thisNode, kind);
+        return VariablesScope.create(kind, SLinkOperations.getTarget(thisNode, "variable", true), ScopeUtils.parentScope(thisNode, kind));
+      } else {
+        return ScopeUtils.parentScope(thisNode, kind);
       }
     }
     return ScopeProvider_Behavior.callSuper_getScope_3734116213129936182(thisNode, "jetbrains.mps.baseLanguage.structure.AbstractForStatement", kind, child);

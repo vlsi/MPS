@@ -12,8 +12,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
+import jetbrains.mps.baseLanguage.scopes.VariablesScope;
 import java.util.Arrays;
+import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
 
 public class SwitchStatement_Behavior {
   public static void init(SNode thisNode) {
@@ -40,7 +41,7 @@ public class SwitchStatement_Behavior {
     {
       SNode concept_d0b;
       concept_d0b = kind;
-      if (SConceptOperations.isSubConceptOf(concept_d0b, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+      if (SConceptOperations.isSubConceptOf(concept_d0b, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration")) {
         {
           if (SLinkOperations.getTarget(thisNode, "expression", true) == childStatement) {
             return ScopeUtils.parentScope(thisNode, kind);
@@ -53,7 +54,8 @@ public class SwitchStatement_Behavior {
             }
             ListSequence.fromList(variables).addSequence(ListSequence.fromList(StatementList_Behavior.call_getLocalVariableDeclarations_3986960521977638556(SLinkOperations.getTarget(caseNode, "body", true), null)));
           }
-          return CompositeWithParentScope.from(variables, thisNode, kind);
+
+          return new VariablesScope(kind, variables, ScopeUtils.parentScope(thisNode, kind));
         }
       }
       if (SConceptOperations.isSubConceptOf(concept_d0b, "jetbrains.mps.baseLanguage.structure.LoopLabel")) {

@@ -40,8 +40,9 @@ import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
-import jetbrains.mps.baseLanguage.scopes.HidingByNameScope;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
+import jetbrains.mps.baseLanguage.scopes.VariablesScope;
+import jetbrains.mps.baseLanguage.scopes.HidingByNameScope;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -404,7 +405,7 @@ public class Classifier_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, final SNode kind, SNode child) {
-    boolean isStaticContext = (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember") && ClassifierMember_Behavior.call_isStatic_8986964027630462944(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) || (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.Classifier") && Classifier_Behavior.call_isStatic_521412098689998668(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.Classifier")));
+    boolean isStaticContext = (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember") && ClassifierMember_Behavior.call_isStatic_8986964027630462944(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) || (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.Classifier") && Classifier_Behavior.call_isStatic_521412098689998668(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.Classifier"))) || SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.StaticInitializer");
 
     // todo: remove this logic from Classifier 
     {
@@ -422,8 +423,29 @@ public class Classifier_Behavior {
           return CompositeWithParentScope.from(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true), thisNode, kind);
         }
       }
+      if (SConceptOperations.isSubConceptOf(concept_d0cb, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration")) {
+        {
+          // add 1) instance fields 2) static fields 
+          // todo: change VariablesScope to accept Scope as vars parameter 
+          Scope scope = ScopeUtils.parentScope(thisNode, kind);
+          scope = new VariablesScope(kind, ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")).getAvailableElements(null)).select(new ISelector<SNode, SNode>() {
+            public SNode select(SNode it) {
+              return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration");
+            }
+          }), scope);
+          if (!(isStaticContext)) {
+            scope = new VariablesScope(kind, ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration")).getAvailableElements(null)).select(new ISelector<SNode, SNode>() {
+              public SNode select(SNode it) {
+                return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration");
+              }
+            }), scope);
+          }
+          return scope;
+        }
+      }
       if (SConceptOperations.isSubConceptOf(concept_d0cb, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
         {
+          // ? 
           Scope addition = null;
           if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.StaticKind")) {
             Iterable<SNode> members = ListSequence.fromList(SNodeOperations.getChildren(thisNode)).where(new IWhereFilter<SNode>() {
@@ -437,6 +459,7 @@ public class Classifier_Behavior {
               addition = Classifier_Behavior.call_getVisibleMembers_8083692786967356611(thisNode, child, kind);
             }
           }
+
           return (addition != null ?
             HidingByNameScope.create(addition, ScopeUtils.parentScope(thisNode, kind), false) :
             ScopeUtils.parentScope(thisNode, kind)

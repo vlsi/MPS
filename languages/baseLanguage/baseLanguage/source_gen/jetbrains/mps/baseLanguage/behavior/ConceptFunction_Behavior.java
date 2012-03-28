@@ -118,13 +118,14 @@ public class ConceptFunction_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    // todo: rewrite using filtering scope 
     {
-      SNode concept_a0l_0;
-      concept_a0l_0 = kind;
-      if (SConceptOperations.isSubConceptOf(concept_a0l_0, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+      SNode concept_b0l;
+      concept_b0l = kind;
+      if (SConceptOperations.isSubConceptOf(concept_b0l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
         return new EmptyScope();
       }
-      if (SConceptOperations.isSubConceptOf(concept_a0l_0, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
+      if (SConceptOperations.isSubConceptOf(concept_b0l, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
         return new EmptyScope();
       }
     }
