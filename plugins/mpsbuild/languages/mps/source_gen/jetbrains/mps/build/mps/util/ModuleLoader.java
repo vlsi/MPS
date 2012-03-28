@@ -29,6 +29,9 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.project.structure.modules.Dependency;
@@ -433,7 +436,24 @@ public class ModuleLoader {
         report("only jar stub libraries are supported, found: " + path, myOriginalModule);
       }
     }
-    for (ModuleReference lang : myModuleDescriptor.getUsedLanguages()) {
+    Iterable<ModuleReference> usedLanguages = myModuleDescriptor.getUsedLanguages();
+    Iterable<ModuleReference> usedDevkits = myModuleDescriptor.getUsedDevkits();
+    if (myModuleDescriptor instanceof LanguageDescriptor) {
+      // see j.m.p.dependency.ModuleDependenciesManager#collectAllCompileTimeDependencies 
+      Iterable<GeneratorDescriptor> generators = ((LanguageDescriptor) myModuleDescriptor).getGenerators();
+      usedLanguages = Sequence.fromIterable(usedLanguages).union(Sequence.fromIterable(generators).translate(new ITranslator2<GeneratorDescriptor, ModuleReference>() {
+        public Iterable<ModuleReference> translate(GeneratorDescriptor it) {
+          return it.getUsedLanguages();
+        }
+      }));
+      usedDevkits = Sequence.fromIterable(usedDevkits).union(Sequence.fromIterable(generators).translate(new ITranslator2<GeneratorDescriptor, ModuleReference>() {
+        public Iterable<ModuleReference> translate(GeneratorDescriptor it) {
+          return it.getUsedDevkits();
+        }
+      }));
+    }
+
+    for (ModuleReference lang : usedLanguages) {
       SNode resolved = SNodeOperations.as(visible.resolve(lang.getModuleFqName(), lang.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
       if (resolved == null) {
         report("cannot find used language in dependencies: " + lang.getModuleFqName(), myModule);
@@ -443,7 +463,7 @@ public class ModuleLoader {
       SLinkOperations.setTarget(ul, "language", resolved, false);
       ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).addElement(ul);
     }
-    for (ModuleReference devkit : myModuleDescriptor.getUsedDevkits()) {
+    for (ModuleReference devkit : usedDevkits) {
       SNode resolved = SNodeOperations.as(visible.resolve(devkit.getModuleFqName(), devkit.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_DevKit");
       if (resolved == null) {
         report("cannot find used devkit in dependencies: " + devkit.getModuleFqName(), myModule);
@@ -468,7 +488,18 @@ public class ModuleLoader {
       }
     }
 
-    for (Dependency dep : myModuleDescriptor.getDependencies()) {
+    Iterable<Dependency> dependencies = myModuleDescriptor.getDependencies();
+    if (myModuleDescriptor instanceof LanguageDescriptor) {
+      // see j.m.p.dependency.ModuleDependenciesManager#collectAllCompileTimeDependencies 
+      Iterable<GeneratorDescriptor> generators = ((LanguageDescriptor) myModuleDescriptor).getGenerators();
+      dependencies = Sequence.fromIterable(dependencies).union(Sequence.fromIterable(generators).translate(new ITranslator2<GeneratorDescriptor, Dependency>() {
+        public Iterable<Dependency> translate(GeneratorDescriptor it) {
+          return it.getDependencies();
+        }
+      }));
+    }
+
+    for (Dependency dep : dependencies) {
       boolean reexport = dep.isReexport();
       ModuleReference moduleRef = dep.getModuleRef();
       SNode resolved = SNodeOperations.as(visible.resolve(moduleRef.getModuleFqName(), moduleRef.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Module");
@@ -484,7 +515,7 @@ public class ModuleLoader {
 
       if (!(found)) {
         if (reexport) {
-          report("reexport dependency should be extracted into build script: " + dep.toString(), myOriginalModule);
+          report("reexport dependency should be extracted into build script: " + dep.getModuleRef().toString(), myOriginalModule);
         }
         if (checkOnly) {
           continue;
@@ -508,7 +539,19 @@ public class ModuleLoader {
 
   private void importDependencies() {
     SNode module = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module");
-    for (Dependency dep : myModuleDescriptor.getDependencies()) {
+
+    Iterable<Dependency> dependencies = myModuleDescriptor.getDependencies();
+    if (myModuleDescriptor instanceof LanguageDescriptor) {
+      // see j.m.p.dependency.ModuleDependenciesManager#collectAllCompileTimeDependencies 
+      Iterable<GeneratorDescriptor> generators = ((LanguageDescriptor) myModuleDescriptor).getGenerators();
+      dependencies = Sequence.fromIterable(dependencies).union(Sequence.fromIterable(generators).translate(new ITranslator2<GeneratorDescriptor, Dependency>() {
+        public Iterable<Dependency> translate(GeneratorDescriptor it) {
+          return it.getDependencies();
+        }
+      }));
+    }
+
+    for (Dependency dep : dependencies) {
       boolean reexport = dep.isReexport();
       if (!(reexport)) {
         continue;
