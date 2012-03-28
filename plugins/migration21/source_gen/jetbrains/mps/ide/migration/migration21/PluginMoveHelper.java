@@ -94,7 +94,7 @@ public class PluginMoveHelper {
       if (solution.getModuleFqName().endsWith(SOLUTION_NAME)) {
         List<SModelDescriptor> models = solution.getOwnModelDescriptors();
         SModel m = ListSequence.fromList(models).first().getSModel();
-        ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.lang.plugin.structure.IconResource")).where(new IWhereFilter<SNode>() {
+        ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.lang.resources.structure.IconResource")).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return (it != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(it, "path")) && !(isValid(it));
           }
