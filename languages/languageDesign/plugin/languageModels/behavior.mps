@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" version="2">
+<model modelUID="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" version="3">
   <persistence version="7" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="6" />
+  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="7" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="tpek" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -89,10 +89,6 @@
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1217679807202">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Preference.Page" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp4k.1210684385183" resolveInfo="PreferencePage" />
-    </node>
-    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1230213597648">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Command" />
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp4k.1225441216717" resolveInfo="CommandClosureLiteral" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="6277721878946468937">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Keymaps" />
@@ -2023,32 +2019,6 @@
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tp4k.PropertyRefType" typeId="tp4k.1628770029971140539" id="5003188907305392420" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5003188907305392421" />
-    </node>
-  </root>
-  <root id="1230213597648">
-    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="1230213600259">
-      <property name="name" nameId="tpck.1169194664001" value="isExecuteSynchronous" />
-      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="tpek.1230212745736" resolveInfo="isExecuteSynchronous" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230213600261">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1230213737701">
-          <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1230213749841">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1230213745814">
-              <node role="operand" roleId="tpee.1197027771414" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="1230213744239" />
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="1230213748473" />
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="1230213751371">
-              <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1230213757177">
-                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tp4k.1229346248766" resolveInfo="BaseExecuteCommandStatementSync" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230213604476" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1230213651438" />
-    </node>
-    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1230213597649">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230213597650" />
     </node>
   </root>
   <root id="6277721878946468937">

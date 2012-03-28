@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="6">
+<model modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="7">
   <persistence version="7" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -319,41 +319,6 @@
       <property name="name" nameId="tpck.1169194664001" value="ActionParameter" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action.Parameters" />
     </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1225441160166">
-      <property name="name" nameId="tpck.1169194664001" value="BaseExecuteCommandStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Command" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
-    </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1225441216717">
-      <property name="name" nameId="tpck.1169194664001" value="CommandClosureLiteral" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Command" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp2c.1199569711397" resolveInfo="ClosureLiteral" />
-    </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1225441257564">
-      <property name="name" nameId="tpck.1169194664001" value="ExecuteCommandInEDTStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Command" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1225441160166" resolveInfo="BaseExecuteCommandStatement" />
-    </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1225441285519">
-      <property name="name" nameId="tpck.1169194664001" value="ExecuteCommandStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Command" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1229346248766" resolveInfo="BaseExecuteCommandStatementSync" />
-    </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1225441312937">
-      <property name="name" nameId="tpck.1169194664001" value="ExecuteEDTCommandStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Command" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1225441160166" resolveInfo="BaseExecuteCommandStatement" />
-    </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1225441341971">
-      <property name="name" nameId="tpck.1169194664001" value="ExecuteLightweightCommandStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Command" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1229346248766" resolveInfo="BaseExecuteCommandStatementSync" />
-    </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1225441380935">
-      <property name="name" nameId="tpck.1169194664001" value="ExecuteWriteActionStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Command" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1229346248766" resolveInfo="BaseExecuteCommandStatementSync" />
-    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1227008846812">
       <property name="name" nameId="tpck.1169194664001" value="ActionConstructionParameterDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action.Parameters" />
@@ -378,15 +343,6 @@
       <property name="name" nameId="tpck.1169194664001" value="ToStringParameter" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action.Parameters" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-    </node>
-    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1229346143986">
-      <property name="name" nameId="tpck.1169194664001" value="IExecuteCommandStatementSync" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Command" />
-    </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1229346248766">
-      <property name="name" nameId="tpck.1169194664001" value="BaseExecuteCommandStatementSync" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Command" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1225441160166" resolveInfo="BaseExecuteCommandStatement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1239975356883">
       <property name="name" nameId="tpck.1169194664001" value="UpdateGroupBlock" />
@@ -1680,50 +1636,6 @@
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="5538333046911298737" />
     </node>
   </root>
-  <root id="1225441160166">
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1225441160167">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="commandClosureLiteral" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1225441216717" resolveInfo="CommandClosureLiteral" />
-    </node>
-  </root>
-  <root id="1225441216717" />
-  <root id="1225441257564">
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8319207097755373179">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="project" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1225441257565">
-      <property name="value" nameId="tpce.1105725733873" value="execute command in EDT" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-  </root>
-  <root id="1225441285519">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1225441285520">
-      <property name="value" nameId="tpce.1105725733873" value="command" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-  </root>
-  <root id="1225441312937">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1225441312938">
-      <property name="value" nameId="tpce.1105725733873" value="execute in EDT" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-  </root>
-  <root id="1225441341971">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1225441341972">
-      <property name="value" nameId="tpce.1105725733873" value="read action" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-  </root>
-  <root id="1225441380935">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1225441380936">
-      <property name="value" nameId="tpce.1105725733873" value="write action" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-  </root>
   <root id="1227008846812">
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1227009371731">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tp4f.1205752032448" resolveInfo="IMember" />
@@ -1783,8 +1695,6 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </root>
-  <root id="1229346143986" />
-  <root id="1229346248766" />
   <root id="1239975356883">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1239975862177">
       <property name="value" nameId="tpce.1105725733873" value="update" />
