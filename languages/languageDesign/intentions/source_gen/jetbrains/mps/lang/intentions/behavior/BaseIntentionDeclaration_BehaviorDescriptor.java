@@ -8,9 +8,9 @@ import jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_BehaviorDescri
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
+import jetbrains.mps.checkedName.PropertyReference;
 import jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_Behavior;
 import java.util.List;
-import jetbrains.mps.checkedName.PropertyReference;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class BaseIntentionDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, ICheckedNamePolicy_BehaviorDescriptor, IConceptAspect_BehaviorDescriptor {
@@ -25,7 +25,7 @@ public class BaseIntentionDeclaration_BehaviorDescriptor extends BaseConcept_Beh
     return BaseIntentionDeclaration_Behavior.virtual_isParameterized_6263518417926802310(thisNode);
   }
 
-  public <!TextGen not found for 'jetbrains.mps.lang.checkedName.structure.PropertyRefType'!> virtual_getPropertyToCheck_4844813484172611473(SNode thisNode) {
+  public PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode) {
     return ICheckedNamePolicy_Behavior.virtual_getPropertyToCheck_4844813484172611473(thisNode);
   }
 
@@ -46,7 +46,7 @@ public class BaseIntentionDeclaration_BehaviorDescriptor extends BaseConcept_Beh
   }
 
   public List<PropertyReference> virtual_getPropertiesToCheck_4844813484172611445(SNode thisNode) {
-    return ICheckedNamePolicy_Behavior.virtual_getPropertiesToCheck_4844813484172611445(thisNode);
+    return BaseIntentionDeclaration_Behavior.virtual_getPropertiesToCheck_4844813484172611445(thisNode);
   }
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {
