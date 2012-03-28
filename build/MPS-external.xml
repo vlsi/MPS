@@ -71,6 +71,8 @@
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsmake.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/plugins/migrationAssistant.jar.tmp/META-INF" />
     <mkdir dir="${deploy.dir}/MPS/plugins/migrationAssistant.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/migration21.jar.tmp/META-INF" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/migration21.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsjava.jar.tmp/META-INF" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsjava.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/plugins/modelchecker.jar.tmp/META-INF" />
@@ -424,10 +426,19 @@
       <fileset dir="${deploy.dir}/MPS/plugins/migrationAssistant.jar.tmp" excludes="" />
     </jar>
     <delete dir="${deploy.dir}/MPS/plugins/migrationAssistant.jar.tmp" />
+    <copy todir="${deploy.dir}/MPS/plugins/migration21.jar.tmp">
+      <fileset dir="${base_dir}/plugins/migration21/classes" />
+    </copy>
+    <antcall target="MPS-external.replace_a1f3a" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/migration21.jar.tmp/META-INF" />
+    <jar destfile="${deploy.dir}/MPS/plugins/migration21.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/plugins/migration21.jar.tmp" excludes="" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS/plugins/migration21.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/plugins/mpsjava.jar.tmp">
       <fileset dir="${mps_home}/plugins/mpsjava/classes" />
     </copy>
-    <antcall target="MPS-external.replace_a1f3a" />
+    <antcall target="MPS-external.replace_a1g3a" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsjava.jar.tmp/META-INF" />
     <jar destfile="${deploy.dir}/MPS/plugins/mpsjava.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/plugins/mpsjava.jar.tmp" excludes="" />
@@ -436,7 +447,7 @@
     <copy todir="${deploy.dir}/MPS/plugins/modelchecker.jar.tmp">
       <fileset dir="${mps_home}/plugins/modelchecker/classes" />
     </copy>
-    <antcall target="MPS-external.replace_a1g3a" />
+    <antcall target="MPS-external.replace_a1h3a" />
     <mkdir dir="${deploy.dir}/MPS/plugins/modelchecker.jar.tmp/META-INF" />
     <jar destfile="${deploy.dir}/MPS/plugins/modelchecker.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/plugins/modelchecker.jar.tmp" excludes="" />
@@ -445,7 +456,7 @@
     <copy todir="${deploy.dir}/MPS/plugins/samples.jar.tmp">
       <fileset dir="${mps_home}/plugins/samples/classes" />
     </copy>
-    <antcall target="MPS-external.replace_a1h3a" />
+    <antcall target="MPS-external.replace_a1i3a" />
     <mkdir dir="${deploy.dir}/MPS/plugins/samples.jar.tmp/META-INF" />
     <jar destfile="${deploy.dir}/MPS/plugins/samples.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/plugins/samples.jar.tmp" excludes="" />
@@ -476,7 +487,7 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/plugins/debugger-api/lib/debugger-api.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api/lib" />
-    <antcall target="MPS-external.replace_a1m3a" />
+    <antcall target="MPS-external.replace_a1n3a" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api/META-INF" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debugger.api.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debugger.api.api" />
@@ -490,7 +501,7 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/plugins/debugger-java/lib/debugger-java.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java/lib" />
-    <antcall target="MPS-external.replace_a1n3a" />
+    <antcall target="MPS-external.replace_a1o3a" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java/META-INF" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debugger.java.customViewers" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debugger.java.evaluation" />
@@ -502,7 +513,7 @@
     <copy todir="${deploy.dir}/MPS/plugins/debugger-java-customViewers.jar.tmp">
       <fileset dir="${mps_home}/plugins/debugger-java-customViewers/classes" />
     </copy>
-    <antcall target="MPS-external.replace_a1o3a" />
+    <antcall target="MPS-external.replace_a1p3a" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java-customViewers.jar.tmp/META-INF" />
     <jar destfile="${deploy.dir}/MPS/plugins/debugger-java-customViewers.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/plugins/debugger-java-customViewers.jar.tmp" excludes="" />
@@ -516,7 +527,7 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/plugins/debugger-api-languages/lib/debugger-api-languages.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api-languages/lib" />
-    <antcall target="MPS-external.replace_a1p3a" />
+    <antcall target="MPS-external.replace_a1q3a" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api-languages/META-INF" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debugger.api.lang" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api-languages/languages" />
@@ -529,7 +540,7 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/plugins/execution-configurations/lib/execution-configurations.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/plugins/execution-configurations/lib" />
-    <antcall target="MPS-external.replace_a1q3a" />
+    <antcall target="MPS-external.replace_a1r3a" />
     <mkdir dir="${deploy.dir}/MPS/plugins/execution-configurations/META-INF" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.execution.startup" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.execution.startup" />
@@ -547,7 +558,7 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/plugins/execution-languages/lib/execution-languages.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/plugins/execution-languages/lib" />
-    <antcall target="MPS-external.replace_a1r3a" />
+    <antcall target="MPS-external.replace_a1s3a" />
     <mkdir dir="${deploy.dir}/MPS/plugins/execution-languages/META-INF" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.lib" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.commands" />
@@ -807,6 +818,7 @@
     <delete dir="${deploy.dir}/MPS/plugins/mpsdevkit/lib/mpsdevkit.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/mpsmake.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/migrationAssistant.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/migration21.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/mpsjava.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/modelchecker.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/samples.jar.tmp" />
@@ -843,38 +855,42 @@
     <replace file="${deploy.dir}/MPS/plugins/migrationAssistant.jar.tmp/META-INF/plugin.xml" token="../classes/" value="/" />
   </target>
   <target name="replace_a1f3a">
+    <copy file="${base_dir}/plugins/migration21/META-INF/plugin.xml" tofile="${deploy.dir}/MPS/plugins/migration21.jar.tmp/META-INF/plugin.xml" />
+    <replace file="${deploy.dir}/MPS/plugins/migration21.jar.tmp/META-INF/plugin.xml" token="../classes/" value="/" />
+  </target>
+  <target name="replace_a1g3a">
     <copy file="${mps_home}/plugins/mpsjava/META-INF/plugin.xml" tofile="${deploy.dir}/MPS/plugins/mpsjava.jar.tmp/META-INF/plugin.xml" />
     <replace file="${deploy.dir}/MPS/plugins/mpsjava.jar.tmp/META-INF/plugin.xml" token="../classes/" value="/" />
   </target>
-  <target name="replace_a1g3a">
+  <target name="replace_a1h3a">
     <copy file="${mps_home}/plugins/modelchecker/META-INF/plugin.xml" tofile="${deploy.dir}/MPS/plugins/modelchecker.jar.tmp/META-INF/plugin.xml" />
     <replace file="${deploy.dir}/MPS/plugins/modelchecker.jar.tmp/META-INF/plugin.xml" token="../classes/" value="/" />
   </target>
-  <target name="replace_a1h3a">
+  <target name="replace_a1i3a">
     <copy file="${mps_home}/plugins/samples/META-INF/plugin.xml" tofile="${deploy.dir}/MPS/plugins/samples.jar.tmp/META-INF/plugin.xml" />
     <replace file="${deploy.dir}/MPS/plugins/samples.jar.tmp/META-INF/plugin.xml" token="../classes/" value="/" />
   </target>
-  <target name="replace_a1m3a">
+  <target name="replace_a1n3a">
     <copy file="${mps_home}/plugins/debugger-api/META-INF/plugin.xml" tofile="${deploy.dir}/MPS/plugins/debugger-api/META-INF/plugin.xml" />
     <replace file="${deploy.dir}/MPS/plugins/debugger-api/META-INF/plugin.xml" token="../classes/" value="/" />
   </target>
-  <target name="replace_a1n3a">
+  <target name="replace_a1o3a">
     <copy file="${mps_home}/plugins/debugger-java/META-INF/plugin.xml" tofile="${deploy.dir}/MPS/plugins/debugger-java/META-INF/plugin.xml" />
     <replace file="${deploy.dir}/MPS/plugins/debugger-java/META-INF/plugin.xml" token="../classes/" value="/" />
   </target>
-  <target name="replace_a1o3a">
+  <target name="replace_a1p3a">
     <copy file="${mps_home}/plugins/debugger-java-customViewers/META-INF/plugin.xml" tofile="${deploy.dir}/MPS/plugins/debugger-java-customViewers.jar.tmp/META-INF/plugin.xml" />
     <replace file="${deploy.dir}/MPS/plugins/debugger-java-customViewers.jar.tmp/META-INF/plugin.xml" token="../classes/" value="/" />
   </target>
-  <target name="replace_a1p3a">
+  <target name="replace_a1q3a">
     <copy file="${mps_home}/plugins/debugger-api-languages/META-INF/plugin.xml" tofile="${deploy.dir}/MPS/plugins/debugger-api-languages/META-INF/plugin.xml" />
     <replace file="${deploy.dir}/MPS/plugins/debugger-api-languages/META-INF/plugin.xml" token="../classes/" value="/" />
   </target>
-  <target name="replace_a1q3a">
+  <target name="replace_a1r3a">
     <copy file="${mps_home}/plugins/execution-configurations/META-INF/plugin.xml" tofile="${deploy.dir}/MPS/plugins/execution-configurations/META-INF/plugin.xml" />
     <replace file="${deploy.dir}/MPS/plugins/execution-configurations/META-INF/plugin.xml" token="../classes/" value="/" />
   </target>
-  <target name="replace_a1r3a">
+  <target name="replace_a1s3a">
     <copy file="${mps_home}/plugins/execution-languages/META-INF/plugin.xml" tofile="${deploy.dir}/MPS/plugins/execution-languages/META-INF/plugin.xml" />
     <replace file="${deploy.dir}/MPS/plugins/execution-languages/META-INF/plugin.xml" token="../classes/" value="/" />
   </target>
