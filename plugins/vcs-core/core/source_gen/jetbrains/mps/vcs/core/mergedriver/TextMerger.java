@@ -19,24 +19,20 @@ import java.io.IOException;
 
   @Nullable
   public Tuples._2<Integer, byte[]> mergeContents(byte[] baseContent, byte[] localContent, byte[] latestContent) {
+    SVNDiffOptions diffOptions = null;
+    FSMergerBySequence merger = new FSMergerBySequence(myConflictStart, mySeparator, myConflictEnd);
+    QSequenceLineRAData baseData = new QSequenceLineRAByteData(baseContent);
+    QSequenceLineRAData localData = new QSequenceLineRAByteData(localContent);
+    QSequenceLineRAData latestData = new QSequenceLineRAByteData(latestContent);
+    ByteArrayOutputStream out = new ByteArrayOutputStream();
     try {
-      SVNDiffOptions diffOptions = null;
-      FSMergerBySequence merger = new FSMergerBySequence(myConflictStart, mySeparator, myConflictEnd);
-      QSequenceLineRAData baseData = new QSequenceLineRAByteData(baseContent);
-      QSequenceLineRAData localData = new QSequenceLineRAByteData(localContent);
-      QSequenceLineRAData latestData = new QSequenceLineRAByteData(latestContent);
-      ByteArrayOutputStream out = new ByteArrayOutputStream();
-      try {
-        int mergeResult = merger.merge(baseData, localData, latestData, diffOptions, out, SVNDiffConflictChoiceStyle.CHOOSE_MODIFIED_LATEST);
-        return MultiTuple.<Integer,byte[]>from((mergeResult == FSMergerBySequence.CONFLICTED ?
-          CONFLICTS :
-          MERGED
-        ), out.toByteArray());
-      } catch (IOException e) {
-        return null;
-      }
-    } catch (NoClassDefFoundError e) {
-      return MultiTuple.<Integer,byte[]>from(CONFLICTS, localContent);
+      int mergeResult = merger.merge(baseData, localData, latestData, diffOptions, out, SVNDiffConflictChoiceStyle.CHOOSE_MODIFIED_LATEST);
+      return MultiTuple.<Integer,byte[]>from((mergeResult == FSMergerBySequence.CONFLICTED ?
+        CONFLICTS :
+        MERGED
+      ), out.toByteArray());
+    } catch (IOException e) {
+      return null;
     }
   }
 }

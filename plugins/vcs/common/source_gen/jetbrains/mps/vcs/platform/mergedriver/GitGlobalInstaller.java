@@ -62,8 +62,8 @@ import java.io.FileNotFoundException;
     }
 
     IdeaPluginDescriptor svnPlugin = PluginManager.getPlugin(PluginId.getId("Subversion"));
-    if (svnPlugin == null) {
-      Messages.showWarningDialog(myProject, "Svn plugin", "Svn plugin is not available, so text files will not be merged automatically");
+    if (!(dryRun) && svnPlugin == null) {
+      Messages.showWarningDialog(myProject, "Svn plugin is not available, so text files will not be merged automatically", "Svn plugin");
     }
     AbstractInstaller.State createScriptResult = ScriptGenerator.generateScript(myProject, ScriptGenerator.GIT, myScriptFile, dryRun);
     if (createScriptResult != AbstractInstaller.State.INSTALLED) {
