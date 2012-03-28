@@ -5,8 +5,8 @@
   <unitInfo fileName="ActionConstructorParameterReferenceOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionConstructorParameterReferenceOperation_BehaviorDescriptor" />
   <unitInfo fileName="ActionDataParameterDeclaration_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionDataParameterDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="ActionDataParameterReferenceOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionDataParameterReferenceOperation_BehaviorDescriptor" />
-  <unitInfo fileName="ActionDeclaration_BehaviorDescriptor.java" startLine="14" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="ActionGroupDeclaration_BehaviorDescriptor.java" startLine="15" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionGroupDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="ActionDeclaration_BehaviorDescriptor.java" startLine="16" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="ActionGroupDeclaration_BehaviorDescriptor.java" startLine="17" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionGroupDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="ActionGroupMember_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionGroupMember_BehaviorDescriptor" />
   <unitInfo fileName="ActionGroupRef_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionGroupRef_BehaviorDescriptor" />
   <unitInfo fileName="ActionInstance_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionInstance_BehaviorDescriptor" />
@@ -27,8 +27,8 @@
   <unitInfo fileName="ApplicationPluginType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ApplicationPluginType_BehaviorDescriptor" />
   <unitInfo fileName="BaseNodeBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BaseNodeBlock_BehaviorDescriptor" />
   <unitInfo fileName="BaseProjectOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BaseProjectOperation_BehaviorDescriptor" />
-  <unitInfo fileName="BaseToolDeclaration_BehaviorDescriptor.java" startLine="14" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BaseToolDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="248" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BaseToolDeclaration_BehaviorDescriptor.java" startLine="16" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BaseToolDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="244" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BuildGroupBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BuildGroupBlock_BehaviorDescriptor" />
   <unitInfo fileName="ButtonCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ButtonCreator_BehaviorDescriptor" />
   <unitInfo fileName="CloseTabOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.CloseTabOperation_BehaviorDescriptor" />
@@ -50,7 +50,7 @@
   <unitInfo fileName="DoUpdateBlock_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.DoUpdateBlock_BehaviorDescriptor" />
   <unitInfo fileName="EditableModel_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.EditableModel_BehaviorDescriptor" />
   <unitInfo fileName="EditorTabReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.EditorTabReference_BehaviorDescriptor" />
-  <unitInfo fileName="EditorTab_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.EditorTab_BehaviorDescriptor" />
+  <unitInfo fileName="EditorTab_BehaviorDescriptor.java" startLine="14" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.EditorTab_BehaviorDescriptor" />
   <unitInfo fileName="ElementListContents_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ElementListContents_BehaviorDescriptor" />
   <unitInfo fileName="EnumerateChildrenFunction_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.EnumerateChildrenFunction_BehaviorDescriptor" />
   <unitInfo fileName="EverywhereActionPlace_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.EverywhereActionPlace_BehaviorDescriptor" />
@@ -67,7 +67,6 @@
   <unitInfo fileName="GroupAnchor_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.GroupAnchor_BehaviorDescriptor" />
   <unitInfo fileName="GroupContents_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.GroupContents_BehaviorDescriptor" />
   <unitInfo fileName="GroupType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.GroupType_BehaviorDescriptor" />
-  <unitInfo fileName="ICheckedNamePolicy_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ICheckedNamePolicy_BehaviorDescriptor" />
   <unitInfo fileName="IdeaActionsDescriptor_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IdeaActionsDescriptor_BehaviorDescriptor" />
   <unitInfo fileName="IdeaConfigurationXml_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IdeaConfigurationXml_BehaviorDescriptor" />
   <unitInfo fileName="IdeaInitializerDescriptor_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IdeaInitializerDescriptor_BehaviorDescriptor" />
@@ -100,15 +99,13 @@
   <unitInfo fileName="PreferencePageCommitBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.PreferencePageCommitBlock_BehaviorDescriptor" />
   <unitInfo fileName="PreferencePageIsModifiedBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.PreferencePageIsModifiedBlock_BehaviorDescriptor" />
   <unitInfo fileName="PreferencePageResetBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.PreferencePageResetBlock_BehaviorDescriptor" />
-  <unitInfo fileName="PreferencePage_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.PreferencePage_BehaviorDescriptor" />
+  <unitInfo fileName="PreferencePage_BehaviorDescriptor.java" startLine="14" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.PreferencePage_BehaviorDescriptor" />
   <unitInfo fileName="PreferencesComponentDeclaration_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.PreferencesComponentDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="PreferencesComponentType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.PreferencesComponentType_BehaviorDescriptor" />
   <unitInfo fileName="ProjectPluginDeclaration_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ProjectPluginDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="ProjectPluginDisposeBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ProjectPluginDisposeBlock_BehaviorDescriptor" />
   <unitInfo fileName="ProjectPluginInitBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ProjectPluginInitBlock_BehaviorDescriptor" />
   <unitInfo fileName="ProjectPluginType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ProjectPluginType_BehaviorDescriptor" />
-  <unitInfo fileName="PropertyRefExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.PropertyRefExpression_BehaviorDescriptor" />
-  <unitInfo fileName="PropertyRefType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.PropertyRefType_BehaviorDescriptor" />
   <unitInfo fileName="RequiredCondition_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.RequiredCondition_BehaviorDescriptor" />
   <unitInfo fileName="Separator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.Separator_BehaviorDescriptor" />
   <unitInfo fileName="ShortcutChange_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ShortcutChange_BehaviorDescriptor" />
@@ -476,7 +473,7 @@
     <nodeInfo nodeId="6301602537765917859" fileName="ActionDeclaration_Behavior.java" startLine="58" startPosition="106" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1213877371869" fileName="ActionDeclaration_Behavior.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGeneratedName_1213877371942#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1213877371869" fileName="ActionDeclaration_Behavior.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGeneratedClassFQName_1213877371952#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1213877371869" fileName="ActionDeclaration_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPropertyToCheck_5003188907305392322#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/checkedName/PropertyReference;" />
+    <nodeInfo nodeId="1213877371869" fileName="ActionDeclaration_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPropertyToCheck_4844813484172611473#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/checkedName/PropertyReference;" />
     <nodeInfo nodeId="1213877371869" fileName="ActionDeclaration_Behavior.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPrefix_1588596821190636875#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="1213877371869" fileName="ActionDeclaration_Behavior.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getFullPath_6301602537765917913#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/project/IModule;)Ljava/lang/String;" />
     <nodeInfo nodeId="1213877371869" fileName="ActionDeclaration_Behavior.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_createType_1213877527970#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
@@ -577,7 +574,7 @@
     <nodeInfo nodeId="1213877494257" fileName="ActionGroupDeclaration_Behavior.java" startLine="19" startPosition="138" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1213877494239" fileName="ActionGroupDeclaration_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGeneratedName_1213877494274#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1213877494239" fileName="ActionGroupDeclaration_Behavior.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGeneratedClassFQName_1213877494288#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1213877494239" fileName="ActionGroupDeclaration_Behavior.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPropertyToCheck_5003188907305392322#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/checkedName/PropertyReference;" />
+    <nodeInfo nodeId="1213877494239" fileName="ActionGroupDeclaration_Behavior.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPropertyToCheck_4844813484172611473#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/checkedName/PropertyReference;" />
     <nodeInfo nodeId="1213877494239" fileName="ActionGroupDeclaration_Behavior.java" startLine="33" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_createType_1213877527970#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1213877494239" fileName="ActionGroupDeclaration_Behavior.java" startLine="16" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGroupPrefix_1213877494242#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="1213877494241" fileName="ActionGroupDeclaration_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
@@ -871,7 +868,7 @@
     <nodeInfo nodeId="1217679841475" fileName="PreferencePage_Behavior.java" startLine="17" startPosition="103" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5003188907305392417" fileName="PreferencePage_Behavior.java" startLine="21" startPosition="98" endLine="22" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1217679807202" fileName="PreferencePage_Behavior.java" startLine="11" startPosition="38" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1217679807202" fileName="PreferencePage_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPropertyToCheck_5003188907305392322#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/checkedName/PropertyReference;" />
+    <nodeInfo nodeId="1217679807202" fileName="PreferencePage_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPropertyToCheck_4844813484172611473#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/checkedName/PropertyReference;" />
     <nodeInfo nodeId="1217679807202" fileName="PreferencePage_Behavior.java" startLine="14" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGeneratedName_1217679829877#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="1217679807204" fileName="PreferencePage_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="5003188907305392416" fileName="PreferencePage_Behavior.java" startLine="21" startPosition="98" endLine="22" endPosition="51" />
@@ -1070,122 +1067,6 @@
     </scopeInfo>
     <unitInfo nodeId="1499919975383980890" fileName="OrderReference_Behavior.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.OrderReference_Behavior" />
   </root>
-  <root nodeId="1628770029971140559">
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="15" startPosition="42" endLine="16" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1628770029971140562" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="16" startPosition="72" endLine="17" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_3745452943050928880" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="17" startPosition="72" endLine="18" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1628770029971140570" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="18" startPosition="72" endLine="19" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_5003188907305392322" />
-    <nodeInfo nodeId="3745452943050932701" fileName="ICheckedNamePolicy_Behavior.java" startLine="24" startPosition="95" endLine="25" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3745452943050932709" fileName="ICheckedNamePolicy_Behavior.java" startLine="25" startPosition="48" endLine="26" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3745452943050932726" fileName="ICheckedNamePolicy_Behavior.java" startLine="27" startPosition="22" endLine="28" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1628770029971140566" fileName="ICheckedNamePolicy_Behavior.java" startLine="29" startPosition="5" endLine="30" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3745452943050932738" fileName="ICheckedNamePolicy_Behavior.java" startLine="33" startPosition="88" endLine="34" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5003188907305392331" fileName="ICheckedNamePolicy_Behavior.java" startLine="37" startPosition="106" endLine="38" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5003188907305392349" fileName="ICheckedNamePolicy_Behavior.java" startLine="38" startPosition="95" endLine="39" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5003188907305392360" fileName="ICheckedNamePolicy_Behavior.java" startLine="40" startPosition="27" endLine="41" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1628770029971140573" fileName="ICheckedNamePolicy_Behavior.java" startLine="42" startPosition="5" endLine="43" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5003188907305392328" fileName="ICheckedNamePolicy_Behavior.java" startLine="46" startPosition="98" endLine="47" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="50" startPosition="92" endLine="51" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="51" startPosition="113" endLine="52" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="55" startPosition="85" endLine="56" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="56" startPosition="113" endLine="57" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="60" startPosition="103" endLine="61" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="61" startPosition="113" endLine="62" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="65" startPosition="95" endLine="66" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="66" startPosition="113" endLine="67" endPosition="235" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="70" startPosition="125" endLine="71" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="74" startPosition="118" endLine="75" endPosition="270" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="78" startPosition="136" endLine="79" endPosition="288" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="82" startPosition="128" endLine="83" endPosition="280" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="3745452943050932717" fileName="ICheckedNamePolicy_Behavior.java" startLine="26" startPosition="100" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5003188907305392340" fileName="ICheckedNamePolicy_Behavior.java" startLine="39" startPosition="115" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getDescendantToCheck_3745452943050928880#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPropertyToCheck_5003188907305392322#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/checkedName/PropertyReference;" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getDescendantsToCheck_1628770029971140562#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/List;" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getDescendantToCheck_3745452943050928880#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="77" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getPropertiesToCheck_1628770029971140570#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/List;" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="81" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getPropertyToCheck_5003188907305392322#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/checkedName/PropertyReference;" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="49" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getDescendantsToCheck_1628770029971140562#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="54" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getDescendantToCheck_3745452943050928880#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="59" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPropertiesToCheck_1628770029971140570#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="64" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPropertyToCheck_5003188907305392322#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/checkedName/PropertyReference;" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="23" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getDescendantsToCheck_1628770029971140562#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="36" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPropertiesToCheck_1628770029971140570#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
-    <scopeInfo nodeId="1628770029971140561" fileName="ICheckedNamePolicy_Behavior.java" startLine="21" startPosition="43" endLine="21" endPosition="43" />
-    <scopeInfo nodeId="3745452943050932718" fileName="ICheckedNamePolicy_Behavior.java" startLine="27" startPosition="22" endLine="28" endPosition="52" />
-    <scopeInfo nodeId="3745452943050928883" fileName="ICheckedNamePolicy_Behavior.java" startLine="33" startPosition="88" endLine="34" endPosition="16" />
-    <scopeInfo nodeId="5003188907305392341" fileName="ICheckedNamePolicy_Behavior.java" startLine="40" startPosition="27" endLine="41" endPosition="57" />
-    <scopeInfo nodeId="5003188907305392325" fileName="ICheckedNamePolicy_Behavior.java" startLine="46" startPosition="98" endLine="47" endPosition="16" />
-    <scopeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="70" startPosition="125" endLine="71" endPosition="277" />
-    <scopeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="74" startPosition="118" endLine="75" endPosition="270" />
-    <scopeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="78" startPosition="136" endLine="79" endPosition="288" />
-    <scopeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="82" startPosition="128" endLine="83" endPosition="280" />
-    <scopeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="50" startPosition="92" endLine="52" endPosition="232">
-      <varInfo nodeId="1628770029971140559" varName="descriptor" />
-    </scopeInfo>
-    <scopeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="55" startPosition="85" endLine="57" endPosition="225">
-      <varInfo nodeId="1628770029971140559" varName="descriptor" />
-    </scopeInfo>
-    <scopeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="60" startPosition="103" endLine="62" endPosition="243">
-      <varInfo nodeId="1628770029971140559" varName="descriptor" />
-    </scopeInfo>
-    <scopeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="65" startPosition="95" endLine="67" endPosition="235">
-      <varInfo nodeId="1628770029971140559" varName="descriptor" />
-    </scopeInfo>
-    <scopeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="1628770029971140559" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="1628770029971140559" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
-      <varInfo nodeId="1628770029971140559" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="1628770029971140559" varName="callerConceptFqName" />
-      <varInfo nodeId="1628770029971140559" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
-      <varInfo nodeId="1628770029971140559" varName="callerConceptFqName" />
-      <varInfo nodeId="1628770029971140559" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="77" startPosition="0" endLine="81" endPosition="0">
-      <varInfo nodeId="1628770029971140559" varName="callerConceptFqName" />
-      <varInfo nodeId="1628770029971140559" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="81" startPosition="0" endLine="85" endPosition="0">
-      <varInfo nodeId="1628770029971140559" varName="callerConceptFqName" />
-      <varInfo nodeId="1628770029971140559" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="49" startPosition="0" endLine="54" endPosition="0">
-      <varInfo nodeId="1628770029971140559" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="54" startPosition="0" endLine="59" endPosition="0">
-      <varInfo nodeId="1628770029971140559" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="59" startPosition="0" endLine="64" endPosition="0">
-      <varInfo nodeId="1628770029971140559" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="64" startPosition="0" endLine="69" endPosition="0">
-      <varInfo nodeId="1628770029971140559" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1628770029971140565" fileName="ICheckedNamePolicy_Behavior.java" startLine="24" startPosition="95" endLine="30" endPosition="18">
-      <varInfo nodeId="3745452943050932710" varName="dsc" />
-      <varInfo nodeId="3745452943050932702" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1628770029971140572" fileName="ICheckedNamePolicy_Behavior.java" startLine="37" startPosition="106" endLine="43" endPosition="18">
-      <varInfo nodeId="5003188907305392350" varName="property" />
-      <varInfo nodeId="5003188907305392332" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="23" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="1628770029971140559" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="36" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="1628770029971140559" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="1628770029971140559" fileName="ICheckedNamePolicy_Behavior.java" startLine="15" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ICheckedNamePolicy_Behavior" />
-  </root>
   <root nodeId="203415309825603287">
     <nodeInfo nodeId="203415309825621189" fileName="MPSPluginDependency_Behavior.java" startLine="13" startPosition="80" endLine="14" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="203415309825603287" fileName="MPSPluginDependency_Behavior.java" startLine="9" startPosition="43" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
@@ -1208,7 +1089,7 @@
     <nodeInfo nodeId="3743831881070611775" fileName="EditorTab_Behavior.java" startLine="14" startPosition="33" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="3743831881070611775" fileName="EditorTab_Behavior.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGeneratedName_3743831881070611776#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="3743831881070611775" fileName="EditorTab_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGeneratedClassFQName_3743831881070611787#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3743831881070611775" fileName="EditorTab_Behavior.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPropertiesToCheck_1628770029971140570#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="3743831881070611775" fileName="EditorTab_Behavior.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPropertiesToCheck_4844813484172611445#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
     <scopeInfo nodeId="3743831881070611831" fileName="EditorTab_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="3743831881070611778" fileName="EditorTab_Behavior.java" startLine="18" startPosition="82" endLine="19" endPosition="106" />
     <scopeInfo nodeId="3743831881070611789" fileName="EditorTab_Behavior.java" startLine="22" startPosition="89" endLine="23" endPosition="139" />
@@ -1353,7 +1234,7 @@
     <nodeInfo nodeId="6547237850567463421" fileName="BaseToolDeclaration_Behavior.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_hasNumber_6547237850567463455#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="6547237850567463421" fileName="BaseToolDeclaration_Behavior.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_createType_1213877527970#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="6547237850567463421" fileName="BaseToolDeclaration_Behavior.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_createSuperType_1217433657148#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="6547237850567463421" fileName="BaseToolDeclaration_Behavior.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPropertyToCheck_5003188907305392322#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/checkedName/PropertyReference;" />
+    <nodeInfo nodeId="6547237850567463421" fileName="BaseToolDeclaration_Behavior.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPropertyToCheck_4844813484172611473#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/checkedName/PropertyReference;" />
     <nodeInfo nodeId="862470364181513536" fileName="BaseToolDeclaration_Behavior.java" startLine="63" startPosition="32" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="862470364181513536" fileName="BaseToolDeclaration_Behavior.java" startLine="63" startPosition="32" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6547237850567463488" fileName="BaseToolDeclaration_Behavior.java" startLine="81" startPosition="32" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

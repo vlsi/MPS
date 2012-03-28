@@ -18,7 +18,7 @@ public class PreferencePage_Behavior {
     return componentName + "_" + pageName + "_PreferencesPage";
   }
 
-  public static PropertyReference virtual_getPropertyToCheck_5003188907305392322(SNode thisNode) {
+  public static PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode) {
     return new PropertyReference(thisNode, "name");
   }
 }

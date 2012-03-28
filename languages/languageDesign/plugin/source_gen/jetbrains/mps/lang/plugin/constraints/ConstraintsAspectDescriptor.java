@@ -7,7 +7,7 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
-  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionDeclaration", "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", "jetbrains.mps.lang.plugin.structure.ActionInstance", "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionParameterReference", "jetbrains.mps.lang.plugin.structure.AddElementStatement", "jetbrains.mps.lang.plugin.structure.AddStatement", "jetbrains.mps.lang.plugin.structure.BaseProjectOperation", "jetbrains.mps.lang.plugin.structure.ConceptCondition", "jetbrains.mps.lang.plugin.structure.EditableModel", "jetbrains.mps.lang.plugin.structure.GroupAnchor", "jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor", "jetbrains.mps.lang.plugin.structure.InterfaceExtentionPoint", "jetbrains.mps.lang.plugin.structure.ModificationStatement", "jetbrains.mps.lang.plugin.structure.PropertyRefExpression", "jetbrains.mps.lang.plugin.structure.Separator", "jetbrains.mps.lang.plugin.structure.ShortcutChange", "jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration", "jetbrains.mps.lang.plugin.structure.TabbedToolOperation", "jetbrains.mps.lang.plugin.structure.ToolInstanceExpression", "jetbrains.mps.lang.plugin.structure.UpdateBlock"};
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionDeclaration", "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", "jetbrains.mps.lang.plugin.structure.ActionInstance", "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionParameterReference", "jetbrains.mps.lang.plugin.structure.AddElementStatement", "jetbrains.mps.lang.plugin.structure.AddStatement", "jetbrains.mps.lang.plugin.structure.BaseProjectOperation", "jetbrains.mps.lang.plugin.structure.ConceptCondition", "jetbrains.mps.lang.plugin.structure.EditableModel", "jetbrains.mps.lang.plugin.structure.GroupAnchor", "jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor", "jetbrains.mps.lang.plugin.structure.InterfaceExtentionPoint", "jetbrains.mps.lang.plugin.structure.ModificationStatement", "jetbrains.mps.lang.plugin.structure.Separator", "jetbrains.mps.lang.plugin.structure.ShortcutChange", "jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration", "jetbrains.mps.lang.plugin.structure.TabbedToolOperation", "jetbrains.mps.lang.plugin.structure.ToolInstanceExpression", "jetbrains.mps.lang.plugin.structure.UpdateBlock"};
 
   public ConstraintsAspectDescriptor() {
   }
@@ -18,11 +18,11 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new ActionDeclaration_Constraints();
       case 15:
         return new ModificationStatement_Constraints();
-      case 21:
+      case 20:
         return new ToolInstanceExpression_Constraints();
       case 12:
         return new GroupAnchor_Constraints();
-      case 17:
+      case 16:
         return new Separator_Constraints();
       case 3:
         return new ActionGroupDeclaration_Constraints();
@@ -34,15 +34,13 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new ActionParameterDeclaration_Constraints();
       case 8:
         return new AddStatement_Constraints();
-      case 18:
+      case 17:
         return new ShortcutChange_Constraints();
-      case 16:
-        return new PropertyRefExpression_Constraints();
-      case 22:
+      case 21:
         return new UpdateBlock_Constraints();
-      case 20:
-        return new TabbedToolOperation_Constraints();
       case 19:
+        return new TabbedToolOperation_Constraints();
+      case 18:
         return new SmartDisposeClosureParameterDeclaration_Constraints();
       case 9:
         return new BaseProjectOperation_Constraints();
