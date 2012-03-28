@@ -3,9 +3,11 @@
   <persistence version="7" />
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+  <language namespace="982eb8df-2c96-4bd7-9963-11712ea622e5(jetbrains.mps.lang.resources)" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
-  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
+  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="6" implicit="yes" />
+  <import index="1oap" modelUID="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="4176072814906255307">
       <property name="name" nameId="tpck.1169194664001" value="DummyAction" />
@@ -19,8 +21,8 @@
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="4176072814906255308">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4176072814906255309" />
     </node>
-    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4176072814906255310">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/jetbrains/mps/make/sandbox/mpsHome.png" />
+    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="4176072814906255310">
+      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/jetbrains/mps/make/sandbox/mpsHome.png" />
     </node>
   </root>
   <root id="3564595993453230683">

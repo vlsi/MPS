@@ -7,6 +7,7 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
+  <language namespace="982eb8df-2c96-4bd7-9963-11712ea622e5(jetbrains.mps.lang.resources)" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" />
   <import index="9a8" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="89o2" modelUID="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)" version="-1" />
@@ -48,14 +49,15 @@
   <import index="m373" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="-1" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
-  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="5" implicit="yes" />
+  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="6" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
+  <import index="1oap" modelUID="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4507335185602802780">
       <property name="name" nameId="tpck.1169194664001" value="ExtractMethodDialog" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="extractMethod" />
     </node>
-    <node type="tp4k.IconResourceBundle" typeId="tp4k.7038317550322744766" id="4507335185602804386">
+    <node type="1oap.IconResourceBundle" typeId="1oap.8974276187400029885" id="4507335185602804386">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="extractMethod" />
       <property name="name" nameId="tpck.1169194664001" value="ExtractMethodIcons" />
     </node>
@@ -558,8 +560,8 @@
                                             </node>
                                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4507335185602802968">
                                               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~AbstractButton%dsetIcon(javax%dswing%dIcon)%cvoid" resolveInfo="setIcon" />
-                                              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="4507335185602802969">
-                                                <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="4507335185602804387" resolveInfo="CLASS" />
+                                              <node role="actualArgument" roleId="tpee.1068499141038" type="1oap.IconResourceReference" typeId="1oap.8974276187400029895" id="4507335185602802969">
+                                                <link role="declaration" roleId="1oap.8974276187400029896" targetNodeId="4507335185602804387" resolveInfo="CLASS" />
                                               </node>
                                             </node>
                                           </node>
@@ -589,8 +591,8 @@
                                               </node>
                                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4507335185602802981">
                                                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~AbstractButton%dsetIcon(javax%dswing%dIcon)%cvoid" resolveInfo="setIcon" />
-                                                <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="4507335185602802982">
-                                                  <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="4507335185602804390" resolveInfo="INTERFACE" />
+                                                <node role="actualArgument" roleId="tpee.1068499141038" type="1oap.IconResourceReference" typeId="1oap.8974276187400029895" id="4507335185602802982">
+                                                  <link role="declaration" roleId="1oap.8974276187400029896" targetNodeId="4507335185602804390" resolveInfo="INTERFACE" />
                                                 </node>
                                               </node>
                                             </node>
@@ -3948,19 +3950,19 @@
     </node>
   </root>
   <root id="4507335185602804386">
-    <node role="icons" roleId="tp4k.7038317550322744874" type="tp4k.IconResourceDeclaration" typeId="tp4k.7038317550322744875" id="4507335185602804387">
+    <node role="icons" roleId="1oap.8974276187400029886" type="1oap.IconResourceDeclaration" typeId="1oap.8974276187400029888" id="4507335185602804387">
       <property name="name" nameId="tpck.1169194664001" value="CLASS" />
-      <node role="iconExpression" roleId="tp4k.7038317550322744876" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="4507335185602804388">
-        <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4507335185602804389">
-          <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/classType.png" />
+      <node role="iconExpression" roleId="1oap.8974276187400029889" type="1oap.IconResourceExpression" typeId="1oap.8974276187400029891" id="4507335185602804388">
+        <node role="icon" roleId="1oap.8974276187400029893" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="4507335185602804389">
+          <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/classType.png" />
         </node>
       </node>
     </node>
-    <node role="icons" roleId="tp4k.7038317550322744874" type="tp4k.IconResourceDeclaration" typeId="tp4k.7038317550322744875" id="4507335185602804390">
+    <node role="icons" roleId="1oap.8974276187400029886" type="1oap.IconResourceDeclaration" typeId="1oap.8974276187400029888" id="4507335185602804390">
       <property name="name" nameId="tpck.1169194664001" value="INTERFACE" />
-      <node role="iconExpression" roleId="tp4k.7038317550322744876" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="4507335185602804391">
-        <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4507335185602804392">
-          <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/languages/languageDesign/behavior/languages/behavior/icons/behavior.png" />
+      <node role="iconExpression" roleId="1oap.8974276187400029889" type="1oap.IconResourceExpression" typeId="1oap.8974276187400029891" id="4507335185602804391">
+        <node role="icon" roleId="1oap.8974276187400029893" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="4507335185602804392">
+          <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/languages/languageDesign/behavior/languages/behavior/icons/behavior.png" />
         </node>
       </node>
     </node>
