@@ -153,7 +153,7 @@
   <import index="z0vn" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide(MPS.Workbench/jetbrains.mps.ide@java_stub)" version="-1" />
   <import index="tz4y" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.project(MPS.Workbench/jetbrains.mps.project@java_stub)" version="-1" />
   <import index="7lwv" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.navigation(MPS.Workbench/jetbrains.mps.ide.navigation@java_stub)" version="-1" />
-  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="7" implicit="yes" />
+  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="8" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -5078,8 +5078,8 @@
               </node>
               <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1228317975665">
                 <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1228317975666">
-                  <node role="statement" roleId="tpee.1068581517665" type=".jetbrains.mps.lang.plugin.structure.AddElementStatement" id="1228318015474">
-                    <node role="expression" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1228318031150">
+                  <node role="statement" roleId="tpee.1068581517665" type="tp4k.AddElementStatement" typeId="tp4k.1207145475354" id="1228318015474">
+                    <node role="expression" roleId="tp4k.1207145494930" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1228318031150">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1228317970581" resolveInfo="newGroup" />
                     </node>
                   </node>
@@ -5107,8 +5107,8 @@
               </node>
             </node>
           </node>
-          <node role="statement" roleId="tpee.1068581517665" type=".jetbrains.mps.lang.plugin.structure.AddElementStatement" id="6661528628553997681">
-            <node role="expression" type="tp4k.GroupAccessOperation" typeId="tp4k.3205675194086686068" id="6661528628553997683">
+          <node role="statement" roleId="tpee.1068581517665" type="tp4k.AddElementStatement" typeId="tp4k.1207145475354" id="6661528628553997681">
+            <node role="expression" roleId="tp4k.1207145494930" type="tp4k.GroupAccessOperation" typeId="tp4k.3205675194086686068" id="6661528628553997683">
               <link role="group" roleId="tp4k.3205675194086686070" targetNodeId="6661528628553884549" resolveInfo="NamespaceMakeActions" />
             </node>
           </node>
@@ -12184,8 +12184,8 @@
   <root id="2841218117793383532">
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.BuildGroupBlock" typeId="tp4k.1207145360364" id="2841218117793383535">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2841218117793383536">
-        <node role="statement" roleId="tpee.1068581517665" type=".jetbrains.mps.lang.plugin.structure.AddElementStatement" id="2841218117793385946">
-          <node role="expression" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2841218117793385948">
+        <node role="statement" roleId="tpee.1068581517665" type="tp4k.AddElementStatement" typeId="tp4k.1207145475354" id="2841218117793385946">
+          <node role="expression" roleId="tp4k.1207145494930" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2841218117793385948">
             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2841218117793440827">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lo9e.~CreateRootNodeGroup%d&lt;init&gt;()" resolveInfo="CreateRootNodeGroup" />
             </node>
