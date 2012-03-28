@@ -71,7 +71,7 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2990235398087273701">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2990235398087431165">
           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2990235398087431171">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7038317550322744968" resolveInfo="getResource" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5t3h.2939287019638088112" resolveInfo="getResource" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2990235398087431173">
               <property name="value" nameId="tpee.1070475926801" value="" />
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="2990235398087431175">
@@ -99,8 +99,8 @@
           <node role="operand" roleId="tpee.1197027771414" type="tp68.InternalStaticMethodCall" typeId="tp68.1173990517731" id="2990235398087273703">
             <property name="methodName" nameId="tp68.1173992444083" value="getInstance" />
             <property name="fqClassName" nameId="tp68.1173992483054" value="IconResourceBundle" />
-            <node role="returnType" roleId="tp68.1175794062018" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2990235398087273704">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7038317550322744899" resolveInfo="IconResourceBundle" />
+            <node role="returnType" roleId="tp68.1175794062018" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6164618174110152840">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5t3h.2939287019638088102" resolveInfo="IconResourceBundle" />
             </node>
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="2990235398087273706">
               <property name="propertyName" nameId="tpck.1757699476691236117" value="fqClassName" />
