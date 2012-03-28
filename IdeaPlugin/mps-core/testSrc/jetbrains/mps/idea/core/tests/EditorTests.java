@@ -25,7 +25,7 @@ import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.editor.MPSEditorOpener;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
-import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import jetbrains.mps.lang.test.runtime.BaseTransformationTest4;
 import jetbrains.mps.lang.test.runtime.ProjectTest;
 import jetbrains.mps.lang.test.runtime.TransformationTestRunner;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -43,7 +43,7 @@ import java.util.List;
 
 public class EditorTests extends DataMPSFixtureTestCase {
 
-    private List<BaseTransformationTest> tests = new ArrayList<BaseTransformationTest>();
+    private List<BaseTransformationTest4> tests = new ArrayList<BaseTransformationTest4>();
 
     @Override
     protected boolean runInDispatchThread() {
@@ -107,7 +107,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
                         try {
                             Class<?> cls = Class.forName(model.getLongName() + "." + r.getName() + "_Test");
                             Method mth = cls.getMethod("test_" + r.getName());
-                            BaseTransformationTest btt = (BaseTransformationTest) cls.newInstance();
+                            BaseTransformationTest4 btt = (BaseTransformationTest4) cls.newInstance();
                             btt.setTestRunner(new SimpleTransformationTestRunner(r, mth));
                             tests.add(btt);
                         }
@@ -148,7 +148,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
 
 
     public void test_AllEditorTests() throws Throwable {
-        for(BaseTransformationTest btt: tests) {
+        for(BaseTransformationTest4 btt: tests) {
             ((SimpleTransformationTestRunner)btt.getTestRunner()).doTest(btt);
         }
     }
@@ -163,7 +163,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
             myTestMethod = testMethod;
         }
 
-        public void doTest (BaseTransformationTest btt) throws Throwable {
+        public void doTest (BaseTransformationTest4 btt) throws Throwable {
             try {
                 myTestMethod.invoke(btt);
             } catch (InvocationTargetException e) {
