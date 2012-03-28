@@ -285,7 +285,12 @@
         <fileset dir="${basedir}/languages/languageDesign/traceable/source_gen"></fileset>
         <fileset dir="${basedir}/languages/languageDesign/typesystem/source_gen"></fileset>
       </src>
-      <classpath path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+      <classpath>
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+      </classpath>
     </javac>
   </target>
   
@@ -298,6 +303,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -312,6 +320,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -326,6 +337,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -340,6 +354,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -383,6 +400,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -425,6 +445,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -438,6 +461,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -481,6 +507,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -494,6 +523,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -537,6 +569,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -579,6 +614,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -622,6 +660,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -664,6 +705,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -706,6 +750,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -719,6 +766,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -762,6 +812,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -773,7 +826,10 @@
       <src>
         <fileset dir="${basedir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/source_gen"></fileset>
       </src>
-      <classpath path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+      <classpath>
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+      </classpath>
     </javac>
   </target>
   
@@ -815,6 +871,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -857,6 +916,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -870,6 +932,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -884,6 +949,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -898,6 +966,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -912,6 +983,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -955,6 +1029,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -968,6 +1045,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -1012,6 +1092,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -1054,6 +1137,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -1096,6 +1182,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -1138,6 +1227,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -1180,6 +1272,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -1222,6 +1317,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -1264,6 +1362,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -1306,6 +1407,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -1319,6 +1423,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -1333,6 +1440,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -1347,6 +1457,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -1361,6 +1474,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -1375,6 +1491,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -1389,6 +1508,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -1403,6 +1525,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -1417,6 +1542,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -1431,6 +1559,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -1445,6 +1576,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -1488,6 +1622,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -1501,6 +1638,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -1515,6 +1655,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -1529,6 +1672,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -1543,6 +1689,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -1586,6 +1735,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.textGen" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -1599,6 +1751,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -1613,6 +1768,9 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -1659,6 +1817,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.xml" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.xmlInternal" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -1701,6 +1862,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.xmlInternal" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -1743,6 +1907,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.xmlSchema" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -1791,6 +1958,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.xmlInternal" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.xmlQuery" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.xmlSchema" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -1834,6 +2004,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -1845,7 +2018,10 @@
       <src>
         <fileset dir="${basedir}/languages/util/gtext/runtime/source_gen"></fileset>
       </src>
-      <classpath path="${build.tmp}/java/out/jetbrains.mps.gtext.runtime" />
+      <classpath>
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.gtext.runtime" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+      </classpath>
     </javac>
   </target>
   
@@ -1887,6 +2063,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.make.facet" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -1929,6 +2108,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.make.outlook" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -1971,6 +2153,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.make.script" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
       </classpath>
     </javac>
   </target>
@@ -1984,6 +2169,9 @@
         <fileset dir="${basedir}/languages/util/buildlanguage/languages/reduced/source_gen"></fileset>
       </src>
       <classpath>
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.classifiers" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closures" />
@@ -2054,6 +2242,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
       </classpath>
     </javac>
@@ -2096,6 +2287,9 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
+        <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+        <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${basedir}/lib/guava-r09.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
       </classpath>
     </javac>

@@ -230,6 +230,10 @@ public class QueriesGenerated {
     return val;
   }
 
+  public static Object propertyMacro_GetPropertyValue_3717132724153210335(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "jar", true), "path", true));
+  }
+
   public static Object propertyMacro_GetPropertyValue_5248329904288079406(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(_context.getNode(), "dir", true));
   }
