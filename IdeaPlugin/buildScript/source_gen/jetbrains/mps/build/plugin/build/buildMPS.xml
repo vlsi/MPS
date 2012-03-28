@@ -356,7 +356,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.baseLanguage.blTypes" depends="java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.baseLanguage.blTypes" depends="java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.blTypes" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.blTypes">
       <compilerarg value="-Xlint:none" />
@@ -364,7 +364,6 @@
         <fileset dir="${basedir}/languages/baseLanguage/blTypes/source_gen"></fileset>
       </src>
       <classpath>
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.blTypes" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
@@ -373,7 +372,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.baseLanguage.checkedDots" depends="java.compile.jetbrains.mps.baseLanguage.checkedDots, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.baseLanguage.checkedDots" depends="java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.checkedDots" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.checkedDots">
       <compilerarg value="-Xlint:none" />
@@ -381,7 +380,6 @@
         <fileset dir="${basedir}/languages/baseLanguage/checkDot/languages/checkedDots/source_gen"></fileset>
       </src>
       <classpath>
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.checkedDots" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
@@ -406,7 +404,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.baseLanguage.constructors" depends="java.compile.jetbrains.mps.baseLanguage.constructors, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.baseLanguage.constructors" depends="java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.constructors" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.constructors">
       <compilerarg value="-Xlint:none" />
@@ -414,7 +412,6 @@
         <fileset dir="${basedir}/languages/baseLanguage/constructors/source_gen"></fileset>
       </src>
       <classpath>
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.constructors" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
@@ -440,7 +437,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.baseLanguage.jdk7" depends="java.compile.jetbrains.mps.baseLanguage.jdk7, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.baseLanguage.jdk7" depends="java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.jdk7" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.jdk7">
       <compilerarg value="-Xlint:none" />
@@ -448,7 +445,6 @@
         <fileset dir="${basedir}/languages/baseLanguage/jdk7/languages/jdk7/source_gen"></fileset>
       </src>
       <classpath>
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.jdk7" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
@@ -457,7 +453,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.baseLanguage.logging" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.logging, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.baseLanguage.logging" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.logging" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.logging">
       <compilerarg value="-Xlint:none" />
@@ -466,7 +462,6 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.logging" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
@@ -475,7 +470,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.baseLanguage.overloadedOperators" depends="java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.overloadedOperators, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.baseLanguage.overloadedOperators" depends="java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.overloadedOperators" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.overloadedOperators">
       <compilerarg value="-Xlint:none" />
@@ -484,7 +479,6 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.blTypes" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.overloadedOperators" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
@@ -493,7 +487,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.baseLanguage.tuples" depends="java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.baseLanguage.tuples, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.baseLanguage.tuples" depends="java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.tuples" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.tuples">
       <compilerarg value="-Xlint:none" />
@@ -502,7 +496,6 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closures" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.tuples" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
@@ -511,7 +504,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.baseLanguage.unitTest" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.unitTest, java.compile.jetbrains.mps.lang.test, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.baseLanguage.unitTest" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.lang.test, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unitTest" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unitTest">
       <compilerarg value="-Xlint:none" />
@@ -520,7 +513,6 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unitTest" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
@@ -546,7 +538,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.baseLanguage.regexp" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.regexp, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.baseLanguage.regexp" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp">
       <compilerarg value="-Xlint:none" />
@@ -555,7 +547,6 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
@@ -564,7 +555,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.baseLanguage.regexp.runtime" depends="java.compile.jetbrains.mps.baseLanguage.regexp.runtime">
+  <target name="java.compile.jetbrains.mps.baseLanguage.regexp.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime">
       <compilerarg value="-Xlint:none" />
@@ -572,13 +563,12 @@
         <fileset dir="${basedir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/source_gen"></fileset>
       </src>
       <classpath>
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
       </classpath>
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.baseLanguage.builders" depends="java.compile.jetbrains.mps.baseLanguage.builders, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.baseLanguage.builders" depends="java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.builders" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.builders">
       <compilerarg value="-Xlint:none" />
@@ -586,7 +576,6 @@
         <fileset dir="${basedir}/languages/util/builders/source_gen"></fileset>
       </src>
       <classpath>
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.builders" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
@@ -595,7 +584,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.analyzers" depends="java.compile.jetbrains.mps.analyzers, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.lang.dataFlow, java.compile.jetbrains.mps.lang.pattern, java.compile.jetbrains.mps.lang.structure, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.analyzers" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.lang.dataFlow, java.compile.jetbrains.mps.lang.pattern, java.compile.jetbrains.mps.lang.structure, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.analyzers" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.analyzers">
       <compilerarg value="-Xlint:none" />
@@ -603,7 +592,6 @@
         <fileset dir="${basedir}/core/analyzers/languages/analyzers/source_gen"></fileset>
       </src>
       <classpath>
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.analyzers" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.dataFlow" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.pattern" />
@@ -632,7 +620,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.actions" depends="java.compile.jetbrains.mps.baseLanguageInternal, java.compile.jetbrains.mps.lang.actions, java.compile.jetbrains.mps.lang.smodel, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.lang.actions" depends="java.compile.jetbrains.mps.baseLanguageInternal, java.compile.jetbrains.mps.lang.smodel, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.actions" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.actions">
       <compilerarg value="-Xlint:none" />
@@ -641,7 +629,6 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguageInternal" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.actions" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
@@ -683,7 +670,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.dataFlow" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.lang.dataFlow, java.compile.jetbrains.mps.lang.structure, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.lang.dataFlow" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.lang.structure, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.dataFlow" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.dataFlow">
       <compilerarg value="-Xlint:none" />
@@ -692,7 +679,6 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.dataFlow" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.structure" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
@@ -718,7 +704,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.editor.table" depends="java.compile.jetbrains.mps.lang.editor, java.compile.jetbrains.mps.lang.editor.table, java.compile.jetbrains.mps.lang.editor.table.runtime, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.lang.editor.table" depends="java.compile.jetbrains.mps.lang.editor, java.compile.jetbrains.mps.lang.editor.table.runtime, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table">
       <compilerarg value="-Xlint:none" />
@@ -727,7 +713,6 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.table" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.table.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
@@ -737,7 +722,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.editor.editorTest" depends="java.compile.jetbrains.mps.lang.editor.editorTest, java.compile.jetbrains.mps.lang.generator, java.compile.jetbrains.mps.lang.test, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.lang.editor.editorTest" depends="java.compile.jetbrains.mps.lang.generator, java.compile.jetbrains.mps.lang.test, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.editorTest" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.editorTest">
       <compilerarg value="-Xlint:none" />
@@ -745,7 +730,6 @@
         <fileset dir="${basedir}/languages/languageDesign/editor/languages/editorTest/source_gen"></fileset>
       </src>
       <classpath>
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.editorTest" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.generator" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
@@ -756,7 +740,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.editor.table.runtime" depends="java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.editor.table.runtime, java.compile.jetbrains.mps.lang.structure">
+  <target name="java.compile.jetbrains.mps.lang.editor.table.runtime" depends="java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.structure">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table.runtime" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table.runtime">
       <compilerarg value="-Xlint:none" />
@@ -765,14 +749,13 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.table.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.structure" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
       </classpath>
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.extension" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguageInternal, java.compile.jetbrains.mps.lang.extension, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.lang.extension" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguageInternal, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.extension" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.extension">
       <compilerarg value="-Xlint:none" />
@@ -782,7 +765,6 @@
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguageInternal" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.extension" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
@@ -791,7 +773,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.findUsages" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.lang.findUsages, java.compile.jetbrains.mps.lang.plugin, java.compile.jetbrains.mps.lang.project, java.compile.jetbrains.mps.lang.refactoring, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.lang.findUsages" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.lang.plugin, java.compile.jetbrains.mps.lang.project, java.compile.jetbrains.mps.lang.refactoring, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.findUsages" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.findUsages">
       <compilerarg value="-Xlint:none" />
@@ -800,7 +782,6 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.findUsages" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.plugin" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.project" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.refactoring" />
@@ -812,7 +793,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.descriptor" depends="java.compile.jetbrains.mps.lang.descriptor, java.compile.jetbrains.mps.lang.findUsages, java.compile.jetbrains.mps.lang.generator, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.lang.descriptor" depends="java.compile.jetbrains.mps.lang.findUsages, java.compile.jetbrains.mps.lang.generator, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.descriptor" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.descriptor">
       <compilerarg value="-Xlint:none" />
@@ -820,7 +801,6 @@
         <fileset dir="${basedir}/languages/languageDesign/generator/languages/descriptor/source_gen"></fileset>
       </src>
       <classpath>
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.descriptor" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.findUsages" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.generator" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
@@ -831,7 +811,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.generator.generationContext" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.lang.generator, java.compile.jetbrains.mps.lang.generator.generationContext, java.compile.jetbrains.mps.lang.pattern, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.lang.generator.generationContext" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.lang.generator, java.compile.jetbrains.mps.lang.pattern, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.generator.generationContext" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.generator.generationContext">
       <compilerarg value="-Xlint:none" />
@@ -841,7 +821,6 @@
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.generator" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.generator.generationContext" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.pattern" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
@@ -851,7 +830,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.generator.generationParameters" depends="java.compile.jetbrains.mps.lang.generator, java.compile.jetbrains.mps.lang.generator.generationParameters, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.lang.generator.generationParameters" depends="java.compile.jetbrains.mps.lang.generator, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.generator.generationParameters" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.generator.generationParameters">
       <compilerarg value="-Xlint:none" />
@@ -860,7 +839,6 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.generator" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.generator.generationParameters" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
@@ -967,7 +945,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.refactoring" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.lang.plugin, java.compile.jetbrains.mps.lang.refactoring, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.lang.refactoring" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.lang.plugin, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.refactoring" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.refactoring">
       <compilerarg value="-Xlint:none" />
@@ -977,7 +955,6 @@
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.plugin" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.refactoring" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
@@ -986,7 +963,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.script" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.lang.script, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.lang.script" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.script" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.script">
       <compilerarg value="-Xlint:none" />
@@ -995,7 +972,6 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.script" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
@@ -1036,7 +1012,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.smodelTests" depends="java.compile.jetbrains.mps.lang.smodelTests, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.lang.smodelTests" depends="java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.smodelTests" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.smodelTests">
       <compilerarg value="-Xlint:none" />
@@ -1044,7 +1020,6 @@
         <fileset dir="${basedir}/languages/languageDesign/smodel/languages/smodelTests/source_gen"></fileset>
       </src>
       <classpath>
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodelTests" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
@@ -1069,7 +1044,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.stubs" depends="java.compile.jetbrains.mps.lang.stubs, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.lang.stubs" depends="java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.stubs" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.stubs">
       <compilerarg value="-Xlint:none" />
@@ -1077,7 +1052,6 @@
         <fileset dir="${basedir}/languages/languageDesign/stubs/source_gen"></fileset>
       </src>
       <classpath>
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.stubs" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
@@ -1117,7 +1091,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.textGen" depends="java.compile.jetbrains.mps.lang.sharedConcepts, java.compile.jetbrains.mps.lang.smodel, java.compile.jetbrains.mps.lang.test.runtime, java.compile.jetbrains.mps.lang.textGen, java.compile.jetbrains.mps.lang.traceable">
+  <target name="java.compile.jetbrains.mps.lang.textGen" depends="java.compile.jetbrains.mps.lang.sharedConcepts, java.compile.jetbrains.mps.lang.smodel, java.compile.jetbrains.mps.lang.test.runtime, java.compile.jetbrains.mps.lang.traceable">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.textGen" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.textGen">
       <compilerarg value="-Xlint:none" />
@@ -1128,7 +1102,6 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.sharedConcepts" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.textGen" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
@@ -1169,7 +1142,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.xml" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.gtext, java.compile.jetbrains.mps.gtext.runtime, java.compile.jetbrains.mps.lang.test.runtime, java.compile.jetbrains.mps.xml, java.compile.jetbrains.mps.xmlInternal">
+  <target name="java.compile.jetbrains.mps.xml" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.gtext, java.compile.jetbrains.mps.gtext.runtime, java.compile.jetbrains.mps.lang.test.runtime, java.compile.jetbrains.mps.xmlInternal">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.xml" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.xml">
       <compilerarg value="-Xlint:none" />
@@ -1181,7 +1154,6 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.gtext" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.gtext.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.xml" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.xmlInternal" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
@@ -1190,7 +1162,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.xmlInternal" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.gtext.runtime, java.compile.jetbrains.mps.lang.test.runtime, java.compile.jetbrains.mps.xmlInternal">
+  <target name="java.compile.jetbrains.mps.xmlInternal" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.gtext.runtime, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.xmlInternal" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.xmlInternal">
       <compilerarg value="-Xlint:none" />
@@ -1201,7 +1173,6 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.gtext.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.xmlInternal" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${basedir}/lib/guava-r09.jar" />
@@ -1209,7 +1180,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.xmlSchema" depends="java.compile.jetbrains.mps.lang.test.runtime, java.compile.jetbrains.mps.xmlSchema">
+  <target name="java.compile.jetbrains.mps.xmlSchema" depends="java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.xmlSchema" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.xmlSchema">
       <compilerarg value="-Xlint:none" />
@@ -1218,7 +1189,6 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.xmlSchema" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${basedir}/lib/guava-r09.jar" />
@@ -1226,7 +1196,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.xmlQuery" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.builders, java.compile.jetbrains.mps.lang.test.runtime, java.compile.jetbrains.mps.xml, java.compile.jetbrains.mps.xmlQuery, java.compile.jetbrains.mps.xmlSchema">
+  <target name="java.compile.jetbrains.mps.xmlQuery" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.builders, java.compile.jetbrains.mps.lang.test.runtime, java.compile.jetbrains.mps.xml, java.compile.jetbrains.mps.xmlSchema">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.xmlQuery" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.xmlQuery">
       <compilerarg value="-Xlint:none" />
@@ -1238,7 +1208,6 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.builders" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.xml" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.xmlQuery" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.xmlSchema" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
@@ -1247,7 +1216,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.gtext" depends="java.compile.jetbrains.mps.gtext, java.compile.jetbrains.mps.gtext.runtime, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.gtext" depends="java.compile.jetbrains.mps.gtext.runtime, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.gtext" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.gtext">
       <compilerarg value="-Xlint:none" />
@@ -1255,7 +1224,6 @@
         <fileset dir="${basedir}/languages/util/gtext/source_gen"></fileset>
       </src>
       <classpath>
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.gtext" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.gtext.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
@@ -1265,7 +1233,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.gtext.runtime" depends="java.compile.jetbrains.mps.gtext.runtime">
+  <target name="java.compile.jetbrains.mps.gtext.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.gtext.runtime" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.gtext.runtime">
       <compilerarg value="-Xlint:none" />
@@ -1273,13 +1241,12 @@
         <fileset dir="${basedir}/languages/util/gtext/runtime/source_gen"></fileset>
       </src>
       <classpath>
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.gtext.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
       </classpath>
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.make.facet" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.lang.project, java.compile.jetbrains.mps.lang.test.runtime, java.compile.jetbrains.mps.make.facet">
+  <target name="java.compile.jetbrains.mps.make.facet" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.lang.project, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.make.facet" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.make.facet">
       <compilerarg value="-Xlint:none" />
@@ -1290,7 +1257,6 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.project" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.make.facet" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${basedir}/lib/guava-r09.jar" />
@@ -1298,7 +1264,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.make.outlook" depends="java.compile.jetbrains.mps.lang.test.runtime, java.compile.jetbrains.mps.make.outlook">
+  <target name="java.compile.jetbrains.mps.make.outlook" depends="java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.make.outlook" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.make.outlook">
       <compilerarg value="-Xlint:none" />
@@ -1307,7 +1273,6 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.make.outlook" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${basedir}/lib/guava-r09.jar" />
@@ -1315,7 +1280,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.make.script" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.lang.test.runtime, java.compile.jetbrains.mps.make.script">
+  <target name="java.compile.jetbrains.mps.make.script" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.make.script" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.make.script">
       <compilerarg value="-Xlint:none" />
@@ -1325,7 +1290,6 @@
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.make.script" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${basedir}/lib/guava-r09.jar" />
@@ -1333,7 +1297,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.build.gentest" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.build.gentest, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.build.gentest" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.gentest" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.gentest">
       <compilerarg value="-Xlint:none" />
@@ -1342,7 +1306,6 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.gentest" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
@@ -1351,7 +1314,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.build.reduced" depends="java.compile.jetbrains.mps.build.gentest, java.compile.jetbrains.mps.build.reduced, java.compile.jetbrains.mps.lang.editor, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.build.reduced" depends="java.compile.jetbrains.mps.build.gentest, java.compile.jetbrains.mps.lang.editor, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.reduced" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.reduced">
       <compilerarg value="-Xlint:none" />
@@ -1360,7 +1323,6 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.gentest" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.reduced" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
