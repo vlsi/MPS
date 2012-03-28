@@ -30,7 +30,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 6:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.findUsages.structure.FindBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.findUsages.structure.FinderDeclaration", "jetbrains.mps.lang.findUsages.structure.AbstractFinderDeclaration", false, new String[]{"jetbrains.mps.lang.findUsages.structure.AbstractFinderDeclaration", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{"description", "longDescription"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.findUsages.structure.FinderDeclaration", "jetbrains.mps.lang.findUsages.structure.AbstractFinderDeclaration", false, new String[]{"jetbrains.mps.lang.findUsages.structure.AbstractFinderDeclaration", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{"description", "longDescription"}, new String[]{});
       case 8:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.findUsages.structure.FinderReference", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"finder"});
       case 9:
