@@ -287,18 +287,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.behavior.BaseExecuteCommandStatementSync_BehaviorDescriptor" file="BaseExecuteCommandStatementSync_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.BaseExecuteCommandStatement_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.behavior.BaseExecuteCommandStatement_BehaviorDescriptor" file="BaseExecuteCommandStatement_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.plugin.behavior.BaseNodeBlock_BehaviorDescriptor" file="BaseNodeBlock_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -373,14 +361,11 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ApplicationPluginDisposeBlock_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ApplicationPluginInitBlock_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ApplicationPluginType_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.BaseExecuteCommandStatementSync_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.BaseExecuteCommandStatement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.BaseNodeBlock_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.BaseProjectOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.BuildGroupBlock_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ButtonCreator_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.CloseTabOperation_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.CommandClosureLiteral_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ConceptCondition_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ConceptFunctionParameter_AnActionEvent_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ConceptFunctionParameter_Concept_BehaviorDescriptor" />
@@ -403,11 +388,6 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.EnumerateChildrenFunction_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.EverywhereActionPlace_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ExecuteBlock_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ExecuteCommandInEDTStatement_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ExecuteCommandStatement_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ExecuteEDTCommandStatement_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ExecuteLightweightCommandStatement_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ExecuteWriteActionStatement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.GetComponentBlock_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.GetConceptsBlock_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.GetGroupOperation_BehaviorDescriptor" />
@@ -419,11 +399,6 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.GroupAccessOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.GroupAnchor_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.GroupType_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IconResourceBundle_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IconResourceDeclaration_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IconResourceExpression_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IconResourceReference_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IconResource_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IdeaActionsDescriptor_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IdeaConfigurationXml_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IdeaInitializerDescriptor_BehaviorDescriptor" />
@@ -500,18 +475,6 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.TabbedToolOperation_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.behavior.CommandClosureLiteral_Behavior" file="CommandClosureLiteral_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.behavior.CommandClosureLiteral_BehaviorDescriptor" file="CommandClosureLiteral_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.ClosureLiteral_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.CommandClosureLiteral_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.behavior.ConceptCondition_BehaviorDescriptor" file="ConceptCondition_BehaviorDescriptor.java">
@@ -682,36 +645,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.behavior.ExecuteCommandInEDTStatement_BehaviorDescriptor" file="ExecuteCommandInEDTStatement_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.BaseExecuteCommandStatement_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.behavior.ExecuteCommandStatement_BehaviorDescriptor" file="ExecuteCommandStatement_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.BaseExecuteCommandStatementSync_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.behavior.ExecuteEDTCommandStatement_BehaviorDescriptor" file="ExecuteEDTCommandStatement_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.BaseExecuteCommandStatement_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.behavior.ExecuteLightweightCommandStatement_BehaviorDescriptor" file="ExecuteLightweightCommandStatement_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.BaseExecuteCommandStatementSync_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.behavior.ExecuteWriteActionStatement_BehaviorDescriptor" file="ExecuteWriteActionStatement_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.BaseExecuteCommandStatementSync_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.plugin.behavior.GetComponentBlock_BehaviorDescriptor" file="GetComponentBlock_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -823,86 +756,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.checkedName.PropertyReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.behavior.IExecuteCommandStatementSync_BehaviorDescriptor" file="IExecuteCommandStatementSync_BehaviorDescriptor.java" />
-  <dependency className="jetbrains.mps.lang.plugin.behavior.IconResourceBundle_Behavior" file="IconResourceBundle_Behavior.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.behavior.IconResourceBundle_BehaviorDescriptor" file="IconResourceBundle_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.behavior.IconResourceDeclaration_BehaviorDescriptor" file="IconResourceDeclaration_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.behavior.IconResourceExpression_BehaviorDescriptor" file="IconResourceExpression_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.behavior.IconResourceReference_Behavior" file="IconResourceReference_Behavior.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.behavior.IconResourceReference_BehaviorDescriptor" file="IconResourceReference_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IconResourceReference_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.behavior.IconResource_Behavior" file="IconResource_Behavior.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="javax.swing.ImageIcon" />
-    <classNode dependClassName="jetbrains.mps.generator.fileGenerator.FileGenerationUtil" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
-    <classNode dependClassName="jetbrains.mps.util.MacrosUtil" />
-    <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
-    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="jetbrains.mps.vfs.IFileUtils" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.behavior.IconResource_BehaviorDescriptor" file="IconResource_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IconResource_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.Resource_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.behavior.IdeaActionsDescriptor_BehaviorDescriptor" file="IdeaActionsDescriptor_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1339,19 +1192,6 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ActionParameterCondition_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.behavior.Resource_Behavior" file="Resource_Behavior.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.behavior.Resource_BehaviorDescriptor" file="Resource_BehaviorDescriptor.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.behavior.Separator_BehaviorDescriptor" file="Separator_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

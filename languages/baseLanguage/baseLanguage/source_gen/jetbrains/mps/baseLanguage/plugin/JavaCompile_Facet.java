@@ -68,7 +68,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
   }
 
   public Iterable<IFacet.Name> optional() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.plugin.Binaries")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.resources.Binaries")});
   }
 
   public Iterable<IFacet.Name> required() {
@@ -173,7 +173,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), new ITarget.Name("jetbrains.mps.lang.plugin.Binaries.copyBinaries")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), new ITarget.Name("jetbrains.mps.lang.resources.Binaries.copyBinaries")});
     }
 
     public Iterable<ITarget.Name> notBefore() {

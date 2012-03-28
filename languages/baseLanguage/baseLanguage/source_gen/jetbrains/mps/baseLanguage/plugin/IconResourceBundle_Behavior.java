@@ -12,9 +12,9 @@ public class IconResourceBundle_Behavior implements IconResourceBundle {
 
   private Map<String, Icon> icons = new HashMap<String, Icon>() {
     {
-      put("FINALMARK", IconContainer.ICON_a0);
-      put("STATICMARK", IconContainer.ICON_a1);
-      put("RUNNABLEMARK", IconContainer.ICON_a2);
+      put("FINALMARK", IconContainer.ICON_a0_0);
+      put("STATICMARK", IconContainer.ICON_a1_0);
+      put("RUNNABLEMARK", IconContainer.ICON_a2_0);
     }
   };
 
@@ -30,6 +30,6 @@ public class IconResourceBundle_Behavior implements IconResourceBundle {
   }
 
   public static IconResourceBundle_Behavior getInstance() {
-    return INSTANCE;
+    return IconResourceBundle_Behavior.INSTANCE;
   }
 }
