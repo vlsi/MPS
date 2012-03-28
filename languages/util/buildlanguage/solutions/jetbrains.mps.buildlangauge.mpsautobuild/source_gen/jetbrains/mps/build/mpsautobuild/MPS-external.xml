@@ -624,6 +624,8 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.pattern.testLang" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.quotation" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.plugin" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.resources" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.access" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.sharedConcepts" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.smodel" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.extension" />

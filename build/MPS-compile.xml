@@ -72,6 +72,7 @@
   <property name="jetbrains.mps.gtext.runtime.classes" value="${base_dir}/languages/util/gtext/runtime/classes_gen" />
   <property name="jetbrains.mps.gwt.client.classes" value="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
   <property name="jetbrains.mps.ide.uiLanguage.classes" value="${base_dir}/languages/util/ideUiLanguage/classes_gen" />
+  <property name="jetbrains.mps.lang.access.classes" value="${base_dir}/languages/languageDesign/access/classes_gen" />
   <property name="jetbrains.mps.lang.actions.classes" value="${base_dir}/languages/languageDesign/actions/classes_gen" />
   <property name="jetbrains.mps.lang.behavior.classes" value="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
   <property name="jetbrains.mps.lang.constraints.classes" value="${base_dir}/languages/languageDesign/constraints/classes_gen" />
@@ -99,6 +100,7 @@
   <property name="jetbrains.mps.lang.quotation.classes" value="${base_dir}/languages/languageDesign/quotation/classes_gen" />
   <property name="jetbrains.mps.lang.quotation.pluginSolution.classes" value="${base_dir}/languages/languageDesign/quotation/solutions/pluginSolution/classes_gen" />
   <property name="jetbrains.mps.lang.refactoring.classes" value="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+  <property name="jetbrains.mps.lang.resources.classes" value="${base_dir}/languages/languageDesign/resources/classes_gen" />
   <property name="jetbrains.mps.lang.script.classes" value="${base_dir}/languages/languageDesign/script/classes_gen" />
   <property name="jetbrains.mps.lang.script.pluginSolution.classes" value="${base_dir}/languages/languageDesign/script/solutions/pluginSolution/classes_gen" />
   <property name="jetbrains.mps.lang.sharedConcepts.classes" value="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
@@ -254,6 +256,8 @@
     <path path="${base_dir}/languages/languageDesign/project/test_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/source_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/test_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/source_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/test_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/source_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/test_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/source_gen" />
@@ -502,6 +506,10 @@
   <path id="cycle.jetbrains.mps.ide.uiLanguage_tjc.src">
     <path path="${base_dir}/languages/util/ideUiLanguage/source_gen" />
     <path path="${base_dir}/languages/util/ideUiLanguage/test_gen" />
+  </path>
+  <path id="cycle.jetbrains.mps.lang.access_tjc.src">
+    <path path="${base_dir}/languages/languageDesign/access/source_gen" />
+    <path path="${base_dir}/languages/languageDesign/access/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.lang.actions_tjc.src">
     <path path="${base_dir}/languages/languageDesign/actions/source_gen" />
@@ -815,6 +823,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -903,6 +912,7 @@
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/structure/classes_gen" />
@@ -966,6 +976,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -1089,6 +1100,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -1214,6 +1226,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -1338,6 +1351,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -1462,6 +1476,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -1585,6 +1600,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -1709,6 +1725,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -1834,6 +1851,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -1970,6 +1988,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -2101,6 +2120,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -2224,6 +2244,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -2347,6 +2368,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -2533,6 +2555,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -2664,6 +2687,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -2789,6 +2813,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -2912,6 +2937,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -3061,6 +3087,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -3189,6 +3216,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -3314,6 +3342,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -3441,6 +3470,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -3576,6 +3606,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -3713,6 +3744,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -3847,6 +3879,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -3977,6 +4010,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -4100,6 +4134,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -4228,6 +4263,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -4352,6 +4388,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -4484,6 +4521,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -4617,6 +4655,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -4740,6 +4779,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -4873,6 +4913,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -4999,6 +5040,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -5123,6 +5165,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -5247,6 +5290,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -5371,6 +5415,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -5495,6 +5540,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -5618,6 +5664,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -5741,6 +5788,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -5870,6 +5918,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -5995,6 +6044,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -6124,6 +6174,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -6249,6 +6300,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -6379,6 +6431,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -6503,6 +6556,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -6629,6 +6683,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -6753,6 +6808,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -6891,6 +6947,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -7021,6 +7078,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -7037,6 +7095,131 @@
     <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ideUiLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
+    <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
+    <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/classes" />
+    <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
+    <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
+    <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
+    <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/annotations.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
+    <path path="${base_dir}/lib/asm.jar" />
+    <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/commons-lang-2.4.jar" />
+    <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
+    <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
+    <path path="${base_dir}/lib/ecj.jar" />
+    <path path="${base_dir}/lib/extensions.jar" />
+    <path path="${base_dir}/lib/guava-r09.jar" />
+    <path path="${base_dir}/lib/jdom.jar" />
+    <path path="${base_dir}/lib/junit-4.10.jar" />
+    <path path="${base_dir}/lib/log4j.jar" />
+    <path path="${base_dir}/lib/picocontainer.jar" />
+    <path path="${base_dir}/lib/platform-api.jar" />
+    <path path="${base_dir}/lib/platform.jar" />
+    <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/lib/trove4j.jar" />
+    <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/lib/xstream.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
+    <path path="${base_dir}/plugins/execution-configurations/classes" />
+    <path path="${base_dir}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
+    <path path="${base_dir}/plugins/execution-configurations/languages/unitTests/startup/classes_gen" />
+    <path path="${base_dir}/plugins/execution-languages/classes" />
+    <path path="${base_dir}/testbench/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
+    <path path="${base_dir}/workbench/mps-editor/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
+    <path path="${base_dir}/workbench/mps-workbench/classes" />
+    <path path="${base_dir}/workbench/resources/classes" />
+    <path path="${base_dir}/workbench/resources_en/classes" />
+    <path path="${base_dir}/workbench/typesystemUi/classes" />
+    <path refid="common.classpath" />
+  </path>
+  <path id="cycle.jetbrains.mps.lang.access_tjc.classpaths">
+    <path path="${base_dir}/languages/languageDesign/access/classes_gen" />
+    <path path="${base_dir}/MPSPlugin/apiclasses" />
+    <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
+    <path path="${base_dir}/core/findUsages-runtime/classes" />
+    <path path="${base_dir}/core/generator/classes" />
+    <path path="${base_dir}/core/kernel/classes" />
+    <path path="${base_dir}/core/make-runtime/classes" />
+    <path path="${base_dir}/core/refactoring-runtime/classes" />
+    <path path="${base_dir}/core/runtime/classes" />
+    <path path="${base_dir}/core/typesystemEngine/classes" />
+    <path path="${base_dir}/editor/actions-runtime/classes" />
+    <path path="${base_dir}/editor/editor-api/classes" />
+    <path path="${base_dir}/editor/editor-runtime/classes" />
+    <path path="${base_dir}/editor/intentions-runtime/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
+    <path path="${base_dir}/languages/baseLanguage/baseLanguage/classes_gen" />
+    <path path="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes" />
+    <path path="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
+    <path path="${base_dir}/languages/baseLanguage/baseLanguageInternal/classes_gen" />
+    <path path="${base_dir}/languages/baseLanguage/blTypes/classes_gen" />
+    <path path="${base_dir}/languages/baseLanguage/classifiers/classes_gen" />
+    <path path="${base_dir}/languages/baseLanguage/closures/classes_gen" />
+    <path path="${base_dir}/languages/baseLanguage/closures/runtime/classes" />
+    <path path="${base_dir}/languages/baseLanguage/collections/classes_gen" />
+    <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
+    <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
+    <path path="${base_dir}/languages/baseLanguage/javadoc/classes_gen" />
+    <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
+    <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/classes_gen" />
+    <path path="${base_dir}/languages/baseLanguage/tuples/runtime/classes" />
+    <path path="${base_dir}/languages/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
+    <path path="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
+    <path path="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
+    <path path="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
+    <path path="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar" />
+    <path path="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
+    <path path="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
+    <path path="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
+    <path path="${base_dir}/languages/core/core/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/access/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/findUsages/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/structure/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/stubs/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/traceable/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/reduced/classes_gen" />
+    <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
+    <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
@@ -7145,6 +7328,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -7269,6 +7453,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -7393,6 +7578,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -7517,6 +7703,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -7641,6 +7828,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -7765,6 +7953,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -7889,6 +8078,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -8012,6 +8202,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -8136,6 +8327,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -8260,6 +8452,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -8384,6 +8577,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -8508,6 +8702,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -8632,6 +8827,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -8756,6 +8952,7 @@
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -8879,6 +9076,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -9002,6 +9200,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
@@ -9126,6 +9325,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -9250,6 +9450,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -9374,6 +9575,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -9498,6 +9700,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -9621,6 +9824,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -9745,6 +9949,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -9874,6 +10079,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -10000,6 +10206,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -10129,6 +10336,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -10252,6 +10460,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -10376,6 +10585,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -10536,6 +10746,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -10660,6 +10871,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -10785,6 +10997,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -10912,6 +11125,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -11047,6 +11261,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -11176,6 +11391,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -11303,6 +11519,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -11427,6 +11644,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -11552,6 +11770,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -11676,6 +11895,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -11812,6 +12032,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -11949,6 +12170,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -12088,6 +12310,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -12225,6 +12448,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -12348,6 +12572,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -12473,6 +12698,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -12600,6 +12826,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -12729,6 +12956,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -12858,6 +13086,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -12982,6 +13211,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -13111,6 +13341,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -13254,6 +13485,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -13384,6 +13616,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -13510,6 +13743,7 @@
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/refactoring/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/resources/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/smodel/classes_gen" />
@@ -13579,7 +13813,7 @@
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
-  <target name="compile.all" depends="compile.cycle.collections_trove.runtime_tjc,compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.baseLanguage_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.checkedDots_tjc,compile.cycle.jetbrains.mps.baseLanguage.collections.trove_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates.pluginSolution_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.datesInternal_tjc,compile.cycle.jetbrains.mps.baseLanguage.execution.startup_tjc,compile.cycle.jetbrains.mps.baseLanguage.jdk7_tjc,compile.cycle.jetbrains.mps.baseLanguage.logging_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.math.pluginSolution_tjc,compile.cycle.jetbrains.mps.baseLanguage.math.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.money.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.pluginSolution_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.unitTest.execution.startup_tjc,compile.cycle.jetbrains.mps.baseLanguage.unitTest.pluginSolution_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.custommps.pluginSolution_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.build.gentest_tjc,compile.cycle.jetbrains.mps.build.mps_tjc,compile.cycle.jetbrains.mps.build.mpsdist_tjc,compile.cycle.jetbrains.mps.build.packaging_tjc,compile.cycle.jetbrains.mps.build.packaging.pluginSolution_tjc,compile.cycle.jetbrains.mps.build.reduced_tjc,compile.cycle.jetbrains.mps.build.startup_tjc,compile.cycle.jetbrains.mps.build.workflow_tjc,compile.cycle.jetbrains.mps.core.properties_tjc,compile.cycle.jetbrains.mps.core.xml_tjc,compile.cycle.jetbrains.mps.debugger.api.lang_tjc,compile.cycle.jetbrains.mps.debugger.java.customViewers_tjc,compile.cycle.jetbrains.mps.debugger.java.evaluation_tjc,compile.cycle.jetbrains.mps.debugger.java.privateMembers_tjc,compile.cycle.jetbrains.mps.execution.commands_tjc,compile.cycle.jetbrains.mps.execution.common_tjc,compile.cycle.jetbrains.mps.execution.configurations_tjc,compile.cycle.jetbrains.mps.execution.configurations.deprecated_tjc,compile.cycle.jetbrains.mps.execution.configurations.pluginSolution_tjc,compile.cycle.jetbrains.mps.execution.migration_tjc,compile.cycle.jetbrains.mps.execution.settings_tjc,compile.cycle.jetbrains.mps.execution.util_tjc,compile.cycle.jetbrains.mps.gtext_tjc,compile.cycle.jetbrains.mps.gtext.pluginSolution_tjc,compile.cycle.jetbrains.mps.gtext.runtime_tjc,compile.cycle.jetbrains.mps.gwt.client_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.lang.actions_tjc,compile.cycle.jetbrains.mps.lang.core.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.dataFlow_tjc,compile.cycle.jetbrains.mps.lang.dataFlow.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.descriptor_tjc,compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.editor.table.runtime_tjc,compile.cycle.jetbrains.mps.lang.extension_tjc,compile.cycle.jetbrains.mps.lang.findUsages_tjc,compile.cycle.jetbrains.mps.lang.generator.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.pattern.testLang_tjc,compile.cycle.jetbrains.mps.lang.plugin.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.quotation.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.script_tjc,compile.cycle.jetbrains.mps.lang.script.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.smodel.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.smodelTests_tjc,compile.cycle.jetbrains.mps.lang.structure.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.stubs_tjc,compile.cycle.jetbrains.mps.lang.test.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.textGen_tjc,compile.cycle.jetbrains.mps.lang.traceable.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.typesystem.pluginSolution_tjc,compile.cycle.jetbrains.mps.make.facet_tjc,compile.cycle.jetbrains.mps.make.facet.pluginSolution_tjc,compile.cycle.jetbrains.mps.make.script_tjc,compile.cycle.jetbrains.mps.nanoj_tjc,compile.cycle.jetbrains.mps.platform.conf_tjc,compile.cycle.jetbrains.mps.quickQuery.runtime_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage.pluginSolution_tjc,compile.cycle.jetbrains.mps.ui_tjc,compile.cycle.jetbrains.mps.ui.gwt_tjc,compile.cycle.jetbrains.mps.ui.gwt.pluginSolution_tjc,compile.cycle.jetbrains.mps.ui.internal_tjc,compile.cycle.jetbrains.mps.ui.modeling_tjc,compile.cycle.jetbrains.mps.ui.modeling.pluginSolution_tjc,compile.cycle.jetbrains.mps.ui.pluginSolution_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swing.pluginSolution_tjc,compile.cycle.jetbrains.mps.ui.swing.runtime_tjc,compile.cycle.jetbrains.mps.ui.swt_tjc,compile.cycle.jetbrains.mps.ui.swt.pluginSolution_tjc,compile.cycle.jetbrains.mps.ui.swt.runtime_tjc,compile.cycle.jetbrains.mps.uiLanguage_tjc,compile.cycle.jetbrains.mps.uiLanguage.pluginSolution_tjc,compile.cycle.jetbrains.mps.xml_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xml.deprecated.pluginSolution_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mps.xmlSchema_tjc,compile.cycle.jetbrains.mps.xmlUnitTest_tjc,compile.cycle.jetbrains.mps.ypath_tjc,compile.cycle.jetbrains.mps.ypath.runtime_tjc,compile.cycle.jetbrains.mpslite_tjc,compile.cycle.jetbrains.mpslite.pluginSolution_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
+  <target name="compile.all" depends="compile.cycle.collections_trove.runtime_tjc,compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.baseLanguage_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.checkedDots_tjc,compile.cycle.jetbrains.mps.baseLanguage.collections.trove_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates.pluginSolution_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.datesInternal_tjc,compile.cycle.jetbrains.mps.baseLanguage.execution.startup_tjc,compile.cycle.jetbrains.mps.baseLanguage.jdk7_tjc,compile.cycle.jetbrains.mps.baseLanguage.logging_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.math.pluginSolution_tjc,compile.cycle.jetbrains.mps.baseLanguage.math.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.money.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.pluginSolution_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.unitTest.execution.startup_tjc,compile.cycle.jetbrains.mps.baseLanguage.unitTest.pluginSolution_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.custommps.pluginSolution_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.build.gentest_tjc,compile.cycle.jetbrains.mps.build.mps_tjc,compile.cycle.jetbrains.mps.build.mpsdist_tjc,compile.cycle.jetbrains.mps.build.packaging_tjc,compile.cycle.jetbrains.mps.build.packaging.pluginSolution_tjc,compile.cycle.jetbrains.mps.build.reduced_tjc,compile.cycle.jetbrains.mps.build.startup_tjc,compile.cycle.jetbrains.mps.build.workflow_tjc,compile.cycle.jetbrains.mps.core.properties_tjc,compile.cycle.jetbrains.mps.core.xml_tjc,compile.cycle.jetbrains.mps.debugger.api.lang_tjc,compile.cycle.jetbrains.mps.debugger.java.customViewers_tjc,compile.cycle.jetbrains.mps.debugger.java.evaluation_tjc,compile.cycle.jetbrains.mps.debugger.java.privateMembers_tjc,compile.cycle.jetbrains.mps.execution.commands_tjc,compile.cycle.jetbrains.mps.execution.common_tjc,compile.cycle.jetbrains.mps.execution.configurations_tjc,compile.cycle.jetbrains.mps.execution.configurations.deprecated_tjc,compile.cycle.jetbrains.mps.execution.configurations.pluginSolution_tjc,compile.cycle.jetbrains.mps.execution.migration_tjc,compile.cycle.jetbrains.mps.execution.settings_tjc,compile.cycle.jetbrains.mps.execution.util_tjc,compile.cycle.jetbrains.mps.gtext_tjc,compile.cycle.jetbrains.mps.gtext.pluginSolution_tjc,compile.cycle.jetbrains.mps.gtext.runtime_tjc,compile.cycle.jetbrains.mps.gwt.client_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.lang.access_tjc,compile.cycle.jetbrains.mps.lang.actions_tjc,compile.cycle.jetbrains.mps.lang.core.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.dataFlow_tjc,compile.cycle.jetbrains.mps.lang.dataFlow.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.descriptor_tjc,compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.editor.table.runtime_tjc,compile.cycle.jetbrains.mps.lang.extension_tjc,compile.cycle.jetbrains.mps.lang.findUsages_tjc,compile.cycle.jetbrains.mps.lang.generator.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.pattern.testLang_tjc,compile.cycle.jetbrains.mps.lang.plugin.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.quotation.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.script_tjc,compile.cycle.jetbrains.mps.lang.script.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.smodel.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.smodelTests_tjc,compile.cycle.jetbrains.mps.lang.structure.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.stubs_tjc,compile.cycle.jetbrains.mps.lang.test.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.textGen_tjc,compile.cycle.jetbrains.mps.lang.traceable.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.typesystem.pluginSolution_tjc,compile.cycle.jetbrains.mps.make.facet_tjc,compile.cycle.jetbrains.mps.make.facet.pluginSolution_tjc,compile.cycle.jetbrains.mps.make.script_tjc,compile.cycle.jetbrains.mps.nanoj_tjc,compile.cycle.jetbrains.mps.platform.conf_tjc,compile.cycle.jetbrains.mps.quickQuery.runtime_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage.pluginSolution_tjc,compile.cycle.jetbrains.mps.ui_tjc,compile.cycle.jetbrains.mps.ui.gwt_tjc,compile.cycle.jetbrains.mps.ui.gwt.pluginSolution_tjc,compile.cycle.jetbrains.mps.ui.internal_tjc,compile.cycle.jetbrains.mps.ui.modeling_tjc,compile.cycle.jetbrains.mps.ui.modeling.pluginSolution_tjc,compile.cycle.jetbrains.mps.ui.pluginSolution_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swing.pluginSolution_tjc,compile.cycle.jetbrains.mps.ui.swing.runtime_tjc,compile.cycle.jetbrains.mps.ui.swt_tjc,compile.cycle.jetbrains.mps.ui.swt.pluginSolution_tjc,compile.cycle.jetbrains.mps.ui.swt.runtime_tjc,compile.cycle.jetbrains.mps.uiLanguage_tjc,compile.cycle.jetbrains.mps.uiLanguage.pluginSolution_tjc,compile.cycle.jetbrains.mps.xml_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xml.deprecated.pluginSolution_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mps.xmlSchema_tjc,compile.cycle.jetbrains.mps.xmlUnitTest_tjc,compile.cycle.jetbrains.mps.ypath_tjc,compile.cycle.jetbrains.mps.ypath.runtime_tjc,compile.cycle.jetbrains.mpslite_tjc,compile.cycle.jetbrains.mpslite.pluginSolution_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
   <target name="compile.cycle.collections_trove.runtime_tjc">
     <property name="classes.dump" value="${collections_trove.runtime.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
@@ -13671,6 +13905,8 @@
     <mkdir dir="${base_dir}/languages/languageDesign/project/test_gen" />
     <mkdir dir="${base_dir}/languages/languageDesign/quotation/source_gen" />
     <mkdir dir="${base_dir}/languages/languageDesign/quotation/test_gen" />
+    <mkdir dir="${base_dir}/languages/languageDesign/resources/source_gen" />
+    <mkdir dir="${base_dir}/languages/languageDesign/resources/test_gen" />
     <mkdir dir="${base_dir}/languages/languageDesign/sharedConcepts/source_gen" />
     <mkdir dir="${base_dir}/languages/languageDesign/sharedConcepts/test_gen" />
     <mkdir dir="${base_dir}/languages/languageDesign/smodel/source_gen" />
@@ -13708,6 +13944,7 @@
     <mkdir dir="${jetbrains.mps.lang.plugin.classes}" />
     <mkdir dir="${jetbrains.mps.lang.project.classes}" />
     <mkdir dir="${jetbrains.mps.lang.quotation.classes}" />
+    <mkdir dir="${jetbrains.mps.lang.resources.classes}" />
     <mkdir dir="${jetbrains.mps.lang.sharedConcepts.classes}" />
     <mkdir dir="${jetbrains.mps.lang.smodel.classes}" />
     <mkdir dir="${jetbrains.mps.lang.structure.classes}" />
@@ -13805,6 +14042,10 @@
     <copy todir="${jetbrains.mps.lang.quotation.classes}">
       <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/quotation/source_gen" />
       <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/quotation/test_gen" />
+    </copy>
+    <copy todir="${jetbrains.mps.lang.resources.classes}">
+      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/resources/source_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/resources/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.lang.sharedConcepts.classes}">
       <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/sharedConcepts/source_gen" />
@@ -13964,6 +14205,12 @@
       <src>
         <path path="${base_dir}/languages/languageDesign/quotation/source_gen" />
         <path path="${base_dir}/languages/languageDesign/quotation/test_gen" />
+      </src>
+    </javac>
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.resources.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
+      <src>
+        <path path="${base_dir}/languages/languageDesign/resources/source_gen" />
+        <path path="${base_dir}/languages/languageDesign/resources/test_gen" />
       </src>
     </javac>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.sharedConcepts.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
@@ -15303,7 +15550,29 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.lang.actions_tjc" depends="compile.cycle.jetbrains.mps.ide.uiLanguage_tjc">
+  <target name="compile.cycle.jetbrains.mps.lang.access_tjc" depends="compile.cycle.jetbrains.mps.ide.uiLanguage_tjc">
+    <property name="classes.dump" value="${jetbrains.mps.lang.access.classes}.tmp" />
+    <fail unless="base_dir" message="Property base_dir unspecified." />
+    <mkdir dir="${base_dir}/languages/languageDesign/access/source_gen" />
+    <mkdir dir="${base_dir}/languages/languageDesign/access/test_gen" />
+    <mkdir dir="${classes.dump}" />
+    <mkdir dir="${jetbrains.mps.lang.access.classes}" />
+    <javac classpathref="cycle.jetbrains.mps.lang.access_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
+      <src refid="cycle.jetbrains.mps.lang.access_tjc.src" />
+    </javac>
+    <copy todir="${jetbrains.mps.lang.access.classes}">
+      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/access/source_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/access/test_gen" />
+    </copy>
+    <javac classpathref="cycle.jetbrains.mps.lang.access_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.access.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
+      <src>
+        <path path="${base_dir}/languages/languageDesign/access/source_gen" />
+        <path path="${base_dir}/languages/languageDesign/access/test_gen" />
+      </src>
+    </javac>
+    <delete dir="${classes.dump}" />
+  </target>
+  <target name="compile.cycle.jetbrains.mps.lang.actions_tjc" depends="compile.cycle.jetbrains.mps.lang.access_tjc">
     <property name="classes.dump" value="${jetbrains.mps.lang.actions.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/languageDesign/actions/source_gen" />
@@ -16665,6 +16934,7 @@
     <delete dir="${jetbrains.mps.lang.plugin.classes}" />
     <delete dir="${jetbrains.mps.lang.project.classes}" />
     <delete dir="${jetbrains.mps.lang.quotation.classes}" />
+    <delete dir="${jetbrains.mps.lang.resources.classes}" />
     <delete dir="${jetbrains.mps.lang.sharedConcepts.classes}" />
     <delete dir="${jetbrains.mps.lang.smodel.classes}" />
     <delete dir="${jetbrains.mps.lang.structure.classes}" />
@@ -16732,6 +17002,7 @@
     <delete dir="${jetbrains.mps.gtext.runtime.classes}" />
     <delete dir="${jetbrains.mps.gwt.client.classes}" />
     <delete dir="${jetbrains.mps.ide.uiLanguage.classes}" />
+    <delete dir="${jetbrains.mps.lang.access.classes}" />
     <delete dir="${jetbrains.mps.lang.actions.classes}" />
     <delete dir="${jetbrains.mps.lang.core.pluginSolution.classes}" />
     <delete dir="${jetbrains.mps.lang.dataFlow.classes}" />
