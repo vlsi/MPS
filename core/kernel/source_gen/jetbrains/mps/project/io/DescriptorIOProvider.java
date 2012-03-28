@@ -5,11 +5,9 @@ package jetbrains.mps.project.io;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
-import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 
 public interface DescriptorIOProvider {
   public DescriptorIO<SolutionDescriptor> solutionDescriptorIO();
   public DescriptorIO<LanguageDescriptor> languageDescriptorIO();
   public DescriptorIO<DevkitDescriptor> devkitDescriptorIO();
-  public DescriptorIO<GeneratorDescriptor> generatorDescriptorIO();
 }

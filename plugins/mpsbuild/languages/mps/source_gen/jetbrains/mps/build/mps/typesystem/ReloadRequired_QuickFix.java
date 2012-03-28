@@ -6,9 +6,6 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.build.behavior.BuildProject_Behavior;
-import jetbrains.mps.build.util.Context;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.ModuleLoader;
@@ -34,11 +31,7 @@ public class ReloadRequired_QuickFix extends QuickFix_Runtime {
       return;
     }
 
-    String workingDir = BuildProject_Behavior.call_getBasePath_4959435991187146924(project, Context.defaultContext());
-    if (StringUtils.isEmpty(workingDir)) {
-      return;
-    }
-    PathConverter pathConverter = new PathConverter(workingDir);
+    PathConverter pathConverter = new PathConverter(project);
 
     try {
       VisibleModules visible = new VisibleModules(project, null);

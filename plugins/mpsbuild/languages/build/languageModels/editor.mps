@@ -229,6 +229,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.Java" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.2913098736709465755" resolveInfo="BuildLayout_JavaLibrary" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1500819558096177284">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Sources" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.1500819558096177282" resolveInfo="BuildSource_JavaFiles" />
+    </node>
   </roots>
   <root id="5617550519002745365">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7389400916847962446">
@@ -3889,6 +3893,11 @@
         </node>
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="2913098736709465767" />
+    </node>
+  </root>
+  <root id="1500819558096177284">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1500819558096177286">
+      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.1500819558096177283" />
     </node>
   </root>
 </model>

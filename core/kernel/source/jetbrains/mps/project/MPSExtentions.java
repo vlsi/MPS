@@ -29,8 +29,10 @@ public class MPSExtentions {
   public static final String JAVAFILE = "java";
   public static final String CLASSFILE = "class";
   public static final String IDEA_PROJECT = "mpr";
+  public static final String PACKAGED_MODULE = "module.xml";
 
   public static final String MPS_ARCH = "jar";
+  @Deprecated
   public static final String RUNTIME_ARCH = "runtime.jar";
 
   public static final String DOT_MPS_PROJECT = "." + MPS_PROJECT;

@@ -21,7 +21,7 @@
     <nodeInfo nodeId="6594325605663849567" fileName="Test_Test.java" startLine="44" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_hasType#()V" />
     <nodeInfo nodeId="6594325605663849578" fileName="Test_Test.java" startLine="49" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_hasError#()V" />
     <nodeInfo nodeId="6594325605663849744" fileName="Test_Test.java" startLine="54" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_hasTypeInSet#()V" />
-    <nodeInfo nodeId="6594325605663717986" fileName="Test_Test.java" startLine="13" startPosition="55" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_testError#()V" />
+    <nodeInfo nodeId="6594325605663717986" fileName="Test_Test.java" startLine="13" startPosition="56" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_testError#()V" />
     <nodeInfo nodeId="6594325605663717986" fileName="Test_Test.java" startLine="19" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_hasType#()V" />
     <nodeInfo nodeId="6594325605663717986" fileName="Test_Test.java" startLine="25" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_hasError#()V" />
     <nodeInfo nodeId="6594325605663717986" fileName="Test_Test.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_hasTypeInSet#()V" />
@@ -37,7 +37,7 @@
     <scopeInfo nodeId="6594325605663849567" fileName="Test_Test.java" startLine="44" startPosition="0" endLine="49" endPosition="0" />
     <scopeInfo nodeId="6594325605663849578" fileName="Test_Test.java" startLine="49" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="6594325605663849744" fileName="Test_Test.java" startLine="54" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="6594325605663717986" fileName="Test_Test.java" startLine="13" startPosition="55" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="6594325605663717986" fileName="Test_Test.java" startLine="13" startPosition="56" endLine="19" endPosition="0" />
     <scopeInfo nodeId="6594325605663717986" fileName="Test_Test.java" startLine="19" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="6594325605663717986" fileName="Test_Test.java" startLine="25" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="6594325605663717986" fileName="Test_Test.java" startLine="31" startPosition="0" endLine="37" endPosition="0" />

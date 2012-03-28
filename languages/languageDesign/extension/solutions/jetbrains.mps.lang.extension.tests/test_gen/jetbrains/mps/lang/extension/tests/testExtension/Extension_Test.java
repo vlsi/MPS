@@ -4,7 +4,7 @@ package jetbrains.mps.lang.extension.tests.testExtension;
 
 import junit.framework.TestCase;
 import jetbrains.mps.lang.extension.tests.plugin.TestObject;
-import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
+import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.smodel.structure.Extension;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import junit.framework.Assert;

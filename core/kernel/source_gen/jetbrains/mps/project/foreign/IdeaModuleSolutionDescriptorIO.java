@@ -6,6 +6,7 @@ import jetbrains.mps.project.io.DescriptorIO;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.io.DescriptorIOException;
+import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -22,7 +23,7 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
     if (mpsConf == null) {
       return null;
     }
-    final MacroExpander mex = new ModuleMacroExpander(null, file);
+    final MacroHelper macroHelper = new ModuleMacroExpander(null, file);
     SolutionDescriptor sd;
     sd = new _FunctionTypes._return_P0_E0<SolutionDescriptor>() {
       public SolutionDescriptor invoke() {
@@ -42,13 +43,13 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
         final boolean result_56japk_a9a0a0e0a = mpsConf.getUseTransientOutputFolder();
         result_56japk_a0a0e0a.setUseTransientOutput(result_56japk_a9a0a0e0a);
 
-        final String result_56japk_a11a0a0e0a = mex.expandMacros(mpsConf.getGeneratorOutputPath());
+        final String result_56japk_a11a0a0e0a = macroHelper.expandPath(mpsConf.getGeneratorOutputPath());
         result_56japk_a0a0e0a.setOutputPath(result_56japk_a11a0a0e0a);
 
         if (mpsConf.getModelRoots() != null) {
           for (ModelRoot mrp : mpsConf.getModelRoots()) {
             // TODO: model root manager 
-            mrp.setPath(mex.expandMacros(mrp.getPath()));
+            mrp.setPath(macroHelper.expandPath(mrp.getPath()));
             result_56japk_a0a0e0a.getModelRoots().add(mrp);
           }
 

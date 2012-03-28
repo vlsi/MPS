@@ -36,7 +36,7 @@ public class MPSDebugRunner extends GenericProgramRunner {
     try {
       return executorId.equals(DefaultDebugExecutor.EXECUTOR_ID) && (isOldRunConfiguration(profile) || isNewRunConfiguration(profile));
     } catch (Throwable throwable) {
-      LOG.error(throwable);
+      LOG.debug(throwable.getMessage());
       return false;
     }
   }
