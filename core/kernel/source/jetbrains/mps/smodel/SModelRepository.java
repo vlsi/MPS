@@ -63,6 +63,7 @@ public class SModelRepository implements CoreComponent {
     myHandler = new ReloadAdapter() {
       public void unload() {
         refreshModels();
+        ModelAccess.instance().clearTransactionCaches();
       }
     };
   }
