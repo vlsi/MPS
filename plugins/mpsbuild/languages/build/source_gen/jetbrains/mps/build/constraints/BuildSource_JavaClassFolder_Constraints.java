@@ -10,11 +10,11 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
-public class BuildSource_JavaLibraryJar_Constraints extends BaseConstraintsDescriptor {
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "1258644073388922143");
+public class BuildSource_JavaClassFolder_Constraints extends BaseConstraintsDescriptor {
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "1258644073389103468");
 
-  public BuildSource_JavaLibraryJar_Constraints() {
-    super("jetbrains.mps.build.structure.BuildSource_JavaLibraryJar");
+  public BuildSource_JavaClassFolder_Constraints() {
+    super("jetbrains.mps.build.structure.BuildSource_JavaClassFolder");
   }
 
   @Override

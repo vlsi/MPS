@@ -12,22 +12,22 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class BuildSource_JavaLibraryClasses_Editor extends DefaultNodeEditor {
+public class BuildSource_JavaDependencyJar_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_kwwkhw_a(editorContext, node);
+    return this.createCollection_tvqbfe_a(editorContext, node);
   }
 
-  private EditorCell createCollection_kwwkhw_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_tvqbfe_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_kwwkhw_a");
-    editorCell.addEditorCell(this.createRefNode_kwwkhw_a0(editorContext, node));
+    editorCell.setCellId("Collection_tvqbfe_a");
+    editorCell.addEditorCell(this.createRefNode_tvqbfe_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_kwwkhw_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_tvqbfe_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("resset");
-    provider.setNoTargetText("<no resset>");
+    provider.setRole("jar");
+    provider.setNoTargetText("<no jar>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
