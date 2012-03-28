@@ -230,12 +230,24 @@ public class QueriesGenerated {
     return val;
   }
 
+  public static Object propertyMacro_GetPropertyValue_3717132724153210335(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "jar", true), "path", true));
+  }
+
   public static Object propertyMacro_GetPropertyValue_5248329904288079406(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(_context.getNode(), "dir", true));
   }
 
   public static Object propertyMacro_GetPropertyValue_5248329904288079452(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(_context.getNode(), "path", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3717132724152837101(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(_context.getNode(), "path", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3717132724152837217(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(_context.getNode(), "dir", true));
   }
 
   public static Object propertyMacro_GetPropertyValue_5248329904288082868(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -520,8 +532,12 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "resset", true);
   }
 
-  public static SNode sourceNodeQuery_5248329904288198651(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "resset", true);
+  public static SNode sourceNodeQuery_3717132724152951510(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "classpath", true);
+  }
+
+  public static SNode sourceNodeQuery_3717132724153138073(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "jars", true);
   }
 
   public static SNode sourceNodeQuery_5248329904288140540(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
