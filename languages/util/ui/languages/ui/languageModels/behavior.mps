@@ -3,9 +3,7 @@
   <persistence version="7" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
-  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="fb26dccf-fa54-4e9a-8ddb-b66311a34393(jetbrains.mps.ui)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
@@ -57,7 +55,7 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="fb0y.5776545240963923425" resolveInfo="ContainerType" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="8923564134258257518">
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="fb0y.8923564134258173965" resolveInfo="ICompartmentProvider" />
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="fb0y.8923564134258173965" resolveInfo="IUIObjectContextProvider" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="8923564134258345460">
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="fb0y.8923564134257084377" resolveInfo="CompartmentProviderStatement" />
@@ -225,7 +223,7 @@
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="9014158157446906290">
-        <link role="concept" roleId="tp25.1138405853777" targetNodeId="sqp9.8381258131358158045" resolveInfo="Property" />
+        <link role="concept" roleId="tp25.1138405853777" targetNodeId="sqp9.8381258131358158045" resolveInfo="UIProperty" />
       </node>
     </node>
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="9014158157446674099">
@@ -393,7 +391,7 @@
             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8923564134259851829">
               <node role="operand" roleId="tpee.1197027771414" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="8923564134259851828" />
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="8923564134259851833">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8923564134258524082" resolveInfo="getCompartmentProvider" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8923564134258524082" resolveInfo="getContextProvider" />
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="8923564134259851838">
@@ -407,7 +405,7 @@
       <property name="name" nameId="tpck.1169194664001" value="getContextProvider" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8923564134258524083" />
       <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="8923564134258524086">
-        <link role="concept" roleId="tp25.1138405853777" targetNodeId="fb0y.8923564134258173965" resolveInfo="ICompartmentProvider" />
+        <link role="concept" roleId="tp25.1138405853777" targetNodeId="fb0y.8923564134258173965" resolveInfo="IUIObjectContextProvider" />
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8923564134258524085">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8923564134258524087">
@@ -416,7 +414,7 @@
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="8923564134258524093">
               <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="8923564134258524094">
                 <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="8923564134258524097">
-                  <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="fb0y.8923564134258173965" resolveInfo="ICompartmentProvider" />
+                  <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="fb0y.8923564134258173965" resolveInfo="IUIObjectContextProvider" />
                 </node>
               </node>
             </node>
@@ -436,7 +434,7 @@
             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8923564134258524105">
               <node role="operand" roleId="tpee.1197027771414" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="8923564134258524104" />
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="8923564134258524109">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8923564134258524082" resolveInfo="getCompartmentProvider" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8923564134258524082" resolveInfo="getContextProvider" />
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="8923564134258524114">
@@ -457,11 +455,11 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8923564134258699728">
                 <node role="operand" roleId="tpee.1197027771414" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="8923564134258699727" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="8923564134258699732">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8923564134258524082" resolveInfo="getCompartmentProvider" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8923564134258524082" resolveInfo="getContextProvider" />
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="8923564134258699737">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8923564134258345451" resolveInfo="getOwner" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8923564134258345451" resolveInfo="getContext" />
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsNotNullOperation" typeId="tp25.1172008320231" id="8923564134258699742" />
@@ -481,11 +479,11 @@
             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8923564134258876772">
               <node role="operand" roleId="tpee.1197027771414" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="8923564134258876773" />
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="8923564134258876774">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8923564134258524082" resolveInfo="getCompartmentProvider" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8923564134258524082" resolveInfo="getContextProvider" />
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="8923564134258876775">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8923564134258345451" resolveInfo="getOwner" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8923564134258345451" resolveInfo="getContext" />
             </node>
           </node>
         </node>
@@ -865,7 +863,7 @@
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="8923564134258345463">
       <property name="name" nameId="tpck.1169194664001" value="getContextExpression" />
       <property name="isVirtual" nameId="1i04.1225194472832" value="true" />
-      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="8923564134258345446" resolveInfo="getOwnerExpression" />
+      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="8923564134258345446" resolveInfo="getContextExpression" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8923564134258345464" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8923564134258345465">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8923564134258345479">
@@ -930,7 +928,7 @@
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="8923564134258348484">
       <property name="name" nameId="tpck.1169194664001" value="getContext" />
       <property name="isVirtual" nameId="1i04.1225194472832" value="true" />
-      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="8923564134258345451" resolveInfo="getOwner" />
+      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="8923564134258345451" resolveInfo="getContext" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8923564134258348485" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8923564134258348486">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8923564134258348503">

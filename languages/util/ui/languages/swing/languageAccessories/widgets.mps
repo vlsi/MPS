@@ -4,7 +4,6 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="8a448bd0-1380-4c01-9820-0f051d33888c(jetbrains.mps.ui.modeling)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
-  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="fb26dccf-fa54-4e9a-8ddb-b66311a34393(jetbrains.mps.ui)" />
   <import index="2yj1" modelUID="r:c1b84d62-80cc-499b-b655-943c00c7ba88(jetbrains.mps.ui.widgets)" version="1" />
   <import index="yv5b" modelUID="r:453b0397-d30d-4f36-9cf6-3903e9b6818d(jetbrains.mps.ui.swing.runtime)" version="-1" />
@@ -15,7 +14,7 @@
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
   <import index="osf5" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.tree(JDK/javax.swing.tree@java_stub)" version="-1" />
   <import index="gsmj" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.table(JDK/javax.swing.table@java_stub)" version="-1" />
-  <import index="juh8" modelUID="f:java_stub#acc947bf-6778-444a-9dc7-4cc72d4eb3d0#org.jdesktop.swingx(jetbrains.mps.ui.swing.runtime/org.jdesktop.swingx@java_stub)" version="-1" />
+  <import index="il0v" modelUID="f:java_stub#acc947bf-6778-444a-9dc7-4cc72d4eb3d0#org.jdesktop.swingx(jetbrains.mps.ui.swing.runtime/org.jdesktop.swingx@java_stub)" version="-1" />
   <import index="oj8w" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.text(JDK/javax.swing.text@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="sqp9" modelUID="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" version="2" implicit="yes" />
@@ -2447,7 +2446,7 @@
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="513490887686353694">
               <node role="operand" roleId="tpee.1197027771414" type="sqp9.ThisUIObjectParam" typeId="sqp9.4643695836679547627" id="513490887686346121" />
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="513490887686353698">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="juh8.~JXTaskPane%dgetTitle()%cjava%dlang%dString" resolveInfo="getTitle" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="il0v.~JXTaskPane%dgetTitle()%cjava%dlang%dString" resolveInfo="getTitle" />
               </node>
             </node>
           </node>
@@ -2459,7 +2458,7 @@
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="513490887686353701">
               <node role="operand" roleId="tpee.1197027771414" type="sqp9.ThisUIObjectParam" typeId="sqp9.4643695836679547627" id="513490887686353700" />
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="513490887686353705">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="juh8.~JXTaskPane%dsetTitle(java%dlang%dString)%cvoid" resolveInfo="setTitle" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="il0v.~JXTaskPane%dsetTitle(java%dlang%dString)%cvoid" resolveInfo="setTitle" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="sqp9.PropertyValueParam" typeId="sqp9.4643695836679547628" id="513490887686353706" />
               </node>
             </node>
@@ -2868,14 +2867,14 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="873604604378858597">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="873604604378858598">
             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="873604604378858600">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="juh8.~JXHyperlink%d&lt;init&gt;()" resolveInfo="JXHyperlink" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="il0v.~JXHyperlink%d&lt;init&gt;()" resolveInfo="JXHyperlink" />
             </node>
           </node>
         </node>
       </node>
     </node>
     <node role="runtimeType" roleId="sqp9.4643695836678898436" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="873604604378858594">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="juh8.~JXHyperlink" resolveInfo="JXHyperlink" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="il0v.~JXHyperlink" resolveInfo="JXHyperlink" />
     </node>
     <node role="auxillary" roleId="sqp9.1412244996131408396" type="sqp9.Auxillary" typeId="sqp9.1412244996131394684" id="873604604378858592" />
     <node role="geometry" roleId="sqp9.3329614760087020873" type="sqp9.Geometry" typeId="sqp9.4033850706585269114" id="873604604378858593" />
