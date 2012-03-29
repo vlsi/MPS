@@ -109,7 +109,7 @@ public class VariablesScope extends Scope {
     return SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"), "name");
   }
 
-  public static Scope create(SNode kind, SNode var, Scope parentScope) {
+  public static Scope create(SNode kind, SNode var, @Nullable Scope parentScope) {
     if ((var != null)) {
       return new VariablesScope(kind, ListSequence.fromListAndArray(new ArrayList<SNode>(), var), parentScope);
     } else {

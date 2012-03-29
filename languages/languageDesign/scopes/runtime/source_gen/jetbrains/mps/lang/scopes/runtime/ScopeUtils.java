@@ -24,4 +24,8 @@ public class ScopeUtils {
   public static Scope parentScope(SNode node, SNode kind) {
     return Scope.getScope(Scope.parent(node), node, kind);
   }
+
+  public static Scope lazyParentScope(SNode node, SNode kind) {
+    return new LazyParentScope(node, kind);
+  }
 }

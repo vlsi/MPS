@@ -129,7 +129,7 @@ public class ConceptFunction_Behavior {
         return new EmptyScope();
       }
     }
-    return ScopeUtils.parentScope(thisNode, kind);
+    return ScopeUtils.lazyParentScope(thisNode, kind);
   }
 
   public static boolean call_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {

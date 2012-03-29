@@ -104,7 +104,7 @@ public class AnonymousClass_Behavior {
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (ScopeUtils.comeFrom("actualArgument", thisNode, child)) {
-      return ScopeUtils.parentScope(thisNode, kind);
+      return ScopeUtils.lazyParentScope(thisNode, kind);
     }
     return ScopeProvider_Behavior.callSuper_getScope_3734116213129936182(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass", kind, child);
   }

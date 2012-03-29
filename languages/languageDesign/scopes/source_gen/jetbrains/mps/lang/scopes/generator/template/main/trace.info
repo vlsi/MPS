@@ -7,10 +7,10 @@
     <nodeInfo nodeId="8077936094962965080" fileName="QueriesGenerated.java" startLine="26" startPosition="136" endLine="27" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8077936094962965147" fileName="QueriesGenerated.java" startLine="27" startPosition="204" endLine="28" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8077936094962965098" fileName="QueriesGenerated.java" startLine="28" startPosition="20" endLine="29" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8077936094962943372" fileName="QueriesGenerated.java" startLine="32" startPosition="150" endLine="33" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8077936094962943504" fileName="QueriesGenerated.java" startLine="33" startPosition="232" endLine="34" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8077936094962943516" fileName="QueriesGenerated.java" startLine="34" startPosition="114" endLine="35" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8077936094962943563" fileName="QueriesGenerated.java" startLine="35" startPosition="80" endLine="36" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4819084825497330062" fileName="QueriesGenerated.java" startLine="32" startPosition="150" endLine="33" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4819084825497330074" fileName="QueriesGenerated.java" startLine="33" startPosition="232" endLine="34" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4819084825497330080" fileName="QueriesGenerated.java" startLine="34" startPosition="114" endLine="35" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4819084825497330086" fileName="QueriesGenerated.java" startLine="35" startPosition="80" endLine="36" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8077936094962965285" fileName="QueriesGenerated.java" startLine="39" startPosition="150" endLine="40" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8077936094962965297" fileName="QueriesGenerated.java" startLine="40" startPosition="239" endLine="41" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8077936094962965303" fileName="QueriesGenerated.java" startLine="41" startPosition="114" endLine="42" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -34,9 +34,9 @@
     <scopeInfo nodeId="8077936094962965079" fileName="QueriesGenerated.java" startLine="26" startPosition="136" endLine="29" endPosition="64">
       <varInfo nodeId="8077936094962965081" varName="parameters" />
     </scopeInfo>
-    <scopeInfo nodeId="8077936094962911415" fileName="QueriesGenerated.java" startLine="32" startPosition="150" endLine="36" endPosition="15">
-      <varInfo nodeId="8077936094962943373" varName="kindParameter" />
-      <varInfo nodeId="8077936094962943505" varName="ref" />
+    <scopeInfo nodeId="4819084825497330061" fileName="QueriesGenerated.java" startLine="32" startPosition="150" endLine="36" endPosition="15">
+      <varInfo nodeId="4819084825497330063" varName="kindParameter" />
+      <varInfo nodeId="4819084825497330075" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="8077936094962965284" fileName="QueriesGenerated.java" startLine="39" startPosition="150" endLine="43" endPosition="15">
       <varInfo nodeId="8077936094962965286" varName="childParameter" />

@@ -38,8 +38,8 @@ import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
-import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.baseLanguage.scopes.VariablesScope;
+import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.baseLanguage.scopes.HidingByNameScope;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
@@ -420,20 +420,20 @@ public class Classifier_Behavior {
         {
           // add 1) instance fields 2) static fields 
           // todo: change VariablesScope to accept Scope as vars parameter 
-          Scope scope = ScopeUtils.parentScope(thisNode, kind);
-          scope = new VariablesScope(kind, ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")).getAvailableElements(null)).select(new ISelector<SNode, SNode>() {
+          Scope scope = new VariablesScope(kind, ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")).getAvailableElements(null)).select(new ISelector<SNode, SNode>() {
             public SNode select(SNode it) {
               return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration");
             }
-          }), scope);
+          }), ScopeUtils.lazyParentScope(thisNode, kind));
           if (!(isStaticContext)) {
-            scope = new VariablesScope(kind, ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration")).getAvailableElements(null)).select(new ISelector<SNode, SNode>() {
+            return new VariablesScope(kind, ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration")).getAvailableElements(null)).select(new ISelector<SNode, SNode>() {
               public SNode select(SNode it) {
                 return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration");
               }
             }), scope);
+          } else {
+            return scope;
           }
-          return scope;
         }
       }
       if (SConceptOperations.isSubConceptOf(concept_d0cb, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
@@ -454,14 +454,14 @@ public class Classifier_Behavior {
           }
 
           return (addition != null ?
-            HidingByNameScope.create(addition, ScopeUtils.parentScope(thisNode, kind), false) :
-            ScopeUtils.parentScope(thisNode, kind)
+            HidingByNameScope.create(addition, ScopeUtils.lazyParentScope(thisNode, kind), false) :
+            ScopeUtils.lazyParentScope(thisNode, kind)
           );
           // <node> 
         }
       }
     }
-    return ScopeUtils.parentScope(thisNode, kind);
+    return ScopeUtils.lazyParentScope(thisNode, kind);
   }
 
   public static List<Icon> call_getMarkIcons_5039675756633081868(SNode thisNode) {

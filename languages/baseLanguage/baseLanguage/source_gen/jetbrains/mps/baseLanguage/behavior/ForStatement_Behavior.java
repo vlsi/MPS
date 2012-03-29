@@ -37,7 +37,7 @@ public class ForStatement_Behavior {
       if (ScopeUtils.comeFrom("body", thisNode, child)) {
         ListSequence.fromList(variables).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "additionalVar", true)));
       }
-      return new VariablesScope(kind, variables, ScopeUtils.parentScope(thisNode, kind));
+      return new VariablesScope(kind, variables, ScopeUtils.lazyParentScope(thisNode, kind));
     }
     return ScopeProvider_Behavior.callSuper_getScope_3734116213129936182(thisNode, "jetbrains.mps.baseLanguage.structure.ForStatement", kind, child);
   }

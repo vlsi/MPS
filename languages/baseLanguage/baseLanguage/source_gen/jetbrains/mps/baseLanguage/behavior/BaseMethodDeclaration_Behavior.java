@@ -244,9 +244,9 @@ public class BaseMethodDeclaration_Behavior {
       }
       if (SConceptOperations.isSubConceptOf(concept_a0y, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration")) {
         if (ScopeUtils.comeFrom("body", thisNode, child)) {
-          return new VariablesScope(SNodeOperations.castConcept(kind, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"), SLinkOperations.getTargets(thisNode, "parameter", true), ScopeUtils.parentScope(thisNode, kind));
+          return new VariablesScope(SNodeOperations.castConcept(kind, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"), SLinkOperations.getTargets(thisNode, "parameter", true), ScopeUtils.lazyParentScope(thisNode, kind));
         } else {
-          return ScopeUtils.parentScope(thisNode, kind);
+          return ScopeUtils.lazyParentScope(thisNode, kind);
         }
       }
     }

@@ -32,6 +32,6 @@ public class AnnotationInstance_Behavior {
       }
     }
 
-    return ScopeUtils.parentScope(thisNode, kind);
+    return ScopeUtils.lazyParentScope(thisNode, kind);
   }
 }

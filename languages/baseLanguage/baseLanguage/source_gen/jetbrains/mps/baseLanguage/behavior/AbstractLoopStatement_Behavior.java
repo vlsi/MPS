@@ -19,6 +19,6 @@ public class AbstractLoopStatement_Behavior {
         return CompositeWithParentScope.from(SLinkOperations.getTarget(thisNode, "loopLabel", true), thisNode, kind);
       }
     }
-    return ScopeUtils.parentScope(thisNode, kind);
+    return ScopeUtils.lazyParentScope(thisNode, kind);
   }
 }

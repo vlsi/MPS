@@ -29,7 +29,7 @@ public class QueriesGenerated {
     return (int) ListSequence.fromList(parameters).count() == 2;
   }
 
-  public static SNode sourceNodeQuery_8077936094962911414(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_4819084825497330060(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode kindParameter = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", false, false), "parameter", true)).first();
     SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterReference", null);
     SLinkOperations.setTarget(ref, "variableDeclaration", kindParameter, false);

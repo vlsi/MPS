@@ -44,7 +44,7 @@ public class SwitchStatement_Behavior {
       if (SConceptOperations.isSubConceptOf(concept_d0b, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration")) {
         {
           if (SLinkOperations.getTarget(thisNode, "expression", true) == childStatement) {
-            return ScopeUtils.parentScope(thisNode, kind);
+            return ScopeUtils.lazyParentScope(thisNode, kind);
           }
 
           List<SNode> variables = new ArrayList<SNode>();
@@ -55,7 +55,7 @@ public class SwitchStatement_Behavior {
             ListSequence.fromList(variables).addSequence(ListSequence.fromList(StatementList_Behavior.call_getLocalVariableDeclarations_3986960521977638556(SLinkOperations.getTarget(caseNode, "body", true), null)));
           }
 
-          return new VariablesScope(kind, variables, ScopeUtils.parentScope(thisNode, kind));
+          return new VariablesScope(kind, variables, ScopeUtils.lazyParentScope(thisNode, kind));
         }
       }
       if (SConceptOperations.isSubConceptOf(concept_d0b, "jetbrains.mps.baseLanguage.structure.LoopLabel")) {
