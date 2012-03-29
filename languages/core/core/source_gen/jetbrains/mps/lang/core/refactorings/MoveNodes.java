@@ -38,10 +38,6 @@ public class MoveNodes extends BaseLoggableRefactoring {
     return "Move Nodes";
   }
 
-  public String getKeyStroke() {
-    return getKeyStroke_static();
-  }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new MoveNodes_Target();
   }
@@ -126,9 +122,5 @@ public class MoveNodes extends BaseLoggableRefactoring {
 
   public void updateModel(final SModel model, final RefactoringContext refactoringContext) {
     refactoringContext.updateByDefault(model);
-  }
-
-  public static String getKeyStroke_static() {
-    return "";
   }
 }

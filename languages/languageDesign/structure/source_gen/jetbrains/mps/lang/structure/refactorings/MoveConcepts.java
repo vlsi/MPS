@@ -49,10 +49,6 @@ public class MoveConcepts extends BaseLoggableRefactoring {
     return "Move Concepts";
   }
 
-  public String getKeyStroke() {
-    return getKeyStroke_static();
-  }
-
   public Class getOverridenRefactoringClass() {
     return MoveNodes.class;
   }
@@ -164,10 +160,6 @@ public class MoveConcepts extends BaseLoggableRefactoring {
 
   public void updateModel(final SModel model, final RefactoringContext refactoringContext) {
     refactoringContext.updateByDefault(model);
-  }
-
-  public static String getKeyStroke_static() {
-    return MoveNodes.getKeyStroke_static();
   }
 
   private static SModelDescriptor check_u6ijv2_a0a0a0a0a0a7a0(SModel checkedDotOperand) {

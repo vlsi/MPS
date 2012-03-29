@@ -8,7 +8,6 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 
 public interface IRefactoring {
   public String getUserFriendlyName();
-  public String getKeyStroke();
   public Class getOverridenRefactoringClass();
   public IRefactoringTarget getRefactoringTarget();
   public boolean init(RefactoringContext refactoringContext);

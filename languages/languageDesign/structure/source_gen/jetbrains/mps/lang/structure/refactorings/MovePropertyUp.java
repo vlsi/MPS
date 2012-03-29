@@ -34,10 +34,6 @@ public class MovePropertyUp extends BaseLoggableRefactoring {
     return "Move Property Up";
   }
 
-  public String getKeyStroke() {
-    return getKeyStroke_static();
-  }
-
   public Class getOverridenRefactoringClass() {
     return MoveNodes.class;
   }
@@ -88,9 +84,5 @@ public class MovePropertyUp extends BaseLoggableRefactoring {
 
   public void updateModel(final SModel model, final RefactoringContext refactoringContext) {
     refactoringContext.updateByDefault(model);
-  }
-
-  public static String getKeyStroke_static() {
-    return MoveNodes.getKeyStroke_static();
   }
 }

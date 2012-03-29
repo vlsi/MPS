@@ -32,10 +32,6 @@ public class RenameLink extends BaseLoggableRefactoring {
     return "Rename Link";
   }
 
-  public String getKeyStroke() {
-    return getKeyStroke_static();
-  }
-
   public Class getOverridenRefactoringClass() {
     return Rename.class;
   }
@@ -69,9 +65,5 @@ public class RenameLink extends BaseLoggableRefactoring {
 
   public void updateModel(final SModel model, final RefactoringContext refactoringContext) {
     refactoringContext.updateByDefault(model);
-  }
-
-  public static String getKeyStroke_static() {
-    return Rename.getKeyStroke_static();
   }
 }

@@ -25,10 +25,6 @@ public class ChangeMethodSignature extends BaseRefactoring {
     return "Change Method Signature";
   }
 
-  public String getKeyStroke() {
-    return getKeyStroke_static();
-  }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new ChangeMethodSignature_Target();
   }
@@ -51,9 +47,5 @@ public class ChangeMethodSignature extends BaseRefactoring {
       allResults.addAll(curResults);
     }
     return allResults;
-  }
-
-  public static String getKeyStroke_static() {
-    return "";
   }
 }

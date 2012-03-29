@@ -22,10 +22,6 @@ public class Rename extends BaseRefactoring {
     return "Rename";
   }
 
-  public String getKeyStroke() {
-    return getKeyStroke_static();
-  }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new Rename_Target();
   }
@@ -44,9 +40,5 @@ public class Rename extends BaseRefactoring {
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     return FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
-  }
-
-  public static String getKeyStroke_static() {
-    return "";
   }
 }
