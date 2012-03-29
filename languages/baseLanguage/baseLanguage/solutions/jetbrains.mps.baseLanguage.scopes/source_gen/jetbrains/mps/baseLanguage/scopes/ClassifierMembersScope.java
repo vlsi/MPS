@@ -39,21 +39,23 @@ public abstract class ClassifierMembersScope extends Scope {
 
   private synchronized void checkInit() {
     // simplest version for now 
-    members = TransactionCacheUtils.getFromCache(ClassifierMembersScope.class, MultiTuple.<SNode,SNode>from(classifier, kind), new _FunctionTypes._return_P0_E0<ISetSequence<SNode>>() {
-      public ISetSequence<SNode> invoke() {
-        // <node> 
-        return SetSequence.fromSetWithValues(new HashSet<SNode>(), getMembers(null));
-      }
-    });
-    names = SetSequence.fromSetWithValues(new HashSet(), SetSequence.fromSet(members).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.core.structure.INamedConcept");
-      }
-    }).select(new ISelector<SNode, String>() {
-      public String select(SNode it) {
-        return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
-      }
-    }));
+    if (names == null) {
+      members = TransactionCacheUtils.getFromCache(ClassifierMembersScope.class, MultiTuple.<SNode,SNode>from(classifier, kind), new _FunctionTypes._return_P0_E0<ISetSequence<SNode>>() {
+        public ISetSequence<SNode> invoke() {
+          // <node> 
+          return SetSequence.fromSetWithValues(new HashSet<SNode>(), getMembers(null));
+        }
+      });
+      names = SetSequence.fromSetWithValues(new HashSet(), SetSequence.fromSet(members).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.core.structure.INamedConcept");
+        }
+      }).select(new ISelector<SNode, String>() {
+        public String select(SNode it) {
+          return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
+        }
+      }));
+    }
   }
 
   protected abstract Iterable<SNode> getMembers(@Nullable String prefix);

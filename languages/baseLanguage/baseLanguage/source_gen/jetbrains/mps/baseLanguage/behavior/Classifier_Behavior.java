@@ -24,9 +24,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.lang.scopes.runtime.SimpleScope;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.baseLanguage.scopes.BLCachedScopes;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
+import jetbrains.mps.baseLanguage.scopes.ClassifierMembersScope;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -118,82 +116,77 @@ public class Classifier_Behavior {
       }));
     }
 
-    return BLCachedScopes.forClassifierMembers(thisNode, kind, new _FunctionTypes._return_P0_E0<NamedElementsScope>() {
-      public NamedElementsScope invoke() {
-        // todo: use special classifier scope here! 
-        return new NamedElementsScope() {
-          public Iterable<SNode> getElements(@Nullable String prefix) {
-            // standard java logic: 
-            // 1) collect all inherited classifier members and filter based on access level 
-            Set<SNode> pretenders = SetSequence.fromSet(new HashSet());
-            for (final SNode classifier : ListSequence.fromList(Classifier_Behavior.call_getExtendedClassifierTypes_2201875424516179426(thisNode)).select(new ISelector<SNode, SNode>() {
-              public SNode select(SNode it) {
-                return SLinkOperations.getTarget(it, "classifier", false);
-              }
-            }).where(new IWhereFilter<SNode>() {
-              public boolean accept(SNode it) {
-                return (it != null);
-              }
-            })) {
-              // todo: ? strange... =( 
-              Iterable<SNode> nodes = ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(classifier, kind).getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
-                }
-              }).select(new ISelector<SNode, SNode>() {
-                public SNode select(SNode it) {
-                  return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
-                }
-              });
-              SetSequence.fromSet(pretenders).addSequence(Sequence.fromIterable(nodes).where(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  return ClassifierMember_Behavior.call_isVisible_8083692786967482069(it, classifier, thisNode);
-                }
-              }));
-            }
-
-            // 2) overriding based on "signature" 
-            Map<Object, List<SNode>> signatureToMembers = MapSequence.fromMap(new HashMap<Object, List<SNode>>());
-
-            // todo: ? 
-            Iterable<SNode> members = ListSequence.fromList(SNodeOperations.getChildren(thisNode)).where(new IWhereFilter<SNode>() {
-              public boolean accept(SNode it) {
-                return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(kind));
-              }
-            }).select(new ISelector<SNode, SNode>() {
-              public SNode select(SNode it) {
-                return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
-              }
-            });
-            SetSequence.fromSet(pretenders).addSequence(Sequence.fromIterable(members));
-
-            for (SNode member : pretenders) {
-              Object signature = ClassifierMember_Behavior.call_getSignatureForOverriding_274804607996650333(member, thisNode);
-              if (!(MapSequence.fromMap(signatureToMembers).containsKey(signature))) {
-                MapSequence.fromMap(signatureToMembers).put(signature, ListSequence.fromList(new ArrayList()));
-              }
-              ListSequence.fromList(MapSequence.fromMap(signatureToMembers).get(signature)).addElement(member);
-            }
-
-            // todo: group by kind! 
-            List<SNode> result = new ArrayList<SNode>();
-            for (Object signature : MapSequence.fromMap(signatureToMembers).keySet()) {
-              ListSequence.fromList(result).addSequence(Sequence.fromIterable(Classifier_Behavior.call_doOverride_7343816061617019844(thisNode, kind, MapSequence.fromMap(signatureToMembers).get(signature))));
-            }
-
-            return ListSequence.fromList(result).where(new IWhereFilter<SNode>() {
-              public boolean accept(SNode it) {
-                return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.core.structure.INamedConcept");
-              }
-            }).select(new ISelector<SNode, SNode>() {
-              public SNode select(SNode it) {
-                return SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.INamedConcept");
-              }
-            });
+    return new ClassifierMembersScope(thisNode, SNodeOperations.castConcept(kind, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
+      protected Iterable<SNode> getMembers(@Nullable String prefix) {
+        // standard java logic: 
+        // 1) collect all inherited classifier members and filter based on access level 
+        Set<SNode> pretenders = SetSequence.fromSet(new HashSet());
+        for (final SNode classifier : ListSequence.fromList(Classifier_Behavior.call_getExtendedClassifierTypes_2201875424516179426(thisNode)).select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SLinkOperations.getTarget(it, "classifier", false);
           }
-        };
+        }).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return (it != null);
+          }
+        })) {
+          // todo: ? strange... =( 
+          Iterable<SNode> nodes = ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(classifier, kind).getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
+            }
+          }).select(new ISelector<SNode, SNode>() {
+            public SNode select(SNode it) {
+              return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
+            }
+          });
+          SetSequence.fromSet(pretenders).addSequence(Sequence.fromIterable(nodes).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return ClassifierMember_Behavior.call_isVisible_8083692786967482069(it, classifier, thisNode);
+            }
+          }));
+        }
+
+        // 2) overriding based on "signature" 
+        Map<Object, List<SNode>> signatureToMembers = MapSequence.fromMap(new HashMap<Object, List<SNode>>());
+
+        // todo: ? 
+        Iterable<SNode> members = ListSequence.fromList(SNodeOperations.getChildren(thisNode)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(kind));
+          }
+        }).select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
+          }
+        });
+        SetSequence.fromSet(pretenders).addSequence(Sequence.fromIterable(members));
+
+        for (SNode member : pretenders) {
+          Object signature = ClassifierMember_Behavior.call_getSignatureForOverriding_274804607996650333(member, thisNode);
+          if (!(MapSequence.fromMap(signatureToMembers).containsKey(signature))) {
+            MapSequence.fromMap(signatureToMembers).put(signature, ListSequence.fromList(new ArrayList()));
+          }
+          ListSequence.fromList(MapSequence.fromMap(signatureToMembers).get(signature)).addElement(member);
+        }
+
+        // todo: group by kind! 
+        List<SNode> result = new ArrayList<SNode>();
+        for (Object signature : MapSequence.fromMap(signatureToMembers).keySet()) {
+          ListSequence.fromList(result).addSequence(Sequence.fromIterable(Classifier_Behavior.call_doOverride_7343816061617019844(thisNode, kind, MapSequence.fromMap(signatureToMembers).get(signature))));
+        }
+
+        return ListSequence.fromList(result).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
+          }
+        }).select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
+          }
+        });
       }
-    });
+    };
   }
 
   public static Iterable<SNode> virtual_doOverride_7343816061617019844(SNode thisNode, SNode kind, List<SNode> equalSignatureMembers) {

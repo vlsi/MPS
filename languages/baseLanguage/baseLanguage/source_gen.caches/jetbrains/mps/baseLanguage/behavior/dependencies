@@ -1071,9 +1071,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IVisible_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.TypeVariableDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.BLCachedScopes" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.ClassifierMembersScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.HidingByNameScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.VariablesScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.VisibleClassifierMembersScope" />
@@ -1088,7 +1087,6 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope" />
-    <classNode dependClassName="jetbrains.mps.lang.scopes.runtime.NamedElementsScope" />
     <classNode dependClassName="jetbrains.mps.lang.scopes.runtime.ScopeUtils" />
     <classNode dependClassName="jetbrains.mps.lang.scopes.runtime.SimpleScope" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
