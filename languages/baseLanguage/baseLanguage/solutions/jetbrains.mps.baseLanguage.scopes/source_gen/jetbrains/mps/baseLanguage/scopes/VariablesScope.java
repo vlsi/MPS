@@ -4,57 +4,65 @@ package jetbrains.mps.baseLanguage.scopes;
 
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.SNode;
-import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.internal.collections.runtime.SortedMapSequence;
+import java.util.TreeMap;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.annotations.NotNull;
 
 public class VariablesScope extends Scope {
   private final SNode kind;
-  private final List<SNode> vars;
+  private final Map<String, SNode> vars;
   private final Set<String> names;
   @Nullable
   private final Scope parentScope;
 
-  public VariablesScope(final SNode kind, Iterable<SNode> vars, @Nullable Scope parentScope) {
+  public VariablesScope(SNode kind, Iterable<SNode> vars, @Nullable Scope parentScope) {
     // behavior: hide parent elements by name 
     // hide all BaseVariableDeclaration nodes in parent scope by vars 
     // parent scope should be with equal kind 
-    this.vars = ListSequence.fromListWithValues(new ArrayList(), Sequence.fromIterable(vars).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return (it != null) && SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(kind));
+    this.vars = SortedMapSequence.fromMap(new TreeMap<String, SNode>());
+    this.names = SetSequence.fromSet(new HashSet());
+    for (SNode node : Sequence.fromIterable(vars)) {
+      if ((node != null)) {
+        SetSequence.fromSet(this.names).addElement(SPropertyOperations.getString(node, "name"));
+        if (SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(kind))) {
+          MapSequence.fromMap(this.vars).put(SPropertyOperations.getString(node, "name"), node);
+        }
       }
-    }));
+    }
     this.parentScope = parentScope;
     this.kind = kind;
-    this.names = SetSequence.fromSetWithValues(new HashSet(), Sequence.fromIterable(vars).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return (it != null);
-      }
-    }).select(new ISelector<SNode, String>() {
-      public String select(SNode it) {
-        return SPropertyOperations.getString(it, "name");
-      }
-    }));
   }
 
   public List<SNode> getAvailableElements(@Nullable final String prefix) {
     List<SNode> result = ListSequence.fromList(new ArrayList());
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(vars).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return prefix == null || SPropertyOperations.getString(it, "name").startsWith(prefix);
-      }
-    }));
+    if (prefix == null) {
+      ListSequence.fromList(result).addSequence(Sequence.fromIterable(MapSequence.fromMap(vars).values()));
+    } else {
+      ListSequence.fromList(result).addSequence(SetSequence.fromSet(MapSequence.fromMap(vars).keySet()).where(new IWhereFilter<String>() {
+        public boolean accept(String it) {
+          return it.startsWith(prefix);
+        }
+      }).select(new ISelector<String, SNode>() {
+        public SNode select(String it) {
+          return MapSequence.fromMap(vars).get(it);
+        }
+      }));
+    }
     if (parentScope != null) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(parentScope.getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -68,8 +76,9 @@ public class VariablesScope extends Scope {
   @Override
   public boolean contains(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration")) {
-      if (SetSequence.fromSet(names).contains(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"), "name"))) {
-        return ListSequence.fromList(vars).contains(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"));
+      String name = SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"), "name");
+      if (MapSequence.fromMap(vars).containsKey(name)) {
+        return MapSequence.fromMap(vars).get(name) == node;
       } else {
         return (parentScope != null ?
           parentScope.contains(node) :
@@ -85,17 +94,9 @@ public class VariablesScope extends Scope {
   }
 
   @Nullable
-  public SNode resolve(SNode contextNode, @NotNull final String refText) {
+  public SNode resolve(SNode contextNode, @NotNull String refText) {
     if (SetSequence.fromSet(names).contains(refText)) {
-      Iterable<SNode> element = ListSequence.fromList(vars).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SPropertyOperations.getString(it, "name").equals(refText);
-        }
-      });
-      return (Sequence.fromIterable(element).isNotEmpty() ?
-        Sequence.fromIterable(element).first() :
-        null
-      );
+      return MapSequence.fromMap(vars).get(refText);
     } else {
       return (parentScope != null ?
         parentScope.resolve(contextNode, refText) :
