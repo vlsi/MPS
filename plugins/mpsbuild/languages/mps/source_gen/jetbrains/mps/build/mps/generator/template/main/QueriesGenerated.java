@@ -56,15 +56,15 @@ public class QueriesGenerated {
     return _context.getCopiedOutputNodeForInputNode(targetModule);
   }
 
-  public static SNode sourceNodeQuery_1500819558096263474(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "sources", true);
+  public static SNode sourceNodeQuery_2303926226081111358(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "folder", true);
   }
 
   public static SNode sourceNodeQuery_3717132724153193351(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return _context.getNode();
   }
 
-  public static Iterable sourceNodesQuery_1500819558096225935(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_2303926226081111354(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "sources", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource");

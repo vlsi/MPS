@@ -7,7 +7,6 @@
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="8xvf" modelUID="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" version="0" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="iuxj" modelUID="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="8xvf.BwfTaskLibrary" typeId="8xvf.7306485738221391506" id="7306485738221408314">
       <property name="name" nameId="tpck.1169194664001" value="java" />
@@ -83,21 +82,6 @@
     </node>
     <node role="parts" roleId="8xvf.7306485738221391508" type="8xvf.BwfTask" typeId="8xvf.2769948622284546675" id="7306485738221390898">
       <property name="name" nameId="tpck.1169194664001" value="clean" />
-      <node role="subTasks" roleId="8xvf.2769948622284546679" type="8xvf.BwfSubTask" typeId="8xvf.2769948622284546677" id="7306485738221314452">
-        <property name="name" nameId="tpck.1169194664001" value="cleanTemp" />
-        <node role="statements" roleId="8xvf.2769948622284606050" type="8xvf.BwfAntStatement" typeId="8xvf.2769948622284768359" id="7306485738221314453">
-          <node role="element" roleId="8xvf.2769948622284768360" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7306485738221314455">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="delete" />
-            <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
-            <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="7306485738221314456">
-              <property name="attrName" nameId="iuxj.6666499814681447926" value="dir" />
-              <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="7306485738221314457">
-                <property name="text" nameId="iuxj.6666499814681541920" value="${build.dir}" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
   </root>
 </model>

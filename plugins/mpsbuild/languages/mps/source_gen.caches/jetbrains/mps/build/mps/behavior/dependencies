@@ -7,6 +7,7 @@
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_DevKitExportSolution_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_DevKitRef_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_DevKit_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_ExtractedModuleDependency_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_Group_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_Language_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_ModuleDependencyExtendLanguage_BehaviorDescriptor" />
@@ -63,6 +64,12 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_AbstractModule_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_ExtractedModuleDependency_BehaviorDescriptor" file="BuildMps_ExtractedModuleDependency_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_ModuleDependency_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_Group_BehaviorDescriptor" file="BuildMps_Group_BehaviorDescriptor.java">

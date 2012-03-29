@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BuildMps_AbstractModule_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_AbstractModule_BehaviorDescriptor" />
   <unitInfo fileName="BuildMps_DevKitExportLanguage_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_DevKitExportLanguage_BehaviorDescriptor" />
   <unitInfo fileName="BuildMps_DevKitExportSolution_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_DevKitExportSolution_BehaviorDescriptor" />
   <unitInfo fileName="BuildMps_DevKitExport_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_DevKitExport_BehaviorDescriptor" />
   <unitInfo fileName="BuildMps_DevKitRef_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_DevKitRef_BehaviorDescriptor" />
   <unitInfo fileName="BuildMps_DevKit_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_DevKit_BehaviorDescriptor" />
+  <unitInfo fileName="BuildMps_ExtractedModuleDependency_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_ExtractedModuleDependency_BehaviorDescriptor" />
   <unitInfo fileName="BuildMps_Group_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_Group_BehaviorDescriptor" />
   <unitInfo fileName="BuildMps_Language_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_Language_BehaviorDescriptor" />
   <unitInfo fileName="BuildMps_ModuleDependencyExtendLanguage_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_ModuleDependencyExtendLanguage_BehaviorDescriptor" />

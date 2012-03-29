@@ -238,7 +238,15 @@ public class QueriesGenerated {
     return BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(_context.getNode(), "dir", true));
   }
 
+  public static Object propertyMacro_GetPropertyValue_7866279537988669079(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(_context.getNode(), "dir", true));
+  }
+
   public static Object propertyMacro_GetPropertyValue_5248329904288079452(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(_context.getNode(), "path", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2303926226081012727(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(_context.getNode(), "path", true));
   }
 
@@ -613,6 +621,10 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_5248329904288079434(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "selectors", true);
+  }
+
+  public static Iterable sourceNodesQuery_7866279537988669091(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "selectors", true);
   }
 

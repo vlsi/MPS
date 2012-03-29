@@ -56,11 +56,11 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildInputResourceSet");
+        SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildInputSingleFolder");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           public SNode wrapNode(SNode nodeToWrap, SModel model) {
             SNode res = SModelOperations.createNewNode(model, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource", null);
-            SLinkOperations.setTarget(res, "sources", nodeToWrap, true);
+            SLinkOperations.setTarget(res, "folder", nodeToWrap, true);
             return res;
           }
 

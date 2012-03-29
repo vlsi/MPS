@@ -662,8 +662,8 @@ public class ModuleLoader {
         continue;
       }
       SNode javaSource = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource", null);
-      SLinkOperations.setTarget(javaSource, "sources", SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildInputFiles", null), true);
-      SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(javaSource, "sources", true), "jetbrains.mps.build.structure.BuildInputFiles"), "dir", p, true);
+      SLinkOperations.setTarget(javaSource, "folder", SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildInputSingleFolder", null), true);
+      SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(javaSource, "folder", true), "jetbrains.mps.build.structure.BuildInputSingleFolder"), "path", p, true);
       ListSequence.fromList(SLinkOperations.getTargets(module, "sources", true)).addElement(javaSource);
     }
     for (ModelRoot modelRoot : myModuleDescriptor.getModelRoots()) {

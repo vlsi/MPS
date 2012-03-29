@@ -172,7 +172,7 @@
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="3189788309731979159">
         <link role="concept" roleId="tpdg.1177333551023" targetNodeId="kdzh.5253498789149588970" resolveInfo="BuildMps_ModuleJavaSource" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.WrapperSubstituteMenuPart" typeId="tpdg.1177402519659" id="3189788309731979160">
-          <link role="wrappedConcept" roleId="tpdg.1177402731616" targetNodeId="3ior.5248329904287739114" resolveInfo="BuildInputResourceSet" />
+          <link role="wrappedConcept" roleId="tpdg.1177402731616" targetNodeId="3ior.2303926226081001727" resolveInfo="BuildInputSingleFolder" />
           <node role="wrapperBlock" roleId="tpdg.1177402719158" type="tpdg.QueryFunction_SubstituteWrapper" typeId="tpdg.1177402571666" id="3189788309731979161">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3189788309731979162">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="3189788309731979163">

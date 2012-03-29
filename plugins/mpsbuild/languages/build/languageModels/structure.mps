@@ -221,7 +221,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5248329904287739116">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="SourceSet.Folders" />
-      <property name="name" nameId="tpck.1169194664001" value="BuildInputDirSet" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildInputFolderSet" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5248329904287739114" resolveInfo="BuildInputResourceSet" />
     </node>
     <node type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="5248329904288265463">
@@ -332,6 +332,16 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Classpath" />
       <property name="name" nameId="tpck.1169194664001" value="BuildSource_JavaJars" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3717132724152837124" resolveInfo="BuildSource_JavaCP" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7866279537988666687">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="SourceSet.Folders" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildInputFolders" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="5248329904287739116" resolveInfo="BuildInputFolderSet" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2303926226081001727">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="SourceSet.Folders" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildInputSingleFolder" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="5248329904287739116" resolveInfo="BuildInputFolderSet" />
     </node>
   </roots>
   <root id="5617550519002745363">
@@ -972,7 +982,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="resset" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="5248329904287739114" resolveInfo="BuildInputResourceSet" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="2303926226081001727" resolveInfo="BuildInputSingleFolder" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="1500819558096223970">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473994950" resolveInfo="dontSubstituteByDefault" />
@@ -1023,6 +1033,36 @@
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3717132724153084013">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3717132724153083947" resolveInfo="BuildSourceSetContainer" />
+    </node>
+  </root>
+  <root id="7866279537988666687">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7866279537988666690">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="dir" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="7389400916848073790" resolveInfo="BuildSourcePath" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7866279537988666691">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="selectors" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="5248329904287794599" resolveInfo="BuildFileSelector" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="7866279537988666689">
+      <property name="value" nameId="tpce.1105725733873" value="folders" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+  </root>
+  <root id="2303926226081001727">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2303926226081001728">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="path" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="7389400916848073790" resolveInfo="BuildSourcePath" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="2303926226081001729">
+      <property name="value" nameId="tpce.1105725733873" value="folder" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>
 </model>
