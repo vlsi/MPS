@@ -57,10 +57,6 @@ public class MergeDriverMain {
         new SimpleMerger()
       );
     }
-    try {
-      Thread.sleep(20000);
-    } catch (Exception e) {
-    }
     System.exit(FileMerger.mergeFiles(merger, baseFile, currentFile, otherFile, conflictStart, conflictEnd, conflictSeparator, overwrite));
   }
 
