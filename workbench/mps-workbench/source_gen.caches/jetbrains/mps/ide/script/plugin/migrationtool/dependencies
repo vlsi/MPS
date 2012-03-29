@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptFinder" file="MigrationScriptFinder.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.IdentityHashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
@@ -11,7 +12,7 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
-    <classNode dependClassName="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsView" />
+    <classNode dependClassName="jetbrains.mps.ide.script.plugin.migrationtool.ResultsListener" />
     <classNode dependClassName="jetbrains.mps.ide.ui.TreeTextUtil" />
     <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
     <classNode dependClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
@@ -22,6 +23,24 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsController" file="MigrationScriptsController.java">
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
+    <classNode dependClassName="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptFinder" />
+    <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
+    <classNode dependClassName="jetbrains.mps.lang.script.runtime.MigrationScriptUtil" />
+    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
   </dependency>
   <dependency className="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsTool" file="MigrationScriptsTool.java">
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
@@ -56,30 +75,35 @@
     <classNode extendsClassName="jetbrains.mps.ide.findusages.view.TabbedUsagesTool" />
   </dependency>
   <dependency className="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsView" file="MigrationScriptsView.java">
+    <classNode dependClassName="com.intellij.openapi.application.ex.ApplicationEx" />
+    <classNode dependClassName="com.intellij.openapi.application.ex.ApplicationManagerEx" />
+    <classNode dependClassName="com.intellij.openapi.command.CommandProcessor" />
+    <classNode dependClassName="com.intellij.openapi.command.CommandProcessorEx" />
+    <classNode dependClassName="com.intellij.openapi.command.UndoConfirmationPolicy" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.progress.Task" />
+    <classNode dependClassName="com.intellij.openapi.progress.TaskInfo" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.wm.impl.status.InlineProgressIndicator" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.FlowLayout" />
-    <classNode dependClassName="java.awt.Rectangle" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.awt.event.ActionListener" />
     <classNode dependClassName="java.lang.IllegalStateException" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="javax.swing.AbstractAction" />
     <classNode dependClassName="javax.swing.JButton" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JOptionPane" />
     <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="javax.swing.JProgressBar" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.IResultProvider" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
@@ -88,15 +112,18 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.UsagesView" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions" />
     <classNode dependClassName="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptFinder" />
+    <classNode dependClassName="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsController" />
     <classNode dependClassName="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsTool" />
-    <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
-    <classNode dependClassName="jetbrains.mps.lang.script.runtime.MigrationScriptUtil" />
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.ide.script.plugin.migrationtool.ResultsListener" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.script.plugin.migrationtool.ResultsListener" file="ResultsListener.java">
+    <classNode dependClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
   </dependency>
 </dependenciesRoot>
 

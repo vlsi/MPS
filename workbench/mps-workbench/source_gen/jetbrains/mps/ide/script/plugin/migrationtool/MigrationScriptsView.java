@@ -7,6 +7,7 @@ import jetbrains.mps.ide.findusages.view.UsagesView;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
@@ -14,33 +15,33 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
-import java.util.List;
+import jetbrains.mps.smodel.ModelAccess;
+import javax.swing.JComponent;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
+import javax.swing.SwingUtilities;
+import javax.swing.JLabel;
+import com.intellij.openapi.progress.TaskInfo;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.project.MPSProject;
+import java.util.Collection;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.smodel.SNode;
-import java.util.ArrayList;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNodePointer;
-import java.util.Set;
-import java.util.HashSet;
 import javax.swing.JOptionPane;
-import javax.swing.JProgressBar;
-import javax.swing.SwingUtilities;
-import java.awt.Rectangle;
-import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
-import jetbrains.mps.lang.script.runtime.MigrationScriptUtil;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.command.CommandProcessorEx;
+import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.command.UndoConfirmationPolicy;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
+import com.intellij.openapi.application.ex.ApplicationEx;
+import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.progress.ProgressMonitorAdapter;
-import javax.swing.JLabel;
 import java.awt.event.ActionListener;
-import javax.swing.JComponent;
 
-public abstract class MigrationScriptsView {
+public abstract class MigrationScriptsView implements ResultsListener {
   private MigrationScriptFinder myFinder;
   private SearchQuery myQuery;
   private MigrationScriptsTool myTool;
@@ -50,6 +51,8 @@ public abstract class MigrationScriptsView {
   private JPanel myStatusPanel;
   private JButton myApplyButton;
   private final Project myProject;
+  private InlineProgressIndicator myIndicator;
+  private MigrationScriptsController myController;
 
   public MigrationScriptsView(MigrationScriptFinder finder, IResultProvider provider, SearchQuery query, MigrationScriptsTool tool, Project project) {
     myProject = project;
@@ -57,8 +60,8 @@ public abstract class MigrationScriptsView {
       throw new IllegalStateException("Can't use this outside of EDT");
     }
     myFinder = finder;
+    myFinder.addResultsListener(this);
     myQuery = query;
-    finder.setMigrationScriptsView(this);
     myTool = tool;
     ViewOptions viewOptions = new ViewOptions();
     viewOptions.myCategories[0] = true;
@@ -83,77 +86,102 @@ public abstract class MigrationScriptsView {
     myStatusPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 5, 0));
     myControlsPanel.add(myStatusPanel);
     myMainPanel.add(myControlsPanel, BorderLayout.SOUTH);
+    this.myIndicator = new InlineProgressIndicator(true, createTaskInfo());
+    this.myController = new MigrationScriptsController(myFinder) {
+      public void runCommand(final Runnable cmd) {
+        ModelAccess.instance().runCommandInEDT(new Runnable() {
+          public void run() {
+            cmd.run();
+          }
+        }, getMPSProject());
+      }
+    };
+  }
+
+  public UsagesView getUsagesView() {
+    return myUsagesView;
+  }
+
+  public JComponent getComponent() {
+    return myMainPanel;
+  }
+
+  public void resultsChanged(IFinder finder) {
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        updateControls(true, new JLabel(""));
+      }
+    });
   }
 
   public abstract void close();
 
-  private void applyMigrations() {
-    if (!(ThreadUtils.isEventDispatchThread())) {
-      throw new IllegalStateException("Can't use this outside of EDT");
-    }
-    final List<SearchResult<SNode>> aliveIncludedResults = new ArrayList<SearchResult<SNode>>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        List<SNodePointer> includedNodes = myUsagesView.getIncludedResultNodes();
-        Set<SNode> aliveIncludedNodes = new HashSet<SNode>();
-        for (SNodePointer includedNode : includedNodes) {
-          if (includedNode.getNode() != null) {
-            aliveIncludedNodes.add(includedNode.getNode());
-          }
-        }
-        List<SearchResult<SNode>> aliveResults = myFinder.getLastSearchResults().getAliveResults();
-        for (SearchResult<SNode> aliveResult : aliveResults) {
-          if (aliveIncludedNodes.contains(aliveResult.getObject())) {
-            aliveIncludedResults.add(aliveResult);
-          }
-        }
+  private TaskInfo createTaskInfo() {
+    return new TaskInfo() {
+      @NotNull
+      public String getTitle() {
+        return "Applying Migrations";
       }
-    });
+
+      public String getCancelText() {
+        return null;
+      }
+
+      public String getCancelTooltipText() {
+        return null;
+      }
+
+      public boolean isCancellable() {
+        return false;
+      }
+
+      @NonNls
+      public String getProcessId() {
+        return "migration";
+      }
+    };
+  }
+
+  private MPSProject getMPSProject() {
+    return (myProject != null ?
+      myProject.getComponent(MPSProject.class) :
+      null
+    );
+  }
+
+  private void applyMigrations() {
+    ThreadUtils.assertEDT();
+
+    final Collection<SearchResult<SNode>> aliveIncludedResults = myController.computeAliveIncludedResults(myUsagesView.getIncludedResultNodes());
     if (aliveIncludedResults.size() == 0) {
       JOptionPane.showMessageDialog(myTool.getComponent(), "No job");
       return;
     }
-    final JProgressBar progress = new JProgressBar(0, aliveIncludedResults.size());
-    progress.setString("applying migrations...");
-    progress.setStringPainted(true);
-    progress.setBorderPainted(false);
-    updateControls(false, progress);
-    // FIXME deadlock 
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-            int progressCount = 0;
-            for (SearchResult<SNode> aliveIncludedResult : aliveIncludedResults) {
-              progress.setValue((progressCount++));
-              progress.paintImmediately(new Rectangle(progress.getSize()));
-              SNode node = aliveIncludedResult.getObject();
-              // still alive? 
-              if (node != null && node.isRegistered()) {
-                // still applicable? 
-                AbstractMigrationRefactoring migrationRefactoring = myFinder.getRefactoring(aliveIncludedResult);
-                if (MigrationScriptUtil.isApplicableRefactoring(node, migrationRefactoring)) {
-                  MigrationScriptUtil.performRefactoring(node, migrationRefactoring);
-                }
-              }
-            }
-            progress.setValue(aliveIncludedResults.size());
-            progress.paintImmediately(new Rectangle(progress.getSize()));
 
-            //  ---- 
-            checkMigrationResults();
-          }
-        }, "migration refactoring", null, true, (myProject != null ?
-          myProject.getComponent(MPSProject.class) :
-          null
-        ));
+    updateControls(false, myIndicator.getComponent());
+
+    final TaskInfo task = createTaskInfo();
+    final Object cmd = ((CommandProcessorEx) CommandProcessor.getInstance()).startCommand(myProject, task.getTitle(), null, UndoConfirmationPolicy.REQUEST_CONFIRMATION);
+    final Runnable finishCommand = new Runnable() {
+      public void run() {
+        ((CommandProcessorEx) CommandProcessor.getInstance()).finishCommand(myProject, cmd, null);
       }
-    });
+    };
+
+    Runnable process = new Runnable() {
+      public void run() {
+        myController.process(new ProgressMonitorAdapter(myIndicator), aliveIncludedResults);
+        ModelAccess.instance().runCommandInEDT(finishCommand, getMPSProject());
+        checkMigrationResults();
+      }
+    };
+    // execute the process on a pooled thread 
+    ((ApplicationEx) ApplicationManagerEx.getApplicationEx()).runProcessWithProgressSynchronously(process, task.getTitle(), task.isCancellable(), myProject, getComponent(), task.getCancelText());
   }
 
   private void checkMigrationResults() {
     final MigrationScriptFinder newFinder = new MigrationScriptFinder(myFinder.getScripts(), myFinder.getOperationContext());
-    SwingUtilities.invokeLater(new Runnable() {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         ProgressManager.getInstance().run(new Task.Modal(myTool.getProject(), "Searching", true) {
           public void run(@NotNull final ProgressIndicator indicator) {
@@ -203,21 +231,5 @@ public abstract class MigrationScriptsView {
     }
     myStatusPanel.revalidate();
     myStatusPanel.repaint();
-  }
-
-  public UsagesView getUsagesView() {
-    return myUsagesView;
-  }
-
-  public JComponent getComponent() {
-    return myMainPanel;
-  }
-
-  public void searchResultsChanged() {
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        updateControls(true, new JLabel(""));
-      }
-    });
   }
 }
