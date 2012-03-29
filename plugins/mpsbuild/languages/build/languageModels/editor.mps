@@ -253,6 +253,11 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Classpath" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.3717132724153084007" resolveInfo="BuildSource_JavaJars" />
     </node>
+    <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="7259033139236546331">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Dependencies" />
+      <property name="name" nameId="tpck.1169194664001" value="delete_reexport_inJavaDependencyModule" />
+      <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="3ior.2754769020641646247" resolveInfo="BuildSource_JavaDependencyModule" />
+    </node>
   </roots>
   <root id="5617550519002745365">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7389400916847962446">
@@ -2150,7 +2155,34 @@
           </node>
         </node>
       </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7259033139236507308">
+        <property name="text" nameId="tpc2.1073389577007" value="(reexport)" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1203598923024" resolveInfo="keyword" />
+        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="7259033139236546331" resolveInfo="delete_reexport_inJavaDependencyModule" />
+        <node role="renderingCondition" roleId="tpc2.1142887637401" type="tpc2.QueryFunction_NodeCondition" typeId="tpc2.1142886221719" id="7259033139236507309">
+          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7259033139236507310">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7259033139236507311">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7259033139236507329">
+                <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="7259033139236507312" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="7259033139236507335">
+                  <link role="property" roleId="tp25.1138056395725" targetNodeId="3ior.7259033139236507306" resolveInfo="reexport" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="2754769020641662854" />
+    </node>
+    <node role="inspectedCellModel" roleId="tpc2.1078153129734" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7259033139236565300">
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="7259033139236565301" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7259033139236565302">
+        <property name="text" nameId="tpc2.1073389577007" value="reexport:" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1203598923024" resolveInfo="keyword" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="7259033139236565304">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.7259033139236507306" resolveInfo="reexport" />
+      </node>
     </node>
   </root>
   <root id="6057319140845467766">
@@ -4100,6 +4132,28 @@
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.3717132724153084009" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="3717132724153084016" />
+    </node>
+  </root>
+  <root id="7259033139236546331">
+    <node role="item" roleId="tpc2.1139535219969" type="tpc2.CellActionMapItem" typeId="tpc2.1139535280617" id="7259033139236546332">
+      <property name="actionId" nameId="tpc2.1139535298778" value="delete_action_id" />
+      <node role="executeFunction" roleId="tpc2.1139535280620" type="tpc2.CellActionMap_ExecuteFunction" typeId="tpc2.1139535439104" id="7259033139236546333">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7259033139236546334">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7259033139236546335">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="7259033139236546360">
+              <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7259033139236546353">
+                <node role="operand" roleId="tpee.1197027771414" type="tpc2.CellActionMap_FunctionParm_selectedNode" typeId="tpc2.1139535439112" id="7259033139236546336" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="7259033139236546359">
+                  <link role="property" roleId="tp25.1138056395725" targetNodeId="3ior.7259033139236507306" resolveInfo="reexport" />
+                </node>
+              </node>
+              <node role="rValue" roleId="tpee.1068498886297" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="7259033139236546363">
+                <property name="value" nameId="tpee.1068580123138" value="false" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </root>
 </model>
