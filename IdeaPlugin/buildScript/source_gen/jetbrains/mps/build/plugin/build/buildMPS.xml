@@ -1021,7 +1021,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.refactoring" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.lang.plugin, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.lang.refactoring" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.refactoring" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.refactoring">
       <compilerarg value="-Xlint:none" />
@@ -1030,7 +1030,6 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.plugin" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
