@@ -46,7 +46,8 @@
   <target name="build" depends="assemble, check" />
   
   <target name="clean">
-    <delete dir="${build.dir}" />
+    <delete dir="${build.tmp}" />
+    <delete dir="${build.layout}" />
   </target>
   
   <target name="compileJava" depends="java.compile.test1" />
@@ -61,7 +62,7 @@
   
   <target name="java.compile.test1" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/test1" />
-    <javac destdir="${build.tmp}/java/out/test1">
+    <javac destdir="${build.tmp}/java/out/test1" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src></src>
       <classpath>
