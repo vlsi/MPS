@@ -75,6 +75,14 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
     return myState.myConfigurationPath;
   }
 
+  public boolean getOpenCurrentProject() {
+    return myState.myOpenCurrentProject;
+  }
+
+  public String getProjectToOpen() {
+    return myState.myProjectToOpen;
+  }
+
   public void setVmOptions(String value) {
     myState.myVmOptions = value;
   }
@@ -91,15 +99,33 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
     myState.myConfigurationPath = value;
   }
 
+  public void setOpenCurrentProject(boolean value) {
+    myState.myOpenCurrentProject = value;
+  }
+
+  public void setProjectToOpen(String value) {
+    myState.myProjectToOpen = value;
+  }
+
   public String expandPath(String path) {
-    return MacrosFactory.mpsHomeMacros().expandPath(path, new File(System.getProperty("user.home"))).replace(File.separator, "/");
+    return MacrosFactory.getGlobal().expandPath(path).replace(File.separator, "/");
   }
 
   public String shinkPath(String path) {
     if (StringUtils.isEmpty(path)) {
       return path;
     }
-    return MacrosFactory.mpsHomeMacros().shrinkPath(path, new File(System.getProperty("user.home"))).replace(File.separator, "/");
+    return MacrosFactory.getGlobal().shrinkPath(path).replace(File.separator, "/");
+  }
+
+  public File getProjectFile(Project currentProject) {
+    if (this.getOpenCurrentProject()) {
+      return new File(currentProject.getProjectFilePath());
+    }
+    if (this.getProjectToOpen() != null) {
+      return new File(this.getProjectToOpen());
+    }
+    return null;
   }
 
   @Override
@@ -153,6 +179,8 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
     public String myJrePath;
     public String mySystemPath = shinkPath(Mps_Command.getDefaultSystemPath());
     public String myConfigurationPath = shinkPath(Mps_Command.getDefaultConfigurationPath());
+    public boolean myOpenCurrentProject = false;
+    public String myProjectToOpen;
 
     public MyState() {
     }
@@ -164,6 +192,8 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
       state.myJrePath = myJrePath;
       state.mySystemPath = mySystemPath;
       state.myConfigurationPath = myConfigurationPath;
+      state.myOpenCurrentProject = myOpenCurrentProject;
+      state.myProjectToOpen = myProjectToOpen;
       return state;
     }
   }

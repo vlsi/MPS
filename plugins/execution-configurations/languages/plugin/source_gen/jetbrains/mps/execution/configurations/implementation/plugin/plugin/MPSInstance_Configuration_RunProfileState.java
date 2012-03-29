@@ -51,7 +51,7 @@ public class MPSInstance_Configuration_RunProfileState extends DebuggerRunProfil
     ConsoleView console = ConsoleCreator.createConsoleView(project, false);
     console.addMessageFilter(new JavaStackTraceFilter(project));
     {
-      ProcessHandler _processHandler = new Mps_Command().setVirtualMachineParameters_String(myRunConfiguration.getVmOptions()).setJrePath_String(myRunConfiguration.getJrePath()).setConfigurationPath_String(myRunConfiguration.expandPath(myRunConfiguration.getConfigurationPath())).setSystemPath_String(myRunConfiguration.expandPath(myRunConfiguration.getSystemPath())).setDebuggerSettings_String(myDebuggerSettings.getCommandLine(true)).createProcess();
+      ProcessHandler _processHandler = new Mps_Command().setVirtualMachineParameters_String(myRunConfiguration.getVmOptions()).setJrePath_String(myRunConfiguration.getJrePath()).setConfigurationPath_String(myRunConfiguration.expandPath(myRunConfiguration.getConfigurationPath())).setSystemPath_String(myRunConfiguration.expandPath(myRunConfiguration.getSystemPath())).setReadOnly_Boolean(myRunConfiguration.getOpenCurrentProject()).setDebuggerSettings_String(myDebuggerSettings.getCommandLine(true)).createProcess(myRunConfiguration.getProjectFile(project));
       final ConsoleView _consoleView = console;
       _processHandler.addProcessListener(new ConsoleProcessListener(_consoleView));
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {

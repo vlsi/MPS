@@ -656,7 +656,6 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPSInstance_Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPSInstance_Configuration_Factory" />
@@ -675,10 +674,14 @@
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPSInstance_Configuration_Editor" file="MPSInstance_Configuration_Editor.java">
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="java.awt.GridBagLayout" />
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPSInstance_Configuration" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Mps_Command" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.ProjectChooser" />
     <classNode dependClassName="jetbrains.mps.execution.lib.ui.FieldWithPathChooseDialog" />
     <classNode dependClassName="jetbrains.mps.execution.lib.ui.RawLineEditorComponent" />
     <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
@@ -926,6 +929,20 @@
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.ProjectChooser" file="ProjectChooser.java">
+    <classNode dependClassName="java.awt.GridBagLayout" />
+    <classNode dependClassName="java.awt.event.ActionEvent" />
+    <classNode dependClassName="java.awt.event.ActionListener" />
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="javax.swing.JCheckBox" />
+    <classNode dependClassName="javax.swing.JLabel" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.execution.lib.ui.FieldWithPathChooseDialog" />
+    <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
+    <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.ProjectPaneModelAddition_ActionGroup" file="ProjectPaneModelAddition_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
