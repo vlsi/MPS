@@ -6,11 +6,14 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.kernel.model.TemporaryModelOwner;
 
-public interface ProjectTest {
+public interface TransformationTest {
   public void setProject(Project project);
   public Project getProject();
   public void setModelDescriptor(SModelDescriptor descriptor);
   public SModelDescriptor getModelDescriptor();
+  public void setTestRunner(TransformationTestRunner runner);
+  public TransformationTestRunner getTestRunner();
   public SModelDescriptor getTransientModelDescriptor();
   public TemporaryModelOwner getModelOwner();
+  public void init();
 }
