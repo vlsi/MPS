@@ -13,6 +13,11 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.resolve.Resolver;
+import jetbrains.mps.smodel.ModuleOperationContext;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -909,11 +914,11 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
-        return "NodeNavigatableItem constructor";
+        return "NodeNavigationItem constructor";
       }
 
       public String getAdditionalInfo() {
-        return "NodeNavigatableItem constructor";
+        return "NodeNavigationItem constructor";
       }
 
       public String getFqNameOfConceptToSearchInstances() {
@@ -921,7 +926,7 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ReferenceUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")), "NodeNavigationItem", "jetbrains.mps.baseLanguage.plugin") && (int) ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() == 3;
+        return ReferenceUtil.isReferenceToModel(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")), "jetbrains.mps.baseLanguage.plugin") && (int) ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() == 3 && "NodeNavigationItem".equals(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")).getResolveInfo());
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -934,11 +939,11 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
-        return "NodeNavigatableItem reference";
+        return "NodeNavigationItem reference";
       }
 
       public String getAdditionalInfo() {
-        return "NodeNavigatableItem reference";
+        return "NodeNavigationItem reference";
       }
 
       public String getFqNameOfConceptToSearchInstances() {
@@ -946,11 +951,60 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ReferenceUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier")), "NodeNavigationItem", "jetbrains.mps.baseLanguage.plugin");
+        return ReferenceUtil.isReferenceToModel(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier")), "jetbrains.mps.baseLanguage.plugin") && "NodeNavigationItem".equals(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier")).getResolveInfo());
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNodeOperations.replaceWithAnother(node, new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a0a0a0e0a0a0lb0a().createNode());
+        String resolveInfo = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier")).getResolveInfo();
+        if ("NodeNavigationItem".equals(resolveInfo)) {
+          SNodeOperations.replaceWithAnother(node, new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a0a0a0b0e0a0a0lb0a().createNode());
+        } else if ("AbstractLeftEditorHighlighterMessage".equals(resolveInfo)) {
+          SNodeOperations.replaceWithAnother(node, new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a0a0a0a1a4a0a0a73a0().createNode());
+        }
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "References to baseLanguage.plugin";
+      }
+
+      public String getAdditionalInfo() {
+        return "References to baseLanguage.plugin";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.core.structure.BaseConcept";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return Sequence.fromIterable(SNodeOperations.getReferences(node)).any(new IWhereFilter<SReference>() {
+          public boolean accept(SReference it) {
+            return ReferenceUtil.isReferenceToModel(it, "jetbrains.mps.baseLanguage.plugin") && it.getTargetNodeSilently() == null;
+          }
+        });
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SModelReference[] d = new SModelReference[]{new SModelReference("jetbrains.mps.editor.runtime", ""), new SModelReference("jetbrains.mps.baseLanguage.util", ""), new SModelReference("jetbrains.mps.ide.editor.util", "")};
+        IModule module = SNodeOperations.getModel(node).getModelDescriptor().getModule();
+        for (SModelReference modelRef : d) {
+          SNodeOperations.getModel(node).addModelImport(modelRef, false);
+          ModuleReference moduleReference = SModelRepository.getInstance().getModelDescriptor(modelRef).getModule().getModuleReference();
+          module.addDependency(moduleReference, false);
+        }
+        for (SReference ref : SNodeOperations.getReferences(node)) {
+          if (!(ReferenceUtil.isReferenceToModel(ref, "jetbrains.mps.baseLanguage.plugin"))) {
+            continue;
+          }
+          if (ref.getTargetNode() != null) {
+            continue;
+          }
+          Resolver.resolve1(ref, new ModuleOperationContext(module));
+        }
       }
 
       public boolean isShowAsIntention() {
@@ -2302,8 +2356,8 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_q3kr7y_a0a0a0e0a0a0lb0a {
-    public QuotationClass_q3kr7y_a0a0a0e0a0a0lb0a() {
+  public static class QuotationClass_q3kr7y_a0a0a0b0e0a0a0lb0a {
+    public QuotationClass_q3kr7y_a0a0a0b0e0a0a0lb0a() {
     }
 
     public SNode createNode() {
@@ -2314,6 +2368,24 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.navigation(MPS.Platform/jetbrains.mps.ide.navigation@java_stub)"), SNodeId.fromString("~NodeNavigatable")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_q3kr7y_a0a0a0a1a4a0a0a73a0 {
+    public QuotationClass_q3kr7y_a0a0a0a1a4a0a0a73a0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)"), SNodeId.fromString("4952318787899710481")));
         result = quotedNode1_2;
       }
       return result;
