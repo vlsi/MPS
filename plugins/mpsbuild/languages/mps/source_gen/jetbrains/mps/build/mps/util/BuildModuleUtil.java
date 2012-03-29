@@ -5,11 +5,11 @@ package jetbrains.mps.build.mps.util;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.iterable.RecursiveIterator;
@@ -21,8 +21,19 @@ public class BuildModuleUtil {
   public BuildModuleUtil() {
   }
 
+  public static Iterable<SNode> dependencies(SNode module) {
+    return ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return (SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency") ?
+          SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) :
+          it
+        );
+      }
+    });
+  }
+
   private static Iterable<SNode> getDependencies(SNode module, final boolean reexport) {
-    Iterable<SNode> dependencies = ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> dependencies = Sequence.fromIterable(dependencies(module)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule") && SPropertyOperations.getBoolean(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule"), "reexport") == reexport;
       }
@@ -54,7 +65,7 @@ public class BuildModuleUtil {
   }
 
   private static Iterable<SNode> getUsedLanguages(SNode module) {
-    Iterable<SNode> usedLangs = ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> usedLangs = Sequence.fromIterable(dependencies(module)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage");
       }
@@ -83,7 +94,7 @@ public class BuildModuleUtil {
   }
 
   private static Iterable<SNode> usedDevkits(SNode module) {
-    return ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(dependencies(module)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnDevKit");
       }
@@ -113,7 +124,7 @@ public class BuildModuleUtil {
   private static Iterable<SNode> includingExtendedLanguages(Iterable<SNode> langs) {
     return new RecursiveIterator<SNode>(Sequence.fromIterable(langs).iterator(), false) {
       protected Iterator<SNode> children(SNode node) {
-        return ListSequence.fromList(SLinkOperations.getTargets(node, "dependencies", true)).where(new IWhereFilter<SNode>() {
+        return Sequence.fromIterable(dependencies(node)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage");
           }
