@@ -18,6 +18,8 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.scope.ErrorScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class Resolver {
   private static final Logger LOG = Logger.getLogger(Resolver.class);
@@ -82,12 +84,12 @@ public class Resolver {
           return false;
         }
         SNode result = null;
+        String resolveInfo = reference.getResolveInfo();
         for (SNode node : refScope.getAvailableElements(null)) {
           if (!(node.isInstanceOfConcept(referentConcept))) {
             continue;
           }
-          String resolveInfo = reference.getResolveInfo();
-          if (resolveInfo != null && resolveInfo.equals(node.getName())) {
+          if (resolveInfo != null && (resolveInfo.equals(node.getName()) || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier") && resolveInfo.equals(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), "nestedName")))) {
             if (result == null) {
               result = node;
             } else {
