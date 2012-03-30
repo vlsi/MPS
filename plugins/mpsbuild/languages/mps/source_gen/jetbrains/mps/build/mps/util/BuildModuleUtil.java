@@ -44,6 +44,19 @@ public class BuildModuleUtil {
     });
 
     if (reexport) {
+      // add extended langs 
+      dependencies = Sequence.fromIterable(dependencies).concat(Sequence.fromIterable(dependencies(module)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage");
+        }
+      }).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage"), "language", false);
+        }
+      }));
+    }
+
+    if (reexport) {
       return dependencies;
     }
 
