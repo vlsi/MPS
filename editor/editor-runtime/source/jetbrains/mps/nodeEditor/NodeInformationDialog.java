@@ -61,7 +61,9 @@ public class NodeInformationDialog extends AbstractNodeInformationDialog {
 
           if (ref.getTargetNode() == null) {
             result.append("Bad Reference\n");
-
+            if (ref.getTargetSModelReference() != null) {
+              result.append("Target model = ").append(ref.getTargetSModelReference()).append("\n");
+            }
           } else {
             result.append("Model = ").append(target.getModel().getSModelReference()).append("\n");
             result.append("Node = ").append(NodePresentationUtil.getPathToRoot(target)).append("\n");
