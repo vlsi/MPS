@@ -60,6 +60,7 @@
   <import index="2yea" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.plugins.tool(MPS.Platform/jetbrains.mps.plugins.tool@java_stub)" version="-1" />
   <import index="xfqe" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.plugins.prefs(MPS.Platform/jetbrains.mps.plugins.prefs@java_stub)" version="-1" />
   <import index="2oml" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.plugins.relations(MPS.Platform/jetbrains.mps.plugins.relations@java_stub)" version="-1" />
+  <import index="boqj" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.plugins.custom(MPS.Platform/jetbrains.mps.plugins.custom@java_stub)" version="-1" />
   <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -73,7 +74,6 @@
   <import index="tpjo" modelUID="r:00000000-0000-4000-0000-011c89590588(jetbrains.mps.xml.structure)" version="0" implicit="yes" />
   <import index="hfw" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.plugins.projectplugins(MPS.Workbench/jetbrains.mps.plugins.projectplugins@java_stub)" version="-1" implicit="yes" />
   <import index="knb2" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.plugins.pluginparts.tool(MPS.Workbench/jetbrains.mps.plugins.pluginparts.tool@java_stub)" version="-1" implicit="yes" />
-  <import index="1pw7" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.plugins.pluginparts.custom(MPS.Workbench/jetbrains.mps.plugins.pluginparts.custom@java_stub)" version="-1" implicit="yes" />
   <import index="nmwl" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.plugins.applicationplugins(MPS.Workbench/jetbrains.mps.plugins.applicationplugins@java_stub)" version="-1" implicit="yes" />
   <import index="kt54" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.workbench(MPS.Workbench/jetbrains.mps.workbench@java_stub)" version="-1" implicit="yes" />
   <roots>
@@ -3184,7 +3184,7 @@
       <property name="name" nameId="tpck.1169194664001" value="initCustomParts" />
       <node role="returnType" roleId="tpee.1068580123133" type="tp2q.ListType" typeId="tp2q.1151688443754" id="1238672240854">
         <node role="elementType" roleId="tp2q.1151688676805" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1238672240855">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1pw7.~BaseCustomProjectPlugin" resolveInfo="BaseCustomProjectPlugin" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="boqj.~BaseCustomProjectPlugin" resolveInfo="BaseCustomProjectPlugin" />
         </node>
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1206115488827" />
@@ -3194,13 +3194,13 @@
             <property name="name" nameId="tpck.1169194664001" value="res" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp2q.ListType" typeId="tp2q.1151688443754" id="1238672240843">
               <node role="elementType" roleId="tp2q.1151688676805" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1238672240844">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1pw7.~BaseCustomProjectPlugin" resolveInfo="BaseCustomProjectPlugin" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="boqj.~BaseCustomProjectPlugin" resolveInfo="BaseCustomProjectPlugin" />
               </node>
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1213279799854">
               <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="1238672241137">
                 <node role="elementType" roleId="tp2q.1237721435807" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1206118560235">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1pw7.~BaseCustomProjectPlugin" resolveInfo="BaseCustomProjectPlugin" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="boqj.~BaseCustomProjectPlugin" resolveInfo="BaseCustomProjectPlugin" />
                 </node>
               </node>
             </node>
@@ -3231,7 +3231,7 @@
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1206117992782">
                 <property name="name" nameId="tpck.1169194664001" value="plugin" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1206117992783">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1pw7.~BaseCustomProjectPlugin" resolveInfo="BaseCustomProjectPlugin" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="boqj.~BaseCustomProjectPlugin" resolveInfo="BaseCustomProjectPlugin" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1213279798117">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1213279798119">
@@ -3274,7 +3274,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1206117992782" resolveInfo="plugin" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1206118523559">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1pw7.~BaseCustomProjectPlugin%dinit(jetbrains%dmps%dproject%dMPSProject)%cvoid" resolveInfo="init" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="boqj.~BaseCustomProjectPlugin%dinit(jetbrains%dmps%dproject%dMPSProject)%cvoid" resolveInfo="init" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3552608880959559330">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3552608880959559332" resolveInfo="mpsProject" />
                   </node>
@@ -5423,7 +5423,7 @@
       <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="tp4k.1206110063106" resolveInfo="ProjectPluginDeclaration" />
     </node>
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1206116789755">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1pw7.~BaseCustomProjectPlugin" resolveInfo="BaseCustomProjectPlugin" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="boqj.~BaseCustomProjectPlugin" resolveInfo="BaseCustomProjectPlugin" />
     </node>
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1206116795145">
       <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />
@@ -7589,8 +7589,8 @@
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1215283528042">
       <property name="name" nameId="tpck.1169194664001" value="initCustomParts" />
       <node role="returnType" roleId="tpee.1068580123133" type="tp2q.ListType" typeId="tp2q.1151688443754" id="1238672240965">
-        <node role="elementType" roleId="tp2q.1151688676805" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4882210430270923847">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1pw7.~BaseCustomApplicationPlugin" resolveInfo="BaseCustomApplicationPlugin" />
+        <node role="elementType" roleId="tp2q.1151688676805" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1341945002279183205">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="boqj.~BaseCustomApplicationPlugin" resolveInfo="BaseCustomApplicationPlugin" />
         </node>
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1215283528045" />
@@ -7600,13 +7600,13 @@
             <property name="name" nameId="tpck.1169194664001" value="res" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp2q.ListType" typeId="tp2q.1151688443754" id="1238672240976">
               <node role="elementType" roleId="tp2q.1151688676805" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1238672240977">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1pw7.~BaseCustomApplicationPlugin" resolveInfo="BaseCustomApplicationPlugin" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="boqj.~BaseCustomApplicationPlugin" resolveInfo="BaseCustomApplicationPlugin" />
               </node>
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1215283528051">
               <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="1238672241219">
                 <node role="elementType" roleId="tp2q.1237721435807" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1215283528053">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1pw7.~BaseCustomApplicationPlugin" resolveInfo="BaseCustomApplicationPlugin" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="boqj.~BaseCustomApplicationPlugin" resolveInfo="BaseCustomApplicationPlugin" />
                 </node>
               </node>
             </node>
@@ -7882,7 +7882,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1228237150026" resolveInfo="plugin" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1228237212250">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1pw7.~BaseCustomApplicationPlugin%dinit()%cvoid" resolveInfo="init" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="boqj.~BaseCustomApplicationPlugin%dinit()%cvoid" resolveInfo="init" />
             </node>
           </node>
         </node>
@@ -7891,14 +7891,14 @@
         <property name="name" nameId="tpck.1169194664001" value="plugins" />
         <node role="type" roleId="tpee.5680397130376446158" type="tp2q.ListType" typeId="tp2q.1151688443754" id="1238672240889">
           <node role="elementType" roleId="tp2q.1151688676805" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1238672240890">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1pw7.~BaseCustomApplicationPlugin" resolveInfo="BaseCustomApplicationPlugin" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="boqj.~BaseCustomApplicationPlugin" resolveInfo="BaseCustomApplicationPlugin" />
           </node>
         </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1228237150026">
         <property name="name" nameId="tpck.1169194664001" value="plugin" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1228237150027">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1pw7.~BaseCustomApplicationPlugin" resolveInfo="BaseCustomApplicationPlugin" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="boqj.~BaseCustomApplicationPlugin" resolveInfo="BaseCustomApplicationPlugin" />
         </node>
       </node>
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1228237263594">
@@ -8054,7 +8054,7 @@
       <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="tp4k.1215279937187" resolveInfo="ApplicationPluginDeclaration" />
     </node>
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1215281686865">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1pw7.~BaseCustomApplicationPlugin" resolveInfo="BaseCustomApplicationPlugin" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="boqj.~BaseCustomApplicationPlugin" resolveInfo="BaseCustomApplicationPlugin" />
     </node>
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1215281686866">
       <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />
