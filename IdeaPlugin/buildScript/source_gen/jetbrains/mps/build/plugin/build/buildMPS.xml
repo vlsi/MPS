@@ -64,6 +64,12 @@
     <jar destfile="${build.layout}/mps-core/lib/mps-editor.jar">
       <fileset dir="${build.tmp}/java/out/mps-editor" />
     </jar>
+    <jar destfile="${build.layout}/mps-core/lib/mps-editor-api.jar">
+      <fileset dir="${build.tmp}/java/out/mps-editor-api" />
+    </jar>
+    <jar destfile="${build.layout}/mps-core/lib/mps-test.jar">
+      <fileset dir="${build.tmp}/java/out/mps-test" />
+    </jar>
     <jar destfile="${build.layout}/mps-core/lib/mps-plugin.jar">
       <fileset dir="${build.tmp}/java/out/mps-plugin" />
     </jar>
