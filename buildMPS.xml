@@ -73,6 +73,16 @@
     <jar destfile="${build.layout}/mps-core/lib/mps-plugin.jar">
       <fileset dir="${build.tmp}/java/out/mps-plugin" />
     </jar>
+    <mkdir dir="${build.layout}/mps-core/languages" />
+    <mkdir dir="${build.tmp}/default/baseLanguage.jar" />
+    <mkdir dir="${build.tmp}/default/baseLanguage.jar/module" />
+    <copy todir="${build.tmp}/default/baseLanguage.jar/module">
+      <fileset file="${basedir}/languages/baseLanguage/baseLanguage/baseLanguage.mpl" />
+    </copy>
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage.jar">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
+      <fileset dir="${build.tmp}/default/baseLanguage.jar" />
+    </jar>
   </target>
   
   <target name="build" depends="assemble, check" />

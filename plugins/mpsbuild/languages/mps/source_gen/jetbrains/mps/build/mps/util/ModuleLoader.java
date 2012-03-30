@@ -119,8 +119,8 @@ public class ModuleLoader {
     loadFile();
     if (myModuleDescriptor != null) {
       loadModule();
-      SLinkOperations.setTarget(myModule, "path", null, true);
     }
+    SPropertyOperations.set(myModule, "compact", "" + false);
   }
 
   private void loadFile() {
