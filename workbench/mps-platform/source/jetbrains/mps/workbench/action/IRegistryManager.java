@@ -13,19 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.editorTabs;
+package jetbrains.mps.workbench.action;
 
-import java.util.Comparator;
+import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.workbench.action.IActionsRegistry;
 
-public class EditorTabComparator implements Comparator<EditorTabDescriptor> {
-  public int compare(EditorTabDescriptor d1, EditorTabDescriptor d2) {
-    int r1 = d1.compareTo(d2);
-    int r2 = d2.compareTo(d1);
-
-    if ((r1 == 0) ^ (r2 == 0)) return r1 - r2;
-
-    assert r1 * r2 <= 0 : "can't determine order";
-
-    return r1;
-  }
+public interface IRegistryManager{
+  IActionsRegistry getActionsRegistry (PluginId id);
 }

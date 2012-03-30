@@ -13,12 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.plugins.applicationplugins;
+package jetbrains.mps.workbench.action;
 
-import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.workbench.action.BaseAction;
 
-public interface IRegistryManager{
-
-  IActionsRegistry getActionsRegistry (PluginId id);
-
+public interface IActionsRegistry {
+  void addParameterizedAction(BaseAction action, Object... params);
 }

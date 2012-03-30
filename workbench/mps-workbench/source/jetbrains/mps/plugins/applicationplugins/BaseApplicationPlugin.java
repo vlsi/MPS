@@ -21,12 +21,13 @@ import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.plugins.actions.BaseKeymapChanges;
+import jetbrains.mps.workbench.action.IActionsRegistry;
+import jetbrains.mps.workbench.action.MPSActions;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.action.BaseKeymapChanges;
-import jetbrains.mps.workbench.action.MPSActions;
 
 import java.util.*;
 
