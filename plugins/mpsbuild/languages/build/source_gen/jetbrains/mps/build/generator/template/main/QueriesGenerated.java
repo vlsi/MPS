@@ -15,29 +15,32 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.behavior.BuildSourcePath_Behavior;
 import jetbrains.mps.build.behavior.BuildString_Behavior;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.build.util.RelativePathHelper;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.build.util.MacroHelper;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import java.util.Collections;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.build.util.GenerationUtil;
 import jetbrains.mps.build.generator.util.FetchDependenciesProcessor;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import java.util.Set;
+import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.build.generator.util.JavaModulesClosure;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class QueriesGenerated {
@@ -51,10 +54,6 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_6921160174096663332(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "defaultPath", true) == null);
-  }
-
-  public static boolean baseMappingRule_Condition_3364920969597615101(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.getContainingRoot(_context.getNode()) == SNodeOperations.getContainingRoot(SLinkOperations.getTarget(_context.getNode(), "library", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963267883(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -206,30 +205,6 @@ public class QueriesGenerated {
     return "java.library." + SPropertyOperations.getString(_context.getNode(), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_3364920969597555949(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getProperty("pathValue");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_6547494638219610715(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode project = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.structure.BuildProject", false, false);
-    if (project == null) {
-      _context.showErrorMessage(_context.getNode(), "no context project defined");
-      return "???";
-    }
-    DependenciesHelper helper = new DependenciesHelper(_context, project);
-    SNode layoutNode = helper.artifacts().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), "module", false), _context));
-    if (layoutNode == null) {
-      _context.showErrorMessage(_context.getNode(), "java module " + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "module", false), "name") + " was not found in the layout");
-      return "???";
-    }
-    String val = helper.locations().get(layoutNode);
-    if (val == null) {
-      _context.showErrorMessage(_context.getNode(), "no location for java module " + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "module", false), "name"));
-      return "???";
-    }
-    return val;
-  }
-
   public static Object propertyMacro_GetPropertyValue_3717132724153210335(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "jar", true), "path", true));
   }
@@ -375,6 +350,30 @@ public class QueriesGenerated {
     return Context.defaultContext(_context).getTempPath(SLinkOperations.getTarget(_context.getNode(), "module", false), SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "module", false), "name"), "java", "out");
   }
 
+  public static Object propertyMacro_GetPropertyValue_5979287180587467412(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getNode().getProperty("pathValue");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4821808014881207505(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode project = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.structure.BuildProject", false, false);
+    if (project == null) {
+      _context.showErrorMessage(_context.getNode(), "no context project defined");
+      return "???";
+    }
+    DependenciesHelper helper = new DependenciesHelper(_context, project);
+    SNode layoutNode = helper.artifacts().get(DependenciesHelper.getOriginalNode(((SNode) _context.getVariable("module")), _context));
+    if (layoutNode == null) {
+      _context.showErrorMessage(_context.getNode(), "java module " + SPropertyOperations.getString(((SNode) _context.getVariable("module")), "name") + " was not found in the layout");
+      return "???";
+    }
+    String val = helper.locations().get(layoutNode);
+    if (val == null) {
+      _context.showErrorMessage(_context.getNode(), "no location for java module " + SPropertyOperations.getString(((SNode) _context.getVariable("module")), "name"));
+      return "???";
+    }
+    return val;
+  }
+
   public static Object referenceMacro_GetReferent_1117643560963363815(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
   }
@@ -423,12 +422,12 @@ public class QueriesGenerated {
     return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
   }
 
-  public static Object referenceMacro_GetReferent_3364920969597615109(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "library", false), "javalibrary");
+  public static Object referenceMacro_GetReferent_4821808014881173680(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(((SNode) _context.getVariable("library")), "javalibrary");
   }
 
-  public static Object referenceMacro_GetReferent_6647099934207033995(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "module", false), "javamodule");
+  public static Object referenceMacro_GetReferent_4821808014881207365(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(((SNode) _context.getVariable("module")), "javamodule");
   }
 
   public static boolean ifMacro_Condition_1117643560963363812(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -515,10 +514,6 @@ public class QueriesGenerated {
     return new DependenciesHelper(_context, SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.structure.BuildProject", false, false)).requiresFetch().containsKey(_context.getOriginalCopiedInputNode(_context.getNode()));
   }
 
-  public static boolean ifMacro_Condition_6547494638219610612(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.getContainingRoot(_context.getNode()) == SNodeOperations.getContainingRoot(SLinkOperations.getTarget(_context.getNode(), "module", false));
-  }
-
   public static boolean ifMacro_Condition_6520682027040886838(final IOperationContext operationContext, final IfMacroContext _context) {
     Iterable<SNode> s = (Iterable<SNode>) ((MacroHelper) _context.getVariable("var:macroHelper")).getMacrosToExport();
     return Sequence.fromIterable(s).isNotEmpty();
@@ -532,8 +527,24 @@ public class QueriesGenerated {
     return Sequence.fromIterable(((Tuples._2<Iterable<SNode>, String>) _context.getVariable("var:depsAndBasePath"))._0()).isNotEmpty();
   }
 
+  public static boolean ifMacro_Condition_5979287180587467645(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.getContainingRoot(_context.getNode()) != SNodeOperations.getContainingRoot(((SNode) _context.getVariable("library")));
+  }
+
+  public static boolean ifMacro_Condition_4821808014881207369(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.getContainingRoot(_context.getNode()) == SNodeOperations.getContainingRoot(((SNode) _context.getVariable("module")));
+  }
+
   public static SNode sourceNodeQuery_5248329904288175557(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "fileset", true);
+  }
+
+  public static SNode sourceNodeQuery_4821808014881265837(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return ((Tuples._3<SNode, Iterable<SNode>, Iterable<SNode>>) _context.getVariable("var:dependenciesClosure"))._0();
+  }
+
+  public static SNode sourceNodeQuery_4821808014881265914(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return ((Tuples._3<SNode, Iterable<SNode>, Iterable<SNode>>) _context.getVariable("var:dependenciesClosure"))._0();
   }
 
   public static SNode sourceNodeQuery_1500819558096269424(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -550,6 +561,22 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_5248329904288140540(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "fileset", true);
+  }
+
+  public static Object templateArgumentQuery_4821808014881251890(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return (SNode) _context.getNode().getReferent("targetModule");
+  }
+
+  public static Object templateArgumentQuery_4821808014881251899(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return (SNode) _context.getNode().getReferent("targetLibrary");
+  }
+
+  public static Object templateArgumentQuery_4821808014881175180(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "library", false);
+  }
+
+  public static Object templateArgumentQuery_4821808014881207678(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "module", false);
   }
 
   public static Iterable sourceNodesQuery_1117643560963351248(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -572,8 +599,32 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "sources", true);
   }
 
+  public static Iterable sourceNodesQuery_5979287180587467230(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNode module : ((Tuples._3<SNode, Iterable<SNode>, Iterable<SNode>>) _context.getVariable("var:dependenciesClosure"))._1()) {
+      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
+      loopnode.setReferent("targetModule", module, false);
+      ListSequence.fromList(result).addElement(loopnode);
+    }
+    return result;
+  }
+
+  public static Iterable sourceNodesQuery_5979287180587467321(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNode library : ((Tuples._3<SNode, Iterable<SNode>, Iterable<SNode>>) _context.getVariable("var:dependenciesClosure"))._2()) {
+      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
+      loopnode.setReferent("targetLibrary", library, false);
+      ListSequence.fromList(result).addElement(loopnode);
+    }
+    return result;
+  }
+
   public static Iterable sourceNodesQuery_6647099934207033969(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "dependencies", true);
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "dependencies", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary")) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaDependencyModule"));
+      }
+    });
   }
 
   public static Iterable sourceNodesQuery_7926701909975671863(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -586,38 +637,6 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_6647099934207253927(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "elements", true);
-  }
-
-  public static Iterable sourceNodesQuery_3364920969597573590(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    SNode project = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.structure.BuildProject", false, false);
-    if (project == null) {
-      _context.showErrorMessage(_context.getNode(), "no context project defined");
-      return Collections.emptyList();
-    }
-    DependenciesHelper helper = new DependenciesHelper(_context, project);
-    SNode layoutNode = helper.artifacts().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), "library", false), _context));
-    if (layoutNode == null) {
-      _context.showErrorMessage(_context.getNode(), "java library " + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "library", false), "name") + " was not found in the layout");
-      return Collections.emptyList();
-    }
-    Iterable<SNode> input;
-    if (SNodeOperations.isInstanceOf(layoutNode, "jetbrains.mps.build.structure.BuildLayout_JavaLibrary")) {
-      input = SLinkOperations.getTargets(SNodeOperations.cast(layoutNode, "jetbrains.mps.build.structure.BuildLayout_JavaLibrary"), "children", true);
-    } else {
-      input = Sequence.<SNode>singleton(layoutNode);
-    }
-    List<SNode> result = new ArrayList<SNode>();
-    for (SNode pe : input) {
-      String val = helper.locations().get(pe);
-      if (val == null) {
-        _context.showErrorMessage(pe, "no location for " + BaseConcept_Behavior.call_getPresentation_1213877396640(pe) + " (unsupported layout element)");
-        continue;
-      }
-      SNode propertyNode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
-      propertyNode.setProperty("pathValue", val);
-      ListSequence.fromList(result).addElement(propertyNode);
-    }
-    return result;
   }
 
   public static Iterable sourceNodesQuery_5248329904288079434(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -684,6 +703,38 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "plugins", true);
   }
 
+  public static Iterable sourceNodesQuery_5979287180587467422(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    SNode project = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.structure.BuildProject", false, false);
+    if (project == null) {
+      _context.showErrorMessage(_context.getNode(), "no context project defined");
+      return Collections.emptyList();
+    }
+    DependenciesHelper helper = new DependenciesHelper(_context, project);
+    SNode layoutNode = helper.artifacts().get(DependenciesHelper.getOriginalNode(((SNode) _context.getVariable("library")), _context));
+    if (layoutNode == null) {
+      _context.showErrorMessage(_context.getNode(), "java library " + SPropertyOperations.getString(((SNode) _context.getVariable("library")), "name") + " was not found in the layout");
+      return Collections.emptyList();
+    }
+    Iterable<SNode> input;
+    if (SNodeOperations.isInstanceOf(layoutNode, "jetbrains.mps.build.structure.BuildLayout_JavaLibrary")) {
+      input = SLinkOperations.getTargets(SNodeOperations.cast(layoutNode, "jetbrains.mps.build.structure.BuildLayout_JavaLibrary"), "children", true);
+    } else {
+      input = Sequence.<SNode>singleton(layoutNode);
+    }
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNode pe : input) {
+      String val = helper.locations().get(pe);
+      if (val == null) {
+        _context.showErrorMessage(pe, "no location for " + BaseConcept_Behavior.call_getPresentation_1213877396640(pe) + " (unsupported layout element)");
+        continue;
+      }
+      SNode propertyNode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
+      propertyNode.setProperty("pathValue", val);
+      ListSequence.fromList(result).addElement(propertyNode);
+    }
+    return result;
+  }
+
   public static void mappingScript_CodeBlock_809559803149973643(final IOperationContext operationContext, final MappingScriptContext _context) {
     for (SNode buildProject : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.structure.BuildProject"))) {
       buildProject.putUserObject(GenerationUtil.SCRIPTS_DIR_PROPERTY, BuildProject_Behavior.call_getScriptsPath_4796668409958419284(buildProject, Context.defaultContext(_context)));
@@ -712,6 +763,32 @@ public class QueriesGenerated {
       _context.showErrorMessage(_context.getNode(), "no location for " + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(_context.getNode(), "target", false)));
     }
     return val;
+  }
+
+  public static Object insertMacro_varValue_5979287180587467220(final IOperationContext operationContext, final TemplateQueryContext _context) {
+
+    Set<SNode> modules = new LinkedHashSet<SNode>();
+    Set<SNode> libraries = new LinkedHashSet<SNode>();
+    modules.addAll(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "dependencies", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaDependencyModule");
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaDependencyModule"), "module", false);
+      }
+    }).toListSequence());
+    libraries.addAll(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "dependencies", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary");
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary"), "library", false);
+      }
+    }).toListSequence());
+    new JavaModulesClosure(modules, libraries).closure();
+    return MultiTuple.<SNode,Set<SNode>,Set<SNode>>from(_context.getNode(), modules, libraries);
   }
 
   public static Object insertMacro_varValue_4129895186893528603(final IOperationContext operationContext, final TemplateQueryContext _context) {

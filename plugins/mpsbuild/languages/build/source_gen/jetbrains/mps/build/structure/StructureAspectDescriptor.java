@@ -116,7 +116,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 49:
         return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildSource_JavaDependencyJar", "jetbrains.mps.build.structure.BuildSource_JavaDependency", false, new String[]{"jetbrains.mps.build.structure.BuildSource_JavaDependency"}, new String[]{}, new String[]{});
       case 50:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary", "jetbrains.mps.build.structure.BuildSource_JavaDependency", false, new String[]{"jetbrains.mps.build.structure.BuildSource_JavaDependency", "jetbrains.mps.build.structure.BuildExternalDependency"}, new String[]{}, new String[]{"library"});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary", "jetbrains.mps.build.structure.BuildSource_JavaDependency", false, new String[]{"jetbrains.mps.build.structure.BuildSource_JavaDependency", "jetbrains.mps.build.structure.BuildExternalDependency"}, new String[]{"reexport"}, new String[]{"library"});
       case 51:
         return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildSource_JavaDependencyModule", "jetbrains.mps.build.structure.BuildSource_JavaDependency", false, new String[]{"jetbrains.mps.build.structure.BuildSource_JavaDependency", "jetbrains.mps.build.structure.BuildExternalDependency"}, new String[]{"reexport"}, new String[]{"module"});
       case 52:
