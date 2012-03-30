@@ -1,4 +1,4 @@
-package jetbrains.mps.plugins.pluginparts.runconfigs;
+package jetbrains.mps.plugins.runconfigs;
 
 import com.intellij.execution.Location;
 import com.intellij.openapi.module.Module;

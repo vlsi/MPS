@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.plugins.pluginparts.custom;
+package jetbrains.mps.plugins.custom;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
