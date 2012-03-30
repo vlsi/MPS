@@ -4,9 +4,10 @@ package jetbrains.mps.ide.modelchecker.actions;
 
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import java.util.List;
-import jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool;
+import jetbrains.mps.plugins.tool.BaseGeneratedTool;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+
 import java.util.ArrayList;
 
 public class Modelchecker_ProjectPlugin extends BaseProjectPlugin {

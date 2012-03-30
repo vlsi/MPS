@@ -37,7 +37,7 @@ import jetbrains.mps.plugins.PluginContributor;
 import jetbrains.mps.plugins.PluginUtil;
 import jetbrains.mps.plugins.PluginUtil.ProjectPluginCreator;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
-import jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool;
+import jetbrains.mps.plugins.tool.BaseGeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager.PluginsState;
 import jetbrains.mps.project.IModule;

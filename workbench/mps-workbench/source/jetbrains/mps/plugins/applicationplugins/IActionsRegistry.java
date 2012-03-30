@@ -18,7 +18,5 @@ package jetbrains.mps.plugins.applicationplugins;
 import jetbrains.mps.workbench.action.BaseAction;
 
 public interface IActionsRegistry {
-
   void addParameterizedAction(BaseAction action, Object... params);
-
 }

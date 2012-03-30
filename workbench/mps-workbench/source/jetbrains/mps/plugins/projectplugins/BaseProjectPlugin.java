@@ -23,7 +23,7 @@ import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
-import jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool;
+import jetbrains.mps.plugins.tool.BaseGeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import org.jdom.Element;
 
