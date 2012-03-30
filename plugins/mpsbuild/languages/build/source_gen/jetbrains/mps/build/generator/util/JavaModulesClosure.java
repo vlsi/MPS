@@ -39,7 +39,7 @@ public class JavaModulesClosure {
         }
       } else if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary")) {
         SNode libraryDep = SNodeOperations.cast(dep, "jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary");
-        if (reexportOnly && !(SPropertyOperations.getBoolean(libraryDep, "reexport"))) {
+        if (!(SPropertyOperations.getBoolean(libraryDep, "reexport"))) {
           continue;
         }
 

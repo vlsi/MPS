@@ -253,7 +253,6 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.java.library.idea-ant" />
-        <path refid="path.java.library.junit-4.10" />
       </classpath>
     </javac>
   </target>

@@ -711,19 +711,14 @@
                     <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="4821808014881336680">
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ContinueStatement" typeId="tpee.1082113931046" id="4821808014881336681" />
                     </node>
-                    <node role="condition" roleId="tpee.1068580123160" type="tpee.AndExpression" typeId="tpee.1080120340718" id="4821808014881336682">
-                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NotExpression" typeId="tpee.1081516740877" id="4821808014881336683">
-                        <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4821808014881336684">
-                          <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4821808014881336685">
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4821808014881336675" resolveInfo="libraryDep" />
-                          </node>
-                          <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="4821808014881336689">
-                            <link role="property" roleId="tp25.1138056395725" targetNodeId="3ior.5979287180587196968" resolveInfo="reexport" />
-                          </node>
+                    <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="4821808014881336683">
+                      <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4821808014881336684">
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4821808014881336685">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4821808014881336675" resolveInfo="libraryDep" />
                         </node>
-                      </node>
-                      <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4821808014881336687">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4821808014881336334" resolveInfo="reexportOnly" />
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="4821808014881336689">
+                          <link role="property" roleId="tp25.1138056395725" targetNodeId="3ior.5979287180587196968" resolveInfo="reexport" />
+                        </node>
                       </node>
                     </node>
                   </node>

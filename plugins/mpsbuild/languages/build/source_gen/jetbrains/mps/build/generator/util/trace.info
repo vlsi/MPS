@@ -12,7 +12,7 @@
     <nodeInfo nodeId="4821808014881336665" fileName="JavaModulesClosure.java" startLine="35" startPosition="9" endLine="36" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4821808014881336604" fileName="JavaModulesClosure.java" startLine="37" startPosition="37" endLine="38" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4821808014881336674" fileName="JavaModulesClosure.java" startLine="40" startPosition="120" endLine="41" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4821808014881336681" fileName="JavaModulesClosure.java" startLine="42" startPosition="88" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4821808014881336681" fileName="JavaModulesClosure.java" startLine="42" startPosition="72" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="4821808014881336690" fileName="JavaModulesClosure.java" startLine="44" startPosition="9" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4821808014881336692" fileName="JavaModulesClosure.java" startLine="45" startPosition="0" endLine="46" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4821808014881336415" fileName="JavaModulesClosure.java" startLine="23" startPosition="59" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -27,7 +27,7 @@
     <scopeInfo nodeId="4821808014881336416" fileName="JavaModulesClosure.java" startLine="24" startPosition="28" endLine="25" endPosition="32" />
     <scopeInfo nodeId="4821808014881336438" fileName="JavaModulesClosure.java" startLine="33" startPosition="87" endLine="34" endPosition="19" />
     <scopeInfo nodeId="4821808014881336525" fileName="JavaModulesClosure.java" startLine="37" startPosition="37" endLine="38" endPosition="41" />
-    <scopeInfo nodeId="4821808014881336680" fileName="JavaModulesClosure.java" startLine="42" startPosition="88" endLine="43" endPosition="19" />
+    <scopeInfo nodeId="4821808014881336680" fileName="JavaModulesClosure.java" startLine="42" startPosition="72" endLine="43" endPosition="19" />
     <scopeInfo nodeId="4821808014881282431" fileName="JavaModulesClosure.java" startLine="17" startPosition="71" endLine="19" endPosition="31" />
     <scopeInfo nodeId="4821808014881336415" fileName="JavaModulesClosure.java" startLine="23" startPosition="59" endLine="26" endPosition="5">
       <varInfo nodeId="4821808014881336417" varName="mod" />
