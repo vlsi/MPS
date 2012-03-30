@@ -15,29 +15,24 @@
  */
 package jetbrains.mps;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ex.ApplicationManagerEx;
-import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.ide.ApplicationLoadListener;
+import com.intellij.openapi.application.Application;
+import com.intellij.openapi.application.ex.ApplicationEx;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.annotations.NotNull;
 
-public class DoNotSave implements ApplicationComponent {
-  private static final Logger LOG = Logger.getLogger(DoNotSave.class); 
+public class DoNotSave implements ApplicationLoadListener {
+  private static final Logger LOG = Logger.getLogger(DoNotSave.class);
+  public static final String DO_NOT_SAVE = "do.not.save";
+
   @Override
-  public void initComponent() {
-    if (Boolean.valueOf(System.getProperty("do.not.save"))) {
-      ApplicationManagerEx.getApplicationEx().doNotSave();
+  public void beforeApplicationLoaded(Application application) {
+    if (isDoNotSave() && application instanceof ApplicationEx) {
+      ((ApplicationEx)application).doNotSave();
       LOG.debug("Do not save property was set to true. Not saving project anymore.");
     }
   }
 
-  @Override
-  public void disposeComponent() {
-  }
-
-  @NotNull
-  @Override
-  public String getComponentName() {
-    return "Do Not Save";
+  public static Boolean isDoNotSave() {
+    return Boolean.valueOf(System.getProperty(DO_NOT_SAVE));
   }
 }
