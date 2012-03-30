@@ -13,25 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.editorTabs.tabfactory.tabs.plaintabs;
+package jetbrains.mps.plugins.relations;
 
-import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.smodel.SNodePointer;
+import java.util.Comparator;
+import java.util.List;
 
-class PlainEditorTab {
-  private SNodePointer myNode;
-  private RelationDescriptor myTab;
+public class BaseOrder implements Comparator<RelationDescriptor> {
+  private List<String> myOrderedIds;
 
-  PlainEditorTab(SNodePointer node, RelationDescriptor tab) {
-    myNode = node;
-    myTab = tab;
+  public BaseOrder(List<String> orderedIds) {
+    myOrderedIds = orderedIds;
   }
 
-  public SNodePointer getNode() {
-    return myNode;
-  }
+  public int compare(RelationDescriptor d1, RelationDescriptor d2) {
+    String id1 = d1.getTitle();
+    String id2 = d2.getTitle();
 
-  public RelationDescriptor getTab() {
-    return myTab;
+    int i1 = myOrderedIds.indexOf(id1);
+    int i2 = myOrderedIds.indexOf(id2);
+
+    if (i1 == -1 || i2 == -1) return 0;
+
+    return i1 - i2;
   }
 }

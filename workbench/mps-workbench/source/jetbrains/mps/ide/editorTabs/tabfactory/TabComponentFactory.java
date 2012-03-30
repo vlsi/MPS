@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.editorTabs.tabfactory;
 
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.emptytabs.EmptyTabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.CreateModeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs.ButtonTabsComponent;
@@ -30,7 +30,7 @@ import javax.swing.JComponent;
 import java.util.Set;
 
 public abstract class TabComponentFactory {
-  public static TabsComponent createTabsComponent(final SNodePointer baseNode, final Set<EditorTabDescriptor> possibleTabs, JComponent component, NodeChangeCallback callback, CreateModeCallback createModeCallback, IOperationContext operationContext) {
+  public static TabsComponent createTabsComponent(final SNodePointer baseNode, final Set<RelationDescriptor> possibleTabs, JComponent component, NodeChangeCallback callback, CreateModeCallback createModeCallback, IOperationContext operationContext) {
     MyState state = ApplicationManager.getApplication().getComponent(EditorSettings.class).getState();
     if (!state.isShow()) {
       return new EmptyTabsComponent(baseNode);

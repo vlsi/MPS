@@ -16,7 +16,7 @@
 package jetbrains.mps.workbench.structureview;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.SNode;
 
@@ -24,10 +24,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class StructureUtil {
-  public static List<EditorTabDescriptor> getApplicableTabs(Project p, SNode node) {
-    List<EditorTabDescriptor> result = new ArrayList<EditorTabDescriptor>();
-    List<EditorTabDescriptor> tabs = p.getComponent(ProjectPluginManager.class).getTabDescriptors();
-    for (EditorTabDescriptor tab : tabs) {
+  public static List<RelationDescriptor> getApplicableTabs(Project p, SNode node) {
+    List<RelationDescriptor> result = new ArrayList<RelationDescriptor>();
+    List<RelationDescriptor> tabs = p.getComponent(ProjectPluginManager.class).getTabDescriptors();
+    for (RelationDescriptor tab : tabs) {
       if (!tab.isApplicable(node)) continue;
       result.add(tab);
     }

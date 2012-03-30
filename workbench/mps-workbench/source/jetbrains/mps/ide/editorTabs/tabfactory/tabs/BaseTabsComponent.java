@@ -23,7 +23,7 @@ import com.intellij.openapi.vcs.FileStatusListener;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import gnu.trove.THashMap;
-import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.ide.editorTabs.TabColorProvider;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
@@ -52,7 +52,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
   private final NodeChangeCallback myCallback;
   private CreateModeCallback myCreateModeCallback;
   protected final SNodePointer myBaseNode;
-  protected final Set<EditorTabDescriptor> myPossibleTabs;
+  protected final Set<RelationDescriptor> myPossibleTabs;
   protected final JComponent myEditor;
   protected final boolean myShowGrayed;
   private TabColorProvider myColorProvider = null;
@@ -68,7 +68,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
   private MySModelCommandListener myRootAdditionListener = new MySModelCommandListener();
   private MyFileStatusListener myFileStatusListener = new MyFileStatusListener();
 
-  protected BaseTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, CreateModeCallback createModeCallback, IOperationContext operationContext) {
+  protected BaseTabsComponent(SNodePointer baseNode, Set<RelationDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, CreateModeCallback createModeCallback, IOperationContext operationContext) {
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
     myEditor = editor;
@@ -85,7 +85,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
         onNodeChange(newNode);
       }
     }) {
-      protected EditorTabDescriptor getCurrentAspect() {
+      protected RelationDescriptor getCurrentAspect() {
         return getCurrentTabAspect();
       }
     };
@@ -136,20 +136,20 @@ public abstract class BaseTabsComponent implements TabsComponent {
     myCallback.changeNode(node);
   }
 
-  protected void enterCreateMode(EditorTabDescriptor tab) {
+  protected void enterCreateMode(RelationDescriptor tab) {
     setLastNode(null);
     if (myCreateModeCallback != null) {
       myCreateModeCallback.enterCreateMode(new CreatePanel(tab));
     }
   }
 
-  protected Map<EditorTabDescriptor, List<SNode>> updateDocumentsAndNodes() {
+  protected Map<RelationDescriptor, List<SNode>> updateDocumentsAndNodes() {
     List<Document> editedDocumentsNew = new ArrayList<Document>();
     List<SNodePointer> editedNodesNew = new ArrayList<SNodePointer>();
 
-    Map<EditorTabDescriptor, List<SNode>> result = new THashMap<EditorTabDescriptor, List<SNode>>();
+    Map<RelationDescriptor, List<SNode>> result = new THashMap<RelationDescriptor, List<SNode>>();
     getTabRemovalListener().clearAspects();
-    for (EditorTabDescriptor d : myPossibleTabs) {
+    for (RelationDescriptor d : myPossibleTabs) {
       List<SNode> nodes = new ArrayList<SNode>();
       for (SNode n : d.getNodes(myBaseNode.getNode())) {
         if (n == null) continue;
@@ -229,7 +229,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
   ///-------------grayed mode----------------
 
   private class CreatePanel extends JPanel {
-    public CreatePanel(final EditorTabDescriptor tab) {
+    public CreatePanel(final RelationDescriptor tab) {
       super(new BorderLayout());
 
       JLabel label = new JLabel("Click to create new aspect");

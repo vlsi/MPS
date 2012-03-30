@@ -386,7 +386,7 @@ public class QueriesGenerated {
         }
 
         public String getDescriptionText(String pattern) {
-          return "downcast to lower semantic level";
+          return "downcast to lower relations level";
         }
       });
     }

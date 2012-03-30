@@ -13,25 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.editorTabs.tabfactory.tabs.plaintabs;
+package jetbrains.mps.plugins.actions;
 
-import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.workbench.action.BaseAction;
+import org.jetbrains.annotations.NotNull;
 
-class PlainEditorTab {
-  private SNodePointer myNode;
-  private RelationDescriptor myTab;
+import javax.swing.Icon;
 
-  PlainEditorTab(SNodePointer node, RelationDescriptor tab) {
-    myNode = node;
-    myTab = tab;
+public abstract class GeneratedAction extends BaseAction {
+  public GeneratedAction() {
   }
 
-  public SNodePointer getNode() {
-    return myNode;
+  protected GeneratedAction(String text) {
+    super(text);
   }
 
-  public RelationDescriptor getTab() {
-    return myTab;
+  protected GeneratedAction(String text, String description, Icon icon) {
+    super(text, description, icon);
   }
 }

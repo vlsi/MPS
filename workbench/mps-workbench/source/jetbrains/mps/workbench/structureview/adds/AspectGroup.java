@@ -19,16 +19,16 @@ import com.intellij.ide.util.treeView.smartTree.Group;
 import com.intellij.ide.util.treeView.smartTree.TreeElement;
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.openapi.editor.colors.TextAttributesKey;
-import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 
 import javax.swing.Icon;
 import java.util.Collection;
 
 class AspectGroup implements Group {
   public Collection<TreeElement> myChildren;
-  private final EditorTabDescriptor myTab;
+  private final RelationDescriptor myTab;
 
-  public AspectGroup(EditorTabDescriptor tab, Collection<TreeElement> children) {
+  public AspectGroup(RelationDescriptor tab, Collection<TreeElement> children) {
     myChildren = children;
     myTab = tab;
   }
@@ -37,7 +37,7 @@ class AspectGroup implements Group {
     return new TabPresentationAdapter(myTab);
   }
 
-  public EditorTabDescriptor getTab() {
+  public RelationDescriptor getTab() {
     return myTab;
   }
 
@@ -46,9 +46,9 @@ class AspectGroup implements Group {
   }
 
   private static class TabPresentationAdapter implements ItemPresentation {
-    private final EditorTabDescriptor myTab;
+    private final RelationDescriptor myTab;
 
-    public TabPresentationAdapter(EditorTabDescriptor tab) {
+    public TabPresentationAdapter(RelationDescriptor tab) {
       myTab = tab;
     }
 

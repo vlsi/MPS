@@ -17,7 +17,7 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs;
 
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.util.ui.UIUtil;
-import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.ide.editorTabs.TabColorProvider;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.icons.IconManager;
@@ -39,12 +39,12 @@ class ButtonEditorTab {
     private ButtonTabsComponent myTabComponent;
     private NodeChangeCallback myCallback;
     private int myIndex;
-    private EditorTabDescriptor myDescriptor;
+    private RelationDescriptor myDescriptor;
     private SNodePointer myBaseNode;
     private TabColorProvider myTabColorProvider;
     private SelectTabAction mySelectTabAction;
 
-    public ButtonEditorTab(ButtonTabsComponent tabComponent, NodeChangeCallback callback, int index, EditorTabDescriptor descriptor, SNodePointer baseNode, TabColorProvider tabColorProvider, JComponent editor) {
+    public ButtonEditorTab(ButtonTabsComponent tabComponent, NodeChangeCallback callback, int index, RelationDescriptor descriptor, SNodePointer baseNode, TabColorProvider tabColorProvider, JComponent editor) {
         myTabComponent = tabComponent;
         myCallback = callback;
         myIndex = index;
@@ -54,7 +54,7 @@ class ButtonEditorTab {
         mySelectTabAction = createAction(editor);
     }
 
-    public EditorTabDescriptor getDescriptor() {
+    public RelationDescriptor getDescriptor() {
         return myDescriptor;
     }
 

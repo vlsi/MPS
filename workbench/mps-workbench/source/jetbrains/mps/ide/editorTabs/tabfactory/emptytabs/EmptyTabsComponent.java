@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.editorTabs.tabfactory.emptytabs;
 
 import com.intellij.openapi.editor.Document;
-import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.smodel.SNodePointer;
@@ -32,7 +32,7 @@ public class EmptyTabsComponent implements TabsComponent {
     myNode = node;
   }
 
-  public EditorTabDescriptor getCurrentTabAspect() {
+  public RelationDescriptor getCurrentTabAspect() {
     throw new UnsupportedOperationException();
   }
 
