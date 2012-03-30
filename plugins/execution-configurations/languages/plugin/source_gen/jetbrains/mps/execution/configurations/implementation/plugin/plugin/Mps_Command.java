@@ -32,7 +32,6 @@ public class Mps_Command {
   private String myConfigurationPath_String = Mps_Command.getDefaultConfigurationPath();
   private String mySystemPath_String = Mps_Command.getDefaultSystemPath();
   private String myDebuggerSettings_String;
-  private boolean myReadOnly_Boolean = true;
 
   public Mps_Command() {
   }
@@ -87,14 +86,6 @@ public class Mps_Command {
     return this;
   }
 
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public Mps_Command setReadOnly(boolean readOnly) {
-    // this methods only exist to not make users regenerate their code 
-    myReadOnly_Boolean = readOnly;
-    return this;
-  }
-
   public Mps_Command setVirtualMachineParameters_String(String virtualMachineParameters) {
     if (virtualMachineParameters != null) {
       myVirtualMachineParameters_String = virtualMachineParameters;
@@ -130,17 +121,12 @@ public class Mps_Command {
     return this;
   }
 
-  public Mps_Command setReadOnly_Boolean(boolean readOnly) {
-    myReadOnly_Boolean = readOnly;
-    return this;
-  }
-
   public ProcessHandler createProcess() throws ExecutionException {
     return new Mps_Command().setVirtualMachineParameters_String(myVirtualMachineParameters_String).setJrePath_String(myJrePath_String).setConfigurationPath_String(myConfigurationPath_String).setSystemPath_String(mySystemPath_String).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(null);
   }
 
   public ProcessHandler createProcess(File projectToOpen) throws ExecutionException {
-    return new Java_Command().setVirtualMachineParameter_ProcessBuilderCommandPart(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), myVirtualMachineParameters_String, new PropertyCommandPart("idea.system.path", mySystemPath_String), new PropertyCommandPart("idea.config.path", myConfigurationPath_String), new PropertyCommandPart("do.not.save", (((projectToOpen != null) && myReadOnly_Boolean) + ""))))).setDebuggerSettings_String(myDebuggerSettings_String).setWorkingDirectory_File(new File(System.getProperty("user.dir"))).setJrePath_String(myJrePath_String).createProcess(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), projectToOpen)), "jetbrains.mps.Launcher", Mps_Command.getClassPath());
+    return new Java_Command().setVirtualMachineParameter_ProcessBuilderCommandPart(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), myVirtualMachineParameters_String, new PropertyCommandPart("idea.system.path", mySystemPath_String), new PropertyCommandPart("idea.config.path", myConfigurationPath_String)))).setDebuggerSettings_String(myDebuggerSettings_String).setWorkingDirectory_File(new File(System.getProperty("user.dir"))).setJrePath_String(myJrePath_String).createProcess(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), projectToOpen)), "jetbrains.mps.Launcher", Mps_Command.getClassPath());
   }
 
   public static IDebugger getDebugger() {

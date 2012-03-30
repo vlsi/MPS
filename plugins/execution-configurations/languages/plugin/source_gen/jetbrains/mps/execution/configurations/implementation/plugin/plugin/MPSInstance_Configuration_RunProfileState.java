@@ -14,10 +14,16 @@ import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import java.io.File;
 import com.intellij.execution.ui.ConsoleView;
 import jetbrains.mps.execution.api.configurations.ConsoleCreator;
 import jetbrains.mps.ide.actions.JavaStackTraceFilter;
 import com.intellij.execution.process.ProcessHandler;
+import jetbrains.mps.execution.api.commands.OutputRedirector;
+import com.intellij.execution.process.ProcessAdapter;
+import com.intellij.execution.process.ProcessEvent;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.execution.api.configurations.ConsoleProcessListener;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionResult;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionConsole;
@@ -48,10 +54,23 @@ public class MPSInstance_Configuration_RunProfileState extends DebuggerRunProfil
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
+
+    final Tuples._2<File, File> files = myRunConfiguration.prepareFilesToOpenAndToDelete(project);
+
     ConsoleView console = ConsoleCreator.createConsoleView(project, false);
     console.addMessageFilter(new JavaStackTraceFilter(project));
+    ProcessHandler process = new Mps_Command().setVirtualMachineParameters_String(myRunConfiguration.getVmOptions()).setJrePath_String(myRunConfiguration.getJrePath()).setConfigurationPath_String(myRunConfiguration.expandPath(myRunConfiguration.getConfigurationPath())).setSystemPath_String(myRunConfiguration.expandPath(myRunConfiguration.getSystemPath())).setDebuggerSettings_String(myDebuggerSettings.getCommandLine(true)).createProcess(files._0());
+    if (files._1() != null) {
+      OutputRedirector.redirect(process, new ProcessAdapter() {
+        @Override
+        public void processTerminated(ProcessEvent event) {
+          super.processTerminated(event);
+          FileUtil.delete(files._1());
+        }
+      });
+    }
     {
-      ProcessHandler _processHandler = new Mps_Command().setVirtualMachineParameters_String(myRunConfiguration.getVmOptions()).setJrePath_String(myRunConfiguration.getJrePath()).setConfigurationPath_String(myRunConfiguration.expandPath(myRunConfiguration.getConfigurationPath())).setSystemPath_String(myRunConfiguration.expandPath(myRunConfiguration.getSystemPath())).setReadOnly_Boolean(myRunConfiguration.getOpenCurrentProject()).setDebuggerSettings_String(myDebuggerSettings.getCommandLine(true)).createProcess(myRunConfiguration.getProjectFile(project));
+      ProcessHandler _processHandler = process;
       final ConsoleView _consoleView = console;
       _processHandler.addProcessListener(new ConsoleProcessListener(_consoleView));
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {

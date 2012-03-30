@@ -51,7 +51,7 @@ public class MPSInstance_Configuration_Editor extends SettingsEditorEx<MPSInstan
       configuration.setConfigurationPath(configuration.shinkPath(myConfigurationPath.getText()));
       Tuples._2<Boolean, String> value = myProjectChooser.getValue();
       configuration.setOpenCurrentProject((boolean) value._0());
-      configuration.setProjectToOpen(value._1());
+      configuration.setProjectToOpen(configuration.shinkPath(value._1()));
     }
   }
 
@@ -60,6 +60,6 @@ public class MPSInstance_Configuration_Editor extends SettingsEditorEx<MPSInstan
     myJrePath.setText(configuration.getJrePath());
     mySystemPath.setText(configuration.expandPath(configuration.getSystemPath()));
     myConfigurationPath.setText(configuration.expandPath(configuration.getConfigurationPath()));
-    myProjectChooser.reset(configuration.getOpenCurrentProject(), configuration.getProjectToOpen());
+    myProjectChooser.reset(configuration.getOpenCurrentProject(), configuration.expandPath(configuration.getProjectToOpen()));
   }
 }
