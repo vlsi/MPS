@@ -22,8 +22,15 @@ import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.kernel.model.SModelUtil;
+import java.util.Set;
+import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.util.NameUtil;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.LanguageAspect;
 
 public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
@@ -92,8 +99,21 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode concept = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getReferenceNode(), "jetbrains.mps.lang.constraints.structure.ConceptConstraints", true, false), "concept", false);
-            List<SNode> concepts = SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope());
-            return concepts;
+
+            Language currentLanguage = SModelUtil.getDeclaringLanguage(concept);
+            Set<String> allDescendants = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(NameUtil.nodeFQName(concept));
+
+            List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+
+            for (String descendant : allDescendants) {
+              SNode declaration = SModelUtil.findConceptDeclaration(descendant, GlobalScope.getInstance());
+              Language declaringLanguage = SModelUtil.getDeclaringLanguage(declaration);
+              if (eq_guz8cy_a0c0h0a0a0a0b0a1a0b0d(currentLanguage, declaringLanguage)) {
+                ListSequence.fromList(result).addElement(SNodeOperations.cast(declaringLanguage.findConceptDeclaration(NameUtil.shortNameFromLongName(descendant)), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
+              }
+            }
+
+            return result;
           }
 
           @Override
@@ -108,5 +128,12 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
 
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
     return LanguageAspect.CONSTRAINTS.is(model);
+  }
+
+  private static boolean eq_guz8cy_a0c0h0a0a0a0b0a1a0b0d(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }
