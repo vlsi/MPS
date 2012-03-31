@@ -34,6 +34,6 @@ public class BuildMps_ModuleDependencyExtendLanguage_Constraints extends BaseCon
   }
 
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.mps.structure.BuildMps_Language");
+    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.mps.structure.BuildMps_Language") || SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(parentNode), "jetbrains.mps.build.mps.structure.BuildMps_Language");
   }
 }

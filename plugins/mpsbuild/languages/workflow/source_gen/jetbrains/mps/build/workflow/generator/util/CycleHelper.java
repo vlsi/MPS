@@ -64,7 +64,7 @@ public class CycleHelper {
     }
     List<List<CycleHelper.Module>> cycles = Graphs.findStronglyConnectedComponents(graph);
     Collections.reverse(cycles);
-    int cycleCounter = 0;
+    List<SNode> cyclesToName = new ArrayList<SNode>();
     for (List<CycleHelper.Module> cycle : cycles) {
       if (cycle.size() < 2) {
         continue;
@@ -82,8 +82,7 @@ public class CycleHelper {
       SNode first = cycle.get(0).getModule();
       SModel model = SNodeOperations.getModel(first);
       SNode cycleX = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfJavaModule", null);
-      SPropertyOperations.set(cycleX, "name", "java.modules.cycle." + ++cycleCounter);
-      SPropertyOperations.set(cycleX, "outputFolder", SPropertyOperations.getString(project, "temporaryFolder") + "/" + SPropertyOperations.getString(cycleX, "name"));
+      cyclesToName.add(cycleX);
       SNodeOperations.insertPrevSiblingChild(first, cycleX);
 
       // build cycle sources & dependencies; trying to avoid duplication (which is not critical) 
@@ -149,6 +148,16 @@ public class CycleHelper {
         SLinkOperations.setTarget(mref, "target", jm, false);
         ListSequence.fromList(SLinkOperations.getTargets(cycleX, "dependencies", true)).addElement(mref);
       }
+    }
+    int cycleCounter = 0;
+    Collections.sort(cyclesToName, new Comparator<SNode>() {
+      public int compare(SNode n1, SNode n2) {
+        return new Integer(SNodeOperations.getIndexInParent(n1)).compareTo(SNodeOperations.getIndexInParent(n2));
+      }
+    });
+    for (SNode cycleX : cyclesToName) {
+      SPropertyOperations.set(cycleX, "name", "java.modules.cycle." + ++cycleCounter);
+      SPropertyOperations.set(cycleX, "outputFolder", SPropertyOperations.getString(project, "temporaryFolder") + "/" + SPropertyOperations.getString(cycleX, "name"));
     }
   }
 

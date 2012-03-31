@@ -12,12 +12,18 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class BuildSource_JavaDependencyLibrary_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_n4mr7u_a(editorContext, node);
+  }
+
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_n4mr7u_a_0(editorContext, node);
   }
 
   private EditorCell createCollection_n4mr7u_a(EditorContext editorContext, SNode node) {
@@ -25,12 +31,40 @@ public class BuildSource_JavaDependencyLibrary_Editor extends DefaultNodeEditor 
     editorCell.setCellId("Collection_n4mr7u_a");
     editorCell.addEditorCell(this.createConstant_n4mr7u_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_n4mr7u_b0(editorContext, node));
+    if (renderingCondition_n4mr7u_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_n4mr7u_c0(editorContext, node));
+    }
+    return editorCell;
+  }
+
+  private EditorCell createCollection_n4mr7u_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_n4mr7u_a_0");
+    editorCell.addEditorCell(this.createConstant_n4mr7u_a0_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_n4mr7u_b0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_n4mr7u_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "library");
     editorCell.setCellId("Constant_n4mr7u_a0");
+    buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_n4mr7u_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(reexport)");
+    editorCell.setCellId("Constant_n4mr7u_c0");
+    buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    delete_reexport_inJavaDependencyLibrary.setCellActions(editorCell, node, editorContext);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_n4mr7u_a0_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reexport:");
+    editorCell.setCellId("Constant_n4mr7u_a0_0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
@@ -52,6 +86,28 @@ public class BuildSource_JavaDependencyLibrary_Editor extends DefaultNodeEditor 
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private EditorCell createProperty_n4mr7u_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("reexport");
+    provider.setNoTargetText("<no reexport>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_reexport");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_n4mr7u_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "reexport");
   }
 
   public static class _Inline_n4mr7u_a1a extends InlineCellProvider {

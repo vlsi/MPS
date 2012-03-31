@@ -357,9 +357,18 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.ide.findusages.caches.MPSFileBasedIndexProjectHandler</implementation-class>
+      <interface-class>com.intellij.psi.PsiFileFactory</interface-class>
+      <implementation-class>jetbrains.mps.EmptyPsiFileFactory</implementation-class>
     </component>
 
+    <component>
+      <interface-class>com.intellij.psi.search.PsiSearchHelper</interface-class>
+      <implementation-class>jetbrains.mps.EmptyPsiSearchHelper</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.findusages.caches.MPSFileBasedIndexProjectHandler</implementation-class>
+    </component>
     <!-- language development workbench -->
 
     <component>

@@ -5,19 +5,21 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
+  <language namespace="fe9d76d7-5809-45c9-ae28-a40915b4d6ff(jetbrains.mps.lang.checkedName)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="tp3b" modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="tpcu" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
-  <import index="tp4s" modelUID="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" version="1" />
+  <import index="tp4s" modelUID="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" version="4" />
   <import index="msyo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" />
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="mjwp" modelUID="r:82ee0621-a317-4778-9ea5-72584de35a48(jetbrains.mps.lang.checkedName.behavior)" version="0" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
-  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="5" implicit="yes" />
   <import index="tpcn" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" version="-1" implicit="yes" />
   <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" implicit="yes" />
+  <import index="4j10" modelUID="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" version="0" implicit="yes" />
   <roots>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877240100">
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp3b.1197044488845" resolveInfo="FinderDeclaration" />
@@ -132,16 +134,16 @@
     </node>
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="5003188907305392372">
       <property name="name" nameId="tpck.1169194664001" value="getPropertyToCheck" />
-      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="tp4s.5003188907305392322" resolveInfo="getPropertyToCheck" />
+      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="mjwp.4844813484172611473" resolveInfo="getPropertyToCheck" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5003188907305392375">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5003188907305392380">
-          <node role="expression" roleId="tpee.1068580123156" type="tp4k.PropertyRefExpression" typeId="tp4k.1628770029971140534" id="5003188907305392381">
-            <link role="propertyDeclaration" roleId="tp4k.1628770029971140536" targetNodeId="tp3b.1197385993272" resolveInfo="description" />
-            <node role="nodeExpr" roleId="tp4k.1628770029971140535" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="5003188907305392382" />
+          <node role="expression" roleId="tpee.1068580123156" type="4j10.PropertyRefExpression" typeId="4j10.4844813484172611385" id="5003188907305392381">
+            <link role="propertyDeclaration" roleId="4j10.4844813484172611387" targetNodeId="tp3b.1197385993272" resolveInfo="description" />
+            <node role="nodeExpr" roleId="4j10.4844813484172611386" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="5003188907305392382" />
           </node>
         </node>
       </node>
-      <node role="returnType" roleId="tpee.1068580123133" type="tp4k.PropertyRefType" typeId="tp4k.1628770029971140539" id="5003188907305392377" />
+      <node role="returnType" roleId="tpee.1068580123133" type="4j10.PropertyRefType" typeId="4j10.4844813484172611390" id="5003188907305392377" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5003188907305392378" />
     </node>
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="8952337903384724634">

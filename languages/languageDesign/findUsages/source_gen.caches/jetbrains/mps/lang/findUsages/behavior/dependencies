@@ -90,12 +90,12 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.checkedName.PropertyReference" />
+    <classNode dependClassName="jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.behavior.AbstractFinderDeclaration_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ICheckedNamePolicy_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ICheckedNamePolicy_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.IConceptAspect_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />

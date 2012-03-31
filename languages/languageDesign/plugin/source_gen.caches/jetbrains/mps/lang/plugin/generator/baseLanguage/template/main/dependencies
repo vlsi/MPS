@@ -12,6 +12,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.behavior.SuperClassifierExpresson_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression_Behavior" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.CreateRootRuleContext" />
@@ -32,11 +33,7 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ApplicationPluginDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.BaseToolDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.EditorTab_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.FileGeneratorDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.GenerationListenerDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.GroupAnchor_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IconResourceBundle_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IconResource_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IdeaInitializerDescriptor_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.KeyMapKeystroke_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.KeymapChangesDeclaration_Behavior" />
@@ -47,6 +44,7 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.PreferencesComponentDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ProjectPluginDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.generator.util.PluginNameUtils" />
+    <classNode dependClassName="jetbrains.mps.lang.resources.behavior.IconResource_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
@@ -64,7 +62,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
-    <classNode dependClassName="jetbrains.mps.util.JavaNameUtil" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
   </dependency>
 </dependenciesRoot>

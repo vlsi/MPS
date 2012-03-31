@@ -29,6 +29,6 @@ public class IconResourceBundle_ExtractMethodIcons implements IconResourceBundle
   }
 
   public static IconResourceBundle_ExtractMethodIcons getInstance() {
-    return INSTANCE;
+    return IconResourceBundle_ExtractMethodIcons.INSTANCE;
   }
 }

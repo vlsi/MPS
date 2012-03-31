@@ -12,7 +12,6 @@ import jetbrains.mps.project.GlobalScope;
 public class DebuggableNodeItem extends BaseConcept {
   public static final String concept = "jetbrains.mps.debugger.api.lang.structure.DebuggableNodeItem";
   public static final String DECLARATION = "declaration";
-  public static final String CREATE_BREAKPOINT = "createBreakpoint";
   public static final String PROPERTY_STRING_GETTER = "propertyStringGetter";
 
   public DebuggableNodeItem(SNode node) {
@@ -25,14 +24,6 @@ public class DebuggableNodeItem extends BaseConcept {
 
   public void setDeclaration(ConceptDeclaration node) {
     super.setReferent(DebuggableNodeItem.DECLARATION, node);
-  }
-
-  public ConceptFunction_CreateBreakpoint_Deprecated getCreateBreakpoint() {
-    return (ConceptFunction_CreateBreakpoint_Deprecated) this.getChild(ConceptFunction_CreateBreakpoint_Deprecated.class, DebuggableNodeItem.CREATE_BREAKPOINT);
-  }
-
-  public void setCreateBreakpoint(ConceptFunction_CreateBreakpoint_Deprecated node) {
-    super.setChild(DebuggableNodeItem.CREATE_BREAKPOINT, node);
   }
 
   public ConceptFunction_PropertyStringGetter getPropertyStringGetter() {

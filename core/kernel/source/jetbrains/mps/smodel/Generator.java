@@ -126,6 +126,11 @@ public class Generator extends AbstractModule {
     return myGeneratorDescriptor;
   }
 
+  @Override
+  public void reloadFromDisk(boolean reloadClasses) {
+    //do nothing. reloaded by containing language
+  }
+
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
     assert moduleDescriptor instanceof GeneratorDescriptor;
 

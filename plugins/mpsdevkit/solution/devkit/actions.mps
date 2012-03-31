@@ -8,6 +8,8 @@
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)" />
+  <language namespace="982eb8df-2c96-4bd7-9963-11712ea622e5(jetbrains.mps.lang.resources)" />
+  <language namespace="63650c59-16c8-498a-99c8-005c7ee9515d(jetbrains.mps.lang.access)" />
   <import index="iwwu" modelUID="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" version="-1" />
   <import index="tpcu" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -97,12 +99,14 @@
   <import index="1d7m" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.ide.editor(MPS.Editor/jetbrains.mps.ide.editor@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
-  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
+  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="8" implicit="yes" />
   <import index="tprs" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
+  <import index="1oap" modelUID="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" version="0" implicit="yes" />
+  <import index="qff7" modelUID="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8586967776370449177">
       <property name="name" nameId="tpck.1169194664001" value="RenameLanguage" />
@@ -897,8 +901,8 @@
         </node>
       </node>
     </node>
-    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="3273304147471139916">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/workbench/mps-platform/source/jetbrains/mps/fileTypes/icons/devkit.png" />
+    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="3273304147471139916">
+      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/workbench/mps-platform/source/jetbrains/mps/fileTypes/icons/devkit.png" />
     </node>
   </root>
   <root id="5883033498657845969">
@@ -1085,8 +1089,8 @@
       <property name="isOptional" nameId="tp4k.1221669969834" value="true" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="kt54.~MPSDataKeys%dNAMESPACE" resolveInfo="NAMESPACE" />
     </node>
-    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="3273304147471066449">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/workbench/mps-platform/source/jetbrains/mps/fileTypes/icons/projectLanguage.png" />
+    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="3273304147471066449">
+      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/workbench/mps-platform/source/jetbrains/mps/fileTypes/icons/projectLanguage.png" />
     </node>
   </root>
   <root id="1744445256079578595">
@@ -1417,8 +1421,8 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1744445256079578724" />
       <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1744445256079578725" />
     </node>
-    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091404">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/solution/icons/editor.png" />
+    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="4470409037201091404">
+      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/solution/icons/editor.png" />
     </node>
   </root>
   <root id="1744445256079578766">
@@ -1494,8 +1498,8 @@
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="5xh9.~MPSCommonDataKeys%dOPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
       <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="8898893144448210023" />
     </node>
-    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091398">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/solution/icons/structure.png" />
+    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="4470409037201091398">
+      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/solution/icons/structure.png" />
     </node>
   </root>
   <root id="1744445256079578802">
@@ -1651,8 +1655,8 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tp4k.ExecuteLightweightCommandStatement" typeId="tp4k.1225441341971" id="3465865320786305508">
-          <node role="commandClosureLiteral" roleId="tp4k.1225441160167" type="tp4k.CommandClosureLiteral" typeId="tp4k.1225441216717" id="3465865320786305509">
+        <node role="statement" roleId="tpee.1068581517665" type="qff7.ExecuteLightweightCommandStatement" typeId="qff7.8974276187400348181" id="3465865320786305508">
+          <node role="commandClosureLiteral" roleId="qff7.8974276187400348171" type="qff7.CommandClosureLiteral" typeId="qff7.8974276187400348173" id="3465865320786305509">
             <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="3465865320786305510">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="3465865320786305511">
                 <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3465865320786305512">
@@ -1744,8 +1748,8 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tp4k.ExecuteCommandStatement" typeId="tp4k.1225441285519" id="3465865320786305548">
-          <node role="commandClosureLiteral" roleId="tp4k.1225441160167" type="tp4k.CommandClosureLiteral" typeId="tp4k.1225441216717" id="3465865320786305549">
+        <node role="statement" roleId="tpee.1068581517665" type="qff7.ExecuteCommandStatement" typeId="qff7.8974276187400348177" id="3465865320786305548">
+          <node role="commandClosureLiteral" roleId="qff7.8974276187400348171" type="qff7.CommandClosureLiteral" typeId="qff7.8974276187400348173" id="3465865320786305549">
             <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="3465865320786305550">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="3465865320786305551">
                 <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3465865320786305552">
@@ -2093,8 +2097,8 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tp4k.ExecuteCommandStatement" typeId="tp4k.1225441285519" id="3465865320786305683">
-          <node role="commandClosureLiteral" roleId="tp4k.1225441160167" type="tp4k.CommandClosureLiteral" typeId="tp4k.1225441216717" id="3465865320786305684">
+        <node role="statement" roleId="tpee.1068581517665" type="qff7.ExecuteCommandStatement" typeId="qff7.8974276187400348177" id="3465865320786305683">
+          <node role="commandClosureLiteral" roleId="qff7.8974276187400348171" type="qff7.CommandClosureLiteral" typeId="qff7.8974276187400348173" id="3465865320786305684">
             <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="3465865320786305685">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="3465865320786305686">
                 <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3465865320786305687">
@@ -2509,8 +2513,8 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tp4k.ExecuteLightweightCommandStatement" typeId="tp4k.1225441341971" id="3465865320786327968">
-          <node role="commandClosureLiteral" roleId="tp4k.1225441160167" type="tp4k.CommandClosureLiteral" typeId="tp4k.1225441216717" id="3465865320786327969">
+        <node role="statement" roleId="tpee.1068581517665" type="qff7.ExecuteLightweightCommandStatement" typeId="qff7.8974276187400348181" id="3465865320786327968">
+          <node role="commandClosureLiteral" roleId="qff7.8974276187400348171" type="qff7.CommandClosureLiteral" typeId="qff7.8974276187400348173" id="3465865320786327969">
             <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="3465865320786327970">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3465865320786327971">
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="3465865320786327972">
@@ -2794,8 +2798,8 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tp4k.ExecuteCommandStatement" typeId="tp4k.1225441285519" id="1683977858888862750">
-          <node role="commandClosureLiteral" roleId="tp4k.1225441160167" type="tp4k.CommandClosureLiteral" typeId="tp4k.1225441216717" id="1683977858888862751">
+        <node role="statement" roleId="tpee.1068581517665" type="qff7.ExecuteCommandStatement" typeId="qff7.8974276187400348177" id="1683977858888862750">
+          <node role="commandClosureLiteral" roleId="qff7.8974276187400348171" type="qff7.CommandClosureLiteral" typeId="qff7.8974276187400348173" id="1683977858888862751">
             <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="1683977858888862752">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1683977858888862753">
                 <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1683977858888862754">
@@ -4020,8 +4024,8 @@
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="1d7m.~MPSEditorDataKeys%dEDITOR_CELL" resolveInfo="EDITOR_CELL" />
       <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="8898893144448210090" />
     </node>
-    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091372">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/solution/icons/cellExplorer.png" />
+    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="4470409037201091372">
+      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/solution/icons/cellExplorer.png" />
     </node>
   </root>
   <root id="2662234144540709043">
@@ -5020,8 +5024,8 @@
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8970236339104100173" />
     </node>
-    <node role="toolIcon" roleId="tp4k.6791676465872004185" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="6791676465872322072">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/workbench/mps-platform/source/jetbrains/mps/ide/icons/nodes/default.png" />
+    <node role="toolIcon" roleId="tp4k.6791676465872004185" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="6791676465872322072">
+      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/workbench/mps-platform/source/jetbrains/mps/ide/icons/nodes/default.png" />
     </node>
     <node role="toolInitBlock" roleId="tp4k.8096638938275469614" type="tp4k.InitBlock" typeId="tp4k.1213888653896" id="7779150961553183890">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7779150961553183891">
@@ -5404,8 +5408,8 @@
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~JPanel" resolveInfo="JPanel" />
       </node>
     </node>
-    <node role="toolIcon" roleId="tp4k.6791676465872004185" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="6791676465872322071">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/workbench/mps-platform/source/jetbrains/mps/fileTypes/icons/project.png" />
+    <node role="toolIcon" roleId="tp4k.6791676465872004185" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="6791676465872322071">
+      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/workbench/mps-platform/source/jetbrains/mps/fileTypes/icons/project.png" />
     </node>
     <node role="toolInitBlock" roleId="tp4k.8096638938275469614" type="tp4k.InitBlock" typeId="tp4k.1213888653896" id="7779150961553184039">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7779150961553184040">
@@ -5642,8 +5646,8 @@
         <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
       </node>
     </node>
-    <node role="toolIcon" roleId="tp4k.6791676465872004185" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="6791676465872322073">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/workbench/mps-platform/source/jetbrains/mps/fileTypes/icons/model.png" />
+    <node role="toolIcon" roleId="tp4k.6791676465872004185" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="6791676465872322073">
+      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/workbench/mps-platform/source/jetbrains/mps/fileTypes/icons/model.png" />
     </node>
     <node role="toolInitBlock" roleId="tp4k.8096638938275469614" type="tp4k.InitBlock" typeId="tp4k.1213888653896" id="7779150961553183974">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7779150961553183975">
@@ -5840,8 +5844,8 @@
                         </node>
                       </node>
                       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2191995028863072572">
-                        <node role="statement" roleId="tpee.1068581517665" type="tp4k.ExecuteWriteActionStatement" typeId="tp4k.1225441380935" id="2191995028863072578">
-                          <node role="commandClosureLiteral" roleId="tp4k.1225441160167" type="tp4k.CommandClosureLiteral" typeId="tp4k.1225441216717" id="2191995028863072579">
+                        <node role="statement" roleId="tpee.1068581517665" type="qff7.ExecuteWriteActionStatement" typeId="qff7.8974276187400348183" id="2191995028863072578">
+                          <node role="commandClosureLiteral" roleId="qff7.8974276187400348171" type="qff7.CommandClosureLiteral" typeId="qff7.8974276187400348173" id="2191995028863072579">
                             <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="2191995028863072580">
                               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2191995028863072581">
                                 <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2191995028863072582">
@@ -5894,8 +5898,8 @@
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="6tyf.~PlatformDataKeys%dPROJECT" resolveInfo="PROJECT" />
       <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="8898893144448209991" />
     </node>
-    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091386">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/solution/icons/reload.png" />
+    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="4470409037201091386">
+      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/solution/icons/reload.png" />
     </node>
   </root>
   <root id="2191995028863072592">
@@ -7073,8 +7077,8 @@
         </node>
       </node>
     </node>
-    <node role="toolIcon" roleId="tp4k.6791676465872004185" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="8513716958726547094">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/languages/languageDesign/typesystem/icons/types.png" />
+    <node role="toolIcon" roleId="tp4k.6791676465872004185" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="8513716958726547094">
+      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/languages/languageDesign/typesystem/icons/types.png" />
     </node>
   </root>
   <root id="8513716958726604212">
@@ -7898,8 +7902,8 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tp4k.ExecuteLightweightCommandStatement" typeId="tp4k.1225441341971" id="6252705307027051899">
-          <node role="commandClosureLiteral" roleId="tp4k.1225441160167" type="tp4k.CommandClosureLiteral" typeId="tp4k.1225441216717" id="6252705307027051900">
+        <node role="statement" roleId="tpee.1068581517665" type="qff7.ExecuteLightweightCommandStatement" typeId="qff7.8974276187400348181" id="6252705307027051899">
+          <node role="commandClosureLiteral" roleId="qff7.8974276187400348171" type="qff7.CommandClosureLiteral" typeId="qff7.8974276187400348173" id="6252705307027051900">
             <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="6252705307027051901">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6252705307027051902">
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="6252705307027051903">
@@ -8031,8 +8035,8 @@
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="5xh9.~MPSCommonDataKeys%dSCOPE" resolveInfo="SCOPE" />
       <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="6252705307027051951" />
     </node>
-    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="6252705307027051952">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/workbench/mps-workbench/icons/find.png" />
+    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="6252705307027051952">
+      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/workbench/mps-workbench/icons/find.png" />
     </node>
   </root>
   <root id="6252705307027051953">
@@ -8113,8 +8117,8 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tp4k.ExecuteLightweightCommandStatement" typeId="tp4k.1225441341971" id="6252705307027051986">
-          <node role="commandClosureLiteral" roleId="tp4k.1225441160167" type="tp4k.CommandClosureLiteral" typeId="tp4k.1225441216717" id="6252705307027051987">
+        <node role="statement" roleId="tpee.1068581517665" type="qff7.ExecuteLightweightCommandStatement" typeId="qff7.8974276187400348181" id="6252705307027051986">
+          <node role="commandClosureLiteral" roleId="qff7.8974276187400348171" type="qff7.CommandClosureLiteral" typeId="qff7.8974276187400348173" id="6252705307027051987">
             <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="6252705307027051988">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6252705307027051989">
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="6252705307027051990">
@@ -8337,8 +8341,8 @@
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="5xh9.~MPSCommonDataKeys%dSCOPE" resolveInfo="SCOPE" />
       <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="6252705307027052076" />
     </node>
-    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="6252705307027052077">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/workbench/mps-workbench/icons/find.png" />
+    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="6252705307027052077">
+      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/workbench/mps-workbench/icons/find.png" />
     </node>
   </root>
   <root id="2165106376654390214">
@@ -9480,8 +9484,8 @@
         <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2970389781193170240" resolveInfo="Actions" />
       </node>
     </node>
-    <node role="icon" roleId="tp4k.2386275659558598338" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="2970389781193170269">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/actions.png" />
+    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="2970389781193170269">
+      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/actions.png" />
     </node>
     <node role="createTabBlock" roleId="tp4k.1640281869714699888" type="tp4k.CreateTabBlock" typeId="tp4k.1640281869714699879" id="2970389781193170270">
       <property name="commandOnCreate" nameId="tp4k.1640281869714699886" value="true" />
@@ -9585,8 +9589,8 @@
         </node>
       </node>
     </node>
-    <node role="icon" roleId="tp4k.2386275659558598338" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="2565896126719552264">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/behavior.png" />
+    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="2565896126719552264">
+      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/behavior.png" />
     </node>
     <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.Order" typeId="tp4k.2450897840534683975" id="2565896126719552265">
       <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="2565896126719552266">
@@ -9743,8 +9747,8 @@
         <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2565896126719599486" resolveInfo="Generator" />
       </node>
     </node>
-    <node role="icon" roleId="tp4k.2386275659558598338" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="2565896126719599533">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/reduction.png" />
+    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="2565896126719599533">
+      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/reduction.png" />
     </node>
     <node role="createTabBlock" roleId="tp4k.1640281869714699888" type="tp4k.CreateTabBlock" typeId="tp4k.1640281869714699879" id="2565896126719599534">
       <property name="commandOnCreate" nameId="tp4k.1640281869714699886" value="false" />
@@ -10099,8 +10103,8 @@
               </node>
             </node>
           </node>
-          <node role="statement" roleId="tpee.1068581517665" type="tp4k.ExecuteLightweightCommandStatement" typeId="tp4k.1225441341971" id="2565896126719599687">
-            <node role="commandClosureLiteral" roleId="tp4k.1225441160167" type="tp4k.CommandClosureLiteral" typeId="tp4k.1225441216717" id="2565896126719599688">
+          <node role="statement" roleId="tpee.1068581517665" type="qff7.ExecuteLightweightCommandStatement" typeId="qff7.8974276187400348181" id="2565896126719599687">
+            <node role="commandClosureLiteral" roleId="qff7.8974276187400348171" type="qff7.CommandClosureLiteral" typeId="qff7.8974276187400348173" id="2565896126719599688">
               <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="2565896126719599689">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2565896126719599690">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="2565896126719599691">
@@ -10253,8 +10257,8 @@
               </node>
             </node>
           </node>
-          <node role="statement" roleId="tpee.1068581517665" type="tp4k.ExecuteLightweightCommandStatement" typeId="tp4k.1225441341971" id="2565896126719599751">
-            <node role="commandClosureLiteral" roleId="tp4k.1225441160167" type="tp4k.CommandClosureLiteral" typeId="tp4k.1225441216717" id="2565896126719599752">
+          <node role="statement" roleId="tpee.1068581517665" type="qff7.ExecuteLightweightCommandStatement" typeId="qff7.8974276187400348181" id="2565896126719599751">
+            <node role="commandClosureLiteral" roleId="qff7.8974276187400348171" type="qff7.CommandClosureLiteral" typeId="qff7.8974276187400348173" id="2565896126719599752">
               <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="2565896126719599753">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ForeachStatement" typeId="tpee.1144226303539" id="2565896126719599754">
                   <node role="iterable" roleId="tpee.1144226360166" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2565896126719599755">
@@ -10312,8 +10316,8 @@
                   <property name="text" nameId="tpee.6329021646629104958" value="generator is present - this means we don't have template models or mappings" />
                 </node>
               </node>
-              <node role="statement" roleId="tpee.1068581517665" type="tp4k.ExecuteCommandStatement" typeId="tp4k.1225441285519" id="2565896126719599777">
-                <node role="commandClosureLiteral" roleId="tp4k.1225441160167" type="tp4k.CommandClosureLiteral" typeId="tp4k.1225441216717" id="2565896126719599778">
+              <node role="statement" roleId="tpee.1068581517665" type="qff7.ExecuteCommandStatement" typeId="qff7.8974276187400348177" id="2565896126719599777">
+                <node role="commandClosureLiteral" roleId="qff7.8974276187400348171" type="qff7.CommandClosureLiteral" typeId="qff7.8974276187400348173" id="2565896126719599778">
                   <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="2565896126719599779">
                     <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2565896126719599780">
                       <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2565896126719599781">
@@ -10562,8 +10566,8 @@
               <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2565896126719599883" />
             </node>
           </node>
-          <node role="statement" roleId="tpee.1068581517665" type="tp4k.ExecuteCommandStatement" typeId="tp4k.1225441285519" id="2565896126719599884">
-            <node role="commandClosureLiteral" roleId="tp4k.1225441160167" type="tp4k.CommandClosureLiteral" typeId="tp4k.1225441216717" id="2565896126719599885">
+          <node role="statement" roleId="tpee.1068581517665" type="qff7.ExecuteCommandStatement" typeId="qff7.8974276187400348177" id="2565896126719599884">
+            <node role="commandClosureLiteral" roleId="qff7.8974276187400348171" type="qff7.CommandClosureLiteral" typeId="qff7.8974276187400348173" id="2565896126719599885">
               <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="2565896126719599886">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2565896126719599887">
                   <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2565896126719599888">
@@ -10910,8 +10914,8 @@
         </node>
       </node>
     </node>
-    <node role="icon" roleId="tp4k.2386275659558598338" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="2565896126719631206">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/editor.png" />
+    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="2565896126719631206">
+      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/editor.png" />
     </node>
     <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.Order" typeId="tp4k.2450897840534683975" id="2565896126719631207">
       <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="2565896126719631208">
@@ -11023,8 +11027,8 @@
         </node>
       </node>
     </node>
-    <node role="icon" roleId="tp4k.2386275659558598338" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="2565896126719631550">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/constraints.png" />
+    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="2565896126719631550">
+      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/constraints.png" />
     </node>
     <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.Order" typeId="tp4k.2450897840534683975" id="2565896126719631551">
       <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="2565896126719631552">
@@ -11172,8 +11176,8 @@
         <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2565896126719634090" resolveInfo="Data Flow" />
       </node>
     </node>
-    <node role="icon" roleId="tp4k.2386275659558598338" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="2565896126719634134">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/goRound.png" />
+    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="2565896126719634134">
+      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/goRound.png" />
     </node>
     <node role="createTabBlock" roleId="tp4k.1640281869714699888" type="tp4k.CreateTabBlock" typeId="tp4k.1640281869714699879" id="2565896126719634135">
       <property name="commandOnCreate" nameId="tp4k.1640281869714699886" value="true" />
@@ -11257,8 +11261,8 @@
         </node>
       </node>
     </node>
-    <node role="icon" roleId="tp4k.2386275659558598338" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="2565896126719635431">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/usagesFinder.png" />
+    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="2565896126719635431">
+      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/usagesFinder.png" />
     </node>
     <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.Order" typeId="tp4k.2450897840534683975" id="2565896126719635432">
       <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="2565896126719635433">
@@ -11396,8 +11400,8 @@
         <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2565896126719641327" resolveInfo="Intentions" />
       </node>
     </node>
-    <node role="icon" roleId="tp4k.2386275659558598338" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="2565896126719641358">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/intention.png" />
+    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="2565896126719641358">
+      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/intention.png" />
     </node>
     <node role="createTabBlock" roleId="tp4k.1640281869714699888" type="tp4k.CreateTabBlock" typeId="tp4k.1640281869714699879" id="2565896126719641359">
       <property name="commandOnCreate" nameId="tp4k.1640281869714699886" value="true" />
@@ -11503,8 +11507,8 @@
         <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="9040118078822013541" resolveInfo="Refactorings" />
       </node>
     </node>
-    <node role="icon" roleId="tp4k.2386275659558598338" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="9040118078822013571">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/refactoring.png" />
+    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="9040118078822013571">
+      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/refactoring.png" />
     </node>
     <node role="createTabBlock" roleId="tp4k.1640281869714699888" type="tp4k.CreateTabBlock" typeId="tp4k.1640281869714699879" id="9040118078822013572">
       <property name="commandOnCreate" nameId="tp4k.1640281869714699886" value="true" />
@@ -11646,8 +11650,8 @@
         <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="9040118078822014208" resolveInfo="Textgen" />
       </node>
     </node>
-    <node role="icon" roleId="tp4k.2386275659558598338" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="9040118078822014254">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/textGen.png" />
+    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="9040118078822014254">
+      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/textGen.png" />
     </node>
     <node role="createTabBlock" roleId="tp4k.1640281869714699888" type="tp4k.CreateTabBlock" typeId="tp4k.1640281869714699879" id="9040118078822014255">
       <property name="commandOnCreate" nameId="tp4k.1640281869714699886" value="true" />
@@ -11983,8 +11987,8 @@
         <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="9040118078822014309" resolveInfo="Typesystem" />
       </node>
     </node>
-    <node role="icon" roleId="tp4k.2386275659558598338" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="9040118078822014437">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/rule.png" />
+    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="9040118078822014437">
+      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/rule.png" />
     </node>
     <node role="createTabBlock" roleId="tp4k.1640281869714699888" type="tp4k.CreateTabBlock" typeId="tp4k.1640281869714699879" id="9040118078822014438">
       <property name="commandOnCreate" nameId="tp4k.1640281869714699886" value="true" />
@@ -12769,8 +12773,8 @@
         </node>
       </node>
     </node>
-    <node role="icon" roleId="tp4k.2386275659558598338" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="9040118078822290740">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/structure.png" />
+    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="9040118078822290740">
+      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/structure.png" />
     </node>
   </root>
   <root id="1206195573853570544">

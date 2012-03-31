@@ -130,8 +130,10 @@
       <modulePath path="${project}/languages/core/stub/MPS.Platform/Platform.msd" folder="core.stub" />
       <modulePath path="${project}/languages/core/stub/MPS.Workbench/Workbench.msd" folder="core.stub" />
       <modulePath path="${project}/languages/core/stub/Testbench/Testbench.msd" folder="core.stub" />
+      <modulePath path="${project}/languages/languageDesign/access/access.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/actions/languageDescriptor.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/behavior/languages/behavior/behavior.mpl" folder="core.language-design" />
+      <modulePath path="${project}/languages/languageDesign/checkedName/checkedName.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/constraints/constraints.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/dataFlow/dataFlow.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/dataFlow/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
@@ -173,6 +175,7 @@
       <modulePath path="${project}/languages/languageDesign/quotation/quotation.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/quotation/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/refactoring/refactoring.mpl" folder="core.language-design" />
+      <modulePath path="${project}/languages/languageDesign/resources/resources.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/script/script.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/script/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/sharedConcepts/sharedConcepts.mpl" folder="core.language-design" />

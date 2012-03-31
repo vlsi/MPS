@@ -386,8 +386,8 @@
     <nodeInfo nodeId="4076419548984269386" fileName="PluginMoveHelper.java" startLine="144" startPosition="27" endLine="145" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8004978336432925683" fileName="PluginMoveHelper.java" startLine="149" startPosition="42" endLine="150" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1855937925843917409" fileName="PluginMoveHelper.java" startLine="150" startPosition="67" endLine="151" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8004978336433092144" fileName="PluginMoveHelper.java" startLine="152" startPosition="20" endLine="153" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4618316083866596705" fileName="PluginMoveHelper.java" startLine="153" startPosition="156" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8004978336433092144" fileName="PluginMoveHelper.java" startLine="152" startPosition="20" endLine="153" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4618316083866596705" fileName="PluginMoveHelper.java" startLine="153" startPosition="149" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="457580200161289901" fileName="PluginMoveHelper.java" startLine="154" startPosition="0" endLine="155" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="457580200161285528" fileName="PluginMoveHelper.java" startLine="155" startPosition="70" endLine="156" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4618316083866596707" fileName="PluginMoveHelper.java" startLine="157" startPosition="5" endLine="158" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -430,7 +430,7 @@
     <nodeInfo nodeId="8004978336433033203" fileName="PluginMoveHelper.java" startLine="57" startPosition="99" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/Language;)Z" />
     <nodeInfo nodeId="8004978336433033305" fileName="PluginMoveHelper.java" startLine="62" startPosition="102" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/Language;)Z" />
     <nodeInfo nodeId="8004978336433033364" fileName="PluginMoveHelper.java" startLine="70" startPosition="73" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/Language;)V" />
-    <nodeInfo nodeId="5318937080028151905" fileName="PluginMoveHelper.java" startLine="97" startPosition="145" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="5318937080028151905" fileName="PluginMoveHelper.java" startLine="97" startPosition="148" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="3573713441992786730" fileName="PluginMoveHelper.java" startLine="163" startPosition="165" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
     <nodeInfo nodeId="3178711211098725025" fileName="PluginMoveHelper.java" startLine="174" startPosition="99" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="8004978336433033229" fileName="PluginMoveHelper.java" startLine="198" startPosition="0" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="makePluginSolutionName#(Ljetbrains/mps/smodel/Language;Ljava/lang/String;)Ljava/lang/String;" />
@@ -492,7 +492,7 @@
     <scopeInfo nodeId="8004978336433033364" fileName="PluginMoveHelper.java" startLine="70" startPosition="73" endLine="74" endPosition="0">
       <varInfo nodeId="8004978336433033364" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="5318937080028151905" fileName="PluginMoveHelper.java" startLine="97" startPosition="145" endLine="101" endPosition="0">
+    <scopeInfo nodeId="5318937080028151905" fileName="PluginMoveHelper.java" startLine="97" startPosition="148" endLine="101" endPosition="0">
       <varInfo nodeId="5318937080028151905" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="8004978336432925713" fileName="PluginMoveHelper.java" startLine="152" startPosition="20" endLine="156" endPosition="55">
@@ -568,7 +568,7 @@
     <unitInfo nodeId="8004978336433033203" fileName="PluginMoveHelper.java" startLine="57" startPosition="73" endLine="61" endPosition="5" unitName="jetbrains.mps.ide.migration.migration21.PluginMoveHelper$1" />
     <unitInfo nodeId="8004978336433033305" fileName="PluginMoveHelper.java" startLine="62" startPosition="76" endLine="66" endPosition="5" unitName="jetbrains.mps.ide.migration.migration21.PluginMoveHelper$2" />
     <unitInfo nodeId="8004978336433033364" fileName="PluginMoveHelper.java" startLine="70" startPosition="51" endLine="74" endPosition="7" unitName="jetbrains.mps.ide.migration.migration21.PluginMoveHelper$3" />
-    <unitInfo nodeId="5318937080028151905" fileName="PluginMoveHelper.java" startLine="97" startPosition="122" endLine="101" endPosition="9" unitName="jetbrains.mps.ide.migration.migration21.PluginMoveHelper$4" />
+    <unitInfo nodeId="5318937080028151905" fileName="PluginMoveHelper.java" startLine="97" startPosition="125" endLine="101" endPosition="9" unitName="jetbrains.mps.ide.migration.migration21.PluginMoveHelper$4" />
     <unitInfo nodeId="5318937080028171596" fileName="PluginMoveHelper.java" startLine="101" startPosition="24" endLine="123" endPosition="9" unitName="jetbrains.mps.ide.migration.migration21.PluginMoveHelper$5" />
     <unitInfo nodeId="3573713441992786730" fileName="PluginMoveHelper.java" startLine="163" startPosition="131" endLine="167" endPosition="5" unitName="jetbrains.mps.ide.migration.migration21.PluginMoveHelper$6" />
     <unitInfo nodeId="3178711211098725025" fileName="PluginMoveHelper.java" startLine="174" startPosition="76" endLine="178" endPosition="5" unitName="jetbrains.mps.ide.migration.migration21.PluginMoveHelper$7" />
@@ -678,8 +678,8 @@
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="34" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="37" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="37" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="49" endLine="12" endPosition="50" conceptFqName="jetbrains.mps.gtext.structure.GText" />

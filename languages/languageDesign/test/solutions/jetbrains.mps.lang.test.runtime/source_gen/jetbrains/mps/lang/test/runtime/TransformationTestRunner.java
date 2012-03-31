@@ -38,7 +38,7 @@ public class TransformationTestRunner {
   public TransformationTestRunner() {
   }
 
-  public void initTest(final ProjectTest projectTest, @NotNull String projectName, final String model) throws Exception {
+  public void initTest(final TransformationTest test, @NotNull String projectName, final String model) throws Exception {
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
     TestMain.configureMPS();
     // we do not want to save our project, see MPS-13352 
@@ -49,22 +49,24 @@ public class TransformationTestRunner {
     if (StringUtils.isEmpty(projectName)) {
       for (Project project : ProjectManager.getInstance().getOpenProjects()) {
         if (project != null) {
-          projectTest.setProject(project);
+          test.setProject(project);
           break;
         }
       }
-      if (projectTest.getProject() == null) {
+      if (test.getProject() == null) {
         Assert.fail("MPS Project was not specfied in test class, no currently open project was not found");
       }
     } else {
-      projectTest.setProject(TestMain.PROJECT_CONTAINER.getProject(MacrosFactory.mpsHomeMacros().expandPath(projectName, ((IFile) null))));
+      test.setProject(TestMain.PROJECT_CONTAINER.getProject(MacrosFactory.mpsHomeMacros().expandPath(projectName, ((IFile) null))));
     }
     SwingUtilities.invokeAndWait(new Runnable() {
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(model));
-            projectTest.setModelDescriptor(modelDescriptor);
+
+            test.setModelDescriptor(modelDescriptor);
+            test.init();
           }
         });
       }
@@ -72,7 +74,7 @@ public class TransformationTestRunner {
     ModelAccess.instance().flushEventQueue();
   }
 
-  public void runTest(final ProjectTest projectTest, final String className, final String methodName, final boolean runInCommand) throws Throwable {
+  public void runTest(final TransformationTest projectTest, final String className, final String methodName, final boolean runInCommand) throws Throwable {
     final Wrappers._T<Class> clazz = new Wrappers._T<Class>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {

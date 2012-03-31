@@ -87,15 +87,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.structure.ConceptFunction_CreateBreakpoint_Deprecated" file="ConceptFunction_CreateBreakpoint_Deprecated.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ConceptFunction" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-  </dependency>
   <dependency className="jetbrains.mps.debugger.api.lang.structure.ConceptFunction_GetUnitName" file="ConceptFunction_GetUnitName.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ConceptFunction" />
@@ -151,7 +142,6 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.api.lang.structure.DebuggableNodeItem" file="DebuggableNodeItem.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.debugger.api.lang.structure.ConceptFunction_CreateBreakpoint_Deprecated" />
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.structure.ConceptFunction_PropertyStringGetter" />
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.ConceptDeclaration" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />

@@ -12,8 +12,8 @@ public class IntentionDeclaration_BehaviorDescriptor extends BaseIntentionDeclar
     return IntentionDeclaration_Behavior.virtual_getBaseConcept_2621449412040133768(thisNode);
   }
 
-  public SNode virtual_getDescendantToCheck_3745452943050928880(SNode thisNode) {
-    return IntentionDeclaration_Behavior.virtual_getDescendantToCheck_3745452943050928880(thisNode);
+  public SNode virtual_getDescendantToCheck_4844813484172611439(SNode thisNode) {
+    return IntentionDeclaration_Behavior.virtual_getDescendantToCheck_4844813484172611439(thisNode);
   }
 
   @Override

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.baseLanguage.unitTest" uuid="f61473f9-130f-42f6-b98d-6c438812c2f6" compileInMPS="true" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.baseLanguage.unitTest" uuid="f61473f9-130f-42f6-b98d-6c438812c2f6" doNotGenerateAdapters="false">
   <models>
     <modelRoot path="${language_descriptor}/languageModels" />
   </models>
@@ -11,8 +11,7 @@
       </models>
       <external-templates />
       <dependencies>
-        <dependency reexport="false">86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)</dependency>
-        <dependency reexport="true">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
+        <dependency reexport="false">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
       </dependencies>
       <mapping-priorities />
     </generator>

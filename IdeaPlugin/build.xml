@@ -605,6 +605,9 @@
         <path path="${base_dir}/languages/languageDesign/pattern/source_gen"/>
         <path path="${base_dir}/languages/languageDesign/pattern/languages/testLang/source_gen"/>
         <path path="${base_dir}/languages/languageDesign/plugin/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/access/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/checkedName/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/resources/source_gen"/>
         <!--path path="${base_dir}/languages/languageDesign/plugin/solutions/runtime/source_gen"/-->
         <path path="${base_dir}/languages/languageDesign/project/source_gen"/>
         <path path="${base_dir}/languages/languageDesign/quotation/source_gen"/>

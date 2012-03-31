@@ -1529,8 +1529,18 @@
         <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="2113577360859166031">
           <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802815735" resolveInfo="dest" />
           <node role="value" roleId="ddum.353793545802643468" type="tpsk.FileName" typeId="tpsk.1199031681512" id="2113577360859166033">
-            <node role="value" roleId="tpsk.1199031757132" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="2113577360859166035">
-              <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="2235195415637076849" resolveInfo="input.dir" />
+            <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="6786771988943539111">
+              <node role="right" roleId="tpsk.1197107881958" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="6786771988943539115">
+                <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="6786771988943539118">
+                  <property name="value" nameId="tpsk.1196861024475" value="jre" />
+                </node>
+                <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="6786771988943539114">
+                  <property name="value" nameId="tpsk.1196861024475" value="/" />
+                </node>
+              </node>
+              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="2113577360859166035">
+                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="2235195415637076849" resolveInfo="input.dir" />
+              </node>
             </node>
           </node>
         </node>
@@ -2304,7 +2314,7 @@
         <property name="text" nameId="tpih.1164413036326" value="CreateShortCut &quot;${PROGRAM_LINK}&quot; &quot;$INSTDIR\mps.bat" />
       </node>
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="4514696390935060311">
-        <property name="text" nameId="tpih.1164413036326" value="&quot; &quot;&quot; &quot;$INSTDIR\application.ico&quot; &quot;&quot; SW_SHOWMINIMIZED" />
+        <property name="text" nameId="tpih.1164413036326" value="&quot; &quot;&quot; &quot;$INSTDIR\mps.ico&quot; &quot;&quot; SW_SHOWMINIMIZED" />
       </node>
     </node>
     <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="4514696390935060312">
@@ -2350,7 +2360,7 @@
         <property name="text" nameId="tpih.1164413036326" value="CreateShortCut &quot;${DESKTOP_LINK}&quot; &quot;$INSTDIR\mps.bat" />
       </node>
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="4514696390935060365">
-        <property name="text" nameId="tpih.1164413036326" value="&quot; &quot;&quot; &quot;$INSTDIR\application.ico&quot; &quot;&quot; SW_SHOWMINIMIZED" />
+        <property name="text" nameId="tpih.1164413036326" value="&quot; &quot;&quot; &quot;$INSTDIR\mps.ico&quot; &quot;&quot; SW_SHOWMINIMIZED" />
       </node>
     </node>
     <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="4514696390935060366">
@@ -2372,7 +2382,7 @@
         <property name="text" nameId="tpih.1164413036326" value="CreateShortCut &quot;${QL_LINK}&quot; &quot;$INSTDIR\mps.bat" />
       </node>
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="4514696390935060388">
-        <property name="text" nameId="tpih.1164413036326" value="&quot; &quot;&quot; &quot;$INSTDIR\application.ico&quot; &quot;&quot; SW_SHOWMINIMIZED" />
+        <property name="text" nameId="tpih.1164413036326" value="&quot; &quot;&quot; &quot;$INSTDIR\mps.ico&quot; &quot;&quot; SW_SHOWMINIMIZED" />
       </node>
     </node>
     <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="4514696390935060389">

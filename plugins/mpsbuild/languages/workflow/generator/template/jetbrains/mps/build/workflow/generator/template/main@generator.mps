@@ -1701,6 +1701,24 @@
                     </node>
                   </node>
                 </node>
+                <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="2303926226081123641">
+                  <property name="attrName" nameId="iuxj.6666499814681447926" value="fork" />
+                  <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="2303926226081123642">
+                    <property name="text" nameId="iuxj.6666499814681541920" value="true" />
+                  </node>
+                </node>
+                <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="2303926226081123643">
+                  <property name="attrName" nameId="iuxj.6666499814681447926" value="memorymaximumsize" />
+                  <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="2303926226081123644">
+                    <property name="text" nameId="iuxj.6666499814681541920" value="1024m" />
+                  </node>
+                </node>
+                <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="2303926226081123645">
+                  <property name="attrName" nameId="iuxj.6666499814681447926" value="includeantruntime" />
+                  <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="2303926226081123646">
+                    <property name="text" nameId="iuxj.6666499814681541920" value="false" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>

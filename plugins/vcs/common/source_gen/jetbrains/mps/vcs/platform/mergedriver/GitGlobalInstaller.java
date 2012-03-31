@@ -53,7 +53,7 @@ import java.io.FileNotFoundException;
     ListSequence.fromList(newConfigLines).addElement("[merge \"mps\"]");
     ListSequence.fromList(newConfigLines).addElement("\tname = MPS merge driver");
 
-    AbstractInstaller.State packerState = InternalRuntimePacker.packIfNeeded(dryRun);
+    AbstractInstaller.State packerState = MergeDriverPacker.packIfNeeded(dryRun);
     if (packerState != AbstractInstaller.State.INSTALLED) {
       return packerState;
     }
