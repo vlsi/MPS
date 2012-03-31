@@ -316,7 +316,7 @@
     <unitInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration_Factory.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration_Factory" />
   </root>
   <root nodeId="4468328282078639071">
-    <nodeInfo nodeId="4468328282078639072" fileName="BuildScript_Kind.java" startLine="18" startPosition="60" endLine="19" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="4468328282078639072" fileName="BuildScript_Kind.java" startLine="18" startPosition="60" endLine="19" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="4468328282078639071" fileName="BuildScript_Kind.java" startLine="20" startPosition="0" endLine="21" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myForeignFactories" />
     <nodeInfo nodeId="4468328282078639071" fileName="BuildScript_Kind.java" startLine="26" startPosition="61" endLine="27" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4468328282078639071" fileName="BuildScript_Kind.java" startLine="27" startPosition="101" endLine="28" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
