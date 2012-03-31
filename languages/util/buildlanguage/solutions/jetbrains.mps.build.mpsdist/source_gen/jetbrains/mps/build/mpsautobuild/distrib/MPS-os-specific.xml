@@ -80,6 +80,7 @@
     <fail unless="output.dir" message="Property output.dir unspecified." />
     <fixcrlf file="${input.dir}/${mps.bat}" eol="dos" eof="asis" />
     <fixcrlf file="${input.dir}/${installer.nsi}" eol="dos" eof="asis" />
+    <fixcrlf file="${input.dir}/${mps.exe.vmoptions}" eof="asis" eol="dos" />
     <unzip src="${input.dir}/jre.zip" dest="${input.dir}/jre" />
     <java classname="jetbrains.mps.build.GenerateNSI" fork="true" dir="${input.dir}" failonerror="true">
       <arg file="${input.dir}/install.nsh" />
@@ -87,6 +88,7 @@
       <arg file="${input.dir}/${MPS}" />
       <arg file="${input.dir}/${mps.bat}" />
       <arg file="${input.dir}/${mps.ico}" />
+      <arg file="${input.dir}/${mps.exe.vmoptions}" />
       <arg file="${input.dir}/${homepage.ico}" />
       <arg file="${input.dir}/jre" />
       <arg file="${input.dir}/help" />
