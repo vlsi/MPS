@@ -100,16 +100,17 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode concept = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getReferenceNode(), "jetbrains.mps.lang.constraints.structure.ConceptConstraints", true, false), "concept", false);
 
+            // all subconcepts from current language 
             Language currentLanguage = SModelUtil.getDeclaringLanguage(concept);
             Set<String> allDescendants = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(NameUtil.nodeFQName(concept));
 
             List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
 
             for (String descendant : allDescendants) {
-              SNode declaration = SModelUtil.findConceptDeclaration(descendant, GlobalScope.getInstance());
+              SNode declaration = SNodeOperations.cast(SModelUtil.findConceptDeclaration(descendant, GlobalScope.getInstance()), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
               Language declaringLanguage = SModelUtil.getDeclaringLanguage(declaration);
-              if (eq_guz8cy_a0c0h0a0a0a0b0a1a0b0d(currentLanguage, declaringLanguage)) {
-                ListSequence.fromList(result).addElement(SNodeOperations.cast(declaringLanguage.findConceptDeclaration(NameUtil.shortNameFromLongName(descendant)), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
+              if (eq_guz8cy_a0c0i0a0a0a0b0a1a0b0d(currentLanguage, declaringLanguage)) {
+                ListSequence.fromList(result).addElement(declaration);
               }
             }
 
@@ -130,7 +131,7 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
     return LanguageAspect.CONSTRAINTS.is(model);
   }
 
-  private static boolean eq_guz8cy_a0c0h0a0a0a0b0a1a0b0d(Object a, Object b) {
+  private static boolean eq_guz8cy_a0c0i0a0a0a0b0a1a0b0d(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
