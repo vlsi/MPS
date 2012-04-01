@@ -116,6 +116,9 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
   }
 
   public String expandPath(String path) {
+    if (StringUtils.isEmpty(path)) {
+      return path;
+    }
     return MacrosFactory.getGlobal().expandPath(path).replace(File.separator, "/");
   }
 
