@@ -4,7 +4,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesByCondition_Action" file="FindInstancesByCondition_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -24,7 +24,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesContext" file="FindInstancesContext.java">
     <classNode dependClassName="java.lang.Class" />
@@ -97,7 +97,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool" />
+    <classNode dependClassName="jetbrains.mps.plugins.tool.BaseGeneratedTool" />
     <classNode dependClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.RunReplacement_Tool" />
     <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
   </dependency>
@@ -177,7 +177,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplacementView" file="ReplacementView.java">
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
@@ -218,13 +218,13 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.icons.IconManager" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.tool.IComponentDisposer" />
+    <classNode dependClassName="jetbrains.mps.plugins.tool.IComponentDisposer" />
     <classNode dependClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.QueryFinder" />
     <classNode dependClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplacementView" />
     <classNode dependClassName="jetbrains.mps.quickQueryLanguage.runtime.Query" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.util.IconUtil" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.tool.GeneratedTabbedTool" />
+    <classNode extendsClassName="jetbrains.mps.plugins.tool.GeneratedTabbedTool" />
   </dependency>
 </dependenciesRoot>
 

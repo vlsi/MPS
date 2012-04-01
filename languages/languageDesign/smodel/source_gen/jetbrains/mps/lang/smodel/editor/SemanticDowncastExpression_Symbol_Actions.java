@@ -23,7 +23,7 @@ public class SemanticDowncastExpression_Symbol_Actions {
     }
 
     public String getDescriptionText() {
-      return "remove relations downcast";
+      return "remove semantic downcast";
     }
 
     public void execute(EditorContext editorContext) {

@@ -10,7 +10,6 @@ import jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent;
 import com.intellij.openapi.options.ConfigurationException;
 import jetbrains.mps.nanoc.debug.ProgramsLocationUtil;
 import javax.swing.JComponent;
-
 import org.apache.commons.lang.ObjectUtils;
 
 public class ProgramsLocationComponent_GDBLocation_PreferencesPage extends BasePrefsPage {

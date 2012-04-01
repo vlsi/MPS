@@ -10,8 +10,6 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-
-import jetbrains.mps.plugins.runconfigs.MPSLocation;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.execution.ui.ConsoleView;
@@ -50,6 +48,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import com.intellij.execution.Location;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.plugins.runconfigs.MPSLocation;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 
 public class UnitTestViewComponent extends JPanel implements Disposable {

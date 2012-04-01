@@ -6,14 +6,13 @@ import javax.swing.JPanel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import jetbrains.mps.ide.findusages.view.UsagesView;
-import jetbrains.mps.plugins.tool.BaseGeneratedTool;
 import jetbrains.mps.project.Project;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
+import jetbrains.mps.plugins.tool.BaseGeneratedTool;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.ide.project.ProjectHelper;

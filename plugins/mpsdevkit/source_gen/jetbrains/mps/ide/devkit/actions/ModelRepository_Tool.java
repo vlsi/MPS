@@ -4,7 +4,6 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.plugins.tool.GeneratedTool;
 import javax.swing.Icon;
-
 import jetbrains.mps.util.IconUtil;
 import jetbrains.mps.ide.modelRepositoryViewer.ModelRepositoryComponent;
 import javax.swing.JPanel;

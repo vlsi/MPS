@@ -7,7 +7,6 @@ import java.util.List;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import com.intellij.openapi.project.Project;
 import java.util.ArrayList;
-
 import jetbrains.mps.plugins.tool.BaseGeneratedTool;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 

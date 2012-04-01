@@ -4,7 +4,6 @@ package jetbrains.mps.quickQueryLanguage.pluginSolution.plugin;
 
 import jetbrains.mps.plugins.tool.GeneratedTabbedTool;
 import javax.swing.Icon;
-
 import jetbrains.mps.util.IconUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
