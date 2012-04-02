@@ -16,6 +16,14 @@ import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.util.MacrosFactory;
 import java.io.File;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.util.FileUtil;
+import org.jdom.Document;
+import jetbrains.mps.util.JDOMUtil;
+import org.jdom.JDOMException;
+import java.io.IOException;
+import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
@@ -75,6 +83,14 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
     return myState.myConfigurationPath;
   }
 
+  public boolean getOpenCurrentProject() {
+    return myState.myOpenCurrentProject;
+  }
+
+  public String getProjectToOpen() {
+    return myState.myProjectToOpen;
+  }
+
   public void setVmOptions(String value) {
     myState.myVmOptions = value;
   }
@@ -91,15 +107,74 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
     myState.myConfigurationPath = value;
   }
 
+  public void setOpenCurrentProject(boolean value) {
+    myState.myOpenCurrentProject = value;
+  }
+
+  public void setProjectToOpen(String value) {
+    myState.myProjectToOpen = value;
+  }
+
   public String expandPath(String path) {
-    return MacrosFactory.mpsHomeMacros().expandPath(path, new File(System.getProperty("user.home"))).replace(File.separator, "/");
+    if (StringUtils.isEmpty(path)) {
+      return path;
+    }
+    return MacrosFactory.getGlobal().expandPath(path).replace(File.separator, "/");
   }
 
   public String shinkPath(String path) {
     if (StringUtils.isEmpty(path)) {
       return path;
     }
-    return MacrosFactory.mpsHomeMacros().shrinkPath(path, new File(System.getProperty("user.home"))).replace(File.separator, "/");
+    return MacrosFactory.getGlobal().shrinkPath(path).replace(File.separator, "/");
+  }
+
+  public Tuples._2<File, File> prepareFilesToOpenAndToDelete(Project project) {
+    File projectFile = getProjectFile(project);
+    if (!(this.getOpenCurrentProject())) {
+      return MultiTuple.<File,File>from(projectFile, (File) null);
+    }
+
+    File temporalDir = FileUtil.createTmpDir();
+    File tmpProjectFile = new File(temporalDir, projectFile.getName());
+    FileUtil.copyFile(projectFile, tmpProjectFile);
+
+    // replace project macro 
+    try {
+      Document document = JDOMUtil.loadDocument(tmpProjectFile);
+      replacePathMacro(document.getRootElement(), project);
+      JDOMUtil.writeDocument(document, tmpProjectFile);
+      projectFile = tmpProjectFile;
+    } catch (JDOMException e) {
+      // ignore and hope for the best 
+    } catch (IOException e) {
+      // same as previous 
+    }
+
+    return MultiTuple.<File,File>from(projectFile, temporalDir);
+  }
+
+  private File getProjectFile(Project currentProject) {
+    if (this.getOpenCurrentProject()) {
+      return new File(currentProject.getProjectFilePath());
+    }
+    if (this.getProjectToOpen() != null) {
+      return new File(expandPath(this.getProjectToOpen()));
+    }
+    return null;
+  }
+
+  private void replacePathMacro(Element element, Project project) {
+    String path = "path";
+    String value = element.getAttributeValue(path);
+    if (StringUtils.isNotEmpty(value)) {
+      element.setAttribute(path, MacrosFactory.forProjectFile(FileSystem.getInstance().getFileByPath(getProjectFile(project).getPath())).expandPath(value));
+    }
+    for (Object child : element.getChildren()) {
+      if (child instanceof Element) {
+        replacePathMacro((Element) child, project);
+      }
+    }
   }
 
   @Override
@@ -153,6 +228,8 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
     public String myJrePath;
     public String mySystemPath = shinkPath(Mps_Command.getDefaultSystemPath());
     public String myConfigurationPath = shinkPath(Mps_Command.getDefaultConfigurationPath());
+    public boolean myOpenCurrentProject = false;
+    public String myProjectToOpen;
 
     public MyState() {
     }
@@ -164,6 +241,8 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
       state.myJrePath = myJrePath;
       state.mySystemPath = mySystemPath;
       state.myConfigurationPath = myConfigurationPath;
+      state.myOpenCurrentProject = myOpenCurrentProject;
+      state.myProjectToOpen = myProjectToOpen;
       return state;
     }
   }
