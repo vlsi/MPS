@@ -15,5 +15,8 @@
     <classNode dependClassName="jetbrains.mps.ui.internal.testdata.pluginSolution.plugin.EditorExtension_CustomApplicationPlugin" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
+  <dependency className="jetbrains.mps.ui.internal.testdata.pluginSolution.plugin.PluginSolution_ProjectPlugin" file="PluginSolution_ProjectPlugin.java">
+    <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
+  </dependency>
 </dependenciesRoot>
 

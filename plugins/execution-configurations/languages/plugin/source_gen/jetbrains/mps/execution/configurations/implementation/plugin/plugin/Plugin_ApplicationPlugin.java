@@ -33,13 +33,16 @@ public class Plugin_ApplicationPlugin extends BaseApplicationPlugin {
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
-    addCustomPart(res, new DebugInfoProvider_CustomApplicationPlugin());
-    addCustomPart(res, new RunConfigurationsInitializer_CustomApplicationPlugin());
+    {
+      BaseCustomApplicationPlugin plugin = new RunConfigurationsInitializer_CustomApplicationPlugin();
+      ListSequence.fromList(res).addElement(plugin);
+      plugin.init();
+    }
+    {
+      BaseCustomApplicationPlugin plugin = new DebugInfoProvider_CustomApplicationPlugin();
+      ListSequence.fromList(res).addElement(plugin);
+      plugin.init();
+    }
     return res;
-  }
-
-  private void addCustomPart(List<BaseCustomApplicationPlugin> plugins, BaseCustomApplicationPlugin plugin) {
-    ListSequence.fromList(plugins).addElement(plugin);
-    plugin.init();
   }
 }

@@ -28,6 +28,8 @@
   <unitInfo fileName="AssignmentExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AssignmentExpression_BehaviorDescriptor" />
   <unitInfo fileName="BLBottomType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BLBottomType_BehaviorDescriptor" />
   <unitInfo fileName="BaseAssignmentExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BaseAssignmentExpression_BehaviorDescriptor" />
+  <unitInfo fileName="BaseLanguage_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BaseLanguage_ApplicationPlugin" />
+  <unitInfo fileName="BaseLanguage_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BaseLanguage_ProjectPlugin" />
   <unitInfo fileName="BaseMethodCall_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BaseMethodCall_BehaviorDescriptor" />
   <unitInfo fileName="BaseMethodDeclaration_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="BaseStringOperation_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BaseStringOperation_BehaviorDescriptor" />

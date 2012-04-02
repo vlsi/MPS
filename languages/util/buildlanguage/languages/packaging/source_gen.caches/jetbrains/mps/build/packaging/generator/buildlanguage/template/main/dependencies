@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.build.packaging.generator.buildlanguage.template.main.Packaging_ApplicationPlugin" file="Packaging_ApplicationPlugin.java">
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.packaging.generator.buildlanguage.template.main.Packaging_ProjectPlugin" file="Packaging_ProjectPlugin.java">
+    <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
+  </dependency>
   <dependency className="jetbrains.mps.build.packaging.generator.buildlanguage.template.main.QueriesGenerated" file="QueriesGenerated.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Boolean" />

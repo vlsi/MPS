@@ -21,13 +21,16 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
-    addCustomPart(res, new EditorExtension_CustomApplicationPlugin());
-    addCustomPart(res, new Variant_CustomApplicationPlugin());
+    {
+      BaseCustomApplicationPlugin plugin = new EditorExtension_CustomApplicationPlugin();
+      ListSequence.fromList(res).addElement(plugin);
+      plugin.init();
+    }
+    {
+      BaseCustomApplicationPlugin plugin = new Variant_CustomApplicationPlugin();
+      ListSequence.fromList(res).addElement(plugin);
+      plugin.init();
+    }
     return res;
-  }
-
-  private void addCustomPart(List<BaseCustomApplicationPlugin> plugins, BaseCustomApplicationPlugin plugin) {
-    ListSequence.fromList(plugins).addElement(plugin);
-    plugin.init();
   }
 }

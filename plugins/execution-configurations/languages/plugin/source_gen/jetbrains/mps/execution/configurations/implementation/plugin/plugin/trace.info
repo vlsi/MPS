@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BeforeTasksInitializer_CustomProjectPlugin.java" startLine="15" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.BeforeTasksInitializer_CustomProjectPlugin" />
-  <unitInfo fileName="Plugin_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Plugin_ApplicationPlugin" />
+  <unitInfo fileName="Plugin_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Plugin_ApplicationPlugin" />
   <unitInfo fileName="Plugin_ProjectPlugin.java" startLine="13" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Plugin_ProjectPlugin" />
   <unitInfo fileName="RunConfigurationsInitializer_CustomApplicationPlugin.java" startLine="18" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" />
   <unitInfo fileName="RunConfigurationsInitializer_CustomApplicationPlugin.java" startLine="57" startPosition="108" endLine="68" endPosition="5" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.RunConfigurationsInitializer_CustomApplicationPlugin$1" />
@@ -592,8 +592,11 @@
     <nodeInfo nodeId="6062668769033909813" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="30" startPosition="26" endLine="31" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769033909817" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="36" startPosition="15" endLine="37" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769033909813" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="39" startPosition="38" endLine="40" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909813" fileName="Plugin_ApplicationPlugin.java" startLine="41" startPosition="5" endLine="42" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6062668769033909813" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="41" startPosition="13" endLine="42" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769033909813" fileName="Plugin_ApplicationPlugin.java" startLine="42" startPosition="91" endLine="43" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769033909813" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="43" startPosition="11" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6062668769033909813" fileName="Plugin_ApplicationPlugin.java" startLine="43" startPosition="52" endLine="44" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769033909813" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="46" startPosition="8" endLine="47" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769033909827" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="52" startPosition="15" endLine="53" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769033909813" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="55" startPosition="38" endLine="56" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -617,6 +620,7 @@
     <nodeInfo nodeId="6062668769033909813" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="54" startPosition="51" endLine="57" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6062668769033909813" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="69" startPosition="109" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6062668769033909813" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="73" startPosition="62" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769033909813" fileName="Plugin_ApplicationPlugin.java" startLine="40" startPosition="5" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6062668769033909813" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="35" startPosition="81" endLine="43" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="6062668769033909813" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="51" startPosition="81" endLine="59" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="6062668769033909813" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="34" startPosition="113" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="value#(Ljetbrains/mps/smodel/SNode;Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/debug/api/breakpoints/ILocationBreakpoint;" />
@@ -638,6 +642,9 @@
     <scopeInfo nodeId="6062668769033909813" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="74" startPosition="26" endLine="75" endPosition="13" />
     <scopeInfo nodeId="6062668769033909813" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="20" startPosition="0" endLine="22" endPosition="3" />
     <scopeInfo nodeId="6062668769033909813" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="38" startPosition="51" endLine="41" endPosition="13" />
+    <scopeInfo nodeId="6062668769033909813" fileName="Plugin_ApplicationPlugin.java" startLine="41" startPosition="5" endLine="44" endPosition="20">
+      <varInfo nodeId="6062668769033909813" varName="plugin" />
+    </scopeInfo>
     <scopeInfo nodeId="6062668769033909813" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="54" startPosition="51" endLine="57" endPosition="13" />
     <scopeInfo nodeId="6062668769033909813" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="38" startPosition="0" endLine="42" endPosition="24">
       <varInfo nodeId="6062668769033909813" varName="e" />
@@ -4268,8 +4275,8 @@
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="34" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="37" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="37" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="49" endLine="12" endPosition="50" conceptFqName="jetbrains.mps.gtext.structure.GText" />

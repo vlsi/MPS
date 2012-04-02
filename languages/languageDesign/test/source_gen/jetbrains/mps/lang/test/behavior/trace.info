@@ -41,6 +41,8 @@
   <unitInfo fileName="TestNodeAnnotation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.TestNodeAnnotation_BehaviorDescriptor" />
   <unitInfo fileName="TestNodeReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.TestNodeReference_BehaviorDescriptor" />
   <unitInfo fileName="TestNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.TestNode_BehaviorDescriptor" />
+  <unitInfo fileName="Test_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.Test_ApplicationPlugin" />
+  <unitInfo fileName="Test_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.Test_ProjectPlugin" />
   <unitInfo fileName="TypeKeyStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.TypeKeyStatement_BehaviorDescriptor" />
   <unitInfo fileName="TypesCheckOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.TypesCheckOperation_BehaviorDescriptor" />
   <unitInfo fileName="VariableInialized_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.VariableInialized_BehaviorDescriptor" />

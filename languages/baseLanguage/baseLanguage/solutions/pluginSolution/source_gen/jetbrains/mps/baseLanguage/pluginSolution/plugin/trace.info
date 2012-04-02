@@ -3,9 +3,13 @@
   <unitInfo fileName="PluginSolution_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
   <unitInfo fileName="PluginSolution_ProjectPlugin.java" startLine="13" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.PluginSolution_ProjectPlugin" />
   <root nodeId="6573807532044001855">
+    <nodeInfo nodeId="6573807532044001855" fileName="PluginSolution_ProjectPlugin.java" startLine="20" startPosition="5" endLine="21" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6573807532044001855" fileName="PluginSolution_ProjectPlugin.java" startLine="21" startPosition="90" endLine="22" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6573807532044001855" fileName="PluginSolution_ProjectPlugin.java" startLine="22" startPosition="52" endLine="23" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6573807532044001855" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="8" startPosition="91" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseLanguageCustomPlugin_CustomProjectPlugin#()V" />
     <nodeInfo nodeId="6573807532044001855" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doInit#(Ljetbrains/mps/project/MPSProject;)V" />
     <nodeInfo nodeId="6573807532044001855" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doDispose#(Ljetbrains/mps/project/MPSProject;)V" />
+    <nodeInfo nodeId="6573807532044001855" fileName="PluginSolution_ProjectPlugin.java" startLine="19" startPosition="67" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <scopeInfo nodeId="6573807532044001855" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="9" startPosition="57" endLine="9" endPosition="57" />
     <scopeInfo nodeId="6573807532044001875" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="12" startPosition="42" endLine="12" endPosition="42" />
     <scopeInfo nodeId="6573807532044001928" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="15" startPosition="45" endLine="15" endPosition="45" />
@@ -15,6 +19,9 @@
     </scopeInfo>
     <scopeInfo nodeId="6573807532044001855" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="6573807532044001855" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="6573807532044001855" fileName="PluginSolution_ProjectPlugin.java" startLine="20" startPosition="5" endLine="23" endPosition="30">
+      <varInfo nodeId="6573807532044001855" varName="plugin" />
     </scopeInfo>
     <unitInfo nodeId="6573807532044001855" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" />
   </root>
