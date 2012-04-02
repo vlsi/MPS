@@ -1288,8 +1288,8 @@
                   </node>
                 </node>
               </node>
-              <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileIncludeSelector" typeId="3ior.5248329904288051100" id="8654221991637113343">
-                <property name="pattern" nameId="3ior.5248329904288051101" value="icons/**, resources/**" />
+              <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="8654221991637412122">
+                <property name="pattern" nameId="3ior.8654221991637384184" value="icons/**, resources/**" />
               </node>
             </node>
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="8654221991637113342" />
@@ -1469,8 +1469,8 @@
                     </node>
                   </node>
                 </node>
-                <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileIncludeSelector" typeId="3ior.5248329904288051100" id="8654221991637263360">
-                  <property name="pattern" nameId="3ior.5248329904288051101" value="**/*.mps, **/*.metadata, **/*.history" />
+                <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="8654221991637412118">
+                  <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.mps, **/*.metadata, **/*.history" />
                 </node>
               </node>
             </node>

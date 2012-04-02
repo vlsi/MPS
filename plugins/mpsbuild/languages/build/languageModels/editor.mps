@@ -271,6 +271,10 @@
       <property name="name" nameId="tpck.1169194664001" value="delete_reexport_inJavaDependencyLibrary" />
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="3ior.4993211115183250894" resolveInfo="BuildSource_JavaDependencyLibrary" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8654221991637384185">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="SourceSet.Selectors" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.8654221991637384182" resolveInfo="BuildFileIncludesSelector" />
+    </node>
   </roots>
   <root id="5617550519002745365">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7389400916847962446">
@@ -4345,6 +4349,18 @@
           </node>
         </node>
       </node>
+    </node>
+  </root>
+  <root id="8654221991637384185">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="8654221991637384191">
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="8654221991637384192">
+        <property name="text" nameId="tpc2.1073389577007" value="includes" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1203598923024" resolveInfo="keyword" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="8654221991637384193">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.8654221991637384184" resolveInfo="pattern" />
+      </node>
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="8654221991637384194" />
     </node>
   </root>
 </model>

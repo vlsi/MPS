@@ -237,6 +237,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "pattern");
   }
 
+  public static Object propertyMacro_GetPropertyValue_8654221991637384417(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "pattern");
+  }
+
   public static Object propertyMacro_GetPropertyValue_5248329904288082882(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "pattern");
   }
@@ -639,12 +643,36 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "elements", true);
   }
 
+  public static Iterable sourceNodesQuery_8654221991637384265(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "selectors", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFileSelectorInAttribute");
+      }
+    });
+  }
+
   public static Iterable sourceNodesQuery_5248329904288079434(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "selectors", true);
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "selectors", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFileSelectorInAttribute"));
+      }
+    });
+  }
+
+  public static Iterable sourceNodesQuery_8654221991637384349(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "selectors", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFileSelectorInAttribute");
+      }
+    });
   }
 
   public static Iterable sourceNodesQuery_7866279537988669091(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "selectors", true);
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "selectors", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFileSelectorInAttribute"));
+      }
+    });
   }
 
   public static Iterable sourceNodesQuery_4701820937132337458(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

@@ -49,15 +49,11 @@
       <fileset file="${basedir}/languages/baseLanguage/tuples/runtime/jetbrains.mps.baseLanguage.tuples.runtime.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-tuples.jar/modules">
-      <fileset dir="${basedir}/languages/baseLanguage/tuples/runtime">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/languages/baseLanguage/tuples/runtime" includes="icons/**, resources/**" />
     </copy>
     <mkdir dir="${build.tmp}/default/mps-tuples.jar/modules/" />
     <copy todir="${build.tmp}/default/mps-tuples.jar/modules/">
-      <fileset dir="${basedir}/languages/baseLanguage/tuples/runtime">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
+      <fileset dir="${basedir}/languages/baseLanguage/tuples/runtime" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/mps-core/lib/mps-tuples.jar">
       <fileset dir="${build.tmp}/java/out/mps-tuples" />
@@ -69,15 +65,11 @@
       <fileset file="${basedir}/languages/baseLanguage/closures/runtime/closures.runtime.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-closures.jar/modules">
-      <fileset dir="${basedir}/languages/baseLanguage/closures/runtime">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/languages/baseLanguage/closures/runtime" includes="icons/**, resources/**" />
     </copy>
     <mkdir dir="${build.tmp}/default/mps-closures.jar/modules/" />
     <copy todir="${build.tmp}/default/mps-closures.jar/modules/">
-      <fileset dir="${basedir}/languages/baseLanguage/closures/runtime">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
+      <fileset dir="${basedir}/languages/baseLanguage/closures/runtime" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/mps-core/lib/mps-closures.jar">
       <fileset dir="${build.tmp}/java/out/mps-closures" />
@@ -89,15 +81,11 @@
       <fileset file="${basedir}/languages/baseLanguage/collections/runtime/collections.runtime.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-collections.jar/modules">
-      <fileset dir="${basedir}/languages/baseLanguage/collections/runtime">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/languages/baseLanguage/collections/runtime" includes="icons/**, resources/**" />
     </copy>
     <mkdir dir="${build.tmp}/default/mps-collections.jar/modules/jetbrains" />
     <copy todir="${build.tmp}/default/mps-collections.jar/modules/jetbrains">
-      <fileset dir="${basedir}/languages/baseLanguage/collections/runtime/jetbrains">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
+      <fileset dir="${basedir}/languages/baseLanguage/collections/runtime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/mps-core/lib/mps-collections.jar">
       <fileset dir="${build.tmp}/java/out/mps-collections" />
@@ -109,269 +97,193 @@
       <fileset file="${basedir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/jetbrains.mps.analyzers.runtime.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
-      <fileset dir="${basedir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime" includes="icons/**, resources/**" />
     </copy>
     <mkdir dir="${build.tmp}/default/mps-core.jar/modules/" />
     <copy todir="${build.tmp}/default/mps-core.jar/modules/">
-      <fileset dir="${basedir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
+      <fileset dir="${basedir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
       <fileset file="${basedir}/core/kernel/kernelSolution/jetbrains.mps.kernel.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
-      <fileset dir="${basedir}/core/kernel/kernelSolution">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/core/kernel/kernelSolution" includes="icons/**, resources/**" />
     </copy>
     <mkdir dir="${build.tmp}/default/mps-core.jar/modules/" />
     <copy todir="${build.tmp}/default/mps-core.jar/modules/">
-      <fileset dir="${basedir}/core/kernel/kernelSolution">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
+      <fileset dir="${basedir}/core/kernel/kernelSolution" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
       <fileset file="${basedir}/core/kernel/smodelRuntime/smodelRuntime.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
-      <fileset dir="${basedir}/core/kernel/smodelRuntime">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/core/kernel/smodelRuntime" includes="icons/**, resources/**" />
     </copy>
     <mkdir dir="${build.tmp}/default/mps-core.jar/modules/" />
     <copy todir="${build.tmp}/default/mps-core.jar/modules/">
-      <fileset dir="${basedir}/core/kernel/smodelRuntime">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
+      <fileset dir="${basedir}/core/kernel/smodelRuntime" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
       <fileset file="${basedir}/core/findUsages-runtime/runtime.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
-      <fileset dir="${basedir}/core/findUsages-runtime">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/core/findUsages-runtime" includes="icons/**, resources/**" />
     </copy>
     <mkdir dir="${build.tmp}/default/mps-core.jar/modules/" />
     <copy todir="${build.tmp}/default/mps-core.jar/modules/">
-      <fileset dir="${basedir}/core/findUsages-runtime">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
+      <fileset dir="${basedir}/core/findUsages-runtime" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <mkdir dir="${build.tmp}/default/mps-core.jar/modules/models" />
     <copy todir="${build.tmp}/default/mps-core.jar/modules/models">
-      <fileset dir="${basedir}/core/findUsages-runtime/models">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
+      <fileset dir="${basedir}/core/findUsages-runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
       <fileset file="${basedir}/core/refactoring-runtime/jetbrains.mps.refactoring.runtime.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
-      <fileset dir="${basedir}/core/refactoring-runtime">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/core/refactoring-runtime" includes="icons/**, resources/**" />
     </copy>
     <mkdir dir="${build.tmp}/default/mps-core.jar/modules/models" />
     <copy todir="${build.tmp}/default/mps-core.jar/modules/models">
-      <fileset dir="${basedir}/core/refactoring-runtime/models">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
+      <fileset dir="${basedir}/core/refactoring-runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
       <fileset file="${basedir}/core/kernel/patternRuntime/runtime.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
-      <fileset dir="${basedir}/core/kernel/patternRuntime">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/core/kernel/patternRuntime" includes="icons/**, resources/**" />
     </copy>
     <mkdir dir="${build.tmp}/default/mps-core.jar/modules/models" />
     <copy todir="${build.tmp}/default/mps-core.jar/modules/models">
-      <fileset dir="${basedir}/core/kernel/patternRuntime/models">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
+      <fileset dir="${basedir}/core/kernel/patternRuntime/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
       <fileset file="${basedir}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
-      <fileset dir="${basedir}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info" includes="icons/**, resources/**" />
     </copy>
     <mkdir dir="${build.tmp}/default/mps-core.jar/modules/" />
     <copy todir="${build.tmp}/default/mps-core.jar/modules/">
-      <fileset dir="${basedir}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
+      <fileset dir="${basedir}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
       <fileset file="${basedir}/core/generator/solutions/traceInfo/util/cache.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
-      <fileset dir="${basedir}/core/generator/solutions/traceInfo/util">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/core/generator/solutions/traceInfo/util" includes="icons/**, resources/**" />
     </copy>
     <mkdir dir="${build.tmp}/default/mps-core.jar/modules/models" />
     <copy todir="${build.tmp}/default/mps-core.jar/modules/models">
-      <fileset dir="${basedir}/core/generator/solutions/traceInfo/util/models">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
+      <fileset dir="${basedir}/core/generator/solutions/traceInfo/util/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
       <fileset file="${basedir}/core/kernel/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
-      <fileset dir="${basedir}/core/kernel/dataFlowRuntime">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/core/kernel/dataFlowRuntime" includes="icons/**, resources/**" />
     </copy>
     <mkdir dir="${build.tmp}/default/mps-core.jar/modules/" />
     <copy todir="${build.tmp}/default/mps-core.jar/modules/">
-      <fileset dir="${basedir}/core/kernel/dataFlowRuntime">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
+      <fileset dir="${basedir}/core/kernel/dataFlowRuntime" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
       <fileset file="${basedir}/core/kernel/stubUtils/stubUtils.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
-      <fileset dir="${basedir}/core/kernel/stubUtils">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/core/kernel/stubUtils" includes="icons/**, resources/**" />
     </copy>
     <mkdir dir="${build.tmp}/default/mps-core.jar/modules/" />
     <copy todir="${build.tmp}/default/mps-core.jar/modules/">
-      <fileset dir="${basedir}/core/kernel/stubUtils">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
+      <fileset dir="${basedir}/core/kernel/stubUtils" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
       <fileset file="${basedir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/jetbrains.mps.typesystemEngine.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
-      <fileset dir="${basedir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine" includes="icons/**, resources/**" />
     </copy>
     <mkdir dir="${build.tmp}/default/mps-core.jar/modules/" />
     <copy todir="${build.tmp}/default/mps-core.jar/modules/">
-      <fileset dir="${basedir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
+      <fileset dir="${basedir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
       <fileset file="${basedir}/core/generator/solutions/generator/jetbrains.mps.generator.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
-      <fileset dir="${basedir}/core/generator/solutions/generator">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/core/generator/solutions/generator" includes="icons/**, resources/**" />
     </copy>
     <mkdir dir="${build.tmp}/default/mps-core.jar/modules/models" />
     <copy todir="${build.tmp}/default/mps-core.jar/modules/models">
-      <fileset dir="${basedir}/core/generator/solutions/generator/models">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
+      <fileset dir="${basedir}/core/generator/solutions/generator/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
       <fileset file="${basedir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/jetbrains.mps.make.runtime.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
-      <fileset dir="${basedir}/core/make-runtime/solutions/jetbrains.mps.make.runtime">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/core/make-runtime/solutions/jetbrains.mps.make.runtime" includes="icons/**, resources/**" />
     </copy>
     <mkdir dir="${build.tmp}/default/mps-core.jar/modules/" />
     <copy todir="${build.tmp}/default/mps-core.jar/modules/">
-      <fileset dir="${basedir}/core/make-runtime/solutions/jetbrains.mps.make.runtime">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
+      <fileset dir="${basedir}/core/make-runtime/solutions/jetbrains.mps.make.runtime" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
       <fileset file="${basedir}/core/make-runtime/solutions/jetbrains.mps.make/jetbrains.mps.make.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
-      <fileset dir="${basedir}/core/make-runtime/solutions/jetbrains.mps.make">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/core/make-runtime/solutions/jetbrains.mps.make" includes="icons/**, resources/**" />
     </copy>
     <mkdir dir="${build.tmp}/default/mps-core.jar/modules/" />
     <copy todir="${build.tmp}/default/mps-core.jar/modules/">
-      <fileset dir="${basedir}/core/make-runtime/solutions/jetbrains.mps.make">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
+      <fileset dir="${basedir}/core/make-runtime/solutions/jetbrains.mps.make" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
       <fileset file="${basedir}/core/kernel/resources/jetbrains.mps.smodel.resources.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
-      <fileset dir="${basedir}/core/kernel/resources">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/core/kernel/resources" includes="icons/**, resources/**" />
     </copy>
     <mkdir dir="${build.tmp}/default/mps-core.jar/modules/" />
     <copy todir="${build.tmp}/default/mps-core.jar/modules/">
-      <fileset dir="${basedir}/core/kernel/resources">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
+      <fileset dir="${basedir}/core/kernel/resources" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
       <fileset file="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/jetbrains.mps.baseLanguage.search.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
-      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search" includes="icons/**, resources/**" />
     </copy>
     <mkdir dir="${build.tmp}/default/mps-core.jar/modules/" />
     <copy todir="${build.tmp}/default/mps-core.jar/modules/">
-      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
+      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
       <fileset file="${basedir}/languages/core/stub/JDK/JDK.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
-      <fileset dir="${basedir}/languages/core/stub/JDK">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/languages/core/stub/JDK" includes="icons/**, resources/**" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
       <fileset file="${basedir}/languages/core/stub/JDK.Tools/Tools.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
-      <fileset dir="${basedir}/languages/core/stub/JDK.Tools">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/languages/core/stub/JDK.Tools" includes="icons/**, resources/**" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
       <fileset file="${basedir}/languages/core/stub/MPS.Core/Core.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
-      <fileset dir="${basedir}/languages/core/stub/MPS.Core">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/languages/core/stub/MPS.Core" includes="icons/**, resources/**" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
       <fileset file="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/util.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-core.jar/modules">
-      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util" includes="icons/**, resources/**" />
     </copy>
     <mkdir dir="${build.tmp}/default/mps-core.jar/modules/solution" />
     <copy todir="${build.tmp}/default/mps-core.jar/modules/solution">
-      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/solution">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
+      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/solution" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/mps-core/lib/mps-core.jar">
       <fileset dir="${build.tmp}/java/out/mps-core" />
@@ -383,23 +295,17 @@
       <fileset file="${basedir}/languages/core/stub/Ant/Ant.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-backend.jar/modules">
-      <fileset dir="${basedir}/languages/core/stub/Ant">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/languages/core/stub/Ant" includes="icons/**, resources/**" />
     </copy>
     <copy todir="${build.tmp}/default/mps-backend.jar/modules">
       <fileset file="${basedir}/core/ant/jetbrains.mps.build.antsupport.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-backend.jar/modules">
-      <fileset dir="${basedir}/core/ant">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/core/ant" includes="icons/**, resources/**" />
     </copy>
     <mkdir dir="${build.tmp}/default/mps-backend.jar/modules/models" />
     <copy todir="${build.tmp}/default/mps-backend.jar/modules/models">
-      <fileset dir="${basedir}/core/ant/models">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
+      <fileset dir="${basedir}/core/ant/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/mps-core/lib/mps-backend.jar">
       <fileset dir="${build.tmp}/java/out/mps-ant" />
@@ -411,23 +317,17 @@
       <fileset file="${basedir}/languages/core/stub/MPS.Platform/Platform.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-platform.jar/modules">
-      <fileset dir="${basedir}/languages/core/stub/MPS.Platform">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/languages/core/stub/MPS.Platform" includes="icons/**, resources/**" />
     </copy>
     <copy todir="${build.tmp}/default/mps-platform.jar/modules">
       <fileset file="${basedir}/workbench/mps-platform/base.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-platform.jar/modules">
-      <fileset dir="${basedir}/workbench/mps-platform">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/workbench/mps-platform" includes="icons/**, resources/**" />
     </copy>
     <mkdir dir="${build.tmp}/default/mps-platform.jar/modules/models" />
     <copy todir="${build.tmp}/default/mps-platform.jar/modules/models">
-      <fileset dir="${basedir}/workbench/mps-platform/models">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
+      <fileset dir="${basedir}/workbench/mps-platform/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/mps-core/lib/mps-platform.jar">
       <fileset dir="${build.tmp}/java/out/mps-platform" />
@@ -439,37 +339,27 @@
       <fileset file="${basedir}/languages/core/stub/MPS.Editor/Editor.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-editor.jar/modules">
-      <fileset dir="${basedir}/languages/core/stub/MPS.Editor">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/languages/core/stub/MPS.Editor" includes="icons/**, resources/**" />
     </copy>
     <copy todir="${build.tmp}/default/mps-editor.jar/modules">
       <fileset file="${basedir}/workbench/mps-editor/jetbrains.mps.ide.editor.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-editor.jar/modules">
-      <fileset dir="${basedir}/workbench/mps-editor">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/workbench/mps-editor" includes="icons/**, resources/**" />
     </copy>
     <mkdir dir="${build.tmp}/default/mps-editor.jar/modules/solution" />
     <copy todir="${build.tmp}/default/mps-editor.jar/modules/solution">
-      <fileset dir="${basedir}/workbench/mps-editor/solution">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
+      <fileset dir="${basedir}/workbench/mps-editor/solution" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <copy todir="${build.tmp}/default/mps-editor.jar/modules">
       <fileset file="${basedir}/editor/editor-runtime/jetbrains.mps.editor.runtime.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-editor.jar/modules">
-      <fileset dir="${basedir}/editor/editor-runtime">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/editor/editor-runtime" includes="icons/**, resources/**" />
     </copy>
     <mkdir dir="${build.tmp}/default/mps-editor.jar/modules/models" />
     <copy todir="${build.tmp}/default/mps-editor.jar/modules/models">
-      <fileset dir="${basedir}/editor/editor-runtime/models">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
+      <fileset dir="${basedir}/editor/editor-runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/mps-core/lib/mps-editor.jar">
       <fileset dir="${build.tmp}/java/out/mps-editor" />
@@ -484,9 +374,7 @@
       <fileset file="${basedir}/languages/core/stub/Testbench/Testbench.msd" />
     </copy>
     <copy todir="${build.tmp}/default/mps-test.jar/modules">
-      <fileset dir="${basedir}/languages/core/stub/Testbench">
-        <include name="icons/**, resources/**" />
-      </fileset>
+      <fileset dir="${basedir}/languages/core/stub/Testbench" includes="icons/**, resources/**" />
     </copy>
     <jar destfile="${build.layout}/mps-core/lib/mps-test.jar">
       <fileset dir="${build.tmp}/java/out/mps-test" />
@@ -519,7 +407,7 @@
     <javac destdir="${build.tmp}/java/out/mps-tuples" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src path="${mps_langs}/baseLanguage/tuples/runtime/source_gen" />
-      <classpath></classpath>
+      <classpath />
     </javac>
   </target>
   
@@ -528,7 +416,7 @@
     <javac destdir="${build.tmp}/java/out/mps-closures" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src path="${mps_langs}/baseLanguage/closures/runtime/source_gen" />
-      <classpath></classpath>
+      <classpath />
     </javac>
   </target>
   
@@ -713,99 +601,37 @@
     <javac destdir="${build.tmp}/java.modules.cycle.1" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/baseLanguage/baseLanguage/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/baseLanguage/closures/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/baseLanguage/collections/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/baseLanguage/baseLanguageInternal/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/baseLanguage/blTypes/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/baseLanguage/classifiers/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/baseLanguage/javadoc/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/baseLanguage/tuples/languages/tuples/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/baseLanguage/unitTest/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/util/extensionMethod/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/core/core/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/behavior/languages/behavior/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/constraints/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/editor/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/generator/languages/generationContext/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/generator/languages/generationParameters/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/generator/languages/templateLanguage/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/intentions/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/pattern/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/plugin/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/checkedName/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/resources/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/project/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/quotation/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/sharedConcepts/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/smodel/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/structure/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/test/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/traceable/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/typesystem/source_gen" />
-        </path>
+        <path location="${basedir}/languages/baseLanguage/baseLanguage/source_gen" />
+        <path location="${basedir}/languages/baseLanguage/closures/source_gen" />
+        <path location="${basedir}/languages/baseLanguage/collections/source_gen" />
+        <path location="${basedir}/languages/baseLanguage/baseLanguageInternal/source_gen" />
+        <path location="${basedir}/languages/baseLanguage/blTypes/source_gen" />
+        <path location="${basedir}/languages/baseLanguage/classifiers/source_gen" />
+        <path location="${basedir}/languages/baseLanguage/javadoc/source_gen" />
+        <path location="${basedir}/languages/baseLanguage/tuples/languages/tuples/source_gen" />
+        <path location="${basedir}/languages/baseLanguage/unitTest/source_gen" />
+        <path location="${basedir}/languages/util/extensionMethod/source_gen" />
+        <path location="${basedir}/languages/core/core/source_gen" />
+        <path location="${basedir}/languages/languageDesign/behavior/languages/behavior/source_gen" />
+        <path location="${basedir}/languages/languageDesign/constraints/source_gen" />
+        <path location="${basedir}/languages/languageDesign/editor/source_gen" />
+        <path location="${basedir}/languages/languageDesign/generator/languages/generationContext/source_gen" />
+        <path location="${basedir}/languages/languageDesign/generator/languages/generationParameters/source_gen" />
+        <path location="${basedir}/languages/languageDesign/generator/languages/templateLanguage/source_gen" />
+        <path location="${basedir}/languages/languageDesign/intentions/source_gen" />
+        <path location="${basedir}/languages/languageDesign/pattern/source_gen" />
+        <path location="${basedir}/languages/languageDesign/plugin/source_gen" />
+        <path location="${basedir}/languages/languageDesign/checkedName/source_gen" />
+        <path location="${basedir}/languages/languageDesign/resources/source_gen" />
+        <path location="${basedir}/languages/languageDesign/project/source_gen" />
+        <path location="${basedir}/languages/languageDesign/quotation/source_gen" />
+        <path location="${basedir}/languages/languageDesign/sharedConcepts/source_gen" />
+        <path location="${basedir}/languages/languageDesign/smodel/source_gen" />
+        <path location="${basedir}/languages/languageDesign/structure/source_gen" />
+        <path location="${basedir}/languages/languageDesign/test/source_gen" />
+        <path location="${basedir}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" />
+        <path location="${basedir}/languages/languageDesign/traceable/source_gen" />
+        <path location="${basedir}/languages/languageDesign/typesystem/source_gen" />
       </src>
       <classpath>
         <path refid="path.java.library.core-libraries" />
@@ -834,9 +660,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/baseLanguage/baseLanguage/source_gen" />
-        </path>
+        <path location="${basedir}/languages/baseLanguage/baseLanguage/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
@@ -863,9 +687,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closures" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/baseLanguage/closures/source_gen" />
-        </path>
+        <path location="${basedir}/languages/baseLanguage/closures/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-core" />
@@ -892,9 +714,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collections" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/baseLanguage/collections/source_gen" />
-        </path>
+        <path location="${basedir}/languages/baseLanguage/collections/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-core" />
@@ -921,9 +741,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguageInternal" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/baseLanguage/baseLanguageInternal/source_gen" />
-        </path>
+        <path location="${basedir}/languages/baseLanguage/baseLanguageInternal/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-core" />
@@ -950,9 +768,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.blTypes" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/baseLanguage/blTypes/source_gen" />
-        </path>
+        <path location="${basedir}/languages/baseLanguage/blTypes/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-core" />
@@ -978,9 +794,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.checkedDots" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/baseLanguage/checkDot/languages/checkedDots/source_gen" />
-        </path>
+        <path location="${basedir}/languages/baseLanguage/checkDot/languages/checkedDots/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -1022,9 +836,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.classifiers" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/baseLanguage/classifiers/source_gen" />
-        </path>
+        <path location="${basedir}/languages/baseLanguage/classifiers/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-core" />
@@ -1051,9 +863,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.constructors" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/baseLanguage/constructors/source_gen" />
-        </path>
+        <path location="${basedir}/languages/baseLanguage/constructors/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -1095,9 +905,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.javadoc" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/baseLanguage/javadoc/source_gen" />
-        </path>
+        <path location="${basedir}/languages/baseLanguage/javadoc/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-core" />
@@ -1124,9 +932,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.jdk7" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/baseLanguage/jdk7/languages/jdk7/source_gen" />
-        </path>
+        <path location="${basedir}/languages/baseLanguage/jdk7/languages/jdk7/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -1168,9 +974,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.logging" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/baseLanguage/logging/source_gen" />
-        </path>
+        <path location="${basedir}/languages/baseLanguage/logging/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -1212,9 +1016,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.overloadedOperators" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/source_gen" />
-        </path>
+        <path location="${basedir}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -1256,9 +1058,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.tuples" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/baseLanguage/tuples/languages/tuples/source_gen" />
-        </path>
+        <path location="${basedir}/languages/baseLanguage/tuples/languages/tuples/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-core" />
@@ -1285,9 +1085,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unitTest" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/baseLanguage/unitTest/source_gen" />
-        </path>
+        <path location="${basedir}/languages/baseLanguage/unitTest/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-core" />
@@ -1316,9 +1114,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.extensionMethods" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/util/extensionMethod/source_gen" />
-        </path>
+        <path location="${basedir}/languages/util/extensionMethod/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-core" />
@@ -1345,9 +1141,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/util/regexp/source_gen" />
-        </path>
+        <path location="${basedir}/languages/util/regexp/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -1389,9 +1183,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/source_gen" />
-        </path>
+        <path location="${basedir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/source_gen" />
       </src>
       <classpath>
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
@@ -1404,9 +1196,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.builders" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/util/builders/source_gen" />
-        </path>
+        <path location="${basedir}/languages/util/builders/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -1451,9 +1241,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.analyzers" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/core/analyzers/languages/analyzers/source_gen" />
-        </path>
+        <path location="${basedir}/core/analyzers/languages/analyzers/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -1500,9 +1288,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.core" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/core/core/source_gen" />
-        </path>
+        <path location="${basedir}/languages/core/core/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-core" />
@@ -1528,9 +1314,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.actions" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/actions/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/actions/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -1579,9 +1363,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.behavior" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/behavior/languages/behavior/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/behavior/languages/behavior/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-core" />
@@ -1608,9 +1390,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.constraints" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/constraints/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/constraints/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-core" />
@@ -1637,9 +1417,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.dataFlow" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/dataFlow/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/dataFlow/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -1688,9 +1466,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/editor/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/editor/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-core" />
@@ -1717,9 +1493,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/editor/languages/table/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/editor/languages/table/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -1769,9 +1543,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.editorTest" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/editor/languages/editorTest/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/editor/languages/editorTest/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
@@ -1819,9 +1591,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/editor/languages/table/runtime/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/editor/languages/table/runtime/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
@@ -1855,9 +1625,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.extension" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/extension/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/extension/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -1899,12 +1667,8 @@
     <javac destdir="${build.tmp}/java.modules.cycle.2" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/findUsages/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/refactoring/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/findUsages/source_gen" />
+        <path location="${basedir}/languages/languageDesign/refactoring/source_gen" />
       </src>
       <classpath>
         <path refid="path.java.library.idea-libraries" />
@@ -1955,9 +1719,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.findUsages" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/findUsages/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/findUsages/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -2009,9 +1771,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.descriptor" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/generator/languages/descriptor/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/generator/languages/descriptor/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -2065,9 +1825,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.generator.generationContext" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/generator/languages/generationContext/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/generator/languages/generationContext/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-core" />
@@ -2094,9 +1852,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.generator.generationParameters" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/generator/languages/generationParameters/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/generator/languages/generationParameters/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-core" />
@@ -2123,9 +1879,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.generator" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/generator/languages/templateLanguage/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/generator/languages/templateLanguage/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-core" />
@@ -2152,9 +1906,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.intentions" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/intentions/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/intentions/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-core" />
@@ -2181,9 +1933,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.pattern" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/pattern/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/pattern/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-core" />
@@ -2210,9 +1960,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.plugin" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/plugin/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/plugin/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.gtext.runtime" />
@@ -2240,9 +1988,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.checkedName" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/checkedName/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/checkedName/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-core" />
@@ -2269,9 +2015,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.access" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/access/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/access/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -2321,9 +2065,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.resources" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/resources/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/resources/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
@@ -2350,9 +2092,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.project" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/project/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/project/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-core" />
@@ -2378,9 +2118,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.quotation" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/quotation/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/quotation/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-core" />
@@ -2407,9 +2145,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.refactoring" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/refactoring/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/refactoring/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -2461,9 +2197,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.script" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/script/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/script/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -2509,9 +2243,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.sharedConcepts" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/sharedConcepts/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/sharedConcepts/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-core" />
@@ -2538,9 +2270,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.smodel" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/smodel/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/smodel/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-core" />
@@ -2567,9 +2297,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.smodelTests" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/smodel/languages/smodelTests/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/smodel/languages/smodelTests/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
@@ -2599,9 +2327,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.structure" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/structure/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/structure/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-core" />
@@ -2628,9 +2354,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.stubs" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/stubs/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/stubs/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -2675,9 +2399,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.test" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/test/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/test/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-core" />
@@ -2707,9 +2429,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-collections" />
@@ -2737,9 +2457,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.textGen" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/textGen/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/textGen/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -2788,9 +2506,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.traceable" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/traceable/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/traceable/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-closures" />
@@ -2816,9 +2532,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/typesystem/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/typesystem/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-core" />
@@ -2845,12 +2559,8 @@
     <javac destdir="${build.tmp}/java.modules.cycle.3" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/util/xml/xml/source_gen" />
-        </path>
-        <path>
-          <pathelement location="${basedir}/languages/util/xml/xmlInternal/source_gen" />
-        </path>
+        <path location="${basedir}/languages/util/xml/xml/source_gen" />
+        <path location="${basedir}/languages/util/xml/xmlInternal/source_gen" />
       </src>
       <classpath>
         <path refid="path.java.library.idea-libraries" />
@@ -2899,9 +2609,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.xml" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/util/xml/xml/source_gen" />
-        </path>
+        <path location="${basedir}/languages/util/xml/xml/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -2951,9 +2659,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.xmlInternal" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/util/xml/xmlInternal/source_gen" />
-        </path>
+        <path location="${basedir}/languages/util/xml/xmlInternal/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -3003,9 +2709,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.xmlSchema" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/util/xml/xmlSchema/source_gen" />
-        </path>
+        <path location="${basedir}/languages/util/xml/xmlSchema/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -3051,9 +2755,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.xmlQuery" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/util/xml/xmlQuery/source_gen" />
-        </path>
+        <path location="${basedir}/languages/util/xml/xmlQuery/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -3104,9 +2806,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.gtext" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/util/gtext/source_gen" />
-        </path>
+        <path location="${basedir}/languages/util/gtext/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -3149,9 +2849,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.gtext.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/util/gtext/runtime/source_gen" />
-        </path>
+        <path location="${basedir}/languages/util/gtext/runtime/source_gen" />
       </src>
       <classpath>
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
@@ -3164,9 +2862,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.make.facet" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/make/languages/facet/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/make/languages/facet/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -3214,9 +2910,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.make.outlook" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/make/languages/outlook/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/make/languages/outlook/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -3265,9 +2959,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.make.script" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/languageDesign/make/languages/script/source_gen" />
-        </path>
+        <path location="${basedir}/languages/languageDesign/make/languages/script/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -3312,9 +3004,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.gentest" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/util/buildlanguage/languages/gentest/source_gen" />
-        </path>
+        <path location="${basedir}/languages/util/buildlanguage/languages/gentest/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
@@ -3358,9 +3048,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.reduced" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path>
-          <pathelement location="${basedir}/languages/util/buildlanguage/languages/reduced/source_gen" />
-        </path>
+        <path location="${basedir}/languages/util/buildlanguage/languages/reduced/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
