@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="7926701909975931624">
+<<<<<<< HEAD
     <unitInfo nodeId="7926701909975931624" fileName="buildMPS.xml" startLine="1" startPosition="0" endLine="2973" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildMPS" />
+=======
+    <unitInfo nodeId="7926701909975931624" fileName="buildMPS.xml" startLine="1" startPosition="0" endLine="3017" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildMPS" />
+>>>>>>> build lang: <mps module sources> package models/resources
   </root>
 </debugInfo>
 

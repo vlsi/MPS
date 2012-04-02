@@ -79,6 +79,17 @@
     <copy todir="${build.tmp}/default/baseLanguage.jar/module">
       <fileset file="${basedir}/languages/baseLanguage/baseLanguage/baseLanguage.mpl" />
     </copy>
+    <copy todir="${build.tmp}/default/baseLanguage.jar/module">
+      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/baseLanguage.jar/module/languageModels" />
+    <copy todir="${build.tmp}/default/baseLanguage.jar/module/languageModels">
+      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/languageModels">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
       <fileset dir="${build.tmp}/default/baseLanguage.jar" />

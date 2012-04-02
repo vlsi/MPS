@@ -6,9 +6,12 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.build.util.RelativePathHelper;
+import jetbrains.mps.build.behavior.BuildSourcePath_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.build.util.Context;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -47,6 +50,19 @@ public class QueriesGenerated {
     return _context.getNode().getBooleanProperty("targetReexport");
   }
 
+  public static Object propertyMacro_GetPropertyValue_8654221991637263445(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    try {
+      String relative = ((RelativePathHelper) _context.getVariable("var:modulePath")).makeRelative(BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(SLinkOperations.getTarget(_context.getNode(), "folder", true), Context.defaultContext(_context)));
+      if (relative == null) {
+        _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "folder", true), "model root folder should be placed under module: " + BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(_context.getNode(), "folder", true)));
+      }
+      return relative;
+    } catch (RelativePathHelper.PathException ex) {
+      _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "folder", true), "cannot build relative path: " + ex.getMessage());
+      return "???";
+    }
+  }
+
   public static Object referenceMacro_GetReferent_4267986820121149131(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode targetModule = (SNode) _context.getNode().getReferent("targetModule");
     return _context.getOutputNodeByInputNodeAndMappingLabel(targetModule, "javaModule");
@@ -65,6 +81,14 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true) != null);
   }
 
+  public static boolean ifMacro_Condition_8654221991637237394(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_8654221991637263558(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true) != null);
+  }
+
   public static SNode sourceNodeQuery_2303926226081111358(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "folder", true);
   }
@@ -75,6 +99,14 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_8369506495128850710(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true);
+  }
+
+  public static SNode sourceNodeQuery_8654221991637113346(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return BuildSourcePath_Behavior.call_getParent_8654221991637145399(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true));
+  }
+
+  public static SNode sourceNodeQuery_8654221991637263395(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "folder", true);
   }
 
   public static Iterable sourceNodesQuery_2303926226081111354(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -180,6 +212,18 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "modules", true);
   }
 
+  public static Iterable sourceNodesQuery_8654221991637263183(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "module", false), "sources", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot");
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot");
+      }
+    });
+  }
+
   public static void mappingScript_CodeBlock_3189788309732145595(final IOperationContext operationContext, final MappingScriptContext _context) {
     for (SNode project : SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.structure.BuildProject")) {
       if (!(_context.isDirty(project))) {
@@ -225,5 +269,9 @@ public class QueriesGenerated {
     Set<SNode> usedLanguages = new LinkedHashSet<SNode>();
     BuildModuleUtil.collectAllCompileTimeDependencies(_context.getNode(), modules, usedLanguages);
     return MultiTuple.<SNode,Set<SNode>,Set<SNode>>from(_context.getNode(), modules, usedLanguages);
+  }
+
+  public static Object insertMacro_varValue_8654221991637263463(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return new RelativePathHelper(BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true), Context.defaultContext(_context)));
   }
 }
