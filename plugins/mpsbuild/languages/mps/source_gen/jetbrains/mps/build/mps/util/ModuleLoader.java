@@ -666,7 +666,16 @@ public class ModuleLoader {
       SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(javaSource, "folder", true), "jetbrains.mps.build.structure.BuildInputSingleFolder"), "path", p, true);
       ListSequence.fromList(SLinkOperations.getTargets(module, "sources", true)).addElement(javaSource);
     }
-    for (ModelRoot modelRoot : myModuleDescriptor.getModelRoots()) {
+    Iterable<ModelRoot> modelRoots = myModuleDescriptor.getModelRoots();
+    if (myModuleDescriptor instanceof LanguageDescriptor) {
+      Iterable<GeneratorDescriptor> generators = ((LanguageDescriptor) myModuleDescriptor).getGenerators();
+      modelRoots = Sequence.fromIterable(modelRoots).concat(Sequence.fromIterable(generators).translate(new ITranslator2<GeneratorDescriptor, ModelRoot>() {
+        public Iterable<ModelRoot> translate(GeneratorDescriptor it) {
+          return it.getModelRoots();
+        }
+      }));
+    }
+    for (ModelRoot modelRoot : modelRoots) {
       if (modelRoot.getManager() != null) {
         continue;
       }

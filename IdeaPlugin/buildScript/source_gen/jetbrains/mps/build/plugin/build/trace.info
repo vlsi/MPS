@@ -2,10 +2,14 @@
 <debugInfo>
   <root nodeId="7926701909975931624">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <unitInfo nodeId="7926701909975931624" fileName="buildMPS.xml" startLine="1" startPosition="0" endLine="2973" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildMPS" />
 =======
     <unitInfo nodeId="7926701909975931624" fileName="buildMPS.xml" startLine="1" startPosition="0" endLine="3017" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildMPS" />
 >>>>>>> build lang: <mps module sources> package models/resources
+=======
+    <unitInfo nodeId="7926701909975931624" fileName="buildMPS.xml" startLine="1" startPosition="0" endLine="3023" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildMPS" />
+>>>>>>> build lang: load generators' model roots
   </root>
 </debugInfo>
 

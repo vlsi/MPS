@@ -90,6 +90,12 @@
         <include name="**/*.mps, **/*.metadata, **/*.history" />
       </fileset>
     </copy>
+    <mkdir dir="${build.tmp}/default/baseLanguage.jar/module/generator/java/templates" />
+    <copy todir="${build.tmp}/default/baseLanguage.jar/module/generator/java/templates">
+      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/generator/java/templates">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
       <fileset dir="${build.tmp}/default/baseLanguage.jar" />
