@@ -20,7 +20,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.plugin.behavior.ActionDataParameterDeclaration_Behavior;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
@@ -80,33 +79,6 @@ public class QueriesGenerated {
                   return "current model";
                 }
                 return "";
-              }
-            });
-          }
-        }
-      }
-    }
-    {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionParameter");
-      SNode childConcept = (SNode) _context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Computable computable = new Computable() {
-          public Object compute() {
-            return ActionDataParameterDeclaration_Behavior.getVariants_1227641865136();
-          }
-        };
-        Iterable<SNode> queryResult = (Iterable) computable.compute();
-        if (queryResult != null) {
-          for (final SNode item : queryResult) {
-            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration", null);
-                SLinkOperations.setTarget(result, "key", (item), false);
-                return result;
-              }
-
-              public String getDescriptionText(String pattern) {
-                return ActionDataParameterDeclaration_Behavior.getDescription_47694270442103157((item));
               }
             });
           }

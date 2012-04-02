@@ -13,23 +13,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.constraints.ActionDataParameterDeclaration_Constraints" file="ActionDataParameterDeclaration_Constraints.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ActionDataParameterDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceScopeProvider" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.plugin.constraints.ActionDeclaration_Constraints" file="ActionDeclaration_Constraints.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -167,7 +150,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.constraints.ActionConstructionParameterDeclaration_Constraints" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.constraints.ActionDataParameterDeclaration_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.constraints.ActionDeclaration_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.constraints.ActionGroupDeclaration_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.constraints.ActionInstance_Constraints" />
