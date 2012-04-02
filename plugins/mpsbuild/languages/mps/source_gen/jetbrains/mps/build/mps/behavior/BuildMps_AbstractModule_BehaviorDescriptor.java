@@ -15,6 +15,10 @@ public abstract class BuildMps_AbstractModule_BehaviorDescriptor extends BuildPr
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 
+  public boolean virtual_isCompact_8369506495128693730(SNode thisNode) {
+    return BuildMps_AbstractModule_Behavior.virtual_isCompact_8369506495128693730(thisNode);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule";

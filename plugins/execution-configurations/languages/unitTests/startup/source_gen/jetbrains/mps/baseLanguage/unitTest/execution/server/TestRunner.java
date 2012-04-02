@@ -58,6 +58,9 @@ public class TestRunner {
     }
   }
 
+  /**
+   * Since BaseTransformationTest4 is no longer TestCase we can start tests without hacks
+   */
   @Deprecated
   @ToRemove(version = 2.1)
   protected Request createMethodRequest(String testCase, String method) throws ClassNotFoundException {
@@ -65,6 +68,9 @@ public class TestRunner {
     return Request.method(Class.forName(testCase), method);
   }
 
+  /**
+   * Since BaseTransformationTest4 is no longer TestCase we can start tests without hacks
+   */
   @Deprecated
   @ToRemove(version = 2.1)
   protected Request createClassRequest(String className) throws ClassNotFoundException {

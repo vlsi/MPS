@@ -1820,15 +1820,15 @@
       <link role="targetDeclaration" roleId="tps4.1224178284812" targetNodeId="6p90.2113577360859083310" resolveInfo="exe" />
       <node role="delete" roleId="tps4.1210852534988" type="tps4.Delete" typeId="tps4.1204122781510" id="4514696390934965380" />
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="4514696390934965381">
-        <node role="sourcePath" roleId="tps4.1220982054961" type="tps4.Path" typeId="tps4.1220973916698" id="2227863968342215715">
-          <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="2227863968342215716">
+        <node role="sourcePath" roleId="tps4.1220982054961" type="tps4.Path" typeId="tps4.1220973916698" id="6324587676312026101">
+          <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="6324587676312026105">
             <property name="name" nameId="tps4.1220976068141" value="base_dir" />
-            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="2227863968342215717">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="6324587676312026103">
               <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />
-              <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="2227863968342215718">
-                <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2227863968342215719">
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2227863968342215720">
-                    <node role="expression" roleId="tpee.1068580123156" type="tp25.StaticConceptMethodCall" typeId="tp25.1206019730951" id="2227863968342215721">
+              <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="6324587676312026109">
+                <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6324587676312026107">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6324587676312026113">
+                    <node role="expression" roleId="tpee.1068580123156" type="tp25.StaticConceptMethodCall" typeId="tp25.1206019730951" id="6324587676312026111">
                       <link role="concept" roleId="tp25.1206019820684" targetNodeId="tps4.1202916958754" resolveInfo="Layout" />
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.462257719548547196" resolveInfo="getDeployDirName" />
                     </node>
@@ -1837,39 +1837,10 @@
               </node>
             </node>
           </node>
-          <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="2227863968342215722">
-            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="2227863968342215723">
+          <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="6324587676312026117">
+            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="6324587676312026115">
               <property name="path" nameId="tps4.1220974398640" value="MPS" />
             </node>
-          </node>
-        </node>
-      </node>
-      <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="4514696390934965388">
-        <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="7049669170419664190">
-          <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="7049669170419664191">
-            <property name="name" nameId="tps4.1223641503366" value="win" />
-          </node>
-        </node>
-        <node role="sourcePath" roleId="tps4.1220982054961" type="tps4.Path" typeId="tps4.1220973916698" id="4514696390934965389">
-          <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="4514696390935050189">
-            <property name="name" nameId="tps4.1220976068141" value="mps_home" />
-          </node>
-          <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="4514696390934965391">
-            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="4514696390934965392">
-              <property name="path" nameId="tps4.1220974398640" value="bin" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="entry" roleId="tps4.1203617897549" type="tps4.File" typeId="tps4.1203598322527" id="4514696390934965393">
-        <node role="sourcePath" roleId="tps4.1220981955937" type="tps4.Path" typeId="tps4.1220973916698" id="4514696390934965394">
-          <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="4514696390934965396">
-            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="4514696390934965398">
-              <property name="path" nameId="tps4.1220974398640" value="mps.vmoptions" />
-            </node>
-          </node>
-          <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="4514696390935050190">
-            <property name="name" nameId="tps4.1220976068141" value="scripts.dir" />
           </node>
         </node>
       </node>

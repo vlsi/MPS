@@ -18,6 +18,9 @@ public class TransformationTestRunner extends TestRunner {
   public TransformationTestRunner() {
   }
 
+  /**
+   * See base class
+   */
   @Override
   @Deprecated
   @ToRemove(version = 2.1)

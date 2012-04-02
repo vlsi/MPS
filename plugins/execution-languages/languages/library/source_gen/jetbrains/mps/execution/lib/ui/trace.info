@@ -761,57 +761,63 @@
   <root nodeId="1240470842553500239">
     <nodeInfo nodeId="1240470842553500404" fileName="FieldWithPathChooseDialog.java" startLine="16" startPosition="77" endLine="17" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myField" />
     <nodeInfo nodeId="1240470842553500407" fileName="FieldWithPathChooseDialog.java" startLine="17" startPosition="67" endLine="18" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChooser" />
-    <nodeInfo nodeId="1240470842553500319" fileName="FieldWithPathChooseDialog.java" startLine="20" startPosition="38" endLine="21" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240470842553500325" fileName="FieldWithPathChooseDialog.java" startLine="21" startPosition="39" endLine="22" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240470842553500352" fileName="FieldWithPathChooseDialog.java" startLine="24" startPosition="51" endLine="25" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240470842553500362" fileName="FieldWithPathChooseDialog.java" startLine="25" startPosition="160" endLine="26" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240470842553500373" fileName="FieldWithPathChooseDialog.java" startLine="27" startPosition="67" endLine="28" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240470842553500396" fileName="FieldWithPathChooseDialog.java" startLine="31" startPosition="7" endLine="32" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240470842553500244" fileName="FieldWithPathChooseDialog.java" startLine="35" startPosition="45" endLine="36" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240470842553500251" fileName="FieldWithPathChooseDialog.java" startLine="36" startPosition="39" endLine="37" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240470842553500266" fileName="FieldWithPathChooseDialog.java" startLine="40" startPosition="32" endLine="41" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240470842553500276" fileName="FieldWithPathChooseDialog.java" startLine="44" startPosition="38" endLine="45" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240470842553500289" fileName="FieldWithPathChooseDialog.java" startLine="48" startPosition="28" endLine="49" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240470842553500299" fileName="FieldWithPathChooseDialog.java" startLine="52" startPosition="36" endLine="53" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240470842553500309" fileName="FieldWithPathChooseDialog.java" startLine="57" startPosition="46" endLine="58" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240470842553500371" fileName="FieldWithPathChooseDialog.java" startLine="26" startPosition="64" endLine="29" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1240470842553500262" fileName="FieldWithPathChooseDialog.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEditable#()Z" />
-    <nodeInfo nodeId="1240470842553500272" fileName="FieldWithPathChooseDialog.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTitle#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1240470842553500285" fileName="FieldWithPathChooseDialog.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTitle#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1240470842553500295" fileName="FieldWithPathChooseDialog.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTextField#()Ljavax/swing/JTextField;" />
-    <nodeInfo nodeId="1240470842553500240" fileName="FieldWithPathChooseDialog.java" startLine="34" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setEditable#(Z)V" />
-    <nodeInfo nodeId="1240470842553500305" fileName="FieldWithPathChooseDialog.java" startLine="55" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDisposableComponent#()Lcom/intellij/openapi/Disposable;" />
-    <nodeInfo nodeId="1240470842553500346" fileName="FieldWithPathChooseDialog.java" startLine="23" startPosition="88" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-    <nodeInfo nodeId="1240470842553500338" fileName="FieldWithPathChooseDialog.java" startLine="22" startPosition="88" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240470842553500315" fileName="FieldWithPathChooseDialog.java" startLine="19" startPosition="0" endLine="33" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FieldWithPathChooseDialog#()V" />
-    <scopeInfo nodeId="1240470842553500372" fileName="FieldWithPathChooseDialog.java" startLine="27" startPosition="67" endLine="28" endPosition="77" />
-    <scopeInfo nodeId="1240470842553500265" fileName="FieldWithPathChooseDialog.java" startLine="40" startPosition="32" endLine="41" endPosition="37" />
-    <scopeInfo nodeId="1240470842553500275" fileName="FieldWithPathChooseDialog.java" startLine="44" startPosition="38" endLine="45" endPosition="35" />
-    <scopeInfo nodeId="1240470842553500288" fileName="FieldWithPathChooseDialog.java" startLine="48" startPosition="28" endLine="49" endPosition="37" />
-    <scopeInfo nodeId="1240470842553500298" fileName="FieldWithPathChooseDialog.java" startLine="52" startPosition="36" endLine="53" endPosition="39" />
-    <scopeInfo nodeId="1240470842553500308" fileName="FieldWithPathChooseDialog.java" startLine="57" startPosition="46" endLine="58" endPosition="24" />
-    <scopeInfo nodeId="1240470842553500243" fileName="FieldWithPathChooseDialog.java" startLine="35" startPosition="45" endLine="37" endPosition="50" />
-    <scopeInfo nodeId="1240470842553500262" fileName="FieldWithPathChooseDialog.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="1240470842553500272" fileName="FieldWithPathChooseDialog.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+    <nodeInfo nodeId="6491532814231161793" fileName="FieldWithPathChooseDialog.java" startLine="20" startPosition="38" endLine="21" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="1240470842553500319" fileName="FieldWithPathChooseDialog.java" startLine="24" startPosition="70" endLine="25" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240470842553500325" fileName="FieldWithPathChooseDialog.java" startLine="25" startPosition="39" endLine="26" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240470842553500352" fileName="FieldWithPathChooseDialog.java" startLine="28" startPosition="51" endLine="29" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240470842553500362" fileName="FieldWithPathChooseDialog.java" startLine="29" startPosition="160" endLine="30" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240470842553500373" fileName="FieldWithPathChooseDialog.java" startLine="31" startPosition="67" endLine="32" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240470842553500396" fileName="FieldWithPathChooseDialog.java" startLine="35" startPosition="7" endLine="36" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240470842553500244" fileName="FieldWithPathChooseDialog.java" startLine="39" startPosition="45" endLine="40" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240470842553500251" fileName="FieldWithPathChooseDialog.java" startLine="40" startPosition="39" endLine="41" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240470842553500266" fileName="FieldWithPathChooseDialog.java" startLine="44" startPosition="32" endLine="45" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240470842553500276" fileName="FieldWithPathChooseDialog.java" startLine="48" startPosition="38" endLine="49" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240470842553500289" fileName="FieldWithPathChooseDialog.java" startLine="52" startPosition="28" endLine="53" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240470842553500299" fileName="FieldWithPathChooseDialog.java" startLine="56" startPosition="36" endLine="57" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240470842553500309" fileName="FieldWithPathChooseDialog.java" startLine="61" startPosition="46" endLine="62" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240470842553500315" fileName="FieldWithPathChooseDialog.java" startLine="19" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FieldWithPathChooseDialog#()V" />
+    <nodeInfo nodeId="1240470842553500371" fileName="FieldWithPathChooseDialog.java" startLine="30" startPosition="64" endLine="33" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1240470842553500262" fileName="FieldWithPathChooseDialog.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEditable#()Z" />
+    <nodeInfo nodeId="1240470842553500272" fileName="FieldWithPathChooseDialog.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTitle#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1240470842553500285" fileName="FieldWithPathChooseDialog.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTitle#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1240470842553500295" fileName="FieldWithPathChooseDialog.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTextField#()Ljavax/swing/JTextField;" />
+    <nodeInfo nodeId="1240470842553500240" fileName="FieldWithPathChooseDialog.java" startLine="38" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setEditable#(Z)V" />
+    <nodeInfo nodeId="1240470842553500305" fileName="FieldWithPathChooseDialog.java" startLine="59" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDisposableComponent#()Lcom/intellij/openapi/Disposable;" />
+    <nodeInfo nodeId="1240470842553500346" fileName="FieldWithPathChooseDialog.java" startLine="27" startPosition="88" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="1240470842553500338" fileName="FieldWithPathChooseDialog.java" startLine="26" startPosition="32" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6491532814231161752" fileName="FieldWithPathChooseDialog.java" startLine="23" startPosition="0" endLine="37" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FieldWithPathChooseDialog#(Lcom/intellij/openapi/fileChooser/FileChooserDescriptor;)V" />
+    <scopeInfo nodeId="1240470842553500318" fileName="FieldWithPathChooseDialog.java" startLine="20" startPosition="38" endLine="21" endPosition="77" />
+    <scopeInfo nodeId="1240470842553500372" fileName="FieldWithPathChooseDialog.java" startLine="31" startPosition="67" endLine="32" endPosition="77" />
+    <scopeInfo nodeId="1240470842553500265" fileName="FieldWithPathChooseDialog.java" startLine="44" startPosition="32" endLine="45" endPosition="37" />
+    <scopeInfo nodeId="1240470842553500275" fileName="FieldWithPathChooseDialog.java" startLine="48" startPosition="38" endLine="49" endPosition="35" />
+    <scopeInfo nodeId="1240470842553500288" fileName="FieldWithPathChooseDialog.java" startLine="52" startPosition="28" endLine="53" endPosition="37" />
+    <scopeInfo nodeId="1240470842553500298" fileName="FieldWithPathChooseDialog.java" startLine="56" startPosition="36" endLine="57" endPosition="39" />
+    <scopeInfo nodeId="1240470842553500308" fileName="FieldWithPathChooseDialog.java" startLine="61" startPosition="46" endLine="62" endPosition="24" />
+    <scopeInfo nodeId="1240470842553500243" fileName="FieldWithPathChooseDialog.java" startLine="39" startPosition="45" endLine="41" endPosition="50" />
+    <scopeInfo nodeId="1240470842553500315" fileName="FieldWithPathChooseDialog.java" startLine="19" startPosition="0" endLine="22" endPosition="3" />
+    <scopeInfo nodeId="1240470842553500262" fileName="FieldWithPathChooseDialog.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="1240470842553500272" fileName="FieldWithPathChooseDialog.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="1240470842553500283" varName="title" />
     </scopeInfo>
-    <scopeInfo nodeId="1240470842553500285" fileName="FieldWithPathChooseDialog.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="1240470842553500295" fileName="FieldWithPathChooseDialog.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1240470842553500351" fileName="FieldWithPathChooseDialog.java" startLine="24" startPosition="51" endLine="29" endPosition="9">
+    <scopeInfo nodeId="1240470842553500285" fileName="FieldWithPathChooseDialog.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="1240470842553500295" fileName="FieldWithPathChooseDialog.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="1240470842553500351" fileName="FieldWithPathChooseDialog.java" startLine="28" startPosition="51" endLine="33" endPosition="9">
       <varInfo nodeId="1240470842553500353" varName="dialog" />
       <varInfo nodeId="1240470842553500363" varName="selectedFiles" />
     </scopeInfo>
-    <scopeInfo nodeId="1240470842553500240" fileName="FieldWithPathChooseDialog.java" startLine="34" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="1240470842553500240" fileName="FieldWithPathChooseDialog.java" startLine="38" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="1240470842553500260" varName="editable" />
     </scopeInfo>
-    <scopeInfo nodeId="1240470842553500305" fileName="FieldWithPathChooseDialog.java" startLine="55" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="1240470842553500346" fileName="FieldWithPathChooseDialog.java" startLine="23" startPosition="88" endLine="31" endPosition="0">
+    <scopeInfo nodeId="1240470842553500305" fileName="FieldWithPathChooseDialog.java" startLine="59" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="1240470842553500346" fileName="FieldWithPathChooseDialog.java" startLine="27" startPosition="88" endLine="35" endPosition="0">
       <varInfo nodeId="1240470842553500349" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="1240470842553500318" fileName="FieldWithPathChooseDialog.java" startLine="20" startPosition="38" endLine="32" endPosition="48" />
-    <scopeInfo nodeId="1240470842553500315" fileName="FieldWithPathChooseDialog.java" startLine="19" startPosition="0" endLine="33" endPosition="3" />
-    <unitInfo nodeId="1240470842553500239" fileName="FieldWithPathChooseDialog.java" startLine="16" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.execution.lib.ui.FieldWithPathChooseDialog" />
-    <unitInfo nodeId="1240470842553500344" fileName="FieldWithPathChooseDialog.java" startLine="23" startPosition="70" endLine="31" endPosition="5" unitName="jetbrains.mps.execution.lib.ui.FieldWithPathChooseDialog$1" />
+    <scopeInfo nodeId="6491532814231161755" fileName="FieldWithPathChooseDialog.java" startLine="24" startPosition="70" endLine="36" endPosition="48" />
+    <scopeInfo nodeId="6491532814231161752" fileName="FieldWithPathChooseDialog.java" startLine="23" startPosition="0" endLine="37" endPosition="3">
+      <varInfo nodeId="6491532814231161765" varName="descriptor" />
+    </scopeInfo>
+    <unitInfo nodeId="1240470842553500239" fileName="FieldWithPathChooseDialog.java" startLine="16" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.execution.lib.ui.FieldWithPathChooseDialog" />
+    <unitInfo nodeId="1240470842553500344" fileName="FieldWithPathChooseDialog.java" startLine="27" startPosition="70" endLine="35" endPosition="5" unitName="jetbrains.mps.execution.lib.ui.FieldWithPathChooseDialog$1" />
   </root>
   <root nodeId="1240470842553500411">
     <nodeInfo nodeId="1240470842553500411" fileName="ParameterBrowser.java" startLine="12" startPosition="46" endLine="13" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myThis" />
@@ -876,7 +882,9 @@
     <scopeInfo nodeId="1240470842553500411" fileName="ParameterBrowser.java" startLine="24" startPosition="0" endLine="29" endPosition="3" />
     <scopeInfo nodeId="1240470842553500411" fileName="ParameterBrowser.java" startLine="34" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="1240470842553500411" fileName="ParameterBrowser.java" startLine="39" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="1240470842553500411" fileName="ParameterBrowser.java" startLine="48" startPosition="25" endLine="53" endPosition="5" />
+    <scopeInfo nodeId="1240470842553500411" fileName="ParameterBrowser.java" startLine="48" startPosition="25" endLine="53" endPosition="5">
+      <varInfo nodeId="1240470842553500411" varName="binding" />
+    </scopeInfo>
     <scopeInfo nodeId="1240470842553500411" fileName="ParameterBrowser.java" startLine="63" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="1240470842553500411" varName="newValue" />
     </scopeInfo>

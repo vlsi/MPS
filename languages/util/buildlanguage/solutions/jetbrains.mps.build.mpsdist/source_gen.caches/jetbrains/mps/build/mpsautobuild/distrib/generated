@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="cmznpo0kr625yq2x7obyjydvx7wryyo">
+<dependencies version="2" modelHash="4u6ff6incaywk9553pdtpe23h7of02b">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-5p0rdl0tgxw43gzmkd4qcpqszqapgi2" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-ad6sacrydlyivgq1a8s9zj6b37xpgsf" />
   <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="-9d8j760pahxgv3avdv9shbp9d8oln8a" />
   <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" hash="-5orl3pbj7rq3aq6k6ot2an47k6uz43d" />
@@ -44,14 +45,15 @@
     <file name="mps.sh" />
     <file name="mps.vmoptions" />
   </source>
-  <source id="3765863190879880927" name="MPS-os-specific" hash="4nqatfsiwvzyt6638mabkvxes7utpm4">
+  <source id="3765863190879880927" name="MPS-os-specific" hash="-51xz5crx7frt7q448u3zk876w9czg39">
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895905a3(jetbrains.mps.xml.deprecated.structure)" />
     <dep model="r:581bb25d-517d-4f18-b7c0-d3f6a738994e(jetbrains.mps.build.generictasks.generator.template.main@generator)" />
     <dep model="r:7a6a35c6-e369-4565-b91b-c7c8dfa2c8d7(jetbrains.mps.build.generictasks.generated)" />
     <file name="MPS-os-specific.xml" />
   </source>
-  <source id="4514696390935059944" name="installer" hash="2s3uxq5beqys8w63ci47b43n923a2nl">
+  <source id="4514696390935059944" name="installer" hash="4r7rvr5fqmsh1kvxsrwut888i28h2c5">
     <dep model="r:00000000-0000-4000-0000-011c89590575(jetbrains.mps.gtext.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590576(jetbrains.mps.gtext.generator.baseLanguage.template.main@generator)" />
     <file name="installer.nsi" />
