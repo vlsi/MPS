@@ -30,7 +30,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ActionDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ActionGroupDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ApplicationPluginDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.BaseToolDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.EditorTab_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.GroupAnchor_Behavior" />
@@ -42,7 +41,6 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.PluginDependency_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.PreferencePage_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.PreferencesComponentDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ProjectPluginDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.generator.util.PluginNameUtils" />
     <classNode dependClassName="jetbrains.mps.lang.resources.behavior.IconResource_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
