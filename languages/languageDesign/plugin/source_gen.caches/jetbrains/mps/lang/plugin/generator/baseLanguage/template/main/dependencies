@@ -15,7 +15,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.behavior.SuperClassifierExpresson_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression_Behavior" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
-    <classNode dependClassName="jetbrains.mps.generator.template.CreateRootRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.MappingScriptContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.PropertyMacroContext" />
@@ -52,7 +51,6 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
