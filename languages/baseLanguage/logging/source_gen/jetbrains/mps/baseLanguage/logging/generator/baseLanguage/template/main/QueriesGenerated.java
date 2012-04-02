@@ -137,6 +137,13 @@ public class QueriesGenerated {
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1187224198430(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+    SNode logStatement = ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.logging.structure.LogStatement", false, new String[]{})).first();
+    SNode usage = _context.getOutputNodeByInputNodeAndMappingLabel(logStatement, "logFieldUsage");
+    SNode ancestor = SNodeOperations.getAncestor(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, true);
+    if (ancestor != null) {
+      return ancestor;
+    }
+
     SNode outputNode = _context.getCopiedOutputNodeForInputNode(_context.getNode());
     if (outputNode == null) {
       _context.showErrorMessage(_context.getNode(), "Can't find copy of the class concept in the target model");
@@ -145,6 +152,13 @@ public class QueriesGenerated {
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1232620727261(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+    SNode logStatement = ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.logging.structure.LogStatement", false, new String[]{})).first();
+    SNode usage = _context.getOutputNodeByInputNodeAndMappingLabel(logStatement, "logFieldUsage");
+    SNode ancestor = SNodeOperations.getAncestor(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, true);
+    if (ancestor != null) {
+      return ancestor;
+    }
+
     SNode outputNode = _context.getCopiedOutputNodeForInputNode(_context.getNode());
     if (outputNode == null) {
       _context.showErrorMessage(_context.getNode(), "Can't find copy of the class concept in the target model");
