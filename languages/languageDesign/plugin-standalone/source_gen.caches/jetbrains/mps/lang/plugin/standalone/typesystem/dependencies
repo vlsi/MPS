@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.lang.plugin.standalone.typesystem.Typeof_ApplicationPluginType_SubtypingRule" file="Typeof_ApplicationPluginType_SubtypingRule.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.plugin.standalone.typesystem.Typeof_ProjectPluginType_SubtypingRule" file="Typeof_ProjectPluginType_SubtypingRule.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.plugin.standalone.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.lang.plugin.standalone.typesystem.Typeof_ApplicationPluginType_SubtypingRule" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.standalone.typesystem.Typeof_ProjectPluginType_SubtypingRule" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
+  </dependency>
+</dependenciesRoot>
+

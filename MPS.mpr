@@ -168,6 +168,7 @@
       <modulePath path="${project}/languages/languageDesign/pattern/languages/testLang/testLang.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/pattern/pattern.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/pattern/solutions/test/test.msd" folder="core.kernel" />
+      <modulePath path="${project}/languages/languageDesign/plugin-standalone/standalone.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/plugin/plugin.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/plugin/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/project/project.mpl" folder="core.language-design" />

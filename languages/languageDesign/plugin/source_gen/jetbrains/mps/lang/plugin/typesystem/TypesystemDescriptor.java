@@ -134,15 +134,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
-      SubtypingRule_Runtime subtypingRule = new Typeof_ApplicationPluginType_SubtypingRule();
-      this.mySubtypingRules.add(subtypingRule);
-    }
-    {
       SubtypingRule_Runtime subtypingRule = new Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule();
-      this.mySubtypingRules.add(subtypingRule);
-    }
-    {
-      SubtypingRule_Runtime subtypingRule = new Typeof_ProjectPluginType_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
     {
