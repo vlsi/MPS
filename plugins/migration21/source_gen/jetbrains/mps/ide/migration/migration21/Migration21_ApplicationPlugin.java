@@ -22,6 +22,7 @@ public class Migration21_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new AddStubsToModelRoots_Action());
     addAction(new CorrectIconsAfterPluhinMove_Action());
     addAction(new MovePluginsOutOfLanguages_Action());
+    addAction(new TMPTestMigrationScript_Action());
     // groups 
     addGroup(new Migrations21_ActionGroup());
   }
