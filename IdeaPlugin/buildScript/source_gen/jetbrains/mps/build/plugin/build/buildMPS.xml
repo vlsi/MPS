@@ -43,62 +43,457 @@
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/mps-core" />
     <mkdir dir="${build.layout}/mps-core/lib" />
+    <mkdir dir="${build.tmp}/default/mps-tuples.jar" />
+    <mkdir dir="${build.tmp}/default/mps-tuples.jar/modules" />
+    <copy todir="${build.tmp}/default/mps-tuples.jar/modules">
+      <fileset file="${basedir}/languages/baseLanguage/tuples/runtime/jetbrains.mps.baseLanguage.tuples.runtime.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-tuples.jar/modules">
+      <fileset dir="${basedir}/languages/baseLanguage/tuples/runtime">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-tuples.jar/modules/" />
+    <copy todir="${build.tmp}/default/mps-tuples.jar/modules/">
+      <fileset dir="${basedir}/languages/baseLanguage/tuples/runtime">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
     <jar destfile="${build.layout}/mps-core/lib/mps-tuples.jar">
       <fileset dir="${build.tmp}/java/out/mps-tuples" />
+      <fileset dir="${build.tmp}/default/mps-tuples.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/mps-closures.jar" />
+    <mkdir dir="${build.tmp}/default/mps-closures.jar/modules" />
+    <copy todir="${build.tmp}/default/mps-closures.jar/modules">
+      <fileset file="${basedir}/languages/baseLanguage/closures/runtime/closures.runtime.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-closures.jar/modules">
+      <fileset dir="${basedir}/languages/baseLanguage/closures/runtime">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-closures.jar/modules/" />
+    <copy todir="${build.tmp}/default/mps-closures.jar/modules/">
+      <fileset dir="${basedir}/languages/baseLanguage/closures/runtime">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
     <jar destfile="${build.layout}/mps-core/lib/mps-closures.jar">
       <fileset dir="${build.tmp}/java/out/mps-closures" />
+      <fileset dir="${build.tmp}/default/mps-closures.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/mps-collections.jar" />
+    <mkdir dir="${build.tmp}/default/mps-collections.jar/modules" />
+    <copy todir="${build.tmp}/default/mps-collections.jar/modules">
+      <fileset file="${basedir}/languages/baseLanguage/collections/runtime/collections.runtime.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-collections.jar/modules">
+      <fileset dir="${basedir}/languages/baseLanguage/collections/runtime">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-collections.jar/modules/jetbrains" />
+    <copy todir="${build.tmp}/default/mps-collections.jar/modules/jetbrains">
+      <fileset dir="${basedir}/languages/baseLanguage/collections/runtime/jetbrains">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
     <jar destfile="${build.layout}/mps-core/lib/mps-collections.jar">
       <fileset dir="${build.tmp}/java/out/mps-collections" />
+      <fileset dir="${build.tmp}/default/mps-collections.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/mps-core.jar" />
+    <mkdir dir="${build.tmp}/default/mps-core.jar/modules" />
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset file="${basedir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/jetbrains.mps.analyzers.runtime.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset dir="${basedir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-core.jar/modules/" />
+    <copy todir="${build.tmp}/default/mps-core.jar/modules/">
+      <fileset dir="${basedir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset file="${basedir}/core/kernel/kernelSolution/jetbrains.mps.kernel.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset dir="${basedir}/core/kernel/kernelSolution">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-core.jar/modules/" />
+    <copy todir="${build.tmp}/default/mps-core.jar/modules/">
+      <fileset dir="${basedir}/core/kernel/kernelSolution">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset file="${basedir}/core/kernel/smodelRuntime/smodelRuntime.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset dir="${basedir}/core/kernel/smodelRuntime">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-core.jar/modules/" />
+    <copy todir="${build.tmp}/default/mps-core.jar/modules/">
+      <fileset dir="${basedir}/core/kernel/smodelRuntime">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset file="${basedir}/core/findUsages-runtime/runtime.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset dir="${basedir}/core/findUsages-runtime">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-core.jar/modules/" />
+    <copy todir="${build.tmp}/default/mps-core.jar/modules/">
+      <fileset dir="${basedir}/core/findUsages-runtime">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-core.jar/modules/models" />
+    <copy todir="${build.tmp}/default/mps-core.jar/modules/models">
+      <fileset dir="${basedir}/core/findUsages-runtime/models">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset file="${basedir}/core/refactoring-runtime/jetbrains.mps.refactoring.runtime.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset dir="${basedir}/core/refactoring-runtime">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-core.jar/modules/models" />
+    <copy todir="${build.tmp}/default/mps-core.jar/modules/models">
+      <fileset dir="${basedir}/core/refactoring-runtime/models">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset file="${basedir}/core/kernel/patternRuntime/runtime.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset dir="${basedir}/core/kernel/patternRuntime">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-core.jar/modules/models" />
+    <copy todir="${build.tmp}/default/mps-core.jar/modules/models">
+      <fileset dir="${basedir}/core/kernel/patternRuntime/models">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset file="${basedir}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset dir="${basedir}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-core.jar/modules/" />
+    <copy todir="${build.tmp}/default/mps-core.jar/modules/">
+      <fileset dir="${basedir}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset file="${basedir}/core/generator/solutions/traceInfo/util/cache.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset dir="${basedir}/core/generator/solutions/traceInfo/util">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-core.jar/modules/models" />
+    <copy todir="${build.tmp}/default/mps-core.jar/modules/models">
+      <fileset dir="${basedir}/core/generator/solutions/traceInfo/util/models">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset file="${basedir}/core/kernel/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset dir="${basedir}/core/kernel/dataFlowRuntime">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-core.jar/modules/" />
+    <copy todir="${build.tmp}/default/mps-core.jar/modules/">
+      <fileset dir="${basedir}/core/kernel/dataFlowRuntime">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset file="${basedir}/core/kernel/stubUtils/stubUtils.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset dir="${basedir}/core/kernel/stubUtils">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-core.jar/modules/" />
+    <copy todir="${build.tmp}/default/mps-core.jar/modules/">
+      <fileset dir="${basedir}/core/kernel/stubUtils">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset file="${basedir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/jetbrains.mps.typesystemEngine.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset dir="${basedir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-core.jar/modules/" />
+    <copy todir="${build.tmp}/default/mps-core.jar/modules/">
+      <fileset dir="${basedir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset file="${basedir}/core/generator/solutions/generator/jetbrains.mps.generator.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset dir="${basedir}/core/generator/solutions/generator">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-core.jar/modules/models" />
+    <copy todir="${build.tmp}/default/mps-core.jar/modules/models">
+      <fileset dir="${basedir}/core/generator/solutions/generator/models">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset file="${basedir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/jetbrains.mps.make.runtime.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset dir="${basedir}/core/make-runtime/solutions/jetbrains.mps.make.runtime">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-core.jar/modules/" />
+    <copy todir="${build.tmp}/default/mps-core.jar/modules/">
+      <fileset dir="${basedir}/core/make-runtime/solutions/jetbrains.mps.make.runtime">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset file="${basedir}/core/make-runtime/solutions/jetbrains.mps.make/jetbrains.mps.make.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset dir="${basedir}/core/make-runtime/solutions/jetbrains.mps.make">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-core.jar/modules/" />
+    <copy todir="${build.tmp}/default/mps-core.jar/modules/">
+      <fileset dir="${basedir}/core/make-runtime/solutions/jetbrains.mps.make">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset file="${basedir}/core/kernel/resources/jetbrains.mps.smodel.resources.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset dir="${basedir}/core/kernel/resources">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-core.jar/modules/" />
+    <copy todir="${build.tmp}/default/mps-core.jar/modules/">
+      <fileset dir="${basedir}/core/kernel/resources">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset file="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/jetbrains.mps.baseLanguage.search.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-core.jar/modules/" />
+    <copy todir="${build.tmp}/default/mps-core.jar/modules/">
+      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset file="${basedir}/languages/core/stub/JDK/JDK.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset dir="${basedir}/languages/core/stub/JDK">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset file="${basedir}/languages/core/stub/JDK.Tools/Tools.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset dir="${basedir}/languages/core/stub/JDK.Tools">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset file="${basedir}/languages/core/stub/MPS.Core/Core.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset dir="${basedir}/languages/core/stub/MPS.Core">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset file="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/util.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-core.jar/modules">
+      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-core.jar/modules/solution" />
+    <copy todir="${build.tmp}/default/mps-core.jar/modules/solution">
+      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/solution">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
     <jar destfile="${build.layout}/mps-core/lib/mps-core.jar">
       <fileset dir="${build.tmp}/java/out/mps-core" />
+      <fileset dir="${build.tmp}/default/mps-core.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/mps-backend.jar" />
+    <mkdir dir="${build.tmp}/default/mps-backend.jar/modules" />
+    <copy todir="${build.tmp}/default/mps-backend.jar/modules">
+      <fileset file="${basedir}/languages/core/stub/Ant/Ant.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-backend.jar/modules">
+      <fileset dir="${basedir}/languages/core/stub/Ant">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/mps-backend.jar/modules">
+      <fileset file="${basedir}/core/ant/jetbrains.mps.build.antsupport.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-backend.jar/modules">
+      <fileset dir="${basedir}/core/ant">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-backend.jar/modules/models" />
+    <copy todir="${build.tmp}/default/mps-backend.jar/modules/models">
+      <fileset dir="${basedir}/core/ant/models">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
     <jar destfile="${build.layout}/mps-core/lib/mps-backend.jar">
       <fileset dir="${build.tmp}/java/out/mps-ant" />
+      <fileset dir="${build.tmp}/default/mps-backend.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/mps-platform.jar" />
+    <mkdir dir="${build.tmp}/default/mps-platform.jar/modules" />
+    <copy todir="${build.tmp}/default/mps-platform.jar/modules">
+      <fileset file="${basedir}/languages/core/stub/MPS.Platform/Platform.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-platform.jar/modules">
+      <fileset dir="${basedir}/languages/core/stub/MPS.Platform">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/mps-platform.jar/modules">
+      <fileset file="${basedir}/workbench/mps-platform/base.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-platform.jar/modules">
+      <fileset dir="${basedir}/workbench/mps-platform">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-platform.jar/modules/models" />
+    <copy todir="${build.tmp}/default/mps-platform.jar/modules/models">
+      <fileset dir="${basedir}/workbench/mps-platform/models">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
     <jar destfile="${build.layout}/mps-core/lib/mps-platform.jar">
       <fileset dir="${build.tmp}/java/out/mps-platform" />
+      <fileset dir="${build.tmp}/default/mps-platform.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/mps-editor.jar" />
+    <mkdir dir="${build.tmp}/default/mps-editor.jar/modules" />
+    <copy todir="${build.tmp}/default/mps-editor.jar/modules">
+      <fileset file="${basedir}/languages/core/stub/MPS.Editor/Editor.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-editor.jar/modules">
+      <fileset dir="${basedir}/languages/core/stub/MPS.Editor">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/mps-editor.jar/modules">
+      <fileset file="${basedir}/workbench/mps-editor/jetbrains.mps.ide.editor.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-editor.jar/modules">
+      <fileset dir="${basedir}/workbench/mps-editor">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-editor.jar/modules/solution" />
+    <copy todir="${build.tmp}/default/mps-editor.jar/modules/solution">
+      <fileset dir="${basedir}/workbench/mps-editor/solution">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/mps-editor.jar/modules">
+      <fileset file="${basedir}/editor/editor-runtime/jetbrains.mps.editor.runtime.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-editor.jar/modules">
+      <fileset dir="${basedir}/editor/editor-runtime">
+        <include name="icons/**, resources/**" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-editor.jar/modules/models" />
+    <copy todir="${build.tmp}/default/mps-editor.jar/modules/models">
+      <fileset dir="${basedir}/editor/editor-runtime/models">
+        <include name="**/*.mps, **/*.metadata, **/*.history" />
+      </fileset>
+    </copy>
     <jar destfile="${build.layout}/mps-core/lib/mps-editor.jar">
       <fileset dir="${build.tmp}/java/out/mps-editor" />
+      <fileset dir="${build.tmp}/default/mps-editor.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-core/lib/mps-editor-api.jar">
       <fileset dir="${build.tmp}/java/out/mps-editor-api" />
     </jar>
-    <jar destfile="${build.layout}/mps-core/lib/mps-test.jar">
-      <fileset dir="${build.tmp}/java/out/mps-test" />
-    </jar>
-    <jar destfile="${build.layout}/mps-core/lib/mps-plugin.jar">
-      <fileset dir="${build.tmp}/java/out/mps-plugin" />
-    </jar>
-    <mkdir dir="${build.layout}/mps-core/languages" />
-    <mkdir dir="${build.tmp}/default/baseLanguage.jar" />
-    <mkdir dir="${build.tmp}/default/baseLanguage.jar/module" />
-    <copy todir="${build.tmp}/default/baseLanguage.jar/module">
-      <fileset file="${basedir}/languages/baseLanguage/baseLanguage/baseLanguage.mpl" />
+    <mkdir dir="${build.tmp}/default/mps-test.jar" />
+    <mkdir dir="${build.tmp}/default/mps-test.jar/modules" />
+    <copy todir="${build.tmp}/default/mps-test.jar/modules">
+      <fileset file="${basedir}/languages/core/stub/Testbench/Testbench.msd" />
     </copy>
-    <copy todir="${build.tmp}/default/baseLanguage.jar/module">
-      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage">
+    <copy todir="${build.tmp}/default/mps-test.jar/modules">
+      <fileset dir="${basedir}/languages/core/stub/Testbench">
         <include name="icons/**, resources/**" />
       </fileset>
     </copy>
-    <mkdir dir="${build.tmp}/default/baseLanguage.jar/module/languageModels" />
-    <copy todir="${build.tmp}/default/baseLanguage.jar/module/languageModels">
-      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/languageModels">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
-    </copy>
-    <mkdir dir="${build.tmp}/default/baseLanguage.jar/module/generator/java/templates" />
-    <copy todir="${build.tmp}/default/baseLanguage.jar/module/generator/java/templates">
-      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/generator/java/templates">
-        <include name="**/*.mps, **/*.metadata, **/*.history" />
-      </fileset>
-    </copy>
-    <jar destfile="${build.layout}/mps-core/languages/baseLanguage.jar">
-      <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
-      <fileset dir="${build.tmp}/default/baseLanguage.jar" />
+    <jar destfile="${build.layout}/mps-core/lib/mps-test.jar">
+      <fileset dir="${build.tmp}/java/out/mps-test" />
+      <fileset dir="${build.tmp}/default/mps-test.jar" />
+    </jar>
+    <jar destfile="${build.layout}/mps-core/lib/mps-plugin.jar">
+      <fileset dir="${build.tmp}/java/out/mps-plugin" />
     </jar>
   </target>
   
