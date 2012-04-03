@@ -30,6 +30,7 @@ import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
 import com.intellij.ui.components.JBCheckBox;
 import com.intellij.ui.components.JBList;
 import com.intellij.ui.components.JBScrollPane;
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.migration.assistant.MigrationProcessor.Callback;
 import jetbrains.mps.project.MPSProjectMigrationState;
 
@@ -110,6 +111,8 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
   protected void updateStep() {
     super.updateStep();
     getCancelAction().setEnabled(canCancel());
+    MyStep step = (MyStep) getCurrentStepObject();
+    step.onAfterUpdate();
   }
 
   protected boolean canCancel () {
@@ -184,6 +187,8 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     public boolean isPostComplete() {
       return false;
     }
+
+    public void onAfterUpdate() {}
 
     protected void createComponent() {
       this.myComponent = new JPanel(new BorderLayout(5,5));
@@ -528,15 +533,19 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     }
 
     @Override
-    public void _init() {
-      super._init();
-      if (!myStarted) {
-        // launch migration
-        MPSProjectMigrationState migrationState = myProject.getComponent(MPSProjectMigrationState.class);
-        migrationState.migrationStarted();
-        this.myStarted = true;
-        runProcessWithProgressSynchronously(myTask, myProgressIndicator);
-      }
+    public void onAfterUpdate() {
+      SwingUtilities.invokeLater(new Runnable() {
+        @Override
+        public void run() {
+          if (!myStarted) {
+            // launch migration
+            MPSProjectMigrationState migrationState = myProject.getComponent(MPSProjectMigrationState.class);
+            migrationState.migrationStarted();
+            myStarted = true;
+            runProcessWithProgressSynchronously(myTask, myProgressIndicator);
+          }
+        }
+      });
     }
 
     private void runProcessWithProgressSynchronously(final Task task, final ProgressIndicator progressIndicator) {
