@@ -7,6 +7,7 @@
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildCustomWorkflow_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildFileExcludeSelector_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildFileIncludeSelector_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildFileIncludesSelector_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildFolderMacro_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildInputFiles_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildInputFolders_BehaviorDescriptor" />
@@ -115,6 +116,15 @@
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildFileSelector_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.build.behavior.BuildFileIncludesSelector_BehaviorDescriptor" file="BuildFileIncludesSelector_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildFileSelectorInAttribute_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildFileSelector_BehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.behavior.BuildFileSelectorInAttribute_BehaviorDescriptor" file="BuildFileSelectorInAttribute_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.build.behavior.BuildFileSelector_BehaviorDescriptor" file="BuildFileSelector_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
