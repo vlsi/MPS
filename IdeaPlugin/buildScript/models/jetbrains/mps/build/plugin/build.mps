@@ -932,9 +932,6 @@
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758419">
               <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048536040" resolveInfo="jetbrains.mps.make.facet" />
             </node>
-            <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758420">
-              <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048536058" resolveInfo="jetbrains.mps.make.outlook" />
-            </node>
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758421">
               <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048536066" resolveInfo="jetbrains.mps.make.script" />
             </node>
@@ -976,11 +973,8 @@
                 <property name="text" nameId="3ior.4903714810883755350" value="languageDesign" />
               </node>
             </node>
-            <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758363">
-              <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048536494" resolveInfo="jetbrains.mps.lang.dataFlow.analyzers" />
-            </node>
-            <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758364">
-              <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048535420" resolveInfo="jetbrains.mps.lang.core" />
+            <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758383">
+              <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="1234292265580016907" resolveInfo="jetbrains.mps.lang.access" />
             </node>
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758365">
               <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048535827" resolveInfo="jetbrains.mps.lang.actions" />
@@ -988,11 +982,23 @@
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758366">
               <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048535833" resolveInfo="jetbrains.mps.lang.behavior" />
             </node>
+            <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758382">
+              <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="4844813484173452778" resolveInfo="jetbrains.mps.lang.checkedName" />
+            </node>
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758367">
               <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048535841" resolveInfo="jetbrains.mps.lang.constraints" />
             </node>
+            <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758364">
+              <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048535420" resolveInfo="jetbrains.mps.lang.core" />
+            </node>
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758368">
               <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048535847" resolveInfo="jetbrains.mps.lang.dataFlow" />
+            </node>
+            <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758363">
+              <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048536494" resolveInfo="jetbrains.mps.lang.dataFlow.analyzers" />
+            </node>
+            <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758375">
+              <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048535944" resolveInfo="jetbrains.mps.lang.descriptor" />
             </node>
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758369">
               <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048535869" resolveInfo="jetbrains.mps.lang.editor" />
@@ -1012,8 +1018,8 @@
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758374">
               <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048535938" resolveInfo="jetbrains.mps.lang.findUsages" />
             </node>
-            <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758375">
-              <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048535944" resolveInfo="jetbrains.mps.lang.descriptor" />
+            <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758378">
+              <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048535976" resolveInfo="jetbrains.mps.lang.generator" />
             </node>
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758376">
               <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048535960" resolveInfo="jetbrains.mps.lang.generator.generationContext" />
@@ -1021,32 +1027,23 @@
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758377">
               <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048535968" resolveInfo="jetbrains.mps.lang.generator.generationParameters" />
             </node>
-            <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758378">
-              <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048535976" resolveInfo="jetbrains.mps.lang.generator" />
-            </node>
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758379">
               <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048536034" resolveInfo="jetbrains.mps.lang.intentions" />
             </node>
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758380">
               <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048536090" resolveInfo="jetbrains.mps.lang.pattern" />
             </node>
-            <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758381">
-              <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048536112" resolveInfo="jetbrains.mps.lang.plugin" />
-            </node>
-            <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758382">
-              <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="4844813484173452778" resolveInfo="jetbrains.mps.lang.checkedName" />
-            </node>
-            <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758383">
-              <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="1234292265580016907" resolveInfo="jetbrains.mps.lang.access" />
-            </node>
-            <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758384">
-              <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="1234292265580016927" resolveInfo="jetbrains.mps.lang.resources" />
-            </node>
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758385">
               <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048536126" resolveInfo="jetbrains.mps.lang.project" />
             </node>
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758386">
               <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048536140" resolveInfo="jetbrains.mps.lang.quotation" />
+            </node>
+            <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758381">
+              <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048536112" resolveInfo="jetbrains.mps.lang.plugin" />
+            </node>
+            <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758384">
+              <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="1234292265580016927" resolveInfo="jetbrains.mps.lang.resources" />
             </node>
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758387">
               <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048536154" resolveInfo="jetbrains.mps.lang.refactoring" />
@@ -4280,37 +4277,6 @@
         <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="7259033139236388257">
           <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="7259033139236388258">
             <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="8939513996048535569" resolveInfo="jetbrains.mps.baseLanguage.collections" />
-          </node>
-        </node>
-      </node>
-      <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Language" typeId="kdzh.3189788309731840248" id="8939513996048536058">
-        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.make.outlook" />
-        <property name="uuid" nameId="kdzh.322010710375892619" value="dc54e1b2-86b3-49d2-9014-a76af17af22a" />
-        <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
-        <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
-        <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="8939513996048536059">
-          <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8939513996048536060">
-            <property name="head" nameId="3ior.8618885170173601779" value="languages" />
-            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8939513996048536061">
-              <property name="head" nameId="3ior.8618885170173601779" value="languageDesign" />
-              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8939513996048536062">
-                <property name="head" nameId="3ior.8618885170173601779" value="make" />
-                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8939513996048536063">
-                  <property name="head" nameId="3ior.8618885170173601779" value="languages" />
-                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8939513996048536064">
-                    <property name="head" nameId="3ior.8618885170173601779" value="outlook" />
-                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8939513996048536065">
-                      <property name="head" nameId="3ior.8618885170173601779" value="outlook.mpl" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="7259033139236388259">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="7259033139236388260">
-            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="8939513996048536040" resolveInfo="jetbrains.mps.make.facet" />
           </node>
         </node>
       </node>
