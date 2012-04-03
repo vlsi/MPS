@@ -2977,7 +2977,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
     <path path="${base_dir}/plugins/debugger-api/api/classes" />
-    <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/api/classes" />
     <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/classes" />
@@ -5160,7 +5160,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
     <path path="${base_dir}/plugins/debugger-api/api/classes" />
-    <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/api/classes" />
     <path path="${base_dir}/plugins/debugger-java/languages/customViewers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
@@ -5282,7 +5282,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
     <path path="${base_dir}/plugins/debugger-api/api/classes" />
-    <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/api/classes" />
     <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
@@ -5886,7 +5886,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
     <path path="${base_dir}/plugins/debugger-api/api/classes" />
-    <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/api/classes" />
     <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/classes" />
@@ -6135,7 +6135,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
     <path path="${base_dir}/plugins/debugger-api/api/classes" />
-    <path path="${base_dir}/plugins/debugger-java/classes" />
+    <path path="${base_dir}/plugins/debugger-java/api/classes" />
     <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/classes" />
