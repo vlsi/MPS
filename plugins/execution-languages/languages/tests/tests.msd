@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.execution.impl.tests" uuid="7b15492d-a198-43e2-91e3-4a7e9116ce2b" compileInMPS="true">
   <models>
-    <modelRoot path="${mps_home}/plugins/execution-configurations/classes">
+    <modelRoot path="${mps_home}/plugins/execution-configurations/lib/execution_configurations.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
     <modelRoot path="${solution_descriptor}/" />
@@ -11,7 +11,7 @@
     </modelRoot>
   </models>
   <stubModelEntries>
-    <stubModelEntry path="${mps_home}/plugins/execution-configurations/classes">
+    <stubModelEntry path="${mps_home}/plugins/execution-configurations/lib/execution_configurations.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </stubModelEntry>
     <stubModelEntry path="${mps_home}/plugins/execution-languages/lib/execution_languages.jar">

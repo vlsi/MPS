@@ -2980,8 +2980,9 @@
     <path path="${base_dir}/plugins/debugger-java/api/classes" />
     <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
-    <path path="${base_dir}/plugins/execution-configurations/classes" />
+    <path path="${base_dir}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes" />
     <path path="${base_dir}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
+    <path path="${base_dir}/plugins/execution-configurations/languages/unitTests/runtime/classes" />
     <path path="${base_dir}/plugins/execution-configurations/languages/unitTests/startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes" />
@@ -6140,9 +6141,10 @@
     <path path="${base_dir}/plugins/debugger-java/api/classes" />
     <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
-    <path path="${base_dir}/plugins/execution-configurations/classes" />
+    <path path="${base_dir}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes" />
     <path path="${base_dir}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-configurations/languages/migration/classes_gen" />
+    <path path="${base_dir}/plugins/execution-configurations/languages/unitTests/runtime/classes" />
     <path path="${base_dir}/plugins/execution-configurations/languages/unitTests/startup/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes" />
