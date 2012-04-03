@@ -566,19 +566,25 @@
     </zip>
     <delete dir="${deploy.dir}/MPS/samples.zip.tmp" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.pluginSolution" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguageInternal" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.blTypes" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.builders" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.checkedDots" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.jdk7" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.classifiers" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.closures" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.collections" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.constructors" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.extensionMethods" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.javadoc" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.jdk7" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.logging" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.overloadedOperators" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp.runtime" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.libs" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguageInternal" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.pluginSolution" />
     <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime.gwt-src.jar.tmp">
       <fileset dir="${mps_home}/languages/baseLanguage/collections/runtime/source_gen.gwt" />
     </copy>
@@ -709,15 +715,9 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.xmlInternal" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xmlSchema" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xmlUnitTest" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp.examples" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.extensionMethods" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.collections.trove" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.contracts" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.overloadedOperators" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.constructors" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.builders" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor.table" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor.table.runtime" />
     <mkdir dir="${deploy.dir}/MPS/languages/util/editor" />
