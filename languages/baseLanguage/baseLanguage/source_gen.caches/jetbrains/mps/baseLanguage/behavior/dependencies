@@ -13,7 +13,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.AbstractForStatement_Behavior" file="AbstractForStatement_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.VariablesScope" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.Scopes" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.scopes.runtime.ScopeUtils" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
@@ -405,7 +405,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ResolveUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Type_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.VariablesScope" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.Scopes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_Behavior" />
@@ -817,7 +817,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.VariablesScope" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.Scopes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.scopes.runtime.ScopeUtils" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
@@ -1074,7 +1074,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.ClassifierMembersScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.HidingByNameScope" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.VariablesScope" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.Scopes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.VisibleClassifierMembersScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.IClassifiersSearchScope" />
@@ -1796,7 +1796,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.VariablesScope" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.Scopes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.scopes.runtime.ScopeUtils" />
@@ -3206,7 +3206,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IContainsStatementList_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IVariableReference_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Statement_Behavior" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.VariablesScope" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.Scopes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.scopes.runtime.ScopeUtils" />
@@ -3550,7 +3550,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.StatementList_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Statement_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.SwitchCase_Behavior" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.VariablesScope" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.Scopes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope" />
     <classNode dependClassName="jetbrains.mps.lang.scopes.runtime.ScopeUtils" />

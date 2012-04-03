@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
-import jetbrains.mps.baseLanguage.scopes.VariablesScope;
+import jetbrains.mps.baseLanguage.scopes.Scopes;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -29,7 +29,7 @@ public class CatchClause_Behavior {
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration")) {
       if (ScopeUtils.comeFrom("catchBody", thisNode, child)) {
-        return VariablesScope.create(kind, SLinkOperations.getTarget(thisNode, "throwable", true), ScopeUtils.lazyParentScope(thisNode, kind));
+        return Scopes.forVariables(kind, SLinkOperations.getTarget(thisNode, "throwable", true), ScopeUtils.lazyParentScope(thisNode, kind));
       } else {
         return ScopeUtils.lazyParentScope(thisNode, kind);
       }

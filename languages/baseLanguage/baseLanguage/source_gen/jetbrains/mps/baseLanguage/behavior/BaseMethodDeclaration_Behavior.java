@@ -21,7 +21,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
-import jetbrains.mps.baseLanguage.scopes.VariablesScope;
+import jetbrains.mps.baseLanguage.scopes.Scopes;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
@@ -244,7 +244,7 @@ public class BaseMethodDeclaration_Behavior {
       }
       if (SConceptOperations.isSubConceptOf(concept_a0y, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration")) {
         if (ScopeUtils.comeFrom("body", thisNode, child)) {
-          return new VariablesScope(SNodeOperations.castConcept(kind, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"), SLinkOperations.getTargets(thisNode, "parameter", true), ScopeUtils.lazyParentScope(thisNode, kind));
+          return Scopes.forVariables(kind, SLinkOperations.getTargets(thisNode, "parameter", true), ScopeUtils.lazyParentScope(thisNode, kind));
         } else {
           return ScopeUtils.lazyParentScope(thisNode, kind);
         }

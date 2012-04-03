@@ -38,7 +38,7 @@ import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
-import jetbrains.mps.baseLanguage.scopes.VariablesScope;
+import jetbrains.mps.baseLanguage.scopes.Scopes;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.baseLanguage.scopes.HidingByNameScope;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
@@ -420,13 +420,13 @@ public class Classifier_Behavior {
         {
           // add 1) instance fields 2) static fields 
           // todo: change VariablesScope to accept Scope as vars parameter 
-          Scope scope = new VariablesScope(kind, ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")).getAvailableElements(null)).select(new ISelector<SNode, SNode>() {
+          Scope scope = Scopes.forVariables(kind, ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")).getAvailableElements(null)).select(new ISelector<SNode, SNode>() {
             public SNode select(SNode it) {
               return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration");
             }
           }), ScopeUtils.lazyParentScope(thisNode, kind));
           if (!(isStaticContext)) {
-            return new VariablesScope(kind, ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration")).getAvailableElements(null)).select(new ISelector<SNode, SNode>() {
+            return Scopes.forVariables(kind, ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration")).getAvailableElements(null)).select(new ISelector<SNode, SNode>() {
               public SNode select(SNode it) {
                 return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration");
               }

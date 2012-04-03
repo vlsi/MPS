@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.scopes.VariablesScope;
+import jetbrains.mps.baseLanguage.scopes.Scopes;
 import java.util.Arrays;
 import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
 
@@ -54,8 +54,7 @@ public class SwitchStatement_Behavior {
             }
             ListSequence.fromList(variables).addSequence(ListSequence.fromList(StatementList_Behavior.call_getLocalVariableDeclarations_3986960521977638556(SLinkOperations.getTarget(caseNode, "body", true), null)));
           }
-
-          return new VariablesScope(kind, variables, ScopeUtils.lazyParentScope(thisNode, kind));
+          return Scopes.forVariables(kind, variables, ScopeUtils.lazyParentScope(thisNode, kind));
         }
       }
       if (SConceptOperations.isSubConceptOf(concept_d0b, "jetbrains.mps.baseLanguage.structure.LoopLabel")) {
