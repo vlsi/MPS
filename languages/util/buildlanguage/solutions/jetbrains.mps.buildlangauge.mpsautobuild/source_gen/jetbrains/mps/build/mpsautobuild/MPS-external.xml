@@ -677,7 +677,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.build.gentest" />
     <antcall target="MPS-languages.pack.jetbrains.mps.make.facet" />
     <antcall target="MPS-languages.pack.jetbrains.mps.make.script" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.make.facet.pluginSolution" />
     <mkdir dir="${deploy.dir}/MPS/languages/make" />
     <antcall target="MPS-languages.pack.jetbrains.mps.core.xml" />
     <mkdir dir="${deploy.dir}/MPS/languages/xml" />

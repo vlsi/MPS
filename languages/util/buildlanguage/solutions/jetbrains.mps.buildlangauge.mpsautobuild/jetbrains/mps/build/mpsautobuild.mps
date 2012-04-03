@@ -3535,10 +3535,6 @@
         <property name="id" nameId="tps4.1222447189012" value="95f8a3e6-f994-4ca0-a65e-763c9bae2d3b" />
         <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.make.script" />
       </node>
-      <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="5084772791166137661">
-        <property name="id" nameId="tps4.1222447189012" value="1472a8b7-bb20-48cd-9918-ac8f8de2b04b" />
-        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.make.facet.pluginSolution" />
-      </node>
       <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="3832932945784337451">
         <property name="name" nameId="tps4.1223641503366" value="make" />
       </node>

@@ -159,7 +159,6 @@
       <modulePath path="${project}/languages/languageDesign/generator/test/sandbox/sandbox.msd" folder="core" />
       <modulePath path="${project}/languages/languageDesign/intentions/intentions.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/make/languages/facet/facet.mpl" folder="core.make" />
-      <modulePath path="${project}/languages/languageDesign/make/languages/facet/solutions/pluginSolution/pluginSolution.msd" folder="core.make" />
       <modulePath path="${project}/languages/languageDesign/make/languages/outlook/outlook.mpl" folder="core.make" />
       <modulePath path="${project}/languages/languageDesign/make/languages/script/script.mpl" folder="core.make" />
       <modulePath path="${project}/languages/languageDesign/make/solutions/jetbrains.mps.make.sandbox/jetbrains.mps.make.sandbox.msd" folder="core.make" />

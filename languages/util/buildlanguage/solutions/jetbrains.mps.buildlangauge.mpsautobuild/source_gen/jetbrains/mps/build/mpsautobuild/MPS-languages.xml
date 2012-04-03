@@ -13709,30 +13709,6 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/make/jetbrains.mps.make.script.jar.jtmp" />
   </target>
-  <target name="pack.jetbrains.mps.make.facet.pluginSolution">
-    <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/languages/languageDesign/make/languages/facet/solutions/pluginSolution/classes_gen" />
-    <mkdir dir="${deploy.dir}/MPS/languages/make/jetbrains.mps.make.facet.pluginSolution.jar.jtmp" />
-    <echoxml file="${deploy.dir}/MPS/languages/make/jetbrains.mps.make.facet.pluginSolution.jar.jtmp/module.xml">
-      <module namespace="jetbrains.mps.make.facet.pluginSolution" uuid="1472a8b7-bb20-48cd-9918-ac8f8de2b04b" type="solution">
-        <dependencies />
-        <sources jar="jetbrains.mps.make.facet.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
-      </module>
-    </echoxml>
-    <jar destfile="${deploy.dir}/MPS/languages/make/jetbrains.mps.make.facet.pluginSolution-src.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset dir="${base_dir}/languages/languageDesign/make/languages/facet/solutions/pluginSolution/source_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset dir="${base_dir}/languages/languageDesign/make/languages/facet/solutions/pluginSolution/test_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset file="${base_dir}/languages/languageDesign/make/languages/facet/solutions/pluginSolution/pluginSolution.msd" prefix="module" />
-      <zipfileset dir="${base_dir}/languages/languageDesign/make/languages/facet/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
-      <zipfileset dir="${base_dir}/languages/languageDesign/make/languages/facet/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
-    </jar>
-    <jar destfile="${deploy.dir}/MPS/languages/make/jetbrains.mps.make.facet.pluginSolution.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${deploy.dir}/MPS/languages/make/jetbrains.mps.make.facet.pluginSolution.jar.jtmp/module.xml" prefix="META-INF" />
-      <zipfileset dir="${base_dir}/languages/languageDesign/make/languages/facet/solutions/pluginSolution" includes="icons/**, resources/**" />
-      <zipfileset dir="${base_dir}/languages/languageDesign/make/languages/facet/solutions/pluginSolution/classes_gen" />
-    </jar>
-    <delete dir="${deploy.dir}/MPS/languages/make/jetbrains.mps.make.facet.pluginSolution.jar.jtmp" />
-  </target>
   <target name="pack.jetbrains.mps.core.xml">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/xml/xml/classes_gen" />
