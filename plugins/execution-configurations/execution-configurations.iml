@@ -22,7 +22,6 @@
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="library" name="Idea-plaform" level="project" />
     <orderEntry type="library" name="Commons-lang" level="project" />
-    <orderEntry type="module" module-name="debugger-api" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="library" name="Commons-logging" level="project" />
     <orderEntry type="module" module-name="debugger-java" />
@@ -32,6 +31,8 @@
     <orderEntry type="module" module-name="execution-languages" />
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="editor-api" />
+    <orderEntry type="module" module-name="execution" />
+    <orderEntry type="module" module-name="debugger-api-api" />
   </component>
 </module>
 
