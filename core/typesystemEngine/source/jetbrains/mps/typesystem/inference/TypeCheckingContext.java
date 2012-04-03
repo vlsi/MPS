@@ -214,7 +214,7 @@ public abstract class TypeCheckingContext {
 
   //returns the most serious error for node (warning if no errors, info if no warnings and errors)
   public abstract IErrorReporter getTypeMessageDontCheck(SNode node);
-
+  public abstract boolean isSingleTypeComputation();
   public abstract void clear();
 
   public static class NodeInfo {

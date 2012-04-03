@@ -244,6 +244,7 @@ public class State {
     if (!checkOnly) {
       addEquation(left, right, info);
     } else {
+      if (myTypeCheckingContext.isSingleTypeComputation()) return; //no need to check if we don't need to report errors)
       addBlock(new CheckEquationBlock(this, left, right, RelationKind.CHECK_EQUATION, info));
     }
   }
@@ -259,6 +260,7 @@ public class State {
         return;
       }
     }
+    if (check && myTypeCheckingContext.isSingleTypeComputation()) return; //no need to check if we don't need to report errors
     addBlock(new InequalityBlock(this, subType, superType, lessThan, RelationKind.fromFlags(isWeak, check, false), info));
   }
 
@@ -273,6 +275,7 @@ public class State {
         return;
       }
     }
+    if (!inference && myTypeCheckingContext.isSingleTypeComputation()) return; //no need to check if we don't need to report errors)
     addBlock(new ComparableBlock(this, left, right, RelationKind.fromFlags(isWeak, !inference, true), info));
   }
 
