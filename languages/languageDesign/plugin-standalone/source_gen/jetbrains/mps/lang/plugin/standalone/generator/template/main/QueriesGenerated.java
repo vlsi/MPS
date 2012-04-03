@@ -9,9 +9,11 @@ import jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression_
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginDeclaration_Behavior;
 import jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginDeclaration_Behavior;
+import jetbrains.mps.lang.plugin.behavior.BaseToolDeclaration_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.plugin.behavior.PreferencesComponentDeclaration_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -31,6 +33,14 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1206116795146(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ProjectPluginDeclaration_Behavior.call_getGeneratedName_481983775135178936(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4911466715314111427(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BaseToolDeclaration_Behavior.call_getGeneratedClassFQName_6547237850567463438(SLinkOperations.getTarget(_context.getNode(), "tool", false));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4911466715314111435(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return PreferencesComponentDeclaration_Behavior.call_getGeneratedClassFQName_4911466715314111449(SLinkOperations.getTarget(_context.getNode(), "componentDeclaration", false));
   }
 
   public static Object referenceMacro_GetReferent_7167571922052020449(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -57,14 +67,6 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_6062029294753276832(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_ApplicationPluginConstructor");
-  }
-
-  public static Object referenceMacro_GetReferent_3339131993542076389(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "tool", false), "map_BaseToolClass");
-  }
-
-  public static Object referenceMacro_GetReferent_3339131993542064657(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "componentDeclaration", false), "map_PreferenceComponentClass");
   }
 
   public static boolean ifMacro_Condition_1215444484689(final IOperationContext operationContext, final IfMacroContext _context) {
