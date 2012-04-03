@@ -44,7 +44,6 @@
   <component name="MPSProject">
     <projectModules>
       <modulePath path="${project}/IdeaPlugin/buildScript/plugin.msd" folder="build" />
-      <modulePath path="${project}/core/analyzers/languages/analyzers/analyzers.mpl" folder="core.analyzers" />
       <modulePath path="${project}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/jetbrains.mps.analyzers.runtime.msd" folder="core.analyzers" />
       <modulePath path="${project}/core/analyzers/solutions/sandbox/sandbox.msd" folder="core.analyzers" />
       <modulePath path="${project}/core/ant/jetbrains.mps.build.antsupport.msd" folder="core" />
@@ -131,6 +130,7 @@
       <modulePath path="${project}/languages/core/stub/Testbench/Testbench.msd" folder="core.stub" />
       <modulePath path="${project}/languages/languageDesign/access/access.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/actions/languageDescriptor.mpl" folder="core.language-design" />
+      <modulePath path="${project}/languages/languageDesign/analyzers/analyzers.mpl" folder="core.analyzers" />
       <modulePath path="${project}/languages/languageDesign/behavior/languages/behavior/behavior.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/checkedName/checkedName.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/constraints/constraints.mpl" folder="core.language-design" />

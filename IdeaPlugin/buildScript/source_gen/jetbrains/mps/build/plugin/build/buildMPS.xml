@@ -637,26 +637,26 @@
       <fileset dir="${build.tmp}/default/jetbrains.mps.gtext.runtime-src.jar" />
     </jar>
     <mkdir dir="${build.layout}/mps-core/languages/languageDesign" />
-    <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.analyzers.jar">
-      <fileset dir="${build.tmp}/java/out/jetbrains.mps.analyzers" />
-      <fileset dir="${basedir}/core/analyzers/languages/analyzers" includes="icons/**, resources/**" />
+    <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.dataFlow.analyzers.jar">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.dataFlow.analyzers" />
+      <fileset dir="${basedir}/languages/languageDesign/analyzers" includes="icons/**, resources/**" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.analyzers-src.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.analyzers-src.jar/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.analyzers-src.jar/module">
-      <fileset file="${basedir}/core/analyzers/languages/analyzers/analyzers.mpl" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.dataFlow.analyzers-src.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.dataFlow.analyzers-src.jar/module" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.lang.dataFlow.analyzers-src.jar/module">
+      <fileset file="${basedir}/languages/languageDesign/analyzers/analyzers.mpl" />
     </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.analyzers-src.jar/module/languageModels" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.analyzers-src.jar/module/languageModels">
-      <fileset dir="${basedir}/core/analyzers/languages/analyzers/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.dataFlow.analyzers-src.jar/module/languageModels" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.lang.dataFlow.analyzers-src.jar/module/languageModels">
+      <fileset dir="${basedir}/languages/languageDesign/analyzers/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.analyzers-src.jar/module/generator/template" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.analyzers-src.jar/module/generator/template">
-      <fileset dir="${basedir}/core/analyzers/languages/analyzers/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.dataFlow.analyzers-src.jar/module/generator/template" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.lang.dataFlow.analyzers-src.jar/module/generator/template">
+      <fileset dir="${basedir}/languages/languageDesign/analyzers/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
-    <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.analyzers-src.jar">
-      <fileset dir="${basedir}/core/analyzers/languages/analyzers/source_gen" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.analyzers-src.jar" />
+    <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.dataFlow.analyzers-src.jar">
+      <fileset dir="${basedir}/languages/languageDesign/analyzers/source_gen" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.lang.dataFlow.analyzers-src.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.core.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.core" />
@@ -1761,7 +1761,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.mps-tuples, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-ant, java.compile.mps-platform, java.compile.mps-editor, java.compile.mps-plugin, java.compile.mps-test, java.compile.java.modules.cycle.1, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.baseLanguage.collections, java.compile.jetbrains.mps.baseLanguageInternal, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.checkedDots, java.compile.jetbrains.mps.baseLanguage.classifiers, java.compile.jetbrains.mps.baseLanguage.constructors, java.compile.jetbrains.mps.baseLanguage.javadoc, java.compile.jetbrains.mps.baseLanguage.jdk7, java.compile.jetbrains.mps.baseLanguage.logging, java.compile.jetbrains.mps.baseLanguage.overloadedOperators, java.compile.jetbrains.mps.baseLanguage.tuples, java.compile.jetbrains.mps.baseLanguage.unitTest, java.compile.jetbrains.mps.baseLanguage.extensionMethods, java.compile.jetbrains.mps.baseLanguage.regexp, java.compile.jetbrains.mps.baseLanguage.regexp.runtime, java.compile.jetbrains.mps.baseLanguage.builders, java.compile.jetbrains.mps.analyzers, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.actions, java.compile.jetbrains.mps.lang.behavior, java.compile.jetbrains.mps.lang.constraints, java.compile.jetbrains.mps.lang.dataFlow, java.compile.jetbrains.mps.lang.editor, java.compile.jetbrains.mps.lang.editor.table, java.compile.jetbrains.mps.lang.editor.editorTest, java.compile.jetbrains.mps.lang.editor.table.runtime, java.compile.jetbrains.mps.lang.extension, java.compile.java.modules.cycle.2, java.compile.jetbrains.mps.lang.findUsages, java.compile.jetbrains.mps.lang.descriptor, java.compile.jetbrains.mps.lang.generator.generationContext, java.compile.jetbrains.mps.lang.generator.generationParameters, java.compile.jetbrains.mps.lang.generator, java.compile.jetbrains.mps.lang.intentions, java.compile.jetbrains.mps.lang.pattern, java.compile.jetbrains.mps.lang.plugin, java.compile.jetbrains.mps.lang.checkedName, java.compile.jetbrains.mps.lang.access, java.compile.jetbrains.mps.lang.resources, java.compile.jetbrains.mps.lang.project, java.compile.jetbrains.mps.lang.quotation, java.compile.jetbrains.mps.lang.refactoring, java.compile.jetbrains.mps.lang.script, java.compile.jetbrains.mps.lang.sharedConcepts, java.compile.jetbrains.mps.lang.smodel, java.compile.jetbrains.mps.lang.smodelTests, java.compile.jetbrains.mps.lang.structure, java.compile.jetbrains.mps.lang.stubs, java.compile.jetbrains.mps.lang.test, java.compile.jetbrains.mps.lang.test.runtime, java.compile.jetbrains.mps.lang.textGen, java.compile.jetbrains.mps.lang.traceable, java.compile.jetbrains.mps.lang.typesystem, java.compile.java.modules.cycle.3, java.compile.jetbrains.mps.xml, java.compile.jetbrains.mps.xmlInternal, java.compile.jetbrains.mps.xmlSchema, java.compile.jetbrains.mps.xmlQuery, java.compile.jetbrains.mps.gtext, java.compile.jetbrains.mps.gtext.runtime, java.compile.jetbrains.mps.make.facet, java.compile.jetbrains.mps.make.outlook, java.compile.jetbrains.mps.make.script, java.compile.jetbrains.mps.build.gentest, java.compile.jetbrains.mps.build.reduced" />
+  <target name="compileJava" depends="java.compile.mps-tuples, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-ant, java.compile.mps-platform, java.compile.mps-editor, java.compile.mps-plugin, java.compile.mps-test, java.compile.java.modules.cycle.1, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.baseLanguage.collections, java.compile.jetbrains.mps.baseLanguageInternal, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.checkedDots, java.compile.jetbrains.mps.baseLanguage.classifiers, java.compile.jetbrains.mps.baseLanguage.constructors, java.compile.jetbrains.mps.baseLanguage.javadoc, java.compile.jetbrains.mps.baseLanguage.jdk7, java.compile.jetbrains.mps.baseLanguage.logging, java.compile.jetbrains.mps.baseLanguage.overloadedOperators, java.compile.jetbrains.mps.baseLanguage.tuples, java.compile.jetbrains.mps.baseLanguage.unitTest, java.compile.jetbrains.mps.baseLanguage.extensionMethods, java.compile.jetbrains.mps.baseLanguage.regexp, java.compile.jetbrains.mps.baseLanguage.regexp.runtime, java.compile.jetbrains.mps.baseLanguage.builders, java.compile.jetbrains.mps.lang.dataFlow.analyzers, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.actions, java.compile.jetbrains.mps.lang.behavior, java.compile.jetbrains.mps.lang.constraints, java.compile.jetbrains.mps.lang.dataFlow, java.compile.jetbrains.mps.lang.editor, java.compile.jetbrains.mps.lang.editor.table, java.compile.jetbrains.mps.lang.editor.editorTest, java.compile.jetbrains.mps.lang.editor.table.runtime, java.compile.jetbrains.mps.lang.extension, java.compile.java.modules.cycle.2, java.compile.jetbrains.mps.lang.findUsages, java.compile.jetbrains.mps.lang.descriptor, java.compile.jetbrains.mps.lang.generator.generationContext, java.compile.jetbrains.mps.lang.generator.generationParameters, java.compile.jetbrains.mps.lang.generator, java.compile.jetbrains.mps.lang.intentions, java.compile.jetbrains.mps.lang.pattern, java.compile.jetbrains.mps.lang.plugin, java.compile.jetbrains.mps.lang.checkedName, java.compile.jetbrains.mps.lang.access, java.compile.jetbrains.mps.lang.resources, java.compile.jetbrains.mps.lang.project, java.compile.jetbrains.mps.lang.quotation, java.compile.jetbrains.mps.lang.refactoring, java.compile.jetbrains.mps.lang.script, java.compile.jetbrains.mps.lang.sharedConcepts, java.compile.jetbrains.mps.lang.smodel, java.compile.jetbrains.mps.lang.smodelTests, java.compile.jetbrains.mps.lang.structure, java.compile.jetbrains.mps.lang.stubs, java.compile.jetbrains.mps.lang.test, java.compile.jetbrains.mps.lang.test.runtime, java.compile.jetbrains.mps.lang.textGen, java.compile.jetbrains.mps.lang.traceable, java.compile.jetbrains.mps.lang.typesystem, java.compile.java.modules.cycle.3, java.compile.jetbrains.mps.xml, java.compile.jetbrains.mps.xmlInternal, java.compile.jetbrains.mps.xmlSchema, java.compile.jetbrains.mps.xmlQuery, java.compile.jetbrains.mps.gtext, java.compile.jetbrains.mps.gtext.runtime, java.compile.jetbrains.mps.make.facet, java.compile.jetbrains.mps.make.outlook, java.compile.jetbrains.mps.make.script, java.compile.jetbrains.mps.build.gentest, java.compile.jetbrains.mps.build.reduced" />
   
   <target name="processResources" />
   
@@ -1965,7 +1965,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.java.modules.cycle.1" depends="java.compile.jetbrains.mps.baseLanguage.regexp.runtime, java.compile.mps-core, java.compile.mps-collections, java.compile.mps-closures, java.compile.mps-tuples, java.compile.mps-editor, java.compile.mps-editor-api, java.compile.mps-platform, java.compile.mps-test, java.compile.mps-ant, java.compile.jetbrains.mps.gtext.runtime">
+  <target name="java.compile.java.modules.cycle.1" depends="java.compile.jetbrains.mps.baseLanguage.regexp.runtime, java.compile.mps-core, java.compile.mps-closures, java.compile.mps-tuples, java.compile.mps-collections, java.compile.mps-editor, java.compile.mps-editor-api, java.compile.mps-platform, java.compile.mps-test, java.compile.mps-ant, java.compile.jetbrains.mps.gtext.runtime">
     <mkdir dir="${build.tmp}/java.modules.cycle.1" />
     <javac destdir="${build.tmp}/java.modules.cycle.1" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -2011,9 +2011,9 @@
         <path refid="path.java.library.idea-ant" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
         <pathelement path="${build.tmp}/java/out/mps-core" />
-        <pathelement path="${build.tmp}/java/out/mps-collections" />
         <pathelement path="${build.tmp}/java/out/mps-closures" />
         <pathelement path="${build.tmp}/java/out/mps-tuples" />
+        <pathelement path="${build.tmp}/java/out/mps-collections" />
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-editor-api" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
@@ -2024,7 +2024,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.baseLanguage" depends="java.compile.jetbrains.mps.baseLanguage.regexp.runtime, java.compile.mps-core, java.compile.mps-collections, java.compile.mps-closures, java.compile.mps-tuples, java.compile.mps-editor, java.compile.mps-editor-api, java.compile.mps-platform, java.compile.mps-test, java.compile.java.modules.cycle.1">
+  <target name="java.compile.jetbrains.mps.baseLanguage" depends="java.compile.jetbrains.mps.baseLanguage.regexp.runtime, java.compile.mps-core, java.compile.mps-closures, java.compile.mps-tuples, java.compile.mps-collections, java.compile.mps-editor, java.compile.mps-editor-api, java.compile.mps-platform, java.compile.mps-test, java.compile.java.modules.cycle.1">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -2034,9 +2034,9 @@
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
         <pathelement path="${build.tmp}/java/out/mps-core" />
-        <pathelement path="${build.tmp}/java/out/mps-collections" />
         <pathelement path="${build.tmp}/java/out/mps-closures" />
         <pathelement path="${build.tmp}/java/out/mps-tuples" />
+        <pathelement path="${build.tmp}/java/out/mps-collections" />
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-editor-api" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
@@ -2605,12 +2605,12 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.analyzers" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.baseLanguage.collections, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.pattern, java.compile.jetbrains.mps.lang.structure, java.compile.jetbrains.mps.lang.test.runtime, java.compile.jetbrains.mps.lang.traceable, java.compile.mps-core, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.jetbrains.mps.baseLanguage.classifiers, java.compile.jetbrains.mps.baseLanguage.javadoc, java.compile.mps-editor, java.compile.mps-editor-api, java.compile.jetbrains.mps.baseLanguage.regexp.runtime, java.compile.jetbrains.mps.baseLanguageInternal, java.compile.jetbrains.mps.lang.behavior, java.compile.jetbrains.mps.lang.generator, java.compile.jetbrains.mps.lang.quotation, java.compile.jetbrains.mps.lang.resources, java.compile.mps-platform, java.compile.jetbrains.mps.lang.smodel, java.compile.jetbrains.mps.lang.typesystem, java.compile.jetbrains.mps.baseLanguage.extensionMethods, java.compile.jetbrains.mps.lang.editor, java.compile.jetbrains.mps.lang.test, java.compile.mps-test">
-    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.analyzers" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.analyzers" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+  <target name="java.compile.jetbrains.mps.lang.dataFlow.analyzers" depends="java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.baseLanguage.collections, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.pattern, java.compile.jetbrains.mps.lang.structure, java.compile.jetbrains.mps.lang.test.runtime, java.compile.jetbrains.mps.lang.traceable, java.compile.mps-core, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.jetbrains.mps.baseLanguage.classifiers, java.compile.jetbrains.mps.baseLanguage.javadoc, java.compile.mps-editor, java.compile.mps-editor-api, java.compile.jetbrains.mps.baseLanguage.regexp.runtime, java.compile.jetbrains.mps.baseLanguageInternal, java.compile.jetbrains.mps.lang.behavior, java.compile.jetbrains.mps.lang.generator, java.compile.jetbrains.mps.lang.quotation, java.compile.jetbrains.mps.lang.resources, java.compile.mps-platform, java.compile.jetbrains.mps.lang.smodel, java.compile.jetbrains.mps.lang.typesystem, java.compile.jetbrains.mps.baseLanguage.extensionMethods, java.compile.jetbrains.mps.lang.editor, java.compile.jetbrains.mps.lang.test, java.compile.mps-test">
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.dataFlow.analyzers" />
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.dataFlow.analyzers" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/core/analyzers/languages/analyzers/source_gen" />
+        <path location="${basedir}/languages/languageDesign/analyzers/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />

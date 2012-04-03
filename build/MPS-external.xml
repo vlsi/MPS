@@ -625,6 +625,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.typesystem" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.intentions" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.dataFlow" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.dataFlow.analyzers" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.pattern" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.pattern.testLang" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.quotation" />
@@ -735,7 +736,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.gtext" />
     <antcall target="MPS-languages.pack.jetbrains.mps.gtext.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.gtext.runtime" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.analyzers" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.dates" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.dates.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.datesInternal" />
