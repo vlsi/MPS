@@ -17,6 +17,7 @@ package jetbrains.mps.ide.make;
 
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.components.AbstractProjectComponent;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
@@ -68,6 +69,8 @@ public class StartupModuleMaker extends AbstractProjectComponent {
           migrationState.removeMigrationListener(this);
         }
       });
+      // reload classes anyway as this is required in order to load the plugins
+      reloadClasses(new EmptyProgressIndicator(), true);
     }
     else {
       compileProjectModulesWithProgress(true);

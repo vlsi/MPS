@@ -522,7 +522,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
             }
           });
           indicator.setIndeterminate(true);
-          processor.startProcessing();
+          processor.startProcessing(SwingUtilities.getRootPane(getComponent()));
         }
       };
     }
