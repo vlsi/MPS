@@ -23,7 +23,7 @@
         <usedDevKit>fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)</usedDevKit>
       </usedDevKits>
       <mapping-priorities>
-        <mapping-priority-rule kind="strictly_together">
+        <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
             <generator generatorUID="d4ef9816-d167-4e4e-a083-91ffd61b4c5c(jetbrains.mps.lang.plugin.standalone#481983775135098857)" />
             <external-mapping>
