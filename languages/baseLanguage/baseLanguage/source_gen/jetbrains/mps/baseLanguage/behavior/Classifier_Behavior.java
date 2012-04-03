@@ -40,7 +40,6 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
 import jetbrains.mps.baseLanguage.scopes.Scopes;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
-import jetbrains.mps.baseLanguage.scopes.HidingByNameScope;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -452,12 +451,10 @@ public class Classifier_Behavior {
               addition = Classifier_Behavior.call_getVisibleMembers_8083692786967356611(thisNode, child, kind);
             }
           }
-
           return (addition != null ?
-            HidingByNameScope.create(addition, ScopeUtils.lazyParentScope(thisNode, kind), false) :
+            Scopes.defaultWithNameHiding(kind, addition, ScopeUtils.lazyParentScope(thisNode, kind)) :
             ScopeUtils.lazyParentScope(thisNode, kind)
           );
-          // <node> 
         }
       }
     }

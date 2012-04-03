@@ -21,4 +21,9 @@ public class Scopes {
     // hiding for variables only name based. so I can use SimpleScope and HidingByNameScope 
     return new HidingByNameScope(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"), kind, new SimpleScope(variable), parentScope);
   }
+
+  public static Scope defaultWithNameHiding(SNode kind, Scope scope, Scope parentScope) {
+    // hide anything by name 
+    return new HidingByNameScope(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.INamedConcept"), kind, scope, parentScope);
+  }
 }

@@ -7810,47 +7810,26 @@
                   </node>
                 </node>
               </node>
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="7497677991177879724" />
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="4513181742439695403">
-                <node role="expression" roleId="tpee.1068581517676" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="4513181742439695442">
-                  <node role="ifFalse" roleId="tpee.1163668934364" type="genb.ParentScope" typeId="genb.8077936094962911282" id="4513181742439695463" />
-                  <node role="condition" roleId="tpee.1163668914799" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="4513181742439695422">
-                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="4513181742439695425" />
-                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4513181742439695405">
+                <node role="expression" roleId="tpee.1068581517676" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="4143990013475458401">
+                  <node role="condition" roleId="tpee.1163668914799" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="4143990013475458381">
+                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="4143990013475458384" />
+                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4143990013475458360">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2574978857361827939" resolveInfo="addition" />
                     </node>
                   </node>
-                  <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4513181742439695449">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fnmy.4513181742439694519" resolveInfo="create" />
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fnmy.5815802410604953815" resolveInfo="HidingByNameScope" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4513181742439695450">
+                  <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4143990013475408102">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fnmy.4143990013475407974" resolveInfo="defaultWithNameHiding" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fnmy.4143990013474875883" resolveInfo="Scopes" />
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4143990013475408103">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8967654016644707951" resolveInfo="kind" />
+                    </node>
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4143990013475408105">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2574978857361827939" resolveInfo="addition" />
                     </node>
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="genb.ParentScope" typeId="genb.8077936094962911282" id="4513181742439695452" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4513181742439695462">
-                      <property name="value" nameId="tpee.1068580123138" value="false" />
-                    </node>
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="genb.ParentScope" typeId="genb.8077936094962911282" id="4143990013475408107" />
                   </node>
-                </node>
-              </node>
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="2574978857361834890">
-                <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.StatementCommentPart" typeId="tpee.6329021646629175143" id="2574978857361834891">
-                  <node role="commentedStatement" roleId="tpee.6329021646629175144" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2574978857361828118">
-                    <node role="expression" roleId="tpee.1068581517676" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="2574978857361828119">
-                      <node role="ifTrue" roleId="tpee.1163668922816" type="genb.CompositeWithParentScopeExpression" typeId="genb.8077936094962850237" id="2574978857361828120">
-                        <node role="expr" roleId="genb.8077936094962969171" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2574978857361828121">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2574978857361827939" resolveInfo="addition" />
-                        </node>
-                      </node>
-                      <node role="ifFalse" roleId="tpee.1163668934364" type="genb.ParentScope" typeId="genb.8077936094962911282" id="2574978857361828122" />
-                      <node role="condition" roleId="tpee.1163668914799" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="2574978857361828123">
-                        <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2574978857361828124">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2574978857361827939" resolveInfo="addition" />
-                        </node>
-                        <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="2574978857361828125" />
-                      </node>
-                    </node>
-                  </node>
+                  <node role="ifFalse" roleId="tpee.1163668934364" type="genb.ParentScope" typeId="genb.8077936094962911282" id="4143990013475458406" />
                 </node>
               </node>
             </node>
