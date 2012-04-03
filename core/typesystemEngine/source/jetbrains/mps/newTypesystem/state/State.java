@@ -445,6 +445,10 @@ public class State {
   }
 
   public void expandAll(final Set<SNode> nodes, final boolean finalExpansion) {
+    if (myTypeCheckingContext.isSingleTypeComputation()) {
+      expandTargetNode();
+      return;
+    }
     if (nodes != null && !nodes.isEmpty()) {
       executeOperation(new AddRemarkOperation("Types Expansion", new Runnable() {
         public void run() {
@@ -452,14 +456,6 @@ public class State {
         }
       }));
     }
-  }
-
-  public void expandAll(final boolean finalExpansion) {
-    executeOperation(new AddRemarkOperation("Types Expansion", new Runnable() {
-      public void run() {
-        myNodeMaps.expandAll(finalExpansion);
-      }
-    }));
   }
 
   public boolean executeOperationsBeforeAnchor(AbstractOperation firstOp, Object anchor) {
