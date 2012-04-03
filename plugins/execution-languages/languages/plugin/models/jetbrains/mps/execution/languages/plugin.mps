@@ -8,7 +8,7 @@
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="6863272677075182370">
       <property name="id" nameId="tp4k.5023285075122009366" value="jetbrains.mps.execution.languages" />
       <property name="name" nameId="tpck.1169194664001" value="Execution Languages" />
-      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Execution Languages" />
+      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Provides languages and libraries for implementing execution configurations for MPS" />
       <property name="version" nameId="tp4k.5023285075122009369" value="1.0" />
       <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
       <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />

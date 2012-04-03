@@ -10,7 +10,7 @@
   <import index="upz5" modelUID="r:33366a6f-09e8-45e7-ae7f-cb8cf0c7ed05(jetbrains.mps.baseLanguage.tuples.runtime)" version="-1" />
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="5" implicit="yes" />
+  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="8" implicit="yes" />
   <import index="kisg" modelUID="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)" version="1" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" implicit="yes" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
@@ -20,7 +20,7 @@
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="5494815557703847191">
       <property name="id" nameId="tp4k.5023285075122009366" value="jetbrains.mps.debugger.java.customViewers" />
       <property name="name" nameId="tpck.1169194664001" value="BaseLanguage Extensions Custom Viewers" />
-      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Custom viewers for baseLanguage extensions" />
+      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Provides debugger custom viewers for baseLanguage extensions" />
       <property name="version" nameId="tp4k.5023285075122009369" value="1.0" />
       <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
       <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
