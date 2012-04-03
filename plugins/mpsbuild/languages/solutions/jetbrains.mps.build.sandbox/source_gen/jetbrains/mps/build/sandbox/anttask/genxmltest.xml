@@ -9,13 +9,34 @@
     </path>
     <taskdef file="${runtime.dir}/jetbrains/mps/build/mps/runtime/anttask/antlib.xml" classpathref="anttask.classpath" />
     
-    <mps.gen.module.xml>
+    <mps.gen.module.xml fork="true">
       <GenModule ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" dest="module.xml">
-          &lt;sources jar="${mps.home}/languages/xxx/yyy.jar" descriptor="${basedir}/xxx.msd" />
-          &lt;library jar="${mps.home}/lib.jar" />
-          </GenModule>
+        <sources jar="${mps.home}/languages/xx/yy.jar" descriptor="${basedir}/xx.msd" />
+        <library jar="${mps.home}/lib.jar"> runtime.dir="${runtime.dir}" <!--test comment--></library>
+        <e1>
+          &lt;ee param="${basedir}/xx">test&lt;/ee>
+          <e2>
+            text
+            <e3 param1="p"><![CDATA[data]]></e3>
+            text2 <!--comment-->
+          </e2>
+        </e1>
+      </GenModule>
       <GenModule ref="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" dest="bL.xml"></GenModule>
     </mps.gen.module.xml>
-    
+    <echoxml>
+      <e1>
+        test
+        <e2>
+          <!--comment-->testc
+          <e3 p1="xx">
+            ttt${mps.home}
+            <e4 />
+          </e3>
+          <![CDATA[ddd]]>testd
+        </e2>
+      </e1>
+      <e11></e11>
+    </echoxml>
   </target>
 </project>

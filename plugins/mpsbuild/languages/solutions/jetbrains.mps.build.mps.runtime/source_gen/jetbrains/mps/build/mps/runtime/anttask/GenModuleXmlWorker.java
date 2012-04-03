@@ -15,23 +15,21 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
-import org.jdom.Element;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.PrintStream;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import java.util.Collection;
-import org.jdom.input.SAXBuilder;
-import org.jdom.Document;
-import java.io.StringReader;
-import jetbrains.mps.util.JDOMUtil;
-import org.jdom.JDOMException;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.PrintStream;
 import jetbrains.mps.project.dependency.DependenciesManager;
 import java.util.Set;
 import java.io.File;
 
 public class GenModuleXmlWorker extends MpsWorker {
+  public static final String INDENT_WITH = "  ";
+  public static final int INDENT_INNER_XML = 2;
+
   public GenModuleXmlWorker(WhatToDo whatToDo) {
     super(whatToDo);
   }
@@ -78,53 +76,13 @@ public class GenModuleXmlWorker extends MpsWorker {
     });
     IFile xmlfile = FileSystem.getInstance().getFileByPath(params.getDest());
 
-    writeFile(xmlfile, moduleRef, module, params.getExtraText());
+    writeFile(xmlfile, moduleRef, module, params.getInnerText(INDENT_INNER_XML, INDENT_WITH));
   }
 
-  public void writeFile0(IFile file, ModuleReference moduleRef, IModule module, List<String> extraText) {
-    Element moduleElem = new Element("module");
-    moduleElem.setAttribute("namespace", moduleRef.getModuleFqName());
-    moduleElem.setAttribute("uuid", moduleRef.getModuleId() + "");
-    moduleElem.setAttribute("type", (module instanceof Solution ?
-      "solution" :
-      (module instanceof Language ?
-        "language" :
-        "unknown"
-      )
-    ));
-    Element depElem = new Element("dependencies");
-    moduleElem.addContent(depElem);
-
-    Collection<IModule> dependencies = getDepenencies(module);
-    if (dependencies == null) {
-      System.out.println("module " + moduleRef + " was not found in repository");
-      // <node> 
-      return;
-    }
-    for (IModule m : dependencies) {
-      depElem.addContent(new Element("module").setAttribute("ref", m.getModuleReference().toString()));
-    }
-
-    StringBuilder sb = new StringBuilder();
-    for (String line : extraText) {
-      sb.append(line).append("\n");
-    }
-    try {
-      SAXBuilder builder = new SAXBuilder();
-      Document doc = builder.build(new StringReader(sb.toString()));
-      moduleElem.addContent(doc.detachRootElement());
-      JDOMUtil.writeDocument(new Document(moduleElem), file);
-    } catch (JDOMException e) {
-      error("Error writing \"" + sb.toString() + "\" to " + file.getPath());
-    } catch (IOException e) {
-      error("Error writing to " + file.getPath());
-    }
-
-  }
-
-  public void writeFile(IFile file, ModuleReference moduleRef, IModule module, List<String> extraText) {
+  public void writeFile(IFile file, ModuleReference moduleRef, IModule module, String extraText) {
 
     try {
+      OutputStreamWriter ow = new OutputStreamWriter(file.openOutputStream());
       PrintWriter wr = new PrintWriter(new PrintStream(file.openOutputStream()));
       wr.println("<module namespace=\"" + moduleRef.getModuleFqName() + "\" uuid=\"" + moduleRef.getModuleId() + "\" type=\"" + ((module instanceof Solution ?
         "solution" :
@@ -133,25 +91,20 @@ public class GenModuleXmlWorker extends MpsWorker {
           "unknown"
         )
       )) + "\">");
-      wr.println("<dependencies>");
 
+      wr.println(INDENT_WITH + "<dependencies>");
       Collection<IModule> dependencies = getDepenencies(module);
       if (dependencies == null) {
-        System.out.println("module " + moduleRef + " was not found in repository");
         // <node> 
+        error("module " + moduleRef + " was not found in repository");
         return;
       }
       for (IModule m : dependencies) {
-        wr.println("<module ref=\"" + m.getModuleReference().toString() + "\" />");
+        wr.println(INDENT_WITH + INDENT_WITH + "<module ref=\"" + m.getModuleReference().toString() + "\" />");
       }
+      wr.println(INDENT_WITH + "</dependencies>");
 
-      wr.println("</dependencies>");
-
-      StringBuilder sb = new StringBuilder();
-      for (String line : extraText) {
-        sb.append(line).append("\n");
-      }
-      wr.println(sb.toString());
+      wr.println(extraText);
 
       wr.println("</module>");
       wr.close();
@@ -161,7 +114,7 @@ public class GenModuleXmlWorker extends MpsWorker {
   }
 
   private Collection<IModule> getDepenencies(IModule module) {
-    final DependenciesManager depManager = check_7yxogc_a0a0g(module);
+    final DependenciesManager depManager = check_7yxogc_a0a0f(module);
     if (depManager == null) {
       return null;
     }
@@ -176,7 +129,7 @@ public class GenModuleXmlWorker extends MpsWorker {
     new GenModuleXmlWorker(WhatToDo.fromDumpInFile(new File(args[0])), new MpsWorker.LogLogger()).workFromMain();
   }
 
-  private static DependenciesManager check_7yxogc_a0a0g(IModule checkedDotOperand) {
+  private static DependenciesManager check_7yxogc_a0a0f(IModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getDependenciesManager();
     }

@@ -21,15 +21,13 @@ public class GenModuleXmlTask extends MpsLoadTask {
 
   public static String encode(ModuleXml moduleXml) {
     StringBuilder sb = new StringBuilder();
-    sb.append(moduleXml.getRef()).append("\n").append(moduleXml.getDest());
-    for (String line : moduleXml.getExtraText()) {
-      sb.append("\n").append(line);
-    }
+    sb.append(moduleXml.getRef()).append("\n").append(moduleXml.getDest()).append("\n");
+    sb.append(moduleXml.getInnerText(GenModuleXmlWorker.INDENT_INNER_XML, GenModuleXmlWorker.INDENT_WITH));
     return URLEncoder.encode(sb.toString());
   }
 
   public static ModuleXml decode(String s) {
-    ModuleXml result = new ModuleXml(false);
+    ModuleXml result = new ModuleXml();
     String[] param = URLDecoder.decode(s).split("\n");
     if (param.length > 0) {
       result.setRef(param[0]);
@@ -37,9 +35,11 @@ public class GenModuleXmlTask extends MpsLoadTask {
     if (param.length > 1) {
       result.setDest(param[1]);
     }
+    StringBuilder sb = new StringBuilder();
     for (int i = 2; i < param.length; ++i) {
-      result.addText(param[i]);
+      sb.append("\n").append(param[i]);
     }
+    result.setInnerText(sb.toString());
     return result;
   }
 }

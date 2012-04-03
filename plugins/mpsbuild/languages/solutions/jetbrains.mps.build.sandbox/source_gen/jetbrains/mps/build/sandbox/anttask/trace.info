@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="5738701198683704599">
-    <unitInfo nodeId="5738701198683704599" fileName="genxmltest.xml" startLine="1" startPosition="0" endLine="21" endPosition="10" unitName="jetbrains.mps.build.sandbox.anttask.genxmltest" />
+    <unitInfo nodeId="5738701198683704599" fileName="genxmltest.xml" startLine="1" startPosition="0" endLine="42" endPosition="10" unitName="jetbrains.mps.build.sandbox.anttask.genxmltest" />
   </root>
 </debugInfo>
 
