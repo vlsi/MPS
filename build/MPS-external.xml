@@ -577,7 +577,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.javadoc" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.logging" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.libs" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples" />
     <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime.gwt-src.jar.tmp">
