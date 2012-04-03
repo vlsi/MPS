@@ -46,9 +46,27 @@ public abstract class AbstractMigrationScriptHelper {
         }
       }
     }
+    // TODO: why global scope??? 
     if (migrationScope.isEmpty()) {
       for (IModule module : GlobalScope.getInstance().getVisibleModules()) {
         migrationScope.addModule(module);
+      }
+    }
+    return migrationScope;
+  }
+
+  public static IScope createMigrationScope(List<SModelDescriptor> models, List<IModule> modules) {
+    AbstractMigrationScriptHelper.MigrationScope migrationScope = new AbstractMigrationScriptHelper.MigrationScope();
+    for (SModelDescriptor model : models) {
+      migrationScope.addModel(model);
+    }
+    for (IModule module : modules) {
+      migrationScope.addModule(module);
+      if (module instanceof Language) {
+        Language language = (Language) module;
+        for (Generator generator : language.getGenerators()) {
+          migrationScope.addModule(generator);
+        }
       }
     }
     return migrationScope;
