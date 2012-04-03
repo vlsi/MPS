@@ -36,6 +36,10 @@
       <property name="name" nameId="tpck.1169194664001" value="contentOf_BuildMpsLayout_ModuleSources" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="kdzh.1692280246134781712" resolveInfo="BuildMpsLayout_ModuleSources" />
     </node>
+    <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1265949165890610447">
+      <property name="name" nameId="tpck.1169194664001" value="reduce_BuildMpsLayout_ModuleJars" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="kdzh.1265949165890536423" resolveInfo="BuildMpsLayout_ModuleJars" />
+    </node>
   </roots>
   <root id="3189788309732033980">
     <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="1500819558096348257">
@@ -1256,6 +1260,12 @@
         </node>
       </node>
     </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1265949165890610445">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="kdzh.1265949165890536423" resolveInfo="BuildMpsLayout_ModuleJars" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1265949165890610449">
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1265949165890610447" resolveInfo="reduce_BuildMpsLayout_ModuleJars" />
+      </node>
+    </node>
     <node role="preMappingScript" roleId="tpf8.1195502100749" type="tpf8.MappingScriptReference" typeId="tpf8.1195502151594" id="3189788309732178790">
       <link role="mappingScript" roleId="tpf8.1195502167610" targetNodeId="3189788309732145594" resolveInfo="loadModules" />
     </node>
@@ -1955,6 +1965,31 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </root>
+  <root id="1265949165890610447">
+    <node role="contentNode" roleId="tpf8.1092060348987" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="1265949165890610450">
+      <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="1265949165890610451">
+        <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="1265949165890610452">
+          <property name="text" nameId="3ior.4903714810883755350" value="root" />
+        </node>
+      </node>
+      <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Jar" typeId="3ior.7389400916848050074" id="1265949165890610453">
+        <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="1265949165890610454">
+          <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="1265949165890654132">
+            <property name="text" nameId="3ior.4903714810883755350" value="module.jar" />
+          </node>
+        </node>
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1265949165890654139" />
+      </node>
+      <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Jar" typeId="3ior.7389400916848050074" id="1265949165890654134">
+        <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="1265949165890654135">
+          <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="1265949165890654137">
+            <property name="text" nameId="3ior.4903714810883755350" value="module-src.jar" />
+          </node>
+        </node>
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1265949165890654138" />
       </node>
     </node>
   </root>

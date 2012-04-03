@@ -21,25 +21,25 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
-public class BuildMpsLayout_ModuleOutput_Editor extends DefaultNodeEditor {
+public class BuildMpsLayout_ModuleJars_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_x4tsfq_a(editorContext, node);
+    return this.createCollection_aqxvre_a(editorContext, node);
   }
 
-  private EditorCell createCollection_x4tsfq_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_aqxvre_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_x4tsfq_a");
-    editorCell.addEditorCell(this.createConceptProperty_x4tsfq_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_x4tsfq_b0(editorContext, node));
+    editorCell.setCellId("Collection_aqxvre_a");
+    editorCell.addEditorCell(this.createConceptProperty_aqxvre_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_aqxvre_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_x4tsfq_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_aqxvre_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("module");
     provider.setNoTargetText("<no module>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildMpsLayout_ModuleOutput_Editor._Inline_x4tsfq_a1a());
+    provider.setAuxiliaryCellProvider(new BuildMpsLayout_ModuleJars_Editor._Inline_aqxvre_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -52,7 +52,7 @@ public class BuildMpsLayout_ModuleOutput_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_x4tsfq_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_aqxvre_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -64,7 +64,7 @@ public class BuildMpsLayout_ModuleOutput_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.EDITABLE, true);
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new BuildMpsLayout_ModuleOutput_Editor.ReplaceWith_BuildLayout_Node_cellMenu_a0a0_0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new BuildMpsLayout_ModuleJars_Editor.ReplaceWith_BuildLayout_Node_cellMenu_a0a0_1()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -75,8 +75,8 @@ public class BuildMpsLayout_ModuleOutput_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class ReplaceWith_BuildLayout_Node_cellMenu_a0a0_0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_BuildLayout_Node_cellMenu_a0a0_0() {
+  public static class ReplaceWith_BuildLayout_Node_cellMenu_a0a0_1 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_BuildLayout_Node_cellMenu_a0a0_1() {
     }
 
     public String getReplacementConceptName() {
@@ -84,8 +84,8 @@ public class BuildMpsLayout_ModuleOutput_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline_x4tsfq_a1a extends InlineCellProvider {
-    public _Inline_x4tsfq_a1a() {
+  public static class _Inline_aqxvre_a1a extends InlineCellProvider {
+    public _Inline_aqxvre_a1a() {
       super();
     }
 
@@ -94,10 +94,10 @@ public class BuildMpsLayout_ModuleOutput_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_x4tsfq_a0b0(editorContext, node);
+      return this.createProperty_aqxvre_a0b0(editorContext, node);
     }
 
-    private EditorCell createProperty_x4tsfq_a0b0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_aqxvre_a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

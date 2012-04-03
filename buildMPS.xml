@@ -414,6 +414,12 @@
     <jar destfile="${build.layout}/mps-core/lib/mps-plugin.jar">
       <fileset dir="${build.tmp}/java/out/mps-plugin" />
     </jar>
+    <mkdir dir="${build.layout}/mps-core/languages" />
+    <mkdir dir="${build.layout}/mps-core/languages/baseLanguage" />
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/module.jar" />
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/module-src.jar" />
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/module.jar" />
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/module-src.jar" />
   </target>
   
   <target name="build" depends="assemble, check" />
