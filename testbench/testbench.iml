@@ -47,7 +47,6 @@
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntry type="module" module-name="mps-workbench" />
     <orderEntry type="module" module-name="mps-platform" />
-    <orderEntry type="module" module-name="debugger-java" scope="RUNTIME" />
     <orderEntry type="library" name="xmlunit" level="project" />
     <orderEntry type="module" module-name="findUsages-runtime" />
   </component>
