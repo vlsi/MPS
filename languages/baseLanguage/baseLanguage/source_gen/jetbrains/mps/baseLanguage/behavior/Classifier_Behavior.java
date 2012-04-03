@@ -15,7 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.baseLanguage.scopes.VisibleClassifierMembersScope;
+import jetbrains.mps.baseLanguage.scopes.MemberScopes;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -40,6 +40,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
 import jetbrains.mps.baseLanguage.scopes.Scopes;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
+import jetbrains.mps.scope.CompositeScope;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -83,7 +84,7 @@ public class Classifier_Behavior {
   }
 
   public static Scope virtual_getVisibleMembers_8083692786967356611(SNode thisNode, SNode contextNode, SNode kind) {
-    return new VisibleClassifierMembersScope(thisNode, kind, contextNode);
+    return MemberScopes.visibleClassifierMembers(thisNode, kind, contextNode);
   }
 
   public static String virtual_getFqName_1213877404258(SNode thisNode) {
@@ -397,52 +398,57 @@ public class Classifier_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, final SNode kind, SNode child) {
+    while (SNodeOperations.getParent(child) != thisNode) {
+      child = SNodeOperations.getParent(child);
+    }
     boolean isStaticContext = (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember") && ClassifierMember_Behavior.call_isStatic_8986964027630462944(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) || (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.Classifier") && Classifier_Behavior.call_isStatic_521412098689998668(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.Classifier"))) || SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.StaticInitializer");
 
     // todo: remove this logic from Classifier 
     {
-      SNode concept_d0cb;
-      concept_d0cb = kind;
-      if (SConceptOperations.isSubConceptOf(concept_d0cb, "jetbrains.mps.baseLanguage.structure.ContextClassifierKind")) {
+      SNode concept_e0cb;
+      concept_e0cb = kind;
+      if (SConceptOperations.isSubConceptOf(concept_e0cb, "jetbrains.mps.baseLanguage.structure.ContextClassifierKind")) {
         return CompositeWithParentScope.from(thisNode, thisNode, kind);
       }
-      if (SConceptOperations.isSubConceptOf(concept_d0cb, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration")) {
-        while (SNodeOperations.getParent(child) != thisNode) {
-          child = SNodeOperations.getParent(child);
-        }
+      if (SConceptOperations.isSubConceptOf(concept_e0cb, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration")) {
         // todo: Classifier should be ClassifierMember! 
         if (!(isStaticContext)) {
           return CompositeWithParentScope.from(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true), thisNode, kind);
         }
       }
-      if (SConceptOperations.isSubConceptOf(concept_d0cb, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration")) {
+      if (SConceptOperations.isSubConceptOf(concept_e0cb, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration")) {
         {
           // add 1) instance fields 2) static fields 
-          // todo: change VariablesScope to accept Scope as vars parameter 
-          Scope scope = Scopes.forVariables(kind, ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")).getAvailableElements(null)).select(new ISelector<SNode, SNode>() {
-            public SNode select(SNode it) {
-              return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration");
-            }
-          }), ScopeUtils.lazyParentScope(thisNode, kind));
+          Scope scope = Scopes.forVariables(kind, Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")), ScopeUtils.lazyParentScope(thisNode, kind));
           if (!(isStaticContext)) {
-            return Scopes.forVariables(kind, ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration")).getAvailableElements(null)).select(new ISelector<SNode, SNode>() {
-              public SNode select(SNode it) {
-                return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration");
-              }
-            }), scope);
+            return Scopes.forVariables(kind, Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration")), scope);
           } else {
             return scope;
           }
         }
       }
-      if (SConceptOperations.isSubConceptOf(concept_d0cb, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
+      if (SConceptOperations.isSubConceptOf(concept_e0cb, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
+        // add instance fields + static fields 
+        if (!(isStaticContext)) {
+          Scope scope = CompositeScope.createComposite(Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")));
+          return Scopes.forMethods(kind, scope, ScopeUtils.lazyParentScope(thisNode, kind));
+        } else {
+          return Scopes.forMethods(kind, Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")), ScopeUtils.lazyParentScope(thisNode, kind));
+        }
+      }
+      if (SConceptOperations.isSubConceptOf(concept_e0cb, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
         {
-          // ? 
+          // in other cases - hide everything by name... 
+          // todo: change! 
           Scope addition = null;
           if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.StaticKind")) {
             Iterable<SNode> members = ListSequence.fromList(SNodeOperations.getChildren(thisNode)).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(kind));
+                return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.core.structure.INamedConcept") && SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(kind));
+              }
+            }).select(new ISelector<SNode, SNode>() {
+              public SNode select(SNode it) {
+                return SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.INamedConcept");
               }
             });
             addition = new SimpleScope(members);
@@ -458,6 +464,7 @@ public class Classifier_Behavior {
         }
       }
     }
+
     return ScopeUtils.lazyParentScope(thisNode, kind);
   }
 

@@ -29,8 +29,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.scopes.runtime.SimpleScope;
 import jetbrains.mps.scope.EmptyScope;
-import jetbrains.mps.baseLanguage.scopes.VisibleClassifierMembersScope;
-import jetbrains.mps.baseLanguage.scopes.NonAbstractMethodsScope;
+import jetbrains.mps.baseLanguage.scopes.MemberScopes;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 import jetbrains.mps.baseLanguage.scopes.OverridingPolicies;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
@@ -264,10 +263,10 @@ public class ClassConcept_Behavior {
       }
 
       if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperConstructorKind")) {
-        return new VisibleClassifierMembersScope(superClass, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorKind"), thisNode);
+        return MemberScopes.visibleClassifierMembers(superClass, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorKind"), thisNode);
       }
       if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperMethodKind")) {
-        return new NonAbstractMethodsScope(new VisibleClassifierMembersScope(superClass, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), thisNode));
+        return MemberScopes.nonAbstractMethods(MemberScopes.visibleClassifierMembers(superClass, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), thisNode));
       }
     }
     return Classifier_Behavior.callSuper_getMembers_2201875424515824604(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", kind);

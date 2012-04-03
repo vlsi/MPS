@@ -12,14 +12,22 @@ public class Scopes {
   private Scopes() {
   }
 
-  public static Scope forVariables(SNode kind, Iterable<SNode> variables, Scope parentScope) {
+  public static Scope forVariables(SNode kind, Scope variablesScope, Scope parentScope) {
     // hiding for variables only name based. so I can use SimpleScope and HidingByNameScope 
-    return new HidingByNameScope(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"), kind, new SimpleScope(variables), parentScope);
+    return new HidingByNameScope(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"), kind, variablesScope, parentScope);
+  }
+
+  public static Scope forVariables(SNode kind, Iterable<SNode> variables, Scope parentScope) {
+    return forVariables(kind, new SimpleScope(variables), parentScope);
   }
 
   public static Scope forVariables(SNode kind, SNode variable, Scope parentScope) {
-    // hiding for variables only name based. so I can use SimpleScope and HidingByNameScope 
-    return new HidingByNameScope(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"), kind, new SimpleScope(variable), parentScope);
+    return forVariables(kind, new SimpleScope(variable), parentScope);
+  }
+
+  public static Scope forMethods(SNode kind, Scope methodsScope, Scope parentScope) {
+    // should be used for methods in getScope() 
+    return new HidingByNameScope(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), kind, methodsScope, parentScope);
   }
 
   public static Scope defaultWithNameHiding(SNode kind, Scope scope, Scope parentScope) {

@@ -9,14 +9,14 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.util.NameUtil;
 
 public class HidingByNameScope extends Scope {
   private final SNode hidingRoot;
@@ -25,14 +25,18 @@ public class HidingByNameScope extends Scope {
   private final Scope parentScope;
   private final Set<String> names;
 
-  public HidingByNameScope(SNode hidingRoot, SNode kind, @NotNull Scope scope, @NotNull Scope parentScope) {
+  public HidingByNameScope(final SNode hidingRoot, SNode kind, @NotNull Scope scope, @NotNull Scope parentScope) {
     // hiding root: all subconcepts of hidingRoot hide each other 
     this.scope = scope;
     this.parentScope = parentScope;
     this.hidingRoot = hidingRoot;
     this.kind = kind;
     // todo: maybe lazy in getAvailableElements? 
-    this.names = SetSequence.fromSetWithValues(new HashSet(), ListSequence.fromList(scope.getAvailableElements(null)).select(new ISelector<SNode, String>() {
+    this.names = SetSequence.fromSetWithValues(new HashSet(), ListSequence.fromList(scope.getAvailableElements(null)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(hidingRoot));
+      }
+    }).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
       }

@@ -101,7 +101,7 @@ public abstract class ClassifierMembersScope extends Scope {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.core.structure.INamedConcept") && refText.equals(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
       }
     });
-    return (Sequence.fromIterable(pretenders).isNotEmpty() ?
+    return ((int) Sequence.fromIterable(pretenders).count() == 1 ?
       Sequence.fromIterable(pretenders).first() :
       null
     );
