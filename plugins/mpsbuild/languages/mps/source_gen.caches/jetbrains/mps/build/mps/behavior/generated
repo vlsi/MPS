@@ -15,7 +15,7 @@
   <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="6sc1uyn8744vgzy5rkofxcdgjycr1nt" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-9uox200f79kg280dd3xzxbsmty1n1q2" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-ad6sacrydlyivgq1a8s9zj6b37xpgsf" />
-  <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" hash="3coxyfetymwfka0x05nmhqzxsg332fo" />
+  <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" hash="-lr81qusdzfsax5q1txv65urse9s8or" />
   <dep model="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)" hash="al93vtckub3pxzmdojbqoyoebxmqe5b" />
   <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="-ao5vy6xmo7zztcteye26aafwxmjea70" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-7zc5n4l9a9zrjq93znk167hfo3dyd2v" />
@@ -41,6 +41,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BehaviorAspectDescriptor.java" />
+    <file name="BuildMPSPlugin_BehaviorDescriptor.java" />
     <file name="BuildMpsLayout_FolderWithSources_BehaviorDescriptor.java" />
     <file name="BuildMpsLayout_ModuleJars_BehaviorDescriptor.java" />
     <file name="BuildMpsLayout_ModuleOutput_BehaviorDescriptor.java" />
@@ -58,7 +59,6 @@
     <file name="BuildMps_ModuleDependencyJar_BehaviorDescriptor.java" />
     <file name="BuildMps_ModuleDependencyOnDevKit_BehaviorDescriptor.java" />
     <file name="BuildMps_ModuleDependencyOnJavaModule_BehaviorDescriptor.java" />
-    <file name="BuildMps_ModuleDependencyOnModuleById_BehaviorDescriptor.java" />
     <file name="BuildMps_ModuleDependencyOnModule_BehaviorDescriptor.java" />
     <file name="BuildMps_ModuleDependencyUseLanguage_BehaviorDescriptor.java" />
     <file name="BuildMps_ModuleDependency_BehaviorDescriptor.java" />

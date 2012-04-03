@@ -12,6 +12,7 @@ import jetbrains.mps.build.behavior.BuildSourcePath_Behavior;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -22,7 +23,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Set;
@@ -90,7 +90,11 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_4267986820121149131(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode targetModule = (SNode) _context.getNode().getReferent("targetModule");
-    return _context.getOutputNodeByInputNodeAndMappingLabel(targetModule, "javaModule");
+    SNode result = _context.getOutputNodeByInputNodeAndMappingLabel(targetModule, "javaModule");
+    if (result == null) {
+      _context.showErrorMessage(((Tuples._3<SNode, Iterable<SNode>, Iterable<SNode>>) _context.getVariable("var:mdeps"))._0(), "cannot get java output for " + SPropertyOperations.getString(targetModule, "name"));
+    }
+    return result;
   }
 
   public static Object referenceMacro_GetReferent_7259033139236507287(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -178,7 +182,7 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode mod : Sequence.fromIterable(((Tuples._3<SNode, Iterable<SNode>, Iterable<SNode>>) _context.getVariable("var:mdeps"))._1()).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.getBoolean(it, "doNotCompile") == false && SNodeOperations.getContainingRoot(((Tuples._3<SNode, Iterable<SNode>, Iterable<SNode>>) _context.getVariable("var:mdeps"))._0()) == SNodeOperations.getContainingRoot(_context.getNode());
+        return SPropertyOperations.getBoolean(it, "doNotCompile") == false && SNodeOperations.getContainingRoot(((Tuples._3<SNode, Iterable<SNode>, Iterable<SNode>>) _context.getVariable("var:mdeps"))._0()) == SNodeOperations.getContainingRoot(it);
       }
     }).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode it) {
@@ -244,7 +248,7 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode lang : Sequence.fromIterable(((Tuples._3<SNode, Iterable<SNode>, Iterable<SNode>>) _context.getVariable("var:mdeps"))._2()).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.getContainingRoot(((Tuples._3<SNode, Iterable<SNode>, Iterable<SNode>>) _context.getVariable("var:mdeps"))._0()) == SNodeOperations.getContainingRoot(_context.getNode());
+        return SNodeOperations.getContainingRoot(((Tuples._3<SNode, Iterable<SNode>, Iterable<SNode>>) _context.getVariable("var:mdeps"))._0()) == SNodeOperations.getContainingRoot(it);
       }
     }).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode it) {
