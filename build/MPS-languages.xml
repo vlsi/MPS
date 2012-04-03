@@ -807,8 +807,8 @@
   </target>
   <target name="pack.jetbrains.mps.debugger.api.runtime">
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api/languages/jetbrains.mps.debugger.api.runtime.jar.jtmp" />
-    <echoxml file="${deploy.dir}/MPS/plugins/debugger-api/languages/jetbrains.mps.debugger.api.runtime.jar.jtmp/module.xml">
+    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api/lib/jetbrains.mps.debugger.api.runtime.jar.jtmp" />
+    <echoxml file="${deploy.dir}/MPS/plugins/debugger-api/lib/jetbrains.mps.debugger.api.runtime.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.debugger.api.runtime" uuid="25891414-2b70-48c7-b1cc-8dc0c127d669" type="solution">
         <dependencies>
           <module ref="018659ff-d3ef-4215-97e0-bcfeeb111145(jetbrains.mps.lang.actions#1154466409006)" />
@@ -935,22 +935,22 @@
         <sources jar="jetbrains.mps.debugger.api.runtime-src.jar" descriptor="jetbrains.mps.debugger-api.msd" />
       </module>
     </echoxml>
-    <jar destfile="${deploy.dir}/MPS/plugins/debugger-api/languages/jetbrains.mps.debugger.api.runtime-src.jar" compress="true" duplicate="preserve" filesonly="true">
+    <jar destfile="${deploy.dir}/MPS/plugins/debugger-api/lib/jetbrains.mps.debugger.api.runtime-src.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset dir="${base_dir}/plugins/debugger-api/runtime/source_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset dir="${base_dir}/plugins/debugger-api/runtime/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/plugins/debugger-api/runtime/jetbrains.mps.debugger-api.msd" prefix="module" />
       <zipfileset dir="${base_dir}/plugins/debugger-api/runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/plugins/debugger-api/languages/jetbrains.mps.debugger.api.runtime.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${deploy.dir}/MPS/plugins/debugger-api/languages/jetbrains.mps.debugger.api.runtime.jar.jtmp/module.xml" prefix="META-INF" />
+    <jar destfile="${deploy.dir}/MPS/plugins/debugger-api/lib/jetbrains.mps.debugger.api.runtime.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="${deploy.dir}/MPS/plugins/debugger-api/lib/jetbrains.mps.debugger.api.runtime.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/plugins/debugger-api/runtime" includes="icons/**, resources/**" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/plugins/debugger-api/languages/jetbrains.mps.debugger.api.runtime.jar.jtmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/debugger-api/lib/jetbrains.mps.debugger.api.runtime.jar.jtmp" />
   </target>
   <target name="pack.jetbrains.mps.debugger.api.api">
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api/languages/jetbrains.mps.debugger.api.api.jar.jtmp" />
-    <echoxml file="${deploy.dir}/MPS/plugins/debugger-api/languages/jetbrains.mps.debugger.api.api.jar.jtmp/module.xml">
+    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api/lib/jetbrains.mps.debugger.api.api.jar.jtmp" />
+    <echoxml file="${deploy.dir}/MPS/plugins/debugger-api/lib/jetbrains.mps.debugger.api.api.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.debugger.api.api" uuid="cc7da2f6-419f-4133-a811-31fcd3295a85" type="solution">
         <dependencies>
           <module ref="018659ff-d3ef-4215-97e0-bcfeeb111145(jetbrains.mps.lang.actions#1154466409006)" />
@@ -1072,22 +1072,20 @@
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
           <module ref="fe9d76d7-5809-45c9-ae28-a40915b4d6ff(jetbrains.mps.lang.checkedName)" />
         </dependencies>
-        <library jar="jetbrains.mps.debugger.api.api.jar" />
-        <library jar="/plugins/debugger-api/lib/debugger-api.jar" />
         <sources jar="jetbrains.mps.debugger.api.api-src.jar" descriptor="api.msd" />
       </module>
     </echoxml>
-    <jar destfile="${deploy.dir}/MPS/plugins/debugger-api/languages/jetbrains.mps.debugger.api.api-src.jar" compress="true" duplicate="preserve" filesonly="true">
+    <jar destfile="${deploy.dir}/MPS/plugins/debugger-api/lib/jetbrains.mps.debugger.api.api-src.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset dir="${base_dir}/plugins/debugger-api/api/source_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset dir="${base_dir}/plugins/debugger-api/api/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/plugins/debugger-api/api/api.msd" prefix="module" />
       <zipfileset dir="${base_dir}/plugins/debugger-api/api" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/plugins/debugger-api/languages/jetbrains.mps.debugger.api.api.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${deploy.dir}/MPS/plugins/debugger-api/languages/jetbrains.mps.debugger.api.api.jar.jtmp/module.xml" prefix="META-INF" />
+    <jar destfile="${deploy.dir}/MPS/plugins/debugger-api/lib/jetbrains.mps.debugger.api.api.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="${deploy.dir}/MPS/plugins/debugger-api/lib/jetbrains.mps.debugger.api.api.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/plugins/debugger-api/api" includes="icons/**, resources/**" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/plugins/debugger-api/languages/jetbrains.mps.debugger.api.api.jar.jtmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/debugger-api/lib/jetbrains.mps.debugger.api.api.jar.jtmp" />
   </target>
   <target name="pack.jetbrains.mps.debugger.java.customViewers">
     <fail unless="base_dir" message="Property base_dir unspecified." />

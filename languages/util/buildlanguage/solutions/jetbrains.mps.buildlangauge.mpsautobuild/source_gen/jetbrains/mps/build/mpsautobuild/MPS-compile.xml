@@ -2976,7 +2976,7 @@
     <path path="${base_dir}/lib/trove4j.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-api/api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
@@ -5041,7 +5041,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
     <path path="${base_dir}/plugins/debugger-api-languages/languages/jetbrains.mps.debugger.api.lang/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-api/api/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
@@ -5159,7 +5159,7 @@
     <path path="${base_dir}/lib/trove4j.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-api/api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/plugins/debugger-java/languages/customViewers/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
@@ -5281,7 +5281,7 @@
     <path path="${base_dir}/lib/trove4j.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-api/api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
@@ -5522,7 +5522,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
     <path path="${base_dir}/plugins/debugger-api-languages/languages/jetbrains.mps.debugger.api.lang/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-api/api/classes" />
     <path path="${base_dir}/plugins/execution-languages/languages/commands/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
@@ -5763,7 +5763,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
     <path path="${base_dir}/plugins/debugger-api-languages/languages/jetbrains.mps.debugger.api.lang/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-api/api/classes" />
     <path path="${base_dir}/plugins/execution-languages/classes" />
     <path path="${base_dir}/plugins/execution-languages/languages/commands/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/configurations/classes_gen" />
@@ -5885,7 +5885,7 @@
     <path path="${base_dir}/lib/trove4j.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-api/api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
@@ -6012,7 +6012,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
     <path path="${base_dir}/plugins/debugger-api-languages/languages/jetbrains.mps.debugger.api.lang/classes_gen" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-api/api/classes" />
     <path path="${base_dir}/plugins/execution-languages/classes" />
     <path path="${base_dir}/plugins/execution-languages/languages/commands/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/configurations/classes_gen" />
@@ -6134,7 +6134,7 @@
     <path path="${base_dir}/lib/trove4j.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-api/api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
     <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />

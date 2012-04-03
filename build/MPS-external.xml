@@ -86,7 +86,7 @@
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api/lib/debugger-api.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api/lib" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api/META-INF" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api/languages" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api/lib" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java/lib/debugger-java.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java/lib" />
@@ -480,7 +480,7 @@
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api/META-INF" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debugger.api.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debugger.api.api" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api/languages" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api/lib" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api" />
     <copy todir="${deploy.dir}/MPS/plugins/debugger-java/lib/debugger-java.jar.tmp">
       <fileset dir="${mps_home}/plugins/debugger-java/classes" />

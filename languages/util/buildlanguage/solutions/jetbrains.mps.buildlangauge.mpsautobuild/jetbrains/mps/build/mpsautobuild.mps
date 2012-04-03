@@ -3067,7 +3067,7 @@
           <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.debugger.api.api" />
         </node>
         <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="571753013890986653">
-          <property name="name" nameId="tps4.1223641503366" value="languages" />
+          <property name="name" nameId="tps4.1223641503366" value="lib" />
         </node>
       </node>
       <node role="sourcePath" roleId="tps4.4159241239519649209" type="tps4.Path" typeId="tps4.1220973916698" id="7491849358393015325">
