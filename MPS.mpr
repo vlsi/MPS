@@ -288,7 +288,7 @@
       <modulePath path="${project}/languages/util/ui/languages/ui/ui.mpl" folder="languages.ui" />
       <modulePath path="${project}/languages/util/ui/solutions/jetbrains.mps.ui.unittest/jetbrains.mps.ui.unittest.msd" folder="languages.ui" />
       <modulePath path="${project}/languages/util/ui/solutions/ui.sandbox/ui.sandbox.msd" folder="languages.ui" />
-      <modulePath path="${project}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/jetbrains.mps.ide.uiLanguage.runtime.msd" folder="languages.uiLanguage" />
+      <modulePath path="${project}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime.msd" folder="languages.uiLanguage" />
       <modulePath path="${project}/languages/util/uiLanguage/solutions/jetbrains.mps.uiLanguage.samples/jetbrains.mps.uiLanguage.saamples.msd" folder="languages.uiLanguage" />
       <modulePath path="${project}/languages/util/uiLanguage/solutions/pluginSolution/pluginSolution.msd" folder="languages.uiLanguage" />
       <modulePath path="${project}/languages/util/uiLanguage/uiLanguage.mpl" folder="languages.uiLanguage" />

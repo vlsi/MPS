@@ -286,11 +286,11 @@
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.ide.uiLanguage.runtime" />
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.ide.uiLanguage.runtime">
-      <fileset file="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/jetbrains.mps.ide.uiLanguage.runtime.msd" />
-      <fileset dir="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime" includes="icons/**, resources/**" />
+      <fileset file="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime.msd" />
+      <fileset dir="${base_dir}/languages/util/uiLanguage/runtime" includes="icons/**, resources/**" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.ide.uiLanguage.runtime">
-      <fileset dir="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${base_dir}/languages/util/uiLanguage/runtime" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
   </target>
   <target name="pack.Testbench">
