@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" version="0">
+<model modelUID="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" version="1">
   <persistence version="7" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
-  <language namespace="ef7bf5ac-d06c-4342-b11d-e42104eb9343(jetbrains.mps.lang.plugin.standalone)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-  <import index="tgbt" modelUID="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" version="0" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" />
-  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="9" />
+  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="10" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
+  <import index="tgbt" modelUID="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" version="1" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="481983775135178819">
       <property name="name" nameId="tpck.1169194664001" value="ProjectPluginDisposeBlock" />
@@ -54,6 +53,16 @@
       <property name="name" nameId="tpck.1169194664001" value="ProjectPluginType" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Custom.ProjectPlugin" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp4f.1205752813637" resolveInfo="BaseClassifierType" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="681855071694758165">
+      <property name="name" nameId="tpck.1169194664001" value="GetToolInProjectOperation" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Tool" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp4k.3339131993542057767" resolveInfo="BaseProjectOperation" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="681855071694758168">
+      <property name="name" nameId="tpck.1169194664001" value="GetPreferencesComponentInProjectOperation" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Preference" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp4k.3339131993542057767" resolveInfo="BaseProjectOperation" />
     </node>
   </roots>
   <root id="481983775135178819">
@@ -186,6 +195,28 @@
       <property name="role" nameId="tpce.1071599776563" value="plugin" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="481983775135178834" resolveInfo="ProjectPluginDeclaration" />
+    </node>
+  </root>
+  <root id="681855071694758165">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="681855071694758166">
+      <property name="role" nameId="tpce.1071599776563" value="tool" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tp4k.6547237850567458268" resolveInfo="BaseToolDeclaration" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="681855071694758167">
+      <property name="value" nameId="tpce.1105725733873" value="tool&lt;&lt;{tool}&gt;&gt;" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+  </root>
+  <root id="681855071694758168">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="681855071694758169">
+      <property name="role" nameId="tpce.1071599776563" value="componentDeclaration" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tp4k.1210179134063" resolveInfo="PreferencesComponentDeclaration" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="681855071694758170">
+      <property name="value" nameId="tpce.1105725733873" value="preferenceComponent&lt;&lt;{componentDeclaration}&gt;&gt;" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>
 </model>

@@ -7,8 +7,8 @@
       <model index="tp4s" modelUID="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" version="4" />
       <model index="8eze" modelUID="r:8512d48b-45ee-468c-82ad-a474345f4ea9(jetbrains.mps.lang.plugin.standalone.behavior)" version="-1" />
       <model index="tp4v" modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" version="6" />
-      <model index="8djd" modelUID="r:4e47f84d-850f-4838-ad49-d37c376b2080(jetbrains.mps.lang.plugin.standalone.typesystem)" version="-1" />
       <model index="tgbt" modelUID="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" version="-1" />
+      <model index="8djd" modelUID="r:4e47f84d-850f-4838-ad49-d37c376b2080(jetbrains.mps.lang.plugin.standalone.typesystem)" version="-1" />
       <model index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="8" />
     </dependencies>
     <move id="tp4k.1206111653895" to="tgbt.481983775135178857" />
@@ -253,6 +253,70 @@
     <move id="tp4s.1213877434762" to="8eze.481983775135178986" />
     <move id="tp4s.1213877434760" to="8eze.481983775135178984" />
     <move id="tp4s.1215279859265" to="8eze.481983775135178998" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="tp4o" modelUID="r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)" version="6" />
+      <model index="fnu3" modelUID="r:dbd42a0c-01d0-4585-adc3-78799d2c649b(jetbrains.mps.lang.plugin.standalone.editor)" version="0" />
+      <model index="tp4v" modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" version="7" />
+      <model index="8djd" modelUID="r:4e47f84d-850f-4838-ad49-d37c376b2080(jetbrains.mps.lang.plugin.standalone.typesystem)" version="0" />
+      <model index="tgbt" modelUID="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" version="0" />
+      <model index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="9" />
+    </dependencies>
+    <move id="tp4k.3339131993542057765" to="tgbt.681855071694758169" />
+    <move id="tp4k.3339131993542057764" to="tgbt.681855071694758168" />
+    <move id="tp4k.3339131993542058153" to="tgbt.681855071694758167" />
+    <move id="tp4k.3339131993542058152" to="tgbt.681855071694758166" />
+    <move id="tp4k.3339131993542057766" to="tgbt.681855071694758170" />
+    <move id="tp4k.3339131993542058151" to="tgbt.681855071694758165" />
+    <move id="tp4o.3339131993542062590" to="8djd.681855071694758183" />
+    <move id="tp4o.3339131993542062580" to="8djd.681855071694758173" />
+    <move id="tp4o.3339131993542062582" to="8djd.681855071694758175" />
+    <move id="tp4o.3339131993542062706" to="8djd.681855071694758191" />
+    <move id="tp4o.3339131993542062698" to="8djd.681855071694758189" />
+    <move id="tp4o.3339131993542062703" to="8djd.681855071694758194" />
+    <move id="tp4o.3339131993542062699" to="8djd.681855071694758190" />
+    <move id="tp4o.3339131993542062679" to="8djd.681855071694758178" />
+    <move id="tp4o.3339131993542062588" to="8djd.681855071694758181" />
+    <move id="tp4o.3339131993542062696" to="8djd.681855071694758187" />
+    <move id="tp4o.3339131993542062589" to="8djd.681855071694758182" />
+    <move id="tp4o.3339131993542062694" to="8djd.681855071694758185" />
+    <move id="tp4o.3339131993542062586" to="8djd.681855071694758179" />
+    <move id="tp4o.3339131993542062695" to="8djd.681855071694758186" />
+    <move id="tp4o.3339131993542062578" to="8djd.681855071694758171" />
+    <move id="tp4o.3339131993542062579" to="8djd.681855071694758172" />
+    <move id="tp4o.3339131993542062705" to="8djd.681855071694758196" />
+    <move id="tp4o.3339131993542062581" to="8djd.681855071694758174" />
+    <move id="tp4o.3339131993542062587" to="8djd.681855071694758180" />
+    <move id="tp4o.3339131993542062697" to="8djd.681855071694758188" />
+    <move id="tp4o.3339131993542062584" to="8djd.681855071694758177" />
+    <move id="tp4o.3339131993542062693" to="8djd.681855071694758184" />
+    <move id="tp4o.3339131993542062704" to="8djd.681855071694758195" />
+    <move id="tp4o.3339131993542062583" to="8djd.681855071694758176" />
+    <move id="tp4o.3339131993542062701" to="8djd.681855071694758192" />
+    <move id="tp4o.3339131993542062702" to="8djd.681855071694758193" />
+    <move id="tp4v.3339131993542061164" to="fnu3.681855071694758197" />
+    <move id="tp4v.3339131993542061167" to="fnu3.681855071694758200" />
+    <move id="tp4v.3339131993542061168" to="fnu3.681855071694758201" />
+    <move id="tp4v.3339131993542062682" to="fnu3.681855071694758208" />
+    <move id="tp4v.3339131993542062690" to="fnu3.681855071694758216" />
+    <move id="tp4v.3339131993542062685" to="fnu3.681855071694758211" />
+    <move id="tp4v.3339131993542061172" to="fnu3.681855071694758205" />
+    <move id="tp4v.3339131993542061165" to="fnu3.681855071694758198" />
+    <move id="tp4v.3339131993542062688" to="fnu3.681855071694758214" />
+    <move id="tp4v.3339131993542061173" to="fnu3.681855071694758206" />
+    <move id="tp4v.3339131993542062692" to="fnu3.681855071694758218" />
+    <move id="tp4v.3339131993542061166" to="fnu3.681855071694758199" />
+    <move id="tp4v.3339131993542061171" to="fnu3.681855071694758204" />
+    <move id="tp4v.3339131993542062683" to="fnu3.681855071694758209" />
+    <move id="tp4v.3339131993542062687" to="fnu3.681855071694758213" />
+    <move id="tp4v.3339131993542062681" to="fnu3.681855071694758207" />
+    <move id="tp4v.3339131993542062689" to="fnu3.681855071694758215" />
+    <move id="tp4v.3339131993542062686" to="fnu3.681855071694758212" />
+    <move id="tp4v.3339131993542061169" to="fnu3.681855071694758202" />
+    <move id="tp4v.3339131993542061170" to="fnu3.681855071694758203" />
+    <move id="tp4v.3339131993542062691" to="fnu3.681855071694758217" />
+    <move id="tp4v.3339131993542062684" to="fnu3.681855071694758210" />
   </StructureModification>
 </history>
 

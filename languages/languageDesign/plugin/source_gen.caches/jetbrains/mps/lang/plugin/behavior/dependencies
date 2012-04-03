@@ -344,9 +344,7 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.GetGroupOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.GetNodeBlock_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.GetNodesBlock_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.GetPreferencesComponentInProjectOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.GetSelectedTabOperation_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.GetToolInProjectOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.GroupAccessOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.GroupAnchor_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.GroupType_BehaviorDescriptor" />
@@ -624,22 +622,10 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.behavior.GetPreferencesComponentInProjectOperation_BehaviorDescriptor" file="GetPreferencesComponentInProjectOperation_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.BaseProjectOperation_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.plugin.behavior.GetSelectedTabOperation_BehaviorDescriptor" file="GetSelectedTabOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.TabbedToolOperation_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.behavior.GetToolInProjectOperation_BehaviorDescriptor" file="GetToolInProjectOperation_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.BaseProjectOperation_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.behavior.GroupAccessOperation_BehaviorDescriptor" file="GroupAccessOperation_BehaviorDescriptor.java">

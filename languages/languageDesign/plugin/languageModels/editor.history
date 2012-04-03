@@ -2,13 +2,13 @@
 <history>
   <StructureModification>
     <dependencies>
-      <model index="vpz8" modelUID="r:4ab4c6eb-58ca-426d-b62d-119c0aacbe5e(jetbrains.mps.execution.configurations.deprecated.constraints)" version="0" />
-      <model index="g3s4" modelUID="r:44be5a71-98f4-4137-88b1-8ccaf67186a8(jetbrains.mps.execution.configurations.deprecated.behavior)" version="0" />
       <model index="tp4o" modelUID="r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)" version="-1" />
+      <model index="g3s4" modelUID="r:44be5a71-98f4-4137-88b1-8ccaf67186a8(jetbrains.mps.execution.configurations.deprecated.behavior)" version="0" />
+      <model index="vpz8" modelUID="r:4ab4c6eb-58ca-426d-b62d-119c0aacbe5e(jetbrains.mps.execution.configurations.deprecated.constraints)" version="0" />
       <model index="tp4s" modelUID="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" version="-1" />
       <model index="tp4t" modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
-      <model index="tp4u" modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" version="-1" />
       <model index="b5ue" modelUID="r:3d1d89d4-ed40-464f-804b-a59886f41d55(jetbrains.mps.execution.configurations.deprecated.typesystem)" version="0" />
+      <model index="tp4u" modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" version="-1" />
       <model index="tp4v" modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" version="-1" />
       <model index="97fo" modelUID="r:8656e939-bf57-4238-aa56-83db35841a3e(jetbrains.mps.execution.configurations.deprecated.dataFlow)" version="-1" />
       <model index="ucfr" modelUID="r:def9da36-61ed-4f39-9c10-98a9883447d1(jetbrains.mps.execution.configurations.deprecated.editor)" version="0" />
@@ -1895,8 +1895,8 @@
   <StructureModification>
     <dependencies>
       <model index="tp4o" modelUID="r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)" version="0" />
-      <model index="tp4u" modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" version="0" />
       <model index="b5ue" modelUID="r:3d1d89d4-ed40-464f-804b-a59886f41d55(jetbrains.mps.execution.configurations.deprecated.typesystem)" version="1" />
+      <model index="tp4u" modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" version="0" />
       <model index="tp4v" modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" version="0" />
       <model index="97fo" modelUID="r:8656e939-bf57-4238-aa56-83db35841a3e(jetbrains.mps.execution.configurations.deprecated.dataFlow)" version="0" />
       <model index="ucfr" modelUID="r:def9da36-61ed-4f39-9c10-98a9883447d1(jetbrains.mps.execution.configurations.deprecated.editor)" version="1" />
@@ -1944,8 +1944,8 @@
       <model index="tp4s" modelUID="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" version="0" />
       <model index="tp4v" modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" version="1" />
       <model index="tp37" modelUID="r:00000000-0000-4000-0000-011c8959035f(jetbrains.mps.lang.plugin.actions)" version="-1" />
-      <model index="2kda" modelUID="r:58d75fa8-039c-4fa0-9395-8c1d516f898b(jetbrains.mps.execution.configurations.deprecated.actions)" version="-1" />
       <model index="ucfr" modelUID="r:def9da36-61ed-4f39-9c10-98a9883447d1(jetbrains.mps.execution.configurations.deprecated.editor)" version="2" />
+      <model index="2kda" modelUID="r:58d75fa8-039c-4fa0-9395-8c1d516f898b(jetbrains.mps.execution.configurations.deprecated.actions)" version="-1" />
       <model index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="1" />
       <model index="11eb" modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.execution.configurations.deprecated.structure)" version="3" />
     </dependencies>
@@ -2447,8 +2447,8 @@
       <model index="tp4o" modelUID="r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)" version="2" />
       <model index="3767" modelUID="r:7f24d329-a444-4288-af92-f8ef91dfd241(jetbrains.mps.lang.resources.behavior)" version="-1" />
       <model index="tp4s" modelUID="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" version="1" />
-      <model index="ghfj" modelUID="r:cafe8450-2876-42f2-9c43-75da10155c47(jetbrains.mps.lang.resources.typesystem)" version="-1" />
       <model index="tp4v" modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" version="3" />
+      <model index="ghfj" modelUID="r:cafe8450-2876-42f2-9c43-75da10155c47(jetbrains.mps.lang.resources.typesystem)" version="-1" />
       <model index="57cc" modelUID="r:dc468d7c-ca2d-45f7-ace9-6f81e4694f66(jetbrains.mps.lang.resources.editor)" version="-1" />
       <model index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="5" />
       <model index="1oap" modelUID="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" version="-1" />
@@ -2801,13 +2801,13 @@
       <model index="tp4o" modelUID="r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)" version="3" />
       <model index="s7wt" modelUID="r:f3e9fe62-b7bf-45b5-802d-9490929b754a(jetbrains.mps.lang.access.editor)" version="-1" />
       <model index="yn9z" modelUID="r:7fecad41-ba00-432a-a44f-b9577c19856b(jetbrains.mps.lang.access.dataFlow)" version="-1" />
-      <model index="apa6" modelUID="r:f9d5a2b1-004e-4138-bf2b-916114888196(jetbrains.mps.lang.access.behavior)" version="-1" />
       <model index="tp4s" modelUID="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" version="2" />
+      <model index="apa6" modelUID="r:f9d5a2b1-004e-4138-bf2b-916114888196(jetbrains.mps.lang.access.behavior)" version="-1" />
       <model index="kknc" modelUID="r:aad06b20-0a6a-42d7-81b8-671529c6126a(jetbrains.mps.lang.access.typesystem)" version="-1" />
       <model index="tp4u" modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" version="1" />
       <model index="tp4v" modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" version="4" />
-      <model index="qff7" modelUID="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" version="-1" />
       <model index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="6" />
+      <model index="qff7" modelUID="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" version="-1" />
     </dependencies>
     <move id="tp4k.1229346143986" to="qff7.8974276187400348185" />
     <move id="tp4k.1225441160166" to="qff7.8974276187400348170" />
@@ -2942,12 +2942,12 @@
   </StructureModification>
   <StructureModification>
     <dependencies>
-      <model index="bkx5" modelUID="r:745da36c-6731-41a7-aad3-c0bff6ba51dd(jetbrains.mps.lang.checkedName.editor)" version="-1" />
       <model index="tp4o" modelUID="r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)" version="4" />
+      <model index="bkx5" modelUID="r:745da36c-6731-41a7-aad3-c0bff6ba51dd(jetbrains.mps.lang.checkedName.editor)" version="-1" />
       <model index="llfg" modelUID="r:bfde7c59-4df1-47aa-b96c-63906ea441df(jetbrains.mps.lang.checkedName.constraints)" version="-1" />
       <model index="4j10" modelUID="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" version="-1" />
-      <model index="tp4s" modelUID="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" version="3" />
       <model index="ahrh" modelUID="r:f922da3a-135f-4fe9-9051-9f018bc5c1bf(jetbrains.mps.lang.checkedName.typesystem)" version="-1" />
+      <model index="tp4s" modelUID="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" version="3" />
       <model index="tp4t" modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="21" />
       <model index="mjwp" modelUID="r:82ee0621-a317-4778-9ea5-72584de35a48(jetbrains.mps.lang.checkedName.behavior)" version="-1" />
       <model index="tp4v" modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" version="5" />
@@ -3217,8 +3217,8 @@
       <model index="tp4s" modelUID="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" version="4" />
       <model index="8eze" modelUID="r:8512d48b-45ee-468c-82ad-a474345f4ea9(jetbrains.mps.lang.plugin.standalone.behavior)" version="-1" />
       <model index="tp4v" modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" version="6" />
-      <model index="8djd" modelUID="r:4e47f84d-850f-4838-ad49-d37c376b2080(jetbrains.mps.lang.plugin.standalone.typesystem)" version="-1" />
       <model index="tgbt" modelUID="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" version="-1" />
+      <model index="8djd" modelUID="r:4e47f84d-850f-4838-ad49-d37c376b2080(jetbrains.mps.lang.plugin.standalone.typesystem)" version="-1" />
       <model index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="8" />
     </dependencies>
     <move id="tp4k.1206111653895" to="tgbt.481983775135178857" />
@@ -3463,6 +3463,70 @@
     <move id="tp4s.1213877434762" to="8eze.481983775135178986" />
     <move id="tp4s.1213877434760" to="8eze.481983775135178984" />
     <move id="tp4s.1215279859265" to="8eze.481983775135178998" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="tp4o" modelUID="r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)" version="6" />
+      <model index="fnu3" modelUID="r:dbd42a0c-01d0-4585-adc3-78799d2c649b(jetbrains.mps.lang.plugin.standalone.editor)" version="0" />
+      <model index="tp4v" modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" version="7" />
+      <model index="8djd" modelUID="r:4e47f84d-850f-4838-ad49-d37c376b2080(jetbrains.mps.lang.plugin.standalone.typesystem)" version="0" />
+      <model index="tgbt" modelUID="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" version="0" />
+      <model index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="9" />
+    </dependencies>
+    <move id="tp4k.3339131993542057765" to="tgbt.681855071694758169" />
+    <move id="tp4k.3339131993542057764" to="tgbt.681855071694758168" />
+    <move id="tp4k.3339131993542058153" to="tgbt.681855071694758167" />
+    <move id="tp4k.3339131993542058152" to="tgbt.681855071694758166" />
+    <move id="tp4k.3339131993542057766" to="tgbt.681855071694758170" />
+    <move id="tp4k.3339131993542058151" to="tgbt.681855071694758165" />
+    <move id="tp4o.3339131993542062590" to="8djd.681855071694758183" />
+    <move id="tp4o.3339131993542062580" to="8djd.681855071694758173" />
+    <move id="tp4o.3339131993542062582" to="8djd.681855071694758175" />
+    <move id="tp4o.3339131993542062706" to="8djd.681855071694758191" />
+    <move id="tp4o.3339131993542062698" to="8djd.681855071694758189" />
+    <move id="tp4o.3339131993542062703" to="8djd.681855071694758194" />
+    <move id="tp4o.3339131993542062699" to="8djd.681855071694758190" />
+    <move id="tp4o.3339131993542062679" to="8djd.681855071694758178" />
+    <move id="tp4o.3339131993542062588" to="8djd.681855071694758181" />
+    <move id="tp4o.3339131993542062696" to="8djd.681855071694758187" />
+    <move id="tp4o.3339131993542062589" to="8djd.681855071694758182" />
+    <move id="tp4o.3339131993542062694" to="8djd.681855071694758185" />
+    <move id="tp4o.3339131993542062586" to="8djd.681855071694758179" />
+    <move id="tp4o.3339131993542062695" to="8djd.681855071694758186" />
+    <move id="tp4o.3339131993542062578" to="8djd.681855071694758171" />
+    <move id="tp4o.3339131993542062579" to="8djd.681855071694758172" />
+    <move id="tp4o.3339131993542062705" to="8djd.681855071694758196" />
+    <move id="tp4o.3339131993542062581" to="8djd.681855071694758174" />
+    <move id="tp4o.3339131993542062587" to="8djd.681855071694758180" />
+    <move id="tp4o.3339131993542062697" to="8djd.681855071694758188" />
+    <move id="tp4o.3339131993542062584" to="8djd.681855071694758177" />
+    <move id="tp4o.3339131993542062693" to="8djd.681855071694758184" />
+    <move id="tp4o.3339131993542062704" to="8djd.681855071694758195" />
+    <move id="tp4o.3339131993542062583" to="8djd.681855071694758176" />
+    <move id="tp4o.3339131993542062701" to="8djd.681855071694758192" />
+    <move id="tp4o.3339131993542062702" to="8djd.681855071694758193" />
+    <move id="tp4v.3339131993542061164" to="fnu3.681855071694758197" />
+    <move id="tp4v.3339131993542061167" to="fnu3.681855071694758200" />
+    <move id="tp4v.3339131993542061168" to="fnu3.681855071694758201" />
+    <move id="tp4v.3339131993542062682" to="fnu3.681855071694758208" />
+    <move id="tp4v.3339131993542062690" to="fnu3.681855071694758216" />
+    <move id="tp4v.3339131993542062685" to="fnu3.681855071694758211" />
+    <move id="tp4v.3339131993542061172" to="fnu3.681855071694758205" />
+    <move id="tp4v.3339131993542061165" to="fnu3.681855071694758198" />
+    <move id="tp4v.3339131993542062688" to="fnu3.681855071694758214" />
+    <move id="tp4v.3339131993542061173" to="fnu3.681855071694758206" />
+    <move id="tp4v.3339131993542062692" to="fnu3.681855071694758218" />
+    <move id="tp4v.3339131993542061166" to="fnu3.681855071694758199" />
+    <move id="tp4v.3339131993542061171" to="fnu3.681855071694758204" />
+    <move id="tp4v.3339131993542062683" to="fnu3.681855071694758209" />
+    <move id="tp4v.3339131993542062687" to="fnu3.681855071694758213" />
+    <move id="tp4v.3339131993542062681" to="fnu3.681855071694758207" />
+    <move id="tp4v.3339131993542062689" to="fnu3.681855071694758215" />
+    <move id="tp4v.3339131993542062686" to="fnu3.681855071694758212" />
+    <move id="tp4v.3339131993542061169" to="fnu3.681855071694758202" />
+    <move id="tp4v.3339131993542061170" to="fnu3.681855071694758203" />
+    <move id="tp4v.3339131993542062691" to="fnu3.681855071694758217" />
+    <move id="tp4v.3339131993542062684" to="fnu3.681855071694758210" />
   </StructureModification>
 </history>
 
