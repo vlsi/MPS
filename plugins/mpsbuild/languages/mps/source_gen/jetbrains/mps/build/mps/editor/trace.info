@@ -1,5 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeId="1265949165890536426">
+    <nodeInfo nodeId="1265949165890547410" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="43" startPosition="58" endLine="43" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1265949165890536426" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="25" startPosition="79" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1265949165890547405" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="29" startPosition="89" endLine="30" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890547405" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="30" startPosition="96" endLine="31" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1265949165890547405" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="30" startPosition="96" endLine="31" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890547405" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="31" startPosition="48" endLine="32" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1265949165890547405" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="31" startPosition="48" endLine="32" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890547405" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="32" startPosition="88" endLine="33" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1265949165890547405" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="32" startPosition="88" endLine="33" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890547405" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="33" startPosition="80" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1265949165890547410" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="37" startPosition="87" endLine="38" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890547410" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="38" startPosition="81" endLine="39" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890547410" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="39" startPosition="31" endLine="40" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890547410" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="40" startPosition="44" endLine="41" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890547410" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="41" startPosition="26" endLine="42" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890547410" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="42" startPosition="97" endLine="43" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890547410" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="43" startPosition="58" endLine="44" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890547410" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="44" startPosition="73" endLine="45" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890547410" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="45" startPosition="57" endLine="46" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890547410" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="47" startPosition="35" endLine="48" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890547410" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="48" startPosition="72" endLine="49" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890547410" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="49" startPosition="78" endLine="50" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1265949165890547410" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="51" startPosition="10" endLine="52" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="55" startPosition="95" endLine="56" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="56" startPosition="89" endLine="57" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="57" startPosition="30" endLine="58" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="58" startPosition="43" endLine="59" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="59" startPosition="26" endLine="60" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="60" startPosition="58" endLine="61" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="61" startPosition="50" endLine="62" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="63" startPosition="5" endLine="64" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="64" startPosition="42" endLine="65" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="66" startPosition="5" endLine="67" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="67" startPosition="215" endLine="68" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="68" startPosition="57" endLine="69" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="70" startPosition="35" endLine="71" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="71" startPosition="72" endLine="72" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="72" startPosition="78" endLine="73" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="74" startPosition="10" endLine="75" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1265949165890547408" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="82" startPosition="47" endLine="83" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1265949165890547411" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="88" startPosition="33" endLine="89" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1265949165890547411" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="92" startPosition="69" endLine="93" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1265949165890547411" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="96" startPosition="81" endLine="97" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1265949165890547412" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="100" startPosition="92" endLine="101" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890547412" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="101" startPosition="84" endLine="102" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890547412" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="102" startPosition="31" endLine="103" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890547412" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="103" startPosition="44" endLine="104" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890547412" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="104" startPosition="33" endLine="105" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890547412" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="105" startPosition="28" endLine="106" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890547412" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="106" startPosition="60" endLine="107" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1265949165890547412" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="106" startPosition="60" endLine="107" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890547412" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="107" startPosition="44" endLine="108" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890547412" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="108" startPosition="75" endLine="109" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890547412" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="109" startPosition="59" endLine="110" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890547412" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="111" startPosition="37" endLine="112" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890547412" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="112" startPosition="74" endLine="113" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890547412" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="113" startPosition="80" endLine="114" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1265949165890547412" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="115" startPosition="12" endLine="116" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1265949165890547408" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="78" startPosition="127" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceWith_BuildLayout_Node_cellMenu_a0a0_1#()V" />
+    <nodeInfo nodeId="1265949165890547410" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="41" startPosition="26" endLine="44" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1265949165890547411" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="87" startPosition="69" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_aqxvre_a1a#()V" />
+    <nodeInfo nodeId="1265949165890547412" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="105" startPosition="28" endLine="108" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1265949165890536426" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="24" startPosition="73" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="62" startPosition="73" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1265949165890547408" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="81" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReplacementConceptName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1265949165890547411" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="91" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1265949165890547411" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1265949165890547410" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="46" startPosition="59" endLine="52" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="60" startPosition="58" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="69" startPosition="59" endLine="75" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1265949165890547412" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="110" startPosition="61" endLine="116" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1265949165890547405" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="28" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_aqxvre_a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="59" startPosition="26" endLine="67" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1265949165890547410" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="36" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_aqxvre_b0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1265949165890547412" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="99" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_aqxvre_a0b0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="54" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConceptProperty_aqxvre_a0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="1265949165890547410" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="43" startPosition="58" endLine="43" endPosition="58" />
+    <scopeInfo nodeId="1265949165890547408" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="79" startPosition="59" endLine="79" endPosition="59" />
+    <scopeInfo nodeId="1265949165890536426" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="25" startPosition="79" endLine="26" endPosition="63" />
+    <scopeInfo nodeId="1265949165890547405" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="30" startPosition="96" endLine="31" endPosition="48" />
+    <scopeInfo nodeId="1265949165890547405" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="31" startPosition="48" endLine="32" endPosition="88" />
+    <scopeInfo nodeId="1265949165890547405" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="32" startPosition="88" endLine="33" endPosition="80" />
+    <scopeInfo nodeId="1265949165890547408" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="82" startPosition="47" endLine="83" endPosition="62" />
+    <scopeInfo nodeId="1265949165890547411" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="88" startPosition="33" endLine="89" endPosition="14" />
+    <scopeInfo nodeId="1265949165890547411" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="92" startPosition="69" endLine="93" endPosition="67" />
+    <scopeInfo nodeId="1265949165890547411" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="96" startPosition="81" endLine="97" endPosition="66" />
+    <scopeInfo nodeId="1265949165890547412" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="106" startPosition="60" endLine="107" endPosition="44" />
+    <scopeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="63" startPosition="5" endLine="65" endPosition="48">
+      <varInfo nodeId="1265949165890547406" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1265949165890547408" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="78" startPosition="127" endLine="80" endPosition="5" />
+    <scopeInfo nodeId="1265949165890547410" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="41" startPosition="26" endLine="44" endPosition="73" />
+    <scopeInfo nodeId="1265949165890547410" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="47" startPosition="35" endLine="50" endPosition="105">
+      <varInfo nodeId="1265949165890547410" varName="manager" />
+      <varInfo nodeId="1265949165890547410" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="70" startPosition="35" endLine="73" endPosition="105">
+      <varInfo nodeId="1265949165890547406" varName="manager" />
+      <varInfo nodeId="1265949165890547406" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1265949165890547411" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="87" startPosition="69" endLine="90" endPosition="5" />
+    <scopeInfo nodeId="1265949165890547412" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="105" startPosition="28" endLine="108" endPosition="75" />
+    <scopeInfo nodeId="1265949165890547412" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="111" startPosition="37" endLine="114" endPosition="107">
+      <varInfo nodeId="1265949165890547412" varName="manager" />
+      <varInfo nodeId="1265949165890547412" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1265949165890536426" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="24" startPosition="73" endLine="28" endPosition="0">
+      <varInfo nodeId="1265949165890536426" varName="editorContext" />
+      <varInfo nodeId="1265949165890536426" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1265949165890547408" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="81" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="1265949165890547411" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="1265949165890547411" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1265949165890547411" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="95" startPosition="0" endLine="99" endPosition="0">
+      <varInfo nodeId="1265949165890547411" varName="editorContext" />
+      <varInfo nodeId="1265949165890547411" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1265949165890547405" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="29" startPosition="89" endLine="34" endPosition="22">
+      <varInfo nodeId="1265949165890547405" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="60" startPosition="58" endLine="66" endPosition="5" />
+    <scopeInfo nodeId="1265949165890547405" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="28" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1265949165890547405" varName="editorContext" />
+      <varInfo nodeId="1265949165890547405" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="59" startPosition="26" endLine="67" endPosition="215" />
+    <scopeInfo nodeId="1265949165890547410" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="37" startPosition="87" endLine="52" endPosition="22">
+      <varInfo nodeId="1265949165890547410" varName="attributeConcept" />
+      <varInfo nodeId="1265949165890547410" varName="attributeKind" />
+      <varInfo nodeId="1265949165890547410" varName="editorCell" />
+      <varInfo nodeId="1265949165890547410" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1265949165890547412" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="100" startPosition="92" endLine="116" endPosition="24">
+      <varInfo nodeId="1265949165890547412" varName="attributeConcept" />
+      <varInfo nodeId="1265949165890547412" varName="attributeKind" />
+      <varInfo nodeId="1265949165890547412" varName="editorCell" />
+      <varInfo nodeId="1265949165890547412" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1265949165890547410" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="36" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="1265949165890547410" varName="editorContext" />
+      <varInfo nodeId="1265949165890547410" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1265949165890547412" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="99" startPosition="0" endLine="118" endPosition="0">
+      <varInfo nodeId="1265949165890547412" varName="editorContext" />
+      <varInfo nodeId="1265949165890547412" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="55" startPosition="95" endLine="75" endPosition="22">
+      <varInfo nodeId="1265949165890547406" varName="attributeConcept" />
+      <varInfo nodeId="1265949165890547406" varName="attributeKind" />
+      <varInfo nodeId="1265949165890547406" varName="editorCell" />
+      <varInfo nodeId="1265949165890547406" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1265949165890547406" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="54" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="1265949165890547406" varName="editorContext" />
+      <varInfo nodeId="1265949165890547406" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="1265949165890536426" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="24" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.build.mps.editor.BuildMpsLayout_ModuleJars_Editor" />
+    <unitInfo nodeId="1265949165890547408" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="78" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.build.mps.editor.BuildMpsLayout_ModuleJars_Editor$ReplaceWith_BuildLayout_Node_cellMenu_a0a0_1" />
+    <unitInfo nodeId="1265949165890547411" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="87" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.build.mps.editor.BuildMpsLayout_ModuleJars_Editor$_Inline_aqxvre_a1a" />
+  </root>
   <root nodeId="1500819558095907807">
     <nodeInfo nodeId="1500819558095907807" fileName="BuildMps_Group_Editor.java" startLine="32" startPosition="79" endLine="33" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1500819558096028155" fileName="BuildMps_Group_Editor.java" startLine="36" startPosition="89" endLine="37" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -275,148 +437,166 @@
     <unitInfo nodeId="1500819558096400335" fileName="delete_doNotCompile.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.mps.editor.delete_doNotCompile$delete_doNotCompile_DELETE" />
   </root>
   <root nodeId="1692280246134778911">
-    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="57" startPosition="58" endLine="57" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1692280246134778911" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="26" startPosition="79" endLine="27" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="30" startPosition="89" endLine="31" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="31" startPosition="96" endLine="32" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="31" startPosition="96" endLine="32" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="32" startPosition="48" endLine="33" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="32" startPosition="48" endLine="33" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="34" startPosition="80" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5966744135495979940" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="38" startPosition="88" endLine="39" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5966744135495979940" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="39" startPosition="103" endLine="40" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5966744135495979940" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="40" startPosition="47" endLine="41" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5966744135495979940" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="42" startPosition="5" endLine="43" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5966744135495979940" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="43" startPosition="42" endLine="44" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5966744135495979940" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="45" startPosition="5" endLine="46" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5966744135495979940" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="46" startPosition="34" endLine="47" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5966744135495979940" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="47" startPosition="218" endLine="48" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="51" startPosition="87" endLine="52" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="52" startPosition="81" endLine="53" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="53" startPosition="31" endLine="54" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="54" startPosition="44" endLine="55" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="55" startPosition="26" endLine="56" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="56" startPosition="99" endLine="57" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="57" startPosition="58" endLine="58" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="58" startPosition="73" endLine="59" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="59" startPosition="57" endLine="60" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="61" startPosition="35" endLine="62" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="62" startPosition="72" endLine="63" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="63" startPosition="78" endLine="64" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="65" startPosition="10" endLine="66" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6099797596647422678" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="73" startPosition="47" endLine="74" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5966744135495979943" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="79" startPosition="33" endLine="80" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5966744135495979943" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="83" startPosition="69" endLine="84" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5966744135495979943" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="87" startPosition="81" endLine="88" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="91" startPosition="92" endLine="92" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="92" startPosition="84" endLine="93" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="93" startPosition="31" endLine="94" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="94" startPosition="44" endLine="95" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="95" startPosition="33" endLine="96" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="96" startPosition="28" endLine="97" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="97" startPosition="60" endLine="98" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="97" startPosition="60" endLine="98" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="98" startPosition="44" endLine="99" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="99" startPosition="75" endLine="100" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="100" startPosition="59" endLine="101" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="102" startPosition="37" endLine="103" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="103" startPosition="74" endLine="104" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="104" startPosition="80" endLine="105" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="106" startPosition="12" endLine="107" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6099797596647422678" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="69" startPosition="127" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceWith_BuildLayout_Node_cellMenu_a0a0_0#()V" />
-    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="55" startPosition="26" endLine="58" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5966744135495979943" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="78" startPosition="69" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_x4tsfq_a1a#()V" />
-    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="96" startPosition="28" endLine="99" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1692280246134778911" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="25" startPosition="75" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="5966744135495979940" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="41" startPosition="73" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6099797596647422678" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReplacementConceptName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5966744135495979943" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="5966744135495979943" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="86" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="5966744135495979940" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="39" startPosition="103" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="60" startPosition="59" endLine="66" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="101" startPosition="61" endLine="107" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="29" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_x4tsfq_a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="5966744135495979940" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="37" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_x4tsfq_a0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="50" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_x4tsfq_b0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="90" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_x4tsfq_a0b0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <scopeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="57" startPosition="58" endLine="57" endPosition="58" />
-    <scopeInfo nodeId="6099797596647422678" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="70" startPosition="59" endLine="70" endPosition="59" />
-    <scopeInfo nodeId="1692280246134778911" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="26" startPosition="79" endLine="27" endPosition="63" />
-    <scopeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="31" startPosition="96" endLine="32" endPosition="48" />
-    <scopeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="32" startPosition="48" endLine="33" endPosition="81" />
-    <scopeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="80" />
-    <scopeInfo nodeId="6099797596647422678" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="73" startPosition="47" endLine="74" endPosition="62" />
-    <scopeInfo nodeId="5966744135495979943" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="79" startPosition="33" endLine="80" endPosition="14" />
-    <scopeInfo nodeId="5966744135495979943" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="83" startPosition="69" endLine="84" endPosition="67" />
-    <scopeInfo nodeId="5966744135495979943" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="87" startPosition="81" endLine="88" endPosition="66" />
-    <scopeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="97" startPosition="60" endLine="98" endPosition="44" />
-    <scopeInfo nodeId="5966744135495979940" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="42" startPosition="5" endLine="44" endPosition="48">
-      <varInfo nodeId="5966744135495979940" varName="style" />
+    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="43" startPosition="58" endLine="43" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1692280246134778911" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="25" startPosition="79" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="29" startPosition="89" endLine="30" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="30" startPosition="96" endLine="31" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="30" startPosition="96" endLine="31" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="31" startPosition="48" endLine="32" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="31" startPosition="48" endLine="32" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="32" startPosition="88" endLine="33" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="32" startPosition="88" endLine="33" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="33" startPosition="80" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="37" startPosition="87" endLine="38" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="38" startPosition="81" endLine="39" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="39" startPosition="31" endLine="40" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="40" startPosition="44" endLine="41" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="41" startPosition="26" endLine="42" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="42" startPosition="99" endLine="43" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="43" startPosition="58" endLine="44" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="44" startPosition="73" endLine="45" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="45" startPosition="57" endLine="46" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="47" startPosition="35" endLine="48" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="48" startPosition="72" endLine="49" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="49" startPosition="78" endLine="50" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="51" startPosition="10" endLine="52" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="55" startPosition="95" endLine="56" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="56" startPosition="89" endLine="57" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="57" startPosition="30" endLine="58" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="58" startPosition="43" endLine="59" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="59" startPosition="26" endLine="60" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="60" startPosition="58" endLine="61" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="61" startPosition="50" endLine="62" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="63" startPosition="5" endLine="64" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="64" startPosition="42" endLine="65" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="66" startPosition="5" endLine="67" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="67" startPosition="217" endLine="68" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="68" startPosition="57" endLine="69" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="70" startPosition="35" endLine="71" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="71" startPosition="72" endLine="72" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="72" startPosition="78" endLine="73" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="74" startPosition="10" endLine="75" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1265949165890593430" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="82" startPosition="47" endLine="83" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5966744135495979943" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="88" startPosition="33" endLine="89" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5966744135495979943" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="92" startPosition="69" endLine="93" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5966744135495979943" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="96" startPosition="81" endLine="97" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="100" startPosition="92" endLine="101" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="101" startPosition="84" endLine="102" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="102" startPosition="31" endLine="103" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="103" startPosition="44" endLine="104" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="104" startPosition="33" endLine="105" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="105" startPosition="28" endLine="106" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="106" startPosition="60" endLine="107" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="106" startPosition="60" endLine="107" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="107" startPosition="44" endLine="108" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="108" startPosition="75" endLine="109" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="109" startPosition="59" endLine="110" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="111" startPosition="37" endLine="112" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="112" startPosition="74" endLine="113" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="113" startPosition="80" endLine="114" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="115" startPosition="12" endLine="116" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1265949165890593430" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="78" startPosition="127" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceWith_BuildLayout_Node_cellMenu_a0a0_0#()V" />
+    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="41" startPosition="26" endLine="44" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5966744135495979943" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="87" startPosition="69" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_x4tsfq_a1a#()V" />
+    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="105" startPosition="28" endLine="108" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1692280246134778911" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="24" startPosition="75" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="62" startPosition="73" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1265949165890593430" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="81" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReplacementConceptName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5966744135495979943" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="91" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5966744135495979943" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="46" startPosition="59" endLine="52" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="60" startPosition="58" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="69" startPosition="59" endLine="75" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="110" startPosition="61" endLine="116" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="28" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_x4tsfq_a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="59" startPosition="26" endLine="67" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="36" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_x4tsfq_b0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="99" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_x4tsfq_a0b0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="54" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConceptProperty_x4tsfq_a0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="43" startPosition="58" endLine="43" endPosition="58" />
+    <scopeInfo nodeId="1265949165890593430" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="79" startPosition="59" endLine="79" endPosition="59" />
+    <scopeInfo nodeId="1692280246134778911" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="25" startPosition="79" endLine="26" endPosition="63" />
+    <scopeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="30" startPosition="96" endLine="31" endPosition="48" />
+    <scopeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="31" startPosition="48" endLine="32" endPosition="88" />
+    <scopeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="32" startPosition="88" endLine="33" endPosition="80" />
+    <scopeInfo nodeId="1265949165890593430" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="82" startPosition="47" endLine="83" endPosition="62" />
+    <scopeInfo nodeId="5966744135495979943" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="88" startPosition="33" endLine="89" endPosition="14" />
+    <scopeInfo nodeId="5966744135495979943" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="92" startPosition="69" endLine="93" endPosition="67" />
+    <scopeInfo nodeId="5966744135495979943" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="96" startPosition="81" endLine="97" endPosition="66" />
+    <scopeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="106" startPosition="60" endLine="107" endPosition="44" />
+    <scopeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="63" startPosition="5" endLine="65" endPosition="48">
+      <varInfo nodeId="1265949165890593427" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="6099797596647422678" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="69" startPosition="127" endLine="71" endPosition="5" />
-    <scopeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="55" startPosition="26" endLine="58" endPosition="73" />
-    <scopeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="61" startPosition="35" endLine="64" endPosition="105">
+    <scopeInfo nodeId="1265949165890593430" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="78" startPosition="127" endLine="80" endPosition="5" />
+    <scopeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="41" startPosition="26" endLine="44" endPosition="73" />
+    <scopeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="47" startPosition="35" endLine="50" endPosition="105">
       <varInfo nodeId="5966744135495979942" varName="manager" />
       <varInfo nodeId="5966744135495979942" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="5966744135495979943" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="78" startPosition="69" endLine="81" endPosition="5" />
-    <scopeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="96" startPosition="28" endLine="99" endPosition="75" />
-    <scopeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="102" startPosition="37" endLine="105" endPosition="107">
+    <scopeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="70" startPosition="35" endLine="73" endPosition="105">
+      <varInfo nodeId="1265949165890593427" varName="manager" />
+      <varInfo nodeId="1265949165890593427" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5966744135495979943" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="87" startPosition="69" endLine="90" endPosition="5" />
+    <scopeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="105" startPosition="28" endLine="108" endPosition="75" />
+    <scopeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="111" startPosition="37" endLine="114" endPosition="107">
       <varInfo nodeId="5966744135495979945" varName="manager" />
       <varInfo nodeId="5966744135495979945" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1692280246134778911" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="25" startPosition="75" endLine="29" endPosition="0">
+    <scopeInfo nodeId="1692280246134778911" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="24" startPosition="75" endLine="28" endPosition="0">
       <varInfo nodeId="1692280246134778911" varName="editorContext" />
       <varInfo nodeId="1692280246134778911" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6099797596647422678" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="5966744135495979943" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="1265949165890593430" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="81" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="5966744135495979943" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
       <varInfo nodeId="5966744135495979943" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="5966744135495979943" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="86" startPosition="0" endLine="90" endPosition="0">
+    <scopeInfo nodeId="5966744135495979943" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="95" startPosition="0" endLine="99" endPosition="0">
       <varInfo nodeId="5966744135495979943" varName="editorContext" />
       <varInfo nodeId="5966744135495979943" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="30" startPosition="89" endLine="35" endPosition="22">
+    <scopeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="29" startPosition="89" endLine="34" endPosition="22">
       <varInfo nodeId="5966744135495979937" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="5966744135495979940" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="39" startPosition="103" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="29" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="60" startPosition="58" endLine="66" endPosition="5" />
+    <scopeInfo nodeId="5966744135495979937" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="28" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="5966744135495979937" varName="editorContext" />
       <varInfo nodeId="5966744135495979937" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5966744135495979940" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="38" startPosition="88" endLine="48" endPosition="22">
-      <varInfo nodeId="5966744135495979940" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="5966744135495979940" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="37" startPosition="0" endLine="50" endPosition="0">
-      <varInfo nodeId="5966744135495979940" varName="editorContext" />
-      <varInfo nodeId="5966744135495979940" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="51" startPosition="87" endLine="66" endPosition="22">
+    <scopeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="59" startPosition="26" endLine="67" endPosition="217" />
+    <scopeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="37" startPosition="87" endLine="52" endPosition="22">
       <varInfo nodeId="5966744135495979942" varName="attributeConcept" />
       <varInfo nodeId="5966744135495979942" varName="attributeKind" />
       <varInfo nodeId="5966744135495979942" varName="editorCell" />
       <varInfo nodeId="5966744135495979942" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="91" startPosition="92" endLine="107" endPosition="24">
+    <scopeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="100" startPosition="92" endLine="116" endPosition="24">
       <varInfo nodeId="5966744135495979945" varName="attributeConcept" />
       <varInfo nodeId="5966744135495979945" varName="attributeKind" />
       <varInfo nodeId="5966744135495979945" varName="editorCell" />
       <varInfo nodeId="5966744135495979945" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="50" startPosition="0" endLine="68" endPosition="0">
+    <scopeInfo nodeId="5966744135495979942" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="36" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="5966744135495979942" varName="editorContext" />
       <varInfo nodeId="5966744135495979942" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="90" startPosition="0" endLine="109" endPosition="0">
+    <scopeInfo nodeId="5966744135495979945" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="99" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="5966744135495979945" varName="editorContext" />
       <varInfo nodeId="5966744135495979945" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1692280246134778911" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="25" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.build.mps.editor.BuildMpsLayout_ModuleOutput_Editor" />
-    <unitInfo nodeId="6099797596647422678" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="69" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.build.mps.editor.BuildMpsLayout_ModuleOutput_Editor$ReplaceWith_BuildLayout_Node_cellMenu_a0a0_0" />
-    <unitInfo nodeId="5966744135495979943" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="78" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.build.mps.editor.BuildMpsLayout_ModuleOutput_Editor$_Inline_x4tsfq_a1a" />
+    <scopeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="55" startPosition="95" endLine="75" endPosition="22">
+      <varInfo nodeId="1265949165890593427" varName="attributeConcept" />
+      <varInfo nodeId="1265949165890593427" varName="attributeKind" />
+      <varInfo nodeId="1265949165890593427" varName="editorCell" />
+      <varInfo nodeId="1265949165890593427" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1265949165890593427" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="54" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="1265949165890593427" varName="editorContext" />
+      <varInfo nodeId="1265949165890593427" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="1692280246134778911" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="24" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.build.mps.editor.BuildMpsLayout_ModuleOutput_Editor" />
+    <unitInfo nodeId="1265949165890593430" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="78" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.build.mps.editor.BuildMpsLayout_ModuleOutput_Editor$ReplaceWith_BuildLayout_Node_cellMenu_a0a0_0" />
+    <unitInfo nodeId="5966744135495979943" fileName="BuildMpsLayout_ModuleOutput_Editor.java" startLine="87" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.build.mps.editor.BuildMpsLayout_ModuleOutput_Editor$_Inline_x4tsfq_a1a" />
   </root>
   <root nodeId="3189788309731903993">
     <nodeInfo nodeId="3189788309731903993" fileName="BuildMps_ModuleRuntime_Editor.java" startLine="16" startPosition="79" endLine="17" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -5916,148 +6096,166 @@
     <unitInfo nodeId="7259033139236285176" fileName="BuildMps_ExtractedModuleDependency_Editor.java" startLine="17" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.build.mps.editor.BuildMps_ExtractedModuleDependency_Editor" />
   </root>
   <root nodeId="8369506495128638579">
-    <nodeInfo nodeId="8369506495128649563" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="57" startPosition="58" endLine="57" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8369506495128638579" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="26" startPosition="79" endLine="27" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8369506495128649558" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="30" startPosition="89" endLine="31" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8369506495128649558" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="31" startPosition="96" endLine="32" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8369506495128649558" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="31" startPosition="96" endLine="32" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8369506495128649558" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="32" startPosition="48" endLine="33" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8369506495128649558" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="32" startPosition="48" endLine="33" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8369506495128649558" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8369506495128649558" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8369506495128649558" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="34" startPosition="80" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8369506495128649559" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="38" startPosition="88" endLine="39" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8369506495128649559" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="39" startPosition="100" endLine="40" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8369506495128649559" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="40" startPosition="47" endLine="41" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8369506495128649559" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="42" startPosition="5" endLine="43" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8369506495128649559" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="43" startPosition="42" endLine="44" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8369506495128649559" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="45" startPosition="5" endLine="46" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8369506495128649559" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="46" startPosition="34" endLine="47" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8369506495128649559" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="47" startPosition="217" endLine="48" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8369506495128649563" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="51" startPosition="87" endLine="52" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8369506495128649563" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="52" startPosition="81" endLine="53" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8369506495128649563" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="53" startPosition="31" endLine="54" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8369506495128649563" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="54" startPosition="44" endLine="55" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8369506495128649563" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="55" startPosition="26" endLine="56" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8369506495128649563" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="56" startPosition="100" endLine="57" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8369506495128649563" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="57" startPosition="58" endLine="58" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8369506495128649563" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="58" startPosition="73" endLine="59" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8369506495128649563" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="59" startPosition="57" endLine="60" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8369506495128649563" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="61" startPosition="35" endLine="62" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8369506495128649563" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="62" startPosition="72" endLine="63" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8369506495128649563" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="63" startPosition="78" endLine="64" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8369506495128649563" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="65" startPosition="10" endLine="66" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8369506495128649562" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="73" startPosition="47" endLine="74" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8369506495128649564" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="79" startPosition="33" endLine="80" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8369506495128649564" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="83" startPosition="69" endLine="84" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8369506495128649564" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="87" startPosition="81" endLine="88" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8369506495128649565" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="91" startPosition="92" endLine="92" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8369506495128649565" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="92" startPosition="84" endLine="93" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8369506495128649565" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="93" startPosition="31" endLine="94" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8369506495128649565" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="94" startPosition="44" endLine="95" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8369506495128649565" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="95" startPosition="33" endLine="96" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8369506495128649565" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="96" startPosition="28" endLine="97" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8369506495128649565" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="97" startPosition="60" endLine="98" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8369506495128649565" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="97" startPosition="60" endLine="98" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8369506495128649565" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="98" startPosition="44" endLine="99" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8369506495128649565" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="99" startPosition="75" endLine="100" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8369506495128649565" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="100" startPosition="59" endLine="101" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8369506495128649565" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="102" startPosition="37" endLine="103" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8369506495128649565" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="103" startPosition="74" endLine="104" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8369506495128649565" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="104" startPosition="80" endLine="105" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8369506495128649565" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="106" startPosition="12" endLine="107" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8369506495128649562" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="69" startPosition="125" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceWith_BuildLayout_Node_cellMenu_a0a0#()V" />
-    <nodeInfo nodeId="8369506495128649563" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="55" startPosition="26" endLine="58" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8369506495128649564" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="78" startPosition="69" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_gp4zyx_a1a#()V" />
-    <nodeInfo nodeId="8369506495128649565" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="96" startPosition="28" endLine="99" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8369506495128638579" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="25" startPosition="76" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="8369506495128649559" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="41" startPosition="73" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8369506495128649562" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReplacementConceptName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8369506495128649564" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="8369506495128649564" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="86" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="8369506495128649559" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="39" startPosition="100" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8369506495128649563" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="60" startPosition="59" endLine="66" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8369506495128649565" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="101" startPosition="61" endLine="107" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8369506495128649558" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="29" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gp4zyx_a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="8369506495128649559" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="37" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gp4zyx_a0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="8369506495128649563" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="50" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_gp4zyx_b0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="8369506495128649565" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="90" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_gp4zyx_a0b0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <scopeInfo nodeId="8369506495128649563" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="57" startPosition="58" endLine="57" endPosition="58" />
-    <scopeInfo nodeId="8369506495128649562" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="70" startPosition="57" endLine="70" endPosition="57" />
-    <scopeInfo nodeId="8369506495128638579" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="26" startPosition="79" endLine="27" endPosition="63" />
-    <scopeInfo nodeId="8369506495128649558" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="31" startPosition="96" endLine="32" endPosition="48" />
-    <scopeInfo nodeId="8369506495128649558" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="32" startPosition="48" endLine="33" endPosition="81" />
-    <scopeInfo nodeId="8369506495128649558" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="80" />
-    <scopeInfo nodeId="8369506495128649562" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="73" startPosition="47" endLine="74" endPosition="62" />
-    <scopeInfo nodeId="8369506495128649564" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="79" startPosition="33" endLine="80" endPosition="14" />
-    <scopeInfo nodeId="8369506495128649564" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="83" startPosition="69" endLine="84" endPosition="67" />
-    <scopeInfo nodeId="8369506495128649564" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="87" startPosition="81" endLine="88" endPosition="66" />
-    <scopeInfo nodeId="8369506495128649565" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="97" startPosition="60" endLine="98" endPosition="44" />
-    <scopeInfo nodeId="8369506495128649559" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="42" startPosition="5" endLine="44" endPosition="48">
-      <varInfo nodeId="8369506495128649559" varName="style" />
+    <nodeInfo nodeId="2105528055260559259" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="43" startPosition="58" endLine="43" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8369506495128638579" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="25" startPosition="79" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2105528055260559254" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="29" startPosition="89" endLine="30" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2105528055260559254" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="30" startPosition="96" endLine="31" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2105528055260559254" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="30" startPosition="96" endLine="31" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105528055260559254" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="31" startPosition="48" endLine="32" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2105528055260559254" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="31" startPosition="48" endLine="32" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105528055260559254" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="32" startPosition="88" endLine="33" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2105528055260559254" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="32" startPosition="88" endLine="33" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105528055260559254" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="33" startPosition="80" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2105528055260559259" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="37" startPosition="87" endLine="38" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2105528055260559259" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="38" startPosition="81" endLine="39" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105528055260559259" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="39" startPosition="31" endLine="40" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105528055260559259" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="40" startPosition="44" endLine="41" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2105528055260559259" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="41" startPosition="26" endLine="42" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105528055260559259" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="42" startPosition="100" endLine="43" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105528055260559259" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="43" startPosition="58" endLine="44" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105528055260559259" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="44" startPosition="73" endLine="45" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2105528055260559259" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="45" startPosition="57" endLine="46" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2105528055260559259" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="47" startPosition="35" endLine="48" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2105528055260559259" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="48" startPosition="72" endLine="49" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2105528055260559259" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="49" startPosition="78" endLine="50" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2105528055260559259" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="51" startPosition="10" endLine="52" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="55" startPosition="95" endLine="56" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="56" startPosition="89" endLine="57" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="57" startPosition="30" endLine="58" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="58" startPosition="43" endLine="59" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="59" startPosition="26" endLine="60" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="60" startPosition="58" endLine="61" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="61" startPosition="50" endLine="62" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="63" startPosition="5" endLine="64" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="64" startPosition="42" endLine="65" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="66" startPosition="5" endLine="67" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="67" startPosition="216" endLine="68" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="68" startPosition="57" endLine="69" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="70" startPosition="35" endLine="71" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="71" startPosition="72" endLine="72" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="72" startPosition="78" endLine="73" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="74" startPosition="10" endLine="75" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2105528055260559257" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="82" startPosition="47" endLine="83" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2105528055260559260" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="88" startPosition="33" endLine="89" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2105528055260559260" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="92" startPosition="69" endLine="93" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2105528055260559260" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="96" startPosition="81" endLine="97" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2105528055260559261" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="100" startPosition="92" endLine="101" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2105528055260559261" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="101" startPosition="84" endLine="102" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105528055260559261" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="102" startPosition="31" endLine="103" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105528055260559261" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="103" startPosition="44" endLine="104" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105528055260559261" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="104" startPosition="33" endLine="105" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2105528055260559261" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="105" startPosition="28" endLine="106" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105528055260559261" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="106" startPosition="60" endLine="107" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2105528055260559261" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="106" startPosition="60" endLine="107" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105528055260559261" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="107" startPosition="44" endLine="108" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105528055260559261" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="108" startPosition="75" endLine="109" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2105528055260559261" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="109" startPosition="59" endLine="110" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2105528055260559261" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="111" startPosition="37" endLine="112" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2105528055260559261" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="112" startPosition="74" endLine="113" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2105528055260559261" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="113" startPosition="80" endLine="114" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2105528055260559261" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="115" startPosition="12" endLine="116" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2105528055260559257" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="78" startPosition="125" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceWith_BuildLayout_Node_cellMenu_a0a0#()V" />
+    <nodeInfo nodeId="2105528055260559259" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="41" startPosition="26" endLine="44" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2105528055260559260" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="87" startPosition="69" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_gp4zyx_a1a#()V" />
+    <nodeInfo nodeId="2105528055260559261" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="105" startPosition="28" endLine="108" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8369506495128638579" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="24" startPosition="76" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="62" startPosition="73" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2105528055260559257" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="81" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReplacementConceptName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2105528055260559260" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="91" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2105528055260559260" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2105528055260559259" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="46" startPosition="59" endLine="52" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="60" startPosition="58" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="69" startPosition="59" endLine="75" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2105528055260559261" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="110" startPosition="61" endLine="116" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2105528055260559254" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="28" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gp4zyx_a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="59" startPosition="26" endLine="67" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2105528055260559259" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="36" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_gp4zyx_b0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2105528055260559261" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="99" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_gp4zyx_a0b0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="54" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConceptProperty_gp4zyx_a0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="2105528055260559259" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="43" startPosition="58" endLine="43" endPosition="58" />
+    <scopeInfo nodeId="2105528055260559257" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="79" startPosition="57" endLine="79" endPosition="57" />
+    <scopeInfo nodeId="8369506495128638579" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="25" startPosition="79" endLine="26" endPosition="63" />
+    <scopeInfo nodeId="2105528055260559254" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="30" startPosition="96" endLine="31" endPosition="48" />
+    <scopeInfo nodeId="2105528055260559254" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="31" startPosition="48" endLine="32" endPosition="88" />
+    <scopeInfo nodeId="2105528055260559254" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="32" startPosition="88" endLine="33" endPosition="80" />
+    <scopeInfo nodeId="2105528055260559257" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="82" startPosition="47" endLine="83" endPosition="62" />
+    <scopeInfo nodeId="2105528055260559260" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="88" startPosition="33" endLine="89" endPosition="14" />
+    <scopeInfo nodeId="2105528055260559260" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="92" startPosition="69" endLine="93" endPosition="67" />
+    <scopeInfo nodeId="2105528055260559260" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="96" startPosition="81" endLine="97" endPosition="66" />
+    <scopeInfo nodeId="2105528055260559261" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="106" startPosition="60" endLine="107" endPosition="44" />
+    <scopeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="63" startPosition="5" endLine="65" endPosition="48">
+      <varInfo nodeId="2105528055260559255" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="8369506495128649562" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="69" startPosition="125" endLine="71" endPosition="5" />
-    <scopeInfo nodeId="8369506495128649563" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="55" startPosition="26" endLine="58" endPosition="73" />
-    <scopeInfo nodeId="8369506495128649563" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="61" startPosition="35" endLine="64" endPosition="105">
-      <varInfo nodeId="8369506495128649563" varName="manager" />
-      <varInfo nodeId="8369506495128649563" varName="opContext" />
+    <scopeInfo nodeId="2105528055260559257" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="78" startPosition="125" endLine="80" endPosition="5" />
+    <scopeInfo nodeId="2105528055260559259" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="41" startPosition="26" endLine="44" endPosition="73" />
+    <scopeInfo nodeId="2105528055260559259" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="47" startPosition="35" endLine="50" endPosition="105">
+      <varInfo nodeId="2105528055260559259" varName="manager" />
+      <varInfo nodeId="2105528055260559259" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="8369506495128649564" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="78" startPosition="69" endLine="81" endPosition="5" />
-    <scopeInfo nodeId="8369506495128649565" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="96" startPosition="28" endLine="99" endPosition="75" />
-    <scopeInfo nodeId="8369506495128649565" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="102" startPosition="37" endLine="105" endPosition="107">
-      <varInfo nodeId="8369506495128649565" varName="manager" />
-      <varInfo nodeId="8369506495128649565" varName="opContext" />
+    <scopeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="70" startPosition="35" endLine="73" endPosition="105">
+      <varInfo nodeId="2105528055260559255" varName="manager" />
+      <varInfo nodeId="2105528055260559255" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="8369506495128638579" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="25" startPosition="76" endLine="29" endPosition="0">
+    <scopeInfo nodeId="2105528055260559260" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="87" startPosition="69" endLine="90" endPosition="5" />
+    <scopeInfo nodeId="2105528055260559261" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="105" startPosition="28" endLine="108" endPosition="75" />
+    <scopeInfo nodeId="2105528055260559261" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="111" startPosition="37" endLine="114" endPosition="107">
+      <varInfo nodeId="2105528055260559261" varName="manager" />
+      <varInfo nodeId="2105528055260559261" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8369506495128638579" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="24" startPosition="76" endLine="28" endPosition="0">
       <varInfo nodeId="8369506495128638579" varName="editorContext" />
       <varInfo nodeId="8369506495128638579" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8369506495128649562" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="8369506495128649564" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
-      <varInfo nodeId="8369506495128649564" varName="editorContext" />
+    <scopeInfo nodeId="2105528055260559257" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="81" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="2105528055260559260" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="2105528055260559260" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="8369506495128649564" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="86" startPosition="0" endLine="90" endPosition="0">
-      <varInfo nodeId="8369506495128649564" varName="editorContext" />
-      <varInfo nodeId="8369506495128649564" varName="node" />
+    <scopeInfo nodeId="2105528055260559260" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="95" startPosition="0" endLine="99" endPosition="0">
+      <varInfo nodeId="2105528055260559260" varName="editorContext" />
+      <varInfo nodeId="2105528055260559260" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8369506495128649558" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="30" startPosition="89" endLine="35" endPosition="22">
-      <varInfo nodeId="8369506495128649558" varName="editorCell" />
+    <scopeInfo nodeId="2105528055260559254" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="29" startPosition="89" endLine="34" endPosition="22">
+      <varInfo nodeId="2105528055260559254" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="8369506495128649559" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="39" startPosition="100" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="8369506495128649558" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="29" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="8369506495128649558" varName="editorContext" />
-      <varInfo nodeId="8369506495128649558" varName="node" />
+    <scopeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="60" startPosition="58" endLine="66" endPosition="5" />
+    <scopeInfo nodeId="2105528055260559254" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="28" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="2105528055260559254" varName="editorContext" />
+      <varInfo nodeId="2105528055260559254" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8369506495128649559" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="38" startPosition="88" endLine="48" endPosition="22">
-      <varInfo nodeId="8369506495128649559" varName="editorCell" />
+    <scopeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="59" startPosition="26" endLine="67" endPosition="216" />
+    <scopeInfo nodeId="2105528055260559259" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="37" startPosition="87" endLine="52" endPosition="22">
+      <varInfo nodeId="2105528055260559259" varName="attributeConcept" />
+      <varInfo nodeId="2105528055260559259" varName="attributeKind" />
+      <varInfo nodeId="2105528055260559259" varName="editorCell" />
+      <varInfo nodeId="2105528055260559259" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="8369506495128649559" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="37" startPosition="0" endLine="50" endPosition="0">
-      <varInfo nodeId="8369506495128649559" varName="editorContext" />
-      <varInfo nodeId="8369506495128649559" varName="node" />
+    <scopeInfo nodeId="2105528055260559261" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="100" startPosition="92" endLine="116" endPosition="24">
+      <varInfo nodeId="2105528055260559261" varName="attributeConcept" />
+      <varInfo nodeId="2105528055260559261" varName="attributeKind" />
+      <varInfo nodeId="2105528055260559261" varName="editorCell" />
+      <varInfo nodeId="2105528055260559261" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="8369506495128649563" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="51" startPosition="87" endLine="66" endPosition="22">
-      <varInfo nodeId="8369506495128649563" varName="attributeConcept" />
-      <varInfo nodeId="8369506495128649563" varName="attributeKind" />
-      <varInfo nodeId="8369506495128649563" varName="editorCell" />
-      <varInfo nodeId="8369506495128649563" varName="provider" />
+    <scopeInfo nodeId="2105528055260559259" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="36" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="2105528055260559259" varName="editorContext" />
+      <varInfo nodeId="2105528055260559259" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8369506495128649565" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="91" startPosition="92" endLine="107" endPosition="24">
-      <varInfo nodeId="8369506495128649565" varName="attributeConcept" />
-      <varInfo nodeId="8369506495128649565" varName="attributeKind" />
-      <varInfo nodeId="8369506495128649565" varName="editorCell" />
-      <varInfo nodeId="8369506495128649565" varName="provider" />
+    <scopeInfo nodeId="2105528055260559261" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="99" startPosition="0" endLine="118" endPosition="0">
+      <varInfo nodeId="2105528055260559261" varName="editorContext" />
+      <varInfo nodeId="2105528055260559261" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8369506495128649563" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="50" startPosition="0" endLine="68" endPosition="0">
-      <varInfo nodeId="8369506495128649563" varName="editorContext" />
-      <varInfo nodeId="8369506495128649563" varName="node" />
+    <scopeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="55" startPosition="95" endLine="75" endPosition="22">
+      <varInfo nodeId="2105528055260559255" varName="attributeConcept" />
+      <varInfo nodeId="2105528055260559255" varName="attributeKind" />
+      <varInfo nodeId="2105528055260559255" varName="editorCell" />
+      <varInfo nodeId="2105528055260559255" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="8369506495128649565" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="90" startPosition="0" endLine="109" endPosition="0">
-      <varInfo nodeId="8369506495128649565" varName="editorContext" />
-      <varInfo nodeId="8369506495128649565" varName="node" />
+    <scopeInfo nodeId="2105528055260559255" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="54" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="2105528055260559255" varName="editorContext" />
+      <varInfo nodeId="2105528055260559255" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="8369506495128638579" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="25" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.build.mps.editor.BuildMpsLayout_ModuleSources_Editor" />
-    <unitInfo nodeId="8369506495128649562" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="69" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.build.mps.editor.BuildMpsLayout_ModuleSources_Editor$ReplaceWith_BuildLayout_Node_cellMenu_a0a0" />
-    <unitInfo nodeId="8369506495128649564" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="78" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.build.mps.editor.BuildMpsLayout_ModuleSources_Editor$_Inline_gp4zyx_a1a" />
+    <unitInfo nodeId="8369506495128638579" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="24" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.build.mps.editor.BuildMpsLayout_ModuleSources_Editor" />
+    <unitInfo nodeId="2105528055260559257" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="78" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.build.mps.editor.BuildMpsLayout_ModuleSources_Editor$ReplaceWith_BuildLayout_Node_cellMenu_a0a0" />
+    <unitInfo nodeId="2105528055260559260" fileName="BuildMpsLayout_ModuleSources_Editor.java" startLine="87" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.build.mps.editor.BuildMpsLayout_ModuleSources_Editor$_Inline_gp4zyx_a1a" />
   </root>
 </debugInfo>
 

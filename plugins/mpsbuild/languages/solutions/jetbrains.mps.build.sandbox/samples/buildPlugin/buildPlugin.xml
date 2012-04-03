@@ -16,7 +16,7 @@
   <property name="buildA.aver1" value="${import.buildB.buildA.aver}" />
   
   <target name="assemble" depends="classes">
-    <aaa></aaa>
+    <aaa />
     <mkdir dir="${build.layout}/xx" />
     <mkdir dir="${build.tmp}/default/xx" />
     <mkdir dir="${build.tmp}/default/xx/test" />
@@ -64,7 +64,7 @@
     <mkdir dir="${build.tmp}/java/out/test1" />
     <javac destdir="${build.tmp}/java/out/test1" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
-      <src></src>
+      <src />
       <classpath>
         <fileset file="${build.tmp}/deps/buildCore/inrelease.zip/mps-core${buildCore.ver}.jar" />
       </classpath>
