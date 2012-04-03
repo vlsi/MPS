@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-984muoassqe83yecsy3l5gimdpl1llq">
+<dependencies version="2" modelHash="-bxqcmceql10e82h6yso2ggufwd0fnjd">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-5p0rdl0tgxw43gzmkd4qcpqszqapgi2" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-z9apu2jgvnwo2rksn2wr6ei9vh9scw" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-ad6sacrydlyivgq1a8s9zj6b37xpgsf" />
@@ -58,7 +58,7 @@
     <file name="mps.sh" />
     <file name="mps.vmoptions" />
   </common>
-  <source id="2235195415637073459" name="MPS" hash="2mdwiy0fzip04zs0ibc5esons7g8a8x">
+  <source id="2235195415637073459" name="MPS" hash="95f3k73br1fczamaywrxaeonuslhf0v">
     <dep root="2235195415637076848" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
@@ -123,6 +123,7 @@
   <source id="3832932945784337441" name="core.make" hash="deml5zk3ngxnhnu649aoin9k5wqa7xy" />
   <source id="4514696390933853559" name="MPS-os-specific" hash="-657e7tmldu56rrlvco1dckjxal9pn7p">
     <dep root="2235195415637073459" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
@@ -141,6 +142,7 @@
     <file name="MPS-os-specific.properties" />
   </source>
   <source id="2495440301906773652" name="MPS-buildserver" hash="-73qjdlbmzskjxmcnd2vbdkgu7fynz9m">
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895905a3(jetbrains.mps.xml.deprecated.structure)" />
     <dep model="r:581bb25d-517d-4f18-b7c0-d3f6a738994e(jetbrains.mps.build.generictasks.generator.template.main@generator)" />
