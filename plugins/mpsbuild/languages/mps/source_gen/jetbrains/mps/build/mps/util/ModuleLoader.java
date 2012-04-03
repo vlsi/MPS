@@ -35,9 +35,9 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.LanguageID;
-import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.project.structure.modules.Dependency;
@@ -393,6 +393,13 @@ public class ModuleLoader {
         report("extends language dependency should be extracted into build script: " + lang.toString(), myOriginalModule);
       }
     }
+    String langName = myModuleDescriptor.getModuleReference().getModuleFqName();
+    for (GeneratorDescriptor generator : descriptor.getGenerators()) {
+      String generatorName = generator.getGeneratorUID();
+      if (generatorName != null && !(generatorName.startsWith(langName + "#"))) {
+        report("wrong generator name `" + generatorName + "', should start with `" + langName + "#'", myOriginalModule);
+      }
+    }
   }
 
   private void importRuntime() {
@@ -556,6 +563,12 @@ public class ModuleLoader {
     }
 
     Iterable<Dependency> dependencies = myModuleDescriptor.getDependencies();
+    for (Dependency dependency : dependencies) {
+      ModuleReference moduleRef = dependency.getModuleRef();
+      if (moduleRef.getModuleFqName().contains("#")) {
+        report("module cannot depend on generator: `" + moduleRef.getModuleFqName() + "'", myOriginalModule);
+      }
+    }
     if (myModuleDescriptor instanceof LanguageDescriptor) {
       // see j.m.p.dependency.ModuleDependenciesManager#collectAllCompileTimeDependencies 
       Iterable<GeneratorDescriptor> generators = ((LanguageDescriptor) myModuleDescriptor).getGenerators();

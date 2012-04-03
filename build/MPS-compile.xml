@@ -846,7 +846,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -963,7 +962,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -1082,7 +1080,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -1200,7 +1197,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -1318,7 +1314,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -1435,7 +1430,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -1553,7 +1547,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -1672,7 +1665,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -1802,7 +1794,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -1927,7 +1918,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -2044,7 +2034,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -2161,7 +2150,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -2330,7 +2318,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -2455,7 +2442,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -2574,7 +2560,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -2692,7 +2677,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -2823,7 +2807,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -2949,7 +2932,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -3068,7 +3050,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -3189,7 +3170,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -3318,7 +3298,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -3449,7 +3428,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -3577,7 +3555,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -3701,7 +3678,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -3818,7 +3794,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -3940,7 +3915,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -4058,7 +4032,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -4184,7 +4157,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -4311,7 +4283,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -4428,7 +4399,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -4548,7 +4518,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -4668,7 +4637,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -4786,7 +4754,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -5147,7 +5114,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -5269,7 +5235,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -5510,7 +5475,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -5755,7 +5719,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -6007,7 +5970,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -6134,7 +6096,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -6254,7 +6215,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -6372,7 +6332,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -6504,7 +6463,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -6628,7 +6586,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -6748,7 +6705,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -6865,7 +6821,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -6983,7 +6938,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -7101,7 +7055,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -7219,7 +7172,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -7337,7 +7289,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -7456,7 +7407,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -7574,7 +7524,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -7692,7 +7641,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -7809,7 +7757,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -7927,7 +7874,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -8045,7 +7991,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -8163,7 +8108,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -8281,7 +8225,6 @@
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/languages/testLang/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -8398,7 +8341,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
@@ -8633,7 +8575,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -8751,7 +8692,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -8868,7 +8808,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -8987,7 +8926,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -9105,7 +9043,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -9223,7 +9160,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -9342,7 +9278,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -9459,7 +9394,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -9577,7 +9511,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -9700,7 +9633,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -9821,7 +9753,6 @@
     <path path="${base_dir}/languages/languageDesign/make/languages/facet/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/make/languages/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -9939,7 +9870,6 @@
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/make/languages/script/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -10056,7 +9986,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -10174,7 +10103,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -10321,7 +10249,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -10439,7 +10366,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -10559,7 +10485,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -10680,7 +10605,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -10930,7 +10854,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -11051,7 +10974,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -11169,7 +11091,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -11288,7 +11209,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -11406,7 +11326,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -11657,7 +11576,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -11910,7 +11828,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -12028,7 +11945,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -12148,7 +12064,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -12269,7 +12184,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -12392,7 +12306,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -12515,7 +12428,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -12633,7 +12545,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -12756,7 +12667,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -12890,7 +12800,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -13014,7 +12923,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
@@ -13134,7 +13042,6 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/intentions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/plugin-standalone/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/plugin/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/project/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/quotation/classes_gen" />
