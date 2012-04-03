@@ -561,7 +561,7 @@
   </root>
   <root id="5966744135495979931">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="5966744135495979934">
-      <property name="value" nameId="tpce.1105725733873" value="compile output of &lt;{module}&gt;" />
+      <property name="value" nameId="tpce.1105725733873" value="compile output of" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5966744135495979932">

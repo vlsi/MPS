@@ -6,9 +6,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.util.RelativePathHelper;
 import jetbrains.mps.build.behavior.BuildSourcePath_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
@@ -48,6 +48,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_7259033139236585058(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.getNode().getBooleanProperty("targetReexport");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2105528055260559335(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "module", false), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_8654221991637263445(final IOperationContext operationContext, final PropertyMacroContext _context) {
