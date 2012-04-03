@@ -11,7 +11,7 @@
   <unitInfo fileName="BooleanMPSParameterType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.BooleanMPSParameterType_BehaviorDescriptor" />
   <unitInfo fileName="ChangeFeatureNameExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.ChangeFeatureNameExpression_BehaviorDescriptor" />
   <unitInfo fileName="ChangeFeatureNameOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.ChangeFeatureNameOperation_BehaviorDescriptor" />
-  <unitInfo fileName="ChooseComponentClause_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.ChooseComponentClause_BehaviorDescriptor" />
+  <unitInfo fileName="ChooseComponentClause_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.ChooseComponentClause_BehaviorDescriptor" />
   <unitInfo fileName="ChooserRefactoringContext_ConceptFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.ChooserRefactoringContext_ConceptFunctionParameter_BehaviorDescriptor" />
   <unitInfo fileName="CommitClause_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.CommitClause_BehaviorDescriptor" />
   <unitInfo fileName="ComponentExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.ComponentExpression_BehaviorDescriptor" />
@@ -100,68 +100,12 @@
   <unitInfo fileName="UpdateModelClause_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.UpdateModelClause_BehaviorDescriptor" />
   <unitInfo fileName="UpdateModelProcedure_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.UpdateModelProcedure_BehaviorDescriptor" />
   <root nodeId="1213877320624">
-    <nodeInfo nodeId="1213877320629" fileName="ChooseComponentClause_Behavior.java" startLine="21" startPosition="83" endLine="22" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877320638" fileName="ChooseComponentClause_Behavior.java" startLine="22" startPosition="203" endLine="23" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="30" startPosition="49" endLine="31" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="31" startPosition="26" endLine="32" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="32" startPosition="67" endLine="33" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="33" startPosition="32" endLine="34" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="35" startPosition="7" endLine="36" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="36" startPosition="163" endLine="37" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="37" startPosition="43" endLine="38" endPosition="301" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="39" startPosition="9" endLine="40" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="40" startPosition="45" endLine="41" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="42" startPosition="66" endLine="43" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="44" startPosition="18" endLine="45" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="45" startPosition="57" endLine="46" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="48" startPosition="38" endLine="49" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="51" startPosition="9" endLine="52" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="53" startPosition="7" endLine="54" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="26" startPosition="51" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_oxr3se_a0b0b#()V" />
-    <nodeInfo nodeId="1213877320624" fileName="ChooseComponentClause_Behavior.java" startLine="17" startPosition="45" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="44" startPosition="16" endLine="47" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="47" startPosition="11" endLine="50" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877320624" fileName="ChooseComponentClause_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="41" startPosition="30" endLine="47" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="38" startPosition="301" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="38" startPosition="301" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="34" startPosition="32" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="34" startPosition="32" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="29" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="1213877320626" fileName="ChooseComponentClause_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
-    <scopeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="27" startPosition="42" endLine="27" endPosition="42" />
-    <scopeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="42" startPosition="66" endLine="43" endPosition="64" />
-    <scopeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="48" startPosition="38" endLine="49" endPosition="85" />
-    <scopeInfo nodeId="1213877320628" fileName="ChooseComponentClause_Behavior.java" startLine="21" startPosition="83" endLine="23" endPosition="100">
-      <varInfo nodeId="1213877320630" varName="elementType" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="26" startPosition="51" endLine="28" endPosition="5" />
-    <scopeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="44" startPosition="18" endLine="46" endPosition="41" />
-    <scopeInfo nodeId="1213877320624" fileName="ChooseComponentClause_Behavior.java" startLine="17" startPosition="45" endLine="20" endPosition="0">
+    <nodeInfo nodeId="1213877320624" fileName="ChooseComponentClause_Behavior.java" startLine="7" startPosition="45" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <scopeInfo nodeId="1213877320626" fileName="ChooseComponentClause_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="1213877320624" fileName="ChooseComponentClause_Behavior.java" startLine="7" startPosition="45" endLine="10" endPosition="0">
       <varInfo nodeId="1213877320624" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877320624" fileName="ChooseComponentClause_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="1213877320624" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="39" startPosition="9" endLine="50" endPosition="11">
-      <varInfo nodeId="1213877320639" varName="quotedNode1_4" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="38" startPosition="301" endLine="51" endPosition="9" />
-    <scopeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="35" startPosition="7" endLine="52" endPosition="31">
-      <varInfo nodeId="1213877320639" varName="quotedNode1_3" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="34" startPosition="32" endLine="53" endPosition="7" />
-    <scopeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="30" startPosition="49" endLine="54" endPosition="20">
-      <varInfo nodeId="1213877320639" varName="_parameterValues_129834374" />
-      <varInfo nodeId="1213877320639" varName="quotedNode_1" />
-      <varInfo nodeId="1213877320639" varName="quotedNode_2" />
-      <varInfo nodeId="1213877320639" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="29" startPosition="0" endLine="56" endPosition="0">
-      <varInfo nodeId="1213877320639" varName="parameter_5" />
-    </scopeInfo>
-    <unitInfo nodeId="1213877320624" fileName="ChooseComponentClause_Behavior.java" startLine="17" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.ChooseComponentClause_Behavior" />
-    <unitInfo nodeId="1213877320639" fileName="ChooseComponentClause_Behavior.java" startLine="26" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.ChooseComponentClause_Behavior$QuotationClass_oxr3se_a0b0b" />
+    <unitInfo nodeId="1213877320624" fileName="ChooseComponentClause_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.ChooseComponentClause_Behavior" />
   </root>
   <root nodeId="1213877343861">
     <nodeInfo nodeId="1213877343867" fileName="RequiredAdditionalArgument_Behavior.java" startLine="14" startPosition="72" endLine="15" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -17,10 +17,6 @@ public class ConvertAnonymousClass extends BaseRefactoring {
     return "Convert Anonymous to Inner Class";
   }
 
-  public String getKeyStroke() {
-    return getKeyStroke_static();
-  }
-
   public Class getOverridenRefactoringClass() {
     return MoveNodes.class;
   }
@@ -31,9 +27,5 @@ public class ConvertAnonymousClass extends BaseRefactoring {
 
   public void refactor(final RefactoringContext refactoringContext) {
     new ConvertAnonymousRefactoring(refactoringContext.getSelectedNode(), ((String) refactoringContext.getParameter("name"))).doRefactor();
-  }
-
-  public static String getKeyStroke_static() {
-    return MoveNodes.getKeyStroke_static();
   }
 }

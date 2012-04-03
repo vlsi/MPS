@@ -13,7 +13,7 @@
       <modulePath path="${project}/solutions/jetbrains.mps.build.sandbox/sandbox.msd" />
       <modulePath path="${project}/solutions/jetbrains.mps.build.tests/tests.msd" folder="" />
       <modulePath path="${project}/workflow/workflow.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/../../../IdeaPlugin/buildScript/plugin.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/../../../IdeaPlugin/buildScript/plugin.msd" />
       <modulePath path="$PROJECT_DIR$/../temp/jetbrains.mps.build.pluginSolution/pluginSolution.msd" />
     </projectModules>
     <genConfs />

@@ -38,10 +38,6 @@ public class MoveLinkUp extends BaseLoggableRefactoring {
     return "Move Link Up";
   }
 
-  public String getKeyStroke() {
-    return getKeyStroke_static();
-  }
-
   public Class getOverridenRefactoringClass() {
     return MoveNodes.class;
   }
@@ -110,9 +106,5 @@ public class MoveLinkUp extends BaseLoggableRefactoring {
 
   public void updateModel(final SModel model, final RefactoringContext refactoringContext) {
     refactoringContext.updateByDefault(model);
-  }
-
-  public static String getKeyStroke_static() {
-    return MoveNodes.getKeyStroke_static();
   }
 }

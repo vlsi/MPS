@@ -12,6 +12,10 @@ public abstract class BuildSourcePath_BehaviorDescriptor extends BaseConcept_Beh
   public BuildSourcePath_BehaviorDescriptor() {
   }
 
+  public SNode virtual_getParent_8654221991637145399(SNode thisNode) {
+    return BuildSourcePath_Behavior.virtual_getParent_8654221991637145399(thisNode);
+  }
+
   public String virtual_getRelativePath_5481553824944787371(SNode thisNode) {
     return BuildSourcePath_Behavior.virtual_getRelativePath_5481553824944787371(thisNode);
   }

@@ -19,6 +19,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -36,7 +38,9 @@ public class BuildInputFiles_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1i9du0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1i9du0_a");
-    editorCell.addEditorCell(this.createConceptProperty_1i9du0_a0(editorContext, node));
+    if (renderingCondition_1i9du0_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConceptProperty_1i9du0_a0(editorContext, node));
+    }
     editorCell.addEditorCell(this.createConstant_1i9du0_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1i9du0_c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_1i9du0_d0(editorContext, node));
@@ -104,6 +108,10 @@ public class BuildInputFiles_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private static boolean renderingCondition_1i9du0_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.build.structure.BuildSourceSetContainer"));
+  }
+
   public static class ReplaceWith_BuildInputResourceSet_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_BuildInputResourceSet_cellMenu_a0a0() {
     }
@@ -158,6 +166,7 @@ public class BuildInputFiles_Editor extends DefaultNodeEditor {
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+        style.set(StyleAttributes.EDITABLE, true);
       }
       editorCell.setDefaultText("<any>");
       return editorCell;

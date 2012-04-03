@@ -18,8 +18,8 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import jetbrains.mps.ide.editorTabs.EditorTabComparator;
-import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.ide.relations.RelationComparator;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.NameUtil;
 import org.apache.commons.lang.StringUtils;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -37,18 +36,18 @@ import java.util.Collections;
 import java.util.List;
 
 public class CreateGroupsBuilder {
-  public static List<DefaultActionGroup> getCreateGroups(SNodePointer baseNode, Collection<EditorTabDescriptor> possibleTabs, @Nullable EditorTabDescriptor currentAspect, NodeChangeCallback callback) {
+  public static List<DefaultActionGroup> getCreateGroups(SNodePointer baseNode, Collection<RelationDescriptor> possibleTabs, @Nullable RelationDescriptor currentAspect, NodeChangeCallback callback) {
     List<DefaultActionGroup> groups = new ArrayList<DefaultActionGroup>();
 
-    List<EditorTabDescriptor> tabs = new ArrayList<EditorTabDescriptor>(possibleTabs);
-    Collections.sort(tabs, new EditorTabComparator());
+    List<RelationDescriptor> tabs = new ArrayList<RelationDescriptor>(possibleTabs);
+    Collections.sort(tabs, new RelationComparator());
 
     if (currentAspect != null) {
       tabs.remove(currentAspect);
       tabs.add(0, currentAspect);
     }
 
-    for (final EditorTabDescriptor d : tabs) {
+    for (final RelationDescriptor d : tabs) {
       List<SNode> nodes = d.getNodes(baseNode.getNode());
       if (!nodes.isEmpty() && d.isSingle()) continue;
 
@@ -64,7 +63,7 @@ public class CreateGroupsBuilder {
     return groups;
   }
 
-  public static DefaultActionGroup getCreateGroup(SNodePointer baseNode, NodeChangeCallback callback, EditorTabDescriptor d) {
+  public static DefaultActionGroup getCreateGroup(SNodePointer baseNode, NodeChangeCallback callback, RelationDescriptor d) {
     List<SNode> concepts = d.getConcepts(baseNode.getNode());
     if (concepts.isEmpty()) return new DefaultActionGroup();
 
@@ -86,11 +85,11 @@ public class CreateGroupsBuilder {
 
   private static class CreateAction extends AnAction {
     private final SNode myConcept;
-    private final EditorTabDescriptor myDescriptor;
+    private final RelationDescriptor myDescriptor;
     private SNodePointer myBaseNode;
     private NodeChangeCallback myCallback;
 
-    public CreateAction(SNode concept, EditorTabDescriptor descriptor, SNodePointer baseNode, NodeChangeCallback callback) {
+    public CreateAction(SNode concept, RelationDescriptor descriptor, SNodePointer baseNode, NodeChangeCallback callback) {
       super(getConceptAlias(concept).replaceAll("_", "__"), "", IconManager.getIconForConceptFQName(NameUtil.nodeFQName(concept)));
       myConcept = concept;
       myDescriptor = descriptor;

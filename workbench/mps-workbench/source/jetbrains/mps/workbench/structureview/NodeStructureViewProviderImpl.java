@@ -20,7 +20,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.editor.NodeStructureViewProvider;
-import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -38,17 +38,17 @@ public class NodeStructureViewProviderImpl implements ApplicationComponent, Node
   public StructureViewBuilder create(Project project, SNodePointer np) {
     ModelAccess.assertLegalRead();
 
-    List<EditorTabDescriptor> tabs = project.getComponent(ProjectPluginManager.class).getTabDescriptors();
+    List<RelationDescriptor> tabs = project.getComponent(ProjectPluginManager.class).getTabDescriptors();
     SNode node = np.getNode();
 
-    for (EditorTabDescriptor tab : tabs) {
+    for (RelationDescriptor tab : tabs) {
       SNode baseNode = tab.getBaseNode(node);
       if (baseNode != null && baseNode.getName() != null) {
         return new NodeStructureViewBuilder(project, new SNodePointer(baseNode));
       }
     }
 
-    for (EditorTabDescriptor tab : tabs) {
+    for (RelationDescriptor tab : tabs) {
       List<SNode> nodes = tab.getNodes(node);
       if (!nodes.isEmpty()) {
         return new NodeStructureViewBuilder(project, new SNodePointer(node));

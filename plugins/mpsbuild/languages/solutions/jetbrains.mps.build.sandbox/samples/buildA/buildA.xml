@@ -30,7 +30,8 @@
   <target name="build" depends="assemble, check" />
   
   <target name="clean">
-    <delete dir="${build.dir}" />
+    <delete dir="${build.tmp}" />
+    <delete dir="${build.layout}" />
   </target>
   
   <target name="compileJava" depends="java.compile.module-A" />
@@ -45,7 +46,7 @@
   
   <target name="java.compile.module-A">
     <mkdir dir="${build.tmp}/java/out/module-A" />
-    <javac destdir="${build.tmp}/java/out/module-A">
+    <javac destdir="${build.tmp}/java/out/module-A" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src path="${basedir}/buildA/src" />
       <classpath refid="path.java.library.abcde-lib" />

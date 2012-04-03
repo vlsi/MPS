@@ -8,8 +8,4 @@ public class BuildSource_JavaSources_Constraints extends BaseConstraintsDescript
   public BuildSource_JavaSources_Constraints() {
     super("jetbrains.mps.build.structure.BuildSource_JavaSources");
   }
-
-  public String getDefaultConcreteConceptFqName() {
-    return "jetbrains.mps.build.structure.BuildSource_JavaContentRoot";
-  }
 }

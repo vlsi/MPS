@@ -2,7 +2,6 @@
 <model modelUID="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" version="5">
   <persistence version="7" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
-  <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <import index="68nn" modelUID="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" version="5" implicit="yes" />
@@ -13,7 +12,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3702466984434723496">
       <property name="name" nameId="tpck.1169194664001" value="BracesBlock" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="3702466984434609595" resolveInfo="TestStatenetList" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="3702466984434609595" resolveInfo="TestBlockList" />
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="3702466984434723497">
       <property name="name" nameId="tpck.1169194664001" value="IBaseTestBlock" />
@@ -24,7 +23,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6859592652550843066">
       <property name="name" nameId="tpck.1169194664001" value="VerticalLayoutBlockList" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="3702466984434609595" resolveInfo="TestStatenetList" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="3702466984434609595" resolveInfo="TestBlockList" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8497577741385080308">
       <property name="name" nameId="tpck.1169194664001" value="BracesStubBlock" />
@@ -90,7 +89,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="statement" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="3702466984434723497" resolveInfo="TestStatement" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="3702466984434723497" resolveInfo="IBaseTestBlock" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3167392541572622492">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3702466984434723497" resolveInfo="IBaseTestBlock" />
@@ -98,7 +97,7 @@
   </root>
   <root id="3702466984434723496">
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3702466984434806357">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3702466984434723497" resolveInfo="TestStatement" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3702466984434723497" resolveInfo="IBaseTestBlock" />
     </node>
   </root>
   <root id="3702466984434723497" />
@@ -108,7 +107,7 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3702466984434811405">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3702466984434723497" resolveInfo="TestStatement" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3702466984434723497" resolveInfo="IBaseTestBlock" />
     </node>
   </root>
   <root id="6859592652550843066">
@@ -117,7 +116,7 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6951814850419516533">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3702466984434723497" resolveInfo="BaseTestBlock" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3702466984434723497" resolveInfo="IBaseTestBlock" />
     </node>
   </root>
   <root id="8497577741385080308">

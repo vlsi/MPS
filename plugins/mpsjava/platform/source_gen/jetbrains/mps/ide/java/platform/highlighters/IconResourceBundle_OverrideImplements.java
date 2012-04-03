@@ -31,6 +31,6 @@ public class IconResourceBundle_OverrideImplements implements IconResourceBundle
   }
 
   public static IconResourceBundle_OverrideImplements getInstance() {
-    return INSTANCE;
+    return IconResourceBundle_OverrideImplements.INSTANCE;
   }
 }

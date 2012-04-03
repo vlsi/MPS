@@ -35,6 +35,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.EditorSettingsListener;
 import jetbrains.mps.openapi.editor.EditorState;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
@@ -54,7 +55,7 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
   private TabsComponent myTabsComponent;
   private SModelListener myModelListener = new MyNameListener();
   private SNodePointer myBaseNode;
-  private Set<EditorTabDescriptor> myPossibleTabs;
+  private Set<RelationDescriptor> myPossibleTabs;
   private IOperationContext myContext;
   private BaseNavigationAction myNextTabAction;
   private BaseNavigationAction myPrevTabAction;
@@ -70,7 +71,7 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
     }
   };
 
-  public TabbedEditor(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, @NotNull IOperationContext context) {
+  public TabbedEditor(SNodePointer baseNode, Set<RelationDescriptor> possibleTabs, @NotNull IOperationContext context) {
     super(context);
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;

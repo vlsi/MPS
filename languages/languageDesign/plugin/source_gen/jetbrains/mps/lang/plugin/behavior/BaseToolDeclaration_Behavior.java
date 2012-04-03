@@ -49,7 +49,7 @@ public class BaseToolDeclaration_Behavior {
     return MacrosFactory.moduleDescriptor(module).expandPath(SPropertyOperations.getString(thisNode, "icon"), module.getDescriptorFile());
   }
 
-  public static PropertyReference virtual_getPropertyToCheck_5003188907305392322(SNode thisNode) {
+  public static PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode) {
     return new PropertyReference(thisNode, "caption");
   }
 

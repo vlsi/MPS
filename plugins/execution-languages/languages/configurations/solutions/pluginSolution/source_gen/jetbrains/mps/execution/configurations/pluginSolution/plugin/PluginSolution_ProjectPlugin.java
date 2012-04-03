@@ -4,10 +4,10 @@ package jetbrains.mps.execution.configurations.pluginSolution.plugin;
 
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import java.util.List;
-import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import com.intellij.openapi.project.Project;
 import java.util.ArrayList;
-import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
+import jetbrains.mps.plugins.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
 
@@ -15,8 +15,8 @@ public class PluginSolution_ProjectPlugin extends BaseProjectPlugin {
   public PluginSolution_ProjectPlugin() {
   }
 
-  public List<EditorTabDescriptor> initTabbedEditors(Project project) {
-    List<EditorTabDescriptor> result = new ArrayList();
+  public List<RelationDescriptor> initTabbedEditors(Project project) {
+    List<RelationDescriptor> result = new ArrayList();
     result.add(new Executor_TabDescriptor());
     result.add(new Run_Configuration_TabDescriptor());
     return result;

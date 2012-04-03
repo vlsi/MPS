@@ -82,7 +82,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.ProjectTest" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.BaseTransformationTest4" file="BaseTransformationTest4.java">
@@ -100,7 +100,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.ProjectTest" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.CellReference" file="CellReference.java">
     <classNode dependClassName="java.lang.Class" />
@@ -125,11 +125,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="junit.framework.Assert" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.test.runtime.ProjectTest" file="ProjectTest.java">
-    <classNode dependClassName="jetbrains.mps.kernel.model.TemporaryModelOwner" />
-    <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.SubtreeChecker" file="SubtreeChecker.java">
     <classNode dependClassName="java.lang.Class" />
@@ -163,6 +158,12 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeContextManager" />
     <classNode dependClassName="junit.framework.Assert" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.test.runtime.TransformationTest" file="TransformationTest.java">
+    <classNode dependClassName="jetbrains.mps.kernel.model.TemporaryModelOwner" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTestRunner" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.TransformationTestRunner" file="TransformationTestRunner.java">
     <classNode dependClassName="com.intellij.openapi.application.ex.ApplicationManagerEx" />
     <classNode dependClassName="com.intellij.util.PathUtil" />
@@ -190,7 +191,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest4" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.ProjectTest" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
     <classNode dependClassName="jetbrains.mps.project.PathMacros" />
     <classNode dependClassName="jetbrains.mps.project.PathMacrosProvider" />
     <classNode dependClassName="jetbrains.mps.project.Project" />

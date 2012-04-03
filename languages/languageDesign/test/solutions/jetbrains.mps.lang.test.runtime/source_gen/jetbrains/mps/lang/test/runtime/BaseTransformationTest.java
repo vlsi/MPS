@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.SModelRepository;
  */
 @Deprecated
 @ToRemove(version = 2.1)
-public abstract class BaseTransformationTest extends TestCase implements ProjectTest {
+public abstract class BaseTransformationTest extends TestCase implements TransformationTest {
   public static final String PATH_MACRO_PREFIX = "path.macro.";
 
   private TransformationTestRunner myRunner = new TransformationTestRunner();
@@ -39,7 +39,8 @@ public abstract class BaseTransformationTest extends TestCase implements Project
   public BaseTransformationTest(Project project, SModelDescriptor modelDescriptor) {
     this();
     this.myProject = project;
-    setModelDescriptor(modelDescriptor);
+    this.myModel = modelDescriptor;
+    init();
   }
 
   public void setTestRunner(TransformationTestRunner ttr) {
@@ -54,17 +55,16 @@ public abstract class BaseTransformationTest extends TestCase implements Project
     myRunner.initTest(this, projectName, model);
   }
 
-  public final void setModelDescriptor(SModelDescriptor modelDescriptor) {
-    this.myModel = modelDescriptor;
+  public void runTest(String className, final String methodName, final boolean runInCommand) throws Throwable {
+    myRunner.runTest(this, className, methodName, runInCommand);
+  }
+
+  public final void init() {
     this.myModelOwner = new TemporaryModelOwner();
     this.myTransientModel = ProjectModels.createDescriptorFor(true);
     CloneUtil.cloneModel(this.myModel.getSModel(), this.myTransientModel.getSModel(), false);
     SModelOperations.validateLanguagesAndImports(this.myTransientModel.getSModel(), false, false);
     SModelRepository.getInstance().registerModelDescriptor(this.myTransientModel, this.myModelOwner);
-  }
-
-  public void runTest(String className, final String methodName, final boolean runInCommand) throws Throwable {
-    myRunner.runTest(this, className, methodName, runInCommand);
   }
 
   public SModelDescriptor getModelDescriptor() {
@@ -85,5 +85,9 @@ public abstract class BaseTransformationTest extends TestCase implements Project
 
   public TemporaryModelOwner getModelOwner() {
     return myModelOwner;
+  }
+
+  public void setModelDescriptor(SModelDescriptor descriptor) {
+    myModel = descriptor;
   }
 }

@@ -19,7 +19,7 @@ import com.intellij.ide.impl.dataRules.GetDataRule;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.IdeFrame;
-import jetbrains.mps.plugins.pluginparts.runconfigs.MPSLocation;
+import jetbrains.mps.plugins.runconfigs.MPSLocation;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelDescriptor;

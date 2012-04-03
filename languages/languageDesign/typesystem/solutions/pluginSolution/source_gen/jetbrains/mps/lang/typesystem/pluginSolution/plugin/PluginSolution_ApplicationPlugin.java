@@ -7,7 +7,7 @@ import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.DebugActions_ActionGroup;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import java.util.List;
-import jetbrains.mps.workbench.action.BaseKeymapChanges;
+import jetbrains.mps.plugins.actions.BaseKeymapChanges;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 

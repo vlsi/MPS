@@ -26,8 +26,8 @@ public class BuildMps_ModuleJavaSource_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_uf20rn_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("sources");
-    provider.setNoTargetText("<no sources>");
+    provider.setRole("folder");
+    provider.setNoTargetText("<no folder>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

@@ -19,7 +19,7 @@ import com.intellij.ide.util.treeView.smartTree.TreeElement;
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.editor.markup.TextAttributes;
-import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
@@ -29,15 +29,15 @@ import java.awt.Color;
 public class AspectTreeElement extends NodeTreeElement {
   private static final String NON_BIJECTIONAL_NODE_ASPECT = "non-bijectional node aspect";
   protected boolean myIsBijectional;
-  protected EditorTabDescriptor myAspectDescriptor;
+  protected RelationDescriptor myAspectDescriptor;
 
-  public AspectTreeElement(SNodePointer node, EditorTabDescriptor aspectDescriptor, boolean bijectional) {
+  public AspectTreeElement(SNodePointer node, RelationDescriptor aspectDescriptor, boolean bijectional) {
     super(node);
     myAspectDescriptor = aspectDescriptor;
     myIsBijectional = bijectional;
   }
 
-  public EditorTabDescriptor getAspectDescriptor() {
+  public RelationDescriptor getAspectDescriptor() {
     return myAspectDescriptor;
   }
 

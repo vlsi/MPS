@@ -28,8 +28,9 @@ import jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debugger.java.runtime.evaluation.model.LowLevelEvaluationModel;
+import org.jetbrains.annotations.NotNull;
 
 public class EvaluationProvider implements IEvaluationProvider {
   private final DebugSession myDebugSession;
@@ -91,6 +92,9 @@ public class EvaluationProvider implements IEvaluationProvider {
         JavaUiState state = myDebugSession.getUiState();
         if (state.isPausedOnBreakpoint()) {
           final AbstractEvaluationModel model = createLowLevelEvaluationModel(AbstractEvaluationModel.IS_DEVELOPER_MODE, selectedNodes);
+          if (model == null) {
+            return;
+          }
           ApplicationManager.getApplication().invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -138,6 +142,9 @@ public class EvaluationProvider implements IEvaluationProvider {
       @Override
       public void run() {
         final AbstractEvaluationModel model = createLowLevelEvaluationModel(true);
+        if (model == null) {
+          return;
+        }
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           @Override
           public void run() {
@@ -165,20 +172,28 @@ public class EvaluationProvider implements IEvaluationProvider {
     return myDebugSession;
   }
 
-  @NotNull
-  public synchronized EvaluationAuxModule getAuxModule() {
-    if (myAuxModule == null) {
-      throw new IllegalStateException("Cant evaluate since auxModule is null.");
+  @Nullable
+  private AbstractEvaluationModel createLowLevelEvaluationModel(boolean isShowContext) {
+    EvaluationAuxModule module = null;
+    synchronized (this) {
+      if (myAuxModule == null) {
+        return null;
+      }
+      module = myAuxModule;
     }
-    return myAuxModule;
+    return new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, module, isShowContext, ListSequence.fromList(new ArrayList<SNodePointer>()));
   }
 
-  /*package*/ AbstractEvaluationModel createLowLevelEvaluationModel(boolean isShowContext) {
-    return new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, getAuxModule(), isShowContext, ListSequence.fromList(new ArrayList<SNodePointer>()));
-  }
-
-  /*package*/ AbstractEvaluationModel createLowLevelEvaluationModel(boolean isShowContext, List<SNodePointer> selectedNodes) {
-    return new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, getAuxModule(), isShowContext, selectedNodes);
+  @Nullable
+  private AbstractEvaluationModel createLowLevelEvaluationModel(boolean isShowContext, List<SNodePointer> selectedNodes) {
+    EvaluationAuxModule module = null;
+    synchronized (this) {
+      if (myAuxModule == null) {
+        return null;
+      }
+      module = myAuxModule;
+    }
+    return new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, module, isShowContext, selectedNodes);
   }
 
   public List<AbstractEvaluationModel> getWatches() {

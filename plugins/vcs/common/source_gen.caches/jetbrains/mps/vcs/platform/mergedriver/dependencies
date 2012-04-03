@@ -6,38 +6,13 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator" file="CommandLineGenerator.java">
-    <classNode dependClassName="com.intellij.ide.plugins.IdeaPluginDescriptor" />
-    <classNode dependClassName="com.intellij.ide.plugins.PluginManager" />
     <classNode dependClassName="com.intellij.openapi.application.PathManager" />
-    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="com.intellij.openapi.util.SystemInfo" />
-    <classNode dependClassName="com.intellij.util.PathUtil" />
     <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.ClassNotFoundException" />
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="java.util.LinkedHashSet" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.InternalFlag" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.ide.IdeMain" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.MergeDriverMain" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeSession" />
-    <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.InternalRuntimePacker" />
-    <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.ScriptGenerator" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.MergeDriverPacker" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.platform.mergedriver.GitGlobalConfigFixesInstaller" file="GitGlobalConfigFixesInstaller.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -74,7 +49,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.util.StringsIO" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator" />
-    <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.InternalRuntimePacker" />
+    <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.MergeDriverPacker" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.ScriptGenerator" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.util.PluginUtil" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
@@ -105,17 +80,13 @@
     <classNode extendsClassName="jetbrains.mps.vcs.platform.mergedriver.AbstractInstaller" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.platform.mergedriver.InternalRuntimePacker" file="InternalRuntimePacker.java">
-    <classNode dependClassName="com.intellij.openapi.application.PathManager" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.InternalFlag" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
-    <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.AbstractInstaller" />
-    <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.platform.mergedriver.MergeDriverInstaller" file="MergeDriverInstaller.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -192,6 +163,27 @@
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
     <classNode extendsClassName="javax.swing.JCheckBox" />
   </dependency>
+  <dependency className="jetbrains.mps.vcs.platform.mergedriver.MergeDriverPacker" file="MergeDriverPacker.java">
+    <classNode dependClassName="com.intellij.ide.plugins.IdeaPluginDescriptor" />
+    <classNode dependClassName="com.intellij.ide.plugins.PluginManager" />
+    <classNode dependClassName="com.intellij.openapi.application.PathManager" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.LinkedHashSet" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.InternalFlag" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+    <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.AbstractInstaller" />
+    <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.InternalRuntimePacker" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.platform.mergedriver.ScriptGenerator" file="ScriptGenerator.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
@@ -226,7 +218,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.util.StringsIO" />
-    <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.InternalRuntimePacker" />
+    <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.MergeDriverPacker" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.ScriptGenerator" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.util.PluginUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

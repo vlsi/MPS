@@ -33,10 +33,6 @@ public class MakeFieldStatic extends BaseRefactoring {
     return "Make field static";
   }
 
-  public String getKeyStroke() {
-    return getKeyStroke_static();
-  }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new MakeFieldStatic_Target();
   }
@@ -63,7 +59,7 @@ public class MakeFieldStatic extends BaseRefactoring {
   }
 
   public void refactor(final RefactoringContext refactoringContext) {
-    SNode newDeclaration = new MakeFieldStatic.QuotationClass_so6etp_a0a0a4().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(((SNode) refactoringContext.getParameter("declaration")), "visibility", true)), SNodeOperations.copyNode(SLinkOperations.getTarget(((SNode) refactoringContext.getParameter("declaration")), "type", true)), SPropertyOperations.getString(((SNode) refactoringContext.getParameter("declaration")), "name"));
+    SNode newDeclaration = new MakeFieldStatic.QuotationClass_so6etp_a0a0a3().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(((SNode) refactoringContext.getParameter("declaration")), "visibility", true)), SNodeOperations.copyNode(SLinkOperations.getTarget(((SNode) refactoringContext.getParameter("declaration")), "type", true)), SPropertyOperations.getString(((SNode) refactoringContext.getParameter("declaration")), "name"));
     SNode declarationClassifier = SNodeOperations.getAncestor(((SNode) refactoringContext.getParameter("declaration")), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     ListSequence.fromList(SLinkOperations.getTargets(declarationClassifier, "staticField", true)).addElement(newDeclaration);
     for (SearchResult<SNode> result : ListSequence.fromList(((SearchResults<SNode>) refactoringContext.getParameter("usages")).getSearchResults())) {
@@ -76,9 +72,9 @@ public class MakeFieldStatic extends BaseRefactoring {
       }
       SNode newReference;
       if (SNodeOperations.getAncestor(usage, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) != declarationClassifier) {
-        newReference = new MakeFieldStatic.QuotationClass_so6etp_a0a0a4a3a4().createNode(declarationClassifier, newDeclaration);
+        newReference = new MakeFieldStatic.QuotationClass_so6etp_a0a0a4a3a3().createNode(declarationClassifier, newDeclaration);
       } else {
-        newReference = new MakeFieldStatic.QuotationClass_so6etp_a0a0a0e0d0e().createNode(newDeclaration);
+        newReference = new MakeFieldStatic.QuotationClass_so6etp_a0a0a0e0d0d().createNode(newDeclaration);
       }
       SNodeOperations.replaceWithAnother(replacing, newReference);
     }
@@ -92,12 +88,8 @@ public class MakeFieldStatic extends BaseRefactoring {
     return ((SearchResults<SNode>) refactoringContext.getParameter("usages"));
   }
 
-  public static String getKeyStroke_static() {
-    return "";
-  }
-
-  public static class QuotationClass_so6etp_a0a0a4 {
-    public QuotationClass_so6etp_a0a0a4() {
+  public static class QuotationClass_so6etp_a0a0a3 {
+    public QuotationClass_so6etp_a0a0a3() {
     }
 
     public SNode createNode(Object parameter_7, Object parameter_8, Object parameter_9) {
@@ -142,8 +134,8 @@ public class MakeFieldStatic extends BaseRefactoring {
     }
   }
 
-  public static class QuotationClass_so6etp_a0a0a4a3a4 {
-    public QuotationClass_so6etp_a0a0a4a3a4() {
+  public static class QuotationClass_so6etp_a0a0a4a3a3 {
+    public QuotationClass_so6etp_a0a0a4a3a3() {
     }
 
     public SNode createNode(Object parameter_3, Object parameter_4) {
@@ -161,8 +153,8 @@ public class MakeFieldStatic extends BaseRefactoring {
     }
   }
 
-  public static class QuotationClass_so6etp_a0a0a0e0d0e {
-    public QuotationClass_so6etp_a0a0a0e0d0e() {
+  public static class QuotationClass_so6etp_a0a0a0e0d0d {
+    public QuotationClass_so6etp_a0a0a0e0d0d() {
     }
 
     public SNode createNode(Object parameter_3) {

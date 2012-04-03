@@ -17,8 +17,8 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
-import jetbrains.mps.ide.editorTabs.EditorTabComparator;
-import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.ide.relations.RelationComparator;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.BaseTabsComponent;
 import jetbrains.mps.smodel.IOperationContext;
@@ -35,7 +35,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
   private List<ButtonEditorTab> myRealTabs = new ArrayList<ButtonEditorTab>();
   private ActionToolbar myToolbar = null;
 
-  public ButtonTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, IOperationContext operationContext) {
+  public ButtonTabsComponent(SNodePointer baseNode, Set<RelationDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, IOperationContext operationContext) {
     super(baseNode, possibleTabs, editor, callback, showGrayed, null, operationContext);
     updateTabs();
   }
@@ -44,12 +44,12 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     return myToolbar.getComponent().getComponent(index);
   }
 
-  public EditorTabDescriptor getCurrentTabAspect() {
+  public RelationDescriptor getCurrentTabAspect() {
     SNode currentAspect = getLastNode().getNode();
     assert currentAspect != null;
 
     for (final ButtonEditorTab bet : myRealTabs) {
-      EditorTabDescriptor d = bet.getDescriptor();
+      RelationDescriptor d = bet.getDescriptor();
       List<SNode> nodes = d.getNodes(myBaseNode.getNode());
       if (nodes.contains(currentAspect)) return d;
     }
@@ -60,11 +60,11 @@ public class ButtonTabsComponent extends BaseTabsComponent {
   protected void updateTabs() {
     myRealTabs.clear();
 
-    ArrayList<EditorTabDescriptor> tabs = new ArrayList<EditorTabDescriptor>(myPossibleTabs);
-    Collections.sort(tabs, new EditorTabComparator());
+    ArrayList<RelationDescriptor> tabs = new ArrayList<RelationDescriptor>(myPossibleTabs);
+    Collections.sort(tabs, new RelationComparator());
 
-    Map<EditorTabDescriptor, List<SNode>> newContent = updateDocumentsAndNodes();
-    for (EditorTabDescriptor tab : tabs) {
+    Map<RelationDescriptor, List<SNode>> newContent = updateDocumentsAndNodes();
+    for (RelationDescriptor tab : tabs) {
       List<SNode> nodes = newContent.get(tab);
       if (nodes != null) {
         myRealTabs.add(new ButtonEditorTab(this, new NodeChangeCallback() {

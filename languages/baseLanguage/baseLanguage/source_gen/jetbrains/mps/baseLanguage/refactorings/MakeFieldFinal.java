@@ -19,10 +19,6 @@ public class MakeFieldFinal extends BaseRefactoring {
     return "Make Field Final";
   }
 
-  public String getKeyStroke() {
-    return getKeyStroke_static();
-  }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new MakeFieldFinal_Target();
   }
@@ -34,9 +30,5 @@ public class MakeFieldFinal extends BaseRefactoring {
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     return FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder");
 
-  }
-
-  public static String getKeyStroke_static() {
-    return "";
   }
 }

@@ -19,10 +19,6 @@ import org.jdesktop.beansbinding.BeanProperty;
 import org.jdesktop.beansbinding.Bindings;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.project.MPSExtentions;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelCommandExecutor;
-import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -192,9 +188,8 @@ public class NewDevKitDialogContentPane extends JPanel {
     }
 
     myThis.getDialog().dispose();
-    Project ideaProject = myThis.getProject().getProject();
-    ModelAccess.instance().runWriteActionWithProgressSynchronously(new ModelCommandExecutor.RunnableWithProgress() {
-      public void run(ProgressMonitor indicator) {
+    NewModuleUtil.runModuleCreation(myThis.getProject().getProject(), new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
         myThis.setResult(NewModuleUtil.createModule(MPSExtentions.DOT_DEVKIT, myThis.getDevkitName(), myThis.getDevkitDir(), myThis.getProject(), new _FunctionTypes._return_P3_E0<DevKit, String, IFile, MPSProject>() {
           public DevKit invoke(String s, IFile f, MPSProject p) {
             return NewModuleUtil.createNewDevkit(s, f, p);
@@ -202,9 +197,9 @@ public class NewDevKitDialogContentPane extends JPanel {
         }, new _FunctionTypes._void_P1_E0<ModuleDescriptor>() {
           public void invoke(ModuleDescriptor d) {
           }
-        }, true));
+        }));
       }
-    }, "Creating", false, ideaProject.getComponent(MPSProject.class));
+    });
   }
 
   /*package*/ void onCancel() {

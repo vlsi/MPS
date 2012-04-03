@@ -3,11 +3,11 @@
   <StructureModification>
     <dependencies>
       <model index="d3bl" modelUID="r:ac7793bc-e58c-4954-a5e8-1100255584f9(jetbrains.mps.buildScript.plugin)" version="-1" />
-      <model index="g07" modelUID="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.buildScript.generator.template.main@generator)" version="-1" />
       <model index="gwxr" modelUID="r:ecaa17fb-f6f8-4afb-8802-fe6c92efd2d3(jetbrains.mps.buildScript.scripts)" version="-1" />
+      <model index="g07" modelUID="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.buildScript.generator.template.main@generator)" version="-1" />
       <model index="uwjx" modelUID="r:d9276ffc-8964-4ead-b55c-1f2409698238(jetbrains.mps.buildScript.actions)" version="-1" />
-      <model index="vbkb" modelUID="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.buildScript.behavior)" version="-1" />
       <model index="a1zn" modelUID="r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.buildScript.constraints)" version="-1" />
+      <model index="vbkb" modelUID="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.buildScript.behavior)" version="-1" />
       <model index="3ior" modelUID="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.buildScript.structure)" version="-1" />
       <model index="4vnv" modelUID="r:2349e4dd-6518-4a4c-9022-c7887bed8b52(jetbrains.mps.buildScript.typesystem)" version="-1" />
       <model index="2o8t" modelUID="r:9a95c968-dcbf-4b0d-8fd9-b8db00f89883(jetbrains.mps.buildScript.generator.util)" version="-1" />
@@ -25,6 +25,18 @@
     <RenameModel oldModel="r:2349e4dd-6518-4a4c-9022-c7887bed8b52(jetbrains.mps.buildScript.typesystem)" newModel="r:2349e4dd-6518-4a4c-9022-c7887bed8b52(jetbrains.mps.build.typesystem)" />
     <RenameModel oldModel="r:9a95c968-dcbf-4b0d-8fd9-b8db00f89883(jetbrains.mps.buildScript.generator.util)" newModel="r:9a95c968-dcbf-4b0d-8fd9-b8db00f89883(jetbrains.mps.build.generator.util)" />
     <RenameModel oldModel="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.buildScript.generator.template.main@generator)" newModel="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="3ior" modelUID="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" version="0" />
+    </dependencies>
+    <rename id="3ior.1258644073388922138" type="CONCEPT" from="BuildSource_JavaLibraryJar" to="BuildSource_JavaJar" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="3ior" modelUID="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" version="1" />
+    </dependencies>
+    <rename id="3ior.1258644073389103449" type="CONCEPT" from="BuildSource_JavaLibraryClassFiles" to="BuildSource_JavaClassFolder" />
   </StructureModification>
 </history>
 

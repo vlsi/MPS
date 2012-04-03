@@ -4,7 +4,7 @@
     <nodeInfo nodeId="2722286076674321044" fileName="NodeFileStatusMappingExt.java" startLine="17" startPosition="88" endLine="18" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2722286076674321627" fileName="NodeFileStatusMappingExt.java" startLine="22" startPosition="113" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2722286076674321274" fileName="NodeFileStatusMappingExt.java" startLine="23" startPosition="48" endLine="24" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2722286076674321287" fileName="NodeFileStatusMappingExt.java" startLine="25" startPosition="129" endLine="26" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2722286076674321287" fileName="NodeFileStatusMappingExt.java" startLine="25" startPosition="128" endLine="26" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2722286076674321295" fileName="NodeFileStatusMappingExt.java" startLine="27" startPosition="56" endLine="28" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2722286076674321303" fileName="NodeFileStatusMappingExt.java" startLine="28" startPosition="57" endLine="29" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="2722286076674321632" fileName="NodeFileStatusMappingExt.java" startLine="31" startPosition="5" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -18,7 +18,7 @@
       <varInfo nodeId="2722286076674321040" varName="project" />
       <varInfo nodeId="2722286076674321055" varName="registry" />
     </scopeInfo>
-    <scopeInfo nodeId="2722286076674321286" fileName="NodeFileStatusMappingExt.java" startLine="25" startPosition="129" endLine="30" endPosition="7">
+    <scopeInfo nodeId="2722286076674321286" fileName="NodeFileStatusMappingExt.java" startLine="25" startPosition="128" endLine="30" endPosition="7">
       <varInfo nodeId="2722286076674321263" varName="baseNode" />
     </scopeInfo>
     <scopeInfo nodeId="2722286076674321285" fileName="NodeFileStatusMappingExt.java" startLine="24" startPosition="46" endLine="31" endPosition="5">

@@ -25,8 +25,7 @@ import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.editor.MPSEditorOpener;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
-import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
-import jetbrains.mps.lang.test.runtime.ProjectTest;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.test.runtime.TransformationTestRunner;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.SModelRoot;
@@ -43,7 +42,7 @@ import java.util.List;
 
 public class EditorTests extends DataMPSFixtureTestCase {
 
-    private List<BaseTransformationTest> tests = new ArrayList<BaseTransformationTest>();
+    private List<TransformationTest> tests = new ArrayList<TransformationTest>();
 
     @Override
     protected boolean runInDispatchThread() {
@@ -107,7 +106,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
                         try {
                             Class<?> cls = Class.forName(model.getLongName() + "." + r.getName() + "_Test");
                             Method mth = cls.getMethod("test_" + r.getName());
-                            BaseTransformationTest btt = (BaseTransformationTest) cls.newInstance();
+                            TransformationTest btt = (TransformationTest) cls.newInstance();
                             btt.setTestRunner(new SimpleTransformationTestRunner(r, mth));
                             tests.add(btt);
                         }
@@ -148,7 +147,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
 
 
     public void test_AllEditorTests() throws Throwable {
-        for(BaseTransformationTest btt: tests) {
+        for(TransformationTest btt: tests) {
             ((SimpleTransformationTestRunner)btt.getTestRunner()).doTest(btt);
         }
     }
@@ -163,7 +162,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
             myTestMethod = testMethod;
         }
 
-        public void doTest (BaseTransformationTest btt) throws Throwable {
+        public void doTest (TransformationTest btt) throws Throwable {
             try {
                 myTestMethod.invoke(btt);
             } catch (InvocationTargetException e) {
@@ -172,7 +171,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
         }
 
         @Override
-        public void initTest(final ProjectTest btt, @NotNull String projectName, String model) throws Exception {
+        public void initTest(final TransformationTest btt, @NotNull String projectName, String model) throws Exception {
             UIUtil.invokeAndWaitIfNeeded(new Runnable() {
                 @Override
                 public void run() {
@@ -193,7 +192,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
         }
 
         @Override
-        public void runTest(ProjectTest btt, String className, String methodName, boolean runInCommand) throws Throwable {
+        public void runTest(TransformationTest btt, String className, String methodName, boolean runInCommand) throws Throwable {
             try {
                 Class<?> cls = Class.forName(className);
                 Object obj = cls.newInstance();

@@ -9,7 +9,7 @@ import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
@@ -22,7 +22,7 @@ public class NodeFileStatusMappingExt extends NodeFileStatusMapping {
   protected void statusChanged(FileStatusManager fsm, MPSNodesVirtualFileSystem nvfs, SNodePointer nodePointer) {
     super.statusChanged(fsm, nvfs, nodePointer);
     SNode currentNode = nodePointer.getNode();
-    for (EditorTabDescriptor d : ListSequence.fromList(myProject.getComponent(ProjectPluginManager.class).getTabDescriptors())) {
+    for (RelationDescriptor d : ListSequence.fromList(myProject.getComponent(ProjectPluginManager.class).getTabDescriptors())) {
       SNode baseNode = d.getBaseNode(currentNode);
       if (baseNode != null && baseNode != currentNode) {
         fsm.fileStatusChanged(nvfs.getFileFor(baseNode));

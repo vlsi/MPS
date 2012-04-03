@@ -19,11 +19,11 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.Tag;
-import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.plugins.custom.BaseCustomProjectPlugin;
+import jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
-import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
-import jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool;
+import jetbrains.mps.plugins.tool.BaseGeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import org.jdom.Element;
 
@@ -40,7 +40,7 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
   private List<BaseGeneratedTool> myInitializedTools = new ArrayList<BaseGeneratedTool>();
   private List<BaseCustomProjectPlugin> myCustomPartsToDispose = new ArrayList<BaseCustomProjectPlugin>();
   private List<BaseProjectPrefsComponent> myPrefsComponents = new ArrayList<BaseProjectPrefsComponent>();
-  private List<EditorTabDescriptor> myTabDescriptors = new ArrayList<EditorTabDescriptor>();
+  private List<RelationDescriptor> myTabDescriptors = new ArrayList<RelationDescriptor>();
 
   public Project getProject() {
     return myProject;
@@ -48,8 +48,8 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
 
   //------------------stuff to generate-----------------------
 
-  protected List<EditorTabDescriptor> initTabbedEditors(Project project) {
-    return new ArrayList<EditorTabDescriptor>();
+  protected List<RelationDescriptor> initTabbedEditors(Project project) {
+    return new ArrayList<RelationDescriptor>();
   }
 
   protected List<BaseGeneratedTool> initAllTools(Project project) {
@@ -71,7 +71,7 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
 
     myCustomPartsToDispose = initCustomParts(project);
 
-    for (EditorTabDescriptor d : initTabbedEditors(project)) {
+    for (RelationDescriptor d : initTabbedEditors(project)) {
       myTabDescriptors.add(d);
     }
 
@@ -128,7 +128,7 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
     return Collections.unmodifiableList(myTools);
   }
 
-  public List<EditorTabDescriptor> getTabDescriptors() {
+  public List<RelationDescriptor> getTabDescriptors() {
     return Collections.unmodifiableList(myTabDescriptors);
   }
   //----------------STATE STUFF------------------------

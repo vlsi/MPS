@@ -18,8 +18,12 @@ public class FieldWithPathChooseDialog extends BaseFieldWithButtonComponent {
   private final FileChooserDescriptor myChooser;
 
   public FieldWithPathChooseDialog() {
+    this(new FileChooserDescriptor(false, true, false, false, false, false));
+  }
+
+  public FieldWithPathChooseDialog(FileChooserDescriptor descriptor) {
     this.setLayout(new BorderLayout());
-    this.myChooser = new FileChooserDescriptor(false, true, false, false, false, false);
+    this.myChooser = descriptor;
     this.myField = new TextFieldWithBrowseButton.NoPathCompletion(new ActionListener() {
       public void actionPerformed(ActionEvent p0) {
         FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(FieldWithPathChooseDialog.this.myChooser, FieldWithPathChooseDialog.this);

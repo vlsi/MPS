@@ -18,7 +18,7 @@ package jetbrains.mps.workbench.structureview.adds;
 import com.intellij.ide.util.treeView.smartTree.ActionPresentation;
 import com.intellij.ide.util.treeView.smartTree.ActionPresentationData;
 import com.intellij.ide.util.treeView.smartTree.Sorter;
-import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Computable;
@@ -55,9 +55,9 @@ public class AspectNodeSorter implements Sorter {
       if (!(o2 instanceof AspectTreeElement)) return -1;
 
       final AspectTreeElement ate1 = (AspectTreeElement) o1;
-      EditorTabDescriptor d1 = ate1.getAspectDescriptor();
+      RelationDescriptor d1 = ate1.getAspectDescriptor();
       final AspectTreeElement ate2 = (AspectTreeElement) o2;
-      EditorTabDescriptor d2 = ate2.getAspectDescriptor();
+      RelationDescriptor d2 = ate2.getAspectDescriptor();
 
       int r1 = d1.compareTo(d2);
       int r2 = d2.compareTo(d1);

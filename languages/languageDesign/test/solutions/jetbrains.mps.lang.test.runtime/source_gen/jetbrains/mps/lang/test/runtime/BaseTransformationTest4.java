@@ -13,7 +13,7 @@ import jetbrains.mps.generator.impl.CloneUtil;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 
-public abstract class BaseTransformationTest4 implements ProjectTest {
+public abstract class BaseTransformationTest4 implements TransformationTest {
   public static final String PATH_MACRO_PREFIX = "path.macro.";
 
   private TransformationTestRunner myRunner = new TransformationTestRunner();
@@ -28,8 +28,9 @@ public abstract class BaseTransformationTest4 implements ProjectTest {
 
   public BaseTransformationTest4(Project project, SModelDescriptor modelDescriptor) {
     this();
-    this.myProject = project;
-    setModelDescriptor(modelDescriptor);
+    // todo: ever used? 
+    myProject = project;
+    myModel = modelDescriptor;
   }
 
   public void setTestRunner(TransformationTestRunner ttr) {
@@ -44,8 +45,11 @@ public abstract class BaseTransformationTest4 implements ProjectTest {
     myRunner.initTest(this, projectName, model);
   }
 
-  public final void setModelDescriptor(SModelDescriptor modelDescriptor) {
-    this.myModel = modelDescriptor;
+  public void runTest(String className, final String methodName, final boolean runInCommand) throws Throwable {
+    myRunner.runTest(this, className, methodName, runInCommand);
+  }
+
+  public void init() {
     this.myModelOwner = new TemporaryModelOwner();
     this.myTransientModel = ProjectModels.createDescriptorFor(true);
     CloneUtil.cloneModel(this.myModel.getSModel(), this.myTransientModel.getSModel(), false);
@@ -53,12 +57,12 @@ public abstract class BaseTransformationTest4 implements ProjectTest {
     SModelRepository.getInstance().registerModelDescriptor(this.myTransientModel, this.myModelOwner);
   }
 
-  public void runTest(String className, final String methodName, final boolean runInCommand) throws Throwable {
-    myRunner.runTest(this, className, methodName, runInCommand);
-  }
-
   public SModelDescriptor getModelDescriptor() {
     return myModel;
+  }
+
+  public void setModelDescriptor(SModelDescriptor descriptor) {
+    myModel = descriptor;
   }
 
   public SModelDescriptor getTransientModelDescriptor() {

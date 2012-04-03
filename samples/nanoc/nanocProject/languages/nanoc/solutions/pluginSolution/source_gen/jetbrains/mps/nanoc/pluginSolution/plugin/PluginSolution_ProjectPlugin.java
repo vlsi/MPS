@@ -4,12 +4,12 @@ package jetbrains.mps.nanoc.pluginSolution.plugin;
 
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import java.util.List;
-import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
+import jetbrains.mps.plugins.custom.BaseCustomProjectPlugin;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
+import jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent;
 
 public class PluginSolution_ProjectPlugin extends BaseProjectPlugin {
   public PluginSolution_ProjectPlugin() {
