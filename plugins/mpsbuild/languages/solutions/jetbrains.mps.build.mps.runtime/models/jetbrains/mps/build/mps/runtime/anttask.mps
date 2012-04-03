@@ -94,7 +94,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6690493898470464015" resolveInfo="moduleXml" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6690493898470495286">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="233723665931928370" resolveInfo="getDest" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="233723665931928370" resolveInfo="getDestfile" />
                   </node>
                 </node>
               </node>
@@ -243,7 +243,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6690493898470464140" resolveInfo="result" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6690493898470494938">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="233723665931928333" resolveInfo="setDest" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="233723665931928333" resolveInfo="setDestfile" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ArrayAccessExpression" typeId="tpee.1173175405605" id="6690493898470494960">
                     <node role="index" roleId="tpee.1173175577737" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6690493898470494963">
                       <property name="value" nameId="tpee.1068580320021" value="1" />
@@ -446,7 +446,7 @@
       </node>
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="233723665931928333">
-      <property name="name" nameId="tpck.1169194664001" value="setDest" />
+      <property name="name" nameId="tpck.1169194664001" value="setDestfile" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="233723665931928334" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="233723665931928335" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="233723665931928336">
@@ -479,7 +479,7 @@
       </node>
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="233723665931928370">
-      <property name="name" nameId="tpck.1169194664001" value="getDest" />
+      <property name="name" nameId="tpck.1169194664001" value="getDestfile" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="233723665931928376" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="233723665931928372" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="233723665931928373">
@@ -1194,7 +1194,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6690493898470495662" resolveInfo="params" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6690493898470495861">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="233723665931928370" resolveInfo="getDest" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="233723665931928370" resolveInfo="getDestfile" />
                   </node>
                 </node>
               </node>

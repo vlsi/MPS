@@ -25,7 +25,7 @@ public class ModuleXml extends XMLFragment {
     myModuleRef = ref;
   }
 
-  public void setDest(String dest) {
+  public void setDestfile(String dest) {
     myModuleXmlPath = dest;
   }
 
@@ -33,7 +33,7 @@ public class ModuleXml extends XMLFragment {
     return myModuleRef;
   }
 
-  public String getDest() {
+  public String getDestfile() {
     return myModuleXmlPath;
   }
 

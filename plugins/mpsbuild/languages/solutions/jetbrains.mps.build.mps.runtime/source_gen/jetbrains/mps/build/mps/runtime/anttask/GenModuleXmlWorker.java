@@ -74,7 +74,7 @@ public class GenModuleXmlWorker extends MpsWorker {
         return MPSModuleRepository.getInstance().getModule(moduleRef);
       }
     });
-    IFile xmlfile = FileSystem.getInstance().getFileByPath(params.getDest());
+    IFile xmlfile = FileSystem.getInstance().getFileByPath(params.getDestfile());
 
     writeFile(xmlfile, moduleRef, module, params.getInnerText(INDENT_INNER_XML, INDENT_WITH));
   }

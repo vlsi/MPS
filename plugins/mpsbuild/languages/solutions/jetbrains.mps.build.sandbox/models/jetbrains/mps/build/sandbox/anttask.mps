@@ -120,7 +120,7 @@
                 </node>
               </node>
               <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="6690493898470423165">
-                <property name="attrName" nameId="iuxj.6666499814681447926" value="dest" />
+                <property name="attrName" nameId="iuxj.6666499814681447926" value="destfile" />
                 <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="6690493898470423166">
                   <property name="text" nameId="iuxj.6666499814681541920" value="module.xml" />
                 </node>
@@ -209,7 +209,7 @@
                 </node>
               </node>
               <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="5738701198683705438">
-                <property name="attrName" nameId="iuxj.6666499814681447926" value="dest" />
+                <property name="attrName" nameId="iuxj.6666499814681447926" value="destfile" />
                 <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="5738701198683705439">
                   <property name="text" nameId="iuxj.6666499814681541920" value="bL.xml" />
                 </node>
