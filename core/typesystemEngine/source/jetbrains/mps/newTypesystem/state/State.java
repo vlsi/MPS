@@ -433,7 +433,7 @@ public class State {
 
   public void setTargetTypeCalculated() {
     myTargetTypeCalculated = true;
-    myNodeMaps.expandNode(myTargetNode);
+    myNodeMaps.expandNode(myTargetNode, true);
   }
 
   public boolean isTargetTypeCalculated() {
@@ -441,7 +441,7 @@ public class State {
   }
 
   public void expandTargetNode() {
-    myNodeMaps.expandNode(myTargetNode);
+    myNodeMaps.expandNode(myTargetNode, true);
   }
 
   public void expandAll(final Set<SNode> nodes, final boolean finalExpansion) {

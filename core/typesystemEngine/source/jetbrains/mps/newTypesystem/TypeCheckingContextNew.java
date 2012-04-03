@@ -546,4 +546,8 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   public boolean isSingleTypeComputation() {
     return myIsSingleTypeComputation;
   }
+
+  public void setSingleTypeComputation(boolean isSingleTypeComputation) {
+    myIsSingleTypeComputation = isSingleTypeComputation;
+  }
 }

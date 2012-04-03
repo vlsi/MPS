@@ -155,27 +155,21 @@ public class NodeMaps {
     return result;
   }
 
-  public void expandNode(SNode node) {
+  public void expandNode(SNode node, boolean finalExpansion) {
     SNode var = myNodesToTypes.get(node);
-    SNode type = myState.getEquations().expandNode(var, true);
+    SNode type = myState.getEquations().expandNode(var, finalExpansion);
     updateNodeToType(node, type, null);
+    if (finalExpansion && (type == null || TypesUtil.isVariable(type))) {
+      myState.getTypeCheckingContext().reportWarning(node, "Type "+ type+ " was not calculated", null, null, null, new NodeMessageTarget());
+    }
   }
   
   public void expandAll(Set<SNode> nodes, boolean finalExpansion) {
     Set<SNode> keySet = myNodesToTypes.keySet();
     for (SNode node : nodes) {
       if (!keySet.contains(node)) continue;
-      SNode var = myNodesToTypes.get(node);
-      SNode type = myState.getEquations().expandNode(var, finalExpansion);
-      updateNodeToType(node, type, null);
-      if (finalExpansion && (type == null || TypesUtil.isVariable(type))) {
-        myState.getTypeCheckingContext().reportWarning(node, "Type "+ type+ " was not calculated", null, null, null, new NodeMessageTarget());
-      }
+      expandNode(node, finalExpansion);
     }
-  }
-
-  public void expandAll(boolean finalExpansion) {
-    expandAll(new THashSet<SNode>(myNodesToTypes.keySet()), finalExpansion);
   }
 
   public SNode getNode(SNode type) {
