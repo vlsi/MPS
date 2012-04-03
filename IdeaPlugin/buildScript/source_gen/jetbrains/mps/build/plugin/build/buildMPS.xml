@@ -1374,6 +1374,90 @@
       <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage-src.jar" />
     </jar>
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.blTypes" />
+      <fileset dir="${basedir}/languages/baseLanguage/blTypes" includes="icons/**, resources/**" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.blTypes-src.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.blTypes-src.jar/module" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.blTypes-src.jar/module">
+      <fileset file="${basedir}/languages/baseLanguage/blTypes/blTypes.mpl" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.blTypes-src.jar/module/languageAccessories" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.blTypes-src.jar/module/languageAccessories">
+      <fileset dir="${basedir}/languages/baseLanguage/blTypes/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.blTypes-src.jar/module/languageModels" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.blTypes-src.jar/module/languageModels">
+      <fileset dir="${basedir}/languages/baseLanguage/blTypes/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes-src.jar">
+      <fileset dir="${basedir}/languages/baseLanguage/blTypes/source_gen" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.blTypes-src.jar" />
+    </jar>
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.builders.jar">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.builders" />
+      <fileset dir="${basedir}/languages/util/builders" includes="icons/**, resources/**" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.builders-src.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.builders-src.jar/module" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.builders-src.jar/module">
+      <fileset file="${basedir}/languages/util/builders/builders.mpl" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.builders-src.jar/module/languageModels" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.builders-src.jar/module/languageModels">
+      <fileset dir="${basedir}/languages/util/builders/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.builders-src.jar/module/generator/template" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.builders-src.jar/module/generator/template">
+      <fileset dir="${basedir}/languages/util/builders/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.builders-src.jar">
+      <fileset dir="${basedir}/languages/util/builders/source_gen" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.builders-src.jar" />
+    </jar>
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots.jar">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.checkedDots" />
+      <fileset dir="${basedir}/languages/baseLanguage/checkDot/languages/checkedDots" includes="icons/**, resources/**" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.checkedDots-src.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.checkedDots-src.jar/module" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.checkedDots-src.jar/module">
+      <fileset file="${basedir}/languages/baseLanguage/checkDot/languages/checkedDots/checkedDots.mpl" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.checkedDots-src.jar/module/languageModels" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.checkedDots-src.jar/module/languageModels">
+      <fileset dir="${basedir}/languages/baseLanguage/checkDot/languages/checkedDots/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.checkedDots-src.jar/module/generator/template" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.checkedDots-src.jar/module/generator/template">
+      <fileset dir="${basedir}/languages/baseLanguage/checkDot/languages/checkedDots/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots-src.jar">
+      <fileset dir="${basedir}/languages/baseLanguage/checkDot/languages/checkedDots/source_gen" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.checkedDots-src.jar" />
+    </jar>
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.classifiers" />
+      <fileset dir="${basedir}/languages/baseLanguage/classifiers" includes="icons/**, resources/**" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.classifiers-src.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.classifiers-src.jar/module" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.classifiers-src.jar/module">
+      <fileset file="${basedir}/languages/baseLanguage/classifiers/classifiers.mpl" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.classifiers-src.jar/module/languageModels" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.classifiers-src.jar/module/languageModels">
+      <fileset dir="${basedir}/languages/baseLanguage/classifiers/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.classifiers-src.jar/module/generator/baseLanguage/template" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.classifiers-src.jar/module/generator/baseLanguage/template">
+      <fileset dir="${basedir}/languages/baseLanguage/classifiers/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers-src.jar">
+      <fileset dir="${basedir}/languages/baseLanguage/classifiers/source_gen" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.classifiers-src.jar" />
+    </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closures" />
       <fileset dir="${basedir}/languages/baseLanguage/closures" includes="icons/**, resources/**" />
@@ -1420,90 +1504,6 @@
       <fileset dir="${basedir}/languages/baseLanguage/collections/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.collections-src.jar" />
     </jar>
-    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguageInternal.jar">
-      <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguageInternal" />
-      <fileset dir="${basedir}/languages/baseLanguage/baseLanguageInternal" includes="icons/**, resources/**" />
-    </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguageInternal-src.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguageInternal-src.jar/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguageInternal-src.jar/module">
-      <fileset file="${basedir}/languages/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpl" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguageInternal-src.jar/module/languageModels" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguageInternal-src.jar/module/languageModels">
-      <fileset dir="${basedir}/languages/baseLanguage/baseLanguageInternal/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguageInternal-src.jar/module/generator/template" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguageInternal-src.jar/module/generator/template">
-      <fileset dir="${basedir}/languages/baseLanguage/baseLanguageInternal/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguageInternal-src.jar">
-      <fileset dir="${basedir}/languages/baseLanguage/baseLanguageInternal/source_gen" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguageInternal-src.jar" />
-    </jar>
-    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar">
-      <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.blTypes" />
-      <fileset dir="${basedir}/languages/baseLanguage/blTypes" includes="icons/**, resources/**" />
-    </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.blTypes-src.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.blTypes-src.jar/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.blTypes-src.jar/module">
-      <fileset file="${basedir}/languages/baseLanguage/blTypes/blTypes.mpl" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.blTypes-src.jar/module/languageAccessories" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.blTypes-src.jar/module/languageAccessories">
-      <fileset dir="${basedir}/languages/baseLanguage/blTypes/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.blTypes-src.jar/module/languageModels" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.blTypes-src.jar/module/languageModels">
-      <fileset dir="${basedir}/languages/baseLanguage/blTypes/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes-src.jar">
-      <fileset dir="${basedir}/languages/baseLanguage/blTypes/source_gen" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.blTypes-src.jar" />
-    </jar>
-    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots.jar">
-      <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.checkedDots" />
-      <fileset dir="${basedir}/languages/baseLanguage/checkDot/languages/checkedDots" includes="icons/**, resources/**" />
-    </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.checkedDots-src.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.checkedDots-src.jar/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.checkedDots-src.jar/module">
-      <fileset file="${basedir}/languages/baseLanguage/checkDot/languages/checkedDots/checkedDots.mpl" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.checkedDots-src.jar/module/languageModels" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.checkedDots-src.jar/module/languageModels">
-      <fileset dir="${basedir}/languages/baseLanguage/checkDot/languages/checkedDots/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.checkedDots-src.jar/module/generator/template" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.checkedDots-src.jar/module/generator/template">
-      <fileset dir="${basedir}/languages/baseLanguage/checkDot/languages/checkedDots/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots-src.jar">
-      <fileset dir="${basedir}/languages/baseLanguage/checkDot/languages/checkedDots/source_gen" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.checkedDots-src.jar" />
-    </jar>
-    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar">
-      <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.classifiers" />
-      <fileset dir="${basedir}/languages/baseLanguage/classifiers" includes="icons/**, resources/**" />
-    </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.classifiers-src.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.classifiers-src.jar/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.classifiers-src.jar/module">
-      <fileset file="${basedir}/languages/baseLanguage/classifiers/classifiers.mpl" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.classifiers-src.jar/module/languageModels" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.classifiers-src.jar/module/languageModels">
-      <fileset dir="${basedir}/languages/baseLanguage/classifiers/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.classifiers-src.jar/module/generator/baseLanguage/template" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.classifiers-src.jar/module/generator/baseLanguage/template">
-      <fileset dir="${basedir}/languages/baseLanguage/classifiers/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers-src.jar">
-      <fileset dir="${basedir}/languages/baseLanguage/classifiers/source_gen" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.classifiers-src.jar" />
-    </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.constructors.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.constructors" />
       <fileset dir="${basedir}/languages/baseLanguage/constructors" includes="icons/**, resources/**" />
@@ -1524,6 +1524,27 @@
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.constructors-src.jar">
       <fileset dir="${basedir}/languages/baseLanguage/constructors/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.constructors-src.jar" />
+    </jar>
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.extensionMethods.jar">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.extensionMethods" />
+      <fileset dir="${basedir}/languages/util/extensionMethod" includes="icons/**, resources/**" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.extensionMethods-src.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.extensionMethods-src.jar/module" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.extensionMethods-src.jar/module">
+      <fileset file="${basedir}/languages/util/extensionMethod/methodExtension.mpl" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.extensionMethods-src.jar/module/languageModels" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.extensionMethods-src.jar/module/languageModels">
+      <fileset dir="${basedir}/languages/util/extensionMethod/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.extensionMethods-src.jar/module/generator/template" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.extensionMethods-src.jar/module/generator/template">
+      <fileset dir="${basedir}/languages/util/extensionMethod/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.extensionMethods-src.jar">
+      <fileset dir="${basedir}/languages/util/extensionMethod/source_gen" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.extensionMethods-src.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.javadoc.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.javadoc" />
@@ -1605,69 +1626,6 @@
       <fileset dir="${basedir}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.overloadedOperators-src.jar" />
     </jar>
-    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar">
-      <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.tuples" />
-      <fileset dir="${basedir}/languages/baseLanguage/tuples/languages/tuples" includes="icons/**, resources/**" />
-    </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.tuples-src.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.tuples-src.jar/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.tuples-src.jar/module">
-      <fileset file="${basedir}/languages/baseLanguage/tuples/languages/tuples/tuples.mpl" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.tuples-src.jar/module/languageModels" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.tuples-src.jar/module/languageModels">
-      <fileset dir="${basedir}/languages/baseLanguage/tuples/languages/tuples/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.tuples-src.jar/module/generator/template" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.tuples-src.jar/module/generator/template">
-      <fileset dir="${basedir}/languages/baseLanguage/tuples/languages/tuples/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples-src.jar">
-      <fileset dir="${basedir}/languages/baseLanguage/tuples/languages/tuples/source_gen" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.tuples-src.jar" />
-    </jar>
-    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar">
-      <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unitTest" />
-      <fileset dir="${basedir}/languages/baseLanguage/unitTest" includes="icons/**, resources/**" />
-    </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.unitTest-src.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.unitTest-src.jar/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.unitTest-src.jar/module">
-      <fileset file="${basedir}/languages/baseLanguage/unitTest/unitTest.mpl" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.unitTest-src.jar/module/languageModels" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.unitTest-src.jar/module/languageModels">
-      <fileset dir="${basedir}/languages/baseLanguage/unitTest/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.unitTest-src.jar/module/generator/baseLanguage/template" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.unitTest-src.jar/module/generator/baseLanguage/template">
-      <fileset dir="${basedir}/languages/baseLanguage/unitTest/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest-src.jar">
-      <fileset dir="${basedir}/languages/baseLanguage/unitTest/source_gen" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.unitTest-src.jar" />
-    </jar>
-    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.extensionMethods.jar">
-      <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.extensionMethods" />
-      <fileset dir="${basedir}/languages/util/extensionMethod" includes="icons/**, resources/**" />
-    </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.extensionMethods-src.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.extensionMethods-src.jar/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.extensionMethods-src.jar/module">
-      <fileset file="${basedir}/languages/util/extensionMethod/methodExtension.mpl" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.extensionMethods-src.jar/module/languageModels" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.extensionMethods-src.jar/module/languageModels">
-      <fileset dir="${basedir}/languages/util/extensionMethod/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.extensionMethods-src.jar/module/generator/template" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.extensionMethods-src.jar/module/generator/template">
-      <fileset dir="${basedir}/languages/util/extensionMethod/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.extensionMethods-src.jar">
-      <fileset dir="${basedir}/languages/util/extensionMethod/source_gen" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.extensionMethods-src.jar" />
-    </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp" />
       <fileset dir="${basedir}/languages/util/regexp" includes="icons/**, resources/**" />
@@ -1710,26 +1668,68 @@
       <fileset dir="${basedir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.regexp.runtime-src.jar" />
     </jar>
-    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.builders.jar">
-      <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.builders" />
-      <fileset dir="${basedir}/languages/util/builders" includes="icons/**, resources/**" />
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.tuples" />
+      <fileset dir="${basedir}/languages/baseLanguage/tuples/languages/tuples" includes="icons/**, resources/**" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.builders-src.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.builders-src.jar/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.builders-src.jar/module">
-      <fileset file="${basedir}/languages/util/builders/builders.mpl" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.tuples-src.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.tuples-src.jar/module" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.tuples-src.jar/module">
+      <fileset file="${basedir}/languages/baseLanguage/tuples/languages/tuples/tuples.mpl" />
     </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.builders-src.jar/module/languageModels" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.builders-src.jar/module/languageModels">
-      <fileset dir="${basedir}/languages/util/builders/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.tuples-src.jar/module/languageModels" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.tuples-src.jar/module/languageModels">
+      <fileset dir="${basedir}/languages/baseLanguage/tuples/languages/tuples/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.builders-src.jar/module/generator/template" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.builders-src.jar/module/generator/template">
-      <fileset dir="${basedir}/languages/util/builders/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.tuples-src.jar/module/generator/template" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.tuples-src.jar/module/generator/template">
+      <fileset dir="${basedir}/languages/baseLanguage/tuples/languages/tuples/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
-    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.builders-src.jar">
-      <fileset dir="${basedir}/languages/util/builders/source_gen" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.builders-src.jar" />
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples-src.jar">
+      <fileset dir="${basedir}/languages/baseLanguage/tuples/languages/tuples/source_gen" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.tuples-src.jar" />
+    </jar>
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unitTest" />
+      <fileset dir="${basedir}/languages/baseLanguage/unitTest" includes="icons/**, resources/**" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.unitTest-src.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.unitTest-src.jar/module" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.unitTest-src.jar/module">
+      <fileset file="${basedir}/languages/baseLanguage/unitTest/unitTest.mpl" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.unitTest-src.jar/module/languageModels" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.unitTest-src.jar/module/languageModels">
+      <fileset dir="${basedir}/languages/baseLanguage/unitTest/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.unitTest-src.jar/module/generator/baseLanguage/template" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.unitTest-src.jar/module/generator/baseLanguage/template">
+      <fileset dir="${basedir}/languages/baseLanguage/unitTest/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest-src.jar">
+      <fileset dir="${basedir}/languages/baseLanguage/unitTest/source_gen" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.unitTest-src.jar" />
+    </jar>
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguageInternal.jar">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguageInternal" />
+      <fileset dir="${basedir}/languages/baseLanguage/baseLanguageInternal" includes="icons/**, resources/**" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguageInternal-src.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguageInternal-src.jar/module" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguageInternal-src.jar/module">
+      <fileset file="${basedir}/languages/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpl" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguageInternal-src.jar/module/languageModels" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguageInternal-src.jar/module/languageModels">
+      <fileset dir="${basedir}/languages/baseLanguage/baseLanguageInternal/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguageInternal-src.jar/module/generator/template" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguageInternal-src.jar/module/generator/template">
+      <fileset dir="${basedir}/languages/baseLanguage/baseLanguageInternal/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguageInternal-src.jar">
+      <fileset dir="${basedir}/languages/baseLanguage/baseLanguageInternal/source_gen" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguageInternal-src.jar" />
     </jar>
   </target>
   
