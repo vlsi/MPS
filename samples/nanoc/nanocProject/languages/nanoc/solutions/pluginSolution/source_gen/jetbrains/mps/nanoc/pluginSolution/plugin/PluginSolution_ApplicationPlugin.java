@@ -22,7 +22,7 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
     {
-      BaseCustomApplicationPlugin plugin = new RunConfigurationsInitializer_CustomApplicationPlugin();
+      BaseCustomApplicationPlugin plugin = new CppDebuggerInitializer_CustomApplicationPlugin();
       ListSequence.fromList(res).addElement(plugin);
       plugin.init();
     }
@@ -32,7 +32,7 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
       plugin.init();
     }
     {
-      BaseCustomApplicationPlugin plugin = new CppDebuggerInitializer_CustomApplicationPlugin();
+      BaseCustomApplicationPlugin plugin = new RunConfigurationsInitializer_CustomApplicationPlugin();
       ListSequence.fromList(res).addElement(plugin);
       plugin.init();
     }

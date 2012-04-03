@@ -692,6 +692,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.ui.swt" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ui.swt.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ui.swt.runtime" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.plugin.standalone" />
     <mkdir dir="${deploy.dir}/MPS/languages/util/ui" />
     <antcall target="MPS-languages.pack.jetbrains.mps.buildlanguage" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.custommps" />

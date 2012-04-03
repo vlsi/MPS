@@ -34,12 +34,12 @@ public class Plugin_ApplicationPlugin extends BaseApplicationPlugin {
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
     {
-      BaseCustomApplicationPlugin plugin = new RunConfigurationsInitializer_CustomApplicationPlugin();
+      BaseCustomApplicationPlugin plugin = new DebugInfoProvider_CustomApplicationPlugin();
       ListSequence.fromList(res).addElement(plugin);
       plugin.init();
     }
     {
-      BaseCustomApplicationPlugin plugin = new DebugInfoProvider_CustomApplicationPlugin();
+      BaseCustomApplicationPlugin plugin = new RunConfigurationsInitializer_CustomApplicationPlugin();
       ListSequence.fromList(res).addElement(plugin);
       plugin.init();
     }

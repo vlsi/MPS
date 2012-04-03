@@ -2,7 +2,6 @@
 <debugInfo>
   <unitInfo fileName="ExtensionDescriptor.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.test.pluginSolution.plugin.ExtensionDescriptor" />
   <unitInfo fileName="PluginSolution_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.test.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
-  <unitInfo fileName="PluginSolution_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.test.pluginSolution.plugin.PluginSolution_ProjectPlugin" />
   <root nodeId="136702651994179408">
     <nodeInfo nodeId="136702651994179408" fileName="Extension_ActionIDs_.java" startLine="12" startPosition="33" endLine="13" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="136702651994179414" fileName="Extension_ActionIDs_.java" startLine="16" startPosition="29" endLine="17" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

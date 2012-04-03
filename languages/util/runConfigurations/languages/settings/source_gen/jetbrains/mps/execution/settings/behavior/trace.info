@@ -27,8 +27,6 @@
   <unitInfo fileName="ResetFrom_Function_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.ResetFrom_Function_BehaviorDescriptor" />
   <unitInfo fileName="SettingsEditorType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.SettingsEditorType_BehaviorDescriptor" />
   <unitInfo fileName="SettingsEditor_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.SettingsEditor_BehaviorDescriptor" />
-  <unitInfo fileName="Settings_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.Settings_ApplicationPlugin" />
-  <unitInfo fileName="Settings_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.Settings_ProjectPlugin" />
   <unitInfo fileName="TemplateParameterReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.TemplateParameterReference_BehaviorDescriptor" />
   <unitInfo fileName="TemplateParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.TemplateParameter_BehaviorDescriptor" />
   <unitInfo fileName="TemplatePersistentConfigurationType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.TemplatePersistentConfigurationType_BehaviorDescriptor" />

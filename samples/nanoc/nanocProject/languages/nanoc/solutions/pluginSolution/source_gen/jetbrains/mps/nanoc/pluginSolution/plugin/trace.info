@@ -149,10 +149,7 @@
     <nodeInfo nodeId="5487985028841967374" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="24" startPosition="24" endLine="25" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841967374" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="26" startPosition="33" endLine="27" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841967374" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="28" startPosition="5" endLine="29" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841967374" fileName="PluginSolution_ApplicationPlugin.java" startLine="29" startPosition="5" endLine="30" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841967374" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="30" startPosition="26" endLine="31" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841967374" fileName="PluginSolution_ApplicationPlugin.java" startLine="30" startPosition="91" endLine="31" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841967374" fileName="PluginSolution_ApplicationPlugin.java" startLine="31" startPosition="52" endLine="32" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841967378" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="36" startPosition="15" endLine="37" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841967374" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="39" startPosition="38" endLine="40" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841967374" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="41" startPosition="13" endLine="42" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -170,7 +167,6 @@
     <nodeInfo nodeId="5487985028841967374" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="38" startPosition="51" endLine="41" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841967374" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="52" startPosition="109" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841967374" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="56" startPosition="62" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841967374" fileName="PluginSolution_ApplicationPlugin.java" startLine="28" startPosition="5" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5487985028841967374" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="35" startPosition="81" endLine="43" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="5487985028841967374" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="34" startPosition="113" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="value#(Ljetbrains/mps/smodel/SNode;Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/debug/api/breakpoints/ILocationBreakpoint;" />
     <nodeInfo nodeId="5487985028841967374" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="50" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doDispose#()V" />
@@ -185,9 +181,6 @@
     <scopeInfo nodeId="5487985028841967374" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="53" startPosition="33" endLine="54" endPosition="13" />
     <scopeInfo nodeId="5487985028841967374" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="57" startPosition="26" endLine="58" endPosition="13" />
     <scopeInfo nodeId="5487985028841967374" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="20" startPosition="0" endLine="22" endPosition="3" />
-    <scopeInfo nodeId="5487985028841967374" fileName="PluginSolution_ApplicationPlugin.java" startLine="29" startPosition="5" endLine="32" endPosition="20">
-      <varInfo nodeId="5487985028841967374" varName="plugin" />
-    </scopeInfo>
     <scopeInfo nodeId="5487985028841967374" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="38" startPosition="51" endLine="41" endPosition="13" />
     <scopeInfo nodeId="5487985028841967374" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="38" startPosition="0" endLine="42" endPosition="24">
       <varInfo nodeId="5487985028841967374" varName="e" />
@@ -223,14 +216,10 @@
     <nodeInfo nodeId="5487985028841967418" fileName="CppDebuggerInitializer_CustomApplicationPlugin.java" startLine="25" startPosition="27" endLine="26" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841967419" fileName="CppDebuggerInitializer_CustomApplicationPlugin.java" startLine="30" startPosition="36" endLine="31" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841967419" fileName="CppDebuggerInitializer_CustomApplicationPlugin.java" startLine="32" startPosition="5" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5487985028841967385" fileName="PluginSolution_ApplicationPlugin.java" startLine="34" startPosition="5" endLine="35" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841967385" fileName="PluginSolution_ApplicationPlugin.java" startLine="35" startPosition="96" endLine="36" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841967385" fileName="PluginSolution_ApplicationPlugin.java" startLine="36" startPosition="52" endLine="37" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841967385" fileName="CppDebuggerInitializer_CustomApplicationPlugin.java" startLine="12" startPosition="0" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CppDebuggerInitializer_CustomApplicationPlugin#()V" />
     <nodeInfo nodeId="5487985028841967395" fileName="CppDebuggerInitializer_CustomApplicationPlugin.java" startLine="17" startPosition="50" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841967419" fileName="CppDebuggerInitializer_CustomApplicationPlugin.java" startLine="29" startPosition="72" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841967385" fileName="CppDebuggerInitializer_CustomApplicationPlugin.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doDispose#()V" />
-    <nodeInfo nodeId="5487985028841967385" fileName="PluginSolution_ApplicationPlugin.java" startLine="33" startPosition="5" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5487985028841967419" fileName="CppDebuggerInitializer_CustomApplicationPlugin.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_fqx22n_a0a0#(Ljetbrains/mps/nanoc/debug/CppDebugger;)V" />
     <nodeInfo nodeId="5487985028841967385" fileName="CppDebuggerInitializer_CustomApplicationPlugin.java" startLine="15" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doInit#()V" />
     <scopeInfo nodeId="5487985028841967385" fileName="CppDebuggerInitializer_CustomApplicationPlugin.java" startLine="13" startPosition="59" endLine="13" endPosition="59" />
@@ -238,9 +227,6 @@
     <scopeInfo nodeId="5487985028841967417" fileName="CppDebuggerInitializer_CustomApplicationPlugin.java" startLine="25" startPosition="27" endLine="26" endPosition="86" />
     <scopeInfo nodeId="5487985028841967419" fileName="CppDebuggerInitializer_CustomApplicationPlugin.java" startLine="30" startPosition="36" endLine="31" endPosition="34" />
     <scopeInfo nodeId="5487985028841967385" fileName="CppDebuggerInitializer_CustomApplicationPlugin.java" startLine="12" startPosition="0" endLine="14" endPosition="3" />
-    <scopeInfo nodeId="5487985028841967385" fileName="PluginSolution_ApplicationPlugin.java" startLine="34" startPosition="5" endLine="37" endPosition="20">
-      <varInfo nodeId="5487985028841967385" varName="plugin" />
-    </scopeInfo>
     <scopeInfo nodeId="5487985028841967385" fileName="CppDebuggerInitializer_CustomApplicationPlugin.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="5487985028841967419" fileName="CppDebuggerInitializer_CustomApplicationPlugin.java" startLine="29" startPosition="72" endLine="33" endPosition="0" />
     <scopeInfo nodeId="5487985028841967390" fileName="CppDebuggerInitializer_CustomApplicationPlugin.java" startLine="16" startPosition="24" endLine="22" endPosition="74">
