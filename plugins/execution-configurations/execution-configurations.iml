@@ -27,7 +27,6 @@
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="module" module-name="uiLanguage-runtime" />
     <orderEntry type="library" name="Beansbinding" level="project" />
-    <orderEntry type="module" module-name="execution-languages" />
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="editor-api" />
     <orderEntry type="module" module-name="execution" />
