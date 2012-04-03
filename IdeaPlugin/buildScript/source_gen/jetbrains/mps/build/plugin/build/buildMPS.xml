@@ -1593,17 +1593,9 @@
     <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.logging-src.jar/module">
       <fileset file="${basedir}/languages/baseLanguage/logging/logging.mpl" />
     </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.logging-src.jar/module/../../../lib/commons-logging-1.1.1.jar" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.logging-src.jar/module/../../../lib/commons-logging-1.1.1.jar">
-      <fileset dir="${basedir}/lib/commons-logging-1.1.1.jar" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.logging-src.jar/module/languageModels" />
     <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.logging-src.jar/module/languageModels">
       <fileset dir="${basedir}/languages/baseLanguage/logging/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.logging-src.jar/module/../../../lib/commons-logging-1.1.1.jar" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.logging-src.jar/module/../../../lib/commons-logging-1.1.1.jar">
-      <fileset dir="${basedir}/lib/commons-logging-1.1.1.jar" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.logging-src.jar/module/generators/baseLanguage/templates" />
     <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.logging-src.jar/module/generators/baseLanguage/templates">

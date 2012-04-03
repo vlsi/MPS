@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.baseLanguage.logging" uuid="760a0a8c-eabb-4521-8bfd-65db761a9ba3" doNotGenerateAdapters="true">
   <models>
-    <modelRoot path="${mps_home}/lib/commons-logging-1.1.1.jar" />
     <modelRoot path="${language_descriptor}/languageModels" />
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="webr.logging#1167240554582" uuid="d95e286a-03bd-41d2-a04d-9db8f070e89c">
+    <generator generatorUID="jetbrains.mps.baseLanguage.logging#1167240554582" uuid="d95e286a-03bd-41d2-a04d-9db8f070e89c">
       <models>
-        <modelRoot path="${mps_home}/lib/commons-logging-1.1.1.jar" />
         <modelRoot path="${language_descriptor}/generators/baseLanguage/templates" />
         <modelRoot path="${mps_home}/lib/commons-logging-1.1.1.jar">
           <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
@@ -27,7 +25,7 @@
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_together">
           <greater-priority-mapping>
-            <generator generatorUID="d95e286a-03bd-41d2-a04d-9db8f070e89c(webr.logging#1167240554582)" />
+            <generator generatorUID="d95e286a-03bd-41d2-a04d-9db8f070e89c(jetbrains.mps.baseLanguage.logging#1167240554582)" />
             <external-mapping>
               <mapping-node modelUID="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" nodeID="1167240570149" />
             </external-mapping>
