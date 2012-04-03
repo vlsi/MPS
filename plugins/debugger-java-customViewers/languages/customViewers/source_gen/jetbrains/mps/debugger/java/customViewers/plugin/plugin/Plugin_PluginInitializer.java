@@ -5,6 +5,8 @@ package jetbrains.mps.debugger.java.customViewers.plugin.plugin;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.plugins.PluginFactoriesRegistry;
 import jetbrains.mps.plugins.AbstractPluginFactory;
+import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
+import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -13,6 +15,12 @@ public class Plugin_PluginInitializer implements ApplicationComponent {
     PluginFactoriesRegistry.registerPluginFactory(new AbstractPluginFactory() {
       @SuppressWarnings("unchecked")
       public <T> T create(Class<T> klass) {
+        if (BaseApplicationPlugin.class == klass) {
+          return (T) new Plugin_ApplicationPlugin();
+        }
+        if (BaseProjectPlugin.class == klass) {
+          return (T) new Plugin_ProjectPlugin();
+        }
         return null;
       }
     });
