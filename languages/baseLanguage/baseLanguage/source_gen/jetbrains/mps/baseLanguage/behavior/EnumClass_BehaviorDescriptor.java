@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.scope.Scope;
 
 public class EnumClass_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor {
   public EnumClass_BehaviorDescriptor() {
@@ -16,10 +15,6 @@ public class EnumClass_BehaviorDescriptor extends ClassConcept_BehaviorDescripto
 
   public List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     return EnumClass_Behavior.virtual_getMembers_1213877531970(thisNode);
-  }
-
-  public Scope virtual_getMembers_2201875424515824604(SNode thisNode, SNode kind) {
-    return EnumClass_Behavior.virtual_getMembers_2201875424515824604(thisNode, kind);
   }
 
   public List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
