@@ -26,20 +26,11 @@ import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.scope.Scope;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.scopes.MemberScopes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.scopes.runtime.SimpleScope;
 import jetbrains.mps.scope.EmptyScope;
-import jetbrains.mps.baseLanguage.scopes.MemberScopes;
-import jetbrains.mps.smodel.TransactionCache;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.baseLanguage.scopes.FieldDeclarationScope;
-import jetbrains.mps.baseLanguage.scopes.EnumConstantDeclarationScope;
-import jetbrains.mps.baseLanguage.scopes.PropertyScope;
-import jetbrains.mps.baseLanguage.scopes.StaticFieldDeclarationScope;
-import jetbrains.mps.baseLanguage.scopes.StaticMethodDeclarationScope;
-import jetbrains.mps.baseLanguage.scopes.InstanceMethodDeclarationScope;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
@@ -196,9 +187,12 @@ public class ClassConcept_Behavior {
   }
 
   public static SNode virtual_getSuperclass_1240936569950(SNode thisNode) {
+    if (Classifier_Behavior.call_isSame_4855996797771684010(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), thisNode)) {
+      return null;
+    }
     return (SLinkOperations.getTarget(thisNode, "superclass", true) != null ?
       SLinkOperations.getTarget(thisNode, "superclass", true) :
-      new ClassConcept_Behavior.QuotationClass_xjj00_a0a0a11().createNode()
+      new ClassConcept_Behavior.QuotationClass_xjj00_a0a1a11().createNode()
     );
   }
 
@@ -260,14 +254,30 @@ public class ClassConcept_Behavior {
 
   public static Scope virtual_getMembers_2201875424515824604(SNode thisNode, SNode kind) {
     SNode superClass = SLinkOperations.getTarget(ClassConcept_Behavior.call_getSuperclass_1240936569950(thisNode), "classifier", false);
-    if ((superClass == null)) {
-      superClass = SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
+    SNode[] implementedInterfaces = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "implementedInterface", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (SLinkOperations.getTarget(it, "classifier", false) != null);
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, "classifier", false);
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (it != null);
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Interface");
+      }
+    }).toGenericArray(SNode.class);
+    Scope result = MemberScopes.forClass(SNodeOperations.castConcept(kind, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), thisNode, SNodeOperations.cast(superClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), implementedInterfaces);
+    if (result != null) {
+      return result;
     }
-    if (Classifier_Behavior.call_isSame_4855996797771684010(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), thisNode)) {
-      superClass = null;
-    }
+
     if (!(SNodeOperations.isInstanceOf(superClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-      // todo: ??? for anonymous. fix in right way in anonymous 
+      // todo: wtf? 
       superClass = null;
     }
 
@@ -286,54 +296,6 @@ public class ClassConcept_Behavior {
       if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperMethodKind")) {
         return MemberScopes.nonAbstractMethods(MemberScopes.visibleClassifierMembers(superClass, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), thisNode));
       }
-    }
-
-    // cache section 
-    TransactionCache cache = ModelAccess.instance().getTransactionCache("jetbrains.mps.baseLanguage.structure.ClassConcept");
-    Scope cached = (Scope) cache.get(MultiTuple.<SNode,SNode>from(thisNode, kind));
-    if (cached != null) {
-      return cached;
-    }
-    // end cache section 
-
-    SNode[] implementedInterfaces = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "implementedInterface", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, "classifier", false) != null);
-      }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "classifier", false);
-      }
-    }).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return (it != null);
-      }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Interface");
-      }
-    }).toGenericArray(SNode.class);
-
-    // todo: generialize this code 
-    Scope result = null;
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
-      result = FieldDeclarationScope.forClass(thisNode, SNodeOperations.cast(superClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), implementedInterfaces);
-    } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
-      result = EnumConstantDeclarationScope.forClass(thisNode, SNodeOperations.cast(superClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), implementedInterfaces);
-    } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.Property")) {
-      result = PropertyScope.forClass(thisNode, SNodeOperations.cast(superClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), implementedInterfaces);
-    } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
-      result = StaticFieldDeclarationScope.forClass(thisNode, SNodeOperations.cast(superClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), implementedInterfaces);
-    } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
-      result = StaticMethodDeclarationScope.forClass(thisNode, SNodeOperations.cast(superClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), implementedInterfaces);
-    } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
-      result = InstanceMethodDeclarationScope.forClass(thisNode, SNodeOperations.cast(superClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), implementedInterfaces);
-    }
-
-    // cache section 
-    if (result != null) {
-      cache.put(MultiTuple.<SNode,SNode>from(thisNode, kind), result);
-      return result;
     }
 
     return Classifier_Behavior.callSuper_getMembers_2201875424515824604(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", kind);
@@ -399,8 +361,8 @@ public class ClassConcept_Behavior {
     return SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
   }
 
-  public static class QuotationClass_xjj00_a0a0a11 {
-    public QuotationClass_xjj00_a0a0a11() {
+  public static class QuotationClass_xjj00_a0a1a11 {
+    public QuotationClass_xjj00_a0a1a11() {
     }
 
     public SNode createNode() {

@@ -16,17 +16,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.ArrayList;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.TransactionCache;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.scopes.FieldDeclarationScope;
-import jetbrains.mps.baseLanguage.scopes.EnumConstantDeclarationScope;
-import jetbrains.mps.baseLanguage.scopes.PropertyScope;
-import jetbrains.mps.baseLanguage.scopes.StaticFieldDeclarationScope;
-import jetbrains.mps.baseLanguage.scopes.StaticMethodDeclarationScope;
-import jetbrains.mps.baseLanguage.scopes.InstanceMethodDeclarationScope;
+import jetbrains.mps.baseLanguage.scopes.MemberScopes;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -97,14 +88,6 @@ public class Interface_Behavior {
   }
 
   public static Scope virtual_getMembers_2201875424515824604(SNode thisNode, final SNode kind) {
-    // cache section 
-    TransactionCache cache = ModelAccess.instance().getTransactionCache("jetbrains.mps.baseLanguage.structure.Interface");
-    Scope cached = (Scope) cache.get(MultiTuple.<SNode,SNode>from(thisNode, kind));
-    if (cached != null) {
-      return cached;
-    }
-    // end cache section 
-
     SNode[] implementedInterfaces = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "extendedInterface", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "classifier", false) != null);
@@ -123,25 +106,8 @@ public class Interface_Behavior {
       }
     }).toGenericArray(SNode.class);
 
-    // todo: generialize this code 
-    Scope result = null;
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
-      result = FieldDeclarationScope.forInterface(thisNode, implementedInterfaces);
-    } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
-      result = EnumConstantDeclarationScope.forInterface(thisNode, implementedInterfaces);
-    } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.Property")) {
-      result = PropertyScope.forInterface(thisNode, implementedInterfaces);
-    } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
-      result = StaticFieldDeclarationScope.forInterface(thisNode, implementedInterfaces);
-    } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
-      result = StaticMethodDeclarationScope.forInterface(thisNode, implementedInterfaces);
-    } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
-      result = InstanceMethodDeclarationScope.forInterface(thisNode, implementedInterfaces);
-    }
-
-    // cache section 
+    Scope result = MemberScopes.forInterface(SNodeOperations.castConcept(kind, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), thisNode, implementedInterfaces);
     if (result != null) {
-      cache.put(MultiTuple.<SNode,SNode>from(thisNode, kind), result);
       return result;
     }
 

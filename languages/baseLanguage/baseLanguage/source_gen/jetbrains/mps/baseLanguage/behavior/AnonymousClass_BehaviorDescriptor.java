@@ -61,6 +61,10 @@ public class AnonymousClass_BehaviorDescriptor extends ClassConcept_BehaviorDesc
     return AnonymousClass_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
   }
 
+  public Scope virtual_getMembers_2201875424515824604(SNode thisNode, final SNode kind) {
+    return AnonymousClass_Behavior.virtual_getMembers_2201875424515824604(thisNode, kind);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.AnonymousClass";
