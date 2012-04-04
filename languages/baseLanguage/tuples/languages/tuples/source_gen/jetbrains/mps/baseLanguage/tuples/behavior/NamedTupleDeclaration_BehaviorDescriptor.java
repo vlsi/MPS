@@ -10,10 +10,6 @@ public class NamedTupleDeclaration_BehaviorDescriptor extends Classifier_Behavio
   public NamedTupleDeclaration_BehaviorDescriptor() {
   }
 
-  public Iterable<SNode> virtual_doOverride_7343816061617019844(SNode thisNode, SNode kind, List<SNode> equalSignatureMembers) {
-    return NamedTupleDeclaration_Behavior.virtual_doOverride_7343816061617019844(thisNode, kind, equalSignatureMembers);
-  }
-
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return NamedTupleDeclaration_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }

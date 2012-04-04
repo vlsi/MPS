@@ -41,7 +41,6 @@ import jetbrains.mps.baseLanguage.scopes.StaticFieldDeclarationScope;
 import jetbrains.mps.baseLanguage.scopes.StaticMethodDeclarationScope;
 import jetbrains.mps.baseLanguage.scopes.InstanceMethodDeclarationScope;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
-import jetbrains.mps.baseLanguage.scopes.OverridingPolicies;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -345,10 +344,6 @@ public class ClassConcept_Behavior {
       return Classifier_Behavior.call_getVisibleMembers_8083692786967356611(thisNode, child, kind);
     }
     return ScopeProvider_Behavior.callSuper_getScope_3734116213129936182(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", kind, child);
-  }
-
-  public static Iterable<SNode> virtual_doOverride_7343816061617019844(SNode thisNode, SNode kind, List<SNode> equalSignatureMembers) {
-    return OverridingPolicies.doClassLikeOverriding(thisNode, kind, equalSignatureMembers);
   }
 
   public static boolean call_isRunnable_7941158526576616766(SNode thisNode) {

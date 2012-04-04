@@ -16,7 +16,7 @@ public class InstanceMethodDeclaration_BehaviorDescriptor extends BaseMethodDecl
   }
 
   public Object virtual_getSignatureForOverriding_274804607996650333(SNode thisNode, SNode contextClassifier) {
-    return InstanceMethodDeclaration_Behavior.virtual_getSignatureForOverriding_274804607996650333(thisNode, contextClassifier);
+    return ClassifierMember_Behavior.virtual_getSignatureForOverriding_274804607996650333(thisNode, contextClassifier);
   }
 
   public boolean virtual_isAbstract_1232982539764(SNode thisNode) {

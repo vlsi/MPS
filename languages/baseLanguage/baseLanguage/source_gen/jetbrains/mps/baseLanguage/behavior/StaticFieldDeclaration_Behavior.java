@@ -83,10 +83,6 @@ public class StaticFieldDeclaration_Behavior {
     return SPropertyOperations.getString(thisNode, "name");
   }
 
-  public static Object virtual_getSignatureForOverriding_274804607996650333(SNode thisNode, SNode contextClassifier) {
-    return SPropertyOperations.getString(thisNode, "name");
-  }
-
   public static List<Icon> call_getMarkIcons_5039675756633082276(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<Icon>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), "virtual_getMarkIcons_3923831204883340393", PARAMETERS_5039675756633082276);

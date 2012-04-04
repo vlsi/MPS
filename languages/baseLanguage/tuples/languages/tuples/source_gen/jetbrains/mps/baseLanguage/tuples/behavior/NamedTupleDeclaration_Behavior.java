@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.scopes.OverridingPolicies;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
@@ -64,17 +63,13 @@ public class NamedTupleDeclaration_Behavior {
     return result;
   }
 
-  public static Iterable<SNode> virtual_doOverride_7343816061617019844(SNode thisNode, SNode kind, List<SNode> equalSignatureMembers) {
-    return OverridingPolicies.doClassLikeOverriding(thisNode, kind, equalSignatureMembers);
-  }
-
   public static SNode virtual_getThisType_3305065273710880775(SNode thisNode) {
     _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> tvd2tvr = new _FunctionTypes._return_P1_E0<SNode, Object>() {
       public SNode invoke(Object tvr) {
-        return new NamedTupleDeclaration_Behavior.QuotationClass_ds5lpv_a0a0a0a0f().createNode(tvr);
+        return new NamedTupleDeclaration_Behavior.QuotationClass_ds5lpv_a0a0a0a0e().createNode(tvr);
       }
     };
-    return new NamedTupleDeclaration_Behavior.QuotationClass_ds5lpv_a0b0f().createNode(thisNode, ListSequence.fromList(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true)).select(tvd2tvr).toListSequence());
+    return new NamedTupleDeclaration_Behavior.QuotationClass_ds5lpv_a0b0e().createNode(thisNode, ListSequence.fromList(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true)).select(tvd2tvr).toListSequence());
   }
 
   public static SNode call_getThisType_6742265879766289824(SNode thisNode) {
@@ -86,8 +81,8 @@ public class NamedTupleDeclaration_Behavior {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"), callerConceptFqName, "virtual_getThisType_3305065273710880775", PARAMETERS_6742265879766289824);
   }
 
-  public static class QuotationClass_ds5lpv_a0a0a0a0f {
-    public QuotationClass_ds5lpv_a0a0a0a0f() {
+  public static class QuotationClass_ds5lpv_a0a0a0a0e {
+    public QuotationClass_ds5lpv_a0a0a0a0e() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -104,8 +99,8 @@ public class NamedTupleDeclaration_Behavior {
     }
   }
 
-  public static class QuotationClass_ds5lpv_a0b0f {
-    public QuotationClass_ds5lpv_a0b0f() {
+  public static class QuotationClass_ds5lpv_a0b0e {
+    public QuotationClass_ds5lpv_a0b0e() {
     }
 
     public SNode createNode(Object parameter_4, Object parameter_5) {

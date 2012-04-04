@@ -58,10 +58,6 @@ public class StaticMethodDeclaration_Behavior {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
   }
 
-  public static Object virtual_getSignatureForOverriding_274804607996650333(SNode thisNode, SNode contextClassifier) {
-    return SPropertyOperations.getString(thisNode, "name") + "(" + BaseMethodDeclaration_Behavior.call_getErasureSignature_2830572026628006618(thisNode) + ")";
-  }
-
   public static List<Icon> call_getMarkIcons_5039675756633082235(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<Icon>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), "virtual_getMarkIcons_3923831204883340393", PARAMETERS_5039675756633082235);

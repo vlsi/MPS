@@ -15,7 +15,18 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.scopes.OverridingPolicies;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.TransactionCache;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.scopes.FieldDeclarationScope;
+import jetbrains.mps.baseLanguage.scopes.EnumConstantDeclarationScope;
+import jetbrains.mps.baseLanguage.scopes.PropertyScope;
+import jetbrains.mps.baseLanguage.scopes.StaticFieldDeclarationScope;
+import jetbrains.mps.baseLanguage.scopes.StaticMethodDeclarationScope;
+import jetbrains.mps.baseLanguage.scopes.InstanceMethodDeclarationScope;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -85,8 +96,56 @@ public class Interface_Behavior {
     }
   }
 
-  public static Iterable<SNode> virtual_doOverride_7343816061617019844(SNode thisNode, SNode kind, List<SNode> equalSignatureMembers) {
-    return OverridingPolicies.doInterfaceLikeOverriding(thisNode, kind, equalSignatureMembers);
+  public static Scope virtual_getMembers_2201875424515824604(SNode thisNode, final SNode kind) {
+    // cache section 
+    TransactionCache cache = ModelAccess.instance().getTransactionCache("jetbrains.mps.baseLanguage.structure.Interface");
+    Scope cached = (Scope) cache.get(MultiTuple.<SNode,SNode>from(thisNode, kind));
+    if (cached != null) {
+      return cached;
+    }
+    // end cache section 
+
+    SNode[] implementedInterfaces = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "extendedInterface", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (SLinkOperations.getTarget(it, "classifier", false) != null);
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, "classifier", false);
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (it != null);
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Interface");
+      }
+    }).toGenericArray(SNode.class);
+
+    // todo: generialize this code 
+    Scope result = null;
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
+      result = FieldDeclarationScope.forInterface(thisNode, implementedInterfaces);
+    } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
+      result = EnumConstantDeclarationScope.forInterface(thisNode, implementedInterfaces);
+    } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.Property")) {
+      result = PropertyScope.forInterface(thisNode, implementedInterfaces);
+    } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
+      result = StaticFieldDeclarationScope.forInterface(thisNode, implementedInterfaces);
+    } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
+      result = StaticMethodDeclarationScope.forInterface(thisNode, implementedInterfaces);
+    } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
+      result = InstanceMethodDeclarationScope.forInterface(thisNode, implementedInterfaces);
+    }
+
+    // cache section 
+    if (result != null) {
+      cache.put(MultiTuple.<SNode,SNode>from(thisNode, kind), result);
+      return result;
+    }
+
+    return Classifier_Behavior.callSuper_getMembers_2201875424515824604(thisNode, "jetbrains.mps.baseLanguage.structure.Interface", kind);
   }
 
   public static String call_getUnitName_2496361171403551004(SNode thisNode) {

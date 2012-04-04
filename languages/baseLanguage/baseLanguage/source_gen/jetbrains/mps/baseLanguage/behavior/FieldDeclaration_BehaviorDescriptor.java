@@ -19,7 +19,7 @@ public class FieldDeclaration_BehaviorDescriptor extends VariableDeclaration_Beh
   }
 
   public Object virtual_getSignatureForOverriding_274804607996650333(SNode thisNode, SNode contextClassifier) {
-    return FieldDeclaration_Behavior.virtual_getSignatureForOverriding_274804607996650333(thisNode, contextClassifier);
+    return ClassifierMember_Behavior.virtual_getSignatureForOverriding_274804607996650333(thisNode, contextClassifier);
   }
 
   public Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {

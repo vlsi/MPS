@@ -114,10 +114,6 @@ public class FieldDeclaration_Behavior {
     return SPropertyOperations.getString(thisNode, "name");
   }
 
-  public static Object virtual_getSignatureForOverriding_274804607996650333(SNode thisNode, SNode contextClassifier) {
-    return SPropertyOperations.getString(thisNode, "name");
-  }
-
   public static Icon call_getAdditionalIcon_8884554759541377970(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Icon) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541377970);
