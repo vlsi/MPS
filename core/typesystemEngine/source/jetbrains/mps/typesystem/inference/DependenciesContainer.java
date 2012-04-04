@@ -23,6 +23,8 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.typesystem.inference.util.IDependency_Runtime;
 import jetbrains.mps.util.NameUtil;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
@@ -30,13 +32,16 @@ import java.util.concurrent.ConcurrentMap;
 
 public class DependenciesContainer {
 
-  ConcurrentMap<String, Set<IDependency_Runtime>> myDependencies = new ConcurrentHashMap<String, /* synchronized */ Set<IDependency_Runtime>>();
-  ConcurrentMap<String, Set<IDependency_Runtime>> myDependenciesCache = new ConcurrentHashMap<String, /* unmodifiable */ Set<IDependency_Runtime>>();
+  private ConcurrentMap<String, Set<IDependency_Runtime>> myDependencies = new ConcurrentHashMap<String, /* synchronized */ Set<IDependency_Runtime>>();
+  private ConcurrentMap<String, Set<IDependency_Runtime>> myDependenciesCache = new ConcurrentHashMap<String, /* unmodifiable */ Set<IDependency_Runtime>>();
 
-  public void addDependencies(Set<IDependency_Runtime> dependencies) {
+  public DependenciesContainer() {
+  }
+
+  void addDependencies(Set<IDependency_Runtime> dependencies) {
     for (IDependency_Runtime dependency : dependencies) {
       String concept = dependency.getTargetConceptFQName();
-      if(concept == null) continue;
+      if (concept == null) continue;
 
       Set<IDependency_Runtime> existingRules = myDependencies.get(concept);
       while (existingRules == null) {
@@ -48,23 +53,26 @@ public class DependenciesContainer {
     myDependenciesCache.clear();
   }
 
-  public Set<SNode> getDependencies(SNode node) {
+  Collection<SNode> getDependencies(SNode node) {
     if (node == null) return Collections.emptySet();
     String conceptDeclaration = node.getConceptFqName();
-    Set<SNode> result = new THashSet<SNode>(1);
+    Collection<SNode> result = null;
     for (IDependency_Runtime dependency_runtime : get(conceptDeclaration)) {
       Set<SNode> sourceNodes = dependency_runtime.getSourceNodes(node);
       for (SNode sourceNode : sourceNodes) {
         if (sourceNode == null) continue;
         if (SModelUtil.isAssignableConcept(sourceNode.getConceptFqName(), dependency_runtime.getSourceConceptFQName())) {
+          if (result == null) {
+            result = new ArrayList<SNode>(4);
+          }
           result.add(sourceNode);
         }
       }
     }
-    return result;
+    return result == null ? Collections.<SNode>emptyList() : result;
   }
 
-  protected Set<IDependency_Runtime> get(String key) {
+  Set<IDependency_Runtime> get(String key) {
     Set<IDependency_Runtime> result = myDependenciesCache.get(key);
     if (result != null) {
       return result;
@@ -92,7 +100,7 @@ public class DependenciesContainer {
     return Collections.emptySet();
   }
 
-  public void makeConsistent() {
+  void makeConsistent() {
     for (String conceptDeclaration : myDependencies.keySet()) {
       if (conceptDeclaration == null) {
         continue;
@@ -116,7 +124,7 @@ public class DependenciesContainer {
     myDependenciesCache.clear();
   }
 
-  public void clear() {
+  void clear() {
     myDependencies.clear();
     myDependenciesCache.clear();
   }
