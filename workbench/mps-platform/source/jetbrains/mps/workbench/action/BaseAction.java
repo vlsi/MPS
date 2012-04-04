@@ -57,6 +57,10 @@ public abstract class BaseAction extends AnAction implements DumbAware {
     myExecuteOutsideCommand = executeOutsideCommand;
   }
 
+  public boolean isExecuteOutsideCommand () {
+    return myExecuteOutsideCommand;
+  }
+
   public void setIsAlwaysVisible(boolean isAlwaysVisible) {
     myIsAlwaysVisible = isAlwaysVisible;
   }

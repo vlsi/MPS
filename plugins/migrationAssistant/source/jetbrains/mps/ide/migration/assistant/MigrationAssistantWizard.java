@@ -43,6 +43,8 @@ import java.awt.event.ActionListener;
 import java.awt.font.TextAttribute;
 import java.util.*;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by IntelliJ IDEA.
@@ -675,11 +677,21 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     private final Set<?> myExcluded;
     private final Set<?> myMarked;
     private final Set<?> myFailed;
+    private static final Pattern ACTION_PRESENTATION = Pattern.compile("(.*).*\\(.*\\)");
 
     public MyListCellRenderer(Set<?> excluded, Set<?> marked, Set<?> failed) {
       myExcluded = excluded;
       myMarked = marked;
       myFailed = failed;
+    }
+
+    @Override
+    public void setText(String text) {
+      Matcher matcher = ACTION_PRESENTATION.matcher(text);
+      if (matcher.matches()) {
+        text = matcher.group(1);
+      }
+      super.setText(text);
     }
 
     @Override

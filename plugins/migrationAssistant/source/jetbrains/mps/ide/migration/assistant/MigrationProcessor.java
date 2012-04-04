@@ -23,6 +23,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.util.ui.*;
 import com.intellij.util.ui.Timer;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.actions.LabelledAnchor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjectVersion;
 import jetbrains.mps.project.Version;
@@ -95,7 +96,9 @@ public class MigrationProcessor extends AbstractProjectComponent{
           fireStartingAction(action);
           AnActionEvent event = new AnActionEvent(null, DataManager.getInstance().getDataContext(component), ActionPlaces.UNKNOWN, action.getTemplatePresentation(), ActionManager.getInstance(), 0);
           boolean success = false;
+          boolean oldFlag = action.isExecuteOutsideCommand();
           try{
+            action.setExecuteOutsideCommand(true);
             action.update(event);
             if (action.getTemplatePresentation().isEnabled()) {
               action.actionPerformed(event);
@@ -106,6 +109,7 @@ public class MigrationProcessor extends AbstractProjectComponent{
             LOG.error(e);
           }
           finally {
+            action.setExecuteOutsideCommand(oldFlag);
             if (success) {
               fireFinishedAction(action);
             } else {
@@ -150,7 +154,7 @@ public class MigrationProcessor extends AbstractProjectComponent{
         AnAction[] actionsOrStubs = ((DefaultActionGroup) group).getChildActionsOrStubs();
         for (int i = 0; i < actionsOrStubs.length; i++) {
           AnAction action = actionsOrStubs[i];
-          if (action instanceof BaseAction) {
+          if (action instanceof BaseAction && !(action instanceof LabelledAnchor)) {
             myActions.add((BaseAction)action);
           }
         }
