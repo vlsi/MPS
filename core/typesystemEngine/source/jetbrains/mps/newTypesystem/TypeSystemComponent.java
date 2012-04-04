@@ -202,13 +202,13 @@ class TypeSystemComponent extends CheckingComponent {
     addDependentNodesTypeSystem(myCurrentCheckedNode, hashSet, true);
   }
 
-  protected void computeTypesSpecial(SNode nodeToCheck, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
+  protected void computeTypesSpecial(SNode nodeToCheck, boolean forceChildrenCheck, Collection<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
     computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes, initialNode);
     if (typeCalculated(initialNode) != null) return;
     solveInequalitiesAndExpandTypes(finalExpansion);
   }
 
-  protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
+  protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, Collection<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
     try {
       if (!isIncrementalMode() || refreshTypes) {
         clear();
@@ -236,22 +236,23 @@ class TypeSystemComponent extends CheckingComponent {
     myNodesToRules.clear();
   }
 
-  protected SNode computeTypesForNode_special(SNode initialNode, List<SNode> givenAdditionalNodes) {
+  protected SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
     SNode type = null;
     SNode prevNode = null;
     SNode node = initialNode;
     long start = System.currentTimeMillis();
     myState.setTargetNode(initialNode);
     while (node != null) {
-      List<SNode> additionalNodes = new ArrayList<SNode>(givenAdditionalNodes);
+      Collection<SNode> additionalNodes = givenAdditionalNodes;
       if (prevNode != null) {
+        additionalNodes = new ArrayList<SNode>(additionalNodes);
         additionalNodes.add(prevNode);
       }
       computeTypesSpecial(node, false, additionalNodes, false, initialNode);
       type = typeCalculated(initialNode);
       if (type == null) {
         if (node.isRoot()) {
-          computeTypes(node, true, true, new ArrayList<SNode>(0), true, initialNode);
+          computeTypes(node, true, true, Collections.<SNode>emptyList(), true, initialNode);
           type = getType(initialNode);
           if(type == null && node != initialNode && myState.getInequalitySystem() == null && !myNodeTypesComponent.getTypeCheckingContext().isInEditorQueries()) {
             LOG.error("No typesystem rule for " + initialNode.getDebugText() + " in root " + initialNode.getContainingRoot() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms", new Throwable(), new SNodePointer(initialNode));
@@ -293,7 +294,7 @@ class TypeSystemComponent extends CheckingComponent {
     return new THashSet<Pair<String, String>>(set);
   }
 
-  private void computeTypesForNode(SNode node, boolean forceChildrenCheck, List<SNode> additionalNodes, SNode targetNode) {
+  private void computeTypesForNode(SNode node, boolean forceChildrenCheck, Collection<SNode> additionalNodes, SNode targetNode) {
     if (node == null) return;
     Set<SNode> frontier = new LinkedHashSet<SNode>();
     Set<SNode> newFrontier = new LinkedHashSet<SNode>();
@@ -408,7 +409,7 @@ class TypeSystemComponent extends CheckingComponent {
   }
 
   public void computeTypes(boolean refreshTypes) {
-    computeTypes(myNodeTypesComponent.getNode(), refreshTypes, true, new ArrayList<SNode>(0), true, null);
+    computeTypes(myNodeTypesComponent.getNode(), refreshTypes, true, Collections.<SNode>emptyList(), true, null);
   }
 
   private void performActionsAfterChecking() {
