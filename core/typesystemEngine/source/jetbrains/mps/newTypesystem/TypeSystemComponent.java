@@ -255,7 +255,7 @@ class TypeSystemComponent extends CheckingComponent {
       if (type == null) {
         if (node.isRoot()) {
           myNodeTypesComponent.getTypeCheckingContext().setSingleTypeComputation(false);
-          System.out.println("Root: " + initialNode.getDebugText());
+          //System.out.println("Root: " + initialNode.getDebugText());
           computeTypes(node, true, true, new ArrayList<SNode>(0), true, initialNode);
           type = getType(initialNode);
           if(type == null && node != initialNode && myState.getInequalitySystem() == null && !myNodeTypesComponent.getTypeCheckingContext().isInEditorQueries()) {
