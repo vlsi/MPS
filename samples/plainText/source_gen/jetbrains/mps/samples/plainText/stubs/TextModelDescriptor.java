@@ -6,27 +6,47 @@ import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 
 public class TextModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModelDescriptor {
   private SModel myModel = null;
-  private boolean isChanged = false;
   private IModule myModule;
+  private boolean isChanged = false;
 
   public TextModelDescriptor(IModule module, TextModelDataSource source) {
     super(TextPersistenceUtil.refByModule(module.getModuleReference()), source, false);
     this.myModule = module;
+    updateDiskTimestamp();
   }
 
   protected void reloadFromDisk() {
+    final SModel old = myModel;
+    check_bp2jat_a1a0(old);
+
     myModel = null;
     isChanged = false;
+    updateDiskTimestamp();
+
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      public void run() {
+        ModelAccess.instance().runWriteAction(new Runnable() {
+          public void run() {
+            fireModelReplaced();
+            fireModelStateChanged(ModelLoadingState.FULLY_LOADED, ModelLoadingState.NOT_LOADED);
+
+            check_bp2jat_a3a0a0a0h0a(old);
+          }
+        });
+      }
+    });
   }
 
   public long lastChangeTime() {
-    return getSource().getTimestamp();
+    return getSourceTimestamp();
   }
 
   public boolean isChanged() {
@@ -35,11 +55,13 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
 
   public void setChanged(boolean value) {
     isChanged = value;
+    updateDiskTimestamp();
   }
 
   public void save() {
     getSource().saveModel(this);
     isChanged = false;
+    updateDiskTimestamp();
   }
 
   public void rename(SModelFqName name, boolean b) {
@@ -74,5 +96,19 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
       ModelLoadingState.NOT_LOADED :
       ModelLoadingState.FULLY_LOADED
     );
+  }
+
+  private static void check_bp2jat_a1a0(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.setModelDescriptor(null);
+    }
+
+  }
+
+  private static void check_bp2jat_a3a0a0a0h0a(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.dispose();
+    }
+
   }
 }

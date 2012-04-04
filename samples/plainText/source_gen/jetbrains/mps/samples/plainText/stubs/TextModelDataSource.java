@@ -7,6 +7,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.util.Collection;
 import java.util.Collections;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelFqName;
@@ -15,7 +16,6 @@ import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.io.InputStream;
@@ -40,8 +40,14 @@ public class TextModelDataSource extends FileBasedModelDataSource {
   }
 
   public long getTimestamp() {
-    // todo don't always reload 
-    return -1;
+    long res = 0;
+    for (IFile child : ListSequence.fromList(dir.getChildren())) {
+      if (!(child.getName().endsWith(".txt"))) {
+        continue;
+      }
+      res = Math.max(res, child.lastModified());
+    }
+    return res;
   }
 
   public DescriptorLoadResult loadDescriptor(IModule module, SModelFqName name) throws ModelReadException {
