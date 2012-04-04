@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="Util_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.execution.api.Util_ApplicationPlugin" />
+  <unitInfo fileName="Util_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.execution.api.Util_ProjectPlugin" />
   <root nodeId="1240470842553275009">
     <nodeInfo nodeId="1240470842553275009" fileName="Java_Command.java" startLine="62" startPosition="27" endLine="63" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="1240470842553275009" fileName="Java_Command.java" startLine="64" startPosition="0" endLine="65" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWorkingDirectory_File" />

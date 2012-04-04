@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="CustomViewers_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.typesystem.CustomViewers_ApplicationPlugin" />
+  <unitInfo fileName="CustomViewers_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.typesystem.CustomViewers_ProjectPlugin" />
   <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.typesystem.TypesystemDescriptor" />
   <root nodeId="1842653058274902924">
     <nodeInfo nodeId="1842653058274918903" fileName="WatchableListIsAListOrWatchables_SubtypingRule.java" startLine="22" startPosition="127" endLine="23" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
