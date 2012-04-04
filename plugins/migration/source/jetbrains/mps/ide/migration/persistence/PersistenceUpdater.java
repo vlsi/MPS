@@ -83,8 +83,8 @@ public class PersistenceUpdater {
       if (modelDescriptor.getLoadingState() != ModelLoadingState.NOT_LOADED) {
         persistenceVersion = modelDescriptor.getSModel().getPersistenceVersion();
       } else {
-        if (modelDescriptor instanceof EditableSModelDescriptor) {
-          IFile file = ((EditableSModelDescriptor) modelDescriptor).getModelFile();
+        if (modelDescriptor instanceof DefaultSModelDescriptor) {
+          IFile file = ((DefaultSModelDescriptor) modelDescriptor).getModelFile();
           if (file != null) {
             try {
               persistenceVersion = ModelPersistence.loadDescriptor(file).getHeader().getPersistenceVersion();

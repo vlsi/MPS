@@ -46,7 +46,6 @@ public class SModelRepository implements CoreComponent {
     return MPSCore.getInstance().getModelRepository();
   }
 
-  private final Map<String, EditableSModelDescriptor> myCanonicalPathsToModelDescriptorMap = new ConcurrentHashMap<String, EditableSModelDescriptor>();
   private final Map<SModelId, SModelDescriptor> myIdToModelDescriptorMap = new ConcurrentHashMap<SModelId, SModelDescriptor>();
   private final Map<SModelFqName, SModelDescriptor> myFqNameToModelDescriptorMap = new ConcurrentHashMap<SModelFqName, SModelDescriptor>();
 
@@ -116,10 +115,6 @@ public class SModelRepository implements CoreComponent {
       if (modelReference.getSModelFqName() != null) {
         myFqNameToModelDescriptorMap.put(modelReference.getSModelFqName(), modelDescriptor);
       }
-
-      if (modelDescriptor instanceof EditableSModelDescriptor) {
-        addModelToFileCache(((EditableSModelDescriptor) modelDescriptor));
-      }
       modelDescriptor.addModelListener(myModelsListener);
     }
     fireModelAdded(modelDescriptor);
@@ -156,10 +151,6 @@ public class SModelRepository implements CoreComponent {
         }
       }
       myFqNameToModelDescriptorMap.remove(md.getSModelReference().getSModelFqName());
-      if (md instanceof EditableSModelDescriptor) {
-        boolean result = removeModelFromFileCache(((EditableSModelDescriptor) md));
-        LOG.assertLog(result, "model " + md + " do not have a path in file cache");
-      }
       md.removeModelListener(myModelsListener);
       fireModelRemoved(md);
       md.dispose();
@@ -195,10 +186,6 @@ public class SModelRepository implements CoreComponent {
 
   //----------------------------get-----------------------------
 
-  public EditableSModelDescriptor findModel(IFile modelFile) {
-    String canonicalPath = IFileUtils.getCanonicalPath(modelFile);
-    return myCanonicalPathsToModelDescriptorMap.get(canonicalPath);
-  }
 
   public List<SModelDescriptor> getModelDescriptors() {
     synchronized (myModelsLock) {
@@ -257,18 +244,6 @@ public class SModelRepository implements CoreComponent {
 
   //----------------------------stuff-----------------------------
 
-  private void addModelToFileCache(EditableSModelDescriptor modelDescriptor) {
-    IFile modelFile = modelDescriptor.getModelFile();
-    if (modelFile == null) return;
-    myCanonicalPathsToModelDescriptorMap.put(IFileUtils.getCanonicalPath(modelFile), modelDescriptor);
-  }
-
-  private boolean removeModelFromFileCache(EditableSModelDescriptor modelDescriptor) {
-    IFile modelFile = modelDescriptor.getModelFile();
-    if (modelFile == null) return true;
-    SModelDescriptor sd = myCanonicalPathsToModelDescriptorMap.remove(IFileUtils.getCanonicalPath(modelFile));
-    return sd == modelDescriptor;
-  }
 
   private List<EditableSModelDescriptor> getModelsToSave() {
     List<EditableSModelDescriptor> modelsToSave = new ArrayList<EditableSModelDescriptor>();
@@ -438,39 +413,16 @@ public class SModelRepository implements CoreComponent {
       markChanged(model);
     }
 
-    public void beforeModelRenamed(SModelRenamedEvent event) {
-      SModelDescriptor md = event.getModelDescriptor();
-      if (!(md instanceof EditableSModelDescriptor)) return;
-      removeModelFromFileCache(((EditableSModelDescriptor) md));
-    }
-
     public void modelRenamed(SModelRenamedEvent event) {
       synchronized (myModelsLock) {
         myFqNameToModelDescriptorMap.remove(event.getOldName());
         myFqNameToModelDescriptorMap.put(event.getNewName(), event.getModelDescriptor());
       }
-      SModelDescriptor md = event.getModelDescriptor();
-      if (md instanceof EditableSModelDescriptor) {
-        addModelToFileCache(((EditableSModelDescriptor) md));
-      }
-      fireModelRenamed(md);
+
+      fireModelRenamed(event.getModelDescriptor());
 
       CleanupManager.getInstance().cleanup();
       MPSModuleRepository.getInstance().invalidateCaches();
-    }
-
-    public void beforeModelFileChanged(SModelFileChangedEvent event) {
-      SModelDescriptor md = event.getModelDescriptor();
-      if (md instanceof EditableSModelDescriptor) {
-        removeModelFromFileCache(((EditableSModelDescriptor) md));
-      }
-    }
-
-    public void modelFileChanged(SModelFileChangedEvent event) {
-      SModelDescriptor md = event.getModelDescriptor();
-      if (md instanceof EditableSModelDescriptor) {
-        addModelToFileCache(((EditableSModelDescriptor) md));
-      }
     }
   }
 }
