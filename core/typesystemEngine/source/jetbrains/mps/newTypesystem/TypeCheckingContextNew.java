@@ -124,7 +124,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void createLessThanInequationStrong(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, boolean checkOnly,
-                                             int inequationPriority, QuickFixProvider intentionProvider) {
+                         int inequationPriority, QuickFixProvider intentionProvider) {
     myState.addInequality(node1, node2, false, checkOnly, new EquationInfo(nodeToCheck, errorString, ruleModel,
       ruleId, inequationPriority, intentionProvider), true);
   }
@@ -307,11 +307,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   protected SNode getTypeOf_generationMode(SNode node) {
-    try {
-      return myNodeTypesComponent.computeTypesForNodeDuringGeneration(node);
-    } finally {
-      myNodeTypesComponent.dispose();
-    }
+    return myNodeTypesComponent.computeTypesForNodeDuringGeneration(node);
   }
 
   @Override
@@ -491,10 +487,15 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public SNode getTypeInGenerationMode(SNode node) {
-    myIsTraceMode = true;
-    SNode type = getTypeOf_generationMode(node);
-    myIsTraceMode = false;
-    return type;
+    try {
+      myIsTraceMode = true;
+      return getTypeOf_generationMode(node);
+    } finally {
+      myIsTraceMode = false;
+
+      // TODO [ts] move dispose -> trace tree
+      myNodeTypesComponent.dispose();
+    }
   }
 
   @Override
