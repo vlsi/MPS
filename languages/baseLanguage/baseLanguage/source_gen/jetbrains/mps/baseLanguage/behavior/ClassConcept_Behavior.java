@@ -27,10 +27,11 @@ import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.baseLanguage.scopes.MemberScopes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.scopes.runtime.SimpleScope;
-import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
@@ -254,7 +255,7 @@ public class ClassConcept_Behavior {
 
   public static Scope virtual_getMembers_2201875424515824604(SNode thisNode, SNode kind) {
     SNode superClass = SLinkOperations.getTarget(ClassConcept_Behavior.call_getSuperclass_1240936569950(thisNode), "classifier", false);
-    SNode[] implementedInterfaces = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "implementedInterface", true)).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> implementedInterfaces = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "implementedInterface", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "classifier", false) != null);
       }
@@ -266,19 +267,23 @@ public class ClassConcept_Behavior {
       public boolean accept(SNode it) {
         return (it != null);
       }
-    }).select(new ISelector<SNode, SNode>() {
+    });
+    if (!(SNodeOperations.isInstanceOf(superClass, "jetbrains.mps.baseLanguage.structure.ClassConcept") || (superClass == null)) || Sequence.fromIterable(implementedInterfaces).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Interface"));
+      }
+    })) {
+      // todo: wtf? 
+      LOG.warning("Illegal ClassConcept: " + thisNode);
+      return new EmptyScope();
+    }
+    Scope result = MemberScopes.forClass(SNodeOperations.castConcept(kind, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), thisNode, SNodeOperations.cast(superClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), Sequence.fromIterable(implementedInterfaces).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Interface");
       }
-    }).toGenericArray(SNode.class);
-    Scope result = MemberScopes.forClass(SNodeOperations.castConcept(kind, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), thisNode, SNodeOperations.cast(superClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), implementedInterfaces);
+    }).toGenericArray(SNode.class));
     if (result != null) {
       return result;
-    }
-
-    if (!(SNodeOperations.isInstanceOf(superClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-      // todo: wtf? 
-      superClass = null;
     }
 
     // todo: remove this code from getMembers to getScope 
