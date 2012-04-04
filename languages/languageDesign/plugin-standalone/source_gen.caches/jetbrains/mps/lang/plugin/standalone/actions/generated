@@ -52,7 +52,6 @@
   <source id="6062029294752720939" name="AddWorkbenchToActionParsmeters" hash="caa35u3kct54wj457e2654fiyb61ip1">
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   </source>
 </dependencies>
 
