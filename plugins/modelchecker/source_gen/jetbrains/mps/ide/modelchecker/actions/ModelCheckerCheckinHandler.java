@@ -5,6 +5,8 @@ package jetbrains.mps.ide.modelchecker.actions;
 import com.intellij.openapi.vcs.checkin.CheckinHandler;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.CheckinProjectPanel;
+import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
+import jetbrains.mps.smodel.SModelFileTracker;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.vcs.ui.RefreshableOnComponent;
 import javax.swing.JCheckBox;
@@ -70,17 +72,16 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
   }
 
   private static List<SModelDescriptor> getModelDescriptorsByFiles(Iterable<File> files) {
-    final SModelRepository repository = SModelRepository.getInstance();
-    return Sequence.fromIterable(files).select(new ISelector<File, EditableSModelDescriptor>() {
-      public EditableSModelDescriptor select(File file) {
-        return repository.findModel(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()));
+    return Sequence.fromIterable(files).select(new ISelector<File, BaseSModelDescriptorWithSource>() {
+      public BaseSModelDescriptorWithSource select(File file) {
+        return SModelFileTracker.getInstance().findModel(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()));
       }
-    }).where(new IWhereFilter<EditableSModelDescriptor>() {
-      public boolean accept(EditableSModelDescriptor modelDescriptor) {
+    }).where(new IWhereFilter<BaseSModelDescriptorWithSource>() {
+      public boolean accept(BaseSModelDescriptorWithSource modelDescriptor) {
         return modelDescriptor != null;
       }
-    }).select(new ISelector<EditableSModelDescriptor, SModelDescriptor>() {
-      public SModelDescriptor select(EditableSModelDescriptor it) {
+    }).select(new ISelector<BaseSModelDescriptorWithSource, SModelDescriptor>() {
+      public SModelDescriptor select(BaseSModelDescriptorWithSource it) {
         return (SModelDescriptor) it;
       }
     }).toListSequence();

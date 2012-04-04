@@ -4,6 +4,8 @@ package jetbrains.mps.vcs.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -136,7 +138,7 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
   }
 
   private IFile getModelFile(final Map<String, Object> _params) {
-    return ((EditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).getModelFile();
+    return ((DefaultSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).getModelFile();
   }
 
   private String selectMineModel(String currentModel, String backUpModel, final Map<String, Object> _params) {

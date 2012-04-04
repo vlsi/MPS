@@ -16,14 +16,14 @@ import java.awt.GridLayout;
 import java.util.Collection;
 import java.io.File;
 import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
+
+import jetbrains.mps.smodel.*;
+
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SModelRepository;
+
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import com.intellij.openapi.vcs.checkin.CheckinHandlerFactory;
@@ -73,9 +73,8 @@ public class OptimizeImportsCheckinHandler extends CheckinHandler {
     if (getSettings().OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT) {
       Collection<File> affectedFiles = myPanel.getFiles();
       final List<SModelDescriptor> affectedModels = new ArrayList<SModelDescriptor>();
-      SModelRepository modelRepository = SModelRepository.getInstance();
       for (File file : affectedFiles) {
-        SModelDescriptor model = modelRepository.findModel(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()));
+        SModelDescriptor model = SModelFileTracker.getInstance().findModel(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()));
         if (model == null) {
           continue;
         }

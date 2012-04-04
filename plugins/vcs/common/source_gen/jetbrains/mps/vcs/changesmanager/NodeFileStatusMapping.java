@@ -4,24 +4,20 @@ package jetbrains.mps.vcs.changesmanager;
 
 import com.intellij.openapi.components.AbstractProjectComponent;
 import java.util.Map;
-import jetbrains.mps.smodel.SNodePointer;
+
+import jetbrains.mps.smodel.*;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vcs.platform.util.ConflictsUtil;
 import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
-import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
@@ -86,8 +82,8 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
     FileStatus status = ModelAccess.instance().runReadAction(new Computable<FileStatus>() {
       public FileStatus compute() {
         SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(root.getModelReference());
-        if (modelDescriptor instanceof EditableSModelDescriptor) {
-          EditableSModelDescriptor emd = (EditableSModelDescriptor) modelDescriptor;
+        if (modelDescriptor instanceof DefaultSModelDescriptor) {
+          DefaultSModelDescriptor emd = (DefaultSModelDescriptor) modelDescriptor;
           if (ConflictsUtil.isModelOrModuleConflicting(emd, myProject)) {
             return FileStatus.MERGED_WITH_CONFLICTS;
           }

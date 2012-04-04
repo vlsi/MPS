@@ -9,18 +9,18 @@ import jetbrains.mps.project.Project;
 import com.intellij.openapi.project.DumbService;
 import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
+
+import jetbrains.mps.smodel.*;
+
 import java.util.Set;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SModelDescriptor;
+
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -53,7 +53,7 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
       if (!((md instanceof EditableSModelDescriptor))) {
         continue;
       }
-      EditableSModelDescriptor emd = (EditableSModelDescriptor) md;
+      DefaultSModelDescriptor emd = (DefaultSModelDescriptor) md;
       IFile modelFile = emd.getModelFile();
       if (modelFile == null) {
         continue;

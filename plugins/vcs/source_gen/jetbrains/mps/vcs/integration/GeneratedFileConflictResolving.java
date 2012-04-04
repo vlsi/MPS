@@ -11,6 +11,7 @@ import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFileEvent;
 import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vcs.merge.MergeProvider;

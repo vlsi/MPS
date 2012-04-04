@@ -4,6 +4,8 @@ package jetbrains.mps.vcs.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.util.IconUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -43,7 +45,7 @@ public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
     if (!(((SModelDescriptor) MapSequence.fromMap(_params).get("model")) instanceof EditableSModelDescriptor)) {
       return false;
     }
-    VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(((EditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).getModelFile());
+    VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(((DefaultSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).getModelFile());
     if (((SNode) MapSequence.fromMap(_params).get("node")).isRoot() && ProjectLevelVcsManager.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getVcsFor(virtualFile) != null) {
       FileStatus fileStatus = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(VcsFileStatusProvider.class).getFileStatus(virtualFile);
       return FileStatus.ADDED != fileStatus && FileStatus.UNKNOWN != fileStatus;
@@ -86,7 +88,7 @@ public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      VcsActionsUtil.showRootDifference((EditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")), ((Project) MapSequence.fromMap(_params).get("project")), null);
+      VcsActionsUtil.showRootDifference((DefaultSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")), ((Project) MapSequence.fromMap(_params).get("project")), null);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowDiffererenceWithCurrentRevision", t);
