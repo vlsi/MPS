@@ -196,10 +196,6 @@ public class DiffTemporaryModule extends AbstractModule {
       throw new UnsupportedOperationException();
     }
 
-    public long lastChangeTime() {
-      throw new UnsupportedOperationException();
-    }
-
     public void save() {
       throw new UnsupportedOperationException();
     }

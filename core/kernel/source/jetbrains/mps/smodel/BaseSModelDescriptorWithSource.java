@@ -53,7 +53,7 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
 
   protected abstract void reloadFromDiskSafe();
 
-  protected long getSourceTimestamp(){
+  public long getSourceTimestamp(){
     return mySourceTimestamp;
   }
 

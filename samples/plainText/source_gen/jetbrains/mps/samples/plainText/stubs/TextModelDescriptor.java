@@ -45,10 +45,6 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
     });
   }
 
-  public long lastChangeTime() {
-    return getSourceTimestamp();
-  }
-
   public boolean isChanged() {
     return isChanged;
   }

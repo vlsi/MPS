@@ -23,7 +23,6 @@ public class EventUtil {
   public static boolean isDetachedOnlyChange(List<SModelEvent> events) {
     final boolean[] result = {true};
 
-
     for (SModelEvent e : events) {
       e.accept(new SModelEventVisitorAdapter() {
         public void visitChildEvent(SModelChildEvent event) {
@@ -54,22 +53,6 @@ public class EventUtil {
       if (e instanceof SModelChildEvent) return true;
       if (e instanceof SModelRootEvent) return true;
       if (e instanceof SModelReferenceEvent) return true;
-    }
-    return false;
-  }
-
-  public static boolean isChange(List<SModelEvent> events) {
-    for (SModelEvent e : events) {
-      if (e.isChangeEvent()) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  public static boolean isRootNameChange(List<SModelEvent> events) {
-    for (SModelEvent e : events) {
-      if (e instanceof SModelPropertyEvent && ((SModelPropertyEvent) e).getNode().isRoot()) return true;
     }
     return false;
   }
