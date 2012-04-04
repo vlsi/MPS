@@ -272,7 +272,7 @@ public abstract class MpsLoadTask extends Task {
     return new File(myMpsHome.getAbsolutePath() + File.separator + path.replace('/', File.separatorChar));
   }
 
-  private Set<File> calculateClassPath() {
+  protected Set<File> calculateClassPath() {
     File[] pathsToLook;
     if (absolutePath("classes").exists()) {
       //         absolutePath("platform/uiLanguage"), 

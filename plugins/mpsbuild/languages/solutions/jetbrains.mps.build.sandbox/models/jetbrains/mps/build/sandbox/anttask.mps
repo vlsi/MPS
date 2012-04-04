@@ -15,6 +15,7 @@
         <property name="tagName" nameId="iuxj.6666499814681415862" value="project" />
         <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="1479037094930576001">
           <property name="tagName" nameId="iuxj.6666499814681415862" value="property" />
+          <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
           <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="1479037094930576002">
             <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
             <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="1479037094930576004">
@@ -30,6 +31,7 @@
         </node>
         <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="1479037094930485453">
           <property name="tagName" nameId="iuxj.6666499814681415862" value="property" />
+          <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
           <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="1479037094930485454">
             <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
             <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="1479037094930485455">
@@ -44,6 +46,158 @@
           </node>
         </node>
         <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="5738701198683704637" />
+        <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="535979196343222700">
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="path" />
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="535979196343222704">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="fileset" />
+            <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+            <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="535979196343222705">
+              <property name="attrName" nameId="iuxj.6666499814681447926" value="dir" />
+              <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="535979196343222706">
+                <property name="text" nameId="iuxj.6666499814681541920" value="${mps.home}/lib" />
+              </node>
+            </node>
+            <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="535979196343222911">
+              <property name="attrName" nameId="iuxj.6666499814681447926" value="includes" />
+              <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="535979196343222912">
+                <property name="text" nameId="iuxj.6666499814681541920" value="*.jar" />
+              </node>
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="535979196343222755">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="dirset" />
+            <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="535979196343222913">
+              <property name="attrName" nameId="iuxj.6666499814681447926" value="dir" />
+              <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="535979196343222914">
+                <property name="text" nameId="iuxj.6666499814681541920" value="${mps.home}/core" />
+              </node>
+            </node>
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="535979196343222915">
+              <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />
+              <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+              <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="535979196343222916">
+                <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
+                <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="535979196343222917">
+                  <property name="text" nameId="iuxj.6666499814681541920" value="**/classes" />
+                </node>
+              </node>
+            </node>
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="535979196343222922">
+              <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />
+              <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+              <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="535979196343222923">
+                <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
+                <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="535979196343222924">
+                  <property name="text" nameId="iuxj.6666499814681541920" value="**/classes_gen" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="535979196343222926">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="dirset" />
+            <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="535979196343222927">
+              <property name="attrName" nameId="iuxj.6666499814681447926" value="dir" />
+              <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="535979196343222928">
+                <property name="text" nameId="iuxj.6666499814681541920" value="${mps.home}/languages/baseLanguage/closures/runtime" />
+              </node>
+            </node>
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="535979196343222929">
+              <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />
+              <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+              <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="535979196343222930">
+                <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
+                <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="535979196343222931">
+                  <property name="text" nameId="iuxj.6666499814681541920" value="**/classes" />
+                </node>
+              </node>
+            </node>
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="535979196343222932">
+              <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />
+              <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+              <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="535979196343222933">
+                <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
+                <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="535979196343222934">
+                  <property name="text" nameId="iuxj.6666499814681541920" value="**/classes_gen" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="535979196343222935">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="dirset" />
+            <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="535979196343222936">
+              <property name="attrName" nameId="iuxj.6666499814681447926" value="dir" />
+              <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="535979196343222937">
+                <property name="text" nameId="iuxj.6666499814681541920" value="${mps.home}/languages/baseLanguage/collections/runtime" />
+              </node>
+            </node>
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="535979196343222938">
+              <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />
+              <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+              <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="535979196343222939">
+                <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
+                <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="535979196343222940">
+                  <property name="text" nameId="iuxj.6666499814681541920" value="**/classes" />
+                </node>
+              </node>
+            </node>
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="535979196343222941">
+              <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />
+              <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+              <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="535979196343222942">
+                <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
+                <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="535979196343222943">
+                  <property name="text" nameId="iuxj.6666499814681541920" value="**/classes_gen" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="535979196343222944">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="dirset" />
+            <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="535979196343222945">
+              <property name="attrName" nameId="iuxj.6666499814681447926" value="dir" />
+              <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="535979196343222946">
+                <property name="text" nameId="iuxj.6666499814681541920" value="${mps.home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search" />
+              </node>
+            </node>
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="535979196343222947">
+              <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />
+              <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+              <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="535979196343222948">
+                <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
+                <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="535979196343222949">
+                  <property name="text" nameId="iuxj.6666499814681541920" value="**/classes" />
+                </node>
+              </node>
+            </node>
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="535979196343222950">
+              <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />
+              <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+              <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="535979196343222951">
+                <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
+                <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="535979196343222952">
+                  <property name="text" nameId="iuxj.6666499814681541920" value="**/classes_gen" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="535979196343222953">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="pathelement" />
+            <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+            <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="535979196343222954">
+              <property name="attrName" nameId="iuxj.6666499814681447926" value="location" />
+              <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="535979196343222955">
+                <property name="text" nameId="iuxj.6666499814681541920" value="${mps.home}/workbench/typesystemUi/classes" />
+              </node>
+            </node>
+          </node>
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="535979196343222701">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="id" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="535979196343222702">
+              <property name="text" nameId="iuxj.6666499814681541920" value="mps.classpath" />
+            </node>
+          </node>
+        </node>
+        <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="535979196343222692" />
         <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="1479037094930484896">
           <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
           <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="1479037094930484897">
@@ -67,19 +221,20 @@
               </node>
             </node>
             <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="1479037094930501414">
-              <property name="tagName" nameId="iuxj.6666499814681415862" value="path" />
+              <property name="tagName" nameId="iuxj.6666499814681415862" value="pathelement" />
               <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
               <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="1479037094930501415">
-                <property name="attrName" nameId="iuxj.6666499814681447926" value="path" />
+                <property name="attrName" nameId="iuxj.6666499814681447926" value="location" />
                 <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="1479037094930501416">
                   <property name="text" nameId="iuxj.6666499814681541920" value="${runtime.dir}" />
                 </node>
               </node>
             </node>
             <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="6690493898470323795">
-              <property name="tagName" nameId="iuxj.6666499814681415862" value="path" />
+              <property name="tagName" nameId="iuxj.6666499814681415862" value="pathelement" />
+              <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
               <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="6690493898470323796">
-                <property name="attrName" nameId="iuxj.6666499814681447926" value="path" />
+                <property name="attrName" nameId="iuxj.6666499814681447926" value="location" />
                 <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="6690493898470323797">
                   <property name="text" nameId="iuxj.6666499814681541920" value="${mps.home}/core/ant/classes" />
                 </node>
@@ -105,6 +260,29 @@
           <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="5738701198683704639" />
           <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="6690493898470399377">
             <property name="tagName" nameId="iuxj.6666499814681415862" value="mps.gen.module.xml" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="535979196343209709">
+              <property name="tagName" nameId="iuxj.6666499814681415862" value="classpath" />
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="535979196343222963">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="path" />
+                <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+                <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="535979196343222964">
+                  <property name="attrName" nameId="iuxj.6666499814681447926" value="refid" />
+                  <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="535979196343222965">
+                    <property name="text" nameId="iuxj.6666499814681541920" value="mps.classpath" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="535979196343209711">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="path" />
+                <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+                <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="535979196343209712">
+                  <property name="attrName" nameId="iuxj.6666499814681447926" value="refid" />
+                  <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="535979196343209713">
+                    <property name="text" nameId="iuxj.6666499814681541920" value="anttask.classpath" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="535979196343207993">
               <property name="attrName" nameId="iuxj.6666499814681447926" value="fork" />
               <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="535979196343207996">

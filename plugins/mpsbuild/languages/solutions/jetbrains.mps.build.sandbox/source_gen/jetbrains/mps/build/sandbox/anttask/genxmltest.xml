@@ -1,15 +1,40 @@
 <project name="test-genxml" basedir="./../../../../..">
-  <property name="mps.home" value="${basedir}/../../../../../.."></property>
-  <property name="runtime.dir" value="${mps.home}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.runtime/classes_gen"></property>
+  <property name="mps.home" value="${basedir}/../../../../../.." />
+  <property name="runtime.dir" value="${mps.home}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.runtime/classes_gen" />
+  
+  <path id="mps.classpath">
+    <fileset dir="${mps.home}/lib" includes="*.jar" />
+    <dirset dir="${mps.home}/core">
+      <include name="**/classes" />
+      <include name="**/classes_gen" />
+    </dirset>
+    <dirset dir="${mps.home}/languages/baseLanguage/closures/runtime">
+      <include name="**/classes" />
+      <include name="**/classes_gen" />
+    </dirset>
+    <dirset dir="${mps.home}/languages/baseLanguage/collections/runtime">
+      <include name="**/classes" />
+      <include name="**/classes_gen" />
+    </dirset>
+    <dirset dir="${mps.home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search">
+      <include name="**/classes" />
+      <include name="**/classes_gen" />
+    </dirset>
+    <pathelement location="${mps.home}/workbench/typesystemUi/classes" />
+  </path>
   
   <target name="test">
     <path id="anttask.classpath">
-      <path path="${runtime.dir}" />
-      <path path="${mps.home}/core/ant/classes"></path>
+      <pathelement location="${runtime.dir}" />
+      <pathelement location="${mps.home}/core/ant/classes" />
     </path>
     <taskdef file="${runtime.dir}/jetbrains/mps/build/mps/runtime/anttask/antlib.xml" classpathref="anttask.classpath" />
     
     <mps.gen.module.xml fork="true">
+      <classpath>
+        <path refid="mps.classpath" />
+        <path refid="anttask.classpath" />
+      </classpath>
       <GenModule ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" destfile="module.xml">
         <sources jar="${mps.home}/languages/xx/yy.jar" descriptor="${basedir}/xx.msd" />
         <library jar="${mps.home}/lib.jar"> runtime.dir="${runtime.dir}" <!--test comment--></library>
