@@ -301,9 +301,11 @@ class TypeSystemComponent extends CheckingComponent {
 
   private void computeTypesForNode(SNode node, boolean forceChildrenCheck, Collection<SNode> additionalNodes, SNode targetNode) {
     if (node == null) return;
+    boolean incrementalMode = isIncrementalMode();
+    MyEventsReadListener nodesReadListener = incrementalMode ? new MyEventsReadListener() : null;
+
     myQueue.add(node);
     myQueue.addAll(additionalNodes);
-    MyEventsReadListener nodesReadListener = new MyEventsReadListener();
     for (SNode sNode = myQueue.poll(); sNode != null; sNode = myQueue.poll()) {
       if (myFullyCheckedNodes.contains(sNode)) {
         continue;
@@ -321,7 +323,7 @@ class TypeSystemComponent extends CheckingComponent {
       }
       if (!myPartlyCheckedNodes.contains(sNode)) {
         MyLanguageCachesReadListener languageCachesReadListener = null;
-        if (isIncrementalMode()) {
+        if (incrementalMode) {
           languageCachesReadListener = new MyLanguageCachesReadListener();
           nodesReadListener.clear();
           NodeReadEventsCaster.setNodesReadListener(nodesReadListener);
@@ -332,11 +334,11 @@ class TypeSystemComponent extends CheckingComponent {
           myJustInvalidatedNodes.add(sNode);
           typeAffected = applyRulesToNode(sNode);
         } finally {
-          if (isIncrementalMode()) {
+          if (incrementalMode) {
             NodeReadEventsCaster.removeNodesReadListener();
           }
         }
-        if (isIncrementalMode()) {
+        if (incrementalMode) {
           synchronized (ACCESS_LOCK) {
             nodesReadListener.setAccessReport(true);
             Set<SNode> accessedNodes = nodesReadListener.getAccessedNodes();
