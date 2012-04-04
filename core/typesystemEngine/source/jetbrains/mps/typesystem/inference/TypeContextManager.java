@@ -254,7 +254,7 @@ public class TypeContextManager implements CoreComponent {
   }
 
   @Nullable
-  SNode getTypeOf(final SNode node, boolean generationMode, IPerformanceTracer tracer) {
+  SNode getTypeOf(final SNode node) {
     ModelAccess.assertLegalRead();
     if (node == null) return null;
     ITypeContextOwner owner = new ITypeContextOwner() {
@@ -272,8 +272,8 @@ public class TypeContextManager implements CoreComponent {
       }
     }
     try {
-      if (generationMode) {
-        TypeCheckingContext context = tracer == null ? createTypeCheckingContext(node) : createTracingTypeCheckingContext(node);
+      if (myTypeChecker.isGenerationMode()) {
+        TypeCheckingContext context = myTypeChecker.hasPerformanceTracer() ? createTracingTypeCheckingContext(node) : createTypeCheckingContext(node);
         if (context == null) return null;
         try {
           return context.getTypeOf_generationMode(node);

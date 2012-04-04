@@ -246,6 +246,10 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
     }
   }
 
+  public boolean hasPerformanceTracer() {
+    return myPerformanceTracer != null;
+  }
+
   public <T> T computeWithTrace(Computable<T> c, String taskName) {
     if (myPerformanceTracer != null) {
       try {
@@ -279,7 +283,7 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   public SNode getTypeOf(final SNode node) {
     if (node == null) return null;
     fireNodeTypeAccessed(node);
-    return TypeContextManager.getInstance().getTypeOf(node, isGenerationMode(), myPerformanceTracer);
+    return TypeContextManager.getInstance().getTypeOf(node);
   }
 
 
