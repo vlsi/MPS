@@ -49,6 +49,7 @@ class TypeSystemComponent extends CheckingComponent {
   private Set<SNode> myPartlyCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
   private Set<SNode> myNodesDependentOnCaches = new THashSet<SNode>();
   private Stack<Set<SNode>> myCurrentFrontiers = new Stack<Set<SNode>>();
+  private Set<SNode> myAdditionalNodes = new THashSet<SNode>();
   private SNode myCurrentCheckedNode;
   private boolean myCurrentTypeAffected = false;
 
@@ -202,7 +203,7 @@ class TypeSystemComponent extends CheckingComponent {
     addDependentNodesTypeSystem(myCurrentCheckedNode, hashSet, true);
   }
 
-  protected void computeTypesSpecial(SNode nodeToCheck, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
+  private void computeTypesSpecial(SNode nodeToCheck, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
     computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes, initialNode);
     if (typeCalculated(initialNode) != null) return;
     solveInequalitiesAndExpandTypes(finalExpansion);
@@ -244,6 +245,8 @@ class TypeSystemComponent extends CheckingComponent {
     myState.setTargetNode(initialNode);
     while (node != null) {
       List<SNode> additionalNodes = new ArrayList<SNode>(givenAdditionalNodes);
+      additionalNodes.addAll(myAdditionalNodes);
+      myAdditionalNodes.clear();
       if (prevNode != null) {
         additionalNodes.add(prevNode);
       }
@@ -252,7 +255,6 @@ class TypeSystemComponent extends CheckingComponent {
       if (type == null) {
         if (node.isRoot()) {
           myNodeTypesComponent.getTypeCheckingContext().setSingleTypeComputation(false);
-          computeTypes(node, true, true, new ArrayList<SNode>(0), true, initialNode);
           type = getType(initialNode);
           if(type == null && node != initialNode && myState.getInequalitySystem() == null && !myNodeTypesComponent.getTypeCheckingContext().isInEditorQueries()) {
             LOG.error("No typesystem rule for " + initialNode.getDebugText() + " in root " + initialNode.getContainingRoot() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms", new Throwable(), new SNodePointer(initialNode));
@@ -442,6 +444,8 @@ class TypeSystemComponent extends CheckingComponent {
     }
     if (!myCurrentFrontiers.isEmpty()) {
       myCurrentFrontiers.peek().add(node);
+    } else {
+      myAdditionalNodes.add(node);
     }
   }
 
