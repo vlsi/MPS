@@ -15,9 +15,11 @@
  */
 package jetbrains.mps.generator;
 
+import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
+import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
@@ -54,14 +56,17 @@ public class ModelDigestHelper {
   }
 
   public String getModelHashFast(@NotNull SModelDescriptor descriptor, IOperationContext operationContext) {
-    if(descriptor instanceof EditableSModelDescriptor) {
-      IFile modelFile = ((EditableSModelDescriptor) descriptor).getModelFile();
-      if (modelFile != null) {
-        for (DigestProvider p : myProviders) {
-          Map<String, String> result = p.getGenerationHashes(operationContext, modelFile);
-          if (result != null) return result.get(FILE);
-        }
-      }
+    if (!(descriptor instanceof BaseSModelDescriptorWithSource)) return descriptor.getModelHash();
+
+    ModelDataSource source = ((BaseSModelDescriptorWithSource) descriptor).getSource();
+    if (!(source instanceof FileBasedModelDataSource)) return descriptor.getModelHash();
+
+    IFile modelFile = ((FileBasedModelDataSource) source).getFile();
+    if (modelFile == null) return descriptor.getModelHash();
+
+    for (DigestProvider p : myProviders) {
+      Map<String, String> result = p.getGenerationHashes(operationContext, modelFile);
+      if (result != null) return result.get(FILE);
     }
 
     return descriptor.getModelHash();
