@@ -16,7 +16,7 @@ public class InstanceMethodDeclarationScope {
     return new EmptyScope();
   }
 
-  public static Scope forInterface(SNode classNode, SNode... extendsInterfaces) {
+  public static Scope forInterface(SNode interfaceNode, SNode... extendsInterfaces) {
     // todo 
     return new EmptyScope();
   }

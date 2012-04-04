@@ -32,7 +32,7 @@ public class FieldDeclarationScope {
     }
   }
 
-  public static Scope forInterface(SNode classNode, SNode... extendsInterfaces) {
+  public static Scope forInterface(SNode interfaceNode, SNode... extendsInterfaces) {
     return new EmptyScope();
   }
 }

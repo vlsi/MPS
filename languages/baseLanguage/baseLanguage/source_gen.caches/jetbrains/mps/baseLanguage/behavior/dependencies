@@ -899,6 +899,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.MemberScopes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.OverridingPolicies" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.PropertyScope" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.StaticFieldDeclarationScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.IClassifiersSearchScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
