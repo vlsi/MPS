@@ -45,7 +45,12 @@ public class TypeContextManager implements CoreComponent {
   private Map<SNodePointer, Pair<TypeCheckingContext, List<ITypeContextOwner>>> myTypeCheckingContexts =
     new THashMap<SNodePointer, Pair<TypeCheckingContext, List<ITypeContextOwner>>>(); //todo cleanup on reload (temp solution)
   private boolean myComputeInNormalMode = false;
-  private ThreadLocal<Stack<Object>> myResolveStack = new ThreadLocal<Stack<Object>>();
+  private ThreadLocal<Boolean> myResolveMode = new ThreadLocal<Boolean>() {
+    @Override
+    protected Boolean initialValue() {
+      return Boolean.FALSE;
+    }
+  };
 
   private TypeChecker myTypeChecker;
   private ClassLoaderManager myClassLoaderManager;
@@ -118,34 +123,22 @@ public class TypeContextManager implements CoreComponent {
   }
 
   public void runResolveAction(Runnable r) {
-    Object o = new Object();
-    Stack<Object> stack = myResolveStack.get();
-    if (stack == null) {
-      stack = new Stack<Object>();
-      myResolveStack.set(stack);
-    }
-    stack.push(o);
+    boolean wasResolveBefore = myResolveMode.get();
+    myResolveMode.set(true);
     try {
       r.run();
     } finally {
-      Object popped = stack.pop();
-      assert o == popped;
+      myResolveMode.set(wasResolveBefore);
     }
   }
 
   public <T> T runResolveAction(Computable<T> computable) {
-    Object o = new Object();
-    Stack<Object> stack = myResolveStack.get();
-    if (stack == null) {
-      stack = new Stack<Object>();
-      myResolveStack.set(stack);
-    }
-    stack.push(o);
+    boolean wasResolveBefore = myResolveMode.get();
+    myResolveMode.set(true);
     try {
       return computable.compute();
     } finally {
-      Object popped = stack.pop();
-      assert o == popped;
+      myResolveMode.set(wasResolveBefore);
     }
   }
 
@@ -249,15 +242,6 @@ public class TypeContextManager implements CoreComponent {
     return new TypeCheckingContextNew(root, myTypeChecker, true);
   }
 
-  private Stack<Object> getMyResolveStack() {
-    Stack<Object> resolve = myResolveStack.get();
-    if (resolve == null) {
-      resolve = new Stack<Object>();
-      myResolveStack.set(resolve);
-    }
-    return resolve;
-  }
-
   private Set<SNode> getMyResolveNodes() {
     Set<SNode> nodes = myResolveNodes.get();
     if (nodes == null) {
@@ -274,9 +258,9 @@ public class TypeContextManager implements CoreComponent {
     ITypeContextOwner owner = new ITypeContextOwner() {
     };
     SNode root = node.getContainingRoot();
-    Stack<Object> resolve = getMyResolveStack();
+    boolean isResolveMode = myResolveMode.get();
     Set<SNode> resolveNodes = getMyResolveNodes();
-    if (!resolve.isEmpty()) {
+    if (isResolveMode) {
       if (resolveNodes.contains(node)) {
         return TypesUtil.createRuntimeErrorType();
       }
@@ -306,7 +290,7 @@ public class TypeContextManager implements CoreComponent {
           myComputeInNormalMode = true;
           return type;
         }
-        if (!resolve.isEmpty()) {
+        if (isResolveMode) {
           if (context == null || !context.isNonTypesystemComputation()) {
             TypeCheckingContext resolveContext = createTypeCheckingContextForResolve(node);
             SNode type = resolveContext.getTypeOf(node, myTypeChecker);
