@@ -74,16 +74,17 @@ public class Utils {
   }
 
   public static Set<SNode> getNodes(String profilerKey, _FunctionTypes._return_P0_E0<? extends Scope> scopeProvider, SReference ref) {
-    Set<SNode> result = SetSequence.fromSet(new HashSet());
+    Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
     long time = System.currentTimeMillis();
     try {
       Scope scope = scopeProvider.invoke();
       result = (scope == null ?
-        SetSequence.fromSet(new HashSet()) :
-        SetSequence.fromSetWithValues(new HashSet(), scope.getAvailableElements(null))
+        SetSequence.fromSet(new HashSet<SNode>()) :
+        SetSequence.fromSetWithValues(new HashSet<SNode>(), scope.getAvailableElements(null))
       );
     } catch (Exception e) {
       // todo: ? 
+      LOG.warning("Exception while " + profilerKey, e);
     }
     time = System.currentTimeMillis() - time;
     if (time > 2 * 1000) {
@@ -100,7 +101,7 @@ public class Utils {
   }
 
   public static boolean checkScopes(SNode node, Set<SNode> oldNodes, Set<SNode> newNodes, boolean debugInfo) {
-    Set<SNode> intersect = SetSequence.fromSetWithValues(new HashSet(), SetSequence.fromSet(oldNodes).intersect(SetSequence.fromSet(newNodes)));
+    Set<SNode> intersect = SetSequence.fromSetWithValues(new HashSet<SNode>(), SetSequence.fromSet(oldNodes).intersect(SetSequence.fromSet(newNodes)));
     SetSequence.fromSet(oldNodes).removeSequence(SetSequence.fromSet(intersect));
     SetSequence.fromSet(newNodes).removeSequence(SetSequence.fromSet(intersect));
     if (SetSequence.fromSet(newNodes).isNotEmpty() || SetSequence.fromSet(oldNodes).isNotEmpty()) {
