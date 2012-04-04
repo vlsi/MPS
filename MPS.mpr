@@ -390,6 +390,7 @@
       <modulePath path="${project}/samples/nanoc/nanocProject/languages/nanoc/nanoc.mpl" folder="samples" />
       <modulePath path="${project}/samples/nanoc/nanocProject/languages/nanoc/solutions/pluginSolution/pluginSolution.msd" folder="samples" />
       <modulePath path="${project}/samples/nanoc/nanocProject/solutions/jetbrains.mps.nanoc.sandbox/jetbrains.mps.nanoc.sandbox.msd" folder="samples" />
+      <modulePath path="${project}/samples/plainText/plainText.mpl" folder="samples" />
       <modulePath path="${project}/samples/sampleFacet/sampleFacet.mpl" folder="samples" />
       <modulePath path="${project}/samples/sampleFacet/solutions/pluginSolution/pluginSolution.msd" folder="samples" />
       <modulePath path="${project}/samples/sampleLanguage/sampleLanguage.mpl" folder="debugger" />
