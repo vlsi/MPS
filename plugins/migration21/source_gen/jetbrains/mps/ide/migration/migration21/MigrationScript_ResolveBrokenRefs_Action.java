@@ -21,12 +21,12 @@ import jetbrains.mps.progress.ProgressMonitorAdapter;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import java.awt.Frame;
 
-public class ConvertActionParameterCondition_Action extends GeneratedAction {
+public class MigrationScript_ResolveBrokenRefs_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ConvertActionParameterCondition_Action.class);
+  protected static Log log = LogFactory.getLog(MigrationScript_ResolveBrokenRefs_Action.class);
 
-  public ConvertActionParameterCondition_Action() {
-    super("Apply Convert Action Parameter Condition", "", ICON);
+  public MigrationScript_ResolveBrokenRefs_Action() {
+    super("Apply Resolve Broken Stub References", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -36,7 +36,7 @@ public class ConvertActionParameterCondition_Action extends GeneratedAction {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ConvertActionParameterCondition", t);
+        log.error("User's action doUpdate method failed. Action:" + "MigrationScript_ResolveBrokenRefs", t);
       }
       this.disable(event.getPresentation());
     }
@@ -60,9 +60,9 @@ public class ConvertActionParameterCondition_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      SNodePointer script = new SNodePointer("r:00000000-0000-4000-0000-011c89590367(jetbrains.mps.lang.plugin.scripts)", "5538333046911349083");
+      SNodePointer script = new SNodePointer("r:00000000-0000-4000-0000-011c89590367(jetbrains.mps.lang.plugin.scripts)", "4214874532454943783");
 
-      MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "Convert Action Parameter Condition", ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
+      MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "Resolve Broken Stub References", ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
       if (CommandProcessorEx.getInstance().getCurrentCommand() != null) {
         executor.execImmediately(new ProgressMonitorAdapter(new EmptyProgressIndicator()));
       } else {
@@ -70,7 +70,7 @@ public class ConvertActionParameterCondition_Action extends GeneratedAction {
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ConvertActionParameterCondition", t);
+        log.error("User's action execute method failed. Action:" + "MigrationScript_ResolveBrokenRefs", t);
       }
     }
   }

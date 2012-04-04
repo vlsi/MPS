@@ -89,19 +89,19 @@
       <property name="caption" nameId="tp4k.1204991940915" value="Optional" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2761153619454568020">
-      <property name="name" nameId="tpck.1169194664001" value="SplitMPSClasspath" />
+      <property name="name" nameId="tpck.1169194664001" value="MigrationScript_SplitMPSClasspath" />
       <property name="caption" nameId="tp4k.1205250923097" value="Apply Split MPS.Classpath" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2761153619454568093">
-      <property name="name" nameId="tpck.1169194664001" value="ResolveBrokenRefs" />
+      <property name="name" nameId="tpck.1169194664001" value="MigrationScript_ResolveBrokenRefs" />
       <property name="caption" nameId="tp4k.1205250923097" value="Apply Resolve Broken Stub References" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2761153619454586633">
-      <property name="name" nameId="tpck.1169194664001" value="ConvertActionParameterCondition" />
+      <property name="name" nameId="tpck.1169194664001" value="MigrationScript_ConvertActionParameterCondition" />
       <property name="caption" nameId="tp4k.1205250923097" value="Apply Convert Action Parameter Condition" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2761153619454599624">
-      <property name="name" nameId="tpck.1169194664001" value="APIMigration" />
+      <property name="name" nameId="tpck.1169194664001" value="MigrationScript_APIMigration" />
       <property name="caption" nameId="tp4k.1205250923097" value="Apply MPS API Migration" />
     </node>
   </roots>
@@ -115,16 +115,16 @@
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="3805125895591795071" resolveInfo="AddSourcesToModelRoots" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2761153619454568090">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="2761153619454568020" resolveInfo="SplitMPSClasspath" />
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="2761153619454568020" resolveInfo="MigrationScript_SplitMPSClasspath" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2761153619454568341">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="2761153619454568093" resolveInfo="ResolveBrokenRefs" />
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="2761153619454568093" resolveInfo="MigrationScript_ResolveBrokenRefs" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2761153619454599684">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="2761153619454599624" resolveInfo="APIMigration" />
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="2761153619454599624" resolveInfo="MigrationScript_APIMigration" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2761153619454586696">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="2761153619454586633" resolveInfo="ConvertActionParameterCondition" />
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="2761153619454586633" resolveInfo="MigrationScript_ConvertActionParameterCondition" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="4250481571544053951">
         <property name="name" nameId="tpck.1169194664001" value="optional" />
@@ -136,8 +136,34 @@
     </node>
   </root>
   <root id="2268008756145947405">
+    <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="8363849690865799422">
+      <property name="name" nameId="tpck.1169194664001" value="project" />
+      <link role="key" roleId="tp4k.1217252646389" targetNodeId="6tyf.~PlatformDataKeys%dPROJECT" resolveInfo="PROJECT" />
+    </node>
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="2268008756145947406">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2268008756145947407">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="8363849690865807141">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8363849690865807142">
+            <property name="name" nameId="tpck.1169194664001" value="mpsProject" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8363849690865807143">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jrbx.~MPSProject" resolveInfo="MPSProject" />
+            </node>
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8363849690865807144">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8363849690865807145">
+                <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="8363849690865807146" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="8363849690865807147">
+                  <link role="member" roleId="tp4f.1205756909548" targetNodeId="8363849690865799422" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8363849690865807148">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t7eg.~ComponentManager%dgetComponent(java%dlang%dClass)%cjava%dlang%dObject" resolveInfo="getComponent" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="8363849690865807149">
+                  <link role="classifier" roleId="tpee.1116615189566" targetNodeId="jrbx.~MPSProject" resolveInfo="MPSProject" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="8629207563095829445">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8629207563095829446">
             <property name="name" nameId="tpck.1169194664001" value="allModules" />
@@ -151,13 +177,12 @@
                 <node role="elementType" roleId="tp2q.1237721435807" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8629207563095929134">
                   <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vsqj.~IModule" resolveInfo="IModule" />
                 </node>
-                <node role="copyFrom" roleId="tp2q.1237731803878" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8629207563095829449">
-                  <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8629207563095829450">
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cu2c.~MPSModuleRepository" resolveInfo="MPSModuleRepository" />
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~MPSModuleRepository%dgetInstance()%cjetbrains%dmps%dsmodel%dMPSModuleRepository" resolveInfo="getInstance" />
+                <node role="copyFrom" roleId="tp2q.1237731803878" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8363849690865807174">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8363849690865807153">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8363849690865807142" resolveInfo="mpsProject" />
                   </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8629207563095829451">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~MPSModuleRepository%dgetAllModules()%cjava%dutil%dSet" resolveInfo="getAllModules" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8363849690865807183">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~Project%dgetModules()%cjava%dutil%dList" resolveInfo="getModules" />
                   </node>
                 </node>
               </node>
@@ -390,8 +415,34 @@
     </node>
   </root>
   <root id="3805125895591795071">
+    <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="8363849690865807186">
+      <property name="name" nameId="tpck.1169194664001" value="project" />
+      <link role="key" roleId="tp4k.1217252646389" targetNodeId="6tyf.~PlatformDataKeys%dPROJECT" resolveInfo="PROJECT" />
+    </node>
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="3805125895591795072">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3805125895591795073">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="8363849690865807188">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8363849690865807189">
+            <property name="name" nameId="tpck.1169194664001" value="mpsProject" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8363849690865807190">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jrbx.~MPSProject" resolveInfo="MPSProject" />
+            </node>
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8363849690865807191">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8363849690865807192">
+                <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="8363849690865807193" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="8363849690865807194">
+                  <link role="member" roleId="tp4f.1205756909548" targetNodeId="8363849690865807186" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8363849690865807195">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t7eg.~ComponentManager%dgetComponent(java%dlang%dClass)%cjava%dlang%dObject" resolveInfo="getComponent" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="8363849690865807196">
+                  <link role="classifier" roleId="tpee.1116615189566" targetNodeId="jrbx.~MPSProject" resolveInfo="MPSProject" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="8629207563095929144">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8629207563095929145">
             <property name="name" nameId="tpck.1169194664001" value="allModules" />
@@ -405,13 +456,12 @@
                 <node role="elementType" roleId="tp2q.1237721435807" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8629207563095929150">
                   <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vsqj.~IModule" resolveInfo="IModule" />
                 </node>
-                <node role="copyFrom" roleId="tp2q.1237731803878" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8629207563095929151">
-                  <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8629207563095929152">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~MPSModuleRepository%dgetInstance()%cjetbrains%dmps%dsmodel%dMPSModuleRepository" resolveInfo="getInstance" />
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cu2c.~MPSModuleRepository" resolveInfo="MPSModuleRepository" />
+                <node role="copyFrom" roleId="tp2q.1237731803878" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8363849690865807222">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8363849690865807201">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8363849690865807189" resolveInfo="mpsProject" />
                   </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8629207563095929153">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~MPSModuleRepository%dgetAllModules()%cjava%dutil%dSet" resolveInfo="getAllModules" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8363849690865807228">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~Project%dgetModules()%cjava%dutil%dList" resolveInfo="getModules" />
                   </node>
                 </node>
               </node>

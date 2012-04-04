@@ -18,14 +18,14 @@ public class Migration21_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
-    addAction(new APIMigration_Action());
     addAction(new AddSourcesToModelRoots_Action());
     addAction(new AddStubsToModelRoots_Action());
-    addAction(new ConvertActionParameterCondition_Action());
     addAction(new CorrectIconsAfterPluhinMove_Action());
+    addAction(new MigrationScript_APIMigration_Action());
+    addAction(new MigrationScript_ConvertActionParameterCondition_Action());
+    addAction(new MigrationScript_ResolveBrokenRefs_Action());
+    addAction(new MigrationScript_SplitMPSClasspath_Action());
     addAction(new MovePluginsOutOfLanguages_Action());
-    addAction(new ResolveBrokenRefs_Action());
-    addAction(new SplitMPSClasspath_Action());
     // groups 
     addGroup(new Migrations21_ActionGroup());
     addGroup(new OptionalMigrations_ActionGroup());

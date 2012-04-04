@@ -9,11 +9,14 @@ import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import java.util.List;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import java.util.Iterator;
@@ -46,12 +49,14 @@ public class AddStubsToModelRoots_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
+    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      List<IModule> allModules = ListSequence.fromListWithValues(new ArrayList<IModule>(), MPSModuleRepository.getInstance().getAllModules());
+      MPSProject mpsProject = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class);
+      List<IModule> allModules = ListSequence.fromListWithValues(new ArrayList<IModule>(), mpsProject.getModules());
       for (IModule module : ListSequence.fromList(allModules)) {
         ModuleDescriptor descriptor = module.getModuleDescriptor();
         if (descriptor == null) {

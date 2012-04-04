@@ -21,12 +21,12 @@ import jetbrains.mps.progress.ProgressMonitorAdapter;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import java.awt.Frame;
 
-public class APIMigration_Action extends GeneratedAction {
+public class MigrationScript_SplitMPSClasspath_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(APIMigration_Action.class);
+  protected static Log log = LogFactory.getLog(MigrationScript_SplitMPSClasspath_Action.class);
 
-  public APIMigration_Action() {
-    super("Apply MPS API Migration", "", ICON);
+  public MigrationScript_SplitMPSClasspath_Action() {
+    super("Apply Split MPS.Classpath", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -36,7 +36,7 @@ public class APIMigration_Action extends GeneratedAction {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "APIMigration", t);
+        log.error("User's action doUpdate method failed. Action:" + "MigrationScript_SplitMPSClasspath", t);
       }
       this.disable(event.getPresentation());
     }
@@ -60,9 +60,8 @@ public class APIMigration_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      SNodePointer script = new SNodePointer("r:00000000-0000-4000-0000-011c89590367(jetbrains.mps.lang.plugin.scripts)", "8954236049244973041");
-
-      MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "MPS API Migration", ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
+      SNodePointer script = new SNodePointer("r:00000000-0000-4000-0000-011c89590367(jetbrains.mps.lang.plugin.scripts)", "5606420294479385927");
+      MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "Split MPS.Classpath", ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
       if (CommandProcessorEx.getInstance().getCurrentCommand() != null) {
         executor.execImmediately(new ProgressMonitorAdapter(new EmptyProgressIndicator()));
       } else {
@@ -70,7 +69,7 @@ public class APIMigration_Action extends GeneratedAction {
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "APIMigration", t);
+        log.error("User's action execute method failed. Action:" + "MigrationScript_SplitMPSClasspath", t);
       }
     }
   }
