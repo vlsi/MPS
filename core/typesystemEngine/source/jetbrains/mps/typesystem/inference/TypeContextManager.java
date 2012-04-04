@@ -257,7 +257,7 @@ public class TypeContextManager implements CoreComponent {
     if (node == null) return null;
     ITypeContextOwner owner = new ITypeContextOwner() {
     };
-    SNode root = node.getContainingRoot();
+    SNode root = node.getTopmostAncestor();
     boolean isResolveMode = myResolveMode.get();
     Set<SNode> resolveNodes = getMyResolveNodes();
     if (isResolveMode) {
