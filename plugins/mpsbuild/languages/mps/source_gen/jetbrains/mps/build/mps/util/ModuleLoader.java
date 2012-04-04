@@ -607,7 +607,7 @@ public class ModuleLoader {
         resolved = SNodeOperations.as(visible.resolve(targetName, moduleRef.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Module");
         if (resolved == null) {
           if (genContext != null) {
-            genContext.showInformationMessage(myOriginalModule, "unsatisfied dependency: " + dep.getModuleRef().toString());
+            genContext.showWarningMessage(myOriginalModule, "unsatisfied dependency: " + dep.getModuleRef().toString());
           }
           // TODO FIXME 
           // <node> 
@@ -687,7 +687,7 @@ public class ModuleLoader {
         resolved = SNodeOperations.as(visible.resolve(targetName, moduleRef.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Module");
         if (resolved == null) {
           if (genContext != null) {
-            genContext.showInformationMessage(myOriginalModule, "unsatisfied dependency: " + dep.getModuleRef().toString());
+            genContext.showWarningMessage(myOriginalModule, "unsatisfied dependency: " + dep.getModuleRef().toString());
           }
           // TODO FIXME 
           // <node> 
