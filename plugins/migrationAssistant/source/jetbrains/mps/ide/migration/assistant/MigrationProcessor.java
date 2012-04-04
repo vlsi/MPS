@@ -148,9 +148,11 @@ public class MigrationProcessor extends AbstractProjectComponent{
       AnAction group = ActionManager.getInstance().getAction("jetbrains.mps.ide.migration.migration21.Migrations21_ActionGroup");
       if (group instanceof DefaultActionGroup) {
         AnAction[] actionsOrStubs = ((DefaultActionGroup) group).getChildActionsOrStubs();
-        AnAction action = actionsOrStubs[actionsOrStubs.length - 1];
-        if (action instanceof BaseAction) {
-          myActions.add((BaseAction)action);
+        for (int i = 0; i < actionsOrStubs.length; i++) {
+          AnAction action = actionsOrStubs[i];
+          if (action instanceof BaseAction) {
+            myActions.add((BaseAction)action);
+          }
         }
       }
     }

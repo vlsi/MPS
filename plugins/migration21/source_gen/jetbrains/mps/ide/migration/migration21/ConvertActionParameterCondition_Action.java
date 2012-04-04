@@ -21,14 +21,14 @@ import jetbrains.mps.progress.ProgressMonitorAdapter;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import java.awt.Frame;
 
-public class TMPTestMigrationScript_Action extends GeneratedAction {
+public class ConvertActionParameterCondition_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(TMPTestMigrationScript_Action.class);
+  protected static Log log = LogFactory.getLog(ConvertActionParameterCondition_Action.class);
 
-  public TMPTestMigrationScript_Action() {
-    super("TestMigrationScript", "", ICON);
+  public ConvertActionParameterCondition_Action() {
+    super("Apply Convert Action Parameter Condition", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(true);
+    this.setExecuteOutsideCommand(false);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -36,7 +36,7 @@ public class TMPTestMigrationScript_Action extends GeneratedAction {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "TMPTestMigrationScript", t);
+        log.error("User's action doUpdate method failed. Action:" + "ConvertActionParameterCondition", t);
       }
       this.disable(event.getPresentation());
     }
@@ -60,8 +60,9 @@ public class TMPTestMigrationScript_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      SNodePointer script = new SNodePointer("r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)", "1704189004094297789");
-      MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "Remove this where appropriate", ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
+      SNodePointer script = new SNodePointer("r:00000000-0000-4000-0000-011c89590367(jetbrains.mps.lang.plugin.scripts)", "5538333046911349083");
+
+      MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "Convert Action Parameter Condition", ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
       if (CommandProcessorEx.getInstance().getCurrentCommand() != null) {
         executor.execImmediately(new ProgressMonitorAdapter(new EmptyProgressIndicator()));
       } else {
@@ -69,7 +70,7 @@ public class TMPTestMigrationScript_Action extends GeneratedAction {
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "TMPTestMigrationScript", t);
+        log.error("User's action execute method failed. Action:" + "ConvertActionParameterCondition", t);
       }
     }
   }

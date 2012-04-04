@@ -4,10 +4,14 @@ package jetbrains.mps.ide.migration.migration21;
 
 import jetbrains.mps.plugins.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.actions.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 
 public class Migrations21_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Migrations21_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.migration.migration21.Migrations21_ActionGroup";
+  public static final String LABEL_ID_optional = ID + "optional";
 
   public Migrations21_ActionGroup() {
     super("Migrations 2.1", ID);
@@ -16,9 +20,16 @@ public class Migrations21_ActionGroup extends GeneratedActionGroup {
     try {
       Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.AddStubsToModelRoots_Action");
       Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.AddSourcesToModelRoots_Action");
-      Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.MovePluginsOutOfLanguages_Action");
-      Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.CorrectIconsAfterPluhinMove_Action");
-      Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.TMPTestMigrationScript_Action");
+      Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.SplitMPSClasspath_Action");
+      Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.ResolveBrokenRefs_Action");
+      Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.APIMigration_Action");
+      Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.ConvertActionParameterCondition_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(Migrations21_ActionGroup.LABEL_ID_optional);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide.migration21"));
+        Migrations21_ActionGroup.this.addAction(action);
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
