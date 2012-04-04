@@ -252,7 +252,7 @@ public class TypeContextManager implements CoreComponent {
   }
 
   @Nullable
-  public SNode getTypeOf(final SNode node, boolean generationMode, IPerformanceTracer tracer) {
+  SNode getTypeOf(final SNode node, boolean generationMode, IPerformanceTracer tracer) {
     ModelAccess.assertLegalRead();
     if (node == null) return null;
     ITypeContextOwner owner = new ITypeContextOwner() {
@@ -267,7 +267,6 @@ public class TypeContextManager implements CoreComponent {
       resolveNodes.add(node);
       if (resolveNodes.size() > 10) {
         LOG.warning("There are too many nodes in resolve");
-        resolveNodes.clear();
       }
     }
     try {
