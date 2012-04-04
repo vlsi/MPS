@@ -22,6 +22,7 @@ import com.intellij.ide.wizard.CommitStepException;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ex.ApplicationEx;
 import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
@@ -551,12 +552,17 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     }
 
     private void runProcessWithProgressSynchronously(final Task task, final ProgressIndicator progressIndicator) {
-      final boolean result = ((ApplicationEx) ApplicationManager.getApplication())
-        .runProcessWithProgressSynchronously(new Runnable() {
+      ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
           public void run() {
-            task.run(progressIndicator);
+            ProgressManager.getInstance().runProcess(new Runnable() {
+              @Override
+              public void run() {
+                task.run(progressIndicator);
+
+              }
+            }, progressIndicator);
           }
-        }, task.getTitle(), task.isCancellable(), task.getProject(), getComponent(), task.getCancelText());
+        });
     }
 
     @Override
