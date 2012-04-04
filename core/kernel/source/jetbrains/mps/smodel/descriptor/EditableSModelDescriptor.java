@@ -36,7 +36,4 @@ public interface EditableSModelDescriptor extends SModelDescriptor {
 
   @Deprecated
   boolean isReadOnly();
-
-  @Deprecated
-  IFile getModelFile();
 }

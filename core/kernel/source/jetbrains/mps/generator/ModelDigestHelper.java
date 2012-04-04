@@ -20,9 +20,11 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -61,7 +63,9 @@ public class ModelDigestHelper {
     ModelDataSource source = ((BaseSModelDescriptorWithSource) descriptor).getSource();
     if (!(source instanceof FileBasedModelDataSource)) return descriptor.getModelHash();
 
-    IFile modelFile = ((FileBasedModelDataSource) source).getFile();
+    Collection<String> files = ((FileBasedModelDataSource) source).getFilesToListen();
+    if (files.size() != 1) return descriptor.getModelHash();
+    IFile modelFile = FileSystem.getInstance().getFileByPath(files.iterator().next());
     if (modelFile == null) return descriptor.getModelHash();
 
     for (DigestProvider p : myProviders) {

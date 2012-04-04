@@ -24,7 +24,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
+import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
@@ -171,19 +172,25 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
-  public void deleteModel(SModelDescriptor modelDescriptor) {
+  public void deleteModel(SModelDescriptor d) {
     ModelAccess.assertLegalWrite();
 
-    fireModelWillBeDeletedEvent(modelDescriptor);
-    removeModelDescriptor(modelDescriptor);
+    fireModelWillBeDeletedEvent(d);
+    removeModelDescriptor(d);
 
-    if (modelDescriptor instanceof EditableSModelDescriptor) {
-      IFile modelFile = ((EditableSModelDescriptor) modelDescriptor).getModelFile();
-      if (modelFile != null && modelFile.exists()) {
-        modelFile.delete();
+    if (d instanceof BaseSModelDescriptorWithSource) {
+      ModelDataSource source = ((BaseSModelDescriptorWithSource) d).getSource();
+      if (source instanceof FileBasedModelDataSource) {
+        for (String file: ((FileBasedModelDataSource) source).getFilesToListen()){
+          IFile modelFile = FileSystem.getInstance().getFileByPath(file);
+
+          if (modelFile != null && modelFile.exists()) {
+            modelFile.delete();
+          }
+        }
       }
     }
-    SModelRepository.getInstance().fireModelDeletedEvent(modelDescriptor);
+    SModelRepository.getInstance().fireModelDeletedEvent(d);
   }
 
   //----------------------------get-----------------------------
@@ -266,12 +273,12 @@ public class SModelRepository implements CoreComponent {
   private List<EditableSModelDescriptor> getModelsToSave() {
     List<EditableSModelDescriptor> modelsToSave = new ArrayList<EditableSModelDescriptor>();
     for (SModelDescriptor md : myModelsWithOwners.keySet()) {
-      if (md instanceof EditableSModelDescriptor) {
-        EditableSModelDescriptor emd = ((EditableSModelDescriptor) md);
-        // HOTFIX MPS-13326
-        if (emd.isChanged() && !emd.isReadOnly()) {
-          modelsToSave.add(emd);
-        }
+      if (!(md instanceof EditableSModelDescriptor)) continue;
+
+      EditableSModelDescriptor emd = ((EditableSModelDescriptor) md);
+      // HOTFIX MPS-13326
+      if (emd.isChanged() && !emd.isReadOnly()) {
+        modelsToSave.add(emd);
       }
     }
     return modelsToSave;
@@ -284,8 +291,18 @@ public class SModelRepository implements CoreComponent {
     synchronized (myModelsLock) {
       modelsToRefresh = getModelsToSave();
     }
+
+    FileSystem fs = FileSystem.getInstance();
     for (EditableSModelDescriptor emd : modelsToRefresh) {
-      FileSystem.getInstance().refresh(emd.getModelFile());
+      if (!(emd instanceof BaseSModelDescriptorWithSource)) return;
+
+      ModelDataSource source = ((BaseSModelDescriptorWithSource) emd).getSource();
+      if (!(source instanceof FileBasedModelDataSource)) continue;
+
+      Collection<String> files = ((FileBasedModelDataSource) source).getFilesToListen();
+      for (String file : files) {
+        fs.refresh(fs.getFileByPath(file));
+      }
     }
 
     synchronized (myModelsLock) {
