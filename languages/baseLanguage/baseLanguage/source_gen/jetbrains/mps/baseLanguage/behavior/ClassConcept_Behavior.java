@@ -38,6 +38,7 @@ import jetbrains.mps.baseLanguage.scopes.FieldDeclarationScope;
 import jetbrains.mps.baseLanguage.scopes.EnumConstantDeclarationScope;
 import jetbrains.mps.baseLanguage.scopes.PropertyScope;
 import jetbrains.mps.baseLanguage.scopes.StaticFieldDeclarationScope;
+import jetbrains.mps.baseLanguage.scopes.StaticMethodDeclarationScope;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 import jetbrains.mps.baseLanguage.scopes.OverridingPolicies;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
@@ -323,6 +324,8 @@ public class ClassConcept_Behavior {
       result = PropertyScope.forClass(thisNode, SNodeOperations.cast(superClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), implementedInterfaces);
     } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
       result = StaticFieldDeclarationScope.forClass(thisNode, SNodeOperations.cast(superClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), implementedInterfaces);
+    } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
+      result = StaticMethodDeclarationScope.forClass(thisNode, SNodeOperations.cast(superClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), implementedInterfaces);
     }
 
     // cache section 

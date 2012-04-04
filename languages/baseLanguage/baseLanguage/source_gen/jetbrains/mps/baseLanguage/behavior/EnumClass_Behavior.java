@@ -8,6 +8,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class EnumClass_Behavior {
   public static void init(SNode thisNode) {
@@ -20,6 +27,10 @@ public class EnumClass_Behavior {
       }
     }
     return null;
+  }
+
+  public static SNode virtual_getSuperclass_1240936569950(SNode thisNode) {
+    return new EnumClass_Behavior.QuotationClass_nbdilp_a0a0c().createNode();
   }
 
   public static List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
@@ -41,5 +52,23 @@ public class EnumClass_Behavior {
   public static boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
     // enums always have static operations: valueOf and values 
     return true;
+  }
+
+  public static class QuotationClass_nbdilp_a0a0c {
+    public QuotationClass_nbdilp_a0a0c() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Enum")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
   }
 }
