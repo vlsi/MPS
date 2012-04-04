@@ -97,6 +97,8 @@ public class InequalityBlock extends RelationBlock {
       return;
     }
     if (!TypesUtil.hasVariablesInside(subType) && !TypesUtil.hasVariablesInside(superType)){
+      //no need to check if we don't need error reporting
+      if (myState.getTypeCheckingContext().isSingleTypeComputation()) return;
       if (TypesUtil.match(subType, superType)) {
         myState.executeOperation(new AddRemarkOperation("Matched: " + subType + " and "+superType));
         return;

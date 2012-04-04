@@ -22,6 +22,7 @@ import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -76,7 +77,7 @@ public class UsedLanguagesTable extends MpsElementsTable<ModuleReference> {
     @Override
     protected List<ModuleReference> getAllVisibleElements() {
         final List<ModuleReference> allLanguages = new ArrayList<ModuleReference>();
-        for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
+        for (Language language : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
             allLanguages.add(language.getModuleReference());
         }
         return allLanguages;

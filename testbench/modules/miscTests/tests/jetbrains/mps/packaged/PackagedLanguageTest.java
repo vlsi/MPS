@@ -98,7 +98,7 @@ public class PackagedLanguageTest {
 
     for (int i = 0; i < 16; i++) {
       final Color color = new Color(buf.getRGB(i, i));
-      Assert.assertTrue(i % 2 == 0 ? Color.BLACK.equals(color) : Color.WHITE.equals(color));
+      Assert.assertTrue("Color at index " + i + " is " + color.toString(),  i % 2 == 0 ? Color.BLACK.equals(color) : Color.WHITE.equals(color));
     }
   }
 

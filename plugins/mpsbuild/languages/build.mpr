@@ -6,10 +6,6 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${mps_langs}/util/properties/properties.mpl" folder="" />
-      <modulePath path="${mps_langs}/util/properties/sandbox/sandbox.msd" folder="" />
-      <modulePath path="${mps_langs}/xml/xml/sandbox/sandbox.msd" />
-      <modulePath path="${mps_langs}/xml/xml/xml.mpl" />
       <modulePath path="${project}/build/build.mpl" />
       <modulePath path="${project}/deploySolution/deploy.msd" />
       <modulePath path="${project}/mps/mps.mpl" folder="" />
@@ -17,7 +13,7 @@
       <modulePath path="${project}/solutions/jetbrains.mps.build.sandbox/sandbox.msd" />
       <modulePath path="${project}/solutions/jetbrains.mps.build.tests/tests.msd" folder="" />
       <modulePath path="${project}/workflow/workflow.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/../../../IdeaPlugin/buildScript/plugin.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/../../../IdeaPlugin/buildScript/plugin.msd" />
       <modulePath path="$PROJECT_DIR$/../temp/jetbrains.mps.build.pluginSolution/pluginSolution.msd" />
     </projectModules>
     <genConfs />

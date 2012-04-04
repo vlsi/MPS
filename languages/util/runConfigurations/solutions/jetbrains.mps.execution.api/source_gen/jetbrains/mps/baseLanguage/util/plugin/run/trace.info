@@ -1,33 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="8492459591399146889">
-    <unitInfo nodeId="8492459591399146889" fileName="MPSLaunch.java" startLine="10" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
-  </root>
   <root nodeId="8492459591399147955">
-    <nodeInfo nodeId="1632860780048165228" fileName="LayoutUtil.java" startLine="15" startPosition="66" endLine="16" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1632860780048165237" fileName="LayoutUtil.java" startLine="16" startPosition="52" endLine="17" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1632860780048165212" fileName="LayoutUtil.java" startLine="17" startPosition="124" endLine="18" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1632860780048165216" fileName="LayoutUtil.java" startLine="21" startPosition="66" endLine="22" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1632860780048165221" fileName="LayoutUtil.java" startLine="25" startPosition="66" endLine="26" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2013126310013254463" fileName="LayoutUtil.java" startLine="10" startPosition="25" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LayoutUtil#()V" />
-    <nodeInfo nodeId="8492459591399147981" fileName="LayoutUtil.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createLabelConstraints#(I)Ljava/awt/GridBagConstraints;" />
-    <nodeInfo nodeId="8492459591399148006" fileName="LayoutUtil.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createPanelConstraints#(I)Ljava/awt/GridBagConstraints;" />
-    <nodeInfo nodeId="8492459591399147956" fileName="LayoutUtil.java" startLine="14" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createFieldConstraints#(I)Ljava/awt/GridBagConstraints;" />
-    <scopeInfo nodeId="2013126310013254465" fileName="LayoutUtil.java" startLine="12" startPosition="23" endLine="12" endPosition="23" />
-    <scopeInfo nodeId="8492459591399147984" fileName="LayoutUtil.java" startLine="21" startPosition="66" endLine="22" endPosition="73" />
-    <scopeInfo nodeId="8492459591399148009" fileName="LayoutUtil.java" startLine="25" startPosition="66" endLine="26" endPosition="73" />
-    <scopeInfo nodeId="2013126310013254463" fileName="LayoutUtil.java" startLine="10" startPosition="25" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="8492459591399147959" fileName="LayoutUtil.java" startLine="15" startPosition="66" endLine="18" endPosition="73" />
-    <scopeInfo nodeId="8492459591399147981" fileName="LayoutUtil.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+    <nodeInfo nodeId="1632860780048165228" fileName="LayoutUtil.java" startLine="19" startPosition="66" endLine="20" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1632860780048165237" fileName="LayoutUtil.java" startLine="20" startPosition="52" endLine="21" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1632860780048165212" fileName="LayoutUtil.java" startLine="21" startPosition="124" endLine="22" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1632860780048165216" fileName="LayoutUtil.java" startLine="25" startPosition="66" endLine="26" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1632860780048165221" fileName="LayoutUtil.java" startLine="29" startPosition="66" endLine="30" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2013126310013254463" fileName="LayoutUtil.java" startLine="14" startPosition="25" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LayoutUtil#()V" />
+    <nodeInfo nodeId="8492459591399147981" fileName="LayoutUtil.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createLabelConstraints#(I)Ljava/awt/GridBagConstraints;" />
+    <nodeInfo nodeId="8492459591399148006" fileName="LayoutUtil.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createPanelConstraints#(I)Ljava/awt/GridBagConstraints;" />
+    <nodeInfo nodeId="8492459591399147956" fileName="LayoutUtil.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createFieldConstraints#(I)Ljava/awt/GridBagConstraints;" />
+    <scopeInfo nodeId="2013126310013254465" fileName="LayoutUtil.java" startLine="16" startPosition="23" endLine="16" endPosition="23" />
+    <scopeInfo nodeId="8492459591399147984" fileName="LayoutUtil.java" startLine="25" startPosition="66" endLine="26" endPosition="73" />
+    <scopeInfo nodeId="8492459591399148009" fileName="LayoutUtil.java" startLine="29" startPosition="66" endLine="30" endPosition="73" />
+    <scopeInfo nodeId="2013126310013254463" fileName="LayoutUtil.java" startLine="14" startPosition="25" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="8492459591399147959" fileName="LayoutUtil.java" startLine="19" startPosition="66" endLine="22" endPosition="73" />
+    <scopeInfo nodeId="8492459591399147981" fileName="LayoutUtil.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="8492459591399148004" varName="y" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399148006" fileName="LayoutUtil.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="8492459591399148006" fileName="LayoutUtil.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="8492459591399148029" varName="y" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399147956" fileName="LayoutUtil.java" startLine="14" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="8492459591399147956" fileName="LayoutUtil.java" startLine="18" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="8492459591399147979" varName="y" />
     </scopeInfo>
-    <unitInfo nodeId="8492459591399147955" fileName="LayoutUtil.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil" />
+    <unitInfo nodeId="8492459591399147955" fileName="LayoutUtil.java" startLine="8" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil" />
   </root>
   <root nodeId="8492459591399148601">
     <nodeInfo nodeId="809981953580482562" fileName="RunUtil.java" startLine="41" startPosition="72" endLine="42" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

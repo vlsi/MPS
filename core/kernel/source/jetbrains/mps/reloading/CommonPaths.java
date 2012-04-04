@@ -55,6 +55,10 @@ public class CommonPaths {
         addWorkbenchJars(result);
       } else if (type == ClassType.TEST) {
         addTestJars(result);
+      } else if (type == ClassType.JDK) {
+        return getJDKPath();
+      } else if (type == ClassType.JDK_TOOLS) {
+        addIfExists(result, "/lib/tools.jar");
       }
     }
     return itemToPath(result);

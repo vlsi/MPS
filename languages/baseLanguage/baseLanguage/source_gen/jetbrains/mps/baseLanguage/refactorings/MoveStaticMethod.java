@@ -24,10 +24,6 @@ public class MoveStaticMethod extends BaseRefactoring {
     return "Move Static Method";
   }
 
-  public String getKeyStroke() {
-    return getKeyStroke_static();
-  }
-
   public Class getOverridenRefactoringClass() {
     return MoveNodes.class;
   }
@@ -52,9 +48,5 @@ public class MoveStaticMethod extends BaseRefactoring {
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     return ((MoveStaticMethodRefactoring) refactoringContext.getParameter("refactor")).getUsages();
-  }
-
-  public static String getKeyStroke_static() {
-    return MoveNodes.getKeyStroke_static();
   }
 }

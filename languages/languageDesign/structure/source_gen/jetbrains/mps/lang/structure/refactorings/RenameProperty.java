@@ -31,10 +31,6 @@ public class RenameProperty extends BaseLoggableRefactoring {
     return "Rename Property";
   }
 
-  public String getKeyStroke() {
-    return getKeyStroke_static();
-  }
-
   public Class getOverridenRefactoringClass() {
     return Rename.class;
   }
@@ -69,9 +65,5 @@ public class RenameProperty extends BaseLoggableRefactoring {
 
   public void updateModel(final SModel model, final RefactoringContext refactoringContext) {
     refactoringContext.updateByDefault(model);
-  }
-
-  public static String getKeyStroke_static() {
-    return Rename.getKeyStroke_static();
   }
 }

@@ -13,7 +13,7 @@ public class Block_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor imp
   }
 
   public String virtual_evaluateMacro_1234975967990(SNode thisNode, String macroName) {
-    return IMacroHolder_Behavior.virtual_evaluateMacro_1234975967990(thisNode, macroName);
+    return Block_Behavior.virtual_evaluateMacro_1234975967990(thisNode, macroName);
   }
 
   public String virtual_getPath_1234976932856(SNode thisNode) {
@@ -22,6 +22,10 @@ public class Block_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor imp
 
   public List<SNode> virtual_getAllVariable_1234864693585(SNode thisNode) {
     return Block_Behavior.virtual_getAllVariable_1234864693585(thisNode);
+  }
+
+  public List<SNode> virtual_getMacro_1107726059764558743(SNode thisNode) {
+    return IMacroHolder_Behavior.virtual_getMacro_1107726059764558743(thisNode);
   }
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {

@@ -8,15 +8,6 @@
         <option name="modelRoots">
           <set>
             <ModelRoot>
-              <option name="manager">
-                <ModelRootManager>
-                  <option name="className" value="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-                  <option name="moduleId" value="f3061a53-9226-4cc5-a443-f952ceaf5816" />
-                </ModelRootManager>
-              </option>
-              <option name="path" value="$MODULE_DIR$/../../../lib/beansbinding-1.2.1.jar" />
-            </ModelRoot>
-            <ModelRoot>
               <option name="path" value="$MODULE_DIR$/models" />
             </ModelRoot>
           </set>
@@ -40,15 +31,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../lib/beansbinding-1.2.1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
   </component>
 </module>
 

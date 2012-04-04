@@ -36,14 +36,43 @@ public class PasteWrappers {
       }
 
       public String getTargetConceptFqName() {
-        return "jetbrains.mps.build.structure.BuildSource_JavaLibraryElement";
+        return "jetbrains.mps.build.structure.BuildSource_JavaFiles";
       }
 
       public SNode wrap(PasteWrapperContext _context) {
-        SNode nn = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), "jetbrains.mps.build.structure.BuildSource_JavaLibraryClasses", null);
+        SNode nn = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), "jetbrains.mps.build.structure.BuildSource_JavaFiles", null);
         SLinkOperations.setTarget(nn, "resset", _context.getSourceNode(), true);
         return nn;
+      }
+    });
+    ListSequence.fromList(result).addElement(new PasteWrapper() {
+      public String getSourceConceptFqName() {
+        return "jetbrains.mps.build.structure.BuildSource_JavaJar";
+      }
 
+      public String getTargetConceptFqName() {
+        return "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar";
+      }
+
+      public SNode wrap(PasteWrapperContext _context) {
+        SNode nn = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar", null);
+        SLinkOperations.setTarget(nn, "jar", _context.getSourceNode(), true);
+        return nn;
+      }
+    });
+    ListSequence.fromList(result).addElement(new PasteWrapper() {
+      public String getSourceConceptFqName() {
+        return "jetbrains.mps.build.structure.BuildSource_JavaCP";
+      }
+
+      public String getTargetConceptFqName() {
+        return "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP";
+      }
+
+      public SNode wrap(PasteWrapperContext _context) {
+        SNode nn = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP", null);
+        SLinkOperations.setTarget(nn, "classpath", _context.getSourceNode(), true);
+        return nn;
       }
     });
     return result;

@@ -20,8 +20,10 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.roots.LibraryOrderEntry;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.OrderEntry;
+import com.intellij.openapi.roots.OrderEnumerator;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.util.Processor;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -32,21 +34,28 @@ import java.util.List;
 
 public class LibHelper {
   public static List<Solution> getAllLibsToImport(Module module) {
-    List<Solution> result = new ArrayList<Solution>();
-    for (OrderEntry oe : ModuleRootManager.getInstance(module).getOrderEntries()) {
-      if (!(oe instanceof LibraryOrderEntry)) continue;
-      LibraryOrderEntry loe = (LibraryOrderEntry) oe;
-      if (loe.isModuleLevel()) continue;
-      Solution s = findSolutionForLibrary(loe.getLibrary());
-      if (s == null) continue;
-      result.add(s);
-    }
+    final List<Solution> result = new ArrayList<Solution>();
+    OrderEnumerator enumerator = ModuleRootManager.getInstance(module).orderEntries();
+    OrderEnumerator libEnumerator = enumerator.recursively().librariesOnly();
+
+    enumerator.forEach(new Processor<OrderEntry>() {
+      public boolean process(OrderEntry oe) {
+        if (!(oe instanceof LibraryOrderEntry)) return true;
+        LibraryOrderEntry loe = (LibraryOrderEntry) oe;
+        if (loe.isModuleLevel()) return true;
+        Solution s = findSolutionForLibrary(loe.getLibrary());
+        if (s == null) return true;
+        result.add(s);
+        return true;
+      }
+    });
+
     return result;
   }
 
   public static Solution findSolutionForLibrary(Library library) {
-    ModuleReference ref = new ModuleReference(null, ModuleId.foreign(library.getName()));
-    return MPSModuleRepository.getInstance().getSolution(ref);
+    ModuleId id = ModuleId.foreign(library.getName());
+    return (Solution) MPSModuleRepository.getInstance().getModuleById(id);
   }
 
   public static String getLocalPath(VirtualFile f) {

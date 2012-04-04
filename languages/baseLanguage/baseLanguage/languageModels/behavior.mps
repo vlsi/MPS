@@ -3,11 +3,11 @@
   <persistence version="7" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
-  <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)" />
   <language namespace="d8f591ec-4d86-4af2-9f92-a9e93c803ffa(jetbrains.mps.lang.scopes)" />
+  <language namespace="982eb8df-2c96-4bd7-9963-11712ea622e5(jetbrains.mps.lang.resources)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -31,12 +31,12 @@
   <import index="msyo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" />
   <import index="n13f" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.reloading(MPS.Core/jetbrains.mps.reloading@java_stub)" version="-1" />
   <import index="7juq" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.pattern.util(MPS.Core/jetbrains.mps.lang.pattern.util@java_stub)" version="-1" />
-  <import index="o8zo" modelUID="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" version="-1" />
-  <import index="tp2n" modelUID="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)" version="-1" />
   <import index="89o2" modelUID="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)" version="-1" />
-  <import index="genb" modelUID="r:142fc2e9-fc09-4c4f-92d7-6ce0e3f66b61(jetbrains.mps.lang.scopes.structure)" version="-1" />
-  <import index="6xgk" modelUID="r:6e9ad488-5df2-49e4-8c01-8a7f3812adf7(jetbrains.mps.lang.scopes.runtime)" version="-1" />
+  <import index="o8zo" modelUID="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" version="-1" />
   <import index="fnmy" modelUID="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)" version="-1" />
+  <import index="genb" modelUID="r:142fc2e9-fc09-4c4f-92d7-6ce0e3f66b61(jetbrains.mps.lang.scopes.structure)" version="-1" />
+  <import index="tp2n" modelUID="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)" version="-1" />
+  <import index="6xgk" modelUID="r:6e9ad488-5df2-49e4-8c01-8a7f3812adf7(jetbrains.mps.lang.scopes.runtime)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp3t" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" implicit="yes" />
@@ -44,7 +44,6 @@
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
   <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" implicit="yes" />
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
-  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" implicit="yes" />
   <import index="cx9y" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" implicit="yes" />
   <roots>
@@ -4238,8 +4237,8 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633081915">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="2990235398088186562">
-                    <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.2990235398088186559" resolveInfo="STATICMARK" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type=".jetbrains.mps.lang.plugin.structure.IconResourceReference" id="2990235398088186562">
+                    <link role="declaration" targetNodeId="tpec.2990235398088186559" resolveInfo="STATICMARK" />
                   </node>
                 </node>
               </node>
@@ -6081,6 +6080,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="4855996797771706430">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4855996797771706431">
             <property name="name" nameId="tpck.1169194664001" value="javastub" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3193109656321131016" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="192193563997309046">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelStereotype%dgetStubStereotypeForId(java%dlang%dString)%cjava%dlang%dString" resolveInfo="getStubStereotypeForId" />
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cu2c.~SModelStereotype" resolveInfo="SModelStereotype" />
@@ -6089,7 +6089,6 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="cu2c.~LanguageID%dJAVA" resolveInfo="JAVA" />
               </node>
             </node>
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3193109656321131016" />
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="4855996797771705028">
@@ -11793,8 +11792,8 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633081822">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="2990235398088186564">
-                    <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.2990235398088186555" resolveInfo="FINALMARK" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type=".jetbrains.mps.lang.plugin.structure.IconResourceReference" id="2990235398088186564">
+                    <link role="declaration" targetNodeId="tpec.2990235398088186555" resolveInfo="FINALMARK" />
                   </node>
                 </node>
               </node>
@@ -13404,8 +13403,8 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633082298">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="2990235398088186573">
-                <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.2990235398088186559" resolveInfo="STATICMARK" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type=".jetbrains.mps.lang.plugin.structure.IconResourceReference" id="2990235398088186573">
+                <link role="declaration" targetNodeId="tpec.2990235398088186559" resolveInfo="STATICMARK" />
               </node>
             </node>
           </node>
@@ -14643,8 +14642,8 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756632959828">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="2990235398088186570">
-                    <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.2990235398088186567" resolveInfo="RUNNABLEMARK" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type=".jetbrains.mps.lang.plugin.structure.IconResourceReference" id="2990235398088186570">
+                    <link role="declaration" targetNodeId="tpec.2990235398088186567" resolveInfo="RUNNABLEMARK" />
                   </node>
                 </node>
               </node>
@@ -14666,8 +14665,8 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633080881">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="2990235398088186571">
-                    <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.2990235398088186555" resolveInfo="FINALMARK" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type=".jetbrains.mps.lang.plugin.structure.IconResourceReference" id="2990235398088186571">
+                    <link role="declaration" targetNodeId="tpec.2990235398088186555" resolveInfo="FINALMARK" />
                   </node>
                 </node>
               </node>
@@ -14885,11 +14884,11 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3980490811621791918">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3980490811621791920">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3980490811621791919">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3980490811621791884" resolveInfo="visited" />
-            </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="7551947648245123122">
               <node role="argument" roleId="tp2q.1160612519549" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="7551947648245123124" />
+            </node>
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3980490811621791919">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3980490811621791884" resolveInfo="visited" />
             </node>
           </node>
         </node>
@@ -22791,8 +22790,8 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633083419">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="2990235398088186565">
-                <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.2990235398088186559" resolveInfo="STATICMARK" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type=".jetbrains.mps.lang.plugin.structure.IconResourceReference" id="2990235398088186565">
+                <link role="declaration" targetNodeId="tpec.2990235398088186559" resolveInfo="STATICMARK" />
               </node>
             </node>
           </node>
@@ -22804,8 +22803,8 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633083426">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="2990235398088186566">
-                <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.2990235398088186555" resolveInfo="FINALMARK" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type=".jetbrains.mps.lang.plugin.structure.IconResourceReference" id="2990235398088186566">
+                <link role="declaration" targetNodeId="tpec.2990235398088186555" resolveInfo="FINALMARK" />
               </node>
             </node>
           </node>
@@ -24008,8 +24007,8 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633082329">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="2990235398088186558">
-                    <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.2990235398088186555" resolveInfo="FINALMARK" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type=".jetbrains.mps.lang.plugin.structure.IconResourceReference" id="2990235398088186558">
+                    <link role="declaration" targetNodeId="tpec.2990235398088186555" resolveInfo="FINALMARK" />
                   </node>
                 </node>
               </node>
@@ -26450,8 +26449,8 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633082260">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="2990235398088186572">
-                <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.2990235398088186559" resolveInfo="STATICMARK" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type=".jetbrains.mps.lang.plugin.structure.IconResourceReference" id="2990235398088186572">
+                <link role="declaration" targetNodeId="tpec.2990235398088186559" resolveInfo="STATICMARK" />
               </node>
             </node>
           </node>
@@ -29948,8 +29947,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5017341185733869604">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5017341185733869605">
             <property name="name" nameId="tpck.1169194664001" value="defaultIcon" />
-            <node role="initializer" roleId="tpee.1068431790190" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="8814893218132341185">
-              <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.349375443596798662" resolveInfo="PACKAGE_LOCAL" />
+            <node role="initializer" roleId="tpee.1068431790190" type=".jetbrains.mps.lang.plugin.structure.IconResourceReference" id="8814893218132341185">
+              <link role="declaration" targetNodeId="tpec.349375443596798662" resolveInfo="PACKAGE_LOCAL" />
             </node>
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5017341185733869606">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~Icon" resolveInfo="Icon" />
@@ -29973,8 +29972,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="5017341185733869614">
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5017341185733869615">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5017341185733869616">
-              <node role="expression" roleId="tpee.1068581517676" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="8814893218132341187">
-                <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.349375443596798665" resolveInfo="PUBLIC" />
+              <node role="expression" roleId="tpee.1068581517676" type=".jetbrains.mps.lang.plugin.structure.IconResourceReference" id="8814893218132341187">
+                <link role="declaration" targetNodeId="tpec.349375443596798665" resolveInfo="PUBLIC" />
               </node>
             </node>
           </node>
@@ -29992,8 +29991,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="5017341185733869622">
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5017341185733869623">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5017341185733869624">
-              <node role="expression" roleId="tpee.1068581517676" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="8814893218132341189">
-                <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.349375443596798668" resolveInfo="PRIVATE" />
+              <node role="expression" roleId="tpee.1068581517676" type=".jetbrains.mps.lang.plugin.structure.IconResourceReference" id="8814893218132341189">
+                <link role="declaration" targetNodeId="tpec.349375443596798668" resolveInfo="PRIVATE" />
               </node>
             </node>
           </node>
@@ -30011,8 +30010,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="5017341185733869630">
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5017341185733869631">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5017341185733869632">
-              <node role="expression" roleId="tpee.1068581517676" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="8814893218132341191">
-                <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.349375443596798671" resolveInfo="PROTECTED" />
+              <node role="expression" roleId="tpee.1068581517676" type=".jetbrains.mps.lang.plugin.structure.IconResourceReference" id="8814893218132341191">
+                <link role="declaration" targetNodeId="tpec.349375443596798671" resolveInfo="PROTECTED" />
               </node>
             </node>
           </node>
@@ -31845,8 +31844,8 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633082373">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="2990235398088186563">
-                <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.2990235398088186559" resolveInfo="STATICMARK" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type=".jetbrains.mps.lang.plugin.structure.IconResourceReference" id="2990235398088186563">
+                <link role="declaration" targetNodeId="tpec.2990235398088186559" resolveInfo="STATICMARK" />
               </node>
             </node>
           </node>

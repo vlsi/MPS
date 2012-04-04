@@ -106,9 +106,7 @@ public class ChangeModelProcessor {
       public void clear() {
       }
     };
-    model.getModule().getModuleDescriptor().setCompileInMPS(false);
     GenerationFacade.generateModels(this.myProject.getComponent(MPSProject.class), models, new ModuleContext(model.getModule(), ProjectHelper.toMPSProject(this.myProject)), generationHandler, new EmptyProgressMonitor(), handler, GenerationOptions.getDefaults().create(), this.myProject.getComponent(TransientModelsComponent.class));
-    model.getModule().getModuleDescriptor().setCompileInMPS(true);
     return results;
   }
 

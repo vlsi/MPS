@@ -16,11 +16,12 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 
 public class LanguageRef_Editor extends DefaultNodeEditor {
@@ -51,8 +52,8 @@ public class LanguageRef_Editor extends DefaultNodeEditor {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      List<Language> langList = MPSModuleRepository.getInstance().getAllLanguages();
-      return ListSequence.fromList(langList).select(new ISelector<Language, String>() {
+      Iterable<Language> langList = ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
+      return Sequence.fromIterable(langList).select(new ISelector<Language, String>() {
         public String select(Language it) {
           return ((String) it.getModuleReference().getModuleId().toString());
         }

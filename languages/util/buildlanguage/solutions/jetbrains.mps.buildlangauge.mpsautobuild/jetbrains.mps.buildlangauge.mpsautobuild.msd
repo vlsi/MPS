@@ -6,7 +6,6 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="false">77cb4ae5-2831-4e0c-b819-c00e2c16c1b2(jetbrains.mps.build.mpsdist)</dependency>
-    <dependency reexport="false">bf659d6c-5638-4ea1-972b-4d492b5a91f2(jetbrains.mps.execution.configurations.implementation.plugin)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>a79f53b6-9aaa-48eb-9fbb-aaec80a6da9a(jetbrains.mps.build.custommps)</usedLanguage>

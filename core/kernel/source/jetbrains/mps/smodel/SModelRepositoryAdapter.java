@@ -15,10 +15,9 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.vfs.IFile;
-
 public abstract class SModelRepositoryAdapter implements SModelRepositoryListener {
   public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
+
   }
 
   public void modelDeleted(SModelDescriptor modelDescriptor) {
@@ -32,6 +31,7 @@ public abstract class SModelRepositoryAdapter implements SModelRepositoryListene
   }
 
   public void beforeModelRemoved(SModelDescriptor modelDescriptor) {
+
   }
 
   public void modelAdded(SModelDescriptor modelDescriptor) {
@@ -44,29 +44,11 @@ public abstract class SModelRepositoryAdapter implements SModelRepositoryListene
     modelRepositoryChanged(modelDescriptor);
   }
 
-  public void modelOwnerAdded(SModelDescriptor modelDescriptor, ModelOwner owner) {
-    modelRepositoryChanged();
-    modelRepositoryChanged(modelDescriptor);
-  }
-
-  public void modelOwnerRemoved(SModelDescriptor modelDescriptor, ModelOwner owner) {
-    modelRepositoryChanged();
-    modelRepositoryChanged(modelDescriptor);
-  }
-
-  public void modelFileChanged(SModelDescriptor modelDescriptor, IFile from) {
-    modelRepositoryChanged();
-    modelRepositoryChanged(modelDescriptor);
-  }
-
-  public void beforeModelFileChanged(SModelDescriptor modelDescriptor) {
-    modelRepositoryChanged();
-    modelRepositoryChanged(modelDescriptor);
-  }
-
   public void modelRepositoryChanged() {
+
   }
 
   public void modelRepositoryChanged(SModelDescriptor modelDescriptor) {
+
   }
 }

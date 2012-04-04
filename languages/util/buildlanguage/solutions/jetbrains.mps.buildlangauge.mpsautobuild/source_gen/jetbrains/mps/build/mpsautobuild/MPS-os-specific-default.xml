@@ -25,8 +25,8 @@
     <mkdir dir="${deploy.dir}/MPS-os-specific.mac/bin" />
     <mkdir dir="${deploy.dir}/MPS-os-specific.mac/help" />
     <mkdir dir="${deploy.dir}/MPS-os-specific.mac" />
+    <mkdir dir="${deploy.dir}/MPS-os-specific.exe/MPS/bin" />
     <mkdir dir="${deploy.dir}/MPS-os-specific.exe/MPS" />
-    <mkdir dir="${deploy.dir}/MPS-os-specific.exe/bin" />
     <mkdir dir="${deploy.dir}/MPS-os-specific.exe/help" />
     <mkdir dir="${deploy.dir}/MPS-os-specific.exe" />
   </target>
@@ -90,13 +90,12 @@
       <param name="base_dir" value="${base_dir}" />
     </antcall>
     <delete dir="${deploy.dir}/MPS-os-specific.mac" />
+    <copy todir="${deploy.dir}/MPS-os-specific.exe/MPS/bin">
+      <fileset dir="${base_dir}/bin/win" excludes="**/bin/linux/**, **/bin/mac/**, **/bin/nix/**, **/bin/win/**, " />
+    </copy>
     <copy todir="${deploy.dir}/MPS-os-specific.exe/MPS">
-      <fileset dir="${base_dir}/../MPS.artifacts/MPS" />
+      <fileset dir="${base_dir}/../MPS.artifacts/MPS" excludes="**/bin/linux/**, **/bin/mac/**, **/bin/nix/**, **/bin/win/**, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-os-specific.exe/bin">
-      <fileset dir="${base_dir}/bin" />
-    </copy>
-    <copy file="${base_dir}/build/mps.vmoptions" tofile="${deploy.dir}/MPS-os-specific.exe/mps.vmoptions" />
     <copy file="${base_dir}/build/mps.vmoptions" tofile="${deploy.dir}/MPS-os-specific.exe/mps.exe.vmoptions" />
     <copy file="${base_dir}/build/mps.bat" tofile="${deploy.dir}/MPS-os-specific.exe/mps.bat" />
     <copy todir="${deploy.dir}/MPS-os-specific.exe/help">
@@ -138,8 +137,9 @@
     <delete dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/vcs/lib/vcs.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/vcs/lib/mps-vcs-core.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/mpsdevkit/lib/mpsdevkit.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/mpsmake.jar.tmp" />
-    <delete dir="${deploy.dir}/MPS/plugins/migration.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/migrationAssistant.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/mpsjava.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/modelchecker.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/samples.jar.tmp" />
@@ -147,7 +147,7 @@
     <delete dir="${deploy.dir}/MPS/plugins/debugger-java/lib/debugger-java.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/debugger-java-customViewers.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/debugger-api-languages/lib/debugger-api-languages.jar.tmp" />
-    <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.configurations.implementation.plugin/lib/jetbrains.mps.execution.configurations.implementation.plugin.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/execution-configurations/lib/execution-configurations.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/execution-languages/lib/execution-languages.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime.gwt-src.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime-src.jar.tmp" />

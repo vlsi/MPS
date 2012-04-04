@@ -2,7 +2,6 @@
 <model modelUID="r:00000000-0000-4000-0000-011c89590604(jetbrains.mps.transformation.test.outputLang.editor)">
   <persistence version="7" />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
-  <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="tq1l" modelUID="r:00000000-0000-4000-0000-011c89590605(jetbrains.mps.transformation.test.outputLang.structure)" version="0" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
@@ -23,7 +22,7 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tq1l.2163819695913378074" resolveInfo="CustomStatementRef" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6010543442198679053">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tq1l.6010543442198679048" resolveInfo="TwoVarRoot" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tq1l.6010543442198679048" resolveInfo="TwoVarStatement" />
     </node>
   </roots>
   <root id="1195166230007">

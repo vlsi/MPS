@@ -6,8 +6,8 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jdom.Element;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
-import java.io.File;
-import jetbrains.mps.util.Macros;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.structure.project.Path;
@@ -18,7 +18,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.structure.project.testconfigurations.ModelsTestConfiguration;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
-import java.io.FileOutputStream;
+import java.io.OutputStream;
 import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import java.util.List;
@@ -33,20 +33,20 @@ public class ProjectDescriptorPersistence {
   private ProjectDescriptorPersistence() {
   }
 
-  public static Element saveProjectDescriptorToElement(final ProjectDescriptor descriptor, final File file) {
-    final Macros macros = MacrosFactory.projectDescriptor();
+  public static Element saveProjectDescriptorToElement(final ProjectDescriptor descriptor, IFile file) {
+    final MacroHelper macroHelper = MacrosFactory.forProjectFile(file);
     return new _FunctionTypes._return_P0_E0<Element>() {
       public Element invoke() {
         final Element result_jnk9az_a0a1a0 = new Element("project");
         final Element result_jnk9az_a0a0a1a0 = new Element("projectModules");
         for (Path path : Sequence.fromIterable(((Iterable<Path>) descriptor.getModules())).sort(new ISelector<Path, Comparable<?>>() {
           public Comparable<?> select(Path p) {
-            return macros.shrinkPath(p.getPath(), file);
+            return macroHelper.shrinkPath(p.getPath());
           }
         }, true)) {
           final Element result_jnk9az_a0a0a0a0a1a0 = new Element("modulePath");
           if (path.getPath() != null) {
-            final String result_jnk9az_a0a0a0a0a0a0a1a0 = macros.shrinkPath(path.getPath(), file);
+            final String result_jnk9az_a0a0a0a0a0a0a1a0 = macroHelper.shrinkPath(path.getPath());
             result_jnk9az_a0a0a0a0a1a0.setAttribute("path", "" + result_jnk9az_a0a0a0a0a0a0a1a0);
           }
           if (path.getMPSFolder() != null) {
@@ -97,11 +97,11 @@ public class ProjectDescriptorPersistence {
     }.invoke();
   }
 
-  public static void saveProjectDescriptor(ProjectDescriptor descriptor, File file) {
+  public static void saveProjectDescriptor(ProjectDescriptor descriptor, IFile file) {
     Element projectElement = saveProjectDescriptorToElement(descriptor, file);
 
     try {
-      FileOutputStream os = new FileOutputStream(file);
+      OutputStream os = file.openOutputStream();
       Document doc = new Document(projectElement);
       JDOMUtil.writeDocument(doc, os);
     } catch (Exception e) {
@@ -111,8 +111,8 @@ public class ProjectDescriptorPersistence {
     }
   }
 
-  public static void loadProjectDescriptorFromElement(ProjectDescriptor descriptor, File file, Element root) {
-    Macros macros = MacrosFactory.projectDescriptor();
+  public static void loadProjectDescriptorFromElement(ProjectDescriptor descriptor, IFile file, Element root) {
+    MacroHelper macros = MacrosFactory.forProjectFile(file);
     ProjectDescriptor result_jnk9az_a1a2 = descriptor;
     final String result_jnk9az_a0a1a2 = file.getName();
     result_jnk9az_a1a2.setName(result_jnk9az_a0a1a2);
@@ -129,7 +129,7 @@ public class ProjectDescriptorPersistence {
     for (Element moduleElement : ListSequence.fromList(moduleList)) {
       Path modulePath = new Path();
       Path result_jnk9az_a1a9a1a2 = modulePath;
-      final String result_jnk9az_a0a1a9a1a2 = macros.expandPath(moduleElement.getAttributeValue("path"), file);
+      final String result_jnk9az_a0a1a9a1a2 = macros.expandPath(moduleElement.getAttributeValue("path"));
       result_jnk9az_a1a9a1a2.setPath(result_jnk9az_a0a1a9a1a2);
       final String result_jnk9az_a1a1a9a1a2 = moduleElement.getAttributeValue("folder");
       result_jnk9az_a1a9a1a2.setMPSFolder(result_jnk9az_a1a1a9a1a2);
@@ -154,7 +154,7 @@ public class ProjectDescriptorPersistence {
     }
   }
 
-  public static void loadProjectDescriptor(ProjectDescriptor descriptor, final File file) {
+  public static void loadProjectDescriptor(ProjectDescriptor descriptor, final IFile file) {
     if (file == null) {
       descriptor.setName("Dummy project");
       return;

@@ -26,6 +26,8 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.MPSProjectMigrationListener;
+import jetbrains.mps.project.MPSProjectMigrationState;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
@@ -45,7 +47,7 @@ import java.io.File;
 public class ProjectLibraryManager extends BaseLibraryManager implements ProjectComponent {
   private Project myProject;
 
-  public ProjectLibraryManager(Project project, MPSProject mpsProject, DumbService dumbService, MPSCoreComponents coreComponents) {
+  public ProjectLibraryManager(Project project, MPSProject mpsProject, DumbService dumbService, MPSCoreComponents coreComponents, MPSProjectMigrationState migrationState) {
     super(coreComponents.getModuleRepository());
     myProject = project;
   }
@@ -60,17 +62,7 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
     if (myProject.isDefault()) {
       return;
     }
-    myProject.getComponent(MPSProject.class);
-    if (!ThreadUtils.isEventDispatchThread()) {
-      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-        @Override
-        public void run() {
-          load();
-        }
-      }, ModalityState.defaultModalityState());
-    } else {
-      load();
-    }
+    super.initComponent();
   }
 
   @Override
@@ -88,7 +80,23 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
   }
 
   public void projectOpened() {
-
+    final MPSProjectMigrationState migrationState = myProject.getComponent(MPSProjectMigrationState.class);
+    if (migrationState.isMigrationRequired() && migrationState.hasMigrationAgent()) {
+      migrationState.addMigrationListener(new MPSProjectMigrationListener.DEFAULT() {
+        @Override
+        public void migrationFinished(Project mpsProject) {
+          migrationState.removeMigrationListener(this);
+          loadLibraries();
+        }
+        @Override
+        public void migrationAborted(Project project) {
+          migrationState.removeMigrationListener(this);
+        }
+      });
+    }
+    else {
+      loadLibraries();
+    }
   }
 
   public void projectClosed() {
@@ -98,6 +106,20 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
   @Override
   public String getHelpTopic() {
     return "Library_Manager";
+  }
+
+  @Override
+  protected void loadLibraries() {
+    if (!ThreadUtils.isEventDispatchThread()) {
+      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+        @Override
+        public void run() {
+          ProjectLibraryManager.super.loadLibraries();
+        }
+      }, ModalityState.defaultModalityState());
+    } else {
+      super.loadLibraries();
+    }
   }
 
   protected String addMacros(String path) {

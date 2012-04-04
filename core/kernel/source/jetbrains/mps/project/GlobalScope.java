@@ -19,6 +19,7 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -56,27 +57,27 @@ public class GlobalScope extends BaseScope implements CoreComponent {
   }
 
   public Language getLanguage(ModuleReference moduleReference) {
-    return myMPSModuleRepository.getLanguage(moduleReference);
+    return ModuleRepositoryFacade.getInstance().getModule(moduleReference,Language.class);
   }
 
   public DevKit getDevKit(ModuleReference ref) {
-    return myMPSModuleRepository.getDevKit(ref);
+    return ModuleRepositoryFacade.getInstance().getModule(ref, DevKit.class);
   }
 
-  public List<Language> getVisibleLanguages() {
-    return myMPSModuleRepository.getAllLanguages();
+  public Collection<Language> getVisibleLanguages() {
+    return ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
   }
 
-  public List<DevKit> getVisibleDevkits() {
-    return myMPSModuleRepository.getAllDevkits();
+  public Collection<DevKit> getVisibleDevkits() {
+    return ModuleRepositoryFacade.getInstance().getAllModules(DevKit.class);
   }
 
-  public List<Solution> getVisibleSolutions() {
-    return myMPSModuleRepository.getAllSolutions();
+  public Collection<Solution> getVisibleSolutions() {
+    return ModuleRepositoryFacade.getInstance().getAllModules(Solution.class);
   }
 
   public Iterable<IModule> getVisibleModules() {
-    return Collections.unmodifiableList(myMPSModuleRepository.getAllModules());
+    return Collections.unmodifiableSet(myMPSModuleRepository.getAllModules());
   }
 
   public SModelDescriptor getModelDescriptor(SModelReference modelReference) {

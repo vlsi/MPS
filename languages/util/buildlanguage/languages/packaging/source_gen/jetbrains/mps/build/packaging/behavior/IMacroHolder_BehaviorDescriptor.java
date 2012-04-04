@@ -9,4 +9,5 @@ public interface IMacroHolder_BehaviorDescriptor {
   public String virtual_getPath_1234976932856(SNode thisNode);
   public List<String> virtual_getAllMacroNames_1234975567387(SNode thisNode, boolean addBasedir);
   public String virtual_evaluateMacro_1234975967990(SNode thisNode, String macroName);
+  public List<SNode> virtual_getMacro_1107726059764558743(SNode thisNode);
 }

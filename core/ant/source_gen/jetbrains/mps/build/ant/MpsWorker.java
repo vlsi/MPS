@@ -10,8 +10,6 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.make.ModuleMaker;
-import java.util.LinkedHashSet;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.apache.commons.lang.StringUtils;
@@ -25,9 +23,11 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.generator.GenerationFacade;
 import java.util.Collection;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.smodel.ModuleFileTracker;
 import java.util.Collections;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.library.ModulesMiner;
@@ -43,6 +43,7 @@ import java.io.StringWriter;
 import java.io.PrintWriter;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
+import java.util.LinkedHashSet;
 
 public abstract class MpsWorker {
   private static Logger LOG = Logger.getLogger(MpsWorker.class);
@@ -128,7 +129,7 @@ public abstract class MpsWorker {
       public void run() {
         ClassLoaderManager.getInstance().updateClassPath();
         ModuleMaker maker = new ModuleMaker();
-        maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), new EmptyProgressMonitor());
+        maker.make(MPSModuleRepository.getInstance().getAllModules(), new EmptyProgressMonitor());
       }
     });
     reload();
@@ -230,7 +231,7 @@ public abstract class MpsWorker {
     List<IModule> tmpmodules;
     IModule moduleByFile = ModelAccess.instance().runReadAction(new Computable<IModule>() {
       public IModule compute() {
-        return MPSModuleRepository.getInstance().getModuleByFile(FileSystem.getInstance().getFileByPath(moduleFile.getAbsolutePath()));
+        return ModuleFileTracker.getInstance().getModuleByFile(FileSystem.getInstance().getFileByPath(moduleFile.getAbsolutePath()));
       }
     });
     if (moduleByFile != null) {

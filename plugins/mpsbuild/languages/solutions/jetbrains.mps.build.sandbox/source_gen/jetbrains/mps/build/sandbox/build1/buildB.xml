@@ -36,7 +36,8 @@
   <target name="build" depends="assemble, check" />
   
   <target name="clean">
-    <delete dir="${build.dir}" />
+    <delete dir="${build.tmp}" />
+    <delete dir="${build.layout}" />
   </target>
   
   <target name="compileJava" depends="java.compile.module-B" />
@@ -51,7 +52,7 @@
   
   <target name="java.compile.module-B" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/module-B" />
-    <javac destdir="${build.tmp}/java/out/module-B">
+    <javac destdir="${build.tmp}/java/out/module-B" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src path="${basedir}/moduleB/src" />
       <classpath>

@@ -23,11 +23,6 @@ public abstract class BaseRefactoring implements IRefactoring {
     return myTransientParameters;
   }
 
-  @Deprecated
-  public String getKeyStroke() {
-    return "";
-  }
-
   public Class getOverridenRefactoringClass() {
     return null;
   }

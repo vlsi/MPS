@@ -17,10 +17,7 @@ package jetbrains.mps.smodel.structure;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
 
@@ -59,7 +56,7 @@ public class DescriptorUtils {
 
   @Nullable
   public static Object getObjectByClassNameForLanguageNamespace(String className, String languageNamespace, boolean avoidLogErrors) {
-    return getObjectByClassNameForLanguage(className, MPSModuleRepository.getInstance().getLanguage(languageNamespace), avoidLogErrors);
+    return getObjectByClassNameForLanguage(className, ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class), avoidLogErrors);
   }
 
   @Nullable

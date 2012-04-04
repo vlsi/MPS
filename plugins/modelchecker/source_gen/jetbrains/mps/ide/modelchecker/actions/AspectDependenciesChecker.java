@@ -42,8 +42,8 @@ public class AspectDependenciesChecker extends SpecificChecker {
   private String languagesUtilPath;
 
   public AspectDependenciesChecker() {
-    this.coreModule = MPSModuleRepository.getInstance().getModuleByUID("MPS.Core");
-    this.editorModule = MPSModuleRepository.getInstance().getModuleByUID("MPS.Editor");
+    this.coreModule = MPSModuleRepository.getInstance().getModuleByFqName("MPS.Core");
+    this.editorModule = MPSModuleRepository.getInstance().getModuleByFqName("MPS.Editor");
     this.languagesUtilPath = PathManager.getHomePath() + "/languages/util/";
   }
 

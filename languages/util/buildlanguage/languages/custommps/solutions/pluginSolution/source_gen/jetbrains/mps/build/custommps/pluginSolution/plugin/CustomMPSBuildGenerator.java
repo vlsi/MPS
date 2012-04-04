@@ -10,7 +10,8 @@ import java.util.List;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.util.Arrays;
 import jetbrains.mps.build.packaging.pluginSolution.plugin.BuildGeneratorUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.build.packaging.pluginSolution.plugin.NodeData;
 import jetbrains.mps.smodel.SNode;
@@ -43,7 +44,7 @@ public class CustomMPSBuildGenerator extends BuildGeneratorImpl {
   }
 
   protected List<ModuleReference> getModuleReferencesToAdd() {
-    return Arrays.asList(BuildGeneratorUtil.getPackagingLanguageReference(), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.build.custommps").getModuleReference());
+    return Arrays.asList(BuildGeneratorUtil.getPackagingLanguageReference(), ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build.custommps", Language.class).getModuleReference());
   }
 
   public Runnable generate(final EditableSModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {

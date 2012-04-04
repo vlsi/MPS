@@ -3,7 +3,6 @@
   <persistence version="7" />
   <language namespace="7fa12e9c-b949-4976-b4fa-19accbc320b4(jetbrains.mps.lang.dataFlow)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -16,7 +15,7 @@
   <roots>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1236428213402">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operations.symbol" />
-      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="39kg.1236427936913" resolveInfo="MathSymbolReference" />
+      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="39kg.1236427936913" resolveInfo="MathSymbolIndexReference" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1236428241304">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operations.symbol" />
@@ -32,7 +31,7 @@
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1237104084169">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operations.arithmetic" />
-      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="39kg.1237100849157" resolveInfo="DivOperationFraction" />
+      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="39kg.1237100849157" resolveInfo="DivExpressionFraction" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="964810815943255970">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />

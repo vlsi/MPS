@@ -3,9 +3,7 @@
   <persistence version="7" />
   <language namespace="d7a92d38-f7db-40d0-8431-763b0c3c9f20(jetbrains.mps.lang.intentions)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="3304fc6e-7c6b-401e-a016-b944934bb21f(jetbrains.mps.baseLanguage.math)" />
-  <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -20,7 +18,7 @@
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1237104496404">
       <property name="name" nameId="tpck.1169194664001" value="DivExpressionFractionToDiv" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operations.arithmetic" />
-      <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="39kg.1237100849157" resolveInfo="DivOperationFraction" />
+      <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="39kg.1237100849157" resolveInfo="DivExpressionFraction" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1237104500799">
       <property name="name" nameId="tpck.1169194664001" value="DivExpressionDivToFraction" />
@@ -33,7 +31,7 @@
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1238942880468">
       <property name="name" nameId="tpck.1169194664001" value="DeleteMathContext" />
-      <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="39kg.1238402702427" resolveInfo="BinaryOperationMathContext" />
+      <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="39kg.1238402702427" resolveInfo="DecimalBinaryOperation" />
     </node>
   </roots>
   <root id="1237104496404">

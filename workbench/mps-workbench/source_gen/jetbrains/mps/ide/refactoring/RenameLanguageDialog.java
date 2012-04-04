@@ -27,6 +27,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import java.util.Set;
 import java.util.LinkedHashSet;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.generator.GenParameters;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.project.MPSProject;
@@ -77,7 +78,7 @@ public class RenameLanguageDialog extends BaseDialog {
   public void buttonOk() {
     final boolean needToRegenerate = myRegenerateLanguage.getModel().isSelected();
     final String fqName = myLanguageNameField.getText();
-    if (MPSModuleRepository.getInstance().getModuleByUID(fqName) != null) {
+    if (MPSModuleRepository.getInstance().getModuleByFqName(fqName) != null) {
       setErrorText("Duplicate language name");
       return;
     }
@@ -112,7 +113,7 @@ public class RenameLanguageDialog extends BaseDialog {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           langs.add(myLanguage);
-          langs.addAll(MPSModuleRepository.getInstance().getAllExtendingLanguages(myLanguage));
+          langs.addAll(ModuleRepositoryFacade.getInstance().getAllExtendingLanguages(myLanguage));
         }
       });
       for (final Language l : langs) {

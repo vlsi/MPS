@@ -7,6 +7,9 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.List;
+import jetbrains.mps.checkedName.PropertyReference;
+import jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_Behavior;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -34,7 +37,11 @@ public class BaseIntentionDeclaration_Behavior {
     return false;
   }
 
-  public static SNode virtual_getDescendantToCheck_3745452943050928880(SNode thisNode) {
+  public static List<PropertyReference> virtual_getPropertiesToCheck_4844813484172611445(SNode thisNode) {
+    return ICheckedNamePolicy_Behavior.callSuper_getPropertiesToCheck_4844813484172611445(thisNode, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration");
+  }
+
+  public static SNode virtual_getDescendantToCheck_4844813484172611439(SNode thisNode) {
     if (!(ConceptFunction_Behavior.call_isReturnOnly_3745452943050787634(SLinkOperations.getTarget(thisNode, "descriptionFunction", true)))) {
       return null;
     }

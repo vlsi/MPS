@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.packaging.behavior.Layout_Behavior;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.ModuleId;
 import java.io.File;
 import jetbrains.mps.util.PathManager;
@@ -51,7 +51,7 @@ public class MPSBuild_Behavior {
   }
 
   public static boolean isInCustomMPSLanguage_1238403397946(IOperationContext operationContext) {
-    Language language = MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.build.custommps");
+    Language language = ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build.custommps", Language.class);
     ModuleId moduleId = operationContext.getModule().getModuleReference().getModuleId();
     if (moduleId == null) {
       return false;

@@ -238,6 +238,11 @@
             path="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/source_gen"/>
       </src>
     </javac>
+    <copy includeemptydirs="false" todir="${build_dir}/mpscore_jar/modules">
+      <fileset dir="${base_dir}/languages/core/stub" includes="JDK/*.msd"/>
+      <fileset dir="${base_dir}/languages/core/stub" includes="JDK.Tools/*.msd"/>
+      <fileset dir="${base_dir}/languages/core/stub" includes="MPS.Core/*.msd"/>
+    </copy>
     <jar destfile="${dist.dir}/mps-core/lib/mps-core.jar">
       <fileset dir="${build_dir}/mpscore_jar"/>
       <manifest>
@@ -266,10 +271,15 @@
       <compilerarg value="-Xlint:none"/>
       <src>
         <path path="${base_dir}/core/ant/source_gen"/>
+        <path path="${base_dir}/core/ant/resources"/>
       </src>
     </javac>
     <copy includeemptydirs="false" todir="${build_dir}/mpsbackend_jar">
       <fileset dir="${base_dir}/core/ant/source_gen" includes="**/*.png"/>
+      <fileset dir="${base_dir}/core/ant/resources" includes="**/*.xml"/>
+    </copy>
+    <copy includeemptydirs="false" todir="${build_dir}/mpsbackend_jar/modules">
+      <fileset dir="${base_dir}/languages/core/stub" includes="Ant/*.msd"/>
     </copy>
     <jar destfile="${dist.dir}/mps-core/lib/mps-backend.jar">
       <fileset dir="${build_dir}/mpsbackend_jar"/>
@@ -310,15 +320,14 @@
       </manifest>
     </jar>
 
-    <!-- IDEA workbench -->
-    <mkdir dir="${build_dir}/mpsworkbench_jar"/>
-    <javac destdir="${build_dir}/mpsworkbench_jar" fork="true"
+    <!-- MPS platform -->
+    <mkdir dir="${build_dir}/mpsplatform_jar"/>
+    <javac destdir="${build_dir}/mpsplatform_jar" fork="true"
            memorymaximumsize="1024m"
            includeantruntime="false"
            debug="${javac.debug}" debuglevel="lines,vars,source">
       <compilerarg value="-Xlint:none"/>
       <src>
-        <!-- idea-workbench -->
         <path path="${base_dir}/workbench/mps-platform/source"/>
         <path path="${base_dir}/workbench/mps-platform/source_gen"/>
       </src>
@@ -327,11 +336,14 @@
         <fileset dir="${ideaPath}/lib" includes="*.jar"/>
       </classpath>
     </javac>
-    <copy includeemptydirs="false" todir="${build_dir}/mpsworkbench_jar">
+    <copy includeemptydirs="false" todir="${build_dir}/mpsplatform_jar">
       <fileset dir="${base_dir}/workbench/mps-platform/source" includes="**/*.png"/>
     </copy>
-    <jar destfile="${dist.dir}/mps-core/lib/mps-workbench.jar">
-      <fileset dir="${build_dir}/mpsworkbench_jar"/>
+    <copy includeemptydirs="false" todir="${build_dir}/mpsplatform_jar/modules">
+      <fileset dir="${base_dir}/languages/core/stub" includes="MPS.Platform/*.msd"/>
+    </copy>
+    <jar destfile="${dist.dir}/mps-core/lib/mps-platform.jar">
+      <fileset dir="${build_dir}/mpsplatform_jar"/>
       <manifest>
         <attribute name="Built-By" value="${user.name}"/>
         <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
@@ -340,7 +352,7 @@
       </manifest>
     </jar>
 
-    <!-- IDEA editor -->
+    <!-- MPS editor -->
     <mkdir dir="${build_dir}/mpseditor_jar"/>
     <javac destdir="${build_dir}/mpseditor_jar" fork="true"
            memorymaximumsize="1024m"
@@ -363,6 +375,9 @@
         <fileset dir="${ideaPath}/lib" includes="*.jar"/>
       </classpath>
     </javac>
+    <copy includeemptydirs="false" todir="${build_dir}/mpseditor_jar/modules">
+      <fileset dir="${base_dir}/languages/core/stub" includes="MPS.Editor/*.msd"/>
+    </copy>
     <copy includeemptydirs="false" todir="${build_dir}/mpseditor_jar">
       <fileset dir="${base_dir}/editor/editor-runtime/source" includes="**/*.png"/>
       <fileset dir="${base_dir}/editor/editor-runtime/source_gen" includes="**/*.png"/>
@@ -590,6 +605,9 @@
         <path path="${base_dir}/languages/languageDesign/pattern/source_gen"/>
         <path path="${base_dir}/languages/languageDesign/pattern/languages/testLang/source_gen"/>
         <path path="${base_dir}/languages/languageDesign/plugin/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/access/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/checkedName/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/resources/source_gen"/>
         <!--path path="${base_dir}/languages/languageDesign/plugin/solutions/runtime/source_gen"/-->
         <path path="${base_dir}/languages/languageDesign/project/source_gen"/>
         <path path="${base_dir}/languages/languageDesign/quotation/source_gen"/>
@@ -741,7 +759,9 @@
       <zipfileset dir="${dist.dir}/mps-core" prefix="mps-core${plugin.prefix}">
         <exclude name="lib/*-tests.jar"/>
       </zipfileset>
-      <zipfileset file="${dist.dir}/mps-vcs.jar"/>
+      <zipfileset dir="${dist.dir}/mps-vcs" prefix="mps-vcs${plugin.prefix}">
+        <exclude name="lib/*-tests.jar"/>
+      </zipfileset>
       <zipfileset file="${dist.dir}/mps-java.jar"/>
     </zip>
   </target>
@@ -754,11 +774,15 @@
     <copy todir="${pluginPath}/mps-vcs">
       <fileset dir="${dist.dir}/mps-vcs"/>
     </copy>
+    <copy todir="${pluginPath}">
+      <fileset file="${dist.dir}/mps-java.jar"/>
+    </copy>
   </target>
 
   <target name="uninstall-plugin">
     <property name="pluginPath" value="${home.idea_ce.plugins}"/>
     <delete dir="${pluginPath}/mps-core"/>
-    <delete file="${pluginPath}/mps-vcs.jar"/>
+    <delete dir="${pluginPath}/mps-vcs"/>
+    <delete file="${pluginPath}/mps-java.jar"/>
   </target>
 </project>

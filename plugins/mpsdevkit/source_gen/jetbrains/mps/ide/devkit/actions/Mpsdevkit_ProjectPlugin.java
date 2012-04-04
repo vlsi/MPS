@@ -4,18 +4,18 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import java.util.List;
-import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import com.intellij.openapi.project.Project;
 import java.util.ArrayList;
-import jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool;
+import jetbrains.mps.plugins.tool.BaseGeneratedTool;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class Mpsdevkit_ProjectPlugin extends BaseProjectPlugin {
   public Mpsdevkit_ProjectPlugin() {
   }
 
-  public List<EditorTabDescriptor> initTabbedEditors(Project project) {
-    List<EditorTabDescriptor> result = new ArrayList();
+  public List<RelationDescriptor> initTabbedEditors(Project project) {
+    List<RelationDescriptor> result = new ArrayList();
     result.add(new Actions_TabDescriptor());
     result.add(new Behavior_TabDescriptor());
     result.add(new Constraints_TabDescriptor());

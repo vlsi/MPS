@@ -17,13 +17,18 @@ package jetbrains.mps.library;
 
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.project.persistence.DeploymentDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.RootReference;
-import jetbrains.mps.project.structure.modules.*;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -35,7 +40,6 @@ import java.util.*;
  * Detects modules in a folder. Loads them into MPSModuleRepository
  */
 public class ModulesMiner {
-
   private static final Logger LOG = Logger.getLogger(ModulesMiner.class);
   private static final ModulesMiner INSTANCE = new ModulesMiner();
   public static final String META_INF_MODULE_XML = "!/META-INF/module.xml";
@@ -45,23 +49,6 @@ public class ModulesMiner {
   }
 
   private ModulesMiner() {
-  }
-
-  public void readModuleDescriptors(Iterator<? extends RootReference> roots, MPSModuleOwner owner) {
-    assertCanWrite();
-
-    while (roots.hasNext()) {
-      RootReference root = roots.next();
-      IFile moduleRoot = FileSystem.getInstance().getFileByPath(root.getPath());
-
-      if (moduleRoot.exists()) {
-        readModuleDescriptors(moduleRoot, owner);
-      } else {
-        String error = "Couldn't load modules from " + moduleRoot.getPath() + " for owner " + owner +
-          "\nDirectory doesn't exist: ";
-        LOG.error(error);
-      }
-    }
   }
 
   public List<IModule> readModuleDescriptors(IFile dir, MPSModuleOwner owner) {
@@ -75,7 +62,7 @@ public class ModulesMiner {
     readModuleDescriptors(dir, new HashSet<IFile>(), result, refreshFiles, new DescriptorReader<IModule>() {
       @Override
       public IModule read(ModuleHandle handle) {
-        return MPSModuleRepository.getInstance().registerModule(handle, owner);
+        return ModuleRepositoryFacade.createModule(handle, owner);
       }
     });
     return result;
@@ -144,6 +131,10 @@ public class ModulesMiner {
 
       readModuleDescriptors(childDir, excludes, result, refreshFiles, reader);
     }
+  }
+
+  public ModuleHandle loadModuleHandle(IFile file) {
+    return new ModuleHandle(file, loadModuleDescriptor(file));
   }
 
   public ModuleDescriptor loadModuleDescriptor(IFile file) {

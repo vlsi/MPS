@@ -5,12 +5,12 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 import jetbrains.mps.util.annotation.ToRemove;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
+import java.io.File;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
 import jetbrains.mps.execution.api.commands.ListCommandPart;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.execution.api.commands.PropertyCommandPart;
-import java.io.File;
 import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.InternalFlag;
@@ -122,7 +122,11 @@ public class Mps_Command {
   }
 
   public ProcessHandler createProcess() throws ExecutionException {
-    return new Java_Command().setVirtualMachineParameter_ProcessBuilderCommandPart(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), myVirtualMachineParameters_String, new PropertyCommandPart("idea.system.path", mySystemPath_String), new PropertyCommandPart("idea.config.path", myConfigurationPath_String)))).setDebuggerSettings_String(myDebuggerSettings_String).setWorkingDirectory_File(new File(System.getProperty("user.dir"))).setJrePath_String(myJrePath_String).createProcess(null, "jetbrains.mps.Launcher", Mps_Command.getClassPath());
+    return new Mps_Command().setVirtualMachineParameters_String(myVirtualMachineParameters_String).setJrePath_String(myJrePath_String).setConfigurationPath_String(myConfigurationPath_String).setSystemPath_String(mySystemPath_String).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(null);
+  }
+
+  public ProcessHandler createProcess(File projectToOpen) throws ExecutionException {
+    return new Java_Command().setVirtualMachineParameter_ProcessBuilderCommandPart(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), myVirtualMachineParameters_String, new PropertyCommandPart("idea.system.path", mySystemPath_String), new PropertyCommandPart("idea.config.path", myConfigurationPath_String)))).setDebuggerSettings_String(myDebuggerSettings_String).setWorkingDirectory_File(new File(System.getProperty("user.dir"))).setJrePath_String(myJrePath_String).createProcess(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), projectToOpen)), "jetbrains.mps.Launcher", Mps_Command.getClassPath());
   }
 
   public static IDebugger getDebugger() {

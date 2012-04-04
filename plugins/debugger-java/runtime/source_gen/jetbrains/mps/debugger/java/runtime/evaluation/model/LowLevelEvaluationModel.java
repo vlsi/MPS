@@ -15,7 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.LinkedListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -78,7 +78,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
 
   public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module, EvaluationContext context, boolean isShowContext, final List<SNodePointer> nodesToImport) {
     super(project, session, module, context, isShowContext);
-    ListSequence.fromList(myLanguages).addSequence(LinkedListSequence.fromLinkedList(LinkedListSequence.fromListAndArray(new LinkedList<Language>(), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debugger.java.evaluation"), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debugger.java.privateMembers"))));
+    ListSequence.fromList(myLanguages).addSequence(LinkedListSequence.fromLinkedList(LinkedListSequence.fromListAndArray(new LinkedList<Language>(), ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.evaluation", Language.class), ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.privateMembers", Language.class))));
 
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
@@ -87,7 +87,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
             myAuxModule.addStubPath(it);
           }
         });
-        myAuxModule.updateModelsSet();
+        myAuxModule.doUpdateModelsSet();
       }
     });
 

@@ -23,10 +23,10 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.wm.WindowManager;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.workbench.action.AbstractActionWithEmptyIcon;
-import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.tools.BaseProjectTool;
+import jetbrains.mps.workbench.action.ActionUtils;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -37,8 +37,8 @@ import java.awt.event.MouseEvent;
 
 // FIXME get rid of
 public class OutputViewTool extends BaseProjectTool {
-  private JPanel myComponent = new JPanel(new BorderLayout());
-  private JTextArea myTextArea = new JTextArea();
+  private JPanel myComponent;
+  private JTextArea myTextArea;
   private String myLastSearchPattern = null;
   private AbstractAction myFindAction;
   private AbstractAction myFindNextAction;
@@ -48,11 +48,13 @@ public class OutputViewTool extends BaseProjectTool {
     super(project, "Output", 6, Icons.OUTPUT_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
   }
 
-  public void initComponent() {
-    super.initComponent();
+  @Override
+  protected void createTool() {
+    this.myComponent = new JPanel(new BorderLayout());
+    this.myTextArea = new JTextArea();
     myTextArea.setEditable(false);
 
-    myFindAction = new AbstractActionWithEmptyIcon("Find") {
+    myFindAction = new AbstractAction("Find", IconManager.EMPTY_ICON) {
       {
         putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke("control F"));
       }
@@ -63,7 +65,7 @@ public class OutputViewTool extends BaseProjectTool {
         find(pattern);
       }
     };
-    myFindNextAction = new AbstractActionWithEmptyIcon("Find Next") {
+    myFindNextAction = new AbstractAction("Find Next", IconManager.EMPTY_ICON) {
       {
         putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke("F3"));
       }
@@ -91,7 +93,7 @@ public class OutputViewTool extends BaseProjectTool {
       private void processMouseEvent(MouseEvent e) {
         if (e.isPopupTrigger()) {
           JPopupMenu menu = new JPopupMenu();
-          menu.add(new AbstractActionWithEmptyIcon("Clear") {
+          menu.add(new AbstractAction("Clear", IconManager.EMPTY_ICON) {
             public void actionPerformed(ActionEvent event) {
               clear();
             }

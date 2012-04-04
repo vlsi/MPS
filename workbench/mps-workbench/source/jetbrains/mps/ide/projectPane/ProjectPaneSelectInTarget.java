@@ -24,10 +24,7 @@ import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
@@ -69,7 +66,7 @@ public class ProjectPaneSelectInTarget extends AbstractProjectViewSelectInTarget
     if (!MPSFileTypesManager.instance().isModuleFile(virtualFile)) return null;
 
     IFile moduleFile = FileSystem.getInstance().getFileByPath(virtualFile.getPath());
-    return MPSModuleRepository.getInstance().getModuleByFile(moduleFile);
+    return ModuleFileTracker.getInstance().getModuleByFile(moduleFile);
   }
 
   private SNode getNode(SelectInContext context) {

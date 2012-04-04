@@ -7,6 +7,7 @@
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)" />
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
+  <language namespace="982eb8df-2c96-4bd7-9963-11712ea622e5(jetbrains.mps.lang.resources)" />
   <import index="jsgz" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" />
   <import index="9a8" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" version="-1" />
@@ -36,9 +37,10 @@
   <import index="86um" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide(MPS.Platform/jetbrains.mps.ide@java_stub)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="-1" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
-  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="5" implicit="yes" />
+  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="7" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="cx9y" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" implicit="yes" />
+  <import index="1oap" modelUID="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8432634623182578751">
       <property name="name" nameId="tpck.1169194664001" value="AbstractOverrideEditorMessage" />
@@ -56,7 +58,7 @@
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8432634623182579978">
       <property name="name" nameId="tpck.1169194664001" value="SubclassedClassifierEditorMessage" />
     </node>
-    <node type="tp4k.IconResourceBundle" typeId="tp4k.7038317550322744766" id="8432634623182690059">
+    <node type="1oap.IconResourceBundle" typeId="1oap.8974276187400029885" id="8432634623182690059">
       <property name="name" nameId="tpck.1169194664001" value="OverrideImplements" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8432634623182781100">
@@ -2775,11 +2777,11 @@
               </node>
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="8432634623182579890" />
             </node>
-            <node role="ifTrue" roleId="tpee.1163668922816" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="8432634623182690078">
-              <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="8432634623182690071" resolveInfo="OVERRIDEN" />
+            <node role="ifTrue" roleId="tpee.1163668922816" type="1oap.IconResourceReference" typeId="1oap.8974276187400029895" id="8432634623182690078">
+              <link role="declaration" roleId="1oap.8974276187400029896" targetNodeId="8432634623182690071" resolveInfo="OVERRIDEN" />
             </node>
-            <node role="ifFalse" roleId="tpee.1163668934364" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="8432634623182690083">
-              <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="8432634623182690060" resolveInfo="IMPLEMENTED" />
+            <node role="ifFalse" roleId="tpee.1163668934364" type="1oap.IconResourceReference" typeId="1oap.8974276187400029895" id="8432634623182690083">
+              <link role="declaration" roleId="1oap.8974276187400029896" targetNodeId="8432634623182690060" resolveInfo="IMPLEMENTED" />
             </node>
           </node>
         </node>
@@ -2906,11 +2908,11 @@
               </node>
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="8432634623182579963" />
             </node>
-            <node role="ifTrue" roleId="tpee.1163668922816" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="8432634623182690120">
-              <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="8432634623182690074" resolveInfo="OVERRIDING" />
+            <node role="ifTrue" roleId="tpee.1163668922816" type="1oap.IconResourceReference" typeId="1oap.8974276187400029895" id="8432634623182690120">
+              <link role="declaration" roleId="1oap.8974276187400029896" targetNodeId="8432634623182690074" resolveInfo="OVERRIDING" />
             </node>
-            <node role="ifFalse" roleId="tpee.1163668934364" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="8432634623182690122">
-              <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="8432634623182690065" resolveInfo="IMPLEMENTING" />
+            <node role="ifFalse" roleId="tpee.1163668934364" type="1oap.IconResourceReference" typeId="1oap.8974276187400029895" id="8432634623182690122">
+              <link role="declaration" roleId="1oap.8974276187400029896" targetNodeId="8432634623182690065" resolveInfo="IMPLEMENTING" />
             </node>
           </node>
         </node>
@@ -3124,11 +3126,11 @@
             <node role="condition" roleId="tpee.1163668914799" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8432634623182580068">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8432634623182579979" resolveInfo="myIsInterface" />
             </node>
-            <node role="ifFalse" roleId="tpee.1163668934364" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="8432634623182690124">
-              <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="8432634623182690071" resolveInfo="OVERRIDEN" />
+            <node role="ifFalse" roleId="tpee.1163668934364" type="1oap.IconResourceReference" typeId="1oap.8974276187400029895" id="8432634623182690124">
+              <link role="declaration" roleId="1oap.8974276187400029896" targetNodeId="8432634623182690071" resolveInfo="OVERRIDEN" />
             </node>
-            <node role="ifTrue" roleId="tpee.1163668922816" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="8432634623182690126">
-              <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="8432634623182690060" resolveInfo="IMPLEMENTED" />
+            <node role="ifTrue" roleId="tpee.1163668922816" type="1oap.IconResourceReference" typeId="1oap.8974276187400029895" id="8432634623182690126">
+              <link role="declaration" roleId="1oap.8974276187400029896" targetNodeId="8432634623182690060" resolveInfo="IMPLEMENTED" />
             </node>
           </node>
         </node>
@@ -3226,35 +3228,35 @@
     </node>
   </root>
   <root id="8432634623182690059">
-    <node role="icons" roleId="tp4k.7038317550322744874" type="tp4k.IconResourceDeclaration" typeId="tp4k.7038317550322744875" id="8432634623182690060">
+    <node role="icons" roleId="1oap.8974276187400029886" type="1oap.IconResourceDeclaration" typeId="1oap.8974276187400029888" id="8432634623182690060">
       <property name="name" nameId="tpck.1169194664001" value="IMPLEMENTED" />
-      <node role="iconExpression" roleId="tp4k.7038317550322744876" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="8432634623182690063">
-        <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="8432634623182690064">
-          <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/implemented.png" />
+      <node role="iconExpression" roleId="1oap.8974276187400029889" type="1oap.IconResourceExpression" typeId="1oap.8974276187400029891" id="8432634623182690063">
+        <node role="icon" roleId="1oap.8974276187400029893" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="8432634623182690064">
+          <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/implemented.png" />
         </node>
       </node>
     </node>
-    <node role="icons" roleId="tp4k.7038317550322744874" type="tp4k.IconResourceDeclaration" typeId="tp4k.7038317550322744875" id="8432634623182690065">
+    <node role="icons" roleId="1oap.8974276187400029886" type="1oap.IconResourceDeclaration" typeId="1oap.8974276187400029888" id="8432634623182690065">
       <property name="name" nameId="tpck.1169194664001" value="IMPLEMENTING" />
-      <node role="iconExpression" roleId="tp4k.7038317550322744876" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="8432634623182690067">
-        <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="8432634623182690068">
-          <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/implementing.png" />
+      <node role="iconExpression" roleId="1oap.8974276187400029889" type="1oap.IconResourceExpression" typeId="1oap.8974276187400029891" id="8432634623182690067">
+        <node role="icon" roleId="1oap.8974276187400029893" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="8432634623182690068">
+          <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/implementing.png" />
         </node>
       </node>
     </node>
-    <node role="icons" roleId="tp4k.7038317550322744874" type="tp4k.IconResourceDeclaration" typeId="tp4k.7038317550322744875" id="8432634623182690071">
+    <node role="icons" roleId="1oap.8974276187400029886" type="1oap.IconResourceDeclaration" typeId="1oap.8974276187400029888" id="8432634623182690071">
       <property name="name" nameId="tpck.1169194664001" value="OVERRIDEN" />
-      <node role="iconExpression" roleId="tp4k.7038317550322744876" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="8432634623182690072">
-        <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="8432634623182690073">
-          <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/overriden.png" />
+      <node role="iconExpression" roleId="1oap.8974276187400029889" type="1oap.IconResourceExpression" typeId="1oap.8974276187400029891" id="8432634623182690072">
+        <node role="icon" roleId="1oap.8974276187400029893" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="8432634623182690073">
+          <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/overriden.png" />
         </node>
       </node>
     </node>
-    <node role="icons" roleId="tp4k.7038317550322744874" type="tp4k.IconResourceDeclaration" typeId="tp4k.7038317550322744875" id="8432634623182690074">
+    <node role="icons" roleId="1oap.8974276187400029886" type="1oap.IconResourceDeclaration" typeId="1oap.8974276187400029888" id="8432634623182690074">
       <property name="name" nameId="tpck.1169194664001" value="OVERRIDING" />
-      <node role="iconExpression" roleId="tp4k.7038317550322744876" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="8432634623182690075">
-        <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="8432634623182690076">
-          <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/overriding.png" />
+      <node role="iconExpression" roleId="1oap.8974276187400029889" type="1oap.IconResourceExpression" typeId="1oap.8974276187400029891" id="8432634623182690075">
+        <node role="icon" roleId="1oap.8974276187400029893" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="8432634623182690076">
+          <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/overriding.png" />
         </node>
       </node>
     </node>

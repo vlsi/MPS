@@ -5,7 +5,6 @@
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
-  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="tpfo" modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
   <import index="tpfs" modelUID="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)" version="-1" />
@@ -83,7 +82,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1178179183600">
       <property name="name" nameId="tpck.1169194664001" value="mvr" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpfo.1174565027678" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpfo.1174565027678" resolveInfo="MatchVariableReference" />
     </node>
   </root>
   <root id="1178179183613">
@@ -111,7 +110,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1178179183601">
       <property name="name" nameId="tpck.1169194664001" value="mrs" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpfo.1174512414484" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpfo.1174512414484" resolveInfo="MatchRegexpStatement" />
     </node>
   </root>
   <root id="1178179183622">
@@ -139,7 +138,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1178179183602">
       <property name="name" nameId="tpck.1169194664001" value="fm" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpfo.1175154849582" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpfo.1175154849582" resolveInfo="ForEachMatchStatement" />
     </node>
   </root>
   <root id="1178179183631">
@@ -167,7 +166,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1178179183603">
       <property name="name" nameId="tpck.1169194664001" value="rr" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpfo.1174655989549" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpfo.1174655989549" resolveInfo="ReplaceWithRegexpExpression" />
     </node>
   </root>
   <root id="1178179183640">
@@ -212,7 +211,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1178179183604">
       <property name="name" nameId="tpck.1169194664001" value="se" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpfo.1175164405556" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpfo.1175164405556" resolveInfo="SplitExpression" />
     </node>
   </root>
   <root id="1178179183654">
@@ -240,7 +239,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1178179183606">
       <property name="name" nameId="tpck.1169194664001" value="fm" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpfo.1175169009571" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpfo.1175169009571" resolveInfo="FindMatchStatement" />
     </node>
   </root>
   <root id="1179358899322">
@@ -262,7 +261,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1179358916528">
       <property name="name" nameId="tpck.1169194664001" value="matchRegexpExpression" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpfo.1179357154354" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpfo.1179357154354" resolveInfo="MatchRegexpExpression" />
     </node>
   </root>
   <root id="1222260042512">

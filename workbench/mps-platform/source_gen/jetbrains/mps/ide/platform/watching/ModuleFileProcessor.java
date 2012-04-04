@@ -13,7 +13,7 @@ import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -29,7 +29,9 @@ import jetbrains.mps.smodel.Generator;
 import java.util.ArrayList;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleFileTracker;
 import java.util.Collections;
 
 /*package*/ class ModuleFileProcessor extends EventProcessor {
@@ -56,8 +58,7 @@ import java.util.Collections;
     }
     for (final IModule module : myDeletedModules) {
       indicator.setText2("Unloading removed module " + module.getModuleFqName());
-      module.dispose();
-      MPSModuleRepository.getInstance().removeModule(module);
+      ModuleRepositoryFacade.getInstance().removeModuleForced(module);
       SetSequence.fromSet(myProcessedModules).addElement(module);
     }
     // update lib modules 
@@ -168,10 +169,10 @@ import java.util.Collections;
     });
   }
 
-  public List<IModule> addNewModules(Project p, List<ModulesMiner.ModuleHandle> modules) {
+  public List<IModule> addNewModules(Project p, List<ModulesMiner.ModuleHandle> handles) {
     ArrayList<IModule> result = new ArrayList<IModule>();
-    for (ModulesMiner.ModuleHandle m : modules) {
-      IModule module = MPSModuleRepository.getInstance().registerModule(m, p);
+    for (ModulesMiner.ModuleHandle h : handles) {
+      IModule module = ModuleRepositoryFacade.createModule(h, p);
       ModuleReference mr = module.getModuleReference();
       p.addModule(mr);
       result.add(module);
@@ -181,15 +182,15 @@ import java.util.Collections;
 
   private static List<IModule> getModulesByFile(final VirtualFile file) {
     final Wrappers._T<List<IModule>> res = new Wrappers._T<List<IModule>>(ListSequence.fromList(new ArrayList<IModule>()));
-    final MPSModuleRepository repo = MPSModuleRepository.getInstance();
+    MPSModuleRepository repo = MPSModuleRepository.getInstance();
     final IFile mpsFile = FileSystem.getInstance().getFileByPath(file.getPath());
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (file.isDirectory()) {
-          res.value = repo.findModulesUnderDir(file.getPath());
+          res.value = ModuleFileTracker.getInstance().findModulesUnderDir(file.getPath());
         } else {
-          IModule module = repo.getModuleByFile(mpsFile);
+          IModule module = ModuleFileTracker.getInstance().getModuleByFile(mpsFile);
           res.value = (module == null ?
             Collections.<IModule>emptyList() :
             Collections.singletonList(module)

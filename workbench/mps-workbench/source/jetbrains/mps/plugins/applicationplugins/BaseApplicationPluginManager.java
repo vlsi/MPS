@@ -20,6 +20,8 @@ import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.AbstractPluginFactory;
 import jetbrains.mps.plugins.PluginFactoriesRegistry;
+import jetbrains.mps.workbench.action.IActionsRegistry;
+import jetbrains.mps.workbench.action.IRegistryManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 

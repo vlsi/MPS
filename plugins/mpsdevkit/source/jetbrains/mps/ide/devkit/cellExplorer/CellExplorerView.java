@@ -65,6 +65,7 @@ public class CellExplorerView extends BaseProjectTool {
       update();
     }
   };
+
   private EditorComponent.CellSynchronizationWithModelListener mySynchronizationListener = new EditorComponent.CellSynchronizationWithModelListener() {
     public void cellSynchronizedWithModel(EditorCell cell) {
       if (cell == null) return;
@@ -88,6 +89,11 @@ public class CellExplorerView extends BaseProjectTool {
     myTree.setRootVisible(true);
     myComponent.add(ScrollPaneFactory.createScrollPane(myTree), BorderLayout.CENTER);
     update();
+  }
+
+  @Override
+  protected void createTool() {
+
   }
 
   public void update() {

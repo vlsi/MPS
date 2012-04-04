@@ -36,7 +36,7 @@
     <fixcrlf file="${input.dir}/${mps.exe.vmoptions}" eof="asis" eol="dos" />
     <zip destfile="${output.dir}/${build.number}.zip">
       <zipfileset dir="${input.dir}/${MPS}" prefix="${dist.folder.name}" excludes="**/bin/mac/fsnotifier, **/bin/linux/fsnotifier, **/bin/linux/fsnotifier64" />
-      <zipfileset file="${mps.sh}" prefix="${dist.folder.name}" filemode="755" />
+      <zipfileset file="${input.dir}/${mps.sh}" prefix="${dist.folder.name}" filemode="755" />
       <zipfileset file="${input.dir}/bin/mac/fsnotifier" prefix="${dist.folder.name}/bin/mac" filemode="755" />
       <zipfileset file="${input.dir}/bin/linux/fsnotifier" prefix="${dist.folder.name}/bin/linux" filemode="755" />
       <zipfileset file="${input.dir}/bin/linux/fsnotifier64" prefix="${dist.folder.name}/bin/linux" filemode="755" />
@@ -80,7 +80,9 @@
     <fail unless="output.dir" message="Property output.dir unspecified." />
     <fixcrlf file="${input.dir}/${mps.bat}" eol="dos" eof="asis" />
     <fixcrlf file="${input.dir}/${installer.nsi}" eol="dos" eof="asis" />
-    <unzip src="${input.dir}/jre.zip" dest="${input.dir}" />
+    <fixcrlf file="${input.dir}/${mps.exe.vmoptions}" eof="asis" eol="dos" />
+    <copy file="${input.dir}/${mps.exe.vmoptions}" todir="${input.dir}/${MPS}/bin" />
+    <unzip src="${input.dir}/jre.zip" dest="${input.dir}/jre" />
     <java classname="jetbrains.mps.build.GenerateNSI" fork="true" dir="${input.dir}" failonerror="true">
       <arg file="${input.dir}/install.nsh" />
       <arg file="${input.dir}/uninstall.nsh" />

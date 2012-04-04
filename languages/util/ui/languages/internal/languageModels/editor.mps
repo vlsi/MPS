@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:d7b4492d-040d-4755-bab4-f5057adfb976(jetbrains.mps.ui.internal.editor)">
   <persistence version="7" />
-  <language namespace="b648a171-98f9-494b-b822-c3147ae7d330(jetbrains.mps.ui.internal)" />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
@@ -15,7 +14,7 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <roots>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4818101245579894639">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="y9ez.4818101245579876200" resolveInfo="EnclosingContextWrapper" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="y9ez.4818101245579876200" resolveInfo="ContextBindingWrapper" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8173290311767412494">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="y9ez.8173290311767412491" resolveInfo="ContextWrapper" />

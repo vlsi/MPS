@@ -7,7 +7,7 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
-  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionDeclaration", "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", "jetbrains.mps.lang.plugin.structure.ActionInstance", "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionParameterReference", "jetbrains.mps.lang.plugin.structure.AddElementStatement", "jetbrains.mps.lang.plugin.structure.AddStatement", "jetbrains.mps.lang.plugin.structure.AskStatement", "jetbrains.mps.lang.plugin.structure.BaseProjectOperation", "jetbrains.mps.lang.plugin.structure.ConceptCondition", "jetbrains.mps.lang.plugin.structure.EditableModel", "jetbrains.mps.lang.plugin.structure.GroupAnchor", "jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor", "jetbrains.mps.lang.plugin.structure.InterfaceExtentionPoint", "jetbrains.mps.lang.plugin.structure.ModificationStatement", "jetbrains.mps.lang.plugin.structure.ProjectOperation", "jetbrains.mps.lang.plugin.structure.PropertyRefExpression", "jetbrains.mps.lang.plugin.structure.Separator", "jetbrains.mps.lang.plugin.structure.ShortcutChange", "jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration", "jetbrains.mps.lang.plugin.structure.TabbedToolOperation", "jetbrains.mps.lang.plugin.structure.ToolInstanceExpression", "jetbrains.mps.lang.plugin.structure.UpdateBlock"};
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionDeclaration", "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", "jetbrains.mps.lang.plugin.structure.ActionInstance", "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionParameterReference", "jetbrains.mps.lang.plugin.structure.AddElementStatement", "jetbrains.mps.lang.plugin.structure.AddStatement", "jetbrains.mps.lang.plugin.structure.BaseProjectOperation", "jetbrains.mps.lang.plugin.structure.ConceptCondition", "jetbrains.mps.lang.plugin.structure.EditableModel", "jetbrains.mps.lang.plugin.structure.GroupAnchor", "jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor", "jetbrains.mps.lang.plugin.structure.InterfaceExtentionPoint", "jetbrains.mps.lang.plugin.structure.ModificationStatement", "jetbrains.mps.lang.plugin.structure.Separator", "jetbrains.mps.lang.plugin.structure.ShortcutChange", "jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration", "jetbrains.mps.lang.plugin.structure.TabbedToolOperation", "jetbrains.mps.lang.plugin.structure.ToolInstanceExpression", "jetbrains.mps.lang.plugin.structure.UpdateBlock"};
 
   public ConstraintsAspectDescriptor() {
   }
@@ -16,21 +16,17 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
       case 2:
         return new ActionDeclaration_Constraints();
-      case 16:
+      case 15:
         return new ModificationStatement_Constraints();
-      case 7:
-        return new AddElementStatement_Constraints();
-      case 23:
+      case 20:
         return new ToolInstanceExpression_Constraints();
-      case 17:
-        return new ProjectOperation_Constraints();
-      case 13:
+      case 12:
         return new GroupAnchor_Constraints();
-      case 19:
+      case 16:
         return new Separator_Constraints();
       case 3:
         return new ActionGroupDeclaration_Constraints();
-      case 15:
+      case 14:
         return new InterfaceExtentionPoint_Constraints();
       case 1:
         return new ActionDataParameterDeclaration_Constraints();
@@ -38,19 +34,15 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new ActionParameterDeclaration_Constraints();
       case 8:
         return new AddStatement_Constraints();
-      case 20:
+      case 17:
         return new ShortcutChange_Constraints();
-      case 18:
-        return new PropertyRefExpression_Constraints();
-      case 24:
-        return new UpdateBlock_Constraints();
-      case 22:
-        return new TabbedToolOperation_Constraints();
       case 21:
+        return new UpdateBlock_Constraints();
+      case 19:
+        return new TabbedToolOperation_Constraints();
+      case 18:
         return new SmartDisposeClosureParameterDeclaration_Constraints();
       case 9:
-        return new AskStatement_Constraints();
-      case 10:
         return new BaseProjectOperation_Constraints();
       case 6:
         return new ActionParameterReference_Constraints();
@@ -58,12 +50,14 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new ActionInstance_Constraints();
       case 0:
         return new ActionConstructionParameterDeclaration_Constraints();
-      case 12:
-        return new EditableModel_Constraints();
-      case 14:
-        return new IdeaInitializerDescriptor_Constraints();
       case 11:
+        return new EditableModel_Constraints();
+      case 13:
+        return new IdeaInitializerDescriptor_Constraints();
+      case 10:
         return new ConceptCondition_Constraints();
+      case 7:
+        return new AddElementStatement_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);

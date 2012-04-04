@@ -28,7 +28,7 @@ public class IntentionDeclaration_Behavior {
     return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(thisNode, "forConcept", false));
   }
 
-  public static SNode virtual_getDescendantToCheck_3745452943050928880(SNode thisNode) {
+  public static SNode virtual_getDescendantToCheck_4844813484172611439(SNode thisNode) {
     if (!(ConceptFunction_Behavior.call_isReturnOnly_3745452943050787634(SLinkOperations.getTarget(thisNode, "descriptionFunction", true)))) {
       return null;
     }

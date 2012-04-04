@@ -244,6 +244,7 @@ public class State {
     if (!checkOnly) {
       addEquation(left, right, info);
     } else {
+      if (myTypeCheckingContext.isSingleTypeComputation()) return; //no need to check if we don't need to report errors)
       addBlock(new CheckEquationBlock(this, left, right, RelationKind.CHECK_EQUATION, info));
     }
   }
@@ -259,6 +260,7 @@ public class State {
         return;
       }
     }
+    if (check && myTypeCheckingContext.isSingleTypeComputation()) return; //no need to check if we don't need to report errors
     addBlock(new InequalityBlock(this, subType, superType, lessThan, RelationKind.fromFlags(isWeak, check, false), info));
   }
 
@@ -273,6 +275,7 @@ public class State {
         return;
       }
     }
+    if (!inference && myTypeCheckingContext.isSingleTypeComputation()) return; //no need to check if we don't need to report errors)
     addBlock(new ComparableBlock(this, left, right, RelationKind.fromFlags(isWeak, !inference, true), info));
   }
 
@@ -430,7 +433,7 @@ public class State {
 
   public void setTargetTypeCalculated() {
     myTargetTypeCalculated = true;
-    myNodeMaps.expandNode(myTargetNode);
+    myNodeMaps.expandNode(myTargetNode, true);
   }
 
   public boolean isTargetTypeCalculated() {
@@ -438,10 +441,14 @@ public class State {
   }
 
   public void expandTargetNode() {
-    myNodeMaps.expandNode(myTargetNode);
+    myNodeMaps.expandNode(myTargetNode, true);
   }
 
   public void expandAll(final Set<SNode> nodes, final boolean finalExpansion) {
+    if (myTypeCheckingContext.isSingleTypeComputation()) {
+      expandTargetNode();
+      return;
+    }
     if (nodes != null && !nodes.isEmpty()) {
       executeOperation(new AddRemarkOperation("Types Expansion", new Runnable() {
         public void run() {
@@ -449,14 +456,6 @@ public class State {
         }
       }));
     }
-  }
-
-  public void expandAll(final boolean finalExpansion) {
-    executeOperation(new AddRemarkOperation("Types Expansion", new Runnable() {
-      public void run() {
-        myNodeMaps.expandAll(finalExpansion);
-      }
-    }));
   }
 
   public boolean executeOperationsBeforeAnchor(AbstractOperation firstOp, Object anchor) {

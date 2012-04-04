@@ -8,21 +8,14 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 
 public class SolutionProperties extends ModuleProperties {
   public static final String OUTPUT_PATH = "outputPath";
+  public static final String COMPILE_IN_MPS = "compileInMPS";
   public static final String KIND = "kind";
 
-  private boolean myExternallyVisible;
+  private boolean myCompileInMPS;
   private String myOutputPath;
   private SolutionKind myKind;
 
   public SolutionProperties() {
-  }
-
-  public boolean isExternallyVisible() {
-    return myExternallyVisible;
-  }
-
-  public void setExternallyVisible(boolean externallyVisible) {
-    myExternallyVisible = externallyVisible;
   }
 
   public String getOutputPath() {
@@ -41,6 +34,14 @@ public class SolutionProperties extends ModuleProperties {
     myKind = SolutionKind.valueOf(kind);
   }
 
+  public boolean isCompileInMPS() {
+    return myCompileInMPS;
+  }
+
+  public void setCompileInMPS(boolean compileInMPS) {
+    myCompileInMPS = compileInMPS;
+  }
+
   @Override
   public void loadFrom(ModuleDescriptor descriptor) {
     assert descriptor instanceof SolutionDescriptor;
@@ -48,6 +49,7 @@ public class SolutionProperties extends ModuleProperties {
     SolutionDescriptor d = (SolutionDescriptor) descriptor;
     myOutputPath = d.getOutputPath();
     myKind = d.getKind();
+    myCompileInMPS = d.getCompileInMPS();
   }
 
   @Override
@@ -57,5 +59,6 @@ public class SolutionProperties extends ModuleProperties {
     SolutionDescriptor d = (SolutionDescriptor) descriptor;
     d.setOutputPath(myOutputPath);
     d.setKind(myKind);
+    d.setCompileInMPS(myCompileInMPS);
   }
 }

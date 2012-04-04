@@ -277,7 +277,7 @@ public class GeneratorUIFacade {
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
 
     for (TemplateModule templateModule : GenerationPartitioningUtil.getTemplateModules(model.getSModel())) {
-      Generator g = MPSModuleRepository.getInstance().getGenerator(templateModule.getReference());
+      Generator g = ModuleRepositoryFacade.getInstance().getModule(templateModule.getReference(), Generator.class);
       if (g == null) continue;
 
       for (SModelDescriptor sm : g.getOwnModelDescriptors()) {

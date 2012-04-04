@@ -27,6 +27,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.List;
+import java.util.Set;
 
 public class ProjectModulesPoolTreeNode extends TextTreeNode {
   private MPSProject myProject;
@@ -59,7 +60,7 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
   }
 
   private void populate() {
-    List<IModule> modules = collectModules();
+    Set<IModule> modules = collectModules();
     {
       ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
       TextTreeNode solutions = new TextTreeNode("Solutions");
@@ -93,7 +94,7 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
     }
   }
 
-  private List<IModule> collectModules() {
+  private Set<IModule> collectModules() {
     return MPSModuleRepository.getInstance().getAllModules();
   }
 

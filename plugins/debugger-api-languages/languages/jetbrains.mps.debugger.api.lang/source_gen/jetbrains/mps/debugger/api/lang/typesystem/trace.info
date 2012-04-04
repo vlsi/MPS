@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="Lang_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.typesystem.Lang_ApplicationPlugin" />
+  <unitInfo fileName="Lang_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.typesystem.Lang_ProjectPlugin" />
   <unitInfo fileName="TypesystemDescriptor.java" startLine="11" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.typesystem.TypesystemDescriptor" />
   <root nodeId="2526721715665547048">
     <nodeInfo nodeId="2526721715665562909" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

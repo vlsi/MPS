@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/testProjects" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/resources" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -28,6 +29,7 @@
     <orderEntry type="library" name="Annotations" level="project" />
     <orderEntry type="module" module-name="baseLanguage-search" />
     <orderEntry type="module" module-name="runtime" />
+    <orderEntry type="module" module-name="MPS-platform" scope="TEST" />
   </component>
 </module>
 

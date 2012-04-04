@@ -21,7 +21,7 @@
     <mkdir dir="${build.tmp}/default/mps-core_dl_{ver}.jar" />
     <mkdir dir="${build.tmp}/default/mps-core_dl_{ver}.jar/abc" />
     <mkdir dir="${build.tmp}/default/mps-core_dl_{ver}.jar/abc/edf" />
-    <zip destfile="${build.tmp}/default/mps-core_dl_{ver}.jar/abc/edf/aaa"></zip>
+    <zip destfile="${build.tmp}/default/mps-core_dl_{ver}.jar/abc/edf/aaa" />
     <jar destfile="${build.tmp}/default/inrelease.zip/mps-core${ver}.jar">
       <fileset dir="${build.tmp}/java/out/mps-core" />
       <fileset dir="${build.tmp}/default/mps-core_dl_{ver}.jar" />
@@ -49,7 +49,8 @@
   <target name="build" depends="assemble, check" />
   
   <target name="clean">
-    <delete dir="${build.dir}" />
+    <delete dir="${build.tmp}" />
+    <delete dir="${build.layout}" />
   </target>
   
   <target name="compileJava" depends="java.compile.mps-core" />
@@ -64,7 +65,7 @@
   
   <target name="java.compile.mps-core">
     <mkdir dir="${build.tmp}/java/out/mps-core" />
-    <javac destdir="${build.tmp}/java/out/mps-core">
+    <javac destdir="${build.tmp}/java/out/mps-core" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
         <pathelement path="${mps_home}/core/source" />

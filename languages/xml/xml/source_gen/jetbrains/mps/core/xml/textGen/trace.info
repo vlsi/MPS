@@ -19,9 +19,7 @@
     <scopeInfo nodeId="3080189811177558093" fileName="XmlAttribute_TextGen.java" startLine="17" startPosition="26" endLine="18" endPosition="24" />
     <scopeInfo nodeId="3080189811177517500" fileName="XmlAttribute_TextGen.java" startLine="23" startPosition="74" endLine="24" endPosition="109" />
     <scopeInfo nodeId="3080189811177558074" fileName="XmlAttribute_TextGen.java" startLine="15" startPosition="79" endLine="18" endPosition="24" />
-    <scopeInfo nodeId="3080189811177517500" fileName="XmlAttribute_TextGen.java" startLine="22" startPosition="94" endLine="25" endPosition="7">
-      <varInfo nodeId="3080189811177517500" varName="item" />
-    </scopeInfo>
+    <scopeInfo nodeId="3080189811177517500" fileName="XmlAttribute_TextGen.java" startLine="22" startPosition="94" endLine="25" endPosition="7" />
     <scopeInfo nodeId="3080189811177517500" fileName="XmlAttribute_TextGen.java" startLine="19" startPosition="5" endLine="27" endPosition="22" />
     <scopeInfo nodeId="3080189811177506495" fileName="XmlAttribute_TextGen.java" startLine="14" startPosition="42" endLine="27" endPosition="22" />
     <scopeInfo nodeId="3080189811177506495" fileName="XmlAttribute_TextGen.java" startLine="13" startPosition="56" endLine="29" endPosition="0">
@@ -98,8 +96,12 @@
     <scopeInfo nodeId="3080189811177580763" fileName="XmlElement_TextGen.java" startLine="16" startPosition="57" endLine="18" endPosition="26" />
     <scopeInfo nodeId="1238418252955" fileName="XmlElement_TextGen.java" startLine="19" startPosition="5" endLine="21" endPosition="64" />
     <scopeInfo nodeId="1238418252967" fileName="XmlElement_TextGen.java" startLine="35" startPosition="155" endLine="37" endPosition="13" />
-    <scopeInfo nodeId="1238422226870" fileName="XmlElement_TextGen.java" startLine="44" startPosition="98" endLine="47" endPosition="9" />
-    <scopeInfo nodeId="3080189811177517384" fileName="XmlElement_TextGen.java" startLine="55" startPosition="98" endLine="58" endPosition="9" />
+    <scopeInfo nodeId="1238422226870" fileName="XmlElement_TextGen.java" startLine="44" startPosition="98" endLine="47" endPosition="9">
+      <varInfo nodeId="1238422226870" varName="item" />
+    </scopeInfo>
+    <scopeInfo nodeId="3080189811177517384" fileName="XmlElement_TextGen.java" startLine="55" startPosition="98" endLine="58" endPosition="9">
+      <varInfo nodeId="3080189811177517384" varName="item" />
+    </scopeInfo>
     <scopeInfo nodeId="1238418252985" fileName="XmlElement_TextGen.java" startLine="62" startPosition="5" endLine="65" endPosition="21" />
     <scopeInfo nodeId="1238423179679" fileName="XmlElement_TextGen.java" startLine="27" startPosition="79" endLine="31" endPosition="9" />
     <scopeInfo nodeId="1238422226870" fileName="XmlElement_TextGen.java" startLine="43" startPosition="26" endLine="48" endPosition="7" />
@@ -258,9 +260,7 @@
     <scopeInfo nodeId="3080189811177579545" fileName="XmlComment_TextGen.java" startLine="16" startPosition="231" endLine="17" endPosition="27" />
     <scopeInfo nodeId="3080189811177517585" fileName="XmlComment_TextGen.java" startLine="22" startPosition="74" endLine="23" endPosition="109" />
     <scopeInfo nodeId="3080189811177579544" fileName="XmlComment_TextGen.java" startLine="16" startPosition="231" endLine="18" endPosition="26" />
-    <scopeInfo nodeId="3080189811177517585" fileName="XmlComment_TextGen.java" startLine="21" startPosition="94" endLine="24" endPosition="7">
-      <varInfo nodeId="3080189811177517585" varName="item" />
-    </scopeInfo>
+    <scopeInfo nodeId="3080189811177517585" fileName="XmlComment_TextGen.java" startLine="21" startPosition="94" endLine="24" endPosition="7" />
     <scopeInfo nodeId="3080189811177517585" fileName="XmlComment_TextGen.java" startLine="19" startPosition="5" endLine="26" endPosition="23" />
     <scopeInfo nodeId="3080189811177517582" fileName="XmlComment_TextGen.java" startLine="14" startPosition="42" endLine="26" endPosition="23">
       <varInfo nodeId="3080189811177579538" varName="left" />

@@ -60,6 +60,7 @@ public abstract class ProjectStructureBuilder {
     result.setId(SNodeId.fromString("~root"));
     SModelOperations.addRootNode(myModel, result);
     fill(result, source);
+    SPropertyOperations.set(result, "compileInMPS", "" + true);
     SPropertyOperations.set(result, "doNotGenerateAdapters", "" + source.isDoNotGenerateAdapters());
     SPropertyOperations.set(result, "genPath", source.getGenPath());
     SPropertyOperations.set(result, "languagePath", myFile.getPath());
@@ -90,6 +91,7 @@ public abstract class ProjectStructureBuilder {
     result.setId(SNodeId.fromString("~root"));
     SModelOperations.addRootNode(myModel, result);
     fill(result, source);
+    SPropertyOperations.set(result, "compileInMPS", "" + source.getCompileInMPS());
     SPropertyOperations.set(result, "outputPath", source.getOutputPath());
     SPropertyOperations.set(result, "solutionPath", myFile.getPath());
     collectModels(result, source);
@@ -101,6 +103,7 @@ public abstract class ProjectStructureBuilder {
     result.setId(SNodeId.fromString("~root"));
     SModelOperations.addRootNode(myModel, result);
     fill(result, source);
+    SPropertyOperations.set(result, "compileInMPS", "" + false);
     SPropertyOperations.set(result, "devkitPath", myFile.getPath());
     for (ModuleReference ref : source.getExtendedDevkits()) {
       SLinkOperations.getTargets(result, "extendedDevkits", true).add(convert(ref));
@@ -132,7 +135,6 @@ public abstract class ProjectStructureBuilder {
   private void fill(SNode module, ModuleDescriptor source) {
     SPropertyOperations.set(module, "uuid", source.getUUID());
     SPropertyOperations.set(module, "namespace", source.getNamespace());
-    SPropertyOperations.set(module, "compileInMPS", "" + source.getCompileInMPS());
 
     for (ModelRoot root : source.getModelRoots()) {
       SLinkOperations.getTargets(module, "modelRoots", true).add(convert(root));

@@ -58,7 +58,7 @@ public class DevkitDescriptorPersistence {
     }
   }
 
-  public static void saveDevKitDescriptor(final DevkitDescriptor descriptor, IFile file) {
+  public static void saveDevKitDescriptor(IFile file, final DevkitDescriptor descriptor) {
     Element root = new _FunctionTypes._return_P0_E0<Element>() {
       public Element invoke() {
         final Element result_raojav_a0a0a0b = new Element("dev-kit");

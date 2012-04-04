@@ -19,10 +19,7 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.structure.ProjectStructureModule.ProjectStructureSModel;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.loading.ModelLoadResult;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.vfs.IFile;
 
 import java.util.*;
@@ -110,7 +107,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     ModelAccess.assertLegalWrite();
 
     Set<SModelReference> old = new HashSet<SModelReference>(myModels.keySet());
-    for (Language module : MPSModuleRepository.getInstance().getAllLanguages()) {
+    for (Language module : (List<Language>) ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
       SModelReference ref = getSModelReference(module);
       if (myModels.containsKey(ref)) {
         old.remove(ref);

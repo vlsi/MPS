@@ -61,7 +61,7 @@ public abstract class DefaultScope extends BaseScope {
   }
 
   public Language getLanguage(ModuleReference moduleReference) {
-    Language l = MPSModuleRepository.getInstance().getLanguage(moduleReference);
+    Language l = ModuleRepositoryFacade.getInstance().getModule(moduleReference, Language.class);
     if (l == null) return null;
 
     synchronized (LOCK) {
@@ -72,7 +72,7 @@ public abstract class DefaultScope extends BaseScope {
   }
 
   public DevKit getDevKit(ModuleReference ref) {
-    DevKit d = MPSModuleRepository.getInstance().getDevKit(ref);
+    DevKit d = ModuleRepositoryFacade.getInstance().getModule(ref, DevKit.class);
     if (d == null) return null;
 
     synchronized (LOCK) {

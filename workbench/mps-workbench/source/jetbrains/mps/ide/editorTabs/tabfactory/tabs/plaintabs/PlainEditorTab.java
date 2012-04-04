@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs.plaintabs;
 
-import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
 
 class PlainEditorTab {
   private SNodePointer myNode;
-  private EditorTabDescriptor myTab;
+  private RelationDescriptor myTab;
 
-  PlainEditorTab(SNodePointer node, EditorTabDescriptor tab) {
+  PlainEditorTab(SNodePointer node, RelationDescriptor tab) {
     myNode = node;
     myTab = tab;
   }
@@ -31,7 +31,7 @@ class PlainEditorTab {
     return myNode;
   }
 
-  public EditorTabDescriptor getTab() {
+  public RelationDescriptor getTab() {
     return myTab;
   }
 }

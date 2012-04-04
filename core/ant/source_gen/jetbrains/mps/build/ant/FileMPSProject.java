@@ -8,7 +8,7 @@ import java.io.File;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.project.ProjectManager;
 import java.util.Set;
@@ -72,7 +72,7 @@ public class FileMPSProject extends Project {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         ClassLoaderManager.getInstance().unloadAll(new EmptyProgressMonitor());
-        MPSModuleRepository.getInstance().unRegisterModules(FileMPSProject.this);
+        ModuleRepositoryFacade.getInstance().unregisterModules(FileMPSProject.this);
         CleanupManager.getInstance().cleanup();
         if (ProjectManager.getInstance().getOpenProjects().length > 0) {
           ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
@@ -92,8 +92,9 @@ public class FileMPSProject extends Project {
       if (descriptorFile.exists()) {
         ModuleDescriptor descriptor = ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
         if (descriptor != null) {
-          IModule module = MPSModuleRepository.getInstance().<IModule>registerModule(new ModulesMiner.ModuleHandle(descriptorFile, descriptor), this);
-          ModuleReference moduleReference = module.getModuleReference();
+          ModulesMiner.ModuleHandle moduleHandle = new ModulesMiner.ModuleHandle(descriptorFile, descriptor);
+          IModule m = ModuleRepositoryFacade.createModule(moduleHandle, this);
+          ModuleReference moduleReference = m.getModuleReference();
           if (!(existingModules.remove(moduleReference))) {
             super.addModule(moduleReference);
           }

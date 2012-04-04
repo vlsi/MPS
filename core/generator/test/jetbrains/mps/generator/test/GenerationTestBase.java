@@ -29,10 +29,7 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.testbench.PerformanceMessenger;
@@ -58,6 +55,8 @@ import java.util.Map.Entry;
  */
 public class GenerationTestBase {
   private static boolean DEBUG = false;
+  private final MPSModuleOwner myOwner = new MPSModuleOwner() {
+  };
 
   @BeforeClass
   public static void init() throws Exception {
@@ -130,6 +129,12 @@ public class GenerationTestBase {
     String randomName = "testxw" + Math.abs(UUID.randomUUID().getLeastSignificantBits()) + "." + originalModel.getModule().getModuleFqName();
     String randomId = UUID.randomUUID().toString();
     final TestModule tm = new TestModule(randomName, randomId, originalModel.getModule());
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        MPSModuleRepository.getInstance().registerModule(tm, myOwner);
+      }
+    });
+
     final SModelDescriptor[] descr1 = new SModelDescriptor[]{null};
     try {
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -245,7 +250,11 @@ public class GenerationTestBase {
         System.out.println();
       }
     } finally {
-      tm.dispose();
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          MPSModuleRepository.getInstance().unregisterModule(tm,myOwner);
+        }
+      });
     }
   }
 

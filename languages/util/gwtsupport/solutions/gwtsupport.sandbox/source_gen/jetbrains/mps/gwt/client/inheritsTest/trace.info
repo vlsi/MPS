@@ -41,44 +41,14 @@
     <nodeInfo nodeId="8175837806590068576" fileName="InheritsTest.gwt.xml" startLine="7" startPosition="9" endLine="7" endPosition="17" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8175837806590068576" fileName="InheritsTest.gwt.xml" startLine="7" startPosition="9" endLine="7" endPosition="16" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8175837806590068576" fileName="InheritsTest.gwt.xml" startLine="7" startPosition="16" endLine="7" endPosition="16" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8175837806590068576" fileName="InheritsTest.gwt.xml" startLine="7" startPosition="16" endLine="7" endPosition="17" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8175837806590068576" fileName="InheritsTest.gwt.xml" startLine="7" startPosition="16" endLine="7" endPosition="16" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8175837806590068576" fileName="InheritsTest.gwt.xml" startLine="7" startPosition="16" endLine="7" endPosition="17" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8175837806590068576" fileName="InheritsTest.gwt.xml" startLine="7" startPosition="17" endLine="7" endPosition="19" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="8" startPosition="0" endLine="8" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="8" startPosition="2" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="8" startPosition="3" endLine="8" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="8" startPosition="3" endLine="8" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="8" startPosition="11" endLine="8" endPosition="61" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="8" startPosition="11" endLine="8" endPosition="18" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="8" startPosition="18" endLine="8" endPosition="60" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="8" startPosition="18" endLine="8" endPosition="60" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="8" startPosition="60" endLine="8" endPosition="61" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="8" startPosition="61" endLine="8" endPosition="63" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="9" startPosition="0" endLine="9" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="9" startPosition="2" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="9" startPosition="3" endLine="9" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="9" startPosition="3" endLine="9" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="9" startPosition="11" endLine="9" endPosition="62" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="9" startPosition="11" endLine="9" endPosition="18" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="9" startPosition="18" endLine="9" endPosition="61" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="9" startPosition="18" endLine="9" endPosition="61" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="9" startPosition="61" endLine="9" endPosition="62" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="9" startPosition="62" endLine="9" endPosition="64" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="10" startPosition="0" endLine="10" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="10" startPosition="2" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="10" startPosition="3" endLine="10" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="10" startPosition="3" endLine="10" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="10" startPosition="11" endLine="10" endPosition="60" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="10" startPosition="11" endLine="10" endPosition="18" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="10" startPosition="18" endLine="10" endPosition="59" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="10" startPosition="18" endLine="10" endPosition="59" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="10" startPosition="59" endLine="10" endPosition="60" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="10" startPosition="60" endLine="10" endPosition="62" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="11" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="11" startPosition="0" endLine="11" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="11" startPosition="2" endLine="11" endPosition="8" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="11" startPosition="2" endLine="11" endPosition="8" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="11" startPosition="8" endLine="11" endPosition="9" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="8" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="8" startPosition="0" endLine="8" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="8" startPosition="2" endLine="8" endPosition="8" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="8" startPosition="2" endLine="8" endPosition="8" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="8" startPosition="8" endLine="8" endPosition="9" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="1" startPosition="0" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="1" startPosition="16" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="2" startPosition="0" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
@@ -90,28 +60,22 @@
     <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="5" startPosition="0" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="5" startPosition="1" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="6" startPosition="8" endLine="7" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8175837806590068576" fileName="InheritsTest.gwt.xml" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8175837806590068576" fileName="InheritsTest.gwt.xml" startLine="7" startPosition="19" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="8" startPosition="63" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="9" startPosition="64" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="10" startPosition="62" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="11" startPosition="9" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="8" startPosition="9" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="3" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="3" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="2" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="2" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="2" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="7" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="7" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="7" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="6" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="1" startPosition="0" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="1" startPosition="0" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="6" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="1" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <unitInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="1" startPosition="0" endLine="12" endPosition="0" unitName="InheritsTest.gwt.xml" />
+    <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="1" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <unitInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="1" startPosition="0" endLine="9" endPosition="0" unitName="InheritsTest.gwt.xml" />
   </root>
 </debugInfo>
 

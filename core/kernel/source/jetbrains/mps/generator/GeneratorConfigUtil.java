@@ -18,10 +18,7 @@ package jetbrains.mps.generator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class GeneratorConfigUtil {
   public static List<SModelDescriptor> getLanguageModels(Language lang) {
@@ -47,8 +44,7 @@ public class GeneratorConfigUtil {
     inputModels.addAll(lang.getUtilModels());
 
     // add it from all generators
-    List<Generator> list = lang.getGenerators();
-    for (Generator generator : list) {
+    for (Generator generator : lang.getGenerators()) {
       inputModels.addAll(generator.getGeneratorModels());
     }
     return inputModels;

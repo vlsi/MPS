@@ -5,6 +5,10 @@ package jetbrains.mps.baseLanguage.util.plugin.run;
 import jetbrains.mps.util.annotation.ToRemove;
 import java.awt.GridBagConstraints;
 
+
+/**
+ * use GridBagConstraints from settings language
+ */
 @Deprecated
 @ToRemove(version = 2.0)
 public class LayoutUtil {

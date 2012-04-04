@@ -33,7 +33,7 @@ public class FinderDeclaration_Behavior {
     return ((SModel) SNodeOperations.getModel(thisNode)).getModelDescriptor().getLongName() + "." + FinderDeclaration_Behavior.call_getGeneratedClassName_1213877240101(thisNode);
   }
 
-  public static PropertyReference virtual_getPropertyToCheck_5003188907305392322(SNode thisNode) {
+  public static PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode) {
     return new PropertyReference(thisNode, "description");
   }
 

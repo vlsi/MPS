@@ -102,8 +102,10 @@ public class Environment {
   protected void loadLibraries() {
     if (myLibraryContibutor == null) {
       Set<String> libraryPaths = new HashSet<String>();
-      libraryPaths.addAll(PathManager.getBootstrapPaths());
-      libraryPaths.add(PathManager.getLanguagesPath());
+      if (myWhatToDo.isLoadBootstrapLibraries()) {
+        libraryPaths.addAll(PathManager.getBootstrapPaths());
+        libraryPaths.add(PathManager.getLanguagesPath());
+      }
       for (String libName : myWhatToDo.getLibraries().keySet()) {
         libraryPaths.add(myWhatToDo.getLibraries().get(libName).getAbsolutePath());
       }

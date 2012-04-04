@@ -18,9 +18,7 @@ import org.jdesktop.beansbinding.Property;
 import org.jdesktop.beansbinding.BeanProperty;
 import org.jdesktop.beansbinding.Bindings;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelCommandExecutor;
-import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.io.File;
 
 public class NewSolutionDialogContentPane extends JPanel {
@@ -187,11 +185,11 @@ public class NewSolutionDialogContentPane extends JPanel {
     }
 
     myThis.getDialog().dispose();
-    ModelAccess.instance().runWriteActionWithProgressSynchronously(new ModelCommandExecutor.RunnableWithProgress() {
-      public void run(ProgressMonitor monitor) {
-        myThis.setResult(NewModuleUtil.createSolution(myThis.getSolutionName(), myThis.getSolutionPath(), myThis.getProject(), true));
+    NewModuleUtil.runModuleCreation(myThis.getProject().getProject(), new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        myThis.setResult(NewModuleUtil.createSolution(myThis.getSolutionName(), myThis.getSolutionPath(), myThis.getProject()));
       }
-    }, "Creating", false, myThis.getProject());
+    });
   }
 
   /*package*/ void onCancel() {

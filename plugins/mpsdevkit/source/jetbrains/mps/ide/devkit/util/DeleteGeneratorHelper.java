@@ -22,7 +22,7 @@ import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
 import javax.swing.SwingUtilities;
 import java.util.ArrayList;
@@ -48,7 +48,7 @@ public class DeleteGeneratorHelper {
 
   private static void safeDelete(final Project project, Language sourceLanguage, final Generator generator, GeneratorDescriptor generatorDescriptor, boolean deleteFiles) {
     List<Generator> dependant = new ArrayList<Generator>();
-    for (Generator gen : MPSModuleRepository.getInstance().getAllGenerators()) {
+    for (Generator gen : (List<Generator>) ModuleRepositoryFacade.getInstance().getAllModules(Generator.class)) {
       if (gen.getReferencedGenerators().contains(generator)) {
         dependant.add(gen);
       }

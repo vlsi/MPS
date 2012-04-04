@@ -36,6 +36,10 @@
     <component>
       <implementation-class>jetbrains.mps.debug.api.DebugSessionManagerComponent</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.debug.api.source.PositionProvider</implementation-class>
+    </component>
     <!--runtime-->
     <component>
       <implementation-class>jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUiComponent</implementation-class>
@@ -45,7 +49,11 @@
       </implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.debugger.api.ui.breakpoints.CurrentLinePositionComponent
+      <implementation-class>jetbrains.mps.debugger.api.ui.executionPoint.CurrentLinePositionComponent
+      </implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.debugger.api.ui.executionPoint.InTextPositionComponent
       </implementation-class>
     </component>
   </project-components>

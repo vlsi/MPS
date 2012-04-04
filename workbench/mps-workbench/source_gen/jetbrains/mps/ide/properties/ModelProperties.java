@@ -18,7 +18,7 @@ import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.Language;
 
@@ -102,7 +102,7 @@ public class ModelProperties extends BaseBean {
     Set<ModuleReference> devKitsInProperties = new HashSet<ModuleReference>(getUsedDevKits());
     devKitsInProperties.removeAll(devKitsInModel);
     for (ModuleReference dk : devKitsInProperties) {
-      DevKit devKit = MPSModuleRepository.getInstance().getDevKit(dk);
+      DevKit devKit = ModuleRepositoryFacade.getInstance().getModule(dk, DevKit.class);
       assert devKit != null;
       SModel model = myModelDescriptor.getSModel();
       model.addDevKit(dk);
@@ -128,7 +128,7 @@ public class ModelProperties extends BaseBean {
     Set<ModuleReference> languagesInProps = new HashSet<ModuleReference>(getUsedLanguages());
     languagesInProps.removeAll(languagesInModel);
     for (ModuleReference ref : languagesInProps) {
-      Language language = MPSModuleRepository.getInstance().getLanguage(ref);
+      Language language = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
       if (language == null) {
         continue;
       }

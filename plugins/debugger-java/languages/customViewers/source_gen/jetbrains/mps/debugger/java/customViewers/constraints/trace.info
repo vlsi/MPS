@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="CustomViewers_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.constraints.CustomViewers_ApplicationPlugin" />
+  <unitInfo fileName="CustomViewers_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.constraints.CustomViewers_ProjectPlugin" />
   <root nodeId="1843851250586694523">
     <nodeInfo nodeId="1843851250586694523" fileName="ClassNameOperation_Constraints.java" startLine="19" startPosition="79" endLine="20" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
     <nodeInfo nodeId="1843851250586694523" fileName="ClassNameOperation_Constraints.java" startLine="22" startPosition="43" endLine="23" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

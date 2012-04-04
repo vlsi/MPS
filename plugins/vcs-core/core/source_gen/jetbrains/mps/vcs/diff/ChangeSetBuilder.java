@@ -67,7 +67,7 @@ public class ChangeSetBuilder {
 
   public void buildForProperty(SNode oldNode, SNode newNode, String name) {
     PropertySupport propertySupport = new ChangeSetBuilder.DefaultPropertySupport();
-    if (MPSCore.getInstance().isMergeDriverMode()) {
+    if (!(MPSCore.getInstance().isMergeDriverMode())) {
       SNode propertyDeclaration = oldNode.getPropertyDeclaration(name);
       if (propertyDeclaration != null) {
         propertySupport = PropertySupport.getPropertySupport(propertyDeclaration);

@@ -12,6 +12,8 @@ import com.intellij.execution.configurations.ConfigurationType;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.RunnerAndConfigurationSettings;
 import com.intellij.execution.Location;
+import jetbrains.mps.plugins.runconfigs.MPSLocation;
+import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
 import com.intellij.execution.configurations.RunConfiguration;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;

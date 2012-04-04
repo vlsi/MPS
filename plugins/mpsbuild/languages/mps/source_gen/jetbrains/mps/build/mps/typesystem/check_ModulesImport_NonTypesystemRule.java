@@ -7,12 +7,11 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.build.util.Context;
 import org.apache.commons.lang.StringUtils;
@@ -20,6 +19,7 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.build.mps.util.ModuleLoader;
+import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -28,15 +28,15 @@ public class check_ModulesImport_NonTypesystemRule extends AbstractNonTypesystem
   }
 
   public void applyRule(final SNode buildProject, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    if (SNodeOperations.getModel(buildProject).isTransient()) {
+      return;
+    }
+
     VisibleModules visible = null;
     String workingDir = null;
-    for (final SNode module : ListSequence.fromList(SLinkOperations.getTargets(buildProject, "parts", true)).where(new IWhereFilter<SNode>() {
+    for (final SNode module : ListSequence.fromList(SNodeOperations.getDescendants(buildProject, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule") && (SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"), "path", true) != null);
-      }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule");
+        return (SLinkOperations.getTarget(it, "path", true) != null);
       }
     })) {
       if (visible == null) {
@@ -52,7 +52,7 @@ public class check_ModulesImport_NonTypesystemRule extends AbstractNonTypesystem
         }
       }
       final StringBuilder messages = new StringBuilder();
-      new ModuleLoader(module, visible, workingDir, null) {
+      new ModuleLoader(module, visible, new PathConverter(buildProject), null) {
         @Override
         protected void report(String message, SNode node) {
           if (messages.length() > 0) {

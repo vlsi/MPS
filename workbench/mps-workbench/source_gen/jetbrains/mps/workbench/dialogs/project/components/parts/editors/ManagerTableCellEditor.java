@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModel;
@@ -66,7 +66,7 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
     final List<SNode> result = new ArrayList<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
+        for (Language l : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
           SModelDescriptor stubsAspect = LanguageAspect.STUBS.get(l);
           if (stubsAspect == null) {
             continue;

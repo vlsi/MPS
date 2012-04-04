@@ -42,10 +42,10 @@ import jetbrains.mps.build.ant.FileMPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.make.ModuleMaker;
-import java.util.HashSet;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
@@ -58,6 +58,7 @@ import jetbrains.mps.project.structure.project.testconfigurations.IllegalGenerat
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.build.ant.generation.TestGenerationOnTeamcity;
 import jetbrains.mps.vfs.FileSystem;
@@ -267,7 +268,7 @@ public class TestGenerationWorker extends MpsWorker {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           ClassLoaderManager.getInstance().updateClassPath();
-          new ModuleMaker().make(new HashSet(MPSModuleRepository.getInstance().getAllModules()), new EmptyProgressMonitor());
+          new ModuleMaker().make(MPSModuleRepository.getInstance().getAllModules(), new EmptyProgressMonitor());
         }
       });
       ModelAccess.instance().runWriteAction(new Runnable() {
@@ -355,12 +356,12 @@ public class TestGenerationWorker extends MpsWorker {
           public boolean accept(IModule it) {
             return it instanceof Language;
           }
-        }).translate(new ITranslator2<IModule, IModule>() {
-          public Iterable<IModule> translate(IModule it) {
-            return Collections.<IModule>unmodifiableList(((Language) it).getGenerators());
+        }).translate(new ITranslator2<IModule, Generator>() {
+          public Iterable<Generator> translate(IModule it) {
+            return ((Language) it).getGenerators();
           }
-        }).translate(new ITranslator2<IModule, SModelDescriptor>() {
-          public Iterable<SModelDescriptor> translate(IModule gen) {
+        }).translate(new ITranslator2<Generator, SModelDescriptor>() {
+          public Iterable<SModelDescriptor> translate(Generator gen) {
             return gen.getOwnModelDescriptors();
           }
         }));

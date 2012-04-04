@@ -21,6 +21,7 @@ import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.*;
+import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.project.dependency.LanguageDependenciesManager;
 import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
@@ -32,8 +33,8 @@ import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.stubs.LibrariesLoader;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.vfs.FileSystem;
@@ -51,7 +52,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   public static final String LANGUAGE_MODELS = "languageModels";
 
   private LanguageDescriptor myLanguageDescriptor;
-  private List<Generator> myGenerators = new ArrayList<Generator>();
 
   private ConcurrentHashMap<String, SNode> myNameToConceptCache = new ConcurrentHashMap<String, SNode>();
   //the following is needed because we can't store null values in myNameToConceptCache, as long as it's a ConcurrentHashMap
@@ -73,70 +73,27 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   private List<Language> myAllExtendedLanguages;
 
-  @Deprecated
-  public static Language createLanguage(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
-    ModuleDescriptor desciptor = null;
-    if (descriptorFile.exists()) {
-      desciptor = ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
+  public static Language newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
+    LanguageDescriptor descriptor = ((LanguageDescriptor) handle.getDescriptor());
+    assert descriptor != null;
+    assert descriptor.getId() != null;
+
+    Language language = new Language(descriptor, handle.getFile());
+
+    Language registered = MPSModuleRepository.getInstance().registerModule(language, moduleOwner);
+
+    if (registered == language) {
+      language.setLanguageDescriptor(descriptor, false);
+      createLanguageLibs(language, descriptor, MPSModuleRepository.getInstance());
     }
-    return createLanguage(namespace, new ModuleHandle(descriptorFile, desciptor), moduleOwner);
+
+    return registered;
   }
 
-  //this is for stubs framework & tests only. Can be later converted into subclass
-  public static Language newInstance(LanguageDescriptor descriptor, MPSModuleOwner moduleOwner) {
-    Language language = new Language() {
-      public String getGeneratorOutputPath() {
-        return null;
-      }
-
-      public String getTestsGeneratorOutputPath() {
-        return null;
-      }
-    };
-
-    MPSModuleRepository repository = MPSModuleRepository.getInstance();
-    if (repository.existsModule(descriptor.getModuleReference())) {
-      LOG.error("Loading module " + descriptor.getNamespace() + " for the second time");
-      return repository.getLanguage(descriptor.getModuleReference());
-    }
-
-    language.setLanguageDescriptor(descriptor, false);
-    repository.addModule(language, moduleOwner);
-
-    return language;
-  }
-
-  public static Language createLanguage(String namespace, ModuleHandle handle, MPSModuleOwner moduleOwner) {
-    LanguageDescriptor languageDescriptor;
-    if (handle.getDescriptor() != null) {
-      languageDescriptor = (LanguageDescriptor) handle.getDescriptor();
-      if (languageDescriptor.getId() == null) {
-        languageDescriptor.setId(ModuleId.regular());
-        LanguageDescriptorPersistence.saveLanguageDescriptor(handle.getFile(), languageDescriptor);
-      }
-    } else {
-      languageDescriptor = createNewDescriptor(namespace, handle.getFile());
-    }
-
-    MPSModuleRepository repository = MPSModuleRepository.getInstance();
-    IModule m = MPSModuleRepository.checkRegistered(languageDescriptor.getModuleReference(), handle.getFile());
-    if (m != null) {
-      return (Language) m;
-    }
-
-    Language language = new Language();
-    language.myDescriptorFile = handle.getFile();
-
-    language.setLanguageDescriptor(languageDescriptor, false);
-    repository.addModule(language, moduleOwner);
-
-    LibrariesLoader.createLanguageLibs(moduleOwner, language, languageDescriptor, repository);
-
-    return language;
-  }
-
-  private Language() {
-
+  protected Language(LanguageDescriptor descriptor, IFile file) {
+    myDescriptorFile = file;
+    myLanguageDescriptor = descriptor;
+    setModuleReference(descriptor.getModuleReference());
   }
 
   protected ModuleDependenciesManager createDependenciesManager() {
@@ -144,15 +101,11 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   protected void reloadAfterDescriptorChange() {
-    MPSModuleRepository.getInstance().unRegisterModules(this, new Condition<IModule>() {
+    ModuleRepositoryFacade.getInstance().unregisterModules(this, new Condition<IModule>() {
       public boolean met(IModule m) {
-        return !(m instanceof Solution && ((Solution) m).isStub());
+        return !(m instanceof Solution && ((Solution) m) instanceof StubSolution);
       }
     });
-
-    for (Generator generator : getGenerators()) {
-      generator.dispose();
-    }
 
     super.reloadAfterDescriptorChange();
     revalidateGenerators();
@@ -252,27 +205,19 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   private void revalidateGenerators() {
-    myGenerators.clear();
+    MPSModuleRepository repo = MPSModuleRepository.getInstance();
+    for (Generator g : getGenerators()) {
+      repo.unregisterModule(g, this);
+    }
     for (GeneratorDescriptor generatorDescriptor : getModuleDescriptor().getGenerators()) {
       Generator generator = new Generator(this, generatorDescriptor);
-      MPSModuleRepository.getInstance().addModule(generator, this);
-      myGenerators.add(generator);
+      repo.registerModule(generator, this);
     }
   }
 
   public void dispose() {
     super.dispose();
-
-    //Call this method before you remove it and its models from repositories
-    //To unregister it correctly from different services we need it and its models    
-    SModelRepository.getInstance().unRegisterModelDescriptors(this);
-    MPSModuleRepository.getInstance().unRegisterModules(this);
-    if (myGenerators != null) {
-      for (Generator generator : myGenerators) {
-        generator.dispose();
-      }
-      myGenerators.clear();
-    }
+    ModuleRepositoryFacade.getInstance().unregisterModules(this);
   }
 
   public LanguageDescriptor getModuleDescriptor() {
@@ -313,8 +258,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return getStructureModelDescriptor().getVersion();
   }
 
-  public List<Generator> getGenerators() {
-    return new ArrayList<Generator>(myGenerators);
+  public Collection<Generator> getGenerators() {
+    return ModuleRepositoryFacade.getInstance().getModules(this, Generator.class);
   }
 
   public void rename(String newNamespace) {
@@ -490,8 +435,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       LOG.warning("Trying to save packaged language " + getModuleFqName(), new Exception());
       return;
     }
-    if (getDescriptorFile() == null) return;
-    LanguageDescriptorPersistence.saveLanguageDescriptor(myDescriptorFile, getModuleDescriptor());
+    LanguageDescriptorPersistence.saveLanguageDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.forModuleFile(myDescriptorFile));
   }
 
   public List<SModelDescriptor> getAccessoryModels() {
@@ -587,20 +531,26 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  public List<StubPath> getOwnStubPaths() {
-    List<StubPath> result = new ArrayList<StubPath>();
-    if (isCompileInMPS()) {
-      IFile classesGen = getClassesGen();
-      if (classesGen != null) {
-        result.add(new StubPath(classesGen.getPath(), LanguageID.JAVA_MANAGER));
-      }
-    } else {
-      IFile classes = ProjectPathUtil.getClassesFolder(getDescriptorFile());
-      if (classes != null) {
-        result.add(new StubPath(classes.getPath(), LanguageID.JAVA_MANAGER));
-      }
+  @Override
+  public boolean isCompileInMPS() {
+    // language is always compiled in MPS
+    return true;
+  }
+
+  @Override
+  public Collection<StubPath> getOwnStubPaths() {
+    if (isPackaged()) {
+      return Collections.singletonList(
+        new StubPath(
+          FileSystem.getInstance().getBundleHome(getDescriptorFile()).getPath(),
+          LanguageID.JAVA_MANAGER));
     }
-    return result;
+
+    IFile classesGen = ProjectPathUtil.getClassesGenFolder(getDescriptorFile());
+    if (classesGen != null) {
+      return Collections.singletonList(new StubPath(classesGen.getPath(), LanguageID.JAVA_MANAGER));
+    }
+    return Collections.emptyList();
   }
 
   protected void invalidateClassPath() {
@@ -682,11 +632,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     }
   }
 
-  @Override
-  protected boolean addBundleAsLibrary() {
-    return false;
-  }
-
   protected Collection<ModelRoot> getRuntimeModelsEntries() {
     return myLanguageDescriptor.getRuntimeStubModels();
   }
@@ -702,21 +647,26 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return res;
   }
 
-  private static LanguageDescriptor createNewDescriptor(String languageNamespace, IFile descriptorFile) {
-    LanguageDescriptor languageDescriptor = new LanguageDescriptor();
-    languageDescriptor.setNamespace(languageNamespace);
-    languageDescriptor.setId(ModuleId.regular());
+  private static void createLanguageLibs(Language language, LanguageDescriptor languageDescriptor, MPSModuleRepository repository) {
+    List<SolutionDescriptor> solutionDescriptors = createLanguageLibraryDescriptors(languageDescriptor);
 
-    IFile languageModels = descriptorFile.getParent().getDescendant(LANGUAGE_MODELS);
-    if (languageModels.exists()) {
-      throw new IllegalStateException("Trying to create a language in an existing language's directory");
+    for (SolutionDescriptor sd : solutionDescriptors) {
+      jetbrains.mps.project.StubSolution.newInstance(sd, language);
     }
+  }
 
-    // default descriptorModel roots
-    jetbrains.mps.project.structure.model.ModelRoot modelRoot = new jetbrains.mps.project.structure.model.ModelRoot();
-    modelRoot.setPath(languageModels.getPath());
-    languageDescriptor.getModelRoots().add(modelRoot);
-    return languageDescriptor;
+  private static List<SolutionDescriptor> createLanguageLibraryDescriptors(LanguageDescriptor ld) {
+    List<SolutionDescriptor> result = new ArrayList<SolutionDescriptor>();
+    for (jetbrains.mps.project.structure.modules.StubSolution ss : ld.getStubSolutions()) {
+      SolutionDescriptor descriptor = new SolutionDescriptor();
+      descriptor.setId(ss.getId());
+      descriptor.setNamespace(ss.getName());
+
+      descriptor.setCompileInMPS(false);
+
+      result.add(descriptor);
+    }
+    return result;
   }
 
   private class CachesInvalidator extends SModelAdapter {

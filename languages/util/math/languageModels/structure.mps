@@ -2,9 +2,6 @@
 <model modelUID="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)">
   <persistence version="7" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
-  <language namespace="a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)" />
-  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
-  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -1302,7 +1299,7 @@
       <link role="targetType" roleId="tpce.1105736621938" targetNodeId="tpce.1071489090640" resolveInfo="ConceptDeclaration" />
     </node>
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="7255837154369627533">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="7255837154369627529" resolveInfo="substituendConcepts" />
+      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="7255837154369627529" resolveInfo="allowedSubstituends" />
       <link role="target" roleId="tpce.1105736807942" targetNodeId="7255837154369354272" resolveInfo="ExponentialOperation" />
     </node>
   </root>
@@ -1311,7 +1308,7 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
     </node>
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="7255837154369627531">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="7255837154369627529" resolveInfo="aaaa" />
+      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="7255837154369627529" resolveInfo="allowedSubstituends" />
       <link role="target" roleId="tpce.1105736807942" targetNodeId="7255837154369580413" resolveInfo="MatrixExponentialOperation" />
     </node>
   </root>

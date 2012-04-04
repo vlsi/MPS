@@ -29,10 +29,6 @@ public class RenameMethod extends BaseRefactoring {
     return "Rename Method";
   }
 
-  public String getKeyStroke() {
-    return getKeyStroke_static();
-  }
-
   public Class getOverridenRefactoringClass() {
     return Rename.class;
   }
@@ -65,9 +61,5 @@ public class RenameMethod extends BaseRefactoring {
         FindUtils.getSearchResults(new EmptyProgressMonitor(), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder")
       );
     }
-  }
-
-  public static String getKeyStroke_static() {
-    return Rename.getKeyStroke_static();
   }
 }

@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 
@@ -65,7 +65,7 @@ import java.lang.reflect.Method;
 
   private static Class getFactoryClass(SNode conceptDeclaration) {
     String languageNamespace = NameUtil.namespaceFromConceptFQName(NameUtil.nodeFQName(conceptDeclaration));
-    Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
+    Language language = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
     assert language != null;
     return language.getClass(languageNamespace + ".Factory");
   }

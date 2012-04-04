@@ -101,7 +101,7 @@ public class KeyMapUtil {
       Set<ModuleReference> importedAndExtendedLanguages = new HashSet<ModuleReference>();
       for (ModuleReference langRef : SModelOperations.getAllImportedLanguages(model)) {
         importedAndExtendedLanguages.add(langRef);
-        Language l = MPSModuleRepository.getInstance().getLanguage(langRef);
+        Language l = ModuleRepositoryFacade.getInstance().getModule(langRef, Language.class);
         if (l != null) {
           for (Language le : l.getAllExtendedLanguages()) {
             importedAndExtendedLanguages.add(le.getModuleReference());

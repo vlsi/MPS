@@ -23,7 +23,7 @@ public class EditorTab_Behavior {
     return SNodeOperations.getModel(thisNode).getLongName() + "." + EditorTab_Behavior.call_getGeneratedName_3743831881070611776(thisNode);
   }
 
-  public static List<PropertyReference> virtual_getPropertiesToCheck_1628770029971140570(SNode thisNode) {
+  public static List<PropertyReference> virtual_getPropertiesToCheck_4844813484172611445(SNode thisNode) {
     List<PropertyReference> props = ListSequence.fromList(new ArrayList<PropertyReference>());
     return props;
   }

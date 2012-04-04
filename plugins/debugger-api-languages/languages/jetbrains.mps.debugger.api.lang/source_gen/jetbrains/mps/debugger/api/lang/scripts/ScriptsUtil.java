@@ -54,7 +54,7 @@ public class ScriptsUtil {
     List<SReference> references = ListSequence.fromList(new ArrayList<SReference>());
     Map<SModelReference, SModelReference> modelsMap = MapSequence.fromMap(new HashMap<SModelReference, SModelReference>());
     for (SNode snode : ListSequence.fromList(SNodeOperations.getDescendants(node, null, true, new String[]{}))) {
-      for (SReference ref : ListSequence.fromList(SNodeOperations.getReferences(snode))) {
+      for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(snode))) {
         SModelReference targetSModelReference = ref.getTargetSModelReference();
 
         if (MapSequence.fromMap(modelsMap).get(targetSModelReference) != null) {
