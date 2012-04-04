@@ -49,6 +49,7 @@ class TypeSystemComponent extends CheckingComponent {
   private Set<SNode> myPartlyCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
   private Set<SNode> myNodesDependentOnCaches = new THashSet<SNode>();
   private Stack<Set<SNode>> myCurrentFrontiers = new Stack<Set<SNode>>();
+  private Set<SNode> myAdditionalNodes = new THashSet<SNode>();
   private SNode myCurrentCheckedNode;
   private boolean myCurrentTypeAffected = false;
 
@@ -202,7 +203,7 @@ class TypeSystemComponent extends CheckingComponent {
     addDependentNodesTypeSystem(myCurrentCheckedNode, hashSet, true);
   }
 
-  protected void computeTypesSpecial(SNode nodeToCheck, boolean forceChildrenCheck, Collection<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
+  private void computeTypesSpecial(SNode nodeToCheck, boolean forceChildrenCheck, Collection<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
     computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes, initialNode);
     if (typeCalculated(initialNode) != null) return;
     solveInequalitiesAndExpandTypes(finalExpansion);
@@ -252,6 +253,8 @@ class TypeSystemComponent extends CheckingComponent {
       type = typeCalculated(initialNode);
       if (type == null) {
         if (node.isRoot()) {
+          myNodeTypesComponent.getTypeCheckingContext().setSingleTypeComputation(false);
+          //System.out.println("Root: " + initialNode.getDebugText());
           computeTypes(node, true, true, Collections.<SNode>emptyList(), true, initialNode);
           type = getType(initialNode);
           if(type == null && node != initialNode && myState.getInequalitySystem() == null && !myNodeTypesComponent.getTypeCheckingContext().isInEditorQueries()) {
@@ -442,6 +445,8 @@ class TypeSystemComponent extends CheckingComponent {
     }
     if (!myCurrentFrontiers.isEmpty()) {
       myCurrentFrontiers.peek().add(node);
+    } else {
+      myAdditionalNodes.add(node);
     }
   }
 

@@ -53,6 +53,8 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   private IOperationContext myOperationContext;
   private Map<Object, Integer> myRequesting = new HashMap<Object, Integer>();
   private Integer myOldHash = 0;
+  private boolean myIsSingleTypeComputation = false;
+  //normal mode - all types calculation, generation mode - single type computation
 
   public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker) {
     myState = new State(this);
@@ -307,11 +309,13 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   protected SNode getTypeOf_generationMode(SNode node) {
+    myIsSingleTypeComputation = true;
     return myNodeTypesComponent.computeTypesForNodeDuringGeneration(node);
   }
 
   @Override
   protected SNode getTypeOf_resolveMode(SNode node, TypeChecker typeChecker) {
+    myIsSingleTypeComputation = true;
     Pair<SNode, Boolean> pair = typeChecker.getTypeComputedForCompletion(node);
     if (pair.o2) {
       return pair.o1;
@@ -336,6 +340,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   protected SNode getTypeOf_normalMode(SNode node) {
+    myIsSingleTypeComputation = false;
     if (!checkIfNotChecked(node, false)) return null;
     return getTypeDontCheck(node);
   }
@@ -534,5 +539,13 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
       }
     });
     return messages.get(0);
+  }
+
+  public boolean isSingleTypeComputation() {
+    return myIsSingleTypeComputation;
+  }
+
+  public void setSingleTypeComputation(boolean isSingleTypeComputation) {
+    myIsSingleTypeComputation = isSingleTypeComputation;
   }
 }
