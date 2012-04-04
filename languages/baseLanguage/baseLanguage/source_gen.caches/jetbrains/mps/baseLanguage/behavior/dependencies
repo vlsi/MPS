@@ -896,6 +896,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.EnumConstantDeclarationScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.FieldDeclarationScope" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.InstanceMethodDeclarationScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.MemberScopes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.OverridingPolicies" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.PropertyScope" />

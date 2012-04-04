@@ -6,8 +6,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.scope.Scope;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -22,6 +23,12 @@ public class StaticMethodDeclarationScope extends BaseMethodsScope {
 
   public String getSignatureForOverriding(SNode method, SNode contextClassifier) {
     return SPropertyOperations.getString(method, "name") + "(" + ((String) BehaviorManager.getInstance().invoke(Object.class, method, "call_getErasureSignature_2830572026628006618", new Class[]{SNode.class})) + ")";
+  }
+
+  @Nullable
+  public SNode resolve(SNode contextNode, @NotNull String refText) {
+    // todo 
+    return null;
   }
 
   public static Scope forClass(SNode classNode, @Nullable SNode extendsClass, SNode... implementsInterfaces) {

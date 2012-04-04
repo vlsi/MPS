@@ -15,11 +15,11 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.Nullable;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import org.jetbrains.annotations.NotNull;
@@ -29,6 +29,7 @@ public abstract class BaseMethodsScope extends Scope {
   private final SNode kind;
   private final SNode classifier;
   private final Iterable<SNode> extendedClassifiers;
+  private List<SNode> allMethods;
 
   public BaseMethodsScope(final SNode kind, SNode classifier, Iterable<SNode> extendedClassifiers) {
     this.kind = kind;
@@ -55,9 +56,29 @@ public abstract class BaseMethodsScope extends Scope {
 
   public abstract String getSignatureForOverriding(SNode method, SNode contextClassifier);
 
-  public List<SNode> getAvailableElements(@Nullable String prefix) {
+  public Iterable<SNode> getMethodsFromGroup(Iterable<SNode> groupWithEqualSignature) {
+    if ((int) Sequence.fromIterable(groupWithEqualSignature).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(SNodeOperations.getParent(it), "jetbrains.mps.baseLanguage.structure.Classifier");
+      }
+    }).distinct().count() == 1) {
+      return groupWithEqualSignature;
+    } else {
+      return ListSequence.fromList(new ArrayList<SNode>());
+    }
+  }
+
+  public List<SNode> getAvailableElements(@Nullable final String prefix) {
+    if (allMethods != null) {
+      return ListSequence.fromList(allMethods).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return prefix == null || SPropertyOperations.getString(it, "name").startsWith(prefix);
+        }
+      }).toListSequence();
+    }
+
     List<SNode> result = ListSequence.fromList(new ArrayList());
-    Set<String> overridenSignatures = SetSequence.fromSet(new HashSet());
+    Set<String> overridenSignatures = SetSequence.fromSet(new HashSet<String>());
 
     for (List<SNode> methods : Sequence.fromIterable(MapSequence.fromMap(nameToMethods).values())) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(methods));
@@ -68,7 +89,7 @@ public abstract class BaseMethodsScope extends Scope {
       }));
     }
 
-    Map<String, List<SNode>> groups = MapSequence.fromMap(new HashMap<String, List<SNode>>());
+    Map<String, Set<SNode>> groups = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
     for (SNode extendedClassifier : Sequence.fromIterable(extendedClassifiers)) {
       for (SNode method : ListSequence.fromList(((Scope) BehaviorManager.getInstance().invoke(Object.class, extendedClassifier, "virtual_getVisibleMembers_8083692786967356611", new Class[]{SNode.class, SNode.class, SNode.class}, classifier, kind)).getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -79,35 +100,35 @@ public abstract class BaseMethodsScope extends Scope {
           return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
         }
       })) {
-        if (!(SetSequence.fromSet(overridenSignatures).contains(getSignatureForOverriding(method, extendedClassifier)))) {
-          if (MapSequence.fromMap(groups).containsKey(SPropertyOperations.getString(method, "name"))) {
-            ListSequence.fromList(MapSequence.fromMap(groups).get(SPropertyOperations.getString(method, "name"))).addElement(method);
+        String signature = getSignatureForOverriding(method, classifier);
+        if (!(SetSequence.fromSet(overridenSignatures).contains(signature))) {
+          if (MapSequence.fromMap(groups).containsKey(signature)) {
+            SetSequence.fromSet(MapSequence.fromMap(groups).get(signature)).addElement(method);
           } else {
-            MapSequence.fromMap(groups).put(SPropertyOperations.getString(method, "name"), ListSequence.fromListAndArray(new ArrayList<SNode>(), method));
+            MapSequence.fromMap(groups).put(signature, SetSequence.fromSetAndArray(new HashSet<SNode>(), method));
           }
         }
       }
     }
 
-    for (IMapping<String, List<SNode>> group : MapSequence.fromMap(groups)) {
+    for (IMapping<String, Set<SNode>> group : MapSequence.fromMap(groups)) {
       // todo: extension methods? 
-      if ((int) ListSequence.fromList(group.value()).select(new ISelector<SNode, SNode>() {
+      ListSequence.fromList(result).addSequence(Sequence.fromIterable(getMethodsFromGroup(group.value())));
+    }
+
+    if (prefix == null) {
+      allMethods = ListSequence.fromList(result).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return SNodeOperations.cast(SNodeOperations.getParent(it), "jetbrains.mps.baseLanguage.structure.Classifier");
+          return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
         }
-      }).distinct().count() == 1) {
-        ListSequence.fromList(result).addSequence(ListSequence.fromList(group.value()));
-      }
+      }).toListSequence();
     }
 
     return result;
   }
 
   @Nullable
-  public SNode resolve(SNode contextNode, @NotNull String refText) {
-    // todo 
-    return null;
-  }
+  public abstract SNode resolve(SNode contextNode, @NotNull String refText);
 
   @Nullable
   public String getReferenceText(SNode contextNode, @NotNull SNode node) {
