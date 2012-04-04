@@ -33,12 +33,13 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
     return isChanged;
   }
 
-  public void setChanged(boolean b) {
-    isChanged = b;
+  public void setChanged(boolean value) {
+    isChanged = value;
   }
 
   public void save() {
-    ((TextModelDataSource) getSource()).saveModel(this);
+    getSource().saveModel(this);
+    isChanged = false;
   }
 
   public void rename(SModelFqName name, boolean b) {
