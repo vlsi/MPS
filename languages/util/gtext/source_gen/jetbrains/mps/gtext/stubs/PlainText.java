@@ -32,11 +32,11 @@ public class PlainText extends AbstractModelRootManager {
     return res;
   }
 
-  public boolean canCreateModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName name) {
+  public boolean canCreateModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName) {
     return true;
   }
 
-  public SModelDescriptor createModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName name) {
+  public SModelDescriptor createModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName) {
     IFile dir = PlainText.this.getRootDir(root);
     SModelReference ref = TextPersistenceUtil.refByFile(dir.getDescendant(fqName + ".txt"));
     return new TextModelDescriptor(module, ref, new TextModelDataSource(dir, module.getModuleReference()));

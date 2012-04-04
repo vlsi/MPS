@@ -6,8 +6,8 @@
     <nodeInfo nodeId="681855071694416570" fileName="PlainText.java" startLine="28" startPosition="7" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="681855071694402823" fileName="PlainText.java" startLine="29" startPosition="0" endLine="30" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="681855071694402675" fileName="PlainText.java" startLine="31" startPosition="5" endLine="32" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9157262317016785949" fileName="PlainText.java" startLine="35" startPosition="102" endLine="36" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="681855071694742842" fileName="PlainText.java" startLine="39" startPosition="108" endLine="40" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9157262317016785949" fileName="PlainText.java" startLine="35" startPosition="104" endLine="36" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="681855071694742842" fileName="PlainText.java" startLine="39" startPosition="110" endLine="40" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="681855071694743040" fileName="PlainText.java" startLine="40" startPosition="48" endLine="41" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="681855071694743056" fileName="PlainText.java" startLine="41" startPosition="92" endLine="42" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="681855071694417401" fileName="PlainText.java" startLine="45" startPosition="44" endLine="46" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -20,16 +20,16 @@
     <nodeInfo nodeId="681855071694401672" fileName="PlainText.java" startLine="22" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="load#(Ljetbrains/mps/project/structure/model/ModelRoot;Ljetbrains/mps/project/IModule;)Ljava/util/Collection;" />
     <scopeInfo nodeId="681855071694401672" fileName="PlainText.java" startLine="20" startPosition="22" endLine="20" endPosition="22" />
     <scopeInfo nodeId="681855071694401937" fileName="PlainText.java" startLine="26" startPosition="47" endLine="27" endPosition="17" />
-    <scopeInfo nodeId="681855071694401677" fileName="PlainText.java" startLine="35" startPosition="102" endLine="36" endPosition="16" />
+    <scopeInfo nodeId="681855071694401677" fileName="PlainText.java" startLine="35" startPosition="104" endLine="36" endPosition="16" />
     <scopeInfo nodeId="681855071694417400" fileName="PlainText.java" startLine="45" startPosition="44" endLine="46" endPosition="66" />
     <scopeInfo nodeId="681855071694401672" fileName="PlainText.java" startLine="19" startPosition="57" endLine="21" endPosition="3" />
-    <scopeInfo nodeId="681855071694401679" fileName="PlainText.java" startLine="39" startPosition="108" endLine="42" endPosition="107">
+    <scopeInfo nodeId="681855071694401679" fileName="PlainText.java" startLine="39" startPosition="110" endLine="42" endPosition="107">
       <varInfo nodeId="681855071694742843" varName="dir" />
       <varInfo nodeId="681855071694743041" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="681855071694401672" fileName="PlainText.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="681855071694401672" varName="fqName" />
       <varInfo nodeId="681855071694401672" varName="module" />
-      <varInfo nodeId="681855071694401672" varName="name" />
       <varInfo nodeId="681855071694401672" varName="root" />
     </scopeInfo>
     <scopeInfo nodeId="681855071694417396" fileName="PlainText.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
@@ -37,8 +37,8 @@
     </scopeInfo>
     <scopeInfo nodeId="681855071694401906" fileName="PlainText.java" startLine="25" startPosition="93" endLine="30" endPosition="174" />
     <scopeInfo nodeId="681855071694401672" fileName="PlainText.java" startLine="38" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="681855071694401672" varName="fqName" />
       <varInfo nodeId="681855071694401672" varName="module" />
-      <varInfo nodeId="681855071694401672" varName="name" />
       <varInfo nodeId="681855071694401672" varName="root" />
     </scopeInfo>
     <scopeInfo nodeId="681855071694401903" fileName="PlainText.java" startLine="24" startPosition="90" endLine="31" endPosition="5">
