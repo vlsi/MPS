@@ -22,6 +22,7 @@ import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.ui.*;
 import com.intellij.util.ui.Timer;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjectVersion;
 import jetbrains.mps.project.Version;
@@ -31,6 +32,8 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.JComponent;
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
@@ -41,6 +44,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * To change this template use File | Settings | File Templates.
  */
 public class MigrationProcessor extends AbstractProjectComponent{
+  
+  private static Logger LOG = Logger.getLogger(MigrationProcessor.class);
   
   private List<Callback> myCallbacks = new CopyOnWriteArrayList<Callback>();
   private AtomicBoolean myStarted = new AtomicBoolean();
@@ -83,21 +88,38 @@ public class MigrationProcessor extends AbstractProjectComponent{
     final ArrayList<BaseAction> actionsCopy = new ArrayList<BaseAction>(mySelectedActions);
 
     for (final BaseAction action : actionsCopy) {
+      final CountDownLatch latch = new CountDownLatch(1);
       runCommand(new Runnable() {
         @Override
         public void run() {
           fireStartingAction(action);
           AnActionEvent event = new AnActionEvent(null, DataManager.getInstance().getDataContext(component), ActionPlaces.UNKNOWN, action.getTemplatePresentation(), ActionManager.getInstance(), 0);
-          action.update(event);
-          if (action.getTemplatePresentation().isEnabled()) {
-            action.actionPerformed(event);
-            fireFinishedAction(action);
+          boolean success = false;
+          try{
+            action.update(event);
+            if (action.getTemplatePresentation().isEnabled()) {
+              action.actionPerformed(event);
+              success = true;
+            }
           }
-          else{
-            fireFailedAction(action);
+          catch (Exception e) {
+            LOG.error(e);
           }
+          finally {
+            if (success) {
+              fireFinishedAction(action);
+            } else {
+              fireFailedAction(action);
+            }
+          }
+          latch.countDown();
         }
       });
+      try {
+        latch.await();
+      } catch (InterruptedException e) {
+        LOG.error(e);
+      }
     }
 
     runCommand(new Runnable() {
