@@ -49,17 +49,17 @@
     <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="library" name="xmlunit" level="project" />
     <orderEntry type="module" module-name="findUsages-runtime" />
-    <orderEntry type="module" module-name="debugger-api-api" />
-    <orderEntry type="module" module-name="debugger-java-api" />
-    <orderEntry type="module" module-name="execution-configurations-ant" />
-    <orderEntry type="module" module-name="execution-configurations-baseLanguage" />
-    <orderEntry type="module" module-name="execution-configurations-plugin" />
-    <orderEntry type="module" module-name="execution-configurations-unitTests" />
-    <orderEntry type="module" module-name="execution-languages-deprecated-runtime" />
-    <orderEntry type="module" module-name="execution-languages-library" />
-    <orderEntry type="module" module-name="execution-languages-plugin" />
-    <orderEntry type="module" module-name="debugger-api-runtime" />
-    <orderEntry type="module" module-name="debugger-java-runtime" />
+    <orderEntry type="module" module-name="debugger-api-api" scope="RUNTIME" />
+    <orderEntry type="module" module-name="debugger-java-api" scope="RUNTIME" />
+    <orderEntry type="module" module-name="execution-configurations-ant" scope="RUNTIME" />
+    <orderEntry type="module" module-name="execution-configurations-baseLanguage" scope="RUNTIME" />
+    <orderEntry type="module" module-name="execution-configurations-plugin" scope="RUNTIME" />
+    <orderEntry type="module" module-name="execution-configurations-unitTests" scope="RUNTIME" />
+    <orderEntry type="module" module-name="execution-languages-deprecated-runtime" scope="RUNTIME" />
+    <orderEntry type="module" module-name="execution-languages-library" scope="RUNTIME" />
+    <orderEntry type="module" module-name="execution-languages-plugin" scope="RUNTIME" />
+    <orderEntry type="module" module-name="debugger-api-runtime" scope="RUNTIME" />
+    <orderEntry type="module" module-name="debugger-java-runtime" scope="RUNTIME" />
   </component>
 </module>
 

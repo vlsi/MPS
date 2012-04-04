@@ -4,11 +4,8 @@
     <output url="file://$MODULE_DIR$/classes" />
     <output-test url="file://$MODULE_DIR$/classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/solutions/jetbrains.mps.execution.api">
-      <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.execution.api/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/solutions/jetbrains.mps.execution.impl">
-      <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.execution.impl/source_gen" isTestSource="false" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -25,6 +22,7 @@
     <orderEntry type="library" name="Commons-logging" level="project" />
     <orderEntry type="library" name="JUnit4" level="project" />
     <orderEntry type="module" module-name="mps-workbench" />
+    <orderEntry type="module" module-name="execution-api" />
   </component>
 </module>
 

@@ -26,7 +26,6 @@
     <orderEntry type="library" name="Beansbinding" level="project" />
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="editor-api" />
-    <orderEntry type="module" module-name="execution" />
     <orderEntry type="module" module-name="debugger-api-api" />
     <orderEntry type="module" module-name="execution-languages-library" />
     <orderEntry type="module" module-name="execution-configurations-ant" />
@@ -34,6 +33,7 @@
     <orderEntry type="module" module-name="debugger-java-api" />
     <orderEntry type="module" module-name="execution-configurations-unitTests" />
     <orderEntry type="module" module-name="debugger-java-runtime" />
+    <orderEntry type="module" module-name="execution-api" />
   </component>
 </module>
 

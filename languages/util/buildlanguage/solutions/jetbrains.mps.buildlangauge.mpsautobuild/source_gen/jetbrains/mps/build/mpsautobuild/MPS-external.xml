@@ -286,7 +286,10 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
-      <fileset dir="${mps_home}/languages/util/runConfigurations/classes" />
+      <fileset dir="${mps_home}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.api/classes" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
+      <fileset dir="${mps_home}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.impl/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
       <fileset dir="${mps_home}/languages/util/uiLanguage/runtime/classes" />
@@ -303,6 +306,8 @@
     <antcall target="MPS-languages.pack.MPS.Workbench" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide.uiLanguage.runtime" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.api" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.impl" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules" />
     <jar destfile="${deploy.dir}/MPS/lib/mps-workbench.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp" />
@@ -638,7 +643,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.devkit.language-design" />
     <antcall target="MPS-languages.pack.jetbrains.mps.devkit.bootstrap-languages" />
     <mkdir dir="${deploy.dir}/MPS/languages/devkits" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.execution.api" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.common" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.settings" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.util" />
