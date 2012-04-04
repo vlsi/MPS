@@ -185,7 +185,7 @@ __switch__:
         }
       }).select(new ISelector<VirtualFile, SModelDescriptor>() {
         public SModelDescriptor select(VirtualFile vf) {
-          return ((SModelDescriptor) SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(vf)));
+          return ((SModelDescriptor) SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(vf)));
         }
       }).where(new IWhereFilter<SModelDescriptor>() {
         public boolean accept(SModelDescriptor m) {

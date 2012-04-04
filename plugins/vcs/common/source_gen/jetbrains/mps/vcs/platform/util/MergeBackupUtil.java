@@ -124,7 +124,7 @@ public class MergeBackupUtil {
 
   public static File chooseZipFileForModelFile(IFile file) {
     MergeDriverBackupUtil.setMergeBackupDirPath(getMergeBackupDirPath());
-    return MergeDriverBackupUtil.chooseZipFileForModelLongName(file.getName(), check_fhutfy_b0b0g(SModelRepository.getInstance().findModel(file)));
+    return MergeDriverBackupUtil.chooseZipFileForModelLongName(file.getName(), check_fhutfy_b0b0g(SModelFileTracker.getInstance().findModel(file)));
   }
 
   public static Iterable<File> findZipFilesForModelFile(final String modelFileName) {

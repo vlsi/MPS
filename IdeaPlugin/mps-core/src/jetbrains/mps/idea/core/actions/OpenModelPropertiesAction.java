@@ -42,7 +42,7 @@ public class OpenModelPropertiesAction extends AnAction {
 
     @Override
     public void actionPerformed(AnActionEvent anActionEvent) {
-        SModelDescriptor descriptor = SModelRepository.getInstance().findModel(myModelFile);
+        SModelDescriptor descriptor = SModelFileTracker.getInstance().findModel(myModelFile);
         if (!(descriptor instanceof EditableSModelDescriptor)) {
             return;
         }

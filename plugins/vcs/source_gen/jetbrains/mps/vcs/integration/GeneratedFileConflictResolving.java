@@ -44,7 +44,7 @@ public class GeneratedFileConflictResolving extends AbstractProjectComponent {
   private void resolveIfNeeded(VirtualFileEvent e) {
     if (e.getRequestor() == IdeaFileSystemProvider.class) {
       VirtualFile file = e.getFile();
-      if (SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(file)) != null) {
+      if (SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(file)) != null) {
         return;
       }
       MergeProvider mergeProvider = check_tqtyvq_a0c0a0c(myVcsManager.getVcsFor(file));

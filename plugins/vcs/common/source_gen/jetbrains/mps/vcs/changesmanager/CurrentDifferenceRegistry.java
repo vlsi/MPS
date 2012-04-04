@@ -80,7 +80,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     if (iFile == null) {
       return;
     }
-    EditableSModelDescriptor modelDescriptor = SModelRepository.getInstance().findModel(iFile);
+    EditableSModelDescriptor modelDescriptor = SModelFileTracker.getInstance().findModel(iFile);
     if (modelDescriptor == null || modelDescriptor.getLoadingState() == ModelLoadingState.NOT_LOADED) {
       return;
     }

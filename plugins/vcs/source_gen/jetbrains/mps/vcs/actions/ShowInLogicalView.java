@@ -32,7 +32,7 @@ public class ShowInLogicalView extends AbstractVcsAction {
     if (MPSFileTypesManager.instance().isModelFile(selectedFile)) {
       SModelDescriptor model = ModelAccess.instance().runReadAction(new Computable<SModelDescriptor>() {
         public SModelDescriptor compute() {
-          return SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(selectedFile));
+          return SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(selectedFile));
         }
       });
       if (model != null) {

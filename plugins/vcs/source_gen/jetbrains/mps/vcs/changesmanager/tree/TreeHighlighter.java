@@ -299,7 +299,7 @@ public class TreeHighlighter implements TreeMessageOwner {
 
     public void fileStatusChanged(@NotNull VirtualFile file) {
       IFile ifile = VirtualFileUtils.toIFile(file);
-      EditableSModelDescriptor emd = SModelRepository.getInstance().findModel(ifile);
+      EditableSModelDescriptor emd = SModelFileTracker.getInstance().findModel(ifile);
       if (emd != null) {
         rehighlightFeatureAndDescendants(new ModelFeature(emd.getSModelReference()));
       }

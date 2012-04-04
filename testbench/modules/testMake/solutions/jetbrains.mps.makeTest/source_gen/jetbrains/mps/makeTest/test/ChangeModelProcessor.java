@@ -113,7 +113,7 @@ public class ChangeModelProcessor {
   public SModelDescriptor getModelDescriptorByName(String name) {
     String path = TEST_RESOURCES_PATH + name + ".mps";
     IFile file = FileSystem.getInstance().getFileByPath(path);
-    return SModelRepository.getInstance().findModel(file);
+    return SModelFileTracker.getInstance().findModel(file);
   }
 
   public SModel getTestModel() {

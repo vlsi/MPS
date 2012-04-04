@@ -280,7 +280,7 @@ public abstract class MpsWorker {
   private void processModelFile(Set<SModelDescriptor> modelDescriptors, File f) {
     final IFile ifile = FileSystem.getInstance().getFileByPath(f.getAbsolutePath());
     //  try to find if model is loaded 
-    SModelDescriptor model = SModelRepository.getInstance().findModel(ifile);
+    SModelDescriptor model = SModelFileTracker.getInstance().findModel(ifile);
     if (model != null) {
       modelDescriptors.add(model);
       info("Found model " + model);
