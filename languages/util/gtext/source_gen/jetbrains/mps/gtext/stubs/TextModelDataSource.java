@@ -22,6 +22,7 @@ import java.io.InputStream;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.IOException;
 import java.io.OutputStream;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelId;
 
@@ -70,7 +71,7 @@ public class TextModelDataSource extends FileBasedModelDataSource {
     try {
       OutputStream os = file.openOutputStream();
       SModel model = descriptor.getSModel();
-      String text = SPropertyOperations.getString(ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.gtext.structure.GText")).first(), "text");
+      String text = SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.gtext.structure.GDocument")).first(), "item", true)).first(), "jetbrains.mps.gtext.structure.GText"), "text");
       os.write(text.getBytes());
       os.close();
     } catch (IOException e) {
