@@ -20,10 +20,11 @@ public class Migrations21_ActionGroup extends GeneratedActionGroup {
     try {
       Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.AddStubsToModelRoots_Action");
       Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.AddSourcesToModelRoots_Action");
-      Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.MigrationScript_SplitMPSClasspath_Action");
-      Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.MigrationScript_ResolveBrokenRefs_Action");
       Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.MigrationScript_APIMigration_Action");
       Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.MigrationScript_ConvertActionParameterCondition_Action");
+      Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.MigrationScript_SplitMPSClasspath_Action");
+      Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.MigrationScript_ResolveBrokenRefs_Action");
+      Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.FixMissingImportsInProject_Action");
       {
         LabelledAnchor action = new LabelledAnchor(Migrations21_ActionGroup.LABEL_ID_optional);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
