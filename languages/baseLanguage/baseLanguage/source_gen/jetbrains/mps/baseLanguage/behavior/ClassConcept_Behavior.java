@@ -36,6 +36,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.scopes.FieldDeclarationScope;
 import jetbrains.mps.baseLanguage.scopes.EnumConstantDeclarationScope;
+import jetbrains.mps.baseLanguage.scopes.PropertyScope;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 import jetbrains.mps.baseLanguage.scopes.OverridingPolicies;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
@@ -317,6 +318,8 @@ public class ClassConcept_Behavior {
       result = FieldDeclarationScope.forClass(thisNode, SNodeOperations.cast(superClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), implementedInterfaces);
     } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
       result = EnumConstantDeclarationScope.forClass(thisNode, SNodeOperations.cast(superClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), implementedInterfaces);
+    } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.Property")) {
+      result = PropertyScope.forClass(thisNode, SNodeOperations.cast(superClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), implementedInterfaces);
     }
 
     // cache section 
