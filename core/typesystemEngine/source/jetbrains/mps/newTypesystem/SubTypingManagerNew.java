@@ -420,7 +420,7 @@ public class SubTypingManagerNew extends SubtypingManager {
   private Boolean getCacheAnswer(SNode subType, SNode superType, boolean isWeak) {
     SubtypingCache cache = myTypeChecker.getSubtypingCache();
     if (cache != null) {
-      Boolean answer = cache.getAnswer(subType, superType, isWeak);
+      Boolean answer = cache.getIsSubtype(subType, superType, isWeak);
       if (answer != null) {
         hits++;
         return answer;
@@ -428,7 +428,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     }
     cache = myTypeChecker.getGlobalSubtypingCache();
     if (cache != null) {
-      Boolean answer = cache.getAnswer(subType, superType, isWeak);
+      Boolean answer = cache.getIsSubtype(subType, superType, isWeak);
       if (answer != null) {
         hits++;
         return answer;
@@ -444,7 +444,7 @@ public class SubTypingManagerNew extends SubtypingManager {
       cache = myTypeChecker.getGlobalSubtypingCache();
     }
     if (cache != null && superType instanceof NodeMatcher) {
-      cache.addCacheEntry(subType, ((NodeMatcher) superType).getNode(), answer, isWeak);
+      cache.cacheIsSubtype(subType, ((NodeMatcher) superType).getNode(), answer, isWeak);
     }
   }
 

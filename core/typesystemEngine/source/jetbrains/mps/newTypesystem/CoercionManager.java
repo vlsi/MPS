@@ -89,11 +89,11 @@ public class CoercionManager {
         //writing to the cache
         SubtypingCache subtypingCache = myTypeChecker.getSubtypingCache();
         if (subtypingCache != null) {
-          subtypingCache.addCacheEntry(subtype, pattern, result, isWeak);
+          subtypingCache.cacheCoerce(subtype, pattern, result, isWeak);
         }
         subtypingCache = myTypeChecker.getGlobalSubtypingCache();
         if (subtypingCache != null) {
-          subtypingCache.addCacheEntry(subtype, pattern, result, isWeak);
+          subtypingCache.cacheCoerce(subtype, pattern, result, isWeak);
         }
 
         return result;

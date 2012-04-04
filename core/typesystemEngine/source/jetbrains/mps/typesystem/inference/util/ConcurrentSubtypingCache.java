@@ -24,7 +24,8 @@ import jetbrains.mps.util.Pair;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class ConcurrentSubtypingCache extends SubtypingCache {
+public class ConcurrentSubtypingCache implements SubtypingCache {
+
   private ConcurrentHashMap<CacheNodeHandler, ConcurrentHashMap<CacheNodeHandler, MyBoolean>> myCache = new ConcurrentHashMap<CacheNodeHandler, ConcurrentHashMap<CacheNodeHandler, MyBoolean>>();
   private ConcurrentHashMap<CacheNodeHandler, ConcurrentHashMap<CacheNodeHandler, MyBoolean>> myCacheWeak = new ConcurrentHashMap<CacheNodeHandler, ConcurrentHashMap<CacheNodeHandler, MyBoolean>>();
   private final Object myCacheLock = new Object();
@@ -67,8 +68,9 @@ public class ConcurrentSubtypingCache extends SubtypingCache {
     }
   }
 
-  public void addCacheEntry(SNode subtype, SNode supertype, boolean answer, boolean isWeak) {
+  public void cacheIsSubtype(SNode subtype, SNode supertype, boolean answer, boolean isWeak) {
     boolean bothMaps = answer != isWeak;
+    // TODO do not cache result in two maps
     ConcurrentHashMap<CacheNodeHandler, ConcurrentHashMap<CacheNodeHandler, MyBoolean>> cache1 = isWeak ? myCacheWeak : myCache;
     ConcurrentHashMap<CacheNodeHandler, ConcurrentHashMap<CacheNodeHandler, MyBoolean>> cache2 = isWeak ? myCache : myCacheWeak;
 
@@ -100,7 +102,7 @@ public class ConcurrentSubtypingCache extends SubtypingCache {
     supertypes.put(new CacheNodeHandler(supertype), preprocessPutBoolean(answer));
   }
 
-  public Boolean getAnswer(SNode subtype, SNode supertype, boolean isWeak) {
+  public Boolean getIsSubtype(SNode subtype, SNode supertype, boolean isWeak) {
     Map<CacheNodeHandler, ConcurrentHashMap<CacheNodeHandler, MyBoolean>> cache = isWeak ? myCacheWeak : myCache;
     Map<CacheNodeHandler, MyBoolean> supertypes = cache.get(new CacheNodeHandler(subtype));
     if (supertypes == null) return null;
@@ -214,9 +216,9 @@ public class ConcurrentSubtypingCache extends SubtypingCache {
     map.put(c, new Pair<SNode, GeneratedMatchingPattern>(result, pattern));
   }
 
-  public void addCacheEntry(SNode subtype, IMatchingPattern pattern, SNode result, boolean isWeak) {
+  public void cacheCoerce(SNode subtype, IMatchingPattern pattern, SNode result, boolean isWeak) {
     if (pattern instanceof ConceptMatchingPattern) {
-      addCacheEntry(subtype, ((ConceptMatchingPattern) pattern).getConceptFQName(), result, isWeak);
+      addCacheEntry(subtype, pattern.getConceptFQName(), result, isWeak);
       return;
     }
     if (pattern instanceof GeneratedMatchingPattern) {
