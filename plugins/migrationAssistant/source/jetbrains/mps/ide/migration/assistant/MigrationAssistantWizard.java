@@ -529,7 +529,6 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
               myList.repaint();
             }
           });
-          indicator.setIndeterminate(true);
           processor.startProcessing(SwingUtilities.getRootPane(getComponent()));
         }
       };
