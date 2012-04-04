@@ -147,7 +147,7 @@ public class TypeContextManager implements CoreComponent {
     return new TypeCheckingContextNew(node, myTypeChecker);
   }
 
-  public TypeCheckingContext createTracingTypeCheckingContext(SNode node) {
+  private TypeCheckingContext createTracingTypeCheckingContext(SNode node) {
     ModelAccess.assertLegalRead();
     return new TypeCheckingContext_Tracer(node, myTypeChecker);
   }
@@ -156,7 +156,8 @@ public class TypeContextManager implements CoreComponent {
     ModelAccess.assertLegalRead();
     if (node == null) return null;
     synchronized (myLock) {
-      Pair<TypeCheckingContext, List<ITypeContextOwner>> contextWithOwners = myTypeCheckingContexts.get(new SNodePointer(node));
+      SNodePointer nodePointer = new SNodePointer(node);
+      Pair<TypeCheckingContext, List<ITypeContextOwner>> contextWithOwners = myTypeCheckingContexts.get(nodePointer);
       if (contextWithOwners == null) {
         if (createIfAbsent) {
           TypeCheckingContext newTypeCheckingContext = createTypeCheckingContext(node);
@@ -170,7 +171,7 @@ public class TypeContextManager implements CoreComponent {
               LOG.warning("Type checking context for node " + node.getPresentation() + " has too much owners");
             }
           }
-          myTypeCheckingContexts.put(new SNodePointer(node), contextWithOwners);
+          myTypeCheckingContexts.put(nodePointer, contextWithOwners);
           return newTypeCheckingContext;
         } else {
           return null;
@@ -178,7 +179,7 @@ public class TypeContextManager implements CoreComponent {
       } else {
         TypeCheckingContext context = contextWithOwners.o1;
         if (context.getNode().isDisposed()) {
-          removeContextForNode(new SNodePointer(node));
+          removeContextForNode(nodePointer);
           LOG.error("Type Checking Context had a disposed node inside. Node: " + node + " model: " + node.getModel());
           return getOrCreateContext(node, owner, createIfAbsent);
         }
@@ -195,13 +196,14 @@ public class TypeContextManager implements CoreComponent {
     if (node == null || node.isDisposed()) return;
     //if node is disposed, then context was removed by beforeModelDisposed listener
     synchronized (myLock) {
-      Pair<TypeCheckingContext, List<ITypeContextOwner>> contextWithOwners = myTypeCheckingContexts.get(new SNodePointer(node));
+      SNodePointer nodePointer = new SNodePointer(node);
+      Pair<TypeCheckingContext, List<ITypeContextOwner>> contextWithOwners = myTypeCheckingContexts.get(nodePointer);
       if (contextWithOwners != null) {
         List<ITypeContextOwner> owners = contextWithOwners.o2;
         owners.remove(owner);
         if (owners.isEmpty()) {
           contextWithOwners.o1.dispose();
-          myTypeCheckingContexts.remove(new SNodePointer(node));
+          myTypeCheckingContexts.remove(nodePointer);
         }
       }
     }
@@ -217,7 +219,7 @@ public class TypeContextManager implements CoreComponent {
     }
   }
 
-  public void clearForClassesUnload() {
+  private void clearForClassesUnload() {
     synchronized (myLock) {
       for (Pair<TypeCheckingContext, List<ITypeContextOwner>> context : myTypeCheckingContexts.values()) {
         context.o1.clear();
