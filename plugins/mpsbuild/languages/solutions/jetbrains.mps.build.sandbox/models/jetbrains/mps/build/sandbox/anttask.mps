@@ -217,7 +217,7 @@
             <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="1479037094930501412">
               <property name="attrName" nameId="iuxj.6666499814681447926" value="id" />
               <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="1479037094930501413">
-                <property name="text" nameId="iuxj.6666499814681541920" value="anttask.classpath" />
+                <property name="text" nameId="iuxj.6666499814681541920" value="task.classpath" />
               </node>
             </node>
             <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="1479037094930501414">
@@ -253,7 +253,7 @@
             <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="1479037094930485662">
               <property name="attrName" nameId="iuxj.6666499814681447926" value="classpathref" />
               <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="1479037094930485663">
-                <property name="text" nameId="iuxj.6666499814681541920" value="anttask.classpath" />
+                <property name="text" nameId="iuxj.6666499814681541920" value="task.classpath" />
               </node>
             </node>
           </node>
@@ -278,7 +278,7 @@
                 <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="535979196343209712">
                   <property name="attrName" nameId="iuxj.6666499814681447926" value="refid" />
                   <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="535979196343209713">
-                    <property name="text" nameId="iuxj.6666499814681541920" value="anttask.classpath" />
+                    <property name="text" nameId="iuxj.6666499814681541920" value="task.classpath" />
                   </node>
                 </node>
               </node>
@@ -399,6 +399,12 @@
             <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
             <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="1479037094930484905">
               <property name="text" nameId="iuxj.6666499814681541920" value="test" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="535979196343223169" />
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlComment" typeId="iuxj.6666499814681299064" id="535979196343223171">
+            <node role="lines" roleId="iuxj.1622293396949036151" type="iuxj.XmlCommentLine" typeId="iuxj.1622293396949036126" id="535979196343223172">
+              <property name="text" nameId="iuxj.1622293396949036127" value="just test of echoxml task" />
             </node>
           </node>
           <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="535979196343145512">
