@@ -84,9 +84,9 @@ public class TypeSystemReporter {
     long sum = 0;
     for (Entry<String, Pair<Long, Long>> entry : list) {
       sum += entry.getValue().o1;
-      System.out.println(entry.getKey() + "\t" + entry.getValue().o1 + "\t" + entry.getValue().o2 +"\t" + entry.getValue().o1/entry.getValue().o2);
+      System.out.println(entry.getKey() + "\t" + entry.getValue().o1*1.0e-9 + "\t" + entry.getValue().o2 +"\t" + entry.getValue().o1*1.0e-9/entry.getValue().o2);
     }
-    System.out.println("Total: " + sum);
+    System.out.println("Total: " + sum*1.0e-9);
   }
 
 
