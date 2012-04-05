@@ -1569,5 +1569,29 @@
     <unitInfo nodeId="681855071694758207" fileName="GetPreferencesComponentInProjectOperation_Editor.java" startLine="21" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.editor.GetPreferencesComponentInProjectOperation_Editor" />
     <unitInfo nodeId="681855071694758214" fileName="GetPreferencesComponentInProjectOperation_Editor.java" startLine="87" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.editor.GetPreferencesComponentInProjectOperation_Editor$_Inline_7v7srj_a2a" />
   </root>
+  <root nodeId="7520713872864775837">
+    <nodeInfo nodeId="7520713872864775837" fileName="StandalonePluginDescriptor_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7520713872864775839" fileName="StandalonePluginDescriptor_Editor.java" startLine="16" startPosition="86" endLine="17" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7520713872864775839" fileName="StandalonePluginDescriptor_Editor.java" startLine="17" startPosition="107" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7520713872864775839" fileName="StandalonePluginDescriptor_Editor.java" startLine="17" startPosition="107" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7520713872864775839" fileName="StandalonePluginDescriptor_Editor.java" startLine="18" startPosition="45" endLine="19" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7520713872864775839" fileName="StandalonePluginDescriptor_Editor.java" startLine="19" startPosition="34" endLine="20" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7520713872864775837" fileName="StandalonePluginDescriptor_Editor.java" startLine="11" startPosition="74" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="7520713872864775839" fileName="StandalonePluginDescriptor_Editor.java" startLine="15" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_lfvdu_a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="7520713872864775837" fileName="StandalonePluginDescriptor_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="60" />
+    <scopeInfo nodeId="7520713872864775839" fileName="StandalonePluginDescriptor_Editor.java" startLine="17" startPosition="107" endLine="18" endPosition="45" />
+    <scopeInfo nodeId="7520713872864775837" fileName="StandalonePluginDescriptor_Editor.java" startLine="11" startPosition="74" endLine="15" endPosition="0">
+      <varInfo nodeId="7520713872864775837" varName="editorContext" />
+      <varInfo nodeId="7520713872864775837" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7520713872864775839" fileName="StandalonePluginDescriptor_Editor.java" startLine="16" startPosition="86" endLine="20" endPosition="22">
+      <varInfo nodeId="7520713872864775839" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="7520713872864775839" fileName="StandalonePluginDescriptor_Editor.java" startLine="15" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="7520713872864775839" varName="editorContext" />
+      <varInfo nodeId="7520713872864775839" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="7520713872864775837" fileName="StandalonePluginDescriptor_Editor.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.editor.StandalonePluginDescriptor_Editor" />
+  </root>
 </debugInfo>
 

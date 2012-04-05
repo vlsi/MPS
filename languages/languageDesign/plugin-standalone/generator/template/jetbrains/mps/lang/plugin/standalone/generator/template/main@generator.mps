@@ -2802,6 +2802,38 @@
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.RootTemplateAnnotation" typeId="tpf8.1168619357332" id="1213878964165" />
   </root>
   <root id="1215266411913">
+    <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="7520713872864780076">
+      <property name="keepSourceRoot" nameId="tpf8.1177959072138" value="true" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tgbt.7520713872864775836" resolveInfo="StandalonePluginDescriptor" />
+      <link role="template" roleId="tpf8.1167514355421" targetNodeId="1215266495083" resolveInfo="GeneratedApplicationPlugin" />
+      <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="7520713872864784973">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7520713872864784974">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="681855071694482358">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="681855071694482360">
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wzm8.681855071694482336" resolveInfo="PluginUtils" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wzm8.681855071694482342" resolveInfo="needAppPlugin" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="681855071694482361" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="7520713872864780077">
+      <property name="keepSourceRoot" nameId="tpf8.1177959072138" value="true" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tgbt.7520713872864775836" resolveInfo="StandalonePluginDescriptor" />
+      <link role="template" roleId="tpf8.1167514355421" targetNodeId="1203866806543" resolveInfo="GeneratedProjectPlugin" />
+      <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="7520713872864784975">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7520713872864784976">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="681855071694482377">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="681855071694482379">
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wzm8.681855071694482336" resolveInfo="PluginUtils" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wzm8.681855071694482362" resolveInfo="needProjectPlugin" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="681855071694482380" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="dropRootRule" roleId="tpf8.1219952894531" type="tpf8.DropRootRule" typeId="tpf8.1219952072943" id="9132872512059499433">
       <link role="applicableConcept" roleId="tpf8.1219952338328" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
       <node role="conditionFunction" roleId="tpf8.1219952317655" type="tpf8.DropRootRule_Condition" typeId="tpf8.1219952151850" id="9132872512059499434">
@@ -2841,6 +2873,9 @@
         </node>
       </node>
     </node>
+    <node role="dropRootRule" roleId="tpf8.1219952894531" type="tpf8.DropRootRule" typeId="tpf8.1219952072943" id="7520713872864780079">
+      <link role="applicableConcept" roleId="tpf8.1219952338328" targetNodeId="tgbt.7520713872864775836" resolveInfo="StandalonePluginDescriptor" />
+    </node>
     <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="880980402160600929">
       <property name="name" nameId="tpck.1169194664001" value="appPluginConstructor" />
       <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="tpee.1068580123140" resolveInfo="ConstructorDeclaration" />
@@ -2848,34 +2883,6 @@
     <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="880980402160600992">
       <property name="name" nameId="tpck.1169194664001" value="projPluginConstructor" />
       <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="tpee.1068580123140" resolveInfo="ConstructorDeclaration" />
-    </node>
-    <node role="createRootRule" roleId="tpf8.1167088157977" type="tpf8.CreateRootRule" typeId="tpf8.1167087469898" id="1215266411921">
-      <link role="templateNode" roleId="tpf8.1167087469901" targetNodeId="1215266495083" resolveInfo="GeneratedApplicationPlugin" />
-      <node role="conditionFunction" roleId="tpf8.1167087469900" type="tpf8.CreateRootRule_Condition" typeId="tpf8.1167087518662" id="1216225645804">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1216225645805">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="681855071694482358">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="681855071694482360">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wzm8.681855071694482336" resolveInfo="PluginUtils" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wzm8.681855071694482342" resolveInfo="needAppPlugin" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="681855071694482361" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="createRootRule" roleId="tpf8.1167088157977" type="tpf8.CreateRootRule" typeId="tpf8.1167087469898" id="880980402160600932">
-      <link role="templateNode" roleId="tpf8.1167087469901" targetNodeId="1203866806543" resolveInfo="GeneratedProjectPlugin" />
-      <node role="conditionFunction" roleId="tpf8.1167087469900" type="tpf8.CreateRootRule_Condition" typeId="tpf8.1167087518662" id="880980402160600933">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="880980402160600934">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="681855071694482377">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="681855071694482379">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wzm8.681855071694482362" resolveInfo="needProjectPlugin" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wzm8.681855071694482336" resolveInfo="PluginUtils" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="681855071694482380" />
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
   </root>
   <root id="3005430634737882358">

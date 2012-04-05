@@ -31,6 +31,9 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Preference" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tgbt.681855071694758168" resolveInfo="GetPreferencesComponentInProjectOperation" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7520713872864775837">
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tgbt.7520713872864775836" resolveInfo="StandalonePluginDescriptor" />
+    </node>
   </roots>
   <root id="481983775135178871">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Block" typeId="tpc2.1198489924438" id="481983775135178872">
@@ -270,6 +273,11 @@
         </node>
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="681855071694758218" />
+    </node>
+  </root>
+  <root id="7520713872864775837">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7520713872864775839">
+      <property name="text" nameId="tpc2.1073389577007" value="standalone descriptor" />
     </node>
   </root>
 </model>
