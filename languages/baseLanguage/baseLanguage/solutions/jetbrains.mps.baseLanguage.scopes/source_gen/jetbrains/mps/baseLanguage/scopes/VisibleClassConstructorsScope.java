@@ -6,45 +6,83 @@ import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.scopes.runtime.FilteringScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.HashMap;
 
 public class VisibleClassConstructorsScope extends Scope {
-  private final Scope visibleClassifiers;
+  private final Scope classifiers;
 
   public VisibleClassConstructorsScope(@NotNull SNode contextNode, IScope scope) {
-    visibleClassifiers = ClassifierScopes.getVisibleClassifiersScope(contextNode, scope);
+    // todo: find not all classifiers, only class concept! 
+    classifiers = new FilteringScope(ClassifierScopes.getVisibleClassifiersScope(contextNode, scope)) {
+      @Override
+      public boolean isExcluded(SNode node) {
+        return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Interface") || (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SPropertyOperations.getBoolean((SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "abstractClass"));
+      }
+    };
   }
 
   public List<SNode> getAvailableElements(@Nullable String prefix) {
-    Iterable<SNode> allConstructors = ListSequence.fromList(visibleClassifiers.getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-      }
-    }).translate(new ITranslator2<SNode, SNode>() {
+    return ListSequence.fromList(classifiers.getAvailableElements(prefix)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return SLinkOperations.getTargets(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true);
+        return ListSequence.fromList(SNodeOperations.getChildren(it)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+          }
+        });
       }
-    });
-    // todo: filter by visibility 
-    return ListSequence.fromListWithValues(new ArrayList(), allConstructors);
+    }).toListSequence();
   }
 
   @Nullable
   public String getReferenceText(SNode contextNode, @NotNull SNode node) {
-    // todo: ! 
-    return null;
+    return SPropertyOperations.getString(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "name");
   }
 
   @Nullable
   public SNode resolve(SNode contextNode, @NotNull String refText) {
-    // todo: ! 
-    return null;
+    SNode classifier = SNodeOperations.cast(classifiers.resolve(contextNode, refText), "jetbrains.mps.baseLanguage.structure.Classifier");
+    if (classifier == null || !(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+      return null;
+    }
+
+    // resolve only by name 
+    List<SNode> constructors = SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true);
+    if ((int) ListSequence.fromList(constructors).count() == 1) {
+      return ListSequence.fromList(constructors).first();
+    }
+
+    // use arguments 
+    if (!(SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.ClassCreator"))) {
+      return null;
+    }
+    List<SNode> actualArguments = SLinkOperations.getTargets(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.ClassCreator"), "actualArgument", true);
+    List<SNode> typeParameters = SLinkOperations.getTargets(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.ClassCreator"), "typeParameter", true);
+
+    // use arguments count 
+    constructors = (List<SNode>) MethodResolveUtil.selectByParmCount(constructors, actualArguments);
+    if (constructors.size() == 1) {
+      return ListSequence.fromList(constructors).first();
+    }
+
+    // use types 
+    Iterator<SNode> typeParms = (Iterator<SNode>) typeParameters.iterator();
+    Iterator<SNode> typeVars = (Iterator<SNode>) SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true).iterator();
+    Map<SNode, SNode> typeByTypeVar = new HashMap<SNode, SNode>();
+    while (typeParms.hasNext() && typeVars.hasNext()) {
+      typeByTypeVar.put(typeVars.next(), typeParms.next());
+    }
+    return MethodResolveUtil.chooseByParameterType(constructors, actualArguments, typeByTypeVar);
   }
 }
