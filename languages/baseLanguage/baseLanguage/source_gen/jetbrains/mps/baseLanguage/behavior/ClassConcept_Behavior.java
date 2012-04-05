@@ -286,7 +286,7 @@ public class ClassConcept_Behavior {
       return result;
     }
 
-    // todo: remove this code from getMembers to getScope 
+    // todo: remove this code from getMembers to getScope? 
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ThisConstructorKind")) {
       return new SimpleScope(SLinkOperations.getTargets(thisNode, "constructor", true));
     }

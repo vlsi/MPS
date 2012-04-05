@@ -7,6 +7,7 @@
   <language namespace="a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)" />
+  <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <import index="o8zo" modelUID="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" />
   <import index="6xgk" modelUID="r:6e9ad488-5df2-49e4-8c01-8a7f3812adf7(jetbrains.mps.lang.scopes.runtime)" version="-1" />
@@ -41,14 +42,15 @@
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3024565449487117567">
       <property name="name" nameId="tpck.1169194664001" value="VisibleClassConstructorsScope" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8483743094179640481">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
       <property name="name" nameId="tpck.1169194664001" value="ClassifierScopes" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="229277139747455549">
       <property name="name" nameId="tpck.1169194664001" value="ClassifiersScope" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4143990013474875883">
       <property name="name" nameId="tpck.1169194664001" value="Scopes" />
