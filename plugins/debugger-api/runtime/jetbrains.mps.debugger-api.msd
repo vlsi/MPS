@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.debugger.api.runtime" uuid="25891414-2b70-48c7-b1cc-8dc0c127d669" compileInMPS="false">
   <models>
-    <modelRoot path="${mps_home}/plugins/debugger-api">
-      <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
-    </modelRoot>
     <modelRoot path="${solution_descriptor}/" />
   </models>
-  <stubModelEntries>
-    <stubModelEntry path="${mps_home}/plugins/debugger-api">
-      <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
-    </stubModelEntry>
-  </stubModelEntries>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
@@ -33,7 +25,6 @@
     <usedLanguage>28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</usedLanguage>
     <usedLanguage>982eb8df-2c96-4bd7-9963-11712ea622e5(jetbrains.mps.lang.resources)</usedLanguage>
     <usedLanguage>7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</usedLanguage>
-    <usedLanguage>32d0a39c-772f-4490-8142-e50f9a9f19d4(jetbrains.mps.platform.conf)</usedLanguage>
   </usedLanguages>
 </solution>
 

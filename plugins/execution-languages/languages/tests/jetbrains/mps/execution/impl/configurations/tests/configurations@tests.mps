@@ -21,7 +21,7 @@
   <import index="4mnu" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.execution.impl(MPS.Platform/com.intellij.execution.impl@java_stub)" version="-1" />
   <import index="ph2v" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.project(MPS.Platform/com.intellij.openapi.project@java_stub)" version="-1" />
   <import index="iwpw" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.util(MPS.Platform/com.intellij.openapi.util@java_stub)" version="-1" />
-  <import index="x19k" modelUID="f:java_stub#f618e99a-2641-465c-bb54-31fe76f9e285#jetbrains.mps.execution.configurations.implementation.plugin.plugin(jetbrains.mps.baseLanguage.unitTest.execution/jetbrains.mps.execution.configurations.implementation.plugin.plugin@java_stub)" version="-1" />
+  <import index="k0vn" modelUID="f:java_stub#7b15492d-a198-43e2-91e3-4a7e9116ce2b#jetbrains.mps.execution.configurations.implementation.plugin.plugin(jetbrains.mps.execution.impl.tests/jetbrains.mps.execution.configurations.implementation.plugin.plugin@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
@@ -157,12 +157,12 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="6504487988305076027">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6504487988305076028">
             <property name="name" nameId="tpck.1169194664001" value="plugin" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6504487988305076029">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="x19k.~RunConfigurationsInitializer_CustomApplicationPlugin" resolveInfo="RunConfigurationsInitializer_CustomApplicationPlugin" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7829289312762901410">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k0vn.~RunConfigurationsInitializer_CustomApplicationPlugin" resolveInfo="RunConfigurationsInitializer_CustomApplicationPlugin" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6504487988305076030">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6504487988305076031">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="x19k.~RunConfigurationsInitializer_CustomApplicationPlugin%d&lt;init&gt;()" resolveInfo="RunConfigurationsInitializer_CustomApplicationPlugin" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k0vn.~RunConfigurationsInitializer_CustomApplicationPlugin%d&lt;init&gt;()" resolveInfo="RunConfigurationsInitializer_CustomApplicationPlugin" />
               </node>
             </node>
           </node>
