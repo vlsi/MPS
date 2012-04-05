@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.scopes;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.lang.scopes.runtime.SimpleScope;
+import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.scopes.runtime.LazyScope;
@@ -19,7 +19,7 @@ public class FieldDeclarationScope {
 
   public static Scope forClass(final SNode classNode, @Nullable final SNode extendsClass, SNode... implementsInterfaces) {
     // todo: not .field but .children.filter, .field only as optimize 
-    Scope fields = new SimpleScope(SLinkOperations.getTargets(classNode, "field", true));
+    Scope fields = new NamedElementsScope(SLinkOperations.getTargets(classNode, "field", true));
     if ((extendsClass != null)) {
       // hiding based on name 
       return Scopes.defaultWithNameHiding(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), fields, new LazyScope(new _FunctionTypes._return_P0_E0<Scope>() {

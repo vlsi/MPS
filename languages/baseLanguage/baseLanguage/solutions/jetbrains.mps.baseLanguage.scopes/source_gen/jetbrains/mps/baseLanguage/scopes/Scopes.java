@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.scopes.runtime.HidingByNameScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.scopes.runtime.SimpleScope;
+import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 
 public class Scopes {
   private Scopes() {
@@ -22,11 +22,11 @@ public class Scopes {
   }
 
   public static Scope forVariables(SNode kind, Iterable<SNode> variables, Scope parentScope) {
-    return forVariables(kind, new SimpleScope(variables), parentScope);
+    return forVariables(kind, new NamedElementsScope(variables), parentScope);
   }
 
   public static Scope forVariables(SNode kind, SNode variable, Scope parentScope) {
-    return forVariables(kind, new SimpleScope(variable), parentScope);
+    return forVariables(kind, new NamedElementsScope(variable), parentScope);
   }
 
   public static Scope forMethods(SNode kind, Scope methodsScope, @Nullable Scope parentScope) {
@@ -47,6 +47,6 @@ public class Scopes {
 
   public static Scope forLoopLabels(Iterable<SNode> labels, Scope parentScope) {
     // Hiding only other LoopLabels 
-    return new HidingByNameScope(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LoopLabel"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LoopLabel"), new SimpleScope(labels), parentScope);
+    return new HidingByNameScope(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LoopLabel"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LoopLabel"), new NamedElementsScope(labels), parentScope);
   }
 }

@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.scopes.runtime.SimpleScope;
+import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
@@ -22,11 +22,11 @@ public class AnnotationInstance_Behavior {
       SNode concept_c0a;
       concept_c0a = kind;
       if (SConceptOperations.isSubConceptOf(concept_c0a, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration")) {
-        return new SimpleScope(methods);
+        return new NamedElementsScope(methods);
       }
       if (SConceptOperations.isSubConceptOf(concept_c0a, "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationMethodKind")) {
         return ((int) Sequence.fromIterable(methods).count() == 1 ?
-          new SimpleScope(methods) :
+          new NamedElementsScope(methods) :
           new EmptyScope()
         );
       }

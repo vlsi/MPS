@@ -33,7 +33,7 @@ import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.scope.CompositeScope;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.scopes.runtime.SimpleScope;
+import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -358,7 +358,7 @@ public class Classifier_Behavior {
                 return SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.INamedConcept");
               }
             });
-            addition = new SimpleScope(members);
+            addition = new NamedElementsScope(members);
           } else {
             if (!(isStaticContext)) {
               addition = Classifier_Behavior.call_getVisibleMembers_8083692786967356611(thisNode, child, kind);

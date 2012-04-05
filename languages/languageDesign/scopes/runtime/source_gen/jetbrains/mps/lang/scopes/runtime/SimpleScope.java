@@ -8,12 +8,10 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
-public class SimpleScope extends Scope {
+public abstract class SimpleScope extends Scope {
   private final LinkedHashSet<SNode> nodes;
 
   public SimpleScope(Iterable<SNode> nodes) {
@@ -36,8 +34,9 @@ public class SimpleScope extends Scope {
   public List<SNode> getAvailableElements(@Nullable String prefix) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode node : nodes) {
-      if ((node != null) && SPropertyOperations.getString(node, "name") != null) {
-        if (prefix == null || SPropertyOperations.getString(node, "name").startsWith(prefix)) {
+      if ((node != null) && getReferenceText(node) != null) {
+        String refText = getReferenceText(node);
+        if (prefix == null || (refText != null && refText.startsWith(prefix))) {
           ListSequence.fromList(result).addElement(node);
         }
       }
@@ -50,7 +49,7 @@ public class SimpleScope extends Scope {
     // todo: maybe map name -> node? 
     SNode result = null;
     for (SNode node : nodes) {
-      if (SPropertyOperations.getString(node, "name").equals(refText)) {
+      if (refText.equals(getReferenceText(node))) {
         if (result == null) {
           result = node;
         } else {
@@ -63,7 +62,10 @@ public class SimpleScope extends Scope {
   }
 
   @Nullable
+  public abstract String getReferenceText(@NotNull SNode target);
+
+  @Nullable
   public String getReferenceText(SNode contextNode, @NotNull SNode target) {
-    return SPropertyOperations.getString(SNodeOperations.cast(target, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
+    return getReferenceText(target);
   }
 }

@@ -22,14 +22,14 @@ public class CompositeWithParentScope {
 
   public static Scope from(Iterable<SNode> elements, SNode node, SNode kind) {
     return (elements != null ?
-      from(new SimpleScope(elements), node, kind) :
+      from(new NamedElementsScope(elements), node, kind) :
       parentScope(node, kind)
     );
   }
 
   public static Scope from(SNode element, SNode node, SNode kind) {
     return ((element != null) ?
-      from(new SimpleScope(element), node, kind) :
+      from(new NamedElementsScope(element), node, kind) :
       parentScope(node, kind)
     );
   }

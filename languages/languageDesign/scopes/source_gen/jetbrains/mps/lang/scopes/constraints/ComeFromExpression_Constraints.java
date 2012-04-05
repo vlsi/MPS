@@ -19,6 +19,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.scopes.runtime.SimpleScope;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ComeFromExpression_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer breakingNode_t1q7r2_a0a0a0a0a1a0b0a1a0 = new SNodePointer("r:ff944d67-5440-4132-a4a9-2198c9221961(jetbrains.mps.lang.scopes.constraints)", "8077936094962945825");
@@ -49,7 +51,12 @@ public class ComeFromExpression_Constraints extends BaseConstraintsDescriptor {
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             // todo: use new scopes =) 
             SNode concept = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false), "concept", false);
-            return new SimpleScope(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept));
+            return new SimpleScope(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept)) {
+              @Nullable
+              public String getReferenceText(@NotNull SNode target) {
+                return SPropertyOperations.getString(SNodeOperations.cast(target, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role");
+              }
+            };
           }
         };
       }
