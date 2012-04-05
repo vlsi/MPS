@@ -986,7 +986,9 @@
       <varInfo nodeId="1747818952411874074" varName="list" />
       <varInfo nodeId="1747818952411874070" varName="owner" />
     </scopeInfo>
-    <scopeInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="409" startPosition="52" endLine="413" endPosition="13" />
+    <scopeInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="409" startPosition="52" endLine="413" endPosition="13">
+      <varInfo nodeId="3416087927885130128" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="4060390951635974672" fileName="StandardComponents.java" startLine="441" startPosition="0" endLine="445" endPosition="0">
       <varInfo nodeId="4060390951635974677" varName="caption" />
       <varInfo nodeId="4060390951635974679" varName="list" />
