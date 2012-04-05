@@ -8,14 +8,12 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior;
-import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -36,7 +34,7 @@ public class InstanceMethodDeclarationScope extends BaseMethodsScope {
     // two variants: 
     if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
       // as part of DotExpression 
-      SNode instanceType = SNodeOperations.cast(DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+      SNode instanceType = SNodeOperations.cast(((SNode) BehaviorManager.getInstance().invoke(Object.class, ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "call_getDotExpression_1224687669172", new Class[]{SNode.class})), "call_getOperandType_8871623299328377715", new Class[]{SNode.class})), "jetbrains.mps.baseLanguage.structure.ClassifierType");
       Map<SNode, SNode> typeByTypeVar = MethodResolveUtil.getTypesByTypeVars(SLinkOperations.getTarget(instanceType, "classifier", false), SLinkOperations.getTargets(instanceType, "parameter", true));
       return MethodResolveUtil.chooseByParameterType(methods, actualArguments, typeByTypeVar);
     } else {
