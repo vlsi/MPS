@@ -16,28 +16,30 @@ import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
-import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.resources.TResource;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
-import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.make.runtime.java.IAuxProjectPeer;
 import jetbrains.mps.lang.core.plugin.Generate_Facet.Target_checkParameters.Variables;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.smodel.resources.IFResource;
 import jetbrains.mps.compiler.JavaCompiler;
 import java.util.Set;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 import jetbrains.mps.smodel.resources.FResource;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -107,55 +109,60 @@ public class JavaCompile_Facet extends IFacet.Stub {
                 return new IResult.SUCCESS(_output_wf1ya0_a0a);
               }
               pa.global().properties(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything(false);
-              int work = Sequence.fromIterable(input).foldLeft(0, new ILeftCombinator<IResource, Integer>() {
-                public Integer combine(Integer s, IResource it) {
-                  return s + ((((TResource) it).module().isCompileInMPS() ?
-                    100 :
-                    0
-                  ));
+              final Iterable<IModule> toCompile = Sequence.fromIterable(input).select(new ISelector<IResource, IModule>() {
+                public IModule select(IResource it) {
+                  return ((TResource) it).module();
                 }
-              });
-              if (work == 0) {
+              }).where(new IWhereFilter<IModule>() {
+                public boolean accept(IModule it) {
+                  return it != null && it.isCompileInMPS();
+                }
+              }).distinct();
+              if ((int) Sequence.fromIterable(toCompile).count() == 0) {
                 return new IResult.SUCCESS(_output_wf1ya0_a0a);
               }
-              monitor.currentProgress().beginWork("Compiling", work, monitor.currentProgress().workLeft());
+              monitor.currentProgress().beginWork("Compiling", 1, monitor.currentProgress().workLeft());
+              final Wrappers._T<MPSCompilationResult> cr = new Wrappers._T<MPSCompilationResult>();
+              ModelAccess.instance().runReadAction(new Runnable() {
+                public void run() {
+                  cr.value = new ModuleMaker().make(SetSequence.fromSetWithValues(new HashSet<IModule>(), toCompile), new EmptyProgressMonitor());
+                }
+              });
+              monitor.currentProgress().advanceWork("Compiling", 1, IterableUtils.join(Sequence.fromIterable(toCompile).select(new ISelector<IModule, String>() {
+                public String select(IModule it) {
+                  return it.getModuleReference().getModuleFqName();
+                }
+              }), ", "));
+              if (cr.value != null) {
+                pa.global().properties(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything(pa.global().properties(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything() || cr.value.isCompiledAnything());
+                for (IMessage msg : cr.value.getMessages()) {
+                  monitor.reportFeedback(new IFeedback.MESSAGE(msg));
+                }
+              }
+              if (cr.value == null || !(cr.value.isOk())) {
+                if (cr.value != null) {
+                  if (cr.value.getErrors() > 0) {
+                    monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(cr.value)));
+                  } else if (cr.value.getWarnings() > 0) {
+                    monitor.reportFeedback(new IFeedback.WARNING(String.valueOf(cr.value)));
+                  } else {
+                    monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf(cr.value)));
+                  }
+                }
+                return new IResult.FAILURE(_output_wf1ya0_a0a);
+              }
+
               for (IResource resource : Sequence.fromIterable(input)) {
-                final TResource tres = (TResource) resource;
+                TResource tres = (TResource) resource;
                 if (tres.module() == null) {
                   return new IResult.FAILURE(_output_wf1ya0_a0a);
                 }
                 if (!(tres.module().isCompileInMPS())) {
                   continue;
                 }
-
-                monitor.currentProgress().advanceWork("Compiling", 100, tres.module().getModuleReference().getModuleFqName());
-
-                final Wrappers._T<MPSCompilationResult> cr = new Wrappers._T<MPSCompilationResult>();
-                ModelAccess.instance().runReadAction(new Runnable() {
-                  public void run() {
-                    cr.value = new ModuleMaker().make(CollectionUtil.set(tres.module()), new EmptyProgressMonitor());
-                  }
-                });
-                if (cr.value != null) {
-                  pa.global().properties(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything(pa.global().properties(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything() || cr.value.isCompiledAnything());
-                  for (IMessage msg : cr.value.getMessages()) {
-                    monitor.reportFeedback(new IFeedback.MESSAGE(msg));
-                  }
-                }
-                if (cr.value == null || !(cr.value.isOk())) {
-                  if (cr.value != null) {
-                    if (cr.value.getErrors() > 0) {
-                      monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(cr.value)));
-                    } else if (cr.value.getWarnings() > 0) {
-                      monitor.reportFeedback(new IFeedback.WARNING(String.valueOf(cr.value)));
-                    } else {
-                      monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf(cr.value)));
-                    }
-                  }
-                  return new IResult.FAILURE(_output_wf1ya0_a0a);
-                }
                 _output_wf1ya0_a0a = Sequence.fromIterable(_output_wf1ya0_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(tres)));
               }
+
               monitor.currentProgress().finishWork("Compiling");
             default:
               return new IResult.SUCCESS(_output_wf1ya0_a0a);
