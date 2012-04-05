@@ -22,6 +22,7 @@ import jetbrains.mps.newTypesystem.state.Equations;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.TypeSystemReporter;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -68,7 +69,10 @@ public class SubTypingManagerNew extends SubtypingManager {
   }
 
   public boolean isSubType(final SNode subType, final SNode superType, @Nullable final EquationInfo info, final State state, final boolean isWeak) {
-    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Boolean>() {
+    long start = System.nanoTime();
+
+
+    Boolean aBoolean = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Boolean>() {
       public Boolean compute() {
         if (null == subType || null == superType) return false;
         if (subType == superType) return true;
@@ -94,6 +98,8 @@ public class SubTypingManagerNew extends SubtypingManager {
         return searchInSuperTypes(subType, new NodeMatcher(superType, equations, info), info, isWeak, state);
       }
     });
+    TypeSystemReporter.getInstance().reportIsSubType(subType,superType,(System.nanoTime() - start));
+    return aBoolean;
   }
 
   private boolean meetsAndJoins(SNode subType, SNode superType, EquationInfo info, boolean isWeak, State state) {

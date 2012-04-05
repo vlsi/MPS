@@ -30,6 +30,7 @@ import jetbrains.mps.newTypesystem.state.blocks.WhenConcreteBlock;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.TypeSystemReporter;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -310,7 +311,10 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   @Override
   protected SNode getTypeOf_generationMode(SNode node) {
     myIsSingleTypeComputation = true;
-    return myNodeTypesComponent.computeTypesForNodeDuringGeneration(node);
+    long start = System.nanoTime();
+    SNode result = myNodeTypesComponent.computeTypesForNodeDuringGeneration(node);
+    TypeSystemReporter.getInstance().reportTypeOf(node,(System.nanoTime() - start));
+    return result;
   }
 
   @Override
