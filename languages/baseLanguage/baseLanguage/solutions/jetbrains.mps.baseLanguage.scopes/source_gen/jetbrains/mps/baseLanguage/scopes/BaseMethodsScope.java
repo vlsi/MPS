@@ -23,12 +23,14 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
 
 public abstract class BaseMethodsScope extends Scope {
   private final Map<String, List<SNode>> nameToMethods;
-  private final SNode kind;
-  private final SNode classifier;
-  private final Iterable<SNode> extendedClassifiers;
+  protected final SNode kind;
+  protected final SNode classifier;
+  protected final Iterable<SNode> extendedClassifiers;
   private List<SNode> allMethods;
 
   public BaseMethodsScope(final SNode kind, SNode classifier, Iterable<SNode> extendedClassifiers) {
@@ -128,7 +130,40 @@ public abstract class BaseMethodsScope extends Scope {
   }
 
   @Nullable
-  public abstract SNode resolve(SNode contextNode, @NotNull String refText);
+  public SNode resolve(SNode contextNode, @NotNull final String refText) {
+    List<SNode> methods = ListSequence.fromList(this.getAvailableElements(refText)).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return refText.equals(SPropertyOperations.getString(it, "name"));
+      }
+    }).toListSequence();
+    if (methods.isEmpty()) {
+      return null;
+    }
+    if (methods.size() == 1) {
+      return ListSequence.fromList(methods).first();
+    }
+    if (!(SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"))) {
+      return null;
+    }
+    List<SNode> actualArguments = SLinkOperations.getTargets((SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.IMethodCall")), "actualArgument", true);
+
+    methods = MethodResolveUtil.selectByParmCount(methods, actualArguments);
+    if (methods.size() == 1) {
+      return ListSequence.fromList(methods).first();
+    }
+
+    return resolveMethod(contextNode, refText, actualArguments, methods);
+  }
+
+  @Nullable
+  public SNode resolveMethod(SNode contextNode, @NotNull String refText, List<SNode> actualArguments, List<SNode> methods) {
+    // all methods have exactly actualArguments.size arguments and name of all methods is refText 
+    throw new UnsupportedOperationException();
+  }
 
   @Nullable
   public String getReferenceText(SNode contextNode, @NotNull SNode node) {

@@ -8,8 +8,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.scope.Scope;
 import java.util.List;
+import java.util.Map;
+import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -26,9 +28,9 @@ public class StaticMethodDeclarationScope extends BaseMethodsScope {
   }
 
   @Nullable
-  public SNode resolve(SNode contextNode, @NotNull String refText) {
-    // todo 
-    return null;
+  public SNode resolveMethod(SNode contextNode, @NotNull String refText, List<SNode> actualArguments, List<SNode> methods) {
+    Map<SNode, SNode> typeByTypeVar = ClassifierScopeUtils.resolveClassifierTypeVars(classifier);
+    return MethodResolveUtil.chooseByParameterType(methods, actualArguments, typeByTypeVar);
   }
 
   public static Scope forClass(SNode classNode, @Nullable SNode extendsClass, SNode... implementsInterfaces) {

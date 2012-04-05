@@ -6,13 +6,18 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
+import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior;
+import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
+import java.util.Map;
+import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.scope.Scope;
-import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
@@ -26,9 +31,19 @@ public class InstanceMethodDeclarationScope extends BaseMethodsScope {
   }
 
   @Nullable
-  public SNode resolve(SNode contextNode, @NotNull String refText) {
-    // todo 
-    return null;
+  @Override
+  public SNode resolveMethod(SNode contextNode, @NotNull String refText, List<SNode> actualArguments, List<SNode> methods) {
+    // two variants: 
+    if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
+      // as part of DotExpression 
+      SNode instanceType = SNodeOperations.cast(DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+      Map<SNode, SNode> typeByTypeVar = MethodResolveUtil.getTypesByTypeVars(SLinkOperations.getTarget(instanceType, "classifier", false), SLinkOperations.getTargets(instanceType, "parameter", true));
+      return MethodResolveUtil.chooseByParameterType(methods, actualArguments, typeByTypeVar);
+    } else {
+      // as local 
+      Map<SNode, SNode> typeByTypeVar = ClassifierScopeUtils.resolveClassifierTypeVars(classifier);
+      return MethodResolveUtil.chooseByParameterType(methods, actualArguments, typeByTypeVar);
+    }
   }
 
   @Override
