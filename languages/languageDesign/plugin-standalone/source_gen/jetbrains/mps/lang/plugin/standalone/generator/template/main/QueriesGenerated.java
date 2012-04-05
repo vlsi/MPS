@@ -16,9 +16,9 @@ import jetbrains.mps.lang.plugin.behavior.PreferencesComponentDeclaration_Behavi
 import jetbrains.mps.lang.plugin.generator.util.PluginNameUtils;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -134,11 +134,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_7944367932918602450(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("appPluginConstructor");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor")).first(), "appPluginConstructor");
   }
 
   public static Object referenceMacro_GetReferent_7944367932918602462(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("projPluginConstructor");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor")).first(), "projPluginConstructor");
   }
 
   public static boolean ifMacro_Condition_1215444484689(final IOperationContext operationContext, final IfMacroContext _context) {
