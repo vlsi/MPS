@@ -19,7 +19,8 @@ public class typeof_ResourceSpecificPropertiesExpression_InferenceRule extends A
   }
 
   public void applyRule(final SNode rspe, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(typeCheckingContext.isSingleTypeComputation())) { {
+    if (!(typeCheckingContext.isSingleTypeComputation())) {
+      {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(rspe, "resource", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e67eab7b-bc9a-4900-b958-c99ccf24a565(jetbrains.mps.make.facet.typesystem)", "2191561637326275606", 0, null);
         typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e67eab7b-bc9a-4900-b958-c99ccf24a565(jetbrains.mps.make.facet.typesystem)", "2191561637326275598", true), (SNode) new typeof_ResourceSpecificPropertiesExpression_InferenceRule.QuotationClass_3fuqx3_a0a0a0().createNode(typeCheckingContext), true, true, _info_12389875345);

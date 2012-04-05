@@ -27,7 +27,8 @@ public class typeof_ButtonCreator_InferenceRule extends AbstractInferenceRule_Ru
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "9011731583464286480", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "9011731583464286485", true), (SNode) new typeof_ButtonCreator_InferenceRule.QuotationClass_i5ms8h_a0a0a0().createNode(typeCheckingContext), _info_12389875345);
     }
-    if (!(typeCheckingContext.isSingleTypeComputation())) { {
+    if (!(typeCheckingContext.isSingleTypeComputation())) {
+      {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(creator, "action", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "9011731583464286489", 0, null);
         typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "9011731583464286495", true), (SNode) new typeof_ButtonCreator_InferenceRule.QuotationClass_i5ms8h_a0a1a0().createNode(typeCheckingContext), true, false, _info_12389875345);

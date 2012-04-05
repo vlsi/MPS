@@ -37,7 +37,8 @@ public class typeof_ExtensionMethodCall_InferenceRule extends AbstractInferenceR
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:d9557470-9267-4b7b-ab45-4dc4cc5d697c(jetbrains.mps.baseLanguage.extensionMethods.typesystem)", "5744862332973319660", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(instanceType_typevar_5744862332973319659), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:d9557470-9267-4b7b-ab45-4dc4cc5d697c(jetbrains.mps.baseLanguage.extensionMethods.typesystem)", "5744862332973319664", false), _info_12389875345);
     }
-    if (!(typeCheckingContext.isSingleTypeComputation())) { {
+    if (!(typeCheckingContext.isSingleTypeComputation())) {
+      {
         SNode _nodeToCheck_1029348928467 = extensionMethodCall;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:d9557470-9267-4b7b-ab45-4dc4cc5d697c(jetbrains.mps.baseLanguage.extensionMethods.typesystem)", "5744862332973319668", 0, null);
         typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.getRepresentative(instanceType_typevar_5744862332973319659), (SNode) Type_Behavior.call_getLooseType_5744862332972792015(methodApplicableType, SetSequence.fromSet(new HashSet<SNode>())), true, false, _info_12389875345);

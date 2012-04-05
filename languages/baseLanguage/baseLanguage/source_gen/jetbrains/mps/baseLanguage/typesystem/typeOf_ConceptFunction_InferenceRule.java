@@ -52,7 +52,8 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
             typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.getRepresentative(LCS_typevar_1186052624152), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053304515", true), false, true, _info_12389875345);
           }
           if ((expectedRetType != null)) {
-            if (!(typeCheckingContext.isSingleTypeComputation())) { {
+            if (!(typeCheckingContext.isSingleTypeComputation())) {
+              {
                 SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(returnStatement, "expression", true);
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7630810368327770735", 0, null);
                 typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7630810368327770718", true), (SNode) expectedRetType, true, true, _info_12389875345);
@@ -71,7 +72,8 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
           typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.getRepresentative(LCS_typevar_1186052624152), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053084979", true), false, true, _info_12389875345);
         }
         if ((expectedRetType != null)) {
-          if (!(typeCheckingContext.isSingleTypeComputation())) { {
+          if (!(typeCheckingContext.isSingleTypeComputation())) {
+            {
               SNode _nodeToCheck_1029348928467 = expression;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7630810368327770756", 0, null);
               typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7630810368327770753", true), (SNode) expectedRetType, true, true, _info_12389875345);
