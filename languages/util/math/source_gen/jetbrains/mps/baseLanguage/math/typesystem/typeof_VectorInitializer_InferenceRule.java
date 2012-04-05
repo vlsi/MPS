@@ -21,10 +21,11 @@ public class typeof_VectorInitializer_InferenceRule extends AbstractInferenceRul
   }
 
   public void applyRule(final SNode initializer, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(initializer, "expression", true);
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6219660258345567359", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6219660258345567364", true), (SNode) SNodeOperations.copyNode(MathTypeUtil.qBigComplex), true, true, _info_12389875345);
+    if (!(typeCheckingContext.isSingleTypeComputation())) { {
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(initializer, "expression", true);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6219660258345567359", 0, null);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6219660258345567364", true), (SNode) SNodeOperations.copyNode(MathTypeUtil.qBigComplex), true, true, _info_12389875345);
+      }
     }
     {
       SNode _nodeToCheck_1029348928467 = initializer;

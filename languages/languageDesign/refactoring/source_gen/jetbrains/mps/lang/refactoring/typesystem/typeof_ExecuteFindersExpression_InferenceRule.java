@@ -22,15 +22,17 @@ public class typeof_ExecuteFindersExpression_InferenceRule extends AbstractInfer
   }
 
   public void applyRule(final SNode expression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expression, "searchNode", true);
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1212243105530", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1212243105532", true), (SNode) new typeof_ExecuteFindersExpression_InferenceRule.QuotationClass_3htopm_a0a0a0().createNode(typeCheckingContext), true, false, _info_12389875345);
+    if (!(typeCheckingContext.isSingleTypeComputation())) { {
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expression, "searchNode", true);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1212243105530", 0, null);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1212243105532", true), (SNode) new typeof_ExecuteFindersExpression_InferenceRule.QuotationClass_3htopm_a0a0a0().createNode(typeCheckingContext), true, false, _info_12389875345);
+      }
     }
-    {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expression, "searchScope", true);
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1212243088247", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1212243079709", true), (SNode) new typeof_ExecuteFindersExpression_InferenceRule.QuotationClass_3htopm_a0a1a0().createNode(typeCheckingContext), true, false, _info_12389875345);
+    if (!(typeCheckingContext.isSingleTypeComputation())) { {
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expression, "searchScope", true);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1212243088247", 0, null);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1212243079709", true), (SNode) new typeof_ExecuteFindersExpression_InferenceRule.QuotationClass_3htopm_a0a1a0().createNode(typeCheckingContext), true, false, _info_12389875345);
+      }
     }
     {
       SNode _nodeToCheck_1029348928467 = expression;
