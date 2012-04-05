@@ -14,7 +14,6 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.scopes.Scopes;
 import java.util.Arrays;
-import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
 
 public class SwitchStatement_Behavior {
   public static void init(SNode thisNode) {
@@ -71,7 +70,7 @@ public class SwitchStatement_Behavior {
 
           // todo: how to generialize? 
           if (Arrays.asList(nodesInScope).contains(child)) {
-            return CompositeWithParentScope.from(parameter, thisNode, kind);
+            return Scopes.forLoopLabels(parameter, ScopeUtils.lazyParentScope(thisNode, kind));
           }
         }
       }

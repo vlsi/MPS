@@ -44,4 +44,9 @@ public class Scopes {
     // hide anything by name 
     return new HidingByNameScope(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.INamedConcept"), kind, scope, parentScope);
   }
+
+  public static Scope forLoopLabels(Iterable<SNode> labels, Scope parentScope) {
+    // Hiding only other LoopLabels 
+    return new HidingByNameScope(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LoopLabel"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LoopLabel"), new SimpleScope(labels), parentScope);
+  }
 }

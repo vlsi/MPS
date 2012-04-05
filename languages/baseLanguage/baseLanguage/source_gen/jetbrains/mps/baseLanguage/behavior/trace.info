@@ -10558,25 +10558,25 @@
     <unitInfo nodeId="1244292059682911437" fileName="CommentedStatementsBlock_Behavior.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.CommentedStatementsBlock_Behavior" />
   </root>
   <root nodeId="1955452033143960286">
-    <nodeInfo nodeId="2832018561209142530" fileName="AbstractLoopStatement_Behavior.java" startLine="18" startPosition="57" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2832018561209142558" fileName="AbstractLoopStatement_Behavior.java" startLine="21" startPosition="5" endLine="22" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1955452033143960286" fileName="AbstractLoopStatement_Behavior.java" startLine="12" startPosition="45" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="2832018561209142525" fileName="AbstractLoopStatement_Behavior.java" startLine="17" startPosition="100" endLine="20" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2832018561209142495" fileName="AbstractLoopStatement_Behavior.java" startLine="16" startPosition="101" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1955452033143960286" fileName="AbstractLoopStatement_Behavior.java" startLine="15" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/scope/Scope;" />
-    <scopeInfo nodeId="1955452033143960288" fileName="AbstractLoopStatement_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="2832018561209142526" fileName="AbstractLoopStatement_Behavior.java" startLine="18" startPosition="57" endLine="19" endPosition="117" />
-    <scopeInfo nodeId="1955452033143960286" fileName="AbstractLoopStatement_Behavior.java" startLine="12" startPosition="45" endLine="15" endPosition="0">
+    <nodeInfo nodeId="2832018561209142530" fileName="AbstractLoopStatement_Behavior.java" startLine="20" startPosition="57" endLine="21" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2832018561209142558" fileName="AbstractLoopStatement_Behavior.java" startLine="23" startPosition="5" endLine="24" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1955452033143960286" fileName="AbstractLoopStatement_Behavior.java" startLine="14" startPosition="45" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2832018561209142525" fileName="AbstractLoopStatement_Behavior.java" startLine="19" startPosition="100" endLine="22" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2832018561209142495" fileName="AbstractLoopStatement_Behavior.java" startLine="18" startPosition="101" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1955452033143960286" fileName="AbstractLoopStatement_Behavior.java" startLine="17" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/scope/Scope;" />
+    <scopeInfo nodeId="1955452033143960288" fileName="AbstractLoopStatement_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="2832018561209142526" fileName="AbstractLoopStatement_Behavior.java" startLine="20" startPosition="57" endLine="21" endPosition="191" />
+    <scopeInfo nodeId="1955452033143960286" fileName="AbstractLoopStatement_Behavior.java" startLine="14" startPosition="45" endLine="17" endPosition="0">
       <varInfo nodeId="1955452033143960286" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2832018561209142496" fileName="AbstractLoopStatement_Behavior.java" startLine="17" startPosition="100" endLine="20" endPosition="7" />
-    <scopeInfo nodeId="1955452033143962424" fileName="AbstractLoopStatement_Behavior.java" startLine="16" startPosition="101" endLine="22" endPosition="54" />
-    <scopeInfo nodeId="1955452033143960286" fileName="AbstractLoopStatement_Behavior.java" startLine="15" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="2832018561209142496" fileName="AbstractLoopStatement_Behavior.java" startLine="19" startPosition="100" endLine="22" endPosition="7" />
+    <scopeInfo nodeId="1955452033143962424" fileName="AbstractLoopStatement_Behavior.java" startLine="18" startPosition="101" endLine="24" endPosition="54" />
+    <scopeInfo nodeId="1955452033143960286" fileName="AbstractLoopStatement_Behavior.java" startLine="17" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="1955452033143962427" varName="child" />
       <varInfo nodeId="1955452033143962425" varName="kind" />
       <varInfo nodeId="1955452033143960286" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1955452033143960286" fileName="AbstractLoopStatement_Behavior.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AbstractLoopStatement_Behavior" />
+    <unitInfo nodeId="1955452033143960286" fileName="AbstractLoopStatement_Behavior.java" startLine="14" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AbstractLoopStatement_Behavior" />
   </root>
   <root nodeId="2102329369853775247">
     <nodeInfo nodeId="2102329369853788155" fileName="VoidType_Behavior.java" startLine="18" startPosition="76" endLine="19" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -10950,97 +10950,97 @@
     <unitInfo nodeId="4313092516461872700" fileName="SwitchCase_Behavior.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.SwitchCase_Behavior" />
   </root>
   <root nodeId="4313092516461999629">
-    <nodeInfo nodeId="4313092516461999657" fileName="SwitchStatement_Behavior.java" startLine="24" startPosition="35" endLine="25" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4313092516461999683" fileName="SwitchStatement_Behavior.java" startLine="27" startPosition="102" endLine="28" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4313092516461999718" fileName="SwitchStatement_Behavior.java" startLine="30" startPosition="78" endLine="31" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5185847984243943358" fileName="SwitchStatement_Behavior.java" startLine="35" startPosition="101" endLine="36" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5185847984243943373" fileName="SwitchStatement_Behavior.java" startLine="37" startPosition="67" endLine="38" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5185847984243943355" fileName="SwitchStatement_Behavior.java" startLine="39" startPosition="5" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8317913688490267983" fileName="SwitchStatement_Behavior.java" startLine="41" startPosition="5" endLine="42" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8317913688490267983" fileName="SwitchStatement_Behavior.java" startLine="42" startPosition="24" endLine="43" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7658027570455079885" fileName="SwitchStatement_Behavior.java" startLine="46" startPosition="90" endLine="47" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7658027570455079858" fileName="SwitchStatement_Behavior.java" startLine="48" startPosition="11" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5185847984243943351" fileName="SwitchStatement_Behavior.java" startLine="49" startPosition="0" endLine="50" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5185847984243943926" fileName="SwitchStatement_Behavior.java" startLine="52" startPosition="45" endLine="53" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="5185847984243943928" fileName="SwitchStatement_Behavior.java" startLine="54" startPosition="13" endLine="55" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4143990013475291606" fileName="SwitchStatement_Behavior.java" startLine="56" startPosition="11" endLine="57" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8967654016644457802" fileName="SwitchStatement_Behavior.java" startLine="61" startPosition="9" endLine="62" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8967654016644457810" fileName="SwitchStatement_Behavior.java" startLine="63" startPosition="83" endLine="64" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8967654016644457844" fileName="SwitchStatement_Behavior.java" startLine="65" startPosition="11" endLine="66" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8967654016644457976" fileName="SwitchStatement_Behavior.java" startLine="67" startPosition="119" endLine="68" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8967654016644458006" fileName="SwitchStatement_Behavior.java" startLine="69" startPosition="11" endLine="70" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6890394376852575429" fileName="SwitchStatement_Behavior.java" startLine="70" startPosition="108" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6890394376852575427" fileName="SwitchStatement_Behavior.java" startLine="71" startPosition="0" endLine="72" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6890394376852575430" fileName="SwitchStatement_Behavior.java" startLine="73" startPosition="60" endLine="74" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8317913688490390616" fileName="SwitchStatement_Behavior.java" startLine="78" startPosition="5" endLine="79" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4313092516461999629" fileName="SwitchStatement_Behavior.java" startLine="19" startPosition="39" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="4313092516461999643" fileName="SwitchStatement_Behavior.java" startLine="23" startPosition="152" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4313092516461999669" fileName="SwitchStatement_Behavior.java" startLine="26" startPosition="5" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4313092516461999697" fileName="SwitchStatement_Behavior.java" startLine="29" startPosition="5" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5185847984243943362" fileName="SwitchStatement_Behavior.java" startLine="36" startPosition="33" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="7658027570455079862" fileName="SwitchStatement_Behavior.java" startLine="45" startPosition="9" endLine="48" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5185847984243943915" fileName="SwitchStatement_Behavior.java" startLine="51" startPosition="85" endLine="54" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8967654016644457808" fileName="SwitchStatement_Behavior.java" startLine="62" startPosition="57" endLine="65" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8967654016644457949" fileName="SwitchStatement_Behavior.java" startLine="66" startPosition="130" endLine="69" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="6890394376852575390" fileName="SwitchStatement_Behavior.java" startLine="72" startPosition="39" endLine="75" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5185847984243943899" fileName="SwitchStatement_Behavior.java" startLine="50" startPosition="57" endLine="56" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4313092516461999629" fileName="SwitchStatement_Behavior.java" startLine="22" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_collectUncaughtMethodThrowables_5412515780383134223#(Ljetbrains/mps/smodel/SNode;Ljava/util/Set;Z)V" />
-    <nodeInfo nodeId="8317913688490267983" fileName="SwitchStatement_Behavior.java" startLine="44" startPosition="123" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8317913688490267983" fileName="SwitchStatement_Behavior.java" startLine="43" startPosition="25" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8317913688490267983" fileName="SwitchStatement_Behavior.java" startLine="60" startPosition="109" endLine="76" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8317913688490267983" fileName="SwitchStatement_Behavior.java" startLine="59" startPosition="7" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8317913688490267983" fileName="SwitchStatement_Behavior.java" startLine="40" startPosition="0" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4313092516461999629" fileName="SwitchStatement_Behavior.java" startLine="34" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/scope/Scope;" />
-    <scopeInfo nodeId="4313092516461999631" fileName="SwitchStatement_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
-    <scopeInfo nodeId="4313092516461999645" fileName="SwitchStatement_Behavior.java" startLine="24" startPosition="35" endLine="25" endPosition="146" />
-    <scopeInfo nodeId="4313092516461999672" fileName="SwitchStatement_Behavior.java" startLine="27" startPosition="102" endLine="28" endPosition="122" />
-    <scopeInfo nodeId="4313092516461999698" fileName="SwitchStatement_Behavior.java" startLine="30" startPosition="78" endLine="31" endPosition="174" />
-    <scopeInfo nodeId="5185847984243943372" fileName="SwitchStatement_Behavior.java" startLine="37" startPosition="67" endLine="38" endPosition="65" />
-    <scopeInfo nodeId="7658027570455079863" fileName="SwitchStatement_Behavior.java" startLine="46" startPosition="90" endLine="47" endPosition="62" />
-    <scopeInfo nodeId="5185847984243943916" fileName="SwitchStatement_Behavior.java" startLine="52" startPosition="45" endLine="53" endPosition="20" />
-    <scopeInfo nodeId="8967654016644457809" fileName="SwitchStatement_Behavior.java" startLine="63" startPosition="83" endLine="64" endPosition="114" />
-    <scopeInfo nodeId="8967654016644457950" fileName="SwitchStatement_Behavior.java" startLine="67" startPosition="119" endLine="68" endPosition="118" />
-    <scopeInfo nodeId="6890394376852575391" fileName="SwitchStatement_Behavior.java" startLine="73" startPosition="60" endLine="74" endPosition="76" />
-    <scopeInfo nodeId="4313092516461999629" fileName="SwitchStatement_Behavior.java" startLine="19" startPosition="39" endLine="22" endPosition="0">
+    <nodeInfo nodeId="4313092516461999657" fileName="SwitchStatement_Behavior.java" startLine="23" startPosition="35" endLine="24" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4313092516461999683" fileName="SwitchStatement_Behavior.java" startLine="26" startPosition="102" endLine="27" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4313092516461999718" fileName="SwitchStatement_Behavior.java" startLine="29" startPosition="78" endLine="30" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5185847984243943358" fileName="SwitchStatement_Behavior.java" startLine="34" startPosition="101" endLine="35" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5185847984243943373" fileName="SwitchStatement_Behavior.java" startLine="36" startPosition="67" endLine="37" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5185847984243943355" fileName="SwitchStatement_Behavior.java" startLine="38" startPosition="5" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8317913688490267983" fileName="SwitchStatement_Behavior.java" startLine="40" startPosition="5" endLine="41" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8317913688490267983" fileName="SwitchStatement_Behavior.java" startLine="41" startPosition="24" endLine="42" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7658027570455079885" fileName="SwitchStatement_Behavior.java" startLine="45" startPosition="90" endLine="46" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7658027570455079858" fileName="SwitchStatement_Behavior.java" startLine="47" startPosition="11" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5185847984243943351" fileName="SwitchStatement_Behavior.java" startLine="48" startPosition="0" endLine="49" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5185847984243943926" fileName="SwitchStatement_Behavior.java" startLine="51" startPosition="45" endLine="52" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="5185847984243943928" fileName="SwitchStatement_Behavior.java" startLine="53" startPosition="13" endLine="54" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4143990013475291606" fileName="SwitchStatement_Behavior.java" startLine="55" startPosition="11" endLine="56" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8967654016644457802" fileName="SwitchStatement_Behavior.java" startLine="60" startPosition="9" endLine="61" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8967654016644457810" fileName="SwitchStatement_Behavior.java" startLine="62" startPosition="83" endLine="63" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8967654016644457844" fileName="SwitchStatement_Behavior.java" startLine="64" startPosition="11" endLine="65" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8967654016644457976" fileName="SwitchStatement_Behavior.java" startLine="66" startPosition="119" endLine="67" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8967654016644458006" fileName="SwitchStatement_Behavior.java" startLine="68" startPosition="11" endLine="69" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6890394376852575429" fileName="SwitchStatement_Behavior.java" startLine="69" startPosition="108" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6890394376852575427" fileName="SwitchStatement_Behavior.java" startLine="70" startPosition="0" endLine="71" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6890394376852575430" fileName="SwitchStatement_Behavior.java" startLine="72" startPosition="60" endLine="73" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8317913688490390616" fileName="SwitchStatement_Behavior.java" startLine="77" startPosition="5" endLine="78" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4313092516461999629" fileName="SwitchStatement_Behavior.java" startLine="18" startPosition="39" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="4313092516461999643" fileName="SwitchStatement_Behavior.java" startLine="22" startPosition="152" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4313092516461999669" fileName="SwitchStatement_Behavior.java" startLine="25" startPosition="5" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4313092516461999697" fileName="SwitchStatement_Behavior.java" startLine="28" startPosition="5" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5185847984243943362" fileName="SwitchStatement_Behavior.java" startLine="35" startPosition="33" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="7658027570455079862" fileName="SwitchStatement_Behavior.java" startLine="44" startPosition="9" endLine="47" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5185847984243943915" fileName="SwitchStatement_Behavior.java" startLine="50" startPosition="85" endLine="53" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8967654016644457808" fileName="SwitchStatement_Behavior.java" startLine="61" startPosition="57" endLine="64" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8967654016644457949" fileName="SwitchStatement_Behavior.java" startLine="65" startPosition="130" endLine="68" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="6890394376852575390" fileName="SwitchStatement_Behavior.java" startLine="71" startPosition="39" endLine="74" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5185847984243943899" fileName="SwitchStatement_Behavior.java" startLine="49" startPosition="57" endLine="55" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4313092516461999629" fileName="SwitchStatement_Behavior.java" startLine="21" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_collectUncaughtMethodThrowables_5412515780383134223#(Ljetbrains/mps/smodel/SNode;Ljava/util/Set;Z)V" />
+    <nodeInfo nodeId="8317913688490267983" fileName="SwitchStatement_Behavior.java" startLine="43" startPosition="123" endLine="57" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8317913688490267983" fileName="SwitchStatement_Behavior.java" startLine="42" startPosition="25" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8317913688490267983" fileName="SwitchStatement_Behavior.java" startLine="59" startPosition="109" endLine="75" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8317913688490267983" fileName="SwitchStatement_Behavior.java" startLine="58" startPosition="7" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8317913688490267983" fileName="SwitchStatement_Behavior.java" startLine="39" startPosition="0" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4313092516461999629" fileName="SwitchStatement_Behavior.java" startLine="33" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/scope/Scope;" />
+    <scopeInfo nodeId="4313092516461999631" fileName="SwitchStatement_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
+    <scopeInfo nodeId="4313092516461999645" fileName="SwitchStatement_Behavior.java" startLine="23" startPosition="35" endLine="24" endPosition="146" />
+    <scopeInfo nodeId="4313092516461999672" fileName="SwitchStatement_Behavior.java" startLine="26" startPosition="102" endLine="27" endPosition="122" />
+    <scopeInfo nodeId="4313092516461999698" fileName="SwitchStatement_Behavior.java" startLine="29" startPosition="78" endLine="30" endPosition="174" />
+    <scopeInfo nodeId="5185847984243943372" fileName="SwitchStatement_Behavior.java" startLine="36" startPosition="67" endLine="37" endPosition="65" />
+    <scopeInfo nodeId="7658027570455079863" fileName="SwitchStatement_Behavior.java" startLine="45" startPosition="90" endLine="46" endPosition="62" />
+    <scopeInfo nodeId="5185847984243943916" fileName="SwitchStatement_Behavior.java" startLine="51" startPosition="45" endLine="52" endPosition="20" />
+    <scopeInfo nodeId="8967654016644457809" fileName="SwitchStatement_Behavior.java" startLine="62" startPosition="83" endLine="63" endPosition="114" />
+    <scopeInfo nodeId="8967654016644457950" fileName="SwitchStatement_Behavior.java" startLine="66" startPosition="119" endLine="67" endPosition="118" />
+    <scopeInfo nodeId="6890394376852575391" fileName="SwitchStatement_Behavior.java" startLine="72" startPosition="60" endLine="73" endPosition="95" />
+    <scopeInfo nodeId="4313092516461999629" fileName="SwitchStatement_Behavior.java" startLine="18" startPosition="39" endLine="21" endPosition="0">
       <varInfo nodeId="4313092516461999629" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4313092516461999669" fileName="SwitchStatement_Behavior.java" startLine="26" startPosition="5" endLine="29" endPosition="5">
+    <scopeInfo nodeId="4313092516461999669" fileName="SwitchStatement_Behavior.java" startLine="25" startPosition="5" endLine="28" endPosition="5">
       <varInfo nodeId="4313092516461999669" varName="caseNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8967654016644457949" fileName="SwitchStatement_Behavior.java" startLine="66" startPosition="130" endLine="69" endPosition="11">
+    <scopeInfo nodeId="8967654016644457949" fileName="SwitchStatement_Behavior.java" startLine="65" startPosition="130" endLine="68" endPosition="11">
       <varInfo nodeId="8967654016644457952" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="5185847984243943900" fileName="SwitchStatement_Behavior.java" startLine="51" startPosition="85" endLine="55" endPosition="215" />
-    <scopeInfo nodeId="5185847984243943899" fileName="SwitchStatement_Behavior.java" startLine="50" startPosition="57" endLine="56" endPosition="11">
+    <scopeInfo nodeId="5185847984243943900" fileName="SwitchStatement_Behavior.java" startLine="50" startPosition="85" endLine="54" endPosition="215" />
+    <scopeInfo nodeId="5185847984243943899" fileName="SwitchStatement_Behavior.java" startLine="49" startPosition="57" endLine="55" endPosition="11">
       <varInfo nodeId="5185847984243943902" varName="caseNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4313092516461999635" fileName="SwitchStatement_Behavior.java" startLine="23" startPosition="152" endLine="32" endPosition="5" />
-    <scopeInfo nodeId="4313092516461999629" fileName="SwitchStatement_Behavior.java" startLine="22" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="4313092516461999635" fileName="SwitchStatement_Behavior.java" startLine="22" startPosition="152" endLine="31" endPosition="5" />
+    <scopeInfo nodeId="4313092516461999629" fileName="SwitchStatement_Behavior.java" startLine="21" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="4313092516461999639" varName="ignoreMayBeThrowables" />
       <varInfo nodeId="4313092516461999629" varName="thisNode" />
       <varInfo nodeId="4313092516461999636" varName="throwables" />
     </scopeInfo>
-    <scopeInfo nodeId="8317913688490267989" fileName="SwitchStatement_Behavior.java" startLine="45" startPosition="9" endLine="57" endPosition="98">
+    <scopeInfo nodeId="8317913688490267989" fileName="SwitchStatement_Behavior.java" startLine="44" startPosition="9" endLine="56" endPosition="98">
       <varInfo nodeId="5185847984243943352" varName="variables" />
     </scopeInfo>
-    <scopeInfo nodeId="8317913688490267983" fileName="SwitchStatement_Behavior.java" startLine="44" startPosition="123" endLine="58" endPosition="9" />
-    <scopeInfo nodeId="8317913688490267995" fileName="SwitchStatement_Behavior.java" startLine="61" startPosition="9" endLine="75" endPosition="11">
+    <scopeInfo nodeId="8317913688490267983" fileName="SwitchStatement_Behavior.java" startLine="43" startPosition="123" endLine="57" endPosition="9" />
+    <scopeInfo nodeId="8317913688490267995" fileName="SwitchStatement_Behavior.java" startLine="60" startPosition="9" endLine="74" endPosition="11">
       <varInfo nodeId="8967654016644457845" varName="nodesInScope" />
       <varInfo nodeId="8967654016644457803" varName="parameter" />
     </scopeInfo>
-    <scopeInfo nodeId="8317913688490267983" fileName="SwitchStatement_Behavior.java" startLine="60" startPosition="109" endLine="76" endPosition="9" />
-    <scopeInfo nodeId="8317913688490267983" fileName="SwitchStatement_Behavior.java" startLine="41" startPosition="5" endLine="77" endPosition="7">
+    <scopeInfo nodeId="8317913688490267983" fileName="SwitchStatement_Behavior.java" startLine="59" startPosition="109" endLine="75" endPosition="9" />
+    <scopeInfo nodeId="8317913688490267983" fileName="SwitchStatement_Behavior.java" startLine="40" startPosition="5" endLine="76" endPosition="7">
       <varInfo nodeId="8317913688490267983" varName="concept_d0b" />
     </scopeInfo>
-    <scopeInfo nodeId="5185847984243943297" fileName="SwitchStatement_Behavior.java" startLine="35" startPosition="101" endLine="79" endPosition="16">
+    <scopeInfo nodeId="5185847984243943297" fileName="SwitchStatement_Behavior.java" startLine="34" startPosition="101" endLine="78" endPosition="16">
       <varInfo nodeId="5185847984243943359" varName="childStatement" />
     </scopeInfo>
-    <scopeInfo nodeId="4313092516461999629" fileName="SwitchStatement_Behavior.java" startLine="34" startPosition="0" endLine="81" endPosition="0">
+    <scopeInfo nodeId="4313092516461999629" fileName="SwitchStatement_Behavior.java" startLine="33" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="5185847984243943300" varName="child" />
       <varInfo nodeId="5185847984243943298" varName="kind" />
       <varInfo nodeId="4313092516461999629" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="4313092516461999629" fileName="SwitchStatement_Behavior.java" startLine="19" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.SwitchStatement_Behavior" />
+    <unitInfo nodeId="4313092516461999629" fileName="SwitchStatement_Behavior.java" startLine="18" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.SwitchStatement_Behavior" />
   </root>
   <root nodeId="4313092516461999734">
     <nodeInfo nodeId="4313092516461999748" fileName="SynchronizedStatement_Behavior.java" startLine="13" startPosition="152" endLine="14" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
