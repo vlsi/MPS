@@ -48,6 +48,14 @@ public class ClassifierScopes {
     return filterVisibleClassifiersScope(contextNode, getReachableClassifiersScope(SNodeOperations.getModel(contextNode), scope));
   }
 
+  public static Scope getVisibleClassesScope(@NotNull final SNode contextNode, IScope scope) {
+    return filterVisibleClassifiersScope(contextNode, new ClassifiersScope(SNodeOperations.getModel(contextNode), scope, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+  }
+
+  public static Scope getVisibleInterfacesScope(@NotNull final SNode contextNode, IScope scope) {
+    return filterVisibleClassifiersScope(contextNode, new ClassifiersScope(SNodeOperations.getModel(contextNode), scope, "jetbrains.mps.baseLanguage.structure.Interface"));
+  }
+
   public static Scope getWithClassExpressionClassifiers(SNode contextNode, IScope scope) {
     return filterVisibleClassifiersScope(contextNode, filterWithClassExpressionClassifiers(getReachableClassifiersScope(SNodeOperations.getModel(contextNode), scope)));
   }
