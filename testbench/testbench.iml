@@ -60,6 +60,7 @@
     <orderEntry type="module" module-name="execution-languages-plugin" scope="RUNTIME" />
     <orderEntry type="module" module-name="debugger-api-runtime" scope="RUNTIME" />
     <orderEntry type="module" module-name="debugger-java-runtime" scope="RUNTIME" />
+    <orderEntry type="module" module-name="execution-impl" scope="RUNTIME" />
   </component>
 </module>
 
