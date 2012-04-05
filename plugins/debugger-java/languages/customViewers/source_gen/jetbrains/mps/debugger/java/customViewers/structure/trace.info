@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="CustomViewers_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.CustomViewers_ApplicationPlugin" />
   <unitInfo fileName="CustomViewers_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.CustomViewers_Language" />
-  <unitInfo fileName="CustomViewers_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.CustomViewers_ProjectPlugin" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.StructureAspectDescriptor" />
   <root nodeId="1842653058274900914">
     <nodeInfo nodeId="1842653058274900914" fileName="WatchablesListCreator.java" startLine="11" startPosition="60" endLine="12" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
