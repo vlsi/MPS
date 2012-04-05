@@ -20,7 +20,6 @@ import java.util.Collection;
 import java.util.Collections;
 
 public class PluginFactoriesRegistry {
-
   private static Collection<AbstractPluginFactory> myPluginFactories = Collections.synchronizedCollection(new ArrayList<AbstractPluginFactory>());
 
   public static void registerPluginFactory(AbstractPluginFactory contributor) {
@@ -30,5 +29,4 @@ public class PluginFactoriesRegistry {
   public static Collection<AbstractPluginFactory> getPluginFactories() {
     return myPluginFactories;
   }
-
 }
