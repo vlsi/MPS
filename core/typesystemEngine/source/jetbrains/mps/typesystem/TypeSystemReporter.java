@@ -41,6 +41,7 @@ public class TypeSystemReporter {
 
   public void reset() {
     myGetTypeOfTime.clear();
+    myIsSubTypeTime.clear();
   }
 
   public synchronized void reportTypeOf(SNode node, long time) {
