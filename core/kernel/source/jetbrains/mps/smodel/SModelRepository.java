@@ -265,8 +265,8 @@ public class SModelRepository implements CoreComponent {
   private List<EditableSModelDescriptor> getModelsToSave() {
     List<EditableSModelDescriptor> modelsToSave = new ArrayList<EditableSModelDescriptor>();
     for (SModelDescriptor md : myModelsWithOwners.keySet()) {
-      if (md instanceof DefaultSModelDescriptor) {
-        DefaultSModelDescriptor emd = ((DefaultSModelDescriptor) md);
+      if (md instanceof EditableSModelDescriptor) {
+        EditableSModelDescriptor emd = ((EditableSModelDescriptor) md);
         // HOTFIX MPS-13326
         if (emd.isChanged() && !emd.isReadOnly()) {
           modelsToSave.add(emd);

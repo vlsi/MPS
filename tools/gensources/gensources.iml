@@ -139,11 +139,9 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/ypath/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/baseLanguage/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/collections/solutions/pluginSolution/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/unitTest/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/core/core/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/dataFlow/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/languages/templateLanguage/solutions/pluginSolution/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/facet/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/plugin/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/quotation/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/script/solutions/pluginSolution/source_gen" isTestSource="false" />
@@ -196,6 +194,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/resources/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/access/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/checkedName/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/plugin-standalone/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../plugins">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-java/languages/customViewers/source_gen" isTestSource="false" />
@@ -239,6 +238,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../samples/theSimplestLanguage/languages/theSimplestLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/theSimplestLanguage/solutions/jetbrains.mps.samples.theSimplestLanguage.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/xmlLiterals/languages/xmlLiterals/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/plainText/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -256,7 +256,6 @@
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="refactoring-runtime" />
     <orderEntry type="module" module-name="baseLanguage-search" />
-    <orderEntry type="module" module-name="execution" />
     <orderEntry type="module" module-name="mps-workbench" />
     <orderEntry type="module" module-name="uiLanguage-runtime" />
     <orderEntry type="module" module-name="ant" />
@@ -314,11 +313,9 @@
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntry type="library" name="JUnit4" level="project" />
     <orderEntry type="library" name="PicoContainer" level="project" />
-    <orderEntry type="module" module-name="debugger-java" />
     <orderEntry type="library" name="Idea-extensions" level="project" />
     <orderEntry type="library" name="Idea-plaform" level="project" />
     <orderEntry type="module" module-name="mps-editor" />
-    <orderEntry type="module" module-name="debugger-api" />
   </component>
 </module>
 

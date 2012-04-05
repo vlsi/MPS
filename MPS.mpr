@@ -166,6 +166,7 @@
       <modulePath path="${project}/languages/languageDesign/pattern/languages/testLang/testLang.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/pattern/pattern.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/pattern/solutions/test/test.msd" folder="core.kernel" />
+      <modulePath path="${project}/languages/languageDesign/plugin-standalone/standalone.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/plugin/plugin.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/plugin/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/project/project.mpl" folder="core.language-design" />
@@ -287,7 +288,7 @@
       <modulePath path="${project}/languages/util/ui/languages/ui/ui.mpl" folder="languages.ui" />
       <modulePath path="${project}/languages/util/ui/solutions/jetbrains.mps.ui.unittest/jetbrains.mps.ui.unittest.msd" folder="languages.ui" />
       <modulePath path="${project}/languages/util/ui/solutions/ui.sandbox/ui.sandbox.msd" folder="languages.ui" />
-      <modulePath path="${project}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/jetbrains.mps.ide.uiLanguage.runtime.msd" folder="languages.uiLanguage" />
+      <modulePath path="${project}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime.msd" folder="languages.uiLanguage" />
       <modulePath path="${project}/languages/util/uiLanguage/solutions/jetbrains.mps.uiLanguage.samples/jetbrains.mps.uiLanguage.saamples.msd" folder="languages.uiLanguage" />
       <modulePath path="${project}/languages/util/uiLanguage/solutions/pluginSolution/pluginSolution.msd" folder="languages.uiLanguage" />
       <modulePath path="${project}/languages/util/uiLanguage/uiLanguage.mpl" folder="languages.uiLanguage" />
@@ -310,11 +311,10 @@
       <modulePath path="${project}/languages/util/ypath/ypath.mpl" folder="languages.ypath" />
       <modulePath path="${project}/languages/xml/xml/sandbox/sandbox.msd" folder="build" />
       <modulePath path="${project}/languages/xml/xml/xml.mpl" folder="build" />
-      <modulePath path="${project}/plugins/debugger-api-languages/languages/jetbrains.mps.debugger.api.lang/api.mpl" folder="debugger.api" />
-      <modulePath path="${project}/plugins/debugger-api-languages/languages/jetbrains.mps.debugger.api.languages.plugin/plugin.msd" folder="debugger.api" />
       <modulePath path="${project}/plugins/debugger-api/api/api.msd" folder="debugger.api" />
+      <modulePath path="${project}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/api.mpl" folder="debugger.api" />
       <modulePath path="${project}/plugins/debugger-api/runtime/jetbrains.mps.debugger-api.msd" folder="debugger.api" />
-      <modulePath path="${project}/plugins/debugger-java-customViewers/languages/customViewers/plugin.msd" folder="debugger.java" />
+      <modulePath path="${project}/plugins/debugger-java-customViewers/plugin.msd" folder="debugger.java" />
       <modulePath path="${project}/plugins/debugger-java/api/jetbrains.mps.debugger.java.api.msd" folder="debugger.java" />
       <modulePath path="${project}/plugins/debugger-java/languages/customViewers/customViewers.mpl" folder="debugger.java.languages" />
       <modulePath path="${project}/plugins/debugger-java/languages/evaluation/evaluation.mpl" folder="debugger.java.languages" />
@@ -389,6 +389,7 @@
       <modulePath path="${project}/samples/nanoc/nanocProject/languages/nanoc/nanoc.mpl" folder="samples" />
       <modulePath path="${project}/samples/nanoc/nanocProject/languages/nanoc/solutions/pluginSolution/pluginSolution.msd" folder="samples" />
       <modulePath path="${project}/samples/nanoc/nanocProject/solutions/jetbrains.mps.nanoc.sandbox/jetbrains.mps.nanoc.sandbox.msd" folder="samples" />
+      <modulePath path="${project}/samples/plainText/plainText.mpl" folder="samples" />
       <modulePath path="${project}/samples/sampleFacet/sampleFacet.mpl" folder="samples" />
       <modulePath path="${project}/samples/sampleFacet/solutions/pluginSolution/pluginSolution.msd" folder="samples" />
       <modulePath path="${project}/samples/sampleLanguage/sampleLanguage.mpl" folder="debugger" />

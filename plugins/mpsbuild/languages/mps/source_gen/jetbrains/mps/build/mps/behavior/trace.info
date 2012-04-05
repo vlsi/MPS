@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BuildMPSPlugin_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMPSPlugin_BehaviorDescriptor" />
   <unitInfo fileName="BuildMpsLayout_FolderWithSources_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMpsLayout_FolderWithSources_BehaviorDescriptor" />
   <unitInfo fileName="BuildMpsLayout_ModuleJars_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMpsLayout_ModuleJars_BehaviorDescriptor" />
   <unitInfo fileName="BuildMpsLayout_ModuleOutput_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMpsLayout_ModuleOutput_BehaviorDescriptor" />
@@ -18,7 +19,6 @@
   <unitInfo fileName="BuildMps_ModuleDependencyJar_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_ModuleDependencyJar_BehaviorDescriptor" />
   <unitInfo fileName="BuildMps_ModuleDependencyOnDevKit_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_ModuleDependencyOnDevKit_BehaviorDescriptor" />
   <unitInfo fileName="BuildMps_ModuleDependencyOnJavaModule_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_ModuleDependencyOnJavaModule_BehaviorDescriptor" />
-  <unitInfo fileName="BuildMps_ModuleDependencyOnModuleById_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_ModuleDependencyOnModuleById_BehaviorDescriptor" />
   <unitInfo fileName="BuildMps_ModuleDependencyOnModule_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_ModuleDependencyOnModule_BehaviorDescriptor" />
   <unitInfo fileName="BuildMps_ModuleDependencyUseLanguage_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_ModuleDependencyUseLanguage_BehaviorDescriptor" />
   <unitInfo fileName="BuildMps_ModuleDependency_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_ModuleDependency_BehaviorDescriptor" />

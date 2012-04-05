@@ -15,6 +15,7 @@
   <language namespace="760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)" />
   <language namespace="982eb8df-2c96-4bd7-9963-11712ea622e5(jetbrains.mps.lang.resources)" />
   <language namespace="63650c59-16c8-498a-99c8-005c7ee9515d(jetbrains.mps.lang.access)" />
+  <language namespace="ef7bf5ac-d06c-4342-b11d-e42104eb9343(jetbrains.mps.lang.plugin.standalone)" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -153,7 +154,7 @@
   <import index="tz4y" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.project(MPS.Workbench/jetbrains.mps.project@java_stub)" version="-1" />
   <import index="7lwv" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.navigation(MPS.Workbench/jetbrains.mps.ide.navigation@java_stub)" version="-1" />
   <import index="2yea" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.plugins.tool(MPS.Platform/jetbrains.mps.plugins.tool@java_stub)" version="-1" />
-  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="8" implicit="yes" />
+  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="10" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -165,6 +166,7 @@
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
   <import index="1oap" modelUID="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" version="0" implicit="yes" />
   <import index="qff7" modelUID="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" version="0" implicit="yes" />
+  <import index="tgbt" modelUID="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" version="1" implicit="yes" />
   <roots>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1204991218714">
       <property name="name" nameId="tpck.1169194664001" value="ModelActions" />
@@ -21740,8 +21742,8 @@
               <link role="tool" roleId="tp4k.1208529537963" targetNodeId="5102590037491954904" resolveInfo="AnalyzeDependencies" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2562278481386587349">
-              <node role="operation" roleId="tpee.1197027833540" type="tp4k.GetToolInProjectOperation" typeId="tp4k.3339131993542058151" id="2562278481386587353">
-                <link role="tool" roleId="tp4k.3339131993542058152" targetNodeId="5102590037491954904" resolveInfo="AnalyzeDependencies" />
+              <node role="operation" roleId="tpee.1197027833540" type="tgbt.GetToolInProjectOperation" typeId="tgbt.681855071694758165" id="2562278481386587353">
+                <link role="tool" roleId="tgbt.681855071694758166" targetNodeId="5102590037491954904" resolveInfo="AnalyzeDependencies" />
               </node>
               <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2562278481386587365">
                 <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="2562278481386587366" />
@@ -22227,8 +22229,8 @@
                   <link role="member" roleId="tp4f.1205756909548" targetNodeId="5476509602181674175" resolveInfo="project" />
                 </node>
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tp4k.GetToolInProjectOperation" typeId="tp4k.3339131993542058151" id="5476509602181674186">
-                <link role="tool" roleId="tp4k.3339131993542058152" targetNodeId="5476509602181674192" resolveInfo="ModuleDependenies" />
+              <node role="operation" roleId="tpee.1197027833540" type="tgbt.GetToolInProjectOperation" typeId="tgbt.681855071694758165" id="5476509602181674186">
+                <link role="tool" roleId="tgbt.681855071694758166" targetNodeId="5476509602181674192" resolveInfo="ModuleDependenies" />
               </node>
             </node>
           </node>
@@ -22858,8 +22860,8 @@
                   <link role="member" roleId="tp4f.1205756909548" targetNodeId="595968436824335640" resolveInfo="project" />
                 </node>
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tp4k.GetToolInProjectOperation" typeId="tp4k.3339131993542058151" id="4691887782450496083">
-                <link role="tool" roleId="tp4k.3339131993542058152" targetNodeId="5476509602181674192" resolveInfo="ModuleDependenies" />
+              <node role="operation" roleId="tpee.1197027833540" type="tgbt.GetToolInProjectOperation" typeId="tgbt.681855071694758165" id="4691887782450496083">
+                <link role="tool" roleId="tgbt.681855071694758166" targetNodeId="5476509602181674192" resolveInfo="ModuleDependenies" />
               </node>
             </node>
           </node>
@@ -23039,8 +23041,8 @@
                           <link role="member" roleId="tp4f.1205756909548" targetNodeId="595968436824335640" resolveInfo="project" />
                         </node>
                       </node>
-                      <node role="operation" roleId="tpee.1197027833540" type="tp4k.GetToolInProjectOperation" typeId="tp4k.3339131993542058151" id="4691887782450496096">
-                        <link role="tool" roleId="tp4k.3339131993542058152" targetNodeId="5102590037491954904" resolveInfo="AnalyzeDependencies" />
+                      <node role="operation" roleId="tpee.1197027833540" type="tgbt.GetToolInProjectOperation" typeId="tgbt.681855071694758165" id="4691887782450496096">
+                        <link role="tool" roleId="tgbt.681855071694758166" targetNodeId="5102590037491954904" resolveInfo="AnalyzeDependencies" />
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4691887782450496097">
@@ -23379,8 +23381,8 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1298565956308950861">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1298565956308940039" resolveInfo="project" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tp4k.GetToolInProjectOperation" typeId="tp4k.3339131993542058151" id="595968436824339629">
-                <link role="tool" roleId="tp4k.3339131993542058152" targetNodeId="5102590037491954904" resolveInfo="AnalyzeDependencies" />
+              <node role="operation" roleId="tpee.1197027833540" type="tgbt.GetToolInProjectOperation" typeId="tgbt.681855071694758165" id="595968436824339629">
+                <link role="tool" roleId="tgbt.681855071694758166" targetNodeId="5102590037491954904" resolveInfo="AnalyzeDependencies" />
               </node>
             </node>
           </node>
@@ -23541,8 +23543,8 @@
                   <link role="member" roleId="tp4f.1205756909548" targetNodeId="1942098792227672803" resolveInfo="project" />
                 </node>
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tp4k.GetToolInProjectOperation" typeId="tp4k.3339131993542058151" id="1942098792227682134">
-                <link role="tool" roleId="tp4k.3339131993542058152" targetNodeId="5476509602181674192" resolveInfo="ModuleDependenies" />
+              <node role="operation" roleId="tpee.1197027833540" type="tgbt.GetToolInProjectOperation" typeId="tgbt.681855071694758165" id="1942098792227682134">
+                <link role="tool" roleId="tgbt.681855071694758166" targetNodeId="5476509602181674192" resolveInfo="ModuleDependenies" />
               </node>
             </node>
           </node>
@@ -25316,8 +25318,8 @@
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="1818770337282919843">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="tveq.~GroupedNodesChooser%dmyProject" resolveInfo="myProject" />
                   </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tp4k.GetPreferencesComponentInProjectOperation" typeId="tp4k.3339131993542057764" id="1818770337282919844">
-                    <link role="componentDeclaration" roleId="tp4k.3339131993542057765" targetNodeId="1818770337282919795" resolveInfo="BehaviorDialogsPersistentOptions" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tgbt.GetPreferencesComponentInProjectOperation" typeId="tgbt.681855071694758168" id="1818770337282919844">
+                    <link role="componentDeclaration" roleId="tgbt.681855071694758169" targetNodeId="1818770337282919795" resolveInfo="BehaviorDialogsPersistentOptions" />
                   </node>
                 </node>
                 <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="1818770337282919845">
@@ -29001,8 +29003,8 @@
                   <link role="member" roleId="tp4f.1205756909548" targetNodeId="5426495936043631332" resolveInfo="project" />
                 </node>
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tp4k.GetToolInProjectOperation" typeId="tp4k.3339131993542058151" id="5426495936043631342">
-                <link role="tool" roleId="tp4k.3339131993542058152" targetNodeId="5426495936043631345" resolveInfo="TodoViewer" />
+              <node role="operation" roleId="tpee.1197027833540" type="tgbt.GetToolInProjectOperation" typeId="tgbt.681855071694758165" id="5426495936043631342">
+                <link role="tool" roleId="tgbt.681855071694758166" targetNodeId="5426495936043631345" resolveInfo="TodoViewer" />
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5426495936043631343">

@@ -16,6 +16,7 @@
 package jetbrains.mps.workbench.action;
 
 import com.intellij.ide.DataManager;
+import com.intellij.ide.actions.RecentProjectsGroup;
 import com.intellij.openapi.actionSystem.*;
 import jetbrains.mps.logging.Logger;
 
@@ -76,6 +77,11 @@ public class ActionUtils {
 
   public static boolean contains(ActionGroup container, ActionGroup what) {
     if (container == what) return true;
+
+    //todo this is a dirty hack. It is needed because this Idea group goes to FS and asks for file attributes, and this is performed too many times
+    //todo the unregistration code should be rewritten in such a manner that additiona are registered and on unregistration we just remove our actions from the places we already know
+    if (container instanceof RecentProjectsGroup) return false;
+
     for (AnAction child : container.getChildren(null)) {
       if (child instanceof ActionGroup) {
         if (contains((ActionGroup) child, what)) return true;

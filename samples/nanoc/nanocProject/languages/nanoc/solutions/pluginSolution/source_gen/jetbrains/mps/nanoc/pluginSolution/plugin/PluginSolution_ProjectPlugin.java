@@ -4,15 +4,22 @@ package jetbrains.mps.nanoc.pluginSolution.plugin;
 
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import java.util.List;
-import jetbrains.mps.plugins.custom.BaseCustomProjectPlugin;
+import jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.plugins.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent;
 
 public class PluginSolution_ProjectPlugin extends BaseProjectPlugin {
   public PluginSolution_ProjectPlugin() {
+  }
+
+  public List<BaseProjectPrefsComponent> createPreferencesComponents(Project project) {
+    List<BaseProjectPrefsComponent> components = ListSequence.fromList(new ArrayList<BaseProjectPrefsComponent>());
+
+    ListSequence.fromList(components).addElement(new ProgramsLocationComponent_PreferencesComponent(project));
+    return components;
   }
 
   public List<BaseCustomProjectPlugin> initCustomParts(Project project) {
@@ -24,11 +31,5 @@ public class PluginSolution_ProjectPlugin extends BaseProjectPlugin {
       plugin.init(mpsProject);
     }
     return res;
-  }
-
-  public List<BaseProjectPrefsComponent> createPreferencesComponents(Project project) {
-    List<BaseProjectPrefsComponent> components = ListSequence.fromList(new ArrayList<BaseProjectPrefsComponent>());
-    ListSequence.fromList(components).addElement(new ProgramsLocationComponent_PreferencesComponent(project));
-    return components;
   }
 }

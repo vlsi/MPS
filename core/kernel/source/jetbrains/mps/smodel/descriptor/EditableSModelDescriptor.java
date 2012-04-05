@@ -26,6 +26,7 @@ import jetbrains.mps.vfs.IFile;
  * Maybe this kind of descriptor will be splitted to a number of descriptors in future.
  */
 public interface EditableSModelDescriptor extends SModelDescriptor {
+  //todo try to get rid
   long lastChangeTime();
 
   boolean isChanged();

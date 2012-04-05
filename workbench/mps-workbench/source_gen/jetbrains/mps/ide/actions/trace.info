@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Ide_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="254" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ApplicationPlugin" />
-  <unitInfo fileName="Ide_ProjectPlugin.java" startLine="13" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ProjectPlugin" />
+  <unitInfo fileName="Ide_ProjectPlugin.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ProjectPlugin" />
   <root nodeId="1204991215587">
     <nodeInfo nodeId="1204991215587" fileName="NodeActions_ActionGroup.java" startLine="11" startPosition="67" endLine="12" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1204991215587" fileName="NodeActions_ActionGroup.java" startLine="12" startPosition="78" endLine="13" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="PluginSolution_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ui.modeling.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
+  <unitInfo fileName="PluginSolution_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ui.modeling.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
   <unitInfo fileName="PluginSolution_ProjectPlugin.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ui.modeling.pluginSolution.plugin.PluginSolution_ProjectPlugin" />
   <root nodeId="5487985028841948850">
     <nodeInfo nodeId="5487985028841948851" fileName="IObjectsProvider.java" startLine="6" startPosition="41" endLine="7" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="info#()Ljava/lang/Object;" />

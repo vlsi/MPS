@@ -13,7 +13,19 @@ import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.lang.plugin.behavior.ActionDataParameterDeclaration_Behavior;
+import java.util.List;
+import jetbrains.mps.smodel.SNode;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class ActionDataParameterDeclaration_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer breakingNode_lb7xg4_a0a1a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1217254460030");
@@ -37,7 +49,11 @@ public class ActionDataParameterDeclaration_Constraints extends BaseConstraintsD
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ActionDataParameterDeclaration_Behavior.getVariants_1227641865136();
+            List<SNode> dataKeys = new ArrayList<SNode>();
+            ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(new ActionDataParameterDeclaration_Constraints.QuotationClass_lb7xg4_a0a0a0a0b0a0a0a0b0a1a0b0a().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
+            ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(new ActionDataParameterDeclaration_Constraints.QuotationClass_lb7xg4_a0a0a0a0c0a0a0a0b0a1a0b0a().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
+            ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(new ActionDataParameterDeclaration_Constraints.QuotationClass_lb7xg4_a0a0a0a0d0a0a0a0b0a1a0b0a().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
+            return dataKeys;
           }
 
           @Override
@@ -48,5 +64,59 @@ public class ActionDataParameterDeclaration_Constraints extends BaseConstraintsD
       }
     });
     return references;
+  }
+
+  public static class QuotationClass_lb7xg4_a0a0a0a0b0a0a0a0b0a1a0b0a {
+    public QuotationClass_lb7xg4_a0a0a0a0b0a0a0a0b0a1a0b0a() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.actionSystem(MPS.Platform/com.intellij.openapi.actionSystem@java_stub)"), SNodeId.fromString("~PlatformDataKeys")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_lb7xg4_a0a0a0a0c0a0a0a0b0a1a0b0a {
+    public QuotationClass_lb7xg4_a0a0a0a0c0a0a0a0b0a1a0b0a() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.ide.editor(MPS.Editor/jetbrains.mps.ide.editor@java_stub)"), SNodeId.fromString("~MPSEditorDataKeys")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_lb7xg4_a0a0a0a0d0a0a0a0b0a1a0b0a {
+    public QuotationClass_lb7xg4_a0a0a0a0d0a0a0a0b0a1a0b0a() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.actions(MPS.Platform/jetbrains.mps.ide.actions@java_stub)"), SNodeId.fromString("~MPSCommonDataKeys")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
   }
 }

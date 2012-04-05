@@ -10,7 +10,7 @@
         <modelRoot path="${language_descriptor}/generator/baseLanguage/template" />
       </models>
       <external-templates>
-        <generator generatorUID="e7d4970e-3e9f-4cf0-a129-f5976c82d635(jetbrains.mps.lang.patterns#1174810948060)" />
+        <generator generatorUID="e7d4970e-3e9f-4cf0-a129-f5976c82d635(jetbrains.mps.lang.pattern#1174810948060)" />
         <generator generatorUID="b736a816-59a2-4796-a8e6-372fc0a096ce(jetbrains.mps.lang.quotation#1196351859310)" />
       </external-templates>
       <dependencies>
@@ -58,7 +58,7 @@
             </external-mapping>
           </greater-priority-mapping>
           <lesser-priority-mapping>
-            <generator generatorUID="e7d4970e-3e9f-4cf0-a129-f5976c82d635(jetbrains.mps.lang.patterns#1174810948060)" />
+            <generator generatorUID="e7d4970e-3e9f-4cf0-a129-f5976c82d635(jetbrains.mps.lang.pattern#1174810948060)" />
             <external-mapping>
               <mapping-node modelUID="r:00000000-0000-4000-0000-011c89590346(jetbrains.mps.lang.pattern.generator.baseLanguage.template.main@generator)" nodeID="1174810951049" />
             </external-mapping>
