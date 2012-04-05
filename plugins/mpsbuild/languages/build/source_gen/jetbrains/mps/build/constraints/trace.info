@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="BuildSource_JavaSources_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildSource_JavaSources_Constraints" />
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.build.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1117643560963345398">
     <nodeInfo nodeId="1117643560963345398" fileName="BuildLayout_JavaOutput_Constraints.java" startLine="13" startPosition="83" endLine="14" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />

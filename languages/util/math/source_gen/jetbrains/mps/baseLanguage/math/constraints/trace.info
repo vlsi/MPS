@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="MatrixElementAccessExpression_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.constraints.MatrixElementAccessExpression_Constraints" />
   <root nodeId="1236430656078">
     <nodeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="21" startPosition="85" endLine="22" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_cdbkmw_a0a1a0a0a1a0b0a1a0" />
     <nodeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="24" startPosition="49" endLine="25" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

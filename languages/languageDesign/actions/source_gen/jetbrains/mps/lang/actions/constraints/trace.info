@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="ConceptPart_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.ConceptPart_Constraints" />
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1213104855837">
     <nodeInfo nodeId="1213104855837" fileName="SubstituteNodeBuilderVariableReference_Constraints.java" startLine="23" startPosition="99" endLine="24" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_vdmjo3_a0a1a0a0a1a0b0a1a0" />
