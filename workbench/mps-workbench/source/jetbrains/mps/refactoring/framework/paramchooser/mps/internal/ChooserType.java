@@ -32,12 +32,14 @@ import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 public abstract class ChooserType<T> {
   public abstract ChooseByNameModel createChooserModel(IChooserSettings<T> settings, RefactoringContext context, String paramName);
 
-  protected List<T> filter(IChooserSettings<T> settings, List<T> list) {
+  protected List<T> filter(IChooserSettings<T> settings, Collection<T> list) {
     List<T> result = new ArrayList<T>();
     for (T entity : list) {
       if (settings.met(entity)) {
@@ -106,7 +108,7 @@ public abstract class ChooserType<T> {
         }
 
         public ModuleReference[] find(boolean checkboxState) {
-          List<IModule> modules = MPSModuleRepository.getInstance().getAllModules();
+          Set<IModule> modules = MPSModuleRepository.getInstance().getAllModules();
           List<ModuleReference> filteredModules = new ArrayList<ModuleReference>();
           for (IModule module : filter(settings, modules)){
             filteredModules.add(module.getModuleReference());

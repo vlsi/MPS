@@ -2,7 +2,6 @@
 <model modelUID="r:7e5623b0-f241-4ce8-8fe7-d8a5c8c44458(jetbrains.mps.traceInfo.testWeaving.data)">
   <persistence version="7" />
   <language namespace="ce517356-fc9a-4e78-8606-6e7a36ff0671(TestProjectForWeaving)" />
-  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="ffafcf63-cbe6-4e5c-9717-541f01743ac7(jetbrains.mps.traceInfo.testWeavingInterpreted.data)" />
   <import index="c5w2" modelUID="r:b8c93b44-499b-404a-a011-c0847b38eb58(jetbrains.mps.traceInfo.testWeavingGenerated.data.structure)" version="1" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />

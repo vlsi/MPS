@@ -62,7 +62,7 @@ public class ModelDiffTool implements DiffTool {
   }
 
   private static SModel readModel(DiffContent content) throws ModelReadException {
-    if (content instanceof DocumentContent || content instanceof FileContent) {
+    if ((content instanceof DocumentContent || content instanceof FileContent) && content.getFile() != null) {
       SModelRepository modelRepository = SModelRepository.getInstance();
       final SModelDescriptor modelDescriptor = modelRepository.findModel(VirtualFileUtils.toIFile(content.getFile()));
       if (modelDescriptor != null) {

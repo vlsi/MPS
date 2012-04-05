@@ -4,13 +4,13 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)" />
+  <language namespace="f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)" />
   <import index="26ri" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.execution.api.configurations(MPS.Workbench/jetbrains.mps.execution.api.configurations@java_stub)" version="-1" />
   <import index="eunx" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util.annotation(MPS.Core/jetbrains.mps.util.annotation@java_stub)" version="-1" />
   <import index="68ai" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.annotations(MPS.Core/org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="aow2" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.commons.lang(MPS.Core/org.apache.commons.lang@java_stub)" version="-1" />
   <import index="msyo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" />
-  <import index="hf1o" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.plugins.pluginparts.runconfigs(MPS.Workbench/jetbrains.mps.plugins.pluginparts.runconfigs@java_stub)" version="-1" />
   <import index="ydef" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.execution.configurations(MPS.Platform/com.intellij.execution.configurations@java_stub)" version="-1" />
   <import index="qfgi" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.psi(MPS.Platform/com.intellij.psi@java_stub)" version="-1" />
   <import index="egwk" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.execution(MPS.Platform/com.intellij.execution@java_stub)" version="-1" />
@@ -19,11 +19,13 @@
   <import index="20wz" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.execution.actions(MPS.Platform/com.intellij.execution.actions@java_stub)" version="-1" />
   <import index="4mnu" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.execution.impl(MPS.Platform/com.intellij.execution.impl@java_stub)" version="-1" />
   <import index="ph2v" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.project(MPS.Platform/com.intellij.openapi.project@java_stub)" version="-1" />
+  <import index="hoff" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.plugins.runconfigs(MPS.Workbench/jetbrains.mps.plugins.runconfigs@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
+  <import index="m373" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5628633142282726547">
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
@@ -37,6 +39,13 @@
     </node>
   </roots>
   <root id="5628633142282726547">
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="m373.ClassifierDocComment" typeId="m373.2068944020170241612" id="2030388754941420392">
+      <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="2030388754941420393">
+        <node role="part" roleId="m373.8970989240999019149" type="m373.TextCommentLinePart" typeId="m373.8970989240999019143" id="2030388754941420395">
+          <property name="text" nameId="m373.8970989240999019144" value="runtime of old run configurations; unsupported; to be removed 6 months ago; use new configurations" />
+        </node>
+      </node>
+    </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5628633142282726548" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5628633142282732650">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="26ri.~BaseMpsRunConfiguration" resolveInfo="BaseMpsRunConfiguration" />
@@ -468,11 +477,11 @@
           <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="5628633142282726868">
             <node role="expression" roleId="tpee.1081516765348" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="5628633142282726869">
               <node role="expression" roleId="tpee.1079359253376" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="5628633142282726870">
+                <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7745138832965602996">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hoff.~MPSLocation" resolveInfo="MPSLocation" />
+                </node>
                 <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5628633142282726871">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5628633142282726858" resolveInfo="location" />
-                </node>
-                <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="189664211927954334">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hf1o.~MPSLocation" resolveInfo="MPSLocation" />
                 </node>
               </node>
             </node>
@@ -487,15 +496,15 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5628633142282726877">
             <property name="name" nameId="tpck.1169194664001" value="mpsLocation" />
             <property name="isFinal" nameId="tpee.1176718929932" value="false" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="189664211927954339">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hf1o.~MPSLocation" resolveInfo="MPSLocation" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7745138832965607111">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hoff.~MPSLocation" resolveInfo="MPSLocation" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="5628633142282726879">
+              <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7745138832965603003">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hoff.~MPSLocation" resolveInfo="MPSLocation" />
+              </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5628633142282726880">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5628633142282726858" resolveInfo="location" />
-              </node>
-              <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="189664211927954335">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hf1o.~MPSLocation" resolveInfo="MPSLocation" />
               </node>
             </node>
           </node>
@@ -504,15 +513,15 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5628633142282726883">
             <property name="name" nameId="tpck.1169194664001" value="psiElement" />
             <property name="isFinal" nameId="tpee.1176718929932" value="true" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="189664211927954340">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hf1o.~MPSPsiElement" resolveInfo="MPSPsiElement" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7745138832965603004">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hoff.~MPSPsiElement" resolveInfo="MPSPsiElement" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5628633142282726885">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5628633142282726886">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5628633142282726877" resolveInfo="mpsLocation" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5628633142282726887">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hf1o.~MPSLocation%dgetPsiElement()%cjetbrains%dmps%dplugins%dpluginparts%drunconfigs%dMPSPsiElement" resolveInfo="getPsiElement" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hoff.~MPSLocation%dgetPsiElement()%cjetbrains%dmps%dplugins%drunconfigs%dMPSPsiElement" resolveInfo="getPsiElement" />
               </node>
             </node>
           </node>
@@ -562,7 +571,7 @@
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5628633142282726883" resolveInfo="psiElement" />
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5628633142282727024">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hf1o.~MPSPsiElement%dgetMPSItem()%cjava%dlang%dObject" resolveInfo="getMPSItem" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hoff.~MPSPsiElement%dgetMPSItem()%cjava%dlang%dObject" resolveInfo="getMPSItem" />
                                 </node>
                               </node>
                             </node>
@@ -604,7 +613,7 @@
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5628633142282726883" resolveInfo="psiElement" />
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5628633142282727044">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hf1o.~MPSPsiElement%dgetMPSItem()%cjava%dlang%dObject" resolveInfo="getMPSItem" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hoff.~MPSPsiElement%dgetMPSItem()%cjava%dlang%dObject" resolveInfo="getMPSItem" />
                                   </node>
                                 </node>
                                 <node role="type" roleId="tpee.1070534934091" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="5628633142282727045">

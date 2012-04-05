@@ -17,7 +17,7 @@ package jetbrains.mps.workbench.structureview.adds;
 
 import com.intellij.ide.util.treeView.AbstractTreeNode;
 import com.intellij.ide.util.treeView.smartTree.*;
-import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.workbench.structureview.nodes.AspectTreeElement;
 import jetbrains.mps.workbench.structureview.nodes.MainNodeTreeElement;
 import org.jetbrains.annotations.NotNull;
@@ -32,12 +32,12 @@ public class AspectGrouper implements Grouper {
     final Object element = parent.getValue();
     if (!(element instanceof MainNodeTreeElement)) return Collections.emptyList();
 
-    Map<EditorTabDescriptor, List<TreeElement>> groups = new HashMap<EditorTabDescriptor, List<TreeElement>>();
+    Map<RelationDescriptor, List<TreeElement>> groups = new HashMap<RelationDescriptor, List<TreeElement>>();
     for (TreeElement te : children) {
       if (!(te instanceof AspectTreeElement)) continue;
 
       AspectTreeElement ate = (AspectTreeElement) te;
-      EditorTabDescriptor d = ate.getAspectDescriptor();
+      RelationDescriptor d = ate.getAspectDescriptor();
       if (!groups.containsKey(d)) {
         groups.put(d, new ArrayList<TreeElement>());
       }
@@ -45,7 +45,7 @@ public class AspectGrouper implements Grouper {
     }
 
     Collection<Group> result = new ArrayList<Group>();
-    for (Entry<EditorTabDescriptor, List<TreeElement>> e : groups.entrySet()) {
+    for (Entry<RelationDescriptor, List<TreeElement>> e : groups.entrySet()) {
       result.add(new AspectGroup(e.getKey(), e.getValue()));
     }
     return result;

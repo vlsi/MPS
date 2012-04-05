@@ -16,12 +16,15 @@ import java.io.File;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleFileTracker;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.Language;
 
 public class BuildGeneratorUtil {
   public BuildGeneratorUtil() {
@@ -58,7 +61,7 @@ public class BuildGeneratorUtil {
     if (solutionFile.exists()) {
       IModule module = ModelAccess.instance().runReadAction(new Computable<IModule>() {
         public IModule compute() {
-          return MPSModuleRepository.getInstance().getModuleByFile(solutionFile);
+          return ModuleFileTracker.getInstance().getModuleByFile(solutionFile);
         }
       });
       if (module instanceof Solution) {
@@ -82,11 +85,12 @@ public class BuildGeneratorUtil {
     ModelRoot mr = new ModelRoot();
     mr.setPath(solutionDescriptorFile.getParent().getPath());
     descriptor.getModelRoots().add(mr);
-    SolutionDescriptorPersistence.saveSolutionDescriptor(solutionDescriptorFile, descriptor);
-    return MPSModuleRepository.getInstance().registerModule(new ModulesMiner.ModuleHandle(solutionDescriptorFile, descriptor), mpsProject);
+    SolutionDescriptorPersistence.saveSolutionDescriptor(solutionDescriptorFile, descriptor, MacrosFactory.forModuleFile(solutionDescriptorFile));
+    ModulesMiner.ModuleHandle handle = new ModulesMiner.ModuleHandle(solutionDescriptorFile, descriptor);
+    return (Solution) ModuleRepositoryFacade.createModule(handle, mpsProject);
   }
 
   public static ModuleReference getPackagingLanguageReference() {
-    return MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.build.packaging").getModuleReference();
+    return ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build.packaging", Language.class).getModuleReference();
   }
 }

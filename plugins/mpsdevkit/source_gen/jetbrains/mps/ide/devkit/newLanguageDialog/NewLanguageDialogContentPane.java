@@ -20,18 +20,13 @@ import org.jdesktop.beansbinding.BeanProperty;
 import org.jdesktop.beansbinding.Bindings;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelCommandExecutor;
-import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.library.LanguageDesign_DevKit;
@@ -219,21 +214,16 @@ public class NewLanguageDialogContentPane extends JPanel {
     }
 
     myThis.getDialog().dispose();
-    final Wrappers._T<Language> language = new Wrappers._T<Language>(null);
-    Project project = myThis.getProject();
-    ModelAccess.instance().runWriteActionWithProgressSynchronously(new ModelCommandExecutor.RunnableWithProgress() {
-      public void run(ProgressMonitor monitor) {
-        language.value = myThis.createNewLanguage();
-      }
-    }, "Creating", false, project);
-    ModelAccess.instance().runWriteActionInCommandAsync(new Runnable() {
-      public void run() {
-        if (!(language.value.getSModelRoots().isEmpty())) {
-          LanguageAspect.STRUCTURE.createNew(language.value, false);
-          LanguageAspect.EDITOR.createNew(language.value, false);
-          LanguageAspect.CONSTRAINTS.createNew(language.value, false);
-          LanguageAspect.BEHAVIOR.createNew(language.value, false);
-          LanguageAspect.TYPESYSTEM.createNew(language.value, false);
+    NewModuleUtil.runModuleCreation(myThis.getProject().getProject(), new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        Language language = myThis.createNewLanguage();
+
+        if (!(language.getSModelRoots().isEmpty())) {
+          LanguageAspect.STRUCTURE.createNew(language, false);
+          LanguageAspect.EDITOR.createNew(language, false);
+          LanguageAspect.CONSTRAINTS.createNew(language, false);
+          LanguageAspect.BEHAVIOR.createNew(language, false);
+          LanguageAspect.TYPESYSTEM.createNew(language, false);
         }
         if (myThis.myNeedRuntime_hneum8_f0.isSelected()) {
           Solution runtime = myThis.createRuntimeSolution();
@@ -253,7 +243,7 @@ public class NewLanguageDialogContentPane extends JPanel {
           }
         }
       }
-    }, project);
+    });
   }
 
   /*package*/ void onCancel() {
@@ -267,28 +257,28 @@ public class NewLanguageDialogContentPane extends JPanel {
   /*package*/ Language createNewLanguage() {
     myThis.setResult(NewModuleUtil.createModule(MPSExtentions.DOT_LANGUAGE, myThis.getLanguageNamespace(), myThis.getLanguagePath(), myThis.getProject(), new _FunctionTypes._return_P3_E0<Language, String, IFile, MPSProject>() {
       public Language invoke(String s, IFile f, MPSProject p) {
-        return Language.createLanguage(s, f, p);
+        return NewModuleUtil.createNewLanguage(s, f, p);
       }
     }, new _FunctionTypes._void_P1_E0<ModuleDescriptor>() {
       public void invoke(ModuleDescriptor d) {
         ModuleReference devkitRef = LanguageDesign_DevKit.MODULE_REFERENCE;
         d.getUsedDevkits().add(devkitRef);
       }
-    }, true));
+    }));
     return myThis.getResult();
   }
 
   /*package*/ Solution createRuntimeSolution() {
     String basePath = myThis.getLanguagePath() + File.separator + "runtime";
     String namespace = myThis.getLanguageNamespace() + ".runtime";
-    Solution solution = NewModuleUtil.createSolution(namespace, basePath, myThis.getProject(), true);
+    Solution solution = NewModuleUtil.createSolution(namespace, basePath, myThis.getProject());
     return solution;
   }
 
   /*package*/ Solution createSandboxSolution() {
     String basePath = myThis.getLanguagePath() + File.separator + "sandbox";
     String namespace = myThis.getLanguageNamespace() + ".sandbox";
-    Solution solution = NewModuleUtil.createSolution(namespace, basePath, myThis.getProject(), true);
+    Solution solution = NewModuleUtil.createSolution(namespace, basePath, myThis.getProject());
     return solution;
   }
 

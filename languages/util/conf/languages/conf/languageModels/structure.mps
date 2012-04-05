@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)" version="1">
   <persistence version="7" />
-  <language namespace="32d0a39c-772f-4490-8142-e50f9a9f19d4(jetbrains.mps.platform.conf)" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
-  <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
@@ -12,7 +10,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4635942846893810046">
       <property name="name" nameId="tpck.1169194664001" value="Component" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.extensions" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="5066720069350533029" resolveInfo="XmlNode" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="5066720069350533029" resolveInfo="ConfigurationXmlNode" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5314521579133239121">
       <property name="name" nameId="tpck.1169194664001" value="Extension" />
@@ -59,7 +57,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7130790807395857422">
       <property name="name" nameId="tpck.1169194664001" value="ExtensionPoints" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.containers" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="5066720069350533029" resolveInfo="XmlConfigurationNode" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="5066720069350533029" resolveInfo="ConfigurationXmlNode" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1740160309778170999">
       <property name="name" nameId="tpck.1169194664001" value="Components" />
@@ -98,7 +96,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1740160309778217806">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="xml.root" />
       <property name="name" nameId="tpck.1169194664001" value="IdeaPluginRoot" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="3963070320413563577" resolveInfo="ConfigurationXmlRootNote" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="3963070320413563577" resolveInfo="ConfigurationXmlRootNode" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6121364846593763655">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.extensions" />
@@ -122,17 +120,17 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5522969664585014978">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="xml.root" />
       <property name="name" nameId="tpck.1169194664001" value="ComponentsRoot" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="3963070320413563577" resolveInfo="ConfigurationXmlRootNote" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="3963070320413563577" resolveInfo="ConfigurationXmlRootNode" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8009656244648532777">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="xml.root" />
       <property name="name" nameId="tpck.1169194664001" value="ComponentRoot" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="3963070320413563577" resolveInfo="ConfigurationXmlRootNote" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="3963070320413563577" resolveInfo="ConfigurationXmlRootNode" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7225089784577918894">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="xml.root" />
       <property name="name" nameId="tpck.1169194664001" value="RootRoot" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="3963070320413563577" resolveInfo="ConfigurationXmlRootNote" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="3963070320413563577" resolveInfo="ConfigurationXmlRootNode" />
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="6536266708345244484">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="configuration" />
@@ -141,7 +139,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6536266708345244486">
       <property name="name" nameId="tpck.1169194664001" value="Plugin" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.plugin" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1740160309778217806" resolveInfo="IdeaPlugin" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1740160309778217806" resolveInfo="IdeaPluginRoot" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6536266708345244487">
       <property name="name" nameId="tpck.1169194664001" value="PluginDependency" />
@@ -262,7 +260,7 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="5314521579133239132" resolveInfo="ExtensionPoint" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5314521579133239129">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5314521579133239127" resolveInfo="IConfigurationChunk" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5314521579133239127" resolveInfo="IConfigurationElement" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="6121364846593790700">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
@@ -312,7 +310,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="root" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="3963070320413563577" resolveInfo="ConfigurationXmlRootNote" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="3963070320413563577" resolveInfo="ConfigurationXmlRootNode" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5314521579133271100">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
@@ -320,7 +318,7 @@
   </root>
   <root id="5066720069350533017">
     <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5066720069350533018">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5314521579133239148" resolveInfo="IConfigurationChunk" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5314521579133239148" resolveInfo="IConfigurationFragment" />
     </node>
   </root>
   <root id="5066720069350533027">
@@ -339,7 +337,7 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5066720069350533028">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5066720069350533017" resolveInfo="IExternalFragment" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5066720069350533017" resolveInfo="IExternalConfigurationFragment" />
     </node>
   </root>
   <root id="5066720069350533029">
@@ -547,7 +545,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="depends" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="6536266708345244487" resolveInfo="PluginReference" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="6536266708345244487" resolveInfo="PluginDependency" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6536266708345477915">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -774,7 +772,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
       <property name="role" nameId="tpce.1071599776563" value="action" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="4383174161801969971" resolveInfo="Action" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="4383174161801969971" resolveInfo="AbstractAction" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8605160448688984322">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8605160448688984319" resolveInfo="IActionItem" />

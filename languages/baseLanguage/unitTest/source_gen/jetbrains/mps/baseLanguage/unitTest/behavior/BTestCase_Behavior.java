@@ -47,13 +47,13 @@ public class BTestCase_Behavior {
 
   public static boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
     for (SNode annotationInstance : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "annotation", true))) {
-      if (SLinkOperations.getTarget(annotationInstance, "annotation", false).equals(SNodeOperations.getNode("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)", "8492459591399146889"))) {
+      if (SLinkOperations.getTarget(annotationInstance, "annotation", false).equals(SNodeOperations.getNode("f:java_stub#920eaa0e-ecca-46bc-bee7-4e5c59213dd6#jetbrains.mps(Testbench/jetbrains.mps@java_stub)", "~MPSLaunch"))) {
         return true;
       }
     }
     for (SNode method : SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "testMethodList", true), "testMethod", true)) {
       for (SNode annotationInstance : SLinkOperations.getTargets(method, "annotation", true)) {
-        if (SLinkOperations.getTarget(annotationInstance, "annotation", false).equals(SNodeOperations.getNode("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)", "8492459591399146889"))) {
+        if (SLinkOperations.getTarget(annotationInstance, "annotation", false).equals(SNodeOperations.getNode("f:java_stub#920eaa0e-ecca-46bc-bee7-4e5c59213dd6#jetbrains.mps(Testbench/jetbrains.mps@java_stub)", "~MPSLaunch"))) {
           return true;
         }
       }

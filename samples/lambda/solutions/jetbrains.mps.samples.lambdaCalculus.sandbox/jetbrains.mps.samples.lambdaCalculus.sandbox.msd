@@ -7,8 +7,5 @@
   <usedLanguages>
     <usedLanguage>7c9e2807-94ad-4afc-adf0-aaee45eb2895(jetbrains.mps.samples.lambdaCalculus)</usedLanguage>
   </usedLanguages>
-  <usedDevKits>
-    <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
-  </usedDevKits>
 </solution>
 

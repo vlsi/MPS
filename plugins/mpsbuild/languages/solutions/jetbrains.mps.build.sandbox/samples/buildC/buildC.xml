@@ -23,7 +23,8 @@
   <target name="build" depends="assemble, check" />
   
   <target name="clean">
-    <delete dir="${build.dir}" />
+    <delete dir="${build.tmp}" />
+    <delete dir="${build.layout}" />
   </target>
   
   <target name="compileJava" />

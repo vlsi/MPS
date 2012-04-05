@@ -23,17 +23,15 @@ import jetbrains.mps.ide.depanalyzer.DependencyPathTree;
 import jetbrains.mps.ide.depanalyzer.DependencyTreeNode;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.*;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.TestLanguage;
 import jetbrains.mps.testbench.WriteAction;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -58,7 +56,7 @@ public class ModuleDependenciesTest {
 
   @After
   public void afterTest() {
-    MPSModuleRepository.getInstance().unRegisterModules(OWNER);
+    ModuleRepositoryFacade.getInstance().unregisterModules(OWNER);
     CleanupManager.getInstance().cleanup();
   }
 
@@ -198,7 +196,7 @@ public class ModuleDependenciesTest {
     String uuid = UUID.randomUUID().toString();
     d.setNamespace(uuid);
     d.setId(ModuleId.fromString(uuid));
-    return Solution.newInstance(d, OWNER);
+    return StubSolution.newInstance(d, OWNER);
   }
 
   private Language createLanguage() {
@@ -206,7 +204,7 @@ public class ModuleDependenciesTest {
     String uuid = UUID.randomUUID().toString();
     d.setNamespace(uuid);
     d.setId(ModuleId.fromString(uuid));
-    return Language.newInstance(d, OWNER);
+    return TestLanguage.newInstance(d, OWNER);
   }
 
   private DevKit createDevKit() {

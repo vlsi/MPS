@@ -154,7 +154,7 @@ public class SolutionStep extends BaseStep {
       if (!(SourceVersion.isName(myNamespace.getText()))) {
         throw new CommitStepException("Solution namespace should be valid Java package");
       }
-      if (MPSModuleRepository.getInstance().getModuleByUID(myNamespace.getText()) != null) {
+      if (MPSModuleRepository.getInstance().getModuleByFqName(myNamespace.getText()) != null) {
         throw new CommitStepException("Duplicate solution name");
       }
       File file = new File(myPath.getPath());

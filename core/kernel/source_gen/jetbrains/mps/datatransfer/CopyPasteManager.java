@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.Condition;
@@ -97,7 +97,7 @@ public class CopyPasteManager extends AbstractManager implements CoreComponent {
     }
     myPostProcessors = MapSequence.fromMap(new HashMap<SNode, AbstractManager.Descriptor<PastePostProcessor>>());
     myPreProcessors = MapSequence.fromMap(new HashMap<SNode, AbstractManager.Descriptor<CopyPreProcessor>>());
-    for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
+    for (Language language : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
       SModelDescriptor actionsModelDescriptor = language.getActionsModelDescriptor();
       if (actionsModelDescriptor == null) {
         continue;

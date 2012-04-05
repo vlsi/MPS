@@ -13,7 +13,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
@@ -22,7 +23,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.baseLanguage.search.AllSubclassifiersScope;
@@ -50,8 +50,8 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Computable computable = new Computable() {
           public Object compute() {
-            List<Solution> allSolutions = MPSModuleRepository.getInstance().getAllSolutions();
-            return ListSequence.fromList(allSolutions).select(new ISelector<Solution, ModuleReference>() {
+            Iterable<Solution> allSolutions = ModuleRepositoryFacade.getInstance().getAllModules(Solution.class);
+            return Sequence.fromIterable(allSolutions).select(new ISelector<Solution, ModuleReference>() {
               public ModuleReference select(Solution s) {
                 return s.getModuleReference();
               }

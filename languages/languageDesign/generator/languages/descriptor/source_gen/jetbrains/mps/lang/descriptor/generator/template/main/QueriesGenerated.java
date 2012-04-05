@@ -21,6 +21,7 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModel;
@@ -143,7 +144,8 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_5828571963818937566(final IOperationContext operationContext, final IfMacroContext _context) {
-    Language l = MPSModuleRepository.getInstance().getLanguage(ModuleReference.fromString(Module_Behavior.call_getModuleReference_9020561928507315628(SLinkOperations.getTarget(_context.getNode(), "language", true))));
+    ModuleReference ref = ModuleReference.fromString(Module_Behavior.call_getModuleReference_9020561928507315628(SLinkOperations.getTarget(_context.getNode(), "language", true)));
+    Language l = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
     if (l == null) {
       _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "language", true), "No language in repository: " + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "language", true), "namespace"));
       return false;
@@ -161,7 +163,8 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2838795720286867781(final IOperationContext operationContext, final IfMacroContext _context) {
-    Language l = MPSModuleRepository.getInstance().getLanguage(ModuleReference.fromString(Module_Behavior.call_getModuleReference_9020561928507315628(SLinkOperations.getTarget(_context.getNode(), "language", true))));
+    ModuleReference ref = ModuleReference.fromString(Module_Behavior.call_getModuleReference_9020561928507315628(SLinkOperations.getTarget(_context.getNode(), "language", true)));
+    Language l = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
     if (l == null) {
       _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "language", true), "No language in repository: " + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "language", true), "namespace"));
       return false;

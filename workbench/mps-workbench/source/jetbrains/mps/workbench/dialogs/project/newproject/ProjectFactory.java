@@ -23,12 +23,11 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.platform.ProjectBaseDirectory;
+import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.project.*;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.NameUtil;
@@ -171,7 +170,7 @@ public class ProjectFactory {
     String descriptorPath = myOptions.getSolutionPath() + File.separator + descriptorFileName;
     IFile descriptorFile = FileSystem.getInstance().getFileByPath(descriptorPath);
 
-    return Solution.createSolution(myOptions.getSolutionNamespace(), descriptorFile, mpsProject);
+    return NewModuleUtil.createNewSolution(myOptions.getSolutionNamespace(), descriptorFile, mpsProject);
   }
 
   private Language createNewLanguage(MPSProject mpsProject) {
@@ -179,7 +178,7 @@ public class ProjectFactory {
     String descriptorPath = myOptions.getLanguagePath() + File.separator + descriptorFileName;
     IFile descriptorFile = FileSystem.getInstance().getFileByPath(descriptorPath);
 
-    Language language = Language.createLanguage(myOptions.getLanguageNamespace(), descriptorFile, mpsProject);
+    Language language = NewModuleUtil.createNewLanguage(myOptions.getLanguageNamespace(), descriptorFile, mpsProject);
     LanguageDescriptor languageDescriptor = language.getModuleDescriptor();
     languageDescriptor.getUsedDevkits().add(LanguageDesign_DevKit.MODULE_REFERENCE);
     

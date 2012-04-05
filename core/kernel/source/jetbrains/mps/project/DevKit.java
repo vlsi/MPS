@@ -17,7 +17,6 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.dependency.DevkitDependenciesManager;
 import jetbrains.mps.project.dependency.ModuleDependenciesManager;
@@ -26,98 +25,37 @@ import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.UUID;
 
 public class DevKit extends AbstractModule implements MPSModuleOwner {
-  private static final Logger LOG = Logger.getLogger(DevKit.class);
-
-  public static DevKit createDevkit(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
-    DevKit devKit = new DevKit();
-    DevkitDescriptor descriptor;
-    if (descriptorFile.exists()) {
-      descriptor = DevkitDescriptorPersistence.loadDevKitDescriptor(descriptorFile);
-      if (descriptor.getId() == null) {
-        descriptor.setId(ModuleId.regular());
-        DevkitDescriptorPersistence.saveDevKitDescriptor(descriptor, descriptorFile);
-      }
-    } else {
-      descriptor = createNewDescriptor(namespace, descriptorFile);
-    }
-    devKit.myDescriptorFile = descriptorFile;
-
-    IModule d = MPSModuleRepository.checkRegistered(descriptor.getModuleReference(), descriptorFile);
-    if (d != null) {
-      return (DevKit) d;
-    }
-
-    devKit.setDevKitDescriptor(descriptor, false);
-    MPSModuleRepository.getInstance().addModule(devKit, moduleOwner);
-
-    return devKit;
-  }
-
-  private static DevkitDescriptor createNewDescriptor(String namespace, IFile descriptorFile) {
-    DevkitDescriptor descriptor = new DevkitDescriptor();
-    descriptor.setNamespace(namespace);
-    descriptor.setId(ModuleId.regular());
-    return descriptor;
-  }
-
-  @Deprecated
-  public static DevKit newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
-    ModuleDescriptor desciptor = null;
-    if (descriptorFile.exists()) {
-      desciptor = ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
-    }
-    return newInstance(new ModuleHandle(descriptorFile, desciptor), moduleOwner);
-  }
-
   public static DevKit newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
-    DevKit result = new DevKit();
+    DevkitDescriptor descriptor = (DevkitDescriptor) handle.getDescriptor();
+    assert descriptor != null;
+    assert descriptor.getId() != null;
 
-    DevkitDescriptor devKitDescriptor;
-    if (handle.getDescriptor() != null) {
-      devKitDescriptor = (DevkitDescriptor) handle.getDescriptor();
-      if (devKitDescriptor.getId() == null) {
-        devKitDescriptor.setId(ModuleId.regular());
-        DevkitDescriptorPersistence.saveDevKitDescriptor(devKitDescriptor, handle.getFile());
-      }
-    } else {
-      devKitDescriptor = new DevkitDescriptor();
-      devKitDescriptor.setId(ModuleId.regular());
+    DevKit result = new DevKit(descriptor, handle.getFile());
+
+    DevKit registered = MPSModuleRepository.getInstance().registerModule(result, moduleOwner);
+    if (registered == result) {
+      result.setDevKitDescriptor(descriptor, false);
     }
-
-
-    result.myDescriptorFile = handle.getFile();
-
-    MPSModuleRepository repository = MPSModuleRepository.getInstance();
-    if (repository.existsModule(devKitDescriptor.getModuleReference())) {
-      LOG.error("Loading module " + devKitDescriptor.getNamespace() + " for the second time");
-      return repository.getDevKit(devKitDescriptor.getModuleReference());
-    }
-
-    result.setDevKitDescriptor(devKitDescriptor, false);
-    repository.addModule(result, moduleOwner);
-
-    return result;
+    return registered;
   }
 
   private DevkitDescriptor myDescriptor;
   private IFile myDescriptorFile;
   private MPSModuleOwner myGenerationOnlyModelsModelOwner = this;
 
-  public DevKit() {
-
+  private DevKit(DevkitDescriptor descriptor, IFile file) {
+    myDescriptorFile = file;
+    myDescriptor = descriptor;
+    setModuleReference(descriptor.getModuleReference());
   }
 
   public IFile getDescriptorFile() {
@@ -134,8 +72,8 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
 
   public void setDevKitDescriptor(DevkitDescriptor descriptor, boolean reloadClasses) {
     MPSModuleRepository moduleRepo = MPSModuleRepository.getInstance();
-    moduleRepo.unRegisterModules(this);
-    moduleRepo.unRegisterModules(myGenerationOnlyModelsModelOwner);
+    ModuleRepositoryFacade.getInstance().unregisterModules(this);
+    ModuleRepositoryFacade.getInstance().unregisterModules(myGenerationOnlyModelsModelOwner);
 
     myDescriptor = descriptor;
 
@@ -164,16 +102,15 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
 
   //why?   [Mihail Muhin]
   protected void reloadAfterDescriptorChange() {
-    MPSModuleRepository.getInstance().unRegisterModules(this);
+    ModuleRepositoryFacade.getInstance().unregisterModules(this);
     super.reloadAfterDescriptorChange();
   }
 
   public void dispose() {
-    super.dispose();
+    ModuleRepositoryFacade.getInstance().unregisterModules(this);
+    ModuleRepositoryFacade.getInstance().unregisterModules(myGenerationOnlyModelsModelOwner);
 
-    SModelRepository.getInstance().unRegisterModelDescriptors(this);
-    MPSModuleRepository.getInstance().unRegisterModules(this);
-    MPSModuleRepository.getInstance().unRegisterModules(myGenerationOnlyModelsModelOwner);
+    super.dispose();
   }
 
   @Override
@@ -185,7 +122,7 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     List<Language> langs = new ArrayList<Language>();
     for (ModuleReference l : myDescriptor.getExportedLanguages()) {
       ModuleReference ref = ModuleReference.fromString(l.getModuleFqName());
-      Language lang = MPSModuleRepository.getInstance().getLanguage(ref);
+      Language lang = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
       if (lang != null) {
         langs.add(lang);
       }
@@ -222,7 +159,7 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     List<DevKit> result = new ArrayList<DevKit>();
     for (ModuleReference ref : myDescriptor.getExtendedDevkits()) {
       String uid = ref.getModuleFqName();
-      DevKit devKit = MPSModuleRepository.getInstance().getDevKit(uid);
+      DevKit devKit = ModuleRepositoryFacade.getInstance().getModule(uid, DevKit.class);
       if (devKit != null) {
         result.add(devKit);
       }
@@ -248,7 +185,7 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     List<Solution> result = new ArrayList<Solution>();
     for (ModuleReference ref : myDescriptor.getExportedSolutions()) {
       String uid = ref.getModuleFqName();
-      Solution solution = MPSModuleRepository.getInstance().getSolution(uid);
+      Solution solution = ModuleRepositoryFacade.getInstance().getModule(uid, Solution.class);
       if (solution == null) continue;
       result.add(solution);
     }
@@ -279,7 +216,7 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
   }
 
   public void save() {
-    DevkitDescriptorPersistence.saveDevKitDescriptor(getModuleDescriptor(), myDescriptorFile);
+    DevkitDescriptorPersistence.saveDevKitDescriptor(myDescriptorFile, getModuleDescriptor());
   }
 
   public String getName() {

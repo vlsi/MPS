@@ -1,37 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="AbstractExtractMethodRefactoringProcessor.java" startLine="16" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractExtractMethodRefactoringProcessor" />
-  <unitInfo fileName="AbstractStaticContainerProcessor.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractStaticContainerProcessor" />
-  <unitInfo fileName="BasicMoveRefactoring.java" startLine="11" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.BasicMoveRefactoring" />
-  <unitInfo fileName="ChangeMethodSignatureParameters.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureParameters" />
-  <unitInfo fileName="ChangeMethodSignatureRefactoring.java" startLine="14" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring" />
-  <unitInfo fileName="ClassExtractMethodRefactoringProcessor.java" startLine="12" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ClassExtractMethodRefactoringProcessor" />
-  <unitInfo fileName="ClassRefactoringUtils.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ClassRefactoringUtils" />
-  <unitInfo fileName="ClassStaticContainerProcessor.java" startLine="12" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ClassStaticContainerProcessor" />
-  <unitInfo fileName="FieldInitializationPlace.java" startLine="6" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.FieldInitializationPlace" />
-  <unitInfo fileName="IExtractMethodRefactoringProcessor.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IExtractMethodRefactoringProcessor" />
-  <unitInfo fileName="IStaticContainerProcessor.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IStaticContainerProcessor" />
-  <unitInfo fileName="InlineMethodRefactoring.java" startLine="29" startPosition="0" endLine="332" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring" />
-  <unitInfo fileName="InlineMethodRefactoring.java" startLine="261" startPosition="44" endLine="265" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring$1" />
-  <unitInfo fileName="InlineMethodRefactoring.java" startLine="301" startPosition="0" endLine="331" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring$QuotationClass_49noxv_a0a0a0b0b" />
-  <unitInfo fileName="MethodCallAdapter.java" startLine="12" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodCallAdapter" />
-  <unitInfo fileName="MethodModel.java" startLine="16" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodModel" />
-  <unitInfo fileName="MethodModel.java" startLine="83" startPosition="45" endLine="87" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodModel$1" />
-  <unitInfo fileName="MethodOptimizer.java" startLine="12" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodOptimizer" />
-  <unitInfo fileName="MethodOptimizer.java" startLine="38" startPosition="52" endLine="42" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodOptimizer$1" />
-  <unitInfo fileName="MethodParameter.java" startLine="19" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodParameter" />
-  <unitInfo fileName="MethodParameterModel.java" startLine="9" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodParameterModel" />
-  <unitInfo fileName="MoveRefactoringUtils.java" startLine="18" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveRefactoringUtils" />
-  <unitInfo fileName="MoveStaticFieldRefactoring.java" startLine="12" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveStaticFieldRefactoring" />
-  <unitInfo fileName="MoveStaticFieldRefactoring.java" startLine="48" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveStaticFieldRefactoring$QuotationClass_fls06q_a0a0a0a1a0" />
-  <unitInfo fileName="MoveStaticFieldRefactoring.java" startLine="30" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveStaticFieldRefactoring$QuotationClass_fls06q_a0a0a0b0a" />
-  <unitInfo fileName="MoveStaticMethodRefactoring.java" startLine="14" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveStaticMethodRefactoring" />
-  <unitInfo fileName="MoveStaticMethodRefactoring.java" startLine="79" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveStaticMethodRefactoring$QuotationClass_f5lqsg_a0a0a0a1a1" />
-  <unitInfo fileName="MoveStaticMethodRefactoring.java" startLine="60" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveStaticMethodRefactoring$QuotationClass_f5lqsg_a0a0a0b0a" />
-  <unitInfo fileName="MoveStaticMethodRefactoring.java" startLine="116" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveStaticMethodRefactoring$QuotationClass_f5lqsg_a0a0a0b0b0d" />
-  <unitInfo fileName="MoveStaticMethodRefactoring.java" startLine="98" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveStaticMethodRefactoring$QuotationClass_f5lqsg_a0a0a1a1a3" />
-  <unitInfo fileName="SimpleDuplicatesFinder.java" startLine="12" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.SimpleDuplicatesFinder" />
-  <unitInfo fileName="VisibilityLevel.java" startLine="9" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.VisibilityLevel" />
   <root nodeId="1143458983612877046">
     <nodeInfo nodeId="1143458983612877343" fileName="SimpleDuplicatesFinder.java" startLine="12" startPosition="37" endLine="13" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeToMatch" />
     <nodeInfo nodeId="1143458983612877351" fileName="SimpleDuplicatesFinder.java" startLine="15" startPosition="45" endLine="16" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -5,14 +5,14 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="jetbrains.mps.lang.patterns#1174810948060" uuid="e7d4970e-3e9f-4cf0-a129-f5976c82d635">
+    <generator generatorUID="jetbrains.mps.lang.pattern#1174810948060" uuid="e7d4970e-3e9f-4cf0-a129-f5976c82d635">
       <models>
         <modelRoot path="${language_descriptor}/generator/baseLanguage/template" />
       </models>
       <external-templates />
       <dependencies>
         <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
-        <dependency reexport="true">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
+        <dependency reexport="false">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
         <dependency reexport="false">c4f367dc-30c0-4376-9d05-1d1797bb8599(jetbrains.mps.lang.pattern.runtime)</dependency>
         <dependency reexport="false">3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)</dependency>
         <dependency reexport="false">9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)</dependency>

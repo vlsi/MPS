@@ -23,7 +23,8 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.TestLanguage;
 import jetbrains.mps.testbench.WriteAction;
 import jetbrains.mps.util.IterableUtil;
 import org.junit.After;
@@ -51,7 +52,7 @@ public class DependenciesTests {
 
   @After
   public void afterTest() {
-    MPSModuleRepository.getInstance().unRegisterModules(OWNER);
+    ModuleRepositoryFacade.getInstance().unregisterModules(OWNER);
     CleanupManager.getInstance().cleanup();
   }
 
@@ -120,7 +121,7 @@ public class DependenciesTests {
     String uuid = UUID.randomUUID().toString();
     d.setNamespace(uuid);
     d.setId(ModuleId.fromString(uuid));
-    return Solution.newInstance(d, OWNER);
+    return StubSolution.newInstance(d, OWNER);
   }
 
   private Language createLanguage() {
@@ -128,6 +129,6 @@ public class DependenciesTests {
     String uuid = UUID.randomUUID().toString();
     d.setNamespace(uuid);
     d.setId(ModuleId.fromString(uuid));
-    return Language.newInstance(d, OWNER);
+    return TestLanguage.newInstance(d, OWNER);
   }
 }

@@ -17,7 +17,7 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 
 import com.intellij.openapi.actionSystem.*;
 import jetbrains.mps.ide.actions.CreateAspect_Action;
-import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
@@ -30,10 +30,10 @@ public abstract class AddAspectAction extends AnAction {
   public static final Icon ADD_ICON = new ImageIcon(AddAspectAction.class.getResource("add.png"));
 
   private SNodePointer myBaseNode;
-  private Set<EditorTabDescriptor> myPossibleTabs;
+  private Set<RelationDescriptor> myPossibleTabs;
   private NodeChangeCallback myCallback;
 
-  public AddAspectAction(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, NodeChangeCallback callback) {
+  public AddAspectAction(SNodePointer baseNode, Set<RelationDescriptor> possibleTabs, NodeChangeCallback callback) {
     super("Add Aspect", "", ADD_ICON);
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
@@ -55,7 +55,7 @@ public abstract class AddAspectAction extends AnAction {
     });
   }
 
-  protected abstract EditorTabDescriptor getCurrentAspect();
+  protected abstract RelationDescriptor getCurrentAspect();
 
   private ActionGroup getCreateGroup() {
     DefaultActionGroup result = new DefaultActionGroup();

@@ -27,7 +27,8 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.editor.EditorOpenHandler;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.editor.NodeEditor;
-import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
 import jetbrains.mps.ide.make.StartupModuleMaker;
 import jetbrains.mps.logging.Logger;
@@ -36,8 +37,7 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.plugins.PluginContributor;
 import jetbrains.mps.plugins.PluginUtil;
 import jetbrains.mps.plugins.PluginUtil.ProjectPluginCreator;
-import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
-import jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool;
+import jetbrains.mps.plugins.tool.BaseGeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager.PluginsState;
 import jetbrains.mps.project.IModule;
@@ -110,9 +110,9 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     }
   }
 
-  public List<EditorTabDescriptor> getTabDescriptors() {
+  public List<RelationDescriptor> getTabDescriptors() {
     synchronized (myPluginsLock) {
-      List<EditorTabDescriptor> result = new ArrayList<EditorTabDescriptor>();
+      List<RelationDescriptor> result = new ArrayList<RelationDescriptor>();
       for (BaseProjectPlugin plugin : mySortedPlugins) {
         result.addAll(plugin.getTabDescriptors());
       }
@@ -259,7 +259,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
               plugins = new ArrayList<BaseProjectPlugin>(mySortedPlugins);
             }
             for (BaseProjectPlugin p : plugins) {
-              for (EditorTabDescriptor tab : p.getTabDescriptors()) {
+              for (RelationDescriptor tab : p.getTabDescriptors()) {
                 SNode node = editor.getNodeEditor().getCurrentlyEditedNode().getNode();
                 if (tab.getBaseNode(node) != null) {
                   editor.recreateEditor();
@@ -275,7 +275,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
   private class TabsMPSEditorOpenHandler implements EditorOpenHandler {
     public SNode getBaseNode(IOperationContext context, SNode node) {
-      for (EditorTabDescriptor d : getTabDescriptors()) {
+      for (RelationDescriptor d : getTabDescriptors()) {
         SNode baseNode = d.getBaseNode(node);
         if (baseNode == node) {
           LOG.error("Editor tabs should not return node as a base node of itself: " + d.getClass().getName());
@@ -287,7 +287,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     }
 
     public boolean canOpen(IOperationContext context, SNode node) {
-      for (EditorTabDescriptor d : getTabDescriptors()) {
+      for (RelationDescriptor d : getTabDescriptors()) {
         if (!d.isApplicable(node)) continue;
         if (!d.getNodes(node).isEmpty()) return true;
       }
@@ -295,9 +295,9 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     }
 
     public Editor open(IOperationContext context, final SNode node) {
-      Set<EditorTabDescriptor> tabs = new HashSet<EditorTabDescriptor>();
+      Set<RelationDescriptor> tabs = new HashSet<RelationDescriptor>();
 
-      for (EditorTabDescriptor d : getTabDescriptors()) {
+      for (RelationDescriptor d : getTabDescriptors()) {
         if (d.isApplicable(node)) {
           tabs.add(d);
         }

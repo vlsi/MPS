@@ -17,7 +17,7 @@ import jetbrains.mps.ide.actions.NamespaceNewActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import java.util.List;
-import jetbrains.mps.workbench.action.BaseKeymapChanges;
+import jetbrains.mps.plugins.actions.BaseKeymapChanges;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 

@@ -112,12 +112,6 @@ public class Generator extends AbstractModule {
     return getSourceLanguage().getRuntimeStubPaths();
   }
 
-  public void dispose() {
-    super.dispose();
-    SModelRepository.getInstance().unRegisterModelDescriptors(this);
-    MPSModuleRepository.getInstance().removeModule(this);
-  }
-
   public List<SModelDescriptor> getOwnTemplateModels() {
     List<SModelDescriptor> templateModels = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor modelDescriptor : getOwnModelDescriptors()) {
@@ -130,6 +124,11 @@ public class Generator extends AbstractModule {
 
   public GeneratorDescriptor getModuleDescriptor() {
     return myGeneratorDescriptor;
+  }
+
+  @Override
+  public void reloadFromDisk(boolean reloadClasses) {
+    //do nothing. reloaded by containing language
   }
 
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {

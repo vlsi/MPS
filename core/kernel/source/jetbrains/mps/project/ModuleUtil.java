@@ -20,6 +20,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.iterable.CollectingManyIterator;
 import jetbrains.mps.util.iterable.RecursiveIterator;
@@ -46,7 +47,7 @@ public class ModuleUtil {
 
       @Override
       protected IModule translate(ModuleReference node) {
-        return MPSModuleRepository.getInstance().getSolution(node);
+        return ModuleRepositoryFacade.getInstance().getModule(node, Solution.class);
       }
     };
     if(module instanceof Language) {
@@ -60,7 +61,7 @@ public class ModuleUtil {
     Iterable<Language> dependencies = new TranslatingIterator<ModuleReference, Language>(module.getUsedLanguagesReferences().iterator()) {
       @Override
       protected Language translate(ModuleReference ref) {
-        return MPSModuleRepository.getInstance().getLanguage(ref);
+        return ModuleRepositoryFacade.getInstance().getModule(ref,Language.class);
       }
     };
     Iterable<Language> languagesFromDevkits = new TranslatingIterator<ModuleReference, Language>(
@@ -73,7 +74,7 @@ public class ModuleUtil {
 
       @Override
       protected Language translate(ModuleReference node) {
-        return MPSModuleRepository.getInstance().getLanguage(node);
+        return ModuleRepositoryFacade.getInstance().getModule(node,Language.class);
       }
     };
     Language core = BootstrapLanguages.coreLanguage();
@@ -84,7 +85,7 @@ public class ModuleUtil {
     return new TranslatingIterator<ModuleReference, DevKit>(module.getUsedDevkitReferences().iterator()) {
       @Override
       protected DevKit translate(ModuleReference node) {
-        return MPSModuleRepository.getInstance().getDevKit(node);
+        return ModuleRepositoryFacade.getInstance().getModule(node, DevKit.class);
       }
     };
   }
@@ -96,7 +97,7 @@ public class ModuleUtil {
         return new TranslatingIterator<ModuleReference, DevKit>(node.getExtendedDevKits_internal().iterator()) {
           @Override
           protected DevKit translate(ModuleReference node) {
-            return MPSModuleRepository.getInstance().getDevKit(node);
+            return ModuleRepositoryFacade.getInstance().getModule(node, DevKit.class);
           }
         };
       }
@@ -110,7 +111,7 @@ public class ModuleUtil {
         return new TranslatingIterator<ModuleReference, Language>(node.getExtendedLanguageRefs().iterator()) {
           @Override
           protected Language translate(ModuleReference node) {
-            return MPSModuleRepository.getInstance().getLanguage(node);
+            return ModuleRepositoryFacade.getInstance().getModule(node,Language.class);
           }
         };
       }
@@ -124,7 +125,7 @@ public class ModuleUtil {
   public static List<Language> refsToLanguages(Iterable<ModuleReference> refs) {
     List<Language> result = new ArrayList<Language>();
     for (ModuleReference ref : refs) {
-      Language l = MPSModuleRepository.getInstance().getLanguage(ref);
+      Language l = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
       if (l == null) continue;
       result.add(l);
     }
@@ -137,7 +138,7 @@ public class ModuleUtil {
     List<DevKit> result = new ArrayList<DevKit>();
 
     for (ModuleReference ref : refs) {
-      DevKit dk = MPSModuleRepository.getInstance().getDevKit(ref);
+      DevKit dk = ModuleRepositoryFacade.getInstance().getModule(ref, DevKit.class);
       if (dk == null) continue;
       result.add(dk);
     }

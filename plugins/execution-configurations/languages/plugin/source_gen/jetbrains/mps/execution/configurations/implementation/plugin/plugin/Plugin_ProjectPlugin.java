@@ -4,7 +4,7 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import java.util.List;
-import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
+import jetbrains.mps.plugins.custom.BaseCustomProjectPlugin;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;

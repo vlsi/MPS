@@ -30,9 +30,7 @@
     <scopeInfo nodeId="6896005762093552903" fileName="PropertiesFile_TextGen.java" startLine="21" startPosition="74" endLine="22" endPosition="109" />
     <scopeInfo nodeId="6896005762093550606" fileName="PropertiesFile_TextGen.java" startLine="25" startPosition="44" endLine="26" endPosition="196" />
     <scopeInfo nodeId="6896005762093550606" fileName="PropertiesFile_TextGen.java" startLine="30" startPosition="42" endLine="31" endPosition="24" />
-    <scopeInfo nodeId="6896005762093552903" fileName="PropertiesFile_TextGen.java" startLine="20" startPosition="94" endLine="23" endPosition="7">
-      <varInfo nodeId="6896005762093552903" varName="item" />
-    </scopeInfo>
+    <scopeInfo nodeId="6896005762093552903" fileName="PropertiesFile_TextGen.java" startLine="20" startPosition="94" endLine="23" endPosition="7" />
     <scopeInfo nodeId="6896005762093550606" fileName="PropertiesFile_TextGen.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="6896005762093550606" varName="node" />
     </scopeInfo>

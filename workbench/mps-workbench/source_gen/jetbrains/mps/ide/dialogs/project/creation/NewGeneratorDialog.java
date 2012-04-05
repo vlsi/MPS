@@ -25,17 +25,16 @@ import java.io.File;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.ide.DataManager;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelCommandExecutor;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
-import java.util.List;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -152,19 +151,15 @@ public class NewGeneratorDialog extends BaseDialog {
     dispose();
     Project project = PlatformDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
     assert project != null;
-    final Generator[] newGenerator = new Generator[]{null};
-    ModelAccess.instance().runWriteActionWithProgressSynchronously(new ModelCommandExecutor.RunnableWithProgress() {
-      @Override
-      public void run(@NotNull ProgressMonitor indicator) {
-        newGenerator[0] = createNewGenerator(mySourceLanguage, dir, name);
-      }
-    }, "Creating", false, project.getComponent(MPSProject.class));
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        adjustTemplateModel(mySourceLanguage, newGenerator[0]);
+    final Wrappers._T<Generator> newGenerator = new Wrappers._T<Generator>(null);
+    NewModuleUtil.runModuleCreation(project, new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        newGenerator.value = createNewGenerator(mySourceLanguage, dir, name);
+        adjustTemplateModel(mySourceLanguage, newGenerator.value);
       }
     });
-    myResult = newGenerator[0];
+
+    myResult = newGenerator.value;
   }
 
   @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C')
@@ -194,8 +189,8 @@ public class NewGeneratorDialog extends BaseDialog {
         language.save();
       }
     });
-    List<Generator> generators = language.getGenerators();
-    return generators.get(generators.size() - 1);
+
+    return (Generator) MPSModuleRepository.getInstance().getModuleById(generatorDescriptor.getId());
   }
 
   private String getTemplateModelPrefix(Language sourceLanguage) {

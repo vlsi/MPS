@@ -978,7 +978,7 @@
     <nodeInfo nodeId="8432634623182690059" fileName="IconResourceBundle_OverrideImplements.java" startLine="17" startPosition="46" endLine="18" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8432634623182690059" fileName="IconResourceBundle_OverrideImplements.java" startLine="25" startPosition="37" endLine="26" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8432634623182690059" fileName="IconResourceBundle_OverrideImplements.java" startLine="29" startPosition="39" endLine="30" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8432634623182690059" fileName="IconResourceBundle_OverrideImplements.java" startLine="33" startPosition="69" endLine="34" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8432634623182690059" fileName="IconResourceBundle_OverrideImplements.java" startLine="33" startPosition="69" endLine="34" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8432634623182690059" fileName="IconResourceBundle_OverrideImplements.java" startLine="21" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IconResourceBundle_OverrideImplements#()V" />
     <nodeInfo nodeId="8432634623182690059" fileName="IconResourceBundle_OverrideImplements.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeys#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="8432634623182690059" fileName="IconResourceBundle_OverrideImplements.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResource#(Ljava/lang/String;)Ljavax/swing/Icon;" />
@@ -987,7 +987,7 @@
     <scopeInfo nodeId="8432634623182690059" fileName="IconResourceBundle_OverrideImplements.java" startLine="22" startPosition="50" endLine="22" endPosition="50" />
     <scopeInfo nodeId="8432634623182690059" fileName="IconResourceBundle_OverrideImplements.java" startLine="25" startPosition="37" endLine="26" endPosition="26" />
     <scopeInfo nodeId="8432634623182690059" fileName="IconResourceBundle_OverrideImplements.java" startLine="29" startPosition="39" endLine="30" endPosition="26" />
-    <scopeInfo nodeId="8432634623182690059" fileName="IconResourceBundle_OverrideImplements.java" startLine="33" startPosition="69" endLine="34" endPosition="20" />
+    <scopeInfo nodeId="8432634623182690059" fileName="IconResourceBundle_OverrideImplements.java" startLine="33" startPosition="69" endLine="34" endPosition="58" />
     <scopeInfo nodeId="8432634623182690059" fileName="IconResourceBundle_OverrideImplements.java" startLine="21" startPosition="0" endLine="23" endPosition="3" />
     <scopeInfo nodeId="8432634623182690059" fileName="IconResourceBundle_OverrideImplements.java" startLine="14" startPosition="5" endLine="18" endPosition="47" />
     <scopeInfo nodeId="8432634623182690059" fileName="IconResourceBundle_OverrideImplements.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />

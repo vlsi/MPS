@@ -12,6 +12,7 @@ import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import java.util.Collection;
 import jetbrains.mps.smodel.Language;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -20,12 +21,11 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.lang.reflect.Constructor;
-import java.util.Collection;
 import java.util.Arrays;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.util.LinkedHashMap;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
@@ -65,7 +65,7 @@ public class RefactoringUtil {
 
   public static List<IRefactoring> getAllRefactorings() {
     List<IRefactoring> allRefactorings = new ArrayList<IRefactoring>();
-    List<Language> languages = GlobalScope.getInstance().getVisibleLanguages();
+    Collection<Language> languages = GlobalScope.getInstance().getVisibleLanguages();
     for (Language language : languages) {
       allRefactorings.addAll(RefactoringUtil.getRefactorings(language));
     }
@@ -187,7 +187,7 @@ public class RefactoringUtil {
   }
 
   public static Map<IModule, List<SModel>> getLanguageAndItsExtendingLanguageModels(Project project, Language language) {
-    Set<Language> extendingLangs = MPSModuleRepository.getInstance().getAllExtendingLanguages(language);
+    Collection<Language> extendingLangs = ModuleRepositoryFacade.getInstance().getAllExtendingLanguages(language);
     Map<IModule, List<SModel>> result = new LinkedHashMap<IModule, List<SModel>>(extendingLangs.size() + 1);
     result.put(language, RefactoringUtil.getLanguageModelsList(project, language));
     for (Language l : extendingLangs) {

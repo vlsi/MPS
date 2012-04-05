@@ -214,9 +214,7 @@
     <scopeInfo nodeId="6062668769034853016" fileName="ModuleChooserComponent.java" startLine="23" startPosition="0" endLine="28" endPosition="3" />
     <scopeInfo nodeId="6062668769034853016" fileName="ModuleChooserComponent.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="6062668769034853016" fileName="ModuleChooserComponent.java" startLine="38" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="6062668769034853016" fileName="ModuleChooserComponent.java" startLine="47" startPosition="25" endLine="52" endPosition="5">
-      <varInfo nodeId="6062668769034853016" varName="binding" />
-    </scopeInfo>
+    <scopeInfo nodeId="6062668769034853016" fileName="ModuleChooserComponent.java" startLine="47" startPosition="25" endLine="52" endPosition="5" />
     <scopeInfo nodeId="6062668769034853016" fileName="ModuleChooserComponent.java" startLine="58" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="6062668769034853016" varName="newValue" />
     </scopeInfo>
@@ -1719,7 +1717,7 @@
     <nodeInfo nodeId="6062668769034855606" fileName="TestUtils.java" startLine="213" startPosition="34" endLine="214" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769034855611" fileName="TestUtils.java" startLine="215" startPosition="5" endLine="216" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769034855625" fileName="TestUtils.java" startLine="221" startPosition="42" endLine="222" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034855630" fileName="TestUtils.java" startLine="223" startPosition="5" endLine="224" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034855630" fileName="TestUtils.java" startLine="223" startPosition="5" endLine="224" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769034855653" fileName="TestUtils.java" startLine="229" startPosition="48" endLine="230" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769034855661" fileName="TestUtils.java" startLine="233" startPosition="50" endLine="234" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769034855683" fileName="TestUtils.java" startLine="241" startPosition="52" endLine="242" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1834,7 +1832,7 @@
     <scopeInfo nodeId="6062668769034855495" fileName="TestUtils.java" startLine="172" startPosition="90" endLine="176" endPosition="0">
       <varInfo nodeId="6062668769034855495" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034855622" fileName="TestUtils.java" startLine="220" startPosition="59" endLine="224" endPosition="72" />
+    <scopeInfo nodeId="6062668769034855622" fileName="TestUtils.java" startLine="220" startPosition="59" endLine="224" endPosition="75" />
     <scopeInfo nodeId="6062668769034855651" fileName="TestUtils.java" startLine="228" startPosition="122" endLine="232" endPosition="0">
       <varInfo nodeId="6062668769034855651" varName="it" />
     </scopeInfo>

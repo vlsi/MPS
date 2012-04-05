@@ -1239,11 +1239,11 @@
   </root>
   <root nodeId="4357968816427529264">
     <nodeInfo nodeId="4357968816427531032" fileName="QueriesGenerated.java" startLine="815" startPosition="154" endLine="816" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4357968816427531043" fileName="QueriesGenerated.java" startLine="816" startPosition="88" endLine="817" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4357968816427531043" fileName="QueriesGenerated.java" startLine="816" startPosition="88" endLine="817" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4357968816427531102" fileName="QueriesGenerated.java" startLine="818" startPosition="25" endLine="819" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4357968816427531067" fileName="QueriesGenerated.java" startLine="819" startPosition="98" endLine="820" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4357968816427531083" fileName="QueriesGenerated.java" startLine="821" startPosition="5" endLine="822" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4357968816427531057" fileName="QueriesGenerated.java" startLine="817" startPosition="84" endLine="821" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4357968816427531057" fileName="QueriesGenerated.java" startLine="817" startPosition="87" endLine="821" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="4357968816427531058" fileName="QueriesGenerated.java" startLine="818" startPosition="25" endLine="820" endPosition="16" />
     <scopeInfo nodeId="4357968816427531030" fileName="QueriesGenerated.java" startLine="815" startPosition="154" endLine="822" endPosition="50">
       <varInfo nodeId="4357968816427531044" varName="module" />

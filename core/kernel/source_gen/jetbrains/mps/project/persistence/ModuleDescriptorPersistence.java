@@ -19,9 +19,9 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Collection;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.util.Macros;
+import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.project.structure.model.ModelRootManager;
+import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.FileUtil;
@@ -166,15 +166,15 @@ public class ModuleDescriptorPersistence {
     }
   }
 
-  public static List<ModelRoot> loadModelRoots(List<Element> modelRootElements, final IFile file, final Macros macros) {
+  public static List<ModelRoot> loadModelRoots(List<Element> modelRootElements, final MacroHelper macroHelper) {
     return ListSequence.fromList(modelRootElements).select(new ISelector<Element, ModelRoot>() {
       public ModelRoot select(Element mre) {
-        return loadModelRoot(mre, file, macros);
+        return loadModelRoot(mre, macroHelper);
       }
     }).toListSequence();
   }
 
-  private static ModelRoot loadModelRoot(final Element modelRootElement, final IFile file, final Macros macros) {
+  private static ModelRoot loadModelRoot(final Element modelRootElement, final MacroHelper macroHelper) {
     return new _FunctionTypes._return_P0_E0<ModelRoot>() {
       public ModelRoot invoke() {
         final ModelRoot result_dxyzb6_a0a0a7 = new ModelRoot();
@@ -183,7 +183,7 @@ public class ModuleDescriptorPersistence {
           // left for compatibility 
           pathName = AttributeUtils.stringWithDefault(modelRootElement.getAttributeValue("rootPath"), "");
         }
-        final String result_dxyzb6_a2a0a0a7 = macros.expandPath(pathName, file);
+        final String result_dxyzb6_a2a0a0a7 = macroHelper.expandPath(pathName);
         result_dxyzb6_a0a0a7.setPath(result_dxyzb6_a2a0a0a7);
         if (ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).isNotEmpty()) {
           final ModelRootManager result_dxyzb6_a0a3a0a0a7 = new ModelRootManager();
@@ -199,19 +199,19 @@ public class ModuleDescriptorPersistence {
     }.invoke();
   }
 
-  public static List<ModelRoot> loadStubModelEntries(List<Element> stubModelEntryElements, final IFile file, final Macros macros) {
+  public static List<ModelRoot> loadStubModelEntries(List<Element> stubModelEntryElements, final MacroHelper macroHelper) {
     return ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(stubModelEntryElements).first(), "stubModelEntry")).select(new ISelector<Element, ModelRoot>() {
       public ModelRoot select(Element mre) {
-        return loadModelEntry(mre, file, macros);
+        return loadModelEntry(mre, macroHelper);
       }
     }).toListSequence();
   }
 
-  private static ModelRoot loadModelEntry(final Element modelRootElement, final IFile file, final Macros macros) {
+  private static ModelRoot loadModelEntry(final Element modelRootElement, final MacroHelper macroHelper) {
     return new _FunctionTypes._return_P0_E0<ModelRoot>() {
       public ModelRoot invoke() {
         final ModelRoot result_dxyzb6_a0a0a9 = new ModelRoot();
-        final String result_dxyzb6_a0a0a0a9 = macros.expandPath(modelRootElement.getAttributeValue("path"), file);
+        final String result_dxyzb6_a0a0a0a9 = macroHelper.expandPath(modelRootElement.getAttributeValue("path"));
         result_dxyzb6_a0a0a9.setPath(result_dxyzb6_a0a0a0a9);
         final ModelRootManager result_dxyzb6_a1a0a0a9 = new ModelRootManager();
         final String result_dxyzb6_a0a1a0a0a9 = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first().getAttributeValue("moduleId"), "");
@@ -224,14 +224,14 @@ public class ModuleDescriptorPersistence {
     }.invoke();
   }
 
-  public static void saveModelRoots(Element modelsElement, Collection<ModelRoot> modelRoots, IFile file, Macros macros) {
+  public static void saveModelRoots(Element modelsElement, Collection<ModelRoot> modelRoots, MacroHelper macroHelper) {
     Element result_dxyzb6_a0a01 = modelsElement;
     for (ModelRoot root : CollectionSequence.fromCollection(modelRoots)) {
       final Element result_dxyzb6_a0a0a0a01 = new Element("modelRoot");
-      final String result_dxyzb6_a0a0a0a0a01 = macros.shrinkPath((root.getPath() == null ?
+      final String result_dxyzb6_a0a0a0a0a01 = macroHelper.shrinkPath((root.getPath() == null ?
         "" :
         root.getPath()
-      ), file);
+      ));
       result_dxyzb6_a0a0a0a01.setAttribute("path", "" + result_dxyzb6_a0a0a0a0a01);
       if (root.getManager() != null) {
         final Element result_dxyzb6_a0a1a0a0a0a01 = new Element("manager");
@@ -245,14 +245,14 @@ public class ModuleDescriptorPersistence {
     }
   }
 
-  public static void saveStubModelEntries(Element modelsElement, Collection<ModelRoot> modelRoots, IFile file, Macros macros) {
+  public static void saveStubModelEntries(Element modelsElement, Collection<ModelRoot> modelRoots, MacroHelper macroHelper) {
     Element result_dxyzb6_a0a11 = modelsElement;
     for (ModelRoot root : CollectionSequence.fromCollection(modelRoots)) {
       final Element result_dxyzb6_a0a0a0a11 = new Element("stubModelEntry");
-      final String result_dxyzb6_a0a0a0a0a11 = macros.shrinkPath((root.getPath() == null ?
+      final String result_dxyzb6_a0a0a0a0a11 = macroHelper.shrinkPath((root.getPath() == null ?
         "" :
         root.getPath()
-      ), file);
+      ));
       result_dxyzb6_a0a0a0a11.setAttribute("path", "" + result_dxyzb6_a0a0a0a0a11);
       final Element result_dxyzb6_a1a0a0a0a11 = new Element("manager");
       final String result_dxyzb6_a0a1a0a0a0a11 = root.getManager().getModuleId();

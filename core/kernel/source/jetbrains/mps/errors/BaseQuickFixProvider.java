@@ -16,7 +16,8 @@
 package jetbrains.mps.errors;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.NameUtil;
 
@@ -65,7 +66,7 @@ public class BaseQuickFixProvider implements QuickFixProvider {
     }
     try {
       String languageNamespace = NameUtil.namespaceFromLongName(NameUtil.namespaceFromLongName(myClassFQName));
-      Class aClass = MPSModuleRepository.getInstance().getLanguage(languageNamespace).getClass(myClassFQName);
+      Class aClass = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class).getClass(myClassFQName);
       if (aClass == null) {
         LOG.error("class " + myClassFQName + " not found in a module " + languageNamespace);
         myQuickFixTaken = true;

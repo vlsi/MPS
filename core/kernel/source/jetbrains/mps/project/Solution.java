@@ -19,7 +19,6 @@ import jetbrains.mps.ClasspathReader;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
@@ -30,8 +29,7 @@ import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
@@ -43,8 +41,6 @@ import java.util.*;
  * Aug 26, 2005
  */
 public class Solution extends AbstractModule {
-  private static final Logger LOG = Logger.getLogger(Solution.class);
-
   private SolutionDescriptor mySolutionDescriptor;
   public static final String SOLUTION_MODELS = "models";
 
@@ -69,102 +65,25 @@ public class Solution extends AbstractModule {
     return result;
   }
 
-  // -------------------------------------------------------------------
-
-  protected Solution() {
-
-  }
-
-  public static Solution createSolution(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
-    Solution solution = new Solution();
-    SolutionDescriptor descriptor;
-    if (descriptorFile.exists()) {
-      descriptor = (SolutionDescriptor) ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
-      if (descriptor.getId() == null) {
-        descriptor.setId(ModuleId.regular());
-        SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, descriptor);
-      }
-    } else {
-      descriptor = createNewDescriptor(namespace, descriptorFile);
-    }
-    solution.myDescriptorFile = descriptorFile;
-
-    IModule d = MPSModuleRepository.checkRegistered(descriptor.getModuleReference(), descriptorFile);
-    if (d != null) {
-      return (Solution) d;
-    }
-
-    solution.setSolutionDescriptor(descriptor, false);
-    MPSModuleRepository.getInstance().addModule(solution, moduleOwner);
-
-    return solution;
-  }
-
-  //this is for stubs framework & tests only. Can be later converted into subclass
-  public static Solution newInstance(SolutionDescriptor descriptor, MPSModuleOwner moduleOwner) {
-    ModuleReference mref = descriptor.getModuleReference();
-    MPSModuleRepository repo = MPSModuleRepository.getInstance();
-    if (repo.existsModule(mref)) {
-      IModule module = repo.getSolution(mref);
-      IFile file = FileSystem.getInstance().getFileByPath("NO FILE");
-      ModuleHandle handle = new ModuleHandle(file, module.getModuleDescriptor());
-      repo.registerModule(handle, moduleOwner);
-      return (Solution) module;
-    }
-
-    Solution solution = new Solution() {
-      public String getGeneratorOutputPath() {
-        return null;
-      }
-
-      public String getTestsGeneratorOutputPath() {
-        return null;
-      }
-
-      protected SolutionDescriptor loadDescriptor() {
-        return getModuleDescriptor();
-      }
-    };
-
-    solution.setSolutionDescriptor(descriptor, false);
-    repo.addModule(solution, moduleOwner);
-
-    return solution;
-  }
-
-  @Deprecated
-  public static Solution newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
-    ModuleDescriptor desciptor = null;
-    if (descriptorFile.exists()) {
-      desciptor = ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
-    }
-    return newInstance(new ModuleHandle(descriptorFile, desciptor), moduleOwner);
-  }
-
   public static Solution newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
-    Solution solution = new Solution();
-    SolutionDescriptor descriptor;
-    if (handle.getDescriptor() != null) {
-      descriptor = (SolutionDescriptor) handle.getDescriptor();
-      if (descriptor.getId() == null) {
-        descriptor.setId(ModuleId.regular());
-        SolutionDescriptorPersistence.saveSolutionDescriptor(handle.getFile(), descriptor);
-      }
-    } else {
-      descriptor = new SolutionDescriptor();
-      descriptor.setId(ModuleId.regular());
-    }
-    solution.myDescriptorFile = handle.getFile();
+    SolutionDescriptor descriptor = ((SolutionDescriptor) handle.getDescriptor());
+    assert descriptor != null;
+    assert descriptor.getId() != null;
 
-    IModule d = MPSModuleRepository.checkRegistered(descriptor.getModuleReference(), handle.getFile());
-    if (d != null) {
-      return (Solution) d;
+    Solution solution = new Solution(descriptor, handle.getFile());
+
+    Solution registered = MPSModuleRepository.getInstance().registerModule(solution, moduleOwner);
+    if (registered == solution) {
+      solution.setSolutionDescriptor(descriptor, false);
     }
 
-    solution.setSolutionDescriptor(descriptor, false);
-    MPSModuleRepository.getInstance().addModule(solution, moduleOwner);
+    return registered;
+  }
 
-    return solution;
+  protected Solution(SolutionDescriptor descriptor, IFile file) {
+    myDescriptorFile = file;
+    mySolutionDescriptor = descriptor;
+    setModuleReference(descriptor.getModuleReference());
   }
 
   public SolutionDescriptor getModuleDescriptor() {
@@ -200,14 +119,8 @@ public class Solution extends AbstractModule {
     invalidateCaches();
   }
 
-  public void dispose() {
-    super.dispose();
-    SModelRepository.getInstance().unRegisterModelDescriptors(this);
-  }
-
   public void save() {
-    if (isStub()) return;
-    SolutionDescriptorPersistence.saveSolutionDescriptor(myDescriptorFile, getModuleDescriptor());
+    SolutionDescriptorPersistence.saveSolutionDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.forModuleFile(myDescriptorFile));
   }
 
   @Override
@@ -236,10 +149,6 @@ public class Solution extends AbstractModule {
       descriptor.getStubModelEntries().add(mr);
       descriptor.getModelRoots().add(mr);
     }
-  }
-
-  public boolean isStub() {
-    return myDescriptorFile == null;
   }
 
   public String toString() {
@@ -296,33 +205,6 @@ public class Solution extends AbstractModule {
     IFile file = getDescriptorFile();
     assert file != null;
     return (SolutionDescriptor) ModulesMiner.getInstance().loadModuleDescriptor(file);
-  }
-
-  private static SolutionDescriptor createNewDescriptor(String namespace, IFile descriptorFile) {
-    SolutionDescriptor descriptor = new SolutionDescriptor();
-    descriptor.setNamespace(namespace);
-    descriptor.setId(ModuleId.regular());
-
-    final IFile modelsDir = descriptorFile.getParent().getDescendant(SOLUTION_MODELS);
-    if (modelsDir.exists() && modelsDir.getChildren().size() != 0) {
-      throw new IllegalStateException("Trying to create a solution in an existing solution's directory");
-    } else {
-      if (ModelAccess.instance().isInEDT()) {
-        modelsDir.mkdirs();
-      } else {
-        ModelAccess.instance().writeFilesInEDT(new Runnable() {
-          public void run() {
-            modelsDir.mkdirs();
-          }
-        });
-      }
-    }
-
-    // default descriptorModel roots
-    ModelRoot modelRoot = new ModelRoot();
-    modelRoot.setPath(modelsDir.getPath());
-    descriptor.getModelRoots().add(modelRoot);
-    return descriptor;
   }
 
   public BytecodeLocator getBytecodeLocator() {

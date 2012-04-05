@@ -36,14 +36,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @State(
-  name = "EditorSettings",
+  name = "MpsEditorSettings",
   storages = {
     @Storage(
       id = "other",
       file = "$APP_CONFIG$/mpsEditor.xml"
     )}
 )
-
 public class EditorSettings implements SearchableConfigurable, PersistentStateComponent<MyState> {
   private static final Logger LOG = Logger.getLogger(EditorSettings.class);
 

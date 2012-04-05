@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="testRefactoringTargetLang" uuid="7bb4f305-7fb7-495b-be9c-5777cd6ab9d6" compileInMPS="true" doNotGenerateAdapters="false">
+<language namespace="testRefactoringTargetLang" uuid="7bb4f305-7fb7-495b-be9c-5777cd6ab9d6" doNotGenerateAdapters="false">
   <models>
     <modelRoot path="${language_descriptor}/languageAccessories" />
     <modelRoot path="${language_descriptor}/languageModels" />
@@ -7,9 +7,6 @@
   <accessoryModels />
   <generators />
   <sourcePath />
-  <dependencies>
-    <dependency reexport="false">343e2a8b-449f-45b3-9da8-1463945cb208(testRefactoring)</dependency>
-  </dependencies>
   <usedDevKits>
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
   </usedDevKits>

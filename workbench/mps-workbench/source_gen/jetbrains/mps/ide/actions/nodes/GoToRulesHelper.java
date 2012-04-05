@@ -18,7 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.kernel.model.SModelUtil;
 import javax.swing.JPopupMenu;
 import java.awt.Color;
@@ -91,7 +91,7 @@ public class GoToRulesHelper {
     if (languageFqName == null) {
       return null;
     }
-    return MPSModuleRepository.getInstance().getLanguage(languageFqName);
+    return ModuleRepositoryFacade.getInstance().getModule(languageFqName, Language.class);
   }
 
   private static boolean isApplicable(SNode ruleNode, SNode conceptDeclaration, boolean skipExact) {

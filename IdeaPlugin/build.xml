@@ -238,6 +238,11 @@
             path="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/source_gen"/>
       </src>
     </javac>
+    <copy includeemptydirs="false" todir="${build_dir}/mpscore_jar/modules">
+      <fileset dir="${base_dir}/languages/core/stub" includes="JDK/*.msd"/>
+      <fileset dir="${base_dir}/languages/core/stub" includes="JDK.Tools/*.msd"/>
+      <fileset dir="${base_dir}/languages/core/stub" includes="MPS.Core/*.msd"/>
+    </copy>
     <jar destfile="${dist.dir}/mps-core/lib/mps-core.jar">
       <fileset dir="${build_dir}/mpscore_jar"/>
       <manifest>
@@ -272,6 +277,9 @@
     <copy includeemptydirs="false" todir="${build_dir}/mpsbackend_jar">
       <fileset dir="${base_dir}/core/ant/source_gen" includes="**/*.png"/>
       <fileset dir="${base_dir}/core/ant/resources" includes="**/*.xml"/>
+    </copy>
+    <copy includeemptydirs="false" todir="${build_dir}/mpsbackend_jar/modules">
+      <fileset dir="${base_dir}/languages/core/stub" includes="Ant/*.msd"/>
     </copy>
     <jar destfile="${dist.dir}/mps-core/lib/mps-backend.jar">
       <fileset dir="${build_dir}/mpsbackend_jar"/>
@@ -331,6 +339,9 @@
     <copy includeemptydirs="false" todir="${build_dir}/mpsplatform_jar">
       <fileset dir="${base_dir}/workbench/mps-platform/source" includes="**/*.png"/>
     </copy>
+    <copy includeemptydirs="false" todir="${build_dir}/mpsplatform_jar/modules">
+      <fileset dir="${base_dir}/languages/core/stub" includes="MPS.Platform/*.msd"/>
+    </copy>
     <jar destfile="${dist.dir}/mps-core/lib/mps-platform.jar">
       <fileset dir="${build_dir}/mpsplatform_jar"/>
       <manifest>
@@ -364,6 +375,9 @@
         <fileset dir="${ideaPath}/lib" includes="*.jar"/>
       </classpath>
     </javac>
+    <copy includeemptydirs="false" todir="${build_dir}/mpseditor_jar/modules">
+      <fileset dir="${base_dir}/languages/core/stub" includes="MPS.Editor/*.msd"/>
+    </copy>
     <copy includeemptydirs="false" todir="${build_dir}/mpseditor_jar">
       <fileset dir="${base_dir}/editor/editor-runtime/source" includes="**/*.png"/>
       <fileset dir="${base_dir}/editor/editor-runtime/source_gen" includes="**/*.png"/>
@@ -591,6 +605,9 @@
         <path path="${base_dir}/languages/languageDesign/pattern/source_gen"/>
         <path path="${base_dir}/languages/languageDesign/pattern/languages/testLang/source_gen"/>
         <path path="${base_dir}/languages/languageDesign/plugin/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/access/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/checkedName/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/resources/source_gen"/>
         <!--path path="${base_dir}/languages/languageDesign/plugin/solutions/runtime/source_gen"/-->
         <path path="${base_dir}/languages/languageDesign/project/source_gen"/>
         <path path="${base_dir}/languages/languageDesign/quotation/source_gen"/>

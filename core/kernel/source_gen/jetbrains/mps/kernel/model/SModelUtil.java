@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -87,7 +87,7 @@ public class SModelUtil {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
       public SNode compute() {
         String languageFqName = NameUtil.namespaceFromConceptFQName(conceptFQName);
-        Language language = MPSModuleRepository.getInstance().getLanguage(languageFqName);
+        Language language = ModuleRepositoryFacade.getInstance().getModule(languageFqName, Language.class);
         if (language == null) {
           return null;
         }
@@ -124,7 +124,7 @@ public class SModelUtil {
     if (languageFqName == null) {
       return null;
     }
-    l = MPSModuleRepository.getInstance().getLanguage(languageFqName);
+    l = ModuleRepositoryFacade.getInstance().getModule(languageFqName, Language.class);
     if (l != null) {
       myConceptToLanguage.putIfAbsent(concept, l);
     }

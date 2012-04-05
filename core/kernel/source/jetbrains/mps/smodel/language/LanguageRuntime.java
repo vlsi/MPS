@@ -18,7 +18,8 @@ package jetbrains.mps.smodel.language;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
@@ -27,7 +28,6 @@ import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import jetbrains.mps.smodel.structure.*;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
 
@@ -51,7 +51,7 @@ public abstract class LanguageRuntime {
 
   public IHelginsDescriptor getTypesystem() {
     // TODO generate
-    return new LanguageRuntimeInterpreted(MPSModuleRepository.getInstance().getLanguage(getNamespace())).getTypesystem();
+    return new LanguageRuntimeInterpreted(ModuleRepositoryFacade.getInstance().getModule(getNamespace(), Language.class)).getTypesystem();
   }
 
   public BaseFindUsagesDescriptor getFindUsages() {

@@ -11,12 +11,14 @@ import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import jetbrains.mps.ide.common.LayoutUtil;
 import com.intellij.openapi.options.ConfigurationException;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
 public class MPSInstance_Configuration_Editor extends SettingsEditorEx<MPSInstance_Configuration> {
   private RawLineEditorComponent myVmOptions = new RawLineEditorComponent();
   private FieldWithPathChooseDialog myJrePath = new FieldWithPathChooseDialog();
   private FieldWithPathChooseDialog mySystemPath = new FieldWithPathChooseDialog();
   private FieldWithPathChooseDialog myConfigurationPath = new FieldWithPathChooseDialog();
+  private ProjectChooser myProjectChooser = new ProjectChooser();
 
   public MPSInstance_Configuration_Editor() {
   }
@@ -37,14 +39,20 @@ public class MPSInstance_Configuration_Editor extends SettingsEditorEx<MPSInstan
     mainPanel.add(myVmOptions, LayoutUtil.createFieldConstraints(5));
     mainPanel.add(new JLabel("Alternative JRE Path:"), LayoutUtil.createLabelConstraints(6));
     mainPanel.add(myJrePath, LayoutUtil.createFieldConstraints(7));
+    mainPanel.add(myProjectChooser, LayoutUtil.createPanelConstraints(8));
     return mainPanel;
   }
 
   public void applyEditorTo(final MPSInstance_Configuration configuration) throws ConfigurationException {
-    configuration.setVmOptions(myVmOptions.getText());
-    configuration.setJrePath(myJrePath.getText());
-    configuration.setSystemPath(configuration.shinkPath(mySystemPath.getText()));
-    configuration.setConfigurationPath(configuration.shinkPath(myConfigurationPath.getText()));
+    {
+      configuration.setVmOptions(myVmOptions.getText());
+      configuration.setJrePath(myJrePath.getText());
+      configuration.setSystemPath(configuration.shinkPath(mySystemPath.getText()));
+      configuration.setConfigurationPath(configuration.shinkPath(myConfigurationPath.getText()));
+      Tuples._2<Boolean, String> value = myProjectChooser.getValue();
+      configuration.setOpenCurrentProject((boolean) value._0());
+      configuration.setProjectToOpen(configuration.shinkPath(value._1()));
+    }
   }
 
   public void resetEditorFrom(final MPSInstance_Configuration configuration) {
@@ -52,5 +60,6 @@ public class MPSInstance_Configuration_Editor extends SettingsEditorEx<MPSInstan
     myJrePath.setText(configuration.getJrePath());
     mySystemPath.setText(configuration.expandPath(configuration.getSystemPath()));
     myConfigurationPath.setText(configuration.expandPath(configuration.getConfigurationPath()));
+    myProjectChooser.reset(configuration.getOpenCurrentProject(), configuration.expandPath(configuration.getProjectToOpen()));
   }
 }

@@ -214,11 +214,6 @@ public abstract class BaseModelCache<T> implements CoreComponent {
     }
 
     @Override
-    public void beforeModelFileChanged(SModelDescriptor modelDescriptor) {
-      invalidateCacheForModel(modelDescriptor);
-    }
-
-    @Override
     public void beforeModelRemoved(SModelDescriptor modelDescriptor) {
       invalidateCacheForModel(modelDescriptor);
     }

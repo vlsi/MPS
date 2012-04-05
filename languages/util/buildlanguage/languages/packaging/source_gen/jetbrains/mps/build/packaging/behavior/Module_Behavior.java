@@ -282,13 +282,13 @@ public class Module_Behavior {
 
   public static List<IModule> getAllAvailableModules_1222444746697() {
     List<IModule> list = ListSequence.fromList(new ArrayList<IModule>());
-    for (Language language : ListSequence.fromList(GlobalScope.getInstance().getVisibleLanguages())) {
+    for (Language language : CollectionSequence.fromCollection(GlobalScope.getInstance().getVisibleLanguages())) {
       ListSequence.fromList(list).addElement(language);
     }
-    for (DevKit devKit : ListSequence.fromList(GlobalScope.getInstance().getVisibleDevkits())) {
+    for (DevKit devKit : CollectionSequence.fromCollection(GlobalScope.getInstance().getVisibleDevkits())) {
       ListSequence.fromList(list).addElement(devKit);
     }
-    for (Solution solution : ListSequence.fromList(GlobalScope.getInstance().getVisibleSolutions())) {
+    for (Solution solution : CollectionSequence.fromCollection(GlobalScope.getInstance().getVisibleSolutions())) {
       ListSequence.fromList(list).addElement(solution);
     }
     return list;

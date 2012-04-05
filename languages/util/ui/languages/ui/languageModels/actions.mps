@@ -7,7 +7,6 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
-  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="fb26dccf-fa54-4e9a-8ddb-b66311a34393(jetbrains.mps.ui)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
@@ -329,7 +328,7 @@
                   <node role="rValue" roleId="tpee.1068498886297" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="3091159734392736973" />
                   <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3091159734392736974">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3091159734392736975">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3091159734392736966" resolveInfo="uios" />
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3091159734392736966" resolveInfo="auios" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3091159734392736976">
                       <link role="link" roleId="tp25.1138056516764" targetNodeId="fb0y.8381258131358446226" />
@@ -339,7 +338,7 @@
               </node>
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3091159734392736977">
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3091159734392736978">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3091159734392736966" resolveInfo="uios" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3091159734392736966" resolveInfo="auios" />
                 </node>
               </node>
             </node>
@@ -410,7 +409,7 @@
                   <node role="rValue" roleId="tpee.1068498886297" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="3091159734392737031" />
                   <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3091159734392737032">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3091159734392737033">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3091159734392737024" resolveInfo="auios" />
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3091159734392737024" resolveInfo="iuios" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3091159734392737034">
                       <link role="link" roleId="tp25.1138056516764" targetNodeId="fb0y.8381258131358446226" />
@@ -420,7 +419,7 @@
               </node>
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3091159734392737035">
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3091159734392737036">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3091159734392737024" resolveInfo="auios" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3091159734392737024" resolveInfo="iuios" />
                 </node>
               </node>
             </node>

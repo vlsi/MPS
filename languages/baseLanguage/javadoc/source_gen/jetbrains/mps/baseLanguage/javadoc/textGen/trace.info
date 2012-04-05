@@ -21,7 +21,9 @@
     <scopeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="23" startPosition="75" endLine="24" endPosition="111" />
     <scopeInfo nodeId="2099616960330116560" fileName="HTMLElement_TextGen.java" startLine="14" startPosition="90" endLine="17" endPosition="25" />
     <scopeInfo nodeId="2099616960330116574" fileName="HTMLElement_TextGen.java" startLine="14" startPosition="90" endLine="17" endPosition="25" />
-    <scopeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="22" startPosition="95" endLine="25" endPosition="9" />
+    <scopeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="22" startPosition="95" endLine="25" endPosition="9">
+      <varInfo nodeId="2099616960330116591" varName="item" />
+    </scopeInfo>
     <scopeInfo nodeId="2099616960330116590" fileName="HTMLElement_TextGen.java" startLine="18" startPosition="12" endLine="29" endPosition="23" />
     <scopeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="18" startPosition="12" endLine="29" endPosition="23" />
     <scopeInfo nodeId="2099616960330110596" fileName="HTMLElement_TextGen.java" startLine="13" startPosition="42" endLine="30" endPosition="5" />
@@ -57,9 +59,7 @@
     <scopeInfo nodeId="9054439867185875455" fileName="MethodDocComment_TextGen.java" startLine="25" startPosition="68" endLine="26" endPosition="150" />
     <scopeInfo nodeId="2004985048484856481" fileName="MethodDocComment_TextGen.java" startLine="28" startPosition="0" endLine="29" endPosition="48" />
     <scopeInfo nodeId="2004985048484774481" fileName="MethodDocComment_TextGen.java" startLine="15" startPosition="94" endLine="18" endPosition="7" />
-    <scopeInfo nodeId="2004985048484774486" fileName="MethodDocComment_TextGen.java" startLine="20" startPosition="98" endLine="23" endPosition="7">
-      <varInfo nodeId="2004985048484774486" varName="item" />
-    </scopeInfo>
+    <scopeInfo nodeId="2004985048484774486" fileName="MethodDocComment_TextGen.java" startLine="20" startPosition="98" endLine="23" endPosition="7" />
     <scopeInfo nodeId="2004985048484774481" fileName="MethodDocComment_TextGen.java" startLine="14" startPosition="0" endLine="19" endPosition="5" />
     <scopeInfo nodeId="2004985048484774486" fileName="MethodDocComment_TextGen.java" startLine="19" startPosition="5" endLine="24" endPosition="5" />
     <scopeInfo nodeId="4021391592914129117" fileName="MethodDocComment_TextGen.java" startLine="12" startPosition="42" endLine="29" endPosition="48" />
@@ -280,9 +280,7 @@
     <scopeInfo nodeId="2004985048484774339" fileName="ClassifierDocComment_TextGen.java" startLine="16" startPosition="74" endLine="17" endPosition="109" />
     <scopeInfo nodeId="2004985048484856472" fileName="ClassifierDocComment_TextGen.java" startLine="20" startPosition="0" endLine="21" endPosition="48" />
     <scopeInfo nodeId="5774894706564089012" fileName="ClassifierDocComment_TextGen.java" startLine="21" startPosition="48" endLine="22" endPosition="25" />
-    <scopeInfo nodeId="2004985048484774339" fileName="ClassifierDocComment_TextGen.java" startLine="15" startPosition="94" endLine="18" endPosition="7">
-      <varInfo nodeId="2004985048484774339" varName="item" />
-    </scopeInfo>
+    <scopeInfo nodeId="2004985048484774339" fileName="ClassifierDocComment_TextGen.java" startLine="15" startPosition="94" endLine="18" endPosition="7" />
     <scopeInfo nodeId="2004985048484774339" fileName="ClassifierDocComment_TextGen.java" startLine="14" startPosition="0" endLine="19" endPosition="5" />
     <scopeInfo nodeId="4021391592916003702" fileName="ClassifierDocComment_TextGen.java" startLine="12" startPosition="42" endLine="22" endPosition="25" />
     <scopeInfo nodeId="4021391592916003702" fileName="ClassifierDocComment_TextGen.java" startLine="11" startPosition="64" endLine="24" endPosition="0">
@@ -314,7 +312,9 @@
     <scopeInfo nodeId="4021391592916694589" fileName="CommentLine_TextGen.java" startLine="19" startPosition="73" endLine="20" endPosition="109" />
     <scopeInfo nodeId="2099616960330159359" fileName="CommentLine_TextGen.java" startLine="14" startPosition="54" endLine="16" endPosition="44" />
     <scopeInfo nodeId="2099616960330159382" fileName="CommentLine_TextGen.java" startLine="14" startPosition="54" endLine="16" endPosition="44" />
-    <scopeInfo nodeId="4021391592916694589" fileName="CommentLine_TextGen.java" startLine="18" startPosition="93" endLine="21" endPosition="7" />
+    <scopeInfo nodeId="4021391592916694589" fileName="CommentLine_TextGen.java" startLine="18" startPosition="93" endLine="21" endPosition="7">
+      <varInfo nodeId="4021391592916694589" varName="item" />
+    </scopeInfo>
     <scopeInfo nodeId="4021391592916694589" fileName="CommentLine_TextGen.java" startLine="17" startPosition="5" endLine="22" endPosition="5" />
     <scopeInfo nodeId="4021391592916694532" fileName="CommentLine_TextGen.java" startLine="13" startPosition="42" endLine="22" endPosition="5" />
     <scopeInfo nodeId="4021391592916694532" fileName="CommentLine_TextGen.java" startLine="12" startPosition="55" endLine="24" endPosition="0">
@@ -383,8 +383,12 @@
     <scopeInfo nodeId="2004985048484856394" fileName="DocCommentTextGen.java" startLine="22" startPosition="0" endLine="24" endPosition="45" />
     <scopeInfo nodeId="2004985048484856404" fileName="DocCommentTextGen.java" startLine="31" startPosition="86" endLine="33" endPosition="47" />
     <scopeInfo nodeId="2004985048484856405" fileName="DocCommentTextGen.java" startLine="31" startPosition="86" endLine="33" endPosition="47" />
-    <scopeInfo nodeId="2004985048484856397" fileName="DocCommentTextGen.java" startLine="25" startPosition="93" endLine="28" endPosition="7" />
-    <scopeInfo nodeId="2004985048484856413" fileName="DocCommentTextGen.java" startLine="36" startPosition="95" endLine="39" endPosition="7" />
+    <scopeInfo nodeId="2004985048484856397" fileName="DocCommentTextGen.java" startLine="25" startPosition="93" endLine="28" endPosition="7">
+      <varInfo nodeId="2004985048484856397" varName="item" />
+    </scopeInfo>
+    <scopeInfo nodeId="2004985048484856413" fileName="DocCommentTextGen.java" startLine="36" startPosition="95" endLine="39" endPosition="7">
+      <varInfo nodeId="2004985048484856413" varName="item" />
+    </scopeInfo>
     <scopeInfo nodeId="2004985048484856418" fileName="DocCommentTextGen.java" startLine="41" startPosition="94" endLine="44" endPosition="7" />
     <scopeInfo nodeId="2004985048484856423" fileName="DocCommentTextGen.java" startLine="46" startPosition="96" endLine="49" endPosition="7" />
     <scopeInfo nodeId="2004985048484856428" fileName="DocCommentTextGen.java" startLine="51" startPosition="92" endLine="54" endPosition="7" />
@@ -458,7 +462,9 @@
     <nodeInfo nodeId="4021391592916799009" fileName="CodeInlineDocTag_TextGen.java" startLine="12" startPosition="42" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4021391592916799006" fileName="CodeInlineDocTag_TextGen.java" startLine="11" startPosition="60" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="4021391592916799009" fileName="CodeInlineDocTag_TextGen.java" startLine="15" startPosition="73" endLine="16" endPosition="109" />
-    <scopeInfo nodeId="4021391592916799009" fileName="CodeInlineDocTag_TextGen.java" startLine="14" startPosition="93" endLine="17" endPosition="7" />
+    <scopeInfo nodeId="4021391592916799009" fileName="CodeInlineDocTag_TextGen.java" startLine="14" startPosition="93" endLine="17" endPosition="7">
+      <varInfo nodeId="4021391592916799009" varName="item" />
+    </scopeInfo>
     <scopeInfo nodeId="4021391592916799006" fileName="CodeInlineDocTag_TextGen.java" startLine="12" startPosition="42" endLine="18" endPosition="5" />
     <scopeInfo nodeId="4021391592916799009" fileName="CodeInlineDocTag_TextGen.java" startLine="12" startPosition="42" endLine="18" endPosition="5" />
     <scopeInfo nodeId="4021391592916799006" fileName="CodeInlineDocTag_TextGen.java" startLine="11" startPosition="60" endLine="20" endPosition="0">
@@ -492,7 +498,9 @@
     <scopeInfo nodeId="4021391592916879721" fileName="LinkInlineDocTag_TextGen.java" startLine="13" startPosition="25" endLine="14" endPosition="151" />
     <scopeInfo nodeId="4021391592916960578" fileName="LinkInlineDocTag_TextGen.java" startLine="18" startPosition="75" endLine="19" endPosition="111" />
     <scopeInfo nodeId="4021391592916879721" fileName="LinkInlineDocTag_TextGen.java" startLine="12" startPosition="42" endLine="14" endPosition="151" />
-    <scopeInfo nodeId="4021391592916960578" fileName="LinkInlineDocTag_TextGen.java" startLine="17" startPosition="95" endLine="20" endPosition="9" />
+    <scopeInfo nodeId="4021391592916960578" fileName="LinkInlineDocTag_TextGen.java" startLine="17" startPosition="95" endLine="20" endPosition="9">
+      <varInfo nodeId="4021391592916960578" varName="item" />
+    </scopeInfo>
     <scopeInfo nodeId="4021391592916960564" fileName="LinkInlineDocTag_TextGen.java" startLine="15" startPosition="93" endLine="21" endPosition="7" />
     <scopeInfo nodeId="4021391592916960578" fileName="LinkInlineDocTag_TextGen.java" startLine="15" startPosition="93" endLine="21" endPosition="7" />
     <scopeInfo nodeId="4021391592916879718" fileName="LinkInlineDocTag_TextGen.java" startLine="12" startPosition="42" endLine="22" endPosition="5" />

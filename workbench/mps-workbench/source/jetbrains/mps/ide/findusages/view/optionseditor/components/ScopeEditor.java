@@ -29,6 +29,7 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class ScopeEditor extends BaseEditor<ScopeOptions> {
   private static final String GLOBAL_SCOPE = "Global";
@@ -100,7 +101,7 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
       myButtonGroup.add(myBootstrapScopeButton);
     }
 
-    List<IModule> moduleList = MPSModuleRepository.getInstance().getAllModules();
+    Set<IModule> moduleList = MPSModuleRepository.getInstance().getAllModules();
     List<String> moduleNameList = new ArrayList<String>();
 
     for (IModule iModule : moduleList) {

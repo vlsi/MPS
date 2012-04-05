@@ -110,11 +110,11 @@ public class Equations {
   public boolean addEquation(SNode left, SNode right, EquationInfo info) {
     SNode lRepresentative = getRepresentative(left);
     SNode rRepresentative = getRepresentative(right);
-    if (lRepresentative == null || rRepresentative == null) {
+ /*   if (lRepresentative == null || rRepresentative == null) {
       myState.executeOperation(new TraceWarningOperation("Equation was not added: " + lRepresentative + " = " + rRepresentative, info));
       return false;
-    }
-    if (lRepresentative.equals(rRepresentative)) {
+    } */
+    if (lRepresentative !=null && lRepresentative.equals(rRepresentative)) {
       return true;
     }
     if (TypesUtil.isVariable(lRepresentative)) {
@@ -132,9 +132,6 @@ public class Equations {
   private boolean compareTypes(SNode left, SNode right, EquationInfo info) {
     if (left == right) {
       return true;
-    }
-    if (left == null || right == null) {
-      return false;
     }
     return TypesUtil.match(left, right, this, info);
   }

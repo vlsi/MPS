@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
+import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;

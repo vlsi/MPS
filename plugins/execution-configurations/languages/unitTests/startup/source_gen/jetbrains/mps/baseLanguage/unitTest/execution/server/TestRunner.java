@@ -12,6 +12,7 @@ import java.io.LineNumberReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.junit.runner.JUnitCore;
 import java.io.PrintStream;
 import org.junit.runner.notification.RunListener;
@@ -57,11 +58,21 @@ public class TestRunner {
     }
   }
 
+  /**
+   * Since BaseTransformationTest4 is no longer TestCase we can start tests without hacks
+   */
+  @Deprecated
+  @ToRemove(version = 2.1)
   protected Request createMethodRequest(String testCase, String method) throws ClassNotFoundException {
     // protected just for the sake of symmetry with createClassRequest 
     return Request.method(Class.forName(testCase), method);
   }
 
+  /**
+   * Since BaseTransformationTest4 is no longer TestCase we can start tests without hacks
+   */
+  @Deprecated
+  @ToRemove(version = 2.1)
   protected Request createClassRequest(String className) throws ClassNotFoundException {
     return Request.aClass(Class.forName(className));
   }

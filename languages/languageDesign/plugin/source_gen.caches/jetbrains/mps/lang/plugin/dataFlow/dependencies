@@ -40,12 +40,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.dataFlow.AddElementStatement_DataFlow" file="AddElementStatement_DataFlow.java">
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.plugin.dataFlow.AddStatement_DataFlow" file="AddStatement_DataFlow.java">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -54,34 +48,6 @@
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.dataFlow.AddTabOperation_DataFlow" file="AddTabOperation_DataFlow.java">
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.dataFlow.AskStatement_DataFlow" file="AskStatement_DataFlow.java">
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.dataFlow.BaseExecuteCommandStatementSync_DataFlow" file="BaseExecuteCommandStatementSync_DataFlow.java">
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.dataFlow.BaseExecuteCommandStatement_DataFlow" file="BaseExecuteCommandStatement_DataFlow.java">
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.dataFlow.CommandClosureLiteral_DataFlow" file="CommandClosureLiteral_DataFlow.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IStatementListContainer_Behavior" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.StatementList_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
@@ -97,13 +63,8 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.dataFlow.ActionInstance_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.dataFlow.ActionParameterDeclaration_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.dataFlow.ActionParameterReferenceOperation_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.dataFlow.AddElementStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.dataFlow.AddStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.dataFlow.AddTabOperation_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.dataFlow.AskStatement_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.dataFlow.BaseExecuteCommandStatementSync_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.dataFlow.BaseExecuteCommandStatement_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.dataFlow.CommandClosureLiteral_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.dataFlow.ToolTab_DataFlow" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilders" />
   </dependency>

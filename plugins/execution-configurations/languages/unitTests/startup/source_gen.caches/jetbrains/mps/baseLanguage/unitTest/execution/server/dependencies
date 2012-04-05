@@ -15,6 +15,7 @@
     <classNode dependClassName="java.io.PrintStream" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassNotFoundException" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -24,6 +25,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestEvent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.CommandOutputStream" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.junit.runner.Description" />
     <classNode dependClassName="org.junit.runner.JUnitCore" />
@@ -37,6 +39,7 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassCastException" />
     <classNode dependClassName="java.lang.ClassNotFoundException" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -47,6 +50,7 @@
     <classNode dependClassName="jetbrains.mps.TestMain" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
     <classNode dependClassName="jetbrains.mps.util.CachesUtil" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="org.junit.internal.builders.JUnit4Builder" />
     <classNode dependClassName="org.junit.runner.Request" />
     <classNode dependClassName="org.junit.runner.Runner" />

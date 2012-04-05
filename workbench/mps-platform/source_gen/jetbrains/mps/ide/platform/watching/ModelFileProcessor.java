@@ -79,8 +79,8 @@ import jetbrains.mps.smodel.descriptor.source.changes.ModelFileWatcher;
     List<IModule> res = ListSequence.fromList(new ArrayList<IModule>());
     String path = file.getPath();
 
-    List<IModule> modules = MPSModuleRepository.getInstance().getAllModules();
-    for (IModule module : ListSequence.fromList(modules)) {
+    Set<IModule> modules = MPSModuleRepository.getInstance().getAllModules();
+    for (IModule module : SetSequence.fromSet(modules)) {
       for (SModelRoot smr : CollectionSequence.fromCollection(module.getSModelRoots())) {
         if (!(intersects(path, smr.getPath()))) {
           continue;

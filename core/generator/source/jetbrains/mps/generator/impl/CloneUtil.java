@@ -47,7 +47,7 @@ public class CloneUtil {
     outputNode.putUserObjects(inputNode);
     // keep track of 'original input node'
     if (originalInput) {
-      outputNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode);
+      TemplateQueryContext.putInputNode(outputNode, inputNode);
     }
     for (SReference reference : inputNode.getReferencesIterable()) {
       SModelReference targetModelReference = reference.isExternal() ? reference.getTargetSModelReference() : outputModel.getSModelReference();

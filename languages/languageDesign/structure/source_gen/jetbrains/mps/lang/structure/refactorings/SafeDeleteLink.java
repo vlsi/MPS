@@ -26,10 +26,6 @@ public class SafeDeleteLink extends BaseLoggableRefactoring {
     return "Safe Delete Link";
   }
 
-  public String getKeyStroke() {
-    return getKeyStroke_static();
-  }
-
   public Class getOverridenRefactoringClass() {
     return SafeDelete.class;
   }
@@ -57,9 +53,5 @@ public class SafeDeleteLink extends BaseLoggableRefactoring {
 
   public void updateModel(final SModel model, final RefactoringContext refactoringContext) {
     refactoringContext.updateByDefault(model);
-  }
-
-  public static String getKeyStroke_static() {
-    return SafeDelete.getKeyStroke_static();
   }
 }

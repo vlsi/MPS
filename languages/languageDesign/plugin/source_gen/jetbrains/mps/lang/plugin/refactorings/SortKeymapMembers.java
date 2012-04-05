@@ -22,10 +22,6 @@ public class SortKeymapMembers extends BaseRefactoring {
     return "Sort Members";
   }
 
-  public String getKeyStroke() {
-    return getKeyStroke_static();
-  }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new SortKeymapMembers_Target();
   }
@@ -43,9 +39,5 @@ public class SortKeymapMembers extends BaseRefactoring {
         return SPropertyOperations.getString(SLinkOperations.getTarget(it, "action", false), "name");
       }
     }, true));
-  }
-
-  public static String getKeyStroke_static() {
-    return "";
   }
 }

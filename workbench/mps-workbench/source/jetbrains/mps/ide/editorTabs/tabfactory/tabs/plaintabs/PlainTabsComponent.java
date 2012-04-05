@@ -25,8 +25,8 @@ import com.intellij.openapi.util.Disposer;
 import com.intellij.ui.PrevNextActionsDescriptor;
 import com.intellij.ui.TabbedPaneWrapper.AsJBTabs;
 import com.intellij.ui.tabs.JBTabs;
-import jetbrains.mps.ide.editorTabs.EditorTabComparator;
-import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.ide.relations.RelationComparator;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.ide.editorTabs.TabColorProvider;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.BaseTabsComponent;
@@ -48,14 +48,14 @@ import java.util.List;
 public class PlainTabsComponent extends BaseTabsComponent {
     private List<PlainEditorTab> myRealTabs = new ArrayList<PlainEditorTab>();
     private AsJBTabs myJbTabs;
-    private EditorTabDescriptor myLastEmptyTab = null;
+    private RelationDescriptor myLastEmptyTab = null;
 
     private final Disposable myJbTabsDisposable = new Disposable() {
         public void dispose() {
         }
     };
 
-    public PlainTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, CreateModeCallback createModeCallback, IOperationContext operationContext) {
+    public PlainTabsComponent(SNodePointer baseNode, Set<RelationDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, CreateModeCallback createModeCallback, IOperationContext operationContext) {
         super(baseNode, possibleTabs, editor, callback, showGrayed, createModeCallback, operationContext);
 
         DataContext dataContext = DataManager.getInstance().getDataContext(myEditor);
@@ -91,7 +91,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
         });
     }
 
-    public EditorTabDescriptor getCurrentTabAspect() {
+    public RelationDescriptor getCurrentTabAspect() {
         if (myLastEmptyTab != null) return myLastEmptyTab;
         return myRealTabs.get(myJbTabs.getSelectedIndex()).getTab();
     }
@@ -136,14 +136,14 @@ public class PlainTabsComponent extends BaseTabsComponent {
         myRealTabs.clear();
         myJbTabs.removeAll();
 
-        ArrayList<EditorTabDescriptor> tabs = new ArrayList<EditorTabDescriptor>(myPossibleTabs);
-        Collections.sort(tabs, new EditorTabComparator());
+        ArrayList<RelationDescriptor> tabs = new ArrayList<RelationDescriptor>(myPossibleTabs);
+        Collections.sort(tabs, new RelationComparator());
 
-        Map<EditorTabDescriptor, List<SNode>> newContent = updateDocumentsAndNodes();
+        Map<RelationDescriptor, List<SNode>> newContent = updateDocumentsAndNodes();
 
         //todo sort nodes inside aspect
         JLabel fill = new JLabel("");
-        for (EditorTabDescriptor tab : tabs) {
+        for (RelationDescriptor tab : tabs) {
             List<SNode> nodes = newContent.get(tab);
             if (nodes != null) {
                 for (SNode node : nodes) {

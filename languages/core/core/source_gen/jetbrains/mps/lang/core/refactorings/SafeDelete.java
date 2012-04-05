@@ -24,10 +24,6 @@ public class SafeDelete extends BaseRefactoring {
     return "Safe Delete Node";
   }
 
-  public String getKeyStroke() {
-    return getKeyStroke_static();
-  }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new SafeDelete_Target();
   }
@@ -50,9 +46,5 @@ public class SafeDelete extends BaseRefactoring {
     }
 
     return searchResults;
-  }
-
-  public static String getKeyStroke_static() {
-    return "";
   }
 }

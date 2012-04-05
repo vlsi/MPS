@@ -29,7 +29,7 @@ public class check_BuildSource_JavaLibraryJar_NonTypesystemRule extends Abstract
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.build.structure.BuildSource_JavaLibraryJar";
+    return "jetbrains.mps.build.structure.BuildSource_JavaJar";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

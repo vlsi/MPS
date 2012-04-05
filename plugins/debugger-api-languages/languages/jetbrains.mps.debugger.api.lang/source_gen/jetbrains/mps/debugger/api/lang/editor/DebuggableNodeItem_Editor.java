@@ -37,9 +37,6 @@ public class DebuggableNodeItem_Editor extends DefaultNodeEditor {
     if (renderingCondition_dx7uys_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_dx7uys_b0(editorContext, node));
     }
-    if (renderingCondition_dx7uys_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_dx7uys_c0(editorContext, node));
-    }
     return editorCell;
   }
 
@@ -51,29 +48,15 @@ public class DebuggableNodeItem_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createCollection_dx7uys_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_dx7uys_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     }
     editorCell.addEditorCell(this.createIndentCell_dx7uys_a1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_dx7uys_b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_dx7uys_c1a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_dx7uys_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_dx7uys_c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createIndentCell_dx7uys_a2a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_dx7uys_b2a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_dx7uys_c2a(editorContext, node));
     return editorCell;
   }
 
@@ -90,15 +73,8 @@ public class DebuggableNodeItem_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_dx7uys_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "create breakpoint:");
-    editorCell.setCellId("Constant_dx7uys_b1a");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_dx7uys_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get property:");
-    editorCell.setCellId("Constant_dx7uys_b2a");
+    editorCell.setCellId("Constant_dx7uys_b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -111,11 +87,6 @@ public class DebuggableNodeItem_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_dx7uys_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
-  }
-
-  private EditorCell createIndentCell_dx7uys_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
@@ -139,23 +110,6 @@ public class DebuggableNodeItem_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNode_dx7uys_c1a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("createBreakpoint");
-    provider.setNoTargetText("<no createBreakpoint>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_dx7uys_c2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("propertyStringGetter");
     provider.setNoTargetText("<no propertyStringGetter>");
@@ -190,10 +144,6 @@ public class DebuggableNodeItem_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_dx7uys_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "createBreakpoint", true) != null);
-  }
-
-  private static boolean renderingCondition_dx7uys_a2a(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "propertyStringGetter", true) != null);
   }
 

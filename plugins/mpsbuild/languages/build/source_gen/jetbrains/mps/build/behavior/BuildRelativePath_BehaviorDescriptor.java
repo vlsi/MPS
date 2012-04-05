@@ -11,6 +11,10 @@ public abstract class BuildRelativePath_BehaviorDescriptor extends BuildSourcePa
   public BuildRelativePath_BehaviorDescriptor() {
   }
 
+  public SNode virtual_getParent_8654221991637145399(SNode thisNode) {
+    return BuildRelativePath_Behavior.virtual_getParent_8654221991637145399(thisNode);
+  }
+
   public String virtual_getLocalPath_5481553824944787364(SNode thisNode, Context context) {
     return BuildRelativePath_Behavior.virtual_getLocalPath_5481553824944787364(thisNode, context);
   }

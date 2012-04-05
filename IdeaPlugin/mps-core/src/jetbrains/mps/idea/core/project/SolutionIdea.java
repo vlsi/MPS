@@ -50,6 +50,7 @@ public class SolutionIdea extends Solution {
   private MessageBusConnection myConnection;
 
   public SolutionIdea(@NotNull Module module, SolutionDescriptor descriptor) {
+    super(descriptor, null);
     myModule = module;
     // TODO: simply set solution descriptor local variable?
     setSolutionDescriptor(descriptor, false);
@@ -63,7 +64,6 @@ public class SolutionIdea extends Solution {
       public void rootsChanged(ModuleRootEvent event) {
         if (myModule.getProject().equals(event.getSource())) {
           ModelAccess.instance().runWriteInEDT(new Runnable() {
-            @Override
             public void run() {
               // this is to prevent a delayed write to be executed after the module has already been disposed
               // TODO: find a better solution
@@ -125,7 +125,7 @@ public class SolutionIdea extends Solution {
           myDependencies.add(dep);
         }
       }
-      for (Module usedModule: usedModules) {
+      for (Module usedModule : usedModules) {
         MPSFacet usedModuleMPSFacet = FacetManager.getInstance(usedModule).getFacetByType(MPSFacetType.ID);
         if (usedModuleMPSFacet != null && usedModuleMPSFacet.wasInitialized()) {
           Dependency dep = new Dependency();

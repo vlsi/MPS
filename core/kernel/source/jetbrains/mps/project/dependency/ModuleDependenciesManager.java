@@ -21,8 +21,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -127,7 +126,7 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
     }
     if (reexportOnly) return;
     for (ModuleReference ref : myModule.getUsedDevkitReferences()) {
-      DevKit dk = MPSModuleRepository.getInstance().getDevKit(ref);
+      DevKit dk = ModuleRepositoryFacade.getInstance().getModule(ref, DevKit.class);
       if (dk == null) continue;
 
       for (Solution solution : dk.getAllExportedSolutions()) {

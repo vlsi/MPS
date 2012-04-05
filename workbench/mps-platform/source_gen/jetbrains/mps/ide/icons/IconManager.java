@@ -32,7 +32,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.lang.reflect.Method;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -181,7 +181,7 @@ public class IconManager {
   public static Icon getIconForNamespace(String namespace) {
     String className = namespace + ".icons.Icons";
     try {
-      Language language = MPSModuleRepository.getInstance().getLanguage(namespace);
+      Language language = ModuleRepositoryFacade.getInstance().getModule(namespace, Language.class);
       if (language == null) {
         LOG.error("Can't find a language " + namespace);
       } else {

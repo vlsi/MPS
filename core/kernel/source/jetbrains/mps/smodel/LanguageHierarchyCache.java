@@ -295,7 +295,7 @@ public class LanguageHierarchyCache implements CoreComponent {
     myDirectDescendantsCache.clear();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (Language language : myModuleRepository.getAllLanguages()) {
+        for (Language language : (List<Language>) ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
           SModelDescriptor structureDescriptor = language.getStructureModelDescriptor();
           if (structureDescriptor == null) continue;
           Iterable<SNode> iterable =

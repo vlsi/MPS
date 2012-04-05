@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:e1fb76fe-337f-4b99-9cd2-23a0f09d8877(jetbrains.mps.ui.gwt.widgets)">
+<model modelUID="r:e1fb76fe-337f-4b99-9cd2-23a0f09d8877(jetbrains.mps.ui.gwt.widgets)" doNotGenerate="true">
   <persistence version="7" />
   <language namespace="8a448bd0-1380-4c01-9820-0f051d33888c(jetbrains.mps.ui.modeling)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="e5c2a44a-6085-4aeb-a5b6-851cecd2d926(jetbrains.mps.ui.gwt)" />
   <language namespace="fb26dccf-fa54-4e9a-8ddb-b66311a34393(jetbrains.mps.ui)" />
   <import index="e8m3" modelUID="r:6878192c-cfd9-411c-9af0-6054cf03c27f(jetbrains.mps.ui.gwt.generator.template.main@generator)" version="-1" />
   <import index="2yj1" modelUID="r:c1b84d62-80cc-499b-b655-943c00c7ba88(jetbrains.mps.ui.widgets)" version="1" />
@@ -38,7 +37,7 @@
     </node>
     <node type="sqp9.UIObjectTemplate" typeId="sqp9.4643695836678898389" id="4007322171505962922">
       <property name="name" nameId="tpck.1169194664001" value="VerticalPanel" />
-      <link role="uiObject" roleId="sqp9.4643695836678898390" targetNodeId="2yj1.4007322171505962920" resolveInfo="VPanel" />
+      <link role="uiObject" roleId="sqp9.4643695836678898390" targetNodeId="2yj1.4007322171505962920" resolveInfo="VerticalPanel" />
     </node>
     <node type="sqp9.UIObjectTemplate" typeId="sqp9.4643695836678898389" id="352695393470336933">
       <property name="name" nameId="tpck.1169194664001" value="HorizontalPanel" />
@@ -50,7 +49,7 @@
     </node>
     <node type="sqp9.UIObjectTemplate" typeId="sqp9.4643695836678898389" id="262873202871588255">
       <property name="name" nameId="tpck.1169194664001" value="Label" />
-      <link role="uiObject" roleId="sqp9.4643695836678898390" targetNodeId="2yj1.262873202871588254" resolveInfo="Text" />
+      <link role="uiObject" roleId="sqp9.4643695836678898390" targetNodeId="2yj1.262873202871588254" resolveInfo="Label" />
     </node>
     <node type="sqp9.UIObjectTemplate" typeId="sqp9.4643695836678898389" id="600037073069499088">
       <property name="name" nameId="tpck.1169194664001" value="TabLayoutPanel" />
@@ -563,7 +562,7 @@
                       </node>
                     </node>
                     <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="9003987136928221160">
-                      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" />
+                      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
                     </node>
                   </node>
                 </node>
@@ -2352,7 +2351,7 @@
   </root>
   <root id="2663453265348464651">
     <node role="containerTemplate" roleId="sqp9.4391079257750389359" type="sqp9.ContainerTemplate" typeId="sqp9.4391079257750389358" id="2663453265348466239">
-      <link role="container" roleId="sqp9.4391079257750389360" targetNodeId="2yj1.2663453265346089637" resolveInfo="children" />
+      <link role="container" roleId="sqp9.4391079257750389360" targetNodeId="2yj1.2663453265346089637" resolveInfo="layoutChildren" />
       <node role="itemType" roleId="sqp9.4391079257750550448" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2663453265348469588">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7s6f.~Widget" resolveInfo="Widget" />
       </node>

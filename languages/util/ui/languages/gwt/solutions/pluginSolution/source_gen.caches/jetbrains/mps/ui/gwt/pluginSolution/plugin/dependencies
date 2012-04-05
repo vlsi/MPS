@@ -2,17 +2,20 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ui.gwt.pluginSolution.plugin.EditorExtension_CustomApplicationPlugin" file="EditorExtension_CustomApplicationPlugin.java">
     <classNode dependClassName="jetbrains.mps.ui.modeling.pluginSolution.plugin.EditorExtensionHelper" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
+    <classNode extendsClassName="jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.ui.gwt.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
+    <classNode dependClassName="jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin" />
     <classNode dependClassName="jetbrains.mps.ui.gwt.pluginSolution.plugin.EditorExtension_CustomApplicationPlugin" />
     <classNode dependClassName="jetbrains.mps.ui.gwt.pluginSolution.plugin.Variant_CustomApplicationPlugin" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
+  </dependency>
+  <dependency className="jetbrains.mps.ui.gwt.pluginSolution.plugin.PluginSolution_ProjectPlugin" file="PluginSolution_ProjectPlugin.java">
+    <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.ui.gwt.pluginSolution.plugin.Variant_CustomApplicationPlugin" file="Variant_CustomApplicationPlugin.java">
     <classNode dependClassName="java.util.HashSet" />
@@ -27,7 +30,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.ui.pluginSolution.plugin.Variants" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
+    <classNode extendsClassName="jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin" />
   </dependency>
 </dependenciesRoot>
 

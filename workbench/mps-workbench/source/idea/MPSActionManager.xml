@@ -119,10 +119,10 @@
               description="You can open existing MPS project with this action"/>
 
       <!--<action id="OpenRecenProjectAciton"-->
-              <!--class="com.intellij.openapi.wm.impl.welcomeScreen.RecentProjectsAction"-->
-              <!--text="Reopen Recent Project"-->
-              <!--description="You can open one of the most recent project you were working with. Click the icon or link to select a project from the list."-->
-              <!--icon="/general/reopenRecentProject.png"/>-->
+      <!--class="com.intellij.openapi.wm.impl.welcomeScreen.RecentProjectsAction"-->
+      <!--text="Reopen Recent Project"-->
+      <!--description="You can open one of the most recent project you were working with. Click the icon or link to select a project from the list."-->
+      <!--icon="/general/reopenRecentProject.png"/>-->
 
       <add-to-group group-id="WelcomeScreen.QuickStart" anchor="first"/>
     </group>
@@ -152,6 +152,8 @@
     <group id="ConsoleView.PopupMenu">
       <action id="ConsoleView.ClearAll" class="com.intellij.execution.impl.ConsoleViewImpl$ClearAllAction"/>
       <action id="ConsoleView.Copy" class="com.intellij.execution.impl.ConsoleViewImpl$CopyAction"/>
+      <separator/>
+      <reference ref="CompareClipboardWithSelection"/>
     </group>
 
     <action id="Find" class="com.intellij.openapi.editor.actions.IncrementalFindAction" icon="/actions/menu-find.png"/>
