@@ -62,11 +62,13 @@ public class TypeSystemReporter {
   }
 
   public void reportIsSubType(SNode subType, SNode superType, long time) {
+    if (null == subType || null == superType) return;
     String conceptFqName = subType.getConceptFqName()+ "   "+ superType.getConceptFqName();
     report(time, conceptFqName, myIsSubTypeTime);
   }
 
   public void reportCoerce(SNode subType, String fq, long time) {
+    if (null == subType) return;
     String conceptFqName = subType.getConceptFqName()+ "   "+ fq;
     report(time, conceptFqName, myCoerceTime);
   }
