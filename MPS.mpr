@@ -311,11 +311,10 @@
       <modulePath path="${project}/languages/util/ypath/ypath.mpl" folder="languages.ypath" />
       <modulePath path="${project}/languages/xml/xml/sandbox/sandbox.msd" folder="build" />
       <modulePath path="${project}/languages/xml/xml/xml.mpl" folder="build" />
-      <modulePath path="${project}/plugins/debugger-api-languages/languages/jetbrains.mps.debugger.api.lang/api.mpl" folder="debugger.api" />
-      <modulePath path="${project}/plugins/debugger-api-languages/languages/jetbrains.mps.debugger.api.languages.plugin/plugin.msd" folder="debugger.api" />
       <modulePath path="${project}/plugins/debugger-api/api/api.msd" folder="debugger.api" />
+      <modulePath path="${project}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/api.mpl" folder="debugger.api" />
       <modulePath path="${project}/plugins/debugger-api/runtime/jetbrains.mps.debugger-api.msd" folder="debugger.api" />
-      <modulePath path="${project}/plugins/debugger-java-customViewers/languages/customViewers/plugin.msd" folder="debugger.java" />
+      <modulePath path="${project}/plugins/debugger-java-customViewers/plugin.msd" folder="debugger.java" />
       <modulePath path="${project}/plugins/debugger-java/api/jetbrains.mps.debugger.java.api.msd" folder="debugger.java" />
       <modulePath path="${project}/plugins/debugger-java/languages/customViewers/customViewers.mpl" folder="debugger.java.languages" />
       <modulePath path="${project}/plugins/debugger-java/languages/evaluation/evaluation.mpl" folder="debugger.java.languages" />
