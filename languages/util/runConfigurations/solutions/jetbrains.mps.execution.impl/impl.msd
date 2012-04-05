@@ -2,7 +2,15 @@
 <solution name="jetbrains.mps.execution.impl" uuid="365fb593-3c1a-40a0-a7d7-c98144281283" compileInMPS="false">
   <models>
     <modelRoot path="${solution_descriptor}/" />
+    <modelRoot path="${solution_descriptor}/classes">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </modelRoot>
   </models>
+  <stubModelEntries>
+    <stubModelEntry path="${solution_descriptor}/classes">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+  </stubModelEntries>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
