@@ -5,8 +5,9 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
+import jetbrains.mps.baseLanguage.scopes.Scopes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 
 public class GenericDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -14,7 +15,7 @@ public class GenericDeclaration_Behavior {
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration")) {
-      return CompositeWithParentScope.from(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true), thisNode, kind);
+      return Scopes.forTypeVariables(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true), ScopeUtils.lazyParentScope(thisNode, kind));
     }
     return null;
   }

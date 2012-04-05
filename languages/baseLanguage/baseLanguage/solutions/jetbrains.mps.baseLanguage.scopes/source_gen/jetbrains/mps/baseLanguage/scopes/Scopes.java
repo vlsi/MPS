@@ -49,4 +49,9 @@ public class Scopes {
     // Hiding only other LoopLabels 
     return new HidingByNameScope(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LoopLabel"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LoopLabel"), new NamedElementsScope(labels), parentScope);
   }
+
+  public static Scope forTypeVariables(Iterable<SNode> variables, Scope parentScope) {
+    // Hiding only other type variables 
+    return new HidingByNameScope(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), new NamedElementsScope(variables), parentScope);
+  }
 }

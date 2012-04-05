@@ -112,7 +112,7 @@ public class Classifier_Behavior {
   public static Set<SNode> call_getAllExtendedClassifiers_2907982978864985482(SNode thisNode) {
     // should be cached // based on extended classifiers 
     // without cyclic dependencies checking 
-    Set<SNode> result = SetSequence.fromSet(new HashSet());
+    Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
     Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985509(thisNode, result);
     return result;
   }
@@ -320,7 +320,9 @@ public class Classifier_Behavior {
       if (SConceptOperations.isSubConceptOf(concept_e0bb, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration")) {
         // todo: Classifier should be ClassifierMember! 
         if (!(isStaticContext)) {
-          return CompositeWithParentScope.from(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true), thisNode, kind);
+          return Scopes.forTypeVariables(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true), ScopeUtils.lazyParentScope(thisNode, kind));
+        } else {
+          return ScopeUtils.lazyParentScope(thisNode, kind);
         }
       }
       if (SConceptOperations.isSubConceptOf(concept_e0bb, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration")) {
