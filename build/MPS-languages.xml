@@ -21221,7 +21221,6 @@
           <module ref="fe9d76d7-5809-45c9-ae28-a40915b4d6ff(jetbrains.mps.lang.checkedName)" />
         </dependencies>
         <runtime jar="/lib/beansbinding-1.2.1.jar" />
-        <runtime jar="jetbrains.mps.uiLanguage-runtime.jar" />
         <library jar="/lib/beansbinding-1.2.1.jar" />
         <sources jar="jetbrains.mps.uiLanguage-src.jar" descriptor="uiLanguage.mpl" />
       </module>
@@ -21239,9 +21238,6 @@
       <zipfileset dir="${base_dir}/languages/util/uiLanguage/classes_gen" />
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/util/deprecated/ui/jetbrains.mps.uiLanguage.jar.jtmp" />
-    <jar destfile="${deploy.dir}/MPS/languages/util/deprecated/ui/jetbrains.mps.uiLanguage-runtime.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    </jar>
   </target>
   <target name="pack.jetbrains.mps.uiLanguage.pluginSolution">
     <fail unless="base_dir" message="Property base_dir unspecified." />
