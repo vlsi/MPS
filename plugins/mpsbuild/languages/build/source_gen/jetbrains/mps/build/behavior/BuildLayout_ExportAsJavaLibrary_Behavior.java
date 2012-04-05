@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
-public class BuildLayout_JavaLibrary_Behavior {
+public class BuildLayout_ExportAsJavaLibrary_Behavior {
   public static void init(SNode thisNode) {
   }
 

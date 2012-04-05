@@ -744,8 +744,8 @@ public class QueriesGenerated {
       return Collections.emptyList();
     }
     Iterable<SNode> input;
-    if (SNodeOperations.isInstanceOf(layoutNode, "jetbrains.mps.build.structure.BuildLayout_JavaLibrary")) {
-      input = SLinkOperations.getTargets(SNodeOperations.cast(layoutNode, "jetbrains.mps.build.structure.BuildLayout_JavaLibrary"), "children", true);
+    if (SNodeOperations.isInstanceOf(layoutNode, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary")) {
+      input = SLinkOperations.getTargets(SNodeOperations.cast(layoutNode, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary"), "children", true);
     } else {
       input = Sequence.<SNode>singleton(layoutNode);
     }
