@@ -53,10 +53,11 @@ public class typeof_LocalInstanceFieldReference_InferenceRule extends AbstractIn
       typeCheckingContext.createEquation((SNode) constructedType, (SNode) typeCheckingContext.getRepresentative(InstanceType_typevar_2233570453276392932), _info_12389875345);
     }
     final SNode fieldClassifier = SNodeOperations.getAncestor(fieldDeclaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    {
-      SNode _nodeToCheck_1029348928467 = fieldReference;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2233570453276392949", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.getRepresentative(InstanceType_typevar_2233570453276392932), (SNode) new typeof_LocalInstanceFieldReference_InferenceRule.QuotationClass_4vmy70_a0a01a0().createNode(fieldClassifier, typeCheckingContext), true, false, _info_12389875345);
+    if (!(typeCheckingContext.isSingleTypeComputation())) { {
+        SNode _nodeToCheck_1029348928467 = fieldReference;
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2233570453276392949", 0, null);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.getRepresentative(InstanceType_typevar_2233570453276392932), (SNode) new typeof_LocalInstanceFieldReference_InferenceRule.QuotationClass_4vmy70_a0a01a0().createNode(fieldClassifier, typeCheckingContext), true, false, _info_12389875345);
+      }
     }
     Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
     SNode matchedType = RulesFunctions_BaseLanguage.inference_matchTypeWithTypeVariables(typeCheckingContext, SLinkOperations.getTarget(fieldDeclaration, "type", true), mmap);
