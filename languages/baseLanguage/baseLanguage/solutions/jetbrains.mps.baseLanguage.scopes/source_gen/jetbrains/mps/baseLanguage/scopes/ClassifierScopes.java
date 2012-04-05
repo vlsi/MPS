@@ -12,6 +12,11 @@ import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class ClassifierScopes {
   private ClassifierScopes() {
@@ -67,6 +72,37 @@ public class ClassifierScopes {
       @Override
       public boolean isExcluded(SNode node) {
         return SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "isFinal");
+      }
+    };
+  }
+
+  public static Scope getClassesForStaticFieldReference(SNode contextNode, IScope scope) {
+    final Set<SNode> enclosingClassifierAncestors = SetSequence.fromSet(new HashSet<SNode>());
+    SetSequence.fromSet(enclosingClassifierAncestors).addSequence(ListSequence.fromList(SNodeOperations.getAncestors(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", false)));
+
+    return new FilteringScope(getVisibleClassifiersScope(contextNode, scope)) {
+      @Override
+      public boolean isExcluded(SNode node) {
+        if (SetSequence.fromSet(enclosingClassifierAncestors).contains(node)) {
+          return false;
+        }
+
+        SNode classifier = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier");
+        if (SPropertyOperations.getBoolean(classifier, "nonStatic") || SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+          return true;
+        }
+
+        List<SNode> ancestors = SNodeOperations.getAncestors(classifier, null, true);
+        // Filtering out Classifiers located in third-party containers (not Classifiers) 
+        // and having no common Classifier container with enclosing node. 
+        // Useful for Classifiers contained in EditorTestCases 
+        // ("result" should not be able to access classifiers from "nodeToEdit")... 
+        // todo: VOODOO PEOPLE MAGIC PEOPLE 
+        return ListSequence.fromList(ancestors).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Classifier"));
+          }
+        }).isNotEmpty() && ListSequence.fromList(ancestors).intersect(SetSequence.fromSet(enclosingClassifierAncestors)).isEmpty();
       }
     };
   }
