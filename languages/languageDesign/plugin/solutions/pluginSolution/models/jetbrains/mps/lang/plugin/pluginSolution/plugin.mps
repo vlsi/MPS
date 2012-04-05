@@ -27,6 +27,7 @@
       <property name="name" nameId="tpck.1169194664001" value="RefactoringAdditions" />
     </node>
     <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="8268629222289297283" />
+    <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690967657585" />
   </roots>
   <root id="5487985028841901743">
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionParameterDeclaration" typeId="tp4k.1205679047295" id="5487985028841901744">
@@ -88,5 +89,6 @@
     </node>
   </root>
   <root id="8268629222289297283" />
+  <root id="7162597690967657585" />
 </model>
 

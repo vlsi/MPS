@@ -88,6 +88,7 @@
       <property name="name" nameId="tpck.1169194664001" value="RunReplacement" />
       <property name="caption" nameId="tp4k.6547237850567462620" value="Replacement" />
     </node>
+    <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690967871525" />
   </roots>
   <root id="5487985028841942626">
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="5487985028841942627">
@@ -3933,5 +3934,6 @@
       <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/workbench/mps-workbench/source/jetbrains/mps/ide/projectPane/other/find.png" />
     </node>
   </root>
+  <root id="7162597690967871525" />
 </model>
 

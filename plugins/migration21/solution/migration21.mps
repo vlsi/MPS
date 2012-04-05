@@ -80,6 +80,7 @@
       <property name="name" nameId="tpck.1169194664001" value="AddPluginDependencies" />
       <property name="caption" nameId="tp4k.1205250923097" value="Add Plugin Dependencies" />
     </node>
+    <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690968046172" />
   </roots>
   <root id="8325776762397714308" />
   <root id="2899596005953728721">
@@ -2439,5 +2440,6 @@
       </node>
     </node>
   </root>
+  <root id="7162597690968046172" />
 </model>
 

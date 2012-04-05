@@ -26,6 +26,7 @@
     <node type="tgbt.ApplicationPluginDeclaration" typeId="tgbt.481983775135178840" id="5487985028841950024">
       <property name="name" nameId="tpck.1169194664001" value="Variant" />
     </node>
+    <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690967918170" />
   </roots>
   <root id="5487985028841949990">
     <node role="fieldDeclaration" roleId="tgbt.481983775135178844" type="tp4f.DefaultClassifierFieldDeclaration" typeId="tp4f.1213999088275" id="5487985028841949991">
@@ -159,5 +160,6 @@
       </node>
     </node>
   </root>
+  <root id="7162597690967918170" />
 </model>
 
