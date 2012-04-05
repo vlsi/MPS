@@ -75,10 +75,11 @@ public class TypeSystemReporter {
   public void printMapReport(Map<String, Pair<Long, Long>> map) {
     ArrayList<Entry<String, Pair<Long, Long>>> list = new  ArrayList<Entry<String, Pair<Long, Long>>>();
     list.addAll(map.entrySet());
+
     Collections.sort(list, new Comparator<Entry<String, Pair<Long, Long>>>() {
       @Override
       public int compare(Entry<String, Pair<Long, Long>> o1, Entry<String, Pair<Long, Long>> o2) {
-        return (int)(o2.getValue().o1 - o1.getValue().o1);
+        return o2.getValue().o1 > o1.getValue().o1 ? 1 : -1;
       }
     });
     long sum = 0;

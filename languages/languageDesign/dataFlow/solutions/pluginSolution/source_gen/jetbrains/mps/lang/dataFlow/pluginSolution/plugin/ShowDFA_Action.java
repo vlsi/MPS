@@ -4,6 +4,8 @@ package jetbrains.mps.lang.dataFlow.pluginSolution.plugin;
 
 import jetbrains.mps.plugins.actions.GeneratedAction;
 import javax.swing.Icon;
+
+import jetbrains.mps.typesystem.TypeSystemReporter;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
@@ -65,6 +67,8 @@ public class ShowDFA_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      TypeSystemReporter.getInstance().printReport();
+      TypeSystemReporter.getInstance().reset();
       Program program = DataFlowManager.getInstance().buildProgramFor(((SNode) MapSequence.fromMap(_params).get("node")));
       new ShowCFGDialog(program, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Frame) MapSequence.fromMap(_params).get("frame")));
     } catch (Throwable t) {
