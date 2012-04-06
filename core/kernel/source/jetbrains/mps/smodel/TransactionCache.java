@@ -33,6 +33,10 @@ public class TransactionCache<K, V> {
    */
   @NotNull
   public V put(K key, @NotNull V value) {
+    // todo: !!! do it in normal way
+    if (inner.size() > 500) {
+      inner.clear();
+    }
     V previous = inner.putIfAbsent(key, value);
     return previous == null ? value : previous;
   }
