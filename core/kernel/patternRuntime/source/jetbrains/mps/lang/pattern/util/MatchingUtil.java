@@ -17,12 +17,14 @@ package jetbrains.mps.lang.pattern.util;
 
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.logging.Logger;
 import org.apache.commons.lang.ObjectUtils;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class MatchingUtil {
@@ -107,4 +109,26 @@ public class MatchingUtil {
     return true;
   }
 
+  public static int hash(SNode node, boolean useAttributes) {
+    int result = node.getConceptFqName().hashCode();
+    for (SReference reference : node.getReferences()) {
+      SNode targetNode = reference.getTargetNodeSilently();
+      if (targetNode != null) {
+        result = 31 * result + reference.getRole().hashCode();
+        result = 31 * result + targetNode.hashCode();
+      }
+    }
+    Map<String, String> properties = node.getProperties();
+    for (String propertyName : properties.keySet()) {
+      result = 31 * result + propertyName.hashCode();
+    }
+    for (String propertyValue : properties.values()) {
+      result = 31 * result + propertyValue.hashCode();
+    }
+    for (SNode child : node.getChildren(useAttributes)) {
+      result = 31 * result + child.getRole_().hashCode();
+      result = 31 * result + hash(child, useAttributes);
+    }
+    return result;
+  }
 }
