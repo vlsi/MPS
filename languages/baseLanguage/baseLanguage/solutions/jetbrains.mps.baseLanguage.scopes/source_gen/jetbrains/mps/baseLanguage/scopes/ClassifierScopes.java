@@ -6,6 +6,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.scopes.runtime.FilteringScope;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -27,12 +28,18 @@ public class ClassifierScopes {
   }
 
   public static Scope filterVisibleClassifiersScope(final SNode contextNode, Scope inner) {
+    if ((contextNode == null)) {
+      if (log.isWarnEnabled()) {
+        log.warn("Empty context node");
+      }
+      return new EmptyScope();
+    }
     return new FilteringScope(inner) {
       @Override
       public boolean isExcluded(SNode node) {
-        if ((node == null) || (contextNode == null)) {
+        if ((node == null)) {
           if (log.isWarnEnabled()) {
-            log.warn("Empty node or contextNode: " + node + " " + contextNode);
+            log.warn("Empty node: " + node);
           }
           return true;
         }
