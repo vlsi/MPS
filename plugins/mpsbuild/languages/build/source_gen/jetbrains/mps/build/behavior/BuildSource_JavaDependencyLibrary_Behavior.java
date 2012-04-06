@@ -18,15 +18,13 @@ public class BuildSource_JavaDependencyLibrary_Behavior {
     }
 
     SNode target = SNodeOperations.as(artifacts.toOriginalNode(SLinkOperations.getTarget(thisNode, "library", false)), "jetbrains.mps.build.structure.BuildSource_JavaLibrary");
-    for (SNode artifact : artifacts.getArtifacts()) {
-      if (BuildLayout_Node_Behavior.call_exports_6547494638219603457(artifact, target)) {
-        artifacts.registerEntity(target, artifact);
-        artifacts.needsFetch(SNodeOperations.getParent(thisNode));
-        if (SNodeOperations.isInstanceOf(artifact, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary")) {
-          return SLinkOperations.getTargets(SNodeOperations.cast(artifact, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary"), "children", true);
-        } else {
-          return Sequence.<SNode>singleton(artifact);
-        }
+    SNode artifact = SNodeOperations.as(artifacts.findArtifact(target), "jetbrains.mps.build.structure.BuildLayout_Node");
+    if (artifact != null) {
+      artifacts.needsFetch(SNodeOperations.getParent(thisNode));
+      if (SNodeOperations.isInstanceOf(artifact, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary")) {
+        return SLinkOperations.getTargets(SNodeOperations.cast(artifact, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary"), "children", true);
+      } else {
+        return Sequence.<SNode>singleton(artifact);
       }
     }
     return null;

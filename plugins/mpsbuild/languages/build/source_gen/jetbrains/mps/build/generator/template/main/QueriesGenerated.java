@@ -40,7 +40,7 @@ import jetbrains.mps.build.generator.util.FetchDependenciesProcessor;
 import java.util.Set;
 import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.build.generator.util.JavaModulesClosure;
+import jetbrains.mps.build.util.JavaModulesClosure;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class QueriesGenerated {
