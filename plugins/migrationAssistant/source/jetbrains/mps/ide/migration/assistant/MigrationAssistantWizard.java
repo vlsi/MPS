@@ -624,6 +624,12 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     }
 
     @Override
+    public Object getNextStepId() {
+      // next step is the error report
+      return null;
+    }
+
+    @Override
     public boolean isComplete() {
       return true;
     }
