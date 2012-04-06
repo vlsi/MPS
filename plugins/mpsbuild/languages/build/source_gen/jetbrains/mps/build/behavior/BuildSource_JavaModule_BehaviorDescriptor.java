@@ -6,7 +6,7 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class BuildSource_JavaModule_BehaviorDescriptor extends BuildProjectPart_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
+public class BuildSource_JavaModule_BehaviorDescriptor extends BuildProjectPart_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, BuildSource_CompilablePart_BehaviorDescriptor {
   public BuildSource_JavaModule_BehaviorDescriptor() {
   }
 

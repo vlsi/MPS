@@ -76,10 +76,6 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Dependencies" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="3ior.4993211115183325728" resolveInfo="BuildProjectDependency" />
     </node>
-    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1117643560963346261">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.Java" />
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="3ior.5966744135495979931" resolveInfo="BuildLayout_JavaOutput" />
-    </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="5096397858823356720">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Names" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="3ior.4903714810883702015" resolveInfo="BuildStringPart" />
@@ -146,7 +142,7 @@
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="2913098736709465779">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.Java" />
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="3ior.2913098736709465755" resolveInfo="BuildLayout_JavaLibrary" />
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="3ior.2913098736709465755" resolveInfo="BuildLayout_ExportAsJavaLibrary" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="2913098736709465902">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Dependencies" />
@@ -2993,11 +2989,6 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1368030936106665780" />
     </node>
   </root>
-  <root id="1117643560963346261">
-    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1117643560963346262">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1117643560963346263" />
-    </node>
-  </root>
   <root id="5096397858823356720">
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="5096397858823356723">
       <property name="name" nameId="tpck.1169194664001" value="punctuationLeft" />
@@ -4774,13 +4765,13 @@
                                 </node>
                                 <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6547494638219622239">
                                   <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="6547494638219622221">
-                                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="3ior.5966744135495979931" resolveInfo="BuildLayout_JavaOutput" />
+                                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="3ior.2591537044435828004" resolveInfo="BuildLayout_CompileOutputOf" />
                                     <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6547494638219622204">
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6547494638219622164" resolveInfo="it" />
                                     </node>
                                   </node>
-                                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6547494638219622245">
-                                    <link role="link" roleId="tp25.1138056516764" targetNodeId="3ior.5966744135495979932" />
+                                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2591537044436116962">
+                                    <link role="link" roleId="tp25.1138056516764" targetNodeId="3ior.2591537044435828006" />
                                   </node>
                                 </node>
                               </node>
@@ -4789,8 +4780,8 @@
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6547494638219622164" resolveInfo="it" />
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="6547494638219622190">
-                                  <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="6547494638219622192">
-                                    <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3ior.5966744135495979931" resolveInfo="BuildLayout_JavaOutput" />
+                                  <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="2591537044436116960">
+                                    <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3ior.2591537044435828004" resolveInfo="BuildLayout_CompileOutputOf" />
                                   </node>
                                 </node>
                               </node>
@@ -5348,7 +5339,7 @@
                     <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2913098736709466138">
                       <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2913098736709466175">
                         <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="2913098736709466157">
-                          <link role="concept" roleId="tp25.1140138128738" targetNodeId="3ior.2913098736709465755" resolveInfo="BuildLayout_JavaLibrary" />
+                          <link role="concept" roleId="tp25.1140138128738" targetNodeId="3ior.2913098736709465755" resolveInfo="BuildLayout_ExportAsJavaLibrary" />
                           <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2913098736709466140">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2913098736709466089" resolveInfo="artifact" />
                           </node>
@@ -5365,7 +5356,7 @@
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="2913098736709466135">
                       <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="2913098736709466137">
-                        <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3ior.2913098736709465755" resolveInfo="BuildLayout_JavaLibrary" />
+                        <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3ior.2913098736709465755" resolveInfo="BuildLayout_ExportAsJavaLibrary" />
                       </node>
                     </node>
                   </node>

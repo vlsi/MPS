@@ -835,8 +835,8 @@
                 <property name="text" nameId="3ior.4903714810883755350" value="debugger-api.jar" />
               </node>
             </node>
-            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_JavaOutput" typeId="3ior.5966744135495979931" id="6164334420696871021">
-              <link role="module" roleId="3ior.5966744135495979932" targetNodeId="1841128050848833495" resolveInfo="debugger-api" />
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_CompileOutputOf" typeId="3ior.2591537044435828004" id="2591537044436106616">
+              <link role="module" roleId="3ior.2591537044435828006" targetNodeId="1841128050848833495" resolveInfo="debugger-api" />
             </node>
             <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="6164334420696871023">
               <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_FolderWithSources" typeId="kdzh.2105528055260548241" id="4873135460959858869">
@@ -900,8 +900,8 @@
             </node>
           </node>
           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Jar" typeId="3ior.7389400916848050074" id="6164334420696871004">
-            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_JavaOutput" typeId="3ior.5966744135495979931" id="6164334420696871010">
-              <link role="module" roleId="3ior.5966744135495979932" targetNodeId="1841128050848833514" resolveInfo="debugger-java" />
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_CompileOutputOf" typeId="3ior.2591537044435828004" id="2591537044436106614">
+              <link role="module" roleId="3ior.2591537044435828006" targetNodeId="1841128050848833514" resolveInfo="debugger-java" />
             </node>
             <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="6164334420696871012">
               <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_FolderWithSources" typeId="kdzh.2105528055260548241" id="4873135460959858874">
@@ -979,8 +979,8 @@
                 <property name="text" nameId="3ior.4903714810883755350" value="debugger-java-customViewers.jar" />
               </node>
             </node>
-            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_JavaOutput" typeId="3ior.5966744135495979931" id="6164334420696871038">
-              <link role="module" roleId="3ior.5966744135495979932" targetNodeId="6164334420696871040" resolveInfo="debugger-java-customViewers" />
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_CompileOutputOf" typeId="3ior.2591537044435828004" id="2591537044436106615">
+              <link role="module" roleId="3ior.2591537044435828006" targetNodeId="6164334420696871040" resolveInfo="debugger-java-customViewers" />
             </node>
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_FolderWithSources" typeId="kdzh.2105528055260548241" id="6164334420696871035">
               <link role="module" roleId="kdzh.1692280246134781713" targetNodeId="5506065168694779085" resolveInfo="jetbrains.mps.debugger.java.customViewers.plugin" />
@@ -1203,8 +1203,8 @@
                 <property name="text" nameId="3ior.4903714810883755350" value="execution-configurations.jar" />
               </node>
             </node>
-            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_JavaOutput" typeId="3ior.5966744135495979931" id="6164334420696871061">
-              <link role="module" roleId="3ior.5966744135495979932" targetNodeId="7966529035455075355" resolveInfo="execution-configurations" />
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_CompileOutputOf" typeId="3ior.2591537044435828004" id="2591537044436106617">
+              <link role="module" roleId="3ior.2591537044435828006" targetNodeId="7966529035455075355" resolveInfo="execution-configurations" />
             </node>
             <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="6164334420696871069">
               <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_FolderWithSources" typeId="kdzh.2105528055260548241" id="4873135460959858882">
@@ -1285,8 +1285,8 @@
                 <property name="text" nameId="3ior.4903714810883755350" value="execution-languages.jar" />
               </node>
             </node>
-            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_JavaOutput" typeId="3ior.5966744135495979931" id="6164334420696881461">
-              <link role="module" roleId="3ior.5966744135495979932" targetNodeId="7966529035455075323" resolveInfo="execution-languages" />
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_CompileOutputOf" typeId="3ior.2591537044435828004" id="2591537044436106618">
+              <link role="module" roleId="3ior.2591537044435828006" targetNodeId="7966529035455075323" resolveInfo="execution-languages" />
             </node>
             <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="6164334420696881462">
               <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_FolderWithSources" typeId="kdzh.2105528055260548241" id="4873135460959858877">

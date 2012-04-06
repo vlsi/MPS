@@ -13,7 +13,7 @@
     <unitInfo nodeId="136702651994179408" fileName="Extension_ActionIDs_.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.test.pluginSolution.plugin.Extension_ActionIDs_" />
   </root>
   <root nodeId="5487985028841906061">
-    <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="30" startPosition="58" endLine="31" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="30" startPosition="53" endLine="31" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="31" startPosition="40" endLine="32" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="34" startPosition="32" endLine="35" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="35" startPosition="47" endLine="36" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

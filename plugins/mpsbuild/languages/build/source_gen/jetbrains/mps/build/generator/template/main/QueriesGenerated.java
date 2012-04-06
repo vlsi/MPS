@@ -56,6 +56,10 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "defaultPath", true) == null);
   }
 
+  public static boolean baseMappingRule_Condition_2591537044435952582(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "module", false), "jetbrains.mps.build.structure.BuildSource_JavaModule");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1117643560963267883(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(_context.getNode(), Context.defaultContext(_context));
   }
@@ -744,8 +748,8 @@ public class QueriesGenerated {
       return Collections.emptyList();
     }
     Iterable<SNode> input;
-    if (SNodeOperations.isInstanceOf(layoutNode, "jetbrains.mps.build.structure.BuildLayout_JavaLibrary")) {
-      input = SLinkOperations.getTargets(SNodeOperations.cast(layoutNode, "jetbrains.mps.build.structure.BuildLayout_JavaLibrary"), "children", true);
+    if (SNodeOperations.isInstanceOf(layoutNode, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary")) {
+      input = SLinkOperations.getTargets(SNodeOperations.cast(layoutNode, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary"), "children", true);
     } else {
       input = Sequence.<SNode>singleton(layoutNode);
     }

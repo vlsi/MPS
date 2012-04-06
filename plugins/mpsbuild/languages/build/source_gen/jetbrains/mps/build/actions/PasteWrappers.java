@@ -32,7 +32,7 @@ public class PasteWrappers {
     });
     ListSequence.fromList(result).addElement(new PasteWrapper() {
       public String getSourceConceptFqName() {
-        return "jetbrains.mps.build.structure.BuildInputResourceSet";
+        return "jetbrains.mps.build.structure.BuildInputSingleFolder";
       }
 
       public String getTargetConceptFqName() {
