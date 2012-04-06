@@ -4,59 +4,15 @@ package jetbrains.mps.build.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.VisibleArtifacts;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.build.util.JavaExportUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.Set;
-import java.util.LinkedHashSet;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.build.util.JavaModulesClosure;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BuildSource_JavaDependencyModule_Behavior {
   public static void init(SNode thisNode) {
   }
 
   public static Iterable<SNode> virtual_getDependencyTargets_841011766566205095(SNode thisNode, VisibleArtifacts artifacts) {
-    if (SNodeOperations.getContainingRoot(thisNode) == SNodeOperations.getContainingRoot(SLinkOperations.getTarget(thisNode, "module", false))) {
-      return null;
-    }
-
-    SNode target = SNodeOperations.as(artifacts.toOriginalNode(SLinkOperations.getTarget(thisNode, "module", false)), "jetbrains.mps.build.structure.BuildSource_JavaModule");
-
-    // dependencies closure 
-    Set<SNode> modules = new LinkedHashSet<SNode>();
-    Set<SNode> libraries = new LinkedHashSet<SNode>();
-    modules.add(target);
-    libraries.addAll(ListSequence.fromList(SLinkOperations.getTargets(target, "dependencies", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary");
-      }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary"), "library", false);
-      }
-    }).toListSequence());
-    new JavaModulesClosure(modules, libraries).closure();
-
-    // searh for artifacts 
-    Iterable<SNode> required = SetSequence.fromSet(((Set<SNode>) modules)).concat(SetSequence.fromSet(((Set<SNode>) libraries)));
-    List<SNode> result = new ArrayList<SNode>();
-    for (SNode n : Sequence.fromIterable(required)) {
-      SNode artifact = SNodeOperations.as(artifacts.findArtifact(n), "jetbrains.mps.build.structure.BuildLayout_Node");
-      if (artifact != null) {
-        ListSequence.fromList(result).addElement(artifact);
-      }
-    }
-
-    if (ListSequence.fromList(result).isNotEmpty()) {
-      artifacts.needsFetch(SNodeOperations.getParent(thisNode));
-      return result;
-    }
-    return null;
+    return JavaExportUtil.requireModule(artifacts, SLinkOperations.getTarget(thisNode, "module", false), SNodeOperations.getParent(thisNode));
   }
 }

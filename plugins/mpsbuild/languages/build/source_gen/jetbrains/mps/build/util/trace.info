@@ -1,5 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeId="2569834391839723574">
+    <nodeInfo nodeId="2569834391839847801" fileName="JavaExportUtil.java" startLine="23" startPosition="103" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2569834391839847810" fileName="JavaExportUtil.java" startLine="25" startPosition="5" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2913098736709466053" fileName="JavaExportUtil.java" startLine="26" startPosition="0" endLine="27" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7880069565647276405" fileName="JavaExportUtil.java" startLine="27" startPosition="130" endLine="28" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2913098736709466077" fileName="JavaExportUtil.java" startLine="29" startPosition="27" endLine="30" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2913098736709466138" fileName="JavaExportUtil.java" startLine="31" startPosition="116" endLine="32" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2913098736709466084" fileName="JavaExportUtil.java" startLine="33" startPosition="14" endLine="34" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2913098736709466094" fileName="JavaExportUtil.java" startLine="36" startPosition="5" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2569834391839723495" fileName="JavaExportUtil.java" startLine="41" startPosition="102" endLine="42" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6547494638219603344" fileName="JavaExportUtil.java" startLine="43" startPosition="5" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6547494638219603345" fileName="JavaExportUtil.java" startLine="44" startPosition="0" endLine="45" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7880069565647313733" fileName="JavaExportUtil.java" startLine="45" startPosition="128" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7880069565647313890" fileName="JavaExportUtil.java" startLine="46" startPosition="0" endLine="47" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4821808014881224935" fileName="JavaExportUtil.java" startLine="47" startPosition="28" endLine="48" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4821808014881224928" fileName="JavaExportUtil.java" startLine="48" startPosition="52" endLine="49" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4821808014881251911" fileName="JavaExportUtil.java" startLine="49" startPosition="54" endLine="50" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4821808014881252149" fileName="JavaExportUtil.java" startLine="52" startPosition="39" endLine="53" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4821808014881252159" fileName="JavaExportUtil.java" startLine="56" startPosition="37" endLine="57" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4821808014881335907" fileName="JavaExportUtil.java" startLine="59" startPosition="25" endLine="60" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7880069565647313888" fileName="JavaExportUtil.java" startLine="60" startPosition="57" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7880069565647313893" fileName="JavaExportUtil.java" startLine="61" startPosition="0" endLine="62" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7880069565647313947" fileName="JavaExportUtil.java" startLine="62" startPosition="27" endLine="63" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7880069565647313742" fileName="JavaExportUtil.java" startLine="63" startPosition="129" endLine="64" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2569834391839855345" fileName="JavaExportUtil.java" startLine="66" startPosition="99" endLine="67" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="2569834391839855346" fileName="JavaExportUtil.java" startLine="68" startPosition="7" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7880069565647276438" fileName="JavaExportUtil.java" startLine="69" startPosition="0" endLine="70" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7880069565647313920" fileName="JavaExportUtil.java" startLine="71" startPosition="29" endLine="72" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7880069565647313750" fileName="JavaExportUtil.java" startLine="74" startPosition="5" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7880069565647276448" fileName="JavaExportUtil.java" startLine="76" startPosition="53" endLine="77" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7880069565647313763" fileName="JavaExportUtil.java" startLine="77" startPosition="40" endLine="78" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2569834391839723498" fileName="JavaExportUtil.java" startLine="79" startPosition="5" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2569834391839723500" fileName="JavaExportUtil.java" startLine="80" startPosition="0" endLine="81" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2569834391839723576" fileName="JavaExportUtil.java" startLine="18" startPosition="29" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaExportUtil#()V" />
+    <nodeInfo nodeId="2913098736709466182" fileName="JavaExportUtil.java" startLine="33" startPosition="12" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2569834391839847799" fileName="JavaExportUtil.java" startLine="22" startPosition="110" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2569834391839607300" fileName="JavaExportUtil.java" startLine="40" startPosition="108" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2569834391839855332" fileName="JavaExportUtil.java" startLine="65" startPosition="53" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7880069565647313897" fileName="JavaExportUtil.java" startLine="70" startPosition="119" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4821808014881252147" fileName="JavaExportUtil.java" startLine="51" startPosition="134" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="4821808014881252157" fileName="JavaExportUtil.java" startLine="55" startPosition="45" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7880069565647313752" fileName="JavaExportUtil.java" startLine="75" startPosition="0" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2913098736709466108" fileName="JavaExportUtil.java" startLine="30" startPosition="40" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7880069565647276414" fileName="JavaExportUtil.java" startLine="28" startPosition="122" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4821808014881252115" fileName="JavaExportUtil.java" startLine="50" startPosition="24" endLine="59" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7880069565647313830" fileName="JavaExportUtil.java" startLine="64" startPosition="48" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2569834391839847787" fileName="JavaExportUtil.java" startLine="21" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="requireLibrary#(Ljetbrains/mps/build/util/VisibleArtifacts;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2569834391839607288" fileName="JavaExportUtil.java" startLine="39" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="requireModule#(Ljetbrains/mps/build/util/VisibleArtifacts;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="2569834391839723579" fileName="JavaExportUtil.java" startLine="19" startPosition="27" endLine="19" endPosition="27" />
+    <scopeInfo nodeId="2569834391839847800" fileName="JavaExportUtil.java" startLine="23" startPosition="103" endLine="24" endPosition="18" />
+    <scopeInfo nodeId="2913098736709466109" fileName="JavaExportUtil.java" startLine="31" startPosition="116" endLine="32" endPosition="157" />
+    <scopeInfo nodeId="2913098736709466183" fileName="JavaExportUtil.java" startLine="33" startPosition="14" endLine="34" endPosition="51" />
+    <scopeInfo nodeId="2569834391839607302" fileName="JavaExportUtil.java" startLine="41" startPosition="102" endLine="42" endPosition="18" />
+    <scopeInfo nodeId="4821808014881252148" fileName="JavaExportUtil.java" startLine="52" startPosition="39" endLine="53" endPosition="115" />
+    <scopeInfo nodeId="4821808014881252158" fileName="JavaExportUtil.java" startLine="56" startPosition="37" endLine="57" endPosition="152" />
+    <scopeInfo nodeId="2569834391839855333" fileName="JavaExportUtil.java" startLine="66" startPosition="99" endLine="67" endPosition="17" />
+    <scopeInfo nodeId="7880069565647313898" fileName="JavaExportUtil.java" startLine="71" startPosition="29" endLine="72" endPosition="59" />
+    <scopeInfo nodeId="2569834391839723576" fileName="JavaExportUtil.java" startLine="18" startPosition="29" endLine="20" endPosition="3" />
+    <scopeInfo nodeId="7880069565647313753" fileName="JavaExportUtil.java" startLine="76" startPosition="53" endLine="78" endPosition="20" />
+    <scopeInfo nodeId="4821808014881252147" fileName="JavaExportUtil.java" startLine="51" startPosition="134" endLine="55" endPosition="0">
+      <varInfo nodeId="4821808014881252147" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="4821808014881252157" fileName="JavaExportUtil.java" startLine="55" startPosition="45" endLine="59" endPosition="0">
+      <varInfo nodeId="4821808014881252157" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7880069565647276415" fileName="JavaExportUtil.java" startLine="29" startPosition="27" endLine="35" endPosition="7" />
+    <scopeInfo nodeId="7880069565647313833" fileName="JavaExportUtil.java" startLine="65" startPosition="53" endLine="73" endPosition="7">
+      <varInfo nodeId="7880069565647276439" varName="artifact" />
+    </scopeInfo>
+    <scopeInfo nodeId="7880069565647313830" fileName="JavaExportUtil.java" startLine="64" startPosition="48" endLine="74" endPosition="5">
+      <varInfo nodeId="7880069565647313830" varName="n" />
+    </scopeInfo>
+    <scopeInfo nodeId="2569834391839847790" fileName="JavaExportUtil.java" startLine="22" startPosition="110" endLine="37" endPosition="16">
+      <varInfo nodeId="7880069565647276406" varName="artifact" />
+      <varInfo nodeId="2913098736709466054" varName="target" />
+    </scopeInfo>
+    <scopeInfo nodeId="2569834391839847787" fileName="JavaExportUtil.java" startLine="21" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="2569834391839847793" varName="artifacts" />
+      <varInfo nodeId="2569834391839847797" varName="contextNode" />
+      <varInfo nodeId="2569834391839847795" varName="library" />
+    </scopeInfo>
+    <scopeInfo nodeId="2569834391839607291" fileName="JavaExportUtil.java" startLine="40" startPosition="108" endLine="81" endPosition="16">
+      <varInfo nodeId="4821808014881224929" varName="libraries" />
+      <varInfo nodeId="4821808014881224936" varName="modules" />
+      <varInfo nodeId="7880069565647313948" varName="required" />
+      <varInfo nodeId="7880069565647313743" varName="result" />
+      <varInfo nodeId="6547494638219603346" varName="target" />
+    </scopeInfo>
+    <scopeInfo nodeId="2569834391839607288" fileName="JavaExportUtil.java" startLine="39" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="2569834391839607292" varName="artifacts" />
+      <varInfo nodeId="2569834391839607297" varName="contextNode" />
+      <varInfo nodeId="2569834391839607294" varName="module" />
+    </scopeInfo>
+    <unitInfo nodeId="2569834391839723574" fileName="JavaExportUtil.java" startLine="18" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.build.util.JavaExportUtil" />
+    <unitInfo nodeId="4821808014881252147" fileName="JavaExportUtil.java" startLine="51" startPosition="111" endLine="55" endPosition="5" unitName="jetbrains.mps.build.util.JavaExportUtil$1" />
+    <unitInfo nodeId="4821808014881252157" fileName="JavaExportUtil.java" startLine="55" startPosition="18" endLine="59" endPosition="5" unitName="jetbrains.mps.build.util.JavaExportUtil$2" />
+  </root>
   <root nodeId="2590001334067667566">
     <nodeInfo nodeId="2590001334067676262" fileName="UnpackHelper.java" startLine="14" startPosition="54" endLine="15" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="visible" />
     <nodeInfo nodeId="7128123785277681135" fileName="UnpackHelper.java" startLine="15" startPosition="41" endLine="16" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="required" />

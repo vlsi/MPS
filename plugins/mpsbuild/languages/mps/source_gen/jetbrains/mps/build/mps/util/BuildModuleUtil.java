@@ -16,6 +16,10 @@ import jetbrains.mps.util.iterable.RecursiveIterator;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.LinkedHashSet;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class BuildModuleUtil {
   public BuildModuleUtil() {
@@ -192,5 +196,36 @@ public class BuildModuleUtil {
         languagesWithRuntime.add(language);
       }
     }
+  }
+
+  public static Tuples._2<Iterable<SNode>, Set<SNode>> getRequiredJava(SNode module, Iterable<SNode> dependenciesClosure) {
+    Iterable<SNode> reexportedFromModuleDependencies = Sequence.fromIterable(dependenciesClosure).concat(Sequence.fromIterable(Sequence.<SNode>singleton(module))).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode mod) {
+        return ListSequence.fromList(SLinkOperations.getTargets(mod, "dependencies", true)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule") && SPropertyOperations.getBoolean(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule"), "reexport");
+          }
+        }).select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule"), "module", false);
+          }
+        });
+      }
+    });
+    Set<SNode> reexportMods = SetSequence.fromSet(new HashSet<SNode>());
+    for (SNode mod : reexportedFromModuleDependencies) {
+      SetSequence.fromSet(reexportMods).addElement(mod);
+    }
+
+    Iterable<SNode> directDeps = ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule");
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule"), "module", false);
+      }
+    });
+    return MultiTuple.<Iterable<SNode>,Set<SNode>>from(Sequence.fromIterable(reexportedFromModuleDependencies).concat(Sequence.fromIterable(directDeps)), reexportMods);
   }
 }

@@ -24,17 +24,16 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Set;
+import jetbrains.mps.build.mps.util.BuildModuleUtil;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.build.mps.util.VisibleModules;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.build.mps.util.ModuleLoader;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import java.util.LinkedHashSet;
-import jetbrains.mps.build.mps.util.BuildModuleUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class QueriesGenerated {
@@ -204,39 +203,13 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_7259033139236497711(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    Iterable<SNode> reexportedFromModuleDependencies = Sequence.fromIterable(((Tuples._3<SNode, Iterable<SNode>, Iterable<SNode>>) _context.getVariable("var:mdeps"))._1()).concat(Sequence.fromIterable(Sequence.<SNode>singleton(_context.getNode()))).translate(new ITranslator2<SNode, SNode>() {
-      public Iterable<SNode> translate(SNode mod) {
-        return ListSequence.fromList(SLinkOperations.getTargets(mod, "dependencies", true)).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule") && SPropertyOperations.getBoolean(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule"), "reexport");
-          }
-        }).select(new ISelector<SNode, SNode>() {
-          public SNode select(SNode it) {
-            return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule"), "module", false);
-          }
-        });
-      }
-    });
-    Set<SNode> reexportMods = SetSequence.fromSet(new HashSet<SNode>());
-    for (SNode mod : reexportedFromModuleDependencies) {
-      SetSequence.fromSet(reexportMods).addElement(mod);
-    }
-
-    Iterable<SNode> directDeps = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "dependencies", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule");
-      }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule"), "module", false);
-      }
-    });
-
+    Tuples._2<Iterable<SNode>, Set<SNode>> requiredAndReexp = BuildModuleUtil.getRequiredJava(_context.getNode(), ((Tuples._3<SNode, Iterable<SNode>, Iterable<SNode>>) _context.getVariable("var:mdeps"))._1());
+    Iterable<SNode> requiredJava = requiredAndReexp._0();
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode mod : Sequence.fromIterable(reexportedFromModuleDependencies).concat(Sequence.fromIterable(directDeps))) {
+    for (SNode mod : requiredJava) {
       SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
       loopnode.setReferent("targetModule", mod, false);
-      if (SetSequence.fromSet(reexportMods).contains(mod)) {
+      if (SetSequence.fromSet(requiredAndReexp._1()).contains(mod)) {
         loopnode.setProperty("targetReexport", "true", false);
       }
       ListSequence.fromList(result).addElement(loopnode);

@@ -42,7 +42,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 12:
         return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_Language", "jetbrains.mps.build.mps.structure.BuildMps_Module", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_Module"}, new String[]{}, new String[]{});
       case 13:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_Module", "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_AbstractModule", "jetbrains.mps.build.structure.BuildSource_CompilablePart"}, new String[]{"doNotCompile"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_Module", "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_AbstractModule", "jetbrains.mps.build.structure.BuildSource_CompilablePart", "jetbrains.mps.build.structure.BuildExternalDependency"}, new String[]{"doNotCompile"}, new String[]{});
       case 14:
         return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 15:
