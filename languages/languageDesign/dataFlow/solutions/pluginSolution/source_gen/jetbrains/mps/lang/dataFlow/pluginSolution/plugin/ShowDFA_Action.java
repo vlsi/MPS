@@ -67,8 +67,6 @@ public class ShowDFA_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      TypeSystemReporter.getInstance().printReport();
-      TypeSystemReporter.getInstance().reset();
       Program program = DataFlowManager.getInstance().buildProgramFor(((SNode) MapSequence.fromMap(_params).get("node")));
       new ShowCFGDialog(program, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Frame) MapSequence.fromMap(_params).get("frame")));
     } catch (Throwable t) {

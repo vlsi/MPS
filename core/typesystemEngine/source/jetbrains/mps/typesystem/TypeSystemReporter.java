@@ -73,16 +73,16 @@ public class TypeSystemReporter {
     report(time, conceptFqName, myCoerceTime);
   }
 
-  public void printReport() {
+  public void printReport(int numTop) {
     System.out.println("getTypeOf");
-    printMapReport(myGetTypeOfTime);
+    printMapReport(myGetTypeOfTime, numTop);
     System.out.println("IsSubType");
-    printMapReport(myIsSubTypeTime);
+    printMapReport(myIsSubTypeTime, numTop);
     System.out.println("Coerce");
-    printMapReport(myCoerceTime);
+    printMapReport(myCoerceTime, numTop);
   }
 
-  public void printMapReport(Map<String, Pair<Long, Long>> map) {
+  public void printMapReport(Map<String, Pair<Long, Long>> map, int numTop) {
     ArrayList<Entry<String, Pair<Long, Long>>> list = new  ArrayList<Entry<String, Pair<Long, Long>>>();
     list.addAll(map.entrySet());
 
@@ -93,7 +93,9 @@ public class TypeSystemReporter {
       }
     });
     long sum = 0;
+    int i = 0;
     for (Entry<String, Pair<Long, Long>> entry : list) {
+      if (i++ >= numTop) break;
       sum += entry.getValue().o1;
       System.out.println(entry.getKey() + "\t" + entry.getValue().o1*1.0e-9 + "\t" + entry.getValue().o2 +"\t" + entry.getValue().o1*1.0e-9/entry.getValue().o2);
     }
