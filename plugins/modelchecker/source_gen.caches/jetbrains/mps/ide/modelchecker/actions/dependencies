@@ -111,7 +111,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.CheckModel_ActionGroup" file="CheckModel_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
@@ -140,7 +140,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.CheckModule_ActionGroup" file="CheckModule_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
@@ -166,7 +166,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.CheckProject_ActionGroup" file="CheckProject_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
@@ -233,7 +233,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.FindWrongAspectDependencies_Action" file="FindWrongAspectDependencies_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -263,7 +263,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.FindlAllBrokenReferences_Action" file="FindlAllBrokenReferences_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -289,7 +289,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.IModelCheckerFix" file="IModelCheckerFix.java" />
   <dependency className="jetbrains.mps.ide.modelchecker.actions.ModelChecker" file="ModelChecker.java">
@@ -622,7 +622,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.SpecificChecker" file="SpecificChecker.java">
     <classNode dependClassName="java.lang.IllegalStateException" />

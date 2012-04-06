@@ -17,7 +17,7 @@
     <unitInfo nodeId="6573807532044001855" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" />
   </root>
   <root nodeId="6573807532044005480">
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="22" startPosition="52" endLine="23" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="22" startPosition="57" endLine="23" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="23" startPosition="40" endLine="24" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="26" startPosition="31" endLine="27" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="27" startPosition="41" endLine="28" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

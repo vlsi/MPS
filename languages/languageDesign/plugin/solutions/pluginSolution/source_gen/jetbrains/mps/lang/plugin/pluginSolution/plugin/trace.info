@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="5487985028841901743">
-    <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="22" startPosition="58" endLine="23" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="22" startPosition="63" endLine="23" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="23" startPosition="40" endLine="24" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="26" startPosition="37" endLine="27" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="27" startPosition="43" endLine="28" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

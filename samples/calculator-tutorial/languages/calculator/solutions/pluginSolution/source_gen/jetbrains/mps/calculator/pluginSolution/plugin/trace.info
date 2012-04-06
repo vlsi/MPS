@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="5487985028841950969">
-    <nodeInfo nodeId="5487985028841950969" fileName="ExecuteCalculator_Action.java" startLine="19" startPosition="58" endLine="20" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="5487985028841950969" fileName="ExecuteCalculator_Action.java" startLine="19" startPosition="63" endLine="20" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5487985028841950969" fileName="ExecuteCalculator_Action.java" startLine="20" startPosition="40" endLine="21" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="5487985028841950969" fileName="ExecuteCalculator_Action.java" startLine="23" startPosition="37" endLine="24" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5487985028841950969" fileName="ExecuteCalculator_Action.java" startLine="24" startPosition="42" endLine="25" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -19,7 +19,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dates.pluginSolution.plugin.DateLangGroup_ActionGroup" file="DateLangGroup_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />

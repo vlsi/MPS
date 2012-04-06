@@ -34,7 +34,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.ImportModuleHelper" file="ImportModuleHelper.java">
     <classNode dependClassName="jetbrains.mps.build.mps.util.ModuleLoader" />

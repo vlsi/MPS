@@ -264,7 +264,7 @@
     <unitInfo nodeId="4613144939628065112" fileName="JavaWatchableNodeActions_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.JavaWatchableNodeActions_ActionGroup" />
   </root>
   <root nodeId="4893181994832024376">
-    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="17" startPosition="66" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="17" startPosition="71" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="18" startPosition="40" endLine="19" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="21" startPosition="45" endLine="22" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="22" startPosition="52" endLine="23" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -383,7 +383,7 @@
     <unitInfo nodeId="8643693251546861612" fileName="WatchesTreeActions_ActionGroup.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.WatchesTreeActions_ActionGroup" />
   </root>
   <root nodeId="8643693251546861633">
-    <nodeInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="17" startPosition="55" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="17" startPosition="60" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="18" startPosition="63" endLine="19" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="21" startPosition="34" endLine="22" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="22" startPosition="48" endLine="23" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -447,7 +447,7 @@
     <unitInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="17" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.AddWatchAction_Action" />
   </root>
   <root nodeId="8643693251546861699">
-    <nodeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="19" startPosition="58" endLine="20" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="19" startPosition="63" endLine="20" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="20" startPosition="66" endLine="21" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="23" startPosition="37" endLine="24" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="24" startPosition="36" endLine="25" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -513,7 +513,7 @@
     <unitInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="19" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.RemoveWatchAction_Action" />
   </root>
   <root nodeId="8643693251546861757">
-    <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="17" startPosition="56" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="17" startPosition="61" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="18" startPosition="40" endLine="19" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="21" startPosition="35" endLine="22" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="22" startPosition="34" endLine="23" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -576,7 +576,7 @@
     <unitInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="17" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.EditWatchAction_Action" />
   </root>
   <root nodeId="8894158296385402494">
-    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="24" startPosition="56" endLine="25" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="24" startPosition="61" endLine="25" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="25" startPosition="40" endLine="26" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="28" startPosition="35" endLine="29" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="29" startPosition="34" endLine="30" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="6937807405124198153">
-    <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="35" startPosition="67" endLine="36" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="35" startPosition="72" endLine="36" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="36" startPosition="66" endLine="37" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="39" startPosition="46" endLine="40" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="40" startPosition="54" endLine="41" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
