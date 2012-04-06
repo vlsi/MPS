@@ -4,8 +4,6 @@ package jetbrains.mps.lang.dataFlow.pluginSolution.plugin;
 
 import jetbrains.mps.plugins.actions.GeneratedAction;
 import javax.swing.Icon;
-
-import jetbrains.mps.typesystem.TypeSystemReporter;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
