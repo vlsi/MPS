@@ -258,6 +258,7 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Model Checker.Dependencies" />
       <property name="name" nameId="tpck.1169194664001" value="WrongAspectDependenciesFinder" />
     </node>
+    <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690968047815" />
   </roots>
   <root id="1453248744423272128" />
   <root id="1453248744423272129">
@@ -14268,5 +14269,6 @@
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1453248744423273915" resolveInfo="ModelCheckerIssueFinder" />
     </node>
   </root>
+  <root id="7162597690968047815" />
 </model>
 
