@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="5487985028841902721">
-    <nodeInfo nodeId="5487985028841902721" fileName="CheckLangForJavaStubModels_Action.java" startLine="31" startPosition="72" endLine="32" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="5487985028841902721" fileName="CheckLangForJavaStubModels_Action.java" startLine="31" startPosition="67" endLine="32" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5487985028841902721" fileName="CheckLangForJavaStubModels_Action.java" startLine="32" startPosition="40" endLine="33" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="5487985028841902721" fileName="CheckLangForJavaStubModels_Action.java" startLine="35" startPosition="46" endLine="36" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5487985028841902721" fileName="CheckLangForJavaStubModels_Action.java" startLine="36" startPosition="51" endLine="37" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

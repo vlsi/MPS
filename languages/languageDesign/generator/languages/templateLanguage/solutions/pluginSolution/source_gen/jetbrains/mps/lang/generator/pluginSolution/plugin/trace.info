@@ -3,7 +3,7 @@
   <root nodeId="428466863025296200">
     <nodeInfo nodeId="1227316931926" fileName="AttachMappingLabel_Action.java" startLine="153" startPosition="29" endLine="153" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1227316931929" fileName="AttachMappingLabel_Action.java" startLine="156" startPosition="29" endLine="156" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="428466863025296200" fileName="AttachMappingLabel_Action.java" startLine="38" startPosition="64" endLine="39" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="428466863025296200" fileName="AttachMappingLabel_Action.java" startLine="38" startPosition="59" endLine="39" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="428466863025296200" fileName="AttachMappingLabel_Action.java" startLine="39" startPosition="40" endLine="40" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="428466863025296200" fileName="AttachMappingLabel_Action.java" startLine="42" startPosition="38" endLine="43" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="428466863025296200" fileName="AttachMappingLabel_Action.java" startLine="43" startPosition="44" endLine="44" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
