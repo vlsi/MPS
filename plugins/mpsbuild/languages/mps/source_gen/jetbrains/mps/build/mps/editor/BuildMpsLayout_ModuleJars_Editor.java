@@ -64,7 +64,7 @@ public class BuildMpsLayout_ModuleJars_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.EDITABLE, true);
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new BuildMpsLayout_ModuleJars_Editor.ReplaceWith_BuildLayout_Node_cellMenu_a0a0_1()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new BuildMpsLayout_ModuleJars_Editor.ReplaceWith_BuildLayout_Node_cellMenu_a0a0_0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -75,8 +75,8 @@ public class BuildMpsLayout_ModuleJars_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class ReplaceWith_BuildLayout_Node_cellMenu_a0a0_1 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_BuildLayout_Node_cellMenu_a0a0_1() {
+  public static class ReplaceWith_BuildLayout_Node_cellMenu_a0a0_0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_BuildLayout_Node_cellMenu_a0a0_0() {
     }
 
     public String getReplacementConceptName() {

@@ -49,7 +49,7 @@ public class BuildLayout_Jar_Behavior {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildSource_JavaModule")) {
         return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "children", true)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_JavaOutput") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildLayout_JavaOutput"), "module", false) == node;
+            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_CompileOutputOf") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildLayout_CompileOutputOf"), "module", false) == node;
           }
         });
       }

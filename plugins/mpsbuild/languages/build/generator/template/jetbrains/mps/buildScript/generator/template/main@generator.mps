@@ -2080,7 +2080,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1117643560963268286">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="3ior.5966744135495979931" resolveInfo="BuildLayout_JavaOutput" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="3ior.2591537044435828004" resolveInfo="BuildLayout_CompileOutputOf" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.AbandonInput_RuleConsequence" typeId="tpf8.1202776937179" id="1117643560963268288" />
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1117643560963307386">
@@ -3289,7 +3289,7 @@
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="8654221991637384336">
                                   <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="8654221991637384337">
-                                    <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3ior.8654221991637384267" resolveInfo="BuildFileAttributeSelector" />
+                                    <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3ior.8654221991637384267" resolveInfo="BuildFileSelectorInAttribute" />
                                   </node>
                                 </node>
                               </node>
@@ -3338,7 +3338,7 @@
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="8654221991637384344">
                                     <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="8654221991637384345">
-                                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3ior.8654221991637384267" resolveInfo="BuildFileAttributeSelector" />
+                                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3ior.8654221991637384267" resolveInfo="BuildFileSelectorInAttribute" />
                                     </node>
                                   </node>
                                 </node>
@@ -3418,7 +3418,7 @@
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="8654221991637384362">
                                   <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="8654221991637384363">
-                                    <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3ior.8654221991637384267" resolveInfo="BuildFileAttributeSelector" />
+                                    <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3ior.8654221991637384267" resolveInfo="BuildFileSelectorInAttribute" />
                                   </node>
                                 </node>
                               </node>
@@ -3467,7 +3467,7 @@
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="8654221991637384394">
                                     <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="8654221991637384395">
-                                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3ior.8654221991637384267" resolveInfo="BuildFileAttributeSelector" />
+                                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3ior.8654221991637384267" resolveInfo="BuildFileSelectorInAttribute" />
                                     </node>
                                   </node>
                                 </node>
@@ -5319,7 +5319,7 @@
   </root>
   <root id="1117643560963351146">
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1117643560963351177">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="3ior.5966744135495979931" resolveInfo="BuildLayout_JavaOutput" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="3ior.2591537044435828004" resolveInfo="BuildLayout_CompileOutputOf" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1117643560963351179">
         <node role="templateNode" roleId="tpf8.1177093586806" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="1117643560963351180">
           <property name="tagName" nameId="iuxj.6666499814681415862" value="fileset" />
@@ -5343,18 +5343,18 @@
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o3n2.4209004860870526317" resolveInfo="getTempPath" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6547494638219541394">
                             <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="6547494638219541371" />
-                            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6547494638219541399">
-                              <link role="link" roleId="tp25.1138056516764" targetNodeId="3ior.5966744135495979932" />
+                            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2591537044435984162">
+                              <link role="link" roleId="tp25.1138056516764" targetNodeId="3ior.2591537044435828006" />
                             </node>
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6547494638219541372">
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6547494638219541416">
                               <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="6547494638219541373" />
-                              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6547494638219541421">
-                                <link role="link" roleId="tp25.1138056516764" targetNodeId="3ior.5966744135495979932" />
+                              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2591537044435984164">
+                                <link role="link" roleId="tp25.1138056516764" targetNodeId="3ior.2591537044435828006" />
                               </node>
                             </node>
-                            <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="6547494638219541423">
+                            <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="2591537044435984168">
                               <link role="property" roleId="tp25.1138056395725" targetNodeId="tpck.1169194664001" resolveInfo="name" />
                             </node>
                           </node>
@@ -5368,6 +5368,25 @@
                       </node>
                     </node>
                   </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="2591537044435952582">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2591537044435952583">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2591537044435952584">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2591537044435984150">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2591537044435952600">
+                <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2591537044435952585" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2591537044435984160">
+                  <link role="link" roleId="tp25.1138056516764" targetNodeId="3ior.2591537044435828006" />
+                </node>
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="2591537044435984156">
+                <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="2591537044435984158">
+                  <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3ior.7389400916848073784" resolveInfo="BuildSource_JavaModule" />
                 </node>
               </node>
             </node>
@@ -5773,7 +5792,7 @@
                       </node>
                       <node role="rValue" roleId="tpee.1068498886297" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5979287180587467495">
                         <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="5979287180587467496">
-                          <link role="concept" roleId="tp25.1140138128738" targetNodeId="3ior.2913098736709465755" resolveInfo="BuildLayout_JavaLibrary" />
+                          <link role="concept" roleId="tp25.1140138128738" targetNodeId="3ior.2913098736709465755" resolveInfo="BuildLayout_ExportAsJavaLibrary" />
                           <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5979287180587467497">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5979287180587467453" resolveInfo="layoutNode" />
                           </node>
@@ -5791,7 +5810,7 @@
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="5979287180587467501">
                     <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="5979287180587467502">
-                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3ior.2913098736709465755" resolveInfo="BuildLayout_JavaLibrary" />
+                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3ior.2913098736709465755" resolveInfo="BuildLayout_ExportAsJavaLibrary" />
                     </node>
                   </node>
                 </node>

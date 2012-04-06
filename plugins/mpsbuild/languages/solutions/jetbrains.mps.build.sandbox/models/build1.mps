@@ -102,8 +102,8 @@
                 <property name="text" nameId="3ior.4903714810883755350" value="module-A.jar" />
               </node>
             </node>
-            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_JavaOutput" typeId="3ior.5966744135495979931" id="6921160174096661141">
-              <link role="module" roleId="3ior.5966744135495979932" targetNodeId="6921160174096491317" resolveInfo="module-A" />
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_CompileOutputOf" typeId="3ior.2591537044435828004" id="2591537044436106619">
+              <link role="module" roleId="3ior.2591537044435828006" targetNodeId="6921160174096491317" resolveInfo="module-A" />
             </node>
           </node>
           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="6520682027041143042">
@@ -177,8 +177,8 @@
                 <property name="text" nameId="3ior.4903714810883755350" value="module-B.jar" />
               </node>
             </node>
-            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_JavaOutput" typeId="3ior.5966744135495979931" id="6921160174096662225">
-              <link role="module" roleId="3ior.5966744135495979932" targetNodeId="6921160174096491327" resolveInfo="module-B" />
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_CompileOutputOf" typeId="3ior.2591537044435828004" id="2591537044436106620">
+              <link role="module" roleId="3ior.2591537044435828006" targetNodeId="6921160174096491327" resolveInfo="module-B" />
             </node>
           </node>
         </node>
@@ -282,8 +282,8 @@
                 <property name="text" nameId="3ior.4903714810883755350" value=".jar" />
               </node>
             </node>
-            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_JavaOutput" typeId="3ior.5966744135495979931" id="6547494638219607272">
-              <link role="module" roleId="3ior.5966744135495979932" targetNodeId="6547494638219607265" resolveInfo="test1" />
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_CompileOutputOf" typeId="3ior.2591537044435828004" id="2591537044436106623">
+              <link role="module" roleId="3ior.2591537044435828006" targetNodeId="6547494638219607265" resolveInfo="test1" />
             </node>
           </node>
         </node>
@@ -373,8 +373,8 @@
           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Zip" typeId="3ior.7389400916848050071" id="1117643560963371565">
             <property name="name" nameId="tpck.1169194664001" value="inrelease.zip" />
             <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Jar" typeId="3ior.7389400916848050074" id="841011766566097344">
-              <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_JavaOutput" typeId="3ior.5966744135495979931" id="6627265764879718147">
-                <link role="module" roleId="3ior.5966744135495979932" targetNodeId="3695638809903322726" resolveInfo="mps-core" />
+              <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_CompileOutputOf" typeId="3ior.2591537044435828004" id="2591537044436106621">
+                <link role="module" roleId="3ior.2591537044435828006" targetNodeId="3695638809903322726" resolveInfo="mps-core" />
               </node>
               <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="1117643560963371555">
                 <property name="name" nameId="tpck.1169194664001" value="abc" />

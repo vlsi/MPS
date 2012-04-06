@@ -87,11 +87,6 @@
       <property name="name" nameId="tpck.1169194664001" value="BuildSourceMacroRelativePath" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="7321017245476976379" resolveInfo="BuildRelativePath" />
     </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5966744135495979931">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.Java" />
-      <property name="name" nameId="tpck.1169194664001" value="BuildLayout_JavaOutput" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="7389400916848036997" resolveInfo="BuildLayout_Node" />
-    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2754769020641429190">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Sources" />
       <property name="name" nameId="tpck.1169194664001" value="BuildSource_JavaContentFolder" />
@@ -352,6 +347,15 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="SourceSet.Selectors" />
       <property name="name" nameId="tpck.1169194664001" value="BuildFileSelectorInAttribute" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2591537044435828004">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.Java" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildLayout_CompileOutputOf" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="7389400916848036997" resolveInfo="BuildLayout_Node" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="2591537044435828007">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildSource_CompilablePart" />
+    </node>
   </roots>
   <root id="5617550519002745363">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5204048710541015587">
@@ -508,6 +512,9 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7389400916848073827">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2591537044435952581">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2591537044435828007" resolveInfo="BuildSource_CompilablePart" />
+    </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="7389400916848087653">
       <property name="value" nameId="tpce.1105725733873" value="java module" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
@@ -557,21 +564,6 @@
       <property name="role" nameId="tpce.1071599776563" value="macro" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="7389400916848136194" resolveInfo="BuildFolderMacro" />
-    </node>
-  </root>
-  <root id="5966744135495979931">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="5966744135495979934">
-      <property name="value" nameId="tpce.1105725733873" value="compile output of" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5966744135495979932">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="role" nameId="tpce.1071599776563" value="module" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="7389400916848073784" resolveInfo="BuildSource_JavaModule" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1117643560963351213">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1117643560963351145" resolveInfo="BuildLayout_FileSet" />
     </node>
   </root>
   <root id="2754769020641429190">
@@ -1092,5 +1084,25 @@
     </node>
   </root>
   <root id="8654221991637384267" />
+  <root id="2591537044435828004">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2591537044435828006">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="role" nameId="tpce.1071599776563" value="module" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="2591537044435828007" resolveInfo="BuildSource_CompilablePart" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="2591537044435828005">
+      <property name="value" nameId="tpce.1105725733873" value="compile output of" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2591537044435952579">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1117643560963351145" resolveInfo="BuildLayout_FileSet" />
+    </node>
+  </root>
+  <root id="2591537044435828007">
+    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2591537044435984166">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+  </root>
 </model>
 
