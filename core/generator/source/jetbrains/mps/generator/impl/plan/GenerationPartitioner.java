@@ -110,8 +110,8 @@ public class GenerationPartitioner {
     MappingConfig_AbstractRef right = rule.getRight();
     if (left == null || right == null) return;
 
-    Collection<TemplateMappingConfiguration> hiPrio = getMappingsFromRef(left, generator);
-    Collection<TemplateMappingConfiguration> loPrio = getMappingsFromRef(right, generator);
+    Collection<TemplateMappingConfiguration> hiPrio = getMappingsFromRef(left, generator, generator.getAlias());
+    Collection<TemplateMappingConfiguration> loPrio = getMappingsFromRef(right, generator, generator.getAlias());
     if (rule.getType() == RuleType.STRICTLY_TOGETHER) {
       Set<TemplateMappingConfiguration> coherentMappings = new HashSet<TemplateMappingConfiguration>(loPrio);
       coherentMappings.addAll(hiPrio);
@@ -146,7 +146,7 @@ public class GenerationPartitioner {
     }
   }
 
-  private Collection<TemplateMappingConfiguration> getMappingsFromRef(MappingConfig_AbstractRef mappingRef, TemplateModule refGenerator) {
+  private Collection<TemplateMappingConfiguration> getMappingsFromRef(MappingConfig_AbstractRef mappingRef, TemplateModule refGenerator, String sourceGeneratorID) {
     if (mappingRef instanceof MappingConfig_RefAllGlobal) {
       return new ArrayList<TemplateMappingConfiguration>(myPriorityMap.keySet());
     }
@@ -165,7 +165,7 @@ public class GenerationPartitioner {
       List<TemplateMappingConfiguration> result = new ArrayList<TemplateMappingConfiguration>();
       MappingConfig_RefSet refSet = ((MappingConfig_RefSet) mappingRef);
       for (MappingConfig_AbstractRef simpleRef : refSet.getMappingConfigs()) {
-        result.addAll(getMappingsFromRef(simpleRef, refGenerator));
+        result.addAll(getMappingsFromRef(simpleRef, refGenerator, sourceGeneratorID));
       }
       return result;
     }
@@ -176,7 +176,7 @@ public class GenerationPartitioner {
         ModuleReference genRef = generatorRef;
         TemplateModule newRefGenerator = myModulesMap.get(genRef);
         if (newRefGenerator != null) {
-          return getMappingsFromRef(((MappingConfig_ExternalRef) mappingRef).getMappingConfig(), newRefGenerator);
+          return getMappingsFromRef(((MappingConfig_ExternalRef) mappingRef).getMappingConfig(), newRefGenerator, sourceGeneratorID);
         } else {
           // generator is not in the plan - just ignore
           // LOG.error("couldn't get generator by uid: '" + genRef + "'");
@@ -202,10 +202,10 @@ public class GenerationPartitioner {
                 return Collections.singletonList(m);
               }
             }
-            LOG.warning("couldn't get node by id: '" + nodeID + "' in model " + modelUID);
+            LOG.warning("couldn't get node by id: '" + nodeID + "' in model " + modelUID + " while loading priority rules for generator: " + sourceGeneratorID);
           }
         } else {
-          LOG.warning("couldn't get model by uid: '" + modelUID + "' in generator " + refGenerator.getAlias());
+          LOG.warning("couldn't get model by uid: '" + modelUID + "' in generator " + refGenerator.getAlias() + " while loading priority rules for generator: " + sourceGeneratorID);
         }
       }
       return Collections.emptyList();
