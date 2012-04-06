@@ -2851,10 +2851,7 @@
         <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="7966529035454587891">
           <property name="id" nameId="tps4.1222447189012" value="36c11d2d-1875-4a95-8bdb-70ea1ac63222" />
           <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.execution.api" />
-        </node>
-        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="7966529035454587893">
-          <property name="id" nameId="tps4.1222447189012" value="365fb593-3c1a-40a0-a7d7-c98144281283" />
-          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.execution.impl" />
+          <property name="doNotJar" nameId="tps4.2850282874221099799" value="true" />
         </node>
         <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="2901107368280485342">
           <property name="name" nameId="tps4.1223641503366" value="modules" />
