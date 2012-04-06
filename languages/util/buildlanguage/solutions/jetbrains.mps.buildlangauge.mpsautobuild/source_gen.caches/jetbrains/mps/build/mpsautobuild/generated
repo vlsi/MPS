@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3j5d5wmytr25bome21mv8xyblqk9fss">
+<dependencies version="2" modelHash="-8lpj8jqvn287v3172eueh2891adbe1n">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-5p0rdl0tgxw43gzmkd4qcpqszqapgi2" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-z9apu2jgvnwo2rksn2wr6ei9vh9scw" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-ad6sacrydlyivgq1a8s9zj6b37xpgsf" />
@@ -105,7 +105,7 @@
   <source id="2738111162319948310" name="core.execution" hash="-bozmnxwobv4imjckazksojfg8nshtzi" />
   <source id="5358686142361317193" name="mps-test.jar" hash="5hps3e0pbymmb5f9dpeja3fk5psu7y1" />
   <source id="6108265972537541352" name="branding" hash="emlz9nqgndw5l0uwzfphkh2i4ok88n5" />
-  <source id="5428983789737854526" name="mps-workbench.jar" hash="6fz0ptctjb7mibndt2plnkm1sa9n633" />
+  <source id="5428983789737854526" name="mps-workbench.jar" hash="-al5bu4oa0qm737f0x77tm1hxp8opukm" />
   <source id="5428983789737854768" name="mps-editor.jar" hash="nu5svsn6wwnxh1ncjq1rvw879hnj2" />
   <source id="2901107368280525965" name="redist" hash="-5y1micluv26ldpxuf61kxk1r7u4f6yx" />
   <source id="6700426045796013947" name="mps-platform.jar" hash="cbdl1pyr3qyb2pn3jg87fhv7lcm4krd" />

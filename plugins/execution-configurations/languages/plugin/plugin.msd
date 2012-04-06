@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.execution.configurations.implementation.plugin" uuid="bf659d6c-5638-4ea1-972b-4d492b5a91f2" compileInMPS="true">
+<solution name="jetbrains.mps.execution.configurations.implementation.plugin" uuid="bf659d6c-5638-4ea1-972b-4d492b5a91f2" compileInMPS="false">
   <models>
     <modelRoot path="${solution_descriptor}/" />
     <modelRoot path="${solution_descriptor}/models" />
@@ -24,7 +24,6 @@
     <dependency reexport="false">2fe588b4-688c-48ba-b903-0b7dc3d30070(jetbrains.mps.execution.languages)</dependency>
     <dependency reexport="false">04b376d5-fc16-403b-a344-c68b30193c6a(jetbrains.mps.execution.lib)</dependency>
     <dependency reexport="false">4caf0310-491e-41f5-8a9b-2006b3a94898(jetbrains.mps.execution.util)</dependency>
-    <dependency reexport="false">cac2fef0-41a6-4fcd-923f-f893d536b2ab(jetbrains.mps.ide.mpsdevkit)</dependency>
     <dependency reexport="false">ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</dependency>
   </dependencies>
   <usedLanguages>
