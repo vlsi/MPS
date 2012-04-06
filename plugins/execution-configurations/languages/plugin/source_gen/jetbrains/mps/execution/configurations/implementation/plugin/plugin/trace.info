@@ -3972,7 +3972,7 @@
     <unitInfo nodeId="6725558006983680492" fileName="ProjectPaneModelAddition_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.ProjectPaneModelAddition_ActionGroup" />
   </root>
   <root nodeId="6725558006983680496">
-    <nodeInfo nodeId="6725558006983680496" fileName="GenerateBuildAction_Action.java" startLine="18" startPosition="65" endLine="19" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="6725558006983680496" fileName="GenerateBuildAction_Action.java" startLine="18" startPosition="60" endLine="19" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="6725558006983680496" fileName="GenerateBuildAction_Action.java" startLine="19" startPosition="40" endLine="20" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="6725558006983680496" fileName="GenerateBuildAction_Action.java" startLine="22" startPosition="39" endLine="23" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6725558006983680496" fileName="GenerateBuildAction_Action.java" startLine="23" startPosition="99" endLine="24" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4373,8 +4373,8 @@
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="32" endLine="25" endPosition="33" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="33" endLine="25" endPosition="33" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="33" endLine="25" endPosition="33" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="33" endLine="25" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="33" endLine="25" endPosition="33" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="33" endLine="25" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="35" endLine="25" endPosition="54" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="35" endLine="25" endPosition="54" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="54" endLine="25" endPosition="55" conceptFqName="jetbrains.mps.gtext.structure.GText" />

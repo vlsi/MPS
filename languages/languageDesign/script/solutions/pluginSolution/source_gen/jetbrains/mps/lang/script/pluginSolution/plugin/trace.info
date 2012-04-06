@@ -201,7 +201,7 @@
     <unitInfo nodeId="5487985028841902494" fileName="ScriptsGlobally_ActionGroup.java" startLine="22" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.script.pluginSolution.plugin.ScriptsGlobally_ActionGroup" />
   </root>
   <root nodeId="5487985028841902566">
-    <nodeInfo nodeId="5487985028841902566" fileName="RunMigrationScripts_Action.java" startLine="28" startPosition="65" endLine="29" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="5487985028841902566" fileName="RunMigrationScripts_Action.java" startLine="28" startPosition="60" endLine="29" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5487985028841902566" fileName="RunMigrationScripts_Action.java" startLine="29" startPosition="40" endLine="30" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="5487985028841902711" fileName="RunMigrationScripts_Action.java" startLine="31" startPosition="0" endLine="32" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="scripts" />
     <nodeInfo nodeId="5487985028841902718" fileName="RunMigrationScripts_Action.java" startLine="32" startPosition="30" endLine="33" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="selectionOnly" />
