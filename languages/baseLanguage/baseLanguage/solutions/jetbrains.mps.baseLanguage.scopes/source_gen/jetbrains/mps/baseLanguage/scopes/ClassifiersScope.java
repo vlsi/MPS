@@ -8,81 +8,203 @@ import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.scope.ModelPlusImportedScope;
+import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
+import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelFqName;
+import java.util.Collection;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class ClassifiersScope extends DelegatingScope {
   protected static Log log = LogFactory.getLog(ClassifiersScope.class);
 
+  private final SModel model;
+  private final IScope scope;
+
   public ClassifiersScope(SModel model, IScope scope, String conceptFqName) {
     super(new ModelPlusImportedScope(model, false, scope, conceptFqName));
+    // todo: not use delegating, use just getClassifiersByModel 
+    this.model = model;
+    this.scope = scope;
+  }
+
+  public List<SNode> getClassifiersByRefName(SModel model, @NotNull String refName) {
+    List<SNode> result = new ArrayList<SNode>();
+
+    String simpleName = refName.substring(Math.max(refName.lastIndexOf("$"), refName.lastIndexOf(".")) + 1);
+    for (SNode classifier : getClassifiersByModelAndSimpleNamePrefix(model, scope, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), simpleName)) {
+      if (refName.equals(getRefName(classifier))) {
+        ListSequence.fromList(result).addElement(classifier);
+      }
+    }
+    return result;
   }
 
   @Override
-  public SNode resolve(SNode contextNode, final String refText) {
-    String className = refText;
-    int dotIndex = className.lastIndexOf(".");
-    final String simpleName = (dotIndex == -1 ?
-      className :
-      className.substring(dotIndex + 1)
-    );
-    Iterable<SNode> possibleClassifiers = ListSequence.fromList(getAvailableElements(simpleName)).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier");
+  public SNode resolve(SNode contextNode, String refText) {
+    String classname = refText;
+    int dotIndex = classname.lastIndexOf(".");
+    if (dotIndex >= 0) {
+      // try local nested classes 
+      List<SNode> localClassifiers = getClassifiersByRefName(model, classname);
+      if (ListSequence.fromList(localClassifiers).count() >= 1) {
+        return ListSequence.fromList(localClassifiers).first();
       }
-    }).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SPropertyOperations.getString(it, "name").equals(simpleName);
-      }
-    });
 
-    if (dotIndex == -1) {
-      if ((int) Sequence.fromIterable(possibleClassifiers).count() == 1) {
-        return Sequence.fromIterable(possibleClassifiers).first();
-      } else {
-        if (log.isWarnEnabled()) {
-          log.warn("Cannot resolve class at " + contextNode + " with refText " + refText);
-        }
+      // search everywhere 
+      String package_ = classname.substring(0, dotIndex);
+      classname = classname.substring(dotIndex + 1).replace('$', '.');
+
+      return resolveClass(package_, null, classname);
+    }
+
+    SModelReference targetModelReference = model.getSModelReference();
+    if (targetModelReference.getSModelId() != null) {
+      SModelDescriptor targetModel = scope.getModelDescriptor(targetModelReference);
+      if (targetModel == null) {
         return null;
       }
-    } else {
-      Iterable<SNode> possibleWithEqualFqName = Sequence.fromIterable(possibleClassifiers).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return INamedConcept_Behavior.call_getFqName_1213877404258(it).endsWith(refText);
+      return ListSequence.fromList(getClassifiersByRefName(targetModel.getSModel(), classname)).first();
+    }
+    SModelFqName modelname = targetModelReference.getSModelFqName();
+    return resolveClass(modelname.getLongName(), modelname.getStereotype(), classname);
+  }
+
+  public SNode resolveClass(String modelname, String stereotype, String nestedClassName) {
+    Collection<IModule> visibleModules = IterableUtil.asCollection(scope.getVisibleModules());
+
+    List<SNode> classifiers = new ArrayList<SNode>();
+    for (SModelDescriptor model : Sequence.fromIterable(((Iterable<IModule>) visibleModules)).translate(new ITranslator2<IModule, SModelDescriptor>() {
+      public Iterable<SModelDescriptor> translate(IModule it) {
+        return it.getOwnModelDescriptors();
+      }
+    }).distinct()) {
+      SModelFqName modelFqName = model.getSModelReference().getSModelFqName();
+      if (!(modelFqName.getLongName().equals(modelname))) {
+        continue;
+      }
+      if (stereotype != null && !(modelFqName.getStereotype().equals(stereotype))) {
+        continue;
+      }
+
+      ListSequence.fromList(classifiers).addSequence(ListSequence.fromList(getClassifiersByRefName(model.getSModel(), nestedClassName)));
+    }
+
+    if (ListSequence.fromList(classifiers).isEmpty()) {
+      return null;
+    }
+    if (ListSequence.fromList(classifiers).count() > 1) {
+      for (SNode cls : ListSequence.fromList(classifiers)) {
+        if (SNodeOperations.getModel(cls) == model) {
+          return cls;
         }
-      });
-      if (Sequence.fromIterable(possibleWithEqualFqName).isNotEmpty()) {
-        if ((int) Sequence.fromIterable(possibleWithEqualFqName).count() == 1) {
-          return Sequence.fromIterable(possibleWithEqualFqName).first();
-        } else {
-          if (log.isWarnEnabled()) {
-            log.warn("Cannot resolve class at " + contextNode + " with refText " + refText);
-          }
-          return null;
-        }
-      } else {
-        if ((int) Sequence.fromIterable(possibleClassifiers).count() == 1) {
-          return Sequence.fromIterable(possibleClassifiers).first();
-        } else {
-          if (log.isWarnEnabled()) {
-            log.warn("Cannot resolve class at " + contextNode + " with refText " + refText);
-          }
-          return null;
+        if (check_npo0wh_a0b0a0g0c_0(check_npo0wh_a0a1a0a6a2_0(model)) == check_npo0wh_a0b0a0g0c(check_npo0wh_a0a1a0a6a2(SNodeOperations.getModel(cls)))) {
+          return cls;
         }
       }
+      Iterable<SNode> userClassifiers = ListSequence.fromList(classifiers).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SModelStereotype.isUserModel(SNodeOperations.getModel(it));
+        }
+      });
+      if ((int) Sequence.fromIterable(userClassifiers).count() == 1) {
+        return Sequence.fromIterable(userClassifiers).first();
+      }
+
+      final StringBuilder warn = new StringBuilder();
+      warn.append("reference can't be resolved: ");
+      warn.append(nestedClassName);
+      warn.append(" in ");
+      warn.append(model.getLongName());
+      warn.append(" can reference nodes from models: ");
+      ListSequence.fromList(classifiers).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode it) {
+          warn.append(SNodeOperations.getModel(it).getSModelReference()).append("; ");
+        }
+      });
+
+      if (log.isWarnEnabled()) {
+        log.warn(warn);
+      }
+      return null;
     }
+    return ListSequence.fromList(classifiers).getElement(0);
   }
 
   @Override
   public String getReferenceText(SNode contextNode, SNode node) {
     // <node> 
     // todo: should use fqName 
-    return SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), "name");
+    return getRefName(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"));
+  }
+
+  private static String getRefName(SNode classifier) {
+    String name = SPropertyOperations.getString(classifier, "name");
+    if (name == null) {
+      name = "";
+    }
+    SNode parent = SNodeOperations.getParent(classifier);
+    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+      return getRefName(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.Classifier")) + "." + name;
+    }
+    return name;
+  }
+
+  public static Iterable<SNode> getClassifiersByModelAndSimpleNamePrefix(SModel model, IScope scope, SNode concreteConcept, @Nullable String prefix) {
+    // for simplicity - prefix is prefix for simple name 
+    return ListSequence.fromList(new ModelPlusImportedScope(model, false, scope, INamedConcept_Behavior.call_getFqName_1213877404258(concreteConcept)) {
+      @Override
+      public String getReferenceText(SNode contextNode, SNode node) {
+        return SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), "name");
+      }
+    }.getAvailableElements(prefix)).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier");
+      }
+    });
+  }
+
+  private static IModule check_npo0wh_a0b0a0g0c(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
+  }
+
+  private static SModelDescriptor check_npo0wh_a0a1a0a6a2(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelDescriptor();
+    }
+    return null;
+  }
+
+  private static IModule check_npo0wh_a0b0a0g0c_0(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
+  }
+
+  private static SModelDescriptor check_npo0wh_a0a1a0a6a2_0(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelDescriptor();
+    }
+    return null;
   }
 }
