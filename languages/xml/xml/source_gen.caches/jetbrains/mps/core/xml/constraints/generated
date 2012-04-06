@@ -42,6 +42,7 @@
     <file name="ConstraintsAspectDescriptor.java" />
   </common>
   <source id="6666499814681413049" name="XmlNameUtil" hash="1h13izey2x69hykkph3k3jqb1td2nq7">
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />

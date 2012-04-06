@@ -1226,6 +1226,7 @@
       <property name="name" nameId="tpck.1169194664001" value="TodoFinder" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="todo" />
     </node>
+    <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690968192621" />
   </roots>
   <root id="1204991218714">
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1207148419636">
@@ -30113,5 +30114,6 @@
       </node>
     </node>
   </root>
+  <root id="7162597690968192621" />
 </model>
 

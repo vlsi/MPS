@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="PluginSolution_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
   <root nodeId="5487985028841902721">
     <nodeInfo nodeId="5487985028841902721" fileName="CheckLangForJavaStubModels_Action.java" startLine="31" startPosition="72" endLine="32" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5487985028841902721" fileName="CheckLangForJavaStubModels_Action.java" startLine="32" startPosition="40" endLine="33" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
@@ -149,6 +148,28 @@
     <scopeInfo nodeId="5487985028841902885" fileName="LanguageInternalAddition_ActionGroup.java" startLine="12" startPosition="49" endLine="21" endPosition="5" />
     <scopeInfo nodeId="5487985028841902885" fileName="LanguageInternalAddition_ActionGroup.java" startLine="11" startPosition="0" endLine="22" endPosition="3" />
     <unitInfo nodeId="5487985028841902885" fileName="LanguageInternalAddition_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.LanguageInternalAddition_ActionGroup" />
+  </root>
+  <root nodeId="7162597690967691224">
+    <nodeInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="9" startPosition="77" endLine="10" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
+    <nodeInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="27" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="19" startPosition="30" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="20" startPosition="30" endLine="21" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="21" startPosition="55" endLine="22" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="22" startPosition="14" endLine="23" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="26" startPosition="37" endLine="27" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PluginSolution_ApplicationPlugin#()V" />
+    <nodeInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
+    <nodeInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adjustRegularGroups#()V" />
+    <nodeInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createGroups#()V" />
+    <scopeInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="12" startPosition="45" endLine="12" endPosition="45" />
+    <scopeInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="27" endLine="16" endPosition="16" />
+    <scopeInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="26" startPosition="37" endLine="27" endPosition="159" />
+    <scopeInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="19" startPosition="30" endLine="23" endPosition="57" />
+    <scopeInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="0" endLine="25" endPosition="0" />
+    <unitInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
   </root>
 </debugInfo>
 

@@ -95,6 +95,7 @@
       <property name="name" nameId="tpck.1169194664001" value="exec" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
     </node>
+    <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690968188473" />
   </roots>
   <root id="5487985028841967290">
     <node role="preferencePage" roleId="tp4k.1210684426855" type="tp4k.PreferencePage" typeId="tp4k.1210684385183" id="5487985028841967291">
@@ -1823,5 +1824,6 @@
       </node>
     </node>
   </root>
+  <root id="7162597690968188473" />
 </model>
 

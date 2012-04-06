@@ -18,6 +18,7 @@ public class Migration21_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
+    addAction(new AddPluginDependencies_Action());
     addAction(new AddSourcesToModelRoots_Action());
     addAction(new AddStubsToModelRoots_Action());
     addAction(new CorrectIconsAfterPluhinMove_Action());

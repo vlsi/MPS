@@ -365,16 +365,21 @@ public class StandardComponents {
 
   private static JPanel createLegendPanel() {
     JPanel result = new JPanel(new GridBagLayout());
-    GridBagConstraints c = StandardComponents.createConstraints(0, 0, 1, 4, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
+    GridBagConstraints c = StandardComponents.createConstraints(0, 0, 1, 6, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
     result.add(new JPanel(), c);
     c = StandardComponents.createConstraints(1, 0, 1, 1, 0, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.NONE);
     result.add(new JLabel("<html><b>Legend</b></html>"), c);
     c.gridy = 1;
     result.add(new JLabel("<html><b>&lt;</b> - strictly before</html>"), c);
     c.gridy = 2;
-    result.add(new JLabel("<html><b>=</b> - strictly together</html>"), c);
-    c.gridy = 3;
     result.add(new JLabel("<html><b>&lt;=</b> - before or together</html>"), c);
+    c.gridy = 3;
+    result.add(new JLabel("<html><b>&gt;</b> - strictly after</html>"), c);
+    c.gridy = 4;
+    result.add(new JLabel("<html><b>=&gt;</b> - after or together</html>"), c);
+    c.gridy = 5;
+    result.add(new JLabel("<html><b>=</b> - strictly together</html>"), c);
+
     return result;
   }
 

@@ -1400,20 +1400,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1560298786499498102">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1560298786499498103">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1560298786499498104">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1560298786499498090" resolveInfo="cb" />
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1560298786499498105">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~JComboBox%daddItem(java%dlang%dObject)%cvoid" resolveInfo="addItem" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="447239626913718129">
-                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="bocb.~RuleType%dSTRICTLY_TOGETHER" resolveInfo="STRICTLY_TOGETHER" />
-                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="bocb.~RuleType" resolveInfo="RuleType" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1560298786499498107">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1560298786499498108">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1560298786499498109">
@@ -1423,6 +1409,20 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~JComboBox%daddItem(java%dlang%dObject)%cvoid" resolveInfo="addItem" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="447239626913718128">
                 <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="bocb.~RuleType%dBEFORE_OR_TOGETHER" resolveInfo="BEFORE_OR_TOGETHER" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="bocb.~RuleType" resolveInfo="RuleType" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="447239626913718121">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="447239626913718122">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="447239626913718123">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1560298786499498090" resolveInfo="cb" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="447239626913718124">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~JComboBox%daddItem(java%dlang%dObject)%cvoid" resolveInfo="addItem" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="447239626913718127">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="bocb.~RuleType%dSTRICTLY_AFTER" resolveInfo="STRICTLY_AFTER" />
                 <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="bocb.~RuleType" resolveInfo="RuleType" />
               </node>
             </node>
@@ -1442,15 +1442,15 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="447239626913718121">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="447239626913718122">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="447239626913718123">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1560298786499498102">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1560298786499498103">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1560298786499498104">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1560298786499498090" resolveInfo="cb" />
             </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="447239626913718124">
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1560298786499498105">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~JComboBox%daddItem(java%dlang%dObject)%cvoid" resolveInfo="addItem" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="447239626913718127">
-                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="bocb.~RuleType%dSTRICTLY_AFTER" resolveInfo="STRICTLY_AFTER" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="447239626913718129">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="bocb.~RuleType%dSTRICTLY_TOGETHER" resolveInfo="STRICTLY_TOGETHER" />
                 <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="bocb.~RuleType" resolveInfo="RuleType" />
               </node>
             </node>
