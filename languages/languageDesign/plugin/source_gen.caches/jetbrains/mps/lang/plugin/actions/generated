@@ -65,7 +65,6 @@
   <source id="1218807098709" name="MoveParametersToTopLevel" hash="-7k5j0jro4oqaa424nid44vf8phaa4dy">
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   </source>
   <source id="1218809006684" name="MoveGroupMembersToTopLevel" hash="bnurpsqiix86jfuo7jtjcofyw2asi5v">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
