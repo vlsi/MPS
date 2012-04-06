@@ -28,7 +28,7 @@ public class MigrationScript_ConvertActionParameterCondition_Action extends Gene
   public MigrationScript_ConvertActionParameterCondition_Action() {
     super("Apply Convert Action Parameter Condition", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {

@@ -28,7 +28,7 @@ public class MigrationScript_ResolveBrokenRefs_Action extends GeneratedAction {
   public MigrationScript_ResolveBrokenRefs_Action() {
     super("Apply Resolve Broken Stub References", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {

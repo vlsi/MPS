@@ -90,6 +90,7 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2761153619454568093">
       <property name="name" nameId="tpck.1169194664001" value="MigrationScript_ResolveBrokenRefs" />
       <property name="caption" nameId="tp4k.1205250923097" value="Apply Resolve Broken Stub References" />
+      <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
     </node>
     <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690968046172" />
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="975723688157231916">
@@ -99,6 +100,7 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2761153619454568020">
       <property name="name" nameId="tpck.1169194664001" value="MigrationScript_SplitMPSClasspath" />
       <property name="caption" nameId="tp4k.1205250923097" value="Apply Split MPS.Classpath" />
+      <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="9164503229271455483">
       <property name="name" nameId="tpck.1169194664001" value="FixMissingImportsInProject" />
@@ -108,6 +110,7 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2761153619454586633">
       <property name="name" nameId="tpck.1169194664001" value="MigrationScript_ConvertActionParameterCondition" />
       <property name="caption" nameId="tp4k.1205250923097" value="Apply Convert Action Parameter Condition" />
+      <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="4250481571544053952">
       <property name="name" nameId="tpck.1169194664001" value="OptionalMigrations" />
@@ -117,6 +120,7 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2761153619454599624">
       <property name="name" nameId="tpck.1169194664001" value="MigrationScript_APIMigration" />
       <property name="caption" nameId="tp4k.1205250923097" value="Apply MPS API Migration" />
+      <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
     </node>
   </roots>
   <root id="8325776762397714308" />
