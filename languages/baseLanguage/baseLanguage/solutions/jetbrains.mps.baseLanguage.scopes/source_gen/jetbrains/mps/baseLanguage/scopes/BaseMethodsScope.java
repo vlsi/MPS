@@ -31,7 +31,7 @@ public abstract class BaseMethodsScope extends Scope {
   protected final SNode kind;
   protected final SNode classifier;
   protected final Iterable<SNode> extendedClassifiers;
-  private List<SNode> allMethods;
+  private SNode[] allMethods;
 
   public BaseMethodsScope(final SNode kind, SNode classifier, Iterable<SNode> extendedClassifiers) {
     this.kind = kind;
@@ -72,7 +72,7 @@ public abstract class BaseMethodsScope extends Scope {
 
   public List<SNode> getAvailableElements(@Nullable final String prefix) {
     if (allMethods != null) {
-      return ListSequence.fromList(allMethods).where(new IWhereFilter<SNode>() {
+      return Sequence.fromIterable(Sequence.fromArray(allMethods)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return prefix == null || SPropertyOperations.getString(it, "name").startsWith(prefix);
         }
@@ -82,13 +82,16 @@ public abstract class BaseMethodsScope extends Scope {
     List<SNode> result = ListSequence.fromList(new ArrayList());
     Set<String> overridenSignatures = SetSequence.fromSet(new HashSet<String>());
 
-    for (List<SNode> methods : Sequence.fromIterable(MapSequence.fromMap(nameToMethods).values())) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(methods));
-      SetSequence.fromSet(overridenSignatures).addSequence(ListSequence.fromList(methods).select(new ISelector<SNode, String>() {
-        public String select(SNode it) {
-          return getSignatureForOverriding(it, classifier);
-        }
-      }));
+    for (String name : SetSequence.fromSet(MapSequence.fromMap(nameToMethods).keySet())) {
+      if (prefix == null || name.startsWith(prefix)) {
+        Iterable<SNode> methods = MapSequence.fromMap(nameToMethods).get(name);
+        ListSequence.fromList(result).addSequence(Sequence.fromIterable(methods));
+        SetSequence.fromSet(overridenSignatures).addSequence(Sequence.fromIterable(methods).select(new ISelector<SNode, String>() {
+          public String select(SNode it) {
+            return getSignatureForOverriding(it, classifier);
+          }
+        }));
+      }
     }
 
     Map<String, Set<SNode>> groups = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
@@ -123,7 +126,7 @@ public abstract class BaseMethodsScope extends Scope {
         public SNode select(SNode it) {
           return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
         }
-      }).toListSequence();
+      }).toGenericArray(SNode.class);
     }
 
     return result;
