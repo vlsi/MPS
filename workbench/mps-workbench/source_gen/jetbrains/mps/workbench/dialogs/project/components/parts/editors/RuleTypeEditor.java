@@ -12,10 +12,10 @@ public class RuleTypeEditor extends DefaultCellEditor {
     super(new JComboBox());
     JComboBox cb = (JComboBox) editorComponent;
     cb.addItem(RuleType.STRICTLY_BEFORE);
-    cb.addItem(RuleType.STRICTLY_TOGETHER);
     cb.addItem(RuleType.BEFORE_OR_TOGETHER);
-    cb.addItem(RuleType.AFTER_OR_TOGETHER);
     cb.addItem(RuleType.STRICTLY_AFTER);
+    cb.addItem(RuleType.AFTER_OR_TOGETHER);
+    cb.addItem(RuleType.STRICTLY_TOGETHER);
     editorComponent = RuleTypeRenderer.createCenterAlignmentInCell(editorComponent);
   }
 }

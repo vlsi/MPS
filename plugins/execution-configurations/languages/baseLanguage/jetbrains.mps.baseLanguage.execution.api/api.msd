@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.baseLanguage.execution.util" uuid="22250116-183c-4e90-8450-b6a13dd8998b" pluginKind="PLUGIN_OTHER" compileInMPS="false">
   <models>
-    <modelRoot path="${mps_home}/plugins/execution-configurations/classes">
+    <modelRoot path="${solution_descriptor}/" />
+    <modelRoot path="${solution_descriptor}/classes">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
-    <modelRoot path="${solution_descriptor}/" />
     <modelRoot path="${solution_descriptor}/models" />
   </models>
   <stubModelEntries>
-    <stubModelEntry path="${mps_home}/plugins/execution-configurations/classes">
+    <stubModelEntry path="${solution_descriptor}/classes">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </stubModelEntry>
   </stubModelEntries>

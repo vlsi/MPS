@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Runtime_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.Runtime_ApplicationPlugin" />
   <root nodeId="3585489156472415414">
     <nodeInfo nodeId="3585489156472415414" fileName="plugin.xml" startLine="1" startPosition="0" endLine="1" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
     <nodeInfo nodeId="3585489156472415414" fileName="plugin.xml" startLine="1" startPosition="0" endLine="1" endPosition="10" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -106,8 +105,8 @@
     <nodeInfo nodeId="3585489156472415414" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="39" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3585489156472415414" fileName="plugin.xml" startLine="12" startPosition="39" endLine="12" endPosition="39" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3585489156472415414" fileName="plugin.xml" startLine="12" startPosition="39" endLine="12" endPosition="39" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3585489156472415414" fileName="plugin.xml" startLine="12" startPosition="39" endLine="12" endPosition="41" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3585489156472415414" fileName="plugin.xml" startLine="12" startPosition="39" endLine="12" endPosition="39" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3585489156472415414" fileName="plugin.xml" startLine="12" startPosition="39" endLine="12" endPosition="41" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3585489156472415414" fileName="plugin.xml" startLine="12" startPosition="41" endLine="12" endPosition="53" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3585489156472415414" fileName="plugin.xml" startLine="12" startPosition="41" endLine="12" endPosition="53" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3585489156472415414" fileName="plugin.xml" startLine="12" startPosition="53" endLine="12" endPosition="54" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -265,7 +264,7 @@
     <unitInfo nodeId="4613144939628065112" fileName="JavaWatchableNodeActions_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.JavaWatchableNodeActions_ActionGroup" />
   </root>
   <root nodeId="4893181994832024376">
-    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="17" startPosition="71" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="17" startPosition="66" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="18" startPosition="40" endLine="19" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="21" startPosition="45" endLine="22" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="22" startPosition="52" endLine="23" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -334,6 +333,34 @@
     </scopeInfo>
     <unitInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="17" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.CopyStackTraceToClipboard_Action" />
   </root>
+  <root nodeId="7162597690968011948">
+    <nodeInfo nodeId="7162597690968011948" fileName="Runtime_ApplicationPlugin.java" startLine="9" startPosition="70" endLine="10" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
+    <nodeInfo nodeId="7162597690968011948" fileName="Runtime_ApplicationPlugin.java" startLine="15" startPosition="27" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7162597690968011948" fileName="Runtime_ApplicationPlugin.java" startLine="19" startPosition="30" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7162597690968011948" fileName="Runtime_ApplicationPlugin.java" startLine="20" startPosition="30" endLine="21" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968011948" fileName="Runtime_ApplicationPlugin.java" startLine="21" startPosition="43" endLine="22" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968011948" fileName="Runtime_ApplicationPlugin.java" startLine="22" startPosition="54" endLine="23" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968011948" fileName="Runtime_ApplicationPlugin.java" startLine="23" startPosition="44" endLine="24" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968011948" fileName="Runtime_ApplicationPlugin.java" startLine="24" startPosition="44" endLine="25" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968011948" fileName="Runtime_ApplicationPlugin.java" startLine="25" startPosition="46" endLine="26" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7162597690968011948" fileName="Runtime_ApplicationPlugin.java" startLine="26" startPosition="14" endLine="27" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968011948" fileName="Runtime_ApplicationPlugin.java" startLine="27" startPosition="57" endLine="28" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968011948" fileName="Runtime_ApplicationPlugin.java" startLine="28" startPosition="54" endLine="29" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968011948" fileName="Runtime_ApplicationPlugin.java" startLine="32" startPosition="37" endLine="33" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968011948" fileName="Runtime_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Runtime_ApplicationPlugin#()V" />
+    <nodeInfo nodeId="7162597690968011948" fileName="Runtime_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
+    <nodeInfo nodeId="7162597690968011948" fileName="Runtime_ApplicationPlugin.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adjustRegularGroups#()V" />
+    <nodeInfo nodeId="7162597690968011948" fileName="Runtime_ApplicationPlugin.java" startLine="18" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createGroups#()V" />
+    <scopeInfo nodeId="7162597690968011948" fileName="Runtime_ApplicationPlugin.java" startLine="12" startPosition="38" endLine="12" endPosition="38" />
+    <scopeInfo nodeId="7162597690968011948" fileName="Runtime_ApplicationPlugin.java" startLine="15" startPosition="27" endLine="16" endPosition="16" />
+    <scopeInfo nodeId="7162597690968011948" fileName="Runtime_ApplicationPlugin.java" startLine="32" startPosition="37" endLine="33" endPosition="175" />
+    <scopeInfo nodeId="7162597690968011948" fileName="Runtime_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="7162597690968011948" fileName="Runtime_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="7162597690968011948" fileName="Runtime_ApplicationPlugin.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="7162597690968011948" fileName="Runtime_ApplicationPlugin.java" startLine="19" startPosition="30" endLine="29" endPosition="51" />
+    <scopeInfo nodeId="7162597690968011948" fileName="Runtime_ApplicationPlugin.java" startLine="18" startPosition="0" endLine="31" endPosition="0" />
+    <unitInfo nodeId="7162597690968011948" fileName="Runtime_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.Runtime_ApplicationPlugin" />
+  </root>
   <root nodeId="8643693251546861612">
     <nodeInfo nodeId="8643693251546861612" fileName="WatchesTreeActions_ActionGroup.java" startLine="8" startPosition="74" endLine="9" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="8643693251546861612" fileName="WatchesTreeActions_ActionGroup.java" startLine="9" startPosition="85" endLine="10" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
@@ -356,7 +383,7 @@
     <unitInfo nodeId="8643693251546861612" fileName="WatchesTreeActions_ActionGroup.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.WatchesTreeActions_ActionGroup" />
   </root>
   <root nodeId="8643693251546861633">
-    <nodeInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="17" startPosition="60" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="17" startPosition="55" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="18" startPosition="63" endLine="19" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="21" startPosition="34" endLine="22" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="22" startPosition="48" endLine="23" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -420,7 +447,7 @@
     <unitInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="17" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.AddWatchAction_Action" />
   </root>
   <root nodeId="8643693251546861699">
-    <nodeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="19" startPosition="63" endLine="20" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="19" startPosition="58" endLine="20" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="20" startPosition="66" endLine="21" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="23" startPosition="37" endLine="24" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="24" startPosition="36" endLine="25" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -486,7 +513,7 @@
     <unitInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="19" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.RemoveWatchAction_Action" />
   </root>
   <root nodeId="8643693251546861757">
-    <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="17" startPosition="61" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="17" startPosition="56" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="18" startPosition="40" endLine="19" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="21" startPosition="35" endLine="22" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="22" startPosition="34" endLine="23" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -549,7 +576,7 @@
     <unitInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="17" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.EditWatchAction_Action" />
   </root>
   <root nodeId="8894158296385402494">
-    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="24" startPosition="61" endLine="25" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="24" startPosition="56" endLine="25" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="25" startPosition="40" endLine="26" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="28" startPosition="35" endLine="29" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="29" startPosition="34" endLine="30" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

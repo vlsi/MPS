@@ -6,9 +6,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
@@ -27,6 +27,9 @@ public class ModuleReferenceExpression_Behavior {
 
   @Nullable
   public static IModule call_getModule_4040588429969043137(SNode thisNode) {
+    if (SPropertyOperations.getString(thisNode, "moduleId") == null) {
+      return null;
+    }
     return MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(SPropertyOperations.getString(thisNode, "moduleId")));
   }
 

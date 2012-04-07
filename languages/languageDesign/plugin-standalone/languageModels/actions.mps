@@ -15,7 +15,7 @@
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpdg.NodeSubstituteActions" typeId="tpdg.1112056943463" id="6062029294752720939">
-      <property name="name" nameId="tpck.1169194664001" value="AddWorkbenchToActionParsmeters" />
+      <property name="name" nameId="tpck.1169194664001" value="AddWorkbenchToActionParameters" />
     </node>
   </roots>
   <root id="6062029294752720939">

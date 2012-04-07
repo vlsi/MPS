@@ -44,7 +44,7 @@ public class BuildLayout_Import_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.EDITABLE, true);
     }
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new BuildLayout_Import_Editor.ReplaceWith_BuildLayout_Node_cellMenu_a0a0_0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new BuildLayout_Import_Editor.ReplaceWith_BuildLayout_Node_cellMenu_a0a0()}));
     return editorCell;
   }
 
@@ -66,8 +66,8 @@ public class BuildLayout_Import_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class ReplaceWith_BuildLayout_Node_cellMenu_a0a0_0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_BuildLayout_Node_cellMenu_a0a0_0() {
+  public static class ReplaceWith_BuildLayout_Node_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_BuildLayout_Node_cellMenu_a0a0() {
     }
 
     public String getReplacementConceptName() {

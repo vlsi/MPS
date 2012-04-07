@@ -2,7 +2,7 @@
 <idea-plugin>
   <id>jetbrains.mps.debugger-java</id>
   <name>Java Debugger for MPS</name>
-  <description>Provides Java Debugger Implementation For MPS</description>
+  <description>Provides java debugger implementation for MPS</description>
   <version>2.0</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
   <idea-version since-build="3000"/>

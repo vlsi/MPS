@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Configurations_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.execution.configurations.typesystem.Configurations_ApplicationPlugin" />
-  <unitInfo fileName="Configurations_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.configurations.typesystem.Configurations_ProjectPlugin" />
   <unitInfo fileName="TypesystemDescriptor.java" startLine="10" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.execution.configurations.typesystem.TypesystemDescriptor" />
   <root nodeId="1594211126127671963">
     <nodeInfo nodeId="1594211126127671995" fileName="typeof_StartProcessHandlerStatement_InferenceRule.java" startLine="25" startPosition="5" endLine="26" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
