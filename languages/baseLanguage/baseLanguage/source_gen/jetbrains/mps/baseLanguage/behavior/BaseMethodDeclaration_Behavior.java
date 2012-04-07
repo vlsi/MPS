@@ -242,7 +242,7 @@ public class BaseMethodDeclaration_Behavior {
       if (SConceptOperations.isSubConceptOf(concept_a0y, "jetbrains.mps.baseLanguage.structure.LocalToMethodKind")) {
         return new EmptyScope();
       }
-      if (SConceptOperations.isSubConceptOf(concept_a0y, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration")) {
+      if (SConceptOperations.isSubConceptOf(concept_a0y, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) {
         if (ScopeUtils.comeFrom("body", thisNode, child)) {
           return Scopes.forVariables(kind, SLinkOperations.getTargets(thisNode, "parameter", true), ScopeUtils.lazyParentScope(thisNode, kind));
         } else {

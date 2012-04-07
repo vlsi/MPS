@@ -325,7 +325,7 @@ public class Classifier_Behavior {
           return ScopeUtils.lazyParentScope(thisNode, kind);
         }
       }
-      if (SConceptOperations.isSubConceptOf(concept_e0bb, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration")) {
+      if (SConceptOperations.isSubConceptOf(concept_e0bb, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) {
         {
           // add 1) instance fields 2) static fields 
           Scope scope = Scopes.forVariables(kind, Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")), ScopeUtils.lazyParentScope(thisNode, kind));

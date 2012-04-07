@@ -40,7 +40,7 @@ public class SwitchStatement_Behavior {
     {
       SNode concept_d0b;
       concept_d0b = kind;
-      if (SConceptOperations.isSubConceptOf(concept_d0b, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration")) {
+      if (SConceptOperations.isSubConceptOf(concept_d0b, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) {
         {
           if (SLinkOperations.getTarget(thisNode, "expression", true) == childStatement) {
             return ScopeUtils.lazyParentScope(thisNode, kind);
