@@ -5,8 +5,6 @@ package jetbrains.mps.lang.scopes.runtime;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class NamedElementsScope extends SimpleScope {
   public NamedElementsScope(Iterable<SNode> nodes) {
@@ -19,6 +17,8 @@ public class NamedElementsScope extends SimpleScope {
 
   @Nullable
   public String getReferenceText(@NotNull SNode target) {
-    return SPropertyOperations.getString(SNodeOperations.cast(target, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
+    // todo: is it right? 
+    // <node> 
+    return target.getName();
   }
 }
