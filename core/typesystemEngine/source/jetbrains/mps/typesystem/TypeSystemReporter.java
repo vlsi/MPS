@@ -28,6 +28,7 @@ public class TypeSystemReporter {
   private Map<String, Pair<Long, Long>> myGetTypeOfTime = new HashMap<String, Pair<Long, Long>>();
   private Map<String, Pair<Long, Long>> myIsSubTypeTime = new HashMap<String, Pair<Long, Long>>();
   private Map<String, Pair<Long, Long>> myCoerceTime = new HashMap<String, Pair<Long, Long>>();
+  private Map<String, Pair<Long, Long>> myCoerceNCTime = new HashMap<String, Pair<Long, Long>>();
 
   private TypeSystemReporter(){
 
@@ -44,6 +45,7 @@ public class TypeSystemReporter {
     myGetTypeOfTime.clear();
     myIsSubTypeTime.clear();
     myCoerceTime.clear();
+    myCoerceNCTime.clear();
   }
 
   public synchronized void reportTypeOf(SNode node, long time) {
@@ -72,6 +74,11 @@ public class TypeSystemReporter {
     String conceptFqName = subType.getConceptFqName()+ "   "+ fq;
     report(time, conceptFqName, myCoerceTime);
   }
+  public void reportCoerceNotCached(SNode subType, String fq, long time) {
+    if (null == subType) return;
+    String conceptFqName = subType.getConceptFqName()+ "   "+ fq;
+    report(time, conceptFqName, myCoerceNCTime);
+  }
 
   public void printReport(int numTop) {
     System.out.println("getTypeOf");
@@ -80,6 +87,9 @@ public class TypeSystemReporter {
     printMapReport(myIsSubTypeTime, numTop);
     System.out.println("Coerce");
     printMapReport(myCoerceTime, numTop);
+
+    System.out.println("Coerce");
+    printMapReport(myCoerceNCTime, numTop);
   }
 
   public void printMapReport(Map<String, Pair<Long, Long>> map, int numTop) {

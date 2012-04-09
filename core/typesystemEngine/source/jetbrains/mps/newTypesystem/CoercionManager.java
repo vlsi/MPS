@@ -15,21 +15,24 @@
  */
 package jetbrains.mps.newTypesystem;
 
+import gnu.trove.THashSet;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.TypeSystemReporter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 
-import java.util.List;
+import java.util.*;
 
 public class CoercionManager {
-  private TypeChecker myTypeChecker;
-  private SubTypingManagerNew mySubTyping;
+  private final TypeChecker myTypeChecker;
+  private final SubTypingManagerNew mySubTyping;
 
   public CoercionManager(TypeChecker typeChecker, SubTypingManagerNew subTyping) {
     myTypeChecker = typeChecker;
@@ -58,33 +61,15 @@ public class CoercionManager {
     //asking the cache
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
       public SNode compute() {
-
-        SubtypingCache cache = myTypeChecker.getSubtypingCache();
-        if (cache != null) {
-          Pair<Boolean, SNode> nodePair = cache.getCoerced(subtype, pattern, isWeak);
-          if (nodePair.o1) {
-            return nodePair.o2;
-          }
-        }
-        cache = myTypeChecker.getGlobalSubtypingCache();
-        if (cache != null) {
-          Pair<Boolean, SNode> nodePair = cache.getCoerced(subtype, pattern, isWeak);
-          if (nodePair.o1) {
-            return nodePair.o2;
-          }
+        Pair<Boolean, SNode> answer = getCoerceCahceAnswer(subtype, pattern, isWeak);
+        if (answer != null && answer.o1) {
+          return answer.o2;
         }
         CoercionMatcher coercionMatcher = new CoercionMatcher(pattern);
-        boolean success = mySubTyping.searchInSuperTypes(subtype, coercionMatcher, null, isWeak, null);
-        SNode result = null;
-        if (success) {
-          List<SNode> nodes = coercionMatcher.getResults();
-          if (nodes.size() > 1) {
-            nodes = mySubTyping.eliminateSuperTypes(nodes);
-          }
-          if (!nodes.isEmpty()) {
-            result = nodes.get(0);
-          }
-        }
+        long start = System.nanoTime();
+        SNode result = searchInSuperTypes(subtype, coercionMatcher, isWeak);
+
+        TypeSystemReporter.getInstance().reportCoerceNotCached(subtype, pattern.getConceptFQName(), System.nanoTime()-start);
         //writing to the cache
         SubtypingCache subtypingCache = myTypeChecker.getSubtypingCache();
         if (subtypingCache != null) {
@@ -100,29 +85,88 @@ public class CoercionManager {
     });
   }
 
-
-  public SNode coerceSubTyping(SNode subtype, final IMatchingPattern pattern, State state) {
-    return coerceSubTypingNew(subtype, pattern, true, state);
+  Pair<Boolean, SNode> getCoerceCahceAnswer(SNode subtype, IMatchingPattern pattern, boolean isWeak) {
+    SubtypingCache cache = myTypeChecker.getSubtypingCache();
+    if (cache != null) {
+      Pair<Boolean, SNode> coerced = cache.getCoerced(subtype, pattern, isWeak);
+      if (coerced != null) {
+        return coerced;
+      }
+    }
+    cache = myTypeChecker.getGlobalSubtypingCache();
+    if (cache != null) {
+      Pair<Boolean, SNode> coerced = cache.getCoerced(subtype, pattern, isWeak);
+      if (coerced != null) return coerced;
+    }
+    return null;
   }
 
-  private static class CoercionMatcher implements INodeMatcher {
+  private SNode searchInSuperTypes(SNode subType, CoercionMatcher superType, boolean isWeak) {
+    StructuralNodeSet<?> frontier = new StructuralNodeSet();
+    StructuralNodeSet<?> newFrontier = new StructuralNodeSet();
+    StructuralNodeSet<?> yetPassed = new StructuralNodeSet();
+    frontier.add(subType);
+    while (!frontier.isEmpty()) {
+      Set<SNode> yetPassedRaw = new THashSet<SNode>();
+      //collecting a set of frontier's ancestors
+      StructuralNodeSet<?> ancestors = new StructuralNodeSet();
+      for (SNode node : frontier) {
+        mySubTyping.collectImmediateSuperTypes(node, isWeak, ancestors, null);
+        yetPassedRaw.add(node);
+      }
+      ArrayList<SNode> ancestorsSorted;
+      ancestorsSorted = new ArrayList<SNode>(ancestors);
+      Collections.sort(ancestorsSorted, new Comparator<SNode>() {
+        public int compare(SNode o1, SNode o2) {
+          return TypesUtil.depth(o2) - TypesUtil.depth(o1);
+        }
+      });
+      List<SNode> results = new ArrayList<SNode>();
+      for (SNode ancestor : ancestorsSorted) {
+        if (superType.matchesWith(ancestor)) {
+          results.add(ancestor);
+        }
+      }
+      if (!results.isEmpty()) {
+        if (results.size() > 1) {
+          results = mySubTyping.eliminateSuperTypes(results);
+        }
+        if (!results.isEmpty()) {
+          return results.get(0);
+        }
+      }
+      for (SNode passedNodeRaw : yetPassedRaw) {
+        yetPassed.add(passedNodeRaw);
+      }
+      for (SNode passedNode : yetPassed) {
+        ancestors.removeStructurally(passedNode);
+      }
+      for (SNode ancestor: ancestors) {
+        Pair<Boolean, SNode> answer = getCoerceCahceAnswer(ancestor, superType.getMatchingPattern(), isWeak);
+        if (answer!=null) {
+          if (answer.o1 && answer.o2 == null) {
+            // System.out.println("coerce optimized");
+            continue;
+          }
+        }
+        newFrontier.addStructurally(ancestor);
+        yetPassed.addStructurally(ancestor);
+      }
+      frontier = newFrontier;
+      newFrontier = new StructuralNodeSet();
+    }
+    return null;
+  }
+
+  static class CoercionMatcher implements INodeMatcher {
     private final IMatchingPattern myPattern;
-    private List<SNode> myResults = new LinkedList<SNode>();
 
     public CoercionMatcher(IMatchingPattern pattern) {
       myPattern = pattern;
     }
 
     public boolean matchesWith(SNode nodeToMatch) {
-      boolean b = myPattern.match(nodeToMatch);
-      if (b) {
-        myResults.add(nodeToMatch);
-      }
-      return b;
-    }
-
-    public List<SNode> getResults() {
-      return myResults;
+      return myPattern.match(nodeToMatch);
     }
 
     public IMatchingPattern getMatchingPattern() {

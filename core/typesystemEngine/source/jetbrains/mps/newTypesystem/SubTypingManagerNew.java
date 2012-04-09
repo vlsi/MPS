@@ -37,18 +37,14 @@ import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 public class SubTypingManagerNew extends SubtypingManager {
-  protected TypeChecker myTypeChecker;
-  private CoercionManager myCoercionManager;
-  public static int hits = 0;
-  public static int misses = 0;
+  private final CoercionManager myCoercionManager;
 
   public SubTypingManagerNew(TypeChecker typeChecker) {
     super(typeChecker);
-    myTypeChecker = typeChecker;
     myCoercionManager = new CoercionManager(typeChecker, this);
   }
 
-  public boolean isSubTypeByReplacementRules(SNode subType, SNode superType, boolean isWeak) {
+  boolean isSubTypeByReplacementRules(SNode subType, SNode superType, boolean isWeak) {
     for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> rule : myTypeChecker.getRulesManager().getReplacementRules(subType, superType)) {
       if (rule.o1.checkInequation(subType, superType, new EquationInfo(null, null), rule.o2, isWeak)) {
         return true;
@@ -77,7 +73,7 @@ public class SubTypingManagerNew extends SubtypingManager {
         if (null == subType || null == superType) return false;
         if (subType == superType) return true;
         if (!TypesUtil.hasVariablesInside(superType) && !TypesUtil.hasVariablesInside(subType)) {
-          Boolean answer = getCacheAnswer(subType, superType, isWeak);
+          Boolean answer = getIsSubTypeCacheAnswer(subType, superType, isWeak);
           if (answer != null) {
             return answer;
           }
@@ -95,7 +91,7 @@ public class SubTypingManagerNew extends SubtypingManager {
         if (meetsAndJoins(subType, superType, info, isWeak, state)) {
           return true;
         }
-        return searchInSuperTypes(subType, new NodeMatcher(superType, equations, info), info, isWeak, state);
+        return searchInSuperTypes(subType, new NodeMatcher(superType, equations, info), isWeak, state);
       }
     });
     TypeSystemReporter.getInstance().reportIsSubType(subType,superType,(System.nanoTime() - start));
@@ -144,62 +140,34 @@ public class SubTypingManagerNew extends SubtypingManager {
     return false;
   }
 
-  boolean searchInSuperTypes(SNode subType, INodeMatcher superType, @Nullable EquationInfo errorInfo, boolean isWeak, State state) {
+  boolean searchInSuperTypes(SNode subType, NodeMatcher superType, boolean isWeak, State state) {
     TypeCheckingContextNew typeCheckingContextNew = state == null ? null : state.getTypeCheckingContext();
-    StructuralNodeSet<?> frontier = new StructuralNodeSet();
-    StructuralNodeSet<?> newFrontier = new StructuralNodeSet();
-    StructuralNodeSet<?> yetPassed = new StructuralNodeSet();
-    frontier.add(subType);
-    while (!frontier.isEmpty()) {
-      Set<SNode> yetPassedRaw = new THashSet<SNode>();
-      //collecting a set of frontier's ancestors
-      StructuralNodeSet<?> ancestors = new StructuralNodeSet();
-      for (SNode node : frontier) {
-        collectImmediateSuperTypes(node, isWeak, ancestors, typeCheckingContextNew);
-        yetPassedRaw.add(node);
+    Queue<SNode> queue = new LinkedList<SNode>();
+    StructuralNodeSet<SNode> visited = new StructuralNodeSet<SNode>();
+    queue.add(subType);
+    visited.add(subType);
+    while (!queue.isEmpty()) {
+      SNode cur = queue.poll();
+      if (superType.matchesWith(cur)) {
+        addToCache(subType, superType, true, isWeak);
+        return true;
       }
-      ArrayList<SNode> ancestorsSorted;
-      ancestorsSorted = new ArrayList<SNode>(ancestors);
-      Collections.sort(ancestorsSorted, new Comparator<SNode>() {
-        public int compare(SNode o1, SNode o2) {
-          return TypesUtil.depth(o2) - TypesUtil.depth(o1);
-        }
-      });
-      //NodeMatcher
-      if (superType instanceof NodeMatcher) {
-        for (SNode ancestor : ancestorsSorted) {
-          if (superType.matchesWith(ancestor)) {
+      StructuralNodeSet<?> ancestors = new StructuralNodeSet();
+      collectImmediateSuperTypes(cur, isWeak, ancestors, typeCheckingContextNew);
+      for (SNode ancestor: ancestors) {
+        if (visited.contains(ancestor)) continue;
+        visited.addStructurally(ancestor);
+        Boolean cacheAnswer = getIsSubTypeCacheAnswer(ancestor, superType.getNode(), isWeak);
+        if (cacheAnswer != null) {
+          // System.out.println("subtype optimized");
+          if (cacheAnswer) {
             addToCache(subType, superType, true, isWeak);
             return true;
-          }     /*
-       if (isSubTypeByReplacementRules(ancestor, ((NodeMatcher)superType).getNode(), isWeak)) {
-          return true;
-        }       */
-        }
-      } else {
-        //CoercionMatcher
-        boolean result = false;
-        for (SNode ancestor : ancestorsSorted) {
-          if (superType.matchesWith(ancestor)) {
-            result = true;
           }
+          continue;
         }
-        if (result) {
-          return true;
-        }
+        queue.add(ancestor);
       }
-
-      for (SNode passedNodeRaw : yetPassedRaw) {
-        yetPassed.add(passedNodeRaw);
-      }
-      for (SNode passedNode : yetPassed) {
-        ancestors.removeStructurally(passedNode);
-      }
-
-      newFrontier.addAllStructurally(ancestors);
-      yetPassed.addAllStructurally(ancestors);
-      frontier = newFrontier;
-      newFrontier = new StructuralNodeSet();
     }
     addToCache(subType, superType, false, isWeak);
     return false;
@@ -215,7 +183,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     return result;
   }
 
-  private void collectImmediateSuperTypes(final SNode term, boolean isWeak, StructuralNodeSet result, final TypeCheckingContext context) {
+ void collectImmediateSuperTypes(final SNode term, boolean isWeak, StructuralNodeSet result, final TypeCheckingContext context) {
     if (term == null) {
       return;
     }
@@ -260,7 +228,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     return eliminateSubOrSuperTypes(types, true);
   }
 
-  public List<SNode> eliminateSubTypes(Collection<SNode> types) {
+  List<SNode> eliminateSubTypes(Collection<SNode> types) {
     return eliminateSubOrSuperTypes(types, false);
   }
 
@@ -371,7 +339,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     return LatticeUtil.meetNodes(new THashSet<SNode>(leastCommonSuperTypes(types, context)));
   }
 
-  public boolean isComparableByRules(SNode left, SNode right, boolean isWeak) {
+  boolean isComparableByRules(SNode left, SNode right, boolean isWeak) {
     if (left == null || right == null) {
       return false;
     }
@@ -427,12 +395,11 @@ public class SubTypingManagerNew extends SubtypingManager {
     return residualNodes;
   }
 
-  private Boolean getCacheAnswer(SNode subType, SNode superType, boolean isWeak) {
+  private Boolean getIsSubTypeCacheAnswer(SNode subType, SNode superType, boolean isWeak) {
     SubtypingCache cache = myTypeChecker.getSubtypingCache();
     if (cache != null) {
       Boolean answer = cache.getIsSubtype(subType, superType, isWeak);
       if (answer != null) {
-        hits++;
         return answer;
       }
     }
@@ -440,11 +407,9 @@ public class SubTypingManagerNew extends SubtypingManager {
     if (cache != null) {
       Boolean answer = cache.getIsSubtype(subType, superType, isWeak);
       if (answer != null) {
-        hits++;
         return answer;
       }
     }
-    misses++;
     return null;
   }
 
@@ -458,7 +423,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     }
   }
 
-  private static class NodeMatcher implements INodeMatcher {
+  static class NodeMatcher implements INodeMatcher {
     private final SNode myNode;
     private final Equations myEquations;
     private final EquationInfo myInfo;
