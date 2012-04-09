@@ -31,6 +31,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.project.ClassLoadingModule;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.Condition;
@@ -46,7 +47,7 @@ import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class Language extends AbstractModule implements MPSModuleOwner {
+public class Language extends ClassLoadingModule implements MPSModuleOwner {
   private static final Logger LOG = Logger.getLogger(Language.class);
 
   public static final String LANGUAGE_MODELS = "languageModels";

@@ -16,7 +16,6 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.ClasspathReader;
-import jetbrains.mps.MPSCore;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -25,7 +24,6 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CommonPaths;
-import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -33,14 +31,13 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
-import java.net.URL;
 import java.util.*;
 
 /**
  * Igor Alshannikov
  * Aug 26, 2005
  */
-public class Solution extends AbstractModule {
+public class Solution extends ClassLoadingModule {
   private SolutionDescriptor mySolutionDescriptor;
   public static final String SOLUTION_MODELS = "models";
 
@@ -205,28 +202,5 @@ public class Solution extends AbstractModule {
     IFile file = getDescriptorFile();
     assert file != null;
     return (SolutionDescriptor) ModulesMiner.getInstance().loadModuleDescriptor(file);
-  }
-
-  public BytecodeLocator getBytecodeLocator() {
-    return new ModuleBytecodeLocator() {
-      public byte[] find(String fqName) {
-        if (!canLoad()) return null;
-        return super.find(fqName);
-      }
-
-      public URL findResource(String name) {
-        if (!canLoad()) return null;
-        return super.findResource(name);
-      }
-
-      private boolean canLoad() {
-        return
-          getModuleDescriptor().getCompileInMPS() &&
-            (
-              MPSCore.getInstance().isTestMode() ||
-                getModuleDescriptor().getKind() != SolutionKind.NONE
-            );
-      }
-    };
   }
 }

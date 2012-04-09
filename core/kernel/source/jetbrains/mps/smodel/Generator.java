@@ -17,19 +17,17 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.ClassLoadingModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.StubPath;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
-import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.vfs.IFile;
 
-import java.net.URL;
 import java.util.*;
 
-public class Generator extends AbstractModule {
+public class Generator extends ClassLoadingModule {
   public static final Logger LOG = Logger.getLogger(Generator.class);
 
   private Language mySourceLanguage;
@@ -273,23 +271,6 @@ public class Generator extends AbstractModule {
 
   public Class getClass(String fqName) {
     return mySourceLanguage.getClass(fqName);
-  }
-
-  public BytecodeLocator getBytecodeLocator() {
-    return new BytecodeLocator() {
-      public byte[] find(String fqName) {
-        return null;
-      }
-
-      public URL findResource(String name) {
-        return null;
-      }
-
-      @Override
-      public String findLibrary(String name) {
-        return null;
-      }
-    };
   }
 
   public Collection<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {

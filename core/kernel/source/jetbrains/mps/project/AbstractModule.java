@@ -23,7 +23,6 @@ import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -38,7 +37,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.util.*;
 
 public abstract class AbstractModule implements IModule {
@@ -372,33 +370,6 @@ public abstract class AbstractModule implements IModule {
 
   public static IClassPathItem getDependenciesClasspath(Set<IModule> modules, boolean includeStubSolutions) {
     return new ClasspathCollector(modules).collect(includeStubSolutions);
-  }
-
-  public Class getClass(String fqName) {
-    123
-    try {
-      return ClassLoaderManager.getInstance().getClassFor(this, fqName);
-    } catch (Throwable t) {
-      LOG.error(t);
-      return null;
-    }
-  }
-
-  public BytecodeLocator getBytecodeLocator() {
-    return new ModuleBytecodeLocator();
-  }
-
-  protected class ModuleBytecodeLocator implements BytecodeLocator {
-    public ModuleBytecodeLocator() {
-    }
-
-    public byte[] find(String fqName) {
-      return getClassPathItem().getClass(fqName);
-    }
-
-    public URL findResource(String name) {
-      return getClassPathItem().getResource(name);
-    }
   }
 
   //----

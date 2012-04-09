@@ -53,11 +53,6 @@ public class EvaluationAuxModule extends AbstractModule {
     return this.myProject.getComponent(MPSProject.class);
   }
 
-  @Nullable
-  public Class getClass(String fqName) {
-    return null;
-  }
-
   @NotNull
   public IScope getScope() {
     if (myScope == null) {
