@@ -55,7 +55,8 @@ import java.util.List;
       id = "other",
       file = "$PROJECT_FILE$"
     )
-  }
+  },
+  reloadable = false
 )
 public class MPSProject implements MPSModuleOwner, ProjectComponent, PersistentStateComponent<Element> {
   private Project myProject;
