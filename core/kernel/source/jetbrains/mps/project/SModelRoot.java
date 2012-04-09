@@ -61,12 +61,6 @@ public class SModelRoot {
     }
   }
 
-  //this method is temporary, just to fix MPS-14489 and should be replaced since custom persistence is implemented
-  @UseCarefully
-  public boolean isStubModels() {
-    return getModelRoot().getManager() != null;
-  }
-
   public IModelRootManager getManager() {
     return myManager;
   }
