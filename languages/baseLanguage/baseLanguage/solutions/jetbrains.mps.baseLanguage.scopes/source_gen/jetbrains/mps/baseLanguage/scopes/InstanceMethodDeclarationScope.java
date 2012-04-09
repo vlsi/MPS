@@ -86,6 +86,6 @@ public class InstanceMethodDeclarationScope extends BaseMethodsScope {
   }
 
   public static Scope forInterface(SNode interfaceNode, SNode... extendsInterfaces) {
-    return new InstanceMethodDeclarationScope(interfaceNode, Sequence.fromArray(extendsInterfaces));
+    return new InstanceMethodDeclarationScope(interfaceNode, Sequence.fromIterable(Sequence.fromArray(extendsInterfaces)).concat(Sequence.fromIterable(Sequence.fromArray(new SNode[]{SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object")}))));
   }
 }

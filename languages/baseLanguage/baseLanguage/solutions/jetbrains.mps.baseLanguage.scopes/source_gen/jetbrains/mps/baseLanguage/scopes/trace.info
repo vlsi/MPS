@@ -1458,7 +1458,7 @@
     <nodeInfo nodeId="8380510254989971591" fileName="InstanceMethodDeclarationScope.java" startLine="77" startPosition="33" endLine="78" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8380510254989971610" fileName="InstanceMethodDeclarationScope.java" startLine="81" startPosition="39" endLine="82" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8380510254989971616" fileName="InstanceMethodDeclarationScope.java" startLine="84" startPosition="8" endLine="85" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8380510254989971621" fileName="InstanceMethodDeclarationScope.java" startLine="88" startPosition="85" endLine="89" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8380510254989971621" fileName="InstanceMethodDeclarationScope.java" startLine="88" startPosition="85" endLine="89" endPosition="309" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4688468737501467533" fileName="InstanceMethodDeclarationScope.java" startLine="69" startPosition="10" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="56048315080429582" fileName="InstanceMethodDeclarationScope.java" startLine="22" startPosition="70" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InstanceMethodDeclarationScope#(Ljetbrains/mps/smodel/SNode;Ljava/lang/Iterable;)V" />
     <nodeInfo nodeId="8380510254989971589" fileName="InstanceMethodDeclarationScope.java" startLine="76" startPosition="84" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1485,7 +1485,7 @@
     <scopeInfo nodeId="4688468737501467534" fileName="InstanceMethodDeclarationScope.java" startLine="69" startPosition="12" endLine="70" endPosition="64" />
     <scopeInfo nodeId="8380510254989971590" fileName="InstanceMethodDeclarationScope.java" startLine="77" startPosition="33" endLine="78" endPosition="74" />
     <scopeInfo nodeId="8380510254989971609" fileName="InstanceMethodDeclarationScope.java" startLine="81" startPosition="39" endLine="82" endPosition="28" />
-    <scopeInfo nodeId="6603321141210156388" fileName="InstanceMethodDeclarationScope.java" startLine="88" startPosition="85" endLine="89" endPosition="100" />
+    <scopeInfo nodeId="6603321141210156388" fileName="InstanceMethodDeclarationScope.java" startLine="88" startPosition="85" endLine="89" endPosition="309" />
     <scopeInfo nodeId="56048315080429582" fileName="InstanceMethodDeclarationScope.java" startLine="22" startPosition="70" endLine="25" endPosition="3">
       <varInfo nodeId="8380510254989971569" varName="classifierNode" />
       <varInfo nodeId="8380510254989971573" varName="extendedClassifiers" />
