@@ -245,7 +245,7 @@ public class BundleLoadingTest {
 
   private static boolean canBeLoadedFromBundle(RBundle b, String className) {
     ClassLoader aClassLoader = b.getClass(className).getClassLoader();
-    return aClassLoader instanceof BundleClassLoader;
+    return aClassLoader instanceof ModuleClassLoader;
   }
 
   public static class A {

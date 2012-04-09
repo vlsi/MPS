@@ -19,7 +19,7 @@ import java.net.URL;
 
 public interface IClassLoadingModule {
   //should include self
-  IClassLoadingModule[] getClassLoadingDependencies();
+  Iterable<IClassLoadingModule> getClassLoadingDependencies();
 
   //---class
 

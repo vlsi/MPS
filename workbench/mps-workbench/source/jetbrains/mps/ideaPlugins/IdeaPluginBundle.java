@@ -22,7 +22,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.runtime.BundleClassLoader;
+import jetbrains.mps.runtime.ModuleClassLoader;
 import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.runtime.RBundle;
 
@@ -32,7 +32,7 @@ import java.net.URL;
 import java.util.List;
 
 public class IdeaPluginBundle extends RBundle<ModuleReference> {
-  private BundleClassLoader myClassLoader;
+  private ModuleClassLoader myClassLoader;
   private final IdeaPluginDescriptor myPluginDescriptor;
   private IClassPathItem myClassPath;
 
@@ -46,7 +46,7 @@ public class IdeaPluginBundle extends RBundle<ModuleReference> {
     if (myClassLoader != null) {
       myClassLoader.dispose();
     }
-    myClassLoader = new BundleClassLoader<ModuleReference>(this, myPluginDescriptor.getPluginClassLoader());
+    myClassLoader = new ModuleClassLoader<ModuleReference>(this, myPluginDescriptor.getPluginClassLoader());
   }
 
   @Override
@@ -72,7 +72,7 @@ public class IdeaPluginBundle extends RBundle<ModuleReference> {
   }
 
   @Override
-  public BundleClassLoader getClassLoader() {
+  public ModuleClassLoader getClassLoader() {
     return myClassLoader;
   }
 

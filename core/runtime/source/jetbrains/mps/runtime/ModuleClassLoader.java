@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
-public class BundleClassLoader extends BaseClassLoader {
+public class ModuleClassLoader extends BaseClassLoader {
   private Map<String, Class> myClassesCache = new HashMap<String, Class>();
   private final Object myLock = new Object();
 
@@ -30,8 +30,8 @@ public class BundleClassLoader extends BaseClassLoader {
   private boolean myDisposed;
   private IClassLoadingModule myModule;
 
-  public BundleClassLoader(IClassLoadingModule module, ClassLoader parent) {
-    super(parent);
+  public ModuleClassLoader(IClassLoadingModule module) {
+    super(BaseClassLoader.class.getClassLoader());
     myModule = module;
   }
 

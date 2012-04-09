@@ -108,15 +108,15 @@ public class ClassLoaderManager implements CoreComponent {
     }
   }
 
-  public ClassLoader getClassLoaderFor(IModule module, boolean reportError) {
-    123  //rewrite usages 
-  }
-
   public void updateClassPath() {
     for (ClassLoadingModule m: ModuleRepositoryFacade.getInstance().getAllModules(ClassLoadingModule.class)){
       m.invalidateClasses();
     }
     ClassPathFactory.getInstance().invalidateAll();
+  }
+
+  public ClassLoader getClassLoaderFor(IModule module, boolean reportError) {
+    123  //rewrite usages
   }
 
   public RuntimeEnvironment<ModuleReference> getRuntimeEnvironment() {
