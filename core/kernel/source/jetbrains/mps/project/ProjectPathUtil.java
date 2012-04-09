@@ -32,8 +32,8 @@ public class ProjectPathUtil {
     }
     if (moduleDescriptor.isReadOnly()) {
       // packaged
-      String filename = FileSystem.getInstance().getBundleHome(moduleDescriptor).getPath() + "!";
-      return FileSystem.getInstance().getFileByPath(filename);
+      IFile bundleHome = FileSystem.getInstance().getBundleHome(moduleDescriptor);
+      return bundleHome != null ? FileSystem.getInstance().getFileByPath(bundleHome.getPath() + "!") : null;
     }
     IFile parent = moduleDescriptor.getParent();
     return parent != null ? parent.getDescendant("classes_gen") : null;
