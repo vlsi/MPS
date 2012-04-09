@@ -16,6 +16,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall" file="ExtensionMethodCall.java">
     <classNode dependClassName="java.lang.String" />
@@ -32,6 +33,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration" file="ExtensionMethodDeclaration.java">
     <classNode dependClassName="java.lang.String" />
@@ -47,6 +49,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethods_Language" file="ExtensionMethods_Language.java">
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />

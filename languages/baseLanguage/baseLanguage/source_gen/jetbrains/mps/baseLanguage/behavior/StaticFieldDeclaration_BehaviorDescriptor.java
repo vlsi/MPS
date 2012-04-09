@@ -56,7 +56,7 @@ public class StaticFieldDeclaration_BehaviorDescriptor extends VariableDeclarati
     return IBLDeprecatable_Behavior.virtual_isDeprecated_1224609060727(thisNode);
   }
 
-  public Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode... implementsInterfaces) {
+  public Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode[] implementsInterfaces) {
     return StaticFieldDeclaration_Behavior.virtual_getScopeForClass_1251851371723365193(thisNode, classNode, extendsClass, implementsInterfaces);
   }
 
@@ -64,7 +64,7 @@ public class StaticFieldDeclaration_BehaviorDescriptor extends VariableDeclarati
     return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
   }
 
-  public Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode... extendsInterfaces) {
+  public Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode[] extendsInterfaces) {
     return StaticFieldDeclaration_Behavior.virtual_getScopeForInterface_1251851371723365208(thisNode, interfaceNode, extendsInterfaces);
   }
 

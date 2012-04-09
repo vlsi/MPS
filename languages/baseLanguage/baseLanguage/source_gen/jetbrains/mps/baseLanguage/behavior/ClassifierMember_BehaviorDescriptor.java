@@ -9,6 +9,6 @@ import org.jetbrains.annotations.Nullable;
 public interface ClassifierMember_BehaviorDescriptor extends IVisible_BehaviorDescriptor {
   public boolean virtual_isStatic_8986964027630462944(SNode thisNode);
   public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode);
-  public Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode... implementsInterfaces);
-  public Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode... extendsInterfaces);
+  public Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode[] implementsInterfaces);
+  public Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode[] extendsInterfaces);
 }

@@ -121,11 +121,11 @@ public class FieldDeclaration_Behavior {
     return SPropertyOperations.getString(thisNode, "name");
   }
 
-  public static Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode... extendsInterfaces) {
+  public static Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode[] extendsInterfaces) {
     return new EmptyScope();
   }
 
-  public static Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, final SNode classNode, @Nullable final SNode extendsClass, SNode... implementsInterfaces) {
+  public static Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, final SNode classNode, @Nullable final SNode extendsClass, SNode[] implementsInterfaces) {
     // todo: not .field but .children.filter, .field only as optimize 
     Scope fields = new NamedElementsScope(SLinkOperations.getTargets(classNode, "field", true));
     if ((extendsClass != null)) {

@@ -25,7 +25,7 @@ public class StaticMethodDeclaration_BehaviorDescriptor extends BaseMethodDeclar
     return StaticMethodDeclaration_Behavior.virtual_getAdditionalIcon_5017341185733863694(thisNode);
   }
 
-  public Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode... implementsInterfaces) {
+  public Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode[] implementsInterfaces) {
     return StaticMethodDeclaration_Behavior.virtual_getScopeForClass_1251851371723365193(thisNode, classNode, extendsClass, implementsInterfaces);
   }
 
@@ -37,7 +37,7 @@ public class StaticMethodDeclaration_BehaviorDescriptor extends BaseMethodDeclar
     return StaticMethodDeclaration_Behavior.virtual_getChildrenToDisplayIntention_4025276038182319200(thisNode);
   }
 
-  public Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode... extendsInterfaces) {
+  public Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode[] extendsInterfaces) {
     return StaticMethodDeclaration_Behavior.virtual_getScopeForInterface_1251851371723365208(thisNode, interfaceNode, extendsInterfaces);
   }
 

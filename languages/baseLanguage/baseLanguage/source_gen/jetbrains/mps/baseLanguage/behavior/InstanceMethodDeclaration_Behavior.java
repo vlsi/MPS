@@ -74,7 +74,7 @@ public class InstanceMethodDeclaration_Behavior {
     return null;
   }
 
-  public static Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode... implementsInterfaces) {
+  public static Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode[] implementsInterfaces) {
     // collect extended classifiers 
     List<SNode> extendedClassifiers = ListSequence.fromList(new ArrayList<SNode>());
     if ((extendsClass != null)) {
@@ -88,7 +88,7 @@ public class InstanceMethodDeclaration_Behavior {
     return new InstanceMethodDeclarationScope(classNode, extendedClassifiers);
   }
 
-  public static Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode... extendsInterfaces) {
+  public static Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode[] extendsInterfaces) {
     return new InstanceMethodDeclarationScope(interfaceNode, Sequence.fromIterable(Sequence.fromArray(extendsInterfaces)).concat(Sequence.fromIterable(Sequence.fromArray(new SNode[]{SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object")}))));
   }
 

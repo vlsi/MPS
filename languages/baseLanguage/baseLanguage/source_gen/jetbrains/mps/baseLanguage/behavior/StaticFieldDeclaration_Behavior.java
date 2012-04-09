@@ -88,7 +88,7 @@ public class StaticFieldDeclaration_Behavior {
     return SPropertyOperations.getString(thisNode, "name");
   }
 
-  public static Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, final SNode interfaceNode, SNode... extendsInterfaces) {
+  public static Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, final SNode interfaceNode, SNode[] extendsInterfaces) {
     List<Scope> extendsScopes = ListSequence.fromList(new ArrayList<Scope>());
     for (final SNode extendsClassifier : extendsInterfaces) {
       if ((extendsClassifier != null)) {
@@ -103,7 +103,7 @@ public class StaticFieldDeclaration_Behavior {
     return new StaticFieldDeclarationScope(SLinkOperations.getTargets(interfaceNode, "staticField", true), extendsScopes);
   }
 
-  public static Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, final SNode classNode, @Nullable final SNode extendsClass, SNode... implementsInterfaces) {
+  public static Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, final SNode classNode, @Nullable final SNode extendsClass, SNode[] implementsInterfaces) {
     List<Scope> extendsScopes = ListSequence.fromList(new ArrayList<Scope>());
     if ((extendsClass != null)) {
       ListSequence.fromList(extendsScopes).addElement(new LazyScope(new _FunctionTypes._return_P0_E0<Scope>() {
