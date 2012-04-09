@@ -6,6 +6,8 @@ import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_BehaviorDescrip
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
+import jetbrains.mps.scope.Scope;
+import org.jetbrains.annotations.Nullable;
 
 public class ExtensionMethodDeclaration_BehaviorDescriptor extends BaseMethodDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor {
   public ExtensionMethodDeclaration_BehaviorDescriptor() {
@@ -15,8 +17,16 @@ public class ExtensionMethodDeclaration_BehaviorDescriptor extends BaseMethodDec
     return ClassifierMember_Behavior.virtual_isStatic_8986964027630462944(thisNode);
   }
 
+  public Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode... implementsInterfaces) {
+    return ExtensionMethodDeclaration_Behavior.virtual_getScopeForClass_1251851371723365193(thisNode, classNode, extendsClass, implementsInterfaces);
+  }
+
   public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
     return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
+  }
+
+  public Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode... extendsInterfaces) {
+    return ExtensionMethodDeclaration_Behavior.virtual_getScopeForInterface_1251851371723365208(thisNode, interfaceNode, extendsInterfaces);
   }
 
   @Override

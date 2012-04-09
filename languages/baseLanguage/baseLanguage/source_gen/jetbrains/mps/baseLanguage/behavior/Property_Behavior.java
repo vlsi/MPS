@@ -8,9 +8,20 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.Icon;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.scope.EmptyScope;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.scopes.Scopes;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.scopes.runtime.LazyScope;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Property_Behavior {
   private static Class[] PARAMETERS_8884554759541381539 = {SNode.class};
@@ -60,6 +71,32 @@ public class Property_Behavior {
 
   public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
+  }
+
+  public static Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode... extendsInterfaces) {
+    return new EmptyScope();
+  }
+
+  public static Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, final SNode classNode, @Nullable final SNode extendsClass, SNode... implementsInterfaces) {
+    Scope properties = new NamedElementsScope(ListSequence.fromList(SNodeOperations.getChildren(classNode)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Property");
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Property");
+      }
+    }));
+    if ((extendsClass != null)) {
+      // hiding based on name 
+      return Scopes.defaultWithNameHiding(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Property"), properties, new LazyScope(new _FunctionTypes._return_P0_E0<Scope>() {
+        public Scope invoke() {
+          return ((Scope) BehaviorManager.getInstance().invoke(Object.class, extendsClass, "virtual_getVisibleMembers_8083692786967356611", new Class[]{SNode.class, SNode.class, SNode.class}, classNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Property")));
+        }
+      }));
+    } else {
+      return properties;
+    }
   }
 
   public static Icon call_getAdditionalIcon_8884554759541381539(SNode thisNode) {

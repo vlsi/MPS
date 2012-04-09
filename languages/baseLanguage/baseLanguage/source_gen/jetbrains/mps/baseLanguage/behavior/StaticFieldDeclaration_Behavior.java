@@ -15,10 +15,15 @@ import jetbrains.mps.baseLanguage.util.CodeStyleSettings;
 import jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.scopes.runtime.LazyScope;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.scopes.StaticFieldDeclarationScope;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class StaticFieldDeclaration_Behavior {
   private static Class[] PARAMETERS_5039675756633082276 = {SNode.class};
@@ -81,6 +86,43 @@ public class StaticFieldDeclaration_Behavior {
   @Nullable
   public static String virtual_getTraceableProperty_5067982036267369901(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "name");
+  }
+
+  public static Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, final SNode interfaceNode, SNode... extendsInterfaces) {
+    List<Scope> extendsScopes = ListSequence.fromList(new ArrayList<Scope>());
+    for (final SNode extendsClassifier : extendsInterfaces) {
+      if ((extendsClassifier != null)) {
+        ListSequence.fromList(extendsScopes).addElement(new LazyScope(new _FunctionTypes._return_P0_E0<Scope>() {
+          public Scope invoke() {
+            return ((Scope) BehaviorManager.getInstance().invoke(Object.class, extendsClassifier, "virtual_getVisibleMembers_8083692786967356611", new Class[]{SNode.class, SNode.class, SNode.class}, interfaceNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")));
+          }
+        }));
+      }
+    }
+    // todo: staticField??? 
+    return new StaticFieldDeclarationScope(SLinkOperations.getTargets(interfaceNode, "staticField", true), extendsScopes);
+  }
+
+  public static Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, final SNode classNode, @Nullable final SNode extendsClass, SNode... implementsInterfaces) {
+    List<Scope> extendsScopes = ListSequence.fromList(new ArrayList<Scope>());
+    if ((extendsClass != null)) {
+      ListSequence.fromList(extendsScopes).addElement(new LazyScope(new _FunctionTypes._return_P0_E0<Scope>() {
+        public Scope invoke() {
+          return ((Scope) BehaviorManager.getInstance().invoke(Object.class, extendsClass, "virtual_getVisibleMembers_8083692786967356611", new Class[]{SNode.class, SNode.class, SNode.class}, classNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")));
+        }
+      }));
+    }
+    for (final SNode extendsClassifier : implementsInterfaces) {
+      if ((extendsClassifier != null)) {
+        ListSequence.fromList(extendsScopes).addElement(new LazyScope(new _FunctionTypes._return_P0_E0<Scope>() {
+          public Scope invoke() {
+            return ((Scope) BehaviorManager.getInstance().invoke(Object.class, extendsClassifier, "virtual_getVisibleMembers_8083692786967356611", new Class[]{SNode.class, SNode.class, SNode.class}, classNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")));
+          }
+        }));
+      }
+    }
+    // todo: staticField??? 
+    return new StaticFieldDeclarationScope(SLinkOperations.getTargets(classNode, "staticField", true), extendsScopes);
   }
 
   public static List<Icon> call_getMarkIcons_5039675756633082276(SNode thisNode) {

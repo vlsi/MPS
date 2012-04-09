@@ -9,6 +9,7 @@ import javax.swing.Icon;
 import java.util.List;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.scope.Scope;
 
 public class FieldDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, IBLDeprecatable_BehaviorDescriptor, TraceableConcept_BehaviorDescriptor {
   public FieldDeclaration_BehaviorDescriptor() {
@@ -51,8 +52,16 @@ public class FieldDeclaration_BehaviorDescriptor extends VariableDeclaration_Beh
     return FieldDeclaration_Behavior.virtual_getPrefix_3012473318495495520(thisNode, project);
   }
 
+  public Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode... implementsInterfaces) {
+    return FieldDeclaration_Behavior.virtual_getScopeForClass_1251851371723365193(thisNode, classNode, extendsClass, implementsInterfaces);
+  }
+
   public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
     return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
+  }
+
+  public Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode... extendsInterfaces) {
+    return FieldDeclaration_Behavior.virtual_getScopeForInterface_1251851371723365208(thisNode, interfaceNode, extendsInterfaces);
   }
 
   @Override

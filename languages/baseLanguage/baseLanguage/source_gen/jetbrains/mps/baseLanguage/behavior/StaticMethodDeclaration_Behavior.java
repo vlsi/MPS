@@ -12,6 +12,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.scope.EmptyScope;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.baseLanguage.scopes.StaticMethodDeclarationScope;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -56,6 +62,24 @@ public class StaticMethodDeclaration_Behavior {
 
   public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
+  }
+
+  public static Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode... extendsInterfaces) {
+    return new EmptyScope();
+  }
+
+  public static Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode... implementsInterfaces) {
+    // collect extended classifiers 
+    List<SNode> extendedClassifiers = ListSequence.fromList(new ArrayList<SNode>());
+    if ((extendsClass != null)) {
+      ListSequence.fromList(extendedClassifiers).addElement(extendsClass);
+    }
+    ListSequence.fromList(extendedClassifiers).addSequence(Sequence.fromIterable(Sequence.fromArray(implementsInterfaces)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (it != null);
+      }
+    }));
+    return new StaticMethodDeclarationScope(classNode, extendedClassifiers);
   }
 
   public static List<Icon> call_getMarkIcons_5039675756633082235(SNode thisNode) {

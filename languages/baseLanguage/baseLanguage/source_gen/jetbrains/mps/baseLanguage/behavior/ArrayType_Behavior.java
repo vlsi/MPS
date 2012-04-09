@@ -6,11 +6,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ArrayType_Behavior {
   public static void init(SNode thisNode) {
@@ -37,6 +37,12 @@ public class ArrayType_Behavior {
     SNode result = SNodeOperations.copyNode(thisNode);
     SLinkOperations.setTarget(result, "componentType", Type_Behavior.call_getJavaType_1213877337345(SLinkOperations.getTarget(result, "componentType", true)), true);
     return result;
+  }
+
+  public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
+    SNode expr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayClassExpression", null);
+    SLinkOperations.setTarget(expr, "arrayType", SNodeOperations.cast(Type_Behavior.call_getErasure_702942408396803226(thisNode), "jetbrains.mps.baseLanguage.structure.ArrayType"), true);
+    return expr;
   }
 
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {

@@ -15574,119 +15574,139 @@
     <unitInfo nodeId="1241543745974" fileName="check_ConstructorInvocationStatementHasConstructor_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_ConstructorInvocationStatementHasConstructor_NonTypesystemRule" />
   </root>
   <root nodeId="1251851371723517321">
-    <nodeInfo nodeId="1251851371723517333" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="25" startPosition="5" endLine="26" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1251851371723517333" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="26" startPosition="62" endLine="27" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1251851371723517333" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="27" startPosition="203" endLine="28" endPosition="419" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="32" startPosition="46" endLine="33" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="37" startPosition="5" endLine="38" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="38" startPosition="117" endLine="39" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="51" startPosition="96" endLine="52" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="52" startPosition="26" endLine="53" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="53" startPosition="67" endLine="54" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="54" startPosition="32" endLine="55" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="56" startPosition="7" endLine="57" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="57" startPosition="163" endLine="58" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="58" startPosition="43" endLine="59" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="60" startPosition="9" endLine="61" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="61" startPosition="165" endLine="62" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="62" startPosition="45" endLine="63" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="63" startPosition="71" endLine="64" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="65" startPosition="9" endLine="66" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="67" startPosition="7" endLine="68" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="71" startPosition="49" endLine="72" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="72" startPosition="26" endLine="73" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="73" startPosition="67" endLine="74" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="74" startPosition="32" endLine="75" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="76" startPosition="7" endLine="77" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="77" startPosition="163" endLine="78" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="78" startPosition="43" endLine="79" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="80" startPosition="9" endLine="81" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="81" startPosition="165" endLine="82" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="82" startPosition="45" endLine="83" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="83" startPosition="71" endLine="84" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="85" startPosition="9" endLine="86" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="87" startPosition="7" endLine="88" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="20" startPosition="127" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_ArrayClassExpression_InferenceRule#()V" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="47" startPosition="51" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_zh2v1_a0a0a0#()V" />
-    <nodeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="36" startPosition="68" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="1251851371723517333" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="24" startPosition="133" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="59" startPosition="228" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="59" startPosition="228" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="79" startPosition="228" endLine="85" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="79" startPosition="228" endLine="85" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="35" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="23" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="55" startPosition="32" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="55" startPosition="32" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="75" startPosition="32" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="75" startPosition="32" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="50" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="70" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="21" startPosition="54" endLine="21" endPosition="54" />
-    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="48" startPosition="42" endLine="48" endPosition="42" />
-    <scopeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="32" startPosition="46" endLine="33" endPosition="71" />
-    <scopeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="17" />
-    <scopeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="20" startPosition="127" endLine="22" endPosition="3" />
-    <scopeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="37" startPosition="5" endLine="39" endPosition="45">
+    <nodeInfo nodeId="1251851371723517333" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="26" startPosition="5" endLine="27" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1251851371723517333" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="27" startPosition="62" endLine="28" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1251851371723517333" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="28" startPosition="203" endLine="29" endPosition="419" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="33" startPosition="46" endLine="34" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="38" startPosition="5" endLine="39" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="39" startPosition="117" endLine="40" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="44" startPosition="30" endLine="45" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="52" startPosition="96" endLine="53" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="53" startPosition="26" endLine="54" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="54" startPosition="67" endLine="55" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="55" startPosition="32" endLine="56" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="56" startPosition="32" endLine="57" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="58" startPosition="7" endLine="59" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="59" startPosition="163" endLine="60" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="60" startPosition="43" endLine="61" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="62" startPosition="9" endLine="63" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="63" startPosition="45" endLine="64" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="65" startPosition="66" endLine="66" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="67" startPosition="18" endLine="68" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="68" startPosition="57" endLine="69" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="71" startPosition="38" endLine="72" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="74" startPosition="9" endLine="75" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="76" startPosition="7" endLine="77" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="80" startPosition="49" endLine="81" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="81" startPosition="26" endLine="82" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="82" startPosition="67" endLine="83" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="83" startPosition="32" endLine="84" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="84" startPosition="32" endLine="85" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="86" startPosition="7" endLine="87" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="87" startPosition="163" endLine="88" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="88" startPosition="43" endLine="89" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="90" startPosition="9" endLine="91" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="91" startPosition="45" endLine="92" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="93" startPosition="66" endLine="94" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="95" startPosition="18" endLine="96" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="96" startPosition="57" endLine="97" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="99" startPosition="38" endLine="100" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="102" startPosition="9" endLine="103" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="104" startPosition="7" endLine="105" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="21" startPosition="127" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_ArrayClassExpression_InferenceRule#()V" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="48" startPosition="51" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_zh2v1_a0a0a0#()V" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="67" startPosition="16" endLine="70" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="70" startPosition="11" endLine="73" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="95" startPosition="16" endLine="98" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="98" startPosition="11" endLine="101" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="37" startPosition="68" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="1251851371723517333" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="25" startPosition="133" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="64" startPosition="30" endLine="70" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="92" startPosition="30" endLine="98" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="36" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="24" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="61" startPosition="224" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="61" startPosition="224" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="89" startPosition="224" endLine="102" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="89" startPosition="224" endLine="102" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="57" startPosition="32" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="57" startPosition="32" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="85" startPosition="32" endLine="104" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="85" startPosition="32" endLine="104" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="51" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="79" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="22" startPosition="54" endLine="22" endPosition="54" />
+    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="49" startPosition="42" endLine="49" endPosition="42" />
+    <scopeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="33" startPosition="46" endLine="34" endPosition="71" />
+    <scopeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="44" startPosition="30" endLine="45" endPosition="17" />
+    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="65" startPosition="66" endLine="66" endPosition="85" />
+    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="71" startPosition="38" endLine="72" endPosition="106" />
+    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="93" startPosition="66" endLine="94" endPosition="64" />
+    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="99" startPosition="38" endLine="100" endPosition="85" />
+    <scopeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="21" startPosition="127" endLine="23" endPosition="3" />
+    <scopeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="38" startPosition="5" endLine="40" endPosition="45">
       <varInfo nodeId="1251851371723517321" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="47" startPosition="51" endLine="49" endPosition="5" />
-    <scopeInfo nodeId="1251851371723517333" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="25" startPosition="5" endLine="28" endPosition="419">
+    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="48" startPosition="51" endLine="50" endPosition="5" />
+    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="67" startPosition="18" endLine="69" endPosition="41" />
+    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="95" startPosition="18" endLine="97" endPosition="41" />
+    <scopeInfo nodeId="1251851371723517333" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="26" startPosition="5" endLine="29" endPosition="419">
       <varInfo nodeId="1251851371723517333" varName="_info_12389875345" />
       <varInfo nodeId="1251851371723517333" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
-    <scopeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="36" startPosition="68" endLine="40" endPosition="5" />
-    <scopeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="60" startPosition="9" endLine="64" endPosition="60">
-      <varInfo nodeId="1251851371723517338" varName="quotedNode1_4" />
-    </scopeInfo>
-    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="80" startPosition="9" endLine="84" endPosition="60">
-      <varInfo nodeId="1251851371723517338" varName="quotedNode1_4" />
-    </scopeInfo>
-    <scopeInfo nodeId="1251851371723517322" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="24" startPosition="133" endLine="29" endPosition="5" />
-    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="59" startPosition="228" endLine="65" endPosition="9" />
-    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="79" startPosition="228" endLine="85" endPosition="9" />
-    <scopeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="35" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="37" startPosition="68" endLine="41" endPosition="5" />
+    <scopeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="1251851371723517322" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="25" startPosition="133" endLine="30" endPosition="5" />
+    <scopeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="1251851371723517321" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="23" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="24" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="1251851371723517321" varName="arrayClassExpression" />
       <varInfo nodeId="1251851371723517321" varName="status" />
       <varInfo nodeId="1251851371723517321" varName="typeCheckingContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="56" startPosition="7" endLine="66" endPosition="31">
-      <varInfo nodeId="1251851371723517338" varName="quotedNode1_3" />
+    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="62" startPosition="9" endLine="73" endPosition="11">
+      <varInfo nodeId="1251851371723517338" varName="quotedNode1_5" />
     </scopeInfo>
-    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="76" startPosition="7" endLine="86" endPosition="31">
-      <varInfo nodeId="1251851371723517338" varName="quotedNode1_3" />
+    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="90" startPosition="9" endLine="101" endPosition="11">
+      <varInfo nodeId="1251851371723517338" varName="quotedNode1_5" />
     </scopeInfo>
-    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="55" startPosition="32" endLine="67" endPosition="7" />
-    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="75" startPosition="32" endLine="87" endPosition="7" />
-    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="51" startPosition="96" endLine="68" endPosition="20">
+    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="61" startPosition="224" endLine="74" endPosition="9" />
+    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="89" startPosition="224" endLine="102" endPosition="9" />
+    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="58" startPosition="7" endLine="75" endPosition="31">
+      <varInfo nodeId="1251851371723517338" varName="quotedNode1_4" />
+    </scopeInfo>
+    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="86" startPosition="7" endLine="103" endPosition="31">
+      <varInfo nodeId="1251851371723517338" varName="quotedNode1_4" />
+    </scopeInfo>
+    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="57" startPosition="32" endLine="76" endPosition="7" />
+    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="85" startPosition="32" endLine="104" endPosition="7" />
+    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="52" startPosition="96" endLine="77" endPosition="20">
       <varInfo nodeId="1251851371723517338" varName="_parameterValues_129834374" />
       <varInfo nodeId="1251851371723517338" varName="quotedNode_1" />
       <varInfo nodeId="1251851371723517338" varName="quotedNode_2" />
+      <varInfo nodeId="1251851371723517338" varName="quotedNode_3" />
       <varInfo nodeId="1251851371723517338" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="71" startPosition="49" endLine="88" endPosition="20">
+    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="80" startPosition="49" endLine="105" endPosition="20">
       <varInfo nodeId="1251851371723517338" varName="_parameterValues_129834374" />
       <varInfo nodeId="1251851371723517338" varName="quotedNode_1" />
       <varInfo nodeId="1251851371723517338" varName="quotedNode_2" />
+      <varInfo nodeId="1251851371723517338" varName="quotedNode_3" />
       <varInfo nodeId="1251851371723517338" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="50" startPosition="0" endLine="70" endPosition="0">
-      <varInfo nodeId="1251851371723517338" varName="parameter_5" />
+    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="51" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="1251851371723517338" varName="parameter_6" />
       <varInfo nodeId="1251851371723517338" varName="typeCheckingContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="70" startPosition="0" endLine="90" endPosition="0">
-      <varInfo nodeId="1251851371723517338" varName="parameter_5" />
+    <scopeInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="79" startPosition="0" endLine="107" endPosition="0">
+      <varInfo nodeId="1251851371723517338" varName="parameter_6" />
     </scopeInfo>
-    <unitInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="20" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_ArrayClassExpression_InferenceRule" />
-    <unitInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="47" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_ArrayClassExpression_InferenceRule$QuotationClass_zh2v1_a0a0a0" />
+    <unitInfo nodeId="1251851371723517321" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="21" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_ArrayClassExpression_InferenceRule" />
+    <unitInfo nodeId="1251851371723517338" fileName="typeof_ArrayClassExpression_InferenceRule.java" startLine="48" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_ArrayClassExpression_InferenceRule$QuotationClass_zh2v1_a0a0a0" />
   </root>
   <root nodeId="1260930188116714148">
     <nodeInfo nodeId="1260930188116719807" fileName="PrimitiveTypesInInstanceOfNotAllowed_NonTypesystemRule.java" startLine="22" startPosition="167" endLine="23" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
