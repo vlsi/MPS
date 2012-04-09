@@ -49,8 +49,6 @@ public class SModelRoot {
     IModule mod = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(moduleId));
     if (mod == null) return null;
 
-    if (!ClassLoaderManager.getInstance().canLoadClasses(mod)) return null;
-
     Class managerClass = mod.getClass(className);
     if (managerClass == null) {
       throw new ManagerNotFoundException("Manager class " + className + " not found in module " + mod.getModuleFqName());

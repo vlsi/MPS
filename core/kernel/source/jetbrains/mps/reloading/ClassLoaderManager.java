@@ -115,14 +115,6 @@ public class ClassLoaderManager implements CoreComponent {
     ClassPathFactory.getInstance().invalidateAll();
   }
 
-  public RuntimeEnvironment<ModuleReference> getRuntimeEnvironment() {
-    return myRuntimeEnvironment;
-  }
-
-  public boolean canLoadClasses(IModule m) {
-    return myRuntimeEnvironment != null && myRuntimeEnvironment.get(m.getModuleReference()) != null;
-  }
-
   //---------------reload handlers------------------
 
   public void addReloadHandler(ReloadListener handler) {
