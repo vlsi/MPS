@@ -27,7 +27,6 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
@@ -375,8 +374,31 @@ public abstract class AbstractModule implements IModule {
     return new ClasspathCollector(modules).collect(includeStubSolutions);
   }
 
+  public Class getClass(String fqName) {
+    123
+    try {
+      return ClassLoaderManager.getInstance().getClassFor(this, fqName);
+    } catch (Throwable t) {
+      LOG.error(t);
+      return null;
+    }
+  }
+
   public BytecodeLocator getBytecodeLocator() {
     return new ModuleBytecodeLocator();
+  }
+
+  protected class ModuleBytecodeLocator implements BytecodeLocator {
+    public ModuleBytecodeLocator() {
+    }
+
+    public byte[] find(String fqName) {
+      return getClassPathItem().getClass(fqName);
+    }
+
+    public URL findResource(String name) {
+      return getClassPathItem().getResource(name);
+    }
   }
 
   //----
@@ -516,15 +538,6 @@ public abstract class AbstractModule implements IModule {
     MPSModuleRepository.getInstance().fireModuleInitialized(this);
   }
 
-  public Class getClass(String fqName) {
-    try {
-      return ClassLoaderManager.getInstance().getClassFor(this, fqName);
-    } catch (Throwable t) {
-      LOG.error(t);
-      return null;
-    }
-  }
-
   public IFile getBundleHome() {
     return FileSystem.getInstance().getBundleHome(getDescriptorFile());
   }
@@ -646,24 +659,6 @@ public abstract class AbstractModule implements IModule {
 
     public String toString() {
       return "Scope of module " + AbstractModule.this;
-    }
-  }
-
-  protected class ModuleBytecodeLocator implements BytecodeLocator {
-    public ModuleBytecodeLocator() {
-    }
-
-    public byte[] find(String fqName) {
-      return getClassPathItem().getClass(fqName);
-    }
-
-    public URL findResource(String name) {
-      return getClassPathItem().getResource(name);
-    }
-
-    @Override
-    public String findLibrary(String name) {
-      return null;
     }
   }
 }

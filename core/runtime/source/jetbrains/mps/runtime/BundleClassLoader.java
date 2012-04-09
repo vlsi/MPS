@@ -26,7 +26,7 @@ public class BundleClassLoader<T> extends BaseClassLoader {
   private final Object myLock = new Object();
 
   //this is for debug purposes (heap dumps)
-  @SuppressWarnings({"UnusedDeclaration"})
+  @SuppressWarnings({"UnusedDeclaration", "FieldCanBeLocal"})
   private boolean myDisposed;
   private RBundle<T> myBundle;
 
@@ -128,7 +128,6 @@ public class BundleClassLoader<T> extends BaseClassLoader {
   }
 
   private static class IterableToEnumWrapper<E> implements Enumeration<E> {
-
     private Iterator<E> myIterator;
 
     public IterableToEnumWrapper(Iterable<E> iterable) {

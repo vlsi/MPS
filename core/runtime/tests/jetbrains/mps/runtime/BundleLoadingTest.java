@@ -17,6 +17,7 @@ package jetbrains.mps.runtime;
 
 import static jetbrains.mps.runtime.BundleUtil.bundle;
 import static org.junit.Assert.*;
+
 import org.junit.Test;
 
 
@@ -148,7 +149,7 @@ public class BundleLoadingTest {
     assertNull(re.get("a"));
   }
 
-  @Test(expected = RuntimeEnvironmentException.class)
+  @Test(expected = RuntimeEnvironment.RuntimeEnvironmentException.class)
   public void bundleUnloadFailsIfItHasDependencies() {
     RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
     RBundle<String> a = bundle("a", A.class);

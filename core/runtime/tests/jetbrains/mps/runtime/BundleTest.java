@@ -19,6 +19,7 @@ import static jetbrains.mps.runtime.BundleUtil.bundle;
 import static jetbrains.mps.runtime.ClassLoaderAssert.*;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
 
 import java.net.URL;
@@ -67,7 +68,7 @@ public class BundleTest {
     assertVisible(c.getClassLoader(), A.class.getName());
   }
 
-  @Test(expected = UnsatisfiedDependencyException.class)
+  @Test(expected = RuntimeEnvironment.UnsatisfiedDependencyException.class)
   public void unsatisfiedDependency() {
     RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
     RBundle<String> a = bundle("a").addDependency("b");
