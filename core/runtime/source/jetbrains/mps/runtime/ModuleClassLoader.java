@@ -75,7 +75,7 @@ public class ModuleClassLoader extends BaseClassLoader {
 
   protected URL findResource(String name) {
     for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
-      URL res = m.getResource(name);
+      URL res = m.findResource(name);
       if (res == null) continue;
       return res;
     }
@@ -86,7 +86,7 @@ public class ModuleClassLoader extends BaseClassLoader {
   protected Enumeration<URL> findResources(String name) throws IOException {
     ArrayList<URL> result = new ArrayList<URL>();
     for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
-      URL res = m.getResource(name);
+      URL res = m.findResource(name);
       if (res == null) continue;
       result.add(res);
     }
@@ -97,7 +97,7 @@ public class ModuleClassLoader extends BaseClassLoader {
   @Override
   protected String findLibrary(String name) {
     for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
-      String res = m.getLibrary(name);
+      String res = m.findLibrary(name);
       if (res == null) continue;
       return res;
     }

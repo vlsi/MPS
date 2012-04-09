@@ -31,9 +31,9 @@ public interface IClassLoadingModule {
 
   //---resource
 
-  URL getResource(String name);
+  URL findResource(String name);
 
   //---library
 
-  String getLibrary(String name);
+  String findLibrary(String name);
 }

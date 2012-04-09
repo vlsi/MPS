@@ -49,24 +49,24 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
     myClassLoader = new ModuleClassLoader(this);
   }
 
-  public String getLibrary(String name) {
-    return ;
-  }
-
-  public URL getResource(String name) {
-    return ;
-  }
-
   public ClassLoader getClassLoader() {
     return myClassLoader;
   }
 
-  public byte[] findClassBytes(String name) {
-    return ;
+  public boolean hasClass(String name) {
+    return getClassPathItem().hasClass(name);
   }
 
-  public boolean hasClass(String name) {
-    return ;
+  public byte[] findClassBytes(String name) {
+    return getClassPathItem().getClass(name);
+  }
+
+  public URL findResource(String name) {
+    return getClassPathItem().getResource(name);
+  }
+
+  public String findLibrary(String name) {
+    return null;
   }
 
   public Iterable<IClassLoadingModule> getClassLoadingDependencies() {
@@ -85,41 +85,4 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
     //this is the only place where dependencies change now
     myClassLoadingDependencies = null;
   }
-
-  protected class ModuleBytecodeLocator implements BytecodeLocator {
-    public ModuleBytecodeLocator() {
-    }
-
-    public byte[] find(String fqName) {
-      return getClassPathItem().getClass(fqName);
-    }
-
-    public URL findResource(String name) {
-      return getClassPathItem().getResource(name);
-    }
-  }
-
-  public BytecodeLocator getBytecodeLocatorSolution() {
-    return new ModuleBytecodeLocator() {
-      public byte[] find(String fqName) {
-        if (!canLoad()) return null;
-        return super.find(fqName);
-      }
-
-      public URL findResource(String name) {
-        if (!canLoad()) return null;
-        return super.findResource(name);
-      }
-
-      private boolean canLoad() {
-        return
-          getModuleDescriptor().getCompileInMPS() &&
-            (
-              MPSCore.getInstance().isTestMode() ||
-                getModuleDescriptor().getKind() != SolutionKind.NONE
-            );
-      }
-    };
-  }
-
 }

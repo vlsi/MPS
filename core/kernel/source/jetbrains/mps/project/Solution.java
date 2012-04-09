@@ -16,6 +16,7 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.ClasspathReader;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -24,6 +25,7 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CommonPaths;
+import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -31,6 +33,7 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
+import java.net.URL;
 import java.util.*;
 
 /**
@@ -203,5 +206,20 @@ public class Solution extends ClassLoadingModule {
     IFile file = getDescriptorFile();
     assert file != null;
     return (SolutionDescriptor) ModulesMiner.getInstance().loadModuleDescriptor(file);
+  }
+
+  @Override
+  public IClassPathItem getClassPathItem() {
+    if (!canLoad()) return null;
+    return super.getClassPathItem();
+  }
+
+  private boolean canLoad() {
+    return
+      getModuleDescriptor().getCompileInMPS() &&
+        (
+          MPSCore.getInstance().isTestMode() ||
+            getModuleDescriptor().getKind() != SolutionKind.NONE
+        );
   }
 }
