@@ -115,10 +115,6 @@ public class ClassLoaderManager implements CoreComponent {
     ClassPathFactory.getInstance().invalidateAll();
   }
 
-  public ClassLoader getClassLoaderFor(IModule module, boolean reportError) {
-    123  //rewrite usages
-  }
-
   public RuntimeEnvironment<ModuleReference> getRuntimeEnvironment() {
     return myRuntimeEnvironment;
   }
