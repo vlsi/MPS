@@ -942,10 +942,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInequationReplacementRules.add(eliminationRule);
     }
     {
-      InequationReplacementRule_Runtime eliminationRule = new supertypesOfLowerBoundType_InequationReplacementRule();
-      this.myInequationReplacementRules.add(eliminationRule);
-    }
-    {
       IVariableConverter_Runtime converter = new IVariableConverter_Runtime() {
         public boolean isApplicable(SNode contextNode, String role, SNode variable, boolean isAggregation) {
           if (!(SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
@@ -955,7 +951,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
         }
 
         public SNode convert(SNode contextNode, String role, SNode variable, boolean isAggregation) {
-          return new TypesystemDescriptor.QuotationClass_3ist9o_a0a0b0a0a0a822a0().createNode();
+          return new TypesystemDescriptor.QuotationClass_3ist9o_a0a0b0a0a0a722a0().createNode();
         }
       };
       this.myVariableConverters.add(converter);
@@ -970,7 +966,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
         }
 
         public SNode convert(SNode contextNode, String role, SNode variable, boolean isAggregation) {
-          return new TypesystemDescriptor.QuotationClass_3ist9o_a0a0b0a0a0a922a0().createNode();
+          return new TypesystemDescriptor.QuotationClass_3ist9o_a0a0b0a0a0a822a0().createNode();
         }
       };
       this.myVariableConverters.add(converter);
@@ -1003,14 +999,14 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       OverloadedOpsProvider_OneTypeSpecified provider = new OverloadedOpsProvider_OneTypeSpecified() {
         {
-          this.myOperandType = new TypesystemDescriptor.QuotationClass_3ist9o_a0a0a0a0a0a0a0dj0a().createNode();
+          this.myOperandType = new TypesystemDescriptor.QuotationClass_3ist9o_a0a0a0a0a0a0a0cj0a().createNode();
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.PlusExpression";
           this.myTypeIsExact = false;
           this.myIsStrong = false;
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return new TypesystemDescriptor.QuotationClass_3ist9o_a0a0a0a0a0a0a732a0().createNode();
+          return new TypesystemDescriptor.QuotationClass_3ist9o_a0a0a0a0a0a0a632a0().createNode();
         }
       };
       this.myOverloadedOperationsTypesProviders.add(provider);
@@ -1480,6 +1476,24 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
+  public static class QuotationClass_3ist9o_a0a0b0a0a0a722a0 {
+    public QuotationClass_3ist9o_a0a0b0a0a0a722a0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
   public static class QuotationClass_3ist9o_a0a0b0a0a0a822a0 {
     public QuotationClass_3ist9o_a0a0b0a0a0a822a0() {
     }
@@ -1498,26 +1512,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class QuotationClass_3ist9o_a0a0b0a0a0a922a0 {
-    public QuotationClass_3ist9o_a0a0b0a0a0a922a0() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_3ist9o_a0a0a0a0a0a0a732a0 {
-    public QuotationClass_3ist9o_a0a0a0a0a0a0a732a0() {
+  public static class QuotationClass_3ist9o_a0a0a0a0a0a0a632a0 {
+    public QuotationClass_3ist9o_a0a0a0a0a0a0a632a0() {
     }
 
     public SNode createNode() {
@@ -1533,8 +1529,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class QuotationClass_3ist9o_a0a0a0a0a0a0a0dj0a {
-    public QuotationClass_3ist9o_a0a0a0a0a0a0a0dj0a() {
+  public static class QuotationClass_3ist9o_a0a0a0a0a0a0a0cj0a {
+    public QuotationClass_3ist9o_a0a0a0a0a0a0a0cj0a() {
     }
 
     public SNode createNode() {
