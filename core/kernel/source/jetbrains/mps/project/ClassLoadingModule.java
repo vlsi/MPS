@@ -16,12 +16,14 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.SolutionKind;
+import jetbrains.mps.runtime.IClassLoadingModule;
 
 import java.net.URL;
 
-public abstract class ClassLoadingModule extends AbstractModule{
-
+public abstract class ClassLoadingModule extends AbstractModule implements IClassLoadingModule{
+  private static Logger LOG = Logger.getLogger(ClassLoadingModule.class);
 
 
   public Class getClass(String fqName) {

@@ -21,22 +21,18 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
-public class BundleClassLoader<T> extends BaseClassLoader {
+public class BundleClassLoader extends BaseClassLoader {
   private Map<String, Class> myClassesCache = new HashMap<String, Class>();
   private final Object myLock = new Object();
 
   //this is for debug purposes (heap dumps)
   @SuppressWarnings({"UnusedDeclaration", "FieldCanBeLocal"})
   private boolean myDisposed;
-  private RBundle<T> myBundle;
+  private IClassLoadingModule myModule;
 
-  public BundleClassLoader(RBundle<T> bundle, ClassLoader parent) {
+  public BundleClassLoader(IClassLoadingModule module, ClassLoader parent) {
     super(parent);
-    myBundle = bundle;
-  }
-
-  BundleClassLoader(RBundle<T> bundle) {
-    this(bundle, BaseClassLoader.class.getClassLoader());
+    myModule = module;
   }
 
   public Class getClass(String fqName) {
@@ -58,16 +54,12 @@ public class BundleClassLoader<T> extends BaseClassLoader {
   }
 
   protected Class findAfterCurrent(String name) {
-    RuntimeEnvironment<T> re = myBundle.getRuntimeEnvironment();
-    for (T dep : re.getAllDependencies(myBundle)) {
-      if (dep.equals(myBundle.getId())) continue;
+    for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
+      if (m.equals(myModule)) continue;
 
-      RBundle<T> bundle = re.get(dep);
-      if (bundle == null) continue;
-
-      if (bundle.hasClass(name)) {
+      if (myModule.hasClass(name)) {
         try {
-          return Class.forName(name, false, bundle.getClassLoader());
+          return Class.forName(name, false, myModule.getClassLoader());
         } catch (ClassNotFoundException e) {
           throw new RuntimeException(e);
         }
@@ -78,20 +70,14 @@ public class BundleClassLoader<T> extends BaseClassLoader {
   }
 
   protected byte[] findInCurrent(String name) {
-    byte[] bytes = myBundle.getLocator().find(name);
-    if (bytes != null) {
-      myBundle.classLoaded(name);
-    }
-    return bytes;
+    return myModule.findClassBytes(name);
   }
 
   protected URL findResource(String name) {
-    RuntimeEnvironment<T> re = myBundle.getRuntimeEnvironment();
-
-    for (T dep : re.getAllDependencies(myBundle)) {
-      if (re.get(dep).hasResource(name)) {
-        return re.get(dep).getResource(name);
-      }
+    for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
+      URL res = m.getResource(name);
+      if (res == null) continue;
+      return res;
     }
 
     return null;
@@ -99,11 +85,10 @@ public class BundleClassLoader<T> extends BaseClassLoader {
 
   protected Enumeration<URL> findResources(String name) throws IOException {
     ArrayList<URL> result = new ArrayList<URL>();
-    RuntimeEnvironment<T> re = myBundle.getRuntimeEnvironment();
-    for (T dep : re.getAllDependencies(myBundle)) {
-      if (re.get(dep).hasResource(name)) {
-        result.add(re.get(dep).getResource(name));
-      }
+    for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
+      URL res = m.getResource(name);
+      if (res == null) continue;
+      result.add(res);
     }
 
     return new IterableToEnumWrapper<URL>(result);
@@ -111,11 +96,13 @@ public class BundleClassLoader<T> extends BaseClassLoader {
 
   @Override
   protected String findLibrary(String name) {
-    String libraryPath = myBundle.getLocator().findLibrary(name);
-    if (libraryPath != null) {
-      return libraryPath;
+    for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
+      String res = m.getLibrary(name);
+      if (res == null) continue;
+      return res;
     }
-    return super.findLibrary(name);
+
+    return null;
   }
 
   public void dispose() {
@@ -124,7 +111,7 @@ public class BundleClassLoader<T> extends BaseClassLoader {
   }
 
   public String toString() {
-    return myBundle.getId() + "'s class loader";
+    return myModule + " class loader";
   }
 
   private static class IterableToEnumWrapper<E> implements Enumeration<E> {
