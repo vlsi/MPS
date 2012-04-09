@@ -1156,6 +1156,11 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="scopes" />
       <property name="name" nameId="tpck.1169194664001" value="SuperConstructorKind" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1251851371723515367">
+      <property name="name" nameId="tpck.1169194664001" value="ArrayClassExpression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
   </roots>
   <root id="1068498886294">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1107215415034">
@@ -4361,5 +4366,16 @@
   <root id="2406048883599831972" />
   <root id="501006281268604400" />
   <root id="2406048883599609633" />
+  <root id="1251851371723515367">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1251851371723515368">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <property name="role" nameId="tpce.1071599776563" value="arrayType" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1070534760951" resolveInfo="ArrayType" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="1251851371723515369">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </root>
 </model>
 

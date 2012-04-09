@@ -927,6 +927,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="property" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.5862977038373003187" resolveInfo="LocalPropertyReference" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1251851371723517378">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1251851371723515367" resolveInfo="ArrayClassExpression" />
+    </node>
   </roots>
   <root id="1073416106125">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1229447107349">
@@ -18179,6 +18183,25 @@
           <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1198595398954" resolveInfo="Field" />
         </node>
       </node>
+    </node>
+  </root>
+  <root id="1251851371723517378">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1251851371723517379">
+      <property name="vertical" nameId="tpc2.1073389446425" value="false" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1251851371723517380">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpee.1251851371723515368" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1251851371723517381">
+        <property name="text" nameId="tpc2.1073389577007" value="." />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1215096040201" resolveInfo="Dot" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1251851371723517382">
+        <property name="text" nameId="tpc2.1073389577007" value="class" />
+        <property name="attractsFocus" nameId="tpc2.1130859485024" value="1" />
+        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="4848386836749782320" resolveInfo="ClassifierClassExpression_DeleteClass" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="1251851371723517383" />
     </node>
   </root>
 </model>

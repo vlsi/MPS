@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BaseLanguage_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BaseLanguage_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="529" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="531" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StructureAspectDescriptor" />
   <root nodeId="1023687332192347378">
     <nodeInfo nodeId="1023687332192347378" fileName="IVariableReference.java" startLine="7" startPosition="58" endLine="8" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <unitInfo nodeId="1023687332192347378" fileName="IVariableReference.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IVariableReference" />
@@ -10683,6 +10683,40 @@
       <varInfo nodeId="1241540912639" varName="sm" />
     </scopeInfo>
     <unitInfo nodeId="1241540912639" fileName="ConstructorInvocationStatement.java" startLine="13" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement" />
+  </root>
+  <root nodeId="1251851371723515367">
+    <nodeInfo nodeId="1251851371723515367" fileName="ArrayClassExpression.java" startLine="10" startPosition="54" endLine="11" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1251851371723515367" fileName="ArrayClassExpression.java" startLine="11" startPosition="99" endLine="12" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ARRAY_TYPE" />
+    <nodeInfo nodeId="1251851371723515367" fileName="ArrayClassExpression.java" startLine="14" startPosition="43" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1251851371723515367" fileName="ArrayClassExpression.java" startLine="18" startPosition="35" endLine="19" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1251851371723515367" fileName="ArrayClassExpression.java" startLine="22" startPosition="44" endLine="23" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1251851371723515367" fileName="ArrayClassExpression.java" startLine="26" startPosition="75" endLine="27" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1251851371723515367" fileName="ArrayClassExpression.java" startLine="30" startPosition="61" endLine="31" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1251851371723515367" fileName="ArrayClassExpression.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ArrayClassExpression#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1251851371723515367" fileName="ArrayClassExpression.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getArrayType#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="1251851371723515367" fileName="ArrayClassExpression.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setArrayType#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1251851371723515367" fileName="ArrayClassExpression.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/baseLanguage/structure/ArrayClassExpression;" />
+    <nodeInfo nodeId="1251851371723515367" fileName="ArrayClassExpression.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/structure/ArrayClassExpression;" />
+    <scopeInfo nodeId="1251851371723515367" fileName="ArrayClassExpression.java" startLine="14" startPosition="43" endLine="15" endPosition="16" />
+    <scopeInfo nodeId="1251851371723515367" fileName="ArrayClassExpression.java" startLine="18" startPosition="35" endLine="19" endPosition="87" />
+    <scopeInfo nodeId="1251851371723515367" fileName="ArrayClassExpression.java" startLine="22" startPosition="44" endLine="23" endPosition="58" />
+    <scopeInfo nodeId="1251851371723515367" fileName="ArrayClassExpression.java" startLine="26" startPosition="75" endLine="27" endPosition="190" />
+    <scopeInfo nodeId="1251851371723515367" fileName="ArrayClassExpression.java" startLine="30" startPosition="61" endLine="31" endPosition="55" />
+    <scopeInfo nodeId="1251851371723515367" fileName="ArrayClassExpression.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1251851371723515367" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1251851371723515367" fileName="ArrayClassExpression.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="1251851371723515367" fileName="ArrayClassExpression.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1251851371723515367" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1251851371723515367" fileName="ArrayClassExpression.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1251851371723515367" varName="init" />
+      <varInfo nodeId="1251851371723515367" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1251851371723515367" fileName="ArrayClassExpression.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1251851371723515367" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="1251851371723515367" fileName="ArrayClassExpression.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ArrayClassExpression" />
   </root>
   <root nodeId="1461424660015405635">
     <nodeInfo nodeId="1461424660015405635" fileName="EscapeOperation.java" startLine="10" startPosition="58" endLine="11" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
