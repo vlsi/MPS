@@ -6,6 +6,7 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="356a" modelUID="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" version="0" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1068498886294">
       <property name="name" nameId="tpck.1169194664001" value="AssignmentExpression" />
@@ -1188,9 +1189,6 @@
     </node>
   </root>
   <root id="1068390468200">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="274804607996650331">
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="274804607996650332" resolveInfo="inheritableMember" />
-    </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1240249534625">
       <property name="name" nameId="tpck.1169194664001" value="isVolatile" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
@@ -1570,9 +1568,6 @@
     </node>
   </root>
   <root id="1068580123165">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="274804607996650413">
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="274804607996650332" resolveInfo="inheritableMember" />
-    </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1178608670077">
       <property name="name" nameId="tpck.1169194664001" value="isAbstract" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
@@ -1732,9 +1727,6 @@
     </node>
   </root>
   <root id="1070462154015">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="7518909260608358343">
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="274804607996650332" resolveInfo="inheritableMember" />
-    </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1178291753349">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
     </node>
@@ -2003,9 +1995,6 @@
     </node>
   </root>
   <root id="1081236700938">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="7518909260608358344">
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="274804607996650332" resolveInfo="inheritableMember" />
-    </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1178289092936">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
     </node>
@@ -3154,9 +3143,6 @@
     </node>
   </root>
   <root id="1178285077437">
-    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="274804607996650332">
-      <property name="name" nameId="tpck.1169194664001" value="inheritableMember" />
-    </node>
     <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1178549989306">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1178549954367" resolveInfo="IVisible" />
     </node>
@@ -3402,9 +3388,6 @@
   <root id="1200397549879" />
   <root id="1201183863028" />
   <root id="1201370618622">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="2907982978865104120">
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="274804607996650332" resolveInfo="inheritableMember" />
-    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1201371521209">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="type" />

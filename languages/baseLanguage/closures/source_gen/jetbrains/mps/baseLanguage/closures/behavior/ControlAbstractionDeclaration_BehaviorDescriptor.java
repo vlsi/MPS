@@ -19,10 +19,6 @@ public class ControlAbstractionDeclaration_BehaviorDescriptor extends GenericDec
     return ClassifierMember_Behavior.virtual_isStatic_8986964027630462944(thisNode);
   }
 
-  public Object virtual_getSignatureForOverriding_274804607996650333(SNode thisNode, SNode contextClassifier) {
-    return ClassifierMember_Behavior.virtual_getSignatureForOverriding_274804607996650333(thisNode, contextClassifier);
-  }
-
   public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     return HasAnnotation_Behavior.virtual_getChildrenToDisplayIntention_4025276038182319200(thisNode);
   }
