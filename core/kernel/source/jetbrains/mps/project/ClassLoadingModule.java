@@ -38,6 +38,11 @@ public abstract class ClassLoadingModule extends AbstractModule{
     return new ModuleBytecodeLocator();
   }
 
+  public void invalidateClasses() {
+
+
+  }
+
   protected class ModuleBytecodeLocator implements BytecodeLocator {
     public ModuleBytecodeLocator() {
     }

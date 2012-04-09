@@ -18,20 +18,15 @@ package jetbrains.mps.reloading;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.project.ClassLoadingModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.runtime.RBundle;
-import jetbrains.mps.runtime.RuntimeEnvironment;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.language.ExtensionRegistry;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.stubs.LibrariesLoader;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ClassLoaderManager implements CoreComponent {
@@ -44,9 +39,6 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   private List<ReloadListener> myReloadHandlers = new CopyOnWriteArrayList<ReloadListener>();
-
-  private final Object myLock = new Object();
-  private RuntimeEnvironment<ModuleReference> myRuntimeEnvironment;
 
   public ClassLoaderManager() {
 
@@ -61,44 +53,6 @@ public class ClassLoaderManager implements CoreComponent {
 
   public void dispose() {
     INSTANCE = null;
-  }
-
-  public void initRuntimeEnvironment() {
-    synchronized (myLock) {
-      if (myRuntimeEnvironment == null) {
-        myRuntimeEnvironment = createRuntimeEnvironment();
-      }
-    }
-  }
-
-  public Class getClassFor(IModule module, String classFqName) {
-    synchronized (myLock) {
-      RBundle<ModuleReference> bundle = myRuntimeEnvironment.get(module.getModuleReference());
-
-      if (bundle == null) {
-        new Throwable().printStackTrace();
-        System.out.printf("Can't find a bundle " + module.getModuleReference().getModuleFqName());
-        
-        return null;
-      }
-
-      return bundle.getClassLoader().getClass(classFqName);
-    }
-  }
-
-  public ClassLoader getClassLoaderFor(IModule module, boolean reportError) {
-    synchronized (myLock) {
-      RBundle<ModuleReference> bundle = myRuntimeEnvironment.get(module.getModuleReference());
-
-      if (bundle == null) {
-        if (reportError) {
-          LOG.error("Can't find a bundle " + module.getModuleReference().getModuleFqName(), new Throwable());
-        }
-        return null;
-      }
-
-      return bundle.getClassLoader();
-    }
   }
 
   public void reloadAll(@NotNull ProgressMonitor monitor) {
@@ -154,67 +108,15 @@ public class ClassLoaderManager implements CoreComponent {
     }
   }
 
-  public void updateClassPath() {
-    MPSModuleRepository repo = MPSModuleRepository.getInstance();
-    synchronized (myLock) {
-      if (myRuntimeEnvironment == null) {
-        myRuntimeEnvironment = createRuntimeEnvironment();
-      }
-
-      Set<ModuleReference> added = new HashSet<ModuleReference>();
-      for (IModule m : repo.getAllModules()) {
-        boolean containsBundle;
-        synchronized (myLock) {
-          containsBundle = myRuntimeEnvironment.get(m.getModuleReference()) != null;
-        }
-
-        if (!containsBundle) {
-          addModule(m.getModuleReference());
-          added.add(m.getModuleReference());
-        }
-      }
-
-      for (IModule m : repo.getAllModules()) {
-        RBundle<ModuleReference> b = myRuntimeEnvironment.get(m.getModuleReference());
-        assert b != null : "There is no budle for module " + m.getModuleFqName();
-        b.clearDependencies();
-
-        for (IModule dep : m.getDependenciesManager().getAllVisibleModules()) {
-          b.addDependency(dep.getModuleReference());
-        }
-      }
-
-      for (ModuleReference addedBundle : added) {
-        RBundle<ModuleReference> bundle = myRuntimeEnvironment.get(addedBundle);
-        assert bundle != null : "Can't find " + addedBundle.getModuleFqName();
-        myRuntimeEnvironment.init(bundle);
-      }
-
-      List<RBundle> toRemove = new ArrayList<RBundle>();
-      for (RBundle<ModuleReference> b : myRuntimeEnvironment.getBundles()) {
-        if (repo.getModule(b.getId()) == null) {
-          toRemove.add(b);
-        }
-      }
-      myRuntimeEnvironment.unload(toRemove.toArray(new RBundle[toRemove.size()]));
-
-      myRuntimeEnvironment.reloadAll();
-
-      ClassPathFactory.getInstance().invalidateAll();
-    }
+  public ClassLoader getClassLoaderFor(IModule module, boolean reportError) {
+    123  //rewrite usages 
   }
 
-  private void addModule(ModuleReference ref) {
-    synchronized (myLock) {
-      IModule module = MPSModuleRepository.getInstance().getModule(ref);
-
-      if (module == null) {
-        throw new RuntimeException("Can't find module : " + ref.getModuleFqName());
-      }
-
-      RBundle<ModuleReference> bundle = new RBundle<ModuleReference>(ref, module.getBytecodeLocator());
-      myRuntimeEnvironment.add(bundle);
+  public void updateClassPath() {
+    for (ClassLoadingModule m: ModuleRepositoryFacade.getInstance().getAllModules(ClassLoadingModule.class)){
+      m.invalidateClasses();
     }
+    ClassPathFactory.getInstance().invalidateAll();
   }
 
   public RuntimeEnvironment<ModuleReference> getRuntimeEnvironment() {
@@ -247,12 +149,6 @@ public class ClassLoaderManager implements CoreComponent {
 
   private interface ListenerCaller {
     void call(ReloadListener l);
-  }
-
-  //---------------runtime environment------------------
-
-  private RuntimeEnvironment createRuntimeEnvironment() {
-    return new RuntimeEnvironment();
   }
 }
                                           
