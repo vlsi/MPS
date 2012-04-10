@@ -58,7 +58,7 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   private RuntimeSupport myRuntimeSupportTracer;
   private SubtypingManager mySubtypingManagerTracer;
 
-  private List<TypesReadListener> myTypesReadListeners = new ArrayList<TypesReadListener>();
+  private ThreadLocal<TypesReadListener> myTypesReadListener = new ThreadLocal<TypesReadListener>();
 
   private SubtypingCache mySubtypingCache = null;
   private SubtypingCache myGlobalSubtypingCache = null;
@@ -302,12 +302,6 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
     return !isGenerationMode();
   }
 
-  private List<TypesReadListener> copyTypesReadListeners() {
-    synchronized (LISTENERS_LOCK) {
-      return new ArrayList<TypesReadListener>(myTypesReadListeners);
-    }
-  }
-
   private List<TypeRecalculatedListener> copyTypeRecalculatedListeners() {
     synchronized (LISTENERS_LOCK) {
       return new ArrayList<TypeRecalculatedListener>(myTypeRecalculatedListeners);
@@ -315,15 +309,13 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   }
 
   public void addTypesReadListener(TypesReadListener typesReadListener) {
-    synchronized (LISTENERS_LOCK) {
-      myTypesReadListeners.add(typesReadListener);
-    }
+    assert myTypesReadListener.get() == null;
+    myTypesReadListener.set(typesReadListener);
   }
 
   public void removeTypesReadListener(TypesReadListener typesReadListener) {
-    synchronized (LISTENERS_LOCK) {
-      myTypesReadListeners.remove(typesReadListener);
-    }
+    assert myTypesReadListener.get() == typesReadListener;
+    myTypesReadListener.set(null);
   }
 
   public void removeTypeRecalculatedListener(TypeRecalculatedListener typeRecalculatedListener) {
@@ -347,7 +339,8 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   }
 
   private void fireNodeTypeAccessed(SNode term) {
-    for (TypesReadListener typesReadListener : copyTypesReadListeners()) {
+    TypesReadListener typesReadListener = myTypesReadListener.get();
+    if (typesReadListener != null) {
       typesReadListener.nodeTypeAccessed(term);
     }
   }

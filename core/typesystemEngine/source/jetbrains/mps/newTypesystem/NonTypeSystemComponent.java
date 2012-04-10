@@ -326,22 +326,20 @@ class NonTypeSystemComponent extends CheckingComponent {
         }
       }
       if (incrementalMode) {
-        synchronized (ACCESS_LOCK) {
-          nodesReadListener.setAccessReport(true);
-          addDependentNodes(node, rule.o1, new THashSet<SNode>(nodesReadListener.getAccessedNodes()));
-          addDependentProperties(node, rule.o1, new THashSet<Pair<SNode, String>>(nodesReadListener.getAccessedProperties()));
-          nodesReadListener.setAccessReport(false);
+        nodesReadListener.setAccessReport(true);
+        addDependentNodes(node, rule.o1, new THashSet<SNode>(nodesReadListener.getAccessedNodes()));
+        addDependentProperties(node, rule.o1, new THashSet<Pair<SNode, String>>(nodesReadListener.getAccessedProperties()));
+        nodesReadListener.setAccessReport(false);
 
-          languageCachesReadListener.setAccessReport(true);
-          if (languageCachesReadListener.isCacheAccessed()) {
-            addCacheDependentNodesNonTypesystem(node, rule.o1);
-          }
-          languageCachesReadListener.setAccessReport(false);
-
-          typesReadListener.setAccessReport(true);
-          addDependentTypeTerms(node, rule.o1, new THashSet<SNode>(typesReadListener.myAccessedNodes));
-          typesReadListener.setAccessReport(false);
+        languageCachesReadListener.setAccessReport(true);
+        if (languageCachesReadListener.isCacheAccessed()) {
+          addCacheDependentNodesNonTypesystem(node, rule.o1);
         }
+        languageCachesReadListener.setAccessReport(false);
+
+        typesReadListener.setAccessReport(true);
+        addDependentTypeTerms(node, rule.o1, typesReadListener.getAccessedNodes());
+        typesReadListener.setAccessReport(false);
         nodesReadListener.clear();
       }
       myCheckedNodes.add(nodeAndRule);
@@ -349,7 +347,7 @@ class NonTypeSystemComponent extends CheckingComponent {
     myCurrentCheckedNode = oldCheckedNode;
   }
 
-  private class MyTypesReadListener implements TypesReadListener {
+  private static class MyTypesReadListener implements TypesReadListener {
     private Set<SNode> myAccessedNodes = new THashSet<SNode>(1);
     private boolean myIsSetAccessReport = false;
 
@@ -357,17 +355,15 @@ class NonTypeSystemComponent extends CheckingComponent {
       myIsSetAccessReport = accessReport;
     }
 
-    private void reportAccess() {
+    public void nodeTypeAccessed(SNode term) {
       if (myIsSetAccessReport) {
         new Throwable().printStackTrace();
       }
+      myAccessedNodes.add(term);
     }
 
-    public void nodeTypeAccessed(SNode term) {
-      synchronized (ACCESS_LOCK) {
-        reportAccess();
-        myAccessedNodes.add(term);
-      }
+    public Set<SNode> getAccessedNodes() {
+      return myAccessedNodes;
     }
   }
 }

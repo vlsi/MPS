@@ -322,18 +322,16 @@ class TypeSystemComponent extends CheckingComponent {
           }
         }
         if (incrementalMode) {
-          synchronized (ACCESS_LOCK) {
-            nodesReadListener.setAccessReport(true);
-            Set<SNode> accessedNodes = nodesReadListener.getAccessedNodes();
-            addDependentNodesTypeSystem(sNode, accessedNodes, typeAffected);
-            nodesReadListener.setAccessReport(false);
-            if (languageCachesReadListener != null) { //redundant checking, in fact; but without this IDEA underlines the next line with red
-              languageCachesReadListener.setAccessReport(true);
-              if (languageCachesReadListener.isCacheAccessed()) {
-                addCacheDependentNodesTypesystem(sNode);
-              }
-              languageCachesReadListener.setAccessReport(false);
+          nodesReadListener.setAccessReport(true);
+          Set<SNode> accessedNodes = nodesReadListener.getAccessedNodes();
+          addDependentNodesTypeSystem(sNode, accessedNodes, typeAffected);
+          nodesReadListener.setAccessReport(false);
+          if (languageCachesReadListener != null) { //redundant checking, in fact; but without this IDEA underlines the next line with red
+            languageCachesReadListener.setAccessReport(true);
+            if (languageCachesReadListener.isCacheAccessed()) {
+              addCacheDependentNodesTypesystem(sNode);
             }
+            languageCachesReadListener.setAccessReport(false);
           }
           nodesReadListener.clear();
         }
