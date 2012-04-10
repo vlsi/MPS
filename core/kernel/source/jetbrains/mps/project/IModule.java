@@ -115,6 +115,8 @@ public interface IModule extends ModelOwner {
 
   boolean needReloading();
 
+  Class getClass(String className);
+
   public static interface ModelAdjuster {
     void adjust(SModelDescriptor model);
   }

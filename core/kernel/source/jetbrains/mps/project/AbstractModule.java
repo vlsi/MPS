@@ -372,7 +372,11 @@ public abstract class AbstractModule implements IModule {
     return new ClasspathCollector(modules).collect(includeStubSolutions);
   }
 
-  //----
+  public Class getClass(String className) {
+    //todo move to a subclass fully
+    throw new UnsupportedOperationException();
+  }
+//----
 
   public Collection<SModelRoot> getSModelRoots() {
     return Collections.unmodifiableCollection(mySModelRoots);

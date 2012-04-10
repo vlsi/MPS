@@ -120,7 +120,6 @@ public class LibraryInitializer implements CoreComponent {
     CleanupManager.getInstance().cleanup();
     ClassLoaderManager.getInstance().updateClassPath();
 
-    myCLM.initRuntimeEnvironment();
     LanguageRegistry.getInstance().loadLanguages();
     ExtensionRegistry.getInstance().loadExtensionDescriptors();
   }
