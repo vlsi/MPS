@@ -20,6 +20,7 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -113,13 +114,12 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
       SNode result = postprocessGetNode(map.get(conceptFQName));
       if (result != null && result.shouldHaveBeenDisposed()) {
         map.remove(conceptFQName);
-        return new Pair<Boolean, SNode>(false, null);
+        return null;
       } else {
         return new Pair<Boolean, SNode>(true, result);
       }
-    } else {
-      return new Pair<Boolean, SNode>(false, null);
     }
+    return null;
   }
 
   private Pair<Boolean, SNode> getCoerced(SNode subtype, Class c, GeneratedMatchingPattern pattern, boolean isWeak) {
@@ -131,14 +131,13 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
       SNode resultNode = patternPair.o1;
       if (resultNode != null && resultNode.shouldHaveBeenDisposed()) {
         map.remove(c);
-        return new Pair<Boolean, SNode>(false, null);
+        return null;
       } else {
         pattern.fillFieldValuesFrom(patternPair.o2);
         return new Pair<Boolean, SNode>(true, resultNode);
       }
-    } else {
-      return new Pair<Boolean, SNode>(false, null);
     }
+    return null;
   }
 
   private void addCacheEntry(SNode subtype, String conceptFQName, SNode result, boolean isWeak) {
@@ -190,16 +189,17 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
     }
   }
 
+  @Nullable
   public Pair<Boolean, SNode> getCoerced(SNode subtype, IMatchingPattern pattern, boolean isWeak) {
     if (pattern instanceof ConceptMatchingPattern) {
-      return getCoerced(subtype, ((ConceptMatchingPattern) pattern).getConceptFQName(), isWeak);
+      return getCoerced(subtype, pattern.getConceptFQName(), isWeak);
     }
     if (pattern instanceof GeneratedMatchingPattern) {
       if (!((GeneratedMatchingPattern) pattern).hasAntiquotations()) {
         return getCoerced(subtype, pattern.getClass(), (GeneratedMatchingPattern) pattern, isWeak);
       }
     }
-    return new Pair<Boolean, SNode>(false, null);
+    return null;
   }
 
   private static enum MyBoolean {

@@ -16,7 +16,6 @@
 package jetbrains.mps.newTypesystem;
 
 import gnu.trove.THashSet;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
@@ -27,6 +26,7 @@ import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
@@ -41,7 +41,7 @@ public class CoercionManager {
 
 
   public SNode coerceSubTypingNew(final SNode subtype, final IMatchingPattern pattern, final boolean isWeak, final State state) {
-    if  (subtype == null) return null;
+    if (subtype == null) return null;
     if (pattern.match(subtype)) return subtype;
     if ("jetbrains.mps.lang.typesystem.structure.MeetType".equals(subtype.getConceptFqName())) {
       List<SNode> children = subtype.getChildren("argument");
@@ -62,7 +62,7 @@ public class CoercionManager {
     //asking the cache
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
       public SNode compute() {
-        Pair<Boolean, SNode> answer = getCoerceCahceAnswer(subtype, pattern, isWeak);
+        Pair<Boolean, SNode> answer = getCoerceCacheAnswer(subtype, pattern, isWeak);
         if (answer != null && answer.o1) {
           return answer.o2;
         }
@@ -70,7 +70,7 @@ public class CoercionManager {
         long start = System.nanoTime();
         SNode result = searchInSuperTypes(subtype, coercionMatcher, isWeak);
 
-        TypeSystemReporter.getInstance().reportCoerceNotCached(subtype, pattern.getConceptFQName(), System.nanoTime()-start);
+        TypeSystemReporter.getInstance().reportCoerceNotCached(subtype, pattern.getConceptFQName(), System.nanoTime() - start);
         //writing to the cache
         SubtypingCache subtypingCache = myTypeChecker.getSubtypingCache();
         if (subtypingCache != null) {
@@ -86,7 +86,8 @@ public class CoercionManager {
     });
   }
 
-  Pair<Boolean, SNode> getCoerceCahceAnswer(SNode subtype, IMatchingPattern pattern, boolean isWeak) {
+  @Nullable
+  Pair<Boolean, SNode> getCoerceCacheAnswer(SNode subtype, IMatchingPattern pattern, boolean isWeak) {
     SubtypingCache cache = myTypeChecker.getSubtypingCache();
     if (cache != null) {
       Pair<Boolean, SNode> coerced = cache.getCoerced(subtype, pattern, isWeak);
@@ -142,9 +143,9 @@ public class CoercionManager {
       for (SNode passedNode : yetPassed) {
         ancestors.removeStructurally(passedNode);
       }
-      for (SNode ancestor: ancestors) {
-        Pair<Boolean, SNode> answer = getCoerceCahceAnswer(ancestor, superType.getMatchingPattern(), isWeak);
-        if (answer!=null) {
+      for (SNode ancestor : ancestors) {
+        Pair<Boolean, SNode> answer = getCoerceCacheAnswer(ancestor, superType.getMatchingPattern(), isWeak);
+        if (answer != null) {
           if (answer.o1 && answer.o2 == null) {
             // System.out.println("coerce optimized");
             continue;
