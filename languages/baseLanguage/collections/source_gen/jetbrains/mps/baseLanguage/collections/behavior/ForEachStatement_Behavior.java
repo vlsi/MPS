@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.baseLanguage.scopes.Scopes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 
 public class ForEachStatement_Behavior {
   public static void init(SNode thisNode) {
@@ -19,6 +20,6 @@ public class ForEachStatement_Behavior {
         return Scopes.forVariables(kind, SLinkOperations.getTarget(thisNode, "variable", true), ScopeUtils.lazyParentScope(thisNode, kind));
       }
     }
-    return null;
+    return ScopeProvider_Behavior.callSuper_getScope_3734116213129936182(thisNode, "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement", kind, child);
   }
 }
