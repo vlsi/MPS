@@ -95,7 +95,7 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
     }
 
     INSTANCE = this;
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
         Collection<LanguageRuntime> availableLanguages = myLanguageRegistry.getAvailableLanguages();

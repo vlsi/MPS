@@ -18,7 +18,6 @@ package jetbrains.mps.typesystem;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.SystemMenuBar;
 import java.util.*;
 import java.util.Map.Entry;
 
@@ -30,7 +29,7 @@ public class TypeSystemReporter {
   private Map<String, Pair<Long, Long>> myCoerceTime = new HashMap<String, Pair<Long, Long>>();
   private Map<String, Pair<Long, Long>> myCoerceNCTime = new HashMap<String, Pair<Long, Long>>();
 
-  private TypeSystemReporter(){
+  private TypeSystemReporter() {
 
   }
 
@@ -48,7 +47,7 @@ public class TypeSystemReporter {
     myCoerceNCTime.clear();
   }
 
-  public synchronized void reportTypeOf(SNode node, long time) {
+  public void reportTypeOf(SNode node, long time) {
     String conceptFqName = node.getConceptFqName();
     report(time, conceptFqName, myGetTypeOfTime);
   }
@@ -56,7 +55,7 @@ public class TypeSystemReporter {
   private void report(long time, String conceptFqName, Map<String, Pair<Long, Long>> map) {
     Pair<Long, Long> value = map.get(conceptFqName);
     if (value == null) {
-      value = new Pair<Long, Long>(0L,0L);
+      value = new Pair<Long, Long>(0L, 0L);
       map.put(conceptFqName, value);
     }
     value.o1 += time;
@@ -65,18 +64,19 @@ public class TypeSystemReporter {
 
   public void reportIsSubType(SNode subType, SNode superType, long time) {
     if (null == subType || null == superType) return;
-    String conceptFqName = subType.getConceptFqName()+ "   "+ superType.getConceptFqName();
+    String conceptFqName = subType.getConceptFqName() + "   " + superType.getConceptFqName();
     report(time, conceptFqName, myIsSubTypeTime);
   }
 
   public void reportCoerce(SNode subType, String fq, long time) {
     if (null == subType) return;
-    String conceptFqName = subType.getConceptFqName()+ "   "+ fq;
+    String conceptFqName = subType.getConceptFqName() + "   " + fq;
     report(time, conceptFqName, myCoerceTime);
   }
+
   public void reportCoerceNotCached(SNode subType, String fq, long time) {
     if (null == subType) return;
-    String conceptFqName = subType.getConceptFqName()+ "   "+ fq;
+    String conceptFqName = subType.getConceptFqName() + "   " + fq;
     report(time, conceptFqName, myCoerceNCTime);
   }
 
@@ -93,7 +93,7 @@ public class TypeSystemReporter {
   }
 
   public void printMapReport(Map<String, Pair<Long, Long>> map, int numTop) {
-    ArrayList<Entry<String, Pair<Long, Long>>> list = new  ArrayList<Entry<String, Pair<Long, Long>>>();
+    ArrayList<Entry<String, Pair<Long, Long>>> list = new ArrayList<Entry<String, Pair<Long, Long>>>();
     list.addAll(map.entrySet());
 
     Collections.sort(list, new Comparator<Entry<String, Pair<Long, Long>>>() {
@@ -107,9 +107,9 @@ public class TypeSystemReporter {
     for (Entry<String, Pair<Long, Long>> entry : list) {
       if (i++ >= numTop) break;
       sum += entry.getValue().o1;
-      System.out.println(entry.getKey() + "\t" + entry.getValue().o1*1.0e-9 + "\t" + entry.getValue().o2 +"\t" + entry.getValue().o1*1.0e-9/entry.getValue().o2);
+      System.out.println(entry.getKey() + "\t" + entry.getValue().o1 * 1.0e-9 + "\t" + entry.getValue().o2 + "\t" + entry.getValue().o1 * 1.0e-9 / entry.getValue().o2);
     }
-    System.out.println("Total: " + sum*1.0e-9);
+    System.out.println("Total: " + sum * 1.0e-9);
   }
 
 

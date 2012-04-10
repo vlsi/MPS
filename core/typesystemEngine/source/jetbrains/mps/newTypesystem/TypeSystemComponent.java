@@ -61,24 +61,6 @@ class TypeSystemComponent extends CheckingComponent {
     myNodeTypesComponent = component;
   }
 
-  @Deprecated
-  protected boolean loadTypesystemRules(SNode root) {
-    SModel model = root.getModel();
-    RulesManager rulesManager = myTypeChecker.getRulesManager();
-    if (rulesManager.hasModelLoadedRules(model.getSModelReference())) {
-      return true;
-    }
-    List<Language> languages = SModelOperations.getLanguages(model, GlobalScope.getInstance());
-    boolean isLoadedAnyLanguage = false;
-    for (Language language : languages) {
-      boolean b = rulesManager.loadLanguage(language.getModuleFqName());
-      isLoadedAnyLanguage = isLoadedAnyLanguage || b;
-    }
-    rulesManager.markModelHasLoadedRules(model.getSModelReference());
-    if (!isLoadedAnyLanguage) return false;
-    return true;
-  }
-
   //returns true if something was invalidated
   protected boolean doInvalidate() {
     if (myInvalidationWasPerformed) {
