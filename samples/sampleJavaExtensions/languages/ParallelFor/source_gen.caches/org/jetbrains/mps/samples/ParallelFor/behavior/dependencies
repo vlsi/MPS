@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
+    <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelFor_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelLoopVariable_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadPool_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
+  </dependency>
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelFor_BehaviorDescriptor" file="ParallelFor_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.AbstractLoopStatement_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelLoopVariable_BehaviorDescriptor" file="ParallelLoopVariable_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.LocalVariableDeclaration_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadPool_BehaviorDescriptor" file="ThreadPool_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+</dependenciesRoot>
+
