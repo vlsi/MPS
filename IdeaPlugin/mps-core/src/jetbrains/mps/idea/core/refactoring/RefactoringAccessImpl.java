@@ -24,6 +24,7 @@ import jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.ide.platform.refactoring.RefactoringFacade;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
+import jetbrains.mps.idea.core.ui.ModelOrNodeChooser;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
@@ -64,12 +65,14 @@ public class RefactoringAccessImpl extends RefactoringAccess implements Applicat
 
   @Override
   public ModelElementTargetChooser createTargetChooser(Project project, SNode node) {
-    throw new UnsupportedOperationException();
+    return new ModelOrNodeChooser(project,node);
+    //throw new UnsupportedOperationException();
   }
 
   @Override
   public ModelElementTargetChooser createTargetChooser(Project project, SModelDescriptor model) {
-    throw new UnsupportedOperationException();
+    return new ModelOrNodeChooser(project,model);
+    // throw new UnsupportedOperationException();
   }
 
     @Override
