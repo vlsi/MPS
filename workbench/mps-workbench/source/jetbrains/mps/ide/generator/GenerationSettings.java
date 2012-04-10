@@ -107,7 +107,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
   }
 
   public void disposeUIResources() {
-
+    myPreferences = null;
   }
 
   public String getId() {

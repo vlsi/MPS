@@ -116,10 +116,6 @@ public class CodeStylePreferencesPage {
     return myPage;
   }
 
-  public String getName() {
-    return "Code Style";
-  }
-
   public void commit() {
     mySettings.setFieldPrefix(myFieldItem.getPrefix());
     mySettings.setFieldSuffix(myFieldItem.getSuffix());
