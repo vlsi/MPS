@@ -11,12 +11,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
-import jetbrains.mps.scope.Scope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.scope.EmptyScope;
 
 public class StaticMethodDeclarationScope extends BaseMethodsScope {
   public StaticMethodDeclarationScope(SNode classNode, Iterable<SNode> extendedClassifiers) {
@@ -31,23 +25,5 @@ public class StaticMethodDeclarationScope extends BaseMethodsScope {
   public SNode resolveMethod(SNode contextNode, @NotNull String refText, List<SNode> actualArguments, List<SNode> methods) {
     Map<SNode, SNode> typeByTypeVar = ClassifierScopeUtils.resolveClassifierTypeVars(classifier);
     return MethodResolveUtil.chooseByParameterType(methods, actualArguments, typeByTypeVar);
-  }
-
-  public static Scope forClass(SNode classNode, @Nullable SNode extendsClass, SNode... implementsInterfaces) {
-    // collect extended classifiers 
-    List<SNode> extendedClassifiers = ListSequence.fromList(new ArrayList<SNode>());
-    if ((extendsClass != null)) {
-      ListSequence.fromList(extendedClassifiers).addElement(extendsClass);
-    }
-    ListSequence.fromList(extendedClassifiers).addSequence(Sequence.fromIterable(Sequence.fromArray(implementsInterfaces)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return (it != null);
-      }
-    }));
-    return new StaticMethodDeclarationScope(classNode, extendedClassifiers);
-  }
-
-  public static Scope forInterface(SNode interfaceNode, SNode... extendsInterfaces) {
-    return new EmptyScope();
   }
 }

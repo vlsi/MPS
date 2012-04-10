@@ -15,9 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.scope.Scope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 public class InstanceMethodDeclarationScope extends BaseMethodsScope {
   public InstanceMethodDeclarationScope(SNode classifierNode, Iterable<SNode> extendedClassifiers) {
@@ -69,23 +66,5 @@ public class InstanceMethodDeclarationScope extends BaseMethodsScope {
     } else {
       return super.getMethodsFromGroup(groupWithEqualSignature);
     }
-  }
-
-  public static Scope forClass(SNode classNode, @Nullable SNode extendsClass, SNode... implementsInterfaces) {
-    // collect extended classifiers 
-    List<SNode> extendedClassifiers = ListSequence.fromList(new ArrayList<SNode>());
-    if ((extendsClass != null)) {
-      ListSequence.fromList(extendedClassifiers).addElement(extendsClass);
-    }
-    ListSequence.fromList(extendedClassifiers).addSequence(Sequence.fromIterable(Sequence.fromArray(implementsInterfaces)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return (it != null);
-      }
-    }));
-    return new InstanceMethodDeclarationScope(classNode, extendedClassifiers);
-  }
-
-  public static Scope forInterface(SNode interfaceNode, SNode... extendsInterfaces) {
-    return new InstanceMethodDeclarationScope(interfaceNode, Sequence.fromIterable(Sequence.fromArray(extendsInterfaces)).concat(Sequence.fromIterable(Sequence.fromArray(new SNode[]{SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object")}))));
   }
 }
