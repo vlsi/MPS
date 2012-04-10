@@ -317,6 +317,7 @@ class TypeSystemComponent extends CheckingComponent {
           typeAffected = applyRulesToNode(sNode);
         } finally {
           if (incrementalMode) {
+            LanguageHierarchyCache.getInstance().removeReadAccessListener();
             NodeReadEventsCaster.removeNodesReadListener();
           }
         }
@@ -328,7 +329,7 @@ class TypeSystemComponent extends CheckingComponent {
             nodesReadListener.setAccessReport(false);
             if (languageCachesReadListener != null) { //redundant checking, in fact; but without this IDEA underlines the next line with red
               languageCachesReadListener.setAccessReport(true);
-              if (languageCachesReadListener.myIsCacheAccessed) {
+              if (languageCachesReadListener.isCacheAccessed()) {
                 addCacheDependentNodesTypesystem(sNode);
               }
               languageCachesReadListener.setAccessReport(false);

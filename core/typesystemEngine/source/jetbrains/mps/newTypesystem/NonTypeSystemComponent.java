@@ -329,11 +329,11 @@ class NonTypeSystemComponent extends CheckingComponent {
         synchronized (ACCESS_LOCK) {
           nodesReadListener.setAccessReport(true);
           addDependentNodes(node, rule.o1, new THashSet<SNode>(nodesReadListener.getAccessedNodes()));
-          addDependentProperties(node, rule.o1, new THashSet<Pair<SNode, String>>(nodesReadListener.myAccessedProperties));
+          addDependentProperties(node, rule.o1, new THashSet<Pair<SNode, String>>(nodesReadListener.getAccessedProperties()));
           nodesReadListener.setAccessReport(false);
 
           languageCachesReadListener.setAccessReport(true);
-          if (languageCachesReadListener.myIsCacheAccessed) {
+          if (languageCachesReadListener.isCacheAccessed()) {
             addCacheDependentNodesNonTypesystem(node, rule.o1);
           }
           languageCachesReadListener.setAccessReport(false);
