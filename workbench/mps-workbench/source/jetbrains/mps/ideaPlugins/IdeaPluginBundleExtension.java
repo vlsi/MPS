@@ -23,6 +23,6 @@ public class IdeaPluginBundleExtension extends AbstractExtensionPointBean {
   public static final ExtensionPointName<IdeaPluginBundleExtension> EP_PLUGIN_BUNDLE = ExtensionPointName.create("com.intellij.mps.PluginBundle");
 
   public IdeaPluginDescriptor getPluginDescriptor() {
-      return (IdeaPluginDescriptor) myPluginDescriptor;
-    }
+    return (IdeaPluginDescriptor) myPluginDescriptor;
+  }
 }

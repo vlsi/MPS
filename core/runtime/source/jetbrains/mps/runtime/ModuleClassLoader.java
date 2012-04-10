@@ -35,6 +35,11 @@ public class ModuleClassLoader extends BaseClassLoader {
     myModule = module;
   }
 
+  public ModuleClassLoader(IClassLoadingModule module, ClassLoader parent) {
+    super(parent);
+    myModule = module;
+  }
+
   public Class getClass(String fqName) {
     synchronized (myLock) {
       if (myClassesCache.containsKey(fqName)) {

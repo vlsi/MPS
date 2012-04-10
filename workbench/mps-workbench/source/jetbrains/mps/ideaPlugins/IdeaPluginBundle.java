@@ -23,15 +23,13 @@ import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.runtime.ModuleClassLoader;
-import jetbrains.mps.runtime.BytecodeLocator;
-import jetbrains.mps.runtime.RBundle;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 
-public class IdeaPluginBundle extends RBundle<ModuleReference> {
+public class IdeaPluginBundle  {
   private ModuleClassLoader myClassLoader;
   private final IdeaPluginDescriptor myPluginDescriptor;
   private IClassPathItem myClassPath;
@@ -46,7 +44,7 @@ public class IdeaPluginBundle extends RBundle<ModuleReference> {
     if (myClassLoader != null) {
       myClassLoader.dispose();
     }
-    myClassLoader = new ModuleClassLoader<ModuleReference>(this, myPluginDescriptor.getPluginClassLoader());
+    myClassLoader = new ModuleClassLoader(this, myPluginDescriptor.getPluginClassLoader());
   }
 
   @Override
@@ -71,29 +69,11 @@ public class IdeaPluginBundle extends RBundle<ModuleReference> {
     return myClassPath.getClass(string) != null;
   }
 
-  @Override
   public ModuleClassLoader getClassLoader() {
     return myClassLoader;
   }
 
   public IdeaPluginDescriptor getPluginDescriptor() {
     return myPluginDescriptor;
-  }
-
-  public static class EmptyByteCodeLocator implements BytecodeLocator {
-    public EmptyByteCodeLocator() {
-    }
-
-    public URL findResource(String string) {
-      return null;
-    }
-
-    public byte[] find(String string) {
-      return null;
-    }
-
-    public String findLibrary(String name) {
-      return null;
-    }
   }
 }
