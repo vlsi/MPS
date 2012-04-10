@@ -108,15 +108,33 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
   }
 
   private Pair<Boolean, SNode> getCoerced(SNode subtype, String conceptFQName, boolean isWeak) {
-    Map<CacheNodeHandler, ConcurrentMap<String, SNode>> cache = isWeak ? myCoerceToConceptsCacheWeak : myCoerceToConceptsCache;
-    ConcurrentMap<String, SNode> map = cache.get(new CacheNodeHandler(subtype));
-    if (map != null && map.containsKey(conceptFQName)) {
-      SNode result = postprocessGetNode(map.get(conceptFQName));
-      if (result != null && result.shouldHaveBeenDisposed()) {
-        map.remove(conceptFQName);
-        return null;
-      } else {
-        return new Pair<Boolean, SNode>(true, result);
+    final CacheNodeHandler subtypeHandler = new CacheNodeHandler(subtype);
+
+    // lookup in the corresponding cache
+    ConcurrentMap<String, SNode> map = (isWeak ? myCoerceToConceptsCacheWeak : myCoerceToConceptsCache).get(subtypeHandler);
+    if (map != null) {
+      SNode value = map.get(conceptFQName);
+      if (value != null) {
+        SNode result = postprocessGetNode(value);
+        if (result != null && result.shouldHaveBeenDisposed()) {
+          map.remove(conceptFQName);
+        } else {
+          return new Pair<Boolean, SNode>(true, result);
+        }
+      }
+    }
+
+    // isStrong => isWeak; !isWeak => !isStrong
+    map = (isWeak ? myCoerceToConceptsCache : myCoerceToConceptsCacheWeak).get(subtypeHandler);
+    if (map != null) {
+      SNode value = map.get(conceptFQName);
+      if (value != null) {
+        SNode result = postprocessGetNode(value);
+        if (isWeak) {
+          if (result != null /* isStrong */) return new Pair<Boolean, SNode>(true, result); // isWeak
+        } else {
+          if (result == null /* !isWeak */) return new Pair<Boolean, SNode>(true, null); // !isStrong
+        }
       }
     }
     return null;
