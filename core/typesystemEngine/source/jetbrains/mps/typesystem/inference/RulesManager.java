@@ -158,10 +158,7 @@ public class RulesManager {
   public List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> getNonTypesystemRules(final SNode node) {
    /* List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> result =
       new LinkedList<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>>();
-    Set<NonTypesystemRule_Runtime> ruleSet;
-    //synchronized (RULES_LOCK) {
-      ruleSet = myNonTypesystemRules.getRules(node);
-    //}
+    Set<NonTypesystemRule_Runtime> ruleSet = myNonTypesystemRules.getRules(node);
     for (NonTypesystemRule_Runtime rule : ruleSet) {
       IsApplicableStatus status = rule.isApplicableAndPattern(node);
       if (status.isApplicable()) {
@@ -173,12 +170,7 @@ public class RulesManager {
 
   public List<Pair<SubtypingRule_Runtime, IsApplicableStatus>> getSubtypingRules(final SNode node, final boolean isWeak) {
     List<Pair<SubtypingRule_Runtime, IsApplicableStatus>> result = new LinkedList<Pair<SubtypingRule_Runtime, IsApplicableStatus>>();
-    Set<SubtypingRule_Runtime> ruleSet;
-    //synchronized (RULES_LOCK) {
-      //loadLanguage(node.getLanguageNamespace());
-      ruleSet = mySubtypingRules.getRules(node);
-    //}
-    for (SubtypingRule_Runtime rule : ruleSet) {
+    for (SubtypingRule_Runtime rule : mySubtypingRules.getRules(node)) {
       if ((isWeak || !rule.isWeak())) {
         IsApplicableStatus status = rule.isApplicableAndPattern(node);
         if (status.isApplicable()) {
@@ -191,7 +183,6 @@ public class RulesManager {
 
          /*
   public boolean subtypingRulesByNodeAreAllByConcept(final SNode node, boolean isWeak) {
-    //  synchronized (RULES_LOCK) {
     loadLanguage(node.getLanguageNamespace());
     for (SubtypingRule_Runtime rule : mySubtypingRules.getRules(node)) {
       if (!isWeak && rule.isWeak()) {
@@ -202,7 +193,6 @@ public class RulesManager {
       }
     }
     return true;
-    // }
   }       */
 
   public List<Pair<ComparisonRule_Runtime, IsApplicable2Status>> getComparisonRules(final SNode node1, final SNode node2, final boolean isWeak) {
