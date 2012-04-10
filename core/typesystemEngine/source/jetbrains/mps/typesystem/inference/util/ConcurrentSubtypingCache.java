@@ -28,16 +28,16 @@ import java.util.concurrent.ConcurrentMap;
 
 public class ConcurrentSubtypingCache implements SubtypingCache {
 
-  private ConcurrentHashMap<CacheNodeHandler, ConcurrentHashMap<CacheNodeHandler, MyBoolean>> myCache = new ConcurrentHashMap<CacheNodeHandler, ConcurrentHashMap<CacheNodeHandler, MyBoolean>>();
-  private ConcurrentHashMap<CacheNodeHandler, ConcurrentHashMap<CacheNodeHandler, MyBoolean>> myCacheWeak = new ConcurrentHashMap<CacheNodeHandler, ConcurrentHashMap<CacheNodeHandler, MyBoolean>>();
+  private ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<CacheNodeHandler, MyBoolean>> myCache = new ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<CacheNodeHandler, MyBoolean>>();
+  private ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<CacheNodeHandler, MyBoolean>> myCacheWeak = new ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<CacheNodeHandler, MyBoolean>>();
 
-  private ConcurrentHashMap<CacheNodeHandler, ConcurrentHashMap<String, SNode>> myCoerceToConceptsCache = new ConcurrentHashMap<CacheNodeHandler, ConcurrentHashMap<String, SNode>>();
-  private ConcurrentHashMap<CacheNodeHandler, ConcurrentHashMap<String, SNode>> myCoerceToConceptsCacheWeak = new ConcurrentHashMap<CacheNodeHandler, ConcurrentHashMap<String, SNode>>();
+  private ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<String, SNode>> myCoerceToConceptsCache = new ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<String, SNode>>();
+  private ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<String, SNode>> myCoerceToConceptsCacheWeak = new ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<String, SNode>>();
 
-  private ConcurrentHashMap<CacheNodeHandler, ConcurrentHashMap<Class, Pair<SNode, GeneratedMatchingPattern>>> myCoerceToPatternsCache
-    = new ConcurrentHashMap<CacheNodeHandler, ConcurrentHashMap<Class, Pair<SNode, GeneratedMatchingPattern>>>();
-  private ConcurrentHashMap<CacheNodeHandler, ConcurrentHashMap<Class, Pair<SNode, GeneratedMatchingPattern>>> myCoerceToPatternsCacheWeak
-    = new ConcurrentHashMap<CacheNodeHandler, ConcurrentHashMap<Class, Pair<SNode, GeneratedMatchingPattern>>>();
+  private ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<Class, Pair<SNode, GeneratedMatchingPattern>>> myCoerceToPatternsCache
+    = new ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<Class, Pair<SNode, GeneratedMatchingPattern>>>();
+  private ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<Class, Pair<SNode, GeneratedMatchingPattern>>> myCoerceToPatternsCacheWeak
+    = new ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<Class, Pair<SNode, GeneratedMatchingPattern>>>();
 
   private static final SNode NULL = new SNode(null, "null", false);
 
@@ -67,10 +67,10 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
   }
 
   public void cacheIsSubtype(SNode subtype, SNode supertype, boolean answer, boolean isWeak) {
-    ConcurrentMap<CacheNodeHandler, ConcurrentHashMap<CacheNodeHandler, MyBoolean>> cache = isWeak ? myCacheWeak : myCache;
+    ConcurrentMap<CacheNodeHandler, ConcurrentMap<CacheNodeHandler, MyBoolean>> cache = isWeak ? myCacheWeak : myCache;
     final CacheNodeHandler subtypeHandler = new CacheNodeHandler(subtype);
 
-    ConcurrentHashMap<CacheNodeHandler, MyBoolean> supertypes = cache.get(subtypeHandler);
+    ConcurrentMap<CacheNodeHandler, MyBoolean> supertypes = cache.get(subtypeHandler);
     if (supertypes == null) {
       supertypes = new ConcurrentHashMap<CacheNodeHandler, MyBoolean>();
       if (cache.putIfAbsent(subtypeHandler, supertypes) != null) {
@@ -108,8 +108,8 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
   }
 
   private Pair<Boolean, SNode> getCoerced(SNode subtype, String conceptFQName, boolean isWeak) {
-    Map<CacheNodeHandler, ConcurrentHashMap<String, SNode>> cache = isWeak ? myCoerceToConceptsCacheWeak : myCoerceToConceptsCache;
-    Map<String, SNode> map = cache.get(new CacheNodeHandler(subtype));
+    Map<CacheNodeHandler, ConcurrentMap<String, SNode>> cache = isWeak ? myCoerceToConceptsCacheWeak : myCoerceToConceptsCache;
+    ConcurrentMap<String, SNode> map = cache.get(new CacheNodeHandler(subtype));
     if (map != null && map.containsKey(conceptFQName)) {
       SNode result = postprocessGetNode(map.get(conceptFQName));
       if (result != null && result.shouldHaveBeenDisposed()) {
@@ -123,7 +123,7 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
   }
 
   private Pair<Boolean, SNode> getCoerced(SNode subtype, Class c, GeneratedMatchingPattern pattern, boolean isWeak) {
-    Map<CacheNodeHandler, ConcurrentHashMap<Class, Pair<SNode, GeneratedMatchingPattern>>> cache
+    Map<CacheNodeHandler, ConcurrentMap<Class, Pair<SNode, GeneratedMatchingPattern>>> cache
       = isWeak ? myCoerceToPatternsCacheWeak : myCoerceToPatternsCache;
     Map<Class, Pair<SNode, GeneratedMatchingPattern>> map = cache.get(new CacheNodeHandler(subtype));
     if (map != null && map.containsKey(c)) {
@@ -141,10 +141,10 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
   }
 
   private void addCacheEntry(SNode subtype, String conceptFQName, SNode result, boolean isWeak) {
-    ConcurrentHashMap<CacheNodeHandler, ConcurrentHashMap<String, SNode>> cache = isWeak ? myCoerceToConceptsCacheWeak : myCoerceToConceptsCache;
+    ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<String, SNode>> cache = isWeak ? myCoerceToConceptsCacheWeak : myCoerceToConceptsCache;
 
     CacheNodeHandler subtypeHandler = new CacheNodeHandler(subtype);
-    ConcurrentHashMap<String, SNode> map = cache.get(subtypeHandler);
+    ConcurrentMap<String, SNode> map = cache.get(subtypeHandler);
 
     if (map == null) {
       map = new ConcurrentHashMap<String, SNode>();
@@ -159,10 +159,10 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
   }
 
   private void addCacheEntry(SNode subtype, Class c, SNode result, GeneratedMatchingPattern pattern, boolean isWeak) {
-    ConcurrentHashMap<CacheNodeHandler, ConcurrentHashMap<Class, Pair<SNode, GeneratedMatchingPattern>>> cache = isWeak ? myCoerceToPatternsCacheWeak : myCoerceToPatternsCache;
+    ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<Class, Pair<SNode, GeneratedMatchingPattern>>> cache = isWeak ? myCoerceToPatternsCacheWeak : myCoerceToPatternsCache;
 
     CacheNodeHandler subtypeHandler = new CacheNodeHandler(subtype);
-    ConcurrentHashMap<Class, Pair<SNode, GeneratedMatchingPattern>> map = cache.get(subtypeHandler);
+    ConcurrentMap<Class, Pair<SNode, GeneratedMatchingPattern>> map = cache.get(subtypeHandler);
 
     if (map == null) {
       map = new ConcurrentHashMap<Class, Pair<SNode, GeneratedMatchingPattern>>();
@@ -184,7 +184,6 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
     if (pattern instanceof GeneratedMatchingPattern) {
       if (!((GeneratedMatchingPattern) pattern).hasAntiquotations()) {
         addCacheEntry(subtype, pattern.getClass(), result, (GeneratedMatchingPattern) pattern, isWeak);
-        return;
       }
     }
   }
