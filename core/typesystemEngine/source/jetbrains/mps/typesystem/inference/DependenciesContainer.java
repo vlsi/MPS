@@ -18,10 +18,12 @@ package jetbrains.mps.typesystem.inference;
 import gnu.trove.THashSet;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.typesystem.inference.util.IDependency_Runtime;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -32,25 +34,10 @@ import java.util.concurrent.ConcurrentMap;
 
 public class DependenciesContainer {
 
-  private ConcurrentMap<String, Set<IDependency_Runtime>> myDependencies = new ConcurrentHashMap<String, /* synchronized */ Set<IDependency_Runtime>>();
-  private ConcurrentMap<String, Set<IDependency_Runtime>> myDependenciesCache = new ConcurrentHashMap<String, /* unmodifiable */ Set<IDependency_Runtime>>();
+  private ConcurrentMap<String, Set<IDependency_Runtime>> myDependencies = new ConcurrentHashMap<String, Set<IDependency_Runtime>>();
+  private ConcurrentMap<String, Set<IDependency_Runtime>> myDependenciesCache = new ConcurrentHashMap<String, Set<IDependency_Runtime>>();
 
   public DependenciesContainer() {
-  }
-
-  void addDependencies(Set<IDependency_Runtime> dependencies) {
-    for (IDependency_Runtime dependency : dependencies) {
-      String concept = dependency.getTargetConceptFQName();
-      if (concept == null) continue;
-
-      Set<IDependency_Runtime> existingRules = myDependencies.get(concept);
-      while (existingRules == null) {
-        myDependencies.putIfAbsent(concept, Collections.synchronizedSet(new THashSet<IDependency_Runtime>(1)));
-        existingRules = myDependencies.get(concept);
-      }
-      existingRules.add(dependency);
-    }
-    myDependenciesCache.clear();
   }
 
   Collection<SNode> getDependencies(SNode node) {
@@ -72,7 +59,7 @@ public class DependenciesContainer {
     return result == null ? Collections.<SNode>emptyList() : result;
   }
 
-  Set<IDependency_Runtime> get(String key) {
+  private Set<IDependency_Runtime> get(@NotNull final String key) {
     Set<IDependency_Runtime> result = myDependenciesCache.get(key);
     if (result != null) {
       return result;
@@ -84,23 +71,39 @@ public class DependenciesContainer {
         Set<IDependency_Runtime> rules = myDependencies.get(conceptDeclaration);
         if (rules != null) {
           if (conceptDeclaration != key) {
-            myDependencies.put(key, rules);
+            myDependencies.putIfAbsent(key, new THashSet<IDependency_Runtime>(rules));
           }
-          synchronized (rules) {
-            result = Collections.unmodifiableSet(new THashSet<IDependency_Runtime>(rules));
-          }
-          myDependenciesCache.putIfAbsent(key, result);
-          return result;
+          myDependenciesCache.putIfAbsent(key, rules);
+          return Collections.unmodifiableSet(rules);
         }
         conceptDeclaration = getSuperConcept(conceptDeclaration);
       }
     }
-    myDependencies.putIfAbsent(key, Collections.synchronizedSet(new THashSet<IDependency_Runtime>(1)));
+    myDependencies.putIfAbsent(key, new THashSet<IDependency_Runtime>(1));
     myDependenciesCache.putIfAbsent(key, Collections.<IDependency_Runtime>emptySet());
     return Collections.emptySet();
   }
 
+  void addDependencies(Set<IDependency_Runtime> dependencies) {
+    ModelAccess.assertLegalWrite();
+
+    for (IDependency_Runtime dependency : dependencies) {
+      String concept = dependency.getTargetConceptFQName();
+      if (concept == null) continue;
+
+      Set<IDependency_Runtime> existingRules = myDependencies.get(concept);
+      while (existingRules == null) {
+        myDependencies.putIfAbsent(concept, new THashSet<IDependency_Runtime>(1));
+        existingRules = myDependencies.get(concept);
+      }
+      existingRules.add(dependency);
+    }
+    myDependenciesCache.clear();
+  }
+
   void makeConsistent() {
+    ModelAccess.assertLegalWrite();
+
     for (String conceptDeclaration : myDependencies.keySet()) {
       if (conceptDeclaration == null) {
         continue;
@@ -112,11 +115,7 @@ public class DependenciesContainer {
       while (parent != null) {
         Set<IDependency_Runtime> parentRules = myDependencies.get(parent);
         if (parentRules != null) {
-          Set<IDependency_Runtime> clone;
-          synchronized (parentRules) {
-            clone = new THashSet<IDependency_Runtime>(parentRules);
-          }
-          rules.addAll(clone);
+          rules.addAll(parentRules);
         }
         parent = getSuperConcept(parent);
       }
