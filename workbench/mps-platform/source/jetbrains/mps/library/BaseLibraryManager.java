@@ -120,7 +120,7 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
 
   @Nullable
   public Icon getIcon() {
-    return getPreferences().getIcon();
+    return null;
   }
 
   @Nullable
@@ -146,7 +146,7 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
   }
 
   public void disposeUIResources() {
-
+    myPreferences = null;
   }
 
   //-------component stuff

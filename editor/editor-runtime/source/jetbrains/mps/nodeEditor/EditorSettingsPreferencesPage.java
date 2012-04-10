@@ -235,10 +235,6 @@ class EditorSettingsPreferencesPage {
     return "Editor Settings";
   }
 
-  public Icon getIcon() {
-    return null;
-  }
-
   public JComponent getComponent() {
     return myEditorSettingsPanel;
   }
@@ -361,6 +357,10 @@ class EditorSettingsPreferencesPage {
         myBlinkingDemo.rebuildEditorContent();
       }
     });
+  }
+
+  public void dispose() {
+    myTimer.stop();
   }
 
   private abstract static class MyColorComponent extends JPanel {
