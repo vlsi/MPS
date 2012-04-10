@@ -73,7 +73,7 @@ public class PackageNode extends SNodeGroupTreeNode {
     Set<SNode> nodes = new LinkedHashSet<SNode>();
     for (SNode root : sm.getSModel().roots()) {
       String rootPack = root.getProperty(SModelTreeNode.PACK);
-      if (rootPack != null && rootPack.startsWith(getFullPackage())) {
+      if (rootPack != null && (rootPack.startsWith(getFullPackage() + ".") || rootPack.equals(getFullPackage()))) {
         nodes.add(root);
       }
     }
