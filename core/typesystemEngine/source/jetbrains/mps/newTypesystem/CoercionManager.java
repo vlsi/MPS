@@ -24,6 +24,7 @@ import jetbrains.mps.typesystem.TypeSystemReporter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
+import jetbrains.mps.typesystemEngine.util.CoerceUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
@@ -43,6 +44,7 @@ public class CoercionManager {
   public SNode coerceSubTypingNew(final SNode subtype, final IMatchingPattern pattern, final boolean isWeak, final State state) {
     if (subtype == null) return null;
     if (pattern.match(subtype)) return subtype;
+    if (!CoerceUtil.canBeCoerced(subtype, pattern.getConceptFQName())) return null;
     if ("jetbrains.mps.lang.typesystem.structure.MeetType".equals(subtype.getConceptFqName())) {
       List<SNode> children = subtype.getChildren("argument");
       for (SNode child : children) {

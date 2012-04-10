@@ -58,6 +58,13 @@ public class SNodeListType_Behavior {
     return (SLinkOperations.getTarget(thisNode, "elementConcept", false) == null);
   }
 
+  public static boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
+    if ("jetbrains.mps.baseLanguage.collections.structure.LinkedListType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.DequeType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.StackType".equals(conceptFqName)) {
+      return false;
+    }
+    return true;
+  }
+
   public static class QuotationClass_r176b6_a0a0f {
     public QuotationClass_r176b6_a0a0f() {
     }
