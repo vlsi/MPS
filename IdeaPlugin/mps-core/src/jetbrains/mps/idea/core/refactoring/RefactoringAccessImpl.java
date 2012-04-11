@@ -66,13 +66,11 @@ public class RefactoringAccessImpl extends RefactoringAccess implements Applicat
   @Override
   public ModelElementTargetChooser createTargetChooser(Project project, SNode node) {
     return new ModelOrNodeChooser(project,node);
-    //throw new UnsupportedOperationException();
   }
 
   @Override
   public ModelElementTargetChooser createTargetChooser(Project project, SModelDescriptor model) {
     return new ModelOrNodeChooser(project,model);
-    // throw new UnsupportedOperationException();
   }
 
     @Override

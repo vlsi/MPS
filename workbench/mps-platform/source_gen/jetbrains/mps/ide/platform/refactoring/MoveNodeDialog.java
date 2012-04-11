@@ -8,6 +8,8 @@ import com.intellij.openapi.project.Project;
 import javax.swing.JOptionPane;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
+import java.awt.Dimension;
+import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.smodel.SModelDescriptor;
 
 public class MoveNodeDialog extends ModelOrNodeChooserDialog {
@@ -20,8 +22,6 @@ public class MoveNodeDialog extends ModelOrNodeChooserDialog {
     myNodeToMove = node;
     init();
     setTitle(REFACTORING_NAME + " " + "node");
-    setHorizontalStretch(1.5f);
-    setVerticalStretch(2.0f);
   }
 
   protected void doRefactoringAction() {
@@ -43,8 +43,16 @@ public class MoveNodeDialog extends ModelOrNodeChooserDialog {
   @Nullable
   protected JComponent createCenterPanel() {
     myChooser = RefactoringAccess.getInstance().createTargetChooser(myProject, myNodeToMove);
+    JComponent centerPanel = myChooser.getComponent();
+    centerPanel.setPreferredSize(new Dimension(400, 900));
+    return centerPanel;
+  }
 
-    return myChooser.getComponent();
+  @Nullable
+  @NonNls
+  @Override
+  protected String getDimensionServiceKey() {
+    return getClass().getName();
   }
 
   public static SNode getSelectedObject(@NotNull Project project, SNode node) {
