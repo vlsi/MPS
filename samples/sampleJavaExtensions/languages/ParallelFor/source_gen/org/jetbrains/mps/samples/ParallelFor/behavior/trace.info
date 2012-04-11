@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="ParallelFor_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelFor_BehaviorDescriptor" />
+  <unitInfo fileName="ParallelLoopVariable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelLoopVariable_BehaviorDescriptor" />
+  <unitInfo fileName="ThreadPool_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadPool_BehaviorDescriptor" />
+</debugInfo>
+
