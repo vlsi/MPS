@@ -205,11 +205,6 @@ public abstract class ModelAccess implements ModelCommandExecutor {
     return cache != null ? cache : null;
   }
 
-  @Nullable
-  public <K, V> ConcurrentMap<K, V> getTransactionCacheNew(Class<?> clazz) {
-    return getTransactionCache(clazz);
-  }
-
   public void clearTransactionCaches() {
     LOG.warning("Clearing transaction caches");
     myTransactionCaches.clear();

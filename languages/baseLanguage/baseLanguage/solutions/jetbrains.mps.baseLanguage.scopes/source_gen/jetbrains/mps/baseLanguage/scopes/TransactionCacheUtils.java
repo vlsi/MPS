@@ -11,7 +11,7 @@ public class TransactionCacheUtils {
   }
 
   public static <K, V> V getFromCache(Class clazz, K key, _FunctionTypes._return_P0_E0<? extends V> creator) {
-    ConcurrentMap<K, V> cache = ModelAccess.instance().getTransactionCacheNew(clazz);
+    ConcurrentMap<K, V> cache = ModelAccess.instance().getTransactionCache(clazz);
     if (cache == null) {
       return creator.invoke();
     }

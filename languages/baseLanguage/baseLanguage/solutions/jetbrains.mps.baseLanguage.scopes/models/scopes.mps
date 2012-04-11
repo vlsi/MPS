@@ -737,7 +737,7 @@
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cu2c.~ModelAccess" resolveInfo="ModelAccess" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1955553662774393344">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~ModelAccess%dgetTransactionCacheNew(java%dlang%dClass)%cjava%dutil%dconcurrent%dConcurrentMap" resolveInfo="getTransactionCacheNew" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~ModelAccess%dgetTransactionCache(java%dlang%dClass)%cjava%dutil%dconcurrent%dConcurrentMap" resolveInfo="getTransactionCache" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1955553662774393345">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4748674287775012017" resolveInfo="clazz" />
                 </node>
@@ -4697,7 +4697,7 @@
                     <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cu2c.~ModelAccess" resolveInfo="ModelAccess" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7551947648244969418">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~ModelAccess%dgetTransactionCacheNew(java%dlang%dClass)%cjava%dutil%dconcurrent%dConcurrentMap" resolveInfo="getTransactionCacheNew" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~ModelAccess%dgetTransactionCache(java%dlang%dClass)%cjava%dutil%dconcurrent%dConcurrentMap" resolveInfo="getTransactionCache" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="4267518923238119967">
                       <link role="classifier" roleId="tpee.1116615189566" targetNodeId="6320759254352298036" resolveInfo="MemberScopes" />
                     </node>
