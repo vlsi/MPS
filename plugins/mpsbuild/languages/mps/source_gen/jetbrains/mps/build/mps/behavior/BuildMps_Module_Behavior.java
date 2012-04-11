@@ -4,9 +4,7 @@ package jetbrains.mps.build.mps.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.VisibleArtifacts;
-import java.util.Set;
-import java.util.LinkedHashSet;
-import jetbrains.mps.build.mps.util.BuildModuleUtil;
+import jetbrains.mps.build.mps.util.MPSModulesClosure;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -19,11 +17,9 @@ public class BuildMps_Module_Behavior {
   }
 
   public static Iterable<SNode> virtual_getDependencyTargets_841011766566205095(SNode thisNode, final VisibleArtifacts artifacts) {
-    Set<SNode> modules = new LinkedHashSet<SNode>();
-    Set<SNode> usedLanguages = new LinkedHashSet<SNode>();
-    BuildModuleUtil.collectAllCompileTimeDependencies(thisNode, modules, usedLanguages);
+    MPSModulesClosure closure = new MPSModulesClosure(artifacts.getGenContext()).closure(thisNode);
 
-    Iterable<SNode> requiredModules = Sequence.fromIterable(((Iterable<SNode>) modules)).concat(Sequence.fromIterable(((Iterable<SNode>) usedLanguages))).select(new ISelector<SNode, SNode>() {
+    Iterable<SNode> requiredModules = Sequence.fromIterable(((Iterable<SNode>) closure.getModules())).concat(Sequence.fromIterable(((Iterable<SNode>) closure.getLanguagesWithRuntime()))).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.as(artifacts.toOriginalNode(it), "jetbrains.mps.build.mps.structure.BuildMps_Module");
       }
@@ -39,7 +35,8 @@ public class BuildMps_Module_Behavior {
         ListSequence.fromList(result).addElement(artifact);
       }
     }
-    Iterable<SNode> requiredJava = BuildModuleUtil.getRequiredJava(thisNode, modules).getModules();
+    Iterable<SNode> requiredJava = closure.getRequiredJava(thisNode).getModules();
+
     for (SNode jm : Sequence.fromIterable(requiredJava)) {
       if (SNodeOperations.getContainingRoot(jm) == SNodeOperations.getContainingRoot(thisNode)) {
         continue;

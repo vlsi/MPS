@@ -14,6 +14,7 @@ import jetbrains.mps.build.util.Context;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.build.mps.util.MPSModulesClosure;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -24,15 +25,12 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.build.mps.util.BuildModuleUtil;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.build.mps.util.ModuleLoader;
 import jetbrains.mps.generator.template.TemplateQueryContext;
-import java.util.Set;
-import java.util.LinkedHashSet;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class QueriesGenerated {
@@ -94,7 +92,7 @@ public class QueriesGenerated {
     SNode targetModule = (SNode) _context.getNode().getReferent("targetModule");
     SNode result = _context.getOutputNodeByInputNodeAndMappingLabel(targetModule, "javaModule");
     if (result == null) {
-      _context.showErrorMessage(((Tuples._3<SNode, Iterable<SNode>, Iterable<SNode>>) _context.getVariable("var:mdeps"))._0(), "cannot get java output for " + SPropertyOperations.getString(targetModule, "name"));
+      _context.showErrorMessage(((Tuples._2<SNode, MPSModulesClosure>) _context.getVariable("var:mdeps"))._0(), "cannot get java output for " + SPropertyOperations.getString(targetModule, "name"));
     }
     return result;
   }
@@ -185,7 +183,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_4267986820121149056(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode mod : Sequence.fromIterable(((Tuples._3<SNode, Iterable<SNode>, Iterable<SNode>>) _context.getVariable("var:mdeps"))._1()).where(new IWhereFilter<SNode>() {
+    for (SNode mod : Sequence.fromIterable(((Tuples._2<SNode, MPSModulesClosure>) _context.getVariable("var:mdeps"))._1().getModules()).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "doNotCompile") == false && SNodeOperations.getContainingRoot(_context.getNode()) == SNodeOperations.getContainingRoot(it);
       }
@@ -202,7 +200,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_7259033139236497711(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    BuildModuleUtil.RequiredJavaModules requiredAndReexp = BuildModuleUtil.getRequiredJava(_context.getNode(), ((Tuples._3<SNode, Iterable<SNode>, Iterable<SNode>>) _context.getVariable("var:mdeps"))._1());
+    MPSModulesClosure.RequiredJavaModules requiredAndReexp = ((Tuples._2<SNode, MPSModulesClosure>) _context.getVariable("var:mdeps"))._1().getRequiredJava(_context.getNode());
     Iterable<SNode> requiredJava = requiredAndReexp.getModules();
     List<SNode> result = new ArrayList<SNode>();
     for (SNode mod : requiredJava) {
@@ -218,7 +216,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_3717132724153192091(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode lang : Sequence.fromIterable(((Tuples._3<SNode, Iterable<SNode>, Iterable<SNode>>) _context.getVariable("var:mdeps"))._2()).where(new IWhereFilter<SNode>() {
+    for (SNode lang : Sequence.fromIterable(((Tuples._2<SNode, MPSModulesClosure>) _context.getVariable("var:mdeps"))._1().getLanguagesWithRuntime()).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.getContainingRoot(_context.getNode()) == SNodeOperations.getContainingRoot(it);
       }
@@ -318,10 +316,8 @@ public class QueriesGenerated {
   }
 
   public static Object insertMacro_varValue_4267986820121148965(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    Set<SNode> modules = new LinkedHashSet<SNode>();
-    Set<SNode> usedLanguages = new LinkedHashSet<SNode>();
-    BuildModuleUtil.collectAllCompileTimeDependencies(_context.getNode(), modules, usedLanguages);
-    return MultiTuple.<SNode,Set<SNode>,Set<SNode>>from(_context.getNode(), modules, usedLanguages);
+    MPSModulesClosure closure = new MPSModulesClosure(_context).closure(_context.getNode());
+    return MultiTuple.<SNode,MPSModulesClosure>from(_context.getNode(), closure);
   }
 
   public static Object insertMacro_varValue_8654221991637263463(final IOperationContext operationContext, final TemplateQueryContext _context) {

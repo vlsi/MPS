@@ -49,7 +49,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.mps-workbench">
+  <target name="java.compile.mps-workbench" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mps-workbench" />
     <javac destdir="${build.tmp}/java/out/mps-workbench" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -57,7 +57,15 @@
         <path location="${mps_home}/workbench/mps-workbench/source" />
         <path location="${mps_home}/workbench/mps-workbench/source_gen" />
       </src>
-      <classpath />
+      <classpath>
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-core.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
+      </classpath>
     </javac>
   </target>
   
