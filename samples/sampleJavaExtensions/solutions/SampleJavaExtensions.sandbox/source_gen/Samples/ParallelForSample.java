@@ -138,8 +138,21 @@ __switch__:
           public void run() {
             try {
               log("Touching " + doNotMessupWith);
-              log("Counter: " + counter.incrementAndGet());
+
+              int messupWithMeSinceImlocal = 1;
+              messupWithMeSinceImlocal += 10;
+              log("Local variables can be used without restrictions " + messupWithMeSinceImlocal);
+
+              // Warning since we are accessing a non-local object 
               ListSequence.fromList(names).removeElement("Joe");
+
+              List<String> localNames = ListSequence.fromList(new ArrayList<String>());
+              // Local references can be called without restrictions 
+              ListSequence.fromList(localNames).addElement("Susan");
+
+              // Thread-safe objects are safe to use as well 
+              log("Counter: " + counter.incrementAndGet());
+
               ParallelForSample.sleep(1000);
             } catch (RuntimeException e) {
               ListSequence.fromList(exceptions).addElement(e);
