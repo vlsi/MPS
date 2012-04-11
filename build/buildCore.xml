@@ -3546,7 +3546,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.traceable" depends="java.compile.mps-collections, java.compile.mps-closures, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.mps-test, java.compile.java.modules.cycle.1">
+  <target name="java.compile.jetbrains.mps.lang.traceable" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.mps-test, java.compile.java.modules.cycle.1">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.traceable" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -3554,8 +3554,8 @@
         <path location="${basedir}/languages/languageDesign/traceable/source_gen" />
       </src>
       <classpath>
-        <pathelement path="${build.tmp}/java/out/mps-collections" />
         <pathelement path="${build.tmp}/java/out/mps-closures" />
+        <pathelement path="${build.tmp}/java/out/mps-collections" />
         <pathelement path="${build.tmp}/java/out/mps-tuples" />
         <pathelement path="${build.tmp}/java/out/mps-core" />
         <pathelement path="${build.tmp}/java/out/mps-editor-api" />
@@ -3888,7 +3888,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.build.gentest" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.jetbrains.mps.baseLanguage, java.compile.mps-test, java.compile.jetbrains.mps.lang.test.runtime, java.compile.mps-ant">
+  <target name="java.compile.jetbrains.mps.build.gentest" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.lang.core, java.compile.mps-test, java.compile.jetbrains.mps.lang.test.runtime, java.compile.mps-ant">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.gentest" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.gentest" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -3904,6 +3904,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <pathelement path="${build.tmp}/java/out/mps-ant" />
@@ -3917,7 +3918,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.build.reduced" depends="java.compile.mps-collections, java.compile.mps-closures, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.mps-test, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.build.reduced" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.jetbrains.mps.lang.core, java.compile.mps-platform, java.compile.mps-test, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.reduced" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.reduced" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -3925,12 +3926,13 @@
         <path location="${basedir}/languages/util/buildlanguage/languages/reduced/source_gen" />
       </src>
       <classpath>
-        <pathelement path="${build.tmp}/java/out/mps-collections" />
         <pathelement path="${build.tmp}/java/out/mps-closures" />
+        <pathelement path="${build.tmp}/java/out/mps-collections" />
         <pathelement path="${build.tmp}/java/out/mps-tuples" />
         <pathelement path="${build.tmp}/java/out/mps-core" />
         <pathelement path="${build.tmp}/java/out/mps-editor-api" />
         <pathelement path="${build.tmp}/java/out/mps-editor" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
