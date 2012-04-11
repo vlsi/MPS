@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
-public class ModuleClassLoader extends BaseClassLoader {
+public class ModuleClassLoader extends ClassLoader {
   private Map<String, Class> myClassesCache = new HashMap<String, Class>();
   private final Object myLock = new Object();
 
@@ -34,6 +34,28 @@ public class ModuleClassLoader extends BaseClassLoader {
   public ModuleClassLoader(IClassLoadingModule module) {
     super(Reflection.getCallerClass(1).getClassLoader());
     myModule = module;
+  }
+
+  protected final Class<?> findClass(String name) throws ClassNotFoundException {
+    byte[] bytes = findInCurrent(name);
+    if (bytes != null) {
+      definePackageIfNecessary(name);
+      return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
+    }
+
+    return findInDependencies(name);
+  }
+
+  private void definePackageIfNecessary(String name) {
+    String pack = getNamespace(name);
+    if (getPackage(pack) != null) return;
+    definePackage(pack, null, null, null, null, null, null, null);
+  }
+
+  private String getNamespace(String fqName) {
+    int lastIndex = fqName.lastIndexOf('.');
+    if (lastIndex == -1) return "";
+    return fqName.substring(0, lastIndex);
   }
 
   public Class getClass(String fqName) {
@@ -54,7 +76,7 @@ public class ModuleClassLoader extends BaseClassLoader {
     }
   }
 
-  protected Class findAfterCurrent(String name) {
+  protected Class findInDependencies(String name) {
     for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
       if (m.equals(myModule)) continue;
 
