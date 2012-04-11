@@ -3,6 +3,7 @@
   <models>
     <modelRoot path="${language_descriptor}/accessoryModels" />
     <modelRoot path="${language_descriptor}/languageModels" />
+    <modelRoot path="${language_descriptor}/util" />
   </models>
   <accessoryModels>
     <model modelUID="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" />

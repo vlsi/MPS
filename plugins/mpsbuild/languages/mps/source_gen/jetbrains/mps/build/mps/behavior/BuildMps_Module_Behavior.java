@@ -39,11 +39,7 @@ public class BuildMps_Module_Behavior {
         ListSequence.fromList(result).addElement(artifact);
       }
     }
-    Iterable<SNode> requiredJava = Sequence.fromIterable(BuildModuleUtil.getRequiredJava(thisNode, modules)._0()).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SNodeOperations.as(artifacts.toOriginalNode(it), "jetbrains.mps.build.structure.BuildSource_JavaModule");
-      }
-    });
+    Iterable<SNode> requiredJava = BuildModuleUtil.getRequiredJava(thisNode, modules).getModules();
     for (SNode jm : Sequence.fromIterable(requiredJava)) {
       if (SNodeOperations.getContainingRoot(jm) == SNodeOperations.getContainingRoot(thisNode)) {
         continue;

@@ -16,10 +16,8 @@ import jetbrains.mps.util.iterable.RecursiveIterator;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.LinkedHashSet;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class BuildModuleUtil {
   public BuildModuleUtil() {
@@ -198,7 +196,7 @@ public class BuildModuleUtil {
     }
   }
 
-  public static Tuples._2<Iterable<SNode>, Set<SNode>> getRequiredJava(SNode module, Iterable<SNode> dependenciesClosure) {
+  public static BuildModuleUtil.RequiredJavaModules getRequiredJava(SNode module, Iterable<SNode> dependenciesClosure) {
     Iterable<SNode> reexportedFromModuleDependencies = Sequence.fromIterable(dependenciesClosure).concat(Sequence.fromIterable(Sequence.<SNode>singleton(module))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode mod) {
         return ListSequence.fromList(SLinkOperations.getTargets(mod, "dependencies", true)).where(new IWhereFilter<SNode>() {
@@ -226,6 +224,24 @@ public class BuildModuleUtil {
         return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule"), "module", false);
       }
     });
-    return MultiTuple.<Iterable<SNode>,Set<SNode>>from(Sequence.fromIterable(reexportedFromModuleDependencies).concat(Sequence.fromIterable(directDeps)), reexportMods);
+    return new BuildModuleUtil.RequiredJavaModules(Sequence.fromIterable(reexportedFromModuleDependencies).concat(Sequence.fromIterable(directDeps)), reexportMods);
+  }
+
+  public static class RequiredJavaModules {
+    private Iterable<SNode> modules;
+    private Set<SNode> reexported;
+
+    public RequiredJavaModules(Iterable<SNode> modules, Set<SNode> reexported) {
+      this.modules = modules;
+      this.reexported = reexported;
+    }
+
+    public Iterable<SNode> getModules() {
+      return modules;
+    }
+
+    public boolean isReexported(SNode mod) {
+      return SetSequence.fromSet(reexported).contains(mod);
+    }
   }
 }

@@ -24,6 +24,7 @@ import java.util.Comparator;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.LinkedHashSet;
+import jetbrains.mps.build.workflow.util.XmlSignature;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.make.dependencies.graph.IVertex;

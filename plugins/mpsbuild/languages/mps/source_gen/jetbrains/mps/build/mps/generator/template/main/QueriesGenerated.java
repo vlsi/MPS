@@ -24,15 +24,14 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import java.util.Set;
 import jetbrains.mps.build.mps.util.BuildModuleUtil;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.build.mps.util.ModuleLoader;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import java.util.Set;
 import java.util.LinkedHashSet;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
@@ -203,13 +202,13 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_7259033139236497711(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    Tuples._2<Iterable<SNode>, Set<SNode>> requiredAndReexp = BuildModuleUtil.getRequiredJava(_context.getNode(), ((Tuples._3<SNode, Iterable<SNode>, Iterable<SNode>>) _context.getVariable("var:mdeps"))._1());
-    Iterable<SNode> requiredJava = requiredAndReexp._0();
+    BuildModuleUtil.RequiredJavaModules requiredAndReexp = BuildModuleUtil.getRequiredJava(_context.getNode(), ((Tuples._3<SNode, Iterable<SNode>, Iterable<SNode>>) _context.getVariable("var:mdeps"))._1());
+    Iterable<SNode> requiredJava = requiredAndReexp.getModules();
     List<SNode> result = new ArrayList<SNode>();
     for (SNode mod : requiredJava) {
       SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
       loopnode.setReferent("targetModule", mod, false);
-      if (SetSequence.fromSet(requiredAndReexp._1()).contains(mod)) {
+      if (requiredAndReexp.isReexported(mod)) {
         loopnode.setProperty("targetReexport", "true", false);
       }
       ListSequence.fromList(result).addElement(loopnode);
