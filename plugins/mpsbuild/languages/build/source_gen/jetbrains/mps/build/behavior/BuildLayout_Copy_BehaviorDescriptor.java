@@ -13,6 +13,10 @@ public class BuildLayout_Copy_BehaviorDescriptor extends BuildLayout_Node_Behavi
     BuildLayout_Copy_Behavior.virtual_unpack_7128123785277710736(thisNode, helper);
   }
 
+  public boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
+    return BuildLayout_Copy_Behavior.virtual_exports_6547494638219603457(thisNode, object);
+  }
+
   public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
     BuildLayout_Copy_Behavior.virtual_appendName_1368030936106665465(thisNode, parent, sb);
   }

@@ -5,6 +5,7 @@
   <dependency className="jetbrains.mps.build.sandbox.build1.buildC" file="buildC.xml" />
   <dependency className="jetbrains.mps.build.sandbox.build1.buildCore" file="buildCore.properties" />
   <dependency className="jetbrains.mps.build.sandbox.build1.buildCore" file="buildCore.xml" />
+  <dependency className="jetbrains.mps.build.sandbox.build1.buildD" file="buildD.xml" />
   <dependency className="jetbrains.mps.build.sandbox.build1.buildPlugin" file="buildPlugin.xml" />
 </dependenciesRoot>
 

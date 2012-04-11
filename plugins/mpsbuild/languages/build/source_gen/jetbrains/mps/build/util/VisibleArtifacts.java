@@ -134,4 +134,8 @@ public class VisibleArtifacts {
     }
     return null;
   }
+
+  public TemplateQueryContext getGenContext() {
+    return genContext;
+  }
 }

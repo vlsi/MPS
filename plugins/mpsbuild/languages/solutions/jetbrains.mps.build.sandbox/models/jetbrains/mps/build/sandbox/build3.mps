@@ -6,7 +6,7 @@
   <import index="3ior" modelUID="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" version="2" implicit="yes" />
   <roots>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="5253498789149585672">
-      <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+      <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value=".." />
       <property name="name" nameId="tpck.1169194664001" value="buildMpsA" />
     </node>
   </roots>

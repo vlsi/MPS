@@ -16,7 +16,7 @@
       <fileset file="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/module-A.jar" />
     </copy>
     <copy todir="${build.layout}/result/A-${buildA.aver}">
-      <fileset file="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/abcde.jar" />
+      <fileset file="${build.tmp}/deps/buildA/abcde.zip/abcde.jar" />
     </copy>
     <jar destfile="${build.layout}/result/A-${buildA.aver}/module-B.jar">
       <fileset dir="${build.tmp}/java/out/module-B" />
@@ -31,6 +31,8 @@
   <target name="fetchDependencies">
     <mkdir dir="${build.tmp}/deps/buildA/A-_dl_{aver}.zip" />
     <unzip src="${artifacts.buildA}/result/A-${buildA.aver}.zip" dest="${build.tmp}/deps/buildA/A-_dl_{aver}.zip" />
+    <mkdir dir="${build.tmp}/deps/buildA/abcde.zip" />
+    <unzip src="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/abcde.zip" dest="${build.tmp}/deps/buildA/abcde.zip" />
   </target>
   
   <target name="build" depends="assemble, check" />
@@ -57,7 +59,7 @@
       <src path="${basedir}/moduleB/src" />
       <classpath>
         <fileset file="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/module-A.jar" />
-        <fileset file="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/abcde.jar" />
+        <fileset file="${build.tmp}/deps/buildA/abcde.zip/abcde.jar" />
       </classpath>
     </javac>
   </target>

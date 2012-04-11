@@ -4,26 +4,30 @@ package jetbrains.mps.build.util;
 
 import java.util.Set;
 import jetbrains.mps.smodel.SNode;
-import java.util.Collection;
-import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.Collection;
 
 public class JavaModulesClosure {
-  private Set<SNode> modules;
-  private Set<SNode> libraries;
+  private Set<SNode> modules = new LinkedHashSet<SNode>();
+  private Set<SNode> libraries = new LinkedHashSet<SNode>();
+  private Set<SNode> jars = new LinkedHashSet<SNode>();
+  private TemplateQueryContext genContext;
+  private SNode initial;
 
-  public JavaModulesClosure(Set<SNode> modules, Set<SNode> libraries) {
-    this.modules = modules;
-    this.libraries = libraries;
+  public JavaModulesClosure(TemplateQueryContext genContext, SNode initial) {
+    this.genContext = genContext;
+    this.initial = initial;
   }
 
-  public void closure() {
-    Collection<SNode> copy = new ArrayList<SNode>(modules);
-    for (SNode mod : copy) {
-      moduleClosure(mod, false);
+  public JavaModulesClosure closure(boolean reexportOnly) {
+    if (modules.add(initial)) {
+      moduleClosure(initial, reexportOnly);
     }
+    return this;
   }
 
   private void moduleClosure(SNode module, boolean reexportOnly) {
@@ -33,18 +37,55 @@ public class JavaModulesClosure {
         if (reexportOnly && !(SPropertyOperations.getBoolean(moduleDep, "reexport"))) {
           continue;
         }
-        SNode depModule = SLinkOperations.getTarget(moduleDep, "module", false);
+        SNode depModule = SNodeOperations.as(toOriginalNode(SLinkOperations.getTarget(moduleDep, "module", false)), "jetbrains.mps.build.structure.BuildSource_JavaModule");
+        if (depModule == null) {
+          continue;
+        }
+
         if (modules.add(depModule)) {
           moduleClosure(depModule, true);
         }
       } else if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary")) {
         SNode libraryDep = SNodeOperations.cast(dep, "jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary");
-        if (!(SPropertyOperations.getBoolean(libraryDep, "reexport"))) {
+        if (reexportOnly && !(SPropertyOperations.getBoolean(libraryDep, "reexport"))) {
           continue;
         }
 
-        libraries.add(SLinkOperations.getTarget(libraryDep, "library", false));
+
+        SNode library = SNodeOperations.as(toOriginalNode(SLinkOperations.getTarget(libraryDep, "library", false)), "jetbrains.mps.build.structure.BuildSource_JavaLibrary");
+        if (library != null) {
+          libraries.add(library);
+        }
+      } else if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar")) {
+        SNode jarDep = SNodeOperations.cast(dep, "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar");
+        if (reexportOnly && !(SPropertyOperations.getBoolean(jarDep, "reexport"))) {
+          continue;
+        }
+
+        jars.add(SLinkOperations.getTarget(jarDep, "jar", true));
       }
     }
+  }
+
+  private SNode toOriginalNode(SNode node) {
+    if (node == null) {
+      return null;
+    }
+    if (SNodeOperations.getContainingRoot(node) == SNodeOperations.getContainingRoot(initial)) {
+      return node;
+    }
+    return DependenciesHelper.getOriginalNode(node, genContext);
+  }
+
+  public Collection<SNode> getModules() {
+    return modules;
+  }
+
+  public Collection<SNode> getLibraries() {
+    return libraries;
+  }
+
+  public Collection<SNode> getJars() {
+    return jars;
   }
 }

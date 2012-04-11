@@ -6,14 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.util.Set;
-import java.util.LinkedHashSet;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class JavaExportUtil {
   public JavaExportUtil() {
@@ -45,22 +41,14 @@ public class JavaExportUtil {
     SNode target = SNodeOperations.as(artifacts.toOriginalNode(module), "jetbrains.mps.build.structure.BuildSource_JavaModule");
 
     // dependencies closure 
-    Set<SNode> modules = new LinkedHashSet<SNode>();
-    Set<SNode> libraries = new LinkedHashSet<SNode>();
-    modules.add(target);
-    libraries.addAll(ListSequence.fromList(SLinkOperations.getTargets(target, "dependencies", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary");
-      }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary"), "library", false);
-      }
-    }).toListSequence());
-    new JavaModulesClosure(modules, libraries).closure();
+    JavaModulesClosure closure = new JavaModulesClosure(artifacts.getGenContext(), target).closure(true);
 
     // searh for artifacts 
-    Iterable<SNode> required = SetSequence.fromSet(((Set<SNode>) modules)).concat(SetSequence.fromSet(((Set<SNode>) libraries)));
+    Iterable<SNode> required = Sequence.fromIterable(((Iterable<SNode>) closure.getModules())).concat(Sequence.fromIterable(((Iterable<SNode>) closure.getLibraries()))).concat(Sequence.fromIterable(((Iterable<SNode>) closure.getJars())).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, "path", true);
+      }
+    }));
     List<SNode> result = new ArrayList<SNode>();
     for (SNode n : Sequence.fromIterable(required)) {
       if (SNodeOperations.getContainingRoot(n) == SNodeOperations.getContainingRoot(contextNode)) {
