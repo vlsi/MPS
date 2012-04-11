@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="org.jetbrains.mps.samples.SampleJavaExtensions.sandbox" uuid="639d7914-0883-43ff-93b8-e99ab48a259c" compileInMPS="true">
   <models>
-    <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
-    <modelRoot path="${solution_descriptor}/models" namespacePrefix="SampleJavaExtensions.sandbox" />
+    <modelRoot path="${solution_descriptor}/" />
   </models>
   <sourcePath />
   <dependencies>
