@@ -38,7 +38,7 @@
   </generators>
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">562eff3e-65ac-4df8-98d2-6cf36850139c(org.jetbrains.mps.samples.MoneyRuntime)</dependency>
+    <dependency reexport="true">562eff3e-65ac-4df8-98d2-6cf36850139c(org.jetbrains.mps.samples.MoneyRuntime)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)</usedLanguage>

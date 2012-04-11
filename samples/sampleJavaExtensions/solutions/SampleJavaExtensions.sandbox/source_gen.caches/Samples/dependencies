@@ -10,9 +10,9 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
   </dependency>
   <dependency className="Samples.MoneySample" file="MoneySample.java">
-    <classNode dependClassName="MoneyRuntime.classes.Money" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="org.jetbrains.mps.samples.money.runtime.Money" />
   </dependency>
   <dependency className="Samples.MyConstants" file="MyConstants.java">
     <classNode dependClassName="java.lang.String" />

@@ -444,7 +444,7 @@
     <nodeInfo nodeId="7427325263439041392" fileName="MoneySample.java" startLine="20" startPosition="117" endLine="21" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3385910400465347332" fileName="MoneySample.java" startLine="24" startPosition="38" endLine="25" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3385910400465347287" fileName="MoneySample.java" startLine="7" startPosition="26" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoneySample#()V" />
-    <nodeInfo nodeId="3385910400465347328" fileName="MoneySample.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDonation#()LMoneyRuntime/classes/Money;" />
+    <nodeInfo nodeId="3385910400465347328" fileName="MoneySample.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDonation#()Lorg/jetbrains/mps/samples/money/runtime/Money;" />
     <nodeInfo nodeId="3385910400465347291" fileName="MoneySample.java" startLine="10" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
     <scopeInfo nodeId="3385910400465347290" fileName="MoneySample.java" startLine="8" startPosition="24" endLine="8" endPosition="24" />
     <scopeInfo nodeId="3385910400465347331" fileName="MoneySample.java" startLine="24" startPosition="38" endLine="25" endPosition="32" />
