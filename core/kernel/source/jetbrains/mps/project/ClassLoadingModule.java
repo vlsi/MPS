@@ -55,21 +55,15 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
   }
 
   public boolean hasClass(String name) {
-    IClassPathItem cpi = getClassPathItem();
-    if (cpi==null) return false;
-    return cpi.hasClass(name);
+    return getClassPathItem().hasClass(name);
   }
 
   public byte[] findClassBytes(String name) {
-    IClassPathItem cpi = getClassPathItem();
-    if (cpi==null) return null;
-    return cpi.getClass(name);
+    return getClassPathItem().getClass(name);
   }
 
   public URL findResource(String name) {
-    IClassPathItem cpi = getClassPathItem();
-    if (cpi==null) return null;
-    return cpi.getResource(name);
+    return getClassPathItem().getResource(name);
   }
 
   public String findLibrary(String name) {

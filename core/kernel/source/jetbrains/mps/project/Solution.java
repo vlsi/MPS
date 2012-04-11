@@ -26,7 +26,6 @@ import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.reloading.NonExistingClassPathItem;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -34,7 +33,6 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
-import java.net.URL;
 import java.util.*;
 
 /**
@@ -210,9 +208,15 @@ public class Solution extends ClassLoadingModule {
   }
 
   @Override
-  public IClassPathItem getClassPathItem() {
+  public boolean hasClass(String name) {
+    if (!canLoad()) return false;
+    return super.hasClass(name);
+  }
+
+  @Override
+  public Class getClass(String fqName) {
     if (!canLoad()) return null;
-    return super.getClassPathItem();
+    return super.getClass(fqName);
   }
 
   private boolean canLoad() {
