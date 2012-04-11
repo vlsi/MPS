@@ -37,6 +37,8 @@
   <import index="genb" modelUID="r:142fc2e9-fc09-4c4f-92d7-6ce0e3f66b61(jetbrains.mps.lang.scopes.structure)" version="-1" />
   <import index="tp2n" modelUID="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)" version="-1" />
   <import index="6xgk" modelUID="r:6e9ad488-5df2-49e4-8c01-8a7f3812adf7(jetbrains.mps.lang.scopes.runtime)" version="-1" />
+  <import index="tpek" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
+  <import index="fuw" modelUID="f:java_stub#f3061a53-9226-4cc5-a443-f952ceaf5816#jetbrains.mps.baseLanguage.behavior(jetbrains.mps.baseLanguage/jetbrains.mps.baseLanguage.behavior@java_stub)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp3t" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" implicit="yes" />
@@ -18822,9 +18824,9 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8871623299328377753">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8871623299328377754">
             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fnmy.4748674287775003937" resolveInfo="TransactionCacheUtils" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fnmy.3660196414914466045" resolveInfo="getFromCache" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ConceptFqNameRefExpression" typeId="tp25.8339862546319741524" id="8871623299328377755">
-              <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="tpee.1197027756228" resolveInfo="DotExpression" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fnmy.4748674287775012009" resolveInfo="getFromCache" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="7320604719454559068">
+              <link role="classifier" roleId="tpee.1116615189566" targetNodeId="fuw.~DotExpression_Behavior" resolveInfo="DotExpression_Behavior" />
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="8871623299328377756" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="8871623299328377757">

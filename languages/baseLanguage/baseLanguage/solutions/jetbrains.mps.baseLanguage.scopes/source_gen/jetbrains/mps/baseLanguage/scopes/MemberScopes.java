@@ -13,7 +13,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.TransactionCache;
+import java.util.concurrent.ConcurrentMap;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.scope.EmptyScope;
 import org.jetbrains.annotations.Nullable;
@@ -39,14 +39,16 @@ public class MemberScopes {
     Tuples._2<SNode, SNode> key = MultiTuple.<SNode,SNode>from(classifier, kind);
 
     boolean isTransient = SNodeOperations.getModel(classifier).isTransient();
-    TransactionCache cache = null;
+    ConcurrentMap<Tuples._2<SNode, SNode>, Scope> cache = null;
 
     // cache 
     if (!(isTransient)) {
-      cache = ModelAccess.instance().getTransactionCache(MemberScopes.class);
-      Scope cached = (Scope) cache.get(key);
-      if (cached != null) {
-        return cached;
+      cache = ModelAccess.instance().getTransactionCacheNew(MemberScopes.class);
+      if (cache != null) {
+        Scope cached = cache.get(((Object) key));
+        if (cached != null) {
+          return cached;
+        }
       }
     }
 
@@ -66,7 +68,7 @@ public class MemberScopes {
       SetSequence.fromSet(inCalculatingScopes.get()).removeElement(key);
     }
 
-    if (result != null && !(isTransient)) {
+    if (result != null && !(isTransient) && cache != null) {
       cache.put(key, result);
     }
 
