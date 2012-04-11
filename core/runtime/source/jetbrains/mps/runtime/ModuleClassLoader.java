@@ -16,6 +16,7 @@
 package jetbrains.mps.runtime;
 
 import jetbrains.mps.util.InternUtil;
+import sun.reflect.Reflection;
 
 import java.io.IOException;
 import java.net.URL;
@@ -31,12 +32,7 @@ public class ModuleClassLoader extends BaseClassLoader {
   private IClassLoadingModule myModule;
 
   public ModuleClassLoader(IClassLoadingModule module) {
-    super(BaseClassLoader.class.getClassLoader());
-    myModule = module;
-  }
-
-  public ModuleClassLoader(IClassLoadingModule module, ClassLoader parent) {
-    super(parent);
+    super(Reflection.getCallerClass(1).getClassLoader());
     myModule = module;
   }
 

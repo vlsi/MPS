@@ -16,10 +16,6 @@
 package jetbrains.mps.runtime;
 
 abstract class BaseClassLoader extends ClassLoader {
-  protected BaseClassLoader() {
-    this(BaseClassLoader.class.getClassLoader());
-  }
-
   protected BaseClassLoader(ClassLoader parent) {
     super(parent);
   }
@@ -27,26 +23,6 @@ abstract class BaseClassLoader extends ClassLoader {
   protected abstract byte[] findInCurrent(String name);
 
   protected abstract Class findAfterCurrent(String name);
-
-  protected final synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
-    Class c = findLoadedClass(name);
-    if (c == null) {
-      c = findClass(name);
-
-      if (c == null) {
-        try {
-          c = getParent().loadClass(name);
-        } catch (ClassNotFoundException e) {
-          throw e;
-        }
-      }
-      if (resolve) {
-        resolveClass(c);
-      }
-    }
-
-    return c;
-  }
 
   protected final Class<?> findClass(String name) throws ClassNotFoundException {
     byte[] bytes = findInCurrent(name);
