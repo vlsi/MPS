@@ -31,13 +31,14 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
   private static Logger LOG = Logger.getLogger(ClassLoadingModule.class);
 
   private List<IClassLoadingModule> myClassLoadingDependencies = null;
-  private ModuleClassLoader myClassLoader;
+  private ModuleClassLoader myClassLoader = null;
 
   protected ClassLoadingModule() {
-    myClassLoader = new ModuleClassLoader(this);
+
   }
 
   public Class getClass(String fqName) {
+    if (myClassLoader==null) return null;
     try {
       return myClassLoader.getClass(fqName);
     } catch (Throwable t) {
