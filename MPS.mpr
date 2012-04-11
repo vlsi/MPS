@@ -392,6 +392,14 @@
       <modulePath path="${project}/samples/plainText/plainText.mpl" folder="samples" />
       <modulePath path="${project}/samples/sampleFacet/sampleFacet.mpl" folder="samples" />
       <modulePath path="${project}/samples/sampleFacet/solutions/pluginSolution/pluginSolution.msd" folder="samples" />
+      <modulePath path="${project}/samples/sampleJavaExtensions/languages/Constants/Constants.mpl" folder="samples" />
+      <modulePath path="${project}/samples/sampleJavaExtensions/languages/DecisionTable/DecisionTable.mpl" folder="samples" />
+      <modulePath path="${project}/samples/sampleJavaExtensions/languages/Money/Money.mpl" folder="samples" />
+      <modulePath path="${project}/samples/sampleJavaExtensions/languages/ParallelFor/ParallelFor.mpl" folder="samples" />
+      <modulePath path="${project}/samples/sampleJavaExtensions/languages/SampleExtensions/SampleExtensions.mpl" folder="samples" />
+      <modulePath path="${project}/samples/sampleJavaExtensions/solutions/MoneyRuntime/MoneyRuntime.msd" folder="samples" />
+      <modulePath path="${project}/samples/sampleJavaExtensions/solutions/ParallelForUtils/ParallelForUtils.msd" folder="samples" />
+      <modulePath path="${project}/samples/sampleJavaExtensions/solutions/SampleJavaExtensions.sandbox/SampleJavaExtensions.sandbox.msd" folder="samples" />
       <modulePath path="${project}/samples/sampleLanguage/sampleLanguage.mpl" folder="debugger" />
       <modulePath path="${project}/samples/sampleLanguage/solutions/sandbox/jetbrains.mps.samples.sampleLanguage.sandbox.msd" folder="samples" />
       <modulePath path="${project}/samples/sampleXML/languages/sampleXML/sampleXML.mpl" folder="samples" />
