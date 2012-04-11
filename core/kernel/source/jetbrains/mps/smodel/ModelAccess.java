@@ -206,7 +206,7 @@ public abstract class ModelAccess implements ModelCommandExecutor {
   }
 
   public void clearTransactionCaches() {
-    LOG.warning("Clearing transaction caches");
+//    LOG.warning("Clearing transaction caches");
     myTransactionCaches.clear();
   }
 
