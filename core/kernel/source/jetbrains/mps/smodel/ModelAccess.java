@@ -18,12 +18,11 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
+import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
@@ -46,8 +45,7 @@ public abstract class ModelAccess implements ModelCommandExecutor {
     }
   };
 
-  protected final Object myTransactionCachesLock = new Object();
-  protected Map<String, TransactionCache> myTransactionCaches = new ConcurrentHashMap<String, TransactionCache>();
+  protected final ConcurrentHashMap<Class, ConcurrentMap<Object, Object>> myTransactionCaches = new ConcurrentHashMap<Class, ConcurrentMap<Object, Object>>();
 
   protected ModelAccess() {
 
@@ -192,39 +190,29 @@ public abstract class ModelAccess implements ModelCommandExecutor {
     return Boolean.TRUE == myReadEnabledFlag.get();
   }
 
-  public <K, V> TransactionCache<K, V> getTransactionCache(String cacheName) {
-    if (myTransactionCaches.containsKey(cacheName)) {
-      return (TransactionCache<K, V>) myTransactionCaches.get(cacheName);
-    } else {
-      synchronized (myTransactionCachesLock) {
-        if (myTransactionCaches.containsKey(cacheName)) {
-          return (TransactionCache<K, V>) myTransactionCaches.get(cacheName);
-        }
-
-        TransactionCache<K, V> cache = new TransactionCache<K, V>();
-        myTransactionCaches.put(cacheName, cache);
-
-        return cache;
-      }
+  @Override
+  @Nullable
+  public <K, V> ConcurrentMap<K, V> getTransactionCache(Class<?> clazz) {
+    if (canWrite()) {
+      return null;
     }
+    // check canRead()?
+    ConcurrentMap<K, V> cache = (ConcurrentMap<K, V>) myTransactionCaches.get(clazz);
+    if (cache != null) {
+      return cache;
+    }
+    cache = (ConcurrentMap<K, V>) myTransactionCaches.putIfAbsent(clazz, new ConcurrentHashMap<Object, Object>());
+    return cache != null ? cache : null;
   }
 
-  public <K, V> TransactionCache<K, V> getTransactionCache(Class<?> clazz) {
-    return getTransactionCache(clazz.getName());
+  @Nullable
+  public <K, V> ConcurrentMap<K, V> getTransactionCacheNew(Class<?> clazz) {
+    return getTransactionCache(clazz);
   }
 
   public void clearTransactionCaches() {
     LOG.warning("Clearing transaction caches");
-    
-    List<TransactionCache> caches = new ArrayList<TransactionCache>();
-
-    synchronized (myTransactionCachesLock) {
-      caches.addAll(myTransactionCaches.values());
-    }
-
-    for (TransactionCache cache : caches) {
-      cache.clear();
-    }
+    myTransactionCaches.clear();
   }
 
   public void dispose() {

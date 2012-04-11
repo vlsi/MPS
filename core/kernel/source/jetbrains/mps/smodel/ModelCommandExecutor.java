@@ -21,6 +21,8 @@ import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.concurrent.ConcurrentMap;
+
 /**
  * Evgeny Gryaznov, Sep 3, 2010
  */
@@ -186,4 +188,6 @@ public interface ModelCommandExecutor {
 
   <T> T tryWriteInCommand(Computable<T> r, Project p);
 
+  @Nullable
+  public <K, V> ConcurrentMap<K, V> getTransactionCache(Class<?> clazz);
 }
