@@ -19,6 +19,7 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionKind;
+import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.runtime.ModuleClassLoader;
 import jetbrains.mps.runtime.IClassLoadingModule;
 
@@ -54,15 +55,21 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
   }
 
   public boolean hasClass(String name) {
-    return getClassPathItem().hasClass(name);
+    IClassPathItem cpi = getClassPathItem();
+    if (cpi==null) return false;
+    return cpi.hasClass(name);
   }
 
   public byte[] findClassBytes(String name) {
-    return getClassPathItem().getClass(name);
+    IClassPathItem cpi = getClassPathItem();
+    if (cpi==null) return null;
+    return cpi.getClass(name);
   }
 
   public URL findResource(String name) {
-    return getClassPathItem().getResource(name);
+    IClassPathItem cpi = getClassPathItem();
+    if (cpi==null) return null;
+    return cpi.getResource(name);
   }
 
   public String findLibrary(String name) {
