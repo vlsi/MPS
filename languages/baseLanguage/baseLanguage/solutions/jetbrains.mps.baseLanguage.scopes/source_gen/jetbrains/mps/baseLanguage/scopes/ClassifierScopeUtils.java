@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -51,11 +52,15 @@ public class ClassifierScopeUtils {
   }
 
   private static ClassifierScopeUtils.ClassifierAndSuperClassifiersData getClassifierAndSuperClassifiersData(final SNode classifier) {
-    return TransactionCacheUtils.getFromCache(ClassifierScopeUtils.class, classifier, new _FunctionTypes._return_P0_E0<ClassifierScopeUtils.ClassifierAndSuperClassifiersData>() {
-      public ClassifierScopeUtils.ClassifierAndSuperClassifiersData invoke() {
-        return new ClassifierScopeUtils.ClassifierAndSuperClassifiersData(classifier);
-      }
-    });
+    if (SNodeOperations.getModel(classifier).isTransient()) {
+      return new ClassifierScopeUtils.ClassifierAndSuperClassifiersData(classifier);
+    } else {
+      return TransactionCacheUtils.getFromCache(ClassifierScopeUtils.class, classifier, new _FunctionTypes._return_P0_E0<ClassifierScopeUtils.ClassifierAndSuperClassifiersData>() {
+        public ClassifierScopeUtils.ClassifierAndSuperClassifiersData invoke() {
+          return new ClassifierScopeUtils.ClassifierAndSuperClassifiersData(classifier);
+        }
+      });
+    }
   }
 
   private static class ClassifierAndSuperClassifiersData {

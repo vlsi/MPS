@@ -12,6 +12,7 @@ import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.TransactionCache;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.scope.EmptyScope;
@@ -20,7 +21,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
 import jetbrains.mps.lang.scopes.runtime.FilteringScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class MemberScopes {
@@ -38,11 +38,16 @@ public class MemberScopes {
   private static Scope calculateScope(SNode classifier, SNode kind, _FunctionTypes._return_P0_E0<? extends Scope> scope) {
     Tuples._2<SNode, SNode> key = MultiTuple.<SNode,SNode>from(classifier, kind);
 
+    boolean isTransient = SNodeOperations.getModel(classifier).isTransient();
+    TransactionCache cache = null;
+
     // cache 
-    TransactionCache cache = ModelAccess.instance().getTransactionCache(MemberScopes.class);
-    Scope cached = (Scope) cache.get(key);
-    if (cached != null) {
-      return cached;
+    if (!(isTransient)) {
+      cache = ModelAccess.instance().getTransactionCache(MemberScopes.class);
+      Scope cached = (Scope) cache.get(key);
+      if (cached != null) {
+        return cached;
+      }
     }
 
     // recursion preventing 
@@ -61,7 +66,7 @@ public class MemberScopes {
       SetSequence.fromSet(inCalculatingScopes.get()).removeElement(key);
     }
 
-    if (result != null) {
+    if (result != null && !(isTransient)) {
       cache.put(key, result);
     }
 
