@@ -58,9 +58,9 @@ public class ModuleClassLoader extends BaseClassLoader {
     for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
       if (m.equals(myModule)) continue;
 
-      if (myModule.hasClass(name)) {
+      if (m.hasClass(name)) {
         try {
-          return Class.forName(name, false, myModule.getClassLoader());
+          return Class.forName(name, false, m.getClassLoader());
         } catch (ClassNotFoundException e) {
           throw new RuntimeException(e);
         }
@@ -71,6 +71,7 @@ public class ModuleClassLoader extends BaseClassLoader {
   }
 
   protected byte[] findInCurrent(String name) {
+    if (!myModule.hasClass(name)) return null;
     return myModule.findClassBytes(name);
   }
 

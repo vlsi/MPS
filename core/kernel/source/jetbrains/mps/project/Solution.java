@@ -26,6 +26,7 @@ import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.reloading.NonExistingClassPathItem;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
