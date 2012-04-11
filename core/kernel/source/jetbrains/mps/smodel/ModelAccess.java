@@ -45,7 +45,7 @@ public abstract class ModelAccess implements ModelCommandExecutor {
     }
   };
 
-  protected final ConcurrentHashMap<Class, ConcurrentMap<Object, Object>> myTransactionCaches = new ConcurrentHashMap<Class, ConcurrentMap<Object, Object>>();
+  protected final ConcurrentHashMap<Class, ConcurrentMap<Object, Object>> myRepositoryStateCaches = new ConcurrentHashMap<Class, ConcurrentMap<Object, Object>>();
 
   protected ModelAccess() {
 
@@ -190,24 +190,26 @@ public abstract class ModelAccess implements ModelCommandExecutor {
     return Boolean.TRUE == myReadEnabledFlag.get();
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   @Nullable
-  public <K, V> ConcurrentMap<K, V> getTransactionCache(Class<?> clazz) {
+  public <K, V> ConcurrentMap<K, V> getRepositoryStateCache(Class<?> clazz) {
+    assertLegalRead();
     if (canWrite()) {
       return null;
     }
-    // check canRead()?
-    ConcurrentMap<K, V> cache = (ConcurrentMap<K, V>) myTransactionCaches.get(clazz);
+    ConcurrentMap<K, V> cache = (ConcurrentMap<K, V>) myRepositoryStateCaches.get(clazz);
     if (cache != null) {
       return cache;
     }
-    cache = (ConcurrentMap<K, V>) myTransactionCaches.putIfAbsent(clazz, new ConcurrentHashMap<Object, Object>());
-    return cache != null ? cache : null;
+    cache = new ConcurrentHashMap<K, V>();
+    ConcurrentHashMap<K, V> existingCache = (ConcurrentHashMap<K, V>) myRepositoryStateCaches.putIfAbsent(clazz, (ConcurrentMap<Object, Object>) cache);
+    return existingCache != null ? existingCache : cache;
   }
 
-  public void clearTransactionCaches() {
-//    LOG.warning("Clearing transaction caches");
-    myTransactionCaches.clear();
+  public void clearRepositoryStateCaches() {
+//    LOG.warning("Clearing model state caches");
+    myRepositoryStateCaches.clear();
   }
 
   public void dispose() {

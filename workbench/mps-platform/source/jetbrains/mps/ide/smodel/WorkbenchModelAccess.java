@@ -157,7 +157,7 @@ public class WorkbenchModelAccess extends ModelAccess {
       public void run() {
         getWriteLock().lock();
         try {
-          clearTransactionCaches();
+          clearRepositoryStateCaches();
           r.run();
         } finally {
           getWriteLock().unlock();
@@ -184,7 +184,7 @@ public class WorkbenchModelAccess extends ModelAccess {
       public T compute() {
         getWriteLock().lock();
         try {
-          clearTransactionCaches();
+          clearRepositoryStateCaches();
           return c.compute();
         } finally {
           getWriteLock().unlock();
@@ -243,7 +243,7 @@ public class WorkbenchModelAccess extends ModelAccess {
               progressIndicator.pushState();
               getWriteLock().lock();
               try {
-                clearTransactionCaches();
+                clearRepositoryStateCaches();
                 process.run(new ProgressMonitorAdapter(progressIndicator));
               } finally {
                 getWriteLock().unlock();
@@ -401,7 +401,7 @@ public class WorkbenchModelAccess extends ModelAccess {
         try {
           if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
             try {
-              clearTransactionCaches();
+              clearRepositoryStateCaches();
               r.run();
             } finally {
               getWriteLock().unlock();
@@ -440,7 +440,7 @@ public class WorkbenchModelAccess extends ModelAccess {
         try {
           if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
             try {
-              clearTransactionCaches();
+              clearRepositoryStateCaches();
               return c.compute();
             } finally {
               getWriteLock().unlock();
@@ -522,7 +522,7 @@ public class WorkbenchModelAccess extends ModelAccess {
         try {
           if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
             try {
-              clearTransactionCaches();
+              clearRepositoryStateCaches();
               new CommandRunnable(r, project).run();
             } finally {
               getWriteLock().unlock();
@@ -559,7 +559,7 @@ public class WorkbenchModelAccess extends ModelAccess {
         try {
           if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
             try {
-              clearTransactionCaches();
+              clearRepositoryStateCaches();
               res[0] = new CommandComputable<T>(r, project).compute();
             } finally {
               getWriteLock().unlock();

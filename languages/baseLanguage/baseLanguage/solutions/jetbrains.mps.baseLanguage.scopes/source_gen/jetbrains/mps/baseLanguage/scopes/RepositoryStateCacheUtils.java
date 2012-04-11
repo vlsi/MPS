@@ -6,12 +6,12 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.concurrent.ConcurrentMap;
 import jetbrains.mps.smodel.ModelAccess;
 
-public class TransactionCacheUtils {
-  private TransactionCacheUtils() {
+public class RepositoryStateCacheUtils {
+  private RepositoryStateCacheUtils() {
   }
 
   public static <K, V> V getFromCache(Class clazz, K key, _FunctionTypes._return_P0_E0<? extends V> creator) {
-    ConcurrentMap<K, V> cache = ModelAccess.instance().getTransactionCache(clazz);
+    ConcurrentMap<K, V> cache = ModelAccess.instance().getRepositoryStateCache(clazz);
     if (cache == null) {
       return creator.invoke();
     }

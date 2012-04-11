@@ -55,7 +55,7 @@ public class ClassifierScopeUtils {
     if (SNodeOperations.getModel(classifier).isTransient()) {
       return new ClassifierScopeUtils.ClassifierAndSuperClassifiersData(classifier);
     } else {
-      return TransactionCacheUtils.getFromCache(ClassifierScopeUtils.class, classifier, new _FunctionTypes._return_P0_E0<ClassifierScopeUtils.ClassifierAndSuperClassifiersData>() {
+      return RepositoryStateCacheUtils.getFromCache(ClassifierScopeUtils.class, classifier, new _FunctionTypes._return_P0_E0<ClassifierScopeUtils.ClassifierAndSuperClassifiersData>() {
         public ClassifierScopeUtils.ClassifierAndSuperClassifiersData invoke() {
           return new ClassifierScopeUtils.ClassifierAndSuperClassifiersData(classifier);
         }

@@ -189,5 +189,5 @@ public interface ModelCommandExecutor {
   <T> T tryWriteInCommand(Computable<T> r, Project p);
 
   @Nullable
-  public <K, V> ConcurrentMap<K, V> getTransactionCache(Class<?> clazz);
+  public <K, V> ConcurrentMap<K, V> getRepositoryStateCache(Class<?> clazz);
 }

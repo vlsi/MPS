@@ -43,7 +43,7 @@ public class MemberScopes {
 
     // cache 
     if (!(isTransient)) {
-      cache = ModelAccess.instance().getTransactionCache(MemberScopes.class);
+      cache = ModelAccess.instance().getRepositoryStateCache(MemberScopes.class);
       if (cache != null) {
         Scope cached = cache.get(((Object) key));
         if (cached != null) {

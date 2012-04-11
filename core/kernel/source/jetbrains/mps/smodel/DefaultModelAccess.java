@@ -51,7 +51,7 @@ public class DefaultModelAccess extends ModelAccess {
     assertNotWriteFromRead();
     getWriteLock().lock();
     try {
-      clearTransactionCaches();
+      clearRepositoryStateCaches();
       r.run();
     } finally {
       getWriteLock().unlock();
@@ -84,7 +84,7 @@ public class DefaultModelAccess extends ModelAccess {
     }
     getWriteLock().lock();
     try {
-      clearTransactionCaches();
+      clearRepositoryStateCaches();
       return c.compute();
     } finally {
       getWriteLock().unlock();
@@ -178,7 +178,7 @@ public class DefaultModelAccess extends ModelAccess {
   public boolean tryWrite(Runnable r) {
     if (getWriteLock().tryLock()) {
       try {
-        clearTransactionCaches();
+        clearRepositoryStateCaches();
         r.run();
       } finally {
         getWriteLock().unlock();
@@ -193,7 +193,7 @@ public class DefaultModelAccess extends ModelAccess {
   public <T> T tryWrite(final Computable<T> c) {
     if (getWriteLock().tryLock()) {
       try {
-        clearTransactionCaches();
+        clearRepositoryStateCaches();
         return c.compute();
       } finally {
         getWriteLock().unlock();

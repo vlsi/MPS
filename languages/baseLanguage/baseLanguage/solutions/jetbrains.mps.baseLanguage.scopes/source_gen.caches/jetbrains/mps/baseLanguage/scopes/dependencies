@@ -44,7 +44,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.GenericTypesUtil" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.TransactionCacheUtils" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.RepositoryStateCacheUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
@@ -204,6 +204,12 @@
     <classNode dependClassName="jetbrains.mps.util.Pair" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.scopes.RepositoryStateCacheUtils" file="RepositoryStateCacheUtils.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.util.concurrent.ConcurrentMap" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.scopes.Scopes" file="Scopes.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.lang.scopes.runtime.HidingByNameScope" />
@@ -250,12 +256,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.scopes.BaseMethodsScope" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scopes.TransactionCacheUtils" file="TransactionCacheUtils.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.util.concurrent.ConcurrentMap" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.scopes.VisibleClassConstructorsScope" file="VisibleClassConstructorsScope.java">
     <classNode dependClassName="java.lang.Iterable" />

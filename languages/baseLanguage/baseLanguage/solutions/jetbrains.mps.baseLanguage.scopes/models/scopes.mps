@@ -38,7 +38,7 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="utils" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4748674287775003937">
-      <property name="name" nameId="tpck.1169194664001" value="TransactionCacheUtils" />
+      <property name="name" nameId="tpck.1169194664001" value="RepositoryStateCacheUtils" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="utils" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3161373106581139869">
@@ -673,7 +673,7 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2934766934156818456">
                 <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6197646168488466070">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4748674287775012009" resolveInfo="getFromCache" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4748674287775003937" resolveInfo="TransactionCacheUtils" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4748674287775003937" resolveInfo="RepositoryStateCacheUtils" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="6197646168488466079">
                     <link role="classifier" roleId="tpee.1116615189566" targetNodeId="4304267140677045312" resolveInfo="ClassifierScopeUtils" />
                   </node>
@@ -737,7 +737,7 @@
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cu2c.~ModelAccess" resolveInfo="ModelAccess" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1955553662774393344">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~ModelAccess%dgetTransactionCache(java%dlang%dClass)%cjava%dutil%dconcurrent%dConcurrentMap" resolveInfo="getTransactionCache" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~ModelAccess%dgetRepositoryStateCache(java%dlang%dClass)%cjava%dutil%dconcurrent%dConcurrentMap" resolveInfo="getRepositoryStateCache" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1955553662774393345">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4748674287775012017" resolveInfo="clazz" />
                 </node>
@@ -4697,7 +4697,7 @@
                     <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cu2c.~ModelAccess" resolveInfo="ModelAccess" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7551947648244969418">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~ModelAccess%dgetTransactionCache(java%dlang%dClass)%cjava%dutil%dconcurrent%dConcurrentMap" resolveInfo="getTransactionCache" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~ModelAccess%dgetRepositoryStateCache(java%dlang%dClass)%cjava%dutil%dconcurrent%dConcurrentMap" resolveInfo="getRepositoryStateCache" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="4267518923238119967">
                       <link role="classifier" roleId="tpee.1116615189566" targetNodeId="6320759254352298036" resolveInfo="MemberScopes" />
                     </node>

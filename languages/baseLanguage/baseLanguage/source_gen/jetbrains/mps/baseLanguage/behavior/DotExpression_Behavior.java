@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.baseLanguage.scopes.TransactionCacheUtils;
+import jetbrains.mps.baseLanguage.scopes.RepositoryStateCacheUtils;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -31,7 +31,7 @@ public class DotExpression_Behavior {
   }
 
   public static SNode call_getOperandType_8871623299328377715(final SNode thisNode) {
-    return TransactionCacheUtils.getFromCache(DotExpression_Behavior.class, thisNode, new _FunctionTypes._return_P0_E0<SNode>() {
+    return RepositoryStateCacheUtils.getFromCache(DotExpression_Behavior.class, thisNode, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
         // long calculation 
         return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "operand", true));
