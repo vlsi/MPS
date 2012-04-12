@@ -240,8 +240,8 @@ public class MPSModulesClosure {
     return this;
   }
 
-  public MPSModulesClosure.RequiredJavaModules getRequiredJava(SNode module) {
-    Iterable<SNode> reexportedFromModuleDependencies = Sequence.fromIterable(getModules()).concat(Sequence.fromIterable(Sequence.<SNode>singleton(module))).translate(new ITranslator2<SNode, SNode>() {
+  public MPSModulesClosure.RequiredJavaModules getRequiredJava() {
+    Iterable<SNode> reexportedFromModuleDependencies = Sequence.fromIterable(getModules()).concat(Sequence.fromIterable(Sequence.<SNode>singleton(initial))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode mod) {
         return ListSequence.fromList(SLinkOperations.getTargets(mod, "dependencies", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -259,7 +259,7 @@ public class MPSModulesClosure {
       SetSequence.fromSet(reexportMods).addElement(mod);
     }
 
-    Iterable<SNode> directDeps = ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> directDeps = ListSequence.fromList(SLinkOperations.getTargets(initial, "dependencies", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule");
       }

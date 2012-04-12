@@ -35,7 +35,7 @@ public class BuildMps_Module_Behavior {
         ListSequence.fromList(result).addElement(artifact);
       }
     }
-    Iterable<SNode> requiredJava = closure.getRequiredJava(thisNode).getModules();
+    Iterable<SNode> requiredJava = closure.getRequiredJava().getModules();
 
     for (SNode jm : Sequence.fromIterable(requiredJava)) {
       if (SNodeOperations.getContainingRoot(jm) == SNodeOperations.getContainingRoot(thisNode)) {

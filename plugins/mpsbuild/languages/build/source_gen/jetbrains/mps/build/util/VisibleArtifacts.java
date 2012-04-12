@@ -119,6 +119,9 @@ public class VisibleArtifacts {
   }
 
   public SNode findArtifact(Object id) {
+    if (id instanceof SNode && ((SNode) id).getModel().isTransient()) {
+      throw new IllegalArgumentException("findArtifact() cannot be called for transient nodes");
+    }
     if (dependenciesHelper == null) {
       throw new IllegalStateException("findArtifact() should be called in generation context only");
     }
@@ -127,6 +130,7 @@ public class VisibleArtifacts {
       return result;
     }
     for (SNode artifact : this.getArtifacts()) {
+      assert !(SNodeOperations.getModel(artifact).isTransient());
       if (BuildLayout_Node_Behavior.call_exports_6547494638219603457(artifact, id)) {
         this.registerEntity(id, artifact);
         return artifact;

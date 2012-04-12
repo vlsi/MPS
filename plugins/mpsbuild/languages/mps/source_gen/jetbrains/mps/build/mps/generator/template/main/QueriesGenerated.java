@@ -200,7 +200,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_7259033139236497711(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    MPSModulesClosure.RequiredJavaModules requiredAndReexp = ((Tuples._2<SNode, MPSModulesClosure>) _context.getVariable("var:mdeps"))._1().getRequiredJava(_context.getNode());
+    MPSModulesClosure.RequiredJavaModules requiredAndReexp = ((Tuples._2<SNode, MPSModulesClosure>) _context.getVariable("var:mdeps"))._1().getRequiredJava();
     Iterable<SNode> requiredJava = requiredAndReexp.getModules();
     List<SNode> result = new ArrayList<SNode>();
     for (SNode mod : requiredJava) {
