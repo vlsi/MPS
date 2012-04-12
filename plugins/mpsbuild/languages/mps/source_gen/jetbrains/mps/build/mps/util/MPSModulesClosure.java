@@ -27,9 +27,9 @@ public class MPSModulesClosure {
   private TemplateQueryContext genContext;
   private SNode initial;
 
-  public MPSModulesClosure(TemplateQueryContext genContext, SNode module) {
+  public MPSModulesClosure(TemplateQueryContext genContext, SNode initialModule) {
     this.genContext = genContext;
-    this.initial = module;
+    this.initial = initialModule;
   }
 
   private SNode toOriginal(SNode node) {
@@ -277,6 +277,10 @@ public class MPSModulesClosure {
 
   public Iterable<SNode> getLanguagesWithRuntime() {
     return languagesWithRuntime;
+  }
+
+  public SNode getInitial() {
+    return initial;
   }
 
   public static class RequiredJavaModules {

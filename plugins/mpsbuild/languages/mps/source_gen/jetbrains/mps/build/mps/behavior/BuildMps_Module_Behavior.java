@@ -6,24 +6,19 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.build.mps.util.MPSModulesClosure;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class BuildMps_Module_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static Iterable<SNode> virtual_getDependencyTargets_841011766566205095(SNode thisNode, final VisibleArtifacts artifacts) {
+  public static Iterable<SNode> virtual_getDependencyTargets_841011766566205095(SNode thisNode, VisibleArtifacts artifacts) {
     MPSModulesClosure closure = new MPSModulesClosure(artifacts.getGenContext(), thisNode).closure();
 
-    Iterable<SNode> requiredModules = Sequence.fromIterable(((Iterable<SNode>) closure.getModules())).concat(Sequence.fromIterable(((Iterable<SNode>) closure.getLanguagesWithRuntime()))).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SNodeOperations.as(artifacts.toOriginalNode(it), "jetbrains.mps.build.mps.structure.BuildMps_Module");
-      }
-    });
+    Iterable<SNode> requiredModules = Sequence.fromIterable(((Iterable<SNode>) closure.getModules())).concat(Sequence.fromIterable(((Iterable<SNode>) closure.getLanguagesWithRuntime())));
     List<SNode> result = new ArrayList<SNode>();
     for (SNode m : Sequence.fromIterable(requiredModules)) {
       if (SNodeOperations.getContainingRoot(m) == SNodeOperations.getContainingRoot(thisNode)) {
@@ -35,8 +30,8 @@ public class BuildMps_Module_Behavior {
         ListSequence.fromList(result).addElement(artifact);
       }
     }
-    Iterable<SNode> requiredJava = closure.getRequiredJava().getModules();
 
+    Iterable<SNode> requiredJava = closure.getRequiredJava().getModules();
     for (SNode jm : Sequence.fromIterable(requiredJava)) {
       if (SNodeOperations.getContainingRoot(jm) == SNodeOperations.getContainingRoot(thisNode)) {
         continue;

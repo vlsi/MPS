@@ -9219,7 +9219,7 @@
               </node>
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4868576097550536532">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7525356604723806863" resolveInfo="module" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7525356604723806863" resolveInfo="initialModule" />
             </node>
           </node>
         </node>
@@ -9229,7 +9229,7 @@
         <node role="type" roleId="tpee.5680397130376446158" type="tpf3.GenerationContextType" typeId="tpf3.1216860049633" id="7525356604723806927" />
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7525356604723806863">
-        <property name="name" nameId="tpck.1169194664001" value="module" />
+        <property name="name" nameId="tpck.1169194664001" value="initialModule" />
         <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7525356604723806864">
           <link role="concept" roleId="tp25.1138405853777" targetNodeId="kdzh.5253498789149381388" resolveInfo="BuildMps_Module" />
         </node>
@@ -11101,6 +11101,20 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="4868576097550536525" />
       <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4868576097550536526">
         <link role="concept" roleId="tp25.1138405853777" targetNodeId="kdzh.5253498789149381388" resolveInfo="BuildMps_Module" />
+      </node>
+    </node>
+    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="8252715012761560316">
+      <property name="name" nameId="tpck.1169194664001" value="getInitial" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="8252715012761560317">
+        <link role="concept" roleId="tp25.1138405853777" targetNodeId="kdzh.5253498789149381388" resolveInfo="BuildMps_Module" />
+      </node>
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8252715012761560318" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8252715012761560319">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8252715012761560320">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8252715012761560321">
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4868576097550536524" resolveInfo="initial" />
+          </node>
+        </node>
       </node>
     </node>
   </root>
