@@ -204,6 +204,14 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/tests/test_gen" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-java/solutions/jetbrains.mps.debugger.java.run.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/deprecated/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsbuild/temp/jetbrains.mps.build.pluginSolution/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsbuild/languages/workflow/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsbuild/languages/solutions/jetbrains.mps.build.sandbox/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsbuild/languages/solutions/jetbrains.mps.build.tests/test_gen" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.pluginSolution/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsbuild/languages/mps/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsbuild/languages/deploySolution/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsbuild/languages/build/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../samples">
       <sourceFolder url="file://$MODULE_DIR$/../../samples/agreement/agreementLanguage/source_gen" isTestSource="false" />
