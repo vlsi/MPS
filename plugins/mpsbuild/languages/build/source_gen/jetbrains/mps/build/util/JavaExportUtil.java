@@ -48,7 +48,7 @@ public class JavaExportUtil {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, "path", true);
       }
-    }));
+    })).concat(Sequence.fromIterable(Sequence.<SNode>singleton(target)));
     List<SNode> result = new ArrayList<SNode>();
     for (SNode n : Sequence.fromIterable(required)) {
       if (SNodeOperations.getContainingRoot(n) == SNodeOperations.getContainingRoot(contextNode)) {
