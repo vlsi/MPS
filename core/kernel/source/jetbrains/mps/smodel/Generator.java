@@ -243,7 +243,7 @@ public class Generator extends ClassLoadingModule {
       result.add(structureModelDescriptor);
     }
 
-    SModelDescriptor constraints = getSourceLanguage().getConstraintsModelDescriptor();
+    SModelDescriptor constraints = LanguageAspect.CONSTRAINTS.get(getSourceLanguage());
     if (constraints != null) {
       result.add(constraints);
     }
@@ -254,7 +254,7 @@ public class Generator extends ClassLoadingModule {
         result.add(structure);
       }
 
-      SModelDescriptor constr = language.getConstraintsModelDescriptor();
+      SModelDescriptor constr = LanguageAspect.CONSTRAINTS.get(language);
       if (constr != null) {
         result.add(constr);
       }

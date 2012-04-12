@@ -307,12 +307,12 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
       result.add(getStructureModelDescriptor());
     }
 
-    if (aspect != LanguageAspect.CONSTRAINTS && getConstraintsModelDescriptor() != null) {
-      result.add(getConstraintsModelDescriptor());
+    if (aspect != LanguageAspect.CONSTRAINTS && LanguageAspect.CONSTRAINTS.get(this) != null) {
+      result.add(LanguageAspect.CONSTRAINTS.get(this));
     }
 
-    if (aspect != LanguageAspect.BEHAVIOR && getBehaviorModelDescriptor() != null) {
-      result.add(getBehaviorModelDescriptor());
+    if (aspect != LanguageAspect.BEHAVIOR && LanguageAspect.BEHAVIOR.get(this) != null) {
+      result.add(LanguageAspect.BEHAVIOR.get(this));
     }
 
     for (Language extended : getExtendedLanguages()) {
@@ -349,41 +349,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
 
   public DefaultSModelDescriptor getStructureModelDescriptor() {
     return LanguageAspect.STRUCTURE.get(this);
-  }
-
-  public DefaultSModelDescriptor getActionsModelDescriptor() {
-    return LanguageAspect.ACTIONS.get(this);
-  }
-
-  public DefaultSModelDescriptor getConstraintsModelDescriptor() {
-    return LanguageAspect.CONSTRAINTS.get(this);
-  }
-
-  public DefaultSModelDescriptor getBehaviorModelDescriptor() {
-    return LanguageAspect.BEHAVIOR.get(this);
-  }
-
-  public DefaultSModelDescriptor getDataFlowModelDescriptor() {
-    return LanguageAspect.DATA_FLOW.get(this);
-  }
-
-  public DefaultSModelDescriptor getEditorModelDescriptor() {
-    return LanguageAspect.EDITOR.get(this);
-  }
-
-  public DefaultSModelDescriptor getTextgenModelDescriptor() {
-    return LanguageAspect.TEXT_GEN.get(this);
-  }
-
-  public Collection<EditableSModelDescriptor> getAspectModelDescriptors() {
-    Set<EditableSModelDescriptor> result = new HashSet<EditableSModelDescriptor>();
-    for (LanguageAspect aspect : LanguageAspect.values()) {
-      EditableSModelDescriptor asp = aspect.get(this);
-      if (asp != null) {
-        result.add(asp);
-      }
-    }
-    return result;
   }
 
   public void invalidateCaches() {

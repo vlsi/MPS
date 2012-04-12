@@ -12,17 +12,16 @@ import java.lang.reflect.Constructor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.INodeEditor;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.ErrorNodeEditor;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
-import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.util.Computable;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
@@ -34,9 +33,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -168,7 +165,7 @@ public class EditorsFinderManager implements ApplicationComponent {
     if (language == null) {
       return null;
     }
-    SModelDescriptor editorModelDescriptor = language.getEditorModelDescriptor();
+    SModelDescriptor editorModelDescriptor = LanguageAspect.EDITOR.get(language);
     String editorUID = null;
     if (editorModelDescriptor != null) {
       editorUID = editorModelDescriptor.getSModelReference().getSModelFqName().toString();

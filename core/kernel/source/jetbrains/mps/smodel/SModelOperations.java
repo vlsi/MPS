@@ -223,7 +223,7 @@ public class SModelOperations {
   public static Set<SModelDescriptor> getDependenciesModels(SModel sModel) {
     Set<SModelDescriptor> modelDescriptors = new HashSet<SModelDescriptor>(allImportedModels(sModel, GlobalScope.getInstance()));
     for (Language language : getLanguages(sModel, GlobalScope.getInstance())) {
-      modelDescriptors.addAll(language.getAspectModelDescriptors());
+      modelDescriptors.addAll(LanguageAspect.getAspectModels(language));
     }
     return modelDescriptors;
   }
