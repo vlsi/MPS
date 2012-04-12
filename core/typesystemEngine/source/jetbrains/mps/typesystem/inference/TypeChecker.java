@@ -244,8 +244,8 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
 
   private void disposeTracing() {
     if (myPerformanceTracer != null) {
+      TypeSystemReporter.getInstance().printReport(10, myPerformanceTracer);
       myPerformanceTracer = null;
-      TypeSystemReporter.getInstance().printReport(10);
     }
   }
 
