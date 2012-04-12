@@ -38,6 +38,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.project.structure.modules.Dependency;
@@ -444,7 +445,7 @@ public class ModuleLoader {
       }
 
       String path = entry.getPath();
-      SNode p = convertPath(path, myOriginalModule);
+      SNode p = ListSequence.fromList(convertPath(path, myOriginalModule)).first();
       if (p == null) {
         continue;
       }
@@ -482,16 +483,21 @@ public class ModuleLoader {
       }
 
       String path = entry.getPath();
-      SNode p = convertPath(path, myOriginalModule);
+      List<SNode> p = convertPath(path, myOriginalModule);
       if (p == null) {
         continue;
       }
 
       if (path.endsWith(".jar")) {
-        final String localPath = BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(p);
+        final Set<String> localPath = SetSequence.fromSet(new HashSet<String>());
+        ListSequence.fromList(p).visitAll(new IVisitor<SNode>() {
+          public void visit(SNode it) {
+            SetSequence.fromSet(localPath).addElement(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(it));
+          }
+        });
         if (!(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language"), "runtime", true)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime") && eq_a6ewnz_a0a0a0a0a0a0b0g0c0o(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime"), "path", true)), localPath);
+            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime") && SetSequence.fromSet(localPath).contains(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime"), "path", true)));
           }
         }))) {
           report("runtime jar should be extracted into build script: " + path, myOriginalModule);
@@ -511,7 +517,7 @@ public class ModuleLoader {
       }
 
       String path = entry.getPath();
-      SNode p = convertPath(path, myOriginalModule);
+      SNode p = ListSequence.fromList(convertPath(path, myOriginalModule)).first();
       if (p == null) {
         continue;
       }
@@ -733,7 +739,7 @@ public class ModuleLoader {
       res.add(genPath.getPath());
     }
     for (String path : res) {
-      SNode p = convertPath(path, myOriginalModule);
+      SNode p = ListSequence.fromList(convertPath(path, myOriginalModule)).first();
       if (p == null) {
         continue;
       }
@@ -757,7 +763,7 @@ public class ModuleLoader {
       }
 
       String path = modelRoot.getPath();
-      SNode p = convertPath(path, myOriginalModule);
+      SNode p = ListSequence.fromList(convertPath(path, myOriginalModule)).first();
       if (p == null) {
         continue;
       }
@@ -768,7 +774,7 @@ public class ModuleLoader {
     }
   }
 
-  private SNode convertPath(String path, SNode anchor) {
+  private List<SNode> convertPath(String path, SNode anchor) {
     try {
       return pathConverter.convertPath(path, SNodeOperations.getModel(myModule));
     } catch (PathConverter.PathConvertException ex) {
@@ -797,13 +803,6 @@ public class ModuleLoader {
       a.equals(b) :
       a == b
     ));
-  }
-
-  private static boolean eq_a6ewnz_a0a0a0a0a0a0b0g0c0o(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
   }
 
   private static boolean eq_a6ewnz_a0c0f0d0a1(Object a, Object b) {

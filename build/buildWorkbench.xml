@@ -92,7 +92,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.uiLanguage" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/languages/util/uiLanguage/source_gen" />
+        <path location="${mps_home}/languages/util/uiLanguage/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
@@ -122,7 +122,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.ide.uiLanguage" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/languages/util/ideUiLanguage/source_gen" />
+        <path location="${mps_home}/languages/util/ideUiLanguage/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
@@ -153,7 +153,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.plugin.standalone" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/languages/languageDesign/plugin-standalone/source_gen" />
+        <path location="${mps_home}/languages/languageDesign/plugin-standalone/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
