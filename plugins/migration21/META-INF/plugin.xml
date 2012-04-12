@@ -1,8 +1,8 @@
 <!DOCTYPE idea-plugin
-        PUBLIC
-        "Plugin/DTD"
-        "http://plugins.intellij.net/plugin.dtd"
-        >
+  PUBLIC
+    "Plugin/DTD"
+    "http://plugins.intellij.net/plugin.dtd"
+>
 <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
   <id>jetbrains.mps.ide.migration_21</id>
   <name>Migration 2.1</name>
@@ -10,11 +10,13 @@
   <version>2.1</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
   <idea-version since-build="3000"></idea-version>
-
+    
+  <depends>jetbrains.mps.ide.modelchecker</depends>
+    
   <application-components>
     <component>
       <implementation-class>jetbrains.mps.ide.migration.migration21.Migration21_PluginInitializer</implementation-class>
     </component>
   </application-components>
+    
 </idea-plugin>
-

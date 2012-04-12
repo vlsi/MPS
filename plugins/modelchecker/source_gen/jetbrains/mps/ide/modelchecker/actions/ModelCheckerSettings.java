@@ -175,10 +175,12 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     myState.myCheckBeforeCommit = checkBeforeCommit;
   }
 
+  @Deprecated
   public void setMigrationMode(boolean migrationMode) {
     myMigrationMode = migrationMode;
   }
 
+  @Deprecated
   public boolean getMigrationMode() {
     return myMigrationMode;
   }
