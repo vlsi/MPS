@@ -308,6 +308,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void addDependencyForCurrent(SNode node) {
+    if (myIsSingleTypeComputation) return;
     getNodeTypesComponent().addDependencyForCurrent(node);
   }
 
