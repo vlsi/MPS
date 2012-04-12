@@ -81,6 +81,7 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
   }
 
   public void disposeUIResources() {
+    myPreferences = null;
   }
 
   public String getId() {

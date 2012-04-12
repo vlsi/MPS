@@ -12,6 +12,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.build.behavior.BuildLayout_Node_Behavior;
 
 public class VisibleArtifacts {
   private final SNode project;
@@ -115,5 +116,26 @@ public class VisibleArtifacts {
       throw new IllegalStateException("registerEntity() should be called in generation context only");
     }
     dependenciesHelper.artifacts().put(id, location);
+  }
+
+  public SNode findArtifact(Object id) {
+    if (dependenciesHelper == null) {
+      throw new IllegalStateException("findArtifact() should be called in generation context only");
+    }
+    SNode result = dependenciesHelper.artifacts().get(id);
+    if (result != null) {
+      return result;
+    }
+    for (SNode artifact : this.getArtifacts()) {
+      if (BuildLayout_Node_Behavior.call_exports_6547494638219603457(artifact, id)) {
+        this.registerEntity(id, artifact);
+        return artifact;
+      }
+    }
+    return null;
+  }
+
+  public TemplateQueryContext getGenContext() {
+    return genContext;
   }
 }

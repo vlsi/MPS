@@ -3,6 +3,7 @@
   <models>
     <modelRoot path="${language_descriptor}/accessoryModels" />
     <modelRoot path="${language_descriptor}/languageModels" />
+    <modelRoot path="${language_descriptor}/util" />
   </models>
   <accessoryModels>
     <model modelUID="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" />
@@ -40,6 +41,7 @@
     <dependency reexport="false">2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)</dependency>
   </dependencies>
   <usedLanguages>
+    <usedLanguage>f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)</usedLanguage>
     <usedLanguage>479c7a8c-02f9-43b5-9139-d910cb22f298(jetbrains.mps.core.xml)</usedLanguage>
   </usedLanguages>
   <usedDevKits>

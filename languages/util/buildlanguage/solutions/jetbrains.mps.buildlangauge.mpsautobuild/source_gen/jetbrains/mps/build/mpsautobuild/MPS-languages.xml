@@ -663,6 +663,7 @@
       <zipfileset dir="${base_dir}/plugins/mpsbuild/languages/workflow/accessoryModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/accessoryModels" />
       <zipfileset dir="${base_dir}/plugins/mpsbuild/languages/workflow/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="${base_dir}/plugins/mpsbuild/languages/workflow/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="${base_dir}/plugins/mpsbuild/languages/workflow/util" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/util" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.build.workflow.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.build.workflow.jar.jtmp/module.xml" prefix="META-INF" />

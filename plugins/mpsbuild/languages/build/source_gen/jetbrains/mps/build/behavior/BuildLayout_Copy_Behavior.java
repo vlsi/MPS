@@ -46,4 +46,26 @@ public class BuildLayout_Copy_Behavior {
     }
     BuildLayout_PathElement_Behavior.callSuper_appendName_1368030936106665465(thisNode, "jetbrains.mps.build.structure.BuildLayout_Copy", parent, sb);
   }
+
+  public static boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
+    if (object instanceof SNode) {
+      SNode node = (SNode) object;
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildSourcePath") && SNodeOperations.getContainingRoot(node) == SNodeOperations.getContainingRoot(thisNode)) {
+        SNode required = SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildSourcePath");
+        String relativePath = BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(required);
+
+        if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile")) {
+          return eq_b6vzi2_a0a0d0b0a0e(relativePath, BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile"), "path", true)));
+        }
+      }
+    }
+    return false;
+  }
+
+  private static boolean eq_b6vzi2_a0a0d0b0a0e(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
 }

@@ -233,10 +233,6 @@
       <property name="name" nameId="tpck.1169194664001" value="supertypesOf_ListType_ListType_elementSNode" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
     </node>
-    <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="1197650845844">
-      <property name="name" nameId="tpck.1169194664001" value="supertypesOf_ListType_SNodeListType" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
-    </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1204764495310">
       <property name="name" nameId="tpck.1169194664001" value="typeof_NodeAttributeAccessQualifier" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="attribute" />
@@ -6475,35 +6471,6 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1193947164552">
       <property name="name" nameId="tpck.1169194664001" value="listType" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp2q.1151688443754" resolveInfo="ListType" />
-    </node>
-  </root>
-  <root id="1197650845844">
-    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="1197650845845">
-      <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1197650920026">
-        <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1197650923059">
-          <node role="quotedNode" roleId="tp3r.1196350785114" type="tp25.SNodeListType" typeId="tp25.1145383075378" id="1197650927420">
-            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1197650949031">
-              <property name="linkRole" nameId="tpck.1757699476691236116" value="elementConcept" />
-              <node role="expression" roleId="tp3r.1196350785111" type="tpd4.LinkPatternVariableReference" typeId="tpd4.1174989777619" id="1197650953924">
-                <link role="patternVarDecl" roleId="tpd4.1174989841903" targetNodeId="1197650891839" resolveInfo="#elem" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="1197650869174">
-      <property name="name" nameId="tpck.1169194664001" value="subtype" />
-      <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="1197650869175">
-        <node role="patternNode" roleId="tp3t.1136720037778" type="tp2q.ListType" typeId="tp2q.1151688443754" id="1197650884087">
-          <node role="elementType" roleId="tp2q.1151688676805" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1197650888838">
-            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1197650891839">
-              <property name="varName" nameId="tp3t.1137418571428" value="elem" />
-              <property name="linkRole" nameId="tpck.1757699476691236116" value="concept" />
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
   </root>
   <root id="1204764495310">

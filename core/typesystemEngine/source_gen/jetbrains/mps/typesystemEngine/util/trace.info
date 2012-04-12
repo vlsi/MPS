@@ -241,5 +241,21 @@
     </scopeInfo>
     <unitInfo nodeId="1883223317720973623" fileName="LatticeUtil.java" startLine="16" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.typesystemEngine.util.LatticeUtil" />
   </root>
+  <root nodeId="6321644624958548836">
+    <nodeInfo nodeId="3635379492312128764" fileName="CoerceUtil.java" startLine="14" startPosition="32" endLine="15" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6321644624958548838" fileName="CoerceUtil.java" startLine="9" startPosition="25" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CoerceUtil#()V" />
+    <nodeInfo nodeId="3635379492312128739" fileName="CoerceUtil.java" startLine="13" startPosition="72" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3635379492312128726" fileName="CoerceUtil.java" startLine="16" startPosition="5" endLine="20" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3635379492312128715" fileName="CoerceUtil.java" startLine="12" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="canBeCoerced#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Z" />
+    <scopeInfo nodeId="6321644624958548841" fileName="CoerceUtil.java" startLine="10" startPosition="23" endLine="10" endPosition="23" />
+    <scopeInfo nodeId="3635379492312128740" fileName="CoerceUtil.java" startLine="14" startPosition="32" endLine="15" endPosition="18" />
+    <scopeInfo nodeId="6321644624958548838" fileName="CoerceUtil.java" startLine="9" startPosition="25" endLine="11" endPosition="3" />
+    <scopeInfo nodeId="3635379492312128718" fileName="CoerceUtil.java" startLine="13" startPosition="72" endLine="20" endPosition="6" />
+    <scopeInfo nodeId="3635379492312128715" fileName="CoerceUtil.java" startLine="12" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="3635379492312128724" varName="conceptFqName" />
+      <varInfo nodeId="3635379492312128722" varName="type" />
+    </scopeInfo>
+    <unitInfo nodeId="6321644624958548836" fileName="CoerceUtil.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.typesystemEngine.util.CoerceUtil" />
+  </root>
 </debugInfo>
 

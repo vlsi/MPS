@@ -80,6 +80,13 @@ public class ListType_Behavior {
     return new ListType_Behavior.QuotationClass_ywnljw_a0a0g().createNode();
   }
 
+  public static boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
+    if ("jetbrains.mps.baseLanguage.collections.structure.LinkedListType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.DequeType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.StackType".equals(conceptFqName)) {
+      return false;
+    }
+    return true;
+  }
+
   public static List<SNode> call_getAbstractCreators_7602110602933345720(SNode thisNode, SModel targetModel) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.ListType"), "virtual_getAbstractCreators_7602110602933317830", PARAMETERS_7602110602933345720, targetModel);

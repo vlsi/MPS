@@ -5,15 +5,16 @@ package jetbrains.mps.build.mps.generator.template.main;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.build.util.RelativePathHelper;
 import jetbrains.mps.build.behavior.BuildSourcePath_Behavior;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.build.mps.util.MPSModulesClosure;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -24,22 +25,21 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.build.mps.util.VisibleModules;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.build.mps.util.ModuleLoader;
 import jetbrains.mps.generator.template.TemplateQueryContext;
-import java.util.LinkedHashSet;
-import jetbrains.mps.build.mps.util.BuildModuleUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1500819558096430320(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "doNotCompile") == false;
+  }
+
+  public static boolean baseMappingRule_Condition_2591537044436204156(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "module", false), "jetbrains.mps.build.mps.structure.BuildMps_Module");
   }
 
   public static Object propertyMacro_GetPropertyValue_1500819558096225938(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -92,7 +92,7 @@ public class QueriesGenerated {
     SNode targetModule = (SNode) _context.getNode().getReferent("targetModule");
     SNode result = _context.getOutputNodeByInputNodeAndMappingLabel(targetModule, "javaModule");
     if (result == null) {
-      _context.showErrorMessage(((Tuples._3<SNode, Iterable<SNode>, Iterable<SNode>>) _context.getVariable("var:mdeps"))._0(), "cannot get java output for " + SPropertyOperations.getString(targetModule, "name"));
+      _context.showErrorMessage(((Tuples._2<SNode, MPSModulesClosure>) _context.getVariable("var:mdeps"))._0(), "cannot get java output for " + SPropertyOperations.getString(targetModule, "name"));
     }
     return result;
   }
@@ -105,11 +105,11 @@ public class QueriesGenerated {
     );
   }
 
-  public static Object referenceMacro_GetReferent_1692280246134778952(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "module", false), "javaModule");
+  public static Object referenceMacro_GetReferent_2591537044436106587(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "module", false), "jetbrains.mps.build.mps.structure.BuildMps_Module"), "javaModule");
   }
 
-  public static Object referenceMacro_GetReferent_2540145662854694353(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_2591537044436106598(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "module", false), "javaModule");
   }
 
@@ -183,7 +183,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_4267986820121149056(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode mod : Sequence.fromIterable(((Tuples._3<SNode, Iterable<SNode>, Iterable<SNode>>) _context.getVariable("var:mdeps"))._1()).where(new IWhereFilter<SNode>() {
+    for (SNode mod : Sequence.fromIterable(((Tuples._2<SNode, MPSModulesClosure>) _context.getVariable("var:mdeps"))._1().getModules()).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "doNotCompile") == false && SNodeOperations.getContainingRoot(_context.getNode()) == SNodeOperations.getContainingRoot(it);
       }
@@ -200,39 +200,13 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_7259033139236497711(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    Iterable<SNode> reexportedFromModuleDependencies = Sequence.fromIterable(((Tuples._3<SNode, Iterable<SNode>, Iterable<SNode>>) _context.getVariable("var:mdeps"))._1()).concat(Sequence.fromIterable(Sequence.<SNode>singleton(_context.getNode()))).translate(new ITranslator2<SNode, SNode>() {
-      public Iterable<SNode> translate(SNode mod) {
-        return ListSequence.fromList(SLinkOperations.getTargets(mod, "dependencies", true)).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule") && SPropertyOperations.getBoolean(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule"), "reexport");
-          }
-        }).select(new ISelector<SNode, SNode>() {
-          public SNode select(SNode it) {
-            return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule"), "module", false);
-          }
-        });
-      }
-    });
-    Set<SNode> reexportMods = SetSequence.fromSet(new HashSet<SNode>());
-    for (SNode mod : reexportedFromModuleDependencies) {
-      SetSequence.fromSet(reexportMods).addElement(mod);
-    }
-
-    Iterable<SNode> directDeps = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "dependencies", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule");
-      }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule"), "module", false);
-      }
-    });
-
+    MPSModulesClosure.RequiredJavaModules requiredAndReexp = ((Tuples._2<SNode, MPSModulesClosure>) _context.getVariable("var:mdeps"))._1().getRequiredJava(_context.getNode());
+    Iterable<SNode> requiredJava = requiredAndReexp.getModules();
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode mod : Sequence.fromIterable(reexportedFromModuleDependencies).concat(Sequence.fromIterable(directDeps))) {
+    for (SNode mod : requiredJava) {
       SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
       loopnode.setReferent("targetModule", mod, false);
-      if (SetSequence.fromSet(reexportMods).contains(mod)) {
+      if (requiredAndReexp.isReexported(mod)) {
         loopnode.setProperty("targetReexport", "true", false);
       }
       ListSequence.fromList(result).addElement(loopnode);
@@ -242,7 +216,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_3717132724153192091(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode lang : Sequence.fromIterable(((Tuples._3<SNode, Iterable<SNode>, Iterable<SNode>>) _context.getVariable("var:mdeps"))._2()).where(new IWhereFilter<SNode>() {
+    for (SNode lang : Sequence.fromIterable(((Tuples._2<SNode, MPSModulesClosure>) _context.getVariable("var:mdeps"))._1().getLanguagesWithRuntime()).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.getContainingRoot(_context.getNode()) == SNodeOperations.getContainingRoot(it);
       }
@@ -342,10 +316,8 @@ public class QueriesGenerated {
   }
 
   public static Object insertMacro_varValue_4267986820121148965(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    Set<SNode> modules = new LinkedHashSet<SNode>();
-    Set<SNode> usedLanguages = new LinkedHashSet<SNode>();
-    BuildModuleUtil.collectAllCompileTimeDependencies(_context.getNode(), modules, usedLanguages);
-    return MultiTuple.<SNode,Set<SNode>,Set<SNode>>from(_context.getNode(), modules, usedLanguages);
+    MPSModulesClosure closure = new MPSModulesClosure(_context).closure(_context.getNode());
+    return MultiTuple.<SNode,MPSModulesClosure>from(_context.getNode(), closure);
   }
 
   public static Object insertMacro_varValue_8654221991637263463(final IOperationContext operationContext, final TemplateQueryContext _context) {

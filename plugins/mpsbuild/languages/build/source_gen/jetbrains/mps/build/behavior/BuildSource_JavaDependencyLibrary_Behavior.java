@@ -4,32 +4,15 @@ package jetbrains.mps.build.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.VisibleArtifacts;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.build.util.JavaExportUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BuildSource_JavaDependencyLibrary_Behavior {
   public static void init(SNode thisNode) {
   }
 
   public static Iterable<SNode> virtual_getDependencyTargets_841011766566205095(SNode thisNode, VisibleArtifacts artifacts) {
-    if (SNodeOperations.getContainingRoot(thisNode) == SNodeOperations.getContainingRoot(SLinkOperations.getTarget(thisNode, "library", false))) {
-      return null;
-    }
-
-    SNode target = SNodeOperations.as(artifacts.toOriginalNode(SLinkOperations.getTarget(thisNode, "library", false)), "jetbrains.mps.build.structure.BuildSource_JavaLibrary");
-    for (SNode artifact : artifacts.getArtifacts()) {
-      if (BuildLayout_Node_Behavior.call_exports_6547494638219603457(artifact, target)) {
-        artifacts.registerEntity(target, artifact);
-        artifacts.needsFetch(SNodeOperations.getParent(thisNode));
-        if (SNodeOperations.isInstanceOf(artifact, "jetbrains.mps.build.structure.BuildLayout_JavaLibrary")) {
-          return SLinkOperations.getTargets(SNodeOperations.cast(artifact, "jetbrains.mps.build.structure.BuildLayout_JavaLibrary"), "children", true);
-        } else {
-          return Sequence.<SNode>singleton(artifact);
-        }
-      }
-    }
-    return null;
-
+    return JavaExportUtil.requireLibrary(artifacts, SLinkOperations.getTarget(thisNode, "library", false), SNodeOperations.getParent(thisNode));
   }
 }
