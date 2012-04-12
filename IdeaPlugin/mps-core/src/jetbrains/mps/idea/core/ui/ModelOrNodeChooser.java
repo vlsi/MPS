@@ -20,6 +20,7 @@ import com.intellij.facet.FacetManager;
 import com.intellij.ide.projectView.impl.ProjectAbstractTreeStructureBase;
 import com.intellij.ide.projectView.impl.ProjectTreeStructure;
 import com.intellij.ide.projectView.impl.ProjectViewPane;
+import com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode;
 import com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode;
 import com.intellij.ide.projectView.impl.nodes.PsiFileNode;
 import com.intellij.openapi.module.Module;
@@ -28,7 +29,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
-import jetbrains.mps.fileTypes.MPSFileType;
+import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
@@ -60,27 +61,32 @@ public class ModelOrNodeChooser extends ProjectViewPane implements ModelElementT
 
   protected ProjectAbstractTreeStructureBase createStructure() {
     return new ProjectTreeStructure(myProject, ID) {
-      private VirtualFile baseDir = myProject.getBaseDir();
-
       public Object[] getChildElements(Object element) {
         ArrayList<Object> result = new ArrayList<Object>();
         for (Object o : super.getChildElements(element)) {
-          if (o instanceof PsiFileNode && ((PsiFileNode) o).getValue().getFileType() instanceof MPSFileType) {
+          if (o instanceof PsiFileNode && ((PsiFileNode) o).getValue().getFileType().equals(MPSFileTypeFactory.MODEL_FILE_TYPE)) {
             result.add(o);
           } else if (o instanceof MPSProjectViewNode) {
             result.add(o);
           } else if (o instanceof PsiDirectoryNode) {
             VirtualFile virtualFile = ((PsiDirectoryNode) o).getVirtualFile();
-            if (virtualFile == null) continue;
-            if (virtualFile.equals(baseDir) || isModelRootOrParent(virtualFile)) {
+            if (virtualFile != null && isModelRootOrParent(virtualFile)) {
               result.add(o);
             }
+          } else if (o instanceof ProjectViewModuleNode && hasModelRoots(((ProjectViewModuleNode) o).getValue())) {
+            result.add(o);
           }
         }
         return result.toArray();
       }
     };
 
+  }
+
+  private boolean hasModelRoots(Module module) {
+    if (module == null) return false;
+    MPSFacet mpsFacet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
+    return !(mpsFacet == null || !(mpsFacet.wasInitialized())) && !(mpsFacet.getConfiguration().getState().getModelRoots().isEmpty());
   }
 
   private boolean isModelRootOrParent(VirtualFile virtualFile) {
