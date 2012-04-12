@@ -87,7 +87,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.uiLanguage">
+  <target name="java.compile.jetbrains.mps.uiLanguage" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.uiLanguage" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.uiLanguage" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -106,7 +106,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.ide.uiLanguage" depends="java.compile.jetbrains.mps.uiLanguage">
+  <target name="java.compile.jetbrains.mps.ide.uiLanguage" depends="java.compile.jetbrains.mps.uiLanguage, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ide.uiLanguage" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.ide.uiLanguage" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -126,7 +126,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.plugin.standalone">
+  <target name="java.compile.jetbrains.mps.lang.plugin.standalone" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.plugin.standalone" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.plugin.standalone" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />

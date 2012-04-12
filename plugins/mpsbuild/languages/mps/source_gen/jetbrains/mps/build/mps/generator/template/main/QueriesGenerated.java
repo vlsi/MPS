@@ -316,7 +316,7 @@ public class QueriesGenerated {
   }
 
   public static Object insertMacro_varValue_4267986820121148965(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    MPSModulesClosure closure = new MPSModulesClosure(_context).closure(_context.getNode());
+    MPSModulesClosure closure = new MPSModulesClosure(_context, _context.getNode()).closure();
     return MultiTuple.<SNode,MPSModulesClosure>from(_context.getNode(), closure);
   }
 

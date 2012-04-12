@@ -17,7 +17,7 @@ public class BuildMps_Module_Behavior {
   }
 
   public static Iterable<SNode> virtual_getDependencyTargets_841011766566205095(SNode thisNode, final VisibleArtifacts artifacts) {
-    MPSModulesClosure closure = new MPSModulesClosure(artifacts.getGenContext()).closure(thisNode);
+    MPSModulesClosure closure = new MPSModulesClosure(artifacts.getGenContext(), thisNode).closure();
 
     Iterable<SNode> requiredModules = Sequence.fromIterable(((Iterable<SNode>) closure.getModules())).concat(Sequence.fromIterable(((Iterable<SNode>) closure.getLanguagesWithRuntime()))).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {

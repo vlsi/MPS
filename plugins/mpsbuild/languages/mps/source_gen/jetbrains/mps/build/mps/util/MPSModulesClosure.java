@@ -5,12 +5,13 @@ package jetbrains.mps.build.mps.util;
 import java.util.LinkedHashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.build.util.DependenciesHelper;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.util.IterableUtil;
@@ -24,9 +25,45 @@ public class MPSModulesClosure {
   private LinkedHashSet<SNode> modules = new LinkedHashSet<SNode>();
   private LinkedHashSet<SNode> languagesWithRuntime = new LinkedHashSet<SNode>();
   private TemplateQueryContext genContext;
+  private SNode initial;
 
-  public MPSModulesClosure(TemplateQueryContext genContext) {
+  public MPSModulesClosure(TemplateQueryContext genContext, SNode module) {
     this.genContext = genContext;
+    this.initial = module;
+  }
+
+  private SNode toOriginal(SNode node) {
+    if (node == null) {
+      return null;
+    }
+    if (SNodeOperations.getContainingRoot(node) == SNodeOperations.getContainingRoot(initial)) {
+      return node;
+    }
+    return SNodeOperations.as(DependenciesHelper.getOriginalNode(node, genContext), "jetbrains.mps.build.mps.structure.BuildMps_Module");
+  }
+
+  private Iterable<SNode> toOriginal(Iterable<SNode> modules) {
+    return Sequence.fromIterable(modules).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return toOriginal(it);
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return it != null;
+      }
+    });
+  }
+
+  private Iterable<SNode> toOriginalLangs(Iterable<SNode> langs) {
+    return Sequence.fromIterable(langs).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.as(toOriginal(it), "jetbrains.mps.build.mps.structure.BuildMps_Language");
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return it != null;
+      }
+    });
   }
 
   private Iterable<SNode> dependencies(SNode module) {
@@ -65,7 +102,7 @@ public class MPSModulesClosure {
     }
 
     if (reexport) {
-      return dependencies;
+      return toOriginal(dependencies);
     }
 
     Iterable<SNode> solutionsFromDevkits = Sequence.fromIterable(includingExtended(usedDevkits(module))).translate(new ITranslator2<SNode, SNode>() {
@@ -82,7 +119,7 @@ public class MPSModulesClosure {
       }
     });
     // "core" language is added in loadModules pre-script 
-    return IterableUtil.distinct(IterableUtil.merge(dependencies, solutionsFromDevkits));
+    return toOriginal(IterableUtil.distinct(IterableUtil.merge(dependencies, solutionsFromDevkits)));
   }
 
   private Iterable<SNode> getUsedLanguages(SNode module) {
@@ -111,7 +148,7 @@ public class MPSModulesClosure {
     });
 
     // use "core" language is added in loadModules pre-script 
-    return includingExtendedLanguages(IterableUtil.merge(usedLangs, languagesFromDevkits));
+    return toOriginalLangs(includingExtendedLanguages(IterableUtil.merge(usedLangs, languagesFromDevkits)));
   }
 
   private Iterable<SNode> usedDevkits(SNode module) {
@@ -158,12 +195,12 @@ public class MPSModulesClosure {
     };
   }
 
-  private void collectAllCompileTimeDependencies(SNode module, boolean reexportOnly, Set<SNode> dependencies, Set<SNode> nonreexportDeps, Set<SNode> languagesWithRuntime) {
+  private void collectAllCompileTimeDependencies(SNode module, boolean reexportOnly, Set<SNode> nonreexportDeps) {
     // copy of ModuleDependenciesManager.collectAllCompileTimeDependencies (ignoring "core" language) 
-    dependencies.add(module);
+    modules.add(module);
     for (SNode m : getDependencies(module, true)) {
-      if (!(dependencies.contains(m))) {
-        collectAllCompileTimeDependencies(m, true, dependencies, nonreexportDeps, languagesWithRuntime);
+      if (!(modules.contains(m))) {
+        collectAllCompileTimeDependencies(m, true, nonreexportDeps);
       }
     }
 
@@ -183,9 +220,9 @@ public class MPSModulesClosure {
           hasRuntime = true;
           continue;
         }
-        SNode runtimeSolution = SLinkOperations.getTarget(SNodeOperations.cast(rdep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime"), "solution", false);
-        if (!(dependencies.contains(runtimeSolution))) {
-          collectAllCompileTimeDependencies(runtimeSolution, true, dependencies, nonreexportDeps, languagesWithRuntime);
+        SNode runtimeSolution = SNodeOperations.as(toOriginal(SLinkOperations.getTarget(SNodeOperations.cast(rdep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime"), "solution", false)), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
+        if (!(modules.contains(runtimeSolution))) {
+          collectAllCompileTimeDependencies(runtimeSolution, true, nonreexportDeps);
         }
 
       }
@@ -195,11 +232,11 @@ public class MPSModulesClosure {
     }
   }
 
-  public MPSModulesClosure closure(SNode module) {
+  public MPSModulesClosure closure() {
     Set<SNode> nonreexportDeps = new LinkedHashSet<SNode>();
-    collectAllCompileTimeDependencies(module, false, modules, nonreexportDeps, languagesWithRuntime);
+    collectAllCompileTimeDependencies(initial, false, nonreexportDeps);
     modules.addAll(nonreexportDeps);
-    modules.remove(module);
+    modules.remove(initial);
     return this;
   }
 

@@ -157,8 +157,8 @@
     <nodeInfo nodeId="3717132724153193252" fileName="QueriesGenerated.java" startLine="231" startPosition="9" endLine="232" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3717132724153192164" fileName="QueriesGenerated.java" startLine="234" startPosition="5" endLine="235" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1500819558096263529" fileName="QueriesGenerated.java" startLine="238" startPosition="155" endLine="239" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7525356604723807120" fileName="QueriesGenerated.java" startLine="318" startPosition="144" endLine="319" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4267986820121149040" fileName="QueriesGenerated.java" startLine="319" startPosition="92" endLine="320" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7525356604723807120" fileName="QueriesGenerated.java" startLine="318" startPosition="144" endLine="319" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4267986820121149040" fileName="QueriesGenerated.java" startLine="319" startPosition="94" endLine="320" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="868032131020648924" fileName="QueriesGenerated.java" startLine="93" startPosition="96" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7259033139236585014" fileName="QueriesGenerated.java" startLine="208" startPosition="55" endLine="211" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3717132724153192339" fileName="QueriesGenerated.java" startLine="228" startPosition="79" endLine="231" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
