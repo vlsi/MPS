@@ -4,7 +4,7 @@
     <unitInfo nodeId="2569834391839970845" fileName="buildWorkbench.xml" startLine="1" startPosition="0" endLine="181" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildWorkbench" />
   </root>
   <root nodeId="7926701909975931624">
-    <unitInfo nodeId="7926701909975931624" fileName="buildCore.xml" startLine="1" startPosition="0" endLine="3962" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildCore" />
+    <unitInfo nodeId="7926701909975931624" fileName="buildCore.xml" startLine="1" startPosition="0" endLine="3963" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildCore" />
   </root>
 </debugInfo>
 

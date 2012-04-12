@@ -726,154 +726,186 @@
     <nodeInfo nodeId="4701820937132256227" fileName="VisibleArtifacts.java" startLine="24" startPosition="85" endLine="25" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4701820937132256236" fileName="VisibleArtifacts.java" startLine="25" startPosition="27" endLine="26" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1368030936106597810" fileName="VisibleArtifacts.java" startLine="31" startPosition="80" endLine="32" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4701820937132233468" fileName="VisibleArtifacts.java" startLine="37" startPosition="81" endLine="38" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4701820937132233505" fileName="VisibleArtifacts.java" startLine="39" startPosition="38" endLine="40" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4701820937132262450" fileName="VisibleArtifacts.java" startLine="41" startPosition="7" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4701820937132263041" fileName="VisibleArtifacts.java" startLine="42" startPosition="0" endLine="43" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4701820937132263050" fileName="VisibleArtifacts.java" startLine="43" startPosition="83" endLine="44" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4701820937132263749" fileName="VisibleArtifacts.java" startLine="48" startPosition="60" endLine="49" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4701820937132263109" fileName="VisibleArtifacts.java" startLine="50" startPosition="25" endLine="51" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4701820937132263267" fileName="VisibleArtifacts.java" startLine="52" startPosition="5" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4701820937132263121" fileName="VisibleArtifacts.java" startLine="54" startPosition="120" endLine="55" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4701820937132263096" fileName="VisibleArtifacts.java" startLine="60" startPosition="38" endLine="61" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4701820937132263271" fileName="VisibleArtifacts.java" startLine="62" startPosition="5" endLine="63" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4701820937132263118" fileName="VisibleArtifacts.java" startLine="63" startPosition="59" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4701820937132263145" fileName="VisibleArtifacts.java" startLine="64" startPosition="0" endLine="65" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4701820937132263177" fileName="VisibleArtifacts.java" startLine="65" startPosition="61" endLine="66" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4701820937132263376" fileName="VisibleArtifacts.java" startLine="66" startPosition="32" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4701820937132263418" fileName="VisibleArtifacts.java" startLine="69" startPosition="163" endLine="70" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4701820937132263566" fileName="VisibleArtifacts.java" startLine="72" startPosition="104" endLine="73" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4701820937132263721" fileName="VisibleArtifacts.java" startLine="74" startPosition="27" endLine="75" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6547494638219491353" fileName="VisibleArtifacts.java" startLine="80" startPosition="43" endLine="81" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2590001334067676260" fileName="VisibleArtifacts.java" startLine="84" startPosition="29" endLine="85" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4701820937132263827" fileName="VisibleArtifacts.java" startLine="88" startPosition="41" endLine="89" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4701820937132265137" fileName="VisibleArtifacts.java" startLine="92" startPosition="39" endLine="93" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7128123785277649559" fileName="VisibleArtifacts.java" startLine="96" startPosition="35" endLine="97" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6520682027041156692" fileName="VisibleArtifacts.java" startLine="101" startPosition="25" endLine="102" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6520682027041156803" fileName="VisibleArtifacts.java" startLine="103" startPosition="5" endLine="104" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520682027041156835" fileName="VisibleArtifacts.java" startLine="105" startPosition="25" endLine="106" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1368030936106597861" fileName="VisibleArtifacts.java" startLine="108" startPosition="37" endLine="109" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6520682027041156496" fileName="VisibleArtifacts.java" startLine="110" startPosition="5" endLine="111" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8252715012761470726" fileName="VisibleArtifacts.java" startLine="115" startPosition="71" endLine="116" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="7880069565647244812" fileName="VisibleArtifacts.java" startLine="118" startPosition="37" endLine="119" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="7880069565647244750" fileName="VisibleArtifacts.java" startLine="120" startPosition="5" endLine="121" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7880069565647244784" fileName="VisibleArtifacts.java" startLine="122" startPosition="25" endLine="123" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8252715012761472779" fileName="VisibleArtifacts.java" startLine="125" startPosition="48" endLine="126" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="8252715012761612124" fileName="VisibleArtifacts.java" startLine="127" startPosition="85" endLine="128" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7880069565647244806" fileName="VisibleArtifacts.java" startLine="128" startPosition="57" endLine="129" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7880069565647244822" fileName="VisibleArtifacts.java" startLine="131" startPosition="5" endLine="132" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8169228734285515154" fileName="VisibleArtifacts.java" startLine="135" startPosition="47" endLine="136" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7181125477683419112" fileName="VisibleArtifacts.java" startLine="37" startPosition="81" endLine="38" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7181125477683419119" fileName="VisibleArtifacts.java" startLine="39" startPosition="37" endLine="40" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="7181125477683419123" fileName="VisibleArtifacts.java" startLine="41" startPosition="7" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7181125477683419124" fileName="VisibleArtifacts.java" startLine="42" startPosition="0" endLine="43" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7181125477683419130" fileName="VisibleArtifacts.java" startLine="43" startPosition="82" endLine="44" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4701820937132233468" fileName="VisibleArtifacts.java" startLine="46" startPosition="81" endLine="47" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4701820937132233505" fileName="VisibleArtifacts.java" startLine="48" startPosition="38" endLine="49" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4701820937132262450" fileName="VisibleArtifacts.java" startLine="50" startPosition="7" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4701820937132263041" fileName="VisibleArtifacts.java" startLine="51" startPosition="0" endLine="52" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4701820937132263050" fileName="VisibleArtifacts.java" startLine="52" startPosition="83" endLine="53" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4701820937132263749" fileName="VisibleArtifacts.java" startLine="57" startPosition="61" endLine="58" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4701820937132263109" fileName="VisibleArtifacts.java" startLine="59" startPosition="25" endLine="60" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4701820937132263267" fileName="VisibleArtifacts.java" startLine="61" startPosition="5" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4701820937132263121" fileName="VisibleArtifacts.java" startLine="63" startPosition="120" endLine="64" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7181125477683419147" fileName="VisibleArtifacts.java" startLine="68" startPosition="68" endLine="69" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7181125477683419155" fileName="VisibleArtifacts.java" startLine="70" startPosition="25" endLine="71" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7181125477683419159" fileName="VisibleArtifacts.java" startLine="72" startPosition="5" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7181125477683419162" fileName="VisibleArtifacts.java" startLine="74" startPosition="77" endLine="75" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4701820937132263096" fileName="VisibleArtifacts.java" startLine="80" startPosition="38" endLine="81" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4701820937132263271" fileName="VisibleArtifacts.java" startLine="82" startPosition="5" endLine="83" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="4701820937132263118" fileName="VisibleArtifacts.java" startLine="83" startPosition="59" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4701820937132263145" fileName="VisibleArtifacts.java" startLine="84" startPosition="0" endLine="85" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4701820937132263177" fileName="VisibleArtifacts.java" startLine="85" startPosition="61" endLine="86" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4701820937132263376" fileName="VisibleArtifacts.java" startLine="86" startPosition="32" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4701820937132263418" fileName="VisibleArtifacts.java" startLine="89" startPosition="163" endLine="90" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4701820937132263566" fileName="VisibleArtifacts.java" startLine="92" startPosition="104" endLine="93" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4701820937132263721" fileName="VisibleArtifacts.java" startLine="94" startPosition="27" endLine="95" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6547494638219491353" fileName="VisibleArtifacts.java" startLine="100" startPosition="43" endLine="101" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2590001334067676260" fileName="VisibleArtifacts.java" startLine="104" startPosition="29" endLine="105" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4701820937132263827" fileName="VisibleArtifacts.java" startLine="108" startPosition="41" endLine="109" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4701820937132265137" fileName="VisibleArtifacts.java" startLine="112" startPosition="39" endLine="113" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7128123785277649559" fileName="VisibleArtifacts.java" startLine="116" startPosition="35" endLine="117" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027041156692" fileName="VisibleArtifacts.java" startLine="121" startPosition="25" endLine="122" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027041156803" fileName="VisibleArtifacts.java" startLine="123" startPosition="5" endLine="124" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027041156835" fileName="VisibleArtifacts.java" startLine="125" startPosition="25" endLine="126" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1368030936106597861" fileName="VisibleArtifacts.java" startLine="128" startPosition="37" endLine="129" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6520682027041156496" fileName="VisibleArtifacts.java" startLine="130" startPosition="5" endLine="131" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8252715012761470726" fileName="VisibleArtifacts.java" startLine="135" startPosition="71" endLine="136" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="7880069565647244812" fileName="VisibleArtifacts.java" startLine="138" startPosition="37" endLine="139" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="7880069565647244750" fileName="VisibleArtifacts.java" startLine="140" startPosition="5" endLine="141" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7880069565647244784" fileName="VisibleArtifacts.java" startLine="142" startPosition="25" endLine="143" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8252715012761472779" fileName="VisibleArtifacts.java" startLine="145" startPosition="48" endLine="146" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="8252715012761612124" fileName="VisibleArtifacts.java" startLine="147" startPosition="85" endLine="148" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7880069565647244806" fileName="VisibleArtifacts.java" startLine="148" startPosition="57" endLine="149" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7880069565647244822" fileName="VisibleArtifacts.java" startLine="151" startPosition="5" endLine="152" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8169228734285515154" fileName="VisibleArtifacts.java" startLine="155" startPosition="47" endLine="156" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1368030936106597657" fileName="VisibleArtifacts.java" startLine="30" startPosition="6" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4701820937132233476" fileName="VisibleArtifacts.java" startLine="38" startPosition="112" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4701820937132263107" fileName="VisibleArtifacts.java" startLine="49" startPosition="102" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4701820937132262959" fileName="VisibleArtifacts.java" startLine="53" startPosition="0" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4701820937132263094" fileName="VisibleArtifacts.java" startLine="59" startPosition="58" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4701820937132263416" fileName="VisibleArtifacts.java" startLine="68" startPosition="108" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4701820937132263692" fileName="VisibleArtifacts.java" startLine="73" startPosition="240" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6520682027041156660" fileName="VisibleArtifacts.java" startLine="100" startPosition="38" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6520682027041156833" fileName="VisibleArtifacts.java" startLine="104" startPosition="32" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1368030936106597832" fileName="VisibleArtifacts.java" startLine="107" startPosition="5" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8252715012761470645" fileName="VisibleArtifacts.java" startLine="114" startPosition="40" endLine="117" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7880069565647244810" fileName="VisibleArtifacts.java" startLine="117" startPosition="5" endLine="120" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7880069565647244690" fileName="VisibleArtifacts.java" startLine="121" startPosition="58" endLine="124" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7181125477683419117" fileName="VisibleArtifacts.java" startLine="38" startPosition="118" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4701820937132233476" fileName="VisibleArtifacts.java" startLine="47" startPosition="112" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4701820937132263107" fileName="VisibleArtifacts.java" startLine="58" startPosition="102" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4701820937132262959" fileName="VisibleArtifacts.java" startLine="62" startPosition="0" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7181125477683419153" fileName="VisibleArtifacts.java" startLine="69" startPosition="109" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7181125477683419160" fileName="VisibleArtifacts.java" startLine="73" startPosition="0" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4701820937132263094" fileName="VisibleArtifacts.java" startLine="79" startPosition="58" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4701820937132263416" fileName="VisibleArtifacts.java" startLine="88" startPosition="108" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4701820937132263692" fileName="VisibleArtifacts.java" startLine="93" startPosition="240" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6520682027041156660" fileName="VisibleArtifacts.java" startLine="120" startPosition="38" endLine="123" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6520682027041156833" fileName="VisibleArtifacts.java" startLine="124" startPosition="32" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1368030936106597832" fileName="VisibleArtifacts.java" startLine="127" startPosition="5" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8252715012761470645" fileName="VisibleArtifacts.java" startLine="134" startPosition="40" endLine="137" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7880069565647244810" fileName="VisibleArtifacts.java" startLine="137" startPosition="5" endLine="140" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7880069565647244690" fileName="VisibleArtifacts.java" startLine="141" startPosition="58" endLine="144" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6547494638219612077" fileName="VisibleArtifacts.java" startLine="26" startPosition="33" endLine="30" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4701820937132263605" fileName="VisibleArtifacts.java" startLine="79" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toOriginalNode#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="2590001334067676256" fileName="VisibleArtifacts.java" startLine="83" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProject#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="4701820937132263823" fileName="VisibleArtifacts.java" startLine="87" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getArtifacts#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="4701820937132265128" fileName="VisibleArtifacts.java" startLine="91" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contains#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="7128123785277649549" fileName="VisibleArtifacts.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parent#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="2913098736709466065" fileName="VisibleArtifacts.java" startLine="126" startPosition="65" endLine="130" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8169228734285515150" fileName="VisibleArtifacts.java" startLine="134" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenContext#()Ljetbrains/mps/generator/template/TemplateQueryContext;" />
-    <nodeInfo nodeId="2913098736709466063" fileName="VisibleArtifacts.java" startLine="124" startPosition="5" endLine="131" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4701820937132233462" fileName="VisibleArtifacts.java" startLine="36" startPosition="25" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4701820937132263378" fileName="VisibleArtifacts.java" startLine="67" startPosition="0" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4701820937132263605" fileName="VisibleArtifacts.java" startLine="99" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toOriginalNode#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2590001334067676256" fileName="VisibleArtifacts.java" startLine="103" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProject#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="4701820937132263823" fileName="VisibleArtifacts.java" startLine="107" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getArtifacts#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="4701820937132265128" fileName="VisibleArtifacts.java" startLine="111" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contains#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="7128123785277649549" fileName="VisibleArtifacts.java" startLine="115" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parent#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2913098736709466065" fileName="VisibleArtifacts.java" startLine="146" startPosition="65" endLine="150" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8169228734285515150" fileName="VisibleArtifacts.java" startLine="154" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenContext#()Ljetbrains/mps/generator/template/TemplateQueryContext;" />
+    <nodeInfo nodeId="2913098736709466063" fileName="VisibleArtifacts.java" startLine="144" startPosition="5" endLine="151" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7181125477683419108" fileName="VisibleArtifacts.java" startLine="36" startPosition="25" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4701820937132233462" fileName="VisibleArtifacts.java" startLine="45" startPosition="5" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4701820937132263378" fileName="VisibleArtifacts.java" startLine="87" startPosition="0" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4701820937132233609" fileName="VisibleArtifacts.java" startLine="23" startPosition="0" endLine="34" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VisibleArtifacts#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;)V" />
-    <nodeInfo nodeId="4701820937132262873" fileName="VisibleArtifacts.java" startLine="47" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectInScript#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="4701820937132256242" fileName="VisibleArtifacts.java" startLine="35" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collect#()V" />
-    <nodeInfo nodeId="6520682027041156490" fileName="VisibleArtifacts.java" startLine="99" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="needsFetch#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="4701820937132263000" fileName="VisibleArtifacts.java" startLine="58" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectInLayout#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="7880069565647244667" fileName="VisibleArtifacts.java" startLine="113" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findArtifact#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="4701820937132262873" fileName="VisibleArtifacts.java" startLine="56" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectInProject#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7181125477683419139" fileName="VisibleArtifacts.java" startLine="67" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectInExternalLayout#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="6520682027041156490" fileName="VisibleArtifacts.java" startLine="119" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="needsFetch#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="4701820937132256242" fileName="VisibleArtifacts.java" startLine="35" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collect#()V" />
+    <nodeInfo nodeId="4701820937132263000" fileName="VisibleArtifacts.java" startLine="78" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectInLayout#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7880069565647244667" fileName="VisibleArtifacts.java" startLine="133" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findArtifact#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="1368030936106597658" fileName="VisibleArtifacts.java" startLine="31" startPosition="80" endLine="32" endPosition="127" />
-    <scopeInfo nodeId="4701820937132233477" fileName="VisibleArtifacts.java" startLine="39" startPosition="38" endLine="40" endPosition="17" />
-    <scopeInfo nodeId="4701820937132263108" fileName="VisibleArtifacts.java" startLine="50" startPosition="25" endLine="51" endPosition="13" />
-    <scopeInfo nodeId="4701820937132262960" fileName="VisibleArtifacts.java" startLine="54" startPosition="120" endLine="55" endPosition="36" />
-    <scopeInfo nodeId="4701820937132263095" fileName="VisibleArtifacts.java" startLine="60" startPosition="38" endLine="61" endPosition="13" />
-    <scopeInfo nodeId="4701820937132263417" fileName="VisibleArtifacts.java" startLine="69" startPosition="163" endLine="70" endPosition="37" />
-    <scopeInfo nodeId="4701820937132263693" fileName="VisibleArtifacts.java" startLine="74" startPosition="27" endLine="75" endPosition="40" />
-    <scopeInfo nodeId="4701820937132263608" fileName="VisibleArtifacts.java" startLine="80" startPosition="43" endLine="81" endPosition="64" />
-    <scopeInfo nodeId="2590001334067676259" fileName="VisibleArtifacts.java" startLine="84" startPosition="29" endLine="85" endPosition="19" />
-    <scopeInfo nodeId="4701820937132263826" fileName="VisibleArtifacts.java" startLine="88" startPosition="41" endLine="89" endPosition="68" />
-    <scopeInfo nodeId="4701820937132265131" fileName="VisibleArtifacts.java" startLine="92" startPosition="39" endLine="93" endPosition="39" />
-    <scopeInfo nodeId="7128123785277649552" fileName="VisibleArtifacts.java" startLine="96" startPosition="35" endLine="97" endPosition="31" />
-    <scopeInfo nodeId="6520682027041156661" fileName="VisibleArtifacts.java" startLine="101" startPosition="25" endLine="102" endPosition="13" />
-    <scopeInfo nodeId="6520682027041156834" fileName="VisibleArtifacts.java" startLine="105" startPosition="25" endLine="106" endPosition="13" />
-    <scopeInfo nodeId="1368030936106597833" fileName="VisibleArtifacts.java" startLine="108" startPosition="37" endLine="109" endPosition="98" />
-    <scopeInfo nodeId="8252715012761470646" fileName="VisibleArtifacts.java" startLine="115" startPosition="71" endLine="116" endPosition="96" />
-    <scopeInfo nodeId="7880069565647244811" fileName="VisibleArtifacts.java" startLine="118" startPosition="37" endLine="119" endPosition="100" />
-    <scopeInfo nodeId="7880069565647244691" fileName="VisibleArtifacts.java" startLine="122" startPosition="25" endLine="123" endPosition="20" />
-    <scopeInfo nodeId="8169228734285515153" fileName="VisibleArtifacts.java" startLine="135" startPosition="47" endLine="136" endPosition="22" />
-    <scopeInfo nodeId="2913098736709466070" fileName="VisibleArtifacts.java" startLine="127" startPosition="85" endLine="129" endPosition="24" />
-    <scopeInfo nodeId="4701820937132262959" fileName="VisibleArtifacts.java" startLine="53" startPosition="0" endLine="56" endPosition="5">
+    <scopeInfo nodeId="7181125477683419118" fileName="VisibleArtifacts.java" startLine="39" startPosition="37" endLine="40" endPosition="17" />
+    <scopeInfo nodeId="4701820937132233477" fileName="VisibleArtifacts.java" startLine="48" startPosition="38" endLine="49" endPosition="17" />
+    <scopeInfo nodeId="4701820937132263108" fileName="VisibleArtifacts.java" startLine="59" startPosition="25" endLine="60" endPosition="13" />
+    <scopeInfo nodeId="4701820937132262960" fileName="VisibleArtifacts.java" startLine="63" startPosition="120" endLine="64" endPosition="36" />
+    <scopeInfo nodeId="7181125477683419154" fileName="VisibleArtifacts.java" startLine="70" startPosition="25" endLine="71" endPosition="13" />
+    <scopeInfo nodeId="7181125477683419161" fileName="VisibleArtifacts.java" startLine="74" startPosition="77" endLine="75" endPosition="36" />
+    <scopeInfo nodeId="4701820937132263095" fileName="VisibleArtifacts.java" startLine="80" startPosition="38" endLine="81" endPosition="13" />
+    <scopeInfo nodeId="4701820937132263417" fileName="VisibleArtifacts.java" startLine="89" startPosition="163" endLine="90" endPosition="37" />
+    <scopeInfo nodeId="4701820937132263693" fileName="VisibleArtifacts.java" startLine="94" startPosition="27" endLine="95" endPosition="40" />
+    <scopeInfo nodeId="4701820937132263608" fileName="VisibleArtifacts.java" startLine="100" startPosition="43" endLine="101" endPosition="64" />
+    <scopeInfo nodeId="2590001334067676259" fileName="VisibleArtifacts.java" startLine="104" startPosition="29" endLine="105" endPosition="19" />
+    <scopeInfo nodeId="4701820937132263826" fileName="VisibleArtifacts.java" startLine="108" startPosition="41" endLine="109" endPosition="68" />
+    <scopeInfo nodeId="4701820937132265131" fileName="VisibleArtifacts.java" startLine="112" startPosition="39" endLine="113" endPosition="39" />
+    <scopeInfo nodeId="7128123785277649552" fileName="VisibleArtifacts.java" startLine="116" startPosition="35" endLine="117" endPosition="31" />
+    <scopeInfo nodeId="6520682027041156661" fileName="VisibleArtifacts.java" startLine="121" startPosition="25" endLine="122" endPosition="13" />
+    <scopeInfo nodeId="6520682027041156834" fileName="VisibleArtifacts.java" startLine="125" startPosition="25" endLine="126" endPosition="13" />
+    <scopeInfo nodeId="1368030936106597833" fileName="VisibleArtifacts.java" startLine="128" startPosition="37" endLine="129" endPosition="98" />
+    <scopeInfo nodeId="8252715012761470646" fileName="VisibleArtifacts.java" startLine="135" startPosition="71" endLine="136" endPosition="96" />
+    <scopeInfo nodeId="7880069565647244811" fileName="VisibleArtifacts.java" startLine="138" startPosition="37" endLine="139" endPosition="100" />
+    <scopeInfo nodeId="7880069565647244691" fileName="VisibleArtifacts.java" startLine="142" startPosition="25" endLine="143" endPosition="20" />
+    <scopeInfo nodeId="8169228734285515153" fileName="VisibleArtifacts.java" startLine="155" startPosition="47" endLine="156" endPosition="22" />
+    <scopeInfo nodeId="2913098736709466070" fileName="VisibleArtifacts.java" startLine="147" startPosition="85" endLine="149" endPosition="24" />
+    <scopeInfo nodeId="4701820937132262959" fileName="VisibleArtifacts.java" startLine="62" startPosition="0" endLine="65" endPosition="5">
       <varInfo nodeId="4701820937132262961" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4701820937132263379" fileName="VisibleArtifacts.java" startLine="68" startPosition="108" endLine="71" endPosition="7" />
-    <scopeInfo nodeId="4701820937132263416" fileName="VisibleArtifacts.java" startLine="68" startPosition="108" endLine="71" endPosition="7">
+    <scopeInfo nodeId="7181125477683419160" fileName="VisibleArtifacts.java" startLine="73" startPosition="0" endLine="76" endPosition="5">
+      <varInfo nodeId="7181125477683419166" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4701820937132263379" fileName="VisibleArtifacts.java" startLine="88" startPosition="108" endLine="91" endPosition="7" />
+    <scopeInfo nodeId="4701820937132263416" fileName="VisibleArtifacts.java" startLine="88" startPosition="108" endLine="91" endPosition="7">
       <varInfo nodeId="4701820937132263422" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="4701820937132263483" fileName="VisibleArtifacts.java" startLine="72" startPosition="104" endLine="76" endPosition="7">
+    <scopeInfo nodeId="4701820937132263483" fileName="VisibleArtifacts.java" startLine="92" startPosition="104" endLine="96" endPosition="7">
       <varInfo nodeId="4701820937132263567" varName="target" />
     </scopeInfo>
-    <scopeInfo nodeId="4701820937132263605" fileName="VisibleArtifacts.java" startLine="79" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="4701820937132263605" fileName="VisibleArtifacts.java" startLine="99" startPosition="0" endLine="103" endPosition="0">
       <varInfo nodeId="4701820937132263611" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2590001334067676256" fileName="VisibleArtifacts.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="4701820937132263823" fileName="VisibleArtifacts.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="4701820937132265128" fileName="VisibleArtifacts.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
+    <scopeInfo nodeId="2590001334067676256" fileName="VisibleArtifacts.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="4701820937132263823" fileName="VisibleArtifacts.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="4701820937132265128" fileName="VisibleArtifacts.java" startLine="111" startPosition="0" endLine="115" endPosition="0">
       <varInfo nodeId="4701820937132265135" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7128123785277649549" fileName="VisibleArtifacts.java" startLine="95" startPosition="0" endLine="99" endPosition="0">
+    <scopeInfo nodeId="7128123785277649549" fileName="VisibleArtifacts.java" startLine="115" startPosition="0" endLine="119" endPosition="0">
       <varInfo nodeId="7128123785277649557" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8169228734285515150" fileName="VisibleArtifacts.java" startLine="134" startPosition="0" endLine="138" endPosition="0" />
-    <scopeInfo nodeId="2913098736709466064" fileName="VisibleArtifacts.java" startLine="125" startPosition="48" endLine="130" endPosition="7" />
-    <scopeInfo nodeId="4701820937132233465" fileName="VisibleArtifacts.java" startLine="37" startPosition="81" endLine="44" endPosition="49">
+    <scopeInfo nodeId="8169228734285515150" fileName="VisibleArtifacts.java" startLine="154" startPosition="0" endLine="158" endPosition="0" />
+    <scopeInfo nodeId="2913098736709466064" fileName="VisibleArtifacts.java" startLine="145" startPosition="48" endLine="150" endPosition="7" />
+    <scopeInfo nodeId="7181125477683419111" fileName="VisibleArtifacts.java" startLine="37" startPosition="81" endLine="44" endPosition="56">
+      <varInfo nodeId="7181125477683419113" varName="layoutDependency" />
+      <varInfo nodeId="7181125477683419125" varName="target" />
+    </scopeInfo>
+    <scopeInfo nodeId="4701820937132233465" fileName="VisibleArtifacts.java" startLine="46" startPosition="81" endLine="53" endPosition="50">
       <varInfo nodeId="4701820937132233469" varName="projectDependency" />
       <varInfo nodeId="4701820937132263042" varName="target" />
     </scopeInfo>
-    <scopeInfo nodeId="2913098736709466063" fileName="VisibleArtifacts.java" startLine="124" startPosition="5" endLine="131" endPosition="5">
+    <scopeInfo nodeId="2913098736709466063" fileName="VisibleArtifacts.java" startLine="144" startPosition="5" endLine="151" endPosition="5">
       <varInfo nodeId="2913098736709466089" varName="artifact" />
     </scopeInfo>
-    <scopeInfo nodeId="4701820937132262876" fileName="VisibleArtifacts.java" startLine="48" startPosition="60" endLine="56" endPosition="5" />
+    <scopeInfo nodeId="4701820937132262876" fileName="VisibleArtifacts.java" startLine="57" startPosition="61" endLine="65" endPosition="5" />
+    <scopeInfo nodeId="7181125477683419146" fileName="VisibleArtifacts.java" startLine="68" startPosition="68" endLine="76" endPosition="5" />
     <scopeInfo nodeId="4701820937132233612" fileName="VisibleArtifacts.java" startLine="24" startPosition="85" endLine="33" endPosition="5" />
-    <scopeInfo nodeId="4701820937132233462" fileName="VisibleArtifacts.java" startLine="36" startPosition="25" endLine="45" endPosition="5">
+    <scopeInfo nodeId="7181125477683419108" fileName="VisibleArtifacts.java" startLine="36" startPosition="25" endLine="45" endPosition="5">
+      <varInfo nodeId="7181125477683419109" varName="dep" />
+    </scopeInfo>
+    <scopeInfo nodeId="4701820937132233462" fileName="VisibleArtifacts.java" startLine="45" startPosition="5" endLine="54" endPosition="5">
       <varInfo nodeId="4701820937132233463" varName="dep" />
     </scopeInfo>
-    <scopeInfo nodeId="4701820937132256245" fileName="VisibleArtifacts.java" startLine="36" startPosition="25" endLine="45" endPosition="5" />
     <scopeInfo nodeId="4701820937132233609" fileName="VisibleArtifacts.java" startLine="23" startPosition="0" endLine="34" endPosition="3">
       <varInfo nodeId="5745174517193855243" varName="genContext" />
       <varInfo nodeId="5745174517193855241" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="4701820937132262873" fileName="VisibleArtifacts.java" startLine="47" startPosition="0" endLine="58" endPosition="0">
+    <scopeInfo nodeId="4701820937132262873" fileName="VisibleArtifacts.java" startLine="56" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="4701820937132262916" varName="parent" />
       <varInfo nodeId="4701820937132262944" varName="target" />
     </scopeInfo>
-    <scopeInfo nodeId="6520682027041156493" fileName="VisibleArtifacts.java" startLine="100" startPosition="38" endLine="111" endPosition="53" />
-    <scopeInfo nodeId="4701820937132256242" fileName="VisibleArtifacts.java" startLine="35" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="6520682027041156490" fileName="VisibleArtifacts.java" startLine="99" startPosition="0" endLine="113" endPosition="0">
+    <scopeInfo nodeId="7181125477683419139" fileName="VisibleArtifacts.java" startLine="67" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="7181125477683419140" varName="parent" />
+      <varInfo nodeId="7181125477683419142" varName="target" />
+    </scopeInfo>
+    <scopeInfo nodeId="6520682027041156493" fileName="VisibleArtifacts.java" startLine="120" startPosition="38" endLine="131" endPosition="53" />
+    <scopeInfo nodeId="6520682027041156490" fileName="VisibleArtifacts.java" startLine="119" startPosition="0" endLine="133" endPosition="0">
       <varInfo nodeId="6520682027041156494" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4701820937132263003" fileName="VisibleArtifacts.java" startLine="59" startPosition="58" endLine="77" endPosition="5" />
-    <scopeInfo nodeId="7880069565647244670" fileName="VisibleArtifacts.java" startLine="114" startPosition="40" endLine="132" endPosition="16">
+    <scopeInfo nodeId="4701820937132256245" fileName="VisibleArtifacts.java" startLine="36" startPosition="25" endLine="54" endPosition="5" />
+    <scopeInfo nodeId="4701820937132263003" fileName="VisibleArtifacts.java" startLine="79" startPosition="58" endLine="97" endPosition="5" />
+    <scopeInfo nodeId="7880069565647244670" fileName="VisibleArtifacts.java" startLine="134" startPosition="40" endLine="152" endPosition="16">
       <varInfo nodeId="7880069565647244751" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="4701820937132263000" fileName="VisibleArtifacts.java" startLine="58" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="4701820937132256242" fileName="VisibleArtifacts.java" startLine="35" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="4701820937132263000" fileName="VisibleArtifacts.java" startLine="78" startPosition="0" endLine="99" endPosition="0">
       <varInfo nodeId="4701820937132263103" varName="node" />
       <varInfo nodeId="4701820937132263005" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="7880069565647244667" fileName="VisibleArtifacts.java" startLine="113" startPosition="0" endLine="134" endPosition="0">
+    <scopeInfo nodeId="7880069565647244667" fileName="VisibleArtifacts.java" startLine="133" startPosition="0" endLine="154" endPosition="0">
       <varInfo nodeId="7880069565647244682" varName="id" />
     </scopeInfo>
-    <unitInfo nodeId="4701820937132233607" fileName="VisibleArtifacts.java" startLine="17" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.build.util.VisibleArtifacts" />
+    <unitInfo nodeId="4701820937132233607" fileName="VisibleArtifacts.java" startLine="17" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.build.util.VisibleArtifacts" />
   </root>
   <root nodeId="4959435991187147167">
     <nodeInfo nodeId="4959435991187147661" fileName="Context.java" startLine="20" startPosition="22" endLine="21" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProperties" />

@@ -4,6 +4,7 @@
   <property name="build.layout" location="${build.dir}/artifacts/buildCore" />
   <property name="idea_home" location="" />
   <property name="mps_home" location="${basedir}" />
+  <property name="artifacts.IDEA" location="${idea_home}" />
   
   <path id="path.java.library.core-libraries">
     <fileset dir="${idea_home}/lib">

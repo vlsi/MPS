@@ -35,23 +35,43 @@ public class VisibleArtifacts {
 
   public void collect() {
     for (SNode dep : SLinkOperations.getTargets(project, "dependencies", true)) {
+      SNode layoutDependency = SNodeOperations.as(dep, "jetbrains.mps.build.structure.BuildExternalLayoutDependency");
+      if (layoutDependency == null) {
+        continue;
+      }
+
+      SNode target = SLinkOperations.getTarget(layoutDependency, "layout", false);
+      collectInExternalLayout(layoutDependency, target);
+    }
+    for (SNode dep : SLinkOperations.getTargets(project, "dependencies", true)) {
       SNode projectDependency = SNodeOperations.as(dep, "jetbrains.mps.build.structure.BuildProjectDependency");
       if (projectDependency == null) {
         continue;
       }
 
       SNode target = SLinkOperations.getTarget(projectDependency, "script", false);
-      collectInScript(projectDependency, target);
+      collectInProject(projectDependency, target);
     }
   }
 
-  private void collectInScript(SNode parent, SNode target) {
+  private void collectInProject(SNode parent, SNode target) {
     target = SNodeOperations.as(toOriginalNode(target), "jetbrains.mps.build.structure.BuildProject");
     if (target == null) {
       return;
     }
 
     for (SNode node : SLinkOperations.getTargets(SLinkOperations.getTarget(target, "layout", true), "children", true)) {
+      collectInLayout(parent, node);
+    }
+  }
+
+  private void collectInExternalLayout(SNode parent, SNode target) {
+    target = SNodeOperations.as(toOriginalNode(target), "jetbrains.mps.build.structure.BuildExternalLayout");
+    if (target == null) {
+      return;
+    }
+
+    for (SNode node : SLinkOperations.getTargets(target, "children", true)) {
       collectInLayout(parent, node);
     }
   }

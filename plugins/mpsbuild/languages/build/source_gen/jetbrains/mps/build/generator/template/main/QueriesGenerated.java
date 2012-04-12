@@ -287,6 +287,14 @@ public class QueriesGenerated {
     }
   }
 
+  public static Object propertyMacro_GetPropertyValue_7181125477683419235(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "artifacts." + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.build.structure.BuildExternalLayoutDependency"), "layout", false), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7181125477683419247(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.build.structure.BuildExternalLayoutDependency"), "artifacts", true));
+  }
+
   public static Object propertyMacro_GetPropertyValue_6520682027041002227(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "${artifacts." + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.build.structure.BuildProjectDependency"), "script", false), "name") + "}/variables.properties";
   }
@@ -779,6 +787,14 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "dependencies", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildProjectDependency");
+      }
+    });
+  }
+
+  public static Iterable sourceNodesQuery_7181125477683419217(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "dependencies", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildExternalLayoutDependency");
       }
     });
   }
