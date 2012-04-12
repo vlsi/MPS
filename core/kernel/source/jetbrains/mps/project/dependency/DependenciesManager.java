@@ -45,6 +45,7 @@ public interface DependenciesManager {
 
   /*
    *  Collects all visible modules (including current).
+   *  This module should be called from outer code only with false as the last parameter
    */
   void collectVisibleModules(/* out */ Set<IModule> dependencies, boolean reexportOnly);
 
