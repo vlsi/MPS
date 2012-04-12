@@ -31,11 +31,13 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.project.ClassLoadingModule;
+import jetbrains.mps.runtime.ModuleClassLoader;
+import jetbrains.mps.runtime.ProtectionDomainUtil;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.vfs.FileSystem;
@@ -73,6 +75,9 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   private CachesInvalidator myCachesInvalidator;
 
   private List<Language> myAllExtendedLanguages;
+  
+  //todo [MihMuh] this should be replaced in 3.0 (don't know exactly with what now)
+  private ClassLoader myStubsLoader = new MyClassLoader();
 
   public static Language newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
     LanguageDescriptor descriptor = ((LanguageDescriptor) handle.getDescriptor());
@@ -486,7 +491,16 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return null;
   }
 
-  //-----------stubs--------------
+  @Override
+  public Class getClass(String fqName) {
+    if (!fqName.startsWith(getModuleFqName() + ".stubs.")) return super.getClass(fqName);
+    try {
+      return myStubsLoader.loadClass(fqName);
+    } catch (ClassNotFoundException e) {
+      LOG.error(e);
+    }
+    return null;
+  }
 
   public Collection<StubPath> getRuntimeStubPaths() {
     Set<StubPath> result = new LinkedHashSet<StubPath>();
@@ -647,6 +661,30 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
 
     public void modelChangedDramatically(SModel model) {
       invalidateCaches();
+    }
+  }
+
+  private class MyClassLoader extends ClassLoader {
+    public MyClassLoader() {
+      super(Language.class.getClassLoader());
+    }
+
+    protected Class<?> findClass(String name) throws ClassNotFoundException {
+      byte[] bytes = findInCurrent(name);
+      if (bytes == null) return null;
+      definePackageIfNecessary(name);
+      return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
+    }
+
+    private void definePackageIfNecessary(String name) {
+      String pack = NameUtil.namespaceFromLongName(name);
+      if (getPackage(pack) != null) return;
+      definePackage(pack, null, null, null, null, null, null, null);
+    }
+
+    protected byte[] findInCurrent(String name) {
+      if (!Language.this.hasClass(name)) return null;
+      return Language.this.findClassBytes(name);
     }
   }
 }

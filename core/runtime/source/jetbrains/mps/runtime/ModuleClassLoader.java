@@ -23,6 +23,7 @@ import java.net.URL;
 import java.util.*;
 
 public class ModuleClassLoader extends ClassLoader {
+  //todo can be removed?
   private Map<String, Class> myClassesCache = new HashMap<String, Class>();
   private final Object myLock = new Object();
 
@@ -52,6 +53,7 @@ public class ModuleClassLoader extends ClassLoader {
     definePackage(pack, null, null, null, null, null, null, null);
   }
 
+  //todo replace with NameUtil.namespaceFromLongName(name)
   private String getNamespace(String fqName) {
     int lastIndex = fqName.lastIndexOf('.');
     if (lastIndex == -1) return "";

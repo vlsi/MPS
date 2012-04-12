@@ -15,13 +15,10 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.SolutionKind;
-import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.runtime.ModuleClassLoader;
 import jetbrains.mps.runtime.IClassLoadingModule;
+import jetbrains.mps.runtime.ModuleClassLoader;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -38,7 +35,7 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
   }
 
   public Class getClass(String fqName) {
-    if (myClassLoader==null) return null;
+    if (myClassLoader == null) return null;
     try {
       return myClassLoader.getClass(fqName);
     } catch (Throwable t) {
