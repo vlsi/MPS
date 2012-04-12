@@ -1,0 +1,19 @@
+<project name="buildMpsB" default="build" basedir="../../">
+  <property name="build.dir" location="build" />
+  <property name="build.tmp" location="${build.dir}/tmp/buildMpsB" />
+  <property name="build.layout" location="${build.dir}/artifacts/buildMpsB" />
+  
+  <target name="assemble">
+    <mkdir dir="${build.layout}/X" />
+    <zip destfile="${build.layout}/X/MpsB.zip">
+      <fileset file="${basedir}/jetbrains.mps.build.sandbox/samples/buildA/abcde.jar" />
+    </zip>
+  </target>
+  
+  <target name="build" depends="assemble" />
+  
+  <target name="clean">
+    <delete dir="${build.tmp}" />
+    <delete dir="${build.layout}" />
+  </target>
+</project>

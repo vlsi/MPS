@@ -15,6 +15,7 @@ public class JavaModulesClosure {
   private Set<SNode> modules = new LinkedHashSet<SNode>();
   private Set<SNode> libraries = new LinkedHashSet<SNode>();
   private Set<SNode> jars = new LinkedHashSet<SNode>();
+  private Set<SNode> importedJars = new LinkedHashSet<SNode>();
   private TemplateQueryContext genContext;
   private SNode initial;
 
@@ -24,9 +25,8 @@ public class JavaModulesClosure {
   }
 
   public JavaModulesClosure closure(boolean reexportOnly) {
-    if (modules.add(initial)) {
-      moduleClosure(initial, reexportOnly);
-    }
+    moduleClosure(initial, reexportOnly);
+    modules.remove(initial);
     return this;
   }
 
@@ -66,6 +66,13 @@ public class JavaModulesClosure {
         }
 
         jars.add(SLinkOperations.getTarget(jarDep, "jar", true));
+      } else if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.structure.BuildSource_JavaDependencyImportedJar")) {
+        SNode jarDep = SNodeOperations.cast(dep, "jetbrains.mps.build.structure.BuildSource_JavaDependencyImportedJar");
+        if (reexportOnly && !(SPropertyOperations.getBoolean(jarDep, "reexport"))) {
+          continue;
+        }
+
+        importedJars.add(SLinkOperations.getTarget(jarDep, "jar", false));
       }
     }
   }
@@ -90,5 +97,13 @@ public class JavaModulesClosure {
 
   public Collection<SNode> getJars() {
     return jars;
+  }
+
+  public Set<SNode> getImportedJars() {
+    return importedJars;
+  }
+
+  public SNode getInitial() {
+    return initial;
   }
 }

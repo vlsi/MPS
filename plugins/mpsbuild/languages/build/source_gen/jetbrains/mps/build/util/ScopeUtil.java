@@ -23,6 +23,7 @@ import jetbrains.mps.build.behavior.BuildLayout_Node_Behavior;
 import org.apache.commons.lang.StringUtils;
 import java.util.ArrayList;
 import jetbrains.mps.build.behavior.BuildLayout_PathElement_Behavior;
+import jetbrains.mps.build.behavior.BuildSourcePath_Behavior;
 
 public class ScopeUtil {
   public ScopeUtil() {
@@ -74,6 +75,16 @@ public class ScopeUtil {
     VisibleArtifacts artifacts = new VisibleArtifacts(project, null);
     artifacts.collect();
     return new ScopeUtil.VisibleArtifactsScope(artifacts);
+  }
+
+  public static Scope getVisibleJarsScope(SNode project) {
+    if (SNodeOperations.getModel(project).isTransient()) {
+      IModule transientModule = SNodeOperations.getModel(project).getModelDescriptor().getModule();
+      return new ModelPlusImportedScope(SNodeOperations.getModel(project), false, transientModule.getScope(), "jetbrains.mps.build.structure.BuildInputSingleFile");
+    }
+    VisibleArtifacts artifacts = new VisibleArtifacts(project, null);
+    artifacts.collect();
+    return new ScopeUtil.VisibleJarsScope(artifacts);
   }
 
   private static class VisibleArtifactsScope extends Scope {
@@ -128,6 +139,104 @@ public class ScopeUtil {
       String result = getName(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildLayout_Node"));
       for (SNode n : getAllNodes()) {
         if (n == node) {
+          continue;
+        }
+        String name = getName(n);
+        if (name.equals(result)) {
+          // ambiguity 
+          return null;
+        }
+      }
+      return result;
+    }
+
+    private String getName(SNode node) {
+      StringBuilder sb = new StringBuilder();
+      appendName(node, sb);
+      return sb.toString();
+    }
+
+    private void appendName(SNode node, StringBuilder sb) {
+      SNode parent = artifacts.parent(node);
+      if ((parent != null)) {
+        appendName(parent, sb);
+      }
+      BuildLayout_PathElement_Behavior.call_appendName_1368030936106665465(node, parent, sb);
+    }
+  }
+
+  private static class VisibleJarsScope extends Scope {
+    private VisibleArtifacts artifacts;
+
+    public VisibleJarsScope(VisibleArtifacts artifacts) {
+      this.artifacts = artifacts;
+    }
+
+    private Iterable<SNode> getAllNodes() {
+      return Sequence.fromIterable(artifacts.getArtifacts()).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          SNode copyNode = SNodeOperations.as(it, "jetbrains.mps.build.structure.BuildLayout_Copy");
+          if ((copyNode == null)) {
+            return false;
+          }
+          SNode file = SNodeOperations.as(SLinkOperations.getTarget(copyNode, "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile");
+          if ((file == null)) {
+            return false;
+          }
+          String relativePath = BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(file, "path", true));
+          return relativePath.endsWith("}") || relativePath.endsWith(".jar");
+        }
+      }).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildLayout_Copy");
+        }
+      });
+    }
+
+    public List<SNode> getAvailableElements(@Nullable String prefix) {
+      if (StringUtils.isEmpty(prefix)) {
+        return Sequence.fromIterable(getAllNodes()).select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SLinkOperations.getTarget(it, "fileset", true);
+          }
+        }).toListSequence();
+      }
+      List<SNode> result = new ArrayList<SNode>();
+      for (SNode n : getAllNodes()) {
+        String name = getName(n);
+        if (prefix == null || name.startsWith(prefix)) {
+          ListSequence.fromList(result).addElement(SLinkOperations.getTarget(n, "fileset", true));
+        }
+      }
+      return result;
+    }
+
+    public SNode resolve(SNode contextNode, String refText) {
+      SNode result = null;
+      for (SNode n : getAllNodes()) {
+        String name = getName(n);
+        if (name.equals(refText)) {
+          if (result == null) {
+            result = SLinkOperations.getTarget(n, "fileset", true);
+          } else {
+            return null;
+          }
+        }
+      }
+      return result;
+    }
+
+    public String getReferenceText(SNode contextNode, SNode node) {
+      if (node == null || !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildInputSingleFile"))) {
+        return null;
+      }
+      if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.build.structure.BuildLayout_Copy"))) {
+        return null;
+      }
+
+      String result = getName(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.build.structure.BuildLayout_Copy"));
+      for (SNode n : getAllNodes()) {
+        if (n == SNodeOperations.getParent(node)) {
           continue;
         }
         String name = getName(n);
