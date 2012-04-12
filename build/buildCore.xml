@@ -40,6 +40,12 @@
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/mps-core" />
     <mkdir dir="${build.layout}/mps-core/lib" />
+    <copy todir="${build.layout}/mps-core/lib">
+      <fileset file="${mps_home}/lib/asm.jar" />
+    </copy>
+    <copy todir="${build.layout}/mps-core/lib">
+      <fileset file="${mps_home}/lib/diffutils-1.2.1.jar" />
+    </copy>
     <mkdir dir="${build.tmp}/default/mps-tuples.jar" />
     <mkdir dir="${build.tmp}/default/mps-tuples.jar/modules" />
     <mkdir dir="${build.tmp}/default/mps-tuples.jar/modules/jetbrains.mps.baseLanguage.tuples.runtime" />
