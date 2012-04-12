@@ -385,7 +385,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public boolean isIncrementalMode() {
-    return !isInEditorQueries() && myTypeChecker.isGlobalIncrementalMode() && myState.getInequalitySystem() == null;
+    return !myIsSingleTypeComputation && !isInEditorQueries() && myTypeChecker.isGlobalIncrementalMode() && myState.getInequalitySystem() == null;
   }
 
   @Override
