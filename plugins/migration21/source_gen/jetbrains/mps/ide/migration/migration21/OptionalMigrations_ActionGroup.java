@@ -16,6 +16,7 @@ public class OptionalMigrations_ActionGroup extends GeneratedActionGroup {
     try {
       OptionalMigrations_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.MovePluginsOutOfLanguages_Action");
       OptionalMigrations_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.CorrectIconsAfterPluhinMove_Action");
+      OptionalMigrations_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.AddPluginDependencies_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

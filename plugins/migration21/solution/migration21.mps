@@ -142,9 +142,6 @@
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="3805125895591804874">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="3805125895591795071" resolveInfo="AddSourcesToModelRoots" />
       </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="4922108977594182784">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="975723688157231916" resolveInfo="AddPluginDependencies" />
-      </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2761153619454599684">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="2761153619454599624" resolveInfo="MigrationScript_APIMigration" />
       </node>
@@ -157,11 +154,11 @@
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="3864735057395396950">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="9164503229271455483" resolveInfo="FixMissingImportsInProject" />
       </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2761153619454568341">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="2761153619454568093" resolveInfo="MigrationScript_ResolveBrokenRefs" />
-      </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="6638751950448587423">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="6735645123418936327" resolveInfo="ExecuteModelCheckerFixes" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2761153619454568341">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="2761153619454568093" resolveInfo="MigrationScript_ResolveBrokenRefs" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="4250481571544053951">
         <property name="name" nameId="tpck.1169194664001" value="optional" />
@@ -3118,8 +3115,11 @@
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="4250481571544053957">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="1855937925843851060" resolveInfo="MovePluginsOutOfLanguages" />
       </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="4250481571544053958">
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="4636220444987588502">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="5318937080028090535" resolveInfo="CorrectIconsAfterPluhinMove" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="4636220444987588504">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="975723688157231916" resolveInfo="AddPluginDependencies" />
       </node>
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="4250481571544053956">

@@ -501,6 +501,9 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
             @Override
             public void startingAction(Object action) {
               indicator.setIndeterminate(false);
+              indicator.setFraction(0.0);
+              myList.ensureIndexIsVisible(0);
+              myList.repaint();
             }
 
             @Override
