@@ -25,7 +25,6 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CommonPaths;
-import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -220,11 +219,6 @@ public class Solution extends ClassLoadingModule {
   }
 
   private boolean canLoad() {
-    return
-      getModuleDescriptor().getCompileInMPS() &&
-        (
-          MPSCore.getInstance().isTestMode() ||
-            getModuleDescriptor().getKind() != SolutionKind.NONE
-        );
+    return MPSCore.getInstance().isTestMode() || getModuleDescriptor().getKind() != SolutionKind.NONE;
   }
 }
