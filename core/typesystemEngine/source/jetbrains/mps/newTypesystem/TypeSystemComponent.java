@@ -228,12 +228,10 @@ class TypeSystemComponent extends CheckingComponent {
     long start = System.currentTimeMillis();
     myState.setTargetNode(initialNode);
     while (node != null) {
-      Collection<SNode> additionalNodes = givenAdditionalNodes;
       if (prevNode != null) {
-        additionalNodes = new ArrayList<SNode>(additionalNodes);
-        additionalNodes.add(prevNode);
+        givenAdditionalNodes.add(prevNode);
       }
-      computeTypesSpecial(node, false, additionalNodes, false, initialNode);
+      computeTypesSpecial(node, false, givenAdditionalNodes, false, initialNode);
       type = typeCalculated(initialNode);
       if (type == null) {
         if (node.isRoot()) {
