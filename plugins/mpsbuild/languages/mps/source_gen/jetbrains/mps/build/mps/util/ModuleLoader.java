@@ -397,7 +397,7 @@ public class ModuleLoader {
         report("extends language dependency should be extracted into build script: " + lang.toString(), myOriginalModule);
       }
     }
-    if (!(importsCore) || checkOnly) {
+    if (!(importsCore) && !(checkOnly)) {
       SNode resolved = SNodeOperations.as(visible.resolve("jetbrains.mps.lang.core", "ceab5195-25ea-4f22-9b92-103b95ca8c0c"), "jetbrains.mps.build.mps.structure.BuildMps_Language");
       if (resolved == null) {
         report("cannot find jetbrains.mps.lang.core language in dependencies for " + SPropertyOperations.getString(myModule, "name"), myModule);

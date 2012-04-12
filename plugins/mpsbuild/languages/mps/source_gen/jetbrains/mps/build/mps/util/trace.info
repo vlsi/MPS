@@ -677,7 +677,7 @@
     <nodeInfo nodeId="322010710375790509" fileName="ModuleLoader.java" startLine="392" startPosition="116" endLine="393" endPosition="410" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="322010710375790491" fileName="ModuleLoader.java" startLine="395" startPosition="12" endLine="396" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="322010710375790492" fileName="ModuleLoader.java" startLine="396" startPosition="0" endLine="397" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7525356604723708772" fileName="ModuleLoader.java" startLine="400" startPosition="38" endLine="401" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7525356604723708772" fileName="ModuleLoader.java" startLine="400" startPosition="41" endLine="401" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7525356604723708789" fileName="ModuleLoader.java" startLine="402" startPosition="29" endLine="403" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7525356604723708954" fileName="ModuleLoader.java" startLine="404" startPosition="14" endLine="405" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7525356604723708960" fileName="ModuleLoader.java" startLine="405" startPosition="135" endLine="406" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1348,7 +1348,7 @@
       <varInfo nodeId="322010710376029825" varName="resolved" />
       <varInfo nodeId="322010710376029854" varName="ul" />
     </scopeInfo>
-    <scopeInfo nodeId="7525356604723708754" fileName="ModuleLoader.java" startLine="400" startPosition="38" endLine="408" endPosition="7">
+    <scopeInfo nodeId="7525356604723708754" fileName="ModuleLoader.java" startLine="400" startPosition="41" endLine="408" endPosition="7">
       <varInfo nodeId="7525356604723708773" varName="resolved" />
     </scopeInfo>
     <scopeInfo nodeId="2531699772406223470" fileName="ModuleLoader.java" startLine="431" startPosition="67" endLine="439" endPosition="175">
