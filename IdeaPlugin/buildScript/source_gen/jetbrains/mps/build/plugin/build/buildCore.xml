@@ -46,6 +46,15 @@
     <copy todir="${build.layout}/mps-core/lib">
       <fileset file="${mps_home}/lib/diffutils-1.2.1.jar" />
     </copy>
+    <copy todir="${build.layout}/mps-core/lib">
+      <fileset file="${basedir}/lib/guava-r09.jar" />
+    </copy>
+    <copy todir="${build.layout}/mps-core/lib">
+      <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
+    </copy>
+    <copy todir="${build.layout}/mps-core/lib">
+      <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
+    </copy>
     <mkdir dir="${build.tmp}/default/mps-tuples.jar" />
     <mkdir dir="${build.tmp}/default/mps-tuples.jar/modules" />
     <mkdir dir="${build.tmp}/default/mps-tuples.jar/modules/jetbrains.mps.baseLanguage.tuples.runtime" />

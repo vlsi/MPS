@@ -22,7 +22,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.behavior.BuildSourcePath_Behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.scope.EmptyScope;
 
 public class BuildSource_JavaDependencyImportedJar_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer breakingNode_rf2pud_a0a2a0a0a1a0b0a1a0 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "6859736767834557942");
@@ -53,7 +52,7 @@ public class BuildSource_JavaDependencyImportedJar_Constraints extends BaseConst
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             SNode contextProject = SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.build.structure.BuildProject", true, false);
             String target = null;
-            if ((_context.getContextNode() != null)) {
+            if ((contextProject != null)) {
               Scope importedArtifactsScope = ScopeUtil.getVisibleJarsScope(contextProject);
               if (importedArtifactsScope != null && !(importedArtifactsScope instanceof ModelPlusImportedScope)) {
                 target = importedArtifactsScope.getReferenceText(_context.getContextNode(), _context.getParameterNode());
@@ -82,7 +81,7 @@ public class BuildSource_JavaDependencyImportedJar_Constraints extends BaseConst
             if ((contextProject != null)) {
               return ScopeUtil.getVisibleJarsScope(contextProject);
             }
-            return new EmptyScope();
+            return new ModelPlusImportedScope(_context.getModel(), false, operationContext.getScope(), "jetbrains.mps.build.structure.BuildInputSingleFile");
           }
         };
       }
