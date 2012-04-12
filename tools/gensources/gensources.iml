@@ -240,6 +240,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../samples/xmlLiterals/languages/xmlLiterals/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/plainText/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/nanoc/nanocProject/solutions/jetbrains.mps.nanoc.sandbox/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/nanoc/nanocProject/languages/nanoc/solutions/pluginSolution/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -317,6 +318,7 @@
     <orderEntry type="library" name="Idea-extensions" level="project" />
     <orderEntry type="library" name="Idea-plaform" level="project" />
     <orderEntry type="module" module-name="mps-editor" />
+    <orderEntry type="module" module-name="debugger-api-api" />
   </component>
 </module>
 
