@@ -121,6 +121,8 @@ public class MigrationScriptExecutor {
         });
 
         controller.process(promon.subTask(100), searchResults[0]);
+
+        promon.done();
       }
     };
   }
