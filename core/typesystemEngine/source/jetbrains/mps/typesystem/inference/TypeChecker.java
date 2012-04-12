@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.typesystem.TypeSystemReporter;
 import jetbrains.mps.typesystem.inference.util.ConcurrentSubtypingCache;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Computable;
@@ -57,7 +58,7 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   private RuntimeSupport myRuntimeSupportTracer;
   private SubtypingManager mySubtypingManagerTracer;
 
-  private List<TypesReadListener> myTypesReadListeners = new ArrayList<TypesReadListener>();
+  private ThreadLocal<TypesReadListener> myTypesReadListener = new ThreadLocal<TypesReadListener>();
 
   private SubtypingCache mySubtypingCache = null;
   private SubtypingCache myGlobalSubtypingCache = null;
@@ -94,7 +95,7 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
     }
 
     INSTANCE = this;
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
         Collection<LanguageRuntime> availableLanguages = myLanguageRegistry.getAvailableLanguages();
@@ -237,13 +238,19 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   private void initTracing(IPerformanceTracer performanceTracer) {
     if (performanceTracer != null) {
       myPerformanceTracer = performanceTracer;
+      TypeSystemReporter.getInstance().reset();
     }
   }
 
   private void disposeTracing() {
     if (myPerformanceTracer != null) {
       myPerformanceTracer = null;
+      TypeSystemReporter.getInstance().printReport(10);
     }
+  }
+
+  public boolean hasPerformanceTracer() {
+    return myPerformanceTracer != null;
   }
 
   public <T> T computeWithTrace(Computable<T> c, String taskName) {
@@ -279,7 +286,7 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   public SNode getTypeOf(final SNode node) {
     if (node == null) return null;
     fireNodeTypeAccessed(node);
-    return TypeContextManager.getInstance().getTypeOf(node, isGenerationMode(), myPerformanceTracer);
+    return TypeContextManager.getInstance().getTypeOf(node);
   }
 
 
@@ -295,12 +302,6 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
     return !isGenerationMode();
   }
 
-  private List<TypesReadListener> copyTypesReadListeners() {
-    synchronized (LISTENERS_LOCK) {
-      return new ArrayList<TypesReadListener>(myTypesReadListeners);
-    }
-  }
-
   private List<TypeRecalculatedListener> copyTypeRecalculatedListeners() {
     synchronized (LISTENERS_LOCK) {
       return new ArrayList<TypeRecalculatedListener>(myTypeRecalculatedListeners);
@@ -308,15 +309,13 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   }
 
   public void addTypesReadListener(TypesReadListener typesReadListener) {
-    synchronized (LISTENERS_LOCK) {
-      myTypesReadListeners.add(typesReadListener);
-    }
+    assert myTypesReadListener.get() == null;
+    myTypesReadListener.set(typesReadListener);
   }
 
   public void removeTypesReadListener(TypesReadListener typesReadListener) {
-    synchronized (LISTENERS_LOCK) {
-      myTypesReadListeners.remove(typesReadListener);
-    }
+    assert myTypesReadListener.get() == typesReadListener;
+    myTypesReadListener.set(null);
   }
 
   public void removeTypeRecalculatedListener(TypeRecalculatedListener typeRecalculatedListener) {
@@ -340,7 +339,8 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   }
 
   private void fireNodeTypeAccessed(SNode term) {
-    for (TypesReadListener typesReadListener : copyTypesReadListeners()) {
+    TypesReadListener typesReadListener = myTypesReadListener.get();
+    if (typesReadListener != null) {
       typesReadListener.nodeTypeAccessed(term);
     }
   }

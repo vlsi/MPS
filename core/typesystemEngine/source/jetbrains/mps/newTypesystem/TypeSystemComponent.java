@@ -61,24 +61,6 @@ class TypeSystemComponent extends CheckingComponent {
     myNodeTypesComponent = component;
   }
 
-  @Deprecated
-  protected boolean loadTypesystemRules(SNode root) {
-    SModel model = root.getModel();
-    RulesManager rulesManager = myTypeChecker.getRulesManager();
-    if (rulesManager.hasModelLoadedRules(model.getSModelReference())) {
-      return true;
-    }
-    List<Language> languages = SModelOperations.getLanguages(model, GlobalScope.getInstance());
-    boolean isLoadedAnyLanguage = false;
-    for (Language language : languages) {
-      boolean b = rulesManager.loadLanguage(language.getModuleFqName());
-      isLoadedAnyLanguage = isLoadedAnyLanguage || b;
-    }
-    rulesManager.markModelHasLoadedRules(model.getSModelReference());
-    if (!isLoadedAnyLanguage) return false;
-    return true;
-  }
-
   //returns true if something was invalidated
   protected boolean doInvalidate() {
     if (myInvalidationWasPerformed) {
@@ -205,13 +187,13 @@ class TypeSystemComponent extends CheckingComponent {
     addDependentNodesTypeSystem(myCurrentCheckedNode, hashSet, true);
   }
 
-  private void computeTypesSpecial(SNode nodeToCheck, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
+  private void computeTypesSpecial(SNode nodeToCheck, boolean forceChildrenCheck, Collection<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
     computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes, initialNode);
     if (typeCalculated(initialNode) != null) return;
     solveInequalitiesAndExpandTypes(finalExpansion);
   }
 
-  protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
+  protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, Collection<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
     try {
       if (!isIncrementalMode() || refreshTypes) {
         clear();
@@ -239,17 +221,16 @@ class TypeSystemComponent extends CheckingComponent {
     myNodesToRules.clear();
   }
 
-  protected SNode computeTypesForNode_special(SNode initialNode, List<SNode> givenAdditionalNodes) {
+  protected SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
     SNode type = null;
     SNode prevNode = null;
     SNode node = initialNode;
     long start = System.currentTimeMillis();
     myState.setTargetNode(initialNode);
     while (node != null) {
-      List<SNode> additionalNodes = new ArrayList<SNode>(givenAdditionalNodes);
-      additionalNodes.addAll(myAdditionalNodes);
-      myAdditionalNodes.clear();
+      Collection<SNode> additionalNodes = givenAdditionalNodes;
       if (prevNode != null) {
+        additionalNodes = new ArrayList<SNode>(additionalNodes);
         additionalNodes.add(prevNode);
       }
       computeTypesSpecial(node, false, additionalNodes, false, initialNode);
@@ -258,7 +239,7 @@ class TypeSystemComponent extends CheckingComponent {
         if (node.isRoot()) {
           myNodeTypesComponent.getTypeCheckingContext().setSingleTypeComputation(false);
           //System.out.println("Root: " + initialNode.getDebugText());
-          computeTypes(node, true, true, new ArrayList<SNode>(0), true, initialNode);
+          computeTypes(node, true, true, Collections.<SNode>emptyList(), true, initialNode);
           type = getType(initialNode);
           if (type == null && node != initialNode && myState.getInequalitySystem() == null && !myNodeTypesComponent.getTypeCheckingContext().isInEditorQueries()) {
             LOG.error("No typesystem rule for " + initialNode.getDebugText() + " in root " + initialNode.getContainingRoot() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms", new Throwable(), new SNodePointer(initialNode));
@@ -300,7 +281,7 @@ class TypeSystemComponent extends CheckingComponent {
     return new THashSet<Pair<String, String>>(set);
   }
 
-  private void computeTypesForNode(SNode node, boolean forceChildrenCheck, List<SNode> additionalNodes, SNode targetNode) {
+  private void computeTypesForNode(SNode node, boolean forceChildrenCheck, Collection<SNode> additionalNodes, SNode targetNode) {
     if (node == null) return;
     boolean incrementalMode = isIncrementalMode();
     MyEventsReadListener nodesReadListener = incrementalMode ? new MyEventsReadListener() : null;
@@ -336,22 +317,21 @@ class TypeSystemComponent extends CheckingComponent {
           typeAffected = applyRulesToNode(sNode);
         } finally {
           if (incrementalMode) {
+            LanguageHierarchyCache.getInstance().removeReadAccessListener();
             NodeReadEventsCaster.removeNodesReadListener();
           }
         }
         if (incrementalMode) {
-          synchronized (ACCESS_LOCK) {
-            nodesReadListener.setAccessReport(true);
-            Set<SNode> accessedNodes = nodesReadListener.getAccessedNodes();
-            addDependentNodesTypeSystem(sNode, accessedNodes, typeAffected);
-            nodesReadListener.setAccessReport(false);
-            if (languageCachesReadListener != null) { //redundant checking, in fact; but without this IDEA underlines the next line with red
-              languageCachesReadListener.setAccessReport(true);
-              if (languageCachesReadListener.myIsCacheAccessed) {
-                addCacheDependentNodesTypesystem(sNode);
-              }
-              languageCachesReadListener.setAccessReport(false);
+          nodesReadListener.setAccessReport(true);
+          Set<SNode> accessedNodes = nodesReadListener.getAccessedNodes();
+          addDependentNodesTypeSystem(sNode, accessedNodes, typeAffected);
+          nodesReadListener.setAccessReport(false);
+          if (languageCachesReadListener != null) { //redundant checking, in fact; but without this IDEA underlines the next line with red
+            languageCachesReadListener.setAccessReport(true);
+            if (languageCachesReadListener.isCacheAccessed()) {
+              addCacheDependentNodesTypesystem(sNode);
             }
+            languageCachesReadListener.setAccessReport(false);
           }
           nodesReadListener.clear();
         }
@@ -409,7 +389,7 @@ class TypeSystemComponent extends CheckingComponent {
   }
 
   public void computeTypes(boolean refreshTypes) {
-    computeTypes(myNodeTypesComponent.getNode(), refreshTypes, true, new ArrayList<SNode>(0), true, null);
+    computeTypes(myNodeTypesComponent.getNode(), refreshTypes, true, Collections.<SNode>emptyList(), true, null);
   }
 
   private void performActionsAfterChecking() {

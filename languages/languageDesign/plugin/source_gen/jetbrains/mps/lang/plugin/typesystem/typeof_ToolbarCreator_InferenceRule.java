@@ -27,7 +27,8 @@ public class typeof_ToolbarCreator_InferenceRule extends AbstractInferenceRule_R
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "9011731583464286469", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "9011731583464286474", true), (SNode) new typeof_ToolbarCreator_InferenceRule.QuotationClass_kda68a_a0a0a0().createNode(typeCheckingContext), _info_12389875345);
     }
-    if (!(typeCheckingContext.isSingleTypeComputation())) { {
+    if (!(typeCheckingContext.isSingleTypeComputation())) {
+      {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(creator, "group", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "9011731583464048189", 0, null);
         typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "9011731583464048181", true), (SNode) new typeof_ToolbarCreator_InferenceRule.QuotationClass_kda68a_a0a1a0().createNode(typeCheckingContext), true, false, _info_12389875345);

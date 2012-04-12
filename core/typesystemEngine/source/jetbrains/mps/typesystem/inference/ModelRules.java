@@ -87,9 +87,9 @@ public class ModelRules {
       }
       if (typeSystemDescriptor == null) return false;
       try {
-        myInferenceRules.addRuleSetItem(typeSystemDescriptor.getInferenceRules());
+      //  myInferenceRules.addRuleSetItem(typeSystemDescriptor.getInferenceRules());
         myNonTypeSystemRules.addRuleSetItem(typeSystemDescriptor.getNonTypesystemRules());
-        mySubTypingRules.addRuleSetItem(typeSystemDescriptor.getSubtypingRules());
+/*        mySubTypingRules.addRuleSetItem(typeSystemDescriptor.getSubtypingRules());
         Set<ComparisonRule_Runtime> comparisonRule_runtimes = typeSystemDescriptor.getComparisonRules();
         myComparisonRules.addRuleSetItem(comparisonRule_runtimes);
         myReplacementRules.addRuleSetItem(typeSystemDescriptor.getEliminationRules());
@@ -104,7 +104,7 @@ public class ModelRules {
         myComparisonRules.makeConsistent();
         myReplacementRules.makeConsistent();
         myDependenciesContainer.makeConsistent();
-//        myOverloadedOperationsManager.makeConsistent();
+//        myOverloadedOperationsManager.makeConsistent();                  */
         return true;
       } catch (Throwable t) {
         LOG.error(t);

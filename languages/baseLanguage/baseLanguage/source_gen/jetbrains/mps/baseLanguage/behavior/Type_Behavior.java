@@ -46,6 +46,7 @@ public class Type_Behavior {
   private static Class[] PARAMETERS_3508583411997314206 = {SNode.class};
   private static Class[] PARAMETERS_5744862332972792015 = {SNode.class, Set.class};
   private static Class[] PARAMETERS_8847328628797633411 = {SNode.class};
+  private static Class[] PARAMETERS_6321644624958501287 = {SNode.class, String.class};
 
   public static void init(SNode thisNode) {
   }
@@ -167,6 +168,10 @@ public class Type_Behavior {
     return null;
   }
 
+  public static boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
+    return true;
+  }
+
   public static List<String> call_getVariableSuffixes_1213877337304(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<String>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_getVariableSuffixes_1213877337304", PARAMETERS_1213877337304);
@@ -257,6 +262,11 @@ public class Type_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_jniSignature_8847328628797633411", PARAMETERS_8847328628797633411);
   }
 
+  public static boolean call_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_canBeCoerced_6321644624958501287", PARAMETERS_6321644624958501287, conceptFqName);
+  }
+
   public static List<String> callSuper_getVariableSuffixes_1213877337304(SNode thisNode, String callerConceptFqName) {
     return (List<String>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getVariableSuffixes_1213877337304", PARAMETERS_1213877337304);
   }
@@ -327,6 +337,10 @@ public class Type_Behavior {
 
   public static String callSuper_jniSignature_8847328628797633411(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_jniSignature_8847328628797633411", PARAMETERS_8847328628797633411);
+  }
+
+  public static boolean callSuper_canBeCoerced_6321644624958501287(SNode thisNode, String callerConceptFqName, String conceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_canBeCoerced_6321644624958501287", PARAMETERS_6321644624958501287, conceptFqName);
   }
 
   public static class QuotationClass_smb55n_a0a0c0a0o {

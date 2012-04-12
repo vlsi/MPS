@@ -34,7 +34,8 @@ public class typeof_TreePathAdapterExpression_InferenceRule extends AbstractInfe
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595295", true), (SNode) new typeof_TreePathAdapterExpression_InferenceRule.QuotationClass_4r2z3q_a0a0a3a0().createNode(SLinkOperations.getTarget(treePathType, "nodeType", true), typeCheckingContext), _info_12389875345);
       }
     }
-    if (!(typeCheckingContext.isSingleTypeComputation())) { {
+    if (!(typeCheckingContext.isSingleTypeComputation())) {
+      {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(exp, "expression", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, "Incompatible type", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1225552004404", 0, null);
         typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.getRepresentative(ExpType_typevar_1190288659521), (SNode) SLinkOperations.getTarget(treePathType, "nodeType", true), true, true, _info_12389875345);
