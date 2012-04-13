@@ -29,6 +29,7 @@ public class Migration21_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new MigrationScript_ResolveBrokenRefs_Action());
     addAction(new MigrationScript_SplitMPSClasspath_Action());
     addAction(new MovePluginsOutOfLanguages_Action());
+    addAction(new OptimizeImportsInProject_Action());
     // groups 
     addGroup(new Migrations21_ActionGroup());
     addGroup(new OptionalMigrations_ActionGroup());

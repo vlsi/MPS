@@ -24,6 +24,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 
@@ -34,7 +35,7 @@ public class FixMissingImportsInProject_Action extends BaseAction {
   public FixMissingImportsInProject_Action() {
     super("Fix Missing Imports", "", ICON);
     this.setIsAlwaysVisible(true);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -79,7 +80,11 @@ public class FixMissingImportsInProject_Action extends BaseAction {
           module.invalidateCaches();
         }
       }
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+        }
+      });
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "FixMissingImportsInProject", t);
