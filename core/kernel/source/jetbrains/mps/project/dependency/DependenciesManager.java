@@ -28,9 +28,6 @@ public interface DependenciesManager {
 
   /**
    * Collects all visible modules (including current).
-   * E.g. (parameters):
-   * runtimes=false,reexports=true => visible modules
-   * runtimes=true,reexports = fa
    */
   void collectModules(Set<IModule> modules, Deptype depType);
 
@@ -61,11 +58,11 @@ public interface DependenciesManager {
 
 
     public boolean runtimes;
-    public boolean reexport;
+    public boolean respectReexport;
 
-    Deptype(boolean runtimes, boolean reexport) {
+    Deptype(boolean runtimes, boolean respectReexport) {
       this.runtimes = runtimes;
-      this.reexport = reexport;
+      this.respectReexport = respectReexport;
     }
   }
 }

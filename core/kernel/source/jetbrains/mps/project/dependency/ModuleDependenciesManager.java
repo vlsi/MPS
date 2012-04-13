@@ -18,7 +18,6 @@ package jetbrains.mps.project.dependency;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -34,112 +33,85 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
     myModule = module;
   }
 
-  public final Set<Language> getAllUsedLanguages() {
-    Set<Language> result = new LinkedHashSet<Language>();
-    result.addAll(ModuleUtil.refsToLanguages(myModule.getUsedLanguagesReferences()));
-    for (DevKit dk : ModuleUtil.refsToDevkits(myModule.getUsedDevkitReferences())) {
-      //todo why extended are not included
-      result.addAll(dk.getAllExportedLanguages());
-    }
-    for (Language l : new HashSet<Language>(result)) {
-      l.getDependenciesManager().collectAllExtendedLanguages(result);
-    }
-    return result;
+  public void collectUsedLanguages(Set<Language> result) {
+    collectUsedLanguages(result, false);
   }
 
-  public Set<IModule> getAllVisibleModules() {
-    Set<IModule> result = new LinkedHashSet<IModule>();
-    collectVisibleModules(result, false);
-    //todo this line is a shit
-    result.remove(myModule);
-    return result;
-  }
+  public void collectModules(Set<IModule> modules, Deptype depType) {
+    modules.add(myModule);
 
-  public final Set<IModule> getAllRequiredModules() {
-    Set<IModule> modules = new LinkedHashSet<IModule>();
-    Set<Language> usedLanguages = new LinkedHashSet<Language>();
-    collectAllCompileTimeDependencies(modules, usedLanguages);
-    //todo what is it?
-    modules.addAll(usedLanguages);
-    //todo this is a shit
-    modules.remove(myModule);
-    return modules;
-  }
+    HashSet<IModule> reexported = new HashSet<IModule>();
+    HashSet<IModule> nonReexported = new HashSet<IModule>();
+    getUsedModules(reexported, nonReexported);
 
-  @Override
-  //todo this is some shit
-  public Set<IModule> getRequiredModules() {
-    Set<IModule> modules = new LinkedHashSet<IModule>();
-    for (IModule m : ModuleUtil.getDependencies(myModule)) {
-      modules.add(m);
+    if (depType.respectReexport){
+      modules.addAll(nonReexported);
+    } else {
+      reexported.addAll(nonReexported);
     }
 
-    for(Language language : ModuleUtil.getUsedLanguages(myModule)) {
-      for (ModuleReference ref : language.getRuntimeModulesReferences()) {
-        IModule m = MPSModuleRepository.getInstance().getModule(ref);
-        if (m == null) continue;
-        modules.add(m);
-      }
+    for (IModule m:reexported){
+      m.getDependenciesManager().collectModules(modules,depType);
     }
-    return modules;
-  }
 
-  public void collectAllCompileTimeDependencies(/* out */ Set<IModule> dependencies, /* out */ Set<Language> languagesWithRuntime) {
-    dependencies.add(myModule);
-    for (IModule m : ModuleUtil.getDependencies(myModule)) {
-      if (!dependencies.contains(m)) {
-        m.getDependenciesManager().collectAllCompileTimeDependencies(dependencies, languagesWithRuntime);
+    //runtimes from languages
+    if (depType.runtimes) {
+      HashSet<Language> lang = new HashSet<Language>();
+      collectUsedLanguages(lang,true);
+
+      for (Language l:lang){
+        l.getDependenciesManager().collectModules(modules,depType);
       }
     }
 
+
+/*  todo move to compilation
     if (myModule instanceof Language) {
       // 1. Generator is always compiled together with the language (???)
       // 2. Generator may have its own compile time dependencies (imports in the generated queries)
       // 3. Let's not ignore them
       for (Generator generator : ((Language) myModule).getGenerators()) {
-        if (!dependencies.contains(generator)) {
-          generator.getDependenciesManager().collectAllCompileTimeDependencies(dependencies, languagesWithRuntime);
+        if (!modules.contains(generator)) {
+          generator.getDependenciesManager().collectAllCompileTimeDependencies(modules, languagesWithRuntime);
         }
       }
     }
+*/
+  }
 
-    for(Language language : ModuleUtil.getUsedLanguages(myModule)) {
-      for (ModuleReference dep : language.getRuntimeModulesReferences()) {
-        IModule m = MPSModuleRepository.getInstance().getModule(dep);
-        if (m == null) continue;
-        if (!dependencies.contains(m)) {
-          m.getDependenciesManager().collectAllCompileTimeDependencies(dependencies, languagesWithRuntime);
-        }
-      }
-      if (!languagesWithRuntime.contains(language)) {
-        if (!language.getRuntimeStubPaths().isEmpty()) {
-          languagesWithRuntime.add(language);
-        }
+  //---------------util methods---NOTE THE SYMMETRY----------------
+
+  protected void collectUsedLanguages(Set<Language> result, boolean includeExtended) {
+    result.addAll(ModuleUtil.refsToLanguages(myModule.getUsedLanguagesReferences()));
+    for (DevKit dk : ModuleUtil.refsToDevkits(myModule.getUsedDevkitReferences())) {
+      result.addAll(dk.getAllExportedLanguages());
+    }
+
+    if (includeExtended) {
+      Set<Language> noExtended = new HashSet<Language>(result);
+      result.clear();
+
+      for (Language l : noExtended) {
+        if (result.contains(l)) continue;
+        l.getDependenciesManager().collectAllExtendedLanguages(result);
       }
     }
   }
 
-
-  public void collectVisibleModules(Set<IModule> dependencies, boolean reexportOnly) {
-    dependencies.add(myModule);
+  protected void getUsedModules(Set<IModule> reexported, Set<IModule> nonReexported) {
     for (Dependency dependency : myModule.getDependencies()) {
-      if (reexportOnly && !dependency.isReexport()) continue;
-      IModule m = MPSModuleRepository.getInstance().getModule(dependency.getModuleRef());
-      if (m == null) continue;
-      if (!dependencies.contains(m)) {
-        m.getDependenciesManager().collectVisibleModules(dependencies, true);
+      IModule m = MPSModuleRepository.getInstance().getModuleById(dependency.getModuleRef().getModuleId());
+      if (m == null || reexported.contains(m)) continue;
+
+      if (dependency.isReexport()) {
+        reexported.add(m);
+      } else {
+        nonReexported.add(m);
       }
     }
-    if (reexportOnly) return;
-    for (ModuleReference ref : myModule.getUsedDevkitReferences()) {
-      DevKit dk = ModuleRepositoryFacade.getInstance().getModule(ref, DevKit.class);
-      if (dk == null) continue;
 
-      for (Solution solution : dk.getAllExportedSolutions()) {
-        if (!dependencies.contains(solution)) {
-          solution.getDependenciesManager().collectVisibleModules(dependencies, true);
-        }
-      }
+    for (DevKit dk : ModuleUtil.refsToDevkits(myModule.getUsedDevkitReferences())) {
+      nonReexported.addAll(dk.getAllExportedLanguages());
     }
   }
 }
