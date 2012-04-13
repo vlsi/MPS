@@ -38,6 +38,7 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
     Set<Language> result = new LinkedHashSet<Language>();
     result.addAll(ModuleUtil.refsToLanguages(myModule.getUsedLanguagesReferences()));
     for (DevKit dk : ModuleUtil.refsToDevkits(myModule.getUsedDevkitReferences())) {
+      //todo why extended are not included
       result.addAll(dk.getAllExportedLanguages());
     }
     for (Language l : new HashSet<Language>(result)) {
@@ -46,16 +47,27 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
     return result;
   }
 
+  public Set<IModule> getAllVisibleModules() {
+    Set<IModule> result = new LinkedHashSet<IModule>();
+    collectVisibleModules(result, false);
+    //todo this line is a shit
+    result.remove(myModule);
+    return result;
+  }
+
   public final Set<IModule> getAllRequiredModules() {
     Set<IModule> modules = new LinkedHashSet<IModule>();
     Set<Language> usedLanguages = new LinkedHashSet<Language>();
     collectAllCompileTimeDependencies(modules, usedLanguages);
+    //todo what is it?
     modules.addAll(usedLanguages);
+    //todo this is a shit
     modules.remove(myModule);
     return modules;
   }
 
   @Override
+  //todo this is some shit
   public Set<IModule> getRequiredModules() {
     Set<IModule> modules = new LinkedHashSet<IModule>();
     for (IModule m : ModuleUtil.getDependencies(myModule)) {
@@ -107,12 +119,6 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
     }
   }
 
-  public Set<IModule> getAllVisibleModules() {
-    Set<IModule> result = new LinkedHashSet<IModule>();
-    collectVisibleModules(result, false);
-    result.remove(myModule);
-    return result;
-  }
 
   public void collectVisibleModules(Set<IModule> dependencies, boolean reexportOnly) {
     dependencies.add(myModule);

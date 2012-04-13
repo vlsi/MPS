@@ -29,6 +29,7 @@ public class LanguageDependenciesManager extends ModuleDependenciesManager<Langu
   @Override
   public Set<IModule> getRequiredModules() {
     final Set<IModule> result = super.getRequiredModules();
+    //todo why?
     result.add(BootstrapLanguages.coreLanguage());
     return result;
   }
@@ -37,6 +38,7 @@ public class LanguageDependenciesManager extends ModuleDependenciesManager<Langu
   public void collectAllCompileTimeDependencies(Set<IModule> dependencies, Set<Language> languagesWithRuntime) {
     super.collectAllCompileTimeDependencies(dependencies, languagesWithRuntime);
 
+    //todo why?
     Language core = BootstrapLanguages.coreLanguage();
     if(!dependencies.contains(core)) {
       core.getDependenciesManager().collectAllCompileTimeDependencies(dependencies, languagesWithRuntime);
