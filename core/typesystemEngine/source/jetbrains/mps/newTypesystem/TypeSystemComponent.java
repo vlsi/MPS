@@ -255,8 +255,9 @@ class TypeSystemComponent extends CheckingComponent {
         additionalNodes = new ArrayList<SNode>(additionalNodes);
         additionalNodes.add(prevNode);
       }
-      computeTypesSpecial(node, false, additionalNodes, true, initialNode);
-      if (!myState.isTargetTypeCalculated()) {
+      computeTypesSpecial(node, false, additionalNodes, false, initialNode);
+      type = typeCalculated(initialNode);
+      if (type == null) {
         if (node.isRoot()) {
           myNodeTypesComponent.getTypeCheckingContext().setSingleTypeComputation(false);
           //System.out.println("Root: " + initialNode.getDebugText());
@@ -374,7 +375,7 @@ class TypeSystemComponent extends CheckingComponent {
     } else {
       if (initialNode == null) return null;
       if (!myState.isTargetTypeCalculated()) return null;
-      SNode type = getType(initialNode);
+      SNode type = myState.expand(getType(initialNode));
       if (type != null && !TypesUtil.hasVariablesInside(type)) return type;
     }
     return null;
