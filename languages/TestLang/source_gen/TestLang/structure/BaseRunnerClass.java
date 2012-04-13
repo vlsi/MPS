@@ -4,7 +4,11 @@ package TestLang.structure;
 
 
 public abstract class BaseRunnerClass implements Runnable {
+  public static String testStaticField;
+
   private final String[] args;
+  public String testField;
+  private String myTestProperty;
 
   public BaseRunnerClass(String[] args) {
     this.args = args;
@@ -15,6 +19,14 @@ public abstract class BaseRunnerClass implements Runnable {
   }
 
   public abstract void run();
+
+  public String getTestProperty() {
+    return this.myTestProperty;
+  }
+
+  private void setTestProperty(String value) {
+    this.myTestProperty = value;
+  }
 
   public static String getHostName() {
     return "host";
