@@ -2,8 +2,10 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/buildWorkbench" />
   <property name="build.layout" location="${build.dir}/artifacts/buildWorkbench" />
+  <property name="idea_home" location="" />
   <property name="mps_home" location="${basedir}" />
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
+  <property name="artifacts.IDEA" location="${idea_home}" />
   
   <target name="assemble" depends="classes" />
   

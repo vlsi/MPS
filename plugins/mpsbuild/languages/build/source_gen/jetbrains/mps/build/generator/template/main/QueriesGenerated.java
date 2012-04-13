@@ -801,7 +801,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_6859736767834590289(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode jar : ((JavaModulesClosure) _context.getVariable("var:dependenciesClosure")).getImportedJars()) {
+    for (SNode jar : ((JavaModulesClosure) _context.getVariable("var:dependenciesClosure")).getExternalJars()) {
       SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
       loopnode.setReferent("targetJar", jar, false);
       ListSequence.fromList(result).addElement(loopnode);
