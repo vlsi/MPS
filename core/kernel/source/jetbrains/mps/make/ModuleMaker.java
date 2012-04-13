@@ -72,7 +72,7 @@ public class ModuleMaker {
   }
 
   public ModuleMaker(@Nullable IMessageHandler handler, MessageKind level) {
-    this (handler);
+    this(handler);
     myLevel = level;
   }
 
@@ -145,7 +145,7 @@ public class ModuleMaker {
           warnCount += result.getWarnings();
           compiled = compiled || result.isCompiledAnything();
           messages.addAll(result.getMessages());
-          for (IMessage msg: result.getMessages()) {
+          for (IMessage msg : result.getMessages()) {
             if (msg.getKind() == MessageKind.ERROR) {
               handle(msg);
             }
@@ -166,7 +166,7 @@ public class ModuleMaker {
     }
   }
 
-  private  void handle (IMessage msg) {
+  private void handle(IMessage msg) {
     if (handler != null && msg.getKind().ordinal() >= myLevel.ordinal()) {
       handler.handle(msg);
     }

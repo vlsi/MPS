@@ -63,20 +63,6 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
         l.getDependenciesManager().collectModules(modules,depType);
       }
     }
-
-
-/*  todo move to compilation
-    if (myModule instanceof Language) {
-      // 1. Generator is always compiled together with the language (???)
-      // 2. Generator may have its own compile time dependencies (imports in the generated queries)
-      // 3. Let's not ignore them
-      for (Generator generator : ((Language) myModule).getGenerators()) {
-        if (!modules.contains(generator)) {
-          generator.getDependenciesManager().collectAllCompileTimeDependencies(modules, languagesWithRuntime);
-        }
-      }
-    }
-*/
   }
 
   //---------------util methods---NOTE THE SYMMETRY----------------

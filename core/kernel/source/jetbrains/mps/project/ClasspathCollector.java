@@ -16,10 +16,12 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.ClasspathReader;
+import jetbrains.mps.project.dependency.DependenciesManager.Deptype;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 
 import java.io.IOException;
@@ -42,6 +44,20 @@ public class ClasspathCollector {
     for (IModule m : myStart) {
       m.getDependenciesManager().collectAllCompileTimeDependencies(modules, usedLanguages);
     }
+
+    for (IModule m:new HashSet<IModule>(modules)){
+      if (m instanceof Language) {
+        // 1. Generator is always compiled together with the language (???)
+        // 2. Generator may have its own compile time dependencies (imports in the generated queries)
+        // 3. Let's not ignore them
+        for (Generator generator : ((Language) m).getGenerators()) {
+          if (!modules.contains(generator)) {
+            generator.getDependenciesManager().collectModules(modules, Deptype.COMPILE);
+          }
+        }
+      }
+    }
+
     for (IModule module : modules) {
       addPart(module.getClassPathItem());
     }
