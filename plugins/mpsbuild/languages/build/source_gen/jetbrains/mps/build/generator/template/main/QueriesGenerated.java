@@ -718,7 +718,7 @@ public class QueriesGenerated {
   }
 
   public static Object templateArgumentQuery_6859736767834590236(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "jar", false);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "extJar", true), "jar", false);
   }
 
   public static Iterable sourceNodesQuery_1117643560963351248(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

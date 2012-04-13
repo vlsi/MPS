@@ -131,7 +131,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static Object referenceMacro_GetReferent_6859736767834858545(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_5610619299014362266(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return ((SNode) _context.getVariable("var:target"));
   }
 

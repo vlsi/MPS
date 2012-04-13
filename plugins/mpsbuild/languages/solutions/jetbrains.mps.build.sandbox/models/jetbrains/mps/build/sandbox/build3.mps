@@ -37,7 +37,9 @@
       </node>
       <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyExternalJar" typeId="3ior.6859736767834557908" id="6859736767834743889">
         <property name="reexport" nameId="3ior.6859736767834590422" value="true" />
-        <link role="jar" roleId="3ior.6859736767834557929" targetNodeId="6859736767834635854" />
+        <node role="extJar" roleId="3ior.5610619299014309674" type="3ior.BuildSource_JavaExternalJarRef" typeId="3ior.5610619299014309452" id="5610619299014362268">
+          <link role="jar" roleId="3ior.5610619299014309453" targetNodeId="6859736767834635854" />
+        </node>
       </node>
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaModule" typeId="3ior.7389400916848073784" id="6859736767834635842">

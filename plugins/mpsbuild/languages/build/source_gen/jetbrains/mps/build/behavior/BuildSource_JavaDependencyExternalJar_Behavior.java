@@ -4,8 +4,8 @@ package jetbrains.mps.build.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.VisibleArtifacts;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class BuildSource_JavaDependencyExternalJar_Behavior {
@@ -13,22 +13,8 @@ public class BuildSource_JavaDependencyExternalJar_Behavior {
   }
 
   public static Iterable<SNode> virtual_getDependencyTargets_841011766566205095(SNode thisNode, VisibleArtifacts artifacts) {
-    if (SNodeOperations.getContainingRoot(thisNode) == SNodeOperations.getContainingRoot(SLinkOperations.getTarget(thisNode, "jar", false))) {
-      return null;
-    }
 
-    SNode target = SNodeOperations.as(artifacts.toOriginalNode(SLinkOperations.getTarget(thisNode, "jar", false)), "jetbrains.mps.build.structure.BuildSource_SingleFile");
-    if (target == null) {
-      return null;
-    }
-
-    SNode artifact = null;
-    if (SNodeOperations.isInstanceOf(target, "jetbrains.mps.build.structure.BuildLayout_Node")) {
-      artifact = SNodeOperations.cast(target, "jetbrains.mps.build.structure.BuildLayout_Node");
-    } else if (SNodeOperations.isInstanceOf(target, "jetbrains.mps.build.structure.BuildInputSingleFile")) {
-      artifact = SNodeOperations.as(artifacts.findArtifact(SLinkOperations.getTarget(SNodeOperations.cast(target, "jetbrains.mps.build.structure.BuildInputSingleFile"), "path", true)), "jetbrains.mps.build.structure.BuildLayout_Node");
-    }
-
+    SNode artifact = BuildSource_JavaExternalJarRef_Behavior.call_getDependencyTarget_5610619299014309566(SLinkOperations.getTarget(thisNode, "extJar", true), artifacts);
     if (artifact != null) {
       artifacts.needsFetch(SNodeOperations.getParent(thisNode));
       return Sequence.<SNode>singleton(artifact);

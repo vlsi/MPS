@@ -72,7 +72,7 @@ public class JavaModulesClosure {
           continue;
         }
 
-        importedJars.add(SLinkOperations.getTarget(jarDep, "jar", false));
+        importedJars.add(SLinkOperations.getTarget(SLinkOperations.getTarget(jarDep, "extJar", true), "jar", false));
       }
     }
   }
