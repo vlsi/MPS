@@ -256,11 +256,10 @@ class TypeSystemComponent extends CheckingComponent {
         additionalNodes.add(prevNode);
       }
       computeTypesSpecial(node, false, additionalNodes, false, initialNode);
-      type = typeCalculated(initialNode);
-      if (type == null) {
+      if (!myState.isTargetTypeCalculated()) {
         if (node.isRoot()) {
           myNodeTypesComponent.getTypeCheckingContext().setSingleTypeComputation(false);
-        //  System.out.println("Root: " + initialNode.getDebugText());
+          System.out.println("Root: " + initialNode.getDebugText());
           computeTypes(node, false, true, Collections.<SNode>emptyList(), true, initialNode);
           type = getType(initialNode);
           if (type == null && node != initialNode && myState.getInequalitySystem() == null && !myNodeTypesComponent.getTypeCheckingContext().isInEditorQueries()) {
@@ -271,6 +270,7 @@ class TypeSystemComponent extends CheckingComponent {
         prevNode = node;
         node = node.getParent();
       } else {
+        type = typeCalculated(initialNode);
         return type;
       }
     }
