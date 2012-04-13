@@ -23,6 +23,12 @@
       <property name="name" nameId="tpck.1169194664001" value="RemoveThreadPoolReference" />
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="cgfx.8923957828369477802" resolveInfo="ParallelFor" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2975785153735131708">
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="cgfx.2975785153735111398" resolveInfo="ThreadSafeClass" />
+    </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2975785153735230339">
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="cgfx.2975785153735230336" resolveInfo="NonThreadSafeClass" />
+    </node>
   </roots>
   <root id="8923957828369515244">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1188212207003">
@@ -147,6 +153,24 @@
           </node>
         </node>
       </node>
+    </node>
+  </root>
+  <root id="2975785153735131708">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1149858909222">
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2975785153735131712">
+        <property name="text" nameId="tpc2.1073389577007" value="@thread safe" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_AttributedNodeCell" typeId="tpc2.1149850725784" id="2975785153735220471" />
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="2975785153735222021" />
+    </node>
+  </root>
+  <root id="2975785153735230339">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="2975785153735230341">
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2975785153735230344">
+        <property name="text" nameId="tpc2.1073389577007" value="@non thread safe" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_AttributedNodeCell" typeId="tpc2.1149850725784" id="2975785153735230346" />
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="2975785153735230343" />
     </node>
   </root>
 </model>
