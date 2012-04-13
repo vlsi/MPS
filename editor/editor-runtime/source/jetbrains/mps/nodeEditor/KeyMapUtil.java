@@ -103,7 +103,7 @@ public class KeyMapUtil {
         importedAndExtendedLanguages.add(langRef);
         Language l = ModuleRepositoryFacade.getInstance().getModule(langRef, Language.class);
         if (l != null) {
-          for (Language le : l.getAllExtendedLanguages()) {
+          for (Language le : l.getDependenciesManager().getAllExtendedLanguages()) {
             importedAndExtendedLanguages.add(le.getModuleReference());
           }
         }

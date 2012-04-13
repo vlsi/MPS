@@ -114,7 +114,6 @@ public class Solution extends ClassLoadingModule {
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     }
 
-    invalidateDependencies();
     invalidateCaches();
   }
 

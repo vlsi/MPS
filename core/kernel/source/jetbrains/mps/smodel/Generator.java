@@ -138,8 +138,6 @@ public class Generator extends ClassLoadingModule {
     languageDescriptor.getGenerators().remove(index);
     languageDescriptor.getGenerators().add(index, (GeneratorDescriptor) moduleDescriptor);
     getSourceLanguage().setLanguageDescriptor(languageDescriptor, reloadClasses);
-
-    invalidateDependencies();
   }
 
   public String getName() {
@@ -248,7 +246,7 @@ public class Generator extends ClassLoadingModule {
       result.add(constraints);
     }
 
-    for (Language language : getSourceLanguage().getExtendedLanguages()) {
+    for (Language language : getSourceLanguage().getDependenciesManager().getExtendedLanguages()) {
       SModelDescriptor structure = language.getStructureModelDescriptor();
       if (structure != null) {
         result.add(structure);
@@ -278,7 +276,7 @@ public class Generator extends ClassLoadingModule {
     Set<Language> result = new LinkedHashSet<Language>(super.getImplicitlyImportedLanguages(sm));
     if (SModelStereotype.isGeneratorModel(sm)) {
       result.add(getSourceLanguage());
-      result.addAll(getSourceLanguage().getExtendedLanguages());
+      result.addAll(getSourceLanguage().getDependenciesManager().getExtendedLanguages());
     }
     return result;
   }

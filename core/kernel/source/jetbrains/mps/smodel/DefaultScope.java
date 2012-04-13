@@ -191,7 +191,7 @@ public abstract class DefaultScope extends BaseScope {
       myUsedLanguages.addAll(dk.getAllExportedLanguages());
     }
     for (Language l : new ArrayList<Language>(myUsedLanguages)) {
-      myUsedLanguages.addAll(l.getAllExtendedLanguages());
+      myUsedLanguages.addAll(l.getDependenciesManager().getAllExtendedLanguages());
     }
   }
 

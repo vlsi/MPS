@@ -42,7 +42,7 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
       result.addAll(dk.getAllExportedLanguages());
     }
     for (Language l : new HashSet<Language>(result)) {
-      result.addAll(l.getAllExtendedLanguages());
+      result.addAll(l.getDependenciesManager().getAllExtendedLanguages());
     }
     return result;
   }

@@ -35,7 +35,7 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
   }
 
   public static boolean checkCyclicInheritance(Language lang) {
-    List<Language> frontier = lang.getExtendedLanguages();
+    List<Language> frontier = lang.getDependenciesManager().getExtendedLanguages();
     ArrayList<Language> passed = new ArrayList<Language>();
     while (!frontier.isEmpty()) {
       List<Language> newFrontier = new ArrayList<Language>();
@@ -44,7 +44,7 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
           return false;
         }
         if (!passed.contains(extendedLang)) {
-          newFrontier.addAll(extendedLang.getExtendedLanguages());
+          newFrontier.addAll(extendedLang.getDependenciesManager().getExtendedLanguages());
         }
         passed.add(extendedLang);
       }
@@ -54,7 +54,7 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
   }
 
   public static void checkBehaviorAspectPresence(Language lang, List<String> errors) {
-    for (Language language : lang.getAllExtendedLanguages()) {
+    for (Language language : lang.getDependenciesManager().getAllExtendedLanguages()) {
       EditableSModelDescriptor descriptor = LanguageAspect.BEHAVIOR.get(language);
       if (descriptor == null) {
         if (lang == language)

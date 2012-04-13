@@ -58,7 +58,6 @@ public abstract class AbstractModule implements IModule {
     }
   };
   private CompositeClassPathItem myCachedClassPathItem;
-  private DependenciesManager myDependenciesManager;
 
   //----model creation
 
@@ -159,14 +158,7 @@ public abstract class AbstractModule implements IModule {
 
   //----get deps
 
-  public final DependenciesManager getDependenciesManager() {
-    if (myDependenciesManager == null) {
-      myDependenciesManager = createDependenciesManager();
-    }
-    return myDependenciesManager;
-  }
-
-  protected ModuleDependenciesManager createDependenciesManager() {
+  public ModuleDependenciesManager getDependenciesManager() {
     return new ModuleDependenciesManager(this);
   }
 
@@ -580,10 +572,6 @@ public abstract class AbstractModule implements IModule {
   public boolean updateModuleReferences() {
     if (getModuleDescriptor() == null) return false;
     return getModuleDescriptor().updateModuleRefs();
-  }
-
-  protected void invalidateDependencies() {
-    myDependenciesManager = null;
   }
 
   protected ModuleDescriptor loadDescriptor() {

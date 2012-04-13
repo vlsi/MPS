@@ -95,7 +95,7 @@ public class ModuleRepositoryFacade implements CoreComponent {
   public Collection<Language> getAllExtendingLanguages(Language l) {
     List<Language> result = new LinkedList<Language>();
     for (Language lang : getAllModules(Language.class)) {
-      if (lang.getExtendedLanguages().contains(l)) {
+      if (lang.getDependenciesManager().getExtendedLanguages().contains(l)) {
         result.add(lang);
       }
     }

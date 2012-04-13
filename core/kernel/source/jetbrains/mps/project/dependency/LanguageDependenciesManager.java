@@ -15,10 +15,13 @@
  */
 package jetbrains.mps.project.dependency;
 
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 
+import java.util.Collection;
+import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 public class LanguageDependenciesManager extends ModuleDependenciesManager<Language> {
@@ -26,22 +29,29 @@ public class LanguageDependenciesManager extends ModuleDependenciesManager<Langu
     super(language);
   }
 
-  @Override
-  public Set<IModule> getRequiredModules() {
-    final Set<IModule> result = super.getRequiredModules();
-    //todo why?
-    result.add(BootstrapLanguages.coreLanguage());
+  public List<Language> getExtendedLanguages() {
+    List<Language> result = ModuleUtil.refsToLanguages(myModule.getExtendedLanguageRefs());
+
+    Language coreLang = BootstrapLanguages.coreLanguage();
+    if (!result.contains(coreLang)) {
+      result.add(coreLang);
+    }
+
     return result;
   }
 
-  @Override
-  public void collectAllCompileTimeDependencies(Set<IModule> dependencies, Set<Language> languagesWithRuntime) {
-    super.collectAllCompileTimeDependencies(dependencies, languagesWithRuntime);
+  public Collection<Language> getAllExtendedLanguages() {
+    Set<Language> result = new LinkedHashSet<Language>();
+    collectAllExtendedLanguages(result);
+    return result;
+  }
 
-    //todo why?
-    Language core = BootstrapLanguages.coreLanguage();
-    if(!dependencies.contains(core)) {
-      core.getDependenciesManager().collectAllCompileTimeDependencies(dependencies, languagesWithRuntime);
+  private void collectAllExtendedLanguages(Set<Language> result) {
+    if (result.contains(myModule)) return;
+
+    result.add(myModule);
+    for (Language l : getExtendedLanguages()) {
+      l.getDependenciesManager().collectAllExtendedLanguages(result);
     }
   }
 }

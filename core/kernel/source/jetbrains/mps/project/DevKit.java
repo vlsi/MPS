@@ -88,8 +88,6 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     if (reloadClasses) {
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     }
-
-    invalidateDependencies();
   }
 
   public String getGeneratorOutputPath() {
@@ -211,7 +209,7 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  protected ModuleDependenciesManager createDependenciesManager() {
+  public DevkitDependenciesManager getDependenciesManager() {
     return new DevkitDependenciesManager(this);
   }
 

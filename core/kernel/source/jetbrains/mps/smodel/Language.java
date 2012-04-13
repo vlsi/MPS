@@ -74,8 +74,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
 
   private CachesInvalidator myCachesInvalidator;
 
-  private List<Language> myAllExtendedLanguages;
-  
   //todo [MihMuh] this should be replaced in 3.0 (don't know exactly with what now)
   private ClassLoader myStubsLoader = new MyClassLoader();
 
@@ -102,10 +100,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     setModuleReference(descriptor.getModuleReference());
   }
 
-  protected ModuleDependenciesManager createDependenciesManager() {
-    return new LanguageDependenciesManager(this);
-  }
-
   protected void reloadAfterDescriptorChange() {
     ModuleRepositoryFacade.getInstance().unregisterModules(this, new Condition<IModule>() {
       public boolean met(IModule m) {
@@ -117,45 +111,22 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     revalidateGenerators();
   }
 
+  public LanguageDependenciesManager getDependenciesManager() {
+    return new LanguageDependenciesManager(this);
+  }
+
   public void addExtendedLanguage(ModuleReference langRef) {
-    if (getExtendedLanguageRefs().contains(langRef)) return;
+    if (myLanguageDescriptor.getExtendedLanguages().contains(langRef)) return;
     LanguageDescriptor moduleDescriptor = getModuleDescriptor();
     moduleDescriptor.getExtendedLanguages().add(langRef);
     setModuleDescriptor(moduleDescriptor, true);
     save();
   }
 
-  public List<ModuleReference> getExtendedLanguageRefs() {
-    return new ArrayList<ModuleReference>(myLanguageDescriptor.getExtendedLanguages());
-  }
-
-  public List<Language> getExtendedLanguages() {
-    List<Language> result = ModuleUtil.refsToLanguages(getExtendedLanguageRefs());
-
-    Language coreLang = BootstrapLanguages.coreLanguage();
-    if (!result.contains(coreLang)) {
-      result.add(coreLang);
-    }
-
-    return result;
-  }
-
-  public Collection<Language> getAllExtendedLanguages() {
-    if (myAllExtendedLanguages == null) {
-      Set<Language> set = new LinkedHashSet<Language>();
-      collectAllExtendedLanguages(set);
-      myAllExtendedLanguages = Collections.unmodifiableList(new ArrayList<Language>(set));
-    }
-    return myAllExtendedLanguages;
-  }
-
-  private void collectAllExtendedLanguages(Set<Language> result) {
-    if (result.contains(this)) return;
-
-    result.add(this);
-    for (Language l : getExtendedLanguages()) {
-      l.collectAllExtendedLanguages(result);
-    }
+  public Set<ModuleReference> getExtendedLanguageRefs() {
+    HashSet<ModuleReference> res = new HashSet<ModuleReference>(myLanguageDescriptor.getExtendedLanguages());
+    res.add(BootstrapLanguages.coreLanguage().getModuleReference());
+    return res;
   }
 
   public List<Dependency> getDependencies() {
@@ -253,8 +224,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     if (getStructureModelDescriptor() != null && myCachesInvalidator == null) {
       getStructureModelDescriptor().addModelListener(myCachesInvalidator = new CachesInvalidator());
     }
-
-    invalidateDependencies();
   }
 
   public boolean isBootstrap() {
@@ -320,7 +289,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
       result.add(LanguageAspect.BEHAVIOR.get(this));
     }
 
-    for (Language extended : getExtendedLanguages()) {
+    for (Language extended : getDependenciesManager().getExtendedLanguages()) {
       SModelDescriptor structure = LanguageAspect.STRUCTURE.get(extended);
       if (structure != null) {
         result.add(structure);
@@ -360,7 +329,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     super.invalidateCaches();
     myNameToConceptCache.clear();
     myNamesWithNoConcepts.clear();
-    myAllExtendedLanguages = null;
   }
 
   public SNode findConceptDeclaration(@NotNull String conceptName) {
