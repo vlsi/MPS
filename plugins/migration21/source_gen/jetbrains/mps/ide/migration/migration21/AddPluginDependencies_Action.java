@@ -14,12 +14,13 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -57,12 +58,27 @@ public class AddPluginDependencies_Action extends BaseAction {
     try {
       ModuleReference pluginRef = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("28f9e497-3b42-4291-aeba-0a1039153ab1")).getModuleReference();
       ModuleReference standaloneRef = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("ef7bf5ac-d06c-4342-b11d-e42104eb9343")).getModuleReference();
-      for (SModelDescriptor m : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectModels())) {
-        if (m.getSModel().importedLanguages().contains(pluginRef)) {
-          SModelOperations.createNewRootNode(((SModel) m.getSModel()), "jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor", null);
-          m.getSModel().addLanguage(standaloneRef);
-          new MissingDependenciesFixer(m).fix(false);
-          m.getModule().invalidateCaches();
+      for (IModule module : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectModules(IModule.class))) {
+        if (!(module.getUsedLanguagesReferences().contains(pluginRef))) {
+          continue;
+        }
+        if (module.getUsedLanguagesReferences().contains(standaloneRef)) {
+          continue;
+        }
+
+        for (SModelDescriptor model : ListSequence.fromList(module.getOwnModelDescriptors())) {
+          if (SModelStereotype.isStubModelStereotype(model.getStereotype())) {
+            continue;
+          }
+          if (!(model.getSModel().importedLanguages().contains(pluginRef))) {
+            continue;
+          }
+          if (model.getSModel().importedLanguages().contains(standaloneRef)) {
+            continue;
+          }
+          SModelOperations.createNewRootNode(((SModel) model.getSModel()), "jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor", null);
+          model.getSModel().addLanguage(standaloneRef);
+          model.getModule().addDependency(standaloneRef, false);
         }
       }
       SModelRepository.getInstance().saveAll();

@@ -74,6 +74,13 @@ public class SetType_Behavior {
     return new SetType_Behavior.QuotationClass_q66uze_a0a0g().createNode();
   }
 
+  public static boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
+    if ("jetbrains.mps.baseLanguage.collections.structure.LinkedListType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.DequeType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.StackType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.ListType".equals(conceptFqName)) {
+      return false;
+    }
+    return true;
+  }
+
   public static List<SNode> call_getAbstractCreators_7602110602933345893(SNode thisNode, SModel targetModel) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.SetType"), "virtual_getAbstractCreators_7602110602933317830", PARAMETERS_7602110602933345893, targetModel);

@@ -2,8 +2,18 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/buildMpsA" />
   <property name="build.layout" location="${build.dir}/artifacts/buildMpsA" />
+  <property name="artifacts.buildMpsB" location="${build.dir}/artifacts/buildMpsB" />
   
   <target name="assemble" depends="classes" />
+  
+  <target name="buildDependents">
+    <ant antfile="jetbrains.mps.build.sandbox/samples/buildMpsB.xml" inheritAll="false" useNativeBasedir="true" />
+  </target>
+  
+  <target name="fetchDependencies">
+    <mkdir dir="${build.tmp}/deps/buildMpsB/MpsB.zip" />
+    <unzip src="${artifacts.buildMpsB}/X/MpsB.zip" dest="${build.tmp}/deps/buildMpsB/MpsB.zip" />
+  </target>
   
   <target name="build" depends="assemble, check" />
   
@@ -12,7 +22,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" />
+  <target name="compileJava" depends="java.compile.A, java.compile.testImportJarReexport" />
   
   <target name="processResources" />
   
@@ -21,4 +31,31 @@
   <target name="test" depends="classes" />
   
   <target name="check" depends="test" />
+  
+  <target name="java.compile.A" depends="fetchDependencies">
+    <mkdir dir="${build.tmp}/java/out/A" />
+    <javac destdir="${build.tmp}/java/out/A" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/jetbrains.mps.build.sandbox/samples/buildD/src" />
+      </src>
+      <classpath>
+        <fileset file="${build.tmp}/deps/buildMpsB/MpsB.zip/abcde.jar" />
+      </classpath>
+    </javac>
+  </target>
+  
+  <target name="java.compile.testImportJarReexport" depends="java.compile.A">
+    <mkdir dir="${build.tmp}/java/out/testImportJarReexport" />
+    <javac destdir="${build.tmp}/java/out/testImportJarReexport" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/jetbrains.mps.build.sandbox/samples/buildA/src" />
+      </src>
+      <classpath>
+        <pathelement path="${build.tmp}/java/out/A" />
+        <fileset file="${build.tmp}/deps/buildMpsB/MpsB.zip/abcde.jar" />
+      </classpath>
+    </javac>
+  </target>
 </project>

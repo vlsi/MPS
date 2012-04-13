@@ -15,12 +15,11 @@
  */
 package jetbrains.mps.typesystem.inference.util;
 
+import jetbrains.mps.lang.pattern.util.IMatchModifier;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
 
 import java.lang.ref.WeakReference;
-import java.util.Map;
 
 public class CacheNodeHandler {
   private WeakReference<SNode> myNodeRef;
@@ -28,30 +27,7 @@ public class CacheNodeHandler {
 
   public CacheNodeHandler(SNode node) {
     myNodeRef = new WeakReference<SNode>(node);
-    myHash = hash(node, false);
-  }
-
-  private int hash(SNode node, boolean useAttributes) {
-    int result = node.getConceptFqName().hashCode();
-    for (SReference reference : node.getReferences()) {
-      SNode targetNode = reference.getTargetNode();
-      if (targetNode != null) {
-        result += reference.getRole().hashCode();
-        result += targetNode.hashCode();
-      }
-    }
-    Map<String, String> properties = node.getProperties();
-    for (String propertyName : properties.keySet()) {
-      result += propertyName.hashCode();
-    }
-    for (String propertyValue : properties.values()) {
-      result += propertyValue.hashCode();
-    }
-    for (SNode child : node.getChildren(useAttributes)) {
-      result += child.getRole_().hashCode();
-      result += hash(child, useAttributes);
-    }
-    return result;
+    myHash = MatchingUtil.hash(node, false);
   }
 
   public int hashCode() {
@@ -64,7 +40,7 @@ public class CacheNodeHandler {
       if (getNode() == null || anotherHandler.getNode() == null) {
         return false;
       }
-      return MatchingUtil.matchNodes(this.getNode(), anotherHandler.getNode());
+      return MatchingUtil.matchNodes(this.getNode(), anotherHandler.getNode(), IMatchModifier.DEFAULT, false);
     } else {
       return false;
     }

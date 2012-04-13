@@ -86,6 +86,9 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   }
 
   public void setGenerationMode(boolean generationMode) {
+    if (generationMode == this.generationMode) {
+      return;
+    }
     this.generationMode = generationMode;
     myOldOperation = null;
     if (this.generationMode) {

@@ -1700,6 +1700,14 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "styleClass", true);
   }
 
+  public static Iterable sourceNodesQuery_7525356604723499612(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "styleItem", true);
+  }
+
+  public static Iterable sourceNodesQuery_7525356604723499637(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "styleItem", true);
+  }
+
   public static Iterable sourceNodesQuery_2409615978587301052(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "styleItem", true);
   }

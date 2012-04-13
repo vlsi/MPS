@@ -31,10 +31,12 @@ public class typeof_ArithmSymbol_InferenceRule extends AbstractInferenceRule_Run
       typeCheckingContext.whenConcrete(t, new Runnable() {
         public void run() {
           if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getExpandedNode(t), MathTypeUtil.qBigComplex)) {
-            {
-              SNode _nodeToCheck_1029348928467 = symbol;
-              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1418611629042133318", 0, null);
-              typeCheckingContext.createLessThanInequality((SNode) SNodeOperations.copyNode(MathTypeUtil.qInt), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1418611629042133323", true), true, true, _info_12389875345);
+            if (!(typeCheckingContext.isSingleTypeComputation())) {
+              {
+                SNode _nodeToCheck_1029348928467 = symbol;
+                EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1418611629042133318", 0, null);
+                typeCheckingContext.createLessThanInequality((SNode) SNodeOperations.copyNode(MathTypeUtil.qInt), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1418611629042133323", true), true, true, _info_12389875345);
+              }
             }
           } else if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(t), "jetbrains.mps.baseLanguage.math.structure.MatrixType") || SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(t), "jetbrains.mps.baseLanguage.math.structure.VectorType")) {
           } else {

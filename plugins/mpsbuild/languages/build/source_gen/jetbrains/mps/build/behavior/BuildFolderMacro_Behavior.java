@@ -26,11 +26,12 @@ public class BuildFolderMacro_Behavior {
       return null;
     }
     SetSequence.fromSet(usedMacro).addElement(SPropertyOperations.getString(thisNode, "name"));
+    try {
+      return BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(SLinkOperations.getTarget(thisNode, "defaultPath", true), context);
+    } finally {
+      SetSequence.fromSet(usedMacro).removeElement(SPropertyOperations.getString(thisNode, "name"));
+    }
 
-    String result = BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(SLinkOperations.getTarget(thisNode, "defaultPath", true), context);
 
-    SetSequence.fromSet(usedMacro).removeElement(SPropertyOperations.getString(thisNode, "name"));
-
-    return result;
   }
 }
