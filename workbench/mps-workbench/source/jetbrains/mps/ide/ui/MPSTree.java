@@ -26,7 +26,7 @@ import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.impl.IdeFocusManagerHeadless;
-import com.intellij.ui.TreeToolTipHandler;
+import com.intellij.ui.TreeUIHelper;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
@@ -81,7 +81,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
     largeModel = true;
 
-    TreeToolTipHandler.install(this);
+    TreeUIHelper.getInstance().installToolTipHandler(this);
 
     setCellRenderer(new NewMPSTreeCellRenderer());
 
