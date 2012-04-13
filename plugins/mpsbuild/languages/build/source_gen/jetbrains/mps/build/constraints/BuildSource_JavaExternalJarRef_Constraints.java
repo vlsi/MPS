@@ -64,10 +64,7 @@ public class BuildSource_JavaExternalJarRef_Constraints extends BaseConstraintsD
                 BaseConcept_Behavior.call_getPresentation_1213877396640(_context.getParameterNode())
               );
             }
-            return (_context.getSmartReference() ?
-              "import jar " + target :
-              target
-            );
+            return target;
           }
 
           @Override

@@ -1032,20 +1032,9 @@
               </node>
             </node>
           </node>
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5610619299014309547">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="5610619299014309548">
-              <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="5610619299014309549">
-                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5610619299014309550">
-                  <property name="value" nameId="tpee.1070475926801" value="import jar " />
-                </node>
-                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5610619299014309551">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5610619299014309494" resolveInfo="target" />
-                </node>
-              </node>
-              <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5610619299014309552">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5610619299014309494" resolveInfo="target" />
-              </node>
-              <node role="condition" roleId="tpee.1163668914799" type="tp1t.ConstraintFunctionParameter_smartReference" typeId="tp1t.6768994795311967741" id="5610619299014309553" />
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5610619299014502521">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5610619299014502522">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5610619299014309494" resolveInfo="target" />
             </node>
           </node>
         </node>
