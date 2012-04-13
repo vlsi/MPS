@@ -20,40 +20,34 @@ import jetbrains.mps.smodel.Language;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
 
 public class GlobalModuleDependenciesManager {
-  public static Set<Language> getUsedLanguages(IModule module){
-    return getUsedLanguages(Collections.singleton(module));
+  private Set<IModule> myModules;
+
+  public GlobalModuleDependenciesManager(Collection<IModule> modules) {
+    myModules = new HashSet<IModule>(modules);
   }
 
-  public static Set<IModule> getVisibleModules(IModule module){
-    return getVisibleModules(Collections.singleton(module));
+  public GlobalModuleDependenciesManager(IModule module) {
+    myModules = new HashSet<IModule>();
+    myModules.add(module);
   }
-
-  public static Set<IModule> getCompilationModules(IModule module){
-    return getCompilationModules(Collections.singleton(module));
-  }
-
-  public static Set<IModule> getExecutionModules(IModule module){
-    return getExecutionModules(Collections.singleton(module));
-  }
-
-  //-------------real code-------------
 
   /**
    * All languages in scope of the given modules
    * This includes imported languages, languages from imported devkits, all their extended languages etc.
    */
-  public static Set<Language> getUsedLanguages(Set<IModule> modules){
-    
+  public Collection<Language> getUsedLanguages() {
+
   }
 
   /*
    *  All modules visible from given modules
    *  This includes modules from dependencies, transitive, respecting reexports
    */
-  public static Set<IModule> getVisibleModules(Set<IModule> modules){
+  public Collection<IModule> getVisibleModules() {
 
   }
 
@@ -62,18 +56,17 @@ public class GlobalModuleDependenciesManager {
    *  This includes visible modules and used language runtimes, respecting reexports
    *  Including languages with runtime stub paths
    */
-  public static Set<IModule> getCompilationModules(Set<IModule> modules){
+  public Collection<IModule> getCompilationModules() {
 
   }
 
   /**
-   *  All modules required for execution of given modules
-   *  This includes transitive closure of visible modules, with no respect for reexports,
-   *  and runtimes of used languages, not respecting reexports
-   *  Including languages with runtime stub paths
+   * All modules required for execution of given modules
+   * This includes transitive closure of visible modules, with no respect for reexports,
+   * and runtimes of used languages, not respecting reexports
+   * Including languages with runtime stub paths
    */
-  public static Set<IModule> getExecutionModules(Set<IModule> modules){
+  public Collection<IModule> getExecutionModules() {
 
   }
-
 }
