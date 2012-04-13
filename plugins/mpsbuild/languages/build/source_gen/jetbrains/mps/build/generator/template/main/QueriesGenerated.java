@@ -784,7 +784,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_6647099934207033969(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "dependencies", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary")) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaDependencyModule")) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar")) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaDependencyImportedJar"));
+        return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary")) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaDependencyModule")) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar")) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaDependencyExternalJar"));
       }
     });
   }

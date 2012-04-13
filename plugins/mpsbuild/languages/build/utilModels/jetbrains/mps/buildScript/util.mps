@@ -8155,7 +8155,7 @@
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="6859736767834590380">
                     <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="6859736767834590382">
-                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3ior.6859736767834557908" resolveInfo="BuildSource_JavaDependencyImportedJar" />
+                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3ior.6859736767834557908" resolveInfo="BuildSource_JavaDependencyExternalJar" />
                     </node>
                   </node>
                 </node>
@@ -8164,10 +8164,10 @@
                     <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6859736767834590384">
                       <property name="name" nameId="tpck.1169194664001" value="jarDep" />
                       <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="6859736767834590385">
-                        <link role="concept" roleId="tp25.1138405853777" targetNodeId="3ior.6859736767834557908" resolveInfo="BuildSource_JavaDependencyImportedJar" />
+                        <link role="concept" roleId="tp25.1138405853777" targetNodeId="3ior.6859736767834557908" resolveInfo="BuildSource_JavaDependencyExternalJar" />
                       </node>
                       <node role="initializer" roleId="tpee.1068431790190" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="6859736767834590386">
-                        <link role="concept" roleId="tp25.1140138128738" targetNodeId="3ior.6859736767834557908" resolveInfo="BuildSource_JavaDependencyImportedJar" />
+                        <link role="concept" roleId="tp25.1140138128738" targetNodeId="3ior.6859736767834557908" resolveInfo="BuildSource_JavaDependencyExternalJar" />
                         <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6859736767834590387">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7880069565647313663" resolveInfo="dep" />
                         </node>

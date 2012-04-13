@@ -155,7 +155,7 @@
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="6859736767834558025">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Dependencies" />
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="3ior.6859736767834557908" resolveInfo="BuildSource_JavaDependencyImportedJar" />
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="3ior.6859736767834557908" resolveInfo="BuildSource_JavaDependencyExternalJar" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="7181125477683216360">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.External" />

@@ -3345,7 +3345,7 @@
                                     </node>
                                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="6859736767834809572">
                                       <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="6859736767834809574">
-                                        <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3ior.6859736767834557908" resolveInfo="BuildSource_JavaDependencyImportedJar" />
+                                        <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3ior.6859736767834557908" resolveInfo="BuildSource_JavaDependencyExternalJar" />
                                       </node>
                                     </node>
                                   </node>
@@ -3757,7 +3757,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="6859736767834590100">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="3ior.6859736767834557908" resolveInfo="BuildSource_JavaDependencyImportedJar" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="3ior.6859736767834557908" resolveInfo="BuildSource_JavaDependencyExternalJar" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="6859736767834590102">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="6859736767834590094" resolveInfo="reduceImportedJar" />
         <node role="actualArgument" roleId="tpf8.1722980698497626405" type="tpf8.TemplateArgumentQueryExpression" typeId="tpf8.4035562641222585520" id="6859736767834590235">

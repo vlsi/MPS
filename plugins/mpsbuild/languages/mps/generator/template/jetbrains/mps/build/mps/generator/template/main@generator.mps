@@ -771,7 +771,7 @@
                   </node>
                 </node>
               </node>
-              <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyImportedJar" typeId="3ior.6859736767834557908" id="6859736767834855132">
+              <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyExternalJar" typeId="3ior.6859736767834557908" id="6859736767834855132">
                 <link role="jar" roleId="3ior.6859736767834557929" targetNodeId="6859736767834858198" />
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="6859736767834858210">
                   <property name="comment" nameId="tpf8.3265704088513289864" value="ext jars" />
@@ -2776,7 +2776,7 @@
     </node>
     <node role="contentNode" roleId="tpf8.1092060348987" type="3ior.BuildSource_JavaModule" typeId="3ior.7389400916848073784" id="6859736767834858396">
       <property name="name" nameId="tpck.1169194664001" value="temp3" />
-      <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyImportedJar" typeId="3ior.6859736767834557908" id="6859736767834858543">
+      <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyExternalJar" typeId="3ior.6859736767834557908" id="6859736767834858543">
         <link role="jar" roleId="3ior.6859736767834557929" targetNodeId="6859736767834858198" />
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="6859736767834858544">
           <property name="linkRole" nameId="tpck.1757699476691236116" value="jar" />

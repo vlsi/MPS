@@ -82,7 +82,7 @@
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="6859736767834557938">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Dependencies" />
-      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="3ior.6859736767834557908" resolveInfo="BuildSource_JavaDependencyImportedJar" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="3ior.6859736767834557908" resolveInfo="BuildSource_JavaDependencyExternalJar" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="7181125477683218680">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.External" />

@@ -79,7 +79,7 @@ public class QueriesGenerated {
     return !(SPropertyOperations.getBoolean(_context.getSourceNode(), "reexport"));
   }
 
-  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildSource_JavaDependencyImportedJar_8169228734285687708(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildSource_JavaDependencyExternalJar_8169228734285687708(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return !(SPropertyOperations.getBoolean(_context.getSourceNode(), "reexport"));
   }
 
@@ -608,10 +608,10 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_BuildSource_JavaDependencyImportedJar_8169228734285687653(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_BuildSource_JavaDependencyExternalJar_8169228734285687653(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaDependencyImportedJar");
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaDependencyExternalJar");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           SPropertyOperations.set(_context.getSourceNode(), "reexport", "" + true);

@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
-public class BuildSource_JavaDependencyImportedJar_Behavior {
+public class BuildSource_JavaDependencyExternalJar_Behavior {
   public static void init(SNode thisNode) {
   }
 
