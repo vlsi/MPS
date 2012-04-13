@@ -28,30 +28,38 @@ public class typeof_DecisionTable_InferenceRule extends AbstractInferenceRule_Ru
     }
 
     for (SNode e : ListSequence.fromList(SLinkOperations.getTargets(decisionTable, "rowHeaders", true))) {
-      {
-        SNode _nodeToCheck_1029348928467 = e;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607015320", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607015317", true), (SNode) typeCheckingContext.typeOf(new typeof_DecisionTable_InferenceRule.QuotationClass_ro75ql_a0a0a0c0a().createNode(typeCheckingContext), "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607015325", true), true, true, _info_12389875345);
+      if (!(typeCheckingContext.isSingleTypeComputation())) {
+        {
+          SNode _nodeToCheck_1029348928467 = e;
+          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607015320", 0, null);
+          typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607015317", true), (SNode) typeCheckingContext.typeOf(new typeof_DecisionTable_InferenceRule.QuotationClass_ro75ql_a0a0a0c0a().createNode(typeCheckingContext), "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607015325", true), true, true, _info_12389875345);
+        }
       }
     }
     for (SNode e : ListSequence.fromList(SLinkOperations.getTargets(decisionTable, "colHeaders", true))) {
-      {
-        SNode _nodeToCheck_1029348928467 = e;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607015341", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607015343", true), (SNode) typeCheckingContext.typeOf(new typeof_DecisionTable_InferenceRule.QuotationClass_ro75ql_a0a0a0d0a().createNode(typeCheckingContext), "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607015346", true), true, true, _info_12389875345);
+      if (!(typeCheckingContext.isSingleTypeComputation())) {
+        {
+          SNode _nodeToCheck_1029348928467 = e;
+          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607015341", 0, null);
+          typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607015343", true), (SNode) typeCheckingContext.typeOf(new typeof_DecisionTable_InferenceRule.QuotationClass_ro75ql_a0a0a0d0a().createNode(typeCheckingContext), "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607015346", true), true, true, _info_12389875345);
+        }
       }
     }
     for (SNode e : ListSequence.fromList(SLinkOperations.getTargets(decisionTable, "resultValues", true))) {
-      {
-        SNode _nodeToCheck_1029348928467 = e;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607015356", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607015358", true), (SNode) typeCheckingContext.typeOf(decisionTable, "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607015361", true), true, true, _info_12389875345);
+      if (!(typeCheckingContext.isSingleTypeComputation())) {
+        {
+          SNode _nodeToCheck_1029348928467 = e;
+          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607015356", 0, null);
+          typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607015358", true), (SNode) typeCheckingContext.typeOf(decisionTable, "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607015361", true), true, true, _info_12389875345);
+        }
       }
     }
-    {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(decisionTable, "defaultValue", true);
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607015373", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607015375", true), (SNode) typeCheckingContext.typeOf(decisionTable, "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607091408", true), true, true, _info_12389875345);
+    if (!(typeCheckingContext.isSingleTypeComputation())) {
+      {
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(decisionTable, "defaultValue", true);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607015373", 0, null);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607015375", true), (SNode) typeCheckingContext.typeOf(decisionTable, "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607091408", true), true, true, _info_12389875345);
+      }
     }
 
   }
