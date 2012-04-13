@@ -16,9 +16,9 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -35,7 +35,8 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
   }
 
   public static boolean checkCyclicInheritance(Language lang) {
-    List<Language> frontier = lang.getDependenciesManager().getExtendedLanguages();
+
+    List<Language> frontier = ModuleUtil.refsToLanguages(lang.getDependenciesManager().myModule.getExtendedLanguageRefs());
     ArrayList<Language> passed = new ArrayList<Language>();
     while (!frontier.isEmpty()) {
       List<Language> newFrontier = new ArrayList<Language>();
@@ -44,7 +45,8 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
           return false;
         }
         if (!passed.contains(extendedLang)) {
-          newFrontier.addAll(extendedLang.getDependenciesManager().getExtendedLanguages());
+
+          newFrontier.addAll(ModuleUtil.refsToLanguages(extendedLang.getDependenciesManager().myModule.getExtendedLanguageRefs()));
         }
         passed.add(extendedLang);
       }

@@ -17,10 +17,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.ClassLoadingModule;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.StubPath;
+import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.vfs.IFile;
@@ -246,7 +243,7 @@ public class Generator extends ClassLoadingModule {
       result.add(constraints);
     }
 
-    for (Language language : getSourceLanguage().getDependenciesManager().getExtendedLanguages()) {
+    for (Language language : ModuleUtil.refsToLanguages(getSourceLanguage().getDependenciesManager().myModule.getExtendedLanguageRefs())) {
       SModelDescriptor structure = language.getStructureModelDescriptor();
       if (structure != null) {
         result.add(structure);
@@ -276,7 +273,8 @@ public class Generator extends ClassLoadingModule {
     Set<Language> result = new LinkedHashSet<Language>(super.getImplicitlyImportedLanguages(sm));
     if (SModelStereotype.isGeneratorModel(sm)) {
       result.add(getSourceLanguage());
-      result.addAll(getSourceLanguage().getDependenciesManager().getExtendedLanguages());
+
+      result.addAll(ModuleUtil.refsToLanguages(getSourceLanguage().getDependenciesManager().myModule.getExtendedLanguageRefs()));
     }
     return result;
   }

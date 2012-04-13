@@ -16,28 +16,15 @@
 package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.ModuleUtil;
-import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 
 import java.util.Collection;
 import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Set;
 
 public class LanguageDependenciesManager extends ModuleDependenciesManager<Language> {
   public LanguageDependenciesManager(Language language) {
     super(language);
-  }
-
-  public List<Language> getExtendedLanguages() {
-    List<Language> result = ModuleUtil.refsToLanguages(myModule.getExtendedLanguageRefs());
-
-    Language coreLang = BootstrapLanguages.coreLanguage();
-    if (!result.contains(coreLang)) {
-      result.add(coreLang);
-    }
-
-    return result;
   }
 
   public Collection<Language> getAllExtendedLanguages() {
@@ -50,7 +37,8 @@ public class LanguageDependenciesManager extends ModuleDependenciesManager<Langu
     if (result.contains(myModule)) return;
 
     result.add(myModule);
-    for (Language l : getExtendedLanguages()) {
+
+    for (Language l : ModuleUtil.refsToLanguages(myModule.getExtendedLanguageRefs())) {
       l.getDependenciesManager().collectAllExtendedLanguages(result);
     }
   }

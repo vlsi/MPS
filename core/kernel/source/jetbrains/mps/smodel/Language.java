@@ -23,7 +23,6 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.project.dependency.LanguageDependenciesManager;
-import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
@@ -31,7 +30,6 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.runtime.ModuleClassLoader;
 import jetbrains.mps.runtime.ProtectionDomainUtil;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -289,7 +287,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
       result.add(LanguageAspect.BEHAVIOR.get(this));
     }
 
-    for (Language extended : getDependenciesManager().getExtendedLanguages()) {
+    for (Language extended : ModuleUtil.refsToLanguages(getDependenciesManager().myModule.getExtendedLanguageRefs())) {
       SModelDescriptor structure = LanguageAspect.STRUCTURE.get(extended);
       if (structure != null) {
         result.add(structure);
