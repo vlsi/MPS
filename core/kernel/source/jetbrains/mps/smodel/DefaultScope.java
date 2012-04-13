@@ -18,6 +18,8 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleUtil;
+import jetbrains.mps.project.dependency.DependenciesManager.Deptype;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.CollectionUtil;
 
@@ -178,10 +180,7 @@ public abstract class DefaultScope extends BaseScope {
   }
 
   private void fillInVisible(Set<IModule> initialModules) {
-    myVisibleModules = new HashSet<IModule>();
-    for (IModule module : initialModules) {
-      module.getDependenciesManager().collectVisibleModules(myVisibleModules, false);
-    }
+    myVisibleModules = (Set<IModule>) new GlobalModuleDependenciesManager(initialModules).getModules(Deptype.VISIBLE);
   }
 
   private void fillInLanguages() {
