@@ -29,7 +29,7 @@ public interface DependenciesManager {
   Set<Language> getAllUsedLanguages();
 
   /*
-   *  Visible modules, respecting re-export dependencies & solutions exported from used devkits (
+   *  Visible modules, respecting re-export dependencies & solutions exported from used devkits
    */
   Set<IModule> getAllVisibleModules();
 
