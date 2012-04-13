@@ -50,6 +50,10 @@ public class QueriesGenerated {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"));
   }
 
+  public static boolean baseMappingRule_Condition_5610619299013114604(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"));
+  }
+
   public static boolean baseMappingRule_Condition_6921160174096663332(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "defaultPath", true) == null);
   }
@@ -161,6 +165,22 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4701820937132270643(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "copy.artifacts." + _context.getNode().getId();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5610619299013114623(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"))) {
+      _context.showErrorMessage(_context.getNode(), "parent should be layout container");
+      return "???";
+    }
+    return BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), Context.defaultContext(_context));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5610619299013114691(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((String) _context.getVariable("var:targetLocation"));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5610619299013114851(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "copy.artifacts." + _context.getNode().getId();
   }
 
@@ -360,6 +380,24 @@ public class QueriesGenerated {
     return Context.defaultContext(_context).getTempPath(SLinkOperations.getTarget(_context.getNode(), "module", false), SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "module", false), "name"), "java", "out");
   }
 
+  public static Object propertyMacro_GetPropertyValue_5610619299013114890(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((String) _context.getVariable("var:targetLocation"));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5610619299013114897(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    if (BuildLayout_Node_Behavior.call_isFile_1368030936106753986(SLinkOperations.getTarget(_context.getNode(), "target", false))) {
+      return "file";
+    }
+    if (!(BuildLayout_Node_Behavior.call_isFolder_1368030936106753980(SLinkOperations.getTarget(_context.getNode(), "target", false)))) {
+      _context.showErrorMessage(_context.getNode(), "cannot import abstract element, should be file or folder");
+    }
+    return "dir";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5610619299013115002(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((String) _context.getVariable("var:targetLocation"));
+  }
+
   public static Object propertyMacro_GetPropertyValue_5979287180587467412(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.getNode().getProperty("pathValue");
   }
@@ -478,6 +516,14 @@ public class QueriesGenerated {
     return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
   }
 
+  public static Object referenceMacro_GetReferent_5610619299013114811(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+  }
+
+  public static Object referenceMacro_GetReferent_5610619299013114841(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+  }
+
   public static Object referenceMacro_GetReferent_4821808014881173680(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(((SNode) _context.getVariable("library")), "javalibrary");
   }
@@ -563,6 +609,14 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4701820937132270614(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+  }
+
+  public static boolean ifMacro_Condition_5610619299013114792(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+  }
+
+  public static boolean ifMacro_Condition_5610619299013114822(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
   }
 
@@ -897,6 +951,20 @@ public class QueriesGenerated {
     return val;
   }
 
+  public static Object insertMacro_varValue_5610619299013114726(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    SNode project = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.structure.BuildProject", false, false);
+    if (project == null) {
+      _context.showErrorMessage(_context.getNode(), "no context project defined");
+      return "???";
+    }
+    DependenciesHelper helper = new DependenciesHelper(_context, project);
+    String val = helper.contentLocations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), "target", false), _context));
+    if (val == null) {
+      _context.showErrorMessage(_context.getNode(), "no location for " + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(_context.getNode(), "target", false)));
+    }
+    return val;
+  }
+
   public static Object insertMacro_varValue_5979287180587467220(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return new JavaModulesClosure(_context, _context.getNode()).closure(false);
   }
@@ -925,5 +993,33 @@ public class QueriesGenerated {
 
   public static Object insertMacro_varValue_6520682027040940450(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return new MacroHelper.MacroContext(_context.getNode(), _context).getMacros(_context.getNode());
+  }
+
+  public static Object insertMacro_varValue_5610619299013114930(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    SNode project = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.structure.BuildProject", false, false);
+    if (project == null) {
+      _context.showErrorMessage(_context.getNode(), "no context project defined");
+      return "???";
+    }
+    DependenciesHelper helper = new DependenciesHelper(_context, project);
+    String val = helper.locations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), "target", false), _context));
+    if (val == null) {
+      _context.showErrorMessage(_context.getNode(), "no location for " + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(_context.getNode(), "target", false)));
+    }
+    return val;
+  }
+
+  public static Object insertMacro_varValue_5610619299013115037(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    SNode project = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.structure.BuildProject", false, false);
+    if (project == null) {
+      _context.showErrorMessage(_context.getNode(), "no context project defined");
+      return "???";
+    }
+    DependenciesHelper helper = new DependenciesHelper(_context, project);
+    String val = helper.contentLocations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), "target", false), _context));
+    if (val == null) {
+      _context.showErrorMessage(_context.getNode(), "no content location for " + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(_context.getNode(), "target", false)));
+    }
+    return val;
   }
 }

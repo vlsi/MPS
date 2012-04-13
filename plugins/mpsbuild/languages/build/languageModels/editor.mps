@@ -301,6 +301,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.External" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.7181125477683417252" resolveInfo="BuildExternalLayoutDependency" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5610619299013057367">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.5610619299013057363" resolveInfo="BuildLayout_ImportContent" />
+    </node>
   </roots>
   <root id="5617550519002745365">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7389400916847962446">
@@ -4619,6 +4623,29 @@
         </node>
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="7181125477683417301" />
+    </node>
+  </root>
+  <root id="5610619299013057367">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="5610619299013068353">
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5610619299013068354">
+        <property name="text" nameId="tpc2.1073389577007" value="import content" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1203598923024" resolveInfo="keyword" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.EditableStyleClassItem" typeId="tpc2.1186414860679" id="5610619299013068355">
+          <property name="flag" nameId="tpc2.1186414551515" value="true" />
+        </node>
+        <node role="menuDescriptor" roleId="tpc2.1164826688380" type="tpc2.CellMenuDescriptor" typeId="tpc2.1164824717996" id="5610619299013068356">
+          <node role="cellMenuPart" roleId="tpc2.1164824815888" type="tpc2.CellMenuPart_ReplaceNode_CustomNodeConcept" typeId="tpc2.1164914519156" id="5610619299013068357">
+            <link role="replacementConcept" roleId="tpc2.1164914727930" targetNodeId="3ior.7389400916848036997" resolveInfo="BuildLayout_Node" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="5610619299013068358">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.5610619299013057365" />
+        <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="5610619299013068359">
+          <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_ReferencePresentation" typeId="tpc2.625126330682908270" id="5610619299013068360" />
+        </node>
+      </node>
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="5610619299013068361" />
     </node>
   </root>
 </model>
