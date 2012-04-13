@@ -2289,34 +2289,12 @@
         <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
       </node>
     </node>
-    <node role="canBeChild" roleId="tp1t.1213106463729" type="tp1t.ConstraintFunction_CanBeAChild" typeId="tp1t.1202989531578" id="222214016077443688">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="222214016077443689">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="222214016077443690">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="222214016077443691">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2043122710974596224" resolveInfo="isInNonStaticClasssifierContext" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="2043122710974596217" resolveInfo="ConstraintsUtil" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tp1t.ConstraintFunctionParameter_parentNode" typeId="tp1t.1202989658459" id="222214016077443692" />
-          </node>
-        </node>
-      </node>
-    </node>
   </root>
   <root id="7785501532031731655">
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="7785501532031731656">
       <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="tpee.7785501532031731645" />
       <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="7898359107948137257">
         <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="tpee.1068390468200" resolveInfo="FieldDeclaration" />
-      </node>
-    </node>
-    <node role="canBeChild" roleId="tp1t.1213106463729" type="tp1t.ConstraintFunction_CanBeAChild" typeId="tp1t.1202989531578" id="222214016077443683">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="222214016077443684">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="222214016077443685">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="222214016077443686">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2043122710974596224" resolveInfo="isInNonStaticClasssifierContext" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="2043122710974596217" resolveInfo="ConstraintsUtil" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tp1t.ConstraintFunctionParameter_parentNode" typeId="tp1t.1202989658459" id="222214016077443687" />
-          </node>
-        </node>
       </node>
     </node>
   </root>
