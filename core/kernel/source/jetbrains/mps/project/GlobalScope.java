@@ -84,6 +84,10 @@ public class GlobalScope extends BaseScope implements CoreComponent {
     return myModelRepository.getModelDescriptor(modelReference);
   }
 
+  public SModelDescriptor getModelDescriptor(SModelFqName fqName) {
+    return myModelRepository.getModelDescriptor(fqName);
+  }
+
   public List<SModelDescriptor> getModelDescriptors(String modelName) {
     return myModelRepository.getModelDescriptorsByModelName(modelName);
   }
