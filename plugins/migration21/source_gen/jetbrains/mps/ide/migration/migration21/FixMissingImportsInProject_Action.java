@@ -11,11 +11,16 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import java.util.Queue;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.QueueSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
@@ -53,9 +58,14 @@ public class FixMissingImportsInProject_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      for (IModule module : ListSequence.fromList(((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class).getModules())) {
+      Queue<IModule> modules = QueueSequence.fromQueueWithValues(new LinkedList<IModule>(), ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class).getModules());
+      while (QueueSequence.fromQueue(modules).isNotEmpty()) {
+        IModule module = QueueSequence.fromQueue(modules).removeFirstElement();
         if (module.isPackaged()) {
           continue;
+        }
+        if (module instanceof Language) {
+          QueueSequence.fromQueue(modules).addSequence(CollectionSequence.fromCollection(((Language) module).getGenerators()));
         }
         for (SModelDescriptor model : ListSequence.fromList(module.getOwnModelDescriptors())) {
           if (!(SModelStereotype.isUserModel(model))) {
