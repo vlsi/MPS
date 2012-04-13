@@ -69,7 +69,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ThreadSafeClass_Editor" file="ThreadSafeClass_Editor.java">
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ThreadSafe_Editor" file="ThreadSafe_Editor.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />

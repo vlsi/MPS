@@ -3,7 +3,7 @@
   <persistence version="7" />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-  <import index="cgfx" modelUID="r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)" version="0" />
+  <import index="cgfx" modelUID="r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)" version="1" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <import index="tpen" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
@@ -24,7 +24,7 @@
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="cgfx.8923957828369477802" resolveInfo="ParallelFor" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2975785153735131708">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="cgfx.2975785153735111398" resolveInfo="ThreadSafeClass" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="cgfx.2975785153735111398" resolveInfo="ThreadSafe" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2975785153735230339">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="cgfx.2975785153735230336" resolveInfo="NonThreadSafeClass" />

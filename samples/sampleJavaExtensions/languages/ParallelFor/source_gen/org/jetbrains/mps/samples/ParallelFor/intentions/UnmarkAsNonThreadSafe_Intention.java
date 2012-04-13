@@ -50,7 +50,7 @@ public class UnmarkAsNonThreadSafe_Intention extends BaseIntention implements In
   }
 
   public boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(childNode, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafeClass");
+    return SNodeOperations.isInstanceOf(childNode, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe");
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

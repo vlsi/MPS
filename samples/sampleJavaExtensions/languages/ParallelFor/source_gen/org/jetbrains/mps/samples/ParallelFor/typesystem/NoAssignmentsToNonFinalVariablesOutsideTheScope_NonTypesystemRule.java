@@ -54,13 +54,13 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
         SNode dotOperation = SNodeOperations.getAncestor(variableReference, "jetbrains.mps.baseLanguage.structure.DotExpression", false, false);
         if (dotOperation != null) {
           if (SLinkOperations.getTarget(dotOperation, "operand", true) == variableReference) {
-            if (AttributeOperations.getAttribute(variableDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafeClass"))) != null) {
+            if (AttributeOperations.getAttribute(variableDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"))) != null) {
               return;
             }
 
             final SNode targetClassifier = check_hquoeu_a0c0a0c0d0b0a(SNodeOperations.as(SLinkOperations.getTarget(variableDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
             if (SNodeOperations.isInstanceOf(targetClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-              if (AttributeOperations.getAttribute(SNodeOperations.cast(targetClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafeClass"))) != null) {
+              if (AttributeOperations.getAttribute(SNodeOperations.cast(targetClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"))) != null) {
                 return;
               }
               if (AttributeOperations.getAttribute(SNodeOperations.cast(targetClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass"))) != null) {

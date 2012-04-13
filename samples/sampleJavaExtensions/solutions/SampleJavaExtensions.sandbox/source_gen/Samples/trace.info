@@ -538,7 +538,7 @@
     <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="118" startPosition="59" endLine="119" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="120" startPosition="7" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2975785153735224058" fileName="ThreadSafeSample.java" startLine="122" startPosition="5" endLine="123" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2975785153735296279" fileName="ThreadSafeSample.java" startLine="126" startPosition="42" endLine="127" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735296279" fileName="ThreadSafeSample.java" startLine="126" startPosition="43" endLine="127" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2975785153735223831" fileName="ThreadSafeSample.java" startLine="15" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ThreadSafeSample#()V" />
     <nodeInfo nodeId="2975785153735246335" fileName="ThreadSafeSample.java" startLine="30" startPosition="13" endLine="33" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="77" startPosition="7" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -593,7 +593,7 @@
     </scopeInfo>
     <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="115" startPosition="40" endLine="116" endPosition="56" />
     <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="118" startPosition="59" endLine="119" endPosition="89" />
-    <scopeInfo nodeId="2975785153735296276" fileName="ThreadSafeSample.java" startLine="126" startPosition="42" endLine="127" endPosition="32" />
+    <scopeInfo nodeId="2975785153735296276" fileName="ThreadSafeSample.java" startLine="126" startPosition="43" endLine="127" endPosition="32" />
     <scopeInfo nodeId="2975785153735223831" fileName="ThreadSafeSample.java" startLine="15" startPosition="0" endLine="17" endPosition="3" />
     <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="99" startPosition="17" endLine="101" endPosition="44">
       <varInfo nodeId="2975785153735296243" varName="finalString" />

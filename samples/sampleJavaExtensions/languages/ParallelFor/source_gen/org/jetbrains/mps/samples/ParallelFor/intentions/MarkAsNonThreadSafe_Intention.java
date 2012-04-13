@@ -48,7 +48,7 @@ public class MarkAsNonThreadSafe_Intention extends BaseIntention implements Inte
 
   public void execute(final SNode node, final EditorContext editorContext) {
     AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass")), SNodeFactoryOperations.createNewNode("org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass", null));
-    AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafeClass")), null);
+    AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")), null);
   }
 
   public String getLocationString() {

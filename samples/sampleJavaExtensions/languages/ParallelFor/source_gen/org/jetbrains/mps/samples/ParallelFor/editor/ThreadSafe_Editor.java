@@ -12,28 +12,28 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class ThreadSafeClass_Editor extends DefaultNodeEditor {
+public class ThreadSafe_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_kt713p_a(editorContext, node);
+    return this.createCollection_ly4xkq_a(editorContext, node);
   }
 
-  private EditorCell createCollection_kt713p_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ly4xkq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_kt713p_a");
-    editorCell.addEditorCell(this.createConstant_kt713p_a0(editorContext, node));
-    editorCell.addEditorCell(this.createAttributedNodeCell_kt713p_b0(editorContext, node));
+    editorCell.setCellId("Collection_ly4xkq_a");
+    editorCell.addEditorCell(this.createConstant_ly4xkq_a0(editorContext, node));
+    editorCell.addEditorCell(this.createAttributedNodeCell_ly4xkq_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_kt713p_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ly4xkq_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@thread safe");
-    editorCell.setCellId("Constant_kt713p_a0");
+    editorCell.setCellId("Constant_ly4xkq_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createAttributedNodeCell_kt713p_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createAttributedNodeCell_ly4xkq_b0(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedNodeCell();

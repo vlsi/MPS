@@ -123,7 +123,7 @@ public class ThreadSafeSample {
     thread.interrupt();
   }
 
-  public static void log(String message) {
+  private static void log(String message) {
     System.out.println(message);
   }
 }
