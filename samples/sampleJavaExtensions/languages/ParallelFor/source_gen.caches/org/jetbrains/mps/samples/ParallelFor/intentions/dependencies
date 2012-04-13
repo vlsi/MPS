@@ -14,8 +14,10 @@
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.intentions.DetachFromThreadPool_Intention" />
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.intentions.MarkAsNonThreadSafe_Intention" />
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.intentions.MarkAsThreadSafe_Intention" />
+    <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.intentions.MarkVariableDeclarationAsThreadSafe_Intention" />
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.intentions.UnmarkAsNonThreadSafe_Intention" />
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.intentions.UnmarkAsThreadSafe_Intention" />
+    <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.intentions.UnmarkVariableAsThreadSafe_Intention" />
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntentionsDescriptor" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.intentions.MarkAsNonThreadSafe_Intention" file="MarkAsNonThreadSafe_Intention.java">
@@ -40,11 +42,23 @@
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
     <classNode extendsClassName="jetbrains.mps.intentions.Intention" />
   </dependency>
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.intentions.MarkVariableDeclarationAsThreadSafe_Intention" file="MarkVariableDeclarationAsThreadSafe_Intention.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
+    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.Intention" />
+  </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.intentions.UnmarkAsNonThreadSafe_Intention" file="UnmarkAsNonThreadSafe_Intention.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
@@ -55,6 +69,18 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.Intention" />
+  </dependency>
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.intentions.UnmarkVariableAsThreadSafe_Intention" file="UnmarkVariableAsThreadSafe_Intention.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />

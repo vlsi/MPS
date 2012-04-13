@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.IntentionsDescriptor" />
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.IntentionsDescriptor" />
   <root nodeId="2975785153735208385">
     <nodeInfo nodeId="2975785153735208385" fileName="MarkAsThreadSafe_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2975785153735208385" fileName="MarkAsThreadSafe_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -60,48 +60,49 @@
     <unitInfo nodeId="2975785153735208385" fileName="MarkAsThreadSafe_Intention.java" startLine="14" startPosition="0" endLine="58" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.MarkAsThreadSafe_Intention" />
   </root>
   <root nodeId="2975785153735222149">
-    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="17" startPosition="30" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="21" startPosition="36" endLine="22" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="25" startPosition="37" endLine="26" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="29" startPosition="44" endLine="30" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2975785153735222154" fileName="UnmarkAsThreadSafe_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="38" startPosition="58" endLine="39" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="40" startPosition="5" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2975785153735222158" fileName="UnmarkAsThreadSafe_Intention.java" startLine="44" startPosition="90" endLine="45" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2975785153735222202" fileName="UnmarkAsThreadSafe_Intention.java" startLine="48" startPosition="76" endLine="49" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="52" startPosition="37" endLine="53" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="13" startPosition="86" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnmarkAsThreadSafe_Intention#()V" />
-    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="37" startPosition="84" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
-    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
-    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
-    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="36" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="14" startPosition="41" endLine="14" endPosition="41" />
-    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="17" startPosition="30" endLine="18" endPosition="63" />
-    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="21" startPosition="36" endLine="22" endPosition="17" />
-    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="25" startPosition="37" endLine="26" endPosition="17" />
-    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="29" startPosition="44" endLine="30" endPosition="17" />
-    <scopeInfo nodeId="2975785153735222151" fileName="UnmarkAsThreadSafe_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="35" />
-    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="38" startPosition="58" endLine="39" endPosition="19" />
-    <scopeInfo nodeId="2975785153735222157" fileName="UnmarkAsThreadSafe_Intention.java" startLine="44" startPosition="90" endLine="45" endPosition="208" />
-    <scopeInfo nodeId="2975785153735222153" fileName="UnmarkAsThreadSafe_Intention.java" startLine="48" startPosition="76" endLine="49" endPosition="199" />
-    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="52" startPosition="37" endLine="53" endPosition="62" />
-    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="13" startPosition="86" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="2975785153735222149" varName="editorContext" />
-      <varInfo nodeId="2975785153735222149" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="37" startPosition="84" endLine="41" endPosition="16" />
-    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="30" startPosition="44" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735222154" fileName="UnmarkAsThreadSafe_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="39" startPosition="58" endLine="40" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="42" startPosition="132" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="44" startPosition="5" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735222158" fileName="UnmarkAsThreadSafe_Intention.java" startLine="48" startPosition="90" endLine="49" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735295163" fileName="UnmarkAsThreadSafe_Intention.java" startLine="52" startPosition="111" endLine="53" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735222202" fileName="UnmarkAsThreadSafe_Intention.java" startLine="56" startPosition="76" endLine="57" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="14" startPosition="86" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnmarkAsThreadSafe_Intention#()V" />
+    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="38" startPosition="84" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="41" startPosition="5" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
+    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
+    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
+    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isVisibleInChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="37" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="15" startPosition="41" endLine="15" endPosition="41" />
+    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="63" />
+    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" />
+    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" />
+    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="30" startPosition="44" endLine="31" endPosition="16" />
+    <scopeInfo nodeId="2975785153735222151" fileName="UnmarkAsThreadSafe_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="35" />
+    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="39" startPosition="58" endLine="40" endPosition="19" />
+    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="42" startPosition="132" endLine="43" endPosition="19" />
+    <scopeInfo nodeId="2975785153735222157" fileName="UnmarkAsThreadSafe_Intention.java" startLine="48" startPosition="90" endLine="49" endPosition="208" />
+    <scopeInfo nodeId="2975785153735295161" fileName="UnmarkAsThreadSafe_Intention.java" startLine="52" startPosition="111" endLine="53" endPosition="118" />
+    <scopeInfo nodeId="2975785153735222153" fileName="UnmarkAsThreadSafe_Intention.java" startLine="56" startPosition="76" endLine="57" endPosition="199" />
+    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="62" />
+    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="14" startPosition="86" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="2975785153735222149" varName="editorContext" />
       <varInfo nodeId="2975785153735222149" varName="node" />
     </scopeInfo>
@@ -109,12 +110,22 @@
       <varInfo nodeId="2975785153735222149" varName="editorContext" />
       <varInfo nodeId="2975785153735222149" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="51" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="2975785153735222149" varName="childNode" />
       <varInfo nodeId="2975785153735222149" varName="editorContext" />
       <varInfo nodeId="2975785153735222149" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.UnmarkAsThreadSafe_Intention" />
+    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="2975785153735222149" varName="editorContext" />
+      <varInfo nodeId="2975785153735222149" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="38" startPosition="84" endLine="45" endPosition="16" />
+    <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="37" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="2975785153735222149" varName="editorContext" />
+      <varInfo nodeId="2975785153735222149" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="14" startPosition="0" endLine="64" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.UnmarkAsThreadSafe_Intention" />
   </root>
   <root nodeId="2975785153735230347">
     <nodeInfo nodeId="2975785153735230347" fileName="MarkAsNonThreadSafe_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -175,48 +186,49 @@
     <unitInfo nodeId="2975785153735230347" fileName="MarkAsNonThreadSafe_Intention.java" startLine="14" startPosition="0" endLine="58" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.MarkAsNonThreadSafe_Intention" />
   </root>
   <root nodeId="2975785153735235995">
-    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="17" startPosition="30" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="21" startPosition="36" endLine="22" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="25" startPosition="37" endLine="26" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="29" startPosition="44" endLine="30" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2975785153735236000" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="38" startPosition="58" endLine="39" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="40" startPosition="5" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2975785153735236004" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="44" startPosition="90" endLine="45" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2975785153735236048" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="48" startPosition="76" endLine="49" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="52" startPosition="37" endLine="53" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="13" startPosition="89" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnmarkAsNonThreadSafe_Intention#()V" />
-    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="37" startPosition="84" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
-    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
-    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
-    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="36" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="14" startPosition="44" endLine="14" endPosition="44" />
-    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="17" startPosition="30" endLine="18" endPosition="63" />
-    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="21" startPosition="36" endLine="22" endPosition="17" />
-    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="25" startPosition="37" endLine="26" endPosition="17" />
-    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="29" startPosition="44" endLine="30" endPosition="17" />
-    <scopeInfo nodeId="2975785153735235997" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="39" />
-    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="38" startPosition="58" endLine="39" endPosition="19" />
-    <scopeInfo nodeId="2975785153735236003" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="44" startPosition="90" endLine="45" endPosition="211" />
-    <scopeInfo nodeId="2975785153735235999" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="48" startPosition="76" endLine="49" endPosition="202" />
-    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="52" startPosition="37" endLine="53" endPosition="62" />
-    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="13" startPosition="89" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="2975785153735235995" varName="editorContext" />
-      <varInfo nodeId="2975785153735235995" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="37" startPosition="84" endLine="41" endPosition="16" />
-    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="30" startPosition="44" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735236000" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="39" startPosition="58" endLine="40" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="42" startPosition="132" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="44" startPosition="5" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735236004" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="48" startPosition="90" endLine="49" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735295136" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="52" startPosition="111" endLine="53" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735236048" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="56" startPosition="76" endLine="57" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="14" startPosition="89" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnmarkAsNonThreadSafe_Intention#()V" />
+    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="38" startPosition="84" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="41" startPosition="5" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
+    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
+    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
+    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isVisibleInChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="37" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="15" startPosition="44" endLine="15" endPosition="44" />
+    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="63" />
+    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" />
+    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" />
+    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="30" startPosition="44" endLine="31" endPosition="16" />
+    <scopeInfo nodeId="2975785153735235997" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="39" />
+    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="39" startPosition="58" endLine="40" endPosition="19" />
+    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="42" startPosition="132" endLine="43" endPosition="19" />
+    <scopeInfo nodeId="2975785153735236003" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="48" startPosition="90" endLine="49" endPosition="211" />
+    <scopeInfo nodeId="2975785153735295134" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="52" startPosition="111" endLine="53" endPosition="118" />
+    <scopeInfo nodeId="2975785153735235999" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="56" startPosition="76" endLine="57" endPosition="202" />
+    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="62" />
+    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="14" startPosition="89" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="2975785153735235995" varName="editorContext" />
       <varInfo nodeId="2975785153735235995" varName="node" />
     </scopeInfo>
@@ -224,12 +236,147 @@
       <varInfo nodeId="2975785153735235995" varName="editorContext" />
       <varInfo nodeId="2975785153735235995" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="51" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="2975785153735235995" varName="childNode" />
       <varInfo nodeId="2975785153735235995" varName="editorContext" />
       <varInfo nodeId="2975785153735235995" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.UnmarkAsNonThreadSafe_Intention" />
+    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="2975785153735235995" varName="editorContext" />
+      <varInfo nodeId="2975785153735235995" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="38" startPosition="84" endLine="45" endPosition="16" />
+    <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="37" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="2975785153735235995" varName="editorContext" />
+      <varInfo nodeId="2975785153735235995" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="14" startPosition="0" endLine="64" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.UnmarkAsNonThreadSafe_Intention" />
+  </root>
+  <root nodeId="2975785153735290139">
+    <nodeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="30" startPosition="44" endLine="31" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735290144" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="39" startPosition="58" endLine="40" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="41" startPosition="5" endLine="42" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735290148" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735290192" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="49" startPosition="76" endLine="50" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="53" startPosition="37" endLine="54" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="14" startPosition="103" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MarkVariableDeclarationAsThreadSafe_Intention#()V" />
+    <nodeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="38" startPosition="84" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
+    <nodeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
+    <nodeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
+    <nodeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="37" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <scopeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="15" startPosition="58" endLine="15" endPosition="58" />
+    <scopeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="70" />
+    <scopeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" />
+    <scopeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" />
+    <scopeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="30" startPosition="44" endLine="31" endPosition="17" />
+    <scopeInfo nodeId="2975785153735290141" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="33" />
+    <scopeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="39" startPosition="58" endLine="40" endPosition="19" />
+    <scopeInfo nodeId="2975785153735290147" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="208" />
+    <scopeInfo nodeId="2975785153735290143" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="49" startPosition="76" endLine="50" endPosition="266" />
+    <scopeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="53" startPosition="37" endLine="54" endPosition="62" />
+    <scopeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="14" startPosition="103" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="2975785153735290139" varName="editorContext" />
+      <varInfo nodeId="2975785153735290139" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="38" startPosition="84" endLine="42" endPosition="16" />
+    <scopeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="2975785153735290139" varName="editorContext" />
+      <varInfo nodeId="2975785153735290139" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="2975785153735290139" varName="editorContext" />
+      <varInfo nodeId="2975785153735290139" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="37" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="2975785153735290139" varName="editorContext" />
+      <varInfo nodeId="2975785153735290139" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="14" startPosition="0" endLine="57" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.MarkVariableDeclarationAsThreadSafe_Intention" />
+  </root>
+  <root nodeId="2975785153735291445">
+    <nodeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="30" startPosition="44" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735291450" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="39" startPosition="58" endLine="40" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="42" startPosition="132" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="44" startPosition="5" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735291454" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="48" startPosition="90" endLine="49" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735295109" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="52" startPosition="111" endLine="53" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735291498" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="56" startPosition="76" endLine="57" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="14" startPosition="94" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnmarkVariableAsThreadSafe_Intention#()V" />
+    <nodeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="38" startPosition="84" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="41" startPosition="5" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
+    <nodeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
+    <nodeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
+    <nodeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isVisibleInChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="37" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <scopeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="15" startPosition="49" endLine="15" endPosition="49" />
+    <scopeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="70" />
+    <scopeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" />
+    <scopeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" />
+    <scopeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="30" startPosition="44" endLine="31" endPosition="16" />
+    <scopeInfo nodeId="2975785153735291447" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="35" />
+    <scopeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="39" startPosition="58" endLine="40" endPosition="19" />
+    <scopeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="42" startPosition="132" endLine="43" endPosition="19" />
+    <scopeInfo nodeId="2975785153735291453" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="48" startPosition="90" endLine="49" endPosition="208" />
+    <scopeInfo nodeId="2975785153735295107" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="52" startPosition="111" endLine="53" endPosition="118" />
+    <scopeInfo nodeId="2975785153735291449" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="56" startPosition="76" endLine="57" endPosition="199" />
+    <scopeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="62" />
+    <scopeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="14" startPosition="94" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="2975785153735291445" varName="editorContext" />
+      <varInfo nodeId="2975785153735291445" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="2975785153735291445" varName="editorContext" />
+      <varInfo nodeId="2975785153735291445" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="51" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="2975785153735291445" varName="childNode" />
+      <varInfo nodeId="2975785153735291445" varName="editorContext" />
+      <varInfo nodeId="2975785153735291445" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="2975785153735291445" varName="editorContext" />
+      <varInfo nodeId="2975785153735291445" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="38" startPosition="84" endLine="45" endPosition="16" />
+    <scopeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="37" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="2975785153735291445" varName="editorContext" />
+      <varInfo nodeId="2975785153735291445" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="14" startPosition="0" endLine="64" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.UnmarkVariableAsThreadSafe_Intention" />
   </root>
   <root nodeId="633195941006988431">
     <nodeInfo nodeId="633195941006988431" fileName="DetachFromThreadPool_Intention.java" startLine="15" startPosition="30" endLine="16" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

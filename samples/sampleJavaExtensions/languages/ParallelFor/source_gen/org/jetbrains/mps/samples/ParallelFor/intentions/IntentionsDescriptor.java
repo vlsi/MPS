@@ -15,7 +15,9 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     add(new DetachFromThreadPool_Intention(), "633195941006988431");
     add(new MarkAsNonThreadSafe_Intention(), "2975785153735230347");
     add(new MarkAsThreadSafe_Intention(), "2975785153735208385");
+    add(new MarkVariableDeclarationAsThreadSafe_Intention(), "2975785153735290139");
     add(new UnmarkAsNonThreadSafe_Intention(), "2975785153735235995");
     add(new UnmarkAsThreadSafe_Intention(), "2975785153735222149");
+    add(new UnmarkVariableAsThreadSafe_Intention(), "2975785153735291445");
   }
 }

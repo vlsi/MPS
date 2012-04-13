@@ -9,6 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class UnmarkAsThreadSafe_Intention extends BaseIntention implements Intention {
   public UnmarkAsThreadSafe_Intention() {
@@ -27,7 +28,7 @@ public class UnmarkAsThreadSafe_Intention extends BaseIntention implements Inten
   }
 
   public boolean isAvailableInChildNodes() {
-    return false;
+    return true;
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
@@ -38,11 +39,18 @@ public class UnmarkAsThreadSafe_Intention extends BaseIntention implements Inten
     if (!(this.isApplicableToNode(node, editorContext))) {
       return false;
     }
+    if (editorContext.getSelectedNode() != node && !(this.isVisibleInChild(node, editorContext.getSelectedNode(), editorContext))) {
+      return false;
+    }
     return true;
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafeClass"))) != null;
+  }
+
+  public boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
+    return SNodeOperations.isInstanceOf(childNode, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafeClass");
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

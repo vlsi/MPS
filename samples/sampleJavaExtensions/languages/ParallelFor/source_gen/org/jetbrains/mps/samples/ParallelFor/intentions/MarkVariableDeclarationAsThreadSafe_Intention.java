@@ -9,14 +9,14 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
-public class UnmarkAsNonThreadSafe_Intention extends BaseIntention implements Intention {
-  public UnmarkAsNonThreadSafe_Intention() {
+public class MarkVariableDeclarationAsThreadSafe_Intention extends BaseIntention implements Intention {
+  public MarkVariableDeclarationAsThreadSafe_Intention() {
   }
 
   public String getConcept() {
-    return "jetbrains.mps.baseLanguage.structure.ClassConcept";
+    return "jetbrains.mps.baseLanguage.structure.VariableDeclaration";
   }
 
   public boolean isParameterized() {
@@ -28,33 +28,26 @@ public class UnmarkAsNonThreadSafe_Intention extends BaseIntention implements In
   }
 
   public boolean isAvailableInChildNodes() {
-    return true;
+    return false;
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Unmark as Non Thread Safe";
+    return "Mark as Thread Safe";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(this.isApplicableToNode(node, editorContext))) {
       return false;
     }
-    if (editorContext.getSelectedNode() != node && !(this.isVisibleInChild(node, editorContext.getSelectedNode(), editorContext))) {
-      return false;
-    }
     return true;
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass"))) != null;
-  }
-
-  public boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(childNode, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafeClass");
+    return AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafeClass"))) == null;
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass")), null);
+    SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafeClass")), "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafeClass");
   }
 
   public String getLocationString() {

@@ -36,9 +36,11 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
   public void applyRule(final SNode variableReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode directAncestor = SNodeOperations.getAncestor(variableReference, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", false, false);
     if (directAncestor != null) {
-      SNode declarationsAncestor = SNodeOperations.getAncestor(SLinkOperations.getTarget(variableReference, "variableDeclaration", false), "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", false, false);
+      SNode variableDeclaration = SLinkOperations.getTarget(variableReference, "variableDeclaration", false);
+
+      SNode declarationsAncestor = SNodeOperations.getAncestor(variableDeclaration, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", false, false);
       if (directAncestor != declarationsAncestor) {
-        if (!(SPropertyOperations.getBoolean(SLinkOperations.getTarget(variableReference, "variableDeclaration", false), "isFinal"))) {
+        if (!(SPropertyOperations.getBoolean(variableDeclaration, "isFinal"))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(variableReference, "Cannot refer non-final variables and parameters from within concurrent code", "r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)", "7793246093816027855", null, errorTarget);
@@ -47,12 +49,16 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
               _reporter_2309309498.addIntentionProvider(intentionProvider);
             }
           }
+
         }
         SNode dotOperation = SNodeOperations.getAncestor(variableReference, "jetbrains.mps.baseLanguage.structure.DotExpression", false, false);
         if (dotOperation != null) {
           if (SLinkOperations.getTarget(dotOperation, "operand", true) == variableReference) {
-            final SNode targetClassifier = check_hquoeu_a0a0a0c0b0b0a(SNodeOperations.as(SLinkOperations.getTarget(SLinkOperations.getTarget(variableReference, "variableDeclaration", false), "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+            if (AttributeOperations.getAttribute(variableDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafeClass"))) != null) {
+              return;
+            }
 
+            final SNode targetClassifier = check_hquoeu_a0c0a0c0d0b0a(SNodeOperations.as(SLinkOperations.getTarget(variableDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
             if (SNodeOperations.isInstanceOf(targetClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
               if (AttributeOperations.getAttribute(SNodeOperations.cast(targetClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafeClass"))) != null) {
                 return;
@@ -66,7 +72,7 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
               }
             }
 
-            List<SNode> allowedClasses = ListSequence.fromListAndArray(new ArrayList<SNode>(), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a1a0e0a0c0b0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a2a0e0a0c0b0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a3a0e0a0c0b0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a4a0e0a0c0b0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a5a0e0a0c0b0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a6a0e0a0c0b0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a7a0e0a0c0b0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a8a0e0a0c0b0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a9a0e0a0c0b0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a01a0e0a0c0b0b0a().createNode(typeCheckingContext));
+            List<SNode> allowedClasses = ListSequence.fromListAndArray(new ArrayList<SNode>(), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a1a0f0a0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a2a0f0a0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a3a0f0a0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a4a0f0a0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a5a0f0a0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a6a0f0a0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a7a0f0a0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a8a0f0a0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a9a0f0a0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a01a0f0a0c0d0b0a().createNode(typeCheckingContext));
 
             if (!(ListSequence.fromList(allowedClasses).any(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
@@ -99,15 +105,15 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
     return false;
   }
 
-  private static SNode check_hquoeu_a0a0a0c0b0b0a(SNode checkedDotOperand) {
+  private static SNode check_hquoeu_a0c0a0c0d0b0a(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTarget(checkedDotOperand, "classifier", false);
     }
     return null;
   }
 
-  public static class QuotationClass_hquoeu_a1a0e0a0c0b0b0a {
-    public QuotationClass_hquoeu_a1a0e0a0c0b0b0a() {
+  public static class QuotationClass_hquoeu_a1a0f0a0c0d0b0a {
+    public QuotationClass_hquoeu_a1a0f0a0c0d0b0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -137,8 +143,8 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
     }
   }
 
-  public static class QuotationClass_hquoeu_a2a0e0a0c0b0b0a {
-    public QuotationClass_hquoeu_a2a0e0a0c0b0b0a() {
+  public static class QuotationClass_hquoeu_a2a0f0a0c0d0b0a {
+    public QuotationClass_hquoeu_a2a0f0a0c0d0b0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -168,8 +174,8 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
     }
   }
 
-  public static class QuotationClass_hquoeu_a3a0e0a0c0b0b0a {
-    public QuotationClass_hquoeu_a3a0e0a0c0b0b0a() {
+  public static class QuotationClass_hquoeu_a3a0f0a0c0d0b0a {
+    public QuotationClass_hquoeu_a3a0f0a0c0d0b0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -199,8 +205,8 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
     }
   }
 
-  public static class QuotationClass_hquoeu_a4a0e0a0c0b0b0a {
-    public QuotationClass_hquoeu_a4a0e0a0c0b0b0a() {
+  public static class QuotationClass_hquoeu_a4a0f0a0c0d0b0a {
+    public QuotationClass_hquoeu_a4a0f0a0c0d0b0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -230,8 +236,8 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
     }
   }
 
-  public static class QuotationClass_hquoeu_a5a0e0a0c0b0b0a {
-    public QuotationClass_hquoeu_a5a0e0a0c0b0b0a() {
+  public static class QuotationClass_hquoeu_a5a0f0a0c0d0b0a {
+    public QuotationClass_hquoeu_a5a0f0a0c0d0b0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -261,8 +267,8 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
     }
   }
 
-  public static class QuotationClass_hquoeu_a6a0e0a0c0b0b0a {
-    public QuotationClass_hquoeu_a6a0e0a0c0b0b0a() {
+  public static class QuotationClass_hquoeu_a6a0f0a0c0d0b0a {
+    public QuotationClass_hquoeu_a6a0f0a0c0d0b0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -292,8 +298,8 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
     }
   }
 
-  public static class QuotationClass_hquoeu_a7a0e0a0c0b0b0a {
-    public QuotationClass_hquoeu_a7a0e0a0c0b0b0a() {
+  public static class QuotationClass_hquoeu_a7a0f0a0c0d0b0a {
+    public QuotationClass_hquoeu_a7a0f0a0c0d0b0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -323,8 +329,8 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
     }
   }
 
-  public static class QuotationClass_hquoeu_a8a0e0a0c0b0b0a {
-    public QuotationClass_hquoeu_a8a0e0a0c0b0b0a() {
+  public static class QuotationClass_hquoeu_a8a0f0a0c0d0b0a {
+    public QuotationClass_hquoeu_a8a0f0a0c0d0b0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -354,8 +360,8 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
     }
   }
 
-  public static class QuotationClass_hquoeu_a9a0e0a0c0b0b0a {
-    public QuotationClass_hquoeu_a9a0e0a0c0b0b0a() {
+  public static class QuotationClass_hquoeu_a9a0f0a0c0d0b0a {
+    public QuotationClass_hquoeu_a9a0f0a0c0d0b0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -385,8 +391,8 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
     }
   }
 
-  public static class QuotationClass_hquoeu_a01a0e0a0c0b0b0a {
-    public QuotationClass_hquoeu_a01a0e0a0c0b0b0a() {
+  public static class QuotationClass_hquoeu_a01a0f0a0c0d0b0a {
+    public QuotationClass_hquoeu_a01a0f0a0c0d0b0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {

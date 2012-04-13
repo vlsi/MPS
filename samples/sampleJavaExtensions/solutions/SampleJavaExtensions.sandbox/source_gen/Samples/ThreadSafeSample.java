@@ -11,6 +11,8 @@ import java.util.Collections;
 import utils.ParallelLoopException;
 
 public class ThreadSafeSample {
+  private static final String fixedFieldValue = "Fixed value for ever";
+
   public ThreadSafeSample() {
   }
 
@@ -79,6 +81,49 @@ public class ThreadSafeSample {
 
     }
 
+    // By annotating a local variable, field or parameter declaration as thread safe you indicate that calling methods 
+    // on the object is thread-safe 
+    // Alt + Enter on variable declarations will let you mark and unmark them as thread-safe 
+    final String fixedValue = "fixed value";
+
+    {
+      final CountDownLatch latch = new CountDownLatch(ListSequence.fromList(names).count());
+      final List<Exception> exceptions = new CopyOnWriteArrayList<Exception>();
+
+      for (final String name : Collections.unmodifiableList(ListSequence.fromListWithValues(new ArrayList<String>(), names))) {
+
+        final String localA = name;
+
+        Runnable runnable = new Runnable() {
+          public void run() {
+            try {
+              String finalString = localA + fixedValue.toUpperCase() + fixedFieldValue;
+              log("Result: " + finalString);
+            } catch (RuntimeException e) {
+              ListSequence.fromList(exceptions).addElement(e);
+            } finally {
+              latch.countDown();
+            }
+          }
+        };
+
+        new Thread(runnable).start();
+
+      }
+      try {
+        latch.await();
+      } catch (InterruptedException e) {
+        ListSequence.fromList(exceptions).addElement(e);
+      }
+      if (ListSequence.fromList(exceptions).isNotEmpty()) {
+        throw new ParallelLoopException("Some parallel calculations failed", exceptions);
+      }
+
+    }
     thread.interrupt();
+  }
+
+  public static void log(String message) {
+    System.out.println(message);
   }
 }

@@ -11,12 +11,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
-public class UnmarkAsNonThreadSafe_Intention extends BaseIntention implements Intention {
-  public UnmarkAsNonThreadSafe_Intention() {
+public class UnmarkVariableAsThreadSafe_Intention extends BaseIntention implements Intention {
+  public UnmarkVariableAsThreadSafe_Intention() {
   }
 
   public String getConcept() {
-    return "jetbrains.mps.baseLanguage.structure.ClassConcept";
+    return "jetbrains.mps.baseLanguage.structure.VariableDeclaration";
   }
 
   public boolean isParameterized() {
@@ -32,7 +32,7 @@ public class UnmarkAsNonThreadSafe_Intention extends BaseIntention implements In
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Unmark as Non Thread Safe";
+    return "Unmark as Thread Safe";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
@@ -46,7 +46,7 @@ public class UnmarkAsNonThreadSafe_Intention extends BaseIntention implements In
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass"))) != null;
+    return AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafeClass"))) != null;
   }
 
   public boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
@@ -54,7 +54,7 @@ public class UnmarkAsNonThreadSafe_Intention extends BaseIntention implements In
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass")), null);
+    AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafeClass")), null);
   }
 
   public String getLocationString() {
