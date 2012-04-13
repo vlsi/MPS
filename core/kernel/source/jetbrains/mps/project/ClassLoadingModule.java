@@ -16,6 +16,8 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.dependency.DependenciesManager.Deptype;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.runtime.ModuleClassLoader;
@@ -72,7 +74,7 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
     if (myClassLoadingDependencies == null) {
       ArrayList<IClassLoadingModule> res = new ArrayList<IClassLoadingModule>();
       res.add(this);
-      for (IModule m : getDependenciesManager().getAllRequiredModules()) {
+      for (IModule m : new GlobalModuleDependenciesManager(this).getModules(Deptype.COMPILE)) {
         if (!(m instanceof ClassLoadingModule)) continue;
         res.add((IClassLoadingModule) m);
       }
