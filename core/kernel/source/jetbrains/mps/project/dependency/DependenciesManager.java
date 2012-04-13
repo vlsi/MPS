@@ -17,40 +17,33 @@ package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Set;
 
 public interface DependenciesManager {
-
-  /*
-   *  Transitive closure of all used langs + langs exported from used devkits and all langs being extended by those.
+  /**
+   * All languages in scope of this module
    */
-  Set<Language> getAllUsedLanguages();
+  void collectUsedLanguages(Set<Language> languages);
 
-  /*
-   *  Visible modules, respecting re-export dependencies & solutions exported from used devkits
+  /**
+   * Collects all visible modules (including current).
+   * E.g. (parameters):
+   * runtimes=false,reexports=true => visible modules
+   * runtimes=true,reexports = fa
    */
-  Set<IModule> getAllVisibleModules();
+  void collectModules(Set<IModule> modules, Deptype depType);
 
-  /*
-   *  All modules required for compilation (including languages with runtime stub paths)
-   */
-  Set<IModule> getAllRequiredModules();
+  enum Deptype {
+    VISIBLE(false, true),
+    COMPILE(true, true),
+    EXECUTE(true, false);
+    public boolean runtimes;
+    public boolean reexport;
 
-  /*
-   *  Only direct dependencies, required for compilation.
-   */
-  Set<IModule> getRequiredModules();
-
-  /*
-   *  Collects all visible modules (including current).
-   *  This module should be called from outer code only with false as the last parameter
-   */
-  void collectVisibleModules(/* out */ Set<IModule> dependencies, boolean reexportOnly);
-
-  /*
-   *  Collects all modules required for compilation + languages with runtime stub paths
-   */
-  void collectAllCompileTimeDependencies(/* out */ Set<IModule> dependencies, /* out */ Set<Language> languagesWithRuntime);
+    Deptype(boolean runtimes, boolean reexport) {
+      this.runtimes = runtimes;
+      this.reexport = reexport;
+    }
+  }
 }
