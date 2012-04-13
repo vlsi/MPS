@@ -243,7 +243,7 @@ public class Generator extends ClassLoadingModule {
       result.add(constraints);
     }
 
-    for (Language language : ModuleUtil.refsToLanguages(getSourceLanguage().getDependenciesManager().myModule.getExtendedLanguageRefs())) {
+    for (Language language : ModuleUtil.refsToLanguages(getSourceLanguage().getExtendedLanguageRefs())) {
       SModelDescriptor structure = language.getStructureModelDescriptor();
       if (structure != null) {
         result.add(structure);
@@ -274,7 +274,7 @@ public class Generator extends ClassLoadingModule {
     if (SModelStereotype.isGeneratorModel(sm)) {
       result.add(getSourceLanguage());
 
-      result.addAll(ModuleUtil.refsToLanguages(getSourceLanguage().getDependenciesManager().myModule.getExtendedLanguageRefs()));
+      result.addAll(ModuleUtil.refsToLanguages(getSourceLanguage().getExtendedLanguageRefs()));
     }
     return result;
   }

@@ -36,7 +36,7 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
 
   public static boolean checkCyclicInheritance(Language lang) {
 
-    List<Language> frontier = ModuleUtil.refsToLanguages(lang.getDependenciesManager().myModule.getExtendedLanguageRefs());
+    List<Language> frontier = ModuleUtil.refsToLanguages(lang.getExtendedLanguageRefs());
     ArrayList<Language> passed = new ArrayList<Language>();
     while (!frontier.isEmpty()) {
       List<Language> newFrontier = new ArrayList<Language>();
@@ -46,7 +46,7 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
         }
         if (!passed.contains(extendedLang)) {
 
-          newFrontier.addAll(ModuleUtil.refsToLanguages(extendedLang.getDependenciesManager().myModule.getExtendedLanguageRefs()));
+          newFrontier.addAll(ModuleUtil.refsToLanguages(extendedLang.getExtendedLanguageRefs()));
         }
         passed.add(extendedLang);
       }
