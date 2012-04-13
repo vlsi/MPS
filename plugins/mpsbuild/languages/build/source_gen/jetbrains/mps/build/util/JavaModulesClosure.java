@@ -66,13 +66,13 @@ public class JavaModulesClosure {
         }
 
         jars.add(SLinkOperations.getTarget(jarDep, "jar", true));
-      } else if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.structure.BuildSource_JavaDependencyImportedJar")) {
-        SNode jarDep = SNodeOperations.cast(dep, "jetbrains.mps.build.structure.BuildSource_JavaDependencyImportedJar");
+      } else if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.structure.BuildSource_JavaDependencyExternalJar")) {
+        SNode jarDep = SNodeOperations.cast(dep, "jetbrains.mps.build.structure.BuildSource_JavaDependencyExternalJar");
         if (reexportOnly && !(SPropertyOperations.getBoolean(jarDep, "reexport"))) {
           continue;
         }
 
-        importedJars.add(SLinkOperations.getTarget(jarDep, "jar", false));
+        importedJars.add(SLinkOperations.getTarget(SLinkOperations.getTarget(jarDep, "extJar", true), "jar", false));
       }
     }
   }

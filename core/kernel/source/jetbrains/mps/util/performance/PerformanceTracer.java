@@ -27,6 +27,7 @@ public class PerformanceTracer implements IPerformanceTracer {
   private int top = 0;
   private StackElement[] myStack = new StackElement[4096];
   private String traceName;
+  private List<String> externalText;
 
   public PerformanceTracer(String name) {
     this.traceName = name;
@@ -38,6 +39,7 @@ public class PerformanceTracer implements IPerformanceTracer {
     }
     myStack[0].name = null;
     myStack[0].task = new Task(myStack[0].name);
+    externalText = new ArrayList<String>();
   }
 
   @Override
@@ -89,6 +91,10 @@ public class PerformanceTracer implements IPerformanceTracer {
     }
     return t;
   }
+  
+  public void addText(String s) {
+    externalText.add(s);
+  }
 
   @Override
   public String report(String... separate) {
@@ -100,6 +106,10 @@ public class PerformanceTracer implements IPerformanceTracer {
       sb.append(traceName);
       sb.append("]\n");
       myStack[0].task.toString(sb, 0);
+      for (String s : externalText) {
+        sb.append(s);
+        sb.append("\n");
+      }
       return sb.toString();
     } else {
       return null;

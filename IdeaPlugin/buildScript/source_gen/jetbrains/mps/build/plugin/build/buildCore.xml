@@ -7,17 +7,15 @@
   <property name="artifacts.IDEA" location="${idea_home}" />
   
   <path id="path.java.library.core-libraries">
-    <fileset dir="${idea_home}/lib">
-      <include name="org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
-      <include name="guava-r09.jar" />
-      <include name="jdom.jar" />
-      <include name="log4j.jar" />
-      <include name="trove4j.jar" />
-      <include name="xstream.jar" />
-      <include name="annotations.jar" />
-      <include name="commons-lang-2.4.jar" />
-      <include name="commons-logging-1.1.1.jar" />
-    </fileset>
+    <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
+    <fileset file="${artifacts.IDEA}/lib/guava-r09.jar" />
+    <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+    <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+    <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
+    <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
+    <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
+    <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
+    <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
     <fileset file="${mps_home}/lib/asm.jar" />
     <fileset file="${mps_home}/lib/diffutils-1.2.1.jar" />
   </path>

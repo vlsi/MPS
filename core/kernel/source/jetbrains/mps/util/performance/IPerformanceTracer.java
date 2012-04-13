@@ -26,6 +26,7 @@ public interface IPerformanceTracer {
 
   String report(String... separate);
 
+  public void addText(String s);
 
   /**
    * Default implementation.
@@ -44,5 +45,10 @@ public interface IPerformanceTracer {
     public String report(String... separate) {
       return null;
     }
+
+    public void addText(String s){
+
+    }
+
   }
 }

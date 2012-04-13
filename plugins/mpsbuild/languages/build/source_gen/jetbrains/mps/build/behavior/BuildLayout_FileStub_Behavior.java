@@ -28,4 +28,8 @@ public class BuildLayout_FileStub_Behavior {
     sb.append(BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(thisNode, "fileName", true), null));
 
   }
+
+  public static String virtual_getApproximateName_5610619299013425878(SNode thisNode) {
+    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(thisNode, "fileName", true), null);
+  }
 }

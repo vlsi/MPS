@@ -17,6 +17,7 @@ package jetbrains.mps.typesystem;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.performance.IPerformanceTracer;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -27,7 +28,6 @@ public class TypeSystemReporter {
   private Map<String, Pair<Long, Long>> myGetTypeOfTime = new HashMap<String, Pair<Long, Long>>();
   private Map<String, Pair<Long, Long>> myIsSubTypeTime = new HashMap<String, Pair<Long, Long>>();
   private Map<String, Pair<Long, Long>> myCoerceTime = new HashMap<String, Pair<Long, Long>>();
-  private Map<String, Pair<Long, Long>> myCoerceNCTime = new HashMap<String, Pair<Long, Long>>();
 
   private TypeSystemReporter() {
 
@@ -44,7 +44,6 @@ public class TypeSystemReporter {
     myGetTypeOfTime.clear();
     myIsSubTypeTime.clear();
     myCoerceTime.clear();
-    myCoerceNCTime.clear();
   }
 
   public void reportTypeOf(SNode node, long time) {
@@ -74,25 +73,16 @@ public class TypeSystemReporter {
     report(time, conceptFqName, myCoerceTime);
   }
 
-  public void reportCoerceNotCached(SNode subType, String fq, long time) {
-    if (null == subType) return;
-    String conceptFqName = subType.getConceptFqName() + "   " + fq;
-    report(time, conceptFqName, myCoerceNCTime);
+  public void printReport(int numTop, IPerformanceTracer tracer) {
+    tracer.addText("Time spent on getTypeOf operation");
+    printMapReport(myGetTypeOfTime, numTop, tracer);
+    tracer.addText("Time spent on isSubType operation");
+    printMapReport(myIsSubTypeTime, numTop, tracer);
+    tracer.addText("Time spent on coerce operation");
+    printMapReport(myCoerceTime, numTop, tracer);
   }
 
-  public void printReport(int numTop) {
-    System.out.println("getTypeOf");
-    printMapReport(myGetTypeOfTime, numTop);
-    System.out.println("IsSubType");
-    printMapReport(myIsSubTypeTime, numTop);
-    System.out.println("Coerce");
-    printMapReport(myCoerceTime, numTop);
-
-    System.out.println("Coerce");
-    printMapReport(myCoerceNCTime, numTop);
-  }
-
-  public void printMapReport(Map<String, Pair<Long, Long>> map, int numTop) {
+  public void printMapReport(Map<String, Pair<Long, Long>> map, int numTop, IPerformanceTracer tracer) {
     ArrayList<Entry<String, Pair<Long, Long>>> list = new ArrayList<Entry<String, Pair<Long, Long>>>();
     list.addAll(map.entrySet());
 
@@ -107,9 +97,20 @@ public class TypeSystemReporter {
     for (Entry<String, Pair<Long, Long>> entry : list) {
       if (i++ >= numTop) break;
       sum += entry.getValue().o1;
-      System.out.println(entry.getKey() + "\t" + entry.getValue().o1 * 1.0e-9 + "\t" + entry.getValue().o2 + "\t" + entry.getValue().o1 * 1.0e-9 / entry.getValue().o2);
+      StringBuilder sb = new StringBuilder();
+      boolean isFirst = true;
+      for (String name : entry.getKey().split("   ")) {
+        if (!isFirst) {
+          sb.append(" :< ");
+        }
+        isFirst = false;
+        int beginIndex = name.lastIndexOf('.')+1;
+        sb.append(name.substring(beginIndex));
+       
+      }
+      tracer.addText(String.format(sb.toString() + " %.3f s,  %d times", entry.getValue().o1 * 1.0e-9, entry.getValue().o2));
     }
-    System.out.println("Total: " + sum * 1.0e-9);
+    tracer.addText("Total: " + sum * 1.0e-9);
   }
 
 
