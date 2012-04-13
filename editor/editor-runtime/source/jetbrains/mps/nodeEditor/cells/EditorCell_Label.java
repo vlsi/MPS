@@ -590,11 +590,14 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   public void changeText(final String text) {
-    final String oldText = getText();
-    final EditorComponent editor = getEditor();
-    final CellInfo cellInfo = getCellInfo();
-
+    String oldText = getText();
     setText(text);
+    addChangeTextUndoableAction(text, oldText);
+  }
+
+  private void addChangeTextUndoableAction(String text, String oldText) {
+    EditorComponent editor = getEditor();
+    CellInfo cellInfo = getCellInfo();
 
     if (getSNode() != null && !ObjectUtils.equals(oldText, text) && !isValidText(text) && CommandProcessor.getInstance().getCurrentCommand() != null) {
       UndoHelper.getInstance().addUndoableAction(new MySNodeUndoableAction(getSNode(), cellInfo, editor, oldText, text));
@@ -606,8 +609,10 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   public void insertText(String text) {
+    String oldText = getText();
     myTextLine.insertText(text);
     changeText(myTextLine.getText());
+    addChangeTextUndoableAction(text, oldText);
   }
 
   public boolean isValidText(String text) {

@@ -409,6 +409,10 @@
       <property name="name" nameId="tpck.1169194664001" value="reduce_GetOperationTypeNoExpand" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpd4.1236163200695" resolveInfo="GetOperationType" />
     </node>
+    <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="7734991387983327211">
+      <property name="name" nameId="tpck.1169194664001" value="AbstractEquation_If" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpd4.1174660718586" resolveInfo="AbstractEquationStatement" />
+    </node>
   </roots>
   <root id="1174411222995">
     <node role="preMappingScript" roleId="tpf8.1195502100749" type="tpf8.MappingScriptReference" typeId="tpf8.1195502151594" id="627838806960557245">
@@ -16654,8 +16658,8 @@
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1215528578195">
       <property name="applyToConceptInheritors" nameId="tpf8.1167272244852" value="true" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpd4.1174660718586" resolveInfo="AbstractEquationStatement" />
-      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1215528578196">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1214924416321" resolveInfo="AbstractEquation_to_Statement" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="7734991387983328867">
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="7734991387983327211" resolveInfo="AbstractEquation_If" />
       </node>
       <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="1215528656471">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1215528656472">
@@ -22931,6 +22935,63 @@
         </node>
       </node>
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1165234951157458712" />
+    </node>
+  </root>
+  <root id="7734991387983327211">
+    <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="7734991387983327212">
+      <property name="name" nameId="tpck.1169194664001" value="method" />
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7734991387983327213">
+        <property name="name" nameId="tpck.1169194664001" value="inequalityIsWeak" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="7734991387983327214" />
+      </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7734991387983327215">
+        <property name="name" nameId="tpck.1169194664001" value="inequalityIsLessThan" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="7734991387983327216" />
+      </node>
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7734991387983327217" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7734991387983327218" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7734991387983327219">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="7734991387983328719">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="7734991387983328738" />
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="7734991387983328760">
+            <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="7734991387983328761">
+              <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7734991387983328762">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7734991387983328841">
+                  <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7734991387983328855">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="7734991387983328842" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="7734991387983328860">
+                      <link role="property" roleId="tp25.1138056395725" targetNodeId="tpd4.1206359757216" resolveInfo="checkOnly" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="alternativeConsequence" roleId="tpf8.1194989344771" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="7734991387983328866">
+              <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1214924416321" resolveInfo="AbstractEquation_to_Statement" />
+            </node>
+          </node>
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="7734991387983328773">
+            <node role="expression" roleId="tpee.1081516765348" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="7734991387983328774">
+              <property name="methodName" nameId="tp68.1174294288199" value="isSingleTypeComputation" />
+              <node role="returnType" roleId="tp68.1174313653259" type="tpee.BooleanType" typeId="tpee.1070534644030" id="7734991387983328775" />
+              <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalVariableReference" typeId="tp68.1176743162354" id="7734991387983328776">
+                <property name="name" nameId="tp68.1176743296073" value="typeCheckingContext" />
+                <node role="type" roleId="tp68.1176743202636" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7734991387983328777">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ua2a.~TypeCheckingContext" resolveInfo="TypeCheckingContext" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5186949263793581545">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="5186949263793581546">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IncludeMacro" typeId="tpf8.1194565793557" id="5186949263793581548">
+                <link role="includeTemplate" roleId="tpf8.1194566366375" targetNodeId="1214924416321" resolveInfo="AbstractEquation_to_Statement" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="7734991387983328557" />
+      </node>
     </node>
   </root>
 </model>

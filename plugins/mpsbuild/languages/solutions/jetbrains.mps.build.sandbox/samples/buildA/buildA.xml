@@ -18,9 +18,20 @@
     <copy todir="${build.tmp}/default/A-_dl_{aver}.zip/A">
       <fileset file="${basedir}/testdata/a.txt" />
     </copy>
-    <copy todir="${build.tmp}/default/A-_dl_{aver}.zip">
+    <mkdir dir="${build.tmp}/default/withX.zip" />
+    <jar destfile="${build.tmp}/default/withX.zip/X.jar">
+      <fileset dir="${build.tmp}/java/out/modX" />
+    </jar>
+    <zip destfile="${build.tmp}/default/A-_dl_{aver}.zip/withX.zip">
+      <fileset dir="${build.tmp}/default/withX.zip" />
+    </zip>
+    <mkdir dir="${build.tmp}/default/abcde.zip" />
+    <copy todir="${build.tmp}/default/abcde.zip">
       <fileset file="${basedir}/buildA/abcde.jar" />
     </copy>
+    <zip destfile="${build.tmp}/default/A-_dl_{aver}.zip/abcde.zip">
+      <fileset dir="${build.tmp}/default/abcde.zip" />
+    </zip>
     <zip destfile="${build.layout}/result/A-${aver}.zip">
       <fileset dir="${build.tmp}/default/A-_dl_{aver}.zip" />
     </zip>
@@ -34,7 +45,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.module-A" />
+  <target name="compileJava" depends="java.compile.module-A, java.compile.modX" />
   
   <target name="processResources" />
   
@@ -50,6 +61,19 @@
       <compilerarg value="-Xlint:none" />
       <src path="${basedir}/buildA/src" />
       <classpath refid="path.java.library.abcde-lib" />
+    </javac>
+  </target>
+  
+  <target name="java.compile.modX">
+    <mkdir dir="${build.tmp}/java/out/modX" />
+    <javac destdir="${build.tmp}/java/out/modX" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/buildA/src" />
+      </src>
+      <classpath>
+        <fileset file="${basedir}/buildA/abcde.jar" />
+      </classpath>
     </javac>
   </target>
 </project>

@@ -26,16 +26,16 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.typesystem.inference.*;
+import jetbrains.mps.typesystem.inference.InequalitySystem;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.TypeRecalculatedListener;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class NodeTypesComponent {
   private SNode myRootNode;
@@ -60,6 +60,7 @@ public class NodeTypesComponent {
     myRootNode = rootNode;
     myTypeCheckingContext = typeCheckingContext;
     myTypeSystemComponent = new TypeSystemComponent(typeChecker, typeCheckingContext.getState(), this);
+    // TODO: do not instantiate NonTypeSystemComponent in generation mode
     myNonTypeSystemComponent = new NonTypeSystemComponent(typeChecker, this);
     myModelListenerManager.track(myRootNode);
   }
@@ -116,18 +117,18 @@ public class NodeTypesComponent {
   }
 
   public SNode computeTypesForNodeDuringGeneration(SNode initialNode) {
-    return computeTypesForNode_special(initialNode, new ArrayList<SNode>(0));
+    return computeTypesForNode_special(initialNode, Collections.<SNode>emptyList());
   }
 
   public SNode computeTypesForNodeDuringResolving(SNode initialNode) {
-    return computeTypesForNode_special(initialNode, new ArrayList<SNode>(0));
+    return computeTypesForNode_special(initialNode, Collections.<SNode>emptyList());
   }
 
   public SNode computeTypesForNodeInferenceMode(SNode initialNode) {
-    return computeTypesForNode_special(initialNode, new ArrayList<SNode>(0));
+    return computeTypesForNode_special(initialNode, Collections.<SNode>emptyList());
   }
 
-  private SNode computeTypesForNode_special(SNode initialNode, List<SNode> givenAdditionalNodes) {
+  private SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
     myIsSpecial = true;
     SNode result = myTypeSystemComponent.computeTypesForNode_special(initialNode, givenAdditionalNodes);
     myIsSpecial = false;
@@ -158,22 +159,20 @@ public class NodeTypesComponent {
   }
 
   public InequalitySystem computeInequalitiesForHole(SNode hole, boolean holeIsAType) {
-     List<SNode> additionalNodes = new ArrayList<SNode>();
-     additionalNodes.add(hole);
-     State state = myTypeCheckingContext.getState();
-     if (state == null) return null;
-     try {
-       state.initHole(hole);
-       computeTypesForNode_special(hole.getParent(), additionalNodes);
-       state.getInequalitySystem().expandAll(state.getEquations());
+    State state = myTypeCheckingContext.getState();
+    if (state == null) return null;
+    try {
+      state.initHole(hole);
+      computeTypesForNode_special(hole.getParent(), Collections.singleton(hole));
+      state.getInequalitySystem().expandAll(state.getEquations());
       /* for (String s : state.getInequalitySystem().getPresentation()) {
          System.out.println(s);
        } */
-       return state.getInequalitySystem();
-     } finally {
-       state.disposeHole();
-     }
-   }
+      return state.getInequalitySystem();
+    } finally {
+      state.disposeHole();
+    }
+  }
 
   public void computeTypes(boolean refreshTypes) {
     myTypeSystemComponent.computeTypes(refreshTypes);
@@ -255,10 +254,10 @@ public class NodeTypesComponent {
       List<IErrorReporter> reporters = getErrors(key);
       if (!reporters.isEmpty()) {
         if (key.getContainingRoot() == null) {
-        /*  LOG.warning("Type system reports error for node without containing root. Node: " + key);
-          for (IErrorReporter reporter : reporters) {
-            LOG.warning("This error was reported from: model: " + reporter.getRuleModel() + " id: " + reporter.getRuleId());
-          }     */
+          /*  LOG.warning("Type system reports error for node without containing root. Node: " + key);
+                    for (IErrorReporter reporter : reporters) {
+                      LOG.warning("This error was reported from: model: " + reporter.getRuleModel() + " id: " + reporter.getRuleId());
+                    }     */
           continue;
         }
         result.add(new Pair<SNode, List<IErrorReporter>>(key, reporters));
@@ -266,7 +265,6 @@ public class NodeTypesComponent {
     }
     return result;
   }
-
 
 
   public void markNodeAsAffectedByRule(SNode node, String ruleModel, String ruleId) {

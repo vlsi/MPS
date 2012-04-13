@@ -31,6 +31,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import java.util.Comparator;
 import com.intellij.openapi.actionSystem.AnAction;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.intentions.IntentionsManager;
 import jetbrains.mps.intentions.SurroundWithIntention;
 
@@ -73,6 +74,7 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("editorContext") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.NODE));
     return true;
   }
@@ -131,7 +133,11 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
       final Pair<Intention, SNode> finalPair = pair;
       actionGroup.add(new AnAction(ShowSurroundWithIntentions_Action.this.getDescriptior(pair, _params)) {
         public void actionPerformed(AnActionEvent event) {
-          finalPair.getFirst().execute(finalPair.getSecond(), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+          ModelAccess.instance().runCommandInEDT(new Runnable() {
+            public void run() {
+              finalPair.getFirst().execute(finalPair.getSecond(), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+            }
+          }, ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
         }
       });
     }

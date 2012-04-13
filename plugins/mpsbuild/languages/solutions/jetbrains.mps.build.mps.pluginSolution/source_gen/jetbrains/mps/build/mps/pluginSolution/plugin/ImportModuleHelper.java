@@ -63,7 +63,7 @@ public class ImportModuleHelper {
     SPropertyOperations.set(module, "compact", "" + true);
     SPropertyOperations.set(module, "name", moduleDescriptor.getModuleReference().getModuleFqName());
     SPropertyOperations.set(module, "uuid", moduleDescriptor.getModuleReference().getModuleId().toString());
-    SLinkOperations.setTarget(module, "path", converter.convertPath(moduleFile.getPath(), SNodeOperations.getModel(project)), true);
+    SLinkOperations.setTarget(module, "path", ListSequence.fromList(converter.convertPath(moduleFile.getPath(), SNodeOperations.getModel(project))).first(), true);
   }
 
   public void update(VisibleModules visible) {

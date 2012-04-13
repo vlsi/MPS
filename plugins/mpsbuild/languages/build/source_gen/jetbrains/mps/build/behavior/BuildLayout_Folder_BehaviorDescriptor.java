@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.UnpackHelper;
 import jetbrains.mps.build.util.Context;
 
-public class BuildLayout_Folder_BehaviorDescriptor extends BuildLayout_NamedContainer_BehaviorDescriptor {
+public class BuildLayout_Folder_BehaviorDescriptor extends BuildLayout_NamedContainer_BehaviorDescriptor implements BuildLayout_PureNode_BehaviorDescriptor {
   public BuildLayout_Folder_BehaviorDescriptor() {
   }
 

@@ -14,6 +14,7 @@
       <modulePath path="${project}/solutions/jetbrains.mps.build.tests/tests.msd" folder="" />
       <modulePath path="${project}/workflow/workflow.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/../../../IdeaPlugin/buildScript/plugin.msd" />
+      <modulePath path="$PROJECT_DIR$/../temp/jetbrains.mps.build.pluginSolution/pluginSolution.msd" />
     </projectModules>
     <genConfs />
   </component>

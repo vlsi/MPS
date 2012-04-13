@@ -12,6 +12,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.build.behavior.BuildLayout_Node_Behavior;
 
 public class VisibleArtifacts {
   private final SNode project;
@@ -34,23 +35,43 @@ public class VisibleArtifacts {
 
   public void collect() {
     for (SNode dep : SLinkOperations.getTargets(project, "dependencies", true)) {
+      SNode layoutDependency = SNodeOperations.as(dep, "jetbrains.mps.build.structure.BuildExternalLayoutDependency");
+      if (layoutDependency == null) {
+        continue;
+      }
+
+      SNode target = SLinkOperations.getTarget(layoutDependency, "layout", false);
+      collectInExternalLayout(layoutDependency, target);
+    }
+    for (SNode dep : SLinkOperations.getTargets(project, "dependencies", true)) {
       SNode projectDependency = SNodeOperations.as(dep, "jetbrains.mps.build.structure.BuildProjectDependency");
       if (projectDependency == null) {
         continue;
       }
 
       SNode target = SLinkOperations.getTarget(projectDependency, "script", false);
-      collectInScript(projectDependency, target);
+      collectInProject(projectDependency, target);
     }
   }
 
-  private void collectInScript(SNode parent, SNode target) {
+  private void collectInProject(SNode parent, SNode target) {
     target = SNodeOperations.as(toOriginalNode(target), "jetbrains.mps.build.structure.BuildProject");
     if (target == null) {
       return;
     }
 
     for (SNode node : SLinkOperations.getTargets(SLinkOperations.getTarget(target, "layout", true), "children", true)) {
+      collectInLayout(parent, node);
+    }
+  }
+
+  private void collectInExternalLayout(SNode parent, SNode target) {
+    target = SNodeOperations.as(toOriginalNode(target), "jetbrains.mps.build.structure.BuildExternalLayout");
+    if (target == null) {
+      return;
+    }
+
+    for (SNode node : SLinkOperations.getTargets(target, "children", true)) {
       collectInLayout(parent, node);
     }
   }
@@ -110,10 +131,28 @@ public class VisibleArtifacts {
     dependenciesHelper.requiresFetch().put(node, "");
   }
 
-  public void registerEntity(Object id, SNode location) {
-    if (dependenciesHelper == null) {
-      throw new IllegalStateException("registerEntity() should be called in generation context only");
+  public SNode findArtifact(Object id) {
+    if (id instanceof SNode && ((SNode) id).getModel().isTransient()) {
+      throw new IllegalArgumentException("findArtifact() cannot be called for transient nodes");
     }
-    dependenciesHelper.artifacts().put(id, location);
+    if (dependenciesHelper == null) {
+      throw new IllegalStateException("findArtifact() should be called in generation context only");
+    }
+    SNode result = dependenciesHelper.artifacts().get(id);
+    if (result != null) {
+      return result;
+    }
+    for (SNode artifact : this.getArtifacts()) {
+      assert !(SNodeOperations.getModel(artifact).isTransient());
+      if (BuildLayout_Node_Behavior.call_exports_6547494638219603457(artifact, id)) {
+        dependenciesHelper.artifacts().put(id, artifact);
+        return artifact;
+      }
+    }
+    return null;
+  }
+
+  public TemplateQueryContext getGenContext() {
+    return genContext;
   }
 }
