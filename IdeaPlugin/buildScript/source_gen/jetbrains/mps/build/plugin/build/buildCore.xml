@@ -21,19 +21,15 @@
   </path>
   
   <path id="path.java.library.idea-libraries">
-    <fileset dir="${idea_home}/lib">
-      <include name="*.jar" />
-    </fileset>
+    <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
   </path>
   
   <path id="path.java.library.idea-ant">
-    <fileset dir="${idea_home}/lib/ant/lib">
-      <include name="*.jar" />
-    </fileset>
+    <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
   </path>
   
   <path id="path.java.library.junit-4.10">
-    <fileset file="${idea_home}/lib/junit-4.10.jar" />
+    <fileset file="${artifacts.IDEA}/lib/junit-4.10.jar" />
   </path>
   
   <target name="assemble" depends="classes">
