@@ -17,12 +17,18 @@ public class BuildSource_JavaDependencyImportedJar_Behavior {
       return null;
     }
 
-    SNode target = SNodeOperations.as(artifacts.toOriginalNode(SLinkOperations.getTarget(thisNode, "jar", false)), "jetbrains.mps.build.structure.BuildInputSingleFile");
+    SNode target = SNodeOperations.as(artifacts.toOriginalNode(SLinkOperations.getTarget(thisNode, "jar", false)), "jetbrains.mps.build.structure.BuildSource_SingleFile");
     if (target == null) {
       return null;
     }
 
-    SNode artifact = SNodeOperations.as(artifacts.findArtifact(SLinkOperations.getTarget(target, "path", true)), "jetbrains.mps.build.structure.BuildLayout_Node");
+    SNode artifact = null;
+    if (SNodeOperations.isInstanceOf(target, "jetbrains.mps.build.structure.BuildLayout_Node")) {
+      artifact = SNodeOperations.cast(target, "jetbrains.mps.build.structure.BuildLayout_Node");
+    } else if (SNodeOperations.isInstanceOf(target, "jetbrains.mps.build.structure.BuildInputSingleFile")) {
+      artifact = SNodeOperations.as(artifacts.findArtifact(SLinkOperations.getTarget(SNodeOperations.cast(target, "jetbrains.mps.build.structure.BuildInputSingleFile"), "path", true)), "jetbrains.mps.build.structure.BuildLayout_Node");
+    }
+
     if (artifact != null) {
       artifacts.needsFetch(SNodeOperations.getParent(thisNode));
       return Sequence.<SNode>singleton(artifact);
