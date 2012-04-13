@@ -28,6 +28,7 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.dependency.DependenciesManager.Deptype;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.Language;
@@ -174,12 +175,10 @@ public class ModuleMaker {
 
   private Set<IModule> collectCandidates(Set<IModule> startSet) {
     Set<IModule> modules = new LinkedHashSet<IModule>();
-    Set<Language> usedLanguages = new LinkedHashSet<Language>();
 
     for (IModule m : startSet) {
-      m.getDependenciesManager().collectAllCompileTimeDependencies(modules, usedLanguages);
+      m.getDependenciesManager().collectModules(modules, Deptype.COMPILE);
     }
-    modules.addAll(usedLanguages);
     return modules;
   }
 

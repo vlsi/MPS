@@ -44,23 +44,23 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
     HashSet<IModule> nonReexported = new HashSet<IModule>();
     getUsedModules(reexported, nonReexported);
 
-    if (depType.respectReexport){
+    if (depType.respectReexport) {
       modules.addAll(nonReexported);
     } else {
       reexported.addAll(nonReexported);
     }
 
-    for (IModule m:reexported){
-      m.getDependenciesManager().collectModules(modules,depType);
+    for (IModule m : reexported) {
+      m.getDependenciesManager().collectModules(modules, depType);
     }
 
     //runtimes from languages
     if (depType.runtimes) {
       HashSet<Language> lang = new HashSet<Language>();
-      collectUsedLanguages(lang,true);
+      collectUsedLanguages(lang, true);
 
-      for (Language l:lang){
-        l.getDependenciesManager().collectModules(modules,depType);
+      for (Language l : lang) {
+        l.getDependenciesManager().collectModules(modules, depType);
       }
     }
   }

@@ -5,6 +5,8 @@ package jetbrains.mps.ide.depanalyzer;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import java.util.List;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.dependency.DependenciesManager.Deptype;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -82,10 +84,10 @@ public class ModuleDependencyNode extends MPSTreeNode {
     DependencyTree tree = (DependencyTree) getTree();
 
     for (IModule module : ListSequence.fromList(myModules)) {
-      DependenciesManager depManager = module.getDependenciesManager();
-      SetSequence.fromSet(reqModules).addSequence(SetSequence.fromSet(depManager.getAllVisibleModules()));
-      SetSequence.fromSet(rtModules).addSequence(SetSequence.fromSet(depManager.getAllRequiredModules()));
-      SetSequence.fromSet(usedLanguages).addSequence(SetSequence.fromSet(depManager.getAllUsedLanguages()));
+      GlobalModuleDependenciesManager gdm = new GlobalModuleDependenciesManager(module);
+      SetSequence.fromSet(reqModules).addSequence(SetSequence.fromSet((Set)gdm.getModules(Deptype.VISIBLE)));
+      SetSequence.fromSet(rtModules).addSequence(SetSequence.fromSet((Set)gdm.getModules(Deptype.COMPILE)));
+      SetSequence.fromSet(usedLanguages).addSequence(SetSequence.fromSet((Set)gdm.getUsedLanguages()));
     }
 
     Set<IModule> allModules = (tree.isShowRuntime() ?

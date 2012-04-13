@@ -20,6 +20,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.dependency.DependenciesManager.Deptype;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import org.jetbrains.annotations.NotNull;
@@ -44,8 +46,8 @@ public class SModelOperations {
     GlobalScope scope = GlobalScope.getInstance();
     SModelDescriptor modelDescriptor = model.getModelDescriptor();
     final IModule module = modelDescriptor == null ? null : modelDescriptor.getModule();
-    final Set<IModule> declaredDependencies = module != null ? module.getDependenciesManager().getAllVisibleModules() : null;
-    final Set<Language> declaredUsedLanguages = module != null ? module.getDependenciesManager().getAllUsedLanguages() : null;
+    final Collection<IModule> declaredDependencies = module != null ? new GlobalModuleDependenciesManager(module).getModules(Deptype.VISIBLE) : null;
+    final Collection<Language> declaredUsedLanguages = module != null ? new GlobalModuleDependenciesManager(module).getUsedLanguages() : null;
     Set<ModuleReference> usedLanguages = getAllImportedLanguages(model);
 
     Set<SModelReference> importedModels = new HashSet<SModelReference>();
@@ -310,28 +312,5 @@ public class SModelOperations {
       }
     }
     return modelsList;
-  }
-
-  static void validateLanguages(SModel sModel, SNode node) {
-    Collection<ModuleReference> allrefs = getAllImportedLanguages(sModel);
-    Set<String> available = new HashSet<String>(allrefs.size());
-    for (ModuleReference ref : allrefs) {
-      available.add(ref.getModuleFqName());
-    }
-    for (SNode n : node.getDescendantsIterable(null, true)) {
-      String namespace = n.getLanguageNamespace();
-      if (!available.contains(namespace)) {
-        available.add(namespace);
-        Language lang = GlobalScope.getInstance().getLanguage(namespace);
-        if (lang != null) {
-          sModel.addLanguage(lang.getModuleReference());
-          // add language also to module if necessary
-          IModule module = sModel.getModelDescriptor() == null ? null : sModel.getModelDescriptor().getModule();
-          if (module != null && module.getModuleDescriptor() != null && !module.getDependenciesManager().getAllUsedLanguages().contains(lang)) {
-            module.addUsedLanguage(lang.getModuleReference());
-          }
-        }
-      }
-    }
   }
 }

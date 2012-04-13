@@ -39,14 +39,14 @@ public class ClasspathCollector {
 
   public IClassPathItem collect(boolean includeStubSolutions) {
     Set<IModule> modules = new LinkedHashSet<IModule>();
-    Set<Language> usedLanguages = new LinkedHashSet<Language>();
 
     for (IModule m : myStart) {
-      m.getDependenciesManager().collectAllCompileTimeDependencies(modules, usedLanguages);
+      m.getDependenciesManager().collectModules(modules, Deptype.COMPILE);
     }
 
-    for (IModule m:new HashSet<IModule>(modules)){
+    for (IModule m : new HashSet<IModule>(modules)) {
       if (m instanceof Language) {
+        //todo this is a hack since we compile generator with language's classpath, too
         // 1. Generator is always compiled together with the language (???)
         // 2. Generator may have its own compile time dependencies (imports in the generated queries)
         // 3. Let's not ignore them
@@ -60,9 +60,6 @@ public class ClasspathCollector {
 
     for (IModule module : modules) {
       addPart(module.getClassPathItem());
-    }
-    for (Language l : usedLanguages) {
-      addPart(l.getLanguageRuntimeClasspath());
     }
 
     CompositeClassPathItem result = new CompositeClassPathItem();
@@ -78,14 +75,6 @@ public class ClasspathCollector {
           // LOG?
         }
       }
-
-/*
-      for (Solution s : MPSModuleRepository.getInstance().getAllSolutions()) {
-        if (s.isStub()) {
-          result.add(s.getClassPathItem());
-        }
-      }
-*/
     }
 
     for (IClassPathItem item : myResult) {

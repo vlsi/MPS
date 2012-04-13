@@ -24,6 +24,8 @@ import jetbrains.mps.ide.depanalyzer.DependencyTreeNode;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.*;
+import jetbrains.mps.project.dependency.DependenciesManager.Deptype;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.TestLanguage;
 import jetbrains.mps.testbench.WriteAction;
@@ -84,15 +86,15 @@ public class ModuleDependenciesTest {
   private void testDependency(DependencyPathTree testTree, IModule source, IModule target, int numPaths) {
     assertEquals(numPaths, findPaths((DependencyTreeNode) testTree.testBuildTree(source, target, null), target));
     if (testTree.isShowRuntime()) {
-      assertEquals(numPaths != 0, source.getDependenciesManager().getAllRequiredModules().contains(target));
+      assertEquals(numPaths != 0, new GlobalModuleDependenciesManager(source).getModules(Deptype.COMPILE).contains(target));
     } else {
-      assertEquals(numPaths != 0, source.getDependenciesManager().getAllVisibleModules().contains(target));
+      assertEquals(numPaths != 0, new GlobalModuleDependenciesManager(source).getModules(Deptype.VISIBLE).contains(target));
     }
   }
 
   private void testUsedLanguage(DependencyPathTree testTree, IModule source, Language target, int numPaths) {
     assertEquals(numPaths, findPaths((DependencyTreeNode) testTree.testBuildTree(source, null, target), target));
-    assertEquals(numPaths != 0, source.getDependenciesManager().getAllUsedLanguages().contains(target));
+    assertEquals(numPaths != 0, new GlobalModuleDependenciesManager(source).getUsedLanguages().contains(target));
   }
 
   @Test
