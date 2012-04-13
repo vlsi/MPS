@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.build.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.build.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BuildAspect_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildAspect_BehaviorDescriptor" />
   <unitInfo fileName="BuildCompositePath_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildCompositePath_BehaviorDescriptor" />
   <unitInfo fileName="BuildCustomWorkflow_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildCustomWorkflow_BehaviorDescriptor" />
@@ -68,6 +68,7 @@
   <unitInfo fileName="BuildSource_JavaJars_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaJars_BehaviorDescriptor" />
   <unitInfo fileName="BuildSource_JavaLibraryCP_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaLibraryCP_BehaviorDescriptor" />
   <unitInfo fileName="BuildSource_JavaLibraryElement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaLibraryElement_BehaviorDescriptor" />
+  <unitInfo fileName="BuildSource_JavaLibraryExternalJar_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaLibraryExternalJar_BehaviorDescriptor" />
   <unitInfo fileName="BuildSource_JavaLibrary_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaLibrary_BehaviorDescriptor" />
   <unitInfo fileName="BuildSource_JavaModule_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaModule_BehaviorDescriptor" />
   <unitInfo fileName="BuildSource_JavaSources_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaSources_BehaviorDescriptor" />
@@ -1219,6 +1220,28 @@
       <varInfo nodeId="5610619299014309559" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="5610619299014309559" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaExternalJarRef_Behavior" />
+  </root>
+  <root nodeId="5610619299014446522">
+    <nodeInfo nodeId="5610619299014446530" fileName="BuildSource_JavaLibraryExternalJar_Behavior.java" startLine="14" startPosition="125" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5610619299014446531" fileName="BuildSource_JavaLibraryExternalJar_Behavior.java" startLine="15" startPosition="0" endLine="16" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5610619299014446549" fileName="BuildSource_JavaLibraryExternalJar_Behavior.java" startLine="17" startPosition="27" endLine="18" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5610619299014446557" fileName="BuildSource_JavaLibraryExternalJar_Behavior.java" startLine="19" startPosition="5" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5610619299014446522" fileName="BuildSource_JavaLibraryExternalJar_Behavior.java" startLine="10" startPosition="58" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5610619299014446540" fileName="BuildSource_JavaLibraryExternalJar_Behavior.java" startLine="16" startPosition="170" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5610619299014446522" fileName="BuildSource_JavaLibraryExternalJar_Behavior.java" startLine="13" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getDependencyTargets_841011766566205095#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/build/util/VisibleArtifacts;)Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="5610619299014446524" fileName="BuildSource_JavaLibraryExternalJar_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
+    <scopeInfo nodeId="5610619299014446541" fileName="BuildSource_JavaLibraryExternalJar_Behavior.java" startLine="17" startPosition="27" endLine="18" endPosition="49" />
+    <scopeInfo nodeId="5610619299014446522" fileName="BuildSource_JavaLibraryExternalJar_Behavior.java" startLine="10" startPosition="58" endLine="13" endPosition="0">
+      <varInfo nodeId="5610619299014446522" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5610619299014446529" fileName="BuildSource_JavaLibraryExternalJar_Behavior.java" startLine="14" startPosition="125" endLine="20" endPosition="16">
+      <varInfo nodeId="5610619299014446532" varName="artifact" />
+    </scopeInfo>
+    <scopeInfo nodeId="5610619299014446522" fileName="BuildSource_JavaLibraryExternalJar_Behavior.java" startLine="13" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="5610619299014446526" varName="artifacts" />
+      <varInfo nodeId="5610619299014446522" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="5610619299014446522" fileName="BuildSource_JavaLibraryExternalJar_Behavior.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaLibraryExternalJar_Behavior" />
   </root>
   <root nodeId="6547494638219485324">
     <nodeInfo nodeId="6547494638219485350" fileName="BuildLayout_Jar_Behavior.java" startLine="21" startPosition="94" endLine="22" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -43,6 +43,7 @@
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildSource_JavaJar_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildSource_JavaJars_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildSource_JavaLibraryCP_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildSource_JavaLibraryExternalJar_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildSource_JavaLibrary_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildSource_JavaModule_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildStringNotEmpty_BehaviorDescriptor" />
@@ -932,6 +933,26 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.behavior.BuildSource_JavaLibraryExternalJar_Behavior" file="BuildSource_JavaLibraryExternalJar_Behavior.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildSource_JavaExternalJarRef_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.util.VisibleArtifacts" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.behavior.BuildSource_JavaLibraryExternalJar_BehaviorDescriptor" file="BuildSource_JavaLibraryExternalJar_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildExternalDependency_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildSource_JavaCP_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildSource_JavaLibraryExternalJar_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.util.VisibleArtifacts" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildSource_JavaLibrary_Behavior" file="BuildSource_JavaLibrary_Behavior.java">

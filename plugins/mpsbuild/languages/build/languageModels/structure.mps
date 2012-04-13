@@ -395,6 +395,11 @@
       <property name="name" nameId="tpck.1169194664001" value="BuildSource_JavaExternalJarRef" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5610619299014446503">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Library" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildSource_JavaLibraryExternalJar" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="3717132724152837124" resolveInfo="BuildSource_JavaCP" />
+    </node>
   </roots>
   <root id="5617550519002745363">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5204048710541015587">
@@ -1253,6 +1258,21 @@
       <property name="role" nameId="tpce.1071599776563" value="jar" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="5610619299013425874" resolveInfo="BuildSource_SingleFile" />
+    </node>
+  </root>
+  <root id="5610619299014446503">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="5610619299014446505">
+      <property name="value" nameId="tpce.1105725733873" value="external jar" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5610619299014446504">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="extJar" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="5610619299014309452" resolveInfo="BuildSource_JavaExternalJarRef" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5610619299014446521">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="841011766566205091" resolveInfo="BuildExternalDependency" />
     </node>
   </root>
 </model>

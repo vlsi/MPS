@@ -721,6 +721,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "extJar", true), "jar", false);
   }
 
+  public static Object templateArgumentQuery_5610619299014495886(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "extJar", true), "jar", false);
+  }
+
   public static Iterable sourceNodesQuery_1117643560963351248(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "children", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
