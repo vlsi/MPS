@@ -151,13 +151,15 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     if (currentTypesComponent != null) {
       //--- for incremental algorithm:
       currentTypesComponent.addNodeToFrontier(node);
-      currentTypesComponent.typeOfNodeCalled(node);
-      if (addDependency) {
-        currentTypesComponent.addDependencyOnCurrent(node);
-      }
-      if (ruleModel != null && ruleId != null) {
-        currentTypesComponent.markNodeAsAffectedByRule(node, ruleModel, ruleId);
-        //todo wrap into "if (addDependency) {}" when sure that typeof works fine
+      if (!myIsSingleTypeComputation) {
+        currentTypesComponent.typeOfNodeCalled(node);
+        if (addDependency) {
+          currentTypesComponent.addDependencyOnCurrent(node);
+        }
+        if (ruleModel != null && ruleId != null) {
+          currentTypesComponent.markNodeAsAffectedByRule(node, ruleModel, ruleId);
+          //todo wrap into "if (addDependency) {}" when sure that typeof works fine
+        }
       }
     }
     return myState.typeOf(node, info);
@@ -180,6 +182,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void reportMessage(SNode nodeWithError, IErrorReporter errorReporter) {
+    if (myIsSingleTypeComputation) return;
     if (nodeWithError == null) {
       myState.executeOperation(new TraceWarningOperation("Error was not added: " + errorReporter.reportError()));
       return;//todo
@@ -305,6 +308,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void addDependencyForCurrent(SNode node) {
+    if (myIsSingleTypeComputation) return;
     getNodeTypesComponent().addDependencyForCurrent(node);
   }
 
@@ -381,7 +385,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public boolean isIncrementalMode() {
-    return !isInEditorQueries() && myTypeChecker.isGlobalIncrementalMode() && myState.getInequalitySystem() == null;
+    return !myIsSingleTypeComputation && !isInEditorQueries() && myTypeChecker.isGlobalIncrementalMode() && myState.getInequalitySystem() == null;
   }
 
   @Override

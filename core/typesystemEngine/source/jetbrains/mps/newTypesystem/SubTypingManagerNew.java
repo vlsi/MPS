@@ -72,7 +72,8 @@ public class SubTypingManagerNew extends SubtypingManager {
       public Boolean compute() {
         if (null == subType || null == superType) return false;
         if (subType == superType) return true;
-        if (!TypesUtil.hasVariablesInside(superType) && !TypesUtil.hasVariablesInside(subType)) {
+        boolean canAskCache = (!TypesUtil.hasVariablesInside(superType) && !TypesUtil.hasVariablesInside(subType));
+        if (canAskCache) {
           Boolean answer = getIsSubTypeCacheAnswer(subType, superType, isWeak);
           if (answer != null) {
             return answer;
@@ -91,7 +92,7 @@ public class SubTypingManagerNew extends SubtypingManager {
         if (meetsAndJoins(subType, superType, info, isWeak, state)) {
           return true;
         }
-        return searchInSuperTypes(subType, new NodeMatcher(superType, equations, info), isWeak, state);
+        return searchInSuperTypes(subType, new NodeMatcher(superType, equations, info), isWeak, state, canAskCache);
       }
     });
     TypeSystemReporter.getInstance().reportIsSubType(subType,superType,(System.nanoTime() - start));
@@ -140,7 +141,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     return false;
   }
 
-  boolean searchInSuperTypes(SNode subType, NodeMatcher superType, boolean isWeak, State state) {
+  private boolean searchInSuperTypes(SNode subType, NodeMatcher superType, boolean isWeak, State state, boolean canAskCache) {
     TypeCheckingContextNew typeCheckingContextNew = state == null ? null : state.getTypeCheckingContext();
     Queue<SNode> queue = new LinkedList<SNode>();
     StructuralNodeSet<SNode> visited = new StructuralNodeSet<SNode>();
@@ -157,14 +158,15 @@ public class SubTypingManagerNew extends SubtypingManager {
       for (SNode ancestor: ancestors) {
         if (visited.contains(ancestor)) continue;
         visited.addStructurally(ancestor);
-        Boolean cacheAnswer = getIsSubTypeCacheAnswer(ancestor, superType.getNode(), isWeak);
-        if (cacheAnswer != null) {
-          // System.out.println("subtype optimized");
-          if (cacheAnswer) {
-            addToCache(subType, superType, true, isWeak);
-            return true;
+        if (canAskCache) {
+          Boolean cacheAnswer = getIsSubTypeCacheAnswer(ancestor, superType.getNode(), isWeak);
+          if (cacheAnswer != null) {
+            if (cacheAnswer) {
+              addToCache(subType, superType, true, isWeak);
+              return true;
+            }
+            continue;
           }
-          continue;
         }
         queue.add(ancestor);
       }
