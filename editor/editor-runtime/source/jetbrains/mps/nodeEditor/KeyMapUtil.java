@@ -102,10 +102,13 @@ public class KeyMapUtil {
       for (ModuleReference langRef : SModelOperations.getAllImportedLanguages(model)) {
         importedAndExtendedLanguages.add(langRef);
         Language l = ModuleRepositoryFacade.getInstance().getModule(langRef, Language.class);
-        if (l != null) {
-          for (Language le : l.getDependenciesManager().getAllExtendedLanguages()) {
-            importedAndExtendedLanguages.add(le.getModuleReference());
-          }
+        if (l == null) continue;
+
+        Set<Language> ext = new LinkedHashSet<Language>();
+        l.getDependenciesManager().collectAllExtendedLanguages(ext);
+
+        for (Language le : ext) {
+          importedAndExtendedLanguages.add(le.getModuleReference());
         }
       }
 

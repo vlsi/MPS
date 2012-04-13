@@ -27,13 +27,7 @@ public class LanguageDependenciesManager extends ModuleDependenciesManager<Langu
     super(language);
   }
 
-  public Collection<Language> getAllExtendedLanguages() {
-    Set<Language> result = new LinkedHashSet<Language>();
-    collectAllExtendedLanguages(result);
-    return result;
-  }
-
-  private void collectAllExtendedLanguages(Set<Language> result) {
+  public void collectAllExtendedLanguages(Set<Language> result) {
     if (result.contains(myModule)) return;
 
     result.add(myModule);

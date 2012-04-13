@@ -19,10 +19,7 @@ import jetbrains.mps.generator.impl.plan.ModelContentUtil;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class GeneratorValidator extends BaseModuleValidator<Generator> {
   public GeneratorValidator(Generator module) {
@@ -45,7 +42,11 @@ public class GeneratorValidator extends BaseModuleValidator<Generator> {
     Set<String> extendedLanguages = new HashSet<String>();
     Language sourceLanguage = myModule.getSourceLanguage();
     usedLanguages.remove(sourceLanguage.getModuleFqName());
-    for(Language language : sourceLanguage.getDependenciesManager().getAllExtendedLanguages()){
+
+    Set<Language> ext = new LinkedHashSet<Language>();
+    sourceLanguage.getDependenciesManager().collectAllExtendedLanguages(ext);
+
+    for(Language language : ext){
       extendedLanguages.add(language.getModuleFqName());
     }
 

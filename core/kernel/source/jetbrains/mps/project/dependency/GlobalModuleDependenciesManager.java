@@ -49,48 +49,13 @@ public class GlobalModuleDependenciesManager {
     return result;
   }
 
-  /*
-   *  All modules visible from given modules
-   *  This includes modules from dependencies, transitive, respecting reexports
-   *  Including initial modules
-   */
-  public Collection<IModule> getVisibleModules() {
-    HashSet<IModule> result = new HashSet<IModule>();
-    for (IModule module : myModules) {
-      module.getDependenciesManager().collectModules(result, Deptype.VISIBLE);
-    }
-    return result;
-  }
-
-  /*
-   *  All modules required for compilation of given modules
-   *  This includes visible modules and used language runtimes, respecting reexports
-   *  Including languages with runtime stub paths
-   *  Including initial modules
-   */
-  public Collection<IModule> getCompilationModules() {
-    HashSet<IModule> result = new HashSet<IModule>();
-
-    return result;
-  }
-
   /**
-   * All modules required for execution of given modules
-   * This includes transitive closure of visible modules, with no respect for reexports,
-   * and runtimes of used languages, not respecting reexports
-   * Including languages with runtime stub paths
-   * Including initial modules
+   * see Deptype doc
    */
-  public Collection<IModule> getExecutionModules() {
-    HashSet<IModule> result = new HashSet<IModule>();
-
-    return result;
-  }
-  
-  private void collect (Set<IModule> result, Deptype depType){
+  public Collection<IModule> getModules(Deptype depType) {
     HashSet<IModule> result = new HashSet<IModule>();
     for (IModule module : myModules) {
-      module.getDependenciesManager().collectModules(result, Deptype.VISIBLE);
+      module.getDependenciesManager().collectModules(result, depType);
     }
     return result;
   }

@@ -35,9 +35,31 @@ public interface DependenciesManager {
   void collectModules(Set<IModule> modules, Deptype depType);
 
   enum Deptype {
+    /*
+    *  All modules visible from given modules
+    *  This includes modules from dependencies, transitive, respecting reexports
+    *  Including initial modules
+    */
     VISIBLE(false, true),
+
+    /*
+    *  All modules required for compilation of given modules
+    *  This includes visible modules and used language runtimes, respecting reexports
+    *  Including languages with runtime stub paths
+    *  Including initial modules
+    */
     COMPILE(true, true),
+
+    /**
+     * All modules required for execution of given modules
+     * This includes transitive closure of visible modules, with no respect for reexports,
+     * and runtimes of used languages, not respecting reexports
+     * Including languages with runtime stub paths
+     * Including initial modules
+     */
     EXECUTE(true, false);
+
+
     public boolean runtimes;
     public boolean reexport;
 

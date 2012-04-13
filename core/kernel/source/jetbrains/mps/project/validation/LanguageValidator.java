@@ -27,7 +27,9 @@ import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 public class LanguageValidator extends BaseModuleValidator<Language> {
   public LanguageValidator(Language module) {
@@ -56,7 +58,10 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
   }
 
   public static void checkBehaviorAspectPresence(Language lang, List<String> errors) {
-    for (Language language : lang.getDependenciesManager().getAllExtendedLanguages()) {
+    Set<Language> ext = new LinkedHashSet<Language>();
+    lang.getDependenciesManager().collectAllExtendedLanguages(ext);
+
+    for (Language language : ext) {
       EditableSModelDescriptor descriptor = LanguageAspect.BEHAVIOR.get(language);
       if (descriptor == null) {
         if (lang == language)
