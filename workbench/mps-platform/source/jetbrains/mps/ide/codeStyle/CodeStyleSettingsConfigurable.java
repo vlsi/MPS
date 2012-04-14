@@ -104,11 +104,12 @@ public class CodeStyleSettingsConfigurable implements PersistentStateComponent<C
   }
 
   public void disposeUIResources() {
+    myPage = null;
   }
 
   @Nls
   public String getDisplayName() {
-    return getPage().getName();
+    return "Code Style";
   }
 
   public Icon getIcon() {

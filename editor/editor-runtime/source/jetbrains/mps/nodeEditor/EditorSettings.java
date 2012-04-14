@@ -213,7 +213,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
 
   @Nullable
   public Icon getIcon() {
-    return getPreferencesPage().getIcon();
+    return null;
   }
 
   @Nullable
@@ -239,7 +239,10 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
   }
 
   public void disposeUIResources() {
-
+    if (myPreferencesPage != null) {
+      myPreferencesPage.dispose();
+    }
+    myPreferencesPage = null;
   }
 
   public MyState getState() {

@@ -20,7 +20,6 @@ import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.lang.typesystem.runtime.AbstractDependentComputation_Runtime.DependentComputationWrapper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -28,6 +27,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
 
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
@@ -87,9 +87,9 @@ public class ModelRules {
       }
       if (typeSystemDescriptor == null) return false;
       try {
-        myInferenceRules.addRuleSetItem(typeSystemDescriptor.getInferenceRules());
+      //  myInferenceRules.addRuleSetItem(typeSystemDescriptor.getInferenceRules());
         myNonTypeSystemRules.addRuleSetItem(typeSystemDescriptor.getNonTypesystemRules());
-        mySubTypingRules.addRuleSetItem(typeSystemDescriptor.getSubtypingRules());
+/*        mySubTypingRules.addRuleSetItem(typeSystemDescriptor.getSubtypingRules());
         Set<ComparisonRule_Runtime> comparisonRule_runtimes = typeSystemDescriptor.getComparisonRules();
         myComparisonRules.addRuleSetItem(comparisonRule_runtimes);
         myReplacementRules.addRuleSetItem(typeSystemDescriptor.getEliminationRules());
@@ -104,7 +104,7 @@ public class ModelRules {
         myComparisonRules.makeConsistent();
         myReplacementRules.makeConsistent();
         myDependenciesContainer.makeConsistent();
-//        myOverloadedOperationsManager.makeConsistent();
+//        myOverloadedOperationsManager.makeConsistent();                  */
         return true;
       } catch (Throwable t) {
         LOG.error(t);
@@ -207,7 +207,7 @@ public class ModelRules {
     return result;
   }
 
-  public Set<SNode> getDependencies(SNode node) {
+  public Collection<SNode> getDependencies(SNode node) {
     return myDependenciesContainer.getDependencies(node);
   }
 

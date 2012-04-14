@@ -25,6 +25,7 @@ import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
+import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.VariableIdentifier;
 import jetbrains.mps.newTypesystem.operation.*;
 import jetbrains.mps.newTypesystem.operation.block.AddBlockOperation;
@@ -442,6 +443,9 @@ public class State {
 
   public void expandTargetNode() {
     myNodeMaps.expandNode(myTargetNode, true);
+    if (!TypesUtil.hasVariablesInside(myNodeMaps.getType(myTargetNode))) {
+      setTargetTypeCalculated();
+    }
   }
 
   public void expandAll(final Set<SNode> nodes, final boolean finalExpansion) {

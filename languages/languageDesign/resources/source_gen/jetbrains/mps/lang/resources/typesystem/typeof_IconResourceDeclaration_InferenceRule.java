@@ -22,10 +22,12 @@ public class typeof_IconResourceDeclaration_InferenceRule extends AbstractInfere
   }
 
   public void applyRule(final SNode ird, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(ird, "iconExpression", true);
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:cafe8450-2876-42f2-9c43-75da10155c47(jetbrains.mps.lang.resources.typesystem)", "8974276187400030205", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:cafe8450-2876-42f2-9c43-75da10155c47(jetbrains.mps.lang.resources.typesystem)", "8974276187400030210", true), (SNode) new typeof_IconResourceDeclaration_InferenceRule.QuotationClass_710b71_a0a0a0().createNode(typeCheckingContext), true, true, _info_12389875345);
+    if (!(typeCheckingContext.isSingleTypeComputation())) {
+      {
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(ird, "iconExpression", true);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:cafe8450-2876-42f2-9c43-75da10155c47(jetbrains.mps.lang.resources.typesystem)", "8974276187400030205", 0, null);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:cafe8450-2876-42f2-9c43-75da10155c47(jetbrains.mps.lang.resources.typesystem)", "8974276187400030210", true), (SNode) new typeof_IconResourceDeclaration_InferenceRule.QuotationClass_710b71_a0a0a0().createNode(typeCheckingContext), true, true, _info_12389875345);
+      }
     }
   }
 

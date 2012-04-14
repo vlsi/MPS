@@ -31,7 +31,6 @@ public abstract class CheckingComponent {
   protected boolean myInvalidationWasPerformed = false;
   protected boolean myCacheWasRebuilt = false;
   protected TypeChecker myTypeChecker;
-  protected final Object ACCESS_LOCK = new Object();
   protected NodeTypesComponent myNodeTypesComponent;
   protected boolean myIsChecked = false;
   protected MyLanguageCacheListener myLanguageCacheListener = new MyLanguageCacheListener();
@@ -70,10 +69,16 @@ public abstract class CheckingComponent {
     LanguageHierarchyCache.getInstance().removeCacheChangeListener(myLanguageCacheListener);
   }
 
+  /*
+   *  Single-threaded
+   */
   protected class MyEventsReadListener extends AbstractNodesReadListener {
     private Set<SNode> myAccessedNodes = new THashSet<SNode>(1);
-    protected Set<Pair<SNode, String>> myAccessedProperties = new THashSet<Pair<SNode, String>>(1);
-    protected boolean myIsSetAccessReport = false;
+    private Set<Pair<SNode, String>> myAccessedProperties = new THashSet<Pair<SNode, String>>(1);
+    private boolean myIsSetAccessReport = false;
+
+    public MyEventsReadListener() {
+    }
 
     public void setAccessReport(boolean accessReport) {
       myIsSetAccessReport = accessReport;
@@ -86,37 +91,29 @@ public abstract class CheckingComponent {
     }
 
     public void nodeChildReadAccess(SNode node, String childRole, SNode child) {
-      synchronized (ACCESS_LOCK) {
-        reportAccess();
-        myAccessedNodes.add(node);
-        if (child != null) {
-          myAccessedNodes.add(child);
-        }
+      reportAccess();
+      myAccessedNodes.add(node);
+      if (child != null) {
+        myAccessedNodes.add(child);
       }
     }
 
     public void nodePropertyReadAccess(SNode node, String propertyName, String value) {
-      synchronized (ACCESS_LOCK) {
-        reportAccess();
-        myAccessedProperties.add(new Pair<SNode, String>(node, propertyName));
-      }
+      reportAccess();
+      myAccessedProperties.add(new Pair<SNode, String>(node, propertyName));
     }
 
     public void nodeReferentReadAccess(SNode node, String referentRole, SNode referent) {
-      synchronized (ACCESS_LOCK) {
-        reportAccess();
-        myAccessedNodes.add(node);
-        if (referent != null) {
-          myAccessedNodes.add(referent);
-        }
+      reportAccess();
+      myAccessedNodes.add(node);
+      if (referent != null) {
+        myAccessedNodes.add(referent);
       }
     }
 
     public void nodeUnclassifiedReadAccess(SNode node) {
-      synchronized (ACCESS_LOCK) {
-        reportAccess();
-        myAccessedNodes.add(node);
-      }
+      reportAccess();
+      myAccessedNodes.add(node);
     }
 
     public Set<SNode> getAccessedNodes() {
@@ -124,33 +121,39 @@ public abstract class CheckingComponent {
     }
 
     public void clear() {
-      synchronized (ACCESS_LOCK) {
-        reportAccess();
-        myAccessedNodes = new THashSet<SNode>();
-        myAccessedProperties = new THashSet<Pair<SNode, String>>();
-      }
+      reportAccess();
+      myAccessedNodes = new THashSet<SNode>();
+      myAccessedProperties = new THashSet<Pair<SNode, String>>();
+    }
+
+    public Set<Pair<SNode, String>> getAccessedProperties() {
+      return myAccessedProperties;
     }
   }
 
+  /*
+   *  Single-threaded.
+   */
   class MyLanguageCachesReadListener implements CacheReadAccessListener {
-    protected boolean myIsCacheAccessed = false;
-    protected boolean myIsSetAccessReport = false;
+    private boolean myIsCacheAccessed = false;
+    private boolean myIsSetAccessReport = false;
+
+    MyLanguageCachesReadListener() {
+    }
 
     public void setAccessReport(boolean accessReport) {
       myIsSetAccessReport = accessReport;
     }
 
-    private void reportAccess() {
+    public void languageCacheRead() {
       if (myIsSetAccessReport) {
         new Throwable().printStackTrace();
       }
+      myIsCacheAccessed = true;
     }
 
-    public void languageCacheRead() {
-      synchronized (ACCESS_LOCK) {
-        reportAccess();
-        myIsCacheAccessed = true;
-      }
+    public boolean isCacheAccessed() {
+      return myIsCacheAccessed;
     }
   }
 

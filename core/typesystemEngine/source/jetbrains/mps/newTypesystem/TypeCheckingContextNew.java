@@ -30,6 +30,7 @@ import jetbrains.mps.newTypesystem.state.blocks.WhenConcreteBlock;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.TypeSystemReporter;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -126,7 +127,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void createLessThanInequationStrong(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, boolean checkOnly,
-                                             int inequationPriority, QuickFixProvider intentionProvider) {
+                         int inequationPriority, QuickFixProvider intentionProvider) {
     myState.addInequality(node1, node2, false, checkOnly, new EquationInfo(nodeToCheck, errorString, ruleModel,
       ruleId, inequationPriority, intentionProvider), true);
   }
@@ -150,13 +151,15 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     if (currentTypesComponent != null) {
       //--- for incremental algorithm:
       currentTypesComponent.addNodeToFrontier(node);
-      currentTypesComponent.typeOfNodeCalled(node);
-      if (addDependency) {
-        currentTypesComponent.addDependencyOnCurrent(node);
-      }
-      if (ruleModel != null && ruleId != null) {
-        currentTypesComponent.markNodeAsAffectedByRule(node, ruleModel, ruleId);
-        //todo wrap into "if (addDependency) {}" when sure that typeof works fine
+      if (!myIsSingleTypeComputation) {
+        currentTypesComponent.typeOfNodeCalled(node);
+        if (addDependency) {
+          currentTypesComponent.addDependencyOnCurrent(node);
+        }
+        if (ruleModel != null && ruleId != null) {
+          currentTypesComponent.markNodeAsAffectedByRule(node, ruleModel, ruleId);
+          //todo wrap into "if (addDependency) {}" when sure that typeof works fine
+        }
       }
     }
     return myState.typeOf(node, info);
@@ -179,6 +182,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void reportMessage(SNode nodeWithError, IErrorReporter errorReporter) {
+    if (myIsSingleTypeComputation) return;
     if (nodeWithError == null) {
       myState.executeOperation(new TraceWarningOperation("Error was not added: " + errorReporter.reportError()));
       return;//todo
@@ -304,17 +308,17 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void addDependencyForCurrent(SNode node) {
+    if (myIsSingleTypeComputation) return;
     getNodeTypesComponent().addDependencyForCurrent(node);
   }
 
   @Override
   protected SNode getTypeOf_generationMode(SNode node) {
     myIsSingleTypeComputation = true;
-    try {
-      return myNodeTypesComponent.computeTypesForNodeDuringGeneration(node);
-    } finally {
-      myNodeTypesComponent.dispose();
-    }
+    long start = System.nanoTime();
+    SNode result = myNodeTypesComponent.computeTypesForNodeDuringGeneration(node);
+    TypeSystemReporter.getInstance().reportTypeOf(node,(System.nanoTime() - start));
+    return result;
   }
 
   @Override
@@ -381,7 +385,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public boolean isIncrementalMode() {
-    return !isInEditorQueries() && myTypeChecker.isGlobalIncrementalMode() && myState.getInequalitySystem() == null;
+    return !myIsSingleTypeComputation && !isInEditorQueries() && myTypeChecker.isGlobalIncrementalMode() && myState.getInequalitySystem() == null;
   }
 
   @Override
@@ -483,8 +487,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     synchronized (TYPECHECKING_LOCK) {
       if (this.isInEditorQueries()) {
         return getTypeOf_resolveMode(node, typeChecker);
-      } else if (typeChecker.isGenerationMode()) {
-        return getTypeOf_generationMode(node);
       } else {
         return getTypeOf_normalMode(node);
       }
@@ -498,11 +500,15 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public SNode getTypeInGenerationMode(SNode node) {
-    myIsSingleTypeComputation = true;
-    myIsTraceMode = true;
-    SNode type = getTypeOf_generationMode(node);
-    myIsTraceMode = false;
-    return type;
+    try {
+      myIsTraceMode = true;
+      return getTypeOf_generationMode(node);
+    } finally {
+      myIsTraceMode = false;
+
+      // TODO [ts] move dispose -> trace tree
+      myNodeTypesComponent.dispose();
+    }
   }
 
   @Override
