@@ -7,8 +7,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public abstract class BuildLayout_NamedContainer_BehaviorDescriptor extends BuildLayout_AbstractContainer_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
+public abstract class BuildLayout_NamedContainer_BehaviorDescriptor extends BuildLayout_AbstractContainer_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, BuildSource_SingleFolder_BehaviorDescriptor {
   public BuildLayout_NamedContainer_BehaviorDescriptor() {
+  }
+
+  public String virtual_getApproximateName_5610619299014531547(SNode thisNode) {
+    return BuildLayout_NamedContainer_Behavior.virtual_getApproximateName_5610619299014531547(thisNode);
   }
 
   public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
