@@ -53,12 +53,15 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
         }
         SNode dotOperation = SNodeOperations.getAncestor(variableReference, "jetbrains.mps.baseLanguage.structure.DotExpression", false, false);
         if (dotOperation != null) {
+          if (AttributeOperations.getAttribute(dotOperation, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"))) != null) {
+            return;
+          }
           if (SLinkOperations.getTarget(dotOperation, "operand", true) == variableReference) {
             if (AttributeOperations.getAttribute(variableDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"))) != null) {
               return;
             }
 
-            final SNode targetClassifier = check_hquoeu_a0c0a0c0d0b0a(SNodeOperations.as(SLinkOperations.getTarget(variableDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+            final SNode targetClassifier = check_hquoeu_a0c0b0c0d0b0a(SNodeOperations.as(SLinkOperations.getTarget(variableDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
             if (SNodeOperations.isInstanceOf(targetClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
               if (AttributeOperations.getAttribute(SNodeOperations.cast(targetClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"))) != null) {
                 return;
@@ -72,7 +75,7 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
               }
             }
 
-            List<SNode> allowedClasses = ListSequence.fromListAndArray(new ArrayList<SNode>(), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a1a0f0a0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a2a0f0a0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a3a0f0a0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a4a0f0a0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a5a0f0a0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a6a0f0a0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a7a0f0a0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a8a0f0a0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a9a0f0a0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a01a0f0a0c0d0b0a().createNode(typeCheckingContext));
+            List<SNode> allowedClasses = ListSequence.fromListAndArray(new ArrayList<SNode>(), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a1a0f0b0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a2a0f0b0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a3a0f0b0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a4a0f0b0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a5a0f0b0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a6a0f0b0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a7a0f0b0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a8a0f0b0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a9a0f0b0c0d0b0a().createNode(typeCheckingContext), new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.QuotationClass_hquoeu_a01a0f0b0c0d0b0a().createNode(typeCheckingContext));
 
             if (!(ListSequence.fromList(allowedClasses).any(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
@@ -105,15 +108,15 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
     return false;
   }
 
-  private static SNode check_hquoeu_a0c0a0c0d0b0a(SNode checkedDotOperand) {
+  private static SNode check_hquoeu_a0c0b0c0d0b0a(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTarget(checkedDotOperand, "classifier", false);
     }
     return null;
   }
 
-  public static class QuotationClass_hquoeu_a1a0f0a0c0d0b0a {
-    public QuotationClass_hquoeu_a1a0f0a0c0d0b0a() {
+  public static class QuotationClass_hquoeu_a1a0f0b0c0d0b0a {
+    public QuotationClass_hquoeu_a1a0f0b0c0d0b0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -143,8 +146,8 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
     }
   }
 
-  public static class QuotationClass_hquoeu_a2a0f0a0c0d0b0a {
-    public QuotationClass_hquoeu_a2a0f0a0c0d0b0a() {
+  public static class QuotationClass_hquoeu_a2a0f0b0c0d0b0a {
+    public QuotationClass_hquoeu_a2a0f0b0c0d0b0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -174,8 +177,8 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
     }
   }
 
-  public static class QuotationClass_hquoeu_a3a0f0a0c0d0b0a {
-    public QuotationClass_hquoeu_a3a0f0a0c0d0b0a() {
+  public static class QuotationClass_hquoeu_a3a0f0b0c0d0b0a {
+    public QuotationClass_hquoeu_a3a0f0b0c0d0b0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -205,8 +208,8 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
     }
   }
 
-  public static class QuotationClass_hquoeu_a4a0f0a0c0d0b0a {
-    public QuotationClass_hquoeu_a4a0f0a0c0d0b0a() {
+  public static class QuotationClass_hquoeu_a4a0f0b0c0d0b0a {
+    public QuotationClass_hquoeu_a4a0f0b0c0d0b0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -236,8 +239,8 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
     }
   }
 
-  public static class QuotationClass_hquoeu_a5a0f0a0c0d0b0a {
-    public QuotationClass_hquoeu_a5a0f0a0c0d0b0a() {
+  public static class QuotationClass_hquoeu_a5a0f0b0c0d0b0a {
+    public QuotationClass_hquoeu_a5a0f0b0c0d0b0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -267,8 +270,8 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
     }
   }
 
-  public static class QuotationClass_hquoeu_a6a0f0a0c0d0b0a {
-    public QuotationClass_hquoeu_a6a0f0a0c0d0b0a() {
+  public static class QuotationClass_hquoeu_a6a0f0b0c0d0b0a {
+    public QuotationClass_hquoeu_a6a0f0b0c0d0b0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -298,8 +301,8 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
     }
   }
 
-  public static class QuotationClass_hquoeu_a7a0f0a0c0d0b0a {
-    public QuotationClass_hquoeu_a7a0f0a0c0d0b0a() {
+  public static class QuotationClass_hquoeu_a7a0f0b0c0d0b0a {
+    public QuotationClass_hquoeu_a7a0f0b0c0d0b0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -329,8 +332,8 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
     }
   }
 
-  public static class QuotationClass_hquoeu_a8a0f0a0c0d0b0a {
-    public QuotationClass_hquoeu_a8a0f0a0c0d0b0a() {
+  public static class QuotationClass_hquoeu_a8a0f0b0c0d0b0a {
+    public QuotationClass_hquoeu_a8a0f0b0c0d0b0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -360,8 +363,8 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
     }
   }
 
-  public static class QuotationClass_hquoeu_a9a0f0a0c0d0b0a {
-    public QuotationClass_hquoeu_a9a0f0a0c0d0b0a() {
+  public static class QuotationClass_hquoeu_a9a0f0b0c0d0b0a {
+    public QuotationClass_hquoeu_a9a0f0b0c0d0b0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -391,8 +394,8 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
     }
   }
 
-  public static class QuotationClass_hquoeu_a01a0f0a0c0d0b0a {
-    public QuotationClass_hquoeu_a01a0f0a0c0d0b0a() {
+  public static class QuotationClass_hquoeu_a01a0f0b0c0d0b0a {
+    public QuotationClass_hquoeu_a01a0f0b0c0d0b0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {

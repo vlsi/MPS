@@ -896,6 +896,7 @@
                   <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8923957828369591806">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Thread%dcurrentThread()%cjava%dlang%dThread" resolveInfo="currentThread" />
                     <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="e2lb.~Thread" resolveInfo="Thread" />
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="cgfx.ThreadSafe" typeId="cgfx.2975785153735111398" id="5384012304952504711" />
                   </node>
                   <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="7793246093816002424">
                     <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7793246093816002427">
@@ -925,6 +926,11 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8923957828369582225" resolveInfo="a" />
                   </node>
                 </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="5384012304952504713">
+              <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="5384012304952504714">
+                <property name="text" nameId="tpee.6329021646629104958" value="External (compiled) method calls can be annotated as thread-safe to indicate that they are safe to call" />
               </node>
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1077635873539568036">
@@ -1326,6 +1332,7 @@
     </node>
     <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1077635873539567998">
       <property name="name" nameId="tpck.1169194664001" value="log" />
+      <property name="isFinal" nameId="tpee.1181808852946" value="false" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1077635873539567999" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1077635873539568078" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1077635873539568001">
@@ -1360,6 +1367,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1603335834236290408" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1603335834236290409" />
     </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="cgfx.ThreadSafe" typeId="cgfx.2975785153735111398" id="5384012304952490047" />
   </root>
   <root id="3385910400465347285">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3385910400465347286" />
@@ -2374,6 +2382,7 @@
     </node>
     <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="2975785153735296273">
       <property name="name" nameId="tpck.1169194664001" value="log" />
+      <property name="isFinal" nameId="tpee.1181808852946" value="false" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2975785153735296274" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="2975785153735350224" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2975785153735296276">
@@ -2397,6 +2406,7 @@
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="2975785153735296278" />
       </node>
     </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="cgfx.ThreadSafe" typeId="cgfx.2975785153735111398" id="5384012304952490042" />
   </root>
 </model>
 

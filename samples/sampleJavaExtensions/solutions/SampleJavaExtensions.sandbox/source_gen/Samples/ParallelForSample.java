@@ -91,6 +91,7 @@ __switch__:
             try {
               log("Starting calculation for number " + localA + " in thread " + Thread.currentThread());
               ParallelForSample.sleep(localA * 1000);
+              // External (compiled) method calls can be annotated as thread-safe to indicate that they are safe to call 
               log("Finished calculation for number " + localA + " in thread " + Thread.currentThread());
             } catch (RuntimeException e) {
               ListSequence.fromList(exceptions).addElement(e);
