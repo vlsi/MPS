@@ -23,9 +23,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.state.State;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.typesystem.inference.RulesManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
@@ -45,7 +43,7 @@ class TypeSystemComponent extends CheckingComponent {
   private Map<SNode, Set<SNode>> myNodesToDependentNodes_A;
   private Map<SNode, Set<SNode>> myNodesToDependentNodes_B;
 
-  private Set<SNode> myJustInvalidatedNodes;
+  private Set<SNode> myNodes = new THashSet<SNode>();
 
   private Map<SNode, Set<Pair<String, String>>> myNodesToRules;
   private Set<SNode> myFullyCheckedNodes = new THashSet<SNode>(); //nodes which are checked with their children
@@ -64,7 +62,6 @@ class TypeSystemComponent extends CheckingComponent {
       myNodesDependentOnCaches = new THashSet<SNode>();
       myNodesToDependentNodes_A = new THashMap<SNode, Set<SNode>>();
       myNodesToDependentNodes_B = new THashMap<SNode, Set<SNode>>();
-      myJustInvalidatedNodes = new THashSet<SNode>();
     }
   }
 
@@ -337,7 +334,7 @@ class TypeSystemComponent extends CheckingComponent {
         }
         boolean typeAffected = false;
         try {
-          myJustInvalidatedNodes.add(sNode);
+          myNodes.add(sNode);
           typeAffected = applyRulesToNode(sNode);
         } finally {
           if (incrementalMode) {
@@ -400,8 +397,8 @@ class TypeSystemComponent extends CheckingComponent {
 
   public void solveInequalitiesAndExpandTypes(boolean finalExpansion) {
     myState.solveInequalities();
-    myState.expandAll(myJustInvalidatedNodes, finalExpansion);
-    myJustInvalidatedNodes.clear();
+    myState.expandAll(myNodes, finalExpansion);
+    myNodes.clear();
   }
 
   public void addError(SNode node, IErrorReporter reporter) {

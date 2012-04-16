@@ -63,6 +63,14 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     myTypeChecker = typeChecker;
   }
 
+  public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker, boolean computeSingleType) {
+    myIsSingleTypeComputation = computeSingleType;
+    myState = new State(this);
+    myRootNode = rootNode;
+    myNodeTypesComponent = new NodeTypesComponent(myRootNode, typeChecker, this);
+    myTypeChecker = typeChecker;
+  }
+
   @Override
   public void checkRoot() {
     checkRoot(false);
