@@ -7,7 +7,135 @@
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
   <property name="artifacts.IDEA" location="${idea_home}" />
   
-  <target name="assemble" depends="classes" />
+  <target name="assemble" depends="classes">
+    <mkdir dir="${build.layout}/languages" />
+    <mkdir dir="${build.layout}/languages/util" />
+    <mkdir dir="${build.layout}/languages/util/ui" />
+    <jar destfile="${build.layout}/languages/util/ui/jetbrains.mps.lang.plugin.standalone.jar">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.plugin.standalone" />
+      <fileset dir="${mps_home}/languages/languageDesign/plugin-standalone" includes="icons/**, resources/**" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.plugin.standalone-src.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.plugin.standalone-src.jar/module" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.lang.plugin.standalone-src.jar/module">
+      <fileset file="${mps_home}/languages/languageDesign/plugin-standalone/standalone.mpl" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.plugin.standalone-src.jar/module/languageModels" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.lang.plugin.standalone-src.jar/module/languageModels">
+      <fileset dir="${mps_home}/languages/languageDesign/plugin-standalone/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.plugin.standalone-src.jar/module/generator/template" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.lang.plugin.standalone-src.jar/module/generator/template">
+      <fileset dir="${mps_home}/languages/languageDesign/plugin-standalone/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <jar destfile="${build.layout}/languages/util/ui/jetbrains.mps.lang.plugin.standalone-src.jar">
+      <fileset dir="${mps_home}/languages/languageDesign/plugin-standalone/source_gen" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.lang.plugin.standalone-src.jar" />
+    </jar>
+    <mkdir dir="${build.layout}/languages/util/deprecated" />
+    <mkdir dir="${build.layout}/languages/util/deprecated/ui" />
+    <jar destfile="${build.layout}/languages/util/deprecated/ui/jetbrains.mps.uiLanguage.jar">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.uiLanguage" />
+      <fileset dir="${mps_home}/languages/util/uiLanguage" includes="icons/**, resources/**" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.uiLanguage-src.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.uiLanguage-src.jar/module" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.uiLanguage-src.jar/module">
+      <fileset file="${mps_home}/languages/util/uiLanguage/uiLanguage.mpl" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.uiLanguage-src.jar/module/languageModels" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.uiLanguage-src.jar/module/languageModels">
+      <fileset dir="${mps_home}/languages/util/uiLanguage/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.uiLanguage-src.jar/module/generator/baseLanguage/template" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.uiLanguage-src.jar/module/generator/baseLanguage/template">
+      <fileset dir="${mps_home}/languages/util/uiLanguage/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <jar destfile="${build.layout}/languages/util/deprecated/ui/jetbrains.mps.uiLanguage-src.jar">
+      <fileset dir="${mps_home}/languages/util/uiLanguage/source_gen" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.uiLanguage-src.jar" />
+    </jar>
+    <jar destfile="${build.layout}/languages/util/deprecated/ui/jetbrains.mps.ide.uiLanguage.jar">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.ide.uiLanguage" />
+      <fileset dir="${mps_home}/languages/util/ideUiLanguage" includes="icons/**, resources/**" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.uiLanguage-src.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.uiLanguage-src.jar/module" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.ide.uiLanguage-src.jar/module">
+      <fileset file="${mps_home}/languages/util/ideUiLanguage/uiLanguage.mpl" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.uiLanguage-src.jar/module/languageModels" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.ide.uiLanguage-src.jar/module/languageModels">
+      <fileset dir="${mps_home}/languages/util/ideUiLanguage/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.uiLanguage-src.jar/module/generator/baseLanguage/template" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.ide.uiLanguage-src.jar/module/generator/baseLanguage/template">
+      <fileset dir="${mps_home}/languages/util/ideUiLanguage/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <jar destfile="${build.layout}/languages/util/deprecated/ui/jetbrains.mps.ide.uiLanguage-src.jar">
+      <fileset dir="${mps_home}/languages/util/ideUiLanguage/source_gen" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.ide.uiLanguage-src.jar" />
+    </jar>
+    <mkdir dir="${build.layout}/libs" />
+    <jar destfile="${build.layout}/libs/mps-resources.jar">
+      <fileset dir="${mps_home}/workbench/resources/source" />
+    </jar>
+    <jar destfile="${build.layout}/libs/mps-resources_en.jar">
+      <fileset dir="${mps_home}/workbench/resources_en/source" />
+    </jar>
+    <jar destfile="${build.layout}/libs/mps-boot.jar">
+      <fileset dir="${build.tmp}/java/out/startup" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/mps-workbench.jar" />
+    <mkdir dir="${build.tmp}/default/mps-workbench.jar/modules" />
+    <mkdir dir="${build.tmp}/default/mps-workbench.jar/modules/MPS.Workbench" />
+    <copy todir="${build.tmp}/default/mps-workbench.jar/modules/MPS.Workbench">
+      <fileset file="${mps_home}/languages/core/stub/MPS.Workbench/Workbench.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-workbench.jar/modules/MPS.Workbench">
+      <fileset dir="${mps_home}/languages/core/stub/MPS.Workbench" includes="icons/**, resources/**" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-workbench.jar/modules/jetbrains.mps.ide" />
+    <copy todir="${build.tmp}/default/mps-workbench.jar/modules/jetbrains.mps.ide">
+      <fileset file="${mps_home}/workbench/mps-workbench/jetbrains.mps.ide.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-workbench.jar/modules/jetbrains.mps.ide">
+      <fileset dir="${mps_home}/workbench/mps-workbench" includes="icons/**, resources/**" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-workbench.jar/modules/jetbrains.mps.ide/models" />
+    <copy todir="${build.tmp}/default/mps-workbench.jar/modules/jetbrains.mps.ide/models">
+      <fileset dir="${mps_home}/workbench/mps-workbench/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-workbench.jar/modules/jetbrains.mps.ide.uiLanguage.runtime" />
+    <copy todir="${build.tmp}/default/mps-workbench.jar/modules/jetbrains.mps.ide.uiLanguage.runtime">
+      <fileset file="${mps_home}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-workbench.jar/modules/jetbrains.mps.ide.uiLanguage.runtime">
+      <fileset dir="${mps_home}/languages/util/uiLanguage/runtime" includes="icons/**, resources/**" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-workbench.jar/modules/jetbrains.mps.ide.uiLanguage.runtime/" />
+    <copy todir="${build.tmp}/default/mps-workbench.jar/modules/jetbrains.mps.ide.uiLanguage.runtime/">
+      <fileset dir="${mps_home}/languages/util/uiLanguage/runtime" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-workbench.jar/modules/jetbrains.mps.execution.api" />
+    <copy todir="${build.tmp}/default/mps-workbench.jar/modules/jetbrains.mps.execution.api">
+      <fileset file="${basedir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.api/jetbrains.mps.execution.api.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-workbench.jar/modules/jetbrains.mps.execution.api">
+      <fileset dir="${basedir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.api" includes="icons/**, resources/**" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/mps-workbench.jar/modules/jetbrains.mps.execution.api/" />
+    <copy todir="${build.tmp}/default/mps-workbench.jar/modules/jetbrains.mps.execution.api/">
+      <fileset dir="${mps_home}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.api" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <jar destfile="${build.layout}/libs/mps-workbench.jar">
+      <fileset dir="${build.tmp}/java/out/mps-workbench" />
+      <fileset dir="${build.tmp}/java/out/execution" />
+      <fileset dir="${build.tmp}/java/out/uiLanguage.runtime" />
+      <fileset dir="${build.tmp}/java/out/typesystem-ui" />
+      <fileset dir="${build.tmp}/default/mps-workbench.jar" />
+    </jar>
+  </target>
   
   <target name="buildDependents">
     <ant antfile="build/buildCore.xml" inheritAll="false" useNativeBasedir="true" />
@@ -22,7 +150,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.typesystem-ui, java.compile.uiLanguage.runtime, java.compile.mps-workbench, java.compile.execution, java.compile.jetbrains.mps.uiLanguage, java.compile.jetbrains.mps.ide.uiLanguage, java.compile.jetbrains.mps.lang.plugin.standalone" />
+  <target name="compileJava" depends="java.compile.typesystem-ui, java.compile.uiLanguage.runtime, java.compile.mps-workbench, java.compile.execution, java.compile.startup, java.compile.jetbrains.mps.uiLanguage, java.compile.jetbrains.mps.ide.uiLanguage, java.compile.jetbrains.mps.lang.plugin.standalone" />
   
   <target name="processResources" />
   
@@ -109,13 +237,13 @@
     </javac>
   </target>
   
-  <target name="java.compile.execution" depends="java.compile.mps-workbench">
+  <target name="java.compile.execution" depends="java.compile.mps-workbench, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/execution" />
     <javac destdir="${build.tmp}/java/out/execution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <pathelement path="${basedir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.api/source_gen" />
-        <pathelement path="${basedir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.impl/source_gen" />
+        <path location="${mps_home}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.api/source_gen" />
+        <path location="${mps_home}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.impl/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
@@ -138,6 +266,25 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+      </classpath>
+    </javac>
+  </target>
+  
+  <target name="java.compile.startup">
+    <mkdir dir="${build.tmp}/java/out/startup" />
+    <javac destdir="${build.tmp}/java/out/startup" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${mps_home}/startup/src" />
+      </src>
+      <classpath>
+        <fileset file="${mps_home}/lib/boot.jar" />
+        <fileset file="${mps_home}/lib/bootstrap.jar" />
+        <fileset file="${mps_home}/lib/trove4j.jar" />
+        <fileset file="${mps_home}/lib/util.jar" />
+        <fileset file="${mps_home}/lib/jdom.jar" />
+        <fileset file="${mps_home}/lib/log4j.jar" />
+        <fileset file="${mps_home}/lib/extensions.jar" />
       </classpath>
     </javac>
   </target>
@@ -185,7 +332,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.ide.uiLanguage" depends="java.compile.uiLanguage.runtime, java.compile.jetbrains.mps.uiLanguage, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.ide.uiLanguage" depends="java.compile.uiLanguage.runtime, java.compile.jetbrains.mps.uiLanguage, java.compile.mps-workbench, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ide.uiLanguage" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.ide.uiLanguage" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -202,6 +349,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.uiLanguage" />
+        <pathelement path="${build.tmp}/java/out/mps-workbench" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/commons-lang-2.4.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/guava-r09.jar" />
@@ -229,7 +377,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.plugin.standalone" depends="fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.plugin.standalone" depends="java.compile.mps-workbench, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.plugin.standalone" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.plugin.standalone" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -244,6 +392,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
+        <pathelement path="${build.tmp}/java/out/mps-workbench" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/commons-lang-2.4.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/guava-r09.jar" />

@@ -80,9 +80,6 @@ public class JavaExportUtil {
   }
 
   public static Iterable<SNode> requireModule(VisibleArtifacts artifacts, SNode module, SNode contextNode) {
-    if (SNodeOperations.getContainingRoot(module) == SNodeOperations.getContainingRoot(contextNode)) {
-      return null;
-    }
 
     SNode target = SNodeOperations.as(artifacts.toOriginalNode(module), "jetbrains.mps.build.structure.BuildSource_JavaModule");
 
