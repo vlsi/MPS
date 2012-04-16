@@ -26,8 +26,13 @@ public class Migration21_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new FixMissingImportsInProject_Action());
     addAction(new MigrationScript_APIMigration_Action());
     addAction(new MigrationScript_ConvertActionParameterCondition_Action());
+    addAction(new MigrationScript_DebuggerMoved_Action());
+    addAction(new MigrationScript_ExecutionAPIMigration_Action());
+    addAction(new MigrationScript_FixReferencesToMpsLaunch_Action());
+    addAction(new MigrationScript_RemoveKeystrokes_Action());
     addAction(new MigrationScript_ResolveBrokenRefs_Action());
     addAction(new MigrationScript_SplitMPSClasspath_Action());
+    addAction(new MigrationScript_UpgradeProcessBuilder_Action());
     addAction(new MovePluginsOutOfLanguages_Action());
     addAction(new OptimizeImportsInProject_Action());
     // groups 

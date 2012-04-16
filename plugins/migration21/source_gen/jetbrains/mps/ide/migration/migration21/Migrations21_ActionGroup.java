@@ -23,6 +23,11 @@ public class Migrations21_ActionGroup extends GeneratedActionGroup {
       Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.MigrationScript_APIMigration_Action");
       Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.MigrationScript_ConvertActionParameterCondition_Action");
       Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.MigrationScript_SplitMPSClasspath_Action");
+      Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.MigrationScript_DebuggerMoved_Action");
+      Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.MigrationScript_ExecutionAPIMigration_Action");
+      Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.MigrationScript_FixReferencesToMpsLaunch_Action");
+      Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.MigrationScript_RemoveKeystrokes_Action");
+      Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.MigrationScript_UpgradeProcessBuilder_Action");
       Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.FixMissingImportsInProject_Action");
       Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.ExecuteModelCheckerFixes_Action");
       Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.MigrationScript_ResolveBrokenRefs_Action");
