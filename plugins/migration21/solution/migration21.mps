@@ -182,23 +182,26 @@
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="3805125895591804874">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="3805125895591795071" resolveInfo="AddSourcesToModelRoots" />
       </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="4636220444987588504">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="975723688157231916" resolveInfo="AddPluginDependencies" />
+      </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2761153619454599684">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="2761153619454599624" resolveInfo="MigrationScript_APIMigration" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2761153619454586696">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="2761153619454586633" resolveInfo="MigrationScript_ConvertActionParameterCondition" />
       </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2761153619454568090">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="2761153619454568020" resolveInfo="MigrationScript_SplitMPSClasspath" />
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1828409047608306837">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1828409047608306728" resolveInfo="MigrationScript_ExecutionAPIMigration" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1828409047608306835">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="1828409047608281136" resolveInfo="MigrationScript_DebuggerMoved" />
       </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1828409047608306837">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1828409047608306728" resolveInfo="MigrationScript_ExecutionAPIMigration" />
-      </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1828409047608306839">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="1828409047608306672" resolveInfo="MigrationScript_FixReferencesToMpsLaunch" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2761153619454568090">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="2761153619454568020" resolveInfo="MigrationScript_SplitMPSClasspath" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1828409047608306841">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="1828409047608306784" resolveInfo="MigrationScript_RemoveKeystrokes" />
@@ -3819,9 +3822,6 @@
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="4636220444987588502">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="5318937080028090535" resolveInfo="CorrectIconsAfterPluhinMove" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="4636220444987588504">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="975723688157231916" resolveInfo="AddPluginDependencies" />
       </node>
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="4250481571544053956">
