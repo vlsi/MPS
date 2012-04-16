@@ -5,13 +5,9 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
-    <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.constraints.ParallelFor_Constraints" />
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.constraints.ParallelLoopVariable_Constraints" />
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.constraints.ThreadPool_Constraints" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
-  </dependency>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.constraints.ParallelFor_Constraints" file="ParallelFor_Constraints.java">
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.constraints.ParallelLoopVariable_Constraints" file="ParallelLoopVariable_Constraints.java">
     <classNode dependClassName="java.lang.Override" />

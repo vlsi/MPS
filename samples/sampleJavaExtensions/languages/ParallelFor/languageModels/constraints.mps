@@ -14,9 +14,6 @@
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="633195941006921799">
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="cgfx.633195941006921788" resolveInfo="ThreadPool" />
     </node>
-    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="633195941007004535">
-      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="cgfx.8923957828369477802" resolveInfo="ParallelFor" />
-    </node>
   </roots>
   <root id="7793246093816048068">
     <node role="property" roleId="tp1t.1213098023997" type="tp1t.NodePropertyConstraint" typeId="tp1t.1147467115080" id="7793246093816048069">
@@ -61,6 +58,5 @@
       </node>
     </node>
   </root>
-  <root id="633195941007004535" />
 </model>
 

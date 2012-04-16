@@ -12,9 +12,6 @@
     <node type="tpdg.NodeFactories" typeId="tpdg.1158700664498" id="8923957828369569660">
       <property name="name" nameId="tpck.1169194664001" value="ParallelLoopVariable_Factory" />
     </node>
-    <node type="tpdg.NodeFactories" typeId="tpdg.1158700664498" id="8923957828369575276">
-      <property name="name" nameId="tpck.1169194664001" value="ParallelLoop_Factory" />
-    </node>
   </roots>
   <root id="8923957828369569660">
     <node role="nodeFactory" roleId="tpdg.1158700779049" type="tpdg.NodeFactory" typeId="tpdg.1158700725281" id="8923957828369569661">
@@ -43,19 +40,11 @@
                 </node>
               </node>
               <node role="rValue" roleId="tpee.1068498886297" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7793246093816046423">
-                <property name="value" nameId="tpee.1070475926801" value="foo" />
+                <property name="value" nameId="tpee.1070475926801" value="a" />
               </node>
             </node>
           </node>
         </node>
-      </node>
-    </node>
-  </root>
-  <root id="8923957828369575276">
-    <node role="nodeFactory" roleId="tpdg.1158700779049" type="tpdg.NodeFactory" typeId="tpdg.1158700725281" id="8923957828369575277">
-      <link role="applicableConcept" roleId="tpdg.1158700943156" targetNodeId="cgfx.8923957828369477802" resolveInfo="ParallelFor" />
-      <node role="setupFunction" roleId="tpdg.1158701448518" type="tpdg.NodeSetupFunction" typeId="tpdg.1158701162220" id="8923957828369575278">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8923957828369575279" />
       </node>
     </node>
   </root>

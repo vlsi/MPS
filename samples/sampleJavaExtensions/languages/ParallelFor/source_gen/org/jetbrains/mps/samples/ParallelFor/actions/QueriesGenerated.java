@@ -9,9 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_ParallelLoopVariable_8923957828369569662(final IOperationContext operationContext, final NodeSetupContext _context) {
     SPropertyOperations.set(_context.getNewNode(), "isFinal", "" + true);
-    SPropertyOperations.set(_context.getNewNode(), "name", "foo");
-  }
-
-  public static void nodeFactory_NodeSetup_ParallelFor_8923957828369575278(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SPropertyOperations.set(_context.getNewNode(), "name", "a");
   }
 }
