@@ -4,12 +4,12 @@ package jetbrains.mps.build.util;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.build.behavior.BuildSource_JavaLibrary_Behavior;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
@@ -22,17 +22,8 @@ public class JavaExportUtil {
       return null;
     }
 
-    SNode target = SNodeOperations.as(artifacts.toOriginalNode(library), "jetbrains.mps.build.structure.BuildSource_JavaLibrary");
-    SNode artifact = SNodeOperations.as(artifacts.findArtifact(target), "jetbrains.mps.build.structure.BuildLayout_Node");
-    if (artifact != null) {
-      artifacts.needsFetch(contextNode);
-      if (SNodeOperations.isInstanceOf(artifact, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary")) {
-        return SLinkOperations.getTargets(SNodeOperations.cast(artifact, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary"), "children", true);
-      } else {
-        return Sequence.<SNode>singleton(artifact);
-      }
-    }
 
+    SNode target = SNodeOperations.as(artifacts.toOriginalNode(library), "jetbrains.mps.build.structure.BuildSource_JavaLibrary");
     if (BuildSource_JavaLibrary_Behavior.call_canExportByParts_5610619299014309362(target)) {
       List<SNode> result = new ArrayList<SNode>();
 
@@ -58,13 +49,25 @@ public class JavaExportUtil {
             ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(requiredJarFolder, "children", true)));
           }
         } else {
-          // FATAL! ignore? 
+          // fatal, unknown element 
+          ListSequence.fromList(result).clear();
+          break;
         }
       }
 
       if (ListSequence.fromList(result).isNotEmpty()) {
         artifacts.needsFetch(contextNode);
         return result;
+      }
+    }
+
+    SNode artifact = SNodeOperations.as(artifacts.findArtifact(target), "jetbrains.mps.build.structure.BuildLayout_Node");
+    if (artifact != null) {
+      artifacts.needsFetch(contextNode);
+      if (SNodeOperations.isInstanceOf(artifact, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary")) {
+        return SLinkOperations.getTargets(SNodeOperations.cast(artifact, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary"), "children", true);
+      } else {
+        return Sequence.<SNode>singleton(artifact);
       }
     }
     return null;

@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="BuildAspect_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildAspect_Constraints" />
+  <unitInfo fileName="BuildExternalLayoutDependency_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildExternalLayoutDependency_Constraints" />
+  <unitInfo fileName="BuildExternalLayout_Constraints.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildExternalLayout_Constraints" />
+  <unitInfo fileName="BuildLayout_CompileOutputOf_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildLayout_CompileOutputOf_Constraints" />
+  <unitInfo fileName="BuildLayout_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildLayout_Constraints" />
+  <unitInfo fileName="BuildLayout_FileStub_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildLayout_FileStub_Constraints" />
+  <unitInfo fileName="BuildLayout_ImportContent_Constraints.java" startLine="25" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildLayout_ImportContent_Constraints" />
+  <unitInfo fileName="BuildLayout_ImportContent_Constraints.java" startLine="35" startPosition="33" endLine="89" endPosition="5" unitName="jetbrains.mps.build.constraints.BuildLayout_ImportContent_Constraints$1" />
+  <unitInfo fileName="BuildLayout_ImportContent_Constraints.java" startLine="44" startPosition="19" endLine="87" endPosition="9" unitName="jetbrains.mps.build.constraints.BuildLayout_ImportContent_Constraints$2" />
+  <unitInfo fileName="BuildLayout_ImportContent_Constraints.java" startLine="78" startPosition="25" endLine="83" endPosition="15" unitName="jetbrains.mps.build.constraints.BuildLayout_ImportContent_Constraints$3" />
+  <unitInfo fileName="BuildLayout_Import_Constraints.java" startLine="25" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildLayout_Import_Constraints" />
+  <unitInfo fileName="BuildLayout_Import_Constraints.java" startLine="35" startPosition="33" endLine="84" endPosition="5" unitName="jetbrains.mps.build.constraints.BuildLayout_Import_Constraints$1" />
+  <unitInfo fileName="BuildLayout_Import_Constraints.java" startLine="44" startPosition="19" endLine="82" endPosition="9" unitName="jetbrains.mps.build.constraints.BuildLayout_Import_Constraints$2" />
+  <unitInfo fileName="BuildSourceMacroRelativePath_Constraints.java" startLine="21" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildSourceMacroRelativePath_Constraints" />
+  <unitInfo fileName="BuildSourceMacroRelativePath_Constraints.java" startLine="31" startPosition="32" endLine="65" endPosition="5" unitName="jetbrains.mps.build.constraints.BuildSourceMacroRelativePath_Constraints$1" />
+  <unitInfo fileName="BuildSourceMacroRelativePath_Constraints.java" startLine="40" startPosition="19" endLine="63" endPosition="9" unitName="jetbrains.mps.build.constraints.BuildSourceMacroRelativePath_Constraints$2" />
+  <unitInfo fileName="BuildSourcePath_Constraints.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildSourcePath_Constraints" />
+  <unitInfo fileName="BuildSource_JavaClassFolder_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildSource_JavaClassFolder_Constraints" />
+  <unitInfo fileName="BuildSource_JavaLibrary_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildSource_JavaLibrary_Constraints" />
+  <unitInfo fileName="BuildSource_JavaModule_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildSource_JavaModule_Constraints" />
+  <unitInfo fileName="BuildSource_JavaSources_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildSource_JavaSources_Constraints" />
+  <unitInfo fileName="BuildStringPart_Constraints.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildStringPart_Constraints" />
+  <unitInfo fileName="BuildTextStringPart_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildTextStringPart_Constraints" />
+  <unitInfo fileName="BuildTextStringPart_Constraints.java" startLine="22" startPosition="31" endLine="33" endPosition="5" unitName="jetbrains.mps.build.constraints.BuildTextStringPart_Constraints$1" />
+  <unitInfo fileName="BuildVarRefStringPart_Constraints.java" startLine="19" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildVarRefStringPart_Constraints" />
+  <unitInfo fileName="BuildVarRefStringPart_Constraints.java" startLine="29" startPosition="32" endLine="50" endPosition="5" unitName="jetbrains.mps.build.constraints.BuildVarRefStringPart_Constraints$1" />
+  <unitInfo fileName="BuildVarRefStringPart_Constraints.java" startLine="38" startPosition="19" endLine="48" endPosition="9" unitName="jetbrains.mps.build.constraints.BuildVarRefStringPart_Constraints$2" />
+  <unitInfo fileName="BuildVariableMacro_Constraints.java" startLine="15" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildVariableMacro_Constraints" />
+  <unitInfo fileName="BuildVariableMacro_Constraints.java" startLine="25" startPosition="31" endLine="36" endPosition="5" unitName="jetbrains.mps.build.constraints.BuildVariableMacro_Constraints$1" />
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.build.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1258644073389103233">
     <nodeInfo nodeId="1258644073389103233" fileName="BuildSourcePath_Constraints.java" startLine="8" startPosition="40" endLine="9" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
