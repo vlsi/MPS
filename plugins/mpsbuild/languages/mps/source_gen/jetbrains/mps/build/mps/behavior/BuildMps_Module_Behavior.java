@@ -58,13 +58,13 @@ public class BuildMps_Module_Behavior {
 
     MPSModulesClosure.RequiredJavaModules requiredJava = closure.getRequiredJava();
     for (SNode jm : Sequence.fromIterable(requiredJava.getModules())) {
-      if (SNodeOperations.getContainingRoot(jm) == SNodeOperations.getContainingRoot(thisNode)) {
-        continue;
-      }
-
       if (requiredJava.isReexported(jm)) {
-        JavaExportUtil.requireModule(artifacts, jm, thisNode);
+        ListSequence.fromList(result).addSequence(Sequence.fromIterable(JavaExportUtil.requireModule(artifacts, jm, thisNode)));
       } else {
+        if (SNodeOperations.getContainingRoot(jm) == SNodeOperations.getContainingRoot(thisNode)) {
+          continue;
+        }
+
         SNode artifact = SNodeOperations.as(artifacts.findArtifact(jm), "jetbrains.mps.build.structure.BuildLayout_Node");
         if (artifact != null) {
           ListSequence.fromList(result).addElement(artifact);
