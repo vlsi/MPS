@@ -2,57 +2,92 @@
 <debugInfo>
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.build.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BuildAspect_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildAspect_BehaviorDescriptor" />
+  <unitInfo fileName="BuildCompositePath_Behavior.java" startLine="17" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildCompositePath_Behavior" />
+  <unitInfo fileName="BuildCompositePath_Behavior.java" startLine="58" startPosition="82" endLine="62" endPosition="5" unitName="jetbrains.mps.build.behavior.BuildCompositePath_Behavior$1" />
+  <unitInfo fileName="BuildCompositePath_Behavior.java" startLine="62" startPosition="79" endLine="66" endPosition="5" unitName="jetbrains.mps.build.behavior.BuildCompositePath_Behavior$2" />
   <unitInfo fileName="BuildCompositePath_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildCompositePath_BehaviorDescriptor" />
   <unitInfo fileName="BuildCustomWorkflow_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildCustomWorkflow_BehaviorDescriptor" />
   <unitInfo fileName="BuildDependency_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildDependency_BehaviorDescriptor" />
+  <unitInfo fileName="BuildExternalDependency_Behavior.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildExternalDependency_Behavior" />
   <unitInfo fileName="BuildExternalDependency_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildExternalDependency_BehaviorDescriptor" />
+  <unitInfo fileName="BuildExternalLayoutDependency_Behavior.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildExternalLayoutDependency_Behavior" />
   <unitInfo fileName="BuildExternalLayoutDependency_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildExternalLayoutDependency_BehaviorDescriptor" />
+  <unitInfo fileName="BuildExternalLayout_Behavior.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildExternalLayout_Behavior" />
   <unitInfo fileName="BuildExternalLayout_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildExternalLayout_BehaviorDescriptor" />
   <unitInfo fileName="BuildFileExcludeSelector_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildFileExcludeSelector_BehaviorDescriptor" />
   <unitInfo fileName="BuildFileIncludeSelector_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildFileIncludeSelector_BehaviorDescriptor" />
   <unitInfo fileName="BuildFileIncludesSelector_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildFileIncludesSelector_BehaviorDescriptor" />
   <unitInfo fileName="BuildFileSelectorInAttribute_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildFileSelectorInAttribute_BehaviorDescriptor" />
   <unitInfo fileName="BuildFileSelector_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildFileSelector_BehaviorDescriptor" />
+  <unitInfo fileName="BuildFolderMacro_Behavior.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildFolderMacro_Behavior" />
   <unitInfo fileName="BuildFolderMacro_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildFolderMacro_BehaviorDescriptor" />
   <unitInfo fileName="BuildInputFileSet_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildInputFileSet_BehaviorDescriptor" />
   <unitInfo fileName="BuildInputFiles_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildInputFiles_BehaviorDescriptor" />
   <unitInfo fileName="BuildInputFolderSet_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildInputFolderSet_BehaviorDescriptor" />
   <unitInfo fileName="BuildInputFolders_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildInputFolders_BehaviorDescriptor" />
   <unitInfo fileName="BuildInputResourceSet_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildInputResourceSet_BehaviorDescriptor" />
+  <unitInfo fileName="BuildInputSingleFile_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildInputSingleFile_Behavior" />
   <unitInfo fileName="BuildInputSingleFile_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildInputSingleFile_BehaviorDescriptor" />
+  <unitInfo fileName="BuildInputSingleFolder_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildInputSingleFolder_Behavior" />
   <unitInfo fileName="BuildInputSingleFolder_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildInputSingleFolder_BehaviorDescriptor" />
   <unitInfo fileName="BuildJavaPlugin_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildJavaPlugin_BehaviorDescriptor" />
+  <unitInfo fileName="BuildLayout_AbstractContainer_Behavior.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_AbstractContainer_Behavior" />
   <unitInfo fileName="BuildLayout_AbstractContainer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_AbstractContainer_BehaviorDescriptor" />
+  <unitInfo fileName="BuildLayout_Behavior.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Behavior" />
   <unitInfo fileName="BuildLayout_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_CompileOutputOf_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_CompileOutputOf_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_ContainerAcceptingFileSet_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_ContainerAcceptingFileSet_BehaviorDescriptor" />
+  <unitInfo fileName="BuildLayout_Container_Behavior.java" startLine="12" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Container_Behavior" />
   <unitInfo fileName="BuildLayout_Container_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Container_BehaviorDescriptor" />
+  <unitInfo fileName="BuildLayout_Copy_Behavior.java" startLine="10" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Copy_Behavior" />
   <unitInfo fileName="BuildLayout_Copy_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Copy_BehaviorDescriptor" />
+  <unitInfo fileName="BuildLayout_ExportAsJavaLibrary_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_ExportAsJavaLibrary_Behavior" />
   <unitInfo fileName="BuildLayout_ExportAsJavaLibrary_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_ExportAsJavaLibrary_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_FileSet_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_FileSet_BehaviorDescriptor" />
+  <unitInfo fileName="BuildLayout_FileStub_Behavior.java" startLine="10" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_FileStub_Behavior" />
   <unitInfo fileName="BuildLayout_FileStub_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_FileStub_BehaviorDescriptor" />
+  <unitInfo fileName="BuildLayout_Folder_Behavior.java" startLine="10" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Folder_Behavior" />
   <unitInfo fileName="BuildLayout_Folder_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Folder_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_ImportContent_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_ImportContent_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_Import_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Import_BehaviorDescriptor" />
+  <unitInfo fileName="BuildLayout_Jar_Behavior.java" startLine="17" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Jar_Behavior" />
+  <unitInfo fileName="BuildLayout_Jar_Behavior.java" startLine="50" startPosition="101" endLine="54" endPosition="9" unitName="jetbrains.mps.build.behavior.BuildLayout_Jar_Behavior$1" />
+  <unitInfo fileName="BuildLayout_Jar_Behavior.java" startLine="64" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Jar_Behavior$QuotationClass_20awhq_a0a0b0h0b" />
+  <unitInfo fileName="BuildLayout_Jar_Behavior.java" startLine="103" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Jar_Behavior$QuotationClass_20awhq_a0a0c0h0b" />
   <unitInfo fileName="BuildLayout_Jar_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Jar_BehaviorDescriptor" />
+  <unitInfo fileName="BuildLayout_NamedContainer_Behavior.java" startLine="11" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_NamedContainer_Behavior" />
   <unitInfo fileName="BuildLayout_NamedContainer_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_NamedContainer_BehaviorDescriptor" />
+  <unitInfo fileName="BuildLayout_Node_Behavior.java" startLine="14" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Node_Behavior" />
   <unitInfo fileName="BuildLayout_Node_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Node_BehaviorDescriptor" />
+  <unitInfo fileName="BuildLayout_PathElement_Behavior.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_PathElement_Behavior" />
   <unitInfo fileName="BuildLayout_PathElement_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_PathElement_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_PureNode_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_PureNode_BehaviorDescriptor" />
+  <unitInfo fileName="BuildLayout_TransparentContainer_Behavior.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_TransparentContainer_Behavior" />
   <unitInfo fileName="BuildLayout_TransparentContainer_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_TransparentContainer_BehaviorDescriptor" />
+  <unitInfo fileName="BuildLayout_Zip_Behavior.java" startLine="15" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Zip_Behavior" />
+  <unitInfo fileName="BuildLayout_Zip_Behavior.java" startLine="44" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Zip_Behavior$QuotationClass_a0cuzf_a0a0b0h0b" />
+  <unitInfo fileName="BuildLayout_Zip_Behavior.java" startLine="83" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Zip_Behavior$QuotationClass_a0cuzf_a0a0c0h0b" />
   <unitInfo fileName="BuildLayout_Zip_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Zip_BehaviorDescriptor" />
+  <unitInfo fileName="BuildMacro_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildMacro_Behavior" />
   <unitInfo fileName="BuildMacro_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildMacro_BehaviorDescriptor" />
+  <unitInfo fileName="BuildNamedLayout_Behavior.java" startLine="11" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildNamedLayout_Behavior" />
   <unitInfo fileName="BuildNamedLayout_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildNamedLayout_BehaviorDescriptor" />
   <unitInfo fileName="BuildPlugin_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildPlugin_BehaviorDescriptor" />
+  <unitInfo fileName="BuildProjectDependency_Behavior.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildProjectDependency_Behavior" />
   <unitInfo fileName="BuildProjectDependency_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildProjectDependency_BehaviorDescriptor" />
   <unitInfo fileName="BuildProjectPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildProjectPart_BehaviorDescriptor" />
   <unitInfo fileName="BuildProject_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildProject_BehaviorDescriptor" />
+  <unitInfo fileName="BuildRelativePath_Behavior.java" startLine="17" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildRelativePath_Behavior" />
   <unitInfo fileName="BuildRelativePath_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildRelativePath_BehaviorDescriptor" />
+  <unitInfo fileName="BuildSourceMacroRelativePath_Behavior.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSourceMacroRelativePath_Behavior" />
   <unitInfo fileName="BuildSourceMacroRelativePath_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSourceMacroRelativePath_BehaviorDescriptor" />
+  <unitInfo fileName="BuildSourcePath_Behavior.java" startLine="14" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSourcePath_Behavior" />
   <unitInfo fileName="BuildSourcePath_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSourcePath_BehaviorDescriptor" />
+  <unitInfo fileName="BuildSourceProjectRelativePath_Behavior.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSourceProjectRelativePath_Behavior" />
   <unitInfo fileName="BuildSourceProjectRelativePath_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSourceProjectRelativePath_BehaviorDescriptor" />
   <unitInfo fileName="BuildSourceSetContainer_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSourceSetContainer_BehaviorDescriptor" />
   <unitInfo fileName="BuildSource_CompilablePart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_CompilablePart_BehaviorDescriptor" />
+  <unitInfo fileName="BuildSource_JavaCP_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaCP_Behavior" />
   <unitInfo fileName="BuildSource_JavaCP_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaCP_BehaviorDescriptor" />
   <unitInfo fileName="BuildSource_JavaClassFolder_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaClassFolder_BehaviorDescriptor" />
   <unitInfo fileName="BuildSource_JavaContentFolder_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaContentFolder_BehaviorDescriptor" />
@@ -71,16 +106,25 @@
   <unitInfo fileName="BuildSource_JavaLibraryElement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaLibraryElement_BehaviorDescriptor" />
   <unitInfo fileName="BuildSource_JavaLibraryExternalJarFolder_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaLibraryExternalJarFolder_BehaviorDescriptor" />
   <unitInfo fileName="BuildSource_JavaLibraryExternalJar_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaLibraryExternalJar_BehaviorDescriptor" />
+  <unitInfo fileName="BuildSource_JavaLibrary_Behavior.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaLibrary_Behavior" />
+  <unitInfo fileName="BuildSource_JavaLibrary_Behavior.java" startLine="16" startPosition="97" endLine="25" endPosition="5" unitName="jetbrains.mps.build.behavior.BuildSource_JavaLibrary_Behavior$1" />
   <unitInfo fileName="BuildSource_JavaLibrary_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaLibrary_BehaviorDescriptor" />
   <unitInfo fileName="BuildSource_JavaModule_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaModule_BehaviorDescriptor" />
   <unitInfo fileName="BuildSource_JavaSources_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaSources_BehaviorDescriptor" />
+  <unitInfo fileName="BuildSource_SingleFile_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_SingleFile_Behavior" />
   <unitInfo fileName="BuildSource_SingleFile_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_SingleFile_BehaviorDescriptor" />
+  <unitInfo fileName="BuildSource_SingleFolder_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_SingleFolder_Behavior" />
   <unitInfo fileName="BuildSource_SingleFolder_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_SingleFolder_BehaviorDescriptor" />
   <unitInfo fileName="BuildStringNotEmpty_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildStringNotEmpty_BehaviorDescriptor" />
+  <unitInfo fileName="BuildStringPart_Behavior.java" startLine="12" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildStringPart_Behavior" />
   <unitInfo fileName="BuildStringPart_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildStringPart_BehaviorDescriptor" />
+  <unitInfo fileName="BuildString_Behavior.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildString_Behavior" />
   <unitInfo fileName="BuildString_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildString_BehaviorDescriptor" />
+  <unitInfo fileName="BuildTextStringPart_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildTextStringPart_Behavior" />
   <unitInfo fileName="BuildTextStringPart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildTextStringPart_BehaviorDescriptor" />
+  <unitInfo fileName="BuildVarRefStringPart_Behavior.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildVarRefStringPart_Behavior" />
   <unitInfo fileName="BuildVarRefStringPart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildVarRefStringPart_BehaviorDescriptor" />
+  <unitInfo fileName="BuildVariableMacro_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildVariableMacro_Behavior" />
   <unitInfo fileName="BuildVariableMacro_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildVariableMacro_BehaviorDescriptor" />
   <root nodeId="1368030936106770941">
     <nodeInfo nodeId="1368030936106771028" fileName="BuildLayout_Copy_Behavior.java" startLine="15" startPosition="147" endLine="16" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1177,58 +1221,52 @@
     <unitInfo nodeId="5610619299013975125" fileName="BuildInputSingleFile_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildInputSingleFile_Behavior" />
   </root>
   <root nodeId="5610619299014309359">
-    <nodeInfo nodeId="5610619299014309416" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="17" startPosition="39" endLine="18" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6853883513540385937" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="17" startPosition="39" endLine="18" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6853883513540385968" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="19" startPosition="27" endLine="20" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6853883513540385995" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="21" startPosition="9" endLine="22" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6853883513540386003" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="22" startPosition="77" endLine="23" endPosition="336" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5610619299014309359" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="11" startPosition="47" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="5610619299014309412" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="16" startPosition="120" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="5610619299014309367" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="15" startPosition="77" endLine="20" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5610619299014309359" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="14" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isReusable_5610619299014309362#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="6853883513540385945" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="18" startPosition="103" endLine="21" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5610619299014309412" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="16" startPosition="120" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="5610619299014309367" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="15" startPosition="83" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5610619299014309359" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="14" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_canExportByParts_5610619299014309362#(Ljetbrains/mps/smodel/SNode;)Z" />
     <scopeInfo nodeId="5610619299014309361" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
-    <scopeInfo nodeId="5610619299014309413" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="17" startPosition="39" endLine="18" endPosition="107" />
+    <scopeInfo nodeId="6853883513540385946" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="19" startPosition="27" endLine="20" endPosition="23" />
     <scopeInfo nodeId="5610619299014309359" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="11" startPosition="47" endLine="14" endPosition="0">
       <varInfo nodeId="5610619299014309359" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5610619299014309412" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="16" startPosition="120" endLine="20" endPosition="0">
+    <scopeInfo nodeId="5610619299014309413" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="17" startPosition="39" endLine="23" endPosition="336">
+      <varInfo nodeId="6853883513540385996" varName="classpath" />
+      <varInfo nodeId="6853883513540385938" varName="jlCP" />
+    </scopeInfo>
+    <scopeInfo nodeId="5610619299014309412" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="16" startPosition="120" endLine="25" endPosition="0">
       <varInfo nodeId="5610619299014309412" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="5610619299014309365" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="15" startPosition="77" endLine="20" endPosition="7" />
-    <scopeInfo nodeId="5610619299014309359" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="14" startPosition="0" endLine="22" endPosition="0">
+    <scopeInfo nodeId="5610619299014309365" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="15" startPosition="83" endLine="25" endPosition="7" />
+    <scopeInfo nodeId="5610619299014309359" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="14" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="5610619299014309359" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="5610619299014309359" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaLibrary_Behavior" />
-    <unitInfo nodeId="5610619299014309412" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="16" startPosition="97" endLine="20" endPosition="5" unitName="jetbrains.mps.build.behavior.BuildSource_JavaLibrary_Behavior$1" />
+    <unitInfo nodeId="5610619299014309359" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaLibrary_Behavior" />
+    <unitInfo nodeId="5610619299014309412" fileName="BuildSource_JavaLibrary_Behavior.java" startLine="16" startPosition="97" endLine="25" endPosition="5" unitName="jetbrains.mps.build.behavior.BuildSource_JavaLibrary_Behavior$1" />
   </root>
   <root nodeId="5610619299014309559">
-    <nodeInfo nodeId="5610619299014309572" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="15" startPosition="142" endLine="16" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5610619299014309583" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="17" startPosition="5" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5610619299014309584" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="18" startPosition="0" endLine="19" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5610619299014309596" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="20" startPosition="25" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5610619299014309601" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="22" startPosition="5" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5610619299014309602" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="23" startPosition="0" endLine="24" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5610619299014309608" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="25" startPosition="97" endLine="26" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5610619299014309615" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="27" startPosition="108" endLine="28" endPosition="235" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5610619299014309665" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="29" startPosition="5" endLine="30" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5610619299014309559" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="10" startPosition="54" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="5610619299014309570" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="14" startPosition="112" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5610619299014309594" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="19" startPosition="171" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5610619299014309606" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="24" startPosition="26" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5610619299014309559" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getDependencyTarget_5610619299014309566#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/build/util/VisibleArtifacts;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="5610619299014309561" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="5610619299014309571" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="15" startPosition="142" endLine="16" endPosition="18" />
-    <scopeInfo nodeId="5610619299014309595" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="20" startPosition="25" endLine="21" endPosition="18" />
-    <scopeInfo nodeId="5610619299014309607" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="25" startPosition="97" endLine="26" endPosition="96" />
-    <scopeInfo nodeId="5610619299014309614" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="27" startPosition="108" endLine="28" endPosition="235" />
-    <scopeInfo nodeId="5610619299014309559" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="10" startPosition="54" endLine="13" endPosition="0">
+    <nodeInfo nodeId="5610619299014309572" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="16" startPosition="142" endLine="17" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5610619299014309583" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="18" startPosition="5" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6853883513540407059" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="19" startPosition="0" endLine="20" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5610619299014309559" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="11" startPosition="54" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5610619299014309570" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="15" startPosition="112" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5610619299014309559" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="14" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getDependencyTarget_5610619299014309566#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/build/util/VisibleArtifacts;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="5610619299014309561" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="5610619299014309571" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="16" startPosition="142" endLine="17" endPosition="18" />
+    <scopeInfo nodeId="5610619299014309559" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="11" startPosition="54" endLine="14" endPosition="0">
       <varInfo nodeId="5610619299014309559" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5610619299014309569" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="14" startPosition="112" endLine="30" endPosition="20">
-      <varInfo nodeId="5610619299014309603" varName="artifact" />
-      <varInfo nodeId="5610619299014309585" varName="target" />
-    </scopeInfo>
-    <scopeInfo nodeId="5610619299014309559" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="5610619299014309569" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="15" startPosition="112" endLine="20" endPosition="109" />
+    <scopeInfo nodeId="5610619299014309559" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="14" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="5610619299014309656" varName="artifacts" />
       <varInfo nodeId="5610619299014309559" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="5610619299014309559" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaExternalJarRef_Behavior" />
+    <unitInfo nodeId="5610619299014309559" fileName="BuildSource_JavaExternalJarRef_Behavior.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaExternalJarRef_Behavior" />
   </root>
   <root nodeId="5610619299014446522">
     <nodeInfo nodeId="5610619299014446530" fileName="BuildSource_JavaLibraryExternalJar_Behavior.java" startLine="14" startPosition="125" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -1292,37 +1330,23 @@
     <unitInfo nodeId="5610619299014531588" fileName="BuildInputSingleFolder_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildInputSingleFolder_Behavior" />
   </root>
   <root nodeId="5610619299014531750">
-    <nodeInfo nodeId="5610619299014531758" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="15" startPosition="145" endLine="16" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5610619299014531769" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="17" startPosition="5" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5610619299014531770" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="18" startPosition="0" endLine="19" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5610619299014531782" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="20" startPosition="25" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5610619299014531787" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="22" startPosition="5" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5610619299014531788" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="23" startPosition="0" endLine="24" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5610619299014531794" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="25" startPosition="110" endLine="26" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5610619299014531801" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="27" startPosition="110" endLine="28" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5610619299014531820" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="29" startPosition="5" endLine="30" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5610619299014531750" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="10" startPosition="60" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="5610619299014531756" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="14" startPosition="112" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5610619299014531780" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="19" startPosition="176" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5610619299014531792" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="24" startPosition="26" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5610619299014531750" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getDependencyTarget_5610619299014531753#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/build/util/VisibleArtifacts;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="5610619299014531752" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="5610619299014531757" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="15" startPosition="145" endLine="16" endPosition="18" />
-    <scopeInfo nodeId="5610619299014531781" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="20" startPosition="25" endLine="21" endPosition="18" />
-    <scopeInfo nodeId="5610619299014531793" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="25" startPosition="110" endLine="26" endPosition="109" />
-    <scopeInfo nodeId="5610619299014531800" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="27" startPosition="110" endLine="28" endPosition="250" />
-    <scopeInfo nodeId="5610619299014531750" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="10" startPosition="60" endLine="13" endPosition="0">
+    <nodeInfo nodeId="5610619299014531758" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="16" startPosition="145" endLine="17" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5610619299014531769" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="18" startPosition="5" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6853883513540407530" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="19" startPosition="0" endLine="20" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5610619299014531750" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="11" startPosition="60" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5610619299014531756" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="15" startPosition="112" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5610619299014531750" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="14" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getDependencyTarget_5610619299014531753#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/build/util/VisibleArtifacts;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="5610619299014531752" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="5610619299014531757" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="16" startPosition="145" endLine="17" endPosition="18" />
+    <scopeInfo nodeId="5610619299014531750" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="11" startPosition="60" endLine="14" endPosition="0">
       <varInfo nodeId="5610619299014531750" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5610619299014531755" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="14" startPosition="112" endLine="30" endPosition="20">
-      <varInfo nodeId="5610619299014531789" varName="artifact" />
-      <varInfo nodeId="5610619299014531771" varName="target" />
-    </scopeInfo>
-    <scopeInfo nodeId="5610619299014531750" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="5610619299014531755" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="15" startPosition="112" endLine="20" endPosition="118" />
+    <scopeInfo nodeId="5610619299014531750" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="14" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="5610619299014531822" varName="artifacts" />
       <varInfo nodeId="5610619299014531750" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="5610619299014531750" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaExternalJarFolderRef_Behavior" />
+    <unitInfo nodeId="5610619299014531750" fileName="BuildSource_JavaExternalJarFolderRef_Behavior.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaExternalJarFolderRef_Behavior" />
   </root>
   <root nodeId="5610619299014531836">
     <nodeInfo nodeId="5610619299014531850" fileName="BuildSource_JavaLibraryExternalJarFolder_Behavior.java" startLine="13" startPosition="125" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -1632,6 +1656,14 @@
       <varInfo nodeId="6547494638219688122" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="6547494638219688122" fileName="BuildVariableMacro_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildVariableMacro_Behavior" />
+  </root>
+  <root nodeId="6853883513540398153">
+    <nodeInfo nodeId="6853883513540398153" fileName="BuildSource_JavaCP_Behavior.java" startLine="7" startPosition="42" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <scopeInfo nodeId="6853883513540398155" fileName="BuildSource_JavaCP_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="6853883513540398153" fileName="BuildSource_JavaCP_Behavior.java" startLine="7" startPosition="42" endLine="10" endPosition="0">
+      <varInfo nodeId="6853883513540398153" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="6853883513540398153" fileName="BuildSource_JavaCP_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaCP_Behavior" />
   </root>
   <root nodeId="6859736767834558025">
     <nodeInfo nodeId="5610619299014362316" fileName="BuildSource_JavaDependencyExternalJar_Behavior.java" startLine="15" startPosition="125" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
