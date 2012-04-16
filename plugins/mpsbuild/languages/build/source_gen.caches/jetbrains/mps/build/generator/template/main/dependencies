@@ -17,6 +17,7 @@
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildSource_SingleFile_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildString_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.generator.util.FetchDependenciesProcessor" />
+    <classNode dependClassName="jetbrains.mps.build.generator.util.JavaExternalLibraryHelper" />
     <classNode dependClassName="jetbrains.mps.build.util.Context" />
     <classNode dependClassName="jetbrains.mps.build.util.DependenciesHelper" />
     <classNode dependClassName="jetbrains.mps.build.util.GenerationUtil" />

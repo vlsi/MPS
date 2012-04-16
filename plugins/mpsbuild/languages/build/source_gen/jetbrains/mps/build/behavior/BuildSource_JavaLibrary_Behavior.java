@@ -12,10 +12,15 @@ public class BuildSource_JavaLibrary_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static boolean call_isReusable_5610619299014309362(SNode thisNode) {
+  public static boolean call_canExportByParts_5610619299014309362(SNode thisNode) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "elements", true)).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP");
+        SNode jlCP = SNodeOperations.as(it, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP");
+        if (jlCP == null) {
+          return false;
+        }
+        SNode classpath = SLinkOperations.getTarget(jlCP, "classpath", true);
+        return SNodeOperations.isInstanceOf(classpath, "jetbrains.mps.build.structure.BuildSource_JavaJar") || SNodeOperations.isInstanceOf(classpath, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar") || SNodeOperations.isInstanceOf(classpath, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJarFolder");
       }
     });
   }
