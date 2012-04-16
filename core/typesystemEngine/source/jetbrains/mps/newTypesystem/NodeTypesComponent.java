@@ -153,10 +153,12 @@ public class NodeTypesComponent {
   }
 
   public void dispose() {
-    myModelListenerManager.dispose();
-    TypeChecker.getInstance().removeTypeRecalculatedListener(myTypeRecalculatedListener);
+    if (!myTypeCheckingContext.isSingleTypeComputation()) {
+      myModelListenerManager.dispose();
+      TypeChecker.getInstance().removeTypeRecalculatedListener(myTypeRecalculatedListener);
+      myNonTypeSystemComponent.dispose();
+    }
     myTypeSystemComponent.dispose();
-    myNonTypeSystemComponent.dispose();
   }
 
   public Map<SNode, SNode> getMainContext() {
