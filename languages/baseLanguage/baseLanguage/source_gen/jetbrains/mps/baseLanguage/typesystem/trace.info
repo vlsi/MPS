@@ -17584,6 +17584,75 @@
     </scopeInfo>
     <unitInfo nodeId="3383150178652161638" fileName="ConvertString_QuickFix.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.ConvertString_QuickFix" />
   </root>
+  <root nodeId="3431562870377402710">
+    <nodeInfo nodeId="3431562870377435333" fileName="compareClassifierTypes_ComparisonRule.java" startLine="21" startPosition="307" endLine="22" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3431562870377402718" fileName="compareClassifierTypes_ComparisonRule.java" startLine="22" startPosition="90" endLine="23" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3431562870377402718" fileName="compareClassifierTypes_ComparisonRule.java" startLine="23" startPosition="124" endLine="24" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3431562870377402718" fileName="compareClassifierTypes_ComparisonRule.java" startLine="24" startPosition="125" endLine="25" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3431562870377402718" fileName="compareClassifierTypes_ComparisonRule.java" startLine="25" startPosition="26" endLine="26" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3431562870377402718" fileName="compareClassifierTypes_ComparisonRule.java" startLine="27" startPosition="65" endLine="28" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3431562870377402718" fileName="compareClassifierTypes_ComparisonRule.java" startLine="28" startPosition="44" endLine="29" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3431562870377435426" fileName="compareClassifierTypes_ComparisonRule.java" startLine="30" startPosition="85" endLine="31" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3431562870377435430" fileName="compareClassifierTypes_ComparisonRule.java" startLine="33" startPosition="7" endLine="34" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3431562870377435434" fileName="compareClassifierTypes_ComparisonRule.java" startLine="35" startPosition="5" endLine="36" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="39" startPosition="27" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="44" startPosition="5" endLine="45" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="45" startPosition="114" endLine="46" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="51" startPosition="5" endLine="52" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="52" startPosition="114" endLine="53" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="57" startPosition="47" endLine="58" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="61" startPosition="47" endLine="62" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="16" startPosition="83" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="compareClassifierTypes_ComparisonRule#()V" />
+    <nodeInfo nodeId="3431562870377435394" fileName="compareClassifierTypes_ComparisonRule.java" startLine="29" startPosition="46" endLine="32" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
+    <nodeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="43" startPosition="59" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="50" startPosition="60" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName1#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName2#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3431562870377402718" fileName="compareClassifierTypes_ComparisonRule.java" startLine="26" startPosition="27" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="42" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableFirst#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="49" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableSecond#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="3431562870377402716" fileName="compareClassifierTypes_ComparisonRule.java" startLine="20" startPosition="86" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="19" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="areComparable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;)Z" />
+    <scopeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="17" startPosition="50" endLine="17" endPosition="50" />
+    <scopeInfo nodeId="3431562870377435396" fileName="compareClassifierTypes_ComparisonRule.java" startLine="30" startPosition="85" endLine="31" endPosition="23" />
+    <scopeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="39" startPosition="27" endLine="40" endPosition="16" />
+    <scopeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="57" startPosition="47" endLine="58" endPosition="65" />
+    <scopeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="61" startPosition="47" endLine="62" endPosition="65" />
+    <scopeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="16" startPosition="83" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="44" startPosition="5" endLine="46" endPosition="45">
+      <varInfo nodeId="3431562870377402710" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="51" startPosition="5" endLine="53" endPosition="45">
+      <varInfo nodeId="3431562870377402710" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="43" startPosition="59" endLine="47" endPosition="5" />
+    <scopeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="50" startPosition="60" endLine="54" endPosition="5" />
+    <scopeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="3431562870377402718" fileName="compareClassifierTypes_ComparisonRule.java" startLine="27" startPosition="65" endLine="32" endPosition="9" />
+    <scopeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="42" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="3431562870377402710" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="49" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="3431562870377402710" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3431562870377402718" fileName="compareClassifierTypes_ComparisonRule.java" startLine="21" startPosition="307" endLine="34" endPosition="18">
+      <varInfo nodeId="3431562870377402718" varName="leftParam_it" />
+      <varInfo nodeId="3431562870377402718" varName="leftParam_var" />
+      <varInfo nodeId="3431562870377402718" varName="rightParam_it" />
+      <varInfo nodeId="3431562870377402718" varName="rightParam_var" />
+      <varInfo nodeId="3431562870377435334" varName="subtypingManager" />
+    </scopeInfo>
+    <scopeInfo nodeId="3431562870377402712" fileName="compareClassifierTypes_ComparisonRule.java" startLine="20" startPosition="86" endLine="36" endPosition="17" />
+    <scopeInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="19" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="3431562870377402710" varName="node1" />
+      <varInfo nodeId="3431562870377402710" varName="node2" />
+      <varInfo nodeId="3431562870377402710" varName="status" />
+    </scopeInfo>
+    <unitInfo nodeId="3431562870377402710" fileName="compareClassifierTypes_ComparisonRule.java" startLine="16" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.compareClassifierTypes_ComparisonRule" />
+  </root>
   <root nodeId="3434914349253195687">
     <nodeInfo nodeId="5499146221535793387" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="25" startPosition="119" endLine="26" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5499146221535808216" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="27" startPosition="32" endLine="28" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -19744,75 +19813,6 @@
     <unitInfo nodeId="4957392803029437211" fileName="typeof_OperationAssignmentExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_OperationAssignmentExpression_InferenceRule" />
     <unitInfo nodeId="4957392803029437214" fileName="typeof_OperationAssignmentExpression_InferenceRule.java" startLine="24" startPosition="53" endLine="47" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_OperationAssignmentExpression_InferenceRule$1" />
     <unitInfo nodeId="4957392803029437216" fileName="typeof_OperationAssignmentExpression_InferenceRule.java" startLine="28" startPosition="60" endLine="44" endPosition="13" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_OperationAssignmentExpression_InferenceRule$2" />
-  </root>
-  <root nodeId="495845790042636417">
-    <nodeInfo nodeId="495845790042636726" fileName="compareClassifierTypes_ComparisonRule.java" startLine="21" startPosition="307" endLine="22" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="495845790042636425" fileName="compareClassifierTypes_ComparisonRule.java" startLine="22" startPosition="90" endLine="23" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="495845790042636425" fileName="compareClassifierTypes_ComparisonRule.java" startLine="23" startPosition="124" endLine="24" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="495845790042636425" fileName="compareClassifierTypes_ComparisonRule.java" startLine="24" startPosition="125" endLine="25" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="495845790042636425" fileName="compareClassifierTypes_ComparisonRule.java" startLine="25" startPosition="26" endLine="26" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="495845790042636425" fileName="compareClassifierTypes_ComparisonRule.java" startLine="27" startPosition="65" endLine="28" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="495845790042636425" fileName="compareClassifierTypes_ComparisonRule.java" startLine="28" startPosition="44" endLine="29" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="495845790042636867" fileName="compareClassifierTypes_ComparisonRule.java" startLine="30" startPosition="85" endLine="31" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="495845790042636871" fileName="compareClassifierTypes_ComparisonRule.java" startLine="33" startPosition="7" endLine="34" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="495845790042636875" fileName="compareClassifierTypes_ComparisonRule.java" startLine="35" startPosition="5" endLine="36" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="39" startPosition="27" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="44" startPosition="5" endLine="45" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="45" startPosition="114" endLine="46" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="51" startPosition="5" endLine="52" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="52" startPosition="114" endLine="53" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="57" startPosition="47" endLine="58" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="61" startPosition="47" endLine="62" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="16" startPosition="83" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="compareClassifierTypes_ComparisonRule#()V" />
-    <nodeInfo nodeId="495845790042636689" fileName="compareClassifierTypes_ComparisonRule.java" startLine="29" startPosition="46" endLine="32" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
-    <nodeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="43" startPosition="59" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="50" startPosition="60" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName1#()Ljava/lang/String;" />
-    <nodeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName2#()Ljava/lang/String;" />
-    <nodeInfo nodeId="495845790042636425" fileName="compareClassifierTypes_ComparisonRule.java" startLine="26" startPosition="27" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="42" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableFirst#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="49" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableSecond#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="495845790042636423" fileName="compareClassifierTypes_ComparisonRule.java" startLine="20" startPosition="86" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="19" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="areComparable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;)Z" />
-    <scopeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="17" startPosition="50" endLine="17" endPosition="50" />
-    <scopeInfo nodeId="495845790042636691" fileName="compareClassifierTypes_ComparisonRule.java" startLine="30" startPosition="85" endLine="31" endPosition="23" />
-    <scopeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="39" startPosition="27" endLine="40" endPosition="16" />
-    <scopeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="57" startPosition="47" endLine="58" endPosition="65" />
-    <scopeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="61" startPosition="47" endLine="62" endPosition="65" />
-    <scopeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="16" startPosition="83" endLine="18" endPosition="3" />
-    <scopeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="44" startPosition="5" endLine="46" endPosition="45">
-      <varInfo nodeId="495845790042636417" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="51" startPosition="5" endLine="53" endPosition="45">
-      <varInfo nodeId="495845790042636417" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="43" startPosition="59" endLine="47" endPosition="5" />
-    <scopeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="50" startPosition="60" endLine="54" endPosition="5" />
-    <scopeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="495845790042636425" fileName="compareClassifierTypes_ComparisonRule.java" startLine="27" startPosition="65" endLine="32" endPosition="9" />
-    <scopeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="42" startPosition="0" endLine="49" endPosition="0">
-      <varInfo nodeId="495845790042636417" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="49" startPosition="0" endLine="56" endPosition="0">
-      <varInfo nodeId="495845790042636417" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="495845790042636425" fileName="compareClassifierTypes_ComparisonRule.java" startLine="21" startPosition="307" endLine="34" endPosition="18">
-      <varInfo nodeId="495845790042636425" varName="leftParam_it" />
-      <varInfo nodeId="495845790042636425" varName="leftParam_var" />
-      <varInfo nodeId="495845790042636425" varName="rightParam_it" />
-      <varInfo nodeId="495845790042636425" varName="rightParam_var" />
-      <varInfo nodeId="495845790042636716" varName="subtypingManager" />
-    </scopeInfo>
-    <scopeInfo nodeId="495845790042636419" fileName="compareClassifierTypes_ComparisonRule.java" startLine="20" startPosition="86" endLine="36" endPosition="17" />
-    <scopeInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="19" startPosition="0" endLine="38" endPosition="0">
-      <varInfo nodeId="495845790042636417" varName="node1" />
-      <varInfo nodeId="495845790042636417" varName="node2" />
-      <varInfo nodeId="495845790042636417" varName="status" />
-    </scopeInfo>
-    <unitInfo nodeId="495845790042636417" fileName="compareClassifierTypes_ComparisonRule.java" startLine="16" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.compareClassifierTypes_ComparisonRule" />
   </root>
   <root nodeId="498633765598940459">
     <nodeInfo nodeId="498633765599059179" fileName="check_InnerClassesCantHaveStaticMethods_NonTypesystemRule.java" startLine="24" startPosition="198" endLine="25" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
