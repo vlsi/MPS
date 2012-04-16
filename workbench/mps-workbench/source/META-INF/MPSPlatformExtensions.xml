@@ -25,6 +25,9 @@
                   serviceImplementation="com.intellij.psi.codeStyle.ProjectCodeStyleSettingsManager"/>
   <applicationService serviceInterface="com.intellij.psi.codeStyle.CodeStyleSchemes"
                       serviceImplementation="com.intellij.psi.impl.source.codeStyle.CodeStyleSchemesImpl"/>
+
+  <moduleRendererFactory implementation="com.intellij.ide.util.PlatformModuleRendererFactory" order="last"/>
+
   <!--MPS Patch:-->
   <selectInTarget implementation="com.intellij.ide.impl.ProjectViewSelectInGroupTarget"/>
 
