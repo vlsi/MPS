@@ -11,7 +11,7 @@ public class LocalVariableDeclarationTest {
     {
       int a = 1;
       int b = 2;
-
+      int tmp = v;
       int test239V = 239;
 
       test239V = 5;

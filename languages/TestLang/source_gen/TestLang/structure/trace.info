@@ -133,8 +133,8 @@
     <nodeInfo nodeId="8682571714413416578" fileName="LocalVariableDeclarationTest.java" startLine="9" startPosition="41" endLine="10" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8682571714413416104" fileName="LocalVariableDeclarationTest.java" startLine="11" startPosition="5" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8682571714413416110" fileName="LocalVariableDeclarationTest.java" startLine="12" startPosition="16" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8682571714413416115" fileName="LocalVariableDeclarationTest.java" startLine="13" startPosition="16" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8682571714413416117" fileName="LocalVariableDeclarationTest.java" startLine="14" startPosition="0" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2236152689655617403" fileName="LocalVariableDeclarationTest.java" startLine="13" startPosition="16" endLine="14" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8682571714413416117" fileName="LocalVariableDeclarationTest.java" startLine="14" startPosition="18" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8682571714413416128" fileName="LocalVariableDeclarationTest.java" startLine="15" startPosition="25" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8682571714413416130" fileName="LocalVariableDeclarationTest.java" startLine="16" startPosition="0" endLine="17" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8826502219008260968" fileName="LocalVariableDeclarationTest.java" startLine="17" startPosition="19" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -147,6 +147,7 @@
       <varInfo nodeId="8682571714413416105" varName="a" />
       <varInfo nodeId="8682571714413416111" varName="b" />
       <varInfo nodeId="8682571714413416118" varName="test239V" />
+      <varInfo nodeId="2236152689655617404" varName="tmp" />
       <varInfo nodeId="8826502219008280065" varName="v" />
     </scopeInfo>
     <scopeInfo nodeId="8682571714413416103" fileName="LocalVariableDeclarationTest.java" startLine="9" startPosition="41" endLine="22" endPosition="5" />
