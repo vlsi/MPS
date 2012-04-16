@@ -26,7 +26,10 @@ import jetbrains.mps.util.iterable.CollectingManyIterator;
 import jetbrains.mps.util.iterable.RecursiveIterator;
 import jetbrains.mps.util.iterable.TranslatingIterator;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 
 public class ModuleUtil {
 
@@ -50,7 +53,7 @@ public class ModuleUtil {
         return ModuleRepositoryFacade.getInstance().getModule(node, Solution.class);
       }
     };
-    if(module instanceof Language) {
+    if (module instanceof Language) {
       Language core = BootstrapLanguages.coreLanguage();
       return IterableUtil.distinct(IterableUtil.merge(dependencies, solutionsFromDevkits, Collections.<IModule>singleton(core)));
     }
@@ -61,7 +64,7 @@ public class ModuleUtil {
     Iterable<Language> dependencies = new TranslatingIterator<ModuleReference, Language>(module.getUsedLanguagesReferences().iterator()) {
       @Override
       protected Language translate(ModuleReference ref) {
-        return ModuleRepositoryFacade.getInstance().getModule(ref,Language.class);
+        return ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
       }
     };
     Iterable<Language> languagesFromDevkits = new TranslatingIterator<ModuleReference, Language>(
@@ -74,7 +77,7 @@ public class ModuleUtil {
 
       @Override
       protected Language translate(ModuleReference node) {
-        return ModuleRepositoryFacade.getInstance().getModule(node,Language.class);
+        return ModuleRepositoryFacade.getInstance().getModule(node, Language.class);
       }
     };
     Language core = BootstrapLanguages.coreLanguage();
@@ -111,7 +114,7 @@ public class ModuleUtil {
         return new TranslatingIterator<ModuleReference, Language>(node.getExtendedLanguageRefs().iterator()) {
           @Override
           protected Language translate(ModuleReference node) {
-            return ModuleRepositoryFacade.getInstance().getModule(node,Language.class);
+            return ModuleRepositoryFacade.getInstance().getModule(node, Language.class);
           }
         };
       }
@@ -163,5 +166,18 @@ public class ModuleUtil {
       if (path.equals(root.getPath())) return root;
     }
     return null;
+  }
+
+  @Deprecated
+  public static List<IModule> refsToModules(Iterable<ModuleReference> refs) {
+    List<IModule> result = new ArrayList<IModule>();
+
+    for (ModuleReference ref : refs) {
+      IModule dk = ModuleRepositoryFacade.getInstance().getModule(ref, IModule.class);
+      if (dk == null) continue;
+      result.add(dk);
+    }
+
+    return result;
   }
 }

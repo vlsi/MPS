@@ -51,6 +51,7 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
     }
 
     for (IModule m : reexported) {
+      if (modules.contains(m)) continue;
       m.getDependenciesManager().collectModules(modules, depType);
     }
 
@@ -60,7 +61,10 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
       collectUsedLanguages(lang, true);
 
       for (Language l : lang) {
-        l.getDependenciesManager().collectModules(modules, depType);
+        for (IModule m:ModuleUtil.refsToModules(l.getRuntimeModulesReferences())){
+          if (modules.contains(m)) continue;
+          m.getDependenciesManager().collectModules(modules,depType);
+        }
       }
     }
   }
