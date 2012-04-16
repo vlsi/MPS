@@ -19,6 +19,12 @@ import jetbrains.mps.make.dependencies.graph.Graph;
 import jetbrains.mps.make.dependencies.graph.Graphs;
 import jetbrains.mps.make.dependencies.graph.IVertex;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleUtil;
+import jetbrains.mps.project.dependency.DependenciesManager.Deptype;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 
@@ -94,7 +100,7 @@ public class StronglyConnectedModules {
     }
 
     public void fill(Map<IModule, IModuleDecorator<M>> map) {
-      List<IModule> dependency = new ArrayList<IModule>(myModule.getDependenciesManager().getRequiredModules());
+      List<IModule> dependency = new ArrayList<IModule>(new GlobalModuleDependenciesManager(myModule).getModules(Deptype.COMPILE));
       List<IModule> dependencyCopy = new ArrayList<IModule>();
       dependencyCopy.addAll(dependency);
       Collections.sort(dependencyCopy, new Comparator<IModule>() {
@@ -131,5 +137,4 @@ public class StronglyConnectedModules {
       });
     }
   }
-
 }
