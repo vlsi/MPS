@@ -19,6 +19,12 @@
   <applicationService serviceInterface="com.intellij.psi.templateLanguages.TemplateDataLanguagePatterns"
                       serviceImplementation="com.intellij.psi.templateLanguages.TemplateDataLanguagePatterns"/>
   <!--MPS Patch Ended-->
+
+  <!-- Fix NPE in EditorImpl.reinitSettings() now requiring CodeStyleSettingsManager -->
+  <projectService serviceInterface="com.intellij.psi.codeStyle.ProjectCodeStyleSettingsManager"
+                  serviceImplementation="com.intellij.psi.codeStyle.ProjectCodeStyleSettingsManager"/>
+  <applicationService serviceInterface="com.intellij.psi.codeStyle.CodeStyleSchemes"
+                      serviceImplementation="com.intellij.psi.impl.source.codeStyle.CodeStyleSchemesImpl"/>
   <!--MPS Patch:-->
   <selectInTarget implementation="com.intellij.ide.impl.ProjectViewSelectInGroupTarget"/>
 
