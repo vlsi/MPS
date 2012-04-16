@@ -9,7 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ISequence;
 
 public class NullSetSequence<T> extends NullCollectionSequence<T> implements ISetSequence<T>, Set<T> {
   private static Object[] EMPTY_ARRAY = new Object[0];
-  private static final NullSetSequence<Integer> INSTANCE = new NullSetSequence<Integer>();
+  private static final NullSetSequence<Object> INSTANCE = new NullSetSequence<Object>();
 
   protected NullSetSequence() {
   }
@@ -99,8 +99,7 @@ public class NullSetSequence<T> extends NullCollectionSequence<T> implements ISe
   }
 
   @SuppressWarnings(value = "unchecked")
-  public static <U extends String> NullSetSequence<U> instance() {
-    System.out.println((NullSetSequence<U>) INSTANCE);
+  public static <U> NullSetSequence<U> instance() {
     return (NullSetSequence<U>) INSTANCE;
   }
 }
