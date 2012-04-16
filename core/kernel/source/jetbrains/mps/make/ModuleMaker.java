@@ -24,14 +24,13 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.*;
 import jetbrains.mps.project.dependency.DependenciesManager.Deptype;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -318,39 +317,18 @@ public class ModuleMaker {
     }
     ttrace.pop();
 
-    Map<IModule, Set<IModule>> backDependencies = new HashMap<IModule, Set<IModule>>();
-
-    ttrace.push("building back deps", false);
-    for (IModule m : modules) {
-      for (IModule dep : m.getDependenciesManager().getRequiredModules()) {
-        Set<IModule> incoming = backDependencies.get(dep);
-        if (incoming == null) {
-          incoming = new HashSet<IModule>();
-          backDependencies.put(dep, incoming);
-        }
-        incoming.add(m);
+    Set<IModule> toCompile = new LinkedHashSet<IModule>();
+    ttrace.push("adding modules dependent on dirty ones - " + dirtyModules.size(), false);
+    for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
+      if (m.isPackaged()) continue;
+      for (IModule dep : new GlobalModuleDependenciesManager(m).getModules(Deptype.COMPILE)) {
+        if (!dirtyModules.contains(dep)) continue;
+        toCompile.add(m);
       }
     }
     ttrace.pop();
 
-    ttrace.push("adding modules dependent on dirty ones - " + dirtyModules.size(), false);
-    Set<IModule> toCompile = new LinkedHashSet<IModule>();
-
-    for (IModule dirty : dirtyModules) {
-      collectToCompile(dirty, toCompile, backDependencies);
-    }
-    ttrace.pop();
-
     return toCompile;
-  }
-
-  private void collectToCompile(IModule current, Set<IModule> result, Map<IModule, Set<IModule>> deps) {
-    if (!result.add(current)) return;
-    if (!deps.containsKey(current)) return;
-
-    for (IModule dep : deps.get(current)) {
-      collectToCompile(dep, result, deps);
-    }
   }
 
   private boolean isDirty(IModule m) {
