@@ -2,78 +2,78 @@
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="3315811491560252601">
-    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="19" startPosition="76" endLine="20" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_3tjqgh_a0a0a0a0a1a0b0a1a0" />
-    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="22" startPosition="40" endLine="23" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="27" startPosition="83" endLine="28" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="31" startPosition="44" endLine="32" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="40" startPosition="61" endLine="41" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="45" startPosition="122" endLine="46" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="50" startPosition="7" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="21" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RefTestParamRef_Constraints#()V" />
-    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="29" startPosition="95" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
-    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="38" startPosition="40" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="43" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="37" startPosition="56" endLine="48" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="34" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="28" startPosition="75" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="25" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
-    <scopeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="22" startPosition="40" endLine="23" endPosition="83" />
-    <scopeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="31" startPosition="44" endLine="32" endPosition="20" />
-    <scopeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="40" startPosition="61" endLine="41" endPosition="58" />
-    <scopeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="45" startPosition="122" endLine="46" endPosition="225" />
-    <scopeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="21" startPosition="0" endLine="24" endPosition="3" />
-    <scopeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="29" startPosition="95" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="38" startPosition="40" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="43" startPosition="0" endLine="48" endPosition="0">
+    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="20" startPosition="76" endLine="21" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_3tjqgh_a0a0a0a0a1a0b0a1a0" />
+    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="23" startPosition="40" endLine="24" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="28" startPosition="83" endLine="29" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="41" startPosition="61" endLine="42" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="46" startPosition="122" endLine="47" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="51" startPosition="7" endLine="52" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="22" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RefTestParamRef_Constraints#()V" />
+    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="30" startPosition="95" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
+    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="39" startPosition="40" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="44" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="38" startPosition="56" endLine="49" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="35" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="29" startPosition="75" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="26" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <scopeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="23" startPosition="40" endLine="24" endPosition="83" />
+    <scopeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="20" />
+    <scopeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="41" startPosition="61" endLine="42" endPosition="58" />
+    <scopeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="46" startPosition="122" endLine="47" endPosition="233" />
+    <scopeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="22" startPosition="0" endLine="25" endPosition="3" />
+    <scopeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="30" startPosition="95" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="39" startPosition="40" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="44" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="3315811491560252601" varName="_context" />
       <varInfo nodeId="3315811491560252601" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="37" startPosition="56" endLine="48" endPosition="10" />
-    <scopeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="34" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="27" startPosition="83" endLine="51" endPosition="22">
+    <scopeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="38" startPosition="56" endLine="49" endPosition="10" />
+    <scopeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="35" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="28" startPosition="83" endLine="52" endPosition="22">
       <varInfo nodeId="3315811491560252601" varName="references" />
     </scopeInfo>
-    <scopeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="25" startPosition="0" endLine="53" endPosition="0" />
-    <unitInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="19" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.constraints.RefTestParamRef_Constraints" />
-    <unitInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="29" startPosition="38" endLine="50" endPosition="5" unitName="jetbrains.mps.transformation.test.inputLang.constraints.RefTestParamRef_Constraints$1" />
-    <unitInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="38" startPosition="19" endLine="48" endPosition="9" unitName="jetbrains.mps.transformation.test.inputLang.constraints.RefTestParamRef_Constraints$2" />
+    <scopeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="26" startPosition="0" endLine="54" endPosition="0" />
+    <unitInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="20" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.constraints.RefTestParamRef_Constraints" />
+    <unitInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="30" startPosition="38" endLine="51" endPosition="5" unitName="jetbrains.mps.transformation.test.inputLang.constraints.RefTestParamRef_Constraints$1" />
+    <unitInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="39" startPosition="19" endLine="49" endPosition="9" unitName="jetbrains.mps.transformation.test.inputLang.constraints.RefTestParamRef_Constraints$2" />
   </root>
   <root nodeId="5934496548013477090">
-    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="19" startPosition="78" endLine="20" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_7egrx9_a0a0a0a0a1a0b0a1a0" />
-    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="22" startPosition="42" endLine="23" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="27" startPosition="83" endLine="28" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="31" startPosition="44" endLine="32" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="40" startPosition="61" endLine="41" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="45" startPosition="122" endLine="46" endPosition="226" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="50" startPosition="7" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="21" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RefTestMethodCall_Constraints#()V" />
-    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="29" startPosition="85" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
-    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="38" startPosition="40" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="43" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="37" startPosition="56" endLine="48" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="34" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="28" startPosition="75" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="25" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
-    <scopeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="22" startPosition="42" endLine="23" endPosition="85" />
-    <scopeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="31" startPosition="44" endLine="32" endPosition="20" />
-    <scopeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="40" startPosition="61" endLine="41" endPosition="58" />
-    <scopeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="45" startPosition="122" endLine="46" endPosition="226" />
-    <scopeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="21" startPosition="0" endLine="24" endPosition="3" />
-    <scopeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="29" startPosition="85" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="38" startPosition="40" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="43" startPosition="0" endLine="48" endPosition="0">
+    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="20" startPosition="78" endLine="21" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_7egrx9_a0a0a0a0a1a0b0a1a0" />
+    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="23" startPosition="42" endLine="24" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="28" startPosition="83" endLine="29" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="41" startPosition="61" endLine="42" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="46" startPosition="122" endLine="47" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="51" startPosition="7" endLine="52" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="22" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RefTestMethodCall_Constraints#()V" />
+    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="30" startPosition="85" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
+    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="39" startPosition="40" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="44" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="38" startPosition="56" endLine="49" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="35" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="29" startPosition="75" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="26" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <scopeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="23" startPosition="42" endLine="24" endPosition="85" />
+    <scopeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="20" />
+    <scopeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="41" startPosition="61" endLine="42" endPosition="58" />
+    <scopeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="46" startPosition="122" endLine="47" endPosition="234" />
+    <scopeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="22" startPosition="0" endLine="25" endPosition="3" />
+    <scopeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="30" startPosition="85" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="39" startPosition="40" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="44" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="5934496548013477090" varName="_context" />
       <varInfo nodeId="5934496548013477090" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="37" startPosition="56" endLine="48" endPosition="10" />
-    <scopeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="34" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="27" startPosition="83" endLine="51" endPosition="22">
+    <scopeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="38" startPosition="56" endLine="49" endPosition="10" />
+    <scopeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="35" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="28" startPosition="83" endLine="52" endPosition="22">
       <varInfo nodeId="5934496548013477090" varName="references" />
     </scopeInfo>
-    <scopeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="25" startPosition="0" endLine="53" endPosition="0" />
-    <unitInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="19" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.constraints.RefTestMethodCall_Constraints" />
-    <unitInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="29" startPosition="33" endLine="50" endPosition="5" unitName="jetbrains.mps.transformation.test.inputLang.constraints.RefTestMethodCall_Constraints$1" />
-    <unitInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="38" startPosition="19" endLine="48" endPosition="9" unitName="jetbrains.mps.transformation.test.inputLang.constraints.RefTestMethodCall_Constraints$2" />
+    <scopeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="26" startPosition="0" endLine="54" endPosition="0" />
+    <unitInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="20" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.constraints.RefTestMethodCall_Constraints" />
+    <unitInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="30" startPosition="33" endLine="51" endPosition="5" unitName="jetbrains.mps.transformation.test.inputLang.constraints.RefTestMethodCall_Constraints$1" />
+    <unitInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="39" startPosition="19" endLine="49" endPosition="9" unitName="jetbrains.mps.transformation.test.inputLang.constraints.RefTestMethodCall_Constraints$2" />
   </root>
 </debugInfo>
 

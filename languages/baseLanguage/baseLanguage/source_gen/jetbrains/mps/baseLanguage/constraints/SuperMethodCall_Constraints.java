@@ -13,15 +13,14 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.search.SuperMethodCall_InstanceMethodScope;
-import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class SuperMethodCall_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "2043122710974594130");
-  private static SNodePointer breakingNode_9k34e0_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1213104855714");
+  private static SNodePointer breakingNode_9k34e0_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137646");
 
   public SuperMethodCall_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.SuperMethodCall");
@@ -55,19 +54,15 @@ public class SuperMethodCall_Constraints extends BaseConstraintsDescriptor {
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
+        return new BaseScopeProvider() {
           @Override
-          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode enclosingClass = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
-            return new SuperMethodCall_InstanceMethodScope(ClassConcept_Behavior.call_getSuperclass_1240936569950(enclosingClass), ((_context.getReferenceNode() == null) ?
-              _context.getEnclosingNode() :
-              _context.getReferenceNode()
-            ));
+          public SNodePointer getSearchScopeValidatorNode() {
+            return breakingNode_9k34e0_a0a0a0a0a1a0b0a1a2;
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
-            return breakingNode_9k34e0_a0a1a0a0a1a0b0a1a2;
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            return Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SuperMethodKind"));
           }
         };
       }

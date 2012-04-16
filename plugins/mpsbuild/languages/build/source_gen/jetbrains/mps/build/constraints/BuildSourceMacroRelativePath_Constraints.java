@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class BuildSourceMacroRelativePath_Constraints extends BaseConstraintsDescriptor {
@@ -58,7 +59,7 @@ public class BuildSourceMacroRelativePath_Constraints extends BaseConstraintsDes
 
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"));
+            return Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"));
           }
         };
       }

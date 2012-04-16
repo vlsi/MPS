@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class RefTestMethodCall_Constraints extends BaseConstraintsDescriptor {
@@ -43,7 +44,7 @@ public class RefTestMethodCall_Constraints extends BaseConstraintsDescriptor {
 
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), SConceptOperations.findConceptDeclaration("jetbrains.mps.transformation.test.inputLang.structure.RefTestMethod"));
+            return Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.transformation.test.inputLang.structure.RefTestMethod"));
           }
         };
       }

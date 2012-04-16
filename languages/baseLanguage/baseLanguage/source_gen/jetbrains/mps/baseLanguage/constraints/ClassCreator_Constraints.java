@@ -10,18 +10,19 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.ConstructorDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.baseLanguage.search.VisibleClassConstructorsScope;
+import jetbrains.mps.baseLanguage.scopes.VisibleClassConstructorsScope;
 
 public class ClassCreator_Constraints extends BaseConstraintsDescriptor {
-  private static SNodePointer breakingNode_bmce85_a0a3a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1213104844200");
+  private static SNodePointer breakingNode_bmce85_a0a2a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948136822");
 
   public ClassCreator_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.ClassCreator");
@@ -39,7 +40,7 @@ public class ClassCreator_Constraints extends BaseConstraintsDescriptor {
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
+        return new BaseScopeProvider() {
           @Override
           public boolean hasPresentation() {
             return true;
@@ -58,16 +59,13 @@ public class ClassCreator_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new VisibleClassConstructorsScope(((_context.getReferenceNode() == null) ?
-              _context.getEnclosingNode() :
-              _context.getReferenceNode()
-            ), operationContext.getScope());
+          public SNodePointer getSearchScopeValidatorNode() {
+            return breakingNode_bmce85_a0a2a0a0a1a0b0a1a0;
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
-            return breakingNode_bmce85_a0a3a0a0a1a0b0a1a0;
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            return new VisibleClassConstructorsScope(_context.getContextNode(), operationContext.getScope());
           }
         };
       }

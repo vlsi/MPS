@@ -10,16 +10,15 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.search.NodeListChildrenSearchScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ForEachVariableReference_Constraints extends BaseConstraintsDescriptor {
-  private static SNodePointer breakingNode_kmh88e_a0a1a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1213104847100");
+  private static SNodePointer breakingNode_kmh88e_a0a0a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "2499957847193033943");
 
   public ForEachVariableReference_Constraints() {
     super("jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference");
@@ -37,17 +36,15 @@ public class ForEachVariableReference_Constraints extends BaseConstraintsDescrip
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
+        return new BaseScopeProvider() {
           @Override
-          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            // cycle-variable of enclosing 'foreach' cycle 
-            List<SNode> forEachStatements = SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement", false);
-            return new NodeListChildrenSearchScope(forEachStatements);
+          public SNodePointer getSearchScopeValidatorNode() {
+            return breakingNode_kmh88e_a0a0a0a0a1a0b0a1a0;
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
-            return breakingNode_kmh88e_a0a1a0a0a1a0b0a1a0;
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            return Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ForEachVariable"));
           }
         };
       }

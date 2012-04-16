@@ -10,19 +10,21 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.search.EmptySearchScope;
+import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.baseLanguage.search.InstanceMethodCall_InstanceMethodScope;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class InstanceMethodCallOperation_Constraints extends BaseConstraintsDescriptor {
-  private static SNodePointer breakingNode_w9prmd_a0a1a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1343296446925670997");
+  private static SNodePointer breakingNode_w9prmd_a0a0a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137224");
 
   public InstanceMethodCallOperation_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
@@ -40,23 +42,25 @@ public class InstanceMethodCallOperation_Constraints extends BaseConstraintsDesc
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
+        return new BaseScopeProvider() {
           @Override
-          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            if (!(SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
-              return new EmptySearchScope();
-            }
-            SNode instance = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
-            SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
-            return new InstanceMethodCall_InstanceMethodScope(classifierType, ((_context.getReferenceNode() == null) ?
-              _context.getEnclosingNode() :
-              _context.getReferenceNode()
-            ));
+          public SNodePointer getSearchScopeValidatorNode() {
+            return breakingNode_w9prmd_a0a0a0a0a1a0b0a1a0;
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
-            return breakingNode_w9prmd_a0a1a0a0a1a0b0a1a0;
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            {
+              if (!(SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
+                return new EmptyScope();
+              }
+              SNode instance = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
+              SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
+              if ((SLinkOperations.getTarget(classifierType, "classifier", false) == null)) {
+                return new EmptyScope();
+              }
+              return Classifier_Behavior.call_getVisibleMembers_8083692786967356611(SLinkOperations.getTarget(classifierType, "classifier", false), _context.getContextNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
+            }
           }
         };
       }

@@ -49,14 +49,16 @@ public class ComeFromExpression_Constraints extends BaseConstraintsDescriptor {
 
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            // todo: use new scopes =) 
-            SNode concept = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false), "concept", false);
-            return new SimpleScope(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept)) {
-              @Nullable
-              public String getReferenceText(@NotNull SNode target) {
-                return SPropertyOperations.getString(SNodeOperations.cast(target, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role");
-              }
-            };
+            {
+              // todo: use new scopes =) 
+              SNode concept = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false), "concept", false);
+              return new SimpleScope(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept)) {
+                @Nullable
+                public String getReferenceText(@NotNull SNode target) {
+                  return SPropertyOperations.getString(SNodeOperations.cast(target, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role");
+                }
+              };
+            }
           }
         };
       }
