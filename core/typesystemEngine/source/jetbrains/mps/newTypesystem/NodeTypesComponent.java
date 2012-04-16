@@ -154,7 +154,7 @@ public class NodeTypesComponent {
 
   public void dispose() {
     if (!myTypeCheckingContext.isSingleTypeComputation()) {
-      if (myModelListener != null) {
+      if (myModelListenerManager != null) {
         myModelListenerManager.dispose();
       }
       TypeChecker.getInstance().removeTypeRecalculatedListener(myTypeRecalculatedListener);
