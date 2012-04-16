@@ -66,12 +66,14 @@ public class ConvertLanguageRuntimes_Action extends BaseAction {
         sd.getStubModelEntries().addAll(language.getRuntimeModelsEntries());
         sd.getModelRoots().addAll(language.getRuntimeModelsEntries());
         runtime.setSolutionDescriptor(sd, false);
+        runtime.save();
 
         LanguageDescriptor ld = language.getModuleDescriptor();
         ld.getRuntimeModules().add(runtime.getModuleReference());
         ld.getModelRoots().remove(ld.getRuntimeStubModels());
         ld.getRuntimeStubModels().clear();
         language.setModuleDescriptor(ld, false);
+        language.save();
 
         ((MPSProject) MapSequence.fromMap(_params).get("project")).addModule(runtime.getModuleReference());
         StandaloneMPSProject project = (StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"));
