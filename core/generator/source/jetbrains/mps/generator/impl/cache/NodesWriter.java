@@ -20,11 +20,22 @@ import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Map.Entry;
 
 public class NodesWriter {
+  public static final int USER_NODE_POINTER = 0;
+  public static final int USER_STRING = 1;
+  public static final int USER_NULL = 2;
+  public static final int USER_NODE_ID = 3;
+  public static final int USER_MODEL_ID = 4;
+  public static final int USER_MODEL_REFERENCE = 5;
+  public static final int USER_SERIALIZABLE = 6;
+
   protected static final SModelReference LOCAL = SModelReference.fromString("$LOCAL$");
   protected final SModelReference myModelReference;
 
@@ -51,6 +62,8 @@ public class NodesWriter {
 
     writeChildren(node, os);
 
+    writeUserObjects(node, os);
+
     os.writeByte('}');
   }
 
@@ -68,7 +81,7 @@ public class NodesWriter {
         os.writeNodeId(reference.getTargetNodeId());
       } else if (reference instanceof DynamicReference) {
         DynamicReferenceOrigin origin = ((DynamicReference) reference).getOrigin();
-        if(origin != null) {
+        if (origin != null) {
           os.writeInt(3);
           os.writeNodePointer(origin.getTemplate());
           os.writeNodePointer(origin.getInputNode());
@@ -91,5 +104,59 @@ public class NodesWriter {
       os.writeString(entry.getKey());
       os.writeString(entry.getValue());
     }
+  }
+
+  protected void writeUserObjects(SNode node, ModelOutputStream os) throws IOException {
+    // write user objects here
+    Map<Object, Object> userObjects = node.getUserObjects();
+    ArrayList<Object> knownUserObject = new ArrayList<Object>();
+    for (Object key : userObjects.keySet()) {
+      Object value = userObjects.get(key);
+      if (isKnownUserObject(key) && isKnownUserObject(value)) {
+        knownUserObject.add(key);
+        knownUserObject.add(value);
+      }
+    }
+
+    os.writeInt(knownUserObject.size());
+    for (int i = 0; i < knownUserObject.size(); i += 2) {
+      writeUserObject(os, knownUserObject.get(i));
+      writeUserObject(os, knownUserObject.get(i + 1));
+    }
+  }
+
+  protected void writeUserObject(ModelOutputStream os, Object object) throws IOException {
+    if (object == null) {
+      os.writeInt(USER_NULL);
+    } else if (object instanceof SNodePointer) {
+      os.writeInt(USER_NODE_POINTER);
+      os.writeNodePointer((SNodePointer) object);
+    } else if (object instanceof String) {
+      os.writeInt(USER_STRING);
+      os.writeString((String) object);
+    } else if (object instanceof SNodeId) {
+      os.writeInt(USER_NODE_ID);
+      os.writeNodeId((SNodeId) object);
+    } else if (object instanceof SModelId) {
+      os.writeInt(USER_MODEL_ID);
+      os.writeModelID((SModelId) object);
+    } else if (object instanceof SModelReference) {
+      os.writeInt(USER_MODEL_REFERENCE);
+      os.writeModelReference((SModelReference) object);
+    } else if (object instanceof Serializable) {
+      os.writeInt(USER_SERIALIZABLE);
+      ObjectOutputStream objectOutput = new ObjectOutputStream(os);
+      objectOutput.writeObject(object);
+    }
+
+  }
+
+  protected boolean isKnownUserObject(Object object) {
+    return object == null
+      || object instanceof SNodePointer
+      || object instanceof Serializable
+      || object instanceof SNodeId
+      || object instanceof SModelId
+      || object instanceof SModelReference;
   }
 }
