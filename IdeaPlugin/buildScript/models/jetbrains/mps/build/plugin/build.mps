@@ -4744,10 +4744,17 @@
         <property name="reexport" nameId="3ior.7259033139236507306" value="true" />
         <link role="module" roleId="3ior.2754769020641646250" targetNodeId="1277685309310811906" resolveInfo="mps-editor" />
       </node>
-      <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyExternalJar" typeId="3ior.6859736767834557908" id="5882870599658208489">
-        <property name="reexport" nameId="3ior.6859736767834590422" value="false" />
-        <node role="extJar" roleId="3ior.5610619299014309674" type="3ior.BuildSource_JavaExternalJarRef" typeId="3ior.5610619299014309452" id="5882870599658208495">
-          <link role="jar" roleId="3ior.5610619299014309453" targetNodeId="5882870599658208492" />
+      <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyJar" typeId="3ior.3717132724152589376" id="5882870599658421443">
+        <node role="jar" roleId="3ior.3717132724152589377" type="3ior.BuildSource_JavaJar" typeId="3ior.1258644073388922138" id="5882870599658421444">
+          <node role="path" roleId="3ior.3717132724152837090" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="5882870599658421446">
+            <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="2569834391839970983" resolveInfo="mps_home" />
+            <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5882870599658421447">
+              <property name="head" nameId="3ior.8618885170173601779" value="lib" />
+              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5882870599658421448">
+                <property name="head" nameId="3ior.8618885170173601779" value="beansbinding-1.2.1.jar" />
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyModule" typeId="3ior.2754769020641646247" id="5882870599658298295">
@@ -5206,13 +5213,6 @@
         <node role="fileName" roleId="3ior.7181125477683370900" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="7181125477683417247">
           <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7181125477683417248">
             <property name="text" nameId="3ior.4903714810883755350" value="junit-4.10.jar" />
-          </node>
-        </node>
-      </node>
-      <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_FileStub" typeId="3ior.7181125477683370806" id="5882870599658208492">
-        <node role="fileName" roleId="3ior.7181125477683370900" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="5882870599658208493">
-          <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="5882870599658208494">
-            <property name="text" nameId="3ior.4903714810883755350" value="beansbinding-1.2.1.jar" />
           </node>
         </node>
       </node>

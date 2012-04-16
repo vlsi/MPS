@@ -92,7 +92,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <pathelement path="${build.tmp}/java/out/uiLanguage.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/beansbinding-1.2.1.jar" />
+        <fileset file="${mps_home}/lib/beansbinding-1.2.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-r09.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
