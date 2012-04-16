@@ -57,6 +57,7 @@ public class TurnToForEachStatement_Intention extends BaseIntention implements I
     });
     SLinkOperations.setTarget(forStatement, "body", SLinkOperations.getTarget(node, "body", true), true);
     SNodeOperations.replaceWithAnother(node, forStatement);
+    editorContext.selectWRTFocusPolicy(variable);
   }
 
   public String getLocationString() {

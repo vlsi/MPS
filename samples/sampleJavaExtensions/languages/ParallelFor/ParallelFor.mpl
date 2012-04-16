@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="org.jetbrains.mps.samples.ParallelFor" uuid="cb7388e8-f182-4cda-bd83-9796e8634856" compileInMPS="true" doNotGenerateAdapters="false">
+<language namespace="org.jetbrains.mps.samples.ParallelFor" uuid="cb7388e8-f182-4cda-bd83-9796e8634856" doNotGenerateAdapters="false">
   <models>
-    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="org.jetbrains.mps.samples.ParallelFor" />
+    <modelRoot path="${language_descriptor}/languageModels" />
   </models>
   <accessoryModels />
   <generators>
     <generator name="" generatorUID="org.jetbrains.mps.samples.ParallelFor#8923957828369584137" uuid="dbbf0a76-172f-4191-a1bd-9b6beb1d70ea">
       <models>
-        <modelRoot path="${language_descriptor}/generator/template" namespacePrefix="org.jetbrains.mps.samples.ParallelFor.generator.template" />
+        <modelRoot path="${language_descriptor}/generator/template" />
       </models>
       <external-templates>
-        <generator generatorUID="857d0a79-6f44-4f46-84ed-9c5b42632011(jetbrains.mps.baseLanguage.closures#1199623535494)" />
         <generator generatorUID="5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)" />
+        <generator generatorUID="857d0a79-6f44-4f46-84ed-9c5b42632011(jetbrains.mps.baseLanguage.closures#1199623535494)" />
       </external-templates>
       <usedDevKits>
         <usedDevKit>fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)</usedDevKit>
@@ -36,6 +36,7 @@
   </generators>
   <sourcePath />
   <dependencies>
+    <dependency reexport="false">1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)</dependency>
     <dependency reexport="false">a0c108f0-1637-416e-a249-3effbaa4c998(jetbrains.mps.baseLanguage.search)</dependency>
   </dependencies>
   <usedLanguages>

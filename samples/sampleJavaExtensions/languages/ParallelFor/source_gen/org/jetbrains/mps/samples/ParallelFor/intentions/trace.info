@@ -599,7 +599,8 @@
     <nodeInfo nodeId="5384012304952526407" fileName="TurnToForEachStatement_Intention.java" startLine="54" startPosition="77" endLine="55" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5384012304952504959" fileName="TurnToForEachStatement_Intention.java" startLine="57" startPosition="7" endLine="58" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5384012304952505021" fileName="TurnToForEachStatement_Intention.java" startLine="58" startPosition="105" endLine="59" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="62" startPosition="37" endLine="63" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3500242163958830774" fileName="TurnToForEachStatement_Intention.java" startLine="59" startPosition="59" endLine="60" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="63" startPosition="37" endLine="64" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="17" startPosition="90" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TurnToForEachStatement_Intention#()V" />
     <nodeInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
@@ -607,10 +608,10 @@
     <nodeInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
     <nodeInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
     <nodeInfo nodeId="5384012304952506653" fileName="TurnToForEachStatement_Intention.java" startLine="47" startPosition="224" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
     <nodeInfo nodeId="5384012304952506742" fileName="TurnToForEachStatement_Intention.java" startLine="51" startPosition="39" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="5384012304952506586" fileName="TurnToForEachStatement_Intention.java" startLine="46" startPosition="123" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="40" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="40" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
     <scopeInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="18" startPosition="45" endLine="18" endPosition="45" />
     <scopeInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="21" startPosition="30" endLine="22" endPosition="73" />
     <scopeInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="25" startPosition="36" endLine="26" endPosition="17" />
@@ -618,7 +619,7 @@
     <scopeInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="33" startPosition="44" endLine="34" endPosition="17" />
     <scopeInfo nodeId="5384012304952504717" fileName="TurnToForEachStatement_Intention.java" startLine="37" startPosition="85" endLine="38" endPosition="32" />
     <scopeInfo nodeId="5384012304952506654" fileName="TurnToForEachStatement_Intention.java" startLine="48" startPosition="39" endLine="49" endPosition="132" />
-    <scopeInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="62" startPosition="37" endLine="63" endPosition="62" />
+    <scopeInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="63" startPosition="37" endLine="64" endPosition="62" />
     <scopeInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="17" startPosition="90" endLine="19" endPosition="3" />
     <scopeInfo nodeId="5384012304952506743" fileName="TurnToForEachStatement_Intention.java" startLine="52" startPosition="35" endLine="55" endPosition="61">
       <varInfo nodeId="5384012304952526359" varName="newReference" />
@@ -634,90 +635,108 @@
     <scopeInfo nodeId="5384012304952506653" fileName="TurnToForEachStatement_Intention.java" startLine="47" startPosition="224" endLine="51" endPosition="0">
       <varInfo nodeId="5384012304952506653" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="5384012304952506742" fileName="TurnToForEachStatement_Intention.java" startLine="51" startPosition="39" endLine="57" endPosition="0">
       <varInfo nodeId="5384012304952506742" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="5384012304952504719" fileName="TurnToForEachStatement_Intention.java" startLine="41" startPosition="76" endLine="59" endPosition="59">
+    <scopeInfo nodeId="5384012304952504719" fileName="TurnToForEachStatement_Intention.java" startLine="41" startPosition="76" endLine="60" endPosition="49">
       <varInfo nodeId="5384012304952504730" varName="forStatement" />
       <varInfo nodeId="5384012304952504806" varName="variable" />
     </scopeInfo>
-    <scopeInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="40" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="40" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="5384012304952504715" varName="editorContext" />
       <varInfo nodeId="5384012304952504715" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="17" startPosition="0" endLine="66" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToForEachStatement_Intention" />
+    <unitInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="17" startPosition="0" endLine="67" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToForEachStatement_Intention" />
     <unitInfo nodeId="5384012304952506653" fileName="TurnToForEachStatement_Intention.java" startLine="47" startPosition="201" endLine="51" endPosition="5" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToForEachStatement_Intention$1" />
     <unitInfo nodeId="5384012304952506742" fileName="TurnToForEachStatement_Intention.java" startLine="51" startPosition="20" endLine="57" endPosition="5" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToForEachStatement_Intention$2" />
   </root>
   <root nodeId="5384012304952529816">
-    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="21" startPosition="30" endLine="22" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="25" startPosition="36" endLine="26" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="29" startPosition="37" endLine="30" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="33" startPosition="44" endLine="34" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5384012304952529819" fileName="TurnToParallelForEachStatement_Intention.java" startLine="37" startPosition="85" endLine="38" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5384012304952529823" fileName="TurnToParallelForEachStatement_Intention.java" startLine="41" startPosition="76" endLine="42" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5384012304952529829" fileName="TurnToParallelForEachStatement_Intention.java" startLine="42" startPosition="130" endLine="43" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5384012304952529835" fileName="TurnToParallelForEachStatement_Intention.java" startLine="43" startPosition="142" endLine="44" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5384012304952544528" fileName="TurnToParallelForEachStatement_Intention.java" startLine="44" startPosition="136" endLine="45" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5384012304952529845" fileName="TurnToParallelForEachStatement_Intention.java" startLine="45" startPosition="14" endLine="46" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5384012304952529851" fileName="TurnToParallelForEachStatement_Intention.java" startLine="46" startPosition="75" endLine="47" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5384012304952529872" fileName="TurnToParallelForEachStatement_Intention.java" startLine="49" startPosition="39" endLine="50" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5384012304952529885" fileName="TurnToParallelForEachStatement_Intention.java" startLine="53" startPosition="35" endLine="54" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5384012304952529891" fileName="TurnToParallelForEachStatement_Intention.java" startLine="54" startPosition="135" endLine="55" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5384012304952529897" fileName="TurnToParallelForEachStatement_Intention.java" startLine="55" startPosition="88" endLine="56" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5384012304952529904" fileName="TurnToParallelForEachStatement_Intention.java" startLine="58" startPosition="7" endLine="59" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5384012304952529912" fileName="TurnToParallelForEachStatement_Intention.java" startLine="59" startPosition="104" endLine="60" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="63" startPosition="37" endLine="64" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="17" startPosition="98" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TurnToParallelForEachStatement_Intention#()V" />
-    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
-    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
-    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
-    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5384012304952529870" fileName="TurnToParallelForEachStatement_Intention.java" startLine="48" startPosition="238" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5384012304952529883" fileName="TurnToParallelForEachStatement_Intention.java" startLine="52" startPosition="39" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="5384012304952529859" fileName="TurnToParallelForEachStatement_Intention.java" startLine="47" startPosition="122" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="40" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="18" startPosition="53" endLine="18" endPosition="53" />
-    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="21" startPosition="30" endLine="22" endPosition="79" />
-    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="25" startPosition="36" endLine="26" endPosition="17" />
-    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="29" startPosition="37" endLine="30" endPosition="17" />
-    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="33" startPosition="44" endLine="34" endPosition="17" />
-    <scopeInfo nodeId="5384012304952529818" fileName="TurnToParallelForEachStatement_Intention.java" startLine="37" startPosition="85" endLine="38" endPosition="30" />
-    <scopeInfo nodeId="5384012304952529871" fileName="TurnToParallelForEachStatement_Intention.java" startLine="49" startPosition="39" endLine="50" endPosition="117" />
-    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="63" startPosition="37" endLine="64" endPosition="62" />
-    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="17" startPosition="98" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="5384012304952529884" fileName="TurnToParallelForEachStatement_Intention.java" startLine="53" startPosition="35" endLine="56" endPosition="61">
+    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="22" startPosition="30" endLine="23" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="26" startPosition="36" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="30" startPosition="37" endLine="31" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="34" startPosition="44" endLine="35" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5384012304952529819" fileName="TurnToParallelForEachStatement_Intention.java" startLine="38" startPosition="85" endLine="39" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="43" startPosition="58" endLine="44" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="45" startPosition="5" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3500242163958721647" fileName="TurnToParallelForEachStatement_Intention.java" startLine="49" startPosition="90" endLine="50" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5384012304952529823" fileName="TurnToParallelForEachStatement_Intention.java" startLine="53" startPosition="76" endLine="54" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5384012304952529829" fileName="TurnToParallelForEachStatement_Intention.java" startLine="54" startPosition="130" endLine="55" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5384012304952529835" fileName="TurnToParallelForEachStatement_Intention.java" startLine="55" startPosition="142" endLine="56" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5384012304952531875" fileName="TurnToParallelForEachStatement_Intention.java" startLine="56" startPosition="136" endLine="57" endPosition="235" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5384012304952529845" fileName="TurnToParallelForEachStatement_Intention.java" startLine="57" startPosition="235" endLine="58" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5384012304952529851" fileName="TurnToParallelForEachStatement_Intention.java" startLine="58" startPosition="75" endLine="59" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5384012304952529872" fileName="TurnToParallelForEachStatement_Intention.java" startLine="61" startPosition="39" endLine="62" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5384012304952529885" fileName="TurnToParallelForEachStatement_Intention.java" startLine="65" startPosition="35" endLine="66" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5384012304952529891" fileName="TurnToParallelForEachStatement_Intention.java" startLine="66" startPosition="135" endLine="67" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5384012304952529897" fileName="TurnToParallelForEachStatement_Intention.java" startLine="67" startPosition="88" endLine="68" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5384012304952529904" fileName="TurnToParallelForEachStatement_Intention.java" startLine="70" startPosition="7" endLine="71" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5384012304952529912" fileName="TurnToParallelForEachStatement_Intention.java" startLine="71" startPosition="104" endLine="72" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3500242163958769585" fileName="TurnToParallelForEachStatement_Intention.java" startLine="72" startPosition="58" endLine="73" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="76" startPosition="37" endLine="77" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="18" startPosition="98" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TurnToParallelForEachStatement_Intention#()V" />
+    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="42" startPosition="84" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
+    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
+    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
+    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="5384012304952529870" fileName="TurnToParallelForEachStatement_Intention.java" startLine="60" startPosition="238" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="75" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5384012304952529883" fileName="TurnToParallelForEachStatement_Intention.java" startLine="64" startPosition="39" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="41" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="5384012304952529859" fileName="TurnToParallelForEachStatement_Intention.java" startLine="59" startPosition="122" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="52" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="19" startPosition="53" endLine="19" endPosition="53" />
+    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="22" startPosition="30" endLine="23" endPosition="79" />
+    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="26" startPosition="36" endLine="27" endPosition="17" />
+    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="30" startPosition="37" endLine="31" endPosition="17" />
+    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="34" startPosition="44" endLine="35" endPosition="17" />
+    <scopeInfo nodeId="5384012304952529818" fileName="TurnToParallelForEachStatement_Intention.java" startLine="38" startPosition="85" endLine="39" endPosition="30" />
+    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="43" startPosition="58" endLine="44" endPosition="19" />
+    <scopeInfo nodeId="3500242163958721646" fileName="TurnToParallelForEachStatement_Intention.java" startLine="49" startPosition="90" endLine="50" endPosition="173" />
+    <scopeInfo nodeId="5384012304952529871" fileName="TurnToParallelForEachStatement_Intention.java" startLine="61" startPosition="39" endLine="62" endPosition="117" />
+    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="76" startPosition="37" endLine="77" endPosition="62" />
+    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="18" startPosition="98" endLine="20" endPosition="3" />
+    <scopeInfo nodeId="5384012304952529884" fileName="TurnToParallelForEachStatement_Intention.java" startLine="65" startPosition="35" endLine="68" endPosition="61">
       <varInfo nodeId="5384012304952529886" varName="newReference" />
     </scopeInfo>
-    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="5384012304952529816" varName="editorContext" />
       <varInfo nodeId="5384012304952529816" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5384012304952529870" fileName="TurnToParallelForEachStatement_Intention.java" startLine="48" startPosition="238" endLine="52" endPosition="0">
+    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="42" startPosition="84" endLine="46" endPosition="16" />
+    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="5384012304952529816" varName="editorContext" />
+      <varInfo nodeId="5384012304952529816" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5384012304952529870" fileName="TurnToParallelForEachStatement_Intention.java" startLine="60" startPosition="238" endLine="64" endPosition="0">
       <varInfo nodeId="5384012304952529870" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="5384012304952529883" fileName="TurnToParallelForEachStatement_Intention.java" startLine="52" startPosition="39" endLine="58" endPosition="0">
+    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="5384012304952529883" fileName="TurnToParallelForEachStatement_Intention.java" startLine="64" startPosition="39" endLine="70" endPosition="0">
       <varInfo nodeId="5384012304952529883" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="5384012304952529822" fileName="TurnToParallelForEachStatement_Intention.java" startLine="41" startPosition="76" endLine="60" endPosition="58">
+    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="41" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="5384012304952529816" varName="editorContext" />
+      <varInfo nodeId="5384012304952529816" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5384012304952529822" fileName="TurnToParallelForEachStatement_Intention.java" startLine="53" startPosition="76" endLine="73" endPosition="49">
       <varInfo nodeId="5384012304952529824" varName="parallelFor" />
       <varInfo nodeId="5384012304952529830" varName="variable" />
     </scopeInfo>
-    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="40" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="52" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="5384012304952529816" varName="editorContext" />
       <varInfo nodeId="5384012304952529816" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="17" startPosition="0" endLine="67" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToParallelForEachStatement_Intention" />
-    <unitInfo nodeId="5384012304952529870" fileName="TurnToParallelForEachStatement_Intention.java" startLine="48" startPosition="215" endLine="52" endPosition="5" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToParallelForEachStatement_Intention$1" />
-    <unitInfo nodeId="5384012304952529883" fileName="TurnToParallelForEachStatement_Intention.java" startLine="52" startPosition="20" endLine="58" endPosition="5" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToParallelForEachStatement_Intention$2" />
+    <unitInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="18" startPosition="0" endLine="80" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToParallelForEachStatement_Intention" />
+    <unitInfo nodeId="5384012304952529870" fileName="TurnToParallelForEachStatement_Intention.java" startLine="60" startPosition="215" endLine="64" endPosition="5" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToParallelForEachStatement_Intention$1" />
+    <unitInfo nodeId="5384012304952529883" fileName="TurnToParallelForEachStatement_Intention.java" startLine="64" startPosition="20" endLine="70" endPosition="5" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToParallelForEachStatement_Intention$2" />
   </root>
   <root nodeId="5384012304952537573">
     <nodeInfo nodeId="5384012304952537573" fileName="UnmarkInstanceMethodCallAsThreadSafe_Intention.java" startLine="19" startPosition="30" endLine="20" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

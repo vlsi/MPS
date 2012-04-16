@@ -6,11 +6,12 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
@@ -38,11 +39,22 @@ public class TurnToParallelForEachStatement_Intention extends BaseIntention impl
     return "Turn to Parallel";
   }
 
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(this.isApplicableToNode(node, editorContext))) {
+      return false;
+    }
+    return true;
+  }
+
+  public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
+    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "variable", true)), "jetbrains.mps.baseLanguage.structure.Type");
+  }
+
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode parallelFor = SNodeFactoryOperations.createNewNode("org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", null);
     final SNode variable = SNodeFactoryOperations.createNewNode("org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable", null);
     SPropertyOperations.set(variable, "name", SPropertyOperations.getString(SLinkOperations.getTarget(node, "variable", true), "name"));
-    // <node> 
+    SLinkOperations.setTarget(variable, "type", SNodeOperations.copyNode(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "variable", true)), "jetbrains.mps.baseLanguage.structure.Type")), true);
     SLinkOperations.setTarget(parallelFor, "loopVariable", variable, true);
     SLinkOperations.setTarget(parallelFor, "inputSequence", SLinkOperations.getTarget(node, "inputSequence", true), true);
     ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "body", true), "jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -58,6 +70,7 @@ public class TurnToParallelForEachStatement_Intention extends BaseIntention impl
     });
     SLinkOperations.setTarget(parallelFor, "body", SLinkOperations.getTarget(node, "body", true), true);
     SNodeOperations.replaceWithAnother(node, parallelFor);
+    editorContext.selectWRTFocusPolicy(variable);
   }
 
   public String getLocationString() {
