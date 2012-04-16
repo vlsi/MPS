@@ -2,5 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.build.sandbox.build3.buildMpsA" file="buildMpsA.xml" />
   <dependency className="jetbrains.mps.build.sandbox.build3.buildMpsB" file="buildMpsB.xml" />
+  <dependency className="jetbrains.mps.build.sandbox.build3.buildMpsC" file="buildMpsC.xml" />
+  <dependency className="jetbrains.mps.build.sandbox.build3.buildMpsD" file="buildMpsD.xml" />
 </dependenciesRoot>
 

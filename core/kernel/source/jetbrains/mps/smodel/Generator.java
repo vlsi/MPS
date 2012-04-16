@@ -103,7 +103,7 @@ public class Generator extends ClassLoadingModule {
   }
 
   @Override
-  public Collection<StubPath> getStubPaths() {
+  public Collection<String> getStubPaths() {
     return getSourceLanguage().getRuntimeStubPaths();
   }
 

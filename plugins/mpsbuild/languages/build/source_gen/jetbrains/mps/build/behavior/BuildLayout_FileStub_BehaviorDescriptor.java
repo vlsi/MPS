@@ -5,7 +5,7 @@ package jetbrains.mps.build.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.UnpackHelper;
 
-public class BuildLayout_FileStub_BehaviorDescriptor extends BuildLayout_Node_BehaviorDescriptor implements BuildLayout_PureNode_BehaviorDescriptor {
+public class BuildLayout_FileStub_BehaviorDescriptor extends BuildLayout_Node_BehaviorDescriptor implements BuildLayout_PureNode_BehaviorDescriptor, BuildSource_SingleFile_BehaviorDescriptor {
   public BuildLayout_FileStub_BehaviorDescriptor() {
   }
 
@@ -15,6 +15,10 @@ public class BuildLayout_FileStub_BehaviorDescriptor extends BuildLayout_Node_Be
 
   public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
     BuildLayout_FileStub_Behavior.virtual_appendName_1368030936106665465(thisNode, parent, sb);
+  }
+
+  public String virtual_getApproximateName_5610619299013425878(SNode thisNode) {
+    return BuildLayout_FileStub_Behavior.virtual_getApproximateName_5610619299013425878(thisNode);
   }
 
   public boolean virtual_isFile_1368030936106753986(SNode thisNode) {

@@ -469,11 +469,11 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return null;
   }
 
-  public Collection<StubPath> getRuntimeStubPaths() {
-    Set<StubPath> result = new LinkedHashSet<StubPath>();
+  public Collection<String> getRuntimeStubPaths() {
+    Set<String> result = new LinkedHashSet<String>();
 
     for (ModelRoot me : getRuntimeModelsEntries()) {
-      result.add(new StubPath(me.getPath(), me.getManager()));
+      result.add(me.getPath());
     }
 
     return result;
@@ -486,17 +486,15 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   }
 
   @Override
-  public Collection<StubPath> getOwnStubPaths() {
+  public Collection<String> getOwnStubPaths() {
     if (isPackaged()) {
       return Collections.singletonList(
-        new StubPath(
-          FileSystem.getInstance().getBundleHome(getDescriptorFile()).getPath(),
-          LanguageID.JAVA_MANAGER));
+          FileSystem.getInstance().getBundleHome(getDescriptorFile()).getPath());
     }
 
     IFile classesGen = ProjectPathUtil.getClassesGenFolder(getDescriptorFile());
     if (classesGen != null) {
-      return Collections.singletonList(new StubPath(classesGen.getPath(), LanguageID.JAVA_MANAGER));
+      return Collections.singletonList(classesGen.getPath());
     }
     return Collections.emptyList();
   }
@@ -580,7 +578,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     }
   }
 
-  protected Collection<ModelRoot> getRuntimeModelsEntries() {
+  public Collection<ModelRoot> getRuntimeModelsEntries() {
     return myLanguageDescriptor.getRuntimeStubModels();
   }
 

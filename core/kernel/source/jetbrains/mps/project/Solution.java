@@ -158,18 +158,15 @@ public class Solution extends ClassLoadingModule {
   }
 
   @Override
-  public Collection<StubPath> getOwnStubPaths() {
+  public Collection<String> getOwnStubPaths() {
     if (isPackaged()) {
-      return Collections.singletonList(
-        new StubPath(
-          FileSystem.getInstance().getBundleHome(getDescriptorFile()).getPath(),
-          LanguageID.JAVA_MANAGER));
+      return Collections.singletonList(FileSystem.getInstance().getBundleHome(getDescriptorFile()).getPath());
     }
 
     if (!isCompileInMPS()) {
       IFile classes = ProjectPathUtil.getClassesFolder(getDescriptorFile());
       if (classes != null && classes.exists()) {
-        return Collections.singletonList(new StubPath(classes.getPath(), LanguageID.JAVA_MANAGER));
+        return Collections.singletonList(classes.getPath());
       }
       return Collections.emptyList();
     }

@@ -7,35 +7,29 @@
   <property name="artifacts.IDEA" location="${idea_home}" />
   
   <path id="path.java.library.core-libraries">
-    <fileset dir="${idea_home}/lib">
-      <include name="org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
-      <include name="guava-r09.jar" />
-      <include name="jdom.jar" />
-      <include name="log4j.jar" />
-      <include name="trove4j.jar" />
-      <include name="xstream.jar" />
-      <include name="annotations.jar" />
-      <include name="commons-lang-2.4.jar" />
-      <include name="commons-logging-1.1.1.jar" />
-    </fileset>
+    <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
+    <fileset file="${artifacts.IDEA}/lib/guava-r09.jar" />
+    <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+    <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+    <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
+    <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
+    <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
+    <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
+    <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
     <fileset file="${mps_home}/lib/asm.jar" />
     <fileset file="${mps_home}/lib/diffutils-1.2.1.jar" />
   </path>
   
   <path id="path.java.library.idea-libraries">
-    <fileset dir="${idea_home}/lib">
-      <include name="*.jar" />
-    </fileset>
+    <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
   </path>
   
   <path id="path.java.library.idea-ant">
-    <fileset dir="${idea_home}/lib/ant/lib">
-      <include name="*.jar" />
-    </fileset>
+    <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
   </path>
   
   <path id="path.java.library.junit-4.10">
-    <fileset file="${idea_home}/lib/junit-4.10.jar" />
+    <fileset file="${artifacts.IDEA}/lib/junit-4.10.jar" />
   </path>
   
   <target name="assemble" depends="classes">
@@ -1982,7 +1976,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.java.modules.cycle.1" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.jetbrains.mps.baseLanguage.regexp.runtime, java.compile.mps-platform, java.compile.mps-test, java.compile.jetbrains.mps.gtext.runtime">
+  <target name="java.compile.java.modules.cycle.1" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.jetbrains.mps.baseLanguage.regexp.runtime, java.compile.mps-test, java.compile.jetbrains.mps.gtext.runtime">
     <mkdir dir="${build.tmp}/java.modules.cycle.1" />
     <javac destdir="${build.tmp}/java.modules.cycle.1" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -2031,15 +2025,15 @@
         <pathelement path="${build.tmp}/java/out/mps-core" />
         <pathelement path="${build.tmp}/java/out/mps-editor-api" />
         <pathelement path="${build.tmp}/java/out/mps-editor" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.gtext.runtime" />
       </classpath>
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.baseLanguage" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.jetbrains.mps.baseLanguage.regexp.runtime, java.compile.mps-platform, java.compile.mps-test, java.compile.java.modules.cycle.1">
+  <target name="java.compile.jetbrains.mps.baseLanguage" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.jetbrains.mps.baseLanguage.regexp.runtime, java.compile.mps-test, java.compile.java.modules.cycle.1">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -2053,8 +2047,8 @@
         <pathelement path="${build.tmp}/java/out/mps-core" />
         <pathelement path="${build.tmp}/java/out/mps-editor-api" />
         <pathelement path="${build.tmp}/java/out/mps-editor" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
@@ -2774,7 +2768,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.editor.editorTest" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.generator, java.compile.mps-test, java.compile.jetbrains.mps.lang.test, java.compile.mps-platform, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.lang.editor.editorTest" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.generator, java.compile.mps-test, java.compile.jetbrains.mps.lang.test, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.editorTest" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.editorTest" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -2788,11 +2782,11 @@
         <pathelement path="${build.tmp}/java/out/mps-core" />
         <pathelement path="${build.tmp}/java/out/mps-editor-api" />
         <pathelement path="${build.tmp}/java/out/mps-editor" />
+        <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.generator" />
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test" />
-        <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
@@ -2803,7 +2797,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.editor.table.runtime" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.structure, java.compile.mps-platform">
+  <target name="java.compile.jetbrains.mps.lang.editor.table.runtime" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.structure">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table.runtime" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -2817,9 +2811,9 @@
         <pathelement path="${build.tmp}/java/out/mps-core" />
         <pathelement path="${build.tmp}/java/out/mps-editor-api" />
         <pathelement path="${build.tmp}/java/out/mps-editor" />
+        <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.structure" />
-        <pathelement path="${build.tmp}/java/out/mps-platform" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
@@ -3390,7 +3384,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.smodelTests" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.jetbrains.mps.lang.core, java.compile.mps-platform, java.compile.mps-test, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.lang.smodelTests" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.jetbrains.mps.lang.core, java.compile.mps-test, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.smodelTests" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.smodelTests" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -3404,8 +3398,8 @@
         <pathelement path="${build.tmp}/java/out/mps-core" />
         <pathelement path="${build.tmp}/java/out/mps-editor-api" />
         <pathelement path="${build.tmp}/java/out/mps-editor" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
@@ -3934,7 +3928,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.build.reduced" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.jetbrains.mps.lang.core, java.compile.mps-platform, java.compile.mps-test, java.compile.jetbrains.mps.lang.test.runtime">
+  <target name="java.compile.jetbrains.mps.build.reduced" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.jetbrains.mps.lang.core, java.compile.mps-test, java.compile.jetbrains.mps.lang.test.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.reduced" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.reduced" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -3948,8 +3942,8 @@
         <pathelement path="${build.tmp}/java/out/mps-core" />
         <pathelement path="${build.tmp}/java/out/mps-editor-api" />
         <pathelement path="${build.tmp}/java/out/mps-editor" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />

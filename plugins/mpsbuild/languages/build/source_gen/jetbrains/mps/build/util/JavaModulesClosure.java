@@ -15,7 +15,7 @@ public class JavaModulesClosure {
   private Set<SNode> modules = new LinkedHashSet<SNode>();
   private Set<SNode> libraries = new LinkedHashSet<SNode>();
   private Set<SNode> jars = new LinkedHashSet<SNode>();
-  private Set<SNode> importedJars = new LinkedHashSet<SNode>();
+  private Set<SNode> externalJars = new LinkedHashSet<SNode>();
   private TemplateQueryContext genContext;
   private SNode initial;
 
@@ -66,13 +66,13 @@ public class JavaModulesClosure {
         }
 
         jars.add(SLinkOperations.getTarget(jarDep, "jar", true));
-      } else if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.structure.BuildSource_JavaDependencyImportedJar")) {
-        SNode jarDep = SNodeOperations.cast(dep, "jetbrains.mps.build.structure.BuildSource_JavaDependencyImportedJar");
+      } else if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.structure.BuildSource_JavaDependencyExternalJar")) {
+        SNode jarDep = SNodeOperations.cast(dep, "jetbrains.mps.build.structure.BuildSource_JavaDependencyExternalJar");
         if (reexportOnly && !(SPropertyOperations.getBoolean(jarDep, "reexport"))) {
           continue;
         }
 
-        importedJars.add(SLinkOperations.getTarget(jarDep, "jar", false));
+        externalJars.add(SLinkOperations.getTarget(SLinkOperations.getTarget(jarDep, "extJar", true), "jar", false));
       }
     }
   }
@@ -99,8 +99,8 @@ public class JavaModulesClosure {
     return jars;
   }
 
-  public Set<SNode> getImportedJars() {
-    return importedJars;
+  public Collection<SNode> getExternalJars() {
+    return externalJars;
   }
 
   public SNode getInitial() {

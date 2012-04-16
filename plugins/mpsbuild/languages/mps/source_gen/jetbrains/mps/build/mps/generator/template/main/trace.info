@@ -362,7 +362,7 @@
     <nodeInfo nodeId="6859736767834858867" fileName="QueriesGenerated.java" startLine="410" startPosition="5" endLine="411" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6859736767834858567" fileName="QueriesGenerated.java" startLine="400" startPosition="127" endLine="404" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6859736767834858600" fileName="QueriesGenerated.java" startLine="406" startPosition="138" endLine="410" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="6859736767834858546" fileName="QueriesGenerated.java" startLine="134" startPosition="151" endLine="135" endPosition="56" />
+    <scopeInfo nodeId="5610619299014362267" fileName="QueriesGenerated.java" startLine="134" startPosition="151" endLine="135" endPosition="56" />
     <scopeInfo nodeId="6859736767834870009" fileName="QueriesGenerated.java" startLine="162" startPosition="136" endLine="163" endPosition="66" />
     <scopeInfo nodeId="6859736767834858568" fileName="QueriesGenerated.java" startLine="401" startPosition="26" endLine="403" endPosition="18" />
     <scopeInfo nodeId="6859736767834858601" fileName="QueriesGenerated.java" startLine="407" startPosition="343" endLine="409" endPosition="18" />

@@ -18,16 +18,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.build.util.ScopeUtil;
 import jetbrains.mps.scope.ModelPlusImportedScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.behavior.BuildSourcePath_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 
-public class BuildSource_JavaDependencyImportedJar_Constraints extends BaseConstraintsDescriptor {
-  private static SNodePointer breakingNode_rf2pud_a0a2a0a0a1a0b0a1a0 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "6859736767834557942");
+public class BuildSource_JavaExternalJarRef_Constraints extends BaseConstraintsDescriptor {
+  private static SNodePointer breakingNode_u5rckp_a0a2a0a0a1a0b0a1a0 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "5610619299014309456");
 
-  public BuildSource_JavaDependencyImportedJar_Constraints() {
-    super("jetbrains.mps.build.structure.BuildSource_JavaDependencyImportedJar");
+  public BuildSource_JavaExternalJarRef_Constraints() {
+    super("jetbrains.mps.build.structure.BuildSource_JavaExternalJarRef");
   }
 
   @Override
@@ -59,20 +59,17 @@ public class BuildSource_JavaDependencyImportedJar_Constraints extends BaseConst
               }
             }
             if (target == null) {
-              target = ((SLinkOperations.getTarget(_context.getParameterNode(), "path", true) != null) ?
-                BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(_context.getParameterNode(), "path", true)) :
+              target = (SNodeOperations.isInstanceOf(_context.getParameterNode(), "jetbrains.mps.build.structure.BuildInputSingleFile") ?
+                BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(SNodeOperations.cast(_context.getParameterNode(), "jetbrains.mps.build.structure.BuildInputSingleFile"), "path", true)) :
                 BaseConcept_Behavior.call_getPresentation_1213877396640(_context.getParameterNode())
               );
             }
-            return (_context.getSmartReference() ?
-              "import jar " + target :
-              target
-            );
+            return target;
           }
 
           @Override
           public SNodePointer getSearchScopeValidatorNode() {
-            return breakingNode_rf2pud_a0a2a0a0a1a0b0a1a0;
+            return breakingNode_u5rckp_a0a2a0a0a1a0b0a1a0;
           }
 
           @Override
@@ -81,7 +78,7 @@ public class BuildSource_JavaDependencyImportedJar_Constraints extends BaseConst
             if ((contextProject != null)) {
               return ScopeUtil.getVisibleJarsScope(contextProject);
             }
-            return new ModelPlusImportedScope(_context.getModel(), false, operationContext.getScope(), "jetbrains.mps.build.structure.BuildInputSingleFile");
+            return new ModelPlusImportedScope(_context.getModel(), false, operationContext.getScope(), "jetbrains.mps.build.structure.BuildSource_SingleFile");
           }
         };
       }
