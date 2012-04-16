@@ -161,7 +161,7 @@ public class QueriesGenerated {
     return _context.getOriginalCopiedInputNode(((SNode) _context.getVariable("factory"))).getId();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1177115336225(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_3602553488694021819(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(SNodeOperations.cast(((SNode) _context.getVariable("factory")), "jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory"), "kind", false));
   }
 
@@ -347,7 +347,7 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(((SNode) _context.getVariable("factory")), "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope");
   }
 
-  public static boolean ifMacro_Condition_5934496548013456358(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_3602553488694021787(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(((SNode) _context.getVariable("factory")), "jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory");
   }
 

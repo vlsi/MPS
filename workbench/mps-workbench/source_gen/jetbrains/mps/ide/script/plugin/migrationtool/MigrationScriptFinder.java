@@ -53,9 +53,6 @@ public class MigrationScriptFinder implements IFinder {
           monitor.step(scriptInstance.getName() + " [" + migrationRefactoring.getAdditionalInfo() + "]");
           Set<SNode> instances = FindUsagesManager.getInstance().findInstances(MigrationScriptUtil.getApplicableConcept(migrationRefactoring), queryScope, null, false);
           for (SNode instance : instances) {
-            if (monitor.isCanceled()) {
-              break;
-            }
             if (MigrationScriptUtil.isApplicableRefactoring(instance, migrationRefactoring)) {
               String category = TreeTextUtil.toHtml(scriptInstance.getName()) + " </b>[" + TreeTextUtil.toHtml(migrationRefactoring.getAdditionalInfo()) + "]<b>";
               SearchResult<SNode> result = new SearchResult<SNode>(instance, category);
