@@ -62,8 +62,8 @@ public class NodeTypesComponent {
     myTypeSystemComponent = new TypeSystemComponent(typeChecker, typeCheckingContext.getState(), this);
     if (!myTypeCheckingContext.isSingleTypeComputation()) {
       myNonTypeSystemComponent = new NonTypeSystemComponent(typeChecker, this);
-      myModelListenerManager = new MyModelListenerManager(myModelListener);
       myModelListener = new MyModelListener();
+      myModelListenerManager = new MyModelListenerManager(myModelListener);
       myModelListenerManager.track(myRootNode);
       myTypeRecalculatedListener = new MyTypeRecalculatedListener();
       myEvents = new ArrayList<SModelEvent>();
