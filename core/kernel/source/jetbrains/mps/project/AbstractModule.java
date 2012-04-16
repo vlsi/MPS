@@ -195,40 +195,40 @@ public abstract class AbstractModule implements IModule {
 
   //----stubs
 
-  public Collection<StubPath> getAllStubPaths() {
-    Set<StubPath> result = new LinkedHashSet<StubPath>();
+  public Collection<String> getAllStubPaths() {
+    Set<String> result = new LinkedHashSet<String>();
     result.addAll(getStubPaths());
     result.addAll(getOwnStubPaths());
     return result;
   }
 
-  public Collection<StubPath> getOwnStubPaths() {
+  public Collection<String> getOwnStubPaths() {
     if (!isCompileInMPS()) return Collections.emptyList();
 
     IFile classFolder = getClassesGen();
     if (classFolder == null) return Collections.emptyList();
 
-    return Collections.singletonList(new StubPath(classFolder.getPath(), LanguageID.JAVA_MANAGER));
+    return Collections.singletonList(classFolder.getPath());
   }
 
-  public Collection<StubPath> getStubPaths() {
+  public Collection<String> getStubPaths() {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return Collections.emptySet();
 
     Collection<ModelRoot> stubModelEntries = descriptor.getStubModelEntries();
-    Collection<StubPath> result = new LinkedHashSet<StubPath>(stubModelEntries.size());
+    Collection<String> result = new LinkedHashSet<String>(stubModelEntries.size());
     for (ModelRoot entry : stubModelEntries) {
-      result.add(new StubPath(entry.getPath(), entry.getManager()));
+      result.add(entry.getPath());
     }
     return result;
   }
 
-  public static Collection<StubPath> getStubPaths(ModuleDescriptor descriptor) {
+  public static Collection<String> getStubPaths(ModuleDescriptor descriptor) {
     if (descriptor != null) {
       Collection<ModelRoot> stubModelEntries = descriptor.getStubModelEntries();
-      Collection<StubPath> result = new LinkedHashSet<StubPath>(stubModelEntries.size());
+      Collection<String> result = new LinkedHashSet<String>(stubModelEntries.size());
       for (ModelRoot entry : stubModelEntries) {
-        result.add(new StubPath(entry.getPath(), entry.getManager()));
+        result.add(entry.getPath());
       }
       return result;
     }
@@ -349,13 +349,9 @@ public abstract class AbstractModule implements IModule {
         myCachedClassPathItem = new CompositeClassPathItem();
         myCachedClassPathItem.addInvalidationAction(myClasspathInvalidator);
 
-        for (StubPath path : getAllStubPaths()) {
-          //look for classes only in stub dirs with JavaStub manager
-          if (!ObjectUtils.equals(path.getManager().getClassName(), LanguageID.JAVA_MANAGER.getClassName()))
-            continue;
-
+        for (String path : getAllStubPaths()) {
           try {
-            IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path.getPath(), this.getModuleFqName());
+            IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path, this.getModuleFqName());
             myCachedClassPathItem.add(pathItem);
           } catch (IOException e) {
             LOG.error(e.getMessage());

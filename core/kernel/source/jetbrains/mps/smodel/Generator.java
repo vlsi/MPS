@@ -20,7 +20,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.StubPath;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.runtime.BytecodeLocator;
@@ -108,7 +107,7 @@ public class Generator extends AbstractModule {
   }
 
   @Override
-  public Collection<StubPath> getStubPaths() {
+  public Collection<String> getStubPaths() {
     return getSourceLanguage().getRuntimeStubPaths();
   }
 
