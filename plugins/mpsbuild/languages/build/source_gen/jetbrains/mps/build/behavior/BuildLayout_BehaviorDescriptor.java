@@ -5,7 +5,7 @@ package jetbrains.mps.build.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.Context;
 
-public class BuildLayout_BehaviorDescriptor extends BuildLayout_AbstractContainer_BehaviorDescriptor implements BuildLayout_Container_BehaviorDescriptor {
+public class BuildLayout_BehaviorDescriptor extends BuildLayout_AbstractContainer_BehaviorDescriptor {
   public BuildLayout_BehaviorDescriptor() {
   }
 

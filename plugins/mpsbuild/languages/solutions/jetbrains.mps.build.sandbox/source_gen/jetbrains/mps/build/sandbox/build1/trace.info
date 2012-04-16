@@ -19,5 +19,8 @@
   <root nodeId="4993211115183416028">
     <unitInfo nodeId="4993211115183416028" fileName="buildPlugin.xml" startLine="1" startPosition="0" endLine="84" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildPlugin" />
   </root>
+  <root nodeId="5610619299013213201">
+    <unitInfo nodeId="5610619299013213201" fileName="buildE.xml" startLine="1" startPosition="0" endLine="52" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildE" />
+  </root>
 </debugInfo>
 

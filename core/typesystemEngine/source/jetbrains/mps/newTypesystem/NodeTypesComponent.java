@@ -60,9 +60,10 @@ public class NodeTypesComponent {
     myRootNode = rootNode;
     myTypeCheckingContext = typeCheckingContext;
     myTypeSystemComponent = new TypeSystemComponent(typeChecker, typeCheckingContext.getState(), this);
-    // TODO: do not instantiate NonTypeSystemComponent in generation mode
-    myNonTypeSystemComponent = new NonTypeSystemComponent(typeChecker, this);
-    myModelListenerManager.track(myRootNode);
+    if (!myTypeCheckingContext.isSingleTypeComputation()) {
+      myNonTypeSystemComponent = new NonTypeSystemComponent(typeChecker, this);
+      myModelListenerManager.track(myRootNode);
+    }
   }
 
   public TypeCheckingContext getTypeCheckingContext() {

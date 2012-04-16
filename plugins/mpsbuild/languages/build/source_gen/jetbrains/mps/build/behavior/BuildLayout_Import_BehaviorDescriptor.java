@@ -5,7 +5,7 @@ package jetbrains.mps.build.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.VisibleArtifacts;
 
-public class BuildLayout_Import_BehaviorDescriptor extends BuildLayout_Node_BehaviorDescriptor implements BuildExternalDependency_BehaviorDescriptor {
+public class BuildLayout_Import_BehaviorDescriptor extends BuildLayout_Node_BehaviorDescriptor implements BuildExternalDependency_BehaviorDescriptor, BuildLayout_FileSet_BehaviorDescriptor {
   public BuildLayout_Import_BehaviorDescriptor() {
   }
 
