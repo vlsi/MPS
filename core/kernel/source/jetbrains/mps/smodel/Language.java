@@ -632,7 +632,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     }
   }
 
-  protected Collection<ModelRoot> getRuntimeModelsEntries() {
+  public Collection<ModelRoot> getRuntimeModelsEntries() {
     return myLanguageDescriptor.getRuntimeStubModels();
   }
 
