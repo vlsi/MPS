@@ -10279,7 +10279,7 @@
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
           <module ref="fe9d76d7-5809-45c9-ae28-a40915b4d6ff(jetbrains.mps.lang.checkedName)" />
         </dependencies>
-        <runtime jar="/lib/guava-r09.jar" />
+        <runtime jar="/lib/guava-11.0.1.jar" />
         <library jar="jetbrains.mps.lang.structure.jar" />
         <sources jar="jetbrains.mps.lang.structure-src.jar" descriptor="languageDescriptor.mpl" />
       </module>

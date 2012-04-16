@@ -8,7 +8,7 @@
   <path id="path.java.library.core-libraries">
     <fileset dir="${idea_home}/lib">
       <include name="org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
-      <include name="guava-r09.jar" />
+      <include name="guava-11.0.1.jar" />
       <include name="jdom.jar" />
       <include name="log4j.jar" />
       <include name="trove4j.jar" />
@@ -2006,7 +2006,7 @@
       <classpath>
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java/out/mps-closures" />
@@ -2042,7 +2042,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2068,7 +2068,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2094,7 +2094,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2120,7 +2120,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2146,7 +2146,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2177,7 +2177,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -2202,7 +2202,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2233,7 +2233,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -2258,7 +2258,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2289,7 +2289,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -2319,7 +2319,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -2349,7 +2349,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -2374,7 +2374,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2400,7 +2400,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2426,7 +2426,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2458,7 +2458,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -2502,7 +2502,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -2536,7 +2536,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -2561,7 +2561,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2598,7 +2598,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -2623,7 +2623,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2649,7 +2649,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2686,7 +2686,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -2711,7 +2711,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2751,7 +2751,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -2780,7 +2780,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -2835,7 +2835,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -2853,7 +2853,7 @@
       <classpath>
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java/out/mps-closures" />
@@ -2914,7 +2914,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -2948,7 +2948,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -2973,7 +2973,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2999,7 +2999,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3025,7 +3025,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3051,7 +3051,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3077,7 +3077,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3104,7 +3104,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3130,7 +3130,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3162,7 +3162,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -3188,7 +3188,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3214,7 +3214,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3240,7 +3240,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3281,7 +3281,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -3315,7 +3315,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -3340,7 +3340,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3366,7 +3366,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3394,7 +3394,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -3419,7 +3419,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3453,7 +3453,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -3478,7 +3478,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3503,7 +3503,7 @@
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3539,7 +3539,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -3564,7 +3564,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3590,7 +3590,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3609,7 +3609,7 @@
       <classpath>
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java/out/mps-closures" />
@@ -3664,7 +3664,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.xmlSchema" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.3" />
@@ -3701,7 +3701,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.xmlSchema" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.3" />
@@ -3735,7 +3735,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -3770,7 +3770,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.xmlSchema" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -3801,7 +3801,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -3849,7 +3849,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.make.script" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -3881,7 +3881,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -3910,7 +3910,7 @@
         <pathelement path="${build.tmp}/java/out/mps-ant" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.java.library.idea-ant" />
@@ -3938,7 +3938,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${basedir}/lib/commons-lang-2.4.jar" />
         <fileset file="${basedir}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${basedir}/lib/guava-r09.jar" />
+        <fileset file="${basedir}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>

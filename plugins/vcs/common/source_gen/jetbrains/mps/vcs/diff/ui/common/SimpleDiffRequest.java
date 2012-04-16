@@ -38,6 +38,7 @@ public class SimpleDiffRequest extends DiffRequest {
     return myContentTitles;
   }
 
+  @NotNull
   public DiffContent[] getContents() {
     return myContents;
   }

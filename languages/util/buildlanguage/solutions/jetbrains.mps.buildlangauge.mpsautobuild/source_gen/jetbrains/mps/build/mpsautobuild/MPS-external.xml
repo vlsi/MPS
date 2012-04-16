@@ -82,7 +82,7 @@
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsbuild/META-INF" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsbuild/languages" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsbuild" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/svn4ideaOld" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/svn4idea" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api/META-INF" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api/lib" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api" />
@@ -469,8 +469,8 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.build.mps" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsbuild/languages" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsbuild" />
-    <copy todir="${deploy.dir}/MPS/plugins/svn4ideaOld">
-      <fileset dir="${mps_home}/plugins/svn4ideaOld" excludes="**/*.zip, " />
+    <copy todir="${deploy.dir}/MPS/plugins/svn4idea">
+      <fileset dir="${mps_home}/plugins/svn4idea" excludes="**/*.zip, " />
     </copy>
     <copy todir="${deploy.dir}/MPS/plugins/debugger-api/META-INF">
       <fileset dir="${mps_home}/plugins/debugger-api/META-INF" excludes="**/*.zip, " />

@@ -32,7 +32,7 @@
               <property name="pattern" nameId="3ior.5248329904288051101" value="org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
             </node>
             <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileIncludeSelector" typeId="3ior.5248329904288051100" id="3717132724153123495">
-              <property name="pattern" nameId="3ior.5248329904288051101" value="guava-r09.jar" />
+              <property name="pattern" nameId="3ior.5248329904288051101" value="guava-11.0.1.jar" />
             </node>
             <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileIncludeSelector" typeId="3ior.5248329904288051100" id="3717132724153123497">
               <property name="pattern" nameId="3ior.5248329904288051101" value="jdom.jar" />
@@ -3928,7 +3928,7 @@
             <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7259033139236388183">
               <property name="head" nameId="3ior.8618885170173601779" value="lib" />
               <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7259033139236388184">
-                <property name="head" nameId="3ior.8618885170173601779" value="guava-r09.jar" />
+                <property name="head" nameId="3ior.8618885170173601779" value="guava-11.0.1.jar" />
               </node>
             </node>
           </node>

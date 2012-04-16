@@ -461,8 +461,8 @@
               <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="3698330505678787860">
                 <property name="path" nameId="tps4.1220974398640" value="plugins" />
               </node>
-              <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="8487423823039977907">
-                <property name="path" nameId="tps4.1220974398640" value="svn4ideaOld" />
+              <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="6063677429891357724">
+                <property name="path" nameId="tps4.1220974398640" value="svn4idea" />
               </node>
             </node>
           </node>
