@@ -154,9 +154,13 @@ public class NodeTypesComponent {
 
   public void dispose() {
     if (!myTypeCheckingContext.isSingleTypeComputation()) {
-      myModelListenerManager.dispose();
+      if (myModelListener != null) {
+        myModelListenerManager.dispose();
+      }
       TypeChecker.getInstance().removeTypeRecalculatedListener(myTypeRecalculatedListener);
-      myNonTypeSystemComponent.dispose();
+      if (myNonTypeSystemComponent != null) {
+        myNonTypeSystemComponent.dispose();
+      }
     }
     myTypeSystemComponent.dispose();
   }
@@ -207,10 +211,6 @@ public class NodeTypesComponent {
 
   public void addDependencyOnCurrent(SNode node) {
     myTypeSystemComponent.addDependencyOnCurrent(node);
-  }
-
-  protected boolean applyRulesToNode(SNode node) {
-    return myTypeSystemComponent.applyRulesToNode(node);
   }
 
   public void applyNonTypesystemRulesToRoot(IOperationContext context) {
