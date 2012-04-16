@@ -90,8 +90,13 @@ public abstract class Scope {
    * Get scope for smart reference, when node doesn't exist yet
    */
   public static Scope getScope(SNode node, String role, int index, SNode kind) {
-    // TODO 
-    return getScope(node, null, kind);
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.ScopeProvider")) {
+      Scope scope = ((Scope) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.ScopeProvider"), "virtual_getScope_7722139651431880752", new Class[]{SNode.class, SNode.class, String.class, Integer.TYPE}, kind, role, index));
+      if (scope != null) {
+        return scope;
+      }
+    }
+    return getScope(parent(node), node, kind);
   }
 
   public static SNode parent(SNode n) {
