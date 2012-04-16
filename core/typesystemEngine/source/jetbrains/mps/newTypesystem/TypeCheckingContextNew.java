@@ -48,7 +48,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   private TypeChecker myTypeChecker;
   private NodeTypesComponent myNodeTypesComponent;
   private boolean myIsNonTypesystemComputation = false;
-  private boolean myIsResolving = false;
   private boolean myIsTraceMode = false;
   private boolean myIsInferenceMode = false;
   private IOperationContext myOperationContext;
@@ -62,14 +61,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     myRootNode = rootNode;
     myNodeTypesComponent = new NodeTypesComponent(myRootNode, typeChecker, this);
     myTypeChecker = typeChecker;
-  }
-
-  public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker, boolean resolving) {
-    myState = new State(this);
-    myRootNode = rootNode;
-    myNodeTypesComponent = new NodeTypesComponent(myRootNode, typeChecker, this);
-    myTypeChecker = typeChecker;
-    myIsResolving = resolving;
   }
 
   @Override
@@ -385,12 +376,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public boolean isIncrementalMode() {
-    return !myIsSingleTypeComputation && !isInEditorQueries() && myTypeChecker.isGlobalIncrementalMode() && myState.getInequalitySystem() == null;
-  }
-
-  @Override
-  public boolean isInEditorQueries() {
-    return myIsResolving;
+    return !myIsSingleTypeComputation && myTypeChecker.isGlobalIncrementalMode() && myState.getInequalitySystem() == null;
   }
 
   @Override
@@ -485,7 +471,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   public SNode getTypeOf(SNode node, TypeChecker typeChecker) {
     if (node == null) return null;
     synchronized (TYPECHECKING_LOCK) {
-      if (this.isInEditorQueries()) {
+      if (this.isSingleTypeComputation()) {
         return getTypeOf_resolveMode(node, typeChecker);
       } else {
         return getTypeOf_normalMode(node);

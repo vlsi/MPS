@@ -241,7 +241,9 @@ public class TypeContextManager implements CoreComponent {
     if (root == null) {
       root = node.getTopmostAncestor();
     }
-    return new TypeCheckingContextNew(root, myTypeChecker, true);
+    TypeCheckingContextNew context = new TypeCheckingContextNew(root, myTypeChecker);
+    context.setSingleTypeComputation(true);
+    return context;
   }
 
   private Set<SNode> getMyResolveNodes() {
