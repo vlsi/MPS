@@ -4,6 +4,7 @@ package jetbrains.mps.build.util;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Collections;
 import jetbrains.mps.build.behavior.BuildSource_JavaLibrary_Behavior;
 import java.util.List;
 import java.util.ArrayList;
@@ -24,6 +25,11 @@ public class JavaExportUtil {
 
 
     SNode target = SNodeOperations.as(artifacts.toOriginalNode(library), "jetbrains.mps.build.structure.BuildSource_JavaLibrary");
+    if (target == null || SNodeOperations.getModel(target).isTransient()) {
+      // problem with transient models, already reported 
+      return Collections.emptyList();
+    }
+
     if (BuildSource_JavaLibrary_Behavior.call_canExportByParts_5610619299014309362(target)) {
       List<SNode> result = new ArrayList<SNode>();
 

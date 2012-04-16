@@ -46,6 +46,7 @@
   <dependency className="jetbrains.mps.build.util.JavaExportUtil" file="JavaExportUtil.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildSource_JavaLibrary_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.util.JavaModulesClosure" />
