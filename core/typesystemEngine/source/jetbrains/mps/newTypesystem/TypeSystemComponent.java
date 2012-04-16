@@ -208,7 +208,7 @@ class TypeSystemComponent extends CheckingComponent {
 
   protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, Collection<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
     try {
-      if (!isIncrementalMode() || refreshTypes) {
+      if (refreshTypes) {
         clear();
       } else {
         myState.clearStateObjects();
