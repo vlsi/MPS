@@ -258,7 +258,6 @@ class TypeSystemComponent extends CheckingComponent {
       type = typeCalculated(initialNode);
       if (type == null) {
         if (node.isRoot()) {
-          myNodeTypesComponent.getTypeCheckingContext().setSingleTypeComputation(false);
           //System.out.println("Root: " + initialNode.getDebugText());
           computeTypes(node, true, true, Collections.<SNode>emptyList(), true, initialNode);
           type = getType(initialNode);
