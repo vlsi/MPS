@@ -224,7 +224,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.execution" depends="java.compile.mps-workbench">
+  <target name="java.compile.execution" depends="java.compile.mps-workbench, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/execution" />
     <javac destdir="${build.tmp}/java/out/execution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />

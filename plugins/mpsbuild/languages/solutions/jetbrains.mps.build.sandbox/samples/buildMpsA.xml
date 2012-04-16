@@ -45,7 +45,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.testImportJarReexport" depends="java.compile.A">
+  <target name="java.compile.testImportJarReexport" depends="java.compile.A, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/testImportJarReexport" />
     <javac destdir="${build.tmp}/java/out/testImportJarReexport" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
