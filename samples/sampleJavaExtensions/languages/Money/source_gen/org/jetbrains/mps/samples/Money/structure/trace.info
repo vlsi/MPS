@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="Money_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.Money.structure.Money_Language" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="org.jetbrains.mps.samples.Money.structure.StructureAspectDescriptor" />
+  <root nodeId="1790427706118304177">
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="15" startPosition="68" endLine="16" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="16" startPosition="95" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="18" startPosition="45" endLine="19" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="19" startPosition="64" endLine="20" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="22" startPosition="34" endLine="23" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="26" startPosition="39" endLine="27" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="30" startPosition="49" endLine="31" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="34" startPosition="28" endLine="35" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="38" startPosition="38" endLine="39" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="42" startPosition="37" endLine="43" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="46" startPosition="47" endLine="47" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="50" startPosition="41" endLine="51" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="54" startPosition="49" endLine="55" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="58" startPosition="48" endLine="59" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="62" startPosition="50" endLine="63" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="66" startPosition="69" endLine="67" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="70" startPosition="66" endLine="71" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="74" startPosition="52" endLine="75" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="21" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GetCurrency#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Lorg/jetbrains/mps/samples/Money/structure/GetCurrency;" />
+    <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Lorg/jetbrains/mps/samples/Money/structure/GetCurrency;" />
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="22" startPosition="34" endLine="23" endPosition="16" />
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="26" startPosition="39" endLine="27" endPosition="59" />
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="30" startPosition="49" endLine="31" endPosition="59" />
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="34" startPosition="28" endLine="35" endPosition="47" />
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="38" startPosition="38" endLine="39" endPosition="47" />
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="42" startPosition="37" endLine="43" endPosition="57" />
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="46" startPosition="47" endLine="47" endPosition="57" />
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="50" startPosition="41" endLine="51" endPosition="60" />
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="54" startPosition="49" endLine="55" endPosition="72" />
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="58" startPosition="48" endLine="59" endPosition="75" />
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="62" startPosition="50" endLine="63" endPosition="54" />
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="66" startPosition="69" endLine="67" endPosition="63" />
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="70" startPosition="66" endLine="71" endPosition="177" />
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="74" startPosition="52" endLine="75" endPosition="46" />
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="21" startPosition="0" endLine="24" endPosition="3">
+      <varInfo nodeId="1790427706118304177" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1790427706118304177" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="1790427706118304177" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="1790427706118304177" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="1790427706118304177" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="1790427706118304177" varName="node" />
+      <varInfo nodeId="1790427706118304177" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="1790427706118304177" varName="init" />
+      <varInfo nodeId="1790427706118304177" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="1790427706118304177" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="org.jetbrains.mps.samples.Money.structure.GetCurrency" />
+  </root>
+  <root nodeId="1790427706118381722">
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="16" startPosition="66" endLine="17" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="17" startPosition="93" endLine="18" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TARGET_CURRENCY" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="18" startPosition="64" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="19" startPosition="68" endLine="20" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="20" startPosition="45" endLine="21" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="21" startPosition="64" endLine="22" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONVERSION_TABLE" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="22" startPosition="66" endLine="23" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="25" startPosition="32" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="29" startPosition="37" endLine="30" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="33" startPosition="47" endLine="34" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="37" startPosition="39" endLine="38" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="41" startPosition="49" endLine="42" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="45" startPosition="28" endLine="46" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="49" startPosition="38" endLine="50" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="53" startPosition="37" endLine="54" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="57" startPosition="47" endLine="58" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="61" startPosition="42" endLine="62" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="65" startPosition="51" endLine="66" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="69" startPosition="41" endLine="70" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="73" startPosition="49" endLine="74" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="77" startPosition="48" endLine="78" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="81" startPosition="50" endLine="82" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="85" startPosition="69" endLine="86" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="89" startPosition="64" endLine="90" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="93" startPosition="50" endLine="94" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="24" startPosition="0" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConvertTo#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTargetCurrency#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTargetCurrency#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConversionTable#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setConversionTable#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="88" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Lorg/jetbrains/mps/samples/Money/structure/ConvertTo;" />
+    <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="92" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Lorg/jetbrains/mps/samples/Money/structure/ConvertTo;" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="25" startPosition="32" endLine="26" endPosition="16" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="29" startPosition="37" endLine="30" endPosition="55" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="33" startPosition="47" endLine="34" endPosition="55" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="37" startPosition="39" endLine="38" endPosition="57" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="41" startPosition="49" endLine="42" endPosition="57" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="45" startPosition="28" endLine="46" endPosition="45" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="49" startPosition="38" endLine="50" endPosition="45" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="53" startPosition="37" endLine="54" endPosition="55" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="57" startPosition="47" endLine="58" endPosition="55" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="61" startPosition="42" endLine="62" endPosition="84" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="65" startPosition="51" endLine="66" endPosition="53" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="69" startPosition="41" endLine="70" endPosition="58" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="73" startPosition="49" endLine="74" endPosition="70" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="77" startPosition="48" endLine="78" endPosition="73" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="81" startPosition="50" endLine="82" endPosition="52" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="85" startPosition="69" endLine="86" endPosition="61" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="89" startPosition="64" endLine="90" endPosition="173" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="93" startPosition="50" endLine="94" endPosition="44" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="24" startPosition="0" endLine="27" endPosition="3">
+      <varInfo nodeId="1790427706118381722" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1790427706118381722" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1790427706118381722" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="1790427706118381722" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="1790427706118381722" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="1790427706118381722" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
+      <varInfo nodeId="1790427706118381722" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="84" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="1790427706118381722" varName="node" />
+      <varInfo nodeId="1790427706118381722" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="88" startPosition="0" endLine="92" endPosition="0">
+      <varInfo nodeId="1790427706118381722" varName="init" />
+      <varInfo nodeId="1790427706118381722" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="92" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="1790427706118381722" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="org.jetbrains.mps.samples.Money.structure.ConvertTo" />
+  </root>
+  <root nodeId="1790427706118391955">
+    <nodeInfo nodeId="1790427706118391955" fileName="MoneyConversionType.java" startLine="11" startPosition="47" endLine="12" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1790427706118391955" fileName="MoneyConversionType.java" startLine="14" startPosition="42" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1790427706118391955" fileName="MoneyConversionType.java" startLine="18" startPosition="74" endLine="19" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1790427706118391955" fileName="MoneyConversionType.java" startLine="22" startPosition="60" endLine="23" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1790427706118391955" fileName="MoneyConversionType.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoneyConversionType#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1790427706118391955" fileName="MoneyConversionType.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Lorg/jetbrains/mps/samples/Money/structure/MoneyConversionType;" />
+    <nodeInfo nodeId="1790427706118391955" fileName="MoneyConversionType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Lorg/jetbrains/mps/samples/Money/structure/MoneyConversionType;" />
+    <scopeInfo nodeId="1790427706118391955" fileName="MoneyConversionType.java" startLine="14" startPosition="42" endLine="15" endPosition="16" />
+    <scopeInfo nodeId="1790427706118391955" fileName="MoneyConversionType.java" startLine="18" startPosition="74" endLine="19" endPosition="193" />
+    <scopeInfo nodeId="1790427706118391955" fileName="MoneyConversionType.java" startLine="22" startPosition="60" endLine="23" endPosition="54" />
+    <scopeInfo nodeId="1790427706118391955" fileName="MoneyConversionType.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1790427706118391955" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1790427706118391955" fileName="MoneyConversionType.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="1790427706118391955" varName="init" />
+      <varInfo nodeId="1790427706118391955" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1790427706118391955" fileName="MoneyConversionType.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1790427706118391955" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="1790427706118391955" fileName="MoneyConversionType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="org.jetbrains.mps.samples.Money.structure.MoneyConversionType" />
+  </root>
+  <root nodeId="3607579524910560662">
+    <nodeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="13" startPosition="51" endLine="14" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="14" startPosition="100" endLine="15" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="UNITS" />
+    <nodeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="17" startPosition="39" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="21" startPosition="32" endLine="22" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="25" startPosition="43" endLine="26" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="29" startPosition="42" endLine="30" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="33" startPosition="43" endLine="34" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="37" startPosition="65" endLine="38" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="41" startPosition="71" endLine="42" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="45" startPosition="57" endLine="46" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="16" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CurrencyDefTable#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUnitsesCount#()I" />
+    <nodeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unitses#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUnitses#()Ljava/util/List;" />
+    <nodeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addUnits#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertUnits#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Lorg/jetbrains/mps/samples/Money/structure/CurrencyDefTable;" />
+    <nodeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Lorg/jetbrains/mps/samples/Money/structure/CurrencyDefTable;" />
+    <scopeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="17" startPosition="39" endLine="18" endPosition="16" />
+    <scopeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="21" startPosition="32" endLine="22" endPosition="54" />
+    <scopeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="25" startPosition="43" endLine="26" endPosition="69" />
+    <scopeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="29" startPosition="42" endLine="30" endPosition="72" />
+    <scopeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="33" startPosition="43" endLine="34" endPosition="48" />
+    <scopeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="37" startPosition="65" endLine="38" endPosition="57" />
+    <scopeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="41" startPosition="71" endLine="42" endPosition="187" />
+    <scopeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="45" startPosition="57" endLine="46" endPosition="51" />
+    <scopeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="16" startPosition="0" endLine="19" endPosition="3">
+      <varInfo nodeId="3607579524910560662" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="3607579524910560662" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="3607579524910560662" varName="node" />
+      <varInfo nodeId="3607579524910560662" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="3607579524910560662" varName="init" />
+      <varInfo nodeId="3607579524910560662" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="3607579524910560662" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="org.jetbrains.mps.samples.Money.structure.CurrencyDefTable" />
+  </root>
+  <root nodeId="3607579524910560663">
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="15" startPosition="72" endLine="16" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="16" startPosition="96" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="18" startPosition="68" endLine="19" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="19" startPosition="45" endLine="20" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="20" startPosition="64" endLine="21" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="23" startPosition="35" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="27" startPosition="27" endLine="28" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="31" startPosition="37" endLine="32" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="35" startPosition="39" endLine="36" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="39" startPosition="49" endLine="40" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="43" startPosition="28" endLine="44" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="47" startPosition="38" endLine="48" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="51" startPosition="37" endLine="52" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="55" startPosition="47" endLine="56" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="59" startPosition="41" endLine="60" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="63" startPosition="49" endLine="64" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="67" startPosition="48" endLine="68" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="71" startPosition="50" endLine="72" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="75" startPosition="69" endLine="76" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="79" startPosition="67" endLine="80" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="83" startPosition="53" endLine="84" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="22" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CurrencyUnit#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setName#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Lorg/jetbrains/mps/samples/Money/structure/CurrencyUnit;" />
+    <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Lorg/jetbrains/mps/samples/Money/structure/CurrencyUnit;" />
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="23" startPosition="35" endLine="24" endPosition="16" />
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="27" startPosition="27" endLine="28" endPosition="47" />
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="31" startPosition="37" endLine="32" endPosition="47" />
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="35" startPosition="39" endLine="36" endPosition="60" />
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="39" startPosition="49" endLine="40" endPosition="60" />
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="43" startPosition="28" endLine="44" endPosition="48" />
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="47" startPosition="38" endLine="48" endPosition="48" />
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="51" startPosition="37" endLine="52" endPosition="58" />
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="55" startPosition="47" endLine="56" endPosition="58" />
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="59" startPosition="41" endLine="60" endPosition="61" />
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="63" startPosition="49" endLine="64" endPosition="73" />
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="67" startPosition="48" endLine="68" endPosition="76" />
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="71" startPosition="50" endLine="72" endPosition="55" />
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="75" startPosition="69" endLine="76" endPosition="64" />
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="79" startPosition="67" endLine="80" endPosition="179" />
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="83" startPosition="53" endLine="84" endPosition="47" />
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
+      <varInfo nodeId="3607579524910560663" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="3607579524910560663" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="3607579524910560663" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="3607579524910560663" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="3607579524910560663" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="3607579524910560663" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="74" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="3607579524910560663" varName="node" />
+      <varInfo nodeId="3607579524910560663" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="3607579524910560663" varName="init" />
+      <varInfo nodeId="3607579524910560663" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="3607579524910560663" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="org.jetbrains.mps.samples.Money.structure.CurrencyUnit" />
+  </root>
+  <root nodeId="5447719361346490674">
+    <nodeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="11" startPosition="46" endLine="12" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="12" startPosition="96" endLine="13" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="AMOUNT" />
+    <nodeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="13" startPosition="47" endLine="14" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="UNIT" />
+    <nodeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="16" startPosition="35" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="20" startPosition="26" endLine="21" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="24" startPosition="36" endLine="25" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="28" startPosition="33" endLine="29" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="32" startPosition="42" endLine="33" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="36" startPosition="67" endLine="37" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="40" startPosition="53" endLine="41" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="15" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoneyLiteral#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAmount#()I" />
+    <nodeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAmount#(I)V" />
+    <nodeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUnit#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setUnit#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Lorg/jetbrains/mps/samples/Money/structure/MoneyLiteral;" />
+    <nodeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Lorg/jetbrains/mps/samples/Money/structure/MoneyLiteral;" />
+    <scopeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="16" startPosition="35" endLine="17" endPosition="16" />
+    <scopeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="20" startPosition="26" endLine="21" endPosition="56" />
+    <scopeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="24" startPosition="36" endLine="25" endPosition="56" />
+    <scopeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="28" startPosition="33" endLine="29" endPosition="82" />
+    <scopeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="32" startPosition="42" endLine="33" endPosition="47" />
+    <scopeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="36" startPosition="67" endLine="37" endPosition="179" />
+    <scopeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="40" startPosition="53" endLine="41" endPosition="47" />
+    <scopeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
+      <varInfo nodeId="5447719361346490674" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="5447719361346490674" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="5447719361346490674" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="5447719361346490674" varName="init" />
+      <varInfo nodeId="5447719361346490674" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="5447719361346490674" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="org.jetbrains.mps.samples.Money.structure.MoneyLiteral" />
+  </root>
+  <root nodeId="5447719361346490730">
+    <nodeInfo nodeId="5447719361346490730" fileName="MoneyType.java" startLine="11" startPosition="37" endLine="12" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="5447719361346490730" fileName="MoneyType.java" startLine="14" startPosition="32" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5447719361346490730" fileName="MoneyType.java" startLine="18" startPosition="64" endLine="19" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5447719361346490730" fileName="MoneyType.java" startLine="22" startPosition="50" endLine="23" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5447719361346490730" fileName="MoneyType.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoneyType#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5447719361346490730" fileName="MoneyType.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Lorg/jetbrains/mps/samples/Money/structure/MoneyType;" />
+    <nodeInfo nodeId="5447719361346490730" fileName="MoneyType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Lorg/jetbrains/mps/samples/Money/structure/MoneyType;" />
+    <scopeInfo nodeId="5447719361346490730" fileName="MoneyType.java" startLine="14" startPosition="32" endLine="15" endPosition="16" />
+    <scopeInfo nodeId="5447719361346490730" fileName="MoneyType.java" startLine="18" startPosition="64" endLine="19" endPosition="173" />
+    <scopeInfo nodeId="5447719361346490730" fileName="MoneyType.java" startLine="22" startPosition="50" endLine="23" endPosition="44" />
+    <scopeInfo nodeId="5447719361346490730" fileName="MoneyType.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="5447719361346490730" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5447719361346490730" fileName="MoneyType.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="5447719361346490730" varName="init" />
+      <varInfo nodeId="5447719361346490730" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="5447719361346490730" fileName="MoneyType.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="5447719361346490730" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="5447719361346490730" fileName="MoneyType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="org.jetbrains.mps.samples.Money.structure.MoneyType" />
+  </root>
+  <root nodeId="5447719361346519865">
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="15" startPosition="66" endLine="16" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="16" startPosition="93" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="18" startPosition="45" endLine="19" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="19" startPosition="64" endLine="20" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="22" startPosition="32" endLine="23" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="26" startPosition="39" endLine="27" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="30" startPosition="49" endLine="31" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="34" startPosition="28" endLine="35" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="38" startPosition="38" endLine="39" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="42" startPosition="37" endLine="43" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="46" startPosition="47" endLine="47" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="50" startPosition="41" endLine="51" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="54" startPosition="49" endLine="55" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="58" startPosition="48" endLine="59" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="62" startPosition="50" endLine="63" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="66" startPosition="69" endLine="67" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="70" startPosition="64" endLine="71" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="74" startPosition="50" endLine="75" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="21" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GetAmount#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Lorg/jetbrains/mps/samples/Money/structure/GetAmount;" />
+    <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Lorg/jetbrains/mps/samples/Money/structure/GetAmount;" />
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="22" startPosition="32" endLine="23" endPosition="16" />
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="26" startPosition="39" endLine="27" endPosition="57" />
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="30" startPosition="49" endLine="31" endPosition="57" />
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="34" startPosition="28" endLine="35" endPosition="45" />
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="38" startPosition="38" endLine="39" endPosition="45" />
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="42" startPosition="37" endLine="43" endPosition="55" />
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="46" startPosition="47" endLine="47" endPosition="55" />
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="50" startPosition="41" endLine="51" endPosition="58" />
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="54" startPosition="49" endLine="55" endPosition="70" />
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="58" startPosition="48" endLine="59" endPosition="73" />
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="62" startPosition="50" endLine="63" endPosition="52" />
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="66" startPosition="69" endLine="67" endPosition="61" />
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="70" startPosition="64" endLine="71" endPosition="173" />
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="74" startPosition="50" endLine="75" endPosition="44" />
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="21" startPosition="0" endLine="24" endPosition="3">
+      <varInfo nodeId="5447719361346519865" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="5447719361346519865" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="5447719361346519865" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="5447719361346519865" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="5447719361346519865" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="5447719361346519865" varName="node" />
+      <varInfo nodeId="5447719361346519865" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="5447719361346519865" varName="init" />
+      <varInfo nodeId="5447719361346519865" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="5447719361346519865" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="org.jetbrains.mps.samples.Money.structure.GetAmount" />
+  </root>
+</debugInfo>
+

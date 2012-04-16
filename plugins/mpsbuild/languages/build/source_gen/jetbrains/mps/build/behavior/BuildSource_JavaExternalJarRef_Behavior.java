@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.build.util.JavaExportUtil;
 
 public class BuildSource_JavaExternalJarRef_Behavior {
   public static void init(SNode thisNode) {
@@ -16,17 +17,6 @@ public class BuildSource_JavaExternalJarRef_Behavior {
       return null;
     }
 
-    SNode target = SNodeOperations.as(artifacts.toOriginalNode(SLinkOperations.getTarget(thisNode, "jar", false)), "jetbrains.mps.build.structure.BuildSource_SingleFile");
-    if (target == null) {
-      return null;
-    }
-
-    SNode artifact = null;
-    if (SNodeOperations.isInstanceOf(target, "jetbrains.mps.build.structure.BuildLayout_Node")) {
-      artifact = SNodeOperations.cast(target, "jetbrains.mps.build.structure.BuildLayout_Node");
-    } else if (SNodeOperations.isInstanceOf(target, "jetbrains.mps.build.structure.BuildInputSingleFile")) {
-      artifact = SNodeOperations.as(artifacts.findArtifact(SLinkOperations.getTarget(SNodeOperations.cast(target, "jetbrains.mps.build.structure.BuildInputSingleFile"), "path", true)), "jetbrains.mps.build.structure.BuildLayout_Node");
-    }
-    return artifact;
+    return JavaExportUtil.requireJar(artifacts, SLinkOperations.getTarget(thisNode, "jar", false), thisNode);
   }
 }

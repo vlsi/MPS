@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="38" endPosition="0" unitName="org.jetbrains.mps.samples.Money.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="ConvertTo_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="org.jetbrains.mps.samples.Money.behavior.ConvertTo_BehaviorDescriptor" />
+  <unitInfo fileName="CurrencyDefTable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.Money.behavior.CurrencyDefTable_BehaviorDescriptor" />
+  <unitInfo fileName="CurrencyUnit_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="org.jetbrains.mps.samples.Money.behavior.CurrencyUnit_BehaviorDescriptor" />
+  <unitInfo fileName="GetAmount_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="org.jetbrains.mps.samples.Money.behavior.GetAmount_BehaviorDescriptor" />
+  <unitInfo fileName="GetCurrency_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="org.jetbrains.mps.samples.Money.behavior.GetCurrency_BehaviorDescriptor" />
+  <unitInfo fileName="MoneyConversionType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.Money.behavior.MoneyConversionType_BehaviorDescriptor" />
+  <unitInfo fileName="MoneyLiteral_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="org.jetbrains.mps.samples.Money.behavior.MoneyLiteral_BehaviorDescriptor" />
+  <unitInfo fileName="MoneyType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.jetbrains.mps.samples.Money.behavior.MoneyType_BehaviorDescriptor" />
+  <root nodeId="6451560055131607330">
+    <nodeInfo nodeId="6451560055131612334" fileName="MoneyType_Behavior.java" startLine="14" startPosition="88" endLine="15" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6451560055131607330" fileName="MoneyType_Behavior.java" startLine="10" startPosition="33" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="6451560055131607330" fileName="MoneyType_Behavior.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getVariableSuffixes_1213877337304#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
+    <scopeInfo nodeId="6451560055131607332" fileName="MoneyType_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
+    <scopeInfo nodeId="6451560055131607335" fileName="MoneyType_Behavior.java" startLine="14" startPosition="88" endLine="15" endPosition="105" />
+    <scopeInfo nodeId="6451560055131607330" fileName="MoneyType_Behavior.java" startLine="10" startPosition="33" endLine="13" endPosition="0">
+      <varInfo nodeId="6451560055131607330" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6451560055131607330" fileName="MoneyType_Behavior.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="6451560055131607330" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="6451560055131607330" fileName="MoneyType_Behavior.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="org.jetbrains.mps.samples.Money.behavior.MoneyType_Behavior" />
+  </root>
+  <root nodeId="6451560055131620545">
+    <nodeInfo nodeId="6451560055131621046" fileName="MoneyLiteral_Behavior.java" startLine="17" startPosition="86" endLine="18" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6451560055131621105" fileName="MoneyLiteral_Behavior.java" startLine="18" startPosition="148" endLine="19" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6451560055131621117" fileName="MoneyLiteral_Behavior.java" startLine="19" startPosition="166" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="595452003767176058" fileName="MoneyLiteral_Behavior.java" startLine="23" startPosition="104" endLine="24" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="595452003767176169" fileName="MoneyLiteral_Behavior.java" startLine="24" startPosition="245" endLine="25" endPosition="275" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="595452003767176237" fileName="MoneyLiteral_Behavior.java" startLine="25" startPosition="275" endLine="26" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="595452003767176017" fileName="MoneyLiteral_Behavior.java" startLine="26" startPosition="245" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="595452003767176314" fileName="MoneyLiteral_Behavior.java" startLine="28" startPosition="37" endLine="29" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="595452003767176339" fileName="MoneyLiteral_Behavior.java" startLine="31" startPosition="37" endLine="32" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="595452003767176376" fileName="MoneyLiteral_Behavior.java" startLine="34" startPosition="39" endLine="35" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="595452003767176364" fileName="MoneyLiteral_Behavior.java" startLine="35" startPosition="28" endLine="36" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="595452003767179677" fileName="MoneyLiteral_Behavior.java" startLine="37" startPosition="20" endLine="38" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="595452003767176401" fileName="MoneyLiteral_Behavior.java" startLine="39" startPosition="7" endLine="40" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="595452003767176406" fileName="MoneyLiteral_Behavior.java" startLine="41" startPosition="5" endLine="42" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6451560055131620545" fileName="MoneyLiteral_Behavior.java" startLine="13" startPosition="36" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="595452003767176296" fileName="MoneyLiteral_Behavior.java" startLine="27" startPosition="16" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="595452003767176322" fileName="MoneyLiteral_Behavior.java" startLine="30" startPosition="5" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="595452003767178553" fileName="MoneyLiteral_Behavior.java" startLine="36" startPosition="67" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6451560055131620545" fileName="MoneyLiteral_Behavior.java" startLine="16" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getVariableExpectedName_1213877519781#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="595452003767176347" fileName="MoneyLiteral_Behavior.java" startLine="33" startPosition="5" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6451560055131620545" fileName="MoneyLiteral_Behavior.java" startLine="22" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_convertAmountAdvanced_595452003767176013#(Ljetbrains/mps/smodel/SNode;I)Ljava/lang/String;" />
+    <scopeInfo nodeId="6451560055131620547" fileName="MoneyLiteral_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="595452003767176297" fileName="MoneyLiteral_Behavior.java" startLine="28" startPosition="37" endLine="29" endPosition="62" />
+    <scopeInfo nodeId="595452003767176323" fileName="MoneyLiteral_Behavior.java" startLine="31" startPosition="37" endLine="32" endPosition="63" />
+    <scopeInfo nodeId="595452003767178555" fileName="MoneyLiteral_Behavior.java" startLine="37" startPosition="20" endLine="38" endPosition="83" />
+    <scopeInfo nodeId="6451560055131620545" fileName="MoneyLiteral_Behavior.java" startLine="13" startPosition="36" endLine="16" endPosition="0">
+      <varInfo nodeId="6451560055131620545" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6451560055131620550" fileName="MoneyLiteral_Behavior.java" startLine="17" startPosition="86" endLine="20" endPosition="16">
+      <varInfo nodeId="6451560055131621047" varName="text" />
+    </scopeInfo>
+    <scopeInfo nodeId="6451560055131620545" fileName="MoneyLiteral_Behavior.java" startLine="16" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="6451560055131620545" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="595452003767176348" fileName="MoneyLiteral_Behavior.java" startLine="34" startPosition="39" endLine="40" endPosition="18">
+      <varInfo nodeId="595452003767176377" varName="mod" />
+    </scopeInfo>
+    <scopeInfo nodeId="595452003767176016" fileName="MoneyLiteral_Behavior.java" startLine="23" startPosition="104" endLine="42" endPosition="25">
+      <varInfo nodeId="595452003767176170" varName="mediumConversion" />
+      <varInfo nodeId="595452003767176059" varName="smallConversion" />
+      <varInfo nodeId="595452003767176238" varName="tensConversion" />
+      <varInfo nodeId="595452003767176018" varName="text" />
+    </scopeInfo>
+    <scopeInfo nodeId="6451560055131620545" fileName="MoneyLiteral_Behavior.java" startLine="22" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="595452003767176055" varName="amount" />
+      <varInfo nodeId="6451560055131620545" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="6451560055131620545" fileName="MoneyLiteral_Behavior.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="org.jetbrains.mps.samples.Money.behavior.MoneyLiteral_Behavior" />
+  </root>
+</debugInfo>
+

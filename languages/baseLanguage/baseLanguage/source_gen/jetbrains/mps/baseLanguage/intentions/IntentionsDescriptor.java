@@ -57,7 +57,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     add(new MakeOneLiner_Intention(), "4467513934994688403");
     add(new MakeParameterFinal_Intention(), "3898325814824766814");
     add(new MakeSynchronized_Intention(), "4276006055363816691");
-    add(new MakeVariableFinal_Intention(), "3898325814824964066");
     add(new MergeStringConcatenation_Intention(), "1202130221457");
     add(new MigrateString_Intention(), "3627222673199430317");
     add(new MoveInitializerToConstructor_Intention(), "1201102619707");
