@@ -69,6 +69,7 @@ public class ConvertLanguageRuntimes_Action extends BaseAction {
 
         LanguageDescriptor ld = language.getModuleDescriptor();
         ld.getRuntimeModules().add(runtime.getModuleReference());
+        ld.getModelRoots().remove(ld.getRuntimeStubModels());
         ld.getRuntimeStubModels().clear();
         language.setModuleDescriptor(ld, false);
 
