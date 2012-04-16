@@ -166,6 +166,9 @@ public class MPSVcsManager implements ProjectComponent {
       return null;
     }
 
+    public void setDefaultChangeList(@NotNull String string) {
+    }
+
     public List<LocalChangeList> getListsCopy() {
       return null;
     }
