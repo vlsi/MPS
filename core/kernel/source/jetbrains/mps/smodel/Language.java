@@ -124,7 +124,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   public Set<ModuleReference> getExtendedLanguageRefs() {
     HashSet<ModuleReference> res = new HashSet<ModuleReference>(myLanguageDescriptor.getExtendedLanguages());
     //this is needed now as we don't force the user to have an explicit dependency on core
-    res.add(BootstrapLanguages.coreLanguage().getModuleReference());
+    res.add(BootstrapLanguages.CORE);
     return res;
   }
 
