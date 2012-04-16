@@ -229,12 +229,14 @@ class TypeSystemComponent extends CheckingComponent {
   }
 
   public void clearCaches() {
-    myNodesToDependentNodes_A.clear();
-    myNodesToDependentNodes_B.clear();
-    myNodesDependentOnCaches.clear();
+    if (myNodesToDependentNodes_A!= null) {
+      myNodesToDependentNodes_A.clear();
+      myNodesToDependentNodes_B.clear();
+      myNodesDependentOnCaches.clear();
+      myNodesToRules.clear();
+    }
     myFullyCheckedNodes.clear();
     myPartlyCheckedNodes.clear();
-    myNodesToRules.clear();
   }
 
   protected SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
