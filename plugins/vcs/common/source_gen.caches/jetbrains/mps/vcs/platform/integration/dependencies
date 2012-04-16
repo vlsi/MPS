@@ -51,12 +51,15 @@
     <classNode extendsClassName="jetbrains.mps.vcs.util.ModelVersion" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.platform.integration.ModelDiffTool" file="ModelDiffTool.java">
+    <classNode dependClassName="com.intellij.openapi.Disposable" />
     <classNode dependClassName="com.intellij.openapi.diff.DiffContent" />
     <classNode dependClassName="com.intellij.openapi.diff.DiffManager" />
     <classNode dependClassName="com.intellij.openapi.diff.DiffRequest" />
+    <classNode dependClassName="com.intellij.openapi.diff.DiffViewer" />
     <classNode dependClassName="com.intellij.openapi.diff.DocumentContent" />
     <classNode dependClassName="com.intellij.openapi.diff.FileContent" />
     <classNode dependClassName="com.intellij.openapi.fileTypes.FileType" />
+    <classNode dependClassName="java.awt.Window" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.fileTypes.MPSFileTypeFactory" />
@@ -73,6 +76,7 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.diff.DiffTool" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.platform.integration.ModelMergeTool" file="ModelMergeTool.java">
