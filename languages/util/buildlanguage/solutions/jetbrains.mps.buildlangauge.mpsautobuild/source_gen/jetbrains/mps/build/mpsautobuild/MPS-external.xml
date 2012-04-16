@@ -518,6 +518,8 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.execution.startup" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.execution.startup" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.migration" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.nanoc" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.nanoc.pluginSolution" />
     <mkdir dir="${deploy.dir}/MPS/plugins/execution-configurations/languages" />
     <mkdir dir="${deploy.dir}/MPS/plugins/execution-configurations" />
     <copy todir="${deploy.dir}/MPS/plugins/execution-languages/META-INF">

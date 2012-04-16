@@ -3233,6 +3233,14 @@
           <property name="id" nameId="tps4.1222447189012" value="92f5dc44-466d-4972-9f92-b03994f153c4" />
           <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.execution.migration" />
         </node>
+        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="3393121265070537496">
+          <property name="id" nameId="tps4.1222447189012" value="08ffecab-a1e5-4be9-bd87-e14140b1b0e0" />
+          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.nanoc" />
+        </node>
+        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="3393121265070537498">
+          <property name="id" nameId="tps4.1222447189012" value="145e4b07-c585-49f6-847f-007fdad1f453" />
+          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.nanoc.pluginSolution" />
+        </node>
       </node>
       <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="3054488448088159487">
         <property name="name" nameId="tps4.1223641503366" value="execution-configurations" />
