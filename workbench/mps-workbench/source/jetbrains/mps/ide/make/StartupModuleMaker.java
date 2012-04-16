@@ -49,32 +49,14 @@ public class StartupModuleMaker extends AbstractProjectComponent {
   private final FSChangesWatcher myWatcher;
 
   @SuppressWarnings({"UnusedDeclaration"})
-  public StartupModuleMaker(Project project, MPSProject mpsProject, ProjectLibraryManager plm, final FSChangesWatcher watcher, MPSProjectMigrationState migrationState) {
+  public StartupModuleMaker(Project project, MPSProject mpsProject, ProjectLibraryManager plm, final FSChangesWatcher watcher) {
     super(project);
     myWatcher = watcher;
   }
 
   @Override
   public void projectOpened() {
-    final MPSProjectMigrationState migrationState = myProject.getComponent(MPSProjectMigrationState.class);
-    if (migrationState.isMigrationRequired() && migrationState.hasMigrationAgent()) {
-      migrationState.addMigrationListener(new MPSProjectMigrationListener.DEFAULT() {
-        @Override
-        public void migrationFinished(Project mpsProject) {
-          migrationState.removeMigrationListener(this);
-          compileProjectModulesWithProgress(false);
-        }
-        @Override
-        public void migrationAborted(Project project) {
-          migrationState.removeMigrationListener(this);
-        }
-      });
-      // reload classes anyway as this is required in order to load the plugins
-      reloadClasses(new EmptyProgressIndicator(), true);
-    }
-    else {
-      compileProjectModulesWithProgress(true);
-    }
+    compileProjectModulesWithProgress(true);
   }
 
 
