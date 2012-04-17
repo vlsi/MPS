@@ -47,7 +47,7 @@ public class EnumConstantReference_Constraints extends BaseConstraintsDescriptor
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             if ((SLinkOperations.getTarget(_context.getReferenceNode(), "enumClass", false) != null)) {
-              return Classifier_Behavior.call_getVisibleMembers_8083692786967356611(SLinkOperations.getTarget(_context.getReferenceNode(), "enumClass", false), _context.getContextNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference"));
+              return Classifier_Behavior.call_getVisibleMembers_8083692786967356611(SLinkOperations.getTarget(_context.getReferenceNode(), "enumClass", false), _context.getContextNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"));
             } else {
               return new EmptyScope();
             }

@@ -1095,7 +1095,7 @@
     <nodeInfo nodeId="1213104856628" fileName="EnumConstantReference_Constraints.java" startLine="30" startPosition="83" endLine="31" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213104856628" fileName="EnumConstantReference_Constraints.java" startLine="34" startPosition="44" endLine="35" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213104856628" fileName="EnumConstantReference_Constraints.java" startLine="43" startPosition="61" endLine="44" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7898359107948136907" fileName="EnumConstantReference_Constraints.java" startLine="49" startPosition="103" endLine="50" endPosition="292" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7898359107948136907" fileName="EnumConstantReference_Constraints.java" startLine="49" startPosition="103" endLine="50" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7898359107948137736" fileName="EnumConstantReference_Constraints.java" startLine="51" startPosition="20" endLine="52" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213104856628" fileName="EnumConstantReference_Constraints.java" startLine="57" startPosition="7" endLine="58" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7898359107948137734" fileName="EnumConstantReference_Constraints.java" startLine="51" startPosition="18" endLine="53" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1112,7 +1112,7 @@
     <scopeInfo nodeId="1213104856628" fileName="EnumConstantReference_Constraints.java" startLine="25" startPosition="46" endLine="26" endPosition="72" />
     <scopeInfo nodeId="1213104856628" fileName="EnumConstantReference_Constraints.java" startLine="34" startPosition="44" endLine="35" endPosition="20" />
     <scopeInfo nodeId="1213104856628" fileName="EnumConstantReference_Constraints.java" startLine="43" startPosition="61" endLine="44" endPosition="58" />
-    <scopeInfo nodeId="7898359107948137668" fileName="EnumConstantReference_Constraints.java" startLine="49" startPosition="103" endLine="50" endPosition="292" />
+    <scopeInfo nodeId="7898359107948137668" fileName="EnumConstantReference_Constraints.java" startLine="49" startPosition="103" endLine="50" endPosition="294" />
     <scopeInfo nodeId="7898359107948137735" fileName="EnumConstantReference_Constraints.java" startLine="51" startPosition="20" endLine="52" endPosition="38" />
     <scopeInfo nodeId="1213104856628" fileName="EnumConstantReference_Constraints.java" startLine="24" startPosition="0" endLine="27" endPosition="3" />
     <scopeInfo nodeId="1213104856628" fileName="EnumConstantReference_Constraints.java" startLine="32" startPosition="119" endLine="37" endPosition="0" />

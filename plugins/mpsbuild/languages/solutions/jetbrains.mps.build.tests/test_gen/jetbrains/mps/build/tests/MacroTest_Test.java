@@ -7,7 +7,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest4;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.Assert;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.ModelAccess;
@@ -65,7 +65,7 @@ public class MacroTest_Test extends BaseTransformationTest4 {
       this.addNodeById("193602448594327347");
       this.addNodeById("763409143595572699");
       this.addNodeById("384280137912153748");
-      Assert.assertTrue(ListSequence.fromList(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("193602448594327348"), "jetbrains.mps.build.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
+      Assert.assertTrue(Sequence.fromIterable(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("193602448594327348"), "jetbrains.mps.build.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
         public SNode compute() {
           return SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro");
         }
@@ -76,7 +76,7 @@ public class MacroTest_Test extends BaseTransformationTest4 {
       this.addNodeById("193602448594327347");
       this.addNodeById("763409143595572699");
       this.addNodeById("384280137912153748");
-      Assert.assertFalse(ListSequence.fromList(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("193602448594327348"), "jetbrains.mps.build.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
+      Assert.assertFalse(Sequence.fromIterable(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("193602448594327348"), "jetbrains.mps.build.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
         public SNode compute() {
           return SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro");
         }
@@ -87,7 +87,7 @@ public class MacroTest_Test extends BaseTransformationTest4 {
       this.addNodeById("193602448594327347");
       this.addNodeById("763409143595572699");
       this.addNodeById("384280137912153748");
-      Assert.assertFalse(ListSequence.fromList(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("763409143595572700"), "jetbrains.mps.build.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
+      Assert.assertFalse(Sequence.fromIterable(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("763409143595572700"), "jetbrains.mps.build.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
         public SNode compute() {
           return SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro");
         }
@@ -98,12 +98,12 @@ public class MacroTest_Test extends BaseTransformationTest4 {
       this.addNodeById("193602448594327347");
       this.addNodeById("763409143595572699");
       this.addNodeById("384280137912153748");
-      Assert.assertFalse(ListSequence.fromList(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("763409143595572700"), "jetbrains.mps.build.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
+      Assert.assertFalse(Sequence.fromIterable(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("763409143595572700"), "jetbrains.mps.build.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
         public SNode compute() {
           return SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro");
         }
       }), SNodeOperations.cast(this.getNodeById("763409143595572705"), "jetbrains.mps.build.structure.BuildFolderMacro")).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("193602448594330632"), "jetbrains.mps.build.structure.BuildFolderMacro")));
-      Assert.assertFalse(ListSequence.fromList(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("763409143595572700"), "jetbrains.mps.build.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
+      Assert.assertFalse(Sequence.fromIterable(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("763409143595572700"), "jetbrains.mps.build.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
         public SNode compute() {
           return SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro");
         }
@@ -114,7 +114,7 @@ public class MacroTest_Test extends BaseTransformationTest4 {
       this.addNodeById("193602448594327347");
       this.addNodeById("763409143595572699");
       this.addNodeById("384280137912153748");
-      Assert.assertTrue(ListSequence.fromList(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("763409143595572700"), "jetbrains.mps.build.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
+      Assert.assertTrue(Sequence.fromIterable(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("763409143595572700"), "jetbrains.mps.build.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
         public SNode compute() {
           return SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro");
         }
@@ -125,7 +125,7 @@ public class MacroTest_Test extends BaseTransformationTest4 {
       this.addNodeById("193602448594327347");
       this.addNodeById("763409143595572699");
       this.addNodeById("384280137912153748");
-      Assert.assertFalse(ListSequence.fromList(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("384280137912153749"), "jetbrains.mps.build.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
+      Assert.assertFalse(Sequence.fromIterable(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("384280137912153749"), "jetbrains.mps.build.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
         public SNode compute() {
           return SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro");
         }
@@ -136,7 +136,7 @@ public class MacroTest_Test extends BaseTransformationTest4 {
       this.addNodeById("193602448594327347");
       this.addNodeById("763409143595572699");
       this.addNodeById("384280137912153748");
-      Assert.assertTrue(ListSequence.fromList(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("384280137912153749"), "jetbrains.mps.build.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
+      Assert.assertTrue(Sequence.fromIterable(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("384280137912153749"), "jetbrains.mps.build.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
         public SNode compute() {
           return SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro");
         }

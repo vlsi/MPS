@@ -14,7 +14,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
@@ -28,6 +27,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -58,7 +58,7 @@ public class ClassifiersScope extends DelegatingScope {
   }
 
   @Override
-  public SNode resolve(SNode contextNode, String refText, @Nullable SModelReference targetModelReference) {
+  public SNode resolve(SNode contextNode, String refText) {
     // todo: CRAP, rewrite it! 
     String classname = refText;
     int dotIndex = classname.lastIndexOf(".");
@@ -76,9 +76,7 @@ public class ClassifiersScope extends DelegatingScope {
       return resolveClass(package_, null, classname);
     }
 
-    if (targetModelReference == null) {
-      targetModelReference = model.getSModelReference();
-    }
+    SModelReference targetModelReference = model.getSModelReference();
     if (targetModelReference.getSModelId() != null) {
       SModelDescriptor targetModel = scope.getModelDescriptor(targetModelReference);
       if (targetModel == null) {
