@@ -4902,6 +4902,9 @@
             <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutIndentStyleClassItem" typeId="tpc2.1237307900041" id="927724900262155847">
               <property name="flag" nameId="tpc2.1186414551515" value="true" />
             </node>
+            <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineChildrenStyleClassItem" typeId="tpc2.1237375020029" id="8055294676438932864">
+              <property name="flag" nameId="tpc2.1186414551515" value="true" />
+            </node>
             <node role="emptyCellModel" roleId="tpc2.1140524464359" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="927724900262213625">
               <property name="text" nameId="tpc2.1073389577007" value="" />
               <property name="nullText" nameId="tpc2.1082639509531" value="&lt;all non-java files&gt;" />

@@ -36,6 +36,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Collections;
 import jetbrains.mps.build.generator.util.JavaExternalLibraryHelper;
 import jetbrains.mps.generator.template.MappingScriptContext;
@@ -220,6 +221,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1117643560963346427(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return Context.defaultContext(_context).getTempPath(_context.getNode(), SPropertyOperations.getString(_context.getNode(), "name"), "java", "out");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_8055294676438890975(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getNode().getProperty("folderName");
   }
 
   public static Object propertyMacro_GetPropertyValue_1659807394254872723(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -684,6 +689,14 @@ public class QueriesGenerated {
     return new DependenciesHelper(_context, SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.structure.BuildProject", false, false)).requiresFetch().containsKey(_context.getOriginalCopiedInputNode(_context.getNode()));
   }
 
+  public static boolean ifMacro_Condition_8055294676438891194(final IOperationContext operationContext, final IfMacroContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(((SNode) _context.getVariable("var:javaOpts")), "resourceSelectors", true)).isEmpty();
+  }
+
+  public static boolean ifMacro_Condition_8055294676438890260(final IOperationContext operationContext, final IfMacroContext _context) {
+    return ((SNode) _context.getVariable("var:javaOpts")) != null;
+  }
+
   public static boolean ifMacro_Condition_6520682027040886838(final IOperationContext operationContext, final IfMacroContext _context) {
     Iterable<SNode> s = (Iterable<SNode>) ((MacroHelper) _context.getVariable("var:macroHelper")).getMacrosToExport();
     return Sequence.fromIterable(s).isNotEmpty();
@@ -857,6 +870,60 @@ public class QueriesGenerated {
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaResources"), "fileset", true);
+      }
+    });
+  }
+
+  public static Iterable sourceNodesQuery_8055294676438890950(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(((SNode) _context.getVariable("var:javaOpts")), "resourceSelectors", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFileSelectorInAttribute");
+      }
+    });
+  }
+
+  public static Iterable sourceNodesQuery_8055294676438890049(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    Iterable<String> folders = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "sources", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaFiles");
+      }
+    }).select(new ISelector<SNode, String>() {
+      public String select(SNode it) {
+        return BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaFiles"), "resset", true), "path", true));
+      }
+    });
+    folders = Sequence.fromIterable(folders).concat(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "sources", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaContentRoot");
+      }
+    }).translate(new ITranslator2<SNode, String>() {
+      public Iterable<String> translate(SNode it) {
+        SNode croot = SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaContentRoot");
+        final String relativePath = BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(croot, "basePath", true));
+        return ListSequence.fromList(SLinkOperations.getTargets(croot, "folders", true)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode ifolder) {
+            return SPropertyOperations.hasValue(ifolder, "kind", "source", null);
+          }
+        }).select(new ISelector<SNode, String>() {
+          public String select(SNode ifolder) {
+            return relativePath + "/" + SPropertyOperations.getString(ifolder, "relativePath");
+          }
+        });
+      }
+    }));
+    List<SNode> result = new ArrayList<SNode>();
+    for (String fname : folders) {
+      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
+      loopnode.setProperty("folderName", fname, false);
+      ListSequence.fromList(result).addElement(loopnode);
+    }
+    return result;
+  }
+
+  public static Iterable sourceNodesQuery_8055294676438891186(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(((SNode) _context.getVariable("var:javaOpts")), "resourceSelectors", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFileSelectorInAttribute"));
       }
     });
   }

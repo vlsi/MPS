@@ -106,6 +106,9 @@
         <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/mps-plugin">
+      <fileset dir="${mps_home}/IdeaPlugin/mps-core/src" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
   </target>
   
   <target name="java.compile.mps-vcs" depends="fetchDependencies">
@@ -133,5 +136,8 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/mps-vcs">
+      <fileset dir="${mps_home}/plugins/vcs-core/core/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
   </target>
 </project>

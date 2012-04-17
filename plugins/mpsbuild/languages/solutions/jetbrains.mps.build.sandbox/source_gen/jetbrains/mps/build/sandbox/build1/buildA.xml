@@ -57,16 +57,19 @@
   
   <target name="java.compile.module-A">
     <mkdir dir="${build.tmp}/java/out/module-A" />
-    <javac destdir="${build.tmp}/java/out/module-A" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/module-A" fork="true" memorymaximumsize="512m" nowarn="true" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src path="${basedir}/buildA/src" />
       <classpath refid="path.java.library.abcde-lib" />
     </javac>
+    <copy todir="${build.tmp}/java/out/module-A">
+      <fileset dir="${basedir}/buildA/src" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.modX">
     <mkdir dir="${build.tmp}/java/out/modX" />
-    <javac destdir="${build.tmp}/java/out/modX" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/modX" fork="true" memorymaximumsize="512m" nowarn="true" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/buildA/src" />
@@ -75,5 +78,8 @@
         <fileset file="${basedir}/buildA/abcde.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/modX">
+      <fileset dir="${basedir}/buildA/src" excludes="**/*.java" />
+    </copy>
   </target>
 </project>

@@ -190,6 +190,9 @@
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/typesystem-ui">
+      <fileset dir="${mps_home}/workbench/typesystemUi/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
   </target>
   
   <target name="java.compile.uiLanguage.runtime">
@@ -201,6 +204,9 @@
       </src>
       <classpath />
     </javac>
+    <copy todir="${build.tmp}/java/out/uiLanguage.runtime">
+      <fileset dir="${mps_home}/languages/util/uiLanguage/runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
   </target>
   
   <target name="java.compile.mps-workbench" depends="java.compile.uiLanguage.runtime, fetchDependencies">
@@ -235,6 +241,10 @@
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/mps-workbench">
+      <fileset dir="${mps_home}/workbench/mps-workbench/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/workbench/mps-workbench/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
   </target>
   
   <target name="java.compile.execution" depends="java.compile.mps-workbench, fetchDependencies">
@@ -268,6 +278,10 @@
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/execution">
+      <fileset dir="${mps_home}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.api/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.impl/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
   </target>
   
   <target name="java.compile.startup">
@@ -287,6 +301,9 @@
         <fileset file="${mps_home}/lib/extensions.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/startup">
+      <fileset dir="${mps_home}/startup/src" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.uiLanguage" depends="java.compile.uiLanguage.runtime, fetchDependencies">
@@ -330,6 +347,9 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.uiLanguage">
+      <fileset dir="${mps_home}/languages/util/uiLanguage/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.ide.uiLanguage" depends="java.compile.uiLanguage.runtime, java.compile.jetbrains.mps.uiLanguage, java.compile.mps-workbench, fetchDependencies">
@@ -375,6 +395,9 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.ide.uiLanguage">
+      <fileset dir="${mps_home}/languages/util/ideUiLanguage/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.plugin.standalone" depends="java.compile.mps-workbench, fetchDependencies">
@@ -421,5 +444,8 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.plugin.standalone">
+      <fileset dir="${mps_home}/languages/languageDesign/plugin-standalone/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
   </target>
 </project>
