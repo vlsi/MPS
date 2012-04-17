@@ -24,6 +24,7 @@ public class Migrations21_ActionGroup extends GeneratedActionGroup {
       Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.MigrationScript_APIMigration_Action");
       Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.MigrationScript_ConvertActionParameterCondition_Action");
       Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.MigrationScript_ExecutionAPIMigration_Action");
+      Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.MigrationScript_JavaAPIMigration_Action");
       Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.MigrationScript_DebuggerMoved_Action");
       Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.MigrationScript_FixReferencesToMpsLaunch_Action");
       Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.MigrationScript_SplitMPSClasspath_Action");
