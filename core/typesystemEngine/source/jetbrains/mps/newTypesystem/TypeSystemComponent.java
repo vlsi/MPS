@@ -258,7 +258,9 @@ class TypeSystemComponent extends CheckingComponent {
       type = typeCalculated(initialNode);
       if (type == null) {
         if (node.isRoot()) {
-          computeTypes(node, true, true, new ArrayList<SNode>(0), true, initialNode);
+          if (myState.getInequalitySystem() == null) {
+            computeTypes(node, true, true, new ArrayList<SNode>(0), true, initialNode);
+          }
           type = getType(initialNode);
           if(type == null && node != initialNode && myState.getInequalitySystem() == null && !myNodeTypesComponent.getTypeCheckingContext().isInEditorQueries()) {
             LOG.error("No typesystem rule for " + initialNode.getDebugText() + " in root " + initialNode.getContainingRoot() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms", new Throwable(), new SNodePointer(initialNode));
