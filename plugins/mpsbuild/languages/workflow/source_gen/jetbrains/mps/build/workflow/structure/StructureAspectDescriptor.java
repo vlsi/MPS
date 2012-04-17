@@ -28,7 +28,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 5:
         return new CompiledConceptDescriptor("jetbrains.mps.build.workflow.structure.BwfJavaDescriptor", "jetbrains.mps.build.workflow.structure.BwfProjectPart", false, new String[]{"jetbrains.mps.build.workflow.structure.BwfProjectPart"}, new String[]{}, new String[]{});
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.workflow.structure.BwfJavaModule", "jetbrains.mps.build.workflow.structure.BwfProjectPart", false, new String[]{"jetbrains.mps.build.workflow.structure.BwfProjectPart", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"outputFolder"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.workflow.structure.BwfJavaModule", "jetbrains.mps.build.workflow.structure.BwfProjectPart", false, new String[]{"jetbrains.mps.build.workflow.structure.BwfProjectPart", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"outputFolder", "generateDebugInfo", "heapSize", "noWarnings"}, new String[]{});
       case 7:
         return new CompiledConceptDescriptor("jetbrains.mps.build.workflow.structure.BwfJavaModuleReference", "jetbrains.mps.build.workflow.structure.BwfJavaDependency", false, new String[]{"jetbrains.mps.build.workflow.structure.BwfJavaDependency"}, new String[]{}, new String[]{"target"});
       case 8:
