@@ -22,6 +22,7 @@ import jetbrains.mps.build.util.MacroHelper;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.build.behavior.BuildSource_SingleFile_Behavior;
+import jetbrains.mps.build.behavior.BuildSource_SingleFolder_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -491,13 +492,13 @@ public class QueriesGenerated {
         targetFolder
       ), _context));
       if (layoutNode == null) {
-        _context.showErrorMessage(_context.getNode(), "folder " + BuildSource_SingleFile_Behavior.call_getApproximateName_5610619299013425878(targetFolder) + " was not found in the layout");
+        _context.showErrorMessage(_context.getNode(), "folder " + BuildSource_SingleFolder_Behavior.call_getApproximateName_5610619299014531547(targetFolder) + " was not found in the layout");
         return "???";
       }
     }
     String val = helper.contentLocations().get(layoutNode);
     if (val == null) {
-      _context.showErrorMessage(_context.getNode(), "no content location for " + BuildSource_SingleFile_Behavior.call_getApproximateName_5610619299013425878(targetFolder));
+      _context.showErrorMessage(_context.getNode(), "no content location for " + BuildSource_SingleFolder_Behavior.call_getApproximateName_5610619299014531547(targetFolder));
       return "???";
     }
     return val;

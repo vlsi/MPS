@@ -3486,6 +3486,7 @@
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="o3n2.7880069565647313573" resolveInfo="JavaModulesClosure" />
             </node>
           </node>
+          <node role="resources" roleId="8xvf.1659807394254493213" type="8xvf.BwfFileSet" typeId="8xvf.7926701909975416091" id="1659807394254544088" />
         </node>
       </node>
     </node>
@@ -4424,6 +4425,10 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1659807394254580521">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="3ior.927724900262033858" resolveInfo="BuildSource_JavaOptions" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.AbandonInput_RuleConsequence" typeId="tpf8.1202776937179" id="1659807394254580523" />
     </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="3595702787188034884">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="3ior.5617550519002745363" resolveInfo="BuildProject" />
@@ -6835,6 +6840,7 @@
         </node>
       </node>
       <node role="sources" roleId="8xvf.7926701909975416101" type="8xvf.BwfFileSet" typeId="8xvf.7926701909975416091" id="5979287180587467572" />
+      <node role="resources" roleId="8xvf.1659807394254493213" type="8xvf.BwfFileSet" typeId="8xvf.7926701909975416091" id="1659807394254544095" />
     </node>
   </root>
   <root id="4821808014881207215">
@@ -7120,6 +7126,7 @@
           </node>
         </node>
       </node>
+      <node role="resources" roleId="8xvf.1659807394254493213" type="8xvf.BwfFileSet" typeId="8xvf.7926701909975416091" id="1659807394254544098" />
     </node>
   </root>
   <root id="2569834391840003270">
@@ -7416,6 +7423,7 @@
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="8169228734285529677" />
       </node>
       <node role="sources" roleId="8xvf.7926701909975416101" type="8xvf.BwfFileSet" typeId="8xvf.7926701909975416091" id="8169228734285529442" />
+      <node role="resources" roleId="8xvf.1659807394254493213" type="8xvf.BwfFileSet" typeId="8xvf.7926701909975416091" id="1659807394254544092" />
     </node>
   </root>
   <root id="6859736767834590094">
@@ -7732,6 +7740,7 @@
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="6859736767834590232" />
       </node>
       <node role="sources" roleId="8xvf.7926701909975416101" type="8xvf.BwfFileSet" typeId="8xvf.7926701909975416091" id="6859736767834590233" />
+      <node role="resources" roleId="8xvf.1659807394254493213" type="8xvf.BwfFileSet" typeId="8xvf.7926701909975416091" id="1659807394254544090" />
     </node>
   </root>
   <root id="5610619299014531935">
@@ -7947,8 +7956,8 @@
                                           <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5610619299014532038">
                                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5610619299014531954" resolveInfo="targetFolder" />
                                           </node>
-                                          <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="5610619299014532039">
-                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vbkb.5610619299013425878" resolveInfo="getApproximateName" />
+                                          <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1659807394254544105">
+                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vbkb.5610619299014531547" resolveInfo="getApproximateName" />
                                           </node>
                                         </node>
                                       </node>
@@ -8012,8 +8021,8 @@
                                   <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5610619299014532065">
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5610619299014531954" resolveInfo="targetFolder" />
                                   </node>
-                                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="5610619299014532066">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vbkb.5610619299013425878" resolveInfo="getApproximateName" />
+                                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1659807394254544107">
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vbkb.5610619299014531547" resolveInfo="getApproximateName" />
                                   </node>
                                 </node>
                               </node>
@@ -8054,6 +8063,7 @@
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="5610619299014532075" />
       </node>
       <node role="sources" roleId="8xvf.7926701909975416101" type="8xvf.BwfFileSet" typeId="8xvf.7926701909975416091" id="5610619299014532076" />
+      <node role="resources" roleId="8xvf.1659807394254493213" type="8xvf.BwfFileSet" typeId="8xvf.7926701909975416091" id="1659807394254544091" />
     </node>
   </root>
 </model>

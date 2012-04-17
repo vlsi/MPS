@@ -1663,5 +1663,17 @@
     </scopeInfo>
     <unitInfo nodeId="809559803149870629" fileName="GenerationUtil.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.build.util.GenerationUtil" />
   </root>
+  <root nodeId="927724900262328575">
+    <nodeInfo nodeId="927724900262335846" fileName="NameUtil.java" startLine="10" startPosition="61" endLine="11" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="927724900262328577" fileName="NameUtil.java" startLine="6" startPosition="23" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NameUtil#()V" />
+    <nodeInfo nodeId="927724900262328581" fileName="NameUtil.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isValidProjectPartName#(Ljava/lang/String;)Z" />
+    <scopeInfo nodeId="927724900262328580" fileName="NameUtil.java" startLine="7" startPosition="21" endLine="7" endPosition="21" />
+    <scopeInfo nodeId="927724900262328584" fileName="NameUtil.java" startLine="10" startPosition="61" endLine="11" endPosition="83" />
+    <scopeInfo nodeId="927724900262328577" fileName="NameUtil.java" startLine="6" startPosition="23" endLine="8" endPosition="3" />
+    <scopeInfo nodeId="927724900262328581" fileName="NameUtil.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="927724900262335844" varName="name" />
+    </scopeInfo>
+    <unitInfo nodeId="927724900262328575" fileName="NameUtil.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.build.util.NameUtil" />
+  </root>
 </debugInfo>
 

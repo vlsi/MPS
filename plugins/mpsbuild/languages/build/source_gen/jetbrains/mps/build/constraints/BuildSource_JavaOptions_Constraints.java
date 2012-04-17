@@ -13,15 +13,16 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.build.util.NameUtil;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.build.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
-public class BuildSource_JavaModule_Constraints extends BaseConstraintsDescriptor {
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "6647099934206891050");
+public class BuildSource_JavaOptions_Constraints extends BaseConstraintsDescriptor {
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "927724900262213629");
 
-  public BuildSource_JavaModule_Constraints() {
-    super("jetbrains.mps.build.structure.BuildSource_JavaModule");
+  public BuildSource_JavaOptions_Constraints() {
+    super("jetbrains.mps.build.structure.BuildSource_JavaOptions");
   }
 
   @Override
@@ -43,7 +44,7 @@ public class BuildSource_JavaModule_Constraints extends BaseConstraintsDescripto
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
-    properties.put("name", new BasePropertyConstraintsDescriptor("name", this) {
+    properties.put("optionsName", new BasePropertyConstraintsDescriptor("optionsName", this) {
       @Override
       public boolean hasOwnValidator() {
         return true;
@@ -51,8 +52,8 @@ public class BuildSource_JavaModule_Constraints extends BaseConstraintsDescripto
 
       @Override
       public boolean validateValue(SNode node, String propertyValue, IScope scope) {
-        String propertyName = "name";
-        return NameUtil.isValidProjectPartName((SPropertyOperations.getString(propertyValue)));
+        String propertyName = "optionsName";
+        return StringUtils.isEmpty((SPropertyOperations.getString(propertyValue))) || NameUtil.isValidProjectPartName((SPropertyOperations.getString(propertyValue)));
       }
     });
     return properties;

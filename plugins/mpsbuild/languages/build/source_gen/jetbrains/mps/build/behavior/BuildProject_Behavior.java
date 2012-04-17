@@ -13,6 +13,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.build.workflow.behavior.FilteringScope;
+import jetbrains.mps.scope.SimpleRoleScope;
 import jetbrains.mps.build.util.ScopeUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -75,6 +77,21 @@ public class BuildProject_Behavior {
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, final SNode child) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.structure.BuildMacro")) {
       return BuildProject_Behavior.call_getBuildMacroScope_3767587139141108514(thisNode, child);
+    } else if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaOptions")) {
+      return new FilteringScope(new SimpleRoleScope(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "parts"), "jetbrains.mps.build.structure.BuildSource_JavaOptions") {
+        public String getName(SNode jo) {
+          String optionsName = SPropertyOperations.getString(SNodeOperations.cast(jo, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName");
+          return (StringUtils.isEmpty(optionsName) ?
+            "<default options>" :
+            optionsName
+          );
+        }
+      }) {
+        @Override
+        public boolean isExcluded(SNode node) {
+          return StringUtils.isEmpty(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName"));
+        }
+      };
     }
     return null;
   }

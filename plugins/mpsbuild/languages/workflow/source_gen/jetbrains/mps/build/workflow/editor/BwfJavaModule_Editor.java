@@ -52,9 +52,11 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_y27sly_a4a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_y27sly_b4a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_y27sly_c4a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_y27sly_d4a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_y27sly_d4a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_y27sly_e4a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_y27sly_f4a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_y27sly_f4a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_y27sly_g4a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_y27sly_h4a(editorContext, node));
     return editorCell;
   }
 
@@ -87,7 +89,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y27sly_c4a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dependencies");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "resources");
     editorCell.setCellId("Constant_y27sly_c4a");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -99,8 +101,20 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y27sly_e4a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "output");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dependencies");
     editorCell.setCellId("Constant_y27sly_e4a");
+    workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_y27sly_g4a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "output");
+    editorCell.setCellId("Constant_y27sly_g4a");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -129,8 +143,8 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_y27sly_d4a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BwfJavaModule_Editor.dependenciesListHandler_y27sly_d4a(node, "dependencies", editorContext);
+  private EditorCell createRefNodeList_y27sly_f4a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BwfJavaModule_Editor.dependenciesListHandler_y27sly_f4a(node, "dependencies", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_dependencies");
     {
@@ -146,6 +160,28 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("sources");
     provider.setNoTargetText("<no sources>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_y27sly_d4a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("resources");
+    provider.setNoTargetText("<no resources>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     {
@@ -182,7 +218,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_y27sly_f4a(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_y27sly_h4a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("outputFolder");
     provider.setNoTargetText("<no outputFolder>");
@@ -241,8 +277,8 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class dependenciesListHandler_y27sly_d4a extends RefNodeListHandler {
-    public dependenciesListHandler_y27sly_d4a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class dependenciesListHandler_y27sly_f4a extends RefNodeListHandler {
+    public dependenciesListHandler_y27sly_f4a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
