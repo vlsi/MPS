@@ -1138,31 +1138,6 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
-        return "new ToDoMessage";
-      }
-
-      public String getAdditionalInfo() {
-        return "new ToDoMessage";
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.ClassCreator";
-      }
-
-      public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isClassCreator(node, SModelReference.fromPath("r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)"), "1208785806875");
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-        StubRefUtil.replaceRefs(node, new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a1a0a4a0a0a44a0().createNode());
-      }
-
-      public boolean isShowAsIntention() {
-        return false;
-      }
-    });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-      public String getName() {
         return "MPSModuleRepository.getDevKit()";
       }
 
@@ -1180,7 +1155,7 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
 
       public void doUpdateInstanceNode(SNode node) {
         SNode arg = SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(node, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "actualArgument", true)).first());
-        StubRefUtil.replaceNode(node, new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a1a1a4a0a0a54a0().createNode(arg));
+        StubRefUtil.replaceNode(node, new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a1a1a4a0a0a44a0().createNode(arg));
       }
 
       public boolean isShowAsIntention() {
@@ -1206,7 +1181,7 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
 
       public void doUpdateInstanceNode(SNode node) {
         SNode arg = SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(node, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "actualArgument", true)).first());
-        StubRefUtil.replaceNode(node, new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a1a1a4a0a0a64a0().createNode(arg));
+        StubRefUtil.replaceNode(node, new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a1a1a4a0a0a54a0().createNode(arg));
       }
 
       public boolean isShowAsIntention() {
@@ -2797,26 +2772,8 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_q3kr7y_a1a0a4a0a0a44a0 {
-    public QuotationClass_q3kr7y_a1a0a4a0a0a44a0() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("r:fa4569a3-1bd4-4159-97bc-db03b3aeff88(jetbrains.mps.ide.java.platform.highlighters)"), SNodeId.fromString("5916754392152656889")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_q3kr7y_a1a1a4a0a0a54a0 {
-    public QuotationClass_q3kr7y_a1a1a4a0a0a54a0() {
+  public static class QuotationClass_q3kr7y_a1a1a4a0a0a44a0 {
+    public QuotationClass_q3kr7y_a1a1a4a0a0a44a0() {
     }
 
     public SNode createNode(Object parameter_11) {
@@ -2868,8 +2825,8 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_q3kr7y_a1a1a4a0a0a64a0 {
-    public QuotationClass_q3kr7y_a1a1a4a0a0a64a0() {
+  public static class QuotationClass_q3kr7y_a1a1a4a0a0a54a0 {
+    public QuotationClass_q3kr7y_a1a1a4a0a0a54a0() {
     }
 
     public SNode createNode(Object parameter_11) {

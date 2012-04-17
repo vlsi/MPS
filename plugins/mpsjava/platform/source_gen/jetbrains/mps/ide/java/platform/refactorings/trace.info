@@ -1861,6 +1861,7 @@
       <varInfo nodeId="4507335185602819729" varName="duplicate" />
     </scopeInfo>
     <unitInfo nodeId="4507335185602819720" fileName="VariableDuplicatesProcessor.java" startLine="16" startPosition="43" endLine="15" endPosition="0" />
+    <unitInfo nodeId="4507335185602819706" fileName="VariableDuplicatesProcessor.java" startLine="15" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ide.java.platform.refactorings.VariableDuplicatesProcessor" />
   </root>
   <root nodeId="4507335185602819743">
     <nodeInfo nodeId="4507335185602819801" fileName="AskDialog.java" startLine="14" startPosition="46" endLine="15" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />

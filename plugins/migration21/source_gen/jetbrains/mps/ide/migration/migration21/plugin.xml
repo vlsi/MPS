@@ -12,6 +12,7 @@
   <idea-version since-build="3000"></idea-version>
     
   <depends>jetbrains.mps.ide.modelchecker</depends>
+  <depends>jetbrains.mps.ide.java</depends>
     
   <application-components>
     <component>
