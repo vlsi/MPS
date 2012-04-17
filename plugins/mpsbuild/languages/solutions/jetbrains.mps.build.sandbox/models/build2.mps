@@ -131,6 +131,7 @@
           </node>
         </node>
       </node>
+      <node role="resources" roleId="8xvf.1659807394254493213" type="8xvf.BwfFileSet" typeId="8xvf.7926701909975416091" id="1659807394254544099" />
     </node>
     <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfJavaModule" typeId="8xvf.4755209551904389307" id="4755209551904406791">
       <property name="name" nameId="tpck.1169194664001" value="module2" />
@@ -174,6 +175,7 @@
           </node>
         </node>
       </node>
+      <node role="resources" roleId="8xvf.1659807394254493213" type="8xvf.BwfFileSet" typeId="8xvf.7926701909975416091" id="1659807394254544100" />
     </node>
     <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfJavaModule" typeId="8xvf.4755209551904389307" id="4755209551904406797">
       <property name="name" nameId="tpck.1169194664001" value="module3" />
@@ -223,6 +225,7 @@
           </node>
         </node>
       </node>
+      <node role="resources" roleId="8xvf.1659807394254493213" type="8xvf.BwfFileSet" typeId="8xvf.7926701909975416091" id="1659807394254544101" />
     </node>
     <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfJavaModule" typeId="8xvf.4755209551904389307" id="7385586609667763177">
       <property name="name" nameId="tpck.1169194664001" value="module4" />
@@ -266,6 +269,7 @@
           </node>
         </node>
       </node>
+      <node role="resources" roleId="8xvf.1659807394254493213" type="8xvf.BwfFileSet" typeId="8xvf.7926701909975416091" id="1659807394254544102" />
     </node>
     <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfJavaModule" typeId="8xvf.4755209551904389307" id="7385586609667763185">
       <property name="name" nameId="tpck.1169194664001" value="module5" />
@@ -285,6 +289,7 @@
           </node>
         </node>
       </node>
+      <node role="resources" roleId="8xvf.1659807394254493213" type="8xvf.BwfFileSet" typeId="8xvf.7926701909975416091" id="1659807394254544103" />
     </node>
     <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfTaskPart" typeId="8xvf.3961775458390032824" id="6647099934207237823">
       <link role="task" roleId="8xvf.3961775458390032825" targetNodeId="tnlc.7306485738221408317" resolveInfo="build" />

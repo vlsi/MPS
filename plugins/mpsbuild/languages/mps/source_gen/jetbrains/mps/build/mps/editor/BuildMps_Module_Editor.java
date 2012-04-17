@@ -189,7 +189,7 @@ public class BuildMps_Module_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ncpkep_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "sources:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "content:");
     editorCell.setCellId("Constant_ncpkep_a4a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -204,6 +204,11 @@ public class BuildMps_Module_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(do not compile)");
     editorCell.setCellId("Constant_ncpkep_b4a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    }
     delete_doNotCompile.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
@@ -241,7 +246,7 @@ public class BuildMps_Module_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ncpkep_a1a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "sources:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "content:");
     editorCell.setCellId("Constant_ncpkep_a1a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -256,6 +261,11 @@ public class BuildMps_Module_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(do not compile)");
     editorCell.setCellId("Constant_ncpkep_b1a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    }
     delete_doNotCompile.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;

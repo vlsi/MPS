@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6y1gob3bijz81yx6x57seay2e6tbsk7">
+<dependencies version="2" modelHash="8g0dz4jhy4mwg4dziwp1bjfxyvsryqy">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -72,7 +72,7 @@
   <source id="2769948622284768359" name="BwfAntStatement" hash="4627dsaj1mw980w18bcja3o4fu8pe77">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4755209551904389307" name="BwfJavaModule" hash="bdqpz3voflfpal3xo7uykfnu54bohfu">
+  <source id="4755209551904389307" name="BwfJavaModule" hash="-9q3o3wbxl72eqb8ksl1rm6a6y9mjb2r">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="4755209551904389316" name="BwfJavaModuleReference" hash="-8rdqw884k9bo5nry653k4nx7niecps4">

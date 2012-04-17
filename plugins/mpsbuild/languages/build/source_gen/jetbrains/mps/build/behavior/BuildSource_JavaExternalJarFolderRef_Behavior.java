@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.build.util.JavaExportUtil;
 
 public class BuildSource_JavaExternalJarFolderRef_Behavior {
   public static void init(SNode thisNode) {
@@ -16,17 +17,6 @@ public class BuildSource_JavaExternalJarFolderRef_Behavior {
       return null;
     }
 
-    SNode target = SNodeOperations.as(artifacts.toOriginalNode(SLinkOperations.getTarget(thisNode, "folder", false)), "jetbrains.mps.build.structure.BuildSource_SingleFolder");
-    if (target == null) {
-      return null;
-    }
-
-    SNode artifact = null;
-    if (SNodeOperations.isInstanceOf(target, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer")) {
-      artifact = SNodeOperations.cast(target, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer");
-    } else if (SNodeOperations.isInstanceOf(target, "jetbrains.mps.build.structure.BuildInputSingleFolder")) {
-      artifact = SNodeOperations.as(artifacts.findArtifact(SLinkOperations.getTarget(SNodeOperations.cast(target, "jetbrains.mps.build.structure.BuildInputSingleFolder"), "path", true)), "jetbrains.mps.build.structure.BuildLayout_AbstractContainer");
-    }
-    return artifact;
+    return JavaExportUtil.requireJarFolder(artifacts, SLinkOperations.getTarget(thisNode, "folder", false), thisNode);
   }
 }

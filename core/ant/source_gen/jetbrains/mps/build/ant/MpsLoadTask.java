@@ -268,16 +268,20 @@ public abstract class MpsLoadTask extends Task {
     outputBuildNumber();
   }
 
-  private Set<File> calculateClassPath() {
+  private File absolutePath(String path) {
+    return new File(myMpsHome.getAbsolutePath() + File.separator + path.replace('/', File.separatorChar));
+  }
+
+  protected Set<File> calculateClassPath() {
     File[] pathsToLook;
-    if (new File(myMpsHome.getAbsolutePath() + File.separator + "classes").exists()) {
-      //         new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "uiLanguage"), 
-      //         new File(myMpsHome.getAbsolutePath() + File.separator + "core" + File.separator + "kernel" + File.separator + "xmlQuery" + File.separator + "runtime"), 
-      //         new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "gtext"), 
-      //         new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "builders"), 
-      pathsToLook = new File[]{new File(myMpsHome.getAbsolutePath() + File.separator + "core"), new File(myMpsHome.getAbsolutePath() + File.separator + "workbench" + File.separator + "classes"), new File(myMpsHome.getAbsolutePath() + File.separator + "lib"), new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "buildlanguage" + File.separator + "ant"), new File(myMpsHome.getAbsolutePath() + File.separator + "workbench" + File.separator + "typesystemUi" + File.separator + "classes"), new File(myMpsHome.getAbsolutePath() + File.separator + "MPSPlugin" + File.separator + "apiclasses")};
+    if (absolutePath("classes").exists()) {
+      //         absolutePath("platform/uiLanguage"), 
+      //         absolutePath("core/kernel/xmlQuery/runtime"), 
+      //         absolutePath("platform/gtext"), 
+      //         absolutePath("platform/builders"), 
+      pathsToLook = new File[]{absolutePath("core"), absolutePath("lib"), absolutePath("plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.runtime"), absolutePath("languages/baseLanguage/closures/runtime"), absolutePath("languages/baseLanguage/collections/runtime"), absolutePath("languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search"), absolutePath("workbench/typesystemUi/classes"), absolutePath("MPSPlugin/apiclasses")};
     } else {
-      pathsToLook = new File[]{new File(myMpsHome.getAbsolutePath() + File.separator + "lib"), new File(myMpsHome.getAbsolutePath() + File.separator + "plugin"), new File(myMpsHome.getAbsolutePath() + File.separator + "plugins")};
+      pathsToLook = new File[]{absolutePath("lib"), absolutePath("plugin"), absolutePath("plugins")};
     }
     Set<File> classPaths = new LinkedHashSet<File>();
     for (File path : pathsToLook) {
@@ -290,7 +294,7 @@ public abstract class MpsLoadTask extends Task {
         gatherAllClassesAndJarsUnder(path, classPaths);
       }
     }
-    File mpsClasses = new File(myMpsHome + File.separator + "classes");
+    File mpsClasses = absolutePath("classes");
     if (mpsClasses.exists()) {
       classPaths.add(mpsClasses);
     }

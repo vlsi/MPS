@@ -19,8 +19,10 @@ import jetbrains.mps.generator.TransientModelsProvider.TransientSwapOwner;
 import jetbrains.mps.generator.TransientModelsProvider.TransientSwapSpace;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.*;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNode;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -176,7 +178,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
       mySpaceDir = null;
     }
 
-    private static final int VERSION = 42;
+    private static final int VERSION = 43;
 
     public TransientSModel loadModel(SModelReference modelReference, ModelInputStream is, TransientSModel model) throws IOException {
       int version = is.readInt();
@@ -184,7 +186,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
         return null;
       }
 
-      List<SNode> roots = new NodesAndUserObjectsReader(modelReference).readNodes(model, is);
+      List<SNode> roots = new NodesReader(modelReference).readNodes(model, is);
       for (SNode r : roots) {
         model.addRoot(r);
       }
@@ -197,123 +199,20 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
 
     public void saveModel(SModelReference modelReference, List<SNode> roots, ModelOutputStream os) throws IOException {
       os.writeInt(VERSION);
-      new NodesAndUserObjectsWriter(modelReference).writeNodes(roots, os);
+      new NodesWriter(modelReference).writeNodes(roots, os);
     }
 
-  }
-
-  private static class NodesAndUserObjectsWriter extends NodesWriter {
-    public static final int NODE_POINTER = 0;
-    public static final int NODE_ID = 1;
-    public static final int MODEL_ID = 2;
-    public static final int MODEL_REFERENCE = 3;
-    public static final int SERIALIZABLE = 4;
-
-    public NodesAndUserObjectsWriter(@NotNull SModelReference modelReference) {
-      super(modelReference);
-    }
-
-    @Override
-    protected void writeChildren(SNode node, ModelOutputStream os) throws IOException {
-      // write user objects here
-      Map<Object, Object> userObjects = node.getUserObjects();
-      ArrayList<Object> knownUserObject = new ArrayList<Object>();
-      for (Object key : userObjects.keySet()) {
-        Object value = userObjects.get(key);
-        if (isKnownUserObject(key) && isKnownUserObject(value)) {
-          knownUserObject.add(key);
-          knownUserObject.add(value);
-        }
-      }
-
-      os.writeInt(knownUserObject.size());
-      for (int i = 0; i < knownUserObject.size(); i += 2) {
-        writeUserObject(os, knownUserObject.get(i));
-        writeUserObject(os, knownUserObject.get(i + 1));
-      }
-
-      super.writeChildren(node, os);
-    }
-
-    private void writeUserObject(ModelOutputStream os, Object object) throws IOException {
-      if (object instanceof SNodePointer) {
-        os.writeInt(NODE_POINTER);
-        os.writeNodePointer((SNodePointer) object);
-      } else if (object instanceof SNodeId) {
-        os.writeInt(NODE_ID);
-        os.writeNodeId((SNodeId) object);
-      } else if (object instanceof SModelId) {
-        os.writeInt(MODEL_ID);
-        os.writeModelID((SModelId) object);
-      } else if (object instanceof SModelReference) {
-        os.writeInt(MODEL_REFERENCE);
-        os.writeModelReference((SModelReference) object);
-      } else if (object instanceof Serializable) {
-        os.writeInt(SERIALIZABLE);
-        ObjectOutputStream objectOutput = new ObjectOutputStream(os);
-        objectOutput.writeObject(object);
-      }
-    }
-
-    private static boolean isKnownUserObject(Object object) {
-      return object != null && (object instanceof Serializable || object instanceof SNodePointer || object instanceof SNodeId || object instanceof SModelId || object instanceof SModelReference);
-    }
-  }
-
-  private static class NodesAndUserObjectsReader extends NodesReader {
-
-    public NodesAndUserObjectsReader(@NotNull SModelReference modelReference) {
-      super(modelReference);
-    }
-
-    @Override
-    protected void readChildren(SModel model, ModelInputStream is, SNode node) throws IOException {
-      // first read user objects
-      int userObjectCount = is.readInt();
-      for (int i = 0; i < userObjectCount; i += 2) {
-        Object key = readUserObject(is, model);
-        Object value = readUserObject(is, model);
-        if (key != null && value != null) {
-          node.putUserObject(key, value);
-        }
-      }
-
-      super.readChildren(model, is, node);
-    }
-
-    private Object readUserObject(ModelInputStream is, SModel model) throws IOException {
-      int id = is.readInt();
-      switch (id) {
-        case NodesAndUserObjectsWriter.NODE_POINTER:
-          return is.readNodePointer();
-        case NodesAndUserObjectsWriter.NODE_ID:
-          return is.readNodeId();
-        case NodesAndUserObjectsWriter.MODEL_ID:
-          return is.readModelID();
-        case NodesAndUserObjectsWriter.MODEL_REFERENCE:
-          return is.readModelReference();
-        case NodesAndUserObjectsWriter.SERIALIZABLE:
-          ObjectInputStream stream = new ObjectInputStream(is);
-          try {
-            return stream.readObject();
-          } catch (ClassNotFoundException ignore) {
-            // class could be loaded by the other classloader
-            return null;
-          }
-      }
-      throw new IOException("Could not read user object");
-    }
   }
 
   // method created for testing
   public static SNode writeAndReadNode(SNode node) throws IOException {
-    FileSwapOwner.NodesAndUserObjectsWriter writer = new FileSwapOwner.NodesAndUserObjectsWriter(node.getModel().getSModelReference());
+    NodesWriter writer = new NodesWriter(node.getModel().getSModelReference());
     ByteArrayOutputStream os = new ByteArrayOutputStream();
     ModelOutputStream mos = new ModelOutputStream(os);
     writer.writeNode(node, mos);
     mos.close();
 
-    FileSwapOwner.NodesAndUserObjectsReader reader = new FileSwapOwner.NodesAndUserObjectsReader(node.getModel().getSModelReference());
+    NodesReader reader = new NodesReader(node.getModel().getSModelReference());
     ByteArrayInputStream is = new ByteArrayInputStream(os.toByteArray());
 
     return reader.readNode(node.getModel(), new ModelInputStream(is));
@@ -329,8 +228,8 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     for (Iterator<SNode> it = model.rootsIterator(); it.hasNext(); ) {
       roots.add(it.next());
     }
-    mos.writeInt(42);
-    new NodesAndUserObjectsWriter(model.getSModelReference()).writeNodes(roots, mos);
+    mos.writeInt(43);
+    new NodesWriter(model.getSModelReference()).writeNodes(roots, mos);
     mos.close();
 
     SModel resultModel = new SModel(new SModelReference("smodel.long.name.for.testing", ""));
@@ -339,10 +238,10 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
 
     // read
     int version = mis.readInt();
-    if (version != 42) {
+    if (version != 43) {
       return null;
     }
-    List<SNode> resultRoots = new NodesAndUserObjectsReader(resultModel.getSModelReference()).readNodes(resultModel, mis);
+    List<SNode> resultRoots = new NodesReader(resultModel.getSModelReference()).readNodes(resultModel, mis);
     for (SNode root : resultRoots) {
       resultModel.addRoot(root);
     }

@@ -186,7 +186,7 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ucemm3_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "sources:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "content:");
     editorCell.setCellId("Constant_ucemm3_a4a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -241,7 +241,7 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ucemm3_a1a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "sources:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "content:");
     editorCell.setCellId("Constant_ucemm3_a1a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {

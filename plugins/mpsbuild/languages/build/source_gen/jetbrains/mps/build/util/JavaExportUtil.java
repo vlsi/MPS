@@ -4,12 +4,15 @@ package jetbrains.mps.build.util;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.Collections;
+import jetbrains.mps.build.behavior.BuildSource_JavaLibrary_Behavior;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 public class JavaExportUtil {
   public JavaExportUtil() {
@@ -20,7 +23,50 @@ public class JavaExportUtil {
       return null;
     }
 
+
     SNode target = SNodeOperations.as(artifacts.toOriginalNode(library), "jetbrains.mps.build.structure.BuildSource_JavaLibrary");
+    if (target == null || SNodeOperations.getModel(target).isTransient()) {
+      // problem with transient models, already reported 
+      return Collections.emptyList();
+    }
+
+    if (BuildSource_JavaLibrary_Behavior.call_canExportByParts_5610619299014309362(target)) {
+      List<SNode> result = new ArrayList<SNode>();
+
+      for (SNode element : ListSequence.fromList(SLinkOperations.getTargets(target, "elements", true))) {
+        SNode jcp = SNodeOperations.as(element, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP");
+        if ((jcp == null)) {
+          return null;
+        }
+        SNode classpath = SLinkOperations.getTarget(jcp, "classpath", true);
+        if (SNodeOperations.isInstanceOf(classpath, "jetbrains.mps.build.structure.BuildSource_JavaJar")) {
+          SNode jarArtifact = SNodeOperations.as(artifacts.findArtifact(SLinkOperations.getTarget(SNodeOperations.cast(classpath, "jetbrains.mps.build.structure.BuildSource_JavaJar"), "path", true)), "jetbrains.mps.build.structure.BuildLayout_Node");
+          if (jarArtifact != null) {
+            ListSequence.fromList(result).addElement(jarArtifact);
+          }
+        } else if (SNodeOperations.isInstanceOf(classpath, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar")) {
+          SNode requiredJar = requireJar(artifacts, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(classpath, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar"), "extJar", true), "jar", false), contextNode);
+          if (requiredJar != null) {
+            ListSequence.fromList(result).addElement(requiredJar);
+          }
+        } else if (SNodeOperations.isInstanceOf(classpath, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJarFolder")) {
+          SNode requiredJarFolder = requireJarFolder(artifacts, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(classpath, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJarFolder"), "extFolder", true), "folder", false), contextNode);
+          if (requiredJarFolder != null) {
+            ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(requiredJarFolder, "children", true)));
+          }
+        } else {
+          // fatal, unknown element 
+          ListSequence.fromList(result).clear();
+          break;
+        }
+      }
+
+      if (ListSequence.fromList(result).isNotEmpty()) {
+        artifacts.needsFetch(contextNode);
+        return result;
+      }
+    }
+
     SNode artifact = SNodeOperations.as(artifacts.findArtifact(target), "jetbrains.mps.build.structure.BuildLayout_Node");
     if (artifact != null) {
       artifacts.needsFetch(contextNode);
@@ -34,9 +80,6 @@ public class JavaExportUtil {
   }
 
   public static Iterable<SNode> requireModule(VisibleArtifacts artifacts, SNode module, SNode contextNode) {
-    if (SNodeOperations.getContainingRoot(module) == SNodeOperations.getContainingRoot(contextNode)) {
-      return null;
-    }
 
     SNode target = SNodeOperations.as(artifacts.toOriginalNode(module), "jetbrains.mps.build.structure.BuildSource_JavaModule");
 
@@ -44,7 +87,7 @@ public class JavaExportUtil {
     JavaModulesClosure closure = new JavaModulesClosure(artifacts.getGenContext(), target).closure(true);
 
     // searh for artifacts 
-    Iterable<SNode> required = Sequence.fromIterable(((Iterable<SNode>) closure.getModules())).concat(Sequence.fromIterable(((Iterable<SNode>) closure.getLibraries()))).concat(Sequence.fromIterable(((Iterable<SNode>) closure.getJars())).select(new ISelector<SNode, SNode>() {
+    Iterable<SNode> required = Sequence.fromIterable(((Iterable<SNode>) closure.getModules())).concat(Sequence.fromIterable(((Iterable<SNode>) closure.getJars())).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, "path", true);
       }
@@ -61,11 +104,72 @@ public class JavaExportUtil {
       }
     }
 
+    for (SNode lib : Sequence.fromIterable((Iterable<SNode>) closure.getLibraries())) {
+      if (SNodeOperations.getContainingRoot(lib) == SNodeOperations.getContainingRoot(contextNode)) {
+        continue;
+      }
+
+      Iterable<SNode> libNodes = requireLibrary(artifacts, lib, contextNode);
+      if (libNodes != null) {
+        ListSequence.fromList(result).addSequence(Sequence.fromIterable(libNodes));
+      }
+    }
+
+    for (SNode extJar : CollectionSequence.fromCollection(closure.getExternalJars())) {
+      if (SNodeOperations.getContainingRoot(extJar) == SNodeOperations.getContainingRoot(contextNode)) {
+        continue;
+      }
+
+      SNode jarNode = requireJar(artifacts, extJar, contextNode);
+      if (jarNode != null) {
+        ListSequence.fromList(result).addElement(jarNode);
+      }
+    }
+
     if (ListSequence.fromList(result).isNotEmpty()) {
       artifacts.needsFetch(contextNode);
       return result;
     }
 
     return null;
+  }
+
+  public static SNode requireJar(VisibleArtifacts artifacts, SNode jar, SNode contextNode) {
+    if (SNodeOperations.getContainingRoot(jar) == SNodeOperations.getContainingRoot(contextNode)) {
+      return null;
+    }
+
+    SNode target = SNodeOperations.as(artifacts.toOriginalNode(jar), "jetbrains.mps.build.structure.BuildSource_SingleFile");
+    if (target == null) {
+      return null;
+    }
+
+    SNode artifact = null;
+    if (SNodeOperations.isInstanceOf(target, "jetbrains.mps.build.structure.BuildLayout_Node")) {
+      artifact = SNodeOperations.cast(target, "jetbrains.mps.build.structure.BuildLayout_Node");
+    } else if (SNodeOperations.isInstanceOf(target, "jetbrains.mps.build.structure.BuildInputSingleFile")) {
+      artifact = SNodeOperations.as(artifacts.findArtifact(SLinkOperations.getTarget(SNodeOperations.cast(target, "jetbrains.mps.build.structure.BuildInputSingleFile"), "path", true)), "jetbrains.mps.build.structure.BuildLayout_Node");
+    }
+    return artifact;
+  }
+
+  public static SNode requireJarFolder(VisibleArtifacts artifacts, SNode jarFolder, SNode contextNode) {
+    if (SNodeOperations.getContainingRoot(jarFolder) == SNodeOperations.getContainingRoot(contextNode)) {
+      return null;
+    }
+
+    SNode target = SNodeOperations.as(artifacts.toOriginalNode(jarFolder), "jetbrains.mps.build.structure.BuildSource_SingleFolder");
+    if (target == null) {
+      return null;
+    }
+
+    SNode artifact = null;
+    if (SNodeOperations.isInstanceOf(target, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer")) {
+      artifact = SNodeOperations.cast(target, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer");
+    } else if (SNodeOperations.isInstanceOf(target, "jetbrains.mps.build.structure.BuildInputSingleFolder")) {
+      artifact = SNodeOperations.as(artifacts.findArtifact(SLinkOperations.getTarget(SNodeOperations.cast(target, "jetbrains.mps.build.structure.BuildInputSingleFolder"), "path", true)), "jetbrains.mps.build.structure.BuildLayout_AbstractContainer");
+    }
+    return artifact;
+
   }
 }

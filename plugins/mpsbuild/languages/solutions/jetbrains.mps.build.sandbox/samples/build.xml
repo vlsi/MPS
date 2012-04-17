@@ -7,6 +7,8 @@
     <ant antfile="buildMpsC.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="buildMpsB.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="buildMpsA.xml" inheritAll="false" useNativeBasedir="true" />
+
+    <ant antfile="buildMpsD.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
 
   <target name="clean">

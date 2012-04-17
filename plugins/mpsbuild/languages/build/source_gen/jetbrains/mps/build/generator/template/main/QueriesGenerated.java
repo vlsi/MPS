@@ -22,6 +22,7 @@ import jetbrains.mps.build.util.MacroHelper;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.build.behavior.BuildSource_SingleFile_Behavior;
+import jetbrains.mps.build.behavior.BuildSource_SingleFolder_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -35,10 +36,11 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Collections;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.build.generator.util.JavaExternalLibraryHelper;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.build.util.GenerationUtil;
 import jetbrains.mps.build.generator.util.FetchDependenciesProcessor;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
@@ -399,10 +401,6 @@ public class QueriesGenerated {
     return ((String) _context.getVariable("var:targetLocation"));
   }
 
-  public static Object propertyMacro_GetPropertyValue_5979287180587467412(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getProperty("pathValue");
-  }
-
   public static Object propertyMacro_GetPropertyValue_4821808014881207505(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode project = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.structure.BuildProject", false, false);
     if (project == null) {
@@ -494,13 +492,13 @@ public class QueriesGenerated {
         targetFolder
       ), _context));
       if (layoutNode == null) {
-        _context.showErrorMessage(_context.getNode(), "folder " + BuildSource_SingleFile_Behavior.call_getApproximateName_5610619299013425878(targetFolder) + " was not found in the layout");
+        _context.showErrorMessage(_context.getNode(), "folder " + BuildSource_SingleFolder_Behavior.call_getApproximateName_5610619299014531547(targetFolder) + " was not found in the layout");
         return "???";
       }
     }
     String val = helper.contentLocations().get(layoutNode);
     if (val == null) {
-      _context.showErrorMessage(_context.getNode(), "no content location for " + BuildSource_SingleFile_Behavior.call_getApproximateName_5610619299013425878(targetFolder));
+      _context.showErrorMessage(_context.getNode(), "no content location for " + BuildSource_SingleFolder_Behavior.call_getApproximateName_5610619299014531547(targetFolder));
       return "???";
     }
     return val;
@@ -801,7 +799,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_6859736767834590289(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode jar : ((JavaModulesClosure) _context.getVariable("var:dependenciesClosure")).getImportedJars()) {
+    for (SNode jar : ((JavaModulesClosure) _context.getVariable("var:dependenciesClosure")).getExternalJars()) {
       SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
       loopnode.setReferent("targetJar", jar, false);
       ListSequence.fromList(result).addElement(loopnode);
@@ -935,6 +933,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "plugins", true);
   }
 
+  public static Iterable sourceNodesQuery_8775597636506088245(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return _context.getNode().getChildren("attrs");
+  }
+
   public static Iterable sourceNodesQuery_5979287180587467422(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode project = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.structure.BuildProject", false, false);
     if (project == null) {
@@ -942,29 +944,9 @@ public class QueriesGenerated {
       return Collections.emptyList();
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    SNode layoutNode = helper.artifacts().get(DependenciesHelper.getOriginalNode(((SNode) _context.getVariable("library")), _context));
-    if (layoutNode == null) {
-      _context.showErrorMessage(_context.getNode(), "java library " + SPropertyOperations.getString(((SNode) _context.getVariable("library")), "name") + " was not found in the layout");
-      return Collections.emptyList();
-    }
-    Iterable<SNode> input;
-    if (SNodeOperations.isInstanceOf(layoutNode, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary")) {
-      input = SLinkOperations.getTargets(SNodeOperations.cast(layoutNode, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary"), "children", true);
-    } else {
-      input = Sequence.<SNode>singleton(layoutNode);
-    }
-    List<SNode> result = new ArrayList<SNode>();
-    for (SNode pe : input) {
-      String val = helper.locations().get(pe);
-      if (val == null) {
-        _context.showErrorMessage(pe, "no location for " + BaseConcept_Behavior.call_getPresentation_1213877396640(pe) + " (unsupported layout element)");
-        continue;
-      }
-      SNode propertyNode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
-      propertyNode.setProperty("pathValue", val);
-      ListSequence.fromList(result).addElement(propertyNode);
-    }
-    return result;
+    SNode originalNode = SNodeOperations.as(DependenciesHelper.getOriginalNode(((SNode) _context.getVariable("library")), _context), "jetbrains.mps.build.structure.BuildSource_JavaLibrary");
+
+    return new JavaExternalLibraryHelper(helper, originalNode, _context).artifacts();
   }
 
   public static void mappingScript_CodeBlock_809559803149973643(final IOperationContext operationContext, final MappingScriptContext _context) {

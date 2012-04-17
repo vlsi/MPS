@@ -11,6 +11,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.build.util.JavaExportUtil;
 
 public class BuildMps_Module_Behavior {
   public static void init(SNode thisNode) {
@@ -55,15 +56,19 @@ public class BuildMps_Module_Behavior {
       }
     }
 
-    Iterable<SNode> requiredJava = closure.getRequiredJava().getModules();
-    for (SNode jm : Sequence.fromIterable(requiredJava)) {
-      if (SNodeOperations.getContainingRoot(jm) == SNodeOperations.getContainingRoot(thisNode)) {
-        continue;
-      }
+    MPSModulesClosure.RequiredJavaModules requiredJava = closure.getRequiredJava();
+    for (SNode jm : Sequence.fromIterable(requiredJava.getModules())) {
+      if (requiredJava.isReexported(jm)) {
+        ListSequence.fromList(result).addSequence(Sequence.fromIterable(JavaExportUtil.requireModule(artifacts, jm, thisNode)));
+      } else {
+        if (SNodeOperations.getContainingRoot(jm) == SNodeOperations.getContainingRoot(thisNode)) {
+          continue;
+        }
 
-      SNode artifact = SNodeOperations.as(artifacts.findArtifact(jm), "jetbrains.mps.build.structure.BuildLayout_Node");
-      if (artifact != null) {
-        ListSequence.fromList(result).addElement(artifact);
+        SNode artifact = SNodeOperations.as(artifacts.findArtifact(jm), "jetbrains.mps.build.structure.BuildLayout_Node");
+        if (artifact != null) {
+          ListSequence.fromList(result).addElement(artifact);
+        }
       }
     }
 

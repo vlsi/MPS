@@ -50,6 +50,10 @@ public class DependenciesHelper {
       }
       SNode originalNode = genContext.getOriginalCopiedInputNode(node);
       if ((originalNode != null)) {
+        if (SNodeOperations.getModel(originalNode).isTransient()) {
+          genContext.showErrorMessage(node, "internal error: cannot get original node");
+          return null;
+        }
         return originalNode;
       } else {
         genContext.showErrorMessage(node, "cannot resolve dependency on transient model, no original node is available");
