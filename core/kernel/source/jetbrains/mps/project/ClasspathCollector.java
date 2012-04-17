@@ -16,8 +16,8 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.ClasspathReader;
-import jetbrains.mps.project.dependency.DependenciesManager.Deptype;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.reloading.CompositeClassPathItem;

@@ -15,15 +15,15 @@
  */
 package jetbrains.mps.project.dependency;
 
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class ModuleDependenciesManager<T extends AbstractModule> implements DependenciesManager {
@@ -33,39 +33,30 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
     myModule = module;
   }
 
-  public void collectUsedLanguages(Set<Language> result) {
+  public final void collectUsedLanguages(Set<Language> result) {
     collectUsedLanguages(result, false);
   }
 
-  public void collectModules(Set<IModule> modules, Deptype depType) {
-    modules.add(myModule);
+  public void collectModules(Set<IModule> reexpRes, Set<IModule> nonReexpRes, boolean runtimes, Reexports reexports) {
+    reexpRes.add(myModule);
 
     HashSet<IModule> reexported = new HashSet<IModule>();
     HashSet<IModule> nonReexported = new HashSet<IModule>();
-    getUsedModules(reexported, nonReexported);
+    collectUsedModules(runtimes, reexported, nonReexported);
 
-    if (depType.respectReexport) {
-      modules.addAll(nonReexported);
-    } else {
+    if (reexports == Reexports.DONT_RESPECT) {
       reexported.addAll(nonReexported);
+    } else if (reexports == Reexports.ALL_WITH_RESPECT) {
+      for (IModule m : nonReexported) {
+        HashSet<IModule> r = new HashSet<IModule>();
+        m.getDependenciesManager().collectModules(r, new HashSet<IModule>(), runtimes, Reexports.REEXPORTED_ONLY);
+        nonReexpRes.addAll(r);
+      }
     }
 
     for (IModule m : reexported) {
-      if (modules.contains(m)) continue;
-      m.getDependenciesManager().collectModules(modules, depType);
-    }
-
-    //runtimes from languages
-    if (depType.runtimes) {
-      HashSet<Language> lang = new HashSet<Language>();
-      collectUsedLanguages(lang, true);
-
-      for (Language l : lang) {
-        for (IModule m:ModuleUtil.refsToModules(l.getRuntimeModulesReferences())){
-          if (modules.contains(m)) continue;
-          m.getDependenciesManager().collectModules(modules,depType);
-        }
-      }
+      if (reexpRes.contains(m)) continue;
+      ((ModuleDependenciesManager) m.getDependenciesManager()).collectModules(reexpRes, nonReexpRes, runtimes, Reexports.REEXPORTED_ONLY);
     }
   }
 
@@ -88,7 +79,7 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
     }
   }
 
-  protected void getUsedModules(Set<IModule> reexported, Set<IModule> nonReexported) {
+  protected void collectUsedModules(boolean runtimes, Set<IModule> reexported, Set<IModule> nonReexported) {
     for (Dependency dependency : myModule.getDependencies()) {
       IModule m = MPSModuleRepository.getInstance().getModuleById(dependency.getModuleRef().getModuleId());
       if (m == null || reexported.contains(m)) continue;
@@ -101,7 +92,17 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
     }
 
     for (DevKit dk : ModuleUtil.refsToDevkits(myModule.getUsedDevkitReferences())) {
-      nonReexported.addAll(dk.getAllExportedLanguages());
+      nonReexported.addAll(dk.getAllExportedSolutions());
+    }
+
+    //runtimes from languages
+    if (runtimes) {
+      HashSet<Language> lang = new HashSet<Language>();
+      collectUsedLanguages(lang, true);
+
+      for (Language l : lang) {
+        nonReexported.addAll(ModuleUtil.refsToModules(l.getRuntimeModulesReferences()));
+      }
     }
   }
 }

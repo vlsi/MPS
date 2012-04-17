@@ -17,6 +17,7 @@ package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Set;
 
@@ -29,40 +30,11 @@ public interface DependenciesManager {
   /**
    * Collects all visible modules (including current).
    */
-  void collectModules(Set<IModule> modules, Deptype depType);
+  public void collectModules(Set<IModule> reexpRes, Set<IModule> nonReexpRes,boolean runtimes, Reexports reexports);
 
-  enum Deptype {
-    /*
-    *  All modules visible from given modules
-    *  This includes modules from dependencies, transitive, respecting reexports
-    *  Including initial modules
-    */
-    VISIBLE(false, true),
-
-    /*
-    *  All modules required for compilation of given modules
-    *  This includes visible modules and used language runtimes, respecting reexports
-    *  Including languages with runtime stub paths
-    *  Including initial modules
-    */
-    COMPILE(true, true),
-
-    /**
-     * All modules required for execution of given modules
-     * This includes transitive closure of visible modules, with no respect for reexports,
-     * and runtimes of used languages, not respecting reexports
-     * Including languages with runtime stub paths
-     * Including initial modules
-     */
-    EXECUTE(true, false);
-
-
-    public boolean runtimes;
-    public boolean respectReexport;
-
-    Deptype(boolean runtimes, boolean respectReexport) {
-      this.runtimes = runtimes;
-      this.respectReexport = respectReexport;
-    }
+  public enum Reexports {
+    DONT_RESPECT,
+    ALL_WITH_RESPECT,
+    REEXPORTED_ONLY
   }
 }

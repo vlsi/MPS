@@ -5,8 +5,8 @@ package jetbrains.mps.make.dependencies;
 import java.util.*;
 
 import jetbrains.mps.project.ModuleUtil;
-import jetbrains.mps.project.dependency.DependenciesManager.Deptype;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.IModule;

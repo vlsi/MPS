@@ -16,8 +16,8 @@
 package jetbrains.mps.plugins;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.dependency.DependenciesManager.Deptype;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 
 import java.util.*;
 

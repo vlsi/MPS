@@ -16,8 +16,8 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.dependency.DependenciesManager.Deptype;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.runtime.ModuleClassLoader;

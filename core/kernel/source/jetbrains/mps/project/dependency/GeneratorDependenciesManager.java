@@ -16,6 +16,7 @@
 package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
@@ -29,8 +30,8 @@ public class GeneratorDependenciesManager extends ModuleDependenciesManager<Gene
     super(gen);
   }
 
-  protected void getUsedModules(Set<IModule> reexported, Set<IModule> nonReexported) {
-    super.getUsedModules(reexported, nonReexported);
+  protected void collectUsedModules(boolean runtimes, Set<IModule> reexported, Set<IModule> nonReexported) {
+    super.collectUsedModules(runtimes, reexported, nonReexported);
     //generator sees all modules from source language as non-reexported
     HashSet<Language> lang = new HashSet<Language>();
     myModule.getSourceLanguage().getDependenciesManager().collectAllExtendedLanguages(lang);

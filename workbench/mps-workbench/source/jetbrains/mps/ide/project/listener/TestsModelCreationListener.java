@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.project.listener;
 
-import jetbrains.mps.project.dependency.DependenciesManager.Deptype;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.smodel.*;
