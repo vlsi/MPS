@@ -1956,7 +1956,7 @@
   
   <target name="java.compile.java.modules.cycle.1" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.jetbrains.mps.baseLanguage.regexp.runtime, java.compile.mps-test, java.compile.jetbrains.mps.gtext.runtime">
     <mkdir dir="${build.tmp}/java.modules.cycle.1" />
-    <javac destdir="${build.tmp}/java.modules.cycle.1" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java.modules.cycle.1" fork="true" memorymaximumsize="1024m" nowarn="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/baseLanguage/baseLanguage/source_gen" />
@@ -2832,7 +2832,7 @@
   
   <target name="java.compile.java.modules.cycle.2" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.baseLanguage.collections, java.compile.jetbrains.mps.lang.checkedName, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.intentions, java.compile.jetbrains.mps.lang.project, java.compile.jetbrains.mps.lang.sharedConcepts, java.compile.jetbrains.mps.lang.structure, java.compile.mps-test, java.compile.jetbrains.mps.lang.test.runtime, java.compile.jetbrains.mps.lang.traceable, java.compile.jetbrains.mps.baseLanguage.classifiers, java.compile.jetbrains.mps.lang.constraints, java.compile.jetbrains.mps.lang.editor, java.compile.jetbrains.mps.lang.smodel">
     <mkdir dir="${build.tmp}/java.modules.cycle.2" />
-    <javac destdir="${build.tmp}/java.modules.cycle.2" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java.modules.cycle.2" fork="true" memorymaximumsize="1024m" nowarn="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/languageDesign/findUsages/source_gen" />
@@ -3588,7 +3588,7 @@
   
   <target name="java.compile.java.modules.cycle.3" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.baseLanguage.collections, java.compile.jetbrains.mps.gtext, java.compile.jetbrains.mps.gtext.runtime, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.structure, java.compile.mps-test, java.compile.jetbrains.mps.lang.test.runtime, java.compile.jetbrains.mps.lang.traceable, java.compile.jetbrains.mps.xmlSchema">
     <mkdir dir="${build.tmp}/java.modules.cycle.3" />
-    <javac destdir="${build.tmp}/java.modules.cycle.3" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java.modules.cycle.3" fork="true" memorymaximumsize="1024m" nowarn="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/xml/xml/source_gen" />

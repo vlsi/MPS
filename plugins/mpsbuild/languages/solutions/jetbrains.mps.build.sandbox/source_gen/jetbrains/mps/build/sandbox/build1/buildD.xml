@@ -45,7 +45,7 @@
   
   <target name="java.compile.AAA" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/AAA" />
-    <javac destdir="${build.tmp}/java/out/AAA" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/AAA" fork="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/buildD/src" />

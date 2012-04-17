@@ -29,7 +29,7 @@
   
   <target name="java.compile.testModuleWithAbcde">
     <mkdir dir="${build.tmp}/java/out/testModuleWithAbcde" />
-    <javac destdir="${build.tmp}/java/out/testModuleWithAbcde" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/testModuleWithAbcde" fork="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/jetbrains.mps.build.sandbox/samples/buildA/src" />

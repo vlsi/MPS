@@ -50,6 +50,7 @@
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildSource_JavaModuleOptions_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildSource_JavaModule_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildSource_JavaOptions_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildSource_JavaResources_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildStringNotEmpty_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildString_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildTextStringPart_BehaviorDescriptor" />
@@ -1047,6 +1048,14 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildProjectPart_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.behavior.BuildSource_JavaResources_BehaviorDescriptor" file="BuildSource_JavaResources_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildSourceSetContainer_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildSource_JavaSources_BehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildSource_JavaSources_BehaviorDescriptor" file="BuildSource_JavaSources_BehaviorDescriptor.java">

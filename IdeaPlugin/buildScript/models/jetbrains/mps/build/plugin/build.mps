@@ -26,6 +26,7 @@
   <root id="7926701909975931624">
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="927724900262328564">
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaLibrary" typeId="3ior.6057319140845467763" id="7926701909975931629">
       <property name="name" nameId="tpck.1169194664001" value="core-libraries" />
@@ -4610,6 +4611,10 @@
     </node>
   </root>
   <root id="2569834391839970845">
+    <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="1659807394255099741">
+      <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
+    </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaModule" typeId="3ior.7389400916848073784" id="2569834391839970846">
       <property name="name" nameId="tpck.1169194664001" value="typesystem-ui" />
       <node role="sources" roleId="3ior.7389400916848073826" type="3ior.BuildSource_JavaFiles" typeId="3ior.1500819558096177282" id="2569834391839970847">
@@ -5514,6 +5519,10 @@
     </node>
   </root>
   <root id="5148601452480491524">
+    <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="1659807394255099739">
+      <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
+    </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaLibrary" typeId="3ior.6057319140845467763" id="5148601452480520722">
       <property name="name" nameId="tpck.1169194664001" value="idea-vcs" />
       <node role="elements" roleId="3ior.6057319140845478673" type="3ior.BuildSource_JavaLibraryCP" typeId="3ior.3717132724152913083" id="5148601452480520751">

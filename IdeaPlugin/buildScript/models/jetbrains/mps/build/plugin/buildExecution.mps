@@ -22,6 +22,10 @@
       <property name="name" nameId="tpck.1169194664001" value="mps_home" />
       <node role="defaultPath" roleId="3ior.7389400916848144618" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="6361939271669730826" />
     </node>
+    <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="927724900262328564">
+      <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
+    </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Group" typeId="kdzh.1500819558095907805" id="6361939271669730827">
       <property name="name" nameId="tpck.1169194664001" value="execution" />
       <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Language" typeId="kdzh.3189788309731840248" id="6361939271669730828">
