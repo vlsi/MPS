@@ -114,6 +114,10 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
         if (myExternalTargetModelReference == null) {
           myExternalTargetModelReference = generator.getOutputModel().getSModelReference();
         }
+        // myExternalTargetModelReference now is not null
+        // todo: check for empty long names
+        resolveInfo = myExternalTargetModelReference.getLongName() + "." + resolveInfo;
+        myExternalTargetModelReference = null;
       }
 
       myResolveInfoForDynamicResolve = resolveInfo;

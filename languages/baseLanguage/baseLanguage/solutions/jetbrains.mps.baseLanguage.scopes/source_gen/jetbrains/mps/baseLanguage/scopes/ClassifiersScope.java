@@ -17,17 +17,20 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
-import java.util.Collection;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.Collection;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.smodel.SModelId;
+import jetbrains.mps.smodel.StubMigrationHelper;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -89,14 +92,8 @@ public class ClassifiersScope extends DelegatingScope {
   }
 
   public SNode resolveClass(String modelname, String stereotype, String nestedClassName) {
-    Collection<IModule> visibleModules = IterableUtil.asCollection(scope.getVisibleModules());
-
     List<SNode> classifiers = new ArrayList<SNode>();
-    for (SModelDescriptor model : Sequence.fromIterable(((Iterable<IModule>) visibleModules)).translate(new ITranslator2<IModule, SModelDescriptor>() {
-      public Iterable<SModelDescriptor> translate(IModule it) {
-        return it.getOwnModelDescriptors();
-      }
-    }).distinct()) {
+    for (SModelDescriptor model : Sequence.fromIterable(getVisibleModels())) {
       SModelFqName modelFqName = model.getSModelReference().getSModelFqName();
       if (!(modelFqName.getLongName().equals(modelname))) {
         continue;
@@ -116,7 +113,7 @@ public class ClassifiersScope extends DelegatingScope {
         if (SNodeOperations.getModel(cls) == model) {
           return cls;
         }
-        if (check_npo0wh_a0b0a0g0c_0(check_npo0wh_a0a1a0a6a2_0(model)) == check_npo0wh_a0b0a0g0c(check_npo0wh_a0a1a0a6a2(SNodeOperations.getModel(cls)))) {
+        if (check_npo0wh_a0b0a0e0c_0(check_npo0wh_a0a1a0a4a2_0(model)) == check_npo0wh_a0b0a0e0c(check_npo0wh_a0a1a0a4a2(SNodeOperations.getModel(cls)))) {
           return cls;
         }
       }
@@ -127,6 +124,15 @@ public class ClassifiersScope extends DelegatingScope {
       });
       if ((int) Sequence.fromIterable(userClassifiers).count() == 1) {
         return Sequence.fromIterable(userClassifiers).first();
+      }
+
+      // trying stubs 
+      SModelDescriptor stub = getStubModelByName(modelname);
+      if (stub != null) {
+        Iterable<SNode> stubClassifiers = getClassifiersByRefName(stub.getSModel(), nestedClassName);
+        if ((int) Sequence.fromIterable(stubClassifiers).count() == 1) {
+          return Sequence.fromIterable(stubClassifiers).first();
+        }
       }
 
       final StringBuilder warn = new StringBuilder();
@@ -147,6 +153,22 @@ public class ClassifiersScope extends DelegatingScope {
       return null;
     }
     return ListSequence.fromList(classifiers).getElement(0);
+  }
+
+  private Iterable<SModelDescriptor> getVisibleModels() {
+    Collection<IModule> visibleModules = IterableUtil.asCollection(scope.getVisibleModules());
+    return Sequence.fromIterable(((Iterable<IModule>) visibleModules)).translate(new ITranslator2<IModule, SModelDescriptor>() {
+      public Iterable<SModelDescriptor> translate(IModule it) {
+        return it.getOwnModelDescriptors();
+      }
+    }).distinct();
+  }
+
+  @Nullable
+  private SModelDescriptor getStubModelByName(String packageName) {
+    String stereo = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
+    SModelId id = StubMigrationHelper.convertModelUIDInScope(stereo + "#" + packageName, getVisibleModels());
+    return scope.getModelDescriptor(new SModelReference(new SModelFqName(packageName, stereo), id));
   }
 
   @Override
@@ -192,28 +214,28 @@ public class ClassifiersScope extends DelegatingScope {
     });
   }
 
-  private static IModule check_npo0wh_a0b0a0g0c(SModelDescriptor checkedDotOperand) {
+  private static IModule check_npo0wh_a0b0a0e0c(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_npo0wh_a0a1a0a6a2(SModel checkedDotOperand) {
+  private static SModelDescriptor check_npo0wh_a0a1a0a4a2(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static IModule check_npo0wh_a0b0a0g0c_0(SModelDescriptor checkedDotOperand) {
+  private static IModule check_npo0wh_a0b0a0e0c_0(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_npo0wh_a0a1a0a6a2_0(SModel checkedDotOperand) {
+  private static SModelDescriptor check_npo0wh_a0a1a0a4a2_0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
