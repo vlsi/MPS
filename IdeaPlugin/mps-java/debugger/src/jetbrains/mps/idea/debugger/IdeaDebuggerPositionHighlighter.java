@@ -95,6 +95,14 @@ public class IdeaDebuggerPositionHighlighter extends CurrentLinePositionComponen
         }
 
         @Override
+        public void sessionAttached(DebuggerSession session) {
+        }
+
+        @Override
+        public void sessionDetached(DebuggerSession session) {
+        }
+
+        @Override
         public void sessionRemoved(DebuggerSession session) {
             detachPainter(session);
             session.getContextManager().removeListener(mySessionListener);
