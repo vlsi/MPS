@@ -8,6 +8,8 @@ import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.project.Project;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
@@ -89,7 +91,7 @@ public class GenModuleXmlTask extends MpsLoadTask {
       Element depElem = new Element("dependencies");
       moduleElem.addContent(depElem);
 
-      List<IModule> dependencies = ListSequence.fromListWithValues(new ArrayList<IModule>(), module.getDependenciesManager().getAllRequiredModules());
+      List<IModule> dependencies = ListSequence.fromListWithValues(new ArrayList<IModule>(), new GlobalModuleDependenciesManager(module).getModules(Deptype.COMPILE));
       for (ModuleReference ref : ListSequence.fromList(dependencies).select(new ISelector<IModule, ModuleReference>() {
         public ModuleReference select(IModule it) {
           return it.getModuleReference();
