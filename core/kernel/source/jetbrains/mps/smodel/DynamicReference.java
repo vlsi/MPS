@@ -76,7 +76,7 @@ public class DynamicReference extends SReferenceBase {
 
     }
 
-    SNode targetNode = scope.resolve(getSourceNode(), getResolveInfo(), getTargetSModelReference());
+    SNode targetNode = scope.resolve(getSourceNode(), getResolveInfo());
     if (targetNode == null) {
       if (!silently) {
         reportErrorWithOrigin("cannot resolve reference by string: '" + getResolveInfo() + "'");
