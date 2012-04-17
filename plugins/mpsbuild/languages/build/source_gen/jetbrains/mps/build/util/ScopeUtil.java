@@ -76,6 +76,26 @@ public class ScopeUtil {
     return new ScopeUtil.VisibleArtifactsScope(artifacts);
   }
 
+  public static Scope getVisibleJarsScope(SNode project) {
+    if (SNodeOperations.getModel(project).isTransient()) {
+      IModule transientModule = SNodeOperations.getModel(project).getModelDescriptor().getModule();
+      return new ModelPlusImportedScope(SNodeOperations.getModel(project), false, transientModule.getScope(), "jetbrains.mps.build.structure.BuildSource_SingleFile");
+    }
+    VisibleArtifacts artifacts = new VisibleArtifacts(project, null);
+    artifacts.collect();
+    return new ScopeUtil.VisibleJarsScope(artifacts);
+  }
+
+  public static Scope getVisibleJarFoldersScope(SNode project) {
+    if (SNodeOperations.getModel(project).isTransient()) {
+      IModule transientModule = SNodeOperations.getModel(project).getModelDescriptor().getModule();
+      return new ModelPlusImportedScope(SNodeOperations.getModel(project), false, transientModule.getScope(), "jetbrains.mps.build.structure.BuildSource_SingleFolder");
+    }
+    VisibleArtifacts artifacts = new VisibleArtifacts(project, null);
+    artifacts.collect();
+    return new ScopeUtil.VisibleJarFoldersScope(artifacts);
+  }
+
   private static class VisibleArtifactsScope extends Scope {
     private VisibleArtifacts artifacts;
 
@@ -151,6 +171,105 @@ public class ScopeUtil {
         appendName(parent, sb);
       }
       BuildLayout_PathElement_Behavior.call_appendName_1368030936106665465(node, parent, sb);
+    }
+  }
+
+  public static abstract class TransformingScope extends Scope {
+    protected Scope wrapped;
+
+    public TransformingScope(Scope wrapped) {
+      this.wrapped = wrapped;
+    }
+
+    public SNode resolve(SNode contextNode, String refText) {
+      SNode resolve = wrapped.resolve(contextNode, refText);
+      if (resolve == null) {
+        return null;
+      }
+      return unwrap(resolve);
+    }
+
+    public List<SNode> getAvailableElements(@Nullable String prefix) {
+      return ListSequence.fromList(wrapped.getAvailableElements(prefix)).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return unwrap(it);
+        }
+      }).toListSequence();
+    }
+
+    public String getReferenceText(SNode contextNode, SNode node) {
+      node = wrap(node);
+      if (node == null) {
+        return null;
+      }
+      return wrapped.getReferenceText(contextNode, node);
+    }
+
+    @Override
+    public boolean contains(SNode node) {
+      node = wrap(node);
+      if (node == null) {
+        return false;
+      }
+      return wrapped.contains(node);
+    }
+
+    public abstract SNode wrap(SNode node);
+
+    public abstract SNode unwrap(SNode node);
+  }
+
+  public static class VisibleJarFoldersScope extends ScopeUtil.TransformingScope {
+    public VisibleJarFoldersScope(VisibleArtifacts artifacts) {
+      super(new ScopeUtil.VisibleArtifactsScope(artifacts));
+    }
+
+    public SNode wrap(SNode node) {
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_Node")) {
+        return SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildLayout_Node");
+      } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildInputSingleFolder") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.build.structure.BuildLayout_Copy")) {
+        return SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.build.structure.BuildLayout_Node");
+      }
+      return null;
+    }
+
+    public SNode unwrap(SNode node) {
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildSource_SingleFolder")) {
+        return SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildSource_SingleFolder");
+      } else {
+        SNode copyNode = SNodeOperations.as(node, "jetbrains.mps.build.structure.BuildLayout_Copy");
+        if ((copyNode != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(copyNode, "fileset", true), "jetbrains.mps.build.structure.BuildSource_SingleFolder")) {
+          return SNodeOperations.cast(SLinkOperations.getTarget(copyNode, "fileset", true), "jetbrains.mps.build.structure.BuildSource_SingleFolder");
+        }
+      }
+      return null;
+    }
+  }
+
+  public static class VisibleJarsScope extends ScopeUtil.TransformingScope {
+    public VisibleJarsScope(VisibleArtifacts artifacts) {
+      super(new ScopeUtil.VisibleArtifactsScope(artifacts));
+    }
+
+    public SNode wrap(SNode node) {
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_Node")) {
+        return SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildLayout_Node");
+      } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildInputSingleFile") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.build.structure.BuildLayout_Copy")) {
+        return SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.build.structure.BuildLayout_Node");
+      }
+      return null;
+    }
+
+    public SNode unwrap(SNode node) {
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildSource_SingleFile")) {
+        return SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildSource_SingleFile");
+      } else {
+        SNode copyNode = SNodeOperations.as(node, "jetbrains.mps.build.structure.BuildLayout_Copy");
+        if ((copyNode != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(copyNode, "fileset", true), "jetbrains.mps.build.structure.BuildSource_SingleFile")) {
+          return SNodeOperations.cast(SLinkOperations.getTarget(copyNode, "fileset", true), "jetbrains.mps.build.structure.BuildSource_SingleFile");
+        }
+      }
+      return null;
     }
   }
 }

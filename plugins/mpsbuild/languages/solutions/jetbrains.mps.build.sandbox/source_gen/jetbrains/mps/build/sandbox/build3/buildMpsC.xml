@@ -1,0 +1,40 @@
+<project name="buildMpsC" default="build" basedir="../../">
+  <property name="build.dir" location="build" />
+  <property name="build.tmp" location="${build.dir}/tmp/buildMpsC" />
+  <property name="build.layout" location="${build.dir}/artifacts/buildMpsC" />
+  <property name="artifacts.JarFromA" location="${basedir}/jetbrains.mps.build.sandbox/samples" />
+  
+  <path id="path.java.library.aaa">
+    <fileset file="${artifacts.JarFromA}/buildA/abcde.jar" />
+  </path>
+  
+  <target name="assemble" depends="classes" />
+  
+  <target name="build" depends="assemble, check" />
+  
+  <target name="clean">
+    <delete dir="${build.tmp}" />
+    <delete dir="${build.layout}" />
+  </target>
+  
+  <target name="compileJava" depends="java.compile.testModuleWithAbcde" />
+  
+  <target name="processResources" />
+  
+  <target name="classes" depends="compileJava, processResources" />
+  
+  <target name="test" depends="classes" />
+  
+  <target name="check" depends="test" />
+  
+  <target name="java.compile.testModuleWithAbcde">
+    <mkdir dir="${build.tmp}/java/out/testModuleWithAbcde" />
+    <javac destdir="${build.tmp}/java/out/testModuleWithAbcde" fork="true" includeantruntime="false">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/jetbrains.mps.build.sandbox/samples/buildA/src" />
+      </src>
+      <classpath refid="path.java.library.aaa" />
+    </javac>
+  </target>
+</project>

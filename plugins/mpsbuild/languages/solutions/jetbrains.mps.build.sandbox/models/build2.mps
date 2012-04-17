@@ -87,6 +87,9 @@
     <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfJavaModule" typeId="8xvf.4755209551904389307" id="4755209551904397940">
       <property name="name" nameId="tpck.1169194664001" value="module1" />
       <property name="outputFolder" nameId="8xvf.7385586609667649463" value="build/temp/module1" />
+      <property name="generateDebugInfo" nameId="8xvf.927724900262033861" value="true" />
+      <property name="noWarnings" nameId="8xvf.927724900262398958" value="true" />
+      <property name="heapSize" nameId="8xvf.927724900262398947" value="512" />
       <node role="dependencies" roleId="8xvf.4755209551904389320" type="8xvf.BwfJavaClassPath" typeId="8xvf.6647099934206976119" id="7926701909975860083">
         <node role="classpath" roleId="8xvf.7926701909975791137" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7926701909975860085">
           <property name="tagName" nameId="iuxj.6666499814681415862" value="pathelement" />
@@ -127,6 +130,24 @@
             <property name="attrName" nameId="iuxj.6666499814681447926" value="path" />
             <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="7926701909975525060">
               <property name="text" nameId="iuxj.6666499814681541920" value="module1/source" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="resources" roleId="8xvf.1659807394254493213" type="8xvf.BwfFileSet" typeId="8xvf.7926701909975416091" id="1659807394254544099">
+        <node role="elements" roleId="8xvf.7926701909975416092" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="1659807394254673424">
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="fileset" />
+          <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="1659807394254673425">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="path" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="1659807394254673426">
+              <property name="text" nameId="iuxj.6666499814681541920" value="module1/source" />
+            </node>
+          </node>
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="1659807394254673427">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="excludes" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="1659807394254673428">
+              <property name="text" nameId="iuxj.6666499814681541920" value="**/*.java" />
             </node>
           </node>
         </node>
@@ -174,6 +195,7 @@
           </node>
         </node>
       </node>
+      <node role="resources" roleId="8xvf.1659807394254493213" type="8xvf.BwfFileSet" typeId="8xvf.7926701909975416091" id="1659807394254544100" />
     </node>
     <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfJavaModule" typeId="8xvf.4755209551904389307" id="4755209551904406797">
       <property name="name" nameId="tpck.1169194664001" value="module3" />
@@ -223,6 +245,7 @@
           </node>
         </node>
       </node>
+      <node role="resources" roleId="8xvf.1659807394254493213" type="8xvf.BwfFileSet" typeId="8xvf.7926701909975416091" id="1659807394254544101" />
     </node>
     <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfJavaModule" typeId="8xvf.4755209551904389307" id="7385586609667763177">
       <property name="name" nameId="tpck.1169194664001" value="module4" />
@@ -266,6 +289,7 @@
           </node>
         </node>
       </node>
+      <node role="resources" roleId="8xvf.1659807394254493213" type="8xvf.BwfFileSet" typeId="8xvf.7926701909975416091" id="1659807394254544102" />
     </node>
     <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfJavaModule" typeId="8xvf.4755209551904389307" id="7385586609667763185">
       <property name="name" nameId="tpck.1169194664001" value="module5" />
@@ -285,6 +309,7 @@
           </node>
         </node>
       </node>
+      <node role="resources" roleId="8xvf.1659807394254493213" type="8xvf.BwfFileSet" typeId="8xvf.7926701909975416091" id="1659807394254544103" />
     </node>
     <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfTaskPart" typeId="8xvf.3961775458390032824" id="6647099934207237823">
       <link role="task" roleId="8xvf.3961775458390032825" targetNodeId="tnlc.7306485738221408317" resolveInfo="build" />

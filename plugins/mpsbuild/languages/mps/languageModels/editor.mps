@@ -231,7 +231,7 @@
         <property name="usesFolding" nameId="tpc2.1160590353935" value="true" />
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="2754769020641674031" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2754769020641674026">
-          <property name="text" nameId="tpc2.1073389577007" value="sources:" />
+          <property name="text" nameId="tpc2.1073389577007" value="content:" />
           <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SideTransformAnchorTagStyleClassItem" typeId="tpc2.1214320119173" id="1500819558096400253">
             <property name="tag" nameId="tpc2.1214320119174" value="ext_4_RTransform" />
@@ -252,6 +252,12 @@
                 </node>
               </node>
             </node>
+          </node>
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutOnNewLineStyleClassItem" typeId="tpc2.1237385578942" id="1659807394254038314">
+            <property name="flag" nameId="tpc2.1186414551515" value="true" />
+          </node>
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutIndentStyleClassItem" typeId="tpc2.1237307900041" id="1659807394254038313">
+            <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
         </node>
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutIndentStyleClassItem" typeId="tpc2.1237307900041" id="2754769020641674032">
@@ -363,7 +369,7 @@
         <property name="usesFolding" nameId="tpc2.1160590353935" value="true" />
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="5780287594867921326" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1500819558096385394">
-          <property name="text" nameId="tpc2.1073389577007" value="sources:" />
+          <property name="text" nameId="tpc2.1073389577007" value="content:" />
           <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SideTransformAnchorTagStyleClassItem" typeId="tpc2.1214320119173" id="1500819558096400254">
             <property name="tag" nameId="tpc2.1214320119174" value="ext_4_RTransform" />
@@ -384,6 +390,12 @@
                 </node>
               </node>
             </node>
+          </node>
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutOnNewLineStyleClassItem" typeId="tpc2.1237385578942" id="1659807394254038308">
+            <property name="flag" nameId="tpc2.1186414551515" value="true" />
+          </node>
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutIndentStyleClassItem" typeId="tpc2.1237307900041" id="1659807394254038310">
+            <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
         </node>
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutIndentStyleClassItem" typeId="tpc2.1237307900041" id="5780287594867921329">
@@ -912,7 +924,7 @@
         <property name="usesFolding" nameId="tpc2.1160590353935" value="true" />
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="3189788309731917361" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3189788309731917362">
-          <property name="text" nameId="tpc2.1073389577007" value="sources:" />
+          <property name="text" nameId="tpc2.1073389577007" value="content:" />
           <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="3189788309731917363">
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
@@ -1048,7 +1060,7 @@
         <property name="usesFolding" nameId="tpc2.1160590353935" value="true" />
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="5780287594867944982" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5780287594867944983">
-          <property name="text" nameId="tpc2.1073389577007" value="sources:" />
+          <property name="text" nameId="tpc2.1073389577007" value="content:" />
           <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="5780287594867944984">
             <property name="flag" nameId="tpc2.1186414551515" value="true" />

@@ -1,0 +1,15 @@
+<project name="buildMPS" default="build">
+
+  <property name="idea_home" location=".." />
+
+  <target name="build">
+    <ant antfile="buildCore.xml" inheritAll="true" useNativeBasedir="true" />
+    <ant antfile="buildWorkbench.xml" inheritAll="true" useNativeBasedir="true" />
+    <ant antfile="buildExecution.xml" inheritAll="true" useNativeBasedir="true" />
+  </target>
+  
+  <target name="clean">
+    <delete dir="tmp"/>
+    <delete dir="artifacts"/>
+  </target>
+</project>

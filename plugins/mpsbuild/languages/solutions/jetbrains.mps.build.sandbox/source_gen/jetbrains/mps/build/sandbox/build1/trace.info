@@ -7,7 +7,7 @@
     <unitInfo nodeId="3364920969597702860" fileName="buildC.xml" startLine="1" startPosition="0" endLine="39" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildC" />
   </root>
   <root nodeId="4129895186893541504">
-    <unitInfo nodeId="4129895186893541504" fileName="buildA.xml" startLine="1" startPosition="0" endLine="79" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildA" />
+    <unitInfo nodeId="4129895186893541504" fileName="buildA.xml" startLine="1" startPosition="0" endLine="85" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildA" />
   </root>
   <root nodeId="4129895186893541508">
     <unitInfo nodeId="4129895186893541508" fileName="buildB.xml" startLine="1" startPosition="0" endLine="66" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildB" />
@@ -18,6 +18,9 @@
   </root>
   <root nodeId="4993211115183416028">
     <unitInfo nodeId="4993211115183416028" fileName="buildPlugin.xml" startLine="1" startPosition="0" endLine="84" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildPlugin" />
+  </root>
+  <root nodeId="5610619299013213201">
+    <unitInfo nodeId="5610619299013213201" fileName="buildE.xml" startLine="1" startPosition="0" endLine="52" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildE" />
   </root>
 </debugInfo>
 

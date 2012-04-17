@@ -69,10 +69,7 @@ public class CoercionManager {
           return answer.o2;
         }
         CoercionMatcher coercionMatcher = new CoercionMatcher(pattern);
-        long start = System.nanoTime();
         SNode result = searchInSuperTypes(subtype, coercionMatcher, isWeak);
-
-        TypeSystemReporter.getInstance().reportCoerceNotCached(subtype, pattern.getConceptFQName(), System.nanoTime() - start);
         //writing to the cache
         SubtypingCache subtypingCache = myTypeChecker.getSubtypingCache();
         if (subtypingCache != null) {

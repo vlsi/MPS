@@ -5,7 +5,7 @@ package jetbrains.mps.build.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.UnpackHelper;
 
-public class BuildLayout_Zip_BehaviorDescriptor extends BuildLayout_NamedContainer_BehaviorDescriptor implements BuildLayout_ContainerAcceptingFileSet_BehaviorDescriptor {
+public class BuildLayout_Zip_BehaviorDescriptor extends BuildLayout_NamedContainer_BehaviorDescriptor implements BuildLayout_ContainerAcceptingFileSet_BehaviorDescriptor, BuildLayout_PureNode_BehaviorDescriptor {
   public BuildLayout_Zip_BehaviorDescriptor() {
   }
 

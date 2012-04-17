@@ -963,7 +963,7 @@
   <root nodeId="7187651930234842193">
     <nodeInfo nodeId="7187651930234857569" fileName="TypeSystemCheckUtil.java" startLine="22" startPosition="54" endLine="23" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7187651930234857579" fileName="TypeSystemCheckUtil.java" startLine="23" startPosition="131" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5959209040402601059" fileName="TypeSystemCheckUtil.java" startLine="24" startPosition="40" endLine="25" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5959209040402601059" fileName="TypeSystemCheckUtil.java" startLine="25" startPosition="134" endLine="26" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7187651930234868202" fileName="TypeSystemCheckUtil.java" startLine="26" startPosition="134" endLine="27" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2506344354198946775" fileName="TypeSystemCheckUtil.java" startLine="28" startPosition="26" endLine="29" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="7187651930234868225" fileName="TypeSystemCheckUtil.java" startLine="30" startPosition="7" endLine="31" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -985,7 +985,7 @@
     <nodeInfo nodeId="2506344354198946764" fileName="TypeSystemCheckUtil.java" startLine="27" startPosition="64" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6852093964161556402" fileName="TypeSystemCheckUtil.java" startLine="47" startPosition="51" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6852093964161556390" fileName="TypeSystemCheckUtil.java" startLine="46" startPosition="67" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7187651930234868011" fileName="TypeSystemCheckUtil.java" startLine="25" startPosition="132" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7187651930234868011" fileName="TypeSystemCheckUtil.java" startLine="24" startPosition="40" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7187651930234842199" fileName="TypeSystemCheckUtil.java" startLine="21" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkGenerationMode#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="7187651930234868244" fileName="TypeSystemCheckUtil.java" startLine="35" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkRollBacks#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="7187651930234842198" fileName="TypeSystemCheckUtil.java" startLine="19" startPosition="32" endLine="19" endPosition="32" />
@@ -993,19 +993,19 @@
     <scopeInfo nodeId="6852093964161556404" fileName="TypeSystemCheckUtil.java" startLine="48" startPosition="39" endLine="49" endPosition="14" />
     <scopeInfo nodeId="7187651930234842195" fileName="TypeSystemCheckUtil.java" startLine="18" startPosition="34" endLine="20" endPosition="3" />
     <scopeInfo nodeId="6852093964161556391" fileName="TypeSystemCheckUtil.java" startLine="47" startPosition="51" endLine="51" endPosition="27" />
-    <scopeInfo nodeId="7187651930234868019" fileName="TypeSystemCheckUtil.java" startLine="26" startPosition="134" endLine="32" endPosition="55">
-      <varInfo nodeId="7187651930234868203" varName="type1" />
-      <varInfo nodeId="7187651930234868226" varName="type2" />
-    </scopeInfo>
     <scopeInfo nodeId="6852093964161556390" fileName="TypeSystemCheckUtil.java" startLine="46" startPosition="67" endLine="52" endPosition="5">
       <varInfo nodeId="6852093964161556393" varName="toRevert" />
     </scopeInfo>
-    <scopeInfo nodeId="7187651930234868011" fileName="TypeSystemCheckUtil.java" startLine="25" startPosition="132" endLine="33" endPosition="5">
+    <scopeInfo nodeId="7187651930234868019" fileName="TypeSystemCheckUtil.java" startLine="25" startPosition="134" endLine="32" endPosition="55">
+      <varInfo nodeId="7187651930234868203" varName="type1" />
+      <varInfo nodeId="7187651930234868226" varName="type2" />
+      <varInfo nodeId="7392353035778547030" varName="typeCheckingContext2" />
+    </scopeInfo>
+    <scopeInfo nodeId="7187651930234868011" fileName="TypeSystemCheckUtil.java" startLine="24" startPosition="40" endLine="33" endPosition="5">
       <varInfo nodeId="7187651930234868017" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="7187651930234842202" fileName="TypeSystemCheckUtil.java" startLine="22" startPosition="54" endLine="33" endPosition="5">
       <varInfo nodeId="7187651930234857570" varName="typeCheckingContext" />
-      <varInfo nodeId="7392353035778547030" varName="typeCheckingContext2" />
     </scopeInfo>
     <scopeInfo nodeId="7187651930234842199" fileName="TypeSystemCheckUtil.java" startLine="21" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="7187651930234842203" varName="node" />
