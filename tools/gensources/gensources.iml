@@ -195,6 +195,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/access/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/checkedName/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/plugin-standalone/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/build/solutions/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../plugins">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-java/languages/customViewers/source_gen" isTestSource="false" />
@@ -212,6 +213,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsbuild/languages/mps/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsbuild/languages/deploySolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsbuild/languages/build/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/languages/migration/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../samples">
       <sourceFolder url="file://$MODULE_DIR$/../../samples/agreement/agreementLanguage/source_gen" isTestSource="false" />
