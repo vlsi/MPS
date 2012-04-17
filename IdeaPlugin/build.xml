@@ -612,6 +612,8 @@
         <path path="${base_dir}/languages/languageDesign/project/source_gen"/>
         <path path="${base_dir}/languages/languageDesign/quotation/source_gen"/>
         <path path="${base_dir}/languages/languageDesign/refactoring/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/scopes/runtime/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/scopes/source_gen"/>
         <path path="${base_dir}/languages/languageDesign/script/source_gen"/>
         <path path="${base_dir}/languages/languageDesign/sharedConcepts/source_gen"/>
         <path path="${base_dir}/languages/languageDesign/smodel/source_gen"/>
@@ -626,6 +628,7 @@
         <path path="${base_dir}/languages/languageDesign/typesystem/languages/test/source_gen"/>
         <!-- baseLanguage -->
         <path path="${base_dir}/languages/baseLanguage/baseLanguage/source_gen"/>
+        <path path="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.scopes/source_gen"/>
         <path path="${base_dir}/languages/baseLanguage/baseLanguageInternal/source_gen"/>
         <path path="${base_dir}/languages/baseLanguage/blTypes/source_gen"/>
         <path path="${base_dir}/languages/baseLanguage/checkDot/languages/checkedDots/source_gen"/>
@@ -637,6 +640,7 @@
         <path path="${base_dir}/languages/baseLanguage/constructors/source_gen"/>
         <path path="${base_dir}/languages/baseLanguage/javadoc/source_gen"/>
         <path path="${base_dir}/languages/baseLanguage/jdk7/languages/jdk7/source_gen"/>
+        <path path="${base_dir}/languages/baseLanguage/varVariable/source_gen"/>
         <path path="${base_dir}/languages/baseLanguage/logging/source_gen"/>
         <path path="${base_dir}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/source_gen"/>
         <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/source_gen"/>
