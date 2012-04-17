@@ -48,7 +48,7 @@ public class LanguageHierarchyCache implements CoreComponent {
   private Map<Language, LanguageConceptsCache> myLanguageSpecificCaches = new HashMap<Language, LanguageConceptsCache>();
 
   private CopyOnWriteArrayList<CacheChangeListener> myCacheChangeListeners = new CopyOnWriteArrayList<CacheChangeListener>();
-  private volatile CacheReadAccessListener myCacheReadAccessListener = null;
+  private ThreadLocal<CacheReadAccessListener> myCacheReadAccessListener = new ThreadLocal<CacheReadAccessListener>();
 
   private MPSModuleRepository myModuleRepository;
 
@@ -95,11 +95,11 @@ public class LanguageHierarchyCache implements CoreComponent {
   }
 
   public void setReadAccessListener(CacheReadAccessListener listener) {
-    myCacheReadAccessListener = listener;
+    myCacheReadAccessListener.set(listener);
   }
 
   public void removeReadAccessListener() {
-    myCacheReadAccessListener = null;
+    myCacheReadAccessListener.set(null);
   }
 
   private void fireCacheChanged() {
@@ -109,7 +109,7 @@ public class LanguageHierarchyCache implements CoreComponent {
   }
 
   private void fireReadAccessPerformed() {
-    CacheReadAccessListener listener = myCacheReadAccessListener;
+    CacheReadAccessListener listener = myCacheReadAccessListener.get();
     if (listener != null) {
       listener.languageCacheRead();
     }

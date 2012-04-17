@@ -57,6 +57,10 @@ public class BuildLayout_Jar_Behavior {
     return false;
   }
 
+  public static String virtual_getApproximateName_5610619299013425878(SNode thisNode) {
+    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(thisNode, "containerName", true), null);
+  }
+
   public static class QuotationClass_20awhq_a0a0b0h0b {
     public QuotationClass_20awhq_a0a0b0h0b() {
     }

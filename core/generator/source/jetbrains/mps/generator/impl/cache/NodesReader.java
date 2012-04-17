@@ -21,6 +21,7 @@ import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,6 +59,8 @@ public class NodesReader {
     readReferences(is, node);
 
     readChildren(model, is, node);
+
+    readUserObjects(model, is, node);
 
     if (is.readByte() != '}') {
       throw new IOException("bad stream, no '}'");
@@ -118,5 +121,44 @@ public class NodesReader {
       String value = is.readString();
       node.setProperty(InternUtil.intern(key), InternUtil.intern(value), false);
     }
+  }
+
+  private void readUserObjects(SModel model, ModelInputStream is, SNode node) throws IOException {
+    // first read user objects
+    int userObjectCount = is.readInt();
+    for (int i = 0; i < userObjectCount; i += 2) {
+      Object key = readUserObject(is, model);
+      Object value = readUserObject(is, model);
+      if (key != null && value != null) {
+        node.putUserObject(key, value);
+      }
+    }
+  }
+
+  private Object readUserObject(ModelInputStream is, SModel model) throws IOException {
+    int id = is.readInt();
+    switch (id) {
+      case NodesWriter.USER_NODE_POINTER:
+        return is.readNodePointer();
+      case NodesWriter.USER_STRING:
+        return is.readString();
+      case NodesWriter.USER_NULL:
+        return null;
+      case NodesWriter.USER_NODE_ID:
+        return is.readNodeId();
+      case NodesWriter.USER_MODEL_ID:
+        return is.readModelID();
+      case NodesWriter.USER_MODEL_REFERENCE:
+        return is.readModelReference();
+      case NodesWriter.USER_SERIALIZABLE:
+        ObjectInputStream stream = new ObjectInputStream(is);
+        try {
+          return stream.readObject();
+        } catch (ClassNotFoundException ignore) {
+          // class could be loaded by the other classloader
+          return null;
+        }
+    }
+    throw new IOException("Could not read user object");
   }
 }

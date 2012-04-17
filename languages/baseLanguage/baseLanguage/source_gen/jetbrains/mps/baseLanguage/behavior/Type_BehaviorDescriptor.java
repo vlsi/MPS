@@ -42,6 +42,10 @@ public abstract class Type_BehaviorDescriptor extends BaseConcept_BehaviorDescri
     return Type_Behavior.virtual_createDefaultTypeExpression_3359611512358152580(thisNode);
   }
 
+  public boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
+    return Type_Behavior.virtual_canBeCoerced_6321644624958501287(thisNode, conceptFqName);
+  }
+
   public boolean virtual_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode) {
     return Type_Behavior.virtual_hasPluralVariableSuffixes_1447667470349154499(thisNode);
   }

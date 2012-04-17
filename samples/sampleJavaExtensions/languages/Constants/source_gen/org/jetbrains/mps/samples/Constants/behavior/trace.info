@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="ConstantReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.behavior.ConstantReference_BehaviorDescriptor" />
+  <unitInfo fileName="Constant_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.behavior.Constant_BehaviorDescriptor" />
+  <unitInfo fileName="Constants_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.behavior.Constants_BehaviorDescriptor" />
+</debugInfo>
+

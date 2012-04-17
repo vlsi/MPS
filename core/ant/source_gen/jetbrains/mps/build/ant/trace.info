@@ -838,6 +838,9 @@
       <varInfo nodeId="4003657351907888028" varName="modules" />
     </scopeInfo>
     <unitInfo nodeId="4003657351907888740" fileName="MpsWorker.java" startLine="246" startPosition="17" endLine="48" endPosition="0" />
+    <unitInfo nodeId="4003657351907888070" fileName="MpsWorker.java" startLine="232" startPosition="68" endLine="236" endPosition="5" unitName="jetbrains.mps.build.ant.MpsWorker$3" />
+    <unitInfo nodeId="4003657351907888089" fileName="MpsWorker.java" startLine="240" startPosition="61" endLine="248" endPosition="7" unitName="jetbrains.mps.build.ant.MpsWorker$4" />
+    <unitInfo nodeId="4003657351907886942" fileName="MpsWorker.java" startLine="403" startPosition="0" endLine="406" endPosition="0" unitName="jetbrains.mps.build.ant.MpsWorker$AntLogger" />
     <unitInfo nodeId="4003657351907886982" fileName="MpsWorker.java" startLine="432" startPosition="0" endLine="457" endPosition="0" unitName="jetbrains.mps.build.ant.MpsWorker$LogLogger" />
     <unitInfo nodeId="4003657351907886911" fileName="MpsWorker.java" startLine="370" startPosition="0" endLine="402" endPosition="0" unitName="jetbrains.mps.build.ant.MpsWorker$MyMessageHandlerAppender" />
     <unitInfo nodeId="4003657351907886995" fileName="MpsWorker.java" startLine="458" startPosition="0" endLine="488" endPosition="0" unitName="jetbrains.mps.build.ant.MpsWorker$ObjectsToProcess" />
@@ -1774,64 +1777,65 @@
     <nodeInfo nodeId="4003657351907891245" fileName="MpsLoadTask.java" startLine="263" startPosition="85" endLine="264" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="4003657351907891249" fileName="MpsLoadTask.java" startLine="265" startPosition="7" endLine="266" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4003657351907891256" fileName="MpsLoadTask.java" startLine="267" startPosition="5" endLine="268" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907891263" fileName="MpsLoadTask.java" startLine="271" startPosition="42" endLine="272" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907894260" fileName="MpsLoadTask.java" startLine="273" startPosition="86" endLine="274" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4003657351907894262" fileName="MpsLoadTask.java" startLine="274" startPosition="118" endLine="275" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4003657351907894264" fileName="MpsLoadTask.java" startLine="275" startPosition="169" endLine="276" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4003657351907894266" fileName="MpsLoadTask.java" startLine="276" startPosition="113" endLine="277" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4003657351907891328" fileName="MpsLoadTask.java" startLine="277" startPosition="116" endLine="278" endPosition="623" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907891281" fileName="MpsLoadTask.java" startLine="279" startPosition="12" endLine="280" endPosition="230" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907891412" fileName="MpsLoadTask.java" startLine="281" startPosition="5" endLine="282" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907891463" fileName="MpsLoadTask.java" startLine="284" startPosition="102" endLine="285" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4003657351907891455" fileName="MpsLoadTask.java" startLine="287" startPosition="34" endLine="288" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907891450" fileName="MpsLoadTask.java" startLine="289" startPosition="14" endLine="290" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907891473" fileName="MpsLoadTask.java" startLine="292" startPosition="5" endLine="293" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907891488" fileName="MpsLoadTask.java" startLine="294" startPosition="30" endLine="295" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907891493" fileName="MpsLoadTask.java" startLine="296" startPosition="5" endLine="297" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907891532" fileName="MpsLoadTask.java" startLine="303" startPosition="119" endLine="304" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907891537" fileName="MpsLoadTask.java" startLine="304" startPosition="22" endLine="305" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907891538" fileName="MpsLoadTask.java" startLine="306" startPosition="5" endLine="307" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907894268" fileName="MpsLoadTask.java" startLine="307" startPosition="38" endLine="308" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4003657351907891545" fileName="MpsLoadTask.java" startLine="308" startPosition="67" endLine="309" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907894270" fileName="MpsLoadTask.java" startLine="309" startPosition="82" endLine="310" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4003657351907894272" fileName="MpsLoadTask.java" startLine="310" startPosition="49" endLine="311" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4003657351907891592" fileName="MpsLoadTask.java" startLine="314" startPosition="118" endLine="315" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907891628" fileName="MpsLoadTask.java" startLine="321" startPosition="81" endLine="322" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907891623" fileName="MpsLoadTask.java" startLine="323" startPosition="16" endLine="324" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907891639" fileName="MpsLoadTask.java" startLine="330" startPosition="60" endLine="331" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907891669" fileName="MpsLoadTask.java" startLine="332" startPosition="9" endLine="333" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907891677" fileName="MpsLoadTask.java" startLine="333" startPosition="73" endLine="334" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907891681" fileName="MpsLoadTask.java" startLine="334" startPosition="32" endLine="335" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907891688" fileName="MpsLoadTask.java" startLine="336" startPosition="20" endLine="337" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907891699" fileName="MpsLoadTask.java" startLine="338" startPosition="27" endLine="339" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="4003657351907891729" fileName="MpsLoadTask.java" startLine="341" startPosition="50" endLine="342" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907891738" fileName="MpsLoadTask.java" startLine="342" startPosition="67" endLine="343" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907891711" fileName="MpsLoadTask.java" startLine="345" startPosition="44" endLine="346" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907891720" fileName="MpsLoadTask.java" startLine="346" startPosition="61" endLine="347" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907891755" fileName="MpsLoadTask.java" startLine="350" startPosition="61" endLine="351" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907891664" fileName="MpsLoadTask.java" startLine="357" startPosition="13" endLine="358" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907891761" fileName="MpsLoadTask.java" startLine="362" startPosition="5" endLine="363" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907890319" fileName="MpsLoadTask.java" startLine="371" startPosition="0" endLine="372" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLevel" />
-    <nodeInfo nodeId="4003657351907891768" fileName="MpsLoadTask.java" startLine="374" startPosition="25" endLine="375" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907891773" fileName="MpsLoadTask.java" startLine="378" startPosition="27" endLine="379" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907890333" fileName="MpsLoadTask.java" startLine="383" startPosition="69" endLine="384" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="myLevels" />
-    <nodeInfo nodeId="4003657351907891800" fileName="MpsLoadTask.java" startLine="389" startPosition="33" endLine="390" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907891812" fileName="MpsLoadTask.java" startLine="393" startPosition="27" endLine="394" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907891793" fileName="MpsLoadTask.java" startLine="397" startPosition="64" endLine="398" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907891785" fileName="MpsLoadTask.java" startLine="402" startPosition="68" endLine="403" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907890355" fileName="MpsLoadTask.java" startLine="408" startPosition="68" endLine="409" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInputStream" />
-    <nodeInfo nodeId="4003657351907891822" fileName="MpsLoadTask.java" startLine="411" startPosition="58" endLine="412" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907891829" fileName="MpsLoadTask.java" startLine="415" startPosition="23" endLine="416" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907891854" fileName="MpsLoadTask.java" startLine="418" startPosition="62" endLine="419" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6690493898470423738" fileName="MpsLoadTask.java" startLine="271" startPosition="42" endLine="272" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907891263" fileName="MpsLoadTask.java" startLine="275" startPosition="44" endLine="276" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907894260" fileName="MpsLoadTask.java" startLine="277" startPosition="43" endLine="278" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4003657351907894262" fileName="MpsLoadTask.java" startLine="278" startPosition="54" endLine="279" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4003657351907894264" fileName="MpsLoadTask.java" startLine="279" startPosition="63" endLine="280" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4003657351907894266" fileName="MpsLoadTask.java" startLine="280" startPosition="49" endLine="281" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4003657351907891328" fileName="MpsLoadTask.java" startLine="281" startPosition="52" endLine="282" endPosition="460" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907891281" fileName="MpsLoadTask.java" startLine="283" startPosition="12" endLine="284" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907891412" fileName="MpsLoadTask.java" startLine="285" startPosition="5" endLine="286" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907891463" fileName="MpsLoadTask.java" startLine="288" startPosition="102" endLine="289" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4003657351907891455" fileName="MpsLoadTask.java" startLine="291" startPosition="34" endLine="292" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907891450" fileName="MpsLoadTask.java" startLine="293" startPosition="14" endLine="294" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907891473" fileName="MpsLoadTask.java" startLine="296" startPosition="5" endLine="297" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907891488" fileName="MpsLoadTask.java" startLine="298" startPosition="30" endLine="299" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907891493" fileName="MpsLoadTask.java" startLine="300" startPosition="5" endLine="301" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907891532" fileName="MpsLoadTask.java" startLine="307" startPosition="119" endLine="308" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907891537" fileName="MpsLoadTask.java" startLine="308" startPosition="22" endLine="309" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907891538" fileName="MpsLoadTask.java" startLine="310" startPosition="5" endLine="311" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907894268" fileName="MpsLoadTask.java" startLine="311" startPosition="38" endLine="312" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4003657351907891545" fileName="MpsLoadTask.java" startLine="312" startPosition="67" endLine="313" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907894270" fileName="MpsLoadTask.java" startLine="313" startPosition="82" endLine="314" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4003657351907894272" fileName="MpsLoadTask.java" startLine="314" startPosition="49" endLine="315" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4003657351907891592" fileName="MpsLoadTask.java" startLine="318" startPosition="118" endLine="319" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907891628" fileName="MpsLoadTask.java" startLine="325" startPosition="81" endLine="326" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907891623" fileName="MpsLoadTask.java" startLine="327" startPosition="16" endLine="328" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907891639" fileName="MpsLoadTask.java" startLine="334" startPosition="60" endLine="335" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907891669" fileName="MpsLoadTask.java" startLine="336" startPosition="9" endLine="337" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907891677" fileName="MpsLoadTask.java" startLine="337" startPosition="73" endLine="338" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907891681" fileName="MpsLoadTask.java" startLine="338" startPosition="32" endLine="339" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907891688" fileName="MpsLoadTask.java" startLine="340" startPosition="20" endLine="341" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907891699" fileName="MpsLoadTask.java" startLine="342" startPosition="27" endLine="343" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="4003657351907891729" fileName="MpsLoadTask.java" startLine="345" startPosition="50" endLine="346" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907891738" fileName="MpsLoadTask.java" startLine="346" startPosition="67" endLine="347" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907891711" fileName="MpsLoadTask.java" startLine="349" startPosition="44" endLine="350" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907891720" fileName="MpsLoadTask.java" startLine="350" startPosition="61" endLine="351" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907891755" fileName="MpsLoadTask.java" startLine="354" startPosition="61" endLine="355" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907891664" fileName="MpsLoadTask.java" startLine="361" startPosition="13" endLine="362" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907891761" fileName="MpsLoadTask.java" startLine="366" startPosition="5" endLine="367" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907890319" fileName="MpsLoadTask.java" startLine="375" startPosition="0" endLine="376" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLevel" />
+    <nodeInfo nodeId="4003657351907891768" fileName="MpsLoadTask.java" startLine="378" startPosition="25" endLine="379" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907891773" fileName="MpsLoadTask.java" startLine="382" startPosition="27" endLine="383" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907890333" fileName="MpsLoadTask.java" startLine="387" startPosition="69" endLine="388" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="myLevels" />
+    <nodeInfo nodeId="4003657351907891800" fileName="MpsLoadTask.java" startLine="393" startPosition="33" endLine="394" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907891812" fileName="MpsLoadTask.java" startLine="397" startPosition="27" endLine="398" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907891793" fileName="MpsLoadTask.java" startLine="401" startPosition="64" endLine="402" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907891785" fileName="MpsLoadTask.java" startLine="406" startPosition="68" endLine="407" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907890355" fileName="MpsLoadTask.java" startLine="412" startPosition="68" endLine="413" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInputStream" />
+    <nodeInfo nodeId="4003657351907891822" fileName="MpsLoadTask.java" startLine="415" startPosition="58" endLine="416" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907891829" fileName="MpsLoadTask.java" startLine="419" startPosition="23" endLine="420" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907891854" fileName="MpsLoadTask.java" startLine="422" startPosition="62" endLine="423" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4003657351907890402" fileName="MpsLoadTask.java" startLine="43" startPosition="0" endLine="45" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MpsLoadTask#()V" />
     <nodeInfo nodeId="4003657351907890881" fileName="MpsLoadTask.java" startLine="151" startPosition="12" endLine="153" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4003657351907891141" fileName="MpsLoadTask.java" startLine="240" startPosition="10" endLine="242" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4003657351907891279" fileName="MpsLoadTask.java" startLine="279" startPosition="10" endLine="281" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4003657351907891448" fileName="MpsLoadTask.java" startLine="289" startPosition="12" endLine="291" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4003657351907891495" fileName="MpsLoadTask.java" startLine="299" startPosition="0" endLine="301" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWorkerClass#()Ljava/lang/Class;" />
-    <nodeInfo nodeId="4003657351907891621" fileName="MpsLoadTask.java" startLine="323" startPosition="14" endLine="325" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4003657351907890337" fileName="MpsLoadTask.java" startLine="385" startPosition="0" endLine="387" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LogLevelAttribute#()V" />
-    <nodeInfo nodeId="4003657351907890366" fileName="MpsLoadTask.java" startLine="424" startPosition="0" endLine="426" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addMessage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4003657351907891279" fileName="MpsLoadTask.java" startLine="283" startPosition="10" endLine="285" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4003657351907891448" fileName="MpsLoadTask.java" startLine="293" startPosition="12" endLine="295" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4003657351907891495" fileName="MpsLoadTask.java" startLine="303" startPosition="0" endLine="305" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWorkerClass#()Ljava/lang/Class;" />
+    <nodeInfo nodeId="4003657351907891621" fileName="MpsLoadTask.java" startLine="327" startPosition="14" endLine="329" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4003657351907890337" fileName="MpsLoadTask.java" startLine="389" startPosition="0" endLine="391" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LogLevelAttribute#()V" />
+    <nodeInfo nodeId="4003657351907890366" fileName="MpsLoadTask.java" startLine="428" startPosition="0" endLine="430" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addMessage#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="3449270742160235824" fileName="MpsLoadTask.java" startLine="91" startPosition="64" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4003657351907890564" fileName="MpsLoadTask.java" startLine="100" startPosition="10" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4003657351907890633" fileName="MpsLoadTask.java" startLine="119" startPosition="47" endLine="122" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1839,14 +1843,14 @@
     <nodeInfo nodeId="4003657351907891025" fileName="MpsLoadTask.java" startLine="175" startPosition="30" endLine="178" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4003657351907891188" fileName="MpsLoadTask.java" startLine="250" startPosition="56" endLine="253" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4003657351907891232" fileName="MpsLoadTask.java" startLine="262" startPosition="64" endLine="265" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907891483" fileName="MpsLoadTask.java" startLine="293" startPosition="71" endLine="296" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907891568" fileName="MpsLoadTask.java" startLine="313" startPosition="31" endLine="316" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907891694" fileName="MpsLoadTask.java" startLine="337" startPosition="48" endLine="340" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907891746" fileName="MpsLoadTask.java" startLine="349" startPosition="7" endLine="352" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907890322" fileName="MpsLoadTask.java" startLine="373" startPosition="0" endLine="376" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LogLevel#(I)V" />
-    <nodeInfo nodeId="4003657351907891780" fileName="MpsLoadTask.java" startLine="401" startPosition="12" endLine="404" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4003657351907890358" fileName="MpsLoadTask.java" startLine="410" startPosition="0" endLine="413" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AbstractOutputReader#(Ljava/io/InputStream;)V" />
-    <nodeInfo nodeId="4003657351907891843" fileName="MpsLoadTask.java" startLine="417" startPosition="11" endLine="420" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="4003657351907891483" fileName="MpsLoadTask.java" startLine="297" startPosition="46" endLine="300" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907891568" fileName="MpsLoadTask.java" startLine="317" startPosition="31" endLine="320" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907891694" fileName="MpsLoadTask.java" startLine="341" startPosition="48" endLine="344" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907891746" fileName="MpsLoadTask.java" startLine="353" startPosition="7" endLine="356" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907890322" fileName="MpsLoadTask.java" startLine="377" startPosition="0" endLine="380" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LogLevel#(I)V" />
+    <nodeInfo nodeId="4003657351907891780" fileName="MpsLoadTask.java" startLine="405" startPosition="12" endLine="408" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4003657351907890358" fileName="MpsLoadTask.java" startLine="414" startPosition="0" endLine="417" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AbstractOutputReader#(Ljava/io/InputStream;)V" />
+    <nodeInfo nodeId="4003657351907891843" fileName="MpsLoadTask.java" startLine="421" startPosition="11" endLine="424" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="4003657351907890406" fileName="MpsLoadTask.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setMpsHome#(Ljava/io/File;)V" />
     <nodeInfo nodeId="4003657351907890416" fileName="MpsLoadTask.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMpsHome#()Ljava/io/File;" />
     <nodeInfo nodeId="4003657351907890422" fileName="MpsLoadTask.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setFailOnError#(Z)V" />
@@ -1866,74 +1870,75 @@
     <nodeInfo nodeId="4003657351907891122" fileName="MpsLoadTask.java" startLine="229" startPosition="145" endLine="233" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4003657351907891164" fileName="MpsLoadTask.java" startLine="244" startPosition="0" endLine="248" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processNonZeroExitCode#(I)V" />
     <nodeInfo nodeId="4003657351907891208" fileName="MpsLoadTask.java" startLine="255" startPosition="0" endLine="259" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExecuteStreamHandler#()Ljetbrains/mps/build/ant/MyExecuteStreamHandler;" />
-    <nodeInfo nodeId="4003657351907891510" fileName="MpsLoadTask.java" startLine="302" startPosition="73" endLine="306" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907891705" fileName="MpsLoadTask.java" startLine="344" startPosition="14" endLine="348" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907891658" fileName="MpsLoadTask.java" startLine="356" startPosition="35" endLine="360" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4003657351907890327" fileName="MpsLoadTask.java" startLine="377" startPosition="0" endLine="381" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLevel#()I" />
-    <nodeInfo nodeId="4003657351907890345" fileName="MpsLoadTask.java" startLine="388" startPosition="0" endLine="392" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValues#()[Ljava/lang/String;" />
-    <nodeInfo nodeId="4003657351907890349" fileName="MpsLoadTask.java" startLine="392" startPosition="0" endLine="396" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLevel#()I" />
-    <nodeInfo nodeId="4003657351907890340" fileName="MpsLoadTask.java" startLine="396" startPosition="0" endLine="400" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLevelText#(Ljetbrains/mps/build/ant/MpsLoadTask/LogLevel;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6690493898470423554" fileName="MpsLoadTask.java" startLine="270" startPosition="0" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="absolutePath#(Ljava/lang/String;)Ljava/io/File;" />
+    <nodeInfo nodeId="4003657351907891510" fileName="MpsLoadTask.java" startLine="306" startPosition="73" endLine="310" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907891705" fileName="MpsLoadTask.java" startLine="348" startPosition="14" endLine="352" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907891658" fileName="MpsLoadTask.java" startLine="360" startPosition="35" endLine="364" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4003657351907890327" fileName="MpsLoadTask.java" startLine="381" startPosition="0" endLine="385" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLevel#()I" />
+    <nodeInfo nodeId="4003657351907890345" fileName="MpsLoadTask.java" startLine="392" startPosition="0" endLine="396" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValues#()[Ljava/lang/String;" />
+    <nodeInfo nodeId="4003657351907890349" fileName="MpsLoadTask.java" startLine="396" startPosition="0" endLine="400" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLevel#()I" />
+    <nodeInfo nodeId="4003657351907890340" fileName="MpsLoadTask.java" startLine="400" startPosition="0" endLine="404" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLevelText#(Ljetbrains/mps/build/ant/MpsLoadTask/LogLevel;)Ljava/lang/String;" />
     <nodeInfo nodeId="4003657351907890877" fileName="MpsLoadTask.java" startLine="148" startPosition="61" endLine="153" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4003657351907890954" fileName="MpsLoadTask.java" startLine="164" startPosition="33" endLine="169" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="4003657351907891136" fileName="MpsLoadTask.java" startLine="237" startPosition="5" endLine="242" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907891443" fileName="MpsLoadTask.java" startLine="286" startPosition="12" endLine="291" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907891562" fileName="MpsLoadTask.java" startLine="312" startPosition="29" endLine="317" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907891607" fileName="MpsLoadTask.java" startLine="320" startPosition="28" endLine="325" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907891443" fileName="MpsLoadTask.java" startLine="290" startPosition="12" endLine="295" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907891562" fileName="MpsLoadTask.java" startLine="316" startPosition="29" endLine="321" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907891607" fileName="MpsLoadTask.java" startLine="324" startPosition="28" endLine="329" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3449270742160235817" fileName="MpsLoadTask.java" startLine="90" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addConfiguredExclude#(Ljetbrains/mps/build/ant/ExcludeNested;)V" />
     <nodeInfo nodeId="4003657351907890558" fileName="MpsLoadTask.java" startLine="97" startPosition="66" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907891653" fileName="MpsLoadTask.java" startLine="355" startPosition="15" endLine="361" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907891837" fileName="MpsLoadTask.java" startLine="416" startPosition="50" endLine="422" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4003657351907891653" fileName="MpsLoadTask.java" startLine="359" startPosition="15" endLine="365" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907891837" fileName="MpsLoadTask.java" startLine="420" startPosition="50" endLine="426" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="4003657351907890652" fileName="MpsLoadTask.java" startLine="126" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addConfiguredJvmArgs#(Ljetbrains/mps/build/ant/JvmArgs;)V" />
     <nodeInfo nodeId="4003657351907890684" fileName="MpsLoadTask.java" startLine="137" startPosition="48" endLine="144" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4003657351907891178" fileName="MpsLoadTask.java" startLine="248" startPosition="0" endLine="255" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dumpPropertiesToWhatToDo#()V" />
     <nodeInfo nodeId="4003657351907891220" fileName="MpsLoadTask.java" startLine="260" startPosition="31" endLine="267" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907891557" fileName="MpsLoadTask.java" startLine="311" startPosition="23" endLine="318" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4003657351907891602" fileName="MpsLoadTask.java" startLine="319" startPosition="29" endLine="326" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907891557" fileName="MpsLoadTask.java" startLine="315" startPosition="23" endLine="322" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4003657351907891602" fileName="MpsLoadTask.java" startLine="323" startPosition="29" endLine="330" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4003657351907890456" fileName="MpsLoadTask.java" startLine="66" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addConfiguredModel#(Lorg/apache/tools/ant/types/FileSet;)V" />
     <nodeInfo nodeId="4003657351907890488" fileName="MpsLoadTask.java" startLine="74" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addConfiguredModules#(Lorg/apache/tools/ant/types/FileSet;)V" />
     <nodeInfo nodeId="4003657351907890520" fileName="MpsLoadTask.java" startLine="82" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addConfiguredProject#(Ljetbrains/mps/build/ant/ProjectNested;)V" />
     <nodeInfo nodeId="4003657351907890627" fileName="MpsLoadTask.java" startLine="118" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addConfiguredJvmArg#(Ljetbrains/mps/build/ant/Arg;)V" />
     <nodeInfo nodeId="4003657351907891009" fileName="MpsLoadTask.java" startLine="173" startPosition="78" endLine="181" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="4003657351907890733" fileName="MpsLoadTask.java" startLine="184" startPosition="36" endLine="192" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4003657351907891424" fileName="MpsLoadTask.java" startLine="283" startPosition="35" endLine="291" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907891700" fileName="MpsLoadTask.java" startLine="340" startPosition="9" endLine="348" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907891267" fileName="MpsLoadTask.java" startLine="272" startPosition="23" endLine="281" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907891597" fileName="MpsLoadTask.java" startLine="318" startPosition="5" endLine="327" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4003657351907891424" fileName="MpsLoadTask.java" startLine="287" startPosition="35" endLine="295" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907891700" fileName="MpsLoadTask.java" startLine="344" startPosition="9" endLine="352" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907891267" fileName="MpsLoadTask.java" startLine="276" startPosition="23" endLine="285" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907891597" fileName="MpsLoadTask.java" startLine="322" startPosition="5" endLine="331" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4003657351907890552" fileName="MpsLoadTask.java" startLine="96" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addConfiguredLibrary#(Ljetbrains/mps/build/ant/LibraryDataType;)V" />
     <nodeInfo nodeId="4003657351907890728" fileName="MpsLoadTask.java" startLine="183" startPosition="53" endLine="193" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4003657351907891060" fileName="MpsLoadTask.java" startLine="216" startPosition="5" endLine="226" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="4003657351907891096" fileName="MpsLoadTask.java" startLine="227" startPosition="33" endLine="237" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4003657351907891419" fileName="MpsLoadTask.java" startLine="282" startPosition="53" endLine="292" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4003657351907890363" fileName="MpsLoadTask.java" startLine="414" startPosition="0" endLine="424" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4003657351907891419" fileName="MpsLoadTask.java" startLine="286" startPosition="53" endLine="296" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4003657351907890363" fileName="MpsLoadTask.java" startLine="418" startPosition="0" endLine="428" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4003657351907891216" fileName="MpsLoadTask.java" startLine="259" startPosition="0" endLine="270" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkMpsHome#()V" />
     <nodeInfo nodeId="4003657351907890778" fileName="MpsLoadTask.java" startLine="194" startPosition="149" endLine="206" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4003657351907891685" fileName="MpsLoadTask.java" startLine="335" startPosition="38" endLine="349" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="4003657351907891685" fileName="MpsLoadTask.java" startLine="339" startPosition="38" endLine="353" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="4003657351907890719" fileName="MpsLoadTask.java" startLine="182" startPosition="10" endLine="207" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4003657351907891501" fileName="MpsLoadTask.java" startLine="301" startPosition="0" endLine="329" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="gatherAllClassesAndJarsUnder#(Ljava/io/File;Ljava/util/Set;)V" />
-    <nodeInfo nodeId="4003657351907891258" fileName="MpsLoadTask.java" startLine="270" startPosition="0" endLine="299" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="calculateClassPath#()Ljava/util/Set;" />
-    <nodeInfo nodeId="4003657351907891643" fileName="MpsLoadTask.java" startLine="331" startPosition="41" endLine="362" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="4003657351907891501" fileName="MpsLoadTask.java" startLine="305" startPosition="0" endLine="333" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="gatherAllClassesAndJarsUnder#(Ljava/io/File;Ljava/util/Set;)V" />
+    <nodeInfo nodeId="4003657351907891258" fileName="MpsLoadTask.java" startLine="274" startPosition="0" endLine="303" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="calculateClassPath#()Ljava/util/Set;" />
+    <nodeInfo nodeId="4003657351907891643" fileName="MpsLoadTask.java" startLine="335" startPosition="41" endLine="366" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="4003657351907891035" fileName="MpsLoadTask.java" startLine="209" startPosition="0" endLine="244" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="outputBuildNumber#()V" />
-    <nodeInfo nodeId="4003657351907891633" fileName="MpsLoadTask.java" startLine="329" startPosition="0" endLine="365" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="readBuildNumber#(Ljava/io/InputStream;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4003657351907891633" fileName="MpsLoadTask.java" startLine="333" startPosition="0" endLine="369" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="readBuildNumber#(Ljava/io/InputStream;)Ljava/lang/String;" />
     <nodeInfo nodeId="4003657351907890717" fileName="MpsLoadTask.java" startLine="144" startPosition="5" endLine="207" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4003657351907890673" fileName="MpsLoadTask.java" startLine="133" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#()V" />
     <scopeInfo nodeId="4003657351907890405" fileName="MpsLoadTask.java" startLine="44" startPosition="24" endLine="44" endPosition="24" />
-    <scopeInfo nodeId="4003657351907891644" fileName="MpsLoadTask.java" startLine="353" startPosition="0" endLine="353" endPosition="44">
+    <scopeInfo nodeId="4003657351907891644" fileName="MpsLoadTask.java" startLine="357" startPosition="0" endLine="357" endPosition="44">
       <varInfo nodeId="4003657351907891646" varName="ignore" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907891645" fileName="MpsLoadTask.java" startLine="353" startPosition="44" endLine="353" endPosition="44" />
-    <scopeInfo nodeId="4003657351907891648" fileName="MpsLoadTask.java" startLine="354" startPosition="0" endLine="354" endPosition="34">
+    <scopeInfo nodeId="4003657351907891645" fileName="MpsLoadTask.java" startLine="357" startPosition="44" endLine="357" endPosition="44" />
+    <scopeInfo nodeId="4003657351907891648" fileName="MpsLoadTask.java" startLine="358" startPosition="0" endLine="358" endPosition="34">
       <varInfo nodeId="4003657351907891650" varName="ignore" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907891649" fileName="MpsLoadTask.java" startLine="354" startPosition="34" endLine="354" endPosition="34" />
-    <scopeInfo nodeId="4003657351907891659" fileName="MpsLoadTask.java" startLine="359" startPosition="0" endLine="359" endPosition="38">
+    <scopeInfo nodeId="4003657351907891649" fileName="MpsLoadTask.java" startLine="358" startPosition="34" endLine="358" endPosition="34" />
+    <scopeInfo nodeId="4003657351907891659" fileName="MpsLoadTask.java" startLine="363" startPosition="0" endLine="363" endPosition="38">
       <varInfo nodeId="4003657351907891661" varName="ignore" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907891660" fileName="MpsLoadTask.java" startLine="359" startPosition="38" endLine="359" endPosition="38" />
-    <scopeInfo nodeId="4003657351907891791" fileName="MpsLoadTask.java" startLine="386" startPosition="32" endLine="386" endPosition="32" />
-    <scopeInfo nodeId="4003657351907891838" fileName="MpsLoadTask.java" startLine="421" startPosition="0" endLine="421" endPosition="29">
+    <scopeInfo nodeId="4003657351907891660" fileName="MpsLoadTask.java" startLine="363" startPosition="38" endLine="363" endPosition="38" />
+    <scopeInfo nodeId="4003657351907891791" fileName="MpsLoadTask.java" startLine="390" startPosition="32" endLine="390" endPosition="32" />
+    <scopeInfo nodeId="4003657351907891838" fileName="MpsLoadTask.java" startLine="425" startPosition="0" endLine="425" endPosition="29">
       <varInfo nodeId="4003657351907891840" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907891839" fileName="MpsLoadTask.java" startLine="421" startPosition="29" endLine="421" endPosition="29" />
+    <scopeInfo nodeId="4003657351907891839" fileName="MpsLoadTask.java" startLine="425" startPosition="29" endLine="425" endPosition="29" />
     <scopeInfo nodeId="4003657351907890411" fileName="MpsLoadTask.java" startLine="47" startPosition="40" endLine="48" endPosition="24" />
     <scopeInfo nodeId="4003657351907890419" fileName="MpsLoadTask.java" startLine="51" startPosition="28" endLine="52" endPosition="21" />
     <scopeInfo nodeId="4003657351907890427" fileName="MpsLoadTask.java" startLine="55" startPosition="51" endLine="56" endPosition="46" />
@@ -1973,25 +1978,26 @@
     <scopeInfo nodeId="4003657351907891194" fileName="MpsLoadTask.java" startLine="251" startPosition="44" endLine="252" endPosition="73" />
     <scopeInfo nodeId="4003657351907891211" fileName="MpsLoadTask.java" startLine="256" startPosition="62" endLine="257" endPosition="44" />
     <scopeInfo nodeId="4003657351907891244" fileName="MpsLoadTask.java" startLine="263" startPosition="85" endLine="264" endPosition="111" />
-    <scopeInfo nodeId="4003657351907891280" fileName="MpsLoadTask.java" startLine="279" startPosition="12" endLine="280" endPosition="230" />
-    <scopeInfo nodeId="4003657351907891462" fileName="MpsLoadTask.java" startLine="284" startPosition="102" endLine="285" endPosition="145" />
-    <scopeInfo nodeId="4003657351907891454" fileName="MpsLoadTask.java" startLine="287" startPosition="34" endLine="288" endPosition="47" />
-    <scopeInfo nodeId="4003657351907891449" fileName="MpsLoadTask.java" startLine="289" startPosition="14" endLine="290" endPosition="55" />
-    <scopeInfo nodeId="4003657351907891487" fileName="MpsLoadTask.java" startLine="294" startPosition="30" endLine="295" endPosition="33" />
-    <scopeInfo nodeId="4003657351907891591" fileName="MpsLoadTask.java" startLine="314" startPosition="118" endLine="315" endPosition="24" />
-    <scopeInfo nodeId="4003657351907891627" fileName="MpsLoadTask.java" startLine="321" startPosition="81" endLine="322" endPosition="24" />
-    <scopeInfo nodeId="4003657351907891622" fileName="MpsLoadTask.java" startLine="323" startPosition="16" endLine="324" endPosition="50" />
-    <scopeInfo nodeId="4003657351907891698" fileName="MpsLoadTask.java" startLine="338" startPosition="27" endLine="339" endPosition="16" />
-    <scopeInfo nodeId="4003657351907891754" fileName="MpsLoadTask.java" startLine="350" startPosition="61" endLine="351" endPosition="53" />
-    <scopeInfo nodeId="4003657351907891663" fileName="MpsLoadTask.java" startLine="357" startPosition="13" endLine="358" endPosition="33" />
-    <scopeInfo nodeId="4003657351907891767" fileName="MpsLoadTask.java" startLine="374" startPosition="25" endLine="375" endPosition="22" />
-    <scopeInfo nodeId="4003657351907891772" fileName="MpsLoadTask.java" startLine="378" startPosition="27" endLine="379" endPosition="21" />
-    <scopeInfo nodeId="4003657351907891799" fileName="MpsLoadTask.java" startLine="389" startPosition="33" endLine="390" endPosition="59" />
-    <scopeInfo nodeId="4003657351907891811" fileName="MpsLoadTask.java" startLine="393" startPosition="27" endLine="394" endPosition="84" />
-    <scopeInfo nodeId="4003657351907891792" fileName="MpsLoadTask.java" startLine="397" startPosition="64" endLine="398" endPosition="36" />
-    <scopeInfo nodeId="4003657351907891784" fileName="MpsLoadTask.java" startLine="402" startPosition="68" endLine="403" endPosition="68" />
-    <scopeInfo nodeId="4003657351907891821" fileName="MpsLoadTask.java" startLine="411" startPosition="58" endLine="412" endPosition="39" />
-    <scopeInfo nodeId="4003657351907891853" fileName="MpsLoadTask.java" startLine="418" startPosition="62" endLine="419" endPosition="40" />
+    <scopeInfo nodeId="6690493898470423557" fileName="MpsLoadTask.java" startLine="271" startPosition="42" endLine="272" endPosition="106" />
+    <scopeInfo nodeId="4003657351907891280" fileName="MpsLoadTask.java" startLine="283" startPosition="12" endLine="284" endPosition="101" />
+    <scopeInfo nodeId="4003657351907891462" fileName="MpsLoadTask.java" startLine="288" startPosition="102" endLine="289" endPosition="145" />
+    <scopeInfo nodeId="4003657351907891454" fileName="MpsLoadTask.java" startLine="291" startPosition="34" endLine="292" endPosition="47" />
+    <scopeInfo nodeId="4003657351907891449" fileName="MpsLoadTask.java" startLine="293" startPosition="14" endLine="294" endPosition="55" />
+    <scopeInfo nodeId="4003657351907891487" fileName="MpsLoadTask.java" startLine="298" startPosition="30" endLine="299" endPosition="33" />
+    <scopeInfo nodeId="4003657351907891591" fileName="MpsLoadTask.java" startLine="318" startPosition="118" endLine="319" endPosition="24" />
+    <scopeInfo nodeId="4003657351907891627" fileName="MpsLoadTask.java" startLine="325" startPosition="81" endLine="326" endPosition="24" />
+    <scopeInfo nodeId="4003657351907891622" fileName="MpsLoadTask.java" startLine="327" startPosition="16" endLine="328" endPosition="50" />
+    <scopeInfo nodeId="4003657351907891698" fileName="MpsLoadTask.java" startLine="342" startPosition="27" endLine="343" endPosition="16" />
+    <scopeInfo nodeId="4003657351907891754" fileName="MpsLoadTask.java" startLine="354" startPosition="61" endLine="355" endPosition="53" />
+    <scopeInfo nodeId="4003657351907891663" fileName="MpsLoadTask.java" startLine="361" startPosition="13" endLine="362" endPosition="33" />
+    <scopeInfo nodeId="4003657351907891767" fileName="MpsLoadTask.java" startLine="378" startPosition="25" endLine="379" endPosition="22" />
+    <scopeInfo nodeId="4003657351907891772" fileName="MpsLoadTask.java" startLine="382" startPosition="27" endLine="383" endPosition="21" />
+    <scopeInfo nodeId="4003657351907891799" fileName="MpsLoadTask.java" startLine="393" startPosition="33" endLine="394" endPosition="59" />
+    <scopeInfo nodeId="4003657351907891811" fileName="MpsLoadTask.java" startLine="397" startPosition="27" endLine="398" endPosition="84" />
+    <scopeInfo nodeId="4003657351907891792" fileName="MpsLoadTask.java" startLine="401" startPosition="64" endLine="402" endPosition="36" />
+    <scopeInfo nodeId="4003657351907891784" fileName="MpsLoadTask.java" startLine="406" startPosition="68" endLine="407" endPosition="68" />
+    <scopeInfo nodeId="4003657351907891821" fileName="MpsLoadTask.java" startLine="415" startPosition="58" endLine="416" endPosition="39" />
+    <scopeInfo nodeId="4003657351907891853" fileName="MpsLoadTask.java" startLine="422" startPosition="62" endLine="423" endPosition="40" />
     <scopeInfo nodeId="4003657351907890402" fileName="MpsLoadTask.java" startLine="43" startPosition="0" endLine="45" endPosition="3" />
     <scopeInfo nodeId="4003657351907890472" fileName="MpsLoadTask.java" startLine="69" startPosition="26" endLine="71" endPosition="46">
       <varInfo nodeId="4003657351907890474" varName="next" />
@@ -2017,16 +2023,16 @@
       <varInfo nodeId="4003657351907891104" varName="ignore" />
     </scopeInfo>
     <scopeInfo nodeId="4003657351907891098" fileName="MpsLoadTask.java" startLine="234" startPosition="34" endLine="236" endPosition="13" />
-    <scopeInfo nodeId="4003657351907891495" fileName="MpsLoadTask.java" startLine="299" startPosition="0" endLine="301" endPosition="0" />
-    <scopeInfo nodeId="4003657351907891531" fileName="MpsLoadTask.java" startLine="303" startPosition="119" endLine="305" endPosition="13" />
-    <scopeInfo nodeId="4003657351907891728" fileName="MpsLoadTask.java" startLine="341" startPosition="50" endLine="343" endPosition="72">
+    <scopeInfo nodeId="4003657351907891495" fileName="MpsLoadTask.java" startLine="303" startPosition="0" endLine="305" endPosition="0" />
+    <scopeInfo nodeId="4003657351907891531" fileName="MpsLoadTask.java" startLine="307" startPosition="119" endLine="309" endPosition="13" />
+    <scopeInfo nodeId="4003657351907891728" fileName="MpsLoadTask.java" startLine="345" startPosition="50" endLine="347" endPosition="72">
       <varInfo nodeId="4003657351907891730" varName="tmp" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907891710" fileName="MpsLoadTask.java" startLine="345" startPosition="44" endLine="347" endPosition="66">
+    <scopeInfo nodeId="4003657351907891710" fileName="MpsLoadTask.java" startLine="349" startPosition="44" endLine="351" endPosition="66">
       <varInfo nodeId="4003657351907891712" varName="tmp" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907890337" fileName="MpsLoadTask.java" startLine="385" startPosition="0" endLine="387" endPosition="5" />
-    <scopeInfo nodeId="4003657351907890366" fileName="MpsLoadTask.java" startLine="424" startPosition="0" endLine="426" endPosition="0">
+    <scopeInfo nodeId="4003657351907890337" fileName="MpsLoadTask.java" startLine="389" startPosition="0" endLine="391" endPosition="5" />
+    <scopeInfo nodeId="4003657351907890366" fileName="MpsLoadTask.java" startLine="428" startPosition="0" endLine="430" endPosition="0">
       <varInfo nodeId="4003657351907890369" varName="message" />
     </scopeInfo>
     <scopeInfo nodeId="3449270742160235820" fileName="MpsLoadTask.java" startLine="91" startPosition="64" endLine="94" endPosition="5" />
@@ -2036,18 +2042,18 @@
     <scopeInfo nodeId="4003657351907891188" fileName="MpsLoadTask.java" startLine="250" startPosition="56" endLine="253" endPosition="5">
       <varInfo nodeId="4003657351907891192" varName="key" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907891567" fileName="MpsLoadTask.java" startLine="313" startPosition="31" endLine="316" endPosition="9" />
-    <scopeInfo nodeId="4003657351907890322" fileName="MpsLoadTask.java" startLine="373" startPosition="0" endLine="376" endPosition="5">
+    <scopeInfo nodeId="4003657351907891567" fileName="MpsLoadTask.java" startLine="317" startPosition="31" endLine="320" endPosition="9" />
+    <scopeInfo nodeId="4003657351907890322" fileName="MpsLoadTask.java" startLine="377" startPosition="0" endLine="380" endPosition="5">
       <varInfo nodeId="4003657351907890325" varName="level" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907891779" fileName="MpsLoadTask.java" startLine="401" startPosition="12" endLine="404" endPosition="7" />
-    <scopeInfo nodeId="4003657351907891780" fileName="MpsLoadTask.java" startLine="401" startPosition="12" endLine="404" endPosition="7">
+    <scopeInfo nodeId="4003657351907891779" fileName="MpsLoadTask.java" startLine="405" startPosition="12" endLine="408" endPosition="7" />
+    <scopeInfo nodeId="4003657351907891780" fileName="MpsLoadTask.java" startLine="405" startPosition="12" endLine="408" endPosition="7">
       <varInfo nodeId="4003657351907891782" varName="l" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907890358" fileName="MpsLoadTask.java" startLine="410" startPosition="0" endLine="413" endPosition="5">
+    <scopeInfo nodeId="4003657351907890358" fileName="MpsLoadTask.java" startLine="414" startPosition="0" endLine="417" endPosition="5">
       <varInfo nodeId="4003657351907890361" varName="inputStream" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907891842" fileName="MpsLoadTask.java" startLine="417" startPosition="11" endLine="420" endPosition="9" />
+    <scopeInfo nodeId="4003657351907891842" fileName="MpsLoadTask.java" startLine="421" startPosition="11" endLine="424" endPosition="9" />
     <scopeInfo nodeId="4003657351907890406" fileName="MpsLoadTask.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="4003657351907890409" varName="mpsHome" />
     </scopeInfo>
@@ -2086,11 +2092,14 @@
       <varInfo nodeId="4003657351907891183" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="4003657351907891208" fileName="MpsLoadTask.java" startLine="255" startPosition="0" endLine="259" endPosition="0" />
-    <scopeInfo nodeId="4003657351907891657" fileName="MpsLoadTask.java" startLine="356" startPosition="35" endLine="360" endPosition="9" />
-    <scopeInfo nodeId="4003657351907890327" fileName="MpsLoadTask.java" startLine="377" startPosition="0" endLine="381" endPosition="0" />
-    <scopeInfo nodeId="4003657351907890345" fileName="MpsLoadTask.java" startLine="388" startPosition="0" endLine="392" endPosition="0" />
-    <scopeInfo nodeId="4003657351907890349" fileName="MpsLoadTask.java" startLine="392" startPosition="0" endLine="396" endPosition="0" />
-    <scopeInfo nodeId="4003657351907890340" fileName="MpsLoadTask.java" startLine="396" startPosition="0" endLine="400" endPosition="0">
+    <scopeInfo nodeId="6690493898470423554" fileName="MpsLoadTask.java" startLine="270" startPosition="0" endLine="274" endPosition="0">
+      <varInfo nodeId="6690493898470423701" varName="path" />
+    </scopeInfo>
+    <scopeInfo nodeId="4003657351907891657" fileName="MpsLoadTask.java" startLine="360" startPosition="35" endLine="364" endPosition="9" />
+    <scopeInfo nodeId="4003657351907890327" fileName="MpsLoadTask.java" startLine="381" startPosition="0" endLine="385" endPosition="0" />
+    <scopeInfo nodeId="4003657351907890345" fileName="MpsLoadTask.java" startLine="392" startPosition="0" endLine="396" endPosition="0" />
+    <scopeInfo nodeId="4003657351907890349" fileName="MpsLoadTask.java" startLine="396" startPosition="0" endLine="400" endPosition="0" />
+    <scopeInfo nodeId="4003657351907890340" fileName="MpsLoadTask.java" startLine="400" startPosition="0" endLine="404" endPosition="0">
       <varInfo nodeId="4003657351907890343" varName="l" />
     </scopeInfo>
     <scopeInfo nodeId="4003657351907890461" fileName="MpsLoadTask.java" startLine="67" startPosition="55" endLine="72" endPosition="5">
@@ -2111,23 +2120,23 @@
     <scopeInfo nodeId="4003657351907891224" fileName="MpsLoadTask.java" startLine="261" startPosition="28" endLine="266" endPosition="56">
       <varInfo nodeId="4003657351907891226" varName="mpsHomePath" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907891327" fileName="MpsLoadTask.java" startLine="273" startPosition="86" endLine="278" endPosition="623" />
-    <scopeInfo nodeId="4003657351907891561" fileName="MpsLoadTask.java" startLine="312" startPosition="29" endLine="317" endPosition="7" />
-    <scopeInfo nodeId="4003657351907891606" fileName="MpsLoadTask.java" startLine="320" startPosition="28" endLine="325" endPosition="9" />
+    <scopeInfo nodeId="4003657351907891327" fileName="MpsLoadTask.java" startLine="277" startPosition="43" endLine="282" endPosition="460" />
+    <scopeInfo nodeId="4003657351907891561" fileName="MpsLoadTask.java" startLine="316" startPosition="29" endLine="321" endPosition="7" />
+    <scopeInfo nodeId="4003657351907891606" fileName="MpsLoadTask.java" startLine="324" startPosition="28" endLine="329" endPosition="9" />
     <scopeInfo nodeId="3449270742160235817" fileName="MpsLoadTask.java" startLine="90" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="3449270742160235821" varName="excludeInner" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907891652" fileName="MpsLoadTask.java" startLine="355" startPosition="15" endLine="361" endPosition="7" />
+    <scopeInfo nodeId="4003657351907891652" fileName="MpsLoadTask.java" startLine="359" startPosition="15" endLine="365" endPosition="7" />
     <scopeInfo nodeId="4003657351907890557" fileName="MpsLoadTask.java" startLine="97" startPosition="66" endLine="104" endPosition="100" />
     <scopeInfo nodeId="4003657351907890652" fileName="MpsLoadTask.java" startLine="126" startPosition="0" endLine="133" endPosition="0">
       <varInfo nodeId="4003657351907890655" varName="jvmArg" />
     </scopeInfo>
     <scopeInfo nodeId="4003657351907891178" fileName="MpsLoadTask.java" startLine="248" startPosition="0" endLine="255" endPosition="0" />
-    <scopeInfo nodeId="4003657351907891557" fileName="MpsLoadTask.java" startLine="311" startPosition="23" endLine="318" endPosition="5">
+    <scopeInfo nodeId="4003657351907891557" fileName="MpsLoadTask.java" startLine="315" startPosition="23" endLine="322" endPosition="5">
       <varInfo nodeId="4003657351907891559" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907891601" fileName="MpsLoadTask.java" startLine="319" startPosition="29" endLine="326" endPosition="7" />
-    <scopeInfo nodeId="4003657351907891828" fileName="MpsLoadTask.java" startLine="415" startPosition="23" endLine="422" endPosition="7">
+    <scopeInfo nodeId="4003657351907891601" fileName="MpsLoadTask.java" startLine="323" startPosition="29" endLine="330" endPosition="7" />
+    <scopeInfo nodeId="4003657351907891828" fileName="MpsLoadTask.java" startLine="419" startPosition="23" endLine="426" endPosition="7">
       <varInfo nodeId="4003657351907891830" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="4003657351907890456" fileName="MpsLoadTask.java" startLine="66" startPosition="0" endLine="74" endPosition="0">
@@ -2152,8 +2161,8 @@
       <varInfo nodeId="4003657351907890799" varName="whatToGenerateClass" />
     </scopeInfo>
     <scopeInfo nodeId="4003657351907891219" fileName="MpsLoadTask.java" startLine="260" startPosition="31" endLine="268" endPosition="24" />
-    <scopeInfo nodeId="4003657351907891423" fileName="MpsLoadTask.java" startLine="283" startPosition="35" endLine="291" endPosition="7" />
-    <scopeInfo nodeId="4003657351907891597" fileName="MpsLoadTask.java" startLine="318" startPosition="5" endLine="327" endPosition="5">
+    <scopeInfo nodeId="4003657351907891423" fileName="MpsLoadTask.java" startLine="287" startPosition="35" endLine="295" endPosition="7" />
+    <scopeInfo nodeId="4003657351907891597" fileName="MpsLoadTask.java" startLine="322" startPosition="5" endLine="331" endPosition="5">
       <varInfo nodeId="4003657351907891599" varName="f" />
     </scopeInfo>
     <scopeInfo nodeId="4003657351907890552" fileName="MpsLoadTask.java" startLine="96" startPosition="0" endLine="106" endPosition="0">
@@ -2162,15 +2171,15 @@
     <scopeInfo nodeId="4003657351907890728" fileName="MpsLoadTask.java" startLine="183" startPosition="53" endLine="193" endPosition="7">
       <varInfo nodeId="4003657351907890730" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907891419" fileName="MpsLoadTask.java" startLine="282" startPosition="53" endLine="292" endPosition="5">
+    <scopeInfo nodeId="4003657351907891419" fileName="MpsLoadTask.java" startLine="286" startPosition="53" endLine="296" endPosition="5">
       <varInfo nodeId="4003657351907891421" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907890363" fileName="MpsLoadTask.java" startLine="414" startPosition="0" endLine="424" endPosition="0" />
+    <scopeInfo nodeId="4003657351907890363" fileName="MpsLoadTask.java" startLine="418" startPosition="0" endLine="428" endPosition="0" />
     <scopeInfo nodeId="4003657351907891216" fileName="MpsLoadTask.java" startLine="259" startPosition="0" endLine="270" endPosition="0" />
-    <scopeInfo nodeId="4003657351907891687" fileName="MpsLoadTask.java" startLine="336" startPosition="20" endLine="348" endPosition="9">
+    <scopeInfo nodeId="4003657351907891687" fileName="MpsLoadTask.java" startLine="340" startPosition="20" endLine="352" endPosition="9">
       <varInfo nodeId="4003657351907891689" varName="line" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907891668" fileName="MpsLoadTask.java" startLine="332" startPosition="9" endLine="352" endPosition="7">
+    <scopeInfo nodeId="4003657351907891668" fileName="MpsLoadTask.java" startLine="336" startPosition="9" endLine="356" endPosition="7">
       <varInfo nodeId="4003657351907891678" varName="buildNumber" />
       <varInfo nodeId="4003657351907891682" varName="configurationName" />
     </scopeInfo>
@@ -2178,26 +2187,26 @@
       <varInfo nodeId="4003657351907890761" varName="classLoader" />
       <varInfo nodeId="4003657351907890722" varName="classPathUrls" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907891509" fileName="MpsLoadTask.java" startLine="302" startPosition="73" endLine="327" endPosition="5">
+    <scopeInfo nodeId="4003657351907891509" fileName="MpsLoadTask.java" startLine="306" startPosition="73" endLine="331" endPosition="5">
       <varInfo nodeId="4003657351907891539" varName="children" />
       <varInfo nodeId="4003657351907891546" varName="troveJar" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907891262" fileName="MpsLoadTask.java" startLine="271" startPosition="42" endLine="297" endPosition="22">
+    <scopeInfo nodeId="4003657351907891262" fileName="MpsLoadTask.java" startLine="275" startPosition="44" endLine="301" endPosition="22">
       <varInfo nodeId="4003657351907891413" varName="classPaths" />
       <varInfo nodeId="4003657351907891474" varName="mpsClasses" />
       <varInfo nodeId="4003657351907891264" varName="pathsToLook" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907891501" fileName="MpsLoadTask.java" startLine="301" startPosition="0" endLine="329" endPosition="0">
+    <scopeInfo nodeId="4003657351907891501" fileName="MpsLoadTask.java" startLine="305" startPosition="0" endLine="333" endPosition="0">
       <varInfo nodeId="4003657351907891504" varName="dir" />
       <varInfo nodeId="4003657351907891506" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907891258" fileName="MpsLoadTask.java" startLine="270" startPosition="0" endLine="299" endPosition="0" />
+    <scopeInfo nodeId="4003657351907891258" fileName="MpsLoadTask.java" startLine="274" startPosition="0" endLine="303" endPosition="0" />
     <scopeInfo nodeId="4003657351907891038" fileName="MpsLoadTask.java" startLine="210" startPosition="36" endLine="242" endPosition="5">
       <varInfo nodeId="4003657351907891040" varName="antTaskBuildNumber" />
       <varInfo nodeId="4003657351907891093" varName="mpsBuildNumber" />
       <varInfo nodeId="4003657351907891044" varName="resource" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907891638" fileName="MpsLoadTask.java" startLine="330" startPosition="60" endLine="363" endPosition="16">
+    <scopeInfo nodeId="4003657351907891638" fileName="MpsLoadTask.java" startLine="334" startPosition="60" endLine="367" endPosition="16">
       <varInfo nodeId="4003657351907891640" varName="bufferedReader" />
     </scopeInfo>
     <scopeInfo nodeId="4003657351907891035" fileName="MpsLoadTask.java" startLine="209" startPosition="0" endLine="244" endPosition="0" />
@@ -2208,17 +2217,17 @@
       <varInfo nodeId="4003657351907890903" varName="pathSeparator" />
       <varInfo nodeId="4003657351907890898" varName="sb" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907891633" fileName="MpsLoadTask.java" startLine="329" startPosition="0" endLine="365" endPosition="0">
+    <scopeInfo nodeId="4003657351907891633" fileName="MpsLoadTask.java" startLine="333" startPosition="0" endLine="369" endPosition="0">
       <varInfo nodeId="4003657351907891636" varName="stream" />
     </scopeInfo>
     <scopeInfo nodeId="4003657351907890676" fileName="MpsLoadTask.java" startLine="135" startPosition="47" endLine="207" endPosition="5">
       <varInfo nodeId="4003657351907890680" varName="classPaths" />
     </scopeInfo>
     <scopeInfo nodeId="4003657351907890673" fileName="MpsLoadTask.java" startLine="133" startPosition="0" endLine="209" endPosition="0" />
-    <unitInfo nodeId="4003657351907890310" fileName="MpsLoadTask.java" startLine="34" startPosition="0" endLine="428" endPosition="0" unitName="jetbrains.mps.build.ant.MpsLoadTask" />
-    <unitInfo nodeId="4003657351907890352" fileName="MpsLoadTask.java" startLine="408" startPosition="0" endLine="427" endPosition="0" unitName="jetbrains.mps.build.ant.MpsLoadTask$AbstractOutputReader" />
-    <unitInfo nodeId="4003657351907890313" fileName="MpsLoadTask.java" startLine="366" startPosition="0" endLine="382" endPosition="0" unitName="jetbrains.mps.build.ant.MpsLoadTask$LogLevel" />
-    <unitInfo nodeId="4003657351907890330" fileName="MpsLoadTask.java" startLine="383" startPosition="0" endLine="407" endPosition="0" unitName="jetbrains.mps.build.ant.MpsLoadTask$LogLevelAttribute" />
+    <unitInfo nodeId="4003657351907890310" fileName="MpsLoadTask.java" startLine="34" startPosition="0" endLine="432" endPosition="0" unitName="jetbrains.mps.build.ant.MpsLoadTask" />
+    <unitInfo nodeId="4003657351907890352" fileName="MpsLoadTask.java" startLine="412" startPosition="0" endLine="431" endPosition="0" unitName="jetbrains.mps.build.ant.MpsLoadTask$AbstractOutputReader" />
+    <unitInfo nodeId="4003657351907890313" fileName="MpsLoadTask.java" startLine="370" startPosition="0" endLine="386" endPosition="0" unitName="jetbrains.mps.build.ant.MpsLoadTask$LogLevel" />
+    <unitInfo nodeId="4003657351907890330" fileName="MpsLoadTask.java" startLine="387" startPosition="0" endLine="411" endPosition="0" unitName="jetbrains.mps.build.ant.MpsLoadTask$LogLevelAttribute" />
   </root>
   <root nodeId="4003657351907893424">
     <nodeInfo nodeId="4003657351907893427" fileName="LibraryDataType.java" startLine="8" startPosition="47" endLine="9" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />

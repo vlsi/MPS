@@ -34,4 +34,8 @@ public class BuildLayout_NamedContainer_Behavior {
     }
     return null;
   }
+
+  public static String virtual_getApproximateName_5610619299014531547(SNode thisNode) {
+    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(thisNode, "containerName", true), null);
+  }
 }

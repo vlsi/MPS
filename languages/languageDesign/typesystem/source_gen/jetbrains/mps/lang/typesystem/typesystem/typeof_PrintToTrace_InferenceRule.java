@@ -19,10 +19,12 @@ public class typeof_PrintToTrace_InferenceRule extends AbstractInferenceRule_Run
   }
 
   public void applyRule(final SNode printToTrace, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(printToTrace, "message", true);
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "4251858506886757259", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "4251858506886757261", true), (SNode) new typeof_PrintToTrace_InferenceRule.QuotationClass_o0btxc_a0a0a0().createNode(typeCheckingContext), true, true, _info_12389875345);
+    if (!(typeCheckingContext.isSingleTypeComputation())) {
+      {
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(printToTrace, "message", true);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "4251858506886757259", 0, null);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "4251858506886757261", true), (SNode) new typeof_PrintToTrace_InferenceRule.QuotationClass_o0btxc_a0a0a0().createNode(typeCheckingContext), true, true, _info_12389875345);
+      }
     }
   }
 

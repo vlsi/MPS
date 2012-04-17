@@ -1,0 +1,59 @@
+<project name="buildD" default="build" basedir="../">
+  <property name="build.dir" location="build" />
+  <property name="build.tmp" location="${build.dir}/tmp/buildD" />
+  <property name="build.layout" location="${build.dir}/artifacts/buildD" />
+  <property name="artifacts.buildA" location="${build.dir}/artifacts/buildA" />
+  <property file="${artifacts.buildA}/variables.properties" prefix="import.buildA" />
+  <property name="buildA.aver" value="${import.buildA.buildA.aver}" />
+  
+  <target name="assemble" depends="classes">
+    <jar destfile="${build.layout}/aaaa.jar">
+      <fileset dir="${build.tmp}/java/out/AAA" />
+    </jar>
+    <echo file="${build.layout}/variables.properties">buildA.aver=${buildA.aver}</echo>
+  </target>
+  
+  <target name="buildDependents">
+    <ant antfile="buildA/buildA.xml" inheritAll="false" useNativeBasedir="true" />
+  </target>
+  
+  <target name="fetchDependencies">
+    <mkdir dir="${build.tmp}/deps/buildA/A-_dl_{aver}.zip" />
+    <unzip src="${artifacts.buildA}/result/A-${buildA.aver}.zip" dest="${build.tmp}/deps/buildA/A-_dl_{aver}.zip" />
+    <mkdir dir="${build.tmp}/deps/buildA/abcde.zip" />
+    <unzip src="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/abcde.zip" dest="${build.tmp}/deps/buildA/abcde.zip" />
+    <mkdir dir="${build.tmp}/deps/buildA/withX.zip" />
+    <unzip src="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/withX.zip" dest="${build.tmp}/deps/buildA/withX.zip" />
+  </target>
+  
+  <target name="build" depends="assemble, check" />
+  
+  <target name="clean">
+    <delete dir="${build.tmp}" />
+    <delete dir="${build.layout}" />
+  </target>
+  
+  <target name="compileJava" depends="java.compile.AAA" />
+  
+  <target name="processResources" />
+  
+  <target name="classes" depends="compileJava, processResources" />
+  
+  <target name="test" depends="classes" />
+  
+  <target name="check" depends="test" />
+  
+  <target name="java.compile.AAA" depends="fetchDependencies">
+    <mkdir dir="${build.tmp}/java/out/AAA" />
+    <javac destdir="${build.tmp}/java/out/AAA" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/buildD/src" />
+      </src>
+      <classpath>
+        <fileset file="${build.tmp}/deps/buildA/withX.zip/X.jar" />
+        <fileset file="${build.tmp}/deps/buildA/abcde.zip/abcde.jar" />
+      </classpath>
+    </javac>
+  </target>
+</project>
