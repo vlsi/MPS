@@ -74,11 +74,13 @@ public class BuildSource_JavaExternalJarFolderRef_Constraints extends BaseConstr
 
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode contextProject = SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.build.structure.BuildProject", true, false);
-            if ((contextProject != null)) {
-              return ScopeUtil.getVisibleJarFoldersScope(contextProject);
+            {
+              SNode contextProject = SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.build.structure.BuildProject", true, false);
+              if ((contextProject != null)) {
+                return ScopeUtil.getVisibleJarFoldersScope(contextProject);
+              }
+              return new ModelPlusImportedScope(_context.getModel(), false, operationContext.getScope(), "jetbrains.mps.build.structure.BuildSource_SingleFolder");
             }
-            return new ModelPlusImportedScope(_context.getModel(), false, operationContext.getScope(), "jetbrains.mps.build.structure.BuildSource_SingleFolder");
           }
         };
       }
