@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -48,11 +47,6 @@ public abstract class Scope {
    */
   @Nullable
   public abstract SNode resolve(SNode contextNode, @NotNull String refText);
-
-  @Nullable
-  public SNode resolve(SNode contextNode, @NotNull String refText, @Nullable SModelReference targetModelReference) {
-    return resolve(contextNode, refText);
-  }
 
   /**
    * Creates textual reference for scope element. If element has no textual representation
