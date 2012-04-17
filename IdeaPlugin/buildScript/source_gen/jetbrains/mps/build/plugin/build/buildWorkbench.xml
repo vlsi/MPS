@@ -242,8 +242,12 @@
       </classpath>
     </javac>
     <copy todir="${build.tmp}/java/out/mps-workbench">
-      <fileset dir="${mps_home}/workbench/mps-workbench/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-      <fileset dir="${mps_home}/workbench/mps-workbench/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/workbench/mps-workbench/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info">
+        <exclude name="idea/IdeaApplicationInfo.xml" />
+      </fileset>
+      <fileset dir="${mps_home}/workbench/mps-workbench/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info">
+        <exclude name="idea/IdeaApplicationInfo.xml" />
+      </fileset>
     </copy>
   </target>
   
