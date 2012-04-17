@@ -18,6 +18,8 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
+import jetbrains.mps.project.dependency.GeneratorDependenciesManager;
+import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.vfs.IFile;
@@ -164,27 +166,18 @@ public class Generator extends ClassLoadingModule {
 
   public List<Dependency> getDependencies() {
     List<Dependency> result = super.getDependencies();
-    Dependency dep = new Dependency();
-    dep.setModuleRef(mySourceLanguage.getModuleReference());
-    dep.setReexport(false);
-    result.add(dep);
-
-    for (ModuleReference refGenerator : getReferencedGeneratorUIDs()) {
-      Dependency depLocal = new Dependency();
-      depLocal.setModuleRef(refGenerator);
-      depLocal.setReexport(false);
-      result.add(depLocal);
-    }
-
     for (ModuleReference ref : getSourceLanguage().getRuntimeModulesReferences()) {
       result.add(new Dependency(ref, false));
     }
     return result;
   }
 
+  public ModuleDependenciesManager getDependenciesManager() {
+    return new GeneratorDependenciesManager(this);
+  }
+
   public List<ModuleReference> getReferencedGeneratorUIDs() {
     return new ArrayList<ModuleReference>(myGeneratorDescriptor.getDepGenerators());
-
   }
 
   public List<Generator> getReferencedGenerators() {
