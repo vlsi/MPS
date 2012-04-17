@@ -70,7 +70,7 @@ public abstract class BaseMethodsScope extends Scope {
     }
   }
 
-  public List<SNode> getAvailableElements(@Nullable final String prefix) {
+  public Iterable<SNode> getAvailableElements(@Nullable final String prefix) {
     if (allMethods != null) {
       return Sequence.fromIterable(Sequence.fromArray(allMethods)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -96,7 +96,7 @@ public abstract class BaseMethodsScope extends Scope {
 
     Map<String, Set<SNode>> groups = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
     for (SNode extendedClassifier : Sequence.fromIterable(extendedClassifiers)) {
-      for (SNode method : ListSequence.fromList(((Scope) BehaviorManager.getInstance().invoke(Object.class, extendedClassifier, "virtual_getVisibleMembers_8083692786967356611", new Class[]{SNode.class, SNode.class, SNode.class}, classifier, kind)).getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
+      for (SNode method : Sequence.fromIterable(((Scope) BehaviorManager.getInstance().invoke(Object.class, extendedClassifier, "virtual_getVisibleMembers_8083692786967356611", new Class[]{SNode.class, SNode.class, SNode.class}, classifier, kind)).getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(kind));
         }
@@ -134,7 +134,7 @@ public abstract class BaseMethodsScope extends Scope {
 
   @Nullable
   public SNode resolve(SNode contextNode, @NotNull final String refText) {
-    List<SNode> methods = ListSequence.fromList(this.getAvailableElements(refText)).select(new ISelector<SNode, SNode>() {
+    List<SNode> methods = Sequence.fromIterable(this.getAvailableElements(refText)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
       }
@@ -175,6 +175,6 @@ public abstract class BaseMethodsScope extends Scope {
 
   @Override
   public boolean contains(SNode node) {
-    return SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(kind)) && ListSequence.fromList(getAvailableElements(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "name"))).contains(node);
+    return SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(kind)) && Sequence.fromIterable(getAvailableElements(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "name"))).contains(node);
   }
 }

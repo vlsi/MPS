@@ -173,7 +173,7 @@ public class ClassifiersScope extends DelegatingScope {
   public static Iterable<SNode> getClassifiersByModelAndSimpleNamePrefix(final SModel model, IScope scope, SNode concreteConcept, @Nullable String prefix) {
     // for simplicity - prefix is prefix for simple name 
     // todo: use FastNodeFinder directly 
-    return ListSequence.fromList(new ModelPlusImportedScope(model, false, scope, INamedConcept_Behavior.call_getFqName_1213877404258(concreteConcept)) {
+    return Sequence.fromIterable(new ModelPlusImportedScope(model, false, scope, INamedConcept_Behavior.call_getFqName_1213877404258(concreteConcept)) {
       @Override
       public String getReferenceText(SNode contextNode, SNode node) {
         if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {

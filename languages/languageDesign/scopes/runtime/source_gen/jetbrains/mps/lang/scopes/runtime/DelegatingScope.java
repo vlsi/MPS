@@ -7,7 +7,6 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModelReference;
-import java.util.List;
 
 public abstract class DelegatingScope extends Scope {
   public DelegatingScope() {
@@ -31,7 +30,7 @@ public abstract class DelegatingScope extends Scope {
     return getScope().resolve(contextNode, refText, targetModelReference);
   }
 
-  public List<SNode> getAvailableElements(@Nullable String prefix) {
+  public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     return getScope().getAvailableElements(prefix);
   }
 

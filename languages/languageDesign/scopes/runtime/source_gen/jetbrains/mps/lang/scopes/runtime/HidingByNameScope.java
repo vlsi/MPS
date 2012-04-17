@@ -7,12 +7,13 @@ import java.util.Set;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.NameUtil;
-import java.util.List;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.annotations.Nullable;
+import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class HidingByNameScope extends Scope {
@@ -30,23 +31,23 @@ public class HidingByNameScope extends Scope {
     this.kindConceptFqName = NameUtil.nodeFQName(kind);
     // todo: maybe lazy in getAvailableElements? 
     // todo: I need this micro optimizations? 
-    List<SNode> tmpResult = scope.getAvailableElements(null);
-    this.names = new HashSet<String>(ListSequence.fromList(tmpResult).count());
-    for (SNode node : ListSequence.fromList(tmpResult)) {
+    Iterable<SNode> tmpResult = scope.getAvailableElements(null);
+    this.names = new HashSet<String>(Sequence.fromIterable(tmpResult).count());
+    for (SNode node : Sequence.fromIterable(tmpResult)) {
       if (node.isInstanceOfConcept(hidingRootConceptFqName)) {
         SetSequence.fromSet(this.names).addElement(node.getName());
       }
     }
   }
 
-  public List<SNode> getAvailableElements(@Nullable String prefix) {
+  public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(scope.getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
+    ListSequence.fromList(result).addSequence(Sequence.fromIterable(scope.getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return it.isInstanceOfConcept(kindConceptFqName);
       }
     }));
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(parentScope.getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
+    ListSequence.fromList(result).addSequence(Sequence.fromIterable(parentScope.getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return it.isInstanceOfConcept(kindConceptFqName);
       }

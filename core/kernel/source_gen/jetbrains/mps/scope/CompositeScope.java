@@ -9,6 +9,7 @@ import java.util.Collections;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class CompositeScope extends Scope {
   private List<Scope> myScopes;
@@ -52,10 +53,10 @@ public class CompositeScope extends Scope {
     return result;
   }
 
-  public List<SNode> getAvailableElements(@Nullable String prefix) {
+  public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     List<SNode> result = new ArrayList<SNode>();
     for (Scope scope : myScopes) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(scope.getAvailableElements(prefix)));
+      ListSequence.fromList(result).addSequence(Sequence.fromIterable(scope.getAvailableElements(prefix)));
     }
     return result;
   }

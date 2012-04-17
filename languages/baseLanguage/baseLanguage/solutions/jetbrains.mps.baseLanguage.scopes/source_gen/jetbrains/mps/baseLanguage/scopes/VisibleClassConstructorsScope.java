@@ -9,11 +9,12 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.scopes.runtime.FilteringScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.List;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
 import java.util.Iterator;
@@ -33,8 +34,8 @@ public class VisibleClassConstructorsScope extends Scope {
     };
   }
 
-  public List<SNode> getAvailableElements(@Nullable String prefix) {
-    return ListSequence.fromList(classifiers.getAvailableElements(prefix)).translate(new ITranslator2<SNode, SNode>() {
+  public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
+    return Sequence.fromIterable(classifiers.getAvailableElements(prefix)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return ListSequence.fromList(SNodeOperations.getChildren(it)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -42,7 +43,7 @@ public class VisibleClassConstructorsScope extends Scope {
           }
         });
       }
-    }).toListSequence();
+    });
   }
 
   @Nullable

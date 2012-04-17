@@ -33,7 +33,7 @@ public abstract class SimpleScope extends Scope {
     }
   }
 
-  public List<SNode> getAvailableElements(@Nullable String prefix) {
+  public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     if (prefix == null) {
       // todo: copy nodes? immutable list? 
       return nodes;

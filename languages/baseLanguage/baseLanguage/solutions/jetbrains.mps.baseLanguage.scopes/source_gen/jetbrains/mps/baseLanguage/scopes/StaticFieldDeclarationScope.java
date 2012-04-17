@@ -9,8 +9,8 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.List;
 import org.jetbrains.annotations.Nullable;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -31,7 +31,7 @@ public class StaticFieldDeclarationScope extends Scope {
     this.extendsScopes = extendsScopes;
   }
 
-  public List<SNode> getAvailableElements(@Nullable final String prefix) {
+  public Iterable<SNode> getAvailableElements(@Nullable final String prefix) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
 
     ListSequence.fromList(result).addSequence(Sequence.fromIterable(MapSequence.fromMap(nameToField).values()));
@@ -39,7 +39,7 @@ public class StaticFieldDeclarationScope extends Scope {
     Map<String, List<SNode>> groups = MapSequence.fromMap(new HashMap<String, List<SNode>>());
     for (SNode field : Sequence.fromIterable(extendsScopes).translate(new ITranslator2<Scope, SNode>() {
       public Iterable<SNode> translate(Scope it) {
-        return ListSequence.fromList(it.getAvailableElements(prefix)).select(new ISelector<SNode, SNode>() {
+        return Sequence.fromIterable(it.getAvailableElements(prefix)).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
             return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
           }
@@ -99,6 +99,6 @@ public class StaticFieldDeclarationScope extends Scope {
     if (MapSequence.fromMap(nameToField).containsKey(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), "name"))) {
       return true;
     }
-    return ListSequence.fromList(getAvailableElements(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), "name"))).contains(node);
+    return Sequence.fromIterable(getAvailableElements(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), "name"))).contains(node);
   }
 }

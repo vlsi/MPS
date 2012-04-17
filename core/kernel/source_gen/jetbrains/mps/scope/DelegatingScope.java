@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SModelReference;
-import java.util.List;
 
 public class DelegatingScope extends Scope {
   protected Scope wrapped;
@@ -23,7 +22,7 @@ public class DelegatingScope extends Scope {
     return wrapped.resolve(contextNode, refText, targetModelReference);
   }
 
-  public List<SNode> getAvailableElements(@Nullable String prefix) {
+  public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     return wrapped.getAvailableElements(prefix);
   }
 

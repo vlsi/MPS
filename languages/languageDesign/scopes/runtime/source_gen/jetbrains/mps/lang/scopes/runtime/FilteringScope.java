@@ -5,9 +5,8 @@ package jetbrains.mps.lang.scopes.runtime;
 import jetbrains.mps.scope.DelegatingScope;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.SNode;
-import java.util.List;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class FilteringScope extends DelegatingScope {
@@ -29,11 +28,11 @@ public class FilteringScope extends DelegatingScope {
   }
 
   @Override
-  public List<SNode> getAvailableElements(@Nullable String prefix) {
-    List<SNode> availableElements = super.getAvailableElements(prefix);
-    return ListSequence.fromList(availableElements).removeWhere(new IWhereFilter<SNode>() {
+  public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
+    Iterable<SNode> availableElements = super.getAvailableElements(prefix);
+    return Sequence.fromIterable(availableElements).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return isExcluded(it);
+        return !(isExcluded(it));
       }
     });
   }
