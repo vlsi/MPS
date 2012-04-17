@@ -210,6 +210,9 @@ class TypeSystemComponent extends CheckingComponent {
     try {
       if (refreshTypes) {
         clear();
+        if (myState.getTypeCheckingContext().isSingleTypeComputation()) {
+          myState.setTargetNode(initialNode);
+        }
       } else {
         myState.clearStateObjects();
         doInvalidate();
@@ -219,7 +222,7 @@ class TypeSystemComponent extends CheckingComponent {
       computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes, initialNode);
       if (typeCalculated(initialNode) != null) return;
       solveInequalitiesAndExpandTypes(finalExpansion);
-      if  (myNodeTypesComponent.getTypeCheckingContext().isSingleTypeComputation()){
+      if  (!myNodeTypesComponent.getTypeCheckingContext().isSingleTypeComputation()){
         performActionsAfterChecking();
       }
       myState.performActionsAfterChecking();
@@ -259,7 +262,7 @@ class TypeSystemComponent extends CheckingComponent {
       if (type == null) {
         if (node.isRoot()) {
           //System.out.println("Root: " + initialNode.getDebugText());
-          computeTypes(node, false, true, Collections.<SNode>emptyList(), true, initialNode);
+          computeTypes(node,true, true, Collections.<SNode>emptyList(), true, initialNode);
           type = getType(initialNode);
           if (type == null && node != initialNode && myTypeChecker.isGenerationMode()) {
             LOG.error("No typesystem rule for " + initialNode.getDebugText() + " in root " + initialNode.getContainingRoot() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms", new Throwable(), new SNodePointer(initialNode));
