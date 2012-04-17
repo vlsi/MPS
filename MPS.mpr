@@ -325,6 +325,9 @@
       <modulePath path="${project}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.api/api.msd" folder="languages.execution.usages.baseLanguage" />
       <modulePath path="${project}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/startup.msd" folder="languages.execution.usages.baseLanguage" />
       <modulePath path="${project}/plugins/execution-configurations/languages/migration/migration.mpl" folder="languages.execution.usages" />
+      <modulePath path="${project}/plugins/execution-configurations/languages/nanoc/nanoc/nanoc.mpl" folder="samples" />
+      <modulePath path="${project}/plugins/execution-configurations/languages/nanoc/pluginSolution/pluginSolution.msd" folder="samples" />
+      <modulePath path="${project}/plugins/execution-configurations/languages/nanoc/sandbox/jetbrains.mps.nanoc.sandbox.msd" folder="samples" />
       <modulePath path="${project}/plugins/execution-configurations/languages/plugin/plugin.msd" folder="languages.execution.usages" />
       <modulePath path="${project}/plugins/execution-configurations/languages/unitTests/runtime/jetbrains.mps.baseLanguage.unitTest.runtime.msd" folder="languages.execution.usages.unitTests" />
       <modulePath path="${project}/plugins/execution-configurations/languages/unitTests/startup/startup.msd" folder="languages.execution.usages.unitTests" />
@@ -386,9 +389,6 @@
       <modulePath path="${project}/samples/lambda/languages/lambdaCalculus/lambdaCalculus.mpl" folder="samples" />
       <modulePath path="${project}/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/jetbrains.mps.samples.lambdaCalculus.runtime.msd" folder="samples" />
       <modulePath path="${project}/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/jetbrains.mps.samples.lambdaCalculus.sandbox.msd" folder="samples" />
-      <modulePath path="${project}/samples/nanoc/nanocProject/languages/nanoc/nanoc.mpl" folder="samples" />
-      <modulePath path="${project}/samples/nanoc/nanocProject/languages/nanoc/solutions/pluginSolution/pluginSolution.msd" folder="samples" />
-      <modulePath path="${project}/samples/nanoc/nanocProject/solutions/jetbrains.mps.nanoc.sandbox/jetbrains.mps.nanoc.sandbox.msd" folder="samples" />
       <modulePath path="${project}/samples/plainText/plainText.mpl" folder="samples" />
       <modulePath path="${project}/samples/sampleFacet/sampleFacet.mpl" folder="samples" />
       <modulePath path="${project}/samples/sampleFacet/solutions/pluginSolution/pluginSolution.msd" folder="samples" />

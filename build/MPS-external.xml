@@ -98,6 +98,7 @@
     <mkdir dir="${deploy.dir}/MPS/plugins/execution-configurations/languages" />
     <mkdir dir="${deploy.dir}/MPS/plugins/execution-configurations" />
     <mkdir dir="${deploy.dir}/MPS/plugins/execution-languages/META-INF" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/execution-languages/lib/jetbrains.mps.execution.languages.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/plugins/execution-languages/lib" />
     <mkdir dir="${deploy.dir}/MPS/plugins/execution-languages/languages" />
     <mkdir dir="${deploy.dir}/MPS/plugins/execution-languages" />
@@ -517,6 +518,8 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.execution.startup" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.execution.startup" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.migration" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.nanoc" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.nanoc.pluginSolution" />
     <mkdir dir="${deploy.dir}/MPS/plugins/execution-configurations/languages" />
     <mkdir dir="${deploy.dir}/MPS/plugins/execution-configurations" />
     <copy todir="${deploy.dir}/MPS/plugins/execution-languages/META-INF">
@@ -525,6 +528,13 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.configurations.deprecated.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.configurations.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.lib" />
+    <copy todir="${deploy.dir}/MPS/plugins/execution-languages/lib/jetbrains.mps.execution.languages.jar.tmp">
+      <fileset dir="${mps_home}/plugins/execution-languages/languages/plugin/classes" />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS/plugins/execution-languages/lib/jetbrains.mps.execution.languages.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/plugins/execution-languages/lib/jetbrains.mps.execution.languages.jar.tmp" excludes="" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS/plugins/execution-languages/lib/jetbrains.mps.execution.languages.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/plugins/execution-languages/lib" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.commands" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.configurations" />
@@ -796,6 +806,7 @@
     <delete dir="${deploy.dir}/MPS/plugins/samples.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/debugger-java-customViewers.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/execution-configurations/lib/jetbrains.mps.execution.configurations.implementation.plugin.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/execution-languages/lib/jetbrains.mps.execution.languages.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime.gwt-src.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime-src.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.runtime-src.jar.tmp" />
