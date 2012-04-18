@@ -38,9 +38,8 @@ public class ClassifierScopes {
       @Override
       public boolean isExcluded(SNode node) {
         if ((node == null)) {
-          if (log.isWarnEnabled()) {
-            log.warn("Empty node: " + node);
-          }
+          // todo: ? 
+          // <node> 
           return true;
         }
         return !(VisibilityUtil.isVisible(contextNode, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IVisible")));

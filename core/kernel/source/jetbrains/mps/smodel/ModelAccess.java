@@ -195,9 +195,9 @@ public abstract class ModelAccess implements ModelCommandExecutor {
   @Nullable
   public <K, V> ConcurrentMap<K, V> getRepositoryStateCache(Class<?> clazz) {
     assertLegalRead();
-    if (canWrite()) {
-      return null;
-    }
+//    if (canWrite()) {
+//      return null;
+//    }
     ConcurrentMap<K, V> cache = (ConcurrentMap<K, V>) myRepositoryStateCaches.get(clazz);
     if (cache != null) {
       return cache;

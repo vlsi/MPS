@@ -1917,14 +1917,23 @@
                   <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="229277139747455646">
                     <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="7619836347971033577">
                       <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="7619836347971033578">
-                        <node role="statement" roleId="tpee.1068581517665" type="tpib.LogStatement" typeId="tpib.1167227138527" id="7619836347971033612">
-                          <property name="severity" nameId="tpib.1167245565795" value="warn" />
-                          <node role="logExpression" roleId="tpib.1167227463056" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="7619836347971033615">
-                            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7619836347971033616">
-                              <property name="value" nameId="tpee.1070475926801" value="Empty node: " />
-                            </node>
-                            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7619836347971033617">
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="229277139747455644" resolveInfo="node" />
+                        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="5557720845543492181">
+                          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="5557720845543492182">
+                            <property name="text" nameId="tpee.6329021646629104958" value="todo: ?" />
+                          </node>
+                        </node>
+                        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="5557720845543492173">
+                          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.StatementCommentPart" typeId="tpee.6329021646629175143" id="5557720845543492174">
+                            <node role="commentedStatement" roleId="tpee.6329021646629175144" type="tpib.LogStatement" typeId="tpib.1167227138527" id="7619836347971033612">
+                              <property name="severity" nameId="tpib.1167245565795" value="warn" />
+                              <node role="logExpression" roleId="tpib.1167227463056" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="7619836347971033615">
+                                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7619836347971033616">
+                                  <property name="value" nameId="tpee.1070475926801" value="Empty node: " />
+                                </node>
+                                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7619836347971033617">
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="229277139747455644" resolveInfo="node" />
+                                </node>
+                              </node>
                             </node>
                           </node>
                         </node>
