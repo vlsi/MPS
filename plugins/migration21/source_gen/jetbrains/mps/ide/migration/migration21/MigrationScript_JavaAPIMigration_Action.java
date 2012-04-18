@@ -60,7 +60,7 @@ public class MigrationScript_JavaAPIMigration_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      SNodePointer script = new SNodePointer("r:86096f77-953b-4095-b887-c1a95e8a58df(jetbrains.mps.ide.java.platform.scripts)", "2794305603015896717");
+      SNodePointer script = new SNodePointer("r:3e625b1a-6e5a-478f-9fe5-a307d84995c3(jetbrains.mps.ide.java.migration.scripts)", "4397798827966744636");
 
       MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "MPS Java API Migration", ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
       if (CommandProcessorEx.getInstance().getCurrentCommand() != null) {
