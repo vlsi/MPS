@@ -5297,6 +5297,24 @@
               </node>
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpck.SuppressErrorsAnnotation" typeId="tpck.4222318806802425298" id="8124461238645271220" />
             </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5719057349399106398">
+              <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5719057349399106399">
+                <property name="name" nameId="tpck.1169194664001" value="test" />
+                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5719057349399106400">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4395293866213195828" resolveInfo="ExpectedTest" />
+                </node>
+                <node role="initializer" roleId="tpee.1068431790190" type="tpee.Expression" typeId="tpee.1068431790191" id="5719057349399106401">
+                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="5719057349399106403">
+                    <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeExpectedTypeProperty" typeId="tp5g.4395293866213195846" id="5719057349399106405">
+                      <node role="type" roleId="tp5g.1215526393912" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5719057349399106408">
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4395293866213195828" resolveInfo="ExpectedTest" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpck.SuppressErrorsAnnotation" typeId="tpck.4222318806802425298" id="5719057349399106402" />
+            </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7924017315521966089">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7924017315521967049">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7924017315521966090">

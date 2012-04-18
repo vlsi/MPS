@@ -23,9 +23,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.state.State;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.typesystem.inference.RulesManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
@@ -45,7 +43,7 @@ class TypeSystemComponent extends CheckingComponent {
   private Map<SNode, Set<SNode>> myNodesToDependentNodes_A;
   private Map<SNode, Set<SNode>> myNodesToDependentNodes_B;
 
-  private Set<SNode> myJustInvalidatedNodes;
+  private Set<SNode> myNodes = new THashSet<SNode>();
 
   private Map<SNode, Set<Pair<String, String>>> myNodesToRules;
   private Set<SNode> myFullyCheckedNodes = new THashSet<SNode>(); //nodes which are checked with their children
@@ -64,7 +62,6 @@ class TypeSystemComponent extends CheckingComponent {
       myNodesDependentOnCaches = new THashSet<SNode>();
       myNodesToDependentNodes_A = new THashMap<SNode, Set<SNode>>();
       myNodesToDependentNodes_B = new THashMap<SNode, Set<SNode>>();
-      myJustInvalidatedNodes = new THashSet<SNode>();
     }
   }
 
@@ -202,8 +199,6 @@ class TypeSystemComponent extends CheckingComponent {
   }
 
   private void computeTypesSpecial(SNode nodeToCheck, boolean forceChildrenCheck, Collection<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
-    assert myNodeTypesComponent.getTypeCheckingContext().isSingleTypeComputation();
-
     computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes, initialNode);
     if (typeCalculated(initialNode) != null) return;
     solveInequalitiesAndExpandTypes(finalExpansion);
@@ -211,8 +206,11 @@ class TypeSystemComponent extends CheckingComponent {
 
   protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, Collection<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
     try {
-      if (!isIncrementalMode() || refreshTypes) {
+      if (refreshTypes) {
         clear();
+        if (myState.getTypeCheckingContext().isSingleTypeComputation()) {
+          myState.setTargetNode(initialNode);
+        }
       } else {
         myState.clearStateObjects();
         doInvalidate();
@@ -222,7 +220,7 @@ class TypeSystemComponent extends CheckingComponent {
       computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes, initialNode);
       if (typeCalculated(initialNode) != null) return;
       solveInequalitiesAndExpandTypes(finalExpansion);
-      if  (myNodeTypesComponent.getTypeCheckingContext().isSingleTypeComputation()){
+      if  (!myNodeTypesComponent.getTypeCheckingContext().isSingleTypeComputation()){
         performActionsAfterChecking();
       }
       myState.performActionsAfterChecking();
@@ -232,16 +230,18 @@ class TypeSystemComponent extends CheckingComponent {
   }
 
   public void clearCaches() {
-    myNodesToDependentNodes_A.clear();
-    myNodesToDependentNodes_B.clear();
-    myNodesDependentOnCaches.clear();
+    if (myNodesToDependentNodes_A!= null) {
+      myNodesToDependentNodes_A.clear();
+      myNodesToDependentNodes_B.clear();
+      myNodesDependentOnCaches.clear();
+      myNodesToRules.clear();
+    }
     myFullyCheckedNodes.clear();
     myPartlyCheckedNodes.clear();
-    myNodesToRules.clear();
   }
 
   protected SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
-    assert myNodeTypesComponent.getTypeCheckingContext().isSingleTypeComputation();
+    assert myNodeTypesComponent.getTypeCheckingContext().isSingleTypeComputation() || myState.getInequalitySystem() !=null;
 
     assert myFullyCheckedNodes.isEmpty();
     SNode type = null;
@@ -259,11 +259,12 @@ class TypeSystemComponent extends CheckingComponent {
       type = typeCalculated(initialNode);
       if (type == null) {
         if (node.isRoot()) {
-          myNodeTypesComponent.getTypeCheckingContext().setSingleTypeComputation(false);
           //System.out.println("Root: " + initialNode.getDebugText());
-          computeTypes(node, true, true, Collections.<SNode>emptyList(), true, initialNode);
+          if (myState.getInequalitySystem() == null) {
+            computeTypes(node,true, true, Collections.<SNode>emptyList(), true, initialNode);
+          }
           type = getType(initialNode);
-          if (type == null && node != initialNode && myState.getInequalitySystem() == null && !myNodeTypesComponent.getTypeCheckingContext().isInEditorQueries()) {
+          if (type == null && node != initialNode && myTypeChecker.isGenerationMode()) {
             LOG.error("No typesystem rule for " + initialNode.getDebugText() + " in root " + initialNode.getContainingRoot() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms", new Throwable(), new SNodePointer(initialNode));
           }
           return type;
@@ -337,7 +338,7 @@ class TypeSystemComponent extends CheckingComponent {
         }
         boolean typeAffected = false;
         try {
-          myJustInvalidatedNodes.add(sNode);
+          myNodes.add(sNode);
           typeAffected = applyRulesToNode(sNode);
         } finally {
           if (incrementalMode) {
@@ -400,8 +401,8 @@ class TypeSystemComponent extends CheckingComponent {
 
   public void solveInequalitiesAndExpandTypes(boolean finalExpansion) {
     myState.solveInequalities();
-    myState.expandAll(myJustInvalidatedNodes, finalExpansion);
-    myJustInvalidatedNodes.clear();
+    myState.expandAll(myNodes, finalExpansion);
+    myNodes.clear();
   }
 
   public void addError(SNode node, IErrorReporter reporter) {

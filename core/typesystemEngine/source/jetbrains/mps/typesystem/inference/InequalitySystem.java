@@ -18,14 +18,17 @@ package jetbrains.mps.typesystem.inference;
 import gnu.trove.THashSet;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.state.Equations;
 import jetbrains.mps.newTypesystem.state.State;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.misc.hash.HashSet;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class InequalitySystem {
@@ -81,7 +84,7 @@ public class InequalitySystem {
     SubtypingManager subtypingManager = TypeChecker.getInstance().getSubtypingManager();
 
     for (SNode w : myEquals) {
-      if (!MatchingUtil.matchNodes(w, type)) {
+      if (!HUtil.isRuntimeHoleType(w) && !MatchingUtil.matchNodes(w, type)) {
         return false;
       }
     }
@@ -178,4 +181,31 @@ public class InequalitySystem {
      }
      return subtypingManager.createLCS(superTypes, myState.getTypeCheckingContext());
    }
+  
+  public void replaceRefs(Map<SNode, SNode> mapping) {
+    Map<SNode, SNode> back = new HashMap<SNode, SNode>();    
+    for (SNode key : mapping.keySet()) {
+      back.put(mapping.get(key), key);      
+    }
+    replaceRefs(mySuperTypes, back);
+    replaceRefs(myStrongSuperTypes, back);
+    replaceRefs(mySubTypes, back);
+    replaceRefs(myStrongSubTypes, back);
+    replaceRefs(myComparableTypes, back);
+    replaceRefs(myStrongComparableTypes, back);
+    replaceRefs(myEquals, back);
+  }
+
+  private void replaceRefs(Set<SNode> nodes, Map<SNode, SNode> mapping) {
+    for (SNode node : nodes) {
+      for (SReference ref : node.getReferences()) {
+        SNode target = ref.getTargetNodeSilently();
+        SNode restored = mapping.get(target);
+        if (restored != null) {
+          node.replaceReference(ref, new StaticReference(ref.getRole(), ref.getSourceNode(), restored));
+        }
+      }
+    }
+  } 
+  
 }

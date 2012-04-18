@@ -285,7 +285,7 @@ public class RulesUtil {
       SetSequence.fromSet(set).addElement(new RulesUtil.QuotationClass_yxkngc_a0a0a0c0k().createNode(concept));
     }
     Set<SNode> leastCommonSupertypes = subtypingManager.leastCommonSupertypes(set, true);
-    if (leastCommonSupertypes.isEmpty() || SLinkOperations.getTarget(SNodeOperations.cast(leastCommonSupertypes.iterator().next(), "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false) == null) {
+    if (leastCommonSupertypes.isEmpty() || !(SNodeOperations.isInstanceOf(leastCommonSupertypes.iterator().next(), "jetbrains.mps.lang.smodel.structure.SNodeType")) || SLinkOperations.getTarget(SNodeOperations.cast(leastCommonSupertypes.iterator().next(), "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false) == null) {
       return SLinkOperations.getTarget(new RulesUtil.QuotationClass_yxkngc_a0a0a4a01().createNode(), "concept", false);
     }
     return SLinkOperations.getTarget(SNodeOperations.cast(leastCommonSupertypes.iterator().next(), "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false);
