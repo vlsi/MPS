@@ -103,7 +103,7 @@ public class ModuleMaker {
     try {
       monitor.step("Collecting candidates");
       ttrace.push("collecting candidates", false);
-      Set<IModule> candidates = collectCandidates(modules);
+      Collection<IModule> candidates = new GlobalModuleDependenciesManager(modules).getModules(Deptype.COMPILE);
       ttrace.pop();
       monitor.advance(1);
 
@@ -170,15 +170,6 @@ public class ModuleMaker {
     if (handler != null && msg.getKind().ordinal() >= myLevel.ordinal()) {
       handler.handle(msg);
     }
-  }
-
-  private Set<IModule> collectCandidates(Set<IModule> startSet) {
-    Set<IModule> modules = new LinkedHashSet<IModule>();
-
-    for (IModule m : startSet) {
-      m.getDependenciesManager().collectModules(modules, Deptype.COMPILE);
-    }
-    return modules;
   }
 
   private MPSCompilationResult compile(Set<IModule> modules) {
@@ -307,7 +298,7 @@ public class ModuleMaker {
     }
   }
 
-  private Set<IModule> getModulesToCompile(Set<IModule> modules) {
+  private Set<IModule> getModulesToCompile(Collection<IModule> modules) {
     ttrace.push("checking if " + modules.size() + " modules are dirty", false);
     List<IModule> dirtyModules = new ArrayList<IModule>(modules.size());
     for (IModule m : modules) {

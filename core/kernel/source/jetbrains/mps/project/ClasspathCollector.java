@@ -17,6 +17,7 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.ClasspathReader;
 import jetbrains.mps.project.dependency.DependenciesManager.Deptype;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.reloading.CompositeClassPathItem;
@@ -38,25 +39,23 @@ public class ClasspathCollector {
   }
 
   public IClassPathItem collect(boolean includeStubSolutions) {
-    Set<IModule> modules = new LinkedHashSet<IModule>();
+    Collection<IModule> modules = new GlobalModuleDependenciesManager(myStart).getModules(Deptype.COMPILE);
 
-    for (IModule m : myStart) {
-      m.getDependenciesManager().collectModules(modules, Deptype.COMPILE);
-    }
+    Set<IModule> fromGenerators = new HashSet<IModule>();
+    for (IModule m : modules) {
+      if (!(m instanceof Language)) continue;
 
-    for (IModule m : new HashSet<IModule>(modules)) {
-      if (m instanceof Language) {
-        //todo this is a hack since we compile generator with language's classpath, too
-        // 1. Generator is always compiled together with the language (???)
-        // 2. Generator may have its own compile time dependencies (imports in the generated queries)
-        // 3. Let's not ignore them
-        for (Generator generator : ((Language) m).getGenerators()) {
-          if (!modules.contains(generator)) {
-            generator.getDependenciesManager().collectModules(modules, Deptype.COMPILE);
-          }
-        }
+      //todo this is a hack since we compile generator with language's classpath, too
+      // 1. Generator is always compiled together with the language (???)
+      // 2. Generator may have its own compile time dependencies (imports in the generated queries)
+      // 3. Let's not ignore them
+      for (Generator generator : ((Language) m).getGenerators()) {
+        if (modules.contains(generator)) continue;
+
+        fromGenerators.addAll(new GlobalModuleDependenciesManager(generator).getModules(Deptype.COMPILE));
       }
     }
+    modules.addAll(fromGenerators);
 
     for (IModule module : modules) {
       addPart(module.getClassPathItem());
