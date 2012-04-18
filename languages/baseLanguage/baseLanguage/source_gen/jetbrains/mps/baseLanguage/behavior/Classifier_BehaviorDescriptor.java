@@ -4,12 +4,14 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IContainer_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import javax.swing.Icon;
+import jetbrains.mps.scope.Scope;
 import java.util.Set;
 
-public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_BehaviorDescriptor implements HasAnnotation_BehaviorDescriptor, IMemberContainer_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, IValidIdentifier_BehaviorDescriptor, IVisible_BehaviorDescriptor, IContainer_BehaviorDescriptor {
+public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_BehaviorDescriptor implements HasAnnotation_BehaviorDescriptor, IMemberContainer_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, IValidIdentifier_BehaviorDescriptor, IVisible_BehaviorDescriptor, IContainer_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public Classifier_BehaviorDescriptor() {
   }
 
@@ -37,6 +39,10 @@ public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_B
     return Classifier_Behavior.virtual_getThisType_3305065273710880775(thisNode);
   }
 
+  public List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
+    return Classifier_Behavior.virtual_getExtendedClassifierTypes_2201875424516179426(thisNode);
+  }
+
   public boolean virtual_checkLoops_3980490811621705344(SNode thisNode) {
     return Classifier_Behavior.virtual_checkLoops_3980490811621705344(thisNode);
   }
@@ -51,6 +57,18 @@ public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_B
 
   public List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
     return IMemberContainer_Behavior.virtual_getMethodsToImplement_5418393554803775106(thisNode);
+  }
+
+  public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    return Classifier_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
+  }
+
+  public Scope virtual_getMembers_2201875424515824604(SNode thisNode, final SNode kind) {
+    return Classifier_Behavior.virtual_getMembers_2201875424515824604(thisNode, kind);
+  }
+
+  public Scope virtual_getVisibleMembers_8083692786967356611(SNode thisNode, SNode contextNode, SNode kind) {
+    return Classifier_Behavior.virtual_getVisibleMembers_8083692786967356611(thisNode, contextNode, kind);
   }
 
   public Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {

@@ -524,6 +524,10 @@
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="320030840061144158">
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.320030840061144153" resolveInfo="ShiftRightUnsignedExpression" />
     </node>
+    <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1251851371723517310">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
+      <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1251851371723515367" resolveInfo="ArrayClassExpression" />
+    </node>
   </roots>
   <root id="1234796104060">
     <node role="function" roleId="2omo.1234526822589" type="2omo.UtilityMethodDeclaration" typeId="2omo.1234524838116" id="1234799495933">
@@ -11345,6 +11349,25 @@
                 <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1081773367579" />
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="1251851371723517310">
+    <node role="textGenBlock" roleId="2omo.1233749296504" type="2omo.GenerateTextDeclaration" typeId="2omo.1233749247888" id="1251851371723517311">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1251851371723517312">
+        <node role="statement" roleId="tpee.1068581517665" type="2omo.AppendOperation" typeId="2omo.1237306079178" id="1251851371723517313">
+          <node role="part" roleId="2omo.1237306115446" type="2omo.NodeAppendPart" typeId="2omo.1237305334312" id="1251851371723517314">
+            <node role="value" roleId="2omo.1237305790512" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1251851371723517315">
+              <node role="operand" roleId="tpee.1197027771414" type="2omo.NodeParameter" typeId="2omo.1233748055915" id="1251851371723517316" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1251851371723517320">
+                <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1251851371723515368" />
+              </node>
+            </node>
+          </node>
+          <node role="part" roleId="2omo.1237306115446" type="2omo.ConstantStringAppendPart" typeId="2omo.1237305557638" id="1251851371723517318">
+            <property name="value" nameId="2omo.1237305576108" value=".class" />
           </node>
         </node>
       </node>

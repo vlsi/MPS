@@ -10,12 +10,15 @@ import jetbrains.mps.util.Condition;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.scope.Scope;
 
 public class LocalVariablesScope extends AbstractSearchScope {
   private SNode myContextNode;
@@ -45,17 +48,27 @@ public class LocalVariablesScope extends AbstractSearchScope {
         this._populateLocalVariablesForCatch(catchClause, this.myLocalVariables);
       }
       // specially process variables in switch cases before current 
-      SNode switchCase = SNodeOperations.as(findThisOrParent(myContextNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SwitchCase")), "jetbrains.mps.baseLanguage.structure.SwitchCase");
-      while ((switchCase != null)) {
-        SNode switchStatement = SNodeOperations.getAncestor(switchCase, "jetbrains.mps.baseLanguage.structure.SwitchStatement", false, false);
-        for (SNode caseClause : ListSequence.fromList(SLinkOperations.getTargets(switchStatement, "case", true))) {
-          if (caseClause == switchCase) {
-            break;
+      SNode switchStatement = SNodeOperations.as(findThisOrParent(myContextNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SwitchStatement")), "jetbrains.mps.baseLanguage.structure.SwitchStatement");
+      while ((switchStatement != null)) {
+        SNode caseStatement = getLastSourceNode(this.myContextNode, switchStatement);
+        if (caseStatement != SLinkOperations.getTarget(switchStatement, "expression", true) && caseStatement != switchStatement) {
+          for (SNode caseClause : ListSequence.fromList(SLinkOperations.getTargets(switchStatement, "case", true))) {
+            if (caseClause == caseStatement) {
+              break;
+            }
+            _populateLocalVariablesFromList(SLinkOperations.getTarget(caseClause, "body", true), null, myLocalVariables);
           }
-          _populateLocalVariablesFromList(SLinkOperations.getTarget(caseClause, "body", true), null, myLocalVariables);
         }
-        switchCase = SNodeOperations.as(findThisOrParent(switchStatement, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SwitchCase")), "jetbrains.mps.baseLanguage.structure.SwitchCase");
+        switchStatement = SNodeOperations.as(findThisOrParent(SNodeOperations.getParent(switchStatement), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SwitchStatement")), "jetbrains.mps.baseLanguage.structure.SwitchStatement");
       }
+      // filter nulls 
+      List<SNode> tmp = new ArrayList();
+      for (SNode node : myLocalVariables) {
+        if (node != null) {
+          tmp.add(node);
+        }
+      }
+      myLocalVariables = tmp;
     }
     if (condition == AbstractSearchScope.TRUE_CONDITION) {
       return this.myLocalVariables;
@@ -85,6 +98,11 @@ public class LocalVariablesScope extends AbstractSearchScope {
 
   private void _populateLocalVariablesFromList(SNode statementList, SNode beforeStatement, List<SNode> result) {
     for (SNode sNode : ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, statementList, "virtual_getLocalVariableElements_1238805763253", new Class[]{SNode.class}))) {
+      // todo: bad code =( 
+      if (ListSequence.fromList(SNodeOperations.getAncestors(beforeStatement, null, false)).contains(sNode)) {
+        break;
+      }
+
       if (sNode == beforeStatement) {
         break;
       }
@@ -106,11 +124,25 @@ public class LocalVariablesScope extends AbstractSearchScope {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
         result.add(child);
       }
-      List<SNode> moreChildren = SNodeOperations.getDescendants(child, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{});
+
+      // <node> 
+      List<SNode> moreChildren = new ArrayList<SNode>();
+      if (SNodeOperations.isInstanceOf(loopStatement, "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop")) {
+        ListSequence.fromList(moreChildren).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(loopStatement, "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop"), "loopVariable", true)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return (SLinkOperations.getTarget(it, "variable", true) != null);
+          }
+        }).select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SLinkOperations.getTarget(it, "variable", true);
+          }
+        }));
+      }
       for (SNode child_ : moreChildren) {
         result.add(child_);
       }
     }
+
     SNode containingLoop = SNodeOperations.as(LocalVariablesScope.findThisOrParent(SNodeOperations.getParent(loopStatement), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractLoopStatement")), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement");
     if (containingLoop != null) {
       this._populateLocalVariables(containingLoop, result);
@@ -157,8 +189,19 @@ public class LocalVariablesScope extends AbstractSearchScope {
       if (SNodeOperations.isInstanceOf(testNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction") && !(SNodeOperations.isInstanceOf(testNode, "jetbrains.mps.baseLanguage.structure.Closure"))) {
         break;
       }
-      testNode = SNodeOperations.getParent(testNode);
+      testNode = Scope.parent(testNode);
     }
     return null;
+  }
+
+  private static SNode getLastSourceNode(SNode sourceNode, SNode ancestorNode) {
+    if (sourceNode == ancestorNode) {
+      return sourceNode;
+    }
+    SNode testNode = sourceNode;
+    while (ancestorNode != Scope.parent(testNode)) {
+      testNode = Scope.parent(testNode);
+    }
+    return testNode;
   }
 }

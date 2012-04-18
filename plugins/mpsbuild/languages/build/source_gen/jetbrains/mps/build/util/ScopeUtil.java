@@ -9,11 +9,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.scope.DelegatingScope;
-import java.util.List;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
@@ -38,8 +38,8 @@ public class ScopeUtil {
 
   public static Scope where(Scope scope, final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> filter) {
     return new DelegatingScope(scope) {
-      public List<SNode> getAvailableElements(@Nullable String prefix) {
-        return ListSequence.fromList(wrapped.getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
+      public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
+        return Sequence.fromIterable(wrapped.getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return filter.invoke(it);
           }
@@ -111,7 +111,7 @@ public class ScopeUtil {
       });
     }
 
-    public List<SNode> getAvailableElements(@Nullable String prefix) {
+    public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
       if (StringUtils.isEmpty(prefix)) {
         return Sequence.fromIterable(getAllNodes()).toListSequence();
       }
@@ -189,8 +189,8 @@ public class ScopeUtil {
       return unwrap(resolve);
     }
 
-    public List<SNode> getAvailableElements(@Nullable String prefix) {
-      return ListSequence.fromList(wrapped.getAvailableElements(prefix)).select(new ISelector<SNode, SNode>() {
+    public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
+      return Sequence.fromIterable(wrapped.getAvailableElements(prefix)).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return unwrap(it);
         }

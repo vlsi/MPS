@@ -4,53 +4,25 @@ package jetbrains.mps.baseLanguage.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import java.util.Map;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.search.ParameterScope;
-import jetbrains.mps.baseLanguage.search.LocalVariablesScope;
-import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.scope.EmptyScope;
 
 public class LocalInstanceFieldReference_Constraints extends BaseConstraintsDescriptor {
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "222214016077443683");
-  private static SNodePointer breakingNode_k7mwms_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7785501532031899739");
+  private static SNodePointer breakingNode_k7mwms_a0a0a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137257");
 
   public LocalInstanceFieldReference_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference");
-  }
-
-  @Override
-  public boolean hasOwnCanBeChildMethod() {
-    return true;
-  }
-
-  @Override
-  public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
-
-    if (!(result) && checkingNodeContext != null) {
-      checkingNodeContext.setBreakingNode(canBeChildBreakingPoint);
-    }
-
-    return result;
   }
 
   @Override
@@ -65,55 +37,25 @@ public class LocalInstanceFieldReference_Constraints extends BaseConstraintsDesc
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
+        return new BaseScopeProvider() {
           @Override
-          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            List<SNode> result = new ArrayList<SNode>();
-            List<SNode> param = new ParameterScope(_context.getEnclosingNode()).getNodes();
-            List<SNode> vars = new LocalVariablesScope(_context.getEnclosingNode()).getNodes();
-            vars.addAll(param);
-            SNode classifier = ClassConcept_Behavior.getContextClass_8008512149545173402(_context.getEnclosingNode());
-            int constraint = IClassifiersSearchScope.INSTANCE_FIELD;
-            Set<String> names = SetSequence.fromSet(new HashSet<String>());
-            while (classifier != null) {
-              for (SNode field : (List<SNode>) Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, ((_context.getReferenceNode() != null) ?
-                _context.getReferenceNode() :
-                _context.getEnclosingNode()
-              ), constraint)) {
-                boolean hasNameSakes = false;
-                for (SNode var : vars) {
-                  if (SNodeOperations.isInstanceOf(var, "jetbrains.mps.lang.core.structure.INamedConcept") && SPropertyOperations.getString(field, "name") != null && SPropertyOperations.getString(field, "name").equals(SPropertyOperations.getString(SNodeOperations.cast(var, "jetbrains.mps.lang.core.structure.INamedConcept"), "name"))) {
-                    if (!(ListSequence.fromList(SNodeOperations.getAncestors(SNodeOperations.getAncestor(field, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "jetbrains.mps.baseLanguage.structure.Classifier", false)).contains(SNodeOperations.getAncestor(var, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)))) {
-                      hasNameSakes = true;
-                      break;
-                    }
-                  }
-                }
-                if (!(hasNameSakes) && !(SetSequence.fromSet(names).contains(SPropertyOperations.getString(field, "name")))) {
-                  ListSequence.fromList(result).addElement(field);
-                  SetSequence.fromSet(names).addElement(SPropertyOperations.getString(field, "name"));
-                }
-              }
-              SNode method = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
-              if (method != null && SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
-                return result;
-              }
-              classifier = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-            }
-            return result;
+          public SNodePointer getSearchScopeValidatorNode() {
+            return breakingNode_k7mwms_a0a0a0a0a1a0b0a1a0;
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
-            return breakingNode_k7mwms_a0a1a0a0a1a0b0a1a2;
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            {
+              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
+              return (scope == null ?
+                new EmptyScope() :
+                scope
+              );
+            }
           }
         };
       }
     });
     return references;
-  }
-
-  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return ConstraintsUtil.isInNonStaticClasssifierContext(parentNode);
   }
 }

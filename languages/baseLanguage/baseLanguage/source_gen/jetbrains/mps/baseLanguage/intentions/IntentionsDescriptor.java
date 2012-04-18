@@ -29,6 +29,8 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     add(new ConvertClassCreatorToAnonimous_Intention(), "1214431614908");
     add(new ConvertElseToElseIf_Intention(), "1217838039231");
     add(new ConvertElsifToNewIfStatement_Intention(), "8145509665020019463");
+    add(new ConvertIfConditionToTernaryOperator_Intention(), "2040594400225005124");
+    add(new ConvertIfReturnConditionToTernaryOperator_Intention(), "2040594400225361890");
     add(new ConvertToArrayType_Intention(), "1226917954178");
     add(new ConvertToClosure_Intention(), "7638980610829995124");
     add(new ConvertToReturnStatement_Intention(), "7288587046701126243");

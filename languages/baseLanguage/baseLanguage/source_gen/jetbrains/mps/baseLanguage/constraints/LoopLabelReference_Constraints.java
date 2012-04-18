@@ -10,18 +10,16 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.scope.EmptyScope;
 
 public class LoopLabelReference_Constraints extends BaseConstraintsDescriptor {
-  private static SNodePointer breakingNode_hn9a9l_a0a1a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "363746191845183796");
+  private static SNodePointer breakingNode_hn9a9l_a0a0a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137263");
 
   public LoopLabelReference_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.LoopLabelReference");
@@ -39,26 +37,21 @@ public class LoopLabelReference_Constraints extends BaseConstraintsDescriptor {
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
+        return new BaseScopeProvider() {
           @Override
-          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            List<SNode> labels = new ArrayList<SNode>();
-            for (SNode loop : SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)) {
-              if ((SLinkOperations.getTarget(loop, "loopLabel", true) != null)) {
-                ListSequence.fromList(labels).addElement(SLinkOperations.getTarget(loop, "loopLabel", true));
-              }
-            }
-            for (SNode switchStatement : SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.SwitchStatement", false)) {
-              if ((SLinkOperations.getTarget(switchStatement, "switchLabel", true) != null)) {
-                ListSequence.fromList(labels).addElement(SLinkOperations.getTarget(switchStatement, "switchLabel", true));
-              }
-            }
-            return labels;
+          public SNodePointer getSearchScopeValidatorNode() {
+            return breakingNode_hn9a9l_a0a0a0a0a1a0b0a1a0;
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
-            return breakingNode_hn9a9l_a0a1a0a0a1a0b0a1a0;
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            {
+              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LoopLabel"));
+              return (scope == null ?
+                new EmptyScope() :
+                scope
+              );
+            }
           }
         };
       }

@@ -74,6 +74,7 @@
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/baseLanguage.mpl" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/sandbox/sandbox.msd" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/jetbrains.mps.baseLanguage.refactoringTest.msd" folder="baseLanguage" />
+      <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.scopes/scopes.msd" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/jetbrains.mps.baseLanguage.search.msd" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.unittest/jetbrains.mps.baseLanguage.unittest.msd" folder="baseLanguage.unitTest" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/util.msd" folder="baseLanguage" />
@@ -117,6 +118,7 @@
       <modulePath path="${project}/languages/baseLanguage/unitTest/solutions/lib/jetbrains.mps.baseLnaguage.unitTest.lib.msd" folder="baseLanguage.unitTest" />
       <modulePath path="${project}/languages/baseLanguage/unitTest/solutions/sandbox/jetbrains.mps.baseLanguage.unitTest.sandbox.msd" folder="baseLanguage.unitTest" />
       <modulePath path="${project}/languages/baseLanguage/unitTest/unitTest.mpl" folder="baseLanguage.unitTest" />
+      <modulePath path="${project}/languages/baseLanguage/varVariable/varVariable.mpl" folder="baseLanguage" />
       <modulePath path="${project}/languages/core/core/languageDescriptor.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/core/core/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/core/stub/Ant/Ant.msd" folder="core.stub" />
@@ -174,6 +176,8 @@
       <modulePath path="${project}/languages/languageDesign/quotation/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/refactoring/refactoring.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/resources/resources.mpl" folder="core.language-design" />
+      <modulePath path="${project}/languages/languageDesign/scopes/runtime/runtime.msd" folder="core.language-design" />
+      <modulePath path="${project}/languages/languageDesign/scopes/scopes.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/script/script.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/script/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/sharedConcepts/sharedConcepts.mpl" folder="core.language-design" />

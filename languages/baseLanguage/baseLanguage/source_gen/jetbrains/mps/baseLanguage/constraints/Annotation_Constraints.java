@@ -5,14 +5,14 @@ package jetbrains.mps.baseLanguage.constraints;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 
 public class Annotation_Constraints extends BaseConstraintsDescriptor {
-  private static SNodePointer breakingNode_9e1z83_a0a1a0a0a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1213104840486");
+  private static SNodePointer breakingNode_9e1z83_a0a0a0a0a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948133146");
 
   public Annotation_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.Annotation");
@@ -25,18 +25,15 @@ public class Annotation_Constraints extends BaseConstraintsDescriptor {
 
   @Override
   public ReferenceScopeProvider getDefaultScopeProvider() {
-    return new BaseReferenceScopeProvider() {
+    return new BaseScopeProvider() {
       @Override
-      public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-        return new VisibleClassifiersScope(((_context.getReferenceNode() == null) ?
-          _context.getEnclosingNode() :
-          _context.getReferenceNode()
-        ), IClassifiersSearchScope.ANNOTATION, operationContext.getScope());
+      public SNodePointer getSearchScopeValidatorNode() {
+        return breakingNode_9e1z83_a0a0a0a0a1;
       }
 
       @Override
-      public SNodePointer getSearchScopeValidatorNode() {
-        return breakingNode_9e1z83_a0a1a0a0a1;
+      public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+        return ClassifierScopes.getAnnotationClassifiersScope(_context.getContextNode(), operationContext.getScope());
       }
     };
   }

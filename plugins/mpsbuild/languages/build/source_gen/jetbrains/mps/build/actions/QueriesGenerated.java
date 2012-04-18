@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.scope.Scope;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -259,7 +260,7 @@ public class QueriesGenerated {
             if (scope == null) {
               return null;
             }
-            return ListSequence.fromList(scope.getAvailableElements(null)).where(new IWhereFilter<SNode>() {
+            return Sequence.fromIterable(scope.getAvailableElements(null)).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildVariableMacro");
               }

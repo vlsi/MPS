@@ -36,7 +36,7 @@ interface ISearchScope {
       return null;
     }
 
-    public List<SNode> getAvailableElements(@Nullable final String prefix) {
+    public Iterable<SNode> getAvailableElements(@Nullable final String prefix) {
       if (StringUtils.isEmpty(prefix)) {
         return searchScope.getNodes();
       }

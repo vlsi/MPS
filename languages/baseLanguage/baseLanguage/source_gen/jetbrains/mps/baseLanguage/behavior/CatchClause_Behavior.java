@@ -7,6 +7,10 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
+import jetbrains.mps.baseLanguage.scopes.Scopes;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -20,6 +24,18 @@ public class CatchClause_Behavior {
 
   public static List<SNode> virtual_getScopeVariables_5067982036267369894(SNode thisNode) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "throwable", true));
+  }
+
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) {
+      if (ScopeUtils.comeFrom("catchBody", thisNode, child)) {
+        return Scopes.forVariables(kind, SLinkOperations.getTarget(thisNode, "throwable", true), ScopeUtils.lazyParentScope(thisNode, kind));
+      } else {
+        return ScopeUtils.lazyParentScope(thisNode, kind);
+      }
+    }
+
+    return null;
   }
 
   public static List<SNode> call_getScopeVariables_2496361171403550981(SNode thisNode) {

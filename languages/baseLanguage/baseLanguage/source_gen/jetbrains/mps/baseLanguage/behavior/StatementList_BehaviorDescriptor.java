@@ -5,10 +5,12 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IContainer_BehaviorDescriptor;
 import jetbrains.mps.lang.traceable.behavior.ScopeConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.scope.Scope;
 
-public class StatementList_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IContainer_BehaviorDescriptor, ILocalVariableElementList_BehaviorDescriptor, ScopeConcept_BehaviorDescriptor {
+public class StatementList_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IContainer_BehaviorDescriptor, ILocalVariableElementList_BehaviorDescriptor, ScopeConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public StatementList_BehaviorDescriptor() {
   }
 
@@ -16,8 +18,16 @@ public class StatementList_BehaviorDescriptor extends BaseConcept_BehaviorDescri
     return StatementList_Behavior.virtual_getScopeVariables_5067982036267369894(thisNode);
   }
 
+  public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
+    return StatementList_Behavior.virtual_getScope_7722139651431880752(thisNode, kind, role, index);
+  }
+
   public List<SNode> virtual_getLocalVariableElements_1238805763253(SNode thisNode) {
     return StatementList_Behavior.virtual_getLocalVariableElements_1238805763253(thisNode);
+  }
+
+  public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    return StatementList_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
   }
 
   @Override

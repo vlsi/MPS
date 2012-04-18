@@ -10,16 +10,16 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 
 public class ClassifierClassExpression_Constraints extends BaseConstraintsDescriptor {
-  private static SNodePointer breakingNode_w155fn_a0a3a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "6768994795312000103");
+  private static SNodePointer breakingNode_w155fn_a0a2a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948136857");
 
   public ClassifierClassExpression_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression");
@@ -37,7 +37,7 @@ public class ClassifierClassExpression_Constraints extends BaseConstraintsDescri
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
+        return new BaseScopeProvider() {
           @Override
           public boolean hasPresentation() {
             return true;
@@ -53,16 +53,13 @@ public class ClassifierClassExpression_Constraints extends BaseConstraintsDescri
           }
 
           @Override
-          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new VisibleClassifiersScope(((_context.getReferenceNode() == null) ?
-              _context.getEnclosingNode() :
-              _context.getReferenceNode()
-            ), IClassifiersSearchScope.CLASSIFFIER, operationContext.getScope());
+          public SNodePointer getSearchScopeValidatorNode() {
+            return breakingNode_w155fn_a0a2a0a0a1a0b0a1a0;
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
-            return breakingNode_w155fn_a0a3a0a0a1a0b0a1a0;
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            return ClassifierScopes.getWithClassExpressionClassifiers(_context.getContextNode(), operationContext.getScope());
           }
         };
       }

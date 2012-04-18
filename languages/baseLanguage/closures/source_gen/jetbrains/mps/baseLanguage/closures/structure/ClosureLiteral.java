@@ -8,6 +8,7 @@ import jetbrains.mps.baseLanguage.structure.IContainsStatementList;
 import jetbrains.mps.baseLanguage.structure.IMethodLike;
 import jetbrains.mps.baseLanguage.structure.IFinalWrapper;
 import jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter;
+import jetbrains.mps.lang.core.structure.ScopeProvider;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.StatementList;
 import java.util.Iterator;
@@ -18,7 +19,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ClosureLiteral extends Expression implements IStatementListContainer, IContainsStatementList, IMethodLike, IFinalWrapper, IControlFlowInterrupter {
+public class ClosureLiteral extends Expression implements IStatementListContainer, IContainsStatementList, IMethodLike, IFinalWrapper, IControlFlowInterrupter, ScopeProvider {
   public static final String concept = "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
