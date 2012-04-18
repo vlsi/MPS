@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6e37ddd2p6t5p0fhjp39xffvbkagjgc">
+<dependencies version="2" modelHash="4nzju5oqzz4i4v5a95ysd6ep38z8blx">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8ddyvtwlgdy2b4rcc23nz4xk6wzma49" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-z9apu2jgvnwo2rksn2wr6ei9vh9scw" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-ad6sacrydlyivgq1a8s9zj6b37xpgsf" />
@@ -24,7 +24,7 @@
   <dep model="r:dcaa78c3-0033-4464-8747-37a798d5e2e6(jetbrains.mps.bash.generator.template.main@generator)" hash="2b4jjjrnr7bceadck9wnsuiped27re6" />
   <dep model="r:e4eacb3c-606c-4e9e-bd5e-ca89808d18ab(jetbrains.mps.build.packaging.mps.generator.template.main@generator)" hash="b1ovoa1pwje8k0x25u1tyqikqh858vx" />
   <dep model="r:ea5ebe15-8287-48fa-903b-179b2fdbe69c(jetbrains.mps.build.property.generator.template.main@generator)" hash="bvdhm2jo5t4eh10gbtqxm6t1d778xll" />
-  <common hash="4u1v06ttkgsia59fwhkbr4d3036ogkg">
+  <common hash="-my08fd325y4pt2nknectv64hr45l6p">
     <dep root="1629113365702710346" />
     <dep root="3413212504041565455" />
     <dep root="4155373682043500272" />
@@ -56,7 +56,7 @@
     <file name="mps.sh" />
     <file name="mps.vmoptions" />
   </common>
-  <source id="2235195415637073459" name="MPS" hash="2mdwiy0fzip04zs0ibc5esons7g8a8x">
+  <source id="2235195415637073459" name="MPS" hash="-6r70o2zko26ezrok52iwlkwuovwuuhq">
     <dep root="2235195415637076848" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
@@ -81,45 +81,45 @@
     <file name="MPS.properties" />
     <file name="branding_b1a.xml" />
   </source>
-  <source id="2235195415637076848" name="help-build" hash="3su9prxz818dbhs6u5eyfh4ei4k4qgm">
+  <source id="2235195415637076848" name="help-build" hash="4np9wnz0bwkgdiqbkaqp19sfluuoh7k">
     <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895905a3(jetbrains.mps.xml.deprecated.structure)" />
     <dep model="r:581bb25d-517d-4f18-b7c0-d3f6a738994e(jetbrains.mps.build.generictasks.generator.template.main@generator)" />
     <dep model="r:7a6a35c6-e369-4565-b91b-c7c8dfa2c8d7(jetbrains.mps.build.generictasks.generated)" />
     <file name="help-build.xml" />
   </source>
-  <source id="8431776905956472400" name="MPS-src.zip" hash="-73rv39a05wqowqnfejf1hxi0a1eoi0v" />
-  <source id="8431776905956472682" name="mps-backend.jar" hash="9g7fi14zyann9c0ifj679cvpokawfbq" />
-  <source id="8431776905956472694" name="mps-resources.jar" hash="1eg79qn0am7cye4gbz75znjh2qhovlv" />
-  <source id="8431776905956472723" name="mps-core.jar" hash="2kjby9ze3oitg34tyxgu7dh4rfd3aql" />
-  <source id="8431776905956472858" name="core" hash="anazjqqk7ktm5ane8pbmtfz15h0nxzf">
+  <source id="8431776905956472400" name="MPS-src.zip" hash="-3g4v7dwq3uoo5a7bnwhy34ek7vem91z" />
+  <source id="8431776905956472682" name="mps-backend.jar" hash="-9gnkaiucj7h7q6wxzvuk75aqujtocb0" />
+  <source id="8431776905956472694" name="mps-resources.jar" hash="-1ojxtc0cjmq8nkeuww3avg4d4ug0a31" />
+  <source id="8431776905956472723" name="mps-core.jar" hash="7iu6i3o5mnb2oj47t7nj185odibrtxg" />
+  <source id="8431776905956472858" name="core" hash="bmcbitjxghtzgss3564ldvafquwxsp6">
     <dep model="r:00000000-0000-4000-0000-011c895904d9(jetbrains.mps.build.packaging.generator.buildlanguage.template.main@generator)" />
   </source>
-  <source id="8431776905956472865" name="core.baseLanguage" hash="1f3esd4rqf2afye6wuljwj7i9lt9p35">
+  <source id="8431776905956472865" name="core.baseLanguage" hash="3wp24b3mzxad3dip70v4fufwidaid77">
     <dep model="r:00000000-0000-4000-0000-011c895904d9(jetbrains.mps.build.packaging.generator.buildlanguage.template.main@generator)" />
   </source>
-  <source id="8431776905956472902" name="core.devkits" hash="7vwsfk0xi0g9d4dv1lbdlgekaw6z4qk" />
-  <source id="8431776905956472907" name="core.languageDesign" hash="-6tmw9c3o7wgb5tjfqa4lgc8vy9978tz" />
-  <source id="8431776905956472948" name="util" hash="cogh7murdqtztfiztzt5x6sao61zt32" />
-  <source id="7715871110555971738" name="mps-boot.jar" hash="2sic6pbuzj4rx7hsfvo0vxlzdnkk2ou" />
-  <source id="2738111162319948310" name="core.execution" hash="-bozmnxwobv4imjckazksojfg8nshtzi" />
-  <source id="5358686142361317193" name="mps-test.jar" hash="5hps3e0pbymmb5f9dpeja3fk5psu7y1" />
-  <source id="6108265972537541352" name="branding" hash="emlz9nqgndw5l0uwzfphkh2i4ok88n5" />
-  <source id="5428983789737854526" name="mps-workbench.jar" hash="-al5bu4oa0qm737f0x77tm1hxp8opukm" />
-  <source id="5428983789737854768" name="mps-editor.jar" hash="nu5svsn6wwnxh1ncjq1rvw879hnj2" />
-  <source id="2901107368280525965" name="redist" hash="-5y1micluv26ldpxuf61kxk1r7u4f6yx" />
-  <source id="6700426045796013947" name="mps-platform.jar" hash="cbdl1pyr3qyb2pn3jg87fhv7lcm4krd" />
-  <source id="938551967734106063" name="debugger" hash="1qucl6mofv8lxofhdvzxemf3e0rarlp" />
-  <source id="625155585696516556" name="execution" hash="-4fzuxjytkpz6mzjuhdjsmgtm6xmxoba" />
-  <source id="1629113365702710346" name="mps-collections.jar" hash="-1evc73kgc31tfadwnydet86tfr0ra1w" />
-  <source id="4259166877922588177" name="mps-closures.jar" hash="bxsanps4scw96wcm88bhxi6ph5nwmwh" />
-  <source id="87733685690765614" name="mps-tuples.jar" hash="-8x814djymjvs6sl0gm6rieeh7c7rtza" />
-  <source id="895779019966565773" name="jetbrains.mps.baseLanguage.collections.runtime.gwt-src" hash="-3y39iohqhkf2tpjssbon15aewip4fq8" />
-  <source id="1541469606659920114" name="jetbrains.mps.baseLanguage.closures.runtime-src" hash="-97d121y1mudkemkrllw0xzsjtyvuszc" />
-  <source id="1541469606659920142" name="jetbrains.mps.baseLanguage.collections.runtime-src" hash="-9q4x5uw6barfltf9lvgjbq24xiq3qk2" />
-  <source id="1541469606659920166" name="jetbrains.mps.baseLanguage.tuples.runtime-src" hash="-cf2lxu6fkf6w9hggj4juo89rqnqd0sh" />
-  <source id="3832932945784337441" name="core.make" hash="deml5zk3ngxnhnu649aoin9k5wqa7xy" />
-  <source id="4514696390933853559" name="MPS-os-specific" hash="-657e7tmldu56rrlvco1dckjxal9pn7p">
+  <source id="8431776905956472902" name="core.devkits" hash="6ye804kv1b5p9zas2dbtyba5mmisz46" />
+  <source id="8431776905956472907" name="core.languageDesign" hash="-ccttxhtzyhkjrkuvjjhd5k8j2zrtuqa" />
+  <source id="8431776905956472948" name="util" hash="-97qb30ee2pd55yfred8ak1wmc0pjw3v" />
+  <source id="7715871110555971738" name="mps-boot.jar" hash="8qsdvujqcxvwdoy6vhndgo8htrfscbp" />
+  <source id="2738111162319948310" name="core.execution" hash="cpzqi4yhmpfa8pqsus3cs5lvec0e8ui" />
+  <source id="5358686142361317193" name="mps-test.jar" hash="cvftj247mdy3rtbvasmweiil0gmyt87" />
+  <source id="6108265972537541352" name="branding" hash="zb1htp6f3cwwlo8y49aclx0ofmeasw" />
+  <source id="5428983789737854526" name="mps-workbench.jar" hash="-df5cao8r5ak38m88fgdpxl332w575xe" />
+  <source id="5428983789737854768" name="mps-editor.jar" hash="3pt63g3td0fjg0kmz5bzofgsuc3pi17" />
+  <source id="2901107368280525965" name="redist" hash="-9czm4daqj2km6xzqopj1svge28qs3ki" />
+  <source id="6700426045796013947" name="mps-platform.jar" hash="dcyh068bnj0nmrgse3k9n23mata6z06" />
+  <source id="938551967734106063" name="debugger" hash="5ihj97mvlq7zuzd5m8g6msttqiraeqo" />
+  <source id="625155585696516556" name="execution" hash="-ee462ajti00hcw4ltmuk3xe157gegdk" />
+  <source id="1629113365702710346" name="mps-collections.jar" hash="td41yyw7wmewyuzsl9ea8hnha4e67a" />
+  <source id="4259166877922588177" name="mps-closures.jar" hash="77j8wqxfpeooqc6dtkprsjjlrn99dok" />
+  <source id="87733685690765614" name="mps-tuples.jar" hash="-53wyws4ie2ksuf9wg7bswhx3cegeal1" />
+  <source id="895779019966565773" name="jetbrains.mps.baseLanguage.collections.runtime.gwt-src" hash="cgiy43iwuipncafnt9wk215l6s9fcni" />
+  <source id="1541469606659920114" name="jetbrains.mps.baseLanguage.closures.runtime-src" hash="-3qo92ceyfqn0jupgknbur58wx9aeiil" />
+  <source id="1541469606659920142" name="jetbrains.mps.baseLanguage.collections.runtime-src" hash="-41xzgbyey6xpiy4yp557cnjr3rlzoql" />
+  <source id="1541469606659920166" name="jetbrains.mps.baseLanguage.tuples.runtime-src" hash="4hs2iqkdobyziq5z045mrphsykwh24g" />
+  <source id="3832932945784337441" name="core.make" hash="-9qc2vuhjui5t2jiy7rhzwgsmfcab4lj" />
+  <source id="4514696390933853559" name="MPS-os-specific" hash="ayyawy0m28pq5ypdyjx5x1rzxo6ti48">
     <dep root="2235195415637073459" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" />
@@ -138,23 +138,23 @@
     <file name="MPS-os-specific-default.xml" />
     <file name="MPS-os-specific.properties" />
   </source>
-  <source id="2495440301906773652" name="MPS-buildserver" hash="-73qjdlbmzskjxmcnd2vbdkgu7fynz9m">
+  <source id="2495440301906773652" name="MPS-buildserver" hash="4cgv6hjwetmwh8exzbguehp381650f5">
     <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895905a3(jetbrains.mps.xml.deprecated.structure)" />
     <dep model="r:581bb25d-517d-4f18-b7c0-d3f6a738994e(jetbrains.mps.build.generictasks.generator.template.main@generator)" />
     <dep model="r:7a6a35c6-e369-4565-b91b-c7c8dfa2c8d7(jetbrains.mps.build.generictasks.generated)" />
     <file name="MPS-buildserver.xml" />
   </source>
-  <source id="2495440301906978406" name="MPS-distribution" hash="ci5f2wh6b0xiymx128j54qxhs1r1r2o">
+  <source id="2495440301906978406" name="MPS-distribution" hash="51sc4rqlrdzu44x1wwnwsch7z9un1b6">
     <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895905a3(jetbrains.mps.xml.deprecated.structure)" />
     <dep model="r:581bb25d-517d-4f18-b7c0-d3f6a738994e(jetbrains.mps.build.generictasks.generator.template.main@generator)" />
     <dep model="r:7a6a35c6-e369-4565-b91b-c7c8dfa2c8d7(jetbrains.mps.build.generictasks.generated)" />
     <file name="MPS-distribution.xml" />
   </source>
-  <source id="3413212504041565455" name="mps-editor-api.jar" hash="fh27pvagz1f7qk2hhc9zleydv0q5ly" />
-  <source id="4155373682043500272" name="mps-resources_en.jar" hash="n34lpnhrackqycq0e2p1am1vvels6u" />
-  <source id="4416609728987027532" name="vcs" hash="-rmito9zd7nqrx70k55nq2t4th8pur7" />
-  <source id="7947179031518546993" name="core.xml" hash="-29g11k8w7n0xnht68x1ffe3yrq3mpqc" />
+  <source id="3413212504041565455" name="mps-editor-api.jar" hash="-1llxl74bq47bettejgk3oxqh9kn5u49" />
+  <source id="4155373682043500272" name="mps-resources_en.jar" hash="-47glaahd2n1gc2xso0w3m55q9z5p3od" />
+  <source id="4416609728987027532" name="vcs" hash="aju9pmhck226mnikk59gps6ucv35z2f" />
+  <source id="7947179031518546993" name="core.xml" hash="e0lgzf1zr6f30cbnyn5lllnzjti1re6" />
 </dependencies>
 
