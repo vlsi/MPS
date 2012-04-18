@@ -18,6 +18,7 @@ package jetbrains.mps.typesystem.inference;
 import gnu.trove.THashSet;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.state.Equations;
@@ -83,7 +84,7 @@ public class InequalitySystem {
     SubtypingManager subtypingManager = TypeChecker.getInstance().getSubtypingManager();
 
     for (SNode w : myEquals) {
-      if (!MatchingUtil.matchNodes(w, type)) {
+      if (!HUtil.isRuntimeHoleType(w) && !MatchingUtil.matchNodes(w, type)) {
         return false;
       }
     }
