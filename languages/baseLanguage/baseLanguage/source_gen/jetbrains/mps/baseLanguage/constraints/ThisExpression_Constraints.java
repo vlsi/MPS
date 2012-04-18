@@ -20,6 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior;
+import org.jetbrains.annotations.NotNull;
 
 public class ThisExpression_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1213619162021");
@@ -68,7 +69,17 @@ public class ThisExpression_Constraints extends BaseConstraintsDescriptor {
             if (!(SNodeOperations.isInstanceOf(_context.getReferenceNode(), "jetbrains.mps.baseLanguage.structure.ThisExpression"))) {
               return new EmptyScope();
             }
-            return new NamedElementsScope(ThisExpression_Behavior.call_getPossibleClassifiers_1215682129821(SNodeOperations.cast(_context.getReferenceNode(), "jetbrains.mps.baseLanguage.structure.ThisExpression")));
+            return new NamedElementsScope(ThisExpression_Behavior.call_getPossibleClassifiers_1215682129821(SNodeOperations.cast(_context.getReferenceNode(), "jetbrains.mps.baseLanguage.structure.ThisExpression"))) {
+              @Nullable
+              @Override
+              public SNode resolve(SNode contextNode, @NotNull String refText) {
+                String packageName = SNodeOperations.getModel(contextNode).getLongName() + ".";
+                if (refText.startsWith(packageName)) {
+                  refText = refText.substring(packageName.length());
+                }
+                return super.resolve(contextNode, refText);
+              }
+            };
           }
         };
       }
