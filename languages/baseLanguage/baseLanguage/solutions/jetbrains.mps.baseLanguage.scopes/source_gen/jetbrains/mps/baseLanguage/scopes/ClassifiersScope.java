@@ -14,10 +14,11 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -72,6 +73,22 @@ public class ClassifiersScope extends DelegatingScope {
         return ListSequence.fromList(localClassifiers).first();
       }
 
+      if (classname.contains("$")) {
+        // search everywhere 
+        String package_ = classname.substring(0, dotIndex);
+        classname = classname.substring(dotIndex + 1).replace('$', '.');
+        return resolveClass(package_, null, classname);
+      } else {
+        String[] parts = classname.split("\\.");
+        for (int sizeOfClassifier = 1; sizeOfClassifier <= parts.length; sizeOfClassifier++) {
+          String packageName = IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(parts)).take(parts.length - sizeOfClassifier), ".");
+          String className = IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(parts)).skip(parts.length - sizeOfClassifier), ".");
+          SNode resolved = resolveClass(packageName, null, className);
+          if (resolved != null) {
+            return resolved;
+          }
+        }
+      }
       // search everywhere 
       String package_ = classname.substring(0, dotIndex);
       classname = classname.substring(dotIndex + 1).replace('$', '.');
