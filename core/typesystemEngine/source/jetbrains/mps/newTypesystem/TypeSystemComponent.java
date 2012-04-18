@@ -199,8 +199,6 @@ class TypeSystemComponent extends CheckingComponent {
   }
 
   private void computeTypesSpecial(SNode nodeToCheck, boolean forceChildrenCheck, Collection<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
-    assert myNodeTypesComponent.getTypeCheckingContext().isSingleTypeComputation();
-
     computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes, initialNode);
     if (typeCalculated(initialNode) != null) return;
     solveInequalitiesAndExpandTypes(finalExpansion);
@@ -243,7 +241,7 @@ class TypeSystemComponent extends CheckingComponent {
   }
 
   protected SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
-    assert myNodeTypesComponent.getTypeCheckingContext().isSingleTypeComputation();
+    assert myNodeTypesComponent.getTypeCheckingContext().isSingleTypeComputation() || myState.getInequalitySystem() !=null;
 
     assert myFullyCheckedNodes.isEmpty();
     SNode type = null;
