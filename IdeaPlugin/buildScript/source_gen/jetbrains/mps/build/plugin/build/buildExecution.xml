@@ -9,8 +9,9 @@
   <property name="artifacts.IDEA" location="${idea_home}" />
   
   <target name="assemble" depends="classes">
-    <mkdir dir="${build.layout}/execution" />
-    <jar destfile="${build.layout}/execution/jetbrains.mps.execution.common.jar">
+    <mkdir dir="${build.layout}/languages" />
+    <mkdir dir="${build.layout}/languages/execution" />
+    <jar destfile="${build.layout}/languages/execution/jetbrains.mps.execution.common.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.execution.common" />
       <fileset dir="${mps_home}/languages/util/runConfigurations/languages/common" includes="icons/**, resources/**" />
     </jar>
@@ -23,11 +24,11 @@
     <copy todir="${build.tmp}/default/jetbrains.mps.execution.common-src.jar/module/languageModels">
       <fileset dir="${mps_home}/languages/util/runConfigurations/languages/common/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
-    <jar destfile="${build.layout}/execution/jetbrains.mps.execution.common-src.jar">
+    <jar destfile="${build.layout}/languages/execution/jetbrains.mps.execution.common-src.jar">
       <fileset dir="${mps_home}/languages/util/runConfigurations/languages/common/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.execution.common-src.jar" />
     </jar>
-    <jar destfile="${build.layout}/execution/jetbrains.mps.execution.settings.jar">
+    <jar destfile="${build.layout}/languages/execution/jetbrains.mps.execution.settings.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.execution.settings" />
       <fileset dir="${mps_home}/languages/util/runConfigurations/languages/settings" includes="icons/**, resources/**" />
     </jar>
@@ -44,11 +45,11 @@
     <copy todir="${build.tmp}/default/jetbrains.mps.execution.settings-src.jar/module/generator/template">
       <fileset dir="${mps_home}/languages/util/runConfigurations/languages/settings/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
-    <jar destfile="${build.layout}/execution/jetbrains.mps.execution.settings-src.jar">
+    <jar destfile="${build.layout}/languages/execution/jetbrains.mps.execution.settings-src.jar">
       <fileset dir="${mps_home}/languages/util/runConfigurations/languages/settings/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.execution.settings-src.jar" />
     </jar>
-    <jar destfile="${build.layout}/execution/jetbrains.mps.execution.util.jar">
+    <jar destfile="${build.layout}/languages/execution/jetbrains.mps.execution.util.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.execution.util" />
       <fileset dir="${mps_home}/languages/util/runConfigurations/languages/util" includes="icons/**, resources/**" />
     </jar>
@@ -61,7 +62,7 @@
     <copy todir="${build.tmp}/default/jetbrains.mps.execution.util-src.jar/module/languageModels">
       <fileset dir="${mps_home}/languages/util/runConfigurations/languages/util/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
-    <jar destfile="${build.layout}/execution/jetbrains.mps.execution.util-src.jar">
+    <jar destfile="${build.layout}/languages/execution/jetbrains.mps.execution.util-src.jar">
       <fileset dir="${mps_home}/languages/util/runConfigurations/languages/util/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.execution.util-src.jar" />
     </jar>

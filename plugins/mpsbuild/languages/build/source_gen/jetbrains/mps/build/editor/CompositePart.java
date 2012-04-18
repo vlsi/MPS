@@ -49,6 +49,7 @@ public class CompositePart extends AbstractCellProvider {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     }
     editorCell.addEditorCell(this.createConstant_gvzdrx_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_gvzdrx_b0a(editorContext, node));
@@ -62,6 +63,7 @@ public class CompositePart extends AbstractCellProvider {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     }
     editorCell.setDefaultText("");
     return editorCell;
@@ -73,6 +75,10 @@ public class CompositePart extends AbstractCellProvider {
     provider.setNoTargetText("<no compositePart>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
