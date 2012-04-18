@@ -428,6 +428,7 @@ public class State {
   }
   
   public void setTargetNode(SNode node) {
+    if (myInequalitySystem != null) return;
     addBlock(new TargetBlock(this, typeOf(node, null)));
     myTargetNode = node;
   }
