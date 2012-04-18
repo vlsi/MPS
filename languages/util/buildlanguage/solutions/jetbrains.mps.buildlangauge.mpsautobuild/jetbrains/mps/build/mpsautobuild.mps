@@ -3091,6 +3091,37 @@
           <property name="name" nameId="tps4.1223641503366" value="lib" />
         </node>
       </node>
+      <node role="entry" roleId="tps4.1203617897549" type="tps4.Zip" typeId="tps4.1204018553150" id="7233798365360316911">
+        <node role="delete" roleId="tps4.1239622410040" type="tps4.Delete" typeId="tps4.1204122781510" id="7233798365360316912" />
+        <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="7233798365360316913">
+          <property name="name" nameId="tps4.1223641503366" value="nanocProject.zip" />
+        </node>
+        <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="7233798365360316914">
+          <property name="excludes" nameId="tps4.1204107522064" value="**/*.class" />
+          <node role="sourcePath" roleId="tps4.1220982054961" type="tps4.Path" typeId="tps4.1220973916698" id="7233798365360316915">
+            <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="7233798365360316917">
+              <property name="name" nameId="tps4.1220976068141" value="mps_home" />
+            </node>
+            <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="7233798365360316918">
+              <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="7233798365360316919">
+                <property name="path" nameId="tps4.1220974398640" value="plugins" />
+              </node>
+              <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="7233798365360316921">
+                <property name="path" nameId="tps4.1220974398640" value="debugger-api" />
+              </node>
+              <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="7233798365360316923">
+                <property name="path" nameId="tps4.1220974398640" value="languages" />
+              </node>
+              <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="7233798365360316925">
+                <property name="path" nameId="tps4.1220974398640" value="nanoc" />
+              </node>
+            </node>
+          </node>
+          <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="7233798365360316926">
+            <property name="name" nameId="tps4.1223641503366" value="nanocProject" />
+          </node>
+        </node>
+      </node>
       <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="8632133948244457339">
         <property name="name" nameId="tps4.1223641503366" value="debugger-api" />
       </node>
@@ -3248,14 +3279,6 @@
         <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="3033860308392477163">
           <property name="id" nameId="tps4.1222447189012" value="92f5dc44-466d-4972-9f92-b03994f153c4" />
           <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.execution.migration" />
-        </node>
-        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="3393121265070537496">
-          <property name="id" nameId="tps4.1222447189012" value="08ffecab-a1e5-4be9-bd87-e14140b1b0e0" />
-          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.nanoc" />
-        </node>
-        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="3393121265070537498">
-          <property name="id" nameId="tps4.1222447189012" value="145e4b07-c585-49f6-847f-007fdad1f453" />
-          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.nanoc.pluginSolution" />
         </node>
       </node>
       <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="3054488448088159487">

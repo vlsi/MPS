@@ -119,6 +119,7 @@
   </target>
   <target name="clean.after" depends="do.the.job">
     <delete dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/debugger-api/nanocProject.zip.tmp" />
     <delete dir="${deploy.dir}/MPS/samples.zip.tmp" />
     <delete dir="${deploy.dir}/${build.number}-buildTools.zip.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-resources.jar.tmp" />
