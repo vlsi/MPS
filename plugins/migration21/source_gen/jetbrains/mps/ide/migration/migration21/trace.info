@@ -1024,9 +1024,9 @@
     <nodeInfo nodeId="1828409047608306841" fileName="Migrations21_ActionGroup.java" startLine="30" startPosition="130" endLine="31" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1828409047608306843" fileName="Migrations21_ActionGroup.java" startLine="31" startPosition="129" endLine="32" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3864735057395396950" fileName="Migrations21_ActionGroup.java" startLine="32" startPosition="134" endLine="33" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6638751950448587423" fileName="Migrations21_ActionGroup.java" startLine="33" startPosition="123" endLine="34" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2761153619454568341" fileName="Migrations21_ActionGroup.java" startLine="34" startPosition="121" endLine="35" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7450649563959273055" fileName="Migrations21_ActionGroup.java" startLine="35" startPosition="130" endLine="36" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2761153619454568341" fileName="Migrations21_ActionGroup.java" startLine="33" startPosition="123" endLine="34" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7450649563959273055" fileName="Migrations21_ActionGroup.java" startLine="34" startPosition="130" endLine="35" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6638751950448587423" fileName="Migrations21_ActionGroup.java" startLine="35" startPosition="121" endLine="36" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4250481571544053951" fileName="Migrations21_ActionGroup.java" startLine="37" startPosition="7" endLine="38" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4250481571544053951" fileName="Migrations21_ActionGroup.java" startLine="38" startPosition="95" endLine="39" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4250481571544053951" fileName="Migrations21_ActionGroup.java" startLine="39" startPosition="66" endLine="40" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1824,8 +1824,8 @@
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="34" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="37" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="49" endLine="12" endPosition="50" conceptFqName="jetbrains.mps.gtext.structure.GText" />

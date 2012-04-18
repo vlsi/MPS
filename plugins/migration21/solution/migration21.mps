@@ -225,14 +225,14 @@
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="3864735057395396950">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="9164503229271455483" resolveInfo="FixMissingImportsInProject" />
       </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="6638751950448587423">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="6735645123418936327" resolveInfo="ExecuteModelCheckerFixes" />
-      </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2761153619454568341">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="2761153619454568093" resolveInfo="MigrationScript_ResolveBrokenRefs" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="7450649563959273055">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="7450649563959262367" resolveInfo="OptimizeImportsInProject" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="6638751950448587423">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="6735645123418936327" resolveInfo="ExecuteModelCheckerFixes" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="4250481571544053951">
         <property name="name" nameId="tpck.1169194664001" value="optional" />
