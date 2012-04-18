@@ -1,0 +1,30 @@
+<project name="buildDistribution" default="build" basedir="../">
+  <property name="build.dir" location="build" />
+  <property name="build.tmp" location="${build.dir}/tmp/buildDistribution" />
+  <property name="build.layout" location="${build.dir}/artifacts/buildDistribution" />
+  <property name="artifacts.buildIDE" location="${build.dir}/artifacts/buildIDE" />
+  <property file="${artifacts.buildIDE}/variables.properties" prefix="import.buildIDE" />
+  <property name="buildIDE.build.number" value="${import.buildIDE.buildIDE.build.number}" />
+  <property name="buildIDE.version" value="${import.buildIDE.buildIDE.version}" />
+  
+  <target name="assemble" depends="fetchDependencies">
+    <zip destfile="${build.layout}/mps${buildIDE.build.number}.zip">
+      <fileset dir="${artifacts.buildIDE}/MPS ${buildIDE.version}" />
+    </zip>
+    <echo file="${build.layout}/variables.properties">buildIDE.build.number=${buildIDE.build.number}
+        buildIDE.version=${buildIDE.version}</echo>
+  </target>
+  
+  <target name="buildDependents">
+    <ant antfile="build/buildIDE.xml" inheritAll="false" useNativeBasedir="true" />
+  </target>
+  
+  <target name="fetchDependencies" />
+  
+  <target name="build" depends="assemble" />
+  
+  <target name="clean">
+    <delete dir="${build.tmp}" />
+    <delete dir="${build.layout}" />
+  </target>
+</project>
