@@ -32,7 +32,7 @@ public class Mps21JavaApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isClassCreator(node, SModelReference.fromPath("r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)"), "1208785806875");
+        return StubRefUtil.isClassCreator(node, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)"), "1208785806875");
       }
 
       public void doUpdateInstanceNode(SNode node) {
