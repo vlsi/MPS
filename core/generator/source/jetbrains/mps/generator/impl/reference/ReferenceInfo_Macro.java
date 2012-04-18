@@ -117,7 +117,7 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
         // myExternalTargetModelReference now is not null
         // todo: check for empty long names
         resolveInfo = myExternalTargetModelReference.getLongName() + "." + resolveInfo;
-        myExternalTargetModelReference = null;
+        myExternalTargetModelReference = null; // get rid of this
       }
 
       myResolveInfoForDynamicResolve = resolveInfo;
