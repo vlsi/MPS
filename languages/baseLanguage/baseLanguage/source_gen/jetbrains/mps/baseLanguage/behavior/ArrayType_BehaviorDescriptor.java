@@ -45,6 +45,10 @@ public class ArrayType_BehaviorDescriptor extends Type_BehaviorDescriptor {
     return ArrayType_Behavior.virtual_hasPluralVariableSuffixes_1447667470349154499(thisNode);
   }
 
+  public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
+    return ArrayType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.ArrayType";

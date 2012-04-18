@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.smodel.dataFlow.DFABuilders" />
+  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.smodel.dataFlow.DFABuilders" />
   <root nodeId="1210626395131">
     <nodeInfo nodeId="7910522704535779665" fileName="SNodeOperation_DataFlow.java" startLine="18" startPosition="98" endLine="19" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1210626395131" fileName="SNodeOperation_DataFlow.java" startLine="12" startPosition="62" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SNodeOperation_DataFlow#()V" />
@@ -46,6 +46,19 @@
       <varInfo nodeId="1220278792529" varName="operationContext" />
     </scopeInfo>
     <unitInfo nodeId="1220278792529" fileName="SemanticDowncastExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.smodel.dataFlow.SemanticDowncastExpression_DataFlow" />
+  </root>
+  <root nodeId="1717381292179403686">
+    <nodeInfo nodeId="1207559196527" fileName="ConceptSwitchStatementCase_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1717381292179403686" fileName="ConceptSwitchStatementCase_DataFlow.java" startLine="11" startPosition="74" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConceptSwitchStatementCase_DataFlow#()V" />
+    <nodeInfo nodeId="1717381292179403686" fileName="ConceptSwitchStatementCase_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="1717381292179403686" fileName="ConceptSwitchStatementCase_DataFlow.java" startLine="12" startPosition="48" endLine="12" endPosition="48" />
+    <scopeInfo nodeId="1717381292179403688" fileName="ConceptSwitchStatementCase_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="101" />
+    <scopeInfo nodeId="1717381292179403686" fileName="ConceptSwitchStatementCase_DataFlow.java" startLine="11" startPosition="74" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="1717381292179403686" fileName="ConceptSwitchStatementCase_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1717381292179403686" varName="_context" />
+      <varInfo nodeId="1717381292179403686" varName="operationContext" />
+    </scopeInfo>
+    <unitInfo nodeId="1717381292179403686" fileName="ConceptSwitchStatementCase_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.smodel.dataFlow.ConceptSwitchStatementCase_DataFlow" />
   </root>
   <root nodeId="1883223317721107093">
     <nodeInfo nodeId="1883223317721107096" fileName="IfInstanceOfVarReference_DataFlow.java" startLine="14" startPosition="102" endLine="15" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -115,6 +128,27 @@
       <varInfo nodeId="4268767923418720675" varName="operationContext" />
     </scopeInfo>
     <unitInfo nodeId="4268767923418720675" fileName="LinkAttributeQualifier_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.smodel.dataFlow.LinkAttributeQualifier_DataFlow" />
+  </root>
+  <root nodeId="5944356402133044075">
+    <nodeInfo nodeId="1207558674001" fileName="ConceptSwitchStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2832018561208855925" fileName="ConceptSwitchStatement_DataFlow.java" startLine="16" startPosition="107" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2832018561208855918" fileName="ConceptSwitchStatement_DataFlow.java" startLine="18" startPosition="91" endLine="19" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207558740566" fileName="ConceptSwitchStatement_DataFlow.java" startLine="19" startPosition="80" endLine="20" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5944356402133044075" fileName="ConceptSwitchStatement_DataFlow.java" startLine="11" startPosition="70" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConceptSwitchStatement_DataFlow#()V" />
+    <nodeInfo nodeId="1207558728441" fileName="ConceptSwitchStatement_DataFlow.java" startLine="17" startPosition="0" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5944356402133044075" fileName="ConceptSwitchStatement_DataFlow.java" startLine="14" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="5944356402133044075" fileName="ConceptSwitchStatement_DataFlow.java" startLine="12" startPosition="44" endLine="12" endPosition="44" />
+    <scopeInfo nodeId="5944356402133044075" fileName="ConceptSwitchStatement_DataFlow.java" startLine="11" startPosition="70" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="1207558728442" fileName="ConceptSwitchStatement_DataFlow.java" startLine="18" startPosition="91" endLine="20" endPosition="54" />
+    <scopeInfo nodeId="1207558728441" fileName="ConceptSwitchStatement_DataFlow.java" startLine="17" startPosition="0" endLine="21" endPosition="5">
+      <varInfo nodeId="1207558728445" varName="switchCase" />
+    </scopeInfo>
+    <scopeInfo nodeId="5944356402133044077" fileName="ConceptSwitchStatement_DataFlow.java" startLine="15" startPosition="102" endLine="21" endPosition="5" />
+    <scopeInfo nodeId="5944356402133044075" fileName="ConceptSwitchStatement_DataFlow.java" startLine="14" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="5944356402133044075" varName="_context" />
+      <varInfo nodeId="5944356402133044075" varName="operationContext" />
+    </scopeInfo>
+    <unitInfo nodeId="5944356402133044075" fileName="ConceptSwitchStatement_DataFlow.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.smodel.dataFlow.ConceptSwitchStatement_DataFlow" />
   </root>
   <root nodeId="6031770219184889510">
     <nodeInfo nodeId="6031770219184889513" fileName="Concept_IsSuperConceptOfOperation_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

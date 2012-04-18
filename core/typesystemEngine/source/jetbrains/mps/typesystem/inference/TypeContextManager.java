@@ -144,7 +144,7 @@ public class TypeContextManager implements CoreComponent {
 
   public TypeCheckingContext createTypeCheckingContext(SNode node) {
     ModelAccess.assertLegalRead();
-    return new TypeCheckingContextNew(node, myTypeChecker);
+    return new TypeCheckingContextNew(node, myTypeChecker, myTypeChecker.isGenerationMode());
   }
 
   private TypeCheckingContext createTracingTypeCheckingContext(SNode node) {
@@ -241,7 +241,9 @@ public class TypeContextManager implements CoreComponent {
     if (root == null) {
       root = node.getTopmostAncestor();
     }
-    return new TypeCheckingContextNew(root, myTypeChecker, true);
+    TypeCheckingContextNew context = new TypeCheckingContextNew(root, myTypeChecker, true);
+    context.setSingleTypeComputation(true);
+    return context;
   }
 
   private Set<SNode> getMyResolveNodes() {

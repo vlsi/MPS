@@ -206,6 +206,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_ArrayClassExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_ArrayCloneOperation_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -375,14 +379,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       InferenceRule_Runtime inferenceRule = new typeof_ValueParameter_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_VarVariableDeclaration_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_VarVariableReference_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -895,6 +891,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       ComparisonRule_Runtime comparisonRule = new any_type_comparable_with_nulltype_ComparisonRule();
+      this.myComparisonRules.add(comparisonRule);
+    }
+    {
+      ComparisonRule_Runtime comparisonRule = new compareClassifierTypes_ComparisonRule();
       this.myComparisonRules.add(comparisonRule);
     }
     {

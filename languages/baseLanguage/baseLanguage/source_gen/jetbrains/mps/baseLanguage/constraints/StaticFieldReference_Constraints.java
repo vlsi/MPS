@@ -10,28 +10,20 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
-import org.jetbrains.annotations.NotNull;
-import java.util.List;
-import jetbrains.mps.smodel.SNode;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 
 public class StaticFieldReference_Constraints extends BaseConstraintsDescriptor {
-  private static SNodePointer breakingNode_amrbnf_a0a1a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1213104847361");
-  private static SNodePointer breakingNode_amrbnf_a0a1a0a0a1a0b0a2a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "4074304533012411948");
+  private static SNodePointer breakingNode_amrbnf_a0a0a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137439");
+  private static SNodePointer breakingNode_amrbnf_a0a0a0a0a1a0b0a2a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137459");
 
   public StaticFieldReference_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.StaticFieldReference");
@@ -49,19 +41,21 @@ public class StaticFieldReference_Constraints extends BaseConstraintsDescriptor 
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
+        return new BaseScopeProvider() {
           @Override
-          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            // static fields from hierarchy of specified class 
-            return new ClassifierVisibleStaticMembersScope(SLinkOperations.getTarget(_context.getReferenceNode(), "classifier", false), ((_context.getEnclosingNode() == null) ?
-              _context.getReferenceNode() :
-              _context.getEnclosingNode()
-            ), IClassifiersSearchScope.STATIC_FIELD);
+          public SNodePointer getSearchScopeValidatorNode() {
+            return breakingNode_amrbnf_a0a0a0a0a1a0b0a1a0;
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
-            return breakingNode_amrbnf_a0a1a0a0a1a0b0a1a0;
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            if (!(SNodeOperations.isInstanceOf(_context.getContextNode(), "jetbrains.mps.baseLanguage.structure.StaticFieldReference"))) {
+              return new EmptyScope();
+            }
+            if ((SLinkOperations.getTarget(SNodeOperations.cast(_context.getContextNode(), "jetbrains.mps.baseLanguage.structure.StaticFieldReference"), "classifier", false) == null)) {
+              return new EmptyScope();
+            }
+            return Classifier_Behavior.call_getVisibleMembers_8083692786967356611(SLinkOperations.getTarget(SNodeOperations.cast(_context.getContextNode(), "jetbrains.mps.baseLanguage.structure.StaticFieldReference"), "classifier", false), _context.getContextNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"));
           }
         };
       }
@@ -75,49 +69,15 @@ public class StaticFieldReference_Constraints extends BaseConstraintsDescriptor 
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
+        return new BaseScopeProvider() {
           @Override
-          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new VisibleClassifiersScope(((_context.getReferenceNode() == null) ?
-              _context.getEnclosingNode() :
-              _context.getReferenceNode()
-            ), IClassifiersSearchScope.CLASSIFFIER, operationContext.getScope()) {
-              @NotNull
-              @Override
-              public List<SNode> getClassifiers() {
-                Set<SNode> enclosingClassifierAncestors = SetSequence.fromSet(new HashSet<SNode>());
-                SetSequence.fromSet(enclosingClassifierAncestors).addSequence(ListSequence.fromList(SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false)));
-
-                List<SNode> result = new ArrayList<SNode>();
-                for (SNode classifier : ListSequence.fromList(super.getClassifiers())) {
-                  if (SPropertyOperations.getBoolean(classifier, "nonStatic")) {
-                    continue;
-                  }
-                  if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
-                    continue;
-                  }
-                  List<SNode> ancestors = SNodeOperations.getAncestors(classifier, null, true);
-                  // Filtering out Classifiers located in third-party containers (not Classifiers) 
-                  // and having no common Classifier container with enclosing node. 
-                  // Useful for Classifiers contained in EditorTestCases 
-                  // ("result" should not be able to access classifiers from "nodeToEdit")... 
-                  if (ListSequence.fromList(ancestors).where(new IWhereFilter<SNode>() {
-                    public boolean accept(SNode it) {
-                      return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Classifier"));
-                    }
-                  }).isNotEmpty() && ListSequence.fromList(ancestors).intersect(SetSequence.fromSet(enclosingClassifierAncestors)).isEmpty()) {
-                    continue;
-                  }
-                  result.add(classifier);
-                }
-                return result;
-              }
-            };
+          public SNodePointer getSearchScopeValidatorNode() {
+            return breakingNode_amrbnf_a0a0a0a0a1a0b0a2a0;
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
-            return breakingNode_amrbnf_a0a1a0a0a1a0b0a2a0;
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            return ClassifierScopes.getClassesForStaticFieldReference(_context.getContextNode(), operationContext.getScope());
           }
         };
       }

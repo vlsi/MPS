@@ -8,6 +8,12 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class Closure_Behavior {
   public static void init(SNode thisNode) {
@@ -22,5 +28,24 @@ public class Closure_Behavior {
       }
     }
     return referencedInClosures;
+  }
+
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    final Wrappers._T<SNode> _child = new Wrappers._T<SNode>(child);
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ClosureParameter")) {
+      while (SNodeOperations.getParent(_child.value) != thisNode) {
+        _child.value = SNodeOperations.getParent(_child.value);
+      }
+      return new NamedElementsScope(ListSequence.fromList(SNodeOperations.getChildren(thisNode)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClosureParameter") && it != _child.value;
+        }
+      }).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClosureParameter");
+        }
+      }));
+    }
+    return null;
   }
 }

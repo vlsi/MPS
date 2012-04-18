@@ -5,13 +5,13 @@ package jetbrains.mps.baseLanguage.constraints;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 import java.util.Map;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Classifier_Constraints extends BaseConstraintsDescriptor {
-  private static SNodePointer breakingNode_z47b7w_a0a3a0a0a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1213104846413");
+  private static SNodePointer breakingNode_z47b7w_a0a2a0a0a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948136860");
 
   public Classifier_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.Classifier");
@@ -36,7 +36,7 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
 
   @Override
   public ReferenceScopeProvider getDefaultScopeProvider() {
-    return new BaseReferenceScopeProvider() {
+    return new BaseScopeProvider() {
       @Override
       public boolean hasPresentation() {
         return true;
@@ -48,16 +48,13 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
       }
 
       @Override
-      public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-        return new VisibleClassifiersScope(((_context.getReferenceNode() == null) ?
-          _context.getEnclosingNode() :
-          _context.getReferenceNode()
-        ), IClassifiersSearchScope.CLASSIFFIER, operationContext.getScope());
+      public SNodePointer getSearchScopeValidatorNode() {
+        return breakingNode_z47b7w_a0a2a0a0a1;
       }
 
       @Override
-      public SNodePointer getSearchScopeValidatorNode() {
-        return breakingNode_z47b7w_a0a3a0a0a1;
+      public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+        return ClassifierScopes.getVisibleClassifiersScope(_context.getContextNode(), operationContext.getScope());
       }
     };
   }
