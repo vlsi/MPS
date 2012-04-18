@@ -16,27 +16,48 @@
 package jetbrains.mps.runtime;
 
 import jetbrains.mps.util.InternUtil;
+import sun.reflect.Reflection;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
-public class BundleClassLoader<T> extends BaseClassLoader {
+public class ModuleClassLoader extends ClassLoader {
+  //todo can be removed?
   private Map<String, Class> myClassesCache = new HashMap<String, Class>();
   private final Object myLock = new Object();
 
   //this is for debug purposes (heap dumps)
-  @SuppressWarnings({"UnusedDeclaration"})
+  @SuppressWarnings({"UnusedDeclaration", "FieldCanBeLocal"})
   private boolean myDisposed;
-  private RBundle<T> myBundle;
+  private IClassLoadingModule myModule;
 
-  public BundleClassLoader(RBundle<T> bundle, ClassLoader parent) {
-    super(parent);
-    myBundle = bundle;
+  public ModuleClassLoader(IClassLoadingModule module) {
+    super(Reflection.getCallerClass(1).getClassLoader());
+    myModule = module;
   }
 
-  BundleClassLoader(RBundle<T> bundle) {
-    this(bundle, BaseClassLoader.class.getClassLoader());
+  protected final Class<?> findClass(String name) throws ClassNotFoundException {
+    byte[] bytes = findInCurrent(name);
+    if (bytes != null) {
+      definePackageIfNecessary(name);
+      return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
+    }
+
+    return findInDependencies(name);
+  }
+
+  private void definePackageIfNecessary(String name) {
+    String pack = getNamespace(name);
+    if (getPackage(pack) != null) return;
+    definePackage(pack, null, null, null, null, null, null, null);
+  }
+
+  //todo replace with NameUtil.namespaceFromLongName(name)
+  private String getNamespace(String fqName) {
+    int lastIndex = fqName.lastIndexOf('.');
+    if (lastIndex == -1) return "";
+    return fqName.substring(0, lastIndex);
   }
 
   public Class getClass(String fqName) {
@@ -57,17 +78,13 @@ public class BundleClassLoader<T> extends BaseClassLoader {
     }
   }
 
-  protected Class findAfterCurrent(String name) {
-    RuntimeEnvironment<T> re = myBundle.getRuntimeEnvironment();
-    for (T dep : re.getAllDependencies(myBundle)) {
-      if (dep.equals(myBundle.getId())) continue;
+  protected Class findInDependencies(String name) {
+    for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
+      if (m.equals(myModule)) continue;
 
-      RBundle<T> bundle = re.get(dep);
-      if (bundle == null) continue;
-
-      if (bundle.hasClass(name)) {
+      if (m.hasClass(name)) {
         try {
-          return Class.forName(name, false, bundle.getClassLoader());
+          return Class.forName(name, false, m.getClassLoader());
         } catch (ClassNotFoundException e) {
           throw new RuntimeException(e);
         }
@@ -78,20 +95,15 @@ public class BundleClassLoader<T> extends BaseClassLoader {
   }
 
   protected byte[] findInCurrent(String name) {
-    byte[] bytes = myBundle.getLocator().find(name);
-    if (bytes != null) {
-      myBundle.classLoaded(name);
-    }
-    return bytes;
+    if (!myModule.hasClass(name)) return null;
+    return myModule.findClassBytes(name);
   }
 
   protected URL findResource(String name) {
-    RuntimeEnvironment<T> re = myBundle.getRuntimeEnvironment();
-
-    for (T dep : re.getAllDependencies(myBundle)) {
-      if (re.get(dep).hasResource(name)) {
-        return re.get(dep).getResource(name);
-      }
+    for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
+      URL res = m.findResource(name);
+      if (res == null) continue;
+      return res;
     }
 
     return null;
@@ -99,11 +111,10 @@ public class BundleClassLoader<T> extends BaseClassLoader {
 
   protected Enumeration<URL> findResources(String name) throws IOException {
     ArrayList<URL> result = new ArrayList<URL>();
-    RuntimeEnvironment<T> re = myBundle.getRuntimeEnvironment();
-    for (T dep : re.getAllDependencies(myBundle)) {
-      if (re.get(dep).hasResource(name)) {
-        result.add(re.get(dep).getResource(name));
-      }
+    for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
+      URL res = m.findResource(name);
+      if (res == null) continue;
+      result.add(res);
     }
 
     return new IterableToEnumWrapper<URL>(result);
@@ -111,11 +122,13 @@ public class BundleClassLoader<T> extends BaseClassLoader {
 
   @Override
   protected String findLibrary(String name) {
-    String libraryPath = myBundle.getLocator().findLibrary(name);
-    if (libraryPath != null) {
-      return libraryPath;
+    for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
+      String res = m.findLibrary(name);
+      if (res == null) continue;
+      return res;
     }
-    return super.findLibrary(name);
+
+    return null;
   }
 
   public void dispose() {
@@ -124,11 +137,10 @@ public class BundleClassLoader<T> extends BaseClassLoader {
   }
 
   public String toString() {
-    return myBundle.getId() + "'s class loader";
+    return myModule + " class loader";
   }
 
   private static class IterableToEnumWrapper<E> implements Enumeration<E> {
-
     private Iterator<E> myIterator;
 
     public IterableToEnumWrapper(Iterable<E> iterable) {

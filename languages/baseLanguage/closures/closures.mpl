@@ -3,9 +3,7 @@
   <models>
     <modelRoot path="${language_descriptor}/languageModels" />
   </models>
-  <accessoryModels>
-    <model modelUID="r:c8f09818-27d0-4e31-9cdf-dedd92fee7ef(jetbrains.mps.baseLanguage.closures.util)" />
-  </accessoryModels>
+  <accessoryModels />
   <generators>
     <generator generatorUID="jetbrains.mps.baseLanguage.closures#1199623535494" uuid="857d0a79-6f44-4f46-84ed-9c5b42632011">
       <models>

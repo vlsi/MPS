@@ -49,8 +49,6 @@ public class SModelRoot {
     IModule mod = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(moduleId));
     if (mod == null) return null;
 
-    if (!ClassLoaderManager.getInstance().canLoadClasses(mod)) return null;
-
     Class managerClass = mod.getClass(className);
     if (managerClass == null) {
       throw new ManagerNotFoundException("Manager class " + className + " not found in module " + mod.getModuleFqName());
@@ -61,12 +59,6 @@ public class SModelRoot {
     } catch (Throwable t) {
       throw new ManagerNotFoundException("Problems during instantiating manager " + className, t);
     }
-  }
-
-  //this method is temporary, just to fix MPS-14489 and should be replaced since custom persistence is implemented
-  @UseCarefully
-  public boolean isStubModels() {
-    return getModelRoot().getManager() != null;
   }
 
   public IModelRootManager getManager() {

@@ -23,11 +23,9 @@ import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
@@ -39,7 +37,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.util.*;
 
 public abstract class AbstractModule implements IModule {
@@ -61,7 +58,6 @@ public abstract class AbstractModule implements IModule {
     }
   };
   private CompositeClassPathItem myCachedClassPathItem;
-  private DependenciesManager myDependenciesManager;
 
   //----model creation
 
@@ -162,14 +158,7 @@ public abstract class AbstractModule implements IModule {
 
   //----get deps
 
-  public final DependenciesManager getDependenciesManager() {
-    if (myDependenciesManager == null) {
-      myDependenciesManager = createDependenciesManager();
-    }
-    return myDependenciesManager;
-  }
-
-  protected ModuleDependenciesManager createDependenciesManager() {
+  public ModuleDependenciesManager getDependenciesManager() {
     return new ModuleDependenciesManager(this);
   }
 
@@ -195,40 +184,40 @@ public abstract class AbstractModule implements IModule {
 
   //----stubs
 
-  public Collection<StubPath> getAllStubPaths() {
-    Set<StubPath> result = new LinkedHashSet<StubPath>();
+  public Collection<String> getAllStubPaths() {
+    Set<String> result = new LinkedHashSet<String>();
     result.addAll(getStubPaths());
     result.addAll(getOwnStubPaths());
     return result;
   }
 
-  public Collection<StubPath> getOwnStubPaths() {
+  public Collection<String> getOwnStubPaths() {
     if (!isCompileInMPS()) return Collections.emptyList();
 
     IFile classFolder = getClassesGen();
     if (classFolder == null) return Collections.emptyList();
 
-    return Collections.singletonList(new StubPath(classFolder.getPath(), LanguageID.JAVA_MANAGER));
+    return Collections.singletonList(classFolder.getPath());
   }
 
-  public Collection<StubPath> getStubPaths() {
+  public Collection<String> getStubPaths() {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return Collections.emptySet();
 
     Collection<ModelRoot> stubModelEntries = descriptor.getStubModelEntries();
-    Collection<StubPath> result = new LinkedHashSet<StubPath>(stubModelEntries.size());
+    Collection<String> result = new LinkedHashSet<String>(stubModelEntries.size());
     for (ModelRoot entry : stubModelEntries) {
-      result.add(new StubPath(entry.getPath(), entry.getManager()));
+      result.add(entry.getPath());
     }
     return result;
   }
 
-  public static Collection<StubPath> getStubPaths(ModuleDescriptor descriptor) {
+  public static Collection<String> getStubPaths(ModuleDescriptor descriptor) {
     if (descriptor != null) {
       Collection<ModelRoot> stubModelEntries = descriptor.getStubModelEntries();
-      Collection<StubPath> result = new LinkedHashSet<StubPath>(stubModelEntries.size());
+      Collection<String> result = new LinkedHashSet<String>(stubModelEntries.size());
       for (ModelRoot entry : stubModelEntries) {
-        result.add(new StubPath(entry.getPath(), entry.getManager()));
+        result.add(entry.getPath());
       }
       return result;
     }
@@ -349,13 +338,9 @@ public abstract class AbstractModule implements IModule {
         myCachedClassPathItem = new CompositeClassPathItem();
         myCachedClassPathItem.addInvalidationAction(myClasspathInvalidator);
 
-        for (StubPath path : getAllStubPaths()) {
-          //look for classes only in stub dirs with JavaStub manager
-          if (!ObjectUtils.equals(path.getManager().getClassName(), LanguageID.JAVA_MANAGER.getClassName()))
-            continue;
-
+        for (String path : getAllStubPaths()) {
           try {
-            IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path.getPath(), this.getModuleFqName());
+            IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path, this.getModuleFqName());
             myCachedClassPathItem.add(pathItem);
           } catch (IOException e) {
             LOG.error(e.getMessage());
@@ -375,11 +360,11 @@ public abstract class AbstractModule implements IModule {
     return new ClasspathCollector(modules).collect(includeStubSolutions);
   }
 
-  public BytecodeLocator getBytecodeLocator() {
-    return new ModuleBytecodeLocator();
+  public Class getClass(String className) {
+    //todo move to a subclass fully
+    throw new UnsupportedOperationException();
   }
-
-  //----
+//----
 
   public Collection<SModelRoot> getSModelRoots() {
     return Collections.unmodifiableCollection(mySModelRoots);
@@ -516,15 +501,6 @@ public abstract class AbstractModule implements IModule {
     MPSModuleRepository.getInstance().fireModuleInitialized(this);
   }
 
-  public Class getClass(String fqName) {
-    try {
-      return ClassLoaderManager.getInstance().getClassFor(this, fqName);
-    } catch (Throwable t) {
-      LOG.error(t);
-      return null;
-    }
-  }
-
   public IFile getBundleHome() {
     return FileSystem.getInstance().getBundleHome(getDescriptorFile());
   }
@@ -594,10 +570,6 @@ public abstract class AbstractModule implements IModule {
     return getModuleDescriptor().updateModuleRefs();
   }
 
-  protected void invalidateDependencies() {
-    myDependenciesManager = null;
-  }
-
   protected ModuleDescriptor loadDescriptor() {
     return null;
   }
@@ -646,24 +618,6 @@ public abstract class AbstractModule implements IModule {
 
     public String toString() {
       return "Scope of module " + AbstractModule.this;
-    }
-  }
-
-  protected class ModuleBytecodeLocator implements BytecodeLocator {
-    public ModuleBytecodeLocator() {
-    }
-
-    public byte[] find(String fqName) {
-      return getClassPathItem().getClass(fqName);
-    }
-
-    public URL findResource(String name) {
-      return getClassPathItem().getResource(name);
-    }
-
-    @Override
-    public String findLibrary(String name) {
-      return null;
     }
   }
 }

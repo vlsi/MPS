@@ -13530,9 +13530,7 @@
     <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="36" startPosition="0" endLine="41" endPosition="3" />
     <scopeInfo nodeId="7889360268649440578" fileName="SetNodePackage_Action.java" startLine="43" startPosition="87" endLine="48" endPosition="7" />
     <scopeInfo nodeId="1680229125543348954" fileName="SetNodePackage_Action.java" startLine="104" startPosition="59" endLine="109" endPosition="0" />
-    <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="80" startPosition="26" endLine="86" endPosition="9">
-      <varInfo nodeId="7889360268649425705" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="80" startPosition="26" endLine="86" endPosition="9" />
     <scopeInfo nodeId="1680229125543349051" fileName="SetNodePackage_Action.java" startLine="118" startPosition="111" endLine="124" endPosition="13" />
     <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="42" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="7889360268649425705" varName="_params" />
@@ -14542,7 +14540,7 @@
     <nodeInfo nodeId="9164503229271455483" fileName="AddMissingImportsInProject_Action.java" startLine="36" startPosition="27" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9164503229271455483" fileName="AddMissingImportsInProject_Action.java" startLine="44" startPosition="95" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9164503229271455483" fileName="AddMissingImportsInProject_Action.java" startLine="48" startPosition="94" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9164503229271487738" fileName="AddMissingImportsInProject_Action.java" startLine="57" startPosition="125" endLine="60" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9164503229271487738" fileName="AddMissingImportsInProject_Action.java" startLine="57" startPosition="139" endLine="60" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9164503229271486536" fileName="AddMissingImportsInProject_Action.java" startLine="61" startPosition="95" endLine="64" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9164503229271486545" fileName="AddMissingImportsInProject_Action.java" startLine="64" startPosition="11" endLine="67" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9164503229271455483" fileName="AddMissingImportsInProject_Action.java" startLine="74" startPosition="27" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -14590,7 +14588,7 @@
     <scopeInfo nodeId="9164503229271486526" fileName="AddMissingImportsInProject_Action.java" startLine="60" startPosition="9" endLine="71" endPosition="9">
       <varInfo nodeId="9164503229271486526" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="9164503229271455507" fileName="AddMissingImportsInProject_Action.java" startLine="57" startPosition="125" endLine="71" endPosition="9" />
+    <scopeInfo nodeId="9164503229271455507" fileName="AddMissingImportsInProject_Action.java" startLine="57" startPosition="139" endLine="71" endPosition="9" />
     <scopeInfo nodeId="9164503229271455504" fileName="AddMissingImportsInProject_Action.java" startLine="56" startPosition="9" endLine="72" endPosition="7">
       <varInfo nodeId="9164503229271455504" varName="module" />
     </scopeInfo>

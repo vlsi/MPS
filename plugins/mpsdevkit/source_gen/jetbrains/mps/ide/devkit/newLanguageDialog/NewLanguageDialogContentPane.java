@@ -233,8 +233,8 @@ public class NewLanguageDialogContentPane extends JPanel {
           Solution sandbox = myThis.createSandboxSolution();
           SModel createdModel = sandbox.createModel(SModelFqName.fromString(myThis.getLanguageNamespace() + ".sandbox"), sandbox.getSModelRoots().iterator().next(), null).getSModel();
           createdModel.addLanguage(myThis.getResult().getModuleReference());
-          for (Language extendedLanguage : myThis.getResult().getExtendedLanguages()) {
-            createdModel.addLanguage(extendedLanguage.getModuleReference());
+          for (ModuleReference extendedLanguage : myThis.getResult().getExtendedLanguageRefs()) {
+            createdModel.addLanguage(extendedLanguage);
           }
           for (ModuleReference addedLanguage : createdModel.importedLanguages()) {
             if (sandbox.getScope().getLanguage(addedLanguage) == null) {

@@ -36,7 +36,7 @@ public class DependenciesCorrectionStage implements MigrationStage {
       lang.save();
     }
     for (Language l : p.getProjectModules(Language.class)) {
-      for (SModelDescriptor aspect : l.getAspectModelDescriptors()) {
+      for (SModelDescriptor aspect : LanguageAspect.getAspectModels(l)) {
         SModel sModel = aspect.getSModel();
         sModel.addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
         sModel.deleteDevKit(LanguageDesign_DevKit.MODULE_REFERENCE);

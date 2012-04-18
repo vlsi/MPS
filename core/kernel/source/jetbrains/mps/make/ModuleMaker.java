@@ -24,13 +24,13 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.*;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -72,7 +72,7 @@ public class ModuleMaker {
   }
 
   public ModuleMaker(@Nullable IMessageHandler handler, MessageKind level) {
-    this (handler);
+    this(handler);
     myLevel = level;
   }
 
@@ -103,7 +103,7 @@ public class ModuleMaker {
     try {
       monitor.step("Collecting candidates");
       ttrace.push("collecting candidates", false);
-      Set<IModule> candidates = collectCandidates(modules);
+      Collection<IModule> candidates = new GlobalModuleDependenciesManager(modules).getModules(Deptype.COMPILE);
       ttrace.pop();
       monitor.advance(1);
 
@@ -145,7 +145,7 @@ public class ModuleMaker {
           warnCount += result.getWarnings();
           compiled = compiled || result.isCompiledAnything();
           messages.addAll(result.getMessages());
-          for (IMessage msg: result.getMessages()) {
+          for (IMessage msg : result.getMessages()) {
             if (msg.getKind() == MessageKind.ERROR) {
               handle(msg);
             }
@@ -166,21 +166,10 @@ public class ModuleMaker {
     }
   }
 
-  private  void handle (IMessage msg) {
+  private void handle(IMessage msg) {
     if (handler != null && msg.getKind().ordinal() >= myLevel.ordinal()) {
       handler.handle(msg);
     }
-  }
-
-  private Set<IModule> collectCandidates(Set<IModule> startSet) {
-    Set<IModule> modules = new LinkedHashSet<IModule>();
-    Set<Language> usedLanguages = new LinkedHashSet<Language>();
-
-    for (IModule m : startSet) {
-      m.getDependenciesManager().collectAllCompileTimeDependencies(modules, usedLanguages);
-    }
-    modules.addAll(usedLanguages);
-    return modules;
   }
 
   private MPSCompilationResult compile(Set<IModule> modules) {
@@ -309,7 +298,7 @@ public class ModuleMaker {
     }
   }
 
-  private Set<IModule> getModulesToCompile(Set<IModule> modules) {
+  private Set<IModule> getModulesToCompile(Collection<IModule> modules) {
     ttrace.push("checking if " + modules.size() + " modules are dirty", false);
     List<IModule> dirtyModules = new ArrayList<IModule>(modules.size());
     for (IModule m : modules) {
@@ -319,39 +308,18 @@ public class ModuleMaker {
     }
     ttrace.pop();
 
-    Map<IModule, Set<IModule>> backDependencies = new HashMap<IModule, Set<IModule>>();
-
-    ttrace.push("building back deps", false);
-    for (IModule m : modules) {
-      for (IModule dep : m.getDependenciesManager().getRequiredModules()) {
-        Set<IModule> incoming = backDependencies.get(dep);
-        if (incoming == null) {
-          incoming = new HashSet<IModule>();
-          backDependencies.put(dep, incoming);
-        }
-        incoming.add(m);
+    Set<IModule> toCompile = new LinkedHashSet<IModule>();
+    ttrace.push("adding modules dependent on dirty ones - " + dirtyModules.size(), false);
+    for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
+      if (m.isPackaged()) continue;
+      for (IModule dep : new GlobalModuleDependenciesManager(m).getModules(Deptype.COMPILE)) {
+        if (!dirtyModules.contains(dep)) continue;
+        toCompile.add(m);
       }
     }
     ttrace.pop();
 
-    ttrace.push("adding modules dependent on dirty ones - " + dirtyModules.size(), false);
-    Set<IModule> toCompile = new LinkedHashSet<IModule>();
-
-    for (IModule dirty : dirtyModules) {
-      collectToCompile(dirty, toCompile, backDependencies);
-    }
-    ttrace.pop();
-
     return toCompile;
-  }
-
-  private void collectToCompile(IModule current, Set<IModule> result, Map<IModule, Set<IModule>> deps) {
-    if (!result.add(current)) return;
-    if (!deps.containsKey(current)) return;
-
-    for (IModule dep : deps.get(current)) {
-      collectToCompile(dep, result, deps);
-    }
   }
 
   private boolean isDirty(IModule m) {

@@ -52,6 +52,19 @@ public class FileClassPathItem extends RealClassPathItem {
     return myClassPath;
   }
 
+  public boolean hasClass(String name) {
+    checkValidity();
+    String namespace = NameUtil.namespaceFromLongName(name);
+    String shortname = NameUtil.shortNameFromLongName(name);
+
+    if (!myAvailableClassesCache.containsKey(namespace)) {
+      buildCacheFor(namespace);
+    }
+
+    Set<String> classes = myAvailableClassesCache.get(namespace);
+    return classes != null && classes.contains(shortname);
+  }
+
   public synchronized byte[] getClass(String name) {
     checkValidity();
     String namespace = NameUtil.namespaceFromLongName(name);

@@ -11,7 +11,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
 import java.util.Set;
-import jetbrains.mps.project.StubPath;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -24,6 +23,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.smodel.LanguageID;
 import java.util.Collection;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
@@ -39,7 +39,7 @@ public class EvaluationAuxModule extends AbstractModule {
   protected static Log log = LogFactory.getLog(EvaluationAuxModule.class);
 
   private Project myProject;
-  private final Set<StubPath> myStubPaths = SetSequence.fromSet(new HashSet<StubPath>());
+  private final Set<String> myStubPaths = SetSequence.fromSet(new HashSet<String>());
   private final Set<ModuleReference> myUsedLanguages = SetSequence.fromSet(new HashSet<ModuleReference>());
   private volatile IScope myScope;
 
@@ -51,11 +51,6 @@ public class EvaluationAuxModule extends AbstractModule {
 
   public MPSProject getMPSProject() {
     return this.myProject.getComponent(MPSProject.class);
-  }
-
-  @Nullable
-  public Class getClass(String fqName) {
-    return null;
   }
 
   @NotNull
@@ -96,12 +91,11 @@ public class EvaluationAuxModule extends AbstractModule {
   }
 
   @Override
-  public Set<StubPath> getStubPaths() {
+  public Set<String> getStubPaths() {
     return myStubPaths;
   }
 
-  public StubPath addStubPath(String stubPath) {
-    StubPath path = new StubPath(stubPath, STUBS_MANAGER);
+  public String addStubPath(String path) {
     if (SetSequence.fromSet(myStubPaths).contains(path)) {
       path = null;
     } else {
@@ -116,10 +110,10 @@ public class EvaluationAuxModule extends AbstractModule {
   public Set<SModelRoot> doUpdateModelsSet() {
     HashSet<SModelRoot> result = new HashSet<SModelRoot>();
     SModelRepository repo = SModelRepository.getInstance();
-    for (StubPath stub : SetSequence.fromSet(myStubPaths)) {
+    for (String stub : SetSequence.fromSet(myStubPaths)) {
       ModelRoot root = new ModelRoot();
-      root.setPath(stub.getPath());
-      root.setManager(stub.getManager());
+      root.setPath(stub);
+      root.setManager(LanguageID.JAVA_MANAGER);
       try {
         SModelRoot smodelRoot = new SModelRoot(root);
         Collection<SModelDescriptor> loaded = smodelRoot.getManager().load(root, this);

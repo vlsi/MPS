@@ -4,7 +4,7 @@ package jetbrains.mps.lang.structure.intentions;
 
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
@@ -12,17 +12,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import java.util.Set;
 import java.util.HashSet;
-import jetbrains.mps.smodel.SModelUtil_new;
+
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeId;
 
 public class CreateReferenceConcept_Intention extends BaseIntention implements Intention {
   public CreateReferenceConcept_Intention() {
@@ -68,7 +62,7 @@ public class CreateReferenceConcept_Intention extends BaseIntention implements I
 
     // find editor model 
     Language language = Language.getLanguageFor(SNodeOperations.getModel(node).getModelDescriptor());
-    SModel editorModel = language.getEditorModelDescriptor().getSModel();
+    SModel editorModel = LanguageAspect.EDITOR.get(language).getSModel();
 
     // editor 
     SNode editor = new CreateReferenceConcept_Intention.QuotationClass_k63gxf_a0a11a7().createNode(concept, link);

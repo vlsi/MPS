@@ -65,7 +65,7 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="pmg0" modelUID="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)" version="0" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
-  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="10" implicit="yes" />
+  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="34" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tprs" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -5614,68 +5614,6 @@
                         </node>
                       </node>
                       <node role="builder" roleId="pmg0.4797501453850567416" type="pmg0.SimpleBuilder" typeId="pmg0.7288041816793071802" id="3201642974934182753">
-                        <link role="declaration" roleId="pmg0.7288041816793071803" targetNodeId="3201642974933961032" resolveInfo="Component" />
-                      </node>
-                    </node>
-                    <node role="statement" roleId="tpee.1068581517665" type="pmg0.BuilderStatement" typeId="pmg0.7057666463730155299" id="3201642974934182754">
-                      <node role="body" roleId="pmg0.4797501453849924252" type="tpee.StatementList" typeId="tpee.1068580123136" id="3201642974934182755">
-                        <node role="statement" roleId="tpee.1068581517665" type="pmg0.BuilderStatement" typeId="pmg0.7057666463730155299" id="3201642974934182882">
-                          <node role="body" roleId="pmg0.4797501453849924252" type="tpee.StatementList" typeId="tpee.1068580123136" id="3201642974934182883" />
-                          <node role="builder" roleId="pmg0.4797501453850567416" type="pmg0.SimpleBuilderPropertyBuilder" typeId="pmg0.5389689214217404511" id="3201642974934182884">
-                            <link role="declaration" roleId="pmg0.5389689214217404513" targetNodeId="3201642974934063692" resolveInfo="component" />
-                            <node role="value" roleId="pmg0.5389689214217404512" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3201642974934182989">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1809539929827629623" resolveInfo="createStubRootsPanel" />
-                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4060390951635972879" resolveInfo="StandardComponents" />
-                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3201642974934183054">
-                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3201642974934182608" resolveInfo="dialog" />
-                              </node>
-                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3986605908471626582">
-                                <property name="value" nameId="tpee.1068580123138" value="false" />
-                              </node>
-                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3201642974934182991">
-                                <property name="value" nameId="tpee.1070475926801" value="Runtime Libraries" />
-                              </node>
-                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3201642974934182992">
-                                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3201642974934182993">
-                                  <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="3201642974934182994">
-                                    <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="5923576889075041825" resolveInfo="myProperties" />
-                                  </node>
-                                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3201642974934183053">
-                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3201642974934182608" resolveInfo="dialog" />
-                                  </node>
-                                </node>
-                                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3201642974934182996">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5923576889075044091" resolveInfo="getRuntimeStubModels" />
-                                </node>
-                              </node>
-                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3986605908471588699">
-                                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3986605908471588700">
-                                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3986605908471588701">
-                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3201642974934182608" resolveInfo="dialog" />
-                                  </node>
-                                  <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="3986605908471588702">
-                                    <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="5923576889075041825" resolveInfo="myProperties" />
-                                  </node>
-                                </node>
-                                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3986605908471588703">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5923576889075044715" resolveInfo="getModelRoots" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node role="statement" roleId="tpee.1068581517665" type="pmg0.BuilderStatement" typeId="pmg0.7057666463730155299" id="3201642974934182885">
-                          <node role="body" roleId="pmg0.4797501453849924252" type="tpee.StatementList" typeId="tpee.1068580123136" id="3201642974934182886" />
-                          <node role="builder" roleId="pmg0.4797501453850567416" type="pmg0.SimpleBuilderPropertyBuilder" typeId="pmg0.5389689214217404511" id="3201642974934182887">
-                            <link role="declaration" roleId="pmg0.5389689214217404513" targetNodeId="3201642974934108900" resolveInfo="constraints" />
-                            <node role="value" roleId="pmg0.5389689214217404512" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="3201642974934183006">
-                              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2968.~BaseBindedDialog$ConstraintsType" resolveInfo="BaseBindedDialog.ConstraintsType" />
-                              <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2968.~BaseBindedDialog$ConstraintsType%dLIST" resolveInfo="LIST" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node role="builder" roleId="pmg0.4797501453850567416" type="pmg0.SimpleBuilder" typeId="pmg0.7288041816793071802" id="3201642974934182756">
                         <link role="declaration" roleId="pmg0.7288041816793071803" targetNodeId="3201642974933961032" resolveInfo="Component" />
                       </node>
                     </node>

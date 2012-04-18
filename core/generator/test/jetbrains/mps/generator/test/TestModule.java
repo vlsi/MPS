@@ -17,6 +17,7 @@ package jetbrains.mps.generator.test;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.ClassLoadingModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -35,7 +36,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * Evgeny Gryaznov, 10/18/10
  */
-public class TestModule extends AbstractModule {
+public class TestModule extends ClassLoadingModule  {
 
   private static final Logger LOG = Logger.getLogger(TestModule.class);
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2012 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,25 @@
  */
 package jetbrains.mps.runtime;
 
-public class UnsatisfiedDependencyException extends RuntimeEnvironmentException {
-  public UnsatisfiedDependencyException(String message) {
-    super(message);
-  }
+import java.net.URL;
+
+public interface IClassLoadingModule {
+  //should include self
+  Iterable<IClassLoadingModule> getClassLoadingDependencies();
+
+  //---class
+
+  boolean hasClass(String name);
+
+  byte[] findClassBytes(String name);
+
+  ClassLoader getClassLoader();
+
+  //---resource
+
+  URL findResource(String name);
+
+  //---library
+
+  String findLibrary(String name);
 }

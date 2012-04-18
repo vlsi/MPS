@@ -23,7 +23,6 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.project.dependency.LanguageDependenciesManager;
-import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
@@ -31,10 +30,12 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.runtime.ProtectionDomainUtil;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.vfs.FileSystem;
@@ -46,7 +47,7 @@ import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class Language extends AbstractModule implements MPSModuleOwner {
+public class Language extends ClassLoadingModule implements MPSModuleOwner {
   private static final Logger LOG = Logger.getLogger(Language.class);
 
   public static final String LANGUAGE_MODELS = "languageModels";
@@ -71,7 +72,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   private CachesInvalidator myCachesInvalidator;
 
-  private List<Language> myAllExtendedLanguages;
+  //todo [MihMuh] this should be replaced in 3.0 (don't know exactly with what now)
+  private ClassLoader myStubsLoader = new MyClassLoader();
 
   public static Language newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
     LanguageDescriptor descriptor = ((LanguageDescriptor) handle.getDescriptor());
@@ -96,10 +98,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     setModuleReference(descriptor.getModuleReference());
   }
 
-  protected ModuleDependenciesManager createDependenciesManager() {
-    return new LanguageDependenciesManager(this);
-  }
-
   protected void reloadAfterDescriptorChange() {
     ModuleRepositoryFacade.getInstance().unregisterModules(this, new Condition<IModule>() {
       public boolean met(IModule m) {
@@ -111,45 +109,23 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     revalidateGenerators();
   }
 
+  public LanguageDependenciesManager getDependenciesManager() {
+    return new LanguageDependenciesManager(this);
+  }
+
   public void addExtendedLanguage(ModuleReference langRef) {
-    if (getExtendedLanguageRefs().contains(langRef)) return;
+    if (myLanguageDescriptor.getExtendedLanguages().contains(langRef)) return;
     LanguageDescriptor moduleDescriptor = getModuleDescriptor();
     moduleDescriptor.getExtendedLanguages().add(langRef);
     setModuleDescriptor(moduleDescriptor, true);
     save();
   }
 
-  public List<ModuleReference> getExtendedLanguageRefs() {
-    return new ArrayList<ModuleReference>(myLanguageDescriptor.getExtendedLanguages());
-  }
-
-  public List<Language> getExtendedLanguages() {
-    List<Language> result = ModuleUtil.refsToLanguages(getExtendedLanguageRefs());
-
-    Language coreLang = BootstrapLanguages.coreLanguage();
-    if (!result.contains(coreLang)) {
-      result.add(coreLang);
-    }
-
-    return result;
-  }
-
-  public Collection<Language> getAllExtendedLanguages() {
-    if (myAllExtendedLanguages == null) {
-      Set<Language> set = new LinkedHashSet<Language>();
-      collectAllExtendedLanguages(set);
-      myAllExtendedLanguages = Collections.unmodifiableList(new ArrayList<Language>(set));
-    }
-    return myAllExtendedLanguages;
-  }
-
-  private void collectAllExtendedLanguages(Set<Language> result) {
-    if (result.contains(this)) return;
-
-    result.add(this);
-    for (Language l : getExtendedLanguages()) {
-      l.collectAllExtendedLanguages(result);
-    }
+  public Set<ModuleReference> getExtendedLanguageRefs() {
+    HashSet<ModuleReference> res = new HashSet<ModuleReference>(myLanguageDescriptor.getExtendedLanguages());
+    //this is needed now as we don't force the user to have an explicit dependency on core
+    res.add(BootstrapLanguages.CORE);
+    return res;
   }
 
   public List<Dependency> getDependencies() {
@@ -225,6 +201,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
+    super.setModuleDescriptor(moduleDescriptor, reloadClasses);
     setLanguageDescriptor((LanguageDescriptor) moduleDescriptor, reloadClasses);
   }
 
@@ -246,8 +223,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     if (getStructureModelDescriptor() != null && myCachesInvalidator == null) {
       getStructureModelDescriptor().addModelListener(myCachesInvalidator = new CachesInvalidator());
     }
-
-    invalidateDependencies();
   }
 
   public boolean isBootstrap() {
@@ -305,15 +280,15 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       result.add(getStructureModelDescriptor());
     }
 
-    if (aspect != LanguageAspect.CONSTRAINTS && getConstraintsModelDescriptor() != null) {
-      result.add(getConstraintsModelDescriptor());
+    if (aspect != LanguageAspect.CONSTRAINTS && LanguageAspect.CONSTRAINTS.get(this) != null) {
+      result.add(LanguageAspect.CONSTRAINTS.get(this));
     }
 
-    if (aspect != LanguageAspect.BEHAVIOR && getBehaviorModelDescriptor() != null) {
-      result.add(getBehaviorModelDescriptor());
+    if (aspect != LanguageAspect.BEHAVIOR && LanguageAspect.BEHAVIOR.get(this) != null) {
+      result.add(LanguageAspect.BEHAVIOR.get(this));
     }
 
-    for (Language extended : getExtendedLanguages()) {
+    for (Language extended : ModuleUtil.refsToLanguages(getExtendedLanguageRefs())) {
       SModelDescriptor structure = LanguageAspect.STRUCTURE.get(extended);
       if (structure != null) {
         result.add(structure);
@@ -349,46 +324,10 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return LanguageAspect.STRUCTURE.get(this);
   }
 
-  public DefaultSModelDescriptor getActionsModelDescriptor() {
-    return LanguageAspect.ACTIONS.get(this);
-  }
-
-  public DefaultSModelDescriptor getConstraintsModelDescriptor() {
-    return LanguageAspect.CONSTRAINTS.get(this);
-  }
-
-  public DefaultSModelDescriptor getBehaviorModelDescriptor() {
-    return LanguageAspect.BEHAVIOR.get(this);
-  }
-
-  public DefaultSModelDescriptor getDataFlowModelDescriptor() {
-    return LanguageAspect.DATA_FLOW.get(this);
-  }
-
-  public DefaultSModelDescriptor getEditorModelDescriptor() {
-    return LanguageAspect.EDITOR.get(this);
-  }
-
-  public DefaultSModelDescriptor getTextgenModelDescriptor() {
-    return LanguageAspect.TEXT_GEN.get(this);
-  }
-
-  public Collection<EditableSModelDescriptor> getAspectModelDescriptors() {
-    Set<EditableSModelDescriptor> result = new HashSet<EditableSModelDescriptor>();
-    for (LanguageAspect aspect : LanguageAspect.values()) {
-      EditableSModelDescriptor asp = aspect.get(this);
-      if (asp != null) {
-        result.add(asp);
-      }
-    }
-    return result;
-  }
-
   public void invalidateCaches() {
     super.invalidateCaches();
     myNameToConceptCache.clear();
     myNamesWithNoConcepts.clear();
-    myAllExtendedLanguages = null;
   }
 
   public SNode findConceptDeclaration(@NotNull String conceptName) {
@@ -519,13 +458,22 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return null;
   }
 
-  //-----------stubs--------------
+  @Override
+  public Class getClass(String fqName) {
+    if (!fqName.startsWith(getModuleFqName() + ".stubs.")) return super.getClass(fqName);
+    try {
+      return myStubsLoader.loadClass(fqName);
+    } catch (ClassNotFoundException e) {
+      LOG.error(e);
+    }
+    return null;
+  }
 
-  public Collection<StubPath> getRuntimeStubPaths() {
-    Set<StubPath> result = new LinkedHashSet<StubPath>();
+  public Collection<String> getRuntimeStubPaths() {
+    Set<String> result = new LinkedHashSet<String>();
 
     for (ModelRoot me : getRuntimeModelsEntries()) {
-      result.add(new StubPath(me.getPath(), me.getManager()));
+      result.add(me.getPath());
     }
 
     return result;
@@ -538,17 +486,15 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   @Override
-  public Collection<StubPath> getOwnStubPaths() {
+  public Collection<String> getOwnStubPaths() {
     if (isPackaged()) {
       return Collections.singletonList(
-        new StubPath(
-          FileSystem.getInstance().getBundleHome(getDescriptorFile()).getPath(),
-          LanguageID.JAVA_MANAGER));
+          FileSystem.getInstance().getBundleHome(getDescriptorFile()).getPath());
     }
 
     IFile classesGen = ProjectPathUtil.getClassesGenFolder(getDescriptorFile());
     if (classesGen != null) {
-      return Collections.singletonList(new StubPath(classesGen.getPath(), LanguageID.JAVA_MANAGER));
+      return Collections.singletonList(classesGen.getPath());
     }
     return Collections.emptyList();
   }
@@ -632,7 +578,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     }
   }
 
-  protected Collection<ModelRoot> getRuntimeModelsEntries() {
+  public Collection<ModelRoot> getRuntimeModelsEntries() {
     return myLanguageDescriptor.getRuntimeStubModels();
   }
 
@@ -680,6 +626,30 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
     public void modelChangedDramatically(SModel model) {
       invalidateCaches();
+    }
+  }
+
+  private class MyClassLoader extends ClassLoader {
+    public MyClassLoader() {
+      super(Language.class.getClassLoader());
+    }
+
+    protected Class<?> findClass(String name) throws ClassNotFoundException {
+      byte[] bytes = findInCurrent(name);
+      if (bytes == null) return null;
+      definePackageIfNecessary(name);
+      return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
+    }
+
+    private void definePackageIfNecessary(String name) {
+      String pack = NameUtil.namespaceFromLongName(name);
+      if (getPackage(pack) != null) return;
+      definePackage(pack, null, null, null, null, null, null, null);
+    }
+
+    protected byte[] findInCurrent(String name) {
+      if (!Language.this.hasClass(name)) return null;
+      return Language.this.findClassBytes(name);
     }
   }
 }

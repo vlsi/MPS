@@ -19,6 +19,8 @@ import jetbrains.mps.TestMain;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.Language;
@@ -65,7 +67,7 @@ public class DependenciesTests {
 
     s1.addDependency(s2.getModuleReference(), false);
 
-    assertTrue(s1.getDependenciesManager().getAllVisibleModules().contains(s2));
+    assertTrue(new GlobalModuleDependenciesManager(s1).getModules(Deptype.VISIBLE).contains(s2));
     assertTrue(IterableUtil.asCollection(s1.getScope().getVisibleModules()).contains(s2));
   }
 
@@ -78,7 +80,7 @@ public class DependenciesTests {
     s2.addDependency(s3.getModuleReference(), true);
     s1.addDependency(s2.getModuleReference(), false);
 
-    assertTrue(s1.getDependenciesManager().getAllVisibleModules().contains(s3));
+    assertTrue(new GlobalModuleDependenciesManager(s1).getModules(Deptype.VISIBLE).contains(s3));
     assertTrue(IterableUtil.asCollection(s1.getScope().getVisibleModules()).contains(s3));
   }
 
@@ -91,7 +93,7 @@ public class DependenciesTests {
     s2.addDependency(s3.getModuleReference(), false);
     s1.addDependency(s2.getModuleReference(), false);
 
-    assertFalse(s1.getDependenciesManager().getAllVisibleModules().contains(s3));
+    assertFalse(new GlobalModuleDependenciesManager(s1).getModules(Deptype.VISIBLE).contains(s3));
     assertFalse(IterableUtil.asCollection(s1.getScope().getVisibleModules()).contains(s3));
   }
 
@@ -107,7 +109,7 @@ public class DependenciesTests {
 
     s1.addUsedLanguage(l1.getModuleReference());
 
-    assertFalse(s1.getDependenciesManager().getAllVisibleModules().contains(ld));
+    assertFalse(new GlobalModuleDependenciesManager(s1).getModules(Deptype.VISIBLE).contains(ld));
     assertFalse(IterableUtil.asCollection(s1.getScope().getVisibleModules()).contains(ld));
   }
 

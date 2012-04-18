@@ -24,7 +24,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -89,7 +89,7 @@ public class CheckUtil {
       }
 
       // if we are here, this means this solution is a part of MPS core 
-      for (Language language : SetSequence.fromSet(solution.getDependenciesManager().getAllUsedLanguages())) {
+      for (Language language : CollectionSequence.fromCollection(new GlobalModuleDependenciesManager(solution).getUsedLanguages())) {
         for (ModuleReference mr : CollectionSequence.fromCollection(language.getRuntimeModulesReferences())) {
           IModule module = MPSModuleRepository.getInstance().getModule(mr);
           if (module.getDescriptorFile() == null) {

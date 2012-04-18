@@ -38,6 +38,15 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     item.addInvalidationAction(myInvalidationListener);
   }
 
+  public boolean hasClass(String name) {
+    checkValidity();
+    for (IClassPathItem item : myChildren) {
+      boolean result = item.hasClass(name);
+      if (result) return true;
+    }
+    return false;
+  }
+
   public byte[] getClass(String name) {
     checkValidity();
     for (IClassPathItem item : myChildren) {

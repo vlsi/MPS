@@ -46,6 +46,5 @@
     <!--runtime-->
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
     <mps.LanguageLibrary dir=""/>
-    <mps.PluginBundle/>
   </extensions>
 </idea-plugin>

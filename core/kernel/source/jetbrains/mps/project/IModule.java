@@ -20,7 +20,6 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -94,13 +93,9 @@ public interface IModule extends ModelOwner {
 
   List<String> getSourcePaths();
 
-  Class getClass(String fqName);
-
   IClassPathItem getClassPathItem();
 
   IClassPathItem getModuleWithDependenciesClassPathItem();
-
-  BytecodeLocator getBytecodeLocator();
 
   boolean isCompileInMPS();
 
@@ -119,6 +114,8 @@ public interface IModule extends ModelOwner {
   void reloadFromDisk(boolean reloadClasses);
 
   boolean needReloading();
+
+  Class getClass(String className);
 
   public static interface ModelAdjuster {
     void adjust(SModelDescriptor model);
