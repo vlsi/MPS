@@ -24,8 +24,8 @@
     <copy todir="${build.tmp}/default/jetbrains.mps.lang.plugin.standalone-src.jar/module/languageModels">
       <fileset dir="${mps_home}/languages/languageDesign/plugin-standalone/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.plugin.standalone-src.jar/module/" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.lang.plugin.standalone-src.jar/module/">
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.plugin.standalone-src.jar/module/generator/template" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.lang.plugin.standalone-src.jar/module/generator/template">
       <fileset dir="${mps_home}/languages/languageDesign/plugin-standalone/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/ui/jetbrains.mps.lang.plugin.standalone-src.jar">
