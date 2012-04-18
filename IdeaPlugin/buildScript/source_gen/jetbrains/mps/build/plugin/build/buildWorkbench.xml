@@ -76,14 +76,14 @@
       <fileset dir="${mps_home}/languages/util/ideUiLanguage/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ide.uiLanguage-src.jar" />
     </jar>
-    <mkdir dir="${build.layout}/libs" />
-    <jar destfile="${build.layout}/libs/mps-resources.jar">
+    <mkdir dir="${build.layout}/lib" />
+    <jar destfile="${build.layout}/lib/mps-resources.jar">
       <fileset dir="${mps_home}/workbench/resources/source" />
     </jar>
-    <jar destfile="${build.layout}/libs/mps-resources_en.jar">
+    <jar destfile="${build.layout}/lib/mps-resources_en.jar">
       <fileset dir="${mps_home}/workbench/resources_en/source" />
     </jar>
-    <jar destfile="${build.layout}/libs/mps-boot.jar">
+    <jar destfile="${build.layout}/lib/mps-boot.jar">
       <fileset dir="${build.tmp}/java/out/startup" />
     </jar>
     <mkdir dir="${build.tmp}/default/mps-workbench.jar" />
@@ -128,7 +128,7 @@
     <copy todir="${build.tmp}/default/mps-workbench.jar/modules/jetbrains.mps.execution.api/">
       <fileset dir="${mps_home}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.api" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
-    <jar destfile="${build.layout}/libs/mps-workbench.jar">
+    <jar destfile="${build.layout}/lib/mps-workbench.jar">
       <fileset dir="${build.tmp}/java/out/mps-workbench" />
       <fileset dir="${build.tmp}/java/out/execution" />
       <fileset dir="${build.tmp}/java/out/uiLanguage.runtime" />

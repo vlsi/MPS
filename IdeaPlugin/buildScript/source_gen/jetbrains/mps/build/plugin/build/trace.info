@@ -3,6 +3,12 @@
   <root nodeId="2569834391839970845">
     <unitInfo nodeId="2569834391839970845" fileName="buildWorkbench.xml" startLine="1" startPosition="0" endLine="455" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildWorkbench" />
   </root>
+  <root nodeId="4301118715654192646">
+    <unitInfo nodeId="4301118715654192646" fileName="buildIDE.xml" startLine="1" startPosition="0" endLine="71" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildIDE" />
+  </root>
+  <root nodeId="4301118715654497533">
+    <unitInfo nodeId="4301118715654497533" fileName="buildDistribution.xml" startLine="1" startPosition="0" endLine="30" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildDistribution" />
+  </root>
   <root nodeId="5148601452480491524">
     <unitInfo nodeId="5148601452480491524" fileName="buildPlugin.xml" startLine="1" startPosition="0" endLine="143" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildPlugin" />
   </root>

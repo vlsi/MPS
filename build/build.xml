@@ -6,6 +6,8 @@
     <ant antfile="buildCore.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildWorkbench.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildExecution.xml" inheritAll="true" useNativeBasedir="true" />
+    <ant antfile="buildIDE.xml" inheritAll="true" useNativeBasedir="true" />
+    <ant antfile="buildDistribution.xml" inheritAll="true" useNativeBasedir="true" />
   </target>
   
   <target name="clean">
