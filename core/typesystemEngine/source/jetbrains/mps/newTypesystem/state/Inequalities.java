@@ -270,7 +270,13 @@ public class Inequalities {
   }
 
   private boolean solveRelationsForNode(SNode node) {
-    return solveRelationForNode(node, subTypingRelation) || solveRelationForNode(node, comparableRelation);
+    if (solveRelationForNode(node, subTypingRelation)) {
+      return true;
+    }
+    if (!mySolveOnlyRight) {
+      return solveRelationForNode(node, comparableRelation);
+    }
+    return false;
   }
 
   private Set<RelationBlock> getRelationBlocks(Set<RelationBlock> blocks, AbstractRelation relation) {
