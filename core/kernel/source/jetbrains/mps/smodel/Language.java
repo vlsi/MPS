@@ -201,7 +201,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   }
 
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
-    super.setModuleDescriptor(moduleDescriptor, reloadClasses);
     setLanguageDescriptor((LanguageDescriptor) moduleDescriptor, reloadClasses);
   }
 

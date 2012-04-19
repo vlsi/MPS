@@ -89,7 +89,6 @@ public class Solution extends ClassLoadingModule {
   }
 
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
-    super.setModuleDescriptor(moduleDescriptor, reloadClasses);
     setSolutionDescriptor((SolutionDescriptor) moduleDescriptor, reloadClasses);
   }
 

@@ -23,10 +23,6 @@ import java.net.URL;
 import java.util.*;
 
 public class ModuleClassLoader extends ClassLoader {
-  //todo can be removed?
-  private Map<String, Class> myClassesCache = new HashMap<String, Class>();
-  private final Object myLock = new Object();
-
   //this is for debug purposes (heap dumps)
   @SuppressWarnings({"UnusedDeclaration", "FieldCanBeLocal"})
   private boolean myDisposed;
@@ -58,24 +54,6 @@ public class ModuleClassLoader extends ClassLoader {
     int lastIndex = fqName.lastIndexOf('.');
     if (lastIndex == -1) return "";
     return fqName.substring(0, lastIndex);
-  }
-
-  public Class getClass(String fqName) {
-    synchronized (myLock) {
-      if (myClassesCache.containsKey(fqName)) {
-        return myClassesCache.get(fqName);
-      }
-
-      fqName = InternUtil.intern(fqName);
-      try {
-        Class<?> cls = Class.forName(fqName, false, this);
-        myClassesCache.put(fqName, cls);
-        return cls;
-      } catch (ClassNotFoundException e) {
-        myClassesCache.put(fqName, null);
-        return null;
-      }
-    }
   }
 
   protected Class findInDependencies(String name) {
@@ -132,7 +110,6 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   public void dispose() {
-    myClassesCache.clear();
     myDisposed = true;
   }
 
