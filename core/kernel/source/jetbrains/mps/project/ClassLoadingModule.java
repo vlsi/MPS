@@ -74,7 +74,7 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
     if (myClassLoadingDependencies == null) {
       ArrayList<IClassLoadingModule> res = new ArrayList<IClassLoadingModule>();
       res.add(this);
-      for (IModule m : new GlobalModuleDependenciesManager(this).getModules(Deptype.COMPILE)) {
+      for (IModule m : new GlobalModuleDependenciesManager(this).getModules(Deptype.EXECUTE)) {
         if (!(m instanceof ClassLoadingModule)) continue;
         res.add((IClassLoadingModule) m);
       }
