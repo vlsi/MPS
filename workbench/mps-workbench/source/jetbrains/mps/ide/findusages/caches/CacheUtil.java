@@ -16,26 +16,34 @@
 package jetbrains.mps.ide.findusages.caches;
 
 import com.intellij.openapi.fileTypes.FileTypeManager;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ex.ProjectRootManagerEx;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
 import java.util.HashSet;
 import java.util.Set;
 
 class CacheUtil {
-  static Set<VirtualFile> getIndexableRoots() {
+  static Set<VirtualFile> getIndexableRoots(Project project) {
     final Set<VirtualFile> files = new HashSet<VirtualFile>();
+    jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
+    if (mpsProject == null) {
+      return files;
+    }
 
-    for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
-      for (final SModelRoot root : m.getSModelRoots()) {
+    for (ModuleReference moduleReference : mpsProject.getModuleReferences()) {
+      IModule module = ModuleRepositoryFacade.getInstance().getModule(moduleReference);
+      for (final SModelRoot modelRoot : module.getSModelRoots()) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            VirtualFile file = VirtualFileUtils.getVirtualFile(root.getPath());
+            VirtualFile file = VirtualFileUtils.getVirtualFile(modelRoot.getPath());
             if (file != null) { //i.e. files doesn't exist
               files.add(file);
             }
@@ -47,7 +55,7 @@ class CacheUtil {
     return files;
   }
 
-  public static boolean checkFile(VirtualFile file,ProjectRootManagerEx manager) {
+  public static boolean checkFile(VirtualFile file, ProjectRootManagerEx manager) {
     if (FileTypeManager.getInstance().isFileIgnored(file.getName())) return false;
     if (manager.getFileIndex().isIgnored(file)) return false;
     return true;
