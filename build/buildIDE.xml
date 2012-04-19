@@ -26,9 +26,8 @@
     <copy todir="${build.layout}/MPS ${version}/languages">
       <fileset dir="${artifacts.buildExecution}/languages" />
     </copy>
-    <mkdir dir="${build.layout}/MPS ${version}/languages/util" />
-    <copy todir="${build.layout}/MPS ${version}/languages/util">
-      <fileset dir="${artifacts.buildUtilLanguages}/languages/util" />
+    <copy todir="${build.layout}/MPS ${version}/languages">
+      <fileset dir="${artifacts.buildUtilLanguages}/languages" />
     </copy>
     <mkdir dir="${build.layout}/MPS ${version}/languages/devkits" />
     <copy todir="${build.layout}/MPS ${version}/languages/devkits">

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="82atojyemsyw6c1sh8us0o3unhvjc9m">
+<dependencies version="2" modelHash="-4wn0g8w4m01hd00cem3ljder8xdz9n6">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-  <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" hash="-263w2y1s4ascyd0mfzxpzvuvpga87ie" />
+  <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" hash="4e88edu6xuwb7natqfc9vshaef6gy3m" />
   <dep model="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" />
   <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="7zs64gvc732tyk03ble656xkl3dp6pv" />
   <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" hash="4x08674bkg5546sm79mpk1a4dt13ver" />
@@ -50,7 +50,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="buildDistribution.xml" />
   </source>
-  <source id="4301118715654192646" name="buildIDE" hash="a11ark4sp9qkws8i0l4vq9vhm8j58oj">
+  <source id="4301118715654192646" name="buildIDE" hash="-6tlcuefvjubq77cibk2nosy2p4gchkx">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
     <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
@@ -68,7 +68,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="buildExecution.xml" />
   </source>
-  <source id="4301118715654819483" name="buildUtilLanguages" hash="-1vcaksbjvk741jtf04y9r9b8dxdc8n0">
+  <source id="4301118715654819483" name="buildUtilLanguages" hash="3n93snrffr3vurzg2g5ev50khd6sl5o">
     <dep root="2569834391839970845" />
     <dep root="7926701909975931624" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />

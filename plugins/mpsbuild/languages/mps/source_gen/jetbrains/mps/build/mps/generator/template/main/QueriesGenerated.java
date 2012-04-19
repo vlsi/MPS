@@ -281,7 +281,7 @@ public class QueriesGenerated {
         ListSequence.fromList(result).addElement(SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(runtime, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime"), "path", true)));
       }
     }
-    for (SNode module : Sequence.fromIterable(((MPSModulesClosure) _context.getVariable("var:mdeps")).getModules()).where(new IWhereFilter<SNode>() {
+    for (SNode module : Sequence.fromIterable(((MPSModulesClosure) _context.getVariable("var:mdeps")).getModules()).concat(Sequence.fromIterable(Sequence.<SNode>singleton(((MPSModulesClosure) _context.getVariable("var:mdeps")).getInitial()))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.getContainingRoot(_context.getNode()) == SNodeOperations.getContainingRoot(it);
       }

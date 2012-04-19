@@ -2513,6 +2513,7 @@
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
+        <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -4331,6 +4332,7 @@
         <path location="${mps_home}/languages/util/gtext/runtime/source_gen" />
       </src>
       <classpath>
+        <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
       </classpath>
     </javac>
