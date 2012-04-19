@@ -46,6 +46,7 @@ public class TransientModelsModule extends ClassLoadingModule   {
   //the module's models to be disposed
 
   public TransientModelsModule(IModule original, TransientModelsProvider component) {
+    assert !(original instanceof TransientModelsModule);
     myComponent = component;
     myOriginalModule = original;
     String fqName = original.getModuleFqName() + "@transient" + ourModuleCounter.getAndIncrement();
@@ -220,14 +221,14 @@ public class TransientModelsModule extends ClassLoadingModule   {
     protected Set<IModule> getInitialModules() {
       Set<IModule> result = new HashSet<IModule>();
       result.add(TransientModelsModule.this);
-      for (IModule m : GlobalScope.getInstance().getVisibleModules()) {
-        result.add(m);
-      }
+      result.addAll(myOriginalModule.getDependenciesManager().getRequiredModules());
+      // todo: o_O o_O o_O %)
+      result.addAll(myOriginalModule.getDependenciesManager().getAllRequiredModules());
       return result;
     }
 
     protected Set<Language> getInitialUsedLanguages() {
-      return CollectionUtil.filter(Language.class, getInitialModules());
+      return myOriginalModule.getDependenciesManager().getAllUsedLanguages();
     }
   }
 

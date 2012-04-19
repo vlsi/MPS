@@ -147,16 +147,22 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
     String packageName = null;
     if (reference instanceof DynamicReference) {
       shortName = reference.getResolveInfo();
-      final SModelReference modelReference = reference.getTargetSModelReference();
-      if (modelReference != null) {
-        packageName = modelReference.getLongName();
+      if (shortName.startsWith("[")) {
+        // todo: hack, remove with [] removing
+        packageName = shortName.substring(1, shortName.lastIndexOf("]")).trim();
+        shortName = shortName.substring(shortName.lastIndexOf("]") + 1).trim();
       } else {
-        int lastDot = shortName.lastIndexOf('.');
-        if(lastDot >= 0) {
-          packageName = shortName.substring(0, lastDot);
-          shortName = shortName.substring(lastDot + 1);
-          if (shortName.indexOf('$') >= 0) {
-            shortName = shortName.replace('$', '.');
+        final SModelReference modelReference = reference.getTargetSModelReference();
+        if (modelReference != null) {
+          packageName = modelReference.getLongName();
+        } else {
+          int lastDot = shortName.lastIndexOf('.');
+          if (lastDot >= 0) {
+            packageName = shortName.substring(0, lastDot);
+            shortName = shortName.substring(lastDot + 1);
+            if (shortName.indexOf('$') >= 0) {
+              shortName = shortName.replace('$', '.');
+            }
           }
         }
       }

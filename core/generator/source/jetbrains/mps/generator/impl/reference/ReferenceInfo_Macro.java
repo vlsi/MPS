@@ -22,14 +22,9 @@ import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.Set;
 
 /**
  * Created by: Sergey Dmitriev
@@ -96,35 +91,6 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
       myOutputTargetNode = (SNode) result;
     } else if (result != null) {
       String resolveInfo = (String) result;
-      // we are expecting:
-      // - just resolve-info
-      // - [models name]resolve-info
-      // - []resolve-info
-      if (resolveInfo.startsWith("[")) {
-        String[] modelNameAndTheRest = resolveInfo.split("]");
-        if (modelNameAndTheRest.length > 1 || (modelNameAndTheRest.length == 1 && resolveInfo.endsWith("]"))) {
-          resolveInfo = resolveInfo.substring(resolveInfo.indexOf("]") + 1).trim();
-          String modelName = modelNameAndTheRest[0].substring(1).trim();
-          if (modelName.length() > 0) {
-            // model: either current output or java_stub
-            if (!modelName.equals(generator.getOutputModel().getLongName())) {
-              // external java_stub
-              String stereo = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
-              Iterable<SModelDescriptor> models = getVisibleModels(generator);
-              SModelId id = StubMigrationHelper.convertModelUIDInScope(stereo + "#" + modelName, models);
-              myExternalTargetModelReference = new SModelReference(new SModelFqName(modelName, stereo), id);
-            }
-          }
-        }
-        if (myExternalTargetModelReference == null) {
-          myExternalTargetModelReference = generator.getOutputModel().getSModelReference();
-        }
-        // myExternalTargetModelReference now is not null
-        // todo: check for empty long names
-        resolveInfo = myExternalTargetModelReference.getLongName() + "." + resolveInfo;
-        myExternalTargetModelReference = null; // get rid of this
-      }
-
       myResolveInfoForDynamicResolve = resolveInfo;
     }
 
@@ -145,19 +111,6 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
           GeneratorUtil.describeIfExists(getMacroNode(), "reference macro"));
         generator.getGeneratorSessionContext().keepTransientModel(generator.getInputModel(), true);
       }
-    }
-  }
-
-  private Iterable<SModelDescriptor> getVisibleModels(ITemplateGenerator generator) {
-    IModule module = generator.getGeneratorSessionContext().getOriginalInputModel().getModelDescriptor().getModule();
-    if (module == null) {
-      return generator.getScope().getModelDescriptors();
-    } else {
-      ArrayList<SModelDescriptor> reqModels = new ArrayList<SModelDescriptor>();
-      for (IModule m : new GlobalModuleDependenciesManager(module).getModules(Deptype.COMPILE)) {
-        reqModels.addAll(m.getOwnModelDescriptors());
-      }
-      return reqModels;
     }
   }
 
