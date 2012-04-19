@@ -22,6 +22,7 @@ public class Migration21_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new AddSourcesToModelRoots_Action());
     addAction(new AddStubsToModelRoots_Action());
     addAction(new CorrectIconsAfterPluhinMove_Action());
+    addAction(new ExecuteJavaModelCheckerFixes_Action());
     addAction(new ExecuteModelCheckerFixes_Action());
     addAction(new FixMissingImportsInProject_Action());
     addAction(new MigrationScript_APIMigration_Action());

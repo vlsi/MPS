@@ -3141,7 +3141,7 @@
     <nodeInfo nodeId="6735645123418935521" fileName="ModelCheckerExecutor.java" startLine="106" startPosition="10" endLine="107" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6735645123418854788" fileName="ModelCheckerExecutor.java" startLine="107" startPosition="61" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6735645123418936280" fileName="ModelCheckerExecutor.java" startLine="108" startPosition="0" endLine="109" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="32328476334654823" fileName="ModelCheckerExecutor.java" startLine="114" startPosition="57" endLine="115" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="32328476334654823" fileName="ModelCheckerExecutor.java" startLine="114" startPosition="59" endLine="115" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="32328476334654836" fileName="ModelCheckerExecutor.java" startLine="115" startPosition="101" endLine="116" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="32328476334654842" fileName="ModelCheckerExecutor.java" startLine="116" startPosition="89" endLine="117" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="32328476334654851" fileName="ModelCheckerExecutor.java" startLine="117" startPosition="85" endLine="118" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3251,7 +3251,7 @@
     <scopeInfo nodeId="6586015060859883907" fileName="ModelCheckerExecutor.java" startLine="60" startPosition="25" endLine="65" endPosition="28" />
     <scopeInfo nodeId="32328476334654799" fileName="ModelCheckerExecutor.java" startLine="74" startPosition="95" endLine="79" endPosition="0" />
     <scopeInfo nodeId="6735645123418935599" fileName="ModelCheckerExecutor.java" startLine="99" startPosition="48" endLine="104" endPosition="13" />
-    <scopeInfo nodeId="32328476334654811" fileName="ModelCheckerExecutor.java" startLine="114" startPosition="57" endLine="119" endPosition="28">
+    <scopeInfo nodeId="32328476334654811" fileName="ModelCheckerExecutor.java" startLine="114" startPosition="59" endLine="119" endPosition="28">
       <varInfo nodeId="32328476334654824" varName="specificCheckers" />
     </scopeInfo>
     <scopeInfo nodeId="6586015060859883053" fileName="ModelCheckerExecutor.java" startLine="123" startPosition="27" endLine="128" endPosition="0" />

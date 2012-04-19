@@ -12,21 +12,25 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptExecutor;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.ide.modelchecker.actions.ModelCheckerExecutor;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.IOperationContext;
+import java.util.List;
+import jetbrains.mps.ide.modelchecker.actions.SpecificChecker;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import com.intellij.openapi.command.CommandProcessorEx;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import java.awt.Frame;
 
-public class MigrationScript_JavaAPIMigration_Action extends BaseAction {
+public class ExecuteJavaModelCheckerFixes_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(MigrationScript_JavaAPIMigration_Action.class);
+  protected static Log log = LogFactory.getLog(ExecuteJavaModelCheckerFixes_Action.class);
 
-  public MigrationScript_JavaAPIMigration_Action() {
-    super("Apply MPS Java API Migration", "", ICON);
+  public ExecuteJavaModelCheckerFixes_Action() {
+    super("Execute Java ModelChecker Fixes", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -36,7 +40,7 @@ public class MigrationScript_JavaAPIMigration_Action extends BaseAction {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "MigrationScript_JavaAPIMigration", t);
+        log.error("User's action doUpdate method failed. Action:" + "ExecuteJavaModelCheckerFixes", t);
       }
       this.disable(event.getPresentation());
     }
@@ -60,9 +64,14 @@ public class MigrationScript_JavaAPIMigration_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      SNodePointer script = new SNodePointer("r:3e625b1a-6e5a-478f-9fe5-a307d84995c3(jetbrains.mps.ide.java.migration.scripts)", "4397798827966744636");
-
-      MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "MPS Java API Migration", ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
+      ModelCheckerExecutor executor = new ModelCheckerExecutor(((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class).getModules(), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project"))) {
+        @Override
+        protected List<SpecificChecker> getMySpecificCheckers() {
+          List<SpecificChecker> specificCheckers = ListSequence.fromList(new ArrayList<SpecificChecker>());
+          ListSequence.fromList(specificCheckers).addElement(new MethodCallChecker());
+          return specificCheckers;
+        }
+      };
       if (CommandProcessorEx.getInstance().getCurrentCommand() != null) {
         executor.execImmediately(new ProgressMonitorAdapter(new EmptyProgressIndicator()));
       } else {
@@ -70,7 +79,7 @@ public class MigrationScript_JavaAPIMigration_Action extends BaseAction {
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "MigrationScript_JavaAPIMigration", t);
+        log.error("User's action execute method failed. Action:" + "ExecuteJavaModelCheckerFixes", t);
       }
     }
   }

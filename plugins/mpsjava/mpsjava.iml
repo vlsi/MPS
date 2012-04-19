@@ -34,6 +34,7 @@
     <orderEntry type="module" module-name="actions-runtime" />
     <orderEntry type="module" module-name="baseLanguage-search" />
     <orderEntry type="module" module-name="findUsages-runtime" />
+    <orderEntry type="module" module-name="modelchecker" />
   </component>
 </module>
 

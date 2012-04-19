@@ -34,6 +34,7 @@ public class Migrations21_ActionGroup extends GeneratedActionGroup {
       Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.MigrationScript_ResolveBrokenRefs_Action");
       Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.OptimizeImportsInProject_Action");
       Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.ExecuteModelCheckerFixes_Action");
+      Migrations21_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration21.ExecuteJavaModelCheckerFixes_Action");
       {
         LabelledAnchor action = new LabelledAnchor(Migrations21_ActionGroup.LABEL_ID_optional);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
