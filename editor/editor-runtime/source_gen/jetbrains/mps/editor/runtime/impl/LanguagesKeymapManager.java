@@ -6,26 +6,28 @@ import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ReloadAdapter;
 import java.util.Map;
-
-import jetbrains.mps.smodel.*;
-
+import jetbrains.mps.smodel.Language;
 import java.util.List;
 import jetbrains.mps.nodeEditor.EditorCellKeyMap;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Collections;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.util.NameUtil;
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.smodel.ModuleRepositoryAdapter;
 import jetbrains.mps.project.IModule;
 
 public class LanguagesKeymapManager implements ApplicationComponent {

@@ -28,7 +28,6 @@ import com.intellij.execution.process.ProcessOutputTypes;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import junit.framework.Assert;
 
-
 @MPSLaunch
 public class JavaCommand_Test extends BaseTransformationTest4 {
   @Test

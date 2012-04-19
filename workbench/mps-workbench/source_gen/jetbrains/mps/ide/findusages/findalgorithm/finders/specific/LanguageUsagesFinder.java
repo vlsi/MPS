@@ -9,13 +9,13 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelOperations;
@@ -71,8 +71,7 @@ public class LanguageUsagesFinder implements IFinder {
   }
 
   private void collectUsagesInLanguage(Language searchedLanguage, Language language, SearchResults searchResults) {
-
-    if (ModuleUtil.refsToLanguages(language.getExtendedLanguageRefs()).contains(searchedLanguage)) {
+    if (language.getExtendedLanguageRefs().contains(searchedLanguage.getModuleReference())) {
       searchResults.getSearchResults().add(new SearchResult<Language>(language, EXTENDING_LANGUAGES));
     }
     if (new GlobalModuleDependenciesManager(language).getUsedLanguages().contains(searchedLanguage)) {
