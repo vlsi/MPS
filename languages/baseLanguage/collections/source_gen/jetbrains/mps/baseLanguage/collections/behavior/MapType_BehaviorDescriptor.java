@@ -19,6 +19,10 @@ public class MapType_BehaviorDescriptor extends Type_BehaviorDescriptor {
     return MapType_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
 
+  public boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
+    return MapType_Behavior.virtual_canBeCoerced_6321644624958501287(thisNode, conceptFqName);
+  }
+
   public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return MapType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
   }
