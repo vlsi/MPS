@@ -6788,7 +6788,7 @@
           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="4301118715654325754">
             <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="4301118715654325755">
               <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="4301118715654325756">
-                <property name="text" nameId="3ior.4903714810883755350" value="svn4ideaOld" />
+                <property name="text" nameId="3ior.4903714810883755350" value="svn4idea" />
               </node>
             </node>
             <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Copy" typeId="3ior.5248329904287857081" id="4301118715654325757">
@@ -6797,7 +6797,7 @@
                   <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4301118715654325760">
                     <property name="head" nameId="3ior.8618885170173601779" value="plugins" />
                     <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4301118715654325761">
-                      <property name="head" nameId="3ior.8618885170173601779" value="svn4ideaOld" />
+                      <property name="head" nameId="3ior.8618885170173601779" value="svn4idea" />
                     </node>
                   </node>
                 </node>
