@@ -6077,16 +6077,6 @@
               <node role="condition" roleId="tpee.1163668914799" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5667264144661016911">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2191995028863072628" resolveInfo="isMac" />
               </node>
-              <node role="ifTrue" roleId="tpee.1163668922816" type="tpfo.InlineRegexpExpression" typeId="tpfo.1174510540317" id="3065485475348898500">
-                <node role="regexp" roleId="tpfo.1174510571016" type="tpfo.SeqRegexp" typeId="tpfo.1174484562151" id="1637150834356120500">
-                  <node role="left" roleId="tpfo.1174485176897" type="tpfo.StringLiteralRegexp" typeId="tpfo.1174482753837" id="3065485475348898505">
-                    <property name="text" nameId="tpfo.1174482761807" value="IntelliJIdea" />
-                  </node>
-                  <node role="right" roleId="tpfo.1174485181039" type="tpfo.StarRegexp" typeId="tpfo.1174482808826" id="1637150834356120505">
-                    <node role="regexp" roleId="tpfo.1174485243418" type="tpfo.DotRegexp" typeId="tpfo.1174556813606" id="1637150834356120504" />
-                  </node>
-                </node>
-              </node>
               <node role="ifFalse" roleId="tpee.1163668934364" type="tpfo.InlineRegexpExpression" typeId="tpfo.1174510540317" id="5068214522080967978">
                 <node role="regexp" roleId="tpfo.1174510571016" type="tpfo.OrRegexp" typeId="tpfo.1174482769792" id="5068214522080967982">
                   <node role="right" roleId="tpfo.1174485181039" type="tpfo.ParensRegexp" typeId="tpfo.1174491169200" id="5068214522080967985">
@@ -6106,6 +6096,30 @@
                       </node>
                       <node role="right" roleId="tpfo.1174485181039" type="tpfo.StarRegexp" typeId="tpfo.1174482808826" id="5068214522080967989">
                         <node role="regexp" roleId="tpfo.1174485243418" type="tpfo.DotRegexp" typeId="tpfo.1174556813606" id="5068214522080967990" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="ifTrue" roleId="tpee.1163668922816" type="tpfo.InlineRegexpExpression" typeId="tpfo.1174510540317" id="2089442845145561393">
+                <node role="regexp" roleId="tpfo.1174510571016" type="tpfo.OrRegexp" typeId="tpfo.1174482769792" id="2089442845145561394">
+                  <node role="right" roleId="tpfo.1174485181039" type="tpfo.ParensRegexp" typeId="tpfo.1174491169200" id="2089442845145561395">
+                    <node role="expr" roleId="tpfo.1174491174779" type="tpfo.SeqRegexp" typeId="tpfo.1174484562151" id="2089442845145561396">
+                      <node role="left" roleId="tpfo.1174485176897" type="tpfo.StringLiteralRegexp" typeId="tpfo.1174482753837" id="2089442845145561397">
+                        <property name="text" nameId="tpfo.1174482761807" value="IdeaIC" />
+                      </node>
+                      <node role="right" roleId="tpfo.1174485181039" type="tpfo.StarRegexp" typeId="tpfo.1174482808826" id="2089442845145561398">
+                        <node role="regexp" roleId="tpfo.1174485243418" type="tpfo.DotRegexp" typeId="tpfo.1174556813606" id="2089442845145561399" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="left" roleId="tpfo.1174485176897" type="tpfo.ParensRegexp" typeId="tpfo.1174491169200" id="2089442845145561400">
+                    <node role="expr" roleId="tpfo.1174491174779" type="tpfo.SeqRegexp" typeId="tpfo.1174484562151" id="2089442845145561401">
+                      <node role="left" roleId="tpfo.1174485176897" type="tpfo.StringLiteralRegexp" typeId="tpfo.1174482753837" id="2089442845145561402">
+                        <property name="text" nameId="tpfo.1174482761807" value="IntelliJIdea" />
+                      </node>
+                      <node role="right" roleId="tpfo.1174485181039" type="tpfo.StarRegexp" typeId="tpfo.1174482808826" id="2089442845145561403">
+                        <node role="regexp" roleId="tpfo.1174485243418" type="tpfo.DotRegexp" typeId="tpfo.1174556813606" id="2089442845145561404" />
                       </node>
                     </node>
                   </node>
