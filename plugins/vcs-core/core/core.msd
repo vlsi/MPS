@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.ide.vcs.core" uuid="85836058-a162-41d7-bb1d-52e99d873f28" compileInMPS="false">
   <models>
-    <modelRoot path="${mps_home}/plugins/svn4ideaOld/lib/sequence-library.jar">
+    <modelRoot path="${mps_home}/plugins/svn4idea/lib/sequence-library.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
-    <modelRoot path="${mps_home}/plugins/svn4ideaOld/lib/svnkit.jar">
+    <modelRoot path="${mps_home}/plugins/svn4idea/lib/svnkit.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
     <modelRoot path="${solution_descriptor}/models" />

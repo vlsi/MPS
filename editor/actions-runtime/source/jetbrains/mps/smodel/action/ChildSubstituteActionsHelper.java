@@ -263,7 +263,7 @@ public class ChildSubstituteActionsHelper {
     final String targetConcept = NameUtil.nodeFQName(SModelUtil.getLinkDeclarationTarget(smartReference));
     List<INodeSubstituteAction> actions = new ArrayList<INodeSubstituteAction>();
     IReferencePresentation presentation = refDescriptor.getReferencePresentation();
-    List<SNode> referentNodes = searchScope.getAvailableElements(null);
+    Iterable<SNode> referentNodes = searchScope.getAvailableElements(null);
     for (SNode referentNode : referentNodes) {
       if(referentNode == null || !referentNode.isInstanceOfConcept(targetConcept)) continue;
       actions.add(new SmartRefChildNodeSubstituteAction(referentNode, parentNode,

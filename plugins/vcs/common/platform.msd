@@ -4,7 +4,7 @@
     <modelRoot path="${mps_home}/plugins/git4idea/lib/git4idea.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
-    <modelRoot path="${mps_home}/plugins/svn4ideaOld/lib/svn4ideaOld.jar">
+    <modelRoot path="${mps_home}/plugins/svn4idea/lib/svn4idea.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
     <modelRoot path="${solution_descriptor}/models" />

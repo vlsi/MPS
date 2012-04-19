@@ -19,6 +19,15 @@
   <applicationService serviceInterface="com.intellij.psi.templateLanguages.TemplateDataLanguagePatterns"
                       serviceImplementation="com.intellij.psi.templateLanguages.TemplateDataLanguagePatterns"/>
   <!--MPS Patch Ended-->
+
+  <!-- Fix NPE in EditorImpl.reinitSettings() now requiring CodeStyleSettingsManager -->
+  <projectService serviceInterface="com.intellij.psi.codeStyle.ProjectCodeStyleSettingsManager"
+                  serviceImplementation="com.intellij.psi.codeStyle.ProjectCodeStyleSettingsManager"/>
+  <applicationService serviceInterface="com.intellij.psi.codeStyle.CodeStyleSchemes"
+                      serviceImplementation="com.intellij.psi.impl.source.codeStyle.CodeStyleSchemesImpl"/>
+
+  <moduleRendererFactory implementation="com.intellij.ide.util.PlatformModuleRendererFactory" order="last"/>
+
   <!--MPS Patch:-->
   <selectInTarget implementation="com.intellij.ide.impl.ProjectViewSelectInGroupTarget"/>
 
@@ -274,7 +283,8 @@
   <gotoFileContributor implementation="jetbrains.mps.MPSGoToFileContributor"/>
   <!--MPS Patch End-->
 
-  <statistics.usagesCollector  implementation="com.intellij.ide.plugins.PluginsUsagesCollector"/>
+  <statistics.usagesCollector  implementation="com.intellij.ide.plugins.DisabledPluginsUsagesCollector"/>
+  <statistics.usagesCollector  implementation="com.intellij.ide.plugins.NonBundledPluginsUsagesCollector"/>
   <statistics.usagesCollector implementation="com.intellij.featureStatistics.FeaturesUsageCollector"/>
   <statistics.usagesCollector implementation="com.intellij.openapi.vcs.statistics.VcsUsagesCollector"/>
 

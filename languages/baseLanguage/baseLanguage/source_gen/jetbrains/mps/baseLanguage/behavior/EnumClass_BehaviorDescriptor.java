@@ -17,6 +17,14 @@ public class EnumClass_BehaviorDescriptor extends ClassConcept_BehaviorDescripto
     return EnumClass_Behavior.virtual_getMembers_1213877531970(thisNode);
   }
 
+  public SNode virtual_getSuperclass_1240936569950(SNode thisNode) {
+    return EnumClass_Behavior.virtual_getSuperclass_1240936569950(thisNode);
+  }
+
+  public List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
+    return EnumClass_Behavior.virtual_getExtendedClassifierTypes_2201875424516179426(thisNode);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.EnumClass";

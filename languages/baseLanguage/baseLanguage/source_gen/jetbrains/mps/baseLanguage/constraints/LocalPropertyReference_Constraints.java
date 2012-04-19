@@ -10,21 +10,16 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
-import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.search.VisibilityUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.scope.EmptyScope;
 
 public class LocalPropertyReference_Constraints extends BaseConstraintsDescriptor {
-  private static SNodePointer breakingNode_pyukpt_a0a1a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "5862977038373005299");
+  private static SNodePointer breakingNode_pyukpt_a0a0a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137259");
 
   public LocalPropertyReference_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.LocalPropertyReference");
@@ -42,33 +37,21 @@ public class LocalPropertyReference_Constraints extends BaseConstraintsDescripto
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
+        return new BaseScopeProvider() {
           @Override
-          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode classifier = ClassConcept_Behavior.getContextClass_8008512149545173402(_context.getEnclosingNode());
-            if (classifier == null) {
-              return null;
-            }
-            List<SNode> resultProperties = new ArrayList<SNode>();
-            List<SNode> classifiers = new ClassifierAndSuperClassifiersScope(classifier).getClassifiers();
-            for (SNode cl : ListSequence.fromList(classifiers)) {
-              if (SNodeOperations.isInstanceOf(cl, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-                for (SNode property : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(cl, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "property", true))) {
-                  if (VisibilityUtil.isVisible(((_context.getReferenceNode() == null) ?
-                    _context.getEnclosingNode() :
-                    _context.getReferenceNode()
-                  ), property)) {
-                    ListSequence.fromList(resultProperties).addElement(property);
-                  }
-                }
-              }
-            }
-            return resultProperties;
+          public SNodePointer getSearchScopeValidatorNode() {
+            return breakingNode_pyukpt_a0a0a0a0a1a0b0a1a0;
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
-            return breakingNode_pyukpt_a0a1a0a0a1a0b0a1a0;
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            {
+              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Property"));
+              return (scope == null ?
+                new EmptyScope() :
+                scope
+              );
+            }
           }
         };
       }

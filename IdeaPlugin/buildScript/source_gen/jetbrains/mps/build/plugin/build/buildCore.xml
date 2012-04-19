@@ -8,7 +8,7 @@
   
   <path id="path.java.library.core-libraries">
     <fileset file="${artifacts.IDEA}/lib/ecj.jar" />
-    <fileset file="${artifacts.IDEA}/lib/guava-r09.jar" />
+    <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
     <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
     <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
     <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
@@ -42,7 +42,7 @@
       <fileset file="${mps_home}/lib/diffutils-1.2.1.jar" />
     </copy>
     <copy todir="${build.layout}/mps-core/lib">
-      <fileset file="${mps_home}/lib/guava-r09.jar" />
+      <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
     </copy>
     <copy todir="${build.layout}/mps-core/lib">
       <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
@@ -1130,6 +1130,44 @@
       <fileset dir="${mps_home}/languages/languageDesign/refactoring/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.refactoring-src.jar" />
     </jar>
+    <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.scopes.jar">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.scopes" />
+      <fileset dir="${mps_home}/languages/languageDesign/scopes" includes="icons/**, resources/**" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.scopes-src.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.scopes-src.jar/module" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.lang.scopes-src.jar/module">
+      <fileset file="${mps_home}/languages/languageDesign/scopes/scopes.mpl" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.scopes-src.jar/module/languageModels" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.lang.scopes-src.jar/module/languageModels">
+      <fileset dir="${mps_home}/languages/languageDesign/scopes/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.scopes-src.jar/module/generator/template" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.lang.scopes-src.jar/module/generator/template">
+      <fileset dir="${mps_home}/languages/languageDesign/scopes/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.scopes-src.jar">
+      <fileset dir="${mps_home}/languages/languageDesign/scopes/source_gen" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.lang.scopes-src.jar" />
+    </jar>
+    <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.scopes.runtime" />
+      <fileset dir="${mps_home}/languages/languageDesign/scopes/runtime" includes="icons/**, resources/**" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.scopes.runtime-src.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.scopes.runtime-src.jar/module" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.lang.scopes.runtime-src.jar/module">
+      <fileset file="${mps_home}/languages/languageDesign/scopes/runtime/runtime.msd" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.scopes.runtime-src.jar/module/models" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.lang.scopes.runtime-src.jar/module/models">
+      <fileset dir="${mps_home}/languages/languageDesign/scopes/runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.scopes.runtime-src.jar">
+      <fileset dir="${mps_home}/languages/languageDesign/scopes/runtime/source_gen" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.lang.scopes.runtime-src.jar" />
+    </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.script.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.script" />
       <fileset dir="${mps_home}/languages/languageDesign/script" includes="icons/**, resources/**" />
@@ -1673,6 +1711,23 @@
       <fileset dir="${mps_home}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.regexp.runtime-src.jar" />
     </jar>
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.scopes" />
+      <fileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.scopes" includes="icons/**, resources/**" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.scopes-src.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.scopes-src.jar/module" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.scopes-src.jar/module">
+      <fileset file="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.scopes/scopes.msd" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.scopes-src.jar/module/models" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.scopes-src.jar/module/models">
+      <fileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.scopes/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes-src.jar">
+      <fileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.scopes/source_gen" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.scopes-src.jar" />
+    </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.tuples" />
       <fileset dir="${mps_home}/languages/baseLanguage/tuples/languages/tuples" includes="icons/**, resources/**" />
@@ -1715,6 +1770,27 @@
       <fileset dir="${mps_home}/languages/baseLanguage/unitTest/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.unitTest-src.jar" />
     </jar>
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.varVariable.jar">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.varVariable" />
+      <fileset dir="${mps_home}/languages/baseLanguage/varVariable" includes="icons/**, resources/**" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.varVariable-src.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.varVariable-src.jar/module" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.varVariable-src.jar/module">
+      <fileset file="${mps_home}/languages/baseLanguage/varVariable/varVariable.mpl" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.varVariable-src.jar/module/languageModels" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.varVariable-src.jar/module/languageModels">
+      <fileset dir="${mps_home}/languages/baseLanguage/varVariable/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.varVariable-src.jar/module/generator/template" />
+    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.varVariable-src.jar/module/generator/template">
+      <fileset dir="${mps_home}/languages/baseLanguage/varVariable/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.varVariable-src.jar">
+      <fileset dir="${mps_home}/languages/baseLanguage/varVariable/source_gen" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.varVariable-src.jar" />
+    </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguageInternal.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguageInternal" />
       <fileset dir="${mps_home}/languages/baseLanguage/baseLanguageInternal" includes="icons/**, resources/**" />
@@ -1747,7 +1823,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.mps-tuples, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-ant, java.compile.mps-platform, java.compile.mps-debugger, java.compile.mps-editor, java.compile.mps-test, java.compile.java.modules.cycle.1, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.baseLanguage.collections, java.compile.jetbrains.mps.baseLanguageInternal, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.checkedDots, java.compile.jetbrains.mps.baseLanguage.classifiers, java.compile.jetbrains.mps.baseLanguage.constructors, java.compile.jetbrains.mps.baseLanguage.javadoc, java.compile.jetbrains.mps.baseLanguage.jdk7, java.compile.jetbrains.mps.baseLanguage.logging, java.compile.jetbrains.mps.baseLanguage.overloadedOperators, java.compile.jetbrains.mps.baseLanguage.tuples, java.compile.jetbrains.mps.baseLanguage.unitTest, java.compile.jetbrains.mps.baseLanguage.extensionMethods, java.compile.jetbrains.mps.baseLanguage.regexp, java.compile.jetbrains.mps.baseLanguage.regexp.runtime, java.compile.jetbrains.mps.baseLanguage.builders, java.compile.jetbrains.mps.lang.dataFlow.analyzers, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.actions, java.compile.jetbrains.mps.lang.behavior, java.compile.jetbrains.mps.lang.constraints, java.compile.jetbrains.mps.lang.dataFlow, java.compile.jetbrains.mps.lang.editor, java.compile.jetbrains.mps.lang.editor.table, java.compile.jetbrains.mps.lang.editor.editorTest, java.compile.jetbrains.mps.lang.editor.table.runtime, java.compile.jetbrains.mps.lang.extension, java.compile.java.modules.cycle.2, java.compile.jetbrains.mps.lang.findUsages, java.compile.jetbrains.mps.lang.descriptor, java.compile.jetbrains.mps.lang.generator.generationContext, java.compile.jetbrains.mps.lang.generator.generationParameters, java.compile.jetbrains.mps.lang.generator, java.compile.jetbrains.mps.lang.intentions, java.compile.jetbrains.mps.lang.pattern, java.compile.jetbrains.mps.lang.plugin, java.compile.jetbrains.mps.lang.checkedName, java.compile.jetbrains.mps.lang.access, java.compile.jetbrains.mps.lang.resources, java.compile.jetbrains.mps.lang.project, java.compile.jetbrains.mps.lang.quotation, java.compile.jetbrains.mps.lang.refactoring, java.compile.jetbrains.mps.lang.script, java.compile.jetbrains.mps.lang.sharedConcepts, java.compile.jetbrains.mps.lang.smodel, java.compile.jetbrains.mps.lang.smodelTests, java.compile.jetbrains.mps.lang.structure, java.compile.jetbrains.mps.lang.stubs, java.compile.jetbrains.mps.lang.test, java.compile.jetbrains.mps.lang.test.runtime, java.compile.jetbrains.mps.lang.textGen, java.compile.jetbrains.mps.lang.traceable, java.compile.jetbrains.mps.lang.typesystem, java.compile.java.modules.cycle.3, java.compile.jetbrains.mps.xml, java.compile.jetbrains.mps.xmlInternal, java.compile.jetbrains.mps.xmlSchema, java.compile.jetbrains.mps.xmlQuery, java.compile.jetbrains.mps.gtext, java.compile.jetbrains.mps.gtext.runtime, java.compile.jetbrains.mps.make.facet, java.compile.jetbrains.mps.make.script, java.compile.jetbrains.mps.build.gentest, java.compile.jetbrains.mps.build.reduced" />
+  <target name="compileJava" depends="java.compile.mps-tuples, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-ant, java.compile.mps-platform, java.compile.mps-debugger, java.compile.mps-editor, java.compile.mps-test, java.compile.java.modules.cycle.1, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.baseLanguage.collections, java.compile.jetbrains.mps.baseLanguageInternal, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.checkedDots, java.compile.jetbrains.mps.baseLanguage.classifiers, java.compile.jetbrains.mps.baseLanguage.constructors, java.compile.jetbrains.mps.baseLanguage.javadoc, java.compile.jetbrains.mps.baseLanguage.jdk7, java.compile.jetbrains.mps.baseLanguage.logging, java.compile.jetbrains.mps.baseLanguage.overloadedOperators, java.compile.jetbrains.mps.baseLanguage.tuples, java.compile.jetbrains.mps.baseLanguage.unitTest, java.compile.jetbrains.mps.baseLanguage.extensionMethods, java.compile.jetbrains.mps.baseLanguage.regexp, java.compile.jetbrains.mps.baseLanguage.regexp.runtime, java.compile.jetbrains.mps.baseLanguage.scopes, java.compile.jetbrains.mps.baseLanguage.builders, java.compile.jetbrains.mps.baseLanguage.varVariable, java.compile.jetbrains.mps.lang.dataFlow.analyzers, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.actions, java.compile.jetbrains.mps.lang.behavior, java.compile.jetbrains.mps.lang.constraints, java.compile.jetbrains.mps.lang.dataFlow, java.compile.jetbrains.mps.lang.editor, java.compile.jetbrains.mps.lang.editor.table, java.compile.jetbrains.mps.lang.editor.editorTest, java.compile.jetbrains.mps.lang.editor.table.runtime, java.compile.jetbrains.mps.lang.extension, java.compile.java.modules.cycle.2, java.compile.jetbrains.mps.lang.findUsages, java.compile.jetbrains.mps.lang.descriptor, java.compile.jetbrains.mps.lang.generator.generationContext, java.compile.jetbrains.mps.lang.generator.generationParameters, java.compile.jetbrains.mps.lang.generator, java.compile.jetbrains.mps.lang.intentions, java.compile.jetbrains.mps.lang.pattern, java.compile.jetbrains.mps.lang.plugin, java.compile.jetbrains.mps.lang.checkedName, java.compile.jetbrains.mps.lang.access, java.compile.jetbrains.mps.lang.resources, java.compile.jetbrains.mps.lang.project, java.compile.jetbrains.mps.lang.quotation, java.compile.jetbrains.mps.lang.refactoring, java.compile.jetbrains.mps.lang.script, java.compile.jetbrains.mps.lang.sharedConcepts, java.compile.jetbrains.mps.lang.smodel, java.compile.jetbrains.mps.lang.smodelTests, java.compile.jetbrains.mps.lang.structure, java.compile.jetbrains.mps.lang.stubs, java.compile.jetbrains.mps.lang.test, java.compile.jetbrains.mps.lang.test.runtime, java.compile.jetbrains.mps.lang.textGen, java.compile.jetbrains.mps.lang.traceable, java.compile.jetbrains.mps.lang.typesystem, java.compile.jetbrains.mps.lang.scopes, java.compile.jetbrains.mps.lang.scopes.runtime, java.compile.java.modules.cycle.3, java.compile.jetbrains.mps.xml, java.compile.jetbrains.mps.xmlInternal, java.compile.jetbrains.mps.xmlSchema, java.compile.jetbrains.mps.xmlQuery, java.compile.jetbrains.mps.gtext, java.compile.jetbrains.mps.gtext.runtime, java.compile.jetbrains.mps.make.facet, java.compile.jetbrains.mps.make.script, java.compile.jetbrains.mps.build.gentest, java.compile.jetbrains.mps.build.reduced" />
   
   <target name="processResources" />
   
@@ -2031,9 +2107,11 @@
         <path location="${mps_home}/languages/baseLanguage/blTypes/source_gen" />
         <path location="${mps_home}/languages/baseLanguage/classifiers/source_gen" />
         <path location="${mps_home}/languages/baseLanguage/javadoc/source_gen" />
+        <path location="${mps_home}/languages/baseLanguage/logging/source_gen" />
         <path location="${mps_home}/languages/baseLanguage/tuples/languages/tuples/source_gen" />
         <path location="${mps_home}/languages/baseLanguage/unitTest/source_gen" />
         <path location="${mps_home}/languages/util/extensionMethod/source_gen" />
+        <path location="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.scopes/source_gen" />
         <path location="${mps_home}/languages/core/core/source_gen" />
         <path location="${mps_home}/languages/languageDesign/behavior/languages/behavior/source_gen" />
         <path location="${mps_home}/languages/languageDesign/constraints/source_gen" />
@@ -2055,11 +2133,13 @@
         <path location="${mps_home}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" />
         <path location="${mps_home}/languages/languageDesign/traceable/source_gen" />
         <path location="${mps_home}/languages/languageDesign/typesystem/source_gen" />
+        <path location="${mps_home}/languages/languageDesign/scopes/source_gen" />
+        <path location="${mps_home}/languages/languageDesign/scopes/runtime/source_gen" />
       </src>
       <classpath>
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java/out/mps-closures" />
@@ -2095,7 +2175,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2124,7 +2204,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2153,7 +2233,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2182,7 +2262,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2211,7 +2291,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2245,7 +2325,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -2273,7 +2353,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2307,7 +2387,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -2335,7 +2415,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2369,7 +2449,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -2379,7 +2459,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.baseLanguage.logging" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.lang.core, java.compile.mps-test, java.compile.jetbrains.mps.lang.test.runtime, java.compile.jetbrains.mps.lang.traceable, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.baseLanguage.logging" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.mps-test, java.compile.java.modules.cycle.1, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.logging" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.logging" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -2394,17 +2474,13 @@
         <pathelement path="${build.tmp}/java/out/mps-editor-api" />
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.blTypes" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/mps-test" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.logging">
@@ -2435,7 +2511,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -2463,7 +2539,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2492,7 +2568,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2521,7 +2597,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2556,7 +2632,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -2579,6 +2655,34 @@
     </javac>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime">
       <fileset dir="${mps_home}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.jetbrains.mps.baseLanguage.scopes" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.java.modules.cycle.1, fetchDependencies">
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.scopes" />
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.scopes" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.scopes/source_gen" />
+      </src>
+      <classpath>
+        <pathelement path="${build.tmp}/java/out/mps-closures" />
+        <pathelement path="${build.tmp}/java/out/mps-collections" />
+        <pathelement path="${build.tmp}/java/out/mps-tuples" />
+        <pathelement path="${build.tmp}/java/out/mps-core" />
+        <pathelement path="${build.tmp}/java/out/mps-editor-api" />
+        <pathelement path="${build.tmp}/java/out/mps-editor" />
+        <pathelement path="${build.tmp}/java/out/mps-platform" />
+        <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
+        <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
+        <path refid="path.java.library.core-libraries" />
+        <path refid="path.java.library.idea-libraries" />
+        <pathelement path="${build.tmp}/java.modules.cycle.1" />
+      </classpath>
+    </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.scopes">
+      <fileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.scopes/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -2606,13 +2710,48 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
     </javac>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.builders">
       <fileset dir="${mps_home}/languages/util/builders/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.jetbrains.mps.baseLanguage.varVariable" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.quotation, java.compile.mps-test, java.compile.jetbrains.mps.lang.test.runtime, java.compile.jetbrains.mps.lang.traceable, fetchDependencies">
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.varVariable" />
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.varVariable" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${mps_home}/languages/baseLanguage/varVariable/source_gen" />
+      </src>
+      <classpath>
+        <pathelement path="${build.tmp}/java/out/mps-closures" />
+        <pathelement path="${build.tmp}/java/out/mps-collections" />
+        <pathelement path="${build.tmp}/java/out/mps-tuples" />
+        <pathelement path="${build.tmp}/java/out/mps-core" />
+        <pathelement path="${build.tmp}/java/out/mps-editor-api" />
+        <pathelement path="${build.tmp}/java/out/mps-editor" />
+        <pathelement path="${build.tmp}/java/out/mps-platform" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.blTypes" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closures" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.quotation" />
+        <pathelement path="${build.tmp}/java/out/mps-test" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
+        <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
+        <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
+        <path refid="path.java.library.core-libraries" />
+        <path refid="path.java.library.idea-libraries" />
+      </classpath>
+    </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.varVariable">
+      <fileset dir="${mps_home}/languages/baseLanguage/varVariable/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -2643,7 +2782,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -2671,7 +2810,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2711,7 +2850,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -2739,7 +2878,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2768,7 +2907,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2808,7 +2947,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -2836,7 +2975,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -2879,7 +3018,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -2911,7 +3050,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -2972,7 +3111,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -2993,7 +3132,7 @@
       <classpath>
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java/out/mps-closures" />
@@ -3054,7 +3193,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -3091,7 +3230,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -3119,7 +3258,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3148,7 +3287,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3177,7 +3316,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3206,7 +3345,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3235,7 +3374,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3265,7 +3404,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3294,7 +3433,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3329,7 +3468,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -3358,7 +3497,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3387,7 +3526,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3416,7 +3555,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3460,7 +3599,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -3497,7 +3636,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -3525,7 +3664,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3554,7 +3693,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3585,7 +3724,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -3613,7 +3752,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3650,7 +3789,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -3678,7 +3817,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3706,7 +3845,7 @@
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3745,7 +3884,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -3773,7 +3912,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3802,7 +3941,7 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
@@ -3810,6 +3949,62 @@
     </javac>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.typesystem">
       <fileset dir="${mps_home}/languages/languageDesign/typesystem/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.jetbrains.mps.lang.scopes" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.mps-test, java.compile.java.modules.cycle.1, fetchDependencies">
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.scopes" />
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.scopes" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${mps_home}/languages/languageDesign/scopes/source_gen" />
+      </src>
+      <classpath>
+        <pathelement path="${build.tmp}/java/out/mps-closures" />
+        <pathelement path="${build.tmp}/java/out/mps-collections" />
+        <pathelement path="${build.tmp}/java/out/mps-tuples" />
+        <pathelement path="${build.tmp}/java/out/mps-core" />
+        <pathelement path="${build.tmp}/java/out/mps-editor-api" />
+        <pathelement path="${build.tmp}/java/out/mps-editor" />
+        <pathelement path="${build.tmp}/java/out/mps-platform" />
+        <pathelement path="${build.tmp}/java/out/mps-test" />
+        <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
+        <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
+        <path refid="path.java.library.core-libraries" />
+        <path refid="path.java.library.idea-libraries" />
+        <pathelement path="${build.tmp}/java.modules.cycle.1" />
+      </classpath>
+    </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.scopes">
+      <fileset dir="${mps_home}/languages/languageDesign/scopes/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.jetbrains.mps.lang.scopes.runtime" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.java.modules.cycle.1, fetchDependencies">
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.scopes.runtime" />
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.scopes.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${mps_home}/languages/languageDesign/scopes/runtime/source_gen" />
+      </src>
+      <classpath>
+        <pathelement path="${build.tmp}/java/out/mps-closures" />
+        <pathelement path="${build.tmp}/java/out/mps-collections" />
+        <pathelement path="${build.tmp}/java/out/mps-tuples" />
+        <pathelement path="${build.tmp}/java/out/mps-core" />
+        <pathelement path="${build.tmp}/java/out/mps-editor-api" />
+        <pathelement path="${build.tmp}/java/out/mps-editor" />
+        <pathelement path="${build.tmp}/java/out/mps-platform" />
+        <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
+        <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
+        <path refid="path.java.library.core-libraries" />
+        <path refid="path.java.library.idea-libraries" />
+        <pathelement path="${build.tmp}/java.modules.cycle.1" />
+      </classpath>
+    </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.scopes.runtime">
+      <fileset dir="${mps_home}/languages/languageDesign/scopes/runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -3824,7 +4019,7 @@
       <classpath>
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java/out/mps-closures" />
@@ -3879,7 +4074,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.xmlSchema" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.3" />
@@ -3919,7 +4114,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.xmlSchema" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.3" />
@@ -3956,7 +4151,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -3994,7 +4189,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.xmlSchema" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -4028,7 +4223,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -4082,7 +4277,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.make.script" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -4117,7 +4312,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>
@@ -4149,7 +4344,7 @@
         <pathelement path="${build.tmp}/java/out/mps-ant" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.java.library.idea-ant" />
@@ -4180,7 +4375,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${mps_home}/lib/commons-lang-2.4.jar" />
         <fileset file="${mps_home}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${mps_home}/lib/guava-r09.jar" />
+        <fileset file="${mps_home}/lib/guava-11.0.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
       </classpath>

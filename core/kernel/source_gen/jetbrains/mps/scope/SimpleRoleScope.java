@@ -5,8 +5,8 @@ package jetbrains.mps.scope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
-import java.util.List;
 import org.jetbrains.annotations.Nullable;
+import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -46,7 +46,7 @@ public abstract class SimpleRoleScope extends Scope {
     return result;
   }
 
-  public List<SNode> getAvailableElements(@Nullable String prefix) {
+  public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode n : SNodeOperations.getChildren(myNode, myLink)) {
       if (this.conceptFqName != null && !(SModelUtil.isAssignableConcept(n.getConceptFqName(), conceptFqName))) {

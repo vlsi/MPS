@@ -11,7 +11,7 @@
   <path id="path.java.library.core-libraries">
     <fileset dir="${idea_home}/lib">
       <include name="org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
-      <include name="guava-r09.jar" />
+      <include name="guava-11.0.1.jar" />
       <include name="jdom.jar" />
       <include name="log4j.jar" />
       <include name="trove4j.jar" />

@@ -9,6 +9,7 @@ import java.util.List;
 import jetbrains.mps.util.Condition;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class SuperMethodCall_InstanceMethodScope extends ClassifierVisibleMembersScope {
   public SuperMethodCall_InstanceMethodScope(@Nullable SNode superclassType, @Nullable SNode contextNode) {
@@ -20,7 +21,7 @@ public class SuperMethodCall_InstanceMethodScope extends ClassifierVisibleMember
     List<SNode> nodes = super.getNodes(condition);
     List<SNode> result = new ArrayList<SNode>();
     for (SNode node : nodes) {
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && !(((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "virtual_isAbstract_1232982539764", new Class[]{SNode.class})))) {
         if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
           result.add(node);
         }

@@ -73,16 +73,18 @@ public class BuildLayout_ImportContent_Constraints extends BaseConstraintsDescri
 
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode contextProject = SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.build.structure.BuildProject", true, false);
-            if ((contextProject != null)) {
-              return new FilteringScope(ScopeUtil.getVisibleArtifactsScope(contextProject)) {
-                @Override
-                public boolean isExcluded(SNode node) {
-                  return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_Container"));
-                }
-              };
+            {
+              SNode contextProject = SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.build.structure.BuildProject", true, false);
+              if ((contextProject != null)) {
+                return new FilteringScope(ScopeUtil.getVisibleArtifactsScope(contextProject)) {
+                  @Override
+                  public boolean isExcluded(SNode node) {
+                    return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_Container"));
+                  }
+                };
+              }
+              return new ModelPlusImportedScope(_context.getModel(), false, operationContext.getScope(), "jetbrains.mps.build.structure.BuildLayout_Node");
             }
-            return new ModelPlusImportedScope(_context.getModel(), false, operationContext.getScope(), "jetbrains.mps.build.structure.BuildLayout_Node");
           }
         };
       }

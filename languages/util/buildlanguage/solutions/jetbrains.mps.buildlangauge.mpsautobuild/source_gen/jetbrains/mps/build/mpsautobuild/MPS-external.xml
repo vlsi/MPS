@@ -82,7 +82,7 @@
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsbuild/META-INF" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsbuild/languages" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsbuild" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/svn4ideaOld" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/svn4idea" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api/META-INF" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api/lib" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api" />
@@ -470,8 +470,8 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.build.mps" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsbuild/languages" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsbuild" />
-    <copy todir="${deploy.dir}/MPS/plugins/svn4ideaOld">
-      <fileset dir="${mps_home}/plugins/svn4ideaOld" excludes="**/*.zip, " />
+    <copy todir="${deploy.dir}/MPS/plugins/svn4idea">
+      <fileset dir="${mps_home}/plugins/svn4idea" excludes="**/*.zip, " />
     </copy>
     <copy todir="${deploy.dir}/MPS/plugins/debugger-api/META-INF">
       <fileset dir="${mps_home}/plugins/debugger-api/META-INF" excludes="**/*.zip, " />
@@ -564,9 +564,11 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.overloadedOperators" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp.runtime" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.scopes" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.libs" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.varVariable" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguageInternal" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.pluginSolution" />
     <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime.gwt-src.jar.tmp">
@@ -635,6 +637,8 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.textGen" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.traceable" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.typesystem" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.scopes" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.scopes.runtime" />
     <antcall target="MPS-languages.pack.typesystemIntegration" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.core.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.structure.pluginSolution" />

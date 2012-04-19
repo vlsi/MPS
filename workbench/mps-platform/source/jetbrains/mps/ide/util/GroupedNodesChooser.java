@@ -296,7 +296,7 @@ public class GroupedNodesChooser extends DialogWrapper {
         return lastPathComponent.getText();
       }
     });
-    treeSpeedSearch.setComparator(new SpeedSearchBase.SpeedSearchComparator(false));
+    treeSpeedSearch.setComparator(new SpeedSearchComparator(false));
 
     treeSpeedSearch.addChangeListener(new PropertyChangeListener() {
       @Override

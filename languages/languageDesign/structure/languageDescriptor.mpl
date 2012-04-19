@@ -15,10 +15,10 @@
         <modelRoot path="${language_descriptor}/classes_gen">
           <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
         </modelRoot>
-        <modelRoot path="${mps_home}/lib/guava-r09.jar">
+        <modelRoot path="${language_descriptor}/generator_new" />
+        <modelRoot path="${mps_home}/lib/guava-11.0.1.jar">
           <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
         </modelRoot>
-        <modelRoot path="${language_descriptor}/generator_new" />
       </models>
       <external-templates>
         <generator generatorUID="5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)" />
@@ -53,7 +53,7 @@
     </generator>
   </generators>
   <runtimeStubModels>
-    <stubModelEntry path="${mps_home}/lib/guava-r09.jar">
+    <stubModelEntry path="${mps_home}/lib/guava-11.0.1.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </stubModelEntry>
   </runtimeStubModels>

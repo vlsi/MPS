@@ -152,7 +152,7 @@ public class StubResolver {
         }
         List<SNode> resolved = TypeContextManager.getInstance().runResolveAction(new Computable<IListSequence<SNode>>() {
           public IListSequence<SNode> compute() {
-            return ListSequence.fromList(refScope.getAvailableElements(null)).where(new IWhereFilter<SNode>() {
+            return Sequence.fromIterable(refScope.getAvailableElements(null)).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode n) {
                 return modelRef.equals(SNodeOperations.getModel(n).getSModelReference()) && resolveInfo.equals(n.getResolveInfo());
               }

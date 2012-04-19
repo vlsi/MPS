@@ -50,7 +50,7 @@ public class typeof_LocalInstanceMethodCall_InferenceRule extends AbstractInfere
     RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, methodClassifier, constructedType, mmap);
     RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(typeCheckingContext, mmap);
     if (currentClassifier == null) {
-      currentClassifier = SNodeOperations.getAncestor(methodCall, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+      currentClassifier = methodClassifier;
     }
     {
       SNode _nodeToCheck_1029348928467 = methodCall;

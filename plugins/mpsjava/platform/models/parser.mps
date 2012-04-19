@@ -37890,7 +37890,7 @@
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="4223086795208732485" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4223086795208732486">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7q5n.~CompilerOptions%dgetSeverity(long)%cint" resolveInfo="getSeverity" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7q5n.~CompilerOptions%dgetSeverity(int)%cint" resolveInfo="getSeverity" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4223086795208732487">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7q5n.~CompilerOptions%dNonExternalizedString" resolveInfo="NonExternalizedString" />
                         <link role="classifier" roleId="tpee.1144433057691" targetNodeId="7q5n.~CompilerOptions" resolveInfo="CompilerOptions" />
