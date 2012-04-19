@@ -175,7 +175,10 @@ public class TreeHighlighter implements TreeMessageOwner {
       } else if (myMap.isAncestorOfAddedFeature(feature)) {
         node.addTreeMessage(getMessage(FileStatus.MODIFIED));
       } else if (feature instanceof ModelFeature) {
-        node.addTreeMessage(getMessage((ModelFeature) feature));
+        TreeMessage message = getMessage((ModelFeature) feature);
+        if (message != null) {
+          node.addTreeMessage(message);
+        }
       }
     }
   }

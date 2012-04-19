@@ -66,7 +66,7 @@ public class SafeDeleteConcept extends BaseLoggableRefactoring {
       searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressMonitor(), aspect, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
     }
 
-    List<SearchResult<SNode>> searchResultsList = searchResults.getSearchResults();
+    List<SearchResult<SNode>> searchResultsList = (List<SearchResult<SNode>>) searchResults.getSearchResults();
     List<SearchResult<SNode>> searchResultsCopy = ListSequence.fromListWithValues(new ArrayList<SearchResult<SNode>>(), searchResultsList);
 
     for (SearchResult<SNode> searchResult : searchResultsCopy) {
