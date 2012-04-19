@@ -25,7 +25,6 @@ import org.junit.runner.RunWith;
 
 
 @SuiteClassSymbols({
-/*
   "jetbrains.mps.tests.TestModule_jetbrains_mps_kernel_tests",
   "jetbrains.mps.tests.TestModule_closures_test",
   "jetbrains.mps.tests.TestModule_collections_trove_test",
@@ -35,7 +34,6 @@ import org.junit.runner.RunWith;
   "jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_closures_unittest",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_math_tests",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_regexp_unittest",
-*/
   "jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_test",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_tuples_test",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_unittest",
