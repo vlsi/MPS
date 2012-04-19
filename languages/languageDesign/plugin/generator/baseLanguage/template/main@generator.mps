@@ -10004,12 +10004,6 @@
                   </node>
                 </node>
               </node>
-              <node role="content" roleId="tpjo.1163629255661" type="tpjh.SimpleElement" typeId="tpjh.1179105519357" id="207263554168445691">
-                <node role="elementName" roleId="tpjh.1179271242032" type="tpjo.Text" typeId="tpjo.1161373262136" id="207263554168445692">
-                  <property name="text" nameId="tpjo.1161373273669" value="mps.PluginBundle" />
-                </node>
-                <node role="contentList" roleId="tpjo.1179114219774" type="tpjo.ContentList" typeId="tpjo.1163629230879" id="207263554168445693" />
-              </node>
             </node>
             <node role="elementName" roleId="tpjh.1179271242032" type="tpjo.Text" typeId="tpjo.1161373262136" id="3434784852188106784">
               <property name="text" nameId="tpjo.1161373273669" value="extensions" />
