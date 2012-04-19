@@ -314,8 +314,8 @@ public class AbstractConceptDeclaration_Behavior {
 
   public static Pair<Set<SNode>, Set<SNode>> call_getInLanguageAndNotInLanguageAncestors_5846203010383875248(SNode thisNode) {
     // todo: use tuple 
-    Set<SNode> inLanguageAncestors = SetSequence.fromSet(new HashSet());
-    Set<SNode> notInLanguageAncestors = SetSequence.fromSet(new HashSet());
+    Set<SNode> inLanguageAncestors = SetSequence.fromSet(new HashSet<SNode>());
+    Set<SNode> notInLanguageAncestors = SetSequence.fromSet(new HashSet<SNode>());
 
     for (SNode superconcept : AbstractConceptDeclaration_Behavior.call_getImmediateSuperconcepts_1222430305282(thisNode)) {
       if ((superconcept != null)) {
