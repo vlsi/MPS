@@ -316,115 +316,115 @@
     <unitInfo nodeId="1240470842553499344" fileName="BaseFieldWithButtonComponent.java" startLine="54" startPosition="57" endLine="58" endPosition="5" unitName="jetbrains.mps.execution.lib.ui.BaseFieldWithButtonComponent$2" />
   </root>
   <root nodeId="1240470842553499470">
-    <nodeInfo nodeId="1240470842553499675" fileName="GlobalFilteredScope.java" startLine="24" startPosition="97" endLine="25" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1240470842553499485" fileName="GlobalFilteredScope.java" startLine="30" startPosition="43" endLine="31" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240470842553499497" fileName="GlobalFilteredScope.java" startLine="35" startPosition="41" endLine="36" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240470842553499508" fileName="GlobalFilteredScope.java" startLine="41" startPosition="73" endLine="42" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240470842553499517" fileName="GlobalFilteredScope.java" startLine="43" startPosition="39" endLine="44" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240470842553499523" fileName="GlobalFilteredScope.java" startLine="45" startPosition="5" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240470842553499540" fileName="GlobalFilteredScope.java" startLine="51" startPosition="52" endLine="52" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240470842553499548" fileName="GlobalFilteredScope.java" startLine="55" startPosition="50" endLine="56" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240470842553499571" fileName="GlobalFilteredScope.java" startLine="63" startPosition="52" endLine="64" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240470842553499578" fileName="GlobalFilteredScope.java" startLine="67" startPosition="50" endLine="68" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240470842553499598" fileName="GlobalFilteredScope.java" startLine="74" startPosition="103" endLine="75" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240470842553499603" fileName="GlobalFilteredScope.java" startLine="76" startPosition="5" endLine="77" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240470842553499613" fileName="GlobalFilteredScope.java" startLine="81" startPosition="71" endLine="82" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240470842553499622" fileName="GlobalFilteredScope.java" startLine="83" startPosition="5" endLine="84" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240470842553499636" fileName="GlobalFilteredScope.java" startLine="85" startPosition="86" endLine="86" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240470842553499644" fileName="GlobalFilteredScope.java" startLine="89" startPosition="78" endLine="90" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240470842553499654" fileName="GlobalFilteredScope.java" startLine="92" startPosition="5" endLine="93" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240470842553499663" fileName="GlobalFilteredScope.java" startLine="97" startPosition="52" endLine="98" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240470842553499667" fileName="GlobalFilteredScope.java" startLine="23" startPosition="54" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GlobalFilteredScope#(Ljetbrains/mps/smodel/MPSModuleRepository;Ljetbrains/mps/smodel/SModelRepository;)V" />
-    <nodeInfo nodeId="1240470842553499515" fileName="GlobalFilteredScope.java" startLine="42" startPosition="82" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1240470842553499590" fileName="GlobalFilteredScope.java" startLine="73" startPosition="62" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1240470842553499611" fileName="GlobalFilteredScope.java" startLine="80" startPosition="45" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1240470842553499627" fileName="GlobalFilteredScope.java" startLine="84" startPosition="61" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1240470842553499642" fileName="GlobalFilteredScope.java" startLine="88" startPosition="67" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1240470842553499483" fileName="GlobalFilteredScope.java" startLine="29" startPosition="80" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1240470842553499495" fileName="GlobalFilteredScope.java" startLine="34" startPosition="114" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/project/IModule;)Z" />
-    <nodeInfo nodeId="1240470842553499538" fileName="GlobalFilteredScope.java" startLine="50" startPosition="96" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1240470842553499546" fileName="GlobalFilteredScope.java" startLine="54" startPosition="52" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
-    <nodeInfo nodeId="1240470842553499569" fileName="GlobalFilteredScope.java" startLine="62" startPosition="96" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1240470842553499576" fileName="GlobalFilteredScope.java" startLine="66" startPosition="52" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
-    <nodeInfo nodeId="1240470842553499476" fileName="GlobalFilteredScope.java" startLine="28" startPosition="43" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240470842553499489" fileName="GlobalFilteredScope.java" startLine="33" startPosition="7" endLine="38" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240470842553499638" fileName="GlobalFilteredScope.java" startLine="87" startPosition="5" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1240470842553499658" fileName="GlobalFilteredScope.java" startLine="95" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRequiredModules#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1240470842553499586" fileName="GlobalFilteredScope.java" startLine="72" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="acceptModel#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
-    <nodeInfo nodeId="1240470842553499504" fileName="GlobalFilteredScope.java" startLine="40" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelDescriptor#(Ljetbrains/mps/smodel/SModelReference;)Ljetbrains/mps/smodel/SModelDescriptor;" />
-    <nodeInfo nodeId="1240470842553499532" fileName="GlobalFilteredScope.java" startLine="49" startPosition="77" endLine="58" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240470842553499563" fileName="GlobalFilteredScope.java" startLine="61" startPosition="55" endLine="70" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240470842553499527" fileName="GlobalFilteredScope.java" startLine="48" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelDescriptors#(Ljava/lang/String;)Ljava/util/List;" />
-    <nodeInfo nodeId="1240470842553499558" fileName="GlobalFilteredScope.java" startLine="60" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelDescriptors#()Ljava/util/List;" />
-    <nodeInfo nodeId="1240470842553499471" fileName="GlobalFilteredScope.java" startLine="27" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVisibleModules#()Ljava/util/Set;" />
-    <nodeInfo nodeId="1240470842553499607" fileName="GlobalFilteredScope.java" startLine="79" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="acceptModule#(Ljetbrains/mps/project/IModule;)Z" />
-    <scopeInfo nodeId="1240470842553499674" fileName="GlobalFilteredScope.java" startLine="24" startPosition="97" endLine="25" endPosition="40" />
-    <scopeInfo nodeId="1240470842553499484" fileName="GlobalFilteredScope.java" startLine="30" startPosition="43" endLine="31" endPosition="53" />
-    <scopeInfo nodeId="1240470842553499496" fileName="GlobalFilteredScope.java" startLine="35" startPosition="41" endLine="36" endPosition="57" />
-    <scopeInfo nodeId="1240470842553499516" fileName="GlobalFilteredScope.java" startLine="43" startPosition="39" endLine="44" endPosition="24" />
-    <scopeInfo nodeId="1240470842553499539" fileName="GlobalFilteredScope.java" startLine="51" startPosition="52" endLine="52" endPosition="75" />
-    <scopeInfo nodeId="1240470842553499547" fileName="GlobalFilteredScope.java" startLine="55" startPosition="50" endLine="56" endPosition="56" />
-    <scopeInfo nodeId="1240470842553499570" fileName="GlobalFilteredScope.java" startLine="63" startPosition="52" endLine="64" endPosition="55" />
-    <scopeInfo nodeId="1240470842553499577" fileName="GlobalFilteredScope.java" startLine="67" startPosition="50" endLine="68" endPosition="56" />
-    <scopeInfo nodeId="1240470842553499597" fileName="GlobalFilteredScope.java" startLine="74" startPosition="103" endLine="75" endPosition="50" />
-    <scopeInfo nodeId="1240470842553499612" fileName="GlobalFilteredScope.java" startLine="81" startPosition="71" endLine="82" endPosition="19" />
-    <scopeInfo nodeId="1240470842553499635" fileName="GlobalFilteredScope.java" startLine="85" startPosition="86" endLine="86" endPosition="18" />
-    <scopeInfo nodeId="1240470842553499643" fileName="GlobalFilteredScope.java" startLine="89" startPosition="78" endLine="90" endPosition="20" />
-    <scopeInfo nodeId="1240470842553499662" fileName="GlobalFilteredScope.java" startLine="97" startPosition="52" endLine="98" endPosition="16" />
-    <scopeInfo nodeId="1240470842553499667" fileName="GlobalFilteredScope.java" startLine="23" startPosition="54" endLine="26" endPosition="3">
+    <nodeInfo nodeId="1240470842553499675" fileName="GlobalFilteredScope.java" startLine="25" startPosition="97" endLine="26" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1240470842553499485" fileName="GlobalFilteredScope.java" startLine="31" startPosition="43" endLine="32" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240470842553499497" fileName="GlobalFilteredScope.java" startLine="36" startPosition="41" endLine="37" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240470842553499508" fileName="GlobalFilteredScope.java" startLine="42" startPosition="73" endLine="43" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240470842553499517" fileName="GlobalFilteredScope.java" startLine="44" startPosition="39" endLine="45" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240470842553499523" fileName="GlobalFilteredScope.java" startLine="46" startPosition="5" endLine="47" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240470842553499540" fileName="GlobalFilteredScope.java" startLine="52" startPosition="52" endLine="53" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240470842553499548" fileName="GlobalFilteredScope.java" startLine="56" startPosition="50" endLine="57" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240470842553499571" fileName="GlobalFilteredScope.java" startLine="64" startPosition="52" endLine="65" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240470842553499578" fileName="GlobalFilteredScope.java" startLine="68" startPosition="50" endLine="69" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240470842553499598" fileName="GlobalFilteredScope.java" startLine="75" startPosition="103" endLine="76" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240470842553499603" fileName="GlobalFilteredScope.java" startLine="77" startPosition="5" endLine="78" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240470842553499613" fileName="GlobalFilteredScope.java" startLine="82" startPosition="71" endLine="83" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240470842553499622" fileName="GlobalFilteredScope.java" startLine="84" startPosition="5" endLine="85" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240470842553499636" fileName="GlobalFilteredScope.java" startLine="86" startPosition="86" endLine="87" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240470842553499644" fileName="GlobalFilteredScope.java" startLine="90" startPosition="92" endLine="91" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240470842553499654" fileName="GlobalFilteredScope.java" startLine="93" startPosition="5" endLine="94" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240470842553499663" fileName="GlobalFilteredScope.java" startLine="98" startPosition="52" endLine="99" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240470842553499667" fileName="GlobalFilteredScope.java" startLine="24" startPosition="54" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GlobalFilteredScope#(Ljetbrains/mps/smodel/MPSModuleRepository;Ljetbrains/mps/smodel/SModelRepository;)V" />
+    <nodeInfo nodeId="1240470842553499515" fileName="GlobalFilteredScope.java" startLine="43" startPosition="82" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1240470842553499590" fileName="GlobalFilteredScope.java" startLine="74" startPosition="62" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1240470842553499611" fileName="GlobalFilteredScope.java" startLine="81" startPosition="45" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1240470842553499627" fileName="GlobalFilteredScope.java" startLine="85" startPosition="61" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1240470842553499642" fileName="GlobalFilteredScope.java" startLine="89" startPosition="67" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1240470842553499483" fileName="GlobalFilteredScope.java" startLine="30" startPosition="80" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1240470842553499495" fileName="GlobalFilteredScope.java" startLine="35" startPosition="114" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/project/IModule;)Z" />
+    <nodeInfo nodeId="1240470842553499538" fileName="GlobalFilteredScope.java" startLine="51" startPosition="96" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1240470842553499546" fileName="GlobalFilteredScope.java" startLine="55" startPosition="52" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
+    <nodeInfo nodeId="1240470842553499569" fileName="GlobalFilteredScope.java" startLine="63" startPosition="96" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1240470842553499576" fileName="GlobalFilteredScope.java" startLine="67" startPosition="52" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
+    <nodeInfo nodeId="1240470842553499476" fileName="GlobalFilteredScope.java" startLine="29" startPosition="43" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240470842553499489" fileName="GlobalFilteredScope.java" startLine="34" startPosition="7" endLine="39" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240470842553499638" fileName="GlobalFilteredScope.java" startLine="88" startPosition="5" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1240470842553499658" fileName="GlobalFilteredScope.java" startLine="96" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRequiredModules#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1240470842553499586" fileName="GlobalFilteredScope.java" startLine="73" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="acceptModel#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
+    <nodeInfo nodeId="1240470842553499504" fileName="GlobalFilteredScope.java" startLine="41" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelDescriptor#(Ljetbrains/mps/smodel/SModelReference;)Ljetbrains/mps/smodel/SModelDescriptor;" />
+    <nodeInfo nodeId="1240470842553499532" fileName="GlobalFilteredScope.java" startLine="50" startPosition="77" endLine="59" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240470842553499563" fileName="GlobalFilteredScope.java" startLine="62" startPosition="55" endLine="71" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240470842553499527" fileName="GlobalFilteredScope.java" startLine="49" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelDescriptors#(Ljava/lang/String;)Ljava/util/List;" />
+    <nodeInfo nodeId="1240470842553499558" fileName="GlobalFilteredScope.java" startLine="61" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelDescriptors#()Ljava/util/List;" />
+    <nodeInfo nodeId="1240470842553499471" fileName="GlobalFilteredScope.java" startLine="28" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVisibleModules#()Ljava/util/Set;" />
+    <nodeInfo nodeId="1240470842553499607" fileName="GlobalFilteredScope.java" startLine="80" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="acceptModule#(Ljetbrains/mps/project/IModule;)Z" />
+    <scopeInfo nodeId="1240470842553499674" fileName="GlobalFilteredScope.java" startLine="25" startPosition="97" endLine="26" endPosition="40" />
+    <scopeInfo nodeId="1240470842553499484" fileName="GlobalFilteredScope.java" startLine="31" startPosition="43" endLine="32" endPosition="53" />
+    <scopeInfo nodeId="1240470842553499496" fileName="GlobalFilteredScope.java" startLine="36" startPosition="41" endLine="37" endPosition="57" />
+    <scopeInfo nodeId="1240470842553499516" fileName="GlobalFilteredScope.java" startLine="44" startPosition="39" endLine="45" endPosition="24" />
+    <scopeInfo nodeId="1240470842553499539" fileName="GlobalFilteredScope.java" startLine="52" startPosition="52" endLine="53" endPosition="75" />
+    <scopeInfo nodeId="1240470842553499547" fileName="GlobalFilteredScope.java" startLine="56" startPosition="50" endLine="57" endPosition="56" />
+    <scopeInfo nodeId="1240470842553499570" fileName="GlobalFilteredScope.java" startLine="64" startPosition="52" endLine="65" endPosition="55" />
+    <scopeInfo nodeId="1240470842553499577" fileName="GlobalFilteredScope.java" startLine="68" startPosition="50" endLine="69" endPosition="56" />
+    <scopeInfo nodeId="1240470842553499597" fileName="GlobalFilteredScope.java" startLine="75" startPosition="103" endLine="76" endPosition="50" />
+    <scopeInfo nodeId="1240470842553499612" fileName="GlobalFilteredScope.java" startLine="82" startPosition="71" endLine="83" endPosition="19" />
+    <scopeInfo nodeId="1240470842553499635" fileName="GlobalFilteredScope.java" startLine="86" startPosition="86" endLine="87" endPosition="18" />
+    <scopeInfo nodeId="1240470842553499643" fileName="GlobalFilteredScope.java" startLine="90" startPosition="92" endLine="91" endPosition="20" />
+    <scopeInfo nodeId="1240470842553499662" fileName="GlobalFilteredScope.java" startLine="98" startPosition="52" endLine="99" endPosition="16" />
+    <scopeInfo nodeId="1240470842553499667" fileName="GlobalFilteredScope.java" startLine="24" startPosition="54" endLine="27" endPosition="3">
       <varInfo nodeId="1240470842553499668" varName="moduleRepository" />
       <varInfo nodeId="1240470842553499670" varName="repository" />
     </scopeInfo>
-    <scopeInfo nodeId="1240470842553499641" fileName="GlobalFilteredScope.java" startLine="88" startPosition="67" endLine="91" endPosition="7" />
-    <scopeInfo nodeId="1240470842553499483" fileName="GlobalFilteredScope.java" startLine="29" startPosition="80" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1240470842553499495" fileName="GlobalFilteredScope.java" startLine="34" startPosition="114" endLine="38" endPosition="0">
+    <scopeInfo nodeId="1240470842553499641" fileName="GlobalFilteredScope.java" startLine="89" startPosition="67" endLine="92" endPosition="7" />
+    <scopeInfo nodeId="1240470842553499483" fileName="GlobalFilteredScope.java" startLine="30" startPosition="80" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1240470842553499495" fileName="GlobalFilteredScope.java" startLine="35" startPosition="114" endLine="39" endPosition="0">
       <varInfo nodeId="1240470842553499495" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1240470842553499538" fileName="GlobalFilteredScope.java" startLine="50" startPosition="96" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1240470842553499546" fileName="GlobalFilteredScope.java" startLine="54" startPosition="52" endLine="58" endPosition="0">
+    <scopeInfo nodeId="1240470842553499538" fileName="GlobalFilteredScope.java" startLine="51" startPosition="96" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="1240470842553499546" fileName="GlobalFilteredScope.java" startLine="55" startPosition="52" endLine="59" endPosition="0">
       <varInfo nodeId="1240470842553499546" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1240470842553499569" fileName="GlobalFilteredScope.java" startLine="62" startPosition="96" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="1240470842553499576" fileName="GlobalFilteredScope.java" startLine="66" startPosition="52" endLine="70" endPosition="0">
+    <scopeInfo nodeId="1240470842553499569" fileName="GlobalFilteredScope.java" startLine="63" startPosition="96" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="1240470842553499576" fileName="GlobalFilteredScope.java" startLine="67" startPosition="52" endLine="71" endPosition="0">
       <varInfo nodeId="1240470842553499576" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1240470842553499589" fileName="GlobalFilteredScope.java" startLine="73" startPosition="62" endLine="77" endPosition="17" />
-    <scopeInfo nodeId="1240470842553499507" fileName="GlobalFilteredScope.java" startLine="41" startPosition="73" endLine="46" endPosition="16">
+    <scopeInfo nodeId="1240470842553499589" fileName="GlobalFilteredScope.java" startLine="74" startPosition="62" endLine="78" endPosition="17" />
+    <scopeInfo nodeId="1240470842553499507" fileName="GlobalFilteredScope.java" startLine="42" startPosition="73" endLine="47" endPosition="16">
       <varInfo nodeId="1240470842553499509" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="1240470842553499638" fileName="GlobalFilteredScope.java" startLine="87" startPosition="5" endLine="92" endPosition="5">
+    <scopeInfo nodeId="1240470842553499638" fileName="GlobalFilteredScope.java" startLine="88" startPosition="5" endLine="93" endPosition="5">
       <varInfo nodeId="1240470842553499638" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="1240470842553499658" fileName="GlobalFilteredScope.java" startLine="95" startPosition="0" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="1240470842553499586" fileName="GlobalFilteredScope.java" startLine="72" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="1240470842553499658" fileName="GlobalFilteredScope.java" startLine="96" startPosition="0" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="1240470842553499586" fileName="GlobalFilteredScope.java" startLine="73" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="1240470842553499605" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="1240470842553499504" fileName="GlobalFilteredScope.java" startLine="40" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="1240470842553499504" fileName="GlobalFilteredScope.java" startLine="41" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="1240470842553499525" varName="reference" />
     </scopeInfo>
-    <scopeInfo nodeId="1240470842553499531" fileName="GlobalFilteredScope.java" startLine="49" startPosition="77" endLine="58" endPosition="24" />
-    <scopeInfo nodeId="1240470842553499562" fileName="GlobalFilteredScope.java" startLine="61" startPosition="55" endLine="70" endPosition="24" />
-    <scopeInfo nodeId="1240470842553499475" fileName="GlobalFilteredScope.java" startLine="28" startPosition="43" endLine="38" endPosition="8">
+    <scopeInfo nodeId="1240470842553499531" fileName="GlobalFilteredScope.java" startLine="50" startPosition="77" endLine="59" endPosition="24" />
+    <scopeInfo nodeId="1240470842553499562" fileName="GlobalFilteredScope.java" startLine="62" startPosition="55" endLine="71" endPosition="24" />
+    <scopeInfo nodeId="1240470842553499475" fileName="GlobalFilteredScope.java" startLine="29" startPosition="43" endLine="39" endPosition="8">
       <varInfo nodeId="1240470842553499477" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="1240470842553499527" fileName="GlobalFilteredScope.java" startLine="48" startPosition="0" endLine="60" endPosition="0">
+    <scopeInfo nodeId="1240470842553499527" fileName="GlobalFilteredScope.java" startLine="49" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="1240470842553499556" varName="modelName" />
     </scopeInfo>
-    <scopeInfo nodeId="1240470842553499558" fileName="GlobalFilteredScope.java" startLine="60" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="1240470842553499471" fileName="GlobalFilteredScope.java" startLine="27" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1240470842553499610" fileName="GlobalFilteredScope.java" startLine="80" startPosition="45" endLine="93" endPosition="17">
+    <scopeInfo nodeId="1240470842553499558" fileName="GlobalFilteredScope.java" startLine="61" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="1240470842553499471" fileName="GlobalFilteredScope.java" startLine="28" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1240470842553499610" fileName="GlobalFilteredScope.java" startLine="81" startPosition="45" endLine="94" endPosition="17">
       <varInfo nodeId="1240470842553499623" varName="requiredModules" />
     </scopeInfo>
-    <scopeInfo nodeId="1240470842553499607" fileName="GlobalFilteredScope.java" startLine="79" startPosition="0" endLine="95" endPosition="0">
+    <scopeInfo nodeId="1240470842553499607" fileName="GlobalFilteredScope.java" startLine="80" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="1240470842553499656" varName="m" />
     </scopeInfo>
-    <unitInfo nodeId="1240470842553499470" fileName="GlobalFilteredScope.java" startLine="23" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.execution.lib.ui.GlobalFilteredScope" />
-    <unitInfo nodeId="1240470842553499483" fileName="GlobalFilteredScope.java" startLine="29" startPosition="51" endLine="33" endPosition="5" unitName="jetbrains.mps.execution.lib.ui.GlobalFilteredScope$1" />
-    <unitInfo nodeId="1240470842553499495" fileName="GlobalFilteredScope.java" startLine="34" startPosition="89" endLine="38" endPosition="5" unitName="jetbrains.mps.execution.lib.ui.GlobalFilteredScope$2" />
-    <unitInfo nodeId="1240470842553499538" fileName="GlobalFilteredScope.java" startLine="50" startPosition="58" endLine="54" endPosition="5" unitName="jetbrains.mps.execution.lib.ui.GlobalFilteredScope$3" />
-    <unitInfo nodeId="1240470842553499546" fileName="GlobalFilteredScope.java" startLine="54" startPosition="18" endLine="58" endPosition="5" unitName="jetbrains.mps.execution.lib.ui.GlobalFilteredScope$4" />
-    <unitInfo nodeId="1240470842553499569" fileName="GlobalFilteredScope.java" startLine="62" startPosition="58" endLine="66" endPosition="5" unitName="jetbrains.mps.execution.lib.ui.GlobalFilteredScope$5" />
-    <unitInfo nodeId="1240470842553499576" fileName="GlobalFilteredScope.java" startLine="66" startPosition="18" endLine="70" endPosition="5" unitName="jetbrains.mps.execution.lib.ui.GlobalFilteredScope$6" />
+    <unitInfo nodeId="1240470842553499470" fileName="GlobalFilteredScope.java" startLine="24" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.execution.lib.ui.GlobalFilteredScope" />
+    <unitInfo nodeId="1240470842553499483" fileName="GlobalFilteredScope.java" startLine="30" startPosition="51" endLine="34" endPosition="5" unitName="jetbrains.mps.execution.lib.ui.GlobalFilteredScope$1" />
+    <unitInfo nodeId="1240470842553499495" fileName="GlobalFilteredScope.java" startLine="35" startPosition="89" endLine="39" endPosition="5" unitName="jetbrains.mps.execution.lib.ui.GlobalFilteredScope$2" />
+    <unitInfo nodeId="1240470842553499538" fileName="GlobalFilteredScope.java" startLine="51" startPosition="58" endLine="55" endPosition="5" unitName="jetbrains.mps.execution.lib.ui.GlobalFilteredScope$3" />
+    <unitInfo nodeId="1240470842553499546" fileName="GlobalFilteredScope.java" startLine="55" startPosition="18" endLine="59" endPosition="5" unitName="jetbrains.mps.execution.lib.ui.GlobalFilteredScope$4" />
+    <unitInfo nodeId="1240470842553499569" fileName="GlobalFilteredScope.java" startLine="63" startPosition="58" endLine="67" endPosition="5" unitName="jetbrains.mps.execution.lib.ui.GlobalFilteredScope$5" />
+    <unitInfo nodeId="1240470842553499576" fileName="GlobalFilteredScope.java" startLine="67" startPosition="18" endLine="71" endPosition="5" unitName="jetbrains.mps.execution.lib.ui.GlobalFilteredScope$6" />
   </root>
   <root nodeId="1240470842553499679">
     <nodeInfo nodeId="1240470842553499680" fileName="IJavaNodeChangeListener.java" startLine="7" startPosition="42" endLine="8" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nodeChanged#(Ljetbrains/mps/smodel/SNode;)V" />
@@ -742,9 +742,7 @@
     <scopeInfo nodeId="1240470842553500231" fileName="FieldWithBrowseButton.java" startLine="25" startPosition="0" endLine="30" endPosition="3" />
     <scopeInfo nodeId="1240470842553500231" fileName="FieldWithBrowseButton.java" startLine="35" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="1240470842553500231" fileName="FieldWithBrowseButton.java" startLine="40" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="1240470842553500231" fileName="FieldWithBrowseButton.java" startLine="49" startPosition="25" endLine="54" endPosition="5">
-      <varInfo nodeId="1240470842553500231" varName="binding" />
-    </scopeInfo>
+    <scopeInfo nodeId="1240470842553500231" fileName="FieldWithBrowseButton.java" startLine="49" startPosition="25" endLine="54" endPosition="5" />
     <scopeInfo nodeId="1240470842553500231" fileName="FieldWithBrowseButton.java" startLine="68" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="1240470842553500231" varName="newValue" />
     </scopeInfo>
