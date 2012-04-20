@@ -6,7 +6,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -24,10 +23,11 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.generator.impl.plan.ModelContentUtil;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import java.util.Collection;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 public class ModulesClusterizer {
   private static Logger LOG = Logger.getLogger(ModulesCluster.class);
@@ -94,8 +94,11 @@ public class ModulesClusterizer {
           }
         }));
       } else {
-        Iterable<Language> langs = new GlobalModuleDependenciesManager(mod).getUsedLanguages();
-        QueueSequence.fromQueue(nsq).addSequence(Sequence.fromIterable(langs).select(new ISelector<Language, String>() {
+        Set<Language> langs = SetSequence.fromSet(new HashSet<Language>());
+        for (Language l : CollectionSequence.fromCollection(new GlobalModuleDependenciesManager(mod).getUsedLanguages())) {
+          l.getDependenciesManager().collectAllExtendedLanguages(langs);
+        }
+        QueueSequence.fromQueue(nsq).addSequence(SetSequence.fromSet(langs).select(new ISelector<Language, String>() {
           public String select(Language lang) {
             return lang.getModuleDescriptor().getNamespace();
           }

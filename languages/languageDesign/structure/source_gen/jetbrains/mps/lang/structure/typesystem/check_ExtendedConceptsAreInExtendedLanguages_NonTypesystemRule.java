@@ -9,14 +9,11 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
-
-import java.util.HashSet;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import java.util.Collection;
 import java.util.Set;
-
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
@@ -35,14 +32,14 @@ public class check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule exte
       return;
     }
     List<SNode> superConcepts = AbstractConceptDeclaration_Behavior.call_getImmediateSuperconcepts_1222430305282(cd);
-    Set<Language> extendedLanguages =new HashSet<Language>();
+    Set<Language> extendedLanguages = SetSequence.fromSet(new HashSet<Language>());
     language.getDependenciesManager().collectAllExtendedLanguages(extendedLanguages);
     for (SNode superConcept : superConcepts) {
       Language conceptLanguage = SModelUtil.getDeclaringLanguage(superConcept);
       if (conceptLanguage == null) {
         continue;
       }
-      if (conceptLanguage != language && !(CollectionSequence.fromCollection(extendedLanguages).contains(conceptLanguage))) {
+      if (conceptLanguage != language && !(SetSequence.fromSet(extendedLanguages).contains(conceptLanguage))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           errorTarget = new PropertyMessageTarget("name");

@@ -25,7 +25,7 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CommonPaths;
-import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.runtime.ModuleClassLoader;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.MacrosFactory;
@@ -89,7 +89,6 @@ public class Solution extends ClassLoadingModule {
   }
 
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
-    super.setModuleDescriptor(moduleDescriptor, reloadClasses);
     setSolutionDescriptor((SolutionDescriptor) moduleDescriptor, reloadClasses);
   }
 
@@ -202,19 +201,11 @@ public class Solution extends ClassLoadingModule {
     return (SolutionDescriptor) ModulesMiner.getInstance().loadModuleDescriptor(file);
   }
 
-  @Override
-  public boolean hasClass(String name) {
-    if (!canLoad()) return false;
-    return super.hasClass(name);
+  public boolean canLoadFromSelf(){
+    return getModuleDescriptor().getCompileInMPS();
   }
 
-  @Override
-  public Class getClass(String fqName) {
-    if (!canLoad()) return null;
-    return super.getClass(fqName);
-  }
-
-  private boolean canLoad() {
+  public boolean canLoad() {
     return MPSCore.getInstance().isTestMode() || getModuleDescriptor().getKind() != SolutionKind.NONE;
   }
 }

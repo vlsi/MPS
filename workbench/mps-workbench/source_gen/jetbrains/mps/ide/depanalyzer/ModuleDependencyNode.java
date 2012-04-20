@@ -5,8 +5,6 @@ package jetbrains.mps.ide.depanalyzer;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import java.util.List;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -16,7 +14,8 @@ import javax.swing.tree.TreeNode;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.project.dependency.DependenciesManager;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -84,10 +83,10 @@ public class ModuleDependencyNode extends MPSTreeNode {
     DependencyTree tree = (DependencyTree) getTree();
 
     for (IModule module : ListSequence.fromList(myModules)) {
-      GlobalModuleDependenciesManager gdm = new GlobalModuleDependenciesManager(module);
-      SetSequence.fromSet(reqModules).addSequence(SetSequence.fromSet((Set)gdm.getModules(Deptype.VISIBLE)));
-      SetSequence.fromSet(rtModules).addSequence(SetSequence.fromSet((Set)gdm.getModules(Deptype.COMPILE)));
-      SetSequence.fromSet(usedLanguages).addSequence(SetSequence.fromSet((Set)gdm.getUsedLanguages()));
+      GlobalModuleDependenciesManager depManager = new GlobalModuleDependenciesManager(module);
+      SetSequence.fromSet(reqModules).addSequence(CollectionSequence.fromCollection(depManager.getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE)));
+      SetSequence.fromSet(rtModules).addSequence(CollectionSequence.fromCollection(depManager.getModules(GlobalModuleDependenciesManager.Deptype.COMPILE)));
+      SetSequence.fromSet(usedLanguages).addSequence(CollectionSequence.fromCollection(depManager.getUsedLanguages()));
     }
 
     Set<IModule> allModules = (tree.isShowRuntime() ?

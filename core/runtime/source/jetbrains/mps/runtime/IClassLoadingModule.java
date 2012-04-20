@@ -21,13 +21,19 @@ public interface IClassLoadingModule {
   //should include self
   Iterable<IClassLoadingModule> getClassLoadingDependencies();
 
+  String getPluginPath();
+
   //---class
 
-  boolean hasClass(String name);
+  boolean canFindClass(String name);
 
   byte[] findClassBytes(String name);
 
-  ClassLoader getClassLoader();
+  ModuleClassLoader getClassLoader();
+
+  boolean canLoadFromSelf();
+
+  boolean canLoad();
 
   //---resource
 

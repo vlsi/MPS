@@ -18,18 +18,16 @@ package jetbrains.mps.project;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.runtime.ModuleClassLoader;
+import jetbrains.mps.util.InternUtil;
 
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 
 public abstract class ClassLoadingModule extends AbstractModule implements IClassLoadingModule {
   private static Logger LOG = Logger.getLogger(ClassLoadingModule.class);
 
-  private List<IClassLoadingModule> myClassLoadingDependencies = null;
   private ModuleClassLoader myClassLoader = null;
 
   protected ClassLoadingModule() {
@@ -39,22 +37,31 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
   public Class getClass(String fqName) {
     if (myClassLoader == null) return null;
     try {
-      return myClassLoader.getClass(fqName);
+      fqName = InternUtil.intern(fqName);
+      try {
+        return Class.forName(fqName, false, myClassLoader);
+      } catch (ClassNotFoundException e) {
+        return null;
+      }
     } catch (Throwable t) {
       LOG.error(t);
       return null;
     }
   }
 
+  public String getPluginPath() {
+    return getBundleHome().getPath();
+  }
+
   public void invalidateClasses() {
     myClassLoader = new ModuleClassLoader(this);
   }
 
-  public ClassLoader getClassLoader() {
+  public ModuleClassLoader getClassLoader() {
     return myClassLoader;
   }
 
-  public boolean hasClass(String name) {
+  public boolean canFindClass(String name) {
     return getClassPathItem().hasClass(name);
   }
 
@@ -71,20 +78,20 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
   }
 
   public Iterable<IClassLoadingModule> getClassLoadingDependencies() {
-    if (myClassLoadingDependencies == null) {
-      ArrayList<IClassLoadingModule> res = new ArrayList<IClassLoadingModule>();
-      res.add(this);
-      for (IModule m : new GlobalModuleDependenciesManager(this).getModules(Deptype.COMPILE)) {
-        if (!(m instanceof ClassLoadingModule)) continue;
-        res.add((IClassLoadingModule) m);
-      }
-      myClassLoadingDependencies = res;
+    ArrayList<IClassLoadingModule> res = new ArrayList<IClassLoadingModule>();
+    res.add(this);
+    for (IModule m : new GlobalModuleDependenciesManager(this).getModules(Deptype.EXECUTE)) {
+      if (!(m instanceof ClassLoadingModule)) continue;
+      res.add((IClassLoadingModule) m);
     }
-    return myClassLoadingDependencies;
+    return res;
   }
 
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
-    //this is the only place where dependencies change now
-    myClassLoadingDependencies = null;
+  public boolean canLoadFromSelf() {
+    return true;
+  }
+
+  public boolean canLoad() {
+    return true;
   }
 }

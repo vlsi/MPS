@@ -53,6 +53,10 @@ public class Generator extends ClassLoadingModule {
     reloadAfterDescriptorChange();
   }
 
+  public String getPluginPath() {
+    return getSourceLanguage().getPluginPath();
+  }
+
   private void upgradeGeneratorDescriptor() {
     for (MappingPriorityRule mappingPriorityRule : myGeneratorDescriptor.getPriorityRules()) {
       MappingConfig_AbstractRef lesser = mappingPriorityRule.getRight();
@@ -131,7 +135,6 @@ public class Generator extends ClassLoadingModule {
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
     assert moduleDescriptor instanceof GeneratorDescriptor;
 
-    super.setModuleDescriptor(moduleDescriptor, reloadClasses);
     LanguageDescriptor languageDescriptor = getSourceLanguage().getModuleDescriptor();
     int index = languageDescriptor.getGenerators().indexOf(getModuleDescriptor());
     languageDescriptor.getGenerators().remove(index);
