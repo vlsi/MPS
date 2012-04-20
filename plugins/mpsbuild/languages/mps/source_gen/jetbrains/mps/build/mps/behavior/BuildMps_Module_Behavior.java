@@ -11,6 +11,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.build.util.JavaExportUtil;
 
 public class BuildMps_Module_Behavior {
@@ -21,6 +23,7 @@ public class BuildMps_Module_Behavior {
     MPSModulesClosure closure = new MPSModulesClosure(artifacts.getGenContext(), thisNode).closure();
 
     List<SNode> result = new ArrayList<SNode>();
+    List<SNode> requiredJars = new ArrayList<SNode>();
     for (SNode m : Sequence.fromIterable(closure.getModules())) {
       if (SNodeOperations.getContainingRoot(m) == SNodeOperations.getContainingRoot(thisNode)) {
         continue;
@@ -30,6 +33,23 @@ public class BuildMps_Module_Behavior {
       if (artifact != null) {
         ListSequence.fromList(result).addElement(artifact);
       }
+
+      ListSequence.fromList(requiredJars).addSequence(ListSequence.fromList(SLinkOperations.getTargets(m, "dependencies", true)).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return (SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency") ?
+            SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) :
+            it
+          );
+        }
+      }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar");
+        }
+      }).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true);
+        }
+      }));
     }
 
     for (SNode lr : Sequence.fromIterable(closure.getLanguagesWithRuntime())) {
@@ -42,15 +62,19 @@ public class BuildMps_Module_Behavior {
           continue;
         }
         SNode path = SLinkOperations.getTarget(SNodeOperations.cast(runtime, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime"), "path", true);
-        SNode artifact = SNodeOperations.as(artifacts.findArtifact(path), "jetbrains.mps.build.structure.BuildLayout_Node");
-        if (artifact != null) {
-          ListSequence.fromList(result).addElement(artifact);
-          if (SNodeOperations.isInstanceOf(artifact, "jetbrains.mps.build.structure.BuildLayout_Copy")) {
-            SNode file = SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.cast(artifact, "jetbrains.mps.build.structure.BuildLayout_Copy"), "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile");
-            if ((file != null)) {
-              // again, register real path here to enable "import jar ...." construction 
-              artifacts.findArtifact(SLinkOperations.getTarget(file, "path", true));
-            }
+        ListSequence.fromList(requiredJars).addElement(path);
+      }
+    }
+
+    for (SNode path : ListSequence.fromList(requiredJars)) {
+      SNode artifact = SNodeOperations.as(artifacts.findArtifact(path), "jetbrains.mps.build.structure.BuildLayout_Node");
+      if (artifact != null) {
+        ListSequence.fromList(result).addElement(artifact);
+        if (SNodeOperations.isInstanceOf(artifact, "jetbrains.mps.build.structure.BuildLayout_AbstractCopy")) {
+          SNode file = SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.cast(artifact, "jetbrains.mps.build.structure.BuildLayout_AbstractCopy"), "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile");
+          if ((file != null)) {
+            // again, register real path here to enable "import jar ...." construction 
+            artifacts.findArtifact(SLinkOperations.getTarget(file, "path", true));
           }
         }
       }

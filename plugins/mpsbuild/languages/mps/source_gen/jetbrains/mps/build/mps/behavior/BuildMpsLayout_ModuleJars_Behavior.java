@@ -7,9 +7,6 @@ import jetbrains.mps.build.util.UnpackHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class BuildMpsLayout_ModuleJars_Behavior {
   public static void init(SNode thisNode) {
@@ -20,24 +17,6 @@ public class BuildMpsLayout_ModuleJars_Behavior {
     String parentLocation = helper.contentLocations().get(parent);
     String languageLocation = parentLocation + "/" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "module", false), "name") + ".jar";
     helper.locations().put(thisNode, languageLocation);
-  }
-
-  public static boolean call_needsSeparateFolder_2540145662854549858(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "module", false), "jetbrains.mps.build.mps.structure.BuildMps_Language")) {
-      List<SNode> runtime = SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "module", false), "jetbrains.mps.build.mps.structure.BuildMps_Language"), "runtime", true);
-      if (ListSequence.fromList(runtime).any(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime");
-        }
-      })) {
-        return true;
-      }
-    }
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "module", false), "dependencies", true)).any(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar");
-      }
-    });
   }
 
   public static boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {

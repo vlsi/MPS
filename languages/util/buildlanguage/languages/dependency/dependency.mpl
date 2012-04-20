@@ -5,7 +5,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="jetbrains.mps.build.moduleDependencyLanguage#1216906826567" uuid="dca5c40a-5151-4f95-a465-70f40cd5f026">
+    <generator generatorUID="jetbrains.mps.build.dependency#1216906826567" uuid="dca5c40a-5151-4f95-a465-70f40cd5f026">
       <models>
         <modelRoot path="${language_descriptor}/generator/buildlanguage/template" />
       </models>
@@ -23,7 +23,7 @@
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <generator generatorUID="dca5c40a-5151-4f95-a465-70f40cd5f026(jetbrains.mps.build.moduleDependencyLanguage#1216906826567)" />
+            <generator generatorUID="dca5c40a-5151-4f95-a465-70f40cd5f026(jetbrains.mps.build.dependency#1216906826567)" />
             <external-mapping>
               <mapping-node modelUID="r:00000000-0000-4000-0000-011c895904d0(jetbrains.mps.build.dependency.generator.buildlanguage.template.main@generator)" nodeID="*" />
             </external-mapping>
@@ -37,7 +37,7 @@
         </mapping-priority-rule>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <generator generatorUID="dca5c40a-5151-4f95-a465-70f40cd5f026(jetbrains.mps.build.moduleDependencyLanguage#1216906826567)" />
+            <generator generatorUID="dca5c40a-5151-4f95-a465-70f40cd5f026(jetbrains.mps.build.dependency#1216906826567)" />
             <external-mapping>
               <mapping-node modelUID="r:00000000-0000-4000-0000-011c895904d0(jetbrains.mps.build.dependency.generator.buildlanguage.template.main@generator)" nodeID="*" />
             </external-mapping>

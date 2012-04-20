@@ -106,6 +106,7 @@
     <fileBasedIndex implementation="jetbrains.mps.ide.generator.index.LanguageModelDigestIndex"/>
     <fileBasedIndex implementation="jetbrains.mps.ide.generator.index.ModelDigestIndex"/>
     <fileBasedIndex implementation="com.intellij.psi.search.FilenameIndex"/>
+    <indexedRootsProvider implementation="jetbrains.mps.ide.findusages.caches.MPSIndexedRootsProvider"/>
 
     <syntaxHighlighter key="JAVA" implementationClass="jetbrains.mps.ide.java.JavaFileHighlighter"/>
     <syntaxHighlighter key="XML" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>

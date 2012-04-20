@@ -7,8 +7,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public abstract class BuildLayout_NamedContainer_BehaviorDescriptor extends BuildLayout_AbstractContainer_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, BuildSource_SingleFolder_BehaviorDescriptor {
+public abstract class BuildLayout_NamedContainer_BehaviorDescriptor extends BuildLayout_AbstractContainer_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, BuildSource_SingleFolder_BehaviorDescriptor, BuildStringContainer_BehaviorDescriptor {
   public BuildLayout_NamedContainer_BehaviorDescriptor() {
+  }
+
+  public boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue) {
+    return BuildLayout_NamedContainer_Behavior.virtual_isValidPart_9184644532456897464(thisNode, propertyValue);
   }
 
   public String virtual_getApproximateName_5610619299014531547(SNode thisNode) {

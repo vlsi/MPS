@@ -227,7 +227,7 @@ public class ScopeUtil {
     public SNode wrap(SNode node) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_Node")) {
         return SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildLayout_Node");
-      } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildInputSingleFolder") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.build.structure.BuildLayout_Copy")) {
+      } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildInputSingleFolder") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.build.structure.BuildLayout_AbstractCopy")) {
         return SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.build.structure.BuildLayout_Node");
       }
       return null;
@@ -237,7 +237,7 @@ public class ScopeUtil {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildSource_SingleFolder")) {
         return SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildSource_SingleFolder");
       } else {
-        SNode copyNode = SNodeOperations.as(node, "jetbrains.mps.build.structure.BuildLayout_Copy");
+        SNode copyNode = SNodeOperations.as(node, "jetbrains.mps.build.structure.BuildLayout_AbstractCopy");
         if ((copyNode != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(copyNode, "fileset", true), "jetbrains.mps.build.structure.BuildSource_SingleFolder")) {
           return SNodeOperations.cast(SLinkOperations.getTarget(copyNode, "fileset", true), "jetbrains.mps.build.structure.BuildSource_SingleFolder");
         }
@@ -254,7 +254,7 @@ public class ScopeUtil {
     public SNode wrap(SNode node) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_Node")) {
         return SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildLayout_Node");
-      } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildInputSingleFile") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.build.structure.BuildLayout_Copy")) {
+      } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildInputSingleFile") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.build.structure.BuildLayout_AbstractCopy")) {
         return SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.build.structure.BuildLayout_Node");
       }
       return null;
@@ -264,7 +264,7 @@ public class ScopeUtil {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildSource_SingleFile")) {
         return SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildSource_SingleFile");
       } else {
-        SNode copyNode = SNodeOperations.as(node, "jetbrains.mps.build.structure.BuildLayout_Copy");
+        SNode copyNode = SNodeOperations.as(node, "jetbrains.mps.build.structure.BuildLayout_AbstractCopy");
         if ((copyNode != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(copyNode, "fileset", true), "jetbrains.mps.build.structure.BuildSource_SingleFile")) {
           return SNodeOperations.cast(SLinkOperations.getTarget(copyNode, "fileset", true), "jetbrains.mps.build.structure.BuildSource_SingleFile");
         }

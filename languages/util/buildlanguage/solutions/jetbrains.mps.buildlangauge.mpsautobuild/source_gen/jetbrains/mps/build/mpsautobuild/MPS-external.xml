@@ -675,7 +675,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.core.xml" />
     <antcall target="MPS-languages.pack.jetbrains.mps.core.properties" />
     <antcall target="MPS-languages.pack.jetbrains.mps.gtext" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.gtext.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.gtext.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xml" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xmlQuery" />
