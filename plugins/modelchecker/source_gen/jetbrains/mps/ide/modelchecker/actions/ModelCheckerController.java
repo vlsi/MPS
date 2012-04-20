@@ -26,14 +26,17 @@ public abstract class ModelCheckerController {
       final CountDownLatch latch = new CountDownLatch(1);
       runCommand(new Runnable() {
         public void run() {
-          for (Iterator<ModelCheckerIssue> lit = ListSequence.fromList(issuesCopy).iterator(); lit.hasNext();) {
-            ModelCheckerIssue issue = lit.next();
-            if (issue.fix()) {
-              lit.remove();
-              promon.advance(1);
+          try {
+            for (Iterator<ModelCheckerIssue> lit = ListSequence.fromList(issuesCopy).iterator(); lit.hasNext();) {
+              ModelCheckerIssue issue = lit.next();
+              if (issue.fix()) {
+                lit.remove();
+                promon.advance(1);
+              }
             }
+          } finally {
+            latch.countDown();
           }
-          latch.countDown();
         }
       });
       try {

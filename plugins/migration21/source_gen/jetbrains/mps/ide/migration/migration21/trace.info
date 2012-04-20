@@ -1596,83 +1596,85 @@
     <nodeInfo nodeId="7450649563959262370" fileName="OptimizeImportsInProject_Action.java" startLine="73" startPosition="9" endLine="74" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7450649563959263120" fileName="OptimizeImportsInProject_Action.java" startLine="74" startPosition="199" endLine="75" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7450649563959265173" fileName="OptimizeImportsInProject_Action.java" startLine="75" startPosition="106" endLine="76" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7450649563959262390" fileName="OptimizeImportsInProject_Action.java" startLine="79" startPosition="65" endLine="80" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7450649563959262401" fileName="OptimizeImportsInProject_Action.java" startLine="81" startPosition="38" endLine="82" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="7450649563959262404" fileName="OptimizeImportsInProject_Action.java" startLine="84" startPosition="45" endLine="85" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4193578441192065042" fileName="OptimizeImportsInProject_Action.java" startLine="86" startPosition="13" endLine="87" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7450649563959262428" fileName="OptimizeImportsInProject_Action.java" startLine="89" startPosition="59" endLine="90" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="7450649563959262435" fileName="OptimizeImportsInProject_Action.java" startLine="92" startPosition="65" endLine="93" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="7450649563959262436" fileName="OptimizeImportsInProject_Action.java" startLine="94" startPosition="15" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7450649563959262931" fileName="OptimizeImportsInProject_Action.java" startLine="95" startPosition="0" endLine="96" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7450649563959263094" fileName="OptimizeImportsInProject_Action.java" startLine="98" startPosition="60" endLine="99" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7450649563959263261" fileName="OptimizeImportsInProject_Action.java" startLine="101" startPosition="19" endLine="102" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8756259057452779965" fileName="OptimizeImportsInProject_Action.java" startLine="105" startPosition="11" endLine="106" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7450649563959265219" fileName="OptimizeImportsInProject_Action.java" startLine="109" startPosition="11" endLine="110" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7450649563959263107" fileName="OptimizeImportsInProject_Action.java" startLine="115" startPosition="29" endLine="116" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5111529450593677658" fileName="OptimizeImportsInProject_Action.java" startLine="116" startPosition="140" endLine="117" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="122" startPosition="33" endLine="123" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7450649563959262390" fileName="OptimizeImportsInProject_Action.java" startLine="80" startPosition="67" endLine="81" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7450649563959262401" fileName="OptimizeImportsInProject_Action.java" startLine="82" startPosition="40" endLine="83" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="7450649563959262404" fileName="OptimizeImportsInProject_Action.java" startLine="85" startPosition="47" endLine="86" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4193578441192065042" fileName="OptimizeImportsInProject_Action.java" startLine="87" startPosition="15" endLine="88" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7450649563959262428" fileName="OptimizeImportsInProject_Action.java" startLine="90" startPosition="61" endLine="91" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="7450649563959262435" fileName="OptimizeImportsInProject_Action.java" startLine="93" startPosition="67" endLine="94" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="7450649563959262436" fileName="OptimizeImportsInProject_Action.java" startLine="95" startPosition="17" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7450649563959262931" fileName="OptimizeImportsInProject_Action.java" startLine="96" startPosition="0" endLine="97" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7450649563959263094" fileName="OptimizeImportsInProject_Action.java" startLine="99" startPosition="62" endLine="100" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7450649563959263261" fileName="OptimizeImportsInProject_Action.java" startLine="102" startPosition="21" endLine="103" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8756259057452779965" fileName="OptimizeImportsInProject_Action.java" startLine="107" startPosition="21" endLine="108" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7450649563959265219" fileName="OptimizeImportsInProject_Action.java" startLine="112" startPosition="11" endLine="113" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7450649563959263107" fileName="OptimizeImportsInProject_Action.java" startLine="118" startPosition="29" endLine="119" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5111529450593677658" fileName="OptimizeImportsInProject_Action.java" startLine="119" startPosition="140" endLine="120" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="125" startPosition="33" endLine="126" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="52" startPosition="27" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="52" startPosition="27" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="60" startPosition="95" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="65" startPosition="100" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7450649563959262396" fileName="OptimizeImportsInProject_Action.java" startLine="80" startPosition="83" endLine="83" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7450649563959262402" fileName="OptimizeImportsInProject_Action.java" startLine="83" startPosition="13" endLine="86" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7450649563959262423" fileName="OptimizeImportsInProject_Action.java" startLine="88" startPosition="99" endLine="91" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7450649563959262429" fileName="OptimizeImportsInProject_Action.java" startLine="91" startPosition="15" endLine="94" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="121" startPosition="27" endLine="124" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="121" startPosition="27" endLine="124" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7450649563959262396" fileName="OptimizeImportsInProject_Action.java" startLine="81" startPosition="85" endLine="84" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7450649563959262402" fileName="OptimizeImportsInProject_Action.java" startLine="84" startPosition="15" endLine="87" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7450649563959262423" fileName="OptimizeImportsInProject_Action.java" startLine="89" startPosition="101" endLine="92" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7450649563959262429" fileName="OptimizeImportsInProject_Action.java" startLine="92" startPosition="17" endLine="95" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="124" startPosition="27" endLine="127" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="124" startPosition="27" endLine="127" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="64" startPosition="89" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7450649563959263092" fileName="OptimizeImportsInProject_Action.java" startLine="97" startPosition="90" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SModelReference;)Z" />
-    <nodeInfo nodeId="7450649563959265212" fileName="OptimizeImportsInProject_Action.java" startLine="108" startPosition="9" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7450649563959263092" fileName="OptimizeImportsInProject_Action.java" startLine="98" startPosition="92" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SModelReference;)Z" />
+    <nodeInfo nodeId="7450649563959265212" fileName="OptimizeImportsInProject_Action.java" startLine="111" startPosition="9" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="42" startPosition="0" endLine="47" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OptimizeImportsInProject_Action#()V" />
-    <nodeInfo nodeId="7450649563959263214" fileName="OptimizeImportsInProject_Action.java" startLine="114" startPosition="71" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7450649563959263213" fileName="OptimizeImportsInProject_Action.java" startLine="113" startPosition="60" endLine="119" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7450649563959263083" fileName="OptimizeImportsInProject_Action.java" startLine="96" startPosition="103" endLine="103" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7450649563959263214" fileName="OptimizeImportsInProject_Action.java" startLine="117" startPosition="71" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7450649563959263213" fileName="OptimizeImportsInProject_Action.java" startLine="116" startPosition="60" endLine="122" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7450649563959263083" fileName="OptimizeImportsInProject_Action.java" startLine="97" startPosition="105" endLine="104" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="49" startPosition="89" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7450649563959263147" fileName="OptimizeImportsInProject_Action.java" startLine="112" startPosition="7" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7450649563959263147" fileName="OptimizeImportsInProject_Action.java" startLine="115" startPosition="7" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="48" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="59" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="7450649563959262417" fileName="OptimizeImportsInProject_Action.java" startLine="87" startPosition="57" endLine="104" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7450649563959262385" fileName="OptimizeImportsInProject_Action.java" startLine="78" startPosition="27" endLine="105" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="7450649563959263253" fileName="OptimizeImportsInProject_Action.java" startLine="77" startPosition="59" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7450649563959263252" fileName="OptimizeImportsInProject_Action.java" startLine="76" startPosition="57" endLine="108" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="72" startPosition="96" endLine="125" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="71" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <scopeInfo nodeId="7450649563959265215" fileName="OptimizeImportsInProject_Action.java" startLine="111" startPosition="0" endLine="111" endPosition="45">
+    <nodeInfo nodeId="7450649563959262417" fileName="OptimizeImportsInProject_Action.java" startLine="88" startPosition="59" endLine="105" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7450649563959262385" fileName="OptimizeImportsInProject_Action.java" startLine="79" startPosition="15" endLine="106" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="8356030516795795326" fileName="OptimizeImportsInProject_Action.java" startLine="78" startPosition="27" endLine="109" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="7450649563959263253" fileName="OptimizeImportsInProject_Action.java" startLine="77" startPosition="59" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7450649563959263252" fileName="OptimizeImportsInProject_Action.java" startLine="76" startPosition="57" endLine="111" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="72" startPosition="96" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="71" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <scopeInfo nodeId="7450649563959265215" fileName="OptimizeImportsInProject_Action.java" startLine="114" startPosition="0" endLine="114" endPosition="45">
       <varInfo nodeId="7450649563959265216" varName="ignore" />
     </scopeInfo>
-    <scopeInfo nodeId="7450649563959265218" fileName="OptimizeImportsInProject_Action.java" startLine="111" startPosition="45" endLine="111" endPosition="45" />
+    <scopeInfo nodeId="7450649563959265218" fileName="OptimizeImportsInProject_Action.java" startLine="114" startPosition="45" endLine="114" endPosition="45" />
     <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="50" startPosition="9" endLine="51" endPosition="43" />
     <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="53" startPosition="33" endLine="54" endPosition="99" />
     <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="61" startPosition="53" endLine="62" endPosition="19" />
     <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="63" startPosition="5" endLine="64" endPosition="89" />
     <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="66" startPosition="62" endLine="67" endPosition="19" />
-    <scopeInfo nodeId="7450649563959262400" fileName="OptimizeImportsInProject_Action.java" startLine="81" startPosition="38" endLine="82" endPosition="23" />
-    <scopeInfo nodeId="7450649563959262403" fileName="OptimizeImportsInProject_Action.java" startLine="84" startPosition="45" endLine="85" endPosition="131" />
-    <scopeInfo nodeId="7450649563959262427" fileName="OptimizeImportsInProject_Action.java" startLine="89" startPosition="59" endLine="90" endPosition="25" />
-    <scopeInfo nodeId="7450649563959262434" fileName="OptimizeImportsInProject_Action.java" startLine="92" startPosition="65" endLine="93" endPosition="25" />
-    <scopeInfo nodeId="7450649563959263093" fileName="OptimizeImportsInProject_Action.java" startLine="98" startPosition="60" endLine="99" endPosition="69" />
-    <scopeInfo nodeId="7450649563959263084" fileName="OptimizeImportsInProject_Action.java" startLine="101" startPosition="19" endLine="102" endPosition="69" />
-    <scopeInfo nodeId="7450649563959265213" fileName="OptimizeImportsInProject_Action.java" startLine="109" startPosition="11" endLine="110" endPosition="22" />
-    <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="122" startPosition="33" endLine="123" endPosition="98" />
-    <scopeInfo nodeId="7450649563959263215" fileName="OptimizeImportsInProject_Action.java" startLine="115" startPosition="29" endLine="117" endPosition="53" />
+    <scopeInfo nodeId="7450649563959262400" fileName="OptimizeImportsInProject_Action.java" startLine="82" startPosition="40" endLine="83" endPosition="25" />
+    <scopeInfo nodeId="7450649563959262403" fileName="OptimizeImportsInProject_Action.java" startLine="85" startPosition="47" endLine="86" endPosition="133" />
+    <scopeInfo nodeId="7450649563959262427" fileName="OptimizeImportsInProject_Action.java" startLine="90" startPosition="61" endLine="91" endPosition="27" />
+    <scopeInfo nodeId="7450649563959262434" fileName="OptimizeImportsInProject_Action.java" startLine="93" startPosition="67" endLine="94" endPosition="27" />
+    <scopeInfo nodeId="7450649563959263093" fileName="OptimizeImportsInProject_Action.java" startLine="99" startPosition="62" endLine="100" endPosition="71" />
+    <scopeInfo nodeId="7450649563959263084" fileName="OptimizeImportsInProject_Action.java" startLine="102" startPosition="21" endLine="103" endPosition="71" />
+    <scopeInfo nodeId="8356030516795795329" fileName="OptimizeImportsInProject_Action.java" startLine="107" startPosition="21" endLine="108" endPosition="30" />
+    <scopeInfo nodeId="7450649563959265213" fileName="OptimizeImportsInProject_Action.java" startLine="112" startPosition="11" endLine="113" endPosition="22" />
+    <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="125" startPosition="33" endLine="126" endPosition="98" />
+    <scopeInfo nodeId="7450649563959263215" fileName="OptimizeImportsInProject_Action.java" startLine="118" startPosition="29" endLine="120" endPosition="53" />
     <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="43" startPosition="44" endLine="46" endPosition="40" />
     <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="52" startPosition="27" endLine="55" endPosition="7" />
-    <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="121" startPosition="0" endLine="124" endPosition="7">
+    <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="124" startPosition="0" endLine="127" endPosition="7">
       <varInfo nodeId="7450649563959262367" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="121" startPosition="27" endLine="124" endPosition="7" />
+    <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="124" startPosition="27" endLine="127" endPosition="7" />
     <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="52" startPosition="0" endLine="56" endPosition="44">
       <varInfo nodeId="7450649563959262367" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="52" startPosition="27" endLine="56" endPosition="44" />
     <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="64" startPosition="89" endLine="68" endPosition="5" />
-    <scopeInfo nodeId="7450649563959263092" fileName="OptimizeImportsInProject_Action.java" startLine="97" startPosition="90" endLine="101" endPosition="0">
+    <scopeInfo nodeId="7450649563959263092" fileName="OptimizeImportsInProject_Action.java" startLine="98" startPosition="92" endLine="102" endPosition="0">
       <varInfo nodeId="7450649563959263092" varName="imp" />
     </scopeInfo>
     <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="42" startPosition="0" endLine="47" endPosition="3" />
-    <scopeInfo nodeId="7450649563959263214" fileName="OptimizeImportsInProject_Action.java" startLine="114" startPosition="71" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="7450649563959263148" fileName="OptimizeImportsInProject_Action.java" startLine="113" startPosition="60" endLine="119" endPosition="11" />
+    <scopeInfo nodeId="7450649563959263214" fileName="OptimizeImportsInProject_Action.java" startLine="117" startPosition="71" endLine="122" endPosition="0" />
+    <scopeInfo nodeId="7450649563959263148" fileName="OptimizeImportsInProject_Action.java" startLine="116" startPosition="60" endLine="122" endPosition="11" />
     <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="49" startPosition="89" endLine="57" endPosition="5" />
     <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="60" startPosition="95" endLine="69" endPosition="16" />
     <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="48" startPosition="0" endLine="59" endPosition="0">
@@ -1683,32 +1685,33 @@
       <varInfo nodeId="7450649563959262367" varName="_params" />
       <varInfo nodeId="7450649563959262367" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="7450649563959262422" fileName="OptimizeImportsInProject_Action.java" startLine="88" startPosition="99" endLine="103" endPosition="15">
+    <scopeInfo nodeId="7450649563959262422" fileName="OptimizeImportsInProject_Action.java" startLine="89" startPosition="101" endLine="104" endPosition="17">
       <varInfo nodeId="7450649563959262932" varName="imports" />
     </scopeInfo>
-    <scopeInfo nodeId="7450649563959262417" fileName="OptimizeImportsInProject_Action.java" startLine="87" startPosition="57" endLine="104" endPosition="13">
+    <scopeInfo nodeId="7450649563959262417" fileName="OptimizeImportsInProject_Action.java" startLine="88" startPosition="59" endLine="105" endPosition="15">
       <varInfo nodeId="7450649563959262417" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="7450649563959262389" fileName="OptimizeImportsInProject_Action.java" startLine="79" startPosition="65" endLine="104" endPosition="13">
+    <scopeInfo nodeId="7450649563959262389" fileName="OptimizeImportsInProject_Action.java" startLine="80" startPosition="67" endLine="105" endPosition="15">
       <varInfo nodeId="7450649563959262391" varName="module" />
       <varInfo nodeId="4193578441192065043" varName="moduleScope" />
     </scopeInfo>
-    <scopeInfo nodeId="7450649563959263254" fileName="OptimizeImportsInProject_Action.java" startLine="78" startPosition="27" endLine="106" endPosition="28" />
-    <scopeInfo nodeId="7450649563959263253" fileName="OptimizeImportsInProject_Action.java" startLine="77" startPosition="59" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="73" startPosition="9" endLine="120" endPosition="7">
+    <scopeInfo nodeId="8356030516795795327" fileName="OptimizeImportsInProject_Action.java" startLine="79" startPosition="15" endLine="106" endPosition="13" />
+    <scopeInfo nodeId="7450649563959263254" fileName="OptimizeImportsInProject_Action.java" startLine="78" startPosition="27" endLine="109" endPosition="11" />
+    <scopeInfo nodeId="7450649563959263253" fileName="OptimizeImportsInProject_Action.java" startLine="77" startPosition="59" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="73" startPosition="9" endLine="123" endPosition="7">
       <varInfo nodeId="7450649563959265174" varName="latch" />
       <varInfo nodeId="7450649563959263121" varName="modelsToFix" />
       <varInfo nodeId="7450649563959262371" varName="modules" />
     </scopeInfo>
-    <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="72" startPosition="96" endLine="125" endPosition="5" />
-    <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="71" startPosition="0" endLine="127" endPosition="0">
+    <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="72" startPosition="96" endLine="128" endPosition="5" />
+    <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="71" startPosition="0" endLine="130" endPosition="0">
       <varInfo nodeId="7450649563959262367" varName="_params" />
       <varInfo nodeId="7450649563959262367" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="39" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.ide.migration.migration21.OptimizeImportsInProject_Action" />
-    <unitInfo nodeId="7450649563959263253" fileName="OptimizeImportsInProject_Action.java" startLine="77" startPosition="47" endLine="108" endPosition="7" unitName="jetbrains.mps.ide.migration.migration21.OptimizeImportsInProject_Action$1" />
-    <unitInfo nodeId="7450649563959263092" fileName="OptimizeImportsInProject_Action.java" startLine="97" startPosition="57" endLine="101" endPosition="15" unitName="jetbrains.mps.ide.migration.migration21.OptimizeImportsInProject_Action$2" />
-    <unitInfo nodeId="7450649563959263214" fileName="OptimizeImportsInProject_Action.java" startLine="114" startPosition="59" endLine="119" endPosition="9" unitName="jetbrains.mps.ide.migration.migration21.OptimizeImportsInProject_Action$2" />
+    <unitInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="39" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.ide.migration.migration21.OptimizeImportsInProject_Action" />
+    <unitInfo nodeId="7450649563959263253" fileName="OptimizeImportsInProject_Action.java" startLine="77" startPosition="47" endLine="111" endPosition="7" unitName="jetbrains.mps.ide.migration.migration21.OptimizeImportsInProject_Action$1" />
+    <unitInfo nodeId="7450649563959263092" fileName="OptimizeImportsInProject_Action.java" startLine="98" startPosition="59" endLine="102" endPosition="17" unitName="jetbrains.mps.ide.migration.migration21.OptimizeImportsInProject_Action$2" />
+    <unitInfo nodeId="7450649563959263214" fileName="OptimizeImportsInProject_Action.java" startLine="117" startPosition="59" endLine="122" endPosition="9" unitName="jetbrains.mps.ide.migration.migration21.OptimizeImportsInProject_Action$2" />
   </root>
   <root nodeId="8004978336432944889">
     <nodeInfo nodeId="8004978336433033240" fileName="PluginMoveHelper.java" startLine="46" startPosition="31" endLine="47" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SOLUTION_NAME" />

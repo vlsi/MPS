@@ -93,30 +93,34 @@ public class MigrationProcessor extends AbstractProjectComponent{
       runCommand(new Runnable() {
         @Override
         public void run() {
-          fireStartingAction(action);
-          AnActionEvent event = new AnActionEvent(null, DataManager.getInstance().getDataContext(component), ActionPlaces.UNKNOWN, action.getTemplatePresentation(), ActionManager.getInstance(), 0);
-          boolean success = false;
-          boolean oldFlag = action.isExecuteOutsideCommand();
           try{
-            action.setExecuteOutsideCommand(true);
-            action.update(event);
-            if (action.getTemplatePresentation().isEnabled()) {
-              action.actionPerformed(event);
-              success = true;
+            fireStartingAction(action);
+            AnActionEvent event = new AnActionEvent(null, DataManager.getInstance().getDataContext(component), ActionPlaces.UNKNOWN, action.getTemplatePresentation(), ActionManager.getInstance(), 0);
+            boolean success = false;
+            boolean oldFlag = action.isExecuteOutsideCommand();
+            try{
+              action.setExecuteOutsideCommand(true);
+              action.update(event);
+              if (action.getTemplatePresentation().isEnabled()) {
+                action.actionPerformed(event);
+                success = true;
+              }
             }
-          }
-          catch (Exception e) {
-            LOG.error(e);
+            catch (Exception e) {
+              LOG.error(e);
+            }
+            finally {
+              action.setExecuteOutsideCommand(oldFlag);
+              if (success) {
+                fireFinishedAction(action);
+              } else {
+                fireFailedAction(action);
+              }
+            }
           }
           finally {
-            action.setExecuteOutsideCommand(oldFlag);
-            if (success) {
-              fireFinishedAction(action);
-            } else {
-              fireFailedAction(action);
-            }
+            latch.countDown();
           }
-          latch.countDown();
         }
       });
       try {

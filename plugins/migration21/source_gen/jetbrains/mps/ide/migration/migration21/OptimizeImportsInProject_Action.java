@@ -76,34 +76,37 @@ public class OptimizeImportsInProject_Action extends BaseAction {
       final CountDownLatch latch = new CountDownLatch(1);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          while (QueueSequence.fromQueue(modules).isNotEmpty()) {
-            IModule module = QueueSequence.fromQueue(modules).removeFirstElement();
-            if (module.isPackaged()) {
-              continue;
-            }
-            if (module instanceof Language) {
-              QueueSequence.fromQueue(modules).addSequence(CollectionSequence.fromCollection(((Language) module).getGenerators()));
-            }
-            final IScope moduleScope = module.getScope();
-            for (SModelDescriptor model : ListSequence.fromList(module.getOwnModelDescriptors())) {
-              if (!(SModelStereotype.isUserModel(model))) {
+          try {
+            while (QueueSequence.fromQueue(modules).isNotEmpty()) {
+              IModule module = QueueSequence.fromQueue(modules).removeFirstElement();
+              if (module.isPackaged()) {
                 continue;
               }
-              if (!(model instanceof EditableSModelDescriptor)) {
-                continue;
+              if (module instanceof Language) {
+                QueueSequence.fromQueue(modules).addSequence(CollectionSequence.fromCollection(((Language) module).getGenerators()));
               }
-
-              List<SModelReference> imports = SModelOperations.getImportedModelUIDs(model.getSModel());
-              if (ListSequence.fromList(imports).any(new IWhereFilter<SModelReference>() {
-                public boolean accept(SModelReference imp) {
-                  return moduleScope.getModelDescriptor(imp) == null;
+              final IScope moduleScope = module.getScope();
+              for (SModelDescriptor model : ListSequence.fromList(module.getOwnModelDescriptors())) {
+                if (!(SModelStereotype.isUserModel(model))) {
+                  continue;
                 }
-              })) {
-                ListSequence.fromList(modelsToFix).addElement(model);
+                if (!(model instanceof EditableSModelDescriptor)) {
+                  continue;
+                }
+
+                List<SModelReference> imports = SModelOperations.getImportedModelUIDs(model.getSModel());
+                if (ListSequence.fromList(imports).any(new IWhereFilter<SModelReference>() {
+                  public boolean accept(SModelReference imp) {
+                    return moduleScope.getModelDescriptor(imp) == null;
+                  }
+                })) {
+                  ListSequence.fromList(modelsToFix).addElement(model);
+                }
               }
             }
+          } finally {
+            latch.countDown();
           }
-          latch.countDown();
         }
       });
       try {
