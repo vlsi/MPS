@@ -14,6 +14,10 @@
   
   <target name="assemble" depends="classes, fetchDependencies">
     <mkdir dir="${build.layout}/mps-core" />
+    <mkdir dir="${build.layout}/mps-core/languages" />
+    <copy todir="${build.layout}/mps-core/languages">
+      <fileset dir="${artifacts.buildCore}/mps-core/languages" />
+    </copy>
     <mkdir dir="${build.layout}/mps-core/lib" />
     <copy todir="${build.layout}/mps-core/lib">
       <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
@@ -86,8 +90,22 @@
     <jar destfile="${build.layout}/mps-vcs/lib/mps-vcs-core.jar">
       <fileset dir="${build.tmp}/java/out/mps-vcs-core" />
     </jar>
+    <mkdir dir="${build.tmp}/default/mps-vcs-platform.jar" />
+    <mkdir dir="${build.tmp}/default/mps-vcs-platform.jar/META-INF" />
+    <copy todir="${build.tmp}/default/mps-vcs-platform.jar/META-INF">
+      <fileset file="${mps_home}/IdeaPlugin/mps-vcs/META-INF/plugin.xml" />
+      <filterchain>
+        <tokenfilter>
+          <replaceregex pattern="../classes/META-INF/" replace="" flags="gi" />
+        </tokenfilter>
+        <tokenfilter>
+          <replaceregex pattern="../classes/jetbrains/" replace="../jetbrains/" flags="gi" />
+        </tokenfilter>
+      </filterchain>
+    </copy>
     <jar destfile="${build.layout}/mps-vcs/lib/mps-vcs-platform.jar">
       <fileset dir="${build.tmp}/java/out/mps-vcs-platform" />
+      <fileset dir="${build.tmp}/default/mps-vcs-platform.jar" />
     </jar>
   </target>
   
@@ -116,7 +134,7 @@
   
   <target name="java.compile.mps-plugin" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mps-plugin" />
-    <javac destdir="${build.tmp}/java/out/mps-plugin" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/mps-plugin" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/IdeaPlugin/mps-core/src" />
@@ -153,7 +171,7 @@
   
   <target name="java.compile.mps-vcs-core" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mps-vcs-core" />
-    <javac destdir="${build.tmp}/java/out/mps-vcs-core" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/mps-vcs-core" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/vcs-core/core/source_gen" />
@@ -184,7 +202,7 @@
   
   <target name="java.compile.mps-vcs-platform" depends="java.compile.mps-vcs-core, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mps-vcs-platform" />
-    <javac destdir="${build.tmp}/java/out/mps-vcs-platform" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/mps-vcs-platform" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/vcs/common/source" />
