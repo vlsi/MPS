@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.runtime;
 
+import jetbrains.mps.library.LibraryInitializer;
 import sun.reflect.Reflection;
 
 import java.io.IOException;
@@ -30,7 +31,7 @@ public class ModuleClassLoader extends ClassLoader {
   private IClassLoadingModule myModule;
 
   public ModuleClassLoader(IClassLoadingModule module) {
-    super(Reflection.getCallerClass(1).getClassLoader());
+    super(LibraryInitializer.getInstance().getParentLoaderForModule(module));
     myModule = module;
   }
 

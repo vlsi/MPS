@@ -21,6 +21,8 @@ public interface IClassLoadingModule {
   //should include self
   Iterable<IClassLoadingModule> getClassLoadingDependencies();
 
+  String getPluginPath();
+
   //---class
 
   boolean canFindClass(String name);

@@ -52,10 +52,10 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
 
   //-------libraries
 
-  public final Set<String> getLibraries() {
-    Set<String> result = new HashSet<String>();
+  public final Set<LibDescriptor> getLibraries() {
+    Set<LibDescriptor> result = new HashSet<LibDescriptor>();
     for (Library l : getUILibraries()) {
-      result.add(l.getPath());
+      result.add(new LibDescriptor(l.getPath(), null));
     }
     return result;
   }

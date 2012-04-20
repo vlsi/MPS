@@ -49,6 +49,10 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
     }
   }
 
+  public String getPluginPath() {
+    return getBundleHome().getPath();
+  }
+
   public void invalidateClasses() {
     myClassLoader = new ModuleClassLoader(this);
   }
