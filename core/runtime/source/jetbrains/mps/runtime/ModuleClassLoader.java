@@ -35,11 +35,11 @@ public class ModuleClassLoader extends ClassLoader {
     myModule = module;
   }
 
-  protected final synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+  protected final Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
     return loadClass(name, resolve, true);
   }
 
-  protected final synchronized Class<?> loadClass(String name, boolean resolve, boolean dependencies) throws ClassNotFoundException {
+  protected final Class<?> loadClass(String name, boolean resolve, boolean dependencies) throws ClassNotFoundException {
     if (!myModule.canLoad()) throw new ClassNotFoundException(name);
 
     Class c = findClassEverywhere(name, dependencies);
