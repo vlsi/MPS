@@ -33,7 +33,7 @@ public class SwitchStatement_Behavior {
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     SNode childStatement = child;
-    while (SNodeOperations.getParent(childStatement) != thisNode) {
+    while ((childStatement != null) && SNodeOperations.getParent(childStatement) != thisNode) {
       childStatement = SNodeOperations.getParent(childStatement);
     }
 
