@@ -31,6 +31,7 @@ import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.build.mps.util.ModuleLoader;
+import org.apache.commons.lang.StringUtils;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1500819558096430320(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -445,7 +446,12 @@ public class QueriesGenerated {
   }
 
   public static Object insertMacro_varValue_2540145662854694572(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return new RelativePathHelper(BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true), Context.defaultContext(_context)));
+    String localPath = BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true), Context.defaultContext(_context));
+    if (StringUtils.isEmpty(localPath)) {
+      _context.showErrorMessage(_context.getNode(), "cannot build local path");
+      return null;
+    }
+    return new RelativePathHelper(localPath);
   }
 
   public static Object insertMacro_varValue_6859736767834869981(final IOperationContext operationContext, final TemplateQueryContext _context) {

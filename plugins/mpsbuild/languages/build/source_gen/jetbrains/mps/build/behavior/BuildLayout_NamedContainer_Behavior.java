@@ -38,4 +38,8 @@ public class BuildLayout_NamedContainer_Behavior {
   public static String virtual_getApproximateName_5610619299014531547(SNode thisNode) {
     return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(thisNode, "containerName", true), null);
   }
+
+  public static boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue) {
+    return !(propertyValue.contains("$") || propertyValue.contains("/") || propertyValue.contains("\\"));
+  }
 }
