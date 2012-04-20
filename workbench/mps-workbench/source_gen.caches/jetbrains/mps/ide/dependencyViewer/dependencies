@@ -112,6 +112,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.ide.dependencyViewer.TargetsView" file="TargetsView.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
