@@ -58,6 +58,10 @@ public class QueriesGenerated {
     return SetSequence.fromSet(StatementList_Behavior.call_uncaughtThrowables_3331512479731115649(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "createBreakpoint", true), "body", true), false)).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.debugger.api.lang.structure.DebuggerReference", false, new String[]{})).isNotEmpty();
   }
 
+  public static boolean ifMacro_Condition_1018031474355522788(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(SPropertyOperations.getBoolean(_context.getNode(), "isComplex"));
+  }
+
   public static SNode sourceNodeQuery_2526721715665232360(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "nodeExpression", true);
   }
@@ -102,7 +106,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "breakpointableConcepts", true);
   }
 
-  public static Iterable sourceNodesQuery_933053558709995176(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1018031474355522851(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "conceptsToCreateBreakpoint", true);
   }
 
