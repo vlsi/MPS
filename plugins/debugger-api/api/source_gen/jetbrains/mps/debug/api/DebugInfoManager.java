@@ -62,6 +62,14 @@ public class DebugInfoManager implements ApplicationComponent {
     MapSequence.fromMap(myAddedByConceptCreators).removeKey(fqName);
   }
 
+  public void addBreakpointCreator(Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> creator) {
+    SetSequence.fromSet(myCreators).addElement(creator);
+  }
+
+  public void removeBreakpointCreator(Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> creator) {
+    SetSequence.fromSet(myCreators).removeElement(creator);
+  }
+
   public boolean isDebuggableNode(@Nullable final SNode node) {
     if (node == null) {
       return false;

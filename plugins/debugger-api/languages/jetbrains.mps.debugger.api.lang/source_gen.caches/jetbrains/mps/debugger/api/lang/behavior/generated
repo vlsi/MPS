@@ -14,7 +14,7 @@
   <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="-4sqjtrg3xzuff4g6f7j2jmf3e16ncus" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-7zc5n4l9a9zrjq93znk167hfo3dyd2v" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="3ogbc94405e1j8mrhp8fnrksbak1c2a" />
-  <dep model="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debugger.api.lang.structure)" hash="9v11ao4g9n4t17d4v5wg91q85xxers6" />
+  <dep model="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debugger.api.lang.structure)" hash="92ihlysacdfatzz84rq9a2o5eg83fj8" />
   <common hash="36ntr8qoiopfrf40c124bow2vqwvnj0" dependsOnNodes="true">
     <dep root="2511103526757024634" />
     <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
@@ -36,6 +36,7 @@
     <file name="BreakpointCreator_BehaviorDescriptor.java" />
     <file name="BreakpointableNodeItem_BehaviorDescriptor.java" />
     <file name="ConceptDeclarationReference_BehaviorDescriptor.java" />
+    <file name="ConceptFunctionParameter_Concept_BehaviorDescriptor.java" />
     <file name="ConceptFunctionParameter_Debug_Project_BehaviorDescriptor.java" />
     <file name="ConceptFunctionParameter_DebuggableNode_BehaviorDescriptor.java" />
     <file name="ConceptFunctionParameter_DebuggableNode_Deprecated_BehaviorDescriptor.java" />
@@ -44,6 +45,7 @@
     <file name="ConceptFunction_CreateBreakpoint_BehaviorDescriptor.java" />
     <file name="ConceptFunction_GetUnitName_BehaviorDescriptor.java" />
     <file name="ConceptFunction_GetVariables_BehaviorDescriptor.java" />
+    <file name="ConceptFunction_IsApplicableToConcept_BehaviorDescriptor.java" />
     <file name="ConceptFunction_PropertyStringGetter_BehaviorDescriptor.java" />
     <file name="CreateBreakpointOperation_BehaviorDescriptor.java" />
     <file name="DebugInfoInitializer_BehaviorDescriptor.java" />
