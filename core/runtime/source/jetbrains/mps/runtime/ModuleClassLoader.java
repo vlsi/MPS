@@ -15,12 +15,13 @@
  */
 package jetbrains.mps.runtime;
 
-import jetbrains.mps.util.InternUtil;
 import sun.reflect.Reflection;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.Iterator;
 
 public class ModuleClassLoader extends ClassLoader {
   //this is for debug purposes (heap dumps)
@@ -33,14 +34,47 @@ public class ModuleClassLoader extends ClassLoader {
     myModule = module;
   }
 
-  protected final Class<?> findClass(String name) throws ClassNotFoundException {
-    byte[] bytes = findInCurrent(name);
-    if (bytes != null) {
-      definePackageIfNecessary(name);
-      return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
+  protected final synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+    return loadClass(name, resolve, true);
+  }
+
+  protected final synchronized Class<?> loadClass(String name, boolean resolve, boolean dependencies) throws ClassNotFoundException {
+    if (!myModule.canLoad()) throw new ClassNotFoundException(name);
+
+    Class c = findClassEverywhere(name, dependencies);
+
+    if (resolve) {
+      resolveClass(c);
     }
 
-    return findInDependencies(name);
+    return c;
+  }
+
+  protected final Class<?> findClassEverywhere(String name, boolean dependencies) throws ClassNotFoundException {
+    if (myModule.canLoadFromSelf()) {
+      Class c = findLoadedClass(name);
+      if (c != null) return c;
+
+      byte[] bytes = myModule.findClassBytes(name);
+      if (bytes != null) {
+        definePackageIfNecessary(name);
+        return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
+      }
+    }
+
+    if (dependencies) {
+      for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
+        if (m.equals(myModule)) continue;
+
+        try {
+          return m.getClassLoader().loadClass(name, false, false);
+        } catch (ClassNotFoundException e) {
+          //ignore
+        }
+      }
+    }
+
+    return getParent().loadClass(name);
   }
 
   private void definePackageIfNecessary(String name) {
@@ -54,27 +88,6 @@ public class ModuleClassLoader extends ClassLoader {
     int lastIndex = fqName.lastIndexOf('.');
     if (lastIndex == -1) return "";
     return fqName.substring(0, lastIndex);
-  }
-
-  protected Class findInDependencies(String name) {
-    for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
-      if (m.equals(myModule)) continue;
-
-      if (m.hasClass(name)) {
-        try {
-          return Class.forName(name, false, m.getClassLoader());
-        } catch (ClassNotFoundException e) {
-          throw new RuntimeException(e);
-        }
-      }
-    }
-
-    return null;
-  }
-
-  protected byte[] findInCurrent(String name) {
-    if (!myModule.hasClass(name)) return null;
-    return myModule.findClassBytes(name);
   }
 
   protected URL findResource(String name) {

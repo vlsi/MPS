@@ -634,7 +634,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     }
 
     protected Class<?> findClass(String name) throws ClassNotFoundException {
-      byte[] bytes = findInCurrent(name);
+      byte[] bytes = findClassBytes(name);
       if (bytes == null) return null;
       definePackageIfNecessary(name);
       return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
@@ -644,11 +644,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
       String pack = NameUtil.namespaceFromLongName(name);
       if (getPackage(pack) != null) return;
       definePackage(pack, null, null, null, null, null, null, null);
-    }
-
-    protected byte[] findInCurrent(String name) {
-      if (!Language.this.hasClass(name)) return null;
-      return Language.this.findClassBytes(name);
     }
   }
 }

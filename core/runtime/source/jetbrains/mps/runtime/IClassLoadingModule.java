@@ -23,11 +23,15 @@ public interface IClassLoadingModule {
 
   //---class
 
-  boolean hasClass(String name);
+  boolean canFindClass(String name);
 
   byte[] findClassBytes(String name);
 
-  ClassLoader getClassLoader();
+  ModuleClassLoader getClassLoader();
+
+  boolean canLoadFromSelf();
+
+  boolean canLoad();
 
   //---resource
 

@@ -24,7 +24,6 @@ import jetbrains.mps.util.InternUtil;
 
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 
 public abstract class ClassLoadingModule extends AbstractModule implements IClassLoadingModule {
   private static Logger LOG = Logger.getLogger(ClassLoadingModule.class);
@@ -54,11 +53,11 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
     myClassLoader = new ModuleClassLoader(this);
   }
 
-  public ClassLoader getClassLoader() {
+  public ModuleClassLoader getClassLoader() {
     return myClassLoader;
   }
 
-  public boolean hasClass(String name) {
+  public boolean canFindClass(String name) {
     return getClassPathItem().hasClass(name);
   }
 
@@ -82,5 +81,13 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
       res.add((IClassLoadingModule) m);
     }
     return res;
+  }
+
+  public boolean canLoadFromSelf() {
+    return true;
+  }
+
+  public boolean canLoad() {
+    return true;
   }
 }
