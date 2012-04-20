@@ -21,6 +21,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.runtime.ModuleClassLoader;
 import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.vfs.IFile;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -50,7 +51,9 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
   }
 
   public String getPluginPath() {
-    return getBundleHome().getPath();
+    IFile bundleHome = getBundleHome();
+    if (bundleHome == null) return null;
+    return bundleHome.getPath();
   }
 
   public void invalidateClasses() {

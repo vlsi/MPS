@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -68,7 +67,9 @@ public class LibraryInitializer implements CoreComponent {
 
   public ClassLoader getParentLoaderForModule(IClassLoadingModule module) {
     for (String path : myParentLoaders.keySet()) {
-      if (module.getPluginPath().startsWith(path)) {
+      String pluginPath = module.getPluginPath();
+      if (pluginPath == null) continue;
+      if (pluginPath.startsWith(path)) {
         return myParentLoaders.get(path);
       }
     }
