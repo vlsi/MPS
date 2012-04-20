@@ -5,12 +5,14 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.lang.core.behavior.IContainer_BehaviorDescriptor;
 import jetbrains.mps.lang.traceable.behavior.TraceableConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.traceable.behavior.ScopeConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import javax.swing.Icon;
+import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.Nullable;
 
-public abstract class BaseMethodDeclaration_BehaviorDescriptor extends GenericDeclaration_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, HasAnnotation_BehaviorDescriptor, IBLDeprecatable_BehaviorDescriptor, IStatementListContainer_BehaviorDescriptor, IContainer_BehaviorDescriptor, IMethodLike_BehaviorDescriptor, TypeAnnotable_BehaviorDescriptor, TraceableConcept_BehaviorDescriptor, ScopeConcept_BehaviorDescriptor {
+public abstract class BaseMethodDeclaration_BehaviorDescriptor extends GenericDeclaration_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, HasAnnotation_BehaviorDescriptor, IBLDeprecatable_BehaviorDescriptor, IStatementListContainer_BehaviorDescriptor, IContainer_BehaviorDescriptor, IMethodLike_BehaviorDescriptor, TypeAnnotable_BehaviorDescriptor, TraceableConcept_BehaviorDescriptor, ScopeConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public BaseMethodDeclaration_BehaviorDescriptor() {
   }
 
@@ -56,6 +58,10 @@ public abstract class BaseMethodDeclaration_BehaviorDescriptor extends GenericDe
 
   public String virtual_jniSignature_8847328628797656446(SNode thisNode) {
     return BaseMethodDeclaration_Behavior.virtual_jniSignature_8847328628797656446(thisNode);
+  }
+
+  public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    return BaseMethodDeclaration_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
   }
 
   public boolean virtual_isExecuteSynchronous_1230212745736(SNode thisNode) {

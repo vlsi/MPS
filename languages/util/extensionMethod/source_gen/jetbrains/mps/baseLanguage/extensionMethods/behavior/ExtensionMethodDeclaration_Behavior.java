@@ -7,6 +7,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.scope.Scope;
+import org.jetbrains.annotations.Nullable;
 
 public class ExtensionMethodDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -32,5 +34,13 @@ public class ExtensionMethodDeclaration_Behavior {
       return null;
     }
     return SLinkOperations.getTarget(classifierType, "classifier", false);
+  }
+
+  public static Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode[] extendsInterfaces) {
+    throw new UnsupportedOperationException();
+  }
+
+  public static Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode[] implementsInterfaces) {
+    throw new UnsupportedOperationException();
   }
 }

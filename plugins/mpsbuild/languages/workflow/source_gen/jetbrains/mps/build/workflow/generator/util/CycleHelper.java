@@ -85,6 +85,7 @@ public class CycleHelper {
       SNode cycleX = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfJavaModule", null);
       cyclesToName.add(cycleX);
       SNodeOperations.insertPrevSiblingChild(first, cycleX);
+      SPropertyOperations.set(cycleX, "noWarnings", "" + true);
 
       // build cycle sources & dependencies; trying to avoid duplication (which is not critical) 
       Set<String> seenSources = new HashSet<String>();
@@ -93,8 +94,10 @@ public class CycleHelper {
       List<SNode> deps = new ArrayList<SNode>();
       Set<SNode> seenModules = new LinkedHashSet<SNode>();
 
+      int heapSize = 0;
       for (CycleHelper.Module m : cycle) {
         SNode module = m.getModule();
+        heapSize = Math.max(heapSize, SPropertyOperations.getInteger(module, "heapSize"));
         ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).removeWhere(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference") && cycleModules.contains(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference"), "target", false));
@@ -133,6 +136,7 @@ public class CycleHelper {
           }
         }
       }
+      SPropertyOperations.set(cycleX, "heapSize", "" + heapSize);
       SLinkOperations.setNewChild(cycleX, "sources", "jetbrains.mps.build.workflow.structure.BwfFileSet");
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(cycleX, "sources", true), "elements", true)).addSequence(Sequence.fromIterable(((Iterable<SNode>) sources)).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {

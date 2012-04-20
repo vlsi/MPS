@@ -1,0 +1,98 @@
+<project name="buildIDE" default="build" basedir="../">
+  <property name="build.dir" location="build" />
+  <property name="build.tmp" location="${build.dir}/tmp/buildIDE" />
+  <property name="build.layout" location="${build.dir}/artifacts/buildIDE" />
+  <property name="build.number" value="7777" />
+  <property name="version" value="2.1 EAP" />
+  <property name="mps_home" location="${basedir}" />
+  <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
+  <property name="artifacts.buildWorkbench" location="${build.dir}/artifacts/buildWorkbench" />
+  <property name="artifacts.buildExecution" location="${build.dir}/artifacts/buildExecution" />
+  <property name="artifacts.buildUtilLanguages" location="${build.dir}/artifacts/buildUtilLanguages" />
+  
+  <target name="assemble" depends="fetchDependencies">
+    <mkdir dir="${build.layout}/MPS ${version}" />
+    <mkdir dir="${build.layout}/MPS ${version}/bin" />
+    <copy todir="${build.layout}/MPS ${version}/bin">
+      <fileset dir="${mps_home}/bin" />
+    </copy>
+    <mkdir dir="${build.layout}/MPS ${version}/languages" />
+    <copy todir="${build.layout}/MPS ${version}/languages">
+      <fileset dir="${artifacts.buildCore}/mps-core/languages" />
+    </copy>
+    <copy todir="${build.layout}/MPS ${version}/languages">
+      <fileset dir="${artifacts.buildWorkbench}/languages" />
+    </copy>
+    <copy todir="${build.layout}/MPS ${version}/languages">
+      <fileset dir="${artifacts.buildExecution}/languages" />
+    </copy>
+    <copy todir="${build.layout}/MPS ${version}/languages">
+      <fileset dir="${artifacts.buildUtilLanguages}/languages" />
+    </copy>
+    <mkdir dir="${build.layout}/MPS ${version}/languages/devkits" />
+    <copy todir="${build.layout}/MPS ${version}/languages/devkits">
+      <fileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" />
+    </copy>
+    <copy todir="${build.layout}/MPS ${version}/languages/devkits">
+      <fileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.general-purpose.devkit" />
+    </copy>
+    <copy todir="${build.layout}/MPS ${version}/languages/devkits">
+      <fileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.language-design.devkit" />
+    </copy>
+    <mkdir dir="${build.layout}/MPS ${version}/lib" />
+    <copy todir="${build.layout}/MPS ${version}/lib">
+      <fileset dir="${artifacts.buildCore}/mps-core/lib" />
+    </copy>
+    <copy todir="${build.layout}/MPS ${version}/lib">
+      <fileset dir="${artifacts.buildWorkbench}/lib" />
+    </copy>
+    <mkdir dir="${build.layout}/MPS ${version}/license" />
+    <copy todir="${build.layout}/MPS ${version}/license">
+      <fileset dir="${basedir}/license" />
+    </copy>
+    <mkdir dir="${build.layout}/MPS ${version}/plugin" />
+    <mkdir dir="${build.layout}/MPS ${version}/plugins" />
+    <mkdir dir="${build.layout}/MPS ${version}/plugins/cvsIntegration" />
+    <copy todir="${build.layout}/MPS ${version}/plugins/cvsIntegration">
+      <fileset dir="${basedir}/plugins/cvsIntegration" />
+    </copy>
+    <mkdir dir="${build.layout}/MPS ${version}/plugins/svn4idea" />
+    <copy todir="${build.layout}/MPS ${version}/plugins/svn4idea">
+      <fileset dir="${basedir}/plugins/svn4idea" />
+    </copy>
+    <mkdir dir="${build.layout}/MPS ${version}/plugins/git4idea" />
+    <copy todir="${build.layout}/MPS ${version}/plugins/git4idea">
+      <fileset dir="${basedir}/plugins/git4idea" />
+    </copy>
+    <copy todir="${build.layout}/MPS ${version}">
+      <fileset dir="${basedir}" includes="help/**" />
+    </copy>
+    <copy todir="${build.layout}/MPS ${version}">
+      <fileset file="${basedir}/about.txt" />
+    </copy>
+    <copy todir="${build.layout}/MPS ${version}">
+      <fileset file="${basedir}/build.number" />
+    </copy>
+    <copy todir="${build.layout}/MPS ${version}">
+      <fileset file="${basedir}/readme.txt" />
+    </copy>
+    <echo file="${build.layout}/variables.properties">buildIDE.build.number=${build.number}
+        buildIDE.version=${version}</echo>
+  </target>
+  
+  <target name="buildDependents">
+    <ant antfile="build/buildCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildExecution.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildUtilLanguages.xml" inheritAll="false" useNativeBasedir="true" />
+  </target>
+  
+  <target name="fetchDependencies" />
+  
+  <target name="build" depends="assemble" />
+  
+  <target name="clean">
+    <delete dir="${build.tmp}" />
+    <delete dir="${build.layout}" />
+  </target>
+</project>

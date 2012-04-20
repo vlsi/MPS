@@ -168,7 +168,7 @@
     <path id="mps.core.libraries">
       <fileset dir="${ideaPath}/lib">
         <include name="org.eclipse.jdt.core_3.5.2.v_981_R35x.jar"/>
-        <include name="guava-r09.jar"/>
+        <include name="guava-11.0.1.jar"/>
         <include name="jdom.jar"/>
         <include name="log4j.jar"/>
         <include name="trove4j.jar"/>
@@ -463,7 +463,7 @@
         <include name="mps-tuples.jar"/>
         <include name="mps-core.jar"/>
       </fileset>
-      <fileset dir="${ideaPath}/plugins/svn4ideaOld/lib">
+      <fileset dir="${ideaPath}/plugins/svn4idea/lib">
         <include name="sequence-library.jar"/>
         <include name="svnkit.jar"/>
       </fileset>
@@ -503,7 +503,7 @@
         <fileset dir="${dist.dir}/mps-vcs/lib" includes="*.jar"/>
         <fileset dir="${ideaPath}/lib" includes="*.jar"/>
         <fileset dir="${ideaPath}/plugins/git4idea/lib" includes="*.jar"/>
-        <fileset dir="${ideaPath}/plugins/svn4ideaOld/lib" includes="*.jar"/>
+        <fileset dir="${ideaPath}/plugins/svn4idea/lib" includes="*.jar"/>
       </classpath>
     </javac2>
     <copy includeemptydirs="false" todir="${build_dir}/mpsvcsplatform_jar">
@@ -612,6 +612,8 @@
         <path path="${base_dir}/languages/languageDesign/project/source_gen"/>
         <path path="${base_dir}/languages/languageDesign/quotation/source_gen"/>
         <path path="${base_dir}/languages/languageDesign/refactoring/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/scopes/runtime/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/scopes/source_gen"/>
         <path path="${base_dir}/languages/languageDesign/script/source_gen"/>
         <path path="${base_dir}/languages/languageDesign/sharedConcepts/source_gen"/>
         <path path="${base_dir}/languages/languageDesign/smodel/source_gen"/>
@@ -626,6 +628,7 @@
         <path path="${base_dir}/languages/languageDesign/typesystem/languages/test/source_gen"/>
         <!-- baseLanguage -->
         <path path="${base_dir}/languages/baseLanguage/baseLanguage/source_gen"/>
+        <path path="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.scopes/source_gen"/>
         <path path="${base_dir}/languages/baseLanguage/baseLanguageInternal/source_gen"/>
         <path path="${base_dir}/languages/baseLanguage/blTypes/source_gen"/>
         <path path="${base_dir}/languages/baseLanguage/checkDot/languages/checkedDots/source_gen"/>
@@ -637,6 +640,7 @@
         <path path="${base_dir}/languages/baseLanguage/constructors/source_gen"/>
         <path path="${base_dir}/languages/baseLanguage/javadoc/source_gen"/>
         <path path="${base_dir}/languages/baseLanguage/jdk7/languages/jdk7/source_gen"/>
+        <path path="${base_dir}/languages/baseLanguage/varVariable/source_gen"/>
         <path path="${base_dir}/languages/baseLanguage/logging/source_gen"/>
         <path path="${base_dir}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/source_gen"/>
         <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/source_gen"/>

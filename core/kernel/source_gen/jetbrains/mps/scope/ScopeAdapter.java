@@ -7,6 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
@@ -25,7 +26,7 @@ public class ScopeAdapter implements ISearchScope {
 
   @NotNull
   public List<SNode> getNodes(Condition<SNode> condition) {
-    List<SNode> result = scope.getAvailableElements(null);
+    List<SNode> result = Sequence.fromIterable(scope.getAvailableElements(null)).toListSequence();
     if (condition != null) {
       Iterator<SNode> it = ListSequence.fromList(result).iterator();
       while (it.hasNext()) {
@@ -44,7 +45,7 @@ public class ScopeAdapter implements ISearchScope {
 
   @NotNull
   public List<SNode> getNodes() {
-    return scope.getAvailableElements(null);
+    return Sequence.fromIterable(scope.getAvailableElements(null)).toListSequence();
   }
 
   public IReferenceInfoResolver getReferenceInfoResolver(final SNode referenceNode, SNode targetConcept) {

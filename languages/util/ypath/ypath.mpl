@@ -9,7 +9,7 @@
     <model modelUID="r:00000000-0000-4000-0000-011c895905af(jetbrains.mps.ypath.internal.generator.helper)" />
   </accessoryModels>
   <generators>
-    <generator generatorUID="ypath#1168438160182" uuid="f18753d4-d7a2-434f-85a3-f8eedf77c99a">
+    <generator generatorUID="jetbrains.mps.ypath#1168438160182" uuid="f18753d4-d7a2-434f-85a3-f8eedf77c99a">
       <models>
         <modelRoot path="${language_descriptor}/generators/baseLanguage/templates" />
       </models>
@@ -22,7 +22,7 @@
         <dependency reexport="true">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
         <dependency reexport="true">fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)</dependency>
         <dependency reexport="true">df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</dependency>
-        <dependency reexport="true">f18753d4-d7a2-434f-85a3-f8eedf77c99a(ypath#1168438160182)</dependency>
+        <dependency reexport="true">f18753d4-d7a2-434f-85a3-f8eedf77c99a(jetbrains.mps.ypath#1168438160182)</dependency>
       </dependencies>
       <usedLanguages>
         <usedLanguage>fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)</usedLanguage>
@@ -32,13 +32,13 @@
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <generator generatorUID="f18753d4-d7a2-434f-85a3-f8eedf77c99a(ypath#1168438160182)" />
+            <generator generatorUID="f18753d4-d7a2-434f-85a3-f8eedf77c99a(jetbrains.mps.ypath#1168438160182)" />
             <external-mapping>
               <mapping-node modelUID="r:00000000-0000-4000-0000-011c895905b1(jetbrains.mps.ypath.generator.baseLanguage.template.generic@generator)" nodeID="1190373998785" />
             </external-mapping>
           </greater-priority-mapping>
           <lesser-priority-mapping>
-            <generator generatorUID="f18753d4-d7a2-434f-85a3-f8eedf77c99a(ypath#1168438160182)" />
+            <generator generatorUID="f18753d4-d7a2-434f-85a3-f8eedf77c99a(jetbrains.mps.ypath#1168438160182)" />
             <external-mapping>
               <mapping-node modelUID="r:00000000-0000-4000-0000-011c895905b3(jetbrains.mps.ypath.generator.baseLanguage.template.main@generator)" nodeID="*" />
             </external-mapping>
@@ -46,7 +46,7 @@
         </mapping-priority-rule>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <generator generatorUID="f18753d4-d7a2-434f-85a3-f8eedf77c99a(ypath#1168438160182)" />
+            <generator generatorUID="f18753d4-d7a2-434f-85a3-f8eedf77c99a(jetbrains.mps.ypath#1168438160182)" />
             <external-mapping>
               <mapping-node modelUID="r:00000000-0000-4000-0000-011c895905b3(jetbrains.mps.ypath.generator.baseLanguage.template.main@generator)" nodeID="1168438163478" />
             </external-mapping>

@@ -84,7 +84,7 @@ public class ModelPlusImportedScope extends Scope {
     return result;
   }
 
-  public List<SNode> getAvailableElements(@Nullable String prefix) {
+  public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     Collection<SModelDescriptor> models = getModels();
     List<SNode> result = new ArrayList<SNode>();
     for (SModelDescriptor model : models) {

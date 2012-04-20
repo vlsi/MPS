@@ -12,6 +12,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.ArrayList;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.baseLanguage.scopes.Scopes;
+import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -101,6 +104,52 @@ public class StatementList_Behavior {
       }
     }
     return result;
+  }
+
+  public static List<SNode> call_getLocalVariableDeclarations_3986960521977638556(SNode thisNode, SNode child) {
+    List<SNode> result = new ArrayList<SNode>();
+
+    SNode childStatement = child;
+    while (childStatement != null && SNodeOperations.getParent(childStatement) != thisNode) {
+      childStatement = SNodeOperations.getParent(childStatement);
+    }
+
+    for (SNode statement : SLinkOperations.getTargets(thisNode, "statement", true)) {
+      if (childStatement == statement) {
+        break;
+      }
+      if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true));
+      }
+    }
+
+    return result;
+  }
+
+  public static List<SNode> call_getLocalVariableDeclarations_9165170089438554320(SNode thisNode, String role, int index) {
+    List<SNode> result = new ArrayList<SNode>();
+
+    for (int num = 0; num < index; num++) {
+      if (SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true)).getElement(num), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true)).getElement(num), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true));
+      }
+    }
+
+    return result;
+  }
+
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) {
+      return Scopes.forVariables(kind, StatementList_Behavior.call_getLocalVariableDeclarations_3986960521977638556(thisNode, child), ScopeUtils.lazyParentScope(thisNode, kind));
+    }
+    return null;
+  }
+
+  public static Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) {
+      return Scopes.forVariables(kind, StatementList_Behavior.call_getLocalVariableDeclarations_9165170089438554320(thisNode, role, index), ScopeUtils.lazyParentScope(thisNode, kind));
+    }
+    return null;
   }
 
   public static List<SNode> call_getScopeVariables_2496361171403550911(SNode thisNode) {

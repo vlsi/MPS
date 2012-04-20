@@ -19,6 +19,7 @@ import com.intellij.ide.caches.CacheUpdater;
 import com.intellij.ide.caches.FileContent;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.CollectingContentIterator;
 import com.intellij.openapi.roots.ContentIterator;
 import com.intellij.openapi.roots.ex.ProjectRootManagerEx;
@@ -35,10 +36,12 @@ import java.util.Set;
 public class MPSUnindexedFilesUpdater implements CacheUpdater {
   private final FileBasedIndex myIndex;
   private ProjectRootManagerEx myManager;
+  private Project myProject;
 
-  public MPSUnindexedFilesUpdater(FileBasedIndex index, ProjectRootManagerEx manager) {
+  public MPSUnindexedFilesUpdater(FileBasedIndex index, ProjectRootManagerEx manager, Project project) {
     myIndex = index;
     myManager = manager;
+    myProject = project;
   }
 
   public int getNumberOfPendingUpdateJobs() {
@@ -70,7 +73,7 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
     }
 
     Set<VirtualFile> visitedRoots = new HashSet<VirtualFile>();
-    for (VirtualFile root : CacheUtil.getIndexableRoots()) {
+    for (VirtualFile root : CacheUtil.getIndexableRoots(myProject)) {
       if (visitedRoots.contains(root)) continue;
       visitedRoots.add(root);
       iterateRecursively(root, processor, indicator);

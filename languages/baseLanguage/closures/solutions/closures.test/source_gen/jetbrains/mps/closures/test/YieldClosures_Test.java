@@ -2012,80 +2012,17 @@ __switch__:
   }
 
   public void test_mps15041() throws Exception {
-    Iterable<? extends Number> seq = new _FunctionTypes._return_P0_E0<Iterable<? extends Number>>() {
-      public Iterable<? extends Number> invoke() {
-        return new Iterable<? extends Number>() {
-          public Iterator<? extends Number> iterator() {
-            return new YieldingIterator<Number>() {
-              private int __CP__ = 0;
-              private Number _5__yield_75e5vq_d0a0a0a32a;
-              private Iterator<? extends Number> _5__yield_75e5vq_d0a0a0a32a_it;
-
-              protected boolean moveToNext() {
-__loop__:
-                do {
-__switch__:
-                  switch (this.__CP__) {
-                    case -1:
-                      assert false : "Internal error";
-                      return false;
-                    case 5:
-                      this._5__yield_75e5vq_d0a0a0a32a_it = Sequence.fromIterable(numberSubtypes()).iterator();
-                    case 6:
-                      if (!(this._5__yield_75e5vq_d0a0a0a32a_it.hasNext())) {
-                        this.__CP__ = 1;
-                        break;
-                      }
-                      this._5__yield_75e5vq_d0a0a0a32a = this._5__yield_75e5vq_d0a0a0a32a_it.next();
-                      this.__CP__ = 7;
-                      break;
-                    case 2:
-                      this.__CP__ = 3;
-                      this.yield(ListSequence.fromList(numberSubtypes()).getElement(0));
-                      return true;
-                    case 3:
-                      this.__CP__ = 4;
-                      this.yield(ListSequence.fromList(numberSubtypes()).getElement(1));
-                      return true;
-                    case 4:
-                      this.__CP__ = 5;
-                      this.yield(ListSequence.fromList(numberSubtypes()).getElement(2));
-                      return true;
-                    case 8:
-                      this.__CP__ = 6;
-                      this.yield(_5__yield_75e5vq_d0a0a0a32a);
-                      return true;
-                    case 0:
-                      this.__CP__ = 2;
-                      break;
-                    case 7:
-                      this.__CP__ = 8;
-                      break;
-                    default:
-                      break __loop__;
-                  }
-                } while (true);
-                return false;
-              }
-            };
-          }
-        };
-      }
-    }.invoke();
-    Assert.assertEquals(Integer.valueOf(42), Sequence.fromIterable(seq).first());
-    Assert.assertEquals(Long.valueOf(100500L), Sequence.fromIterable(seq).skip(1).first());
-    Assert.assertEquals(Double.valueOf(2.718281828), Sequence.fromIterable(seq).skip(2).first());
-    Assert.assertEquals(Integer.valueOf(42), Sequence.fromIterable(seq).first());
-    Assert.assertEquals(Long.valueOf(100500L), Sequence.fromIterable(seq).skip(1).first());
-    Assert.assertEquals(Double.valueOf(2.718281828), Sequence.fromIterable(seq).skip(2).first());
-    Iterable<? extends Number> seq2 = new _FunctionTypes._return_P0_E0<List<? extends Number>>() {
-      public List<? extends Number> invoke() {
-        return numberSubtypes();
-      }
-    }.invoke();
-    Assert.assertEquals(Integer.valueOf(42), Sequence.fromIterable(seq).first());
-    Assert.assertEquals(Long.valueOf(100500L), Sequence.fromIterable(seq).skip(1).first());
-    Assert.assertEquals(Double.valueOf(2.718281828), Sequence.fromIterable(seq).skip(2).first());
+    // <node> 
+    // <node> 
+    // <node> 
+    // <node> 
+    // <node> 
+    // <node> 
+    // <node> 
+    // <node> 
+    // <node> 
+    // <node> 
+    // <node> 
   }
 
   private List<? extends Number> numberSubtypes() {

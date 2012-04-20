@@ -21,6 +21,7 @@ import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
@@ -229,11 +230,11 @@ public class State {
 
   public boolean addEquation(SNode left, SNode right, EquationInfo info) {
     if (myInequalitySystem != null) {
-      if (myInequalitySystem.getHoleType()== left) {
+      if (HUtil.isRuntimeHoleType(left)) {
         myInequalitySystem.addEquation(left);
         return true;
       }
-      if (myEquations.getRepresentative(myInequalitySystem.getHoleType())== right) {
+      if (HUtil.isRuntimeHoleType(right)) {
         myInequalitySystem.addEquation(right);
         return true;
       }
@@ -252,11 +253,11 @@ public class State {
 
   public void addInequality(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info, boolean lessThan) {
     if (myInequalitySystem != null) {
-      if (myEquations.getRepresentative(myInequalitySystem.getHoleType())== subType) {
+      if (HUtil.isRuntimeHoleType(subType)) {
         myInequalitySystem.addSupertype(superType, isWeak);
         return;
       }
-      if (myInequalitySystem.getHoleType()== superType) {
+      if (HUtil.isRuntimeHoleType(superType)) {
         myInequalitySystem.addSubtype(subType, isWeak);
         return;
       }
@@ -267,11 +268,11 @@ public class State {
 
   public void addComparable(SNode left, SNode right, boolean isWeak, boolean inference, EquationInfo info) {
     if (myInequalitySystem != null) {
-      if (myInequalitySystem.getHoleType()== right) {
+      if (HUtil.isRuntimeHoleType(right)) {
         myInequalitySystem.addComparable(left, isWeak);
         return;
       }
-      if (myInequalitySystem.getHoleType()== left) {
+      if (HUtil.isRuntimeHoleType(left)) {
         myInequalitySystem.addComparable(right, isWeak);
         return;
       }
@@ -428,6 +429,7 @@ public class State {
   }
   
   public void setTargetNode(SNode node) {
+    if (myInequalitySystem != null) return;
     addBlock(new TargetBlock(this, typeOf(node, null)));
     myTargetNode = node;
   }

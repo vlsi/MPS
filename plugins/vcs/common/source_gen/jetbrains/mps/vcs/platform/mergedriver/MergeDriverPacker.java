@@ -21,7 +21,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 public class MergeDriverPacker {
   private static final Iterable<String> mpsLibJars = Arrays.asList("mps-closures.jar", "mps-collections.jar", "mps-tuples.jar", "mps-core.jar");
   private static Iterable<String> mpsAddJars = Arrays.asList("asm.jar", "diffutils-1.2.1.jar");
-  private static final Iterable<String> ideaLibJars = Arrays.asList("xstream.jar", "guava-r09.jar", "jdom.jar", "log4j.jar", "trove4j.jar", "annotations.jar", "commons-lang-2.4.jar", "commons-logging-1.1.1.jar");
+  private static final Iterable<String> ideaLibJars = Arrays.asList("xstream.jar", "guava-11.0.1.jar", "jdom.jar", "log4j.jar", "trove4j.jar", "annotations.jar", "commons-lang-2.4.jar", "commons-logging-1.1.1.jar");
   private static final Iterable<String> svnJars = Arrays.asList("svnkit.jar", "sequence-library.jar");
   private static final String MERGEDRIVER_PATH = "mergedriver";
   private static boolean ourUpToDate = false;

@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import javax.swing.Icon;
+import jetbrains.mps.scope.Scope;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -17,6 +19,14 @@ public class InstanceInitializer_Behavior {
 
   public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
+  }
+
+  public static Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode[] extendsInterfaces) {
+    throw new UnsupportedOperationException();
+  }
+
+  public static Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode[] implementsInterfaces) {
+    throw new UnsupportedOperationException();
   }
 
   public static Icon call_getAdditionalIcon_8884554759541377996(SNode thisNode) {

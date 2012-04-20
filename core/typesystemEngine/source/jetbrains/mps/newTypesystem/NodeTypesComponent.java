@@ -40,12 +40,12 @@ import java.util.*;
 public class NodeTypesComponent {
   private SNode myRootNode;
 
-  private List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
+  private List<SModelEvent> myEvents;
 
-  private MyTypeRecalculatedListener myTypeRecalculatedListener = new MyTypeRecalculatedListener();
+  private MyTypeRecalculatedListener myTypeRecalculatedListener;
 
-  private MyModelListener myModelListener = new MyModelListener();
-  private MyModelListenerManager myModelListenerManager = new MyModelListenerManager(myModelListener);
+  private MyModelListener myModelListener;
+  private MyModelListenerManager myModelListenerManager;
 
   private NonTypeSystemComponent myNonTypeSystemComponent;
   private TypeSystemComponent myTypeSystemComponent;
@@ -62,7 +62,11 @@ public class NodeTypesComponent {
     myTypeSystemComponent = new TypeSystemComponent(typeChecker, typeCheckingContext.getState(), this);
     if (!myTypeCheckingContext.isSingleTypeComputation()) {
       myNonTypeSystemComponent = new NonTypeSystemComponent(typeChecker, this);
+      myModelListener = new MyModelListener();
+      myModelListenerManager = new MyModelListenerManager(myModelListener);
       myModelListenerManager.track(myRootNode);
+      myTypeRecalculatedListener = new MyTypeRecalculatedListener();
+      myEvents = new ArrayList<SModelEvent>();
     }
   }
 
@@ -149,10 +153,16 @@ public class NodeTypesComponent {
   }
 
   public void dispose() {
-    myModelListenerManager.dispose();
-    TypeChecker.getInstance().removeTypeRecalculatedListener(myTypeRecalculatedListener);
+    if (!myTypeCheckingContext.isSingleTypeComputation()) {
+      if (myModelListenerManager != null) {
+        myModelListenerManager.dispose();
+      }
+      TypeChecker.getInstance().removeTypeRecalculatedListener(myTypeRecalculatedListener);
+      if (myNonTypeSystemComponent != null) {
+        myNonTypeSystemComponent.dispose();
+      }
+    }
     myTypeSystemComponent.dispose();
-    myNonTypeSystemComponent.dispose();
   }
 
   public Map<SNode, SNode> getMainContext() {
@@ -201,10 +211,6 @@ public class NodeTypesComponent {
 
   public void addDependencyOnCurrent(SNode node) {
     myTypeSystemComponent.addDependencyOnCurrent(node);
-  }
-
-  protected boolean applyRulesToNode(SNode node) {
-    return myTypeSystemComponent.applyRulesToNode(node);
   }
 
   public void applyNonTypesystemRulesToRoot(IOperationContext context) {

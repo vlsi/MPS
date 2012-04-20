@@ -5,9 +5,10 @@ package jetbrains.mps.baseLanguage.search;
 import jetbrains.mps.smodel.search.AbstractSearchScope;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.Condition;
 
@@ -15,7 +16,14 @@ public class ParameterScope extends AbstractSearchScope {
   private List<SNode> params;
 
   public ParameterScope(SNode contextNode) {
-    List<SNode> methods = SNodeOperations.getAncestors(contextNode, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", true);
+    List<SNode> methods = ListSequence.fromList(new ArrayList<SNode>());
+    SNode current = contextNode;
+    while ((current != null)) {
+      if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.IStatementListContainer")) {
+        ListSequence.fromList(methods).addElement(SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"));
+      }
+      current = Scope.parent(current);
+    }
     this.params = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode bmd : methods) {
       for (SNode child : SNodeOperations.getChildren(bmd)) {

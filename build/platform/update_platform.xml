@@ -47,7 +47,6 @@
     <mkdir dir="${tmp.mpslib}"/>
     <move todir="${tmp.mpslib}">
       <fileset file="${platform.lib.dir}/beansbinding-1.2.1.jar"/>
-      <fileset file="${platform.lib.dir}/ecj.jar"/>
       <fileset file="${platform.lib.dir}/tools.jar"/>
       <fileset file="${platform.lib.dir}/asm.jar"/>
       <fileset file="${platform.lib.dir}/diffutils-1.2.1.jar"/>

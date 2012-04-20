@@ -68,7 +68,7 @@ import java.util.List;
       return Collections.emptyList();
     }
     String referentConceptFqName = NameUtil.nodeFQName(referentConcept);
-    List<SNode> nodes = searchScope.getAvailableElements(null);
+    Iterable<SNode> nodes = searchScope.getAvailableElements(null);
     List<INodeSubstituteAction> actions = new ArrayList<INodeSubstituteAction>();
     for (SNode node : nodes) {
       if (node == null || !node.isInstanceOfConcept(referentConceptFqName)) continue;

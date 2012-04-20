@@ -42,8 +42,6 @@ public abstract class TypeCheckingContext {
 
   public abstract boolean isIncrementalMode();
 
-  public abstract boolean isInEditorQueries();
-
   public abstract void setIsNonTypesystemComputation();
 
   public abstract void resetIsNonTypesystemComputation();

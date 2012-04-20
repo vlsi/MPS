@@ -112,6 +112,7 @@
     <classNode extendsClassName="jetbrains.mps.make.service.CoreMakeTask" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.TextPreviewFile" file="TextPreviewFile.java">
+    <classNode dependClassName="com.intellij.openapi.util.io.FileUtil" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileSystem" />
     <classNode dependClassName="java.io.IOException" />
@@ -124,7 +125,6 @@
     <classNode dependClassName="java.nio.charset.Charset" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

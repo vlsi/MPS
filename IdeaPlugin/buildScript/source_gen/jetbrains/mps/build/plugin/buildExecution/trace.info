@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <root nodeId="6361939271669730823">
-    <unitInfo nodeId="6361939271669730823" fileName="buildExecution.xml" startLine="1" startPosition="0" endLine="213" endPosition="10" unitName="jetbrains.mps.build.plugin.buildExecution.buildExecution" />
-  </root>
-</debugInfo>
-

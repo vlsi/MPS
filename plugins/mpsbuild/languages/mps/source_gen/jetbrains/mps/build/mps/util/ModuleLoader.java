@@ -511,25 +511,6 @@ public class ModuleLoader {
 
   private void collectLocalDependencies() {
     SNode module = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module");
-    for (ModelRoot entry : myModuleDescriptor.getStubModelEntries()) {
-      if (!(LanguageID.JAVA_MANAGER.equals(entry.getManager()))) {
-        continue;
-      }
-
-      String path = entry.getPath();
-      SNode p = ListSequence.fromList(convertPath(path, myOriginalModule)).first();
-      if (p == null) {
-        continue;
-      }
-
-      if (path.endsWith(".jar")) {
-        SNode jar = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar", null);
-        SLinkOperations.setTarget(jar, "path", p, true);
-        ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).addElement(jar);
-      } else {
-        report("only jar stub libraries are supported, found: " + path, myOriginalModule);
-      }
-    }
     Iterable<ModuleReference> usedLanguages = myModuleDescriptor.getUsedLanguages();
     Iterable<ModuleReference> usedDevkits = myModuleDescriptor.getUsedDevkits();
     if (myModuleDescriptor instanceof LanguageDescriptor) {
@@ -670,6 +651,37 @@ public class ModuleLoader {
         ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).addElement(res);
       }
     }
+
+    // java stubs: jars 
+    for (ModelRoot entry : myModuleDescriptor.getStubModelEntries()) {
+      if (!(LanguageID.JAVA_MANAGER.equals(entry.getManager()))) {
+        continue;
+      }
+
+      String path = entry.getPath();
+      SNode p = ListSequence.fromList(convertPath(path, myOriginalModule)).first();
+      if (p == null) {
+        continue;
+      }
+
+      if (path.endsWith(".jar")) {
+        final String relPath = BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(p);
+        if (!(ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            SNode dep = (SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency") ?
+              SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) :
+              it
+            );
+            return SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_a6ewnz_a0a1a0a0a0a0b0g0r0q(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true)), relPath);
+          }
+        }))) {
+          report("jar stub library should be extracted into build script: " + relPath, myOriginalModule);
+        }
+      } else {
+        report("only jar stub libraries are supported, found: " + path, myOriginalModule);
+      }
+    }
+
   }
 
   private void importDependencies() {
@@ -726,6 +738,29 @@ public class ModuleLoader {
       SLinkOperations.setTarget(extr, "dependency", res, true);
       ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).addElement(extr);
     }
+
+    // java stubs: jars 
+    for (ModelRoot entry : myModuleDescriptor.getStubModelEntries()) {
+      if (!(LanguageID.JAVA_MANAGER.equals(entry.getManager()))) {
+        continue;
+      }
+
+      String path = entry.getPath();
+      SNode p = ListSequence.fromList(convertPath(path, myOriginalModule)).first();
+      if (p == null) {
+        continue;
+      }
+
+      if (path.endsWith(".jar")) {
+        SNode jar = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar", null);
+        SLinkOperations.setTarget(jar, "path", p, true);
+        SNode extr = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency", null);
+        SLinkOperations.setTarget(extr, "dependency", jar, true);
+        ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).addElement(extr);
+      } else {
+        report("only jar stub libraries are supported, found: " + path, myOriginalModule);
+      }
+    }
   }
 
   private void collectSources() {
@@ -734,9 +769,11 @@ public class ModuleLoader {
     for (String sp : myModuleDescriptor.getSourcePaths()) {
       res.add(sp);
     }
-    IFile genPath = ProjectPathUtil.getGeneratorOutputPath(myModuleFile, myModuleDescriptor);
-    if (genPath != null) {
-      res.add(genPath.getPath());
+    if (!(SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Solution")) || !(SPropertyOperations.getBoolean(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Solution"), "doNotCompile"))) {
+      IFile genPath = ProjectPathUtil.getGeneratorOutputPath(myModuleFile, myModuleDescriptor);
+      if (genPath != null) {
+        res.add(genPath.getPath());
+      }
     }
     for (String path : res) {
       SNode p = ListSequence.fromList(convertPath(path, myOriginalModule)).first();
@@ -803,6 +840,13 @@ public class ModuleLoader {
       a.equals(b) :
       a == b
     ));
+  }
+
+  private static boolean eq_a6ewnz_a0a1a0a0a0a0b0g0r0q(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 
   private static boolean eq_a6ewnz_a0c0f0d0a1(Object a, Object b) {

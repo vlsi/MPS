@@ -14,6 +14,10 @@ import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.fileTypes.FileType;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import org.jetbrains.annotations.Nullable;
+import com.intellij.openapi.diff.DiffViewer;
+import java.awt.Window;
+import com.intellij.openapi.Disposable;
 import com.intellij.openapi.diff.DocumentContent;
 import com.intellij.openapi.diff.FileContent;
 import jetbrains.mps.smodel.SModelRepository;
@@ -59,6 +63,11 @@ public class ModelDiffTool implements DiffTool {
       return true;
     }
     return type.equals(MPSFileTypeFactory.MODEL_FILE_TYPE);
+  }
+
+  @Nullable
+  public DiffViewer createComponent(String string, DiffRequest request, Window window, Disposable disposable) {
+    return null;
   }
 
   private static SModel readModel(DiffContent content) throws ModelReadException {

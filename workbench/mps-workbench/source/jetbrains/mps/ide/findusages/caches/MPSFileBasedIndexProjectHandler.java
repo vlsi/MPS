@@ -30,6 +30,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.IndexableFileSet;
 import jetbrains.mps.ide.make.StartupModuleMaker;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -56,13 +57,13 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
     }
   };
 
-  public MPSFileBasedIndexProjectHandler(final Project project, final ProjectRootManagerEx rootManager, ProjectManager projectManager, FileBasedIndex index, StartupModuleMaker maker) {
+  public MPSFileBasedIndexProjectHandler(final Project project, final ProjectRootManagerEx rootManager, ProjectManager projectManager, FileBasedIndex index, StartupModuleMaker maker, MPSProject mpsProject) {
     super(project);
     myRootManager = rootManager;
     myProjectManager = projectManager;
     myIndex = index;
 
-    final MPSUnindexedFilesUpdater updater = new MPSUnindexedFilesUpdater(myIndex, myRootManager);
+    final MPSUnindexedFilesUpdater updater = new MPSUnindexedFilesUpdater(myIndex, myRootManager, myProject);
 
     final StartupManagerEx startupManager = (StartupManagerEx) StartupManager.getInstance(myProject);
     if (startupManager == null) return;
@@ -116,7 +117,7 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
     if (myRootFiles == null) {
       myRootFiles = ModelAccess.instance().runReadAction(new Computable<Set<VirtualFile>>() {
         public Set<VirtualFile> compute() {
-          return CacheUtil.getIndexableRoots();
+          return CacheUtil.getIndexableRoots(myProject);
         }
       });
     }

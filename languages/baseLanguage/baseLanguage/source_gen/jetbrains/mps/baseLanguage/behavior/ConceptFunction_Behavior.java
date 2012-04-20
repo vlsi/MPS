@@ -10,6 +10,10 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -111,6 +115,21 @@ public class ConceptFunction_Behavior {
       }
     }
     return result.toString();
+  }
+
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    // todo: rewrite using filtering scope 
+    {
+      SNode concept_b0l;
+      concept_b0l = kind;
+      if (SConceptOperations.isSubConceptOf(concept_b0l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+        return new EmptyScope();
+      }
+      if (SConceptOperations.isSubConceptOf(concept_b0l, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
+        return new EmptyScope();
+      }
+    }
+    return ScopeUtils.lazyParentScope(thisNode, kind);
   }
 
   public static boolean call_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {

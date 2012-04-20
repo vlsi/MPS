@@ -56,6 +56,12 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="attributes" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp25.6407023681583036855" resolveInfo="LinkAttributeQualifier" />
     </node>
+    <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="5944356402133044075">
+      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp25.5944356402132808749" resolveInfo="ConceptSwitchStatement" />
+    </node>
+    <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1717381292179403686">
+      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp25.5944356402132808754" resolveInfo="ConceptSwitchStatementCase" />
+    </node>
   </roots>
   <root id="1210626395131">
     <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="1210626395132">
@@ -265,6 +271,63 @@
             <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="4268767923418720680" />
             <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="4268767923418720685">
               <link role="link" roleId="tp25.1138056516764" targetNodeId="tp25.6407023681583038098" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="5944356402133044075">
+    <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="5944356402133044076">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5944356402133044077">
+        <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="1207558674001">
+          <node role="codeFor" roleId="tp41.1206454079161" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1207558675457">
+            <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="1207558675222" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="5944356402133044079">
+              <link role="link" roleId="tp25.1138056516764" targetNodeId="tp25.5944356402132808752" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2832018561208855925" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ForeachStatement" typeId="tpee.1144226303539" id="1207558728441">
+          <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1207558728442">
+            <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitIfJumpStatement" typeId="tp41.1206445295557" id="2832018561208855918">
+              <node role="jumpTo" roleId="tp41.1206445193860" type="tp41.AfterPosition" typeId="tp41.1206445082906" id="2832018561208855920">
+                <node role="relativeTo" roleId="tp41.1206444923842" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2832018561208855922">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1207558728445" resolveInfo="switchCase" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="1207558740566">
+              <node role="codeFor" roleId="tp41.1206454079161" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1207558741927">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1207558728445" resolveInfo="switchCase" />
+              </node>
+            </node>
+          </node>
+          <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1207558734512">
+            <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="1207558734073" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="5944356402133044093">
+              <link role="link" roleId="tp25.1138056546658" targetNodeId="tp25.5944356402132808753" />
+            </node>
+          </node>
+          <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1207558728445">
+            <property name="name" nameId="tpck.1169194664001" value="switchCase" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1207558729166">
+              <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp25.5944356402132808754" resolveInfo="ConceptSwitchStatementCase" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="1717381292179403686">
+    <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="1717381292179403687">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1717381292179403688">
+        <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="1207559196527">
+          <node role="codeFor" roleId="tp41.1206454079161" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1207559198734">
+            <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="1207559198514" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1717381292179403691">
+              <link role="link" roleId="tp25.1138056516764" targetNodeId="tp25.1163670683720" />
             </node>
           </node>
         </node>
