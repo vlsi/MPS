@@ -31,9 +31,11 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="86gq.5789575999242884574" resolveInfo="ConceptDeclarationReference" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1104094430779068754">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="settings" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="86gq.1104094430779063683" resolveInfo="DebuggerType" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1104094430779068758">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="settings" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="86gq.1104094430779068753" resolveInfo="DebuggerReference" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2569394751387978477">
@@ -41,29 +43,31 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="86gq.2569394751387978473" resolveInfo="CreateBreakpointOperation" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6720907903633286554">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="settings" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="86gq.6720907903633266421" resolveInfo="DebuggerConfiguration" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="989489456093733957">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Custom.TraceInfo" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="86gq.989489456093733942" resolveInfo="DebuggableNodeItem" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="989489456093733999">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Custom.TraceInfo" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="86gq.989489456093733936" resolveInfo="DebugInfoInitializer" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="989489456093734037">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Custom.TraceInfo" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="86gq.989489456093733954" resolveInfo="VariableNodeItem" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="989489456093734045">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Custom.TraceInfo" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="86gq.989489456093733952" resolveInfo="VariableNodeExpression" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="989489456093734047">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Custom.TraceInfo" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="86gq.989489456093733946" resolveInfo="ScopeNodeItem" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="989489456093734055">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="86gq.989489456093733949" resolveInfo="UnitNodeItem" />
     </node>
   </roots>

@@ -40,15 +40,17 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="4675583320452238768">
       <property name="name" nameId="tpck.1169194664001" value="reduce_DebuggerConfiguration" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="settings" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="86gq.6720907903633266421" resolveInfo="DebuggerConfiguration" />
     </node>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="989489456094261871">
       <property name="name" nameId="tpck.1169194664001" value="TraceInfo" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Custom.DebugInfo" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
     </node>
   </roots>
   <root id="1270798772176052789">
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="4853044606869374801">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="settings" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="86gq.1104094430779063683" resolveInfo="DebuggerType" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="4853044606869374803">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2965907096334542124">
@@ -57,6 +59,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="4853044606869386564">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="settings" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="86gq.1104094430779068753" resolveInfo="DebuggerReference" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="4853044606869386566">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4853044606869386571">
@@ -106,6 +109,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="7329423411587656262">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="settings" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="86gq.1104094430779068753" resolveInfo="DebuggerReference" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="7329423411587656263">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7329423411587656264">
@@ -231,6 +235,7 @@
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="1270798772176197309" resolveInfo="DebugInfoProvider" />
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="4675583320452238770">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="settings" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="86gq.6720907903633266421" resolveInfo="DebuggerConfiguration" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="4675583320452238771">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="4675583320452238768" resolveInfo="reduce_DebuggerConfiguration" />
@@ -740,6 +745,7 @@
   </root>
   <root id="989489456094261871">
     <node role="dropRootRule" roleId="tpf8.1219952894531" type="tpf8.DropRootRule" typeId="tpf8.1219952072943" id="989489456094261872">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="applicableConcept" roleId="tpf8.1219952338328" targetNodeId="86gq.989489456093733936" resolveInfo="DebugInfoInitializer" />
     </node>
   </root>

@@ -18,7 +18,7 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="86gq.2569394751387978473" resolveInfo="CreateBreakpointOperation" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="989489456093734163">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Custom.TraceInfo" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="86gq.989489456093733952" resolveInfo="VariableNodeExpression" />
     </node>
   </roots>
