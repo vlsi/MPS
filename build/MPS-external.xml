@@ -85,6 +85,8 @@
     <mkdir dir="${deploy.dir}/MPS/plugins/svn4idea" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api/META-INF" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api/lib" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api/nanocProject.zip.tmp/nanocProject" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api/nanocProject.zip.tmp" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java/lib" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java/META-INF" />
@@ -480,6 +482,13 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.debugger.api.api" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debugger.api.lang" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api/lib" />
+    <copy todir="${deploy.dir}/MPS/plugins/debugger-api/nanocProject.zip.tmp/nanocProject">
+      <fileset dir="${mps_home}/plugins/debugger-api/languages/nanoc" excludes="**/*.class, " />
+    </copy>
+    <zip destfile="${deploy.dir}/MPS/plugins/debugger-api/nanocProject.zip" duplicate="preserve" filesonly="true">
+      <zipfileset dir="${deploy.dir}/MPS/plugins/debugger-api/nanocProject.zip.tmp" />
+    </zip>
+    <delete dir="${deploy.dir}/MPS/plugins/debugger-api/nanocProject.zip.tmp" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debugger.java.api" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debugger.java.runtime" />
@@ -518,8 +527,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.execution.startup" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.execution.startup" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.migration" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.nanoc" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.nanoc.pluginSolution" />
     <mkdir dir="${deploy.dir}/MPS/plugins/execution-configurations/languages" />
     <mkdir dir="${deploy.dir}/MPS/plugins/execution-configurations" />
     <copy todir="${deploy.dir}/MPS/plugins/execution-languages/META-INF">
@@ -668,7 +675,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.core.xml" />
     <antcall target="MPS-languages.pack.jetbrains.mps.core.properties" />
     <antcall target="MPS-languages.pack.jetbrains.mps.gtext" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.gtext.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.gtext.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xml" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xmlQuery" />
@@ -784,6 +790,7 @@
   </target>
   <target name="clean.after" depends="do.the.job">
     <delete dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/debugger-api/nanocProject.zip.tmp" />
     <delete dir="${deploy.dir}/MPS/samples.zip.tmp" />
     <delete dir="${deploy.dir}/${build.number}-buildTools.zip.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-resources.jar.tmp" />

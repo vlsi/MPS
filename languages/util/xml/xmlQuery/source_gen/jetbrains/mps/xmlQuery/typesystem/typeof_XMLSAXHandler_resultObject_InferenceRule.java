@@ -26,10 +26,12 @@ public class typeof_XMLSAXHandler_resultObject_InferenceRule extends AbstractInf
       }
     } else {
       SNode parentMacro = SNodeOperations.getAncestor(node, "jetbrains.mps.xmlQuery.structure.XMLSAXNodeRule", false, false);
-      {
-        SNode _nodeToCheck_1029348928467 = node;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "4635390255048098117", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "4635390255048098119", true), (SNode) SLinkOperations.getTarget(parentMacro, "type", true), _info_12389875345);
+      if (parentMacro != null) {
+        {
+          SNode _nodeToCheck_1029348928467 = node;
+          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "4635390255048098117", 0, null);
+          typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "4635390255048098119", true), (SNode) SLinkOperations.getTarget(parentMacro, "type", true), _info_12389875345);
+        }
       }
     }
   }

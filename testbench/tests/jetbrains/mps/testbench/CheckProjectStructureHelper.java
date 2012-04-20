@@ -329,7 +329,7 @@ public class CheckProjectStructureHelper {
               if (reporter.getMessageStatus().equals(MessageStatus.ERROR)) {
                 if (reporter.reportError().startsWith("a class should have")) continue;
                 SNode node = reporter.getSNode();
-                if (!CheckersComponent.filterIssue(node)) continue;
+                if (!CheckProjectStructureUtil.filterIssue(node)) continue;
                 myErrors++;
                 errors.add("Error message: " + reporter.reportError() + "   model: " + node.getModel().getLongName() + " root: " + node.getContainingRoot() + " node: " + node);
               }

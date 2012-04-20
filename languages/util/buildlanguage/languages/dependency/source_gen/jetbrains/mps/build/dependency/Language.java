@@ -32,6 +32,6 @@ public class Language extends LanguageRuntime {
   }
 
   public Collection<TemplateModule> getGenerators() {
-    return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "dca5c40a-5151-4f95-a465-70f40cd5f026(jetbrains.mps.build.moduleDependencyLanguage#1216906826567)"));
+    return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "dca5c40a-5151-4f95-a465-70f40cd5f026(jetbrains.mps.build.dependency#1216906826567)"));
   }
 }

@@ -7,6 +7,7 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
+    <dependency reexport="false">707c4fde-f79a-44b5-b3d7-b5cef8844ccf(jetbrains.mps.lang.test.runtime)</dependency>
     <dependency reexport="false">ce517356-fc9a-4e78-8606-6e7a36ff0671(jetbrains.mps.traceInfo.testWeavingGenerated.data)</dependency>
     <dependency reexport="false">ffafcf63-cbe6-4e5c-9717-541f01743ac7(jetbrains.mps.traceInfo.testWeavingInterpreted.data)</dependency>
   </dependencies>

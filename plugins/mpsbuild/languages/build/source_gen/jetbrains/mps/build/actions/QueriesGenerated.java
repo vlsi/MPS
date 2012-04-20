@@ -25,6 +25,9 @@ import jetbrains.mps.build.behavior.BuildRelativePath_Behavior;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.IScope;
@@ -33,11 +36,8 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import org.apache.commons.lang.StringUtils;
 import java.util.regex.Matcher;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
@@ -50,7 +50,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class QueriesGenerated {
-  private static Pattern REGEXP_x583g4_a0a0b0b0a0a0a0c0a0c0u = Pattern.compile("[^\\$].*", 0);
+  private static Pattern REGEXP_x583g4_a0a0b0b0a0a0a0c0a0c0v = Pattern.compile("[^\\$].*", 0);
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildCompositePath_8169228734285651483(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     SNode curr = _context.getSourceNode();
@@ -172,6 +172,53 @@ public class QueriesGenerated {
             });
           }
         }
+      }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_BuildLayout_CustomCopy_9184644532456752016(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_CustomCopy");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.build.structure.BuildLayout_CustomCopy", null);
+            SLinkOperations.setTarget(result, "fileset", SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.build.structure.BuildInputSingleFile", null), true);
+            return result;
+          }
+
+          public String getMatchingText(String pattern) {
+            return "copy file";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+        });
+      }
+    }
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_CustomCopy");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.build.structure.BuildLayout_CustomCopy", null);
+            SLinkOperations.setTarget(result, "fileset", SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.build.structure.BuildInputFiles", null), true);
+            return result;
+          }
+
+          public String getMatchingText(String pattern) {
+            return "copy files";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+        });
       }
     }
     return result;
@@ -309,7 +356,7 @@ public class QueriesGenerated {
               return "text";
             }
             {
-              Pattern _pattern_0 = REGEXP_x583g4_a0a0b0b0a0a0a0c0a0c0u;
+              Pattern _pattern_0 = REGEXP_x583g4_a0a0b0b0a0a0a0c0a0c0v;
               Matcher _matcher_0 = _pattern_0.matcher(pattern);
               if (_matcher_0.find()) {
                 return pattern;

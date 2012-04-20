@@ -7,7 +7,7 @@ import jetbrains.mps.build.util.UnpackHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
-public class BuildLayout_Copy_Behavior {
+public class BuildLayout_AbstractCopy_Behavior {
   public static void init(SNode thisNode) {
   }
 
@@ -44,7 +44,7 @@ public class BuildLayout_Copy_Behavior {
       }
       return;
     }
-    BuildLayout_PathElement_Behavior.callSuper_appendName_1368030936106665465(thisNode, "jetbrains.mps.build.structure.BuildLayout_Copy", parent, sb);
+    BuildLayout_PathElement_Behavior.callSuper_appendName_1368030936106665465(thisNode, "jetbrains.mps.build.structure.BuildLayout_AbstractCopy", parent, sb);
   }
 
   public static boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
@@ -55,14 +55,14 @@ public class BuildLayout_Copy_Behavior {
         String relativePath = BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(required);
 
         if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile")) {
-          return eq_b6vzi2_a0a0d0b0a0e(relativePath, BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile"), "path", true)));
+          return eq_cz5gmx_a0a0d0b0a0e(relativePath, BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile"), "path", true)));
         }
       }
     }
     return false;
   }
 
-  private static boolean eq_b6vzi2_a0a0d0b0a0e(Object a, Object b) {
+  private static boolean eq_cz5gmx_a0a0d0b0a0e(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

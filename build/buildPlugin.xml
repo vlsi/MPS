@@ -9,11 +9,15 @@
   
   <path id="path.java.library.idea-vcs">
     <fileset dir="${artifacts.IDEA}/plugins/git4idea/lib" includes="*.jar" />
-    <fileset dir="${artifacts.IDEA}/plugins/svn4ideaOld/lib" includes="*.jar" />
+    <fileset dir="${artifacts.IDEA}/plugins/svn4idea/lib" includes="*.jar" />
   </path>
   
   <target name="assemble" depends="classes, fetchDependencies">
     <mkdir dir="${build.layout}/mps-core" />
+    <mkdir dir="${build.layout}/mps-core/languages" />
+    <copy todir="${build.layout}/mps-core/languages">
+      <fileset dir="${artifacts.buildCore}/mps-core/languages" />
+    </copy>
     <mkdir dir="${build.layout}/mps-core/lib" />
     <copy todir="${build.layout}/mps-core/lib">
       <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
@@ -45,13 +49,81 @@
     <copy todir="${build.layout}/mps-core/lib">
       <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
     </copy>
+    <mkdir dir="${build.tmp}/default/mps-plugin.jar" />
+    <mkdir dir="${build.tmp}/default/mps-plugin.jar/META-INF" />
+    <copy todir="${build.tmp}/default/mps-plugin.jar/META-INF">
+      <fileset file="${mps_home}/workbench/mps-platform/source/META-INF/MPSCore.xml" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-plugin.jar/META-INF">
+      <fileset file="${mps_home}/workbench/mps-editor/source/META-INF/MPSEditor.xml" />
+    </copy>
+    <copy todir="${build.tmp}/default/mps-plugin.jar/META-INF">
+      <fileset dir="${mps_home}/workbench/mps-platform/source_gen">
+        <include name="jetbrains/mps/ide/platform/actions/PlatformActions.xml" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/mps-plugin.jar/META-INF">
+      <fileset dir="${mps_home}/workbench/mps-editor/source_gen">
+        <include name="jetbrains/mps/ide/editor/actions/MPSEditorActions.xml" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/mps-plugin.jar/META-INF">
+      <fileset file="${mps_home}/IdeaPlugin/mps-core/META-INF/plugin.xml" />
+      <filterchain>
+        <tokenfilter>
+          <replaceregex pattern="../classes/META-INF/" replace="" flags="gi" />
+        </tokenfilter>
+        <tokenfilter>
+          <replaceregex pattern="../classes/jetbrains/" replace="../jetbrains/" flags="gi" />
+        </tokenfilter>
+      </filterchain>
+    </copy>
     <jar destfile="${build.layout}/mps-core/lib/mps-plugin.jar">
       <fileset dir="${build.tmp}/java/out/mps-plugin" />
+      <fileset dir="${build.tmp}/default/mps-plugin.jar" />
     </jar>
     <copy todir="${build.layout}/mps-core">
       <fileset file="${mps_home}/build.number" />
     </copy>
     <mkdir dir="${build.layout}/mps-vcs" />
+    <mkdir dir="${build.layout}/mps-vcs/lib" />
+    <jar destfile="${build.layout}/mps-vcs/lib/mps-vcs-core.jar">
+      <fileset dir="${build.tmp}/java/out/mps-vcs-core" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/mps-vcs-platform.jar" />
+    <mkdir dir="${build.tmp}/default/mps-vcs-platform.jar/META-INF" />
+    <copy todir="${build.tmp}/default/mps-vcs-platform.jar/META-INF">
+      <fileset file="${mps_home}/IdeaPlugin/mps-vcs/META-INF/plugin.xml" />
+      <filterchain>
+        <tokenfilter>
+          <replaceregex pattern="../classes/META-INF/" replace="" flags="gi" />
+        </tokenfilter>
+        <tokenfilter>
+          <replaceregex pattern="../classes/jetbrains/" replace="../jetbrains/" flags="gi" />
+        </tokenfilter>
+      </filterchain>
+    </copy>
+    <jar destfile="${build.layout}/mps-vcs/lib/mps-vcs-platform.jar">
+      <fileset dir="${build.tmp}/java/out/mps-vcs-platform" />
+      <fileset dir="${build.tmp}/default/mps-vcs-platform.jar" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/mps-java.jar" />
+    <mkdir dir="${build.tmp}/default/mps-java.jar/META-INF" />
+    <copy todir="${build.tmp}/default/mps-java.jar/META-INF">
+      <fileset file="${mps_home}/IdeaPlugin/mps-java/META-INF/plugin.xml" />
+      <filterchain>
+        <tokenfilter>
+          <replaceregex pattern="../classes/META-INF/" replace="" flags="gi" />
+        </tokenfilter>
+        <tokenfilter>
+          <replaceregex pattern="../classes/jetbrains/" replace="../jetbrains/" flags="gi" />
+        </tokenfilter>
+      </filterchain>
+    </copy>
+    <jar destfile="${build.layout}/mps-java.jar">
+      <fileset dir="${build.tmp}/java/out/mps-java" />
+      <fileset dir="${build.tmp}/default/mps-java.jar" />
+    </jar>
   </target>
   
   <target name="buildDependents">
@@ -67,7 +139,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.mps-plugin, java.compile.mps-vcs" />
+  <target name="compileJava" depends="java.compile.mps-plugin, java.compile.mps-vcs-core, java.compile.mps-vcs-platform, java.compile.mps-java" />
   
   <target name="processResources" />
   
@@ -79,9 +151,11 @@
   
   <target name="java.compile.mps-plugin" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mps-plugin" />
-    <javac destdir="${build.tmp}/java/out/mps-plugin" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/mps-plugin" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
-      <src path="${mps_home}/IdeaPlugin/mps-core/src" />
+      <src>
+        <path location="${mps_home}/IdeaPlugin/mps-core/src" />
+      </src>
       <classpath>
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
@@ -91,7 +165,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-backend.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj.jar" />
+        <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
@@ -107,13 +181,14 @@
       </classpath>
     </javac>
     <copy todir="${build.tmp}/java/out/mps-plugin">
+      <fileset dir="${mps_home}/IdeaPlugin/mps-core/resources" />
       <fileset dir="${mps_home}/IdeaPlugin/mps-core/src" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
-  <target name="java.compile.mps-vcs" depends="fetchDependencies">
-    <mkdir dir="${build.tmp}/java/out/mps-vcs" />
-    <javac destdir="${build.tmp}/java/out/mps-vcs" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+  <target name="java.compile.mps-vcs-core" depends="fetchDependencies">
+    <mkdir dir="${build.tmp}/java/out/mps-vcs-core" />
+    <javac destdir="${build.tmp}/java/out/mps-vcs-core" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/vcs-core/core/source_gen" />
@@ -123,7 +198,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-core.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj.jar" />
+        <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
@@ -134,10 +209,89 @@
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
+        <path refid="path.java.library.idea-vcs" />
       </classpath>
     </javac>
-    <copy todir="${build.tmp}/java/out/mps-vcs">
+    <copy todir="${build.tmp}/java/out/mps-vcs-core">
       <fileset dir="${mps_home}/plugins/vcs-core/core/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.mps-vcs-platform" depends="java.compile.mps-vcs-core, fetchDependencies">
+    <mkdir dir="${build.tmp}/java/out/mps-vcs-platform" />
+    <javac destdir="${build.tmp}/java/out/mps-vcs-platform" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${mps_home}/plugins/vcs/common/source" />
+        <path location="${mps_home}/plugins/vcs/common/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-core.jar" />
+        <pathelement path="${build.tmp}/java/out/mps-vcs-core" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
+        <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
+        <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
+        <path refid="path.java.library.idea-vcs" />
+        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+      </classpath>
+    </javac>
+    <copy todir="${build.tmp}/java/out/mps-vcs-platform">
+      <fileset dir="${mps_home}/plugins/vcs/common/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/vcs/common/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.mps-java" depends="java.compile.mps-plugin, fetchDependencies">
+    <mkdir dir="${build.tmp}/java/out/mps-java" />
+    <javac destdir="${build.tmp}/java/out/mps-java" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${mps_home}/IdeaPlugin/mps-java/debugger/src" />
+        <path location="${mps_home}/plugins/mpsjava/platform/source_gen" />
+        <path location="${mps_home}/workbench/mps-debugger/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-core.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
+        <pathelement path="${build.tmp}/java/out/mps-plugin" />
+        <fileset file="${mps_home}/lib/tools.jar" />
+        <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
+        <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
+        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+      </classpath>
+    </javac>
+    <copy todir="${build.tmp}/java/out/mps-java">
+      <fileset dir="${mps_home}/IdeaPlugin/mps-java/debugger/src" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/mpsjava/platform/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/workbench/mps-debugger/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
 </project>

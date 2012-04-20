@@ -12,6 +12,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.Constants.structure.ConstantReference" file="ConstantReference.java">
     <classNode dependClassName="java.lang.String" />
@@ -35,6 +36,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.samples.Constants.structure.Constant" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.Constants.structure.Constants_Language" file="Constants_Language.java">
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />

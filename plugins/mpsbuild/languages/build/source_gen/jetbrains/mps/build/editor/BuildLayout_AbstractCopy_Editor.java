@@ -12,19 +12,19 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class BuildLayout_Copy_Editor extends DefaultNodeEditor {
+public class BuildLayout_AbstractCopy_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_gci4x4_a(editorContext, node);
+    return this.createCollection_vu0yef_a(editorContext, node);
   }
 
-  private EditorCell createCollection_gci4x4_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_vu0yef_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_gci4x4_a");
-    editorCell.addEditorCell(this.createRefNode_gci4x4_a0(editorContext, node));
+    editorCell.setCellId("Collection_vu0yef_a");
+    editorCell.addEditorCell(this.createRefNode_vu0yef_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_gci4x4_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_vu0yef_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("fileset");
     provider.setNoTargetText("<no fileset>");
