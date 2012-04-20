@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-72tmazk54g50dgjzohggcmev1m5w32w">
+<dependencies version="2" modelHash="8wnppt50yq2ek34n9ppntouuen8xchu">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" hash="-37mj1fhqym1o3u0s8q4cigqi9gnyewl" />
@@ -34,7 +34,7 @@
   <source id="7181125477683264500" name="IDEA" hash="a5apzlzkw1q19qduc0j0tg0nvoyr9d5">
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
   </source>
-  <source id="5148601452480491524" name="buildPlugin" hash="7cvrtf27utx3aoh5cpqvzbkkfxs31y5">
+  <source id="5148601452480491524" name="buildPlugin" hash="-ci7zlmpv723sv6rx51s8sl0x8x2lq4r">
     <dep root="7926701909975931624" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
