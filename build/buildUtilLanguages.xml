@@ -15,9 +15,27 @@
     <copy todir="${build.layout}/languages/xml/jetbrains.mps.xmlUnitTest">
       <fileset file="${mps_home}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.xmlUnitTest.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.xmlUnitTest.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.xmlUnitTest.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.xmlUnitTest" type="language" uuid="f85adbd8-2ec2-4572-bcfc-8dd799a7f025">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
+          <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+        </dependencies>
+        <runtime jar="xmlunit-1.3.jar" />
+        <sources jar="jetbrains.mps.xmlUnitTest-src.jar" descriptor="xmlUnitTest.mpl" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/xml/jetbrains.mps.xmlUnitTest/jetbrains.mps.xmlUnitTest.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.xmlUnitTest" />
       <fileset dir="${mps_home}/languages/util/xmlUnitTest/languages/xmlUnitTest" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.xmlUnitTest.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.xmlUnitTest-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.xmlUnitTest-src.jar/module" />
@@ -36,9 +54,27 @@
       <fileset dir="${mps_home}/languages/util/xmlUnitTest/languages/xmlUnitTest/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.xmlUnitTest-src.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.core.xml.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.core.xml.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.core.xml.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.core.xml" type="language" uuid="479c7a8c-02f9-43b5-9139-d910cb22f298">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
+          <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.core.xml-src.jar" descriptor="xml.mpl" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/xml/jetbrains.mps.core.xml.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.core.xml" />
       <fileset dir="${mps_home}/languages/xml/xml" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.core.xml.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.core.xml-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.core.xml-src.jar/module" />
@@ -57,9 +93,26 @@
       <fileset dir="${mps_home}/languages/xml/xml/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.core.xml-src.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.core.properties.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.core.properties.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.core.properties.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.core.properties" type="language" uuid="58f98fef-90ad-4b72-a390-fad66ec7005a">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
+          <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.core.properties-src.jar" descriptor="properties.mpl" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/xml/jetbrains.mps.core.properties.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.core.properties" />
       <fileset dir="${mps_home}/languages/util/properties" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.core.properties.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.core.properties-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.core.properties-src.jar/module" />
@@ -80,9 +133,26 @@
     </jar>
     <mkdir dir="${build.layout}/languages/util" />
     <mkdir dir="${build.layout}/languages/util/baseLanguage" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.contracts.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.contracts.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.baseLanguage.contracts.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.baseLanguage.contracts" type="language" uuid="c1b26490-e316-44a3-bb8e-c9120732af93">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
+          <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.baseLanguage.contracts-src.jar" descriptor="contracts.mpl" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/baseLanguage/jetbrains.mps.baseLanguage.contracts.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.contracts" />
       <fileset dir="${mps_home}/languages/util/contracts/languages/contracts" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.contracts.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.contracts-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.contracts-src.jar/module" />
@@ -101,9 +171,26 @@
       <fileset dir="${mps_home}/languages/util/contracts/languages/contracts/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.contracts-src.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.math.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.math.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.baseLanguage.math.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.baseLanguage.math" type="language" uuid="3304fc6e-7c6b-401e-a016-b944934bb21f">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
+          <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.baseLanguage.math-src.jar" descriptor="math.mpl" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/baseLanguage/jetbrains.mps.baseLanguage.math.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.math" />
       <fileset dir="${mps_home}/languages/util/math" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.math.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.math-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.math-src.jar/module" />
@@ -126,9 +213,22 @@
       <fileset dir="${mps_home}/languages/util/math/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.math-src.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.math.pluginSolution.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.math.pluginSolution.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.baseLanguage.math.pluginSolution.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.baseLanguage.math.pluginSolution" type="solution" uuid="77a6e046-32d5-4d60-823e-d1c337b22c4d">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.baseLanguage.math.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/baseLanguage/jetbrains.mps.baseLanguage.math.pluginSolution.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.math.pluginSolution" />
       <fileset dir="${mps_home}/languages/util/math/solutions/pluginSolution" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.math.pluginSolution.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.math.pluginSolution-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.math.pluginSolution-src.jar/module" />
@@ -147,9 +247,21 @@
       <fileset dir="${mps_home}/languages/util/math/solutions/pluginSolution/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.math.pluginSolution-src.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.math.runtime.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.math.runtime.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.baseLanguage.math.runtime.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.baseLanguage.math.runtime" type="solution" uuid="b98999bc-8369-4b20-9510-598d4eb5ace6">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.baseLanguage.math.runtime-src.jar" descriptor="jetbrains.mps.baseLanguage.math.runtime.msd" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/baseLanguage/jetbrains.mps.baseLanguage.math.runtime.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.math.runtime" />
       <fileset dir="${mps_home}/languages/util/math/runtimeSolution" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.math.runtime.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.math.runtime-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.math.runtime-src.jar/module" />
@@ -164,9 +276,26 @@
       <fileset dir="${mps_home}/languages/util/math/runtimeSolution/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.math.runtime-src.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.collections.trove.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.collections.trove.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.baseLanguage.collections.trove.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.baseLanguage.collections.trove" type="language" uuid="73736c50-f124-433b-b789-2828a15a0adc">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
+          <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.baseLanguage.collections.trove-src.jar" descriptor="trove.mpl" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/baseLanguage/jetbrains.mps.baseLanguage.collections.trove.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collections.trove" />
       <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.collections.trove.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.collections.trove-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.collections.trove-src.jar/module" />
@@ -193,9 +322,23 @@
     <copy todir="${build.layout}/languages/util/collections_trove.runtime">
       <fileset file="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     </copy>
+    <mkdir dir="${build.tmp}/default/collections_trove.runtime.jar" />
+    <mkdir dir="${build.tmp}/default/collections_trove.runtime.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/collections_trove.runtime.jar/META-INF/module.xml">
+      <module namespace="collections_trove.runtime" type="solution" uuid="134ef213-c518-42b0-b12c-c109aa13d320">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+        </dependencies>
+        <library jar="trove-2.1.0.jar" />
+        <sources jar="collections_trove.runtime-src.jar" descriptor="collections_trove.runtime.msd" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/collections_trove.runtime/collections_trove.runtime.jar">
       <fileset dir="${build.tmp}/java/out/collections_trove.runtime" />
       <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/collections_trove.runtime.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/collections_trove.runtime-src.jar" />
     <mkdir dir="${build.tmp}/default/collections_trove.runtime-src.jar/module" />
@@ -211,9 +354,26 @@
       <fileset dir="${build.tmp}/default/collections_trove.runtime-src.jar" />
     </jar>
     <mkdir dir="${build.layout}/languages/util/quickQueryLanguage" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.quickQueryLanguage.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.quickQueryLanguage.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.quickQueryLanguage.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.quickQueryLanguage" type="language" uuid="d745e97c-8235-4470-b086-ba3da1f4c03c">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
+          <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.quickQueryLanguage-src.jar" descriptor="quickQueryLanguage.mpl" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/quickQueryLanguage/jetbrains.mps.quickQueryLanguage.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.quickQueryLanguage" />
       <fileset dir="${mps_home}/languages/util/quickQueryLanguage" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.quickQueryLanguage.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.quickQueryLanguage-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.quickQueryLanguage-src.jar/module" />
@@ -236,9 +396,20 @@
       <fileset dir="${mps_home}/languages/util/quickQueryLanguage/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.quickQueryLanguage-src.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.quickQuery.runtime.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.quickQuery.runtime.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.quickQuery.runtime.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.quickQuery.runtime" type="solution" uuid="8a97af52-a1ac-4297-b776-d35bf47ce8da">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.quickQuery.runtime-src.jar" descriptor="jetbrains.mps.quickQuery.runtime.msd" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/quickQueryLanguage/jetbrains.mps.quickQuery.runtime.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.quickQuery.runtime" />
       <fileset dir="${mps_home}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.quickQuery.runtime.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.quickQuery.runtime-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.quickQuery.runtime-src.jar/module" />
@@ -253,9 +424,25 @@
       <fileset dir="${mps_home}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.quickQuery.runtime-src.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.quickQueryLanguage.pluginSolution.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.quickQueryLanguage.pluginSolution.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.quickQueryLanguage.pluginSolution.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.quickQueryLanguage.pluginSolution" type="solution" uuid="7cafff2e-0f23-44d5-8d34-9e13afa2a751">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.quickQueryLanguage.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/quickQueryLanguage/jetbrains.mps.quickQueryLanguage.pluginSolution.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.quickQueryLanguage.pluginSolution" />
       <fileset dir="${mps_home}/languages/util/quickQueryLanguage/solutions/pluginSolution" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.quickQueryLanguage.pluginSolution.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.quickQueryLanguage.pluginSolution-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.quickQueryLanguage.pluginSolution-src.jar/module" />
@@ -275,9 +462,27 @@
       <fileset dir="${build.tmp}/default/jetbrains.mps.quickQueryLanguage.pluginSolution-src.jar" />
     </jar>
     <mkdir dir="${build.layout}/languages/util/ypath" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.ypath.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.ypath.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.ypath.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.ypath" type="language" uuid="d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
+          <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+          <module ref="99834b1c-2b28-4543-a97c-953df7633f72(jetbrains.mps.ypath.runtime)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.ypath-src.jar" descriptor="ypath.mpl" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/ypath/jetbrains.mps.ypath.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.ypath" />
       <fileset dir="${mps_home}/languages/util/ypath" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.ypath.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ypath-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ypath-src.jar/module" />
@@ -300,9 +505,25 @@
       <fileset dir="${mps_home}/languages/util/ypath/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ypath-src.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.ypath.pluginSolution.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.ypath.pluginSolution.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.ypath.pluginSolution.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.ypath.pluginSolution" type="solution" uuid="7a726c26-db91-4893-9e84-b952361700b3">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.ypath.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/ypath/jetbrains.mps.ypath.pluginSolution.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.ypath.pluginSolution" />
       <fileset dir="${mps_home}/languages/util/ypath/solutions/pluginSolution" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.ypath.pluginSolution.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ypath.pluginSolution-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ypath.pluginSolution-src.jar/module" />
@@ -321,9 +542,20 @@
       <fileset dir="${mps_home}/languages/util/ypath/solutions/pluginSolution/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ypath.pluginSolution-src.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.ypath.runtime.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.ypath.runtime.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.ypath.runtime.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.ypath.runtime" type="solution" uuid="99834b1c-2b28-4543-a97c-953df7633f72">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.ypath.runtime-src.jar" descriptor="jetbrains.mps.ypath.runtime.msd" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/ypath/jetbrains.mps.ypath.runtime.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.ypath.runtime" />
       <fileset dir="${mps_home}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.ypath.runtime.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ypath.runtime-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ypath.runtime-src.jar/module" />
@@ -338,9 +570,23 @@
       <fileset dir="${mps_home}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ypath.runtime-src.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/ypath.main.jar" />
+    <mkdir dir="${build.tmp}/default/ypath.main.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/ypath.main.jar/META-INF/module.xml">
+      <module namespace="ypath.main" type="solution" uuid="084f8779-0bb0-44bf-8a8b-1214d7acfbc5">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="99834b1c-2b28-4543-a97c-953df7633f72(jetbrains.mps.ypath.runtime)" />
+        </dependencies>
+        <sources jar="ypath.main-src.jar" descriptor="main.msd" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/ypath/ypath.main.jar">
       <fileset dir="${build.tmp}/java/out/ypath.main" />
       <fileset dir="${mps_home}/languages/util/ypath/solutions/main" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/ypath.main.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/ypath.main-src.jar" />
     <mkdir dir="${build.tmp}/default/ypath.main-src.jar/module" />
@@ -355,9 +601,24 @@
       <fileset dir="${mps_home}/languages/util/ypath/solutions/main/source_gen" />
       <fileset dir="${build.tmp}/default/ypath.main-src.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/ypath.test.jar" />
+    <mkdir dir="${build.tmp}/default/ypath.test.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/ypath.test.jar/META-INF/module.xml">
+      <module namespace="ypath.test" type="solution" uuid="26af8f6b-3531-46d0-8700-83a313e4566e">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="83f155ff-422c-4b5a-a2f2-b459302dd215(jetbrains.mps.baseLanguage.unitTest.libs)" />
+          <module ref="99834b1c-2b28-4543-a97c-953df7633f72(jetbrains.mps.ypath.runtime)" />
+        </dependencies>
+        <sources jar="ypath.test-src.jar" descriptor="test.msd" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/ypath/ypath.test.jar">
       <fileset dir="${build.tmp}/java/out/ypath.test" />
       <fileset dir="${mps_home}/languages/util/ypath/solutions/test" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/ypath.test.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/ypath.test-src.jar" />
     <mkdir dir="${build.tmp}/default/ypath.test-src.jar/module" />
@@ -374,9 +635,28 @@
     </jar>
     <mkdir dir="${build.layout}/languages/util/deprecated" />
     <mkdir dir="${build.layout}/languages/util/deprecated/build" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.build.custommps.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.build.custommps.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.build.custommps.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.build.custommps" type="language" uuid="a79f53b6-9aaa-48eb-9fbb-aaec80a6da9a">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
+          <module ref="34f23130-e35c-4795-a45a-85d828b16016(jetbrains.mps.gtext.runtime)" />
+          <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
+          <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.build.custommps-src.jar" descriptor="custommps.mpl" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/deprecated/build/jetbrains.mps.build.custommps.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.custommps" />
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/custommps" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.build.custommps.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.custommps-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.custommps-src.jar/module" />
@@ -399,9 +679,25 @@
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/custommps/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.custommps-src.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.build.custommps.pluginSolution.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.build.custommps.pluginSolution.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.build.custommps.pluginSolution.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.build.custommps.pluginSolution" type="solution" uuid="094954f5-ae7f-4b4c-a5a2-cfd4bbb86ad2">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.build.custommps.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/deprecated/build/jetbrains.mps.build.custommps.pluginSolution.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.custommps.pluginSolution" />
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/custommps/solutions/pluginSolution" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.build.custommps.pluginSolution.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.custommps.pluginSolution-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.custommps.pluginSolution-src.jar/module" />
@@ -420,9 +716,27 @@
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/custommps/solutions/pluginSolution/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.custommps.pluginSolution-src.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.build.dependency.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.build.dependency.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.build.dependency.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.build.dependency" type="language" uuid="500e32a4-ab9e-46a4-ae29-127ae883d208">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
+          <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
+          <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.build.dependency-src.jar" descriptor="dependency.mpl" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/deprecated/build/jetbrains.mps.build.dependency.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.dependency" />
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/dependency" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.build.dependency.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.dependency-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.dependency-src.jar/module" />
@@ -441,9 +755,28 @@
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/dependency/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.dependency-src.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.build.generictasks.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.build.generictasks.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.build.generictasks.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.build.generictasks" type="language" uuid="fba399db-f591-45dc-a279-e2a2a986e262">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
+          <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
+          <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+        </dependencies>
+        <library jar="ant-launcher.jar" />
+        <sources jar="jetbrains.mps.build.generictasks-src.jar" descriptor="generictasks.mpl" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/deprecated/build/jetbrains.mps.build.generictasks.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.generictasks" />
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/generictasks" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.build.generictasks.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.generictasks-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.generictasks-src.jar/module" />
@@ -466,9 +799,25 @@
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/generictasks/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.generictasks-src.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.build.generictasks.pluginSolution.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.build.generictasks.pluginSolution.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.build.generictasks.pluginSolution.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.build.generictasks.pluginSolution" type="solution" uuid="f44cbdd5-39a3-4e80-a4e4-26ad1efab3cc">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.build.generictasks.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/deprecated/build/jetbrains.mps.build.generictasks.pluginSolution.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.generictasks.pluginSolution" />
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.build.generictasks.pluginSolution.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.generictasks.pluginSolution-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.generictasks.pluginSolution-src.jar/module" />
@@ -487,9 +836,25 @@
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.generictasks.pluginSolution-src.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.build.mpsdist.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.build.mpsdist.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.build.mpsdist.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.build.mpsdist" type="solution" uuid="77cb4ae5-2831-4e0c-b819-c00e2c16c1b2">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="34f23130-e35c-4795-a45a-85d828b16016(jetbrains.mps.gtext.runtime)" />
+          <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.build.mpsdist-src.jar" descriptor="mpsdist.msd" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/deprecated/build/jetbrains.mps.build.mpsdist.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.mpsdist" />
       <fileset dir="${mps_home}/languages/util/buildlanguage/solutions/jetbrains.mps.build.mpsdist" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.build.mpsdist.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.mpsdist-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.mpsdist-src.jar/module" />
@@ -504,9 +869,28 @@
       <fileset dir="${mps_home}/languages/util/buildlanguage/solutions/jetbrains.mps.build.mpsdist/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.mpsdist-src.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.build.packaging.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.build.packaging.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.build.packaging.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.build.packaging" type="language" uuid="4e6c5313-7662-4c44-9bc7-b488cec17508">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
+          <module ref="34f23130-e35c-4795-a45a-85d828b16016(jetbrains.mps.gtext.runtime)" />
+          <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
+          <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.build.packaging-src.jar" descriptor="packaging.mpl" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/deprecated/build/jetbrains.mps.build.packaging.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.packaging" />
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/packaging" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.build.packaging.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.packaging-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.packaging-src.jar/module" />
@@ -529,9 +913,26 @@
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/packaging/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.packaging-src.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.build.packaging.pluginSolution.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.build.packaging.pluginSolution.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.build.packaging.pluginSolution.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.build.packaging.pluginSolution" type="solution" uuid="b5230e95-4b1a-45ec-ace6-8ae079e17bba">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="34f23130-e35c-4795-a45a-85d828b16016(jetbrains.mps.gtext.runtime)" />
+          <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.build.packaging.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/deprecated/build/jetbrains.mps.build.packaging.pluginSolution.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.packaging.pluginSolution" />
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/packaging/solutions/pluginSolution" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.build.packaging.pluginSolution.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.packaging.pluginSolution-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.packaging.pluginSolution-src.jar/module" />
@@ -550,9 +951,27 @@
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/packaging/solutions/pluginSolution/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.packaging.pluginSolution-src.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.build.property.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.build.property.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.build.property.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.build.property" type="language" uuid="dd61a7d7-8e1b-45a1-9aa3-8585ec2b60fc">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
+          <module ref="34f23130-e35c-4795-a45a-85d828b16016(jetbrains.mps.gtext.runtime)" />
+          <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.build.property-src.jar" descriptor="property.mpl" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/deprecated/build/jetbrains.mps.build.property.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.property" />
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/property" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.build.property.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.property-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.property-src.jar/module" />
@@ -571,9 +990,26 @@
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/property/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.property-src.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.build.startup.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.build.startup.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.build.startup.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.build.startup" type="language" uuid="d5033cee-f632-44b6-b308-89d4fbde34ff">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
+          <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.build.startup-src.jar" descriptor="startup.mpl" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/deprecated/build/jetbrains.mps.build.startup.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.startup" />
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/startup" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.build.startup.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.startup-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.startup-src.jar/module" />
@@ -592,9 +1028,28 @@
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/startup/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.startup-src.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.buildlanguage.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.buildlanguage.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.buildlanguage.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.buildlanguage" type="language" uuid="0b608d44-1308-418d-8715-22d040c3b3cc">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
+          <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
+          <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.buildlanguage-src.jar" descriptor="buildlanguage.mpl" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/deprecated/build/jetbrains.mps.buildlanguage.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.buildlanguage" />
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/buildlanguage" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.buildlanguage.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.buildlanguage-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.buildlanguage-src.jar/module" />
@@ -614,9 +1069,25 @@
       <fileset dir="${build.tmp}/default/jetbrains.mps.buildlanguage-src.jar" />
     </jar>
     <mkdir dir="${build.layout}/languages/util/deprecated/ui" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.uiLanguage.pluginSolution.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.uiLanguage.pluginSolution.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.uiLanguage.pluginSolution.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.uiLanguage.pluginSolution" type="solution" uuid="15c70035-a529-4bb0-8c16-00e6d2ce60de">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.uiLanguage.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/deprecated/ui/jetbrains.mps.uiLanguage.pluginSolution.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.uiLanguage.pluginSolution" />
       <fileset dir="${mps_home}/languages/util/uiLanguage/solutions/pluginSolution" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.uiLanguage.pluginSolution.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.uiLanguage.pluginSolution-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.uiLanguage.pluginSolution-src.jar/module" />
@@ -636,9 +1107,26 @@
       <fileset dir="${build.tmp}/default/jetbrains.mps.uiLanguage.pluginSolution-src.jar" />
     </jar>
     <mkdir dir="${build.layout}/languages/util/deprecated/xml" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.xml.deprecated.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.xml.deprecated.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.xml.deprecated.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.xml.deprecated" type="language" uuid="823d79c6-2e26-4b0e-92a0-e1884a10bba9">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
+          <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.xml.deprecated-src.jar" descriptor="languageDescriptor.mpl" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/deprecated/xml/jetbrains.mps.xml.deprecated.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.xml.deprecated" />
       <fileset dir="${mps_home}/languages/util/xmlDeprecated" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.xml.deprecated.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.xml.deprecated-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.xml.deprecated-src.jar/module" />
@@ -657,9 +1145,18 @@
       <fileset dir="${mps_home}/languages/util/xmlDeprecated/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.xml.deprecated-src.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.xml.deprecated.pluginSolution.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.xml.deprecated.pluginSolution.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.xml.deprecated.pluginSolution.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.xml.deprecated.pluginSolution" type="solution" uuid="00079280-2b75-4da8-bc1f-55c3bf8b1bab">
+        <dependencies />
+        <sources jar="jetbrains.mps.xml.deprecated.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/deprecated/xml/jetbrains.mps.xml.deprecated.pluginSolution.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.xml.deprecated.pluginSolution" />
       <fileset dir="${mps_home}/languages/util/xmlDeprecated/solutions/pluginSolution" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.xml.deprecated.pluginSolution.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.xml.deprecated.pluginSolution-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.xml.deprecated.pluginSolution-src.jar/module" />
@@ -678,9 +1175,26 @@
       <fileset dir="${mps_home}/languages/util/xmlDeprecated/solutions/pluginSolution/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.xml.deprecated.pluginSolution-src.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.nanoj.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.nanoj.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.nanoj.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.nanoj" type="language" uuid="0452c5e6-046a-41b1-a1c2-bfa47ef3ae0b">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
+          <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.nanoj-src.jar" descriptor="nanoj.mpl" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/deprecated/jetbrains.mps.nanoj.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.nanoj" />
       <fileset dir="${mps_home}/languages/util/mps-lite/languages/nanoj" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.nanoj.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.nanoj-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.nanoj-src.jar/module" />
@@ -695,9 +1209,26 @@
       <fileset dir="${mps_home}/languages/util/mps-lite/languages/nanoj/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.nanoj-src.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mpslite.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mpslite.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mpslite.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mpslite" type="language" uuid="3fe6ec39-7405-4314-abfd-5964c9c40e6b">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
+          <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+        </dependencies>
+        <sources jar="jetbrains.mpslite-src.jar" descriptor="mpslite.mpl" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/deprecated/jetbrains.mpslite.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mpslite" />
       <fileset dir="${mps_home}/languages/util/mps-lite/languages/mpslite" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mpslite.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mpslite-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mpslite-src.jar/module" />
@@ -720,9 +1251,18 @@
       <fileset dir="${mps_home}/languages/util/mps-lite/languages/mpslite/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mpslite-src.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mpslite.pluginSolution.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mpslite.pluginSolution.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mpslite.pluginSolution.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mpslite.pluginSolution" type="solution" uuid="c9b07d89-4434-4e84-be34-987acee1abeb">
+        <dependencies />
+        <sources jar="jetbrains.mpslite.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/languages/util/deprecated/jetbrains.mpslite.pluginSolution.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mpslite.pluginSolution" />
       <fileset dir="${mps_home}/languages/util/mps-lite/languages/mpslite/solutions/pluginSolution" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mpslite.pluginSolution.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mpslite.pluginSolution-src.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mpslite.pluginSolution-src.jar/module" />

@@ -8,10 +8,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.build.util.RelativePathHelper;
+import jetbrains.mps.build.mps.behavior.BuildMps_AbstractModule_Behavior;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.behavior.BuildSourcePath_Behavior;
 import jetbrains.mps.build.util.Context;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.build.util.RelativePathHelper;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -26,12 +27,12 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import java.util.Collections;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.build.mps.util.ModuleLoader;
-import org.apache.commons.lang.StringUtils;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1500819558096430320(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -54,6 +55,43 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "module", false), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_4643216374596368557(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "module", false), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4643216374596368425(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "module", false), "jetbrains.mps.build.mps.structure.BuildMps_Solution") ?
+      "solution" :
+      "language"
+    );
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4643216374596368503(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "module", false), "uuid");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4643216374596368657(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildMps_AbstractModule_Behavior.call_getModuleReference_4643216374596368935(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4743026300739052533(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode path = (SNode) _context.getNode().getReferent("targetJarPath");
+    return BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(path, Context.defaultContext(_context).getMacros(path));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4743026300739052426(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode path = (SNode) _context.getNode().getReferent("targetJarPath");
+    return BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(path, Context.defaultContext(_context).getMacros(path));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4743026300739110532(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "module", false), "name") + "-src.jar";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4743026300739110547(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true), Context.defaultContext(_context).getMacros(_context.getNode()));
+  }
+
   public static Object propertyMacro_GetPropertyValue_8654221991637263445(final IOperationContext operationContext, final PropertyMacroContext _context) {
     try {
       String relative = ((RelativePathHelper) _context.getVariable("var:modulePath")).makeRelative(BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(SLinkOperations.getTarget(_context.getNode(), "folder", true), Context.defaultContext(_context)));
@@ -69,19 +107,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_2540145662854694140(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "module", false), "name") + ".jar";
-  }
-
-  public static Object propertyMacro_GetPropertyValue_2540145662854694384(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    try {
-      String relative = ((RelativePathHelper) _context.getVariable("var:modulePath")).makeRelative(BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(SLinkOperations.getTarget(_context.getNode(), "folder", true), Context.defaultContext(_context)));
-      if (relative == null) {
-        _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "folder", true), "model root folder should be placed under module: " + BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(_context.getNode(), "folder", true)));
-      }
-      return relative;
-    } catch (RelativePathHelper.PathException ex) {
-      _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "folder", true), "cannot build relative path: " + ex.getMessage());
-      return "???";
-    }
   }
 
   public static Object propertyMacro_GetPropertyValue_2540145662854694191(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -120,8 +145,16 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "module", false), "jetbrains.mps.build.mps.structure.BuildMps_Module"), "javaModule");
   }
 
+  public static Object referenceMacro_GetReferent_4643216374596368393(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "module", false);
+  }
+
   public static Object referenceMacro_GetReferent_2591537044436106598(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "module", false), "javaModule");
+    return _context.getCopiedOutputNodeForInputNode(SLinkOperations.getTarget(_context.getNode(), "module", false));
+  }
+
+  public static Object referenceMacro_GetReferent_4643216374596212875(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "module", false);
   }
 
   public static Object referenceMacro_GetReferent_8252715012761547084(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -136,12 +169,16 @@ public class QueriesGenerated {
     return ((SNode) _context.getVariable("var:target"));
   }
 
+  public static boolean ifMacro_Condition_4743026300739110563(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true) != null);
+  }
+
   public static boolean ifMacro_Condition_8369506495128850763(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true) != null);
   }
 
   public static boolean ifMacro_Condition_8654221991637237394(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true) != null);
+    return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true) != null) && !(SPropertyOperations.getBoolean(_context.getNode(), "modelsOnly"));
   }
 
   public static boolean ifMacro_Condition_8654221991637263558(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -198,14 +235,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_2540145662854694242(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return BuildSourcePath_Behavior.call_getParent_8654221991637145399(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true));
-  }
-
-  public static SNode sourceNodeQuery_2540145662854694289(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true);
-  }
-
-  public static SNode sourceNodeQuery_2540145662854694446(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "folder", true);
   }
 
   public static SNode sourceNodeQuery_2540145662854694674(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -361,19 +390,63 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "modules", true);
   }
 
-  public static Iterable sourceNodesQuery_8654221991637263183(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "module", false), "sources", true)).where(new IWhereFilter<SNode>() {
+  public static Iterable sourceNodesQuery_4643216374596368654(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return Sequence.fromIterable(new MPSModulesClosure(_context, SLinkOperations.getTarget(_context.getNode(), "module", false)).runtimeDependencies().getModules()).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return SPropertyOperations.getString(it, "name");
+      }
+    }, true);
+  }
+
+  public static Iterable sourceNodesQuery_4743026300739026811(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    SNode lang = SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "module", false), "jetbrains.mps.build.mps.structure.BuildMps_Language");
+    if (lang == null) {
+      return Collections.emptyList();
+    }
+    return ListSequence.fromList(SLinkOperations.getTargets(lang, "runtime", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime");
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot");
+        return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime"), "path", true);
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
+        loopnode.setReferent("targetJarPath", it, false);
+        return loopnode;
+      }
+    });
+
+  }
+
+  public static Iterable sourceNodesQuery_4743026300739026814(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "module", false), "dependencies", true)).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return (SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency") ?
+          SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) :
+          it
+        );
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar");
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true);
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
+        loopnode.setReferent("targetJarPath", it, false);
+        return loopnode;
       }
     });
   }
 
-  public static Iterable sourceNodesQuery_2540145662854694482(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_8654221991637263183(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "module", false), "sources", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot");
@@ -443,15 +516,6 @@ public class QueriesGenerated {
 
   public static Object insertMacro_varValue_8654221991637263463(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return new RelativePathHelper(BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true), Context.defaultContext(_context)));
-  }
-
-  public static Object insertMacro_varValue_2540145662854694572(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    String localPath = BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true), Context.defaultContext(_context));
-    if (StringUtils.isEmpty(localPath)) {
-      _context.showErrorMessage(_context.getNode(), "cannot build local path");
-      return null;
-    }
-    return new RelativePathHelper(localPath);
   }
 
   public static Object insertMacro_varValue_6859736767834869981(final IOperationContext operationContext, final TemplateQueryContext _context) {

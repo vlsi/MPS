@@ -240,6 +240,30 @@ public class MPSModulesClosure {
     return this;
   }
 
+  public MPSModulesClosure runtimeDependencies() {
+    Set<SNode> nonreexportDeps = new LinkedHashSet<SNode>();
+    modules.add(initial);
+    for (SNode language : getUsedLanguages(initial)) {
+      boolean hasRuntime = false;
+      for (SNode rdep : SLinkOperations.getTargets(language, "runtime", true)) {
+        if (!(SNodeOperations.isInstanceOf(rdep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime"))) {
+          hasRuntime = true;
+          continue;
+        }
+        SNode runtimeSolution = SNodeOperations.as(toOriginal(SLinkOperations.getTarget(SNodeOperations.cast(rdep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime"), "solution", false)), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
+        modules.add(runtimeSolution);
+
+      }
+      if (hasRuntime) {
+        languagesWithRuntime.add(language);
+      }
+    }
+
+    modules.addAll(nonreexportDeps);
+    modules.remove(initial);
+    return this;
+  }
+
   public MPSModulesClosure.RequiredJavaModules getRequiredJava() {
     Iterable<SNode> reexportedFromModuleDependencies = Sequence.fromIterable(getModules()).concat(Sequence.fromIterable(Sequence.<SNode>singleton(initial))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode mod) {

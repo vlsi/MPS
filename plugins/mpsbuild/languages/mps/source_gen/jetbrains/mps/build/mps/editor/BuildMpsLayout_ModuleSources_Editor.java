@@ -7,23 +7,32 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.build.editor.buildStyles_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
-import jetbrains.mps.build.editor.buildStyles_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_gp4zyx_a(editorContext, node);
+  }
+
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_gp4zyx_a_0(editorContext, node);
   }
 
   private EditorCell createCollection_gp4zyx_a(EditorContext editorContext, SNode node) {
@@ -31,6 +40,43 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_gp4zyx_a");
     editorCell.addEditorCell(this.createConceptProperty_gp4zyx_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_gp4zyx_b0(editorContext, node));
+    if (renderingCondition_gp4zyx_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_gp4zyx_c0(editorContext, node));
+    }
+    return editorCell;
+  }
+
+  private EditorCell createCollection_gp4zyx_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_gp4zyx_a_0");
+    if (renderingCondition_gp4zyx_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_gp4zyx_a0(editorContext, node));
+    }
+    return editorCell;
+  }
+
+  private EditorCell createCollection_gp4zyx_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_gp4zyx_a0");
+    editorCell.addEditorCell(this.createConstant_gp4zyx_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_gp4zyx_b0a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_gp4zyx_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(models only)");
+    editorCell.setCellId("Constant_gp4zyx_c0");
+    buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    delete_ModuleSources_modelsOnly.setCellActions(editorCell, node, editorContext);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_gp4zyx_a0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "models only:");
+    editorCell.setCellId("Constant_gp4zyx_a0a");
+    buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
     return editorCell;
   }
 
@@ -41,6 +87,24 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new BuildMpsLayout_ModuleSources_Editor._Inline_gp4zyx_a1a());
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createProperty_gp4zyx_b0a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("modelsOnly");
+    provider.setNoTargetText("<no modelsOnly>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_modelsOnly");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -73,6 +137,14 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private static boolean renderingCondition_gp4zyx_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "modelsOnly");
+  }
+
+  private static boolean renderingCondition_gp4zyx_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node));
   }
 
   public static class ReplaceWith_BuildLayout_Node_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
