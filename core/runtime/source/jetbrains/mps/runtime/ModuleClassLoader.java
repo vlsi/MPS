@@ -20,9 +20,7 @@ import sun.reflect.Reflection;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.Iterator;
+import java.util.*;
 
 public class ModuleClassLoader extends ClassLoader {
   //this is for debug purposes (heap dumps)
@@ -64,9 +62,21 @@ public class ModuleClassLoader extends ClassLoader {
     }
 
     if (dependencies) {
+      Set<IClassLoadingModule> mayContainNonOwned = new HashSet<IClassLoadingModule>();
       for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
         if (m.equals(myModule)) continue;
 
+        if (m.canFindClass(name)) {
+          try {
+            return m.getClassLoader().loadClass(name, false, false);
+          } catch (ClassNotFoundException e) {
+            //ignore
+          }
+        } else {
+          mayContainNonOwned.add(m);
+        }
+      }
+      for (IClassLoadingModule m : mayContainNonOwned) {
         try {
           return m.getClassLoader().loadClass(name, false, false);
         } catch (ClassNotFoundException e) {
