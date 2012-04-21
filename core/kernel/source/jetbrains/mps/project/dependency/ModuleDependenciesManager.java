@@ -22,6 +22,7 @@ import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -81,7 +82,7 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
 
   protected void collectUsedModules(boolean runtimes, Set<IModule> reexported, Set<IModule> nonReexported) {
     for (Dependency dependency : myModule.getDependencies()) {
-      IModule m = MPSModuleRepository.getInstance().getModuleById(dependency.getModuleRef().getModuleId());
+      IModule m = ModuleRepositoryFacade.getInstance().getModule(dependency.getModuleRef());
       if (m == null || reexported.contains(m)) continue;
 
       if (dependency.isReexport()) {

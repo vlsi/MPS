@@ -21,6 +21,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -38,7 +39,7 @@ public class GeneratorDependenciesManager extends ModuleDependenciesManager<Gene
     nonReexported.addAll(lang);
     //generator sees all dependent generators as non-reexport
     for (ModuleReference refGenerator : myModule.getReferencedGeneratorUIDs()) {
-      IModule gm = MPSModuleRepository.getInstance().getModuleById(refGenerator.getModuleId());
+      IModule gm = ModuleRepositoryFacade.getInstance().getModule(refGenerator);
       if (gm == null) continue;
       nonReexported.add(gm);
     }
