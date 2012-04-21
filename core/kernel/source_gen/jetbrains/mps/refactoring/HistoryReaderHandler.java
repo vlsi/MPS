@@ -249,7 +249,7 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
       if ("model".equals(tagName)) {
         String[] child = (String[]) value;
         SModelReference modelRef = SModelReference.fromString(child[1]);
-        result.put(modelRef, Integer.parseInt(child[2]));
+        MapSequence.fromMap(result).put(modelRef, Integer.parseInt(child[2]));
         fieldhelper.addModelRef(child[0], modelRef);
         return;
       }
