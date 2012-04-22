@@ -118,7 +118,7 @@ public class Module_Behavior {
     Collection<String> paths = Module_Behavior.call_getClassPathExcludingIdea_2000252915626233691(thisNode, module);
     return Module_Behavior.call_getPathHolders_4642981534832278885(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, CollectionSequence.fromCollection(((Collection<String>) paths)).where(new IWhereFilter<String>() {
       public boolean accept(String it) {
-        return it.endsWith(".jar");
+        return !(it.endsWith(".jar"));
       }
     }).toListSequence())).distinct().toListSequence(), true, includeHomeLib);
   }
