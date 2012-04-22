@@ -114,6 +114,7 @@ public class Solution extends ClassLoadingModule {
     }
 
     invalidateCaches();
+    invalidateDependencies();
   }
 
   public void save() {

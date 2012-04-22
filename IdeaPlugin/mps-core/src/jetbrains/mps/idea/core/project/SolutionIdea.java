@@ -148,6 +148,12 @@ public class SolutionIdea extends Solution {
   }
 
   @Override
+  protected void invalidateDependencies() {
+    super.invalidateDependencies();
+    myDependencies = null;
+  }
+
+  @Override
   public void save() {
     // TODO: implement saving functionality here.
 //        super.save();    //To change body of overridden methods use File | Settings | File Templates.

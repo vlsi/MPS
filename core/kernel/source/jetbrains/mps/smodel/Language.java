@@ -222,6 +222,8 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     if (getStructureModelDescriptor() != null && myCachesInvalidator == null) {
       getStructureModelDescriptor().addModelListener(myCachesInvalidator = new CachesInvalidator());
     }
+
+    invalidateDependencies();
   }
 
   public boolean isBootstrap() {

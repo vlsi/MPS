@@ -86,6 +86,8 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     if (reloadClasses) {
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     }
+
+    invalidateDependencies();
   }
 
   public String getGeneratorOutputPath() {
