@@ -55,7 +55,7 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
   }
 
   @Override
-  protected void invalidateDependencies() {
+  public void invalidateDependencies() {
     super.invalidateDependencies();
     synchronized (LOCK) {
       myClassLoadingDepsCache = null;

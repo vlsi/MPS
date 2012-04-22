@@ -138,6 +138,10 @@ public class LibraryInitializer implements CoreComponent {
 
     LanguageRegistry.getInstance().loadLanguages();
     ExtensionRegistry.getInstance().loadExtensionDescriptors();
+
+    for (IModule m:MPSModuleRepository.getInstance().getAllModules()){
+      m.invalidateDependencies();
+    }
   }
 
   protected void fireOnLoad(final MPSModuleOwner owner) {

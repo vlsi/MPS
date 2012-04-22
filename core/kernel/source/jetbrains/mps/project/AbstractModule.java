@@ -570,7 +570,7 @@ public abstract class AbstractModule implements IModule {
     return getModuleDescriptor().updateModuleRefs();
   }
 
-  protected void invalidateDependencies() {
+  public void invalidateDependencies() {
     //do nothing by default
   }
 

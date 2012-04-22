@@ -72,6 +72,8 @@ public interface IModule extends ModelOwner {
 
   void addUsedDevkit(ModuleReference devkitRef);
 
+  void invalidateDependencies();
+
   //----
 
   SModelDescriptor createModel(SModelFqName fqName, SModelRoot root, @Nullable ModelAdjuster adj);
