@@ -1290,10 +1290,6 @@
     <copy todir="${build.tmp}/default/jetbrains.mps.lang.structure.runtime-src.jar/module">
       <fileset file="${mps_home}/languages/languageDesign/structure/solutions/runtime/runtime.msd" />
     </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.structure.runtime-src.jar/module/models" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.lang.structure.runtime-src.jar/module/models">
-      <fileset dir="${mps_home}/languages/languageDesign/structure/solutions/runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.structure.runtime-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/structure/solutions/runtime/source_gen" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.structure.runtime-src.jar" />
@@ -1450,10 +1446,6 @@
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.runtime-src.jar/module" />
     <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.runtime-src.jar/module">
       <fileset file="${mps_home}/languages/baseLanguage/baseLanguage/solutions/runtime/runtime.msd" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.runtime-src.jar/module/models" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.runtime-src.jar/module/models">
-      <fileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.runtime-src.jar">
       <fileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/runtime/source_gen" />
@@ -1698,10 +1690,6 @@
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.logging.runtime-src.jar/module" />
     <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.logging.runtime-src.jar/module">
       <fileset file="${mps_home}/languages/baseLanguage/logging/solutions/runtime/runtime.msd" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.logging.runtime-src.jar/module/models" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.logging.runtime-src.jar/module/models">
-      <fileset dir="${mps_home}/languages/baseLanguage/logging/solutions/runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime-src.jar">
       <fileset dir="${mps_home}/languages/baseLanguage/logging/solutions/runtime/source_gen" />
