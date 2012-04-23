@@ -59,16 +59,6 @@
       <fileset file="${mps_home}/workbench/mps-editor/source/META-INF/MPSEditor.xml" />
     </copy>
     <copy todir="${build.tmp}/default/mps-plugin.jar/META-INF">
-      <fileset dir="${mps_home}/workbench/mps-platform/source_gen">
-        <include name="jetbrains/mps/ide/platform/actions/PlatformActions.xml" />
-      </fileset>
-    </copy>
-    <copy todir="${build.tmp}/default/mps-plugin.jar/META-INF">
-      <fileset dir="${mps_home}/workbench/mps-editor/source_gen">
-        <include name="jetbrains/mps/ide/editor/actions/MPSEditorActions.xml" />
-      </fileset>
-    </copy>
-    <copy todir="${build.tmp}/default/mps-plugin.jar/META-INF">
       <fileset file="${mps_home}/IdeaPlugin/mps-core/META-INF/plugin.xml" />
       <filterchain>
         <tokenfilter>
@@ -81,6 +71,12 @@
     </copy>
     <jar destfile="${build.layout}/plugins/mps-core/lib/mps-plugin.jar">
       <fileset dir="${build.tmp}/java/out/mps-plugin" />
+      <fileset dir="${mps_home}/workbench/mps-platform/source_gen">
+        <include name="jetbrains/mps/ide/platform/actions/PlatformActions.xml" />
+      </fileset>
+      <fileset dir="${mps_home}/workbench/mps-editor/source_gen">
+        <include name="jetbrains/mps/ide/editor/actions/MPSEditorActions.xml" />
+      </fileset>
       <fileset dir="${build.tmp}/default/mps-plugin.jar" />
     </jar>
     <copy todir="${build.layout}/plugins/mps-core">
