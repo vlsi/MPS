@@ -3097,7 +3097,7 @@
           <property name="name" nameId="tps4.1223641503366" value="nanocProject.zip" />
         </node>
         <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="7233798365360316914">
-          <property name="excludes" nameId="tps4.1204107522064" value="**/*.class" />
+          <property name="excludes" nameId="tps4.1204107522064" value="**/*.class, **/classes_gen/**" />
           <node role="sourcePath" roleId="tps4.1220982054961" type="tps4.Path" typeId="tps4.1220973916698" id="7233798365360316915">
             <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="7233798365360316917">
               <property name="name" nameId="tps4.1220976068141" value="mps_home" />

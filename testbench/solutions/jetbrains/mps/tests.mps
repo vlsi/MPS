@@ -48,7 +48,6 @@
   <import index="vz87" modelUID="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)" version="-1" />
   <import index="mbhy" modelUID="r:e9dec192-5733-4300-8d93-4c61effb6e45(jetbrains.mps.baseLanguage.unitTest.sandbox)" version="-1" />
   <import index="mql5" modelUID="r:aca77a3d-d50b-42af-89a7-f304bf06ae8f(jetbrains.mps.traceInfo.testWeaving.test@tests)" version="-1" />
-  <import index="96t8" modelUID="r:ba79f114-e14c-442e-a24a-6ed5711c2453(jetbrains.mps.execution.impl.configurations.tests.configurations@tests)" version="-1" />
   <import index="7fn4" modelUID="r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)" version="-1" />
   <import index="nq5u" modelUID="r:53c4b5ce-bc17-4454-a907-f9ec447f3644(jetbrains.mps.build.mpsautobuild.test@tests)" version="-1" />
   <import index="saz5" modelUID="r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)" version="-1" />
@@ -1809,9 +1808,6 @@
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="7120092006645318625">
       <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.execution.impl.tests" />
       <property name="moduleID" nameId="pop3.1280144168199506910" value="7b15492d-a198-43e2-91e3-4a7e9116ce2b" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1538369951873468541">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="96t8.8128243960970298563" resolveInfo="TestConfigurationsMigration" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8989032736195149097">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="7fn4.8128243960970298959" resolveInfo="SplitCommandInParts_Test" />

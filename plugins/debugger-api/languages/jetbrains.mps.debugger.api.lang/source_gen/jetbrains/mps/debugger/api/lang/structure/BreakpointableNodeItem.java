@@ -13,12 +13,22 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BreakpointableNodeItem extends BaseConcept {
   public static final String concept = "jetbrains.mps.debugger.api.lang.structure.BreakpointableNodeItem";
+  public static final String IS_COMPLEX = "isComplex";
   public static final String DECLARATION = "declaration";
   public static final String CREATE_BREAKPOINT = "createBreakpoint";
+  public static final String IS_APPLICABLE = "isApplicable";
   public static final String CONCEPTS_TO_CREATE_BREAKPOINT = "conceptsToCreateBreakpoint";
 
   public BreakpointableNodeItem(SNode node) {
     super(node);
+  }
+
+  public boolean getIsComplex() {
+    return this.getBooleanProperty(BreakpointableNodeItem.IS_COMPLEX);
+  }
+
+  public void setIsComplex(boolean value) {
+    this.setBooleanProperty(BreakpointableNodeItem.IS_COMPLEX, value);
   }
 
   public ConceptDeclaration getDeclaration() {
@@ -35,6 +45,14 @@ public class BreakpointableNodeItem extends BaseConcept {
 
   public void setCreateBreakpoint(ConceptFunction_CreateBreakpoint node) {
     super.setChild(BreakpointableNodeItem.CREATE_BREAKPOINT, node);
+  }
+
+  public ConceptFunction_IsApplicableToConcept getIsApplicable() {
+    return (ConceptFunction_IsApplicableToConcept) this.getChild(ConceptFunction_IsApplicableToConcept.class, BreakpointableNodeItem.IS_APPLICABLE);
+  }
+
+  public void setIsApplicable(ConceptFunction_IsApplicableToConcept node) {
+    super.setChild(BreakpointableNodeItem.IS_APPLICABLE, node);
   }
 
   public int getConceptsToCreateBreakpointsCount() {
