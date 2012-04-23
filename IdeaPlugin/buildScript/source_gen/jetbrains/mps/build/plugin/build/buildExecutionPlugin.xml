@@ -374,7 +374,7 @@
   
   <target name="java.compile.execution-languages" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/execution-languages" />
-    <javac destdir="${build.tmp}/java/out/execution-languages" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/execution-languages" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/execution-languages/languages/library/source_gen" />
@@ -408,11 +408,16 @@
         <fileset file="${artifacts.buildDebuggerPlugin}/lib/tools.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/execution-languages">
+      <fileset dir="${mps_home}/plugins/execution-languages/languages/library/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/execution-languages/languages/deprecated.runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/execution-languages/languages/plugin/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.execution.commands" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.execution.commands" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.execution.commands" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.execution.commands" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/execution-languages/languages/commands/source_gen" />
@@ -459,11 +464,14 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.execution.commands">
+      <fileset dir="${mps_home}/plugins/execution-languages/languages/commands/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.execution.configurations" depends="java.compile.jetbrains.mps.execution.commands, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.execution.configurations" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.execution.configurations" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.execution.configurations" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/execution-languages/languages/configurations/source_gen" />
@@ -514,11 +522,14 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.execution.configurations">
+      <fileset dir="${mps_home}/plugins/execution-languages/languages/configurations/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.execution.configurations.deprecated" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.execution.configurations.deprecated" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.execution.configurations.deprecated" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.execution.configurations.deprecated" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/execution-languages/languages/deprecated/source_gen" />
@@ -570,11 +581,14 @@
         <fileset file="${artifacts.buildWorkbench}/languages/util/deprecated/ui/jetbrains.mps.uiLanguage.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.execution.configurations.deprecated">
+      <fileset dir="${mps_home}/plugins/execution-languages/languages/deprecated/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.execution.configurations.pluginSolution" depends="java.compile.jetbrains.mps.execution.configurations, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.execution.configurations.pluginSolution" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.execution.configurations.pluginSolution" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.execution.configurations.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/execution-languages/languages/configurations/solutions/pluginSolution/source_gen" />
@@ -606,11 +620,14 @@
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.execution.configurations.pluginSolution">
+      <fileset dir="${mps_home}/plugins/execution-languages/languages/configurations/solutions/pluginSolution/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
   </target>
   
   <target name="java.compile.execution-configurations" depends="java.compile.execution-languages, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/execution-configurations" />
-    <javac destdir="${build.tmp}/java/out/execution-configurations" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/execution-configurations" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/execution-configurations/languages/ant/source_gen" />
@@ -646,11 +663,17 @@
         <fileset file="${artifacts.buildDebuggerPlugin}/lib/tools.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/execution-configurations">
+      <fileset dir="${mps_home}/plugins/execution-configurations/languages/ant/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.api/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/execution-configurations/languages/plugin/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/execution-configurations/languages/unitTests/runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.execution.migration" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.execution.migration" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.execution.migration" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.execution.migration" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/execution-configurations/languages/migration/source_gen" />
@@ -683,11 +706,14 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.plugin.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.execution.migration">
+      <fileset dir="${mps_home}/plugins/execution-configurations/languages/migration/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguage.execution.startup" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.execution.startup" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.execution.startup" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.execution.startup" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/source_gen" />
@@ -696,11 +722,14 @@
         <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.execution.startup">
+      <fileset dir="${mps_home}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguage.unitTest.execution.startup" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unitTest.execution.startup" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unitTest.execution.startup" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unitTest.execution.startup" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/execution-configurations/languages/unitTests/startup/source_gen" />
@@ -737,5 +766,8 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unitTest.execution.startup">
+      <fileset dir="${mps_home}/plugins/execution-configurations/languages/unitTests/startup/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
   </target>
 </project>

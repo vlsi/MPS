@@ -177,7 +177,7 @@
   
   <target name="java.compile.jetbrains.mps.build" depends="java.compile.jetbrains.mps.build.workflow, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mpsbuild/languages/build/source_gen" />
@@ -213,11 +213,14 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.build">
+      <fileset dir="${mps_home}/plugins/mpsbuild/languages/build/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.build.workflow" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.workflow" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.workflow" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.workflow" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mpsbuild/languages/workflow/source_gen" />
@@ -251,11 +254,14 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.build.workflow">
+      <fileset dir="${mps_home}/plugins/mpsbuild/languages/workflow/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.build.mps" depends="java.compile.jetbrains.mps.build, java.compile.jetbrains.mps.build.workflow, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.mps" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.mps" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.mps" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mpsbuild/languages/mps/source_gen" />
@@ -291,5 +297,8 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.build.mps">
+      <fileset dir="${mps_home}/plugins/mpsbuild/languages/mps/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
   </target>
 </project>
