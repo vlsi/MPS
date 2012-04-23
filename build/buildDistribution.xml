@@ -8,7 +8,7 @@
   <property name="buildIDE.version" value="${import.buildIDE.buildIDE.version}" />
   
   <target name="assemble" depends="fetchDependencies">
-    <zip destfile="${build.layout}/mps${buildIDE.build.number}.zip">
+    <zip destfile="${build.layout}/${buildIDE.build.number}.zip">
       <fileset dir="${artifacts.buildIDE}/MPS ${buildIDE.version}" />
     </zip>
     <echo file="${build.layout}/variables.properties">buildIDE.build.number=${buildIDE.build.number}

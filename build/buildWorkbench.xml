@@ -64,8 +64,8 @@
           <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <runtime jar="beansbinding-1.2.1.jar" />
-        <library jar="beansbinding-1.2.1.jar" />
+        <runtime jar="/lib/beansbinding-1.2.1.jar" />
+        <library jar="/lib/beansbinding-1.2.1.jar" />
         <sources jar="jetbrains.mps.uiLanguage-src.jar" descriptor="uiLanguage.mpl" />
       </module>
     </echoxml>

@@ -15,9 +15,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.build.behavior.BuildLayout_Node_Behavior;
 
 public class VisibleArtifacts {
-  private final SNode project;
-  private final TemplateQueryContext genContext;
-  private final Map<SNode, SNode> parentMap = new HashMap<SNode, SNode>();
+  protected final SNode project;
+  protected final TemplateQueryContext genContext;
+  protected final Map<SNode, SNode> parentMap = new HashMap<SNode, SNode>();
   private final List<SNode> visibleArtifacts = new ArrayList<SNode>();
   private DependenciesHelper dependenciesHelper;
 
@@ -54,11 +54,15 @@ public class VisibleArtifacts {
     }
   }
 
-  private void collectInProject(SNode parent, SNode target) {
-    target = SNodeOperations.as(toOriginalNode(target), "jetbrains.mps.build.structure.BuildProject");
+  protected void collectInProject(SNode parent, SNode target) {
+    target = (target != project ?
+      SNodeOperations.as(toOriginalNode(target), "jetbrains.mps.build.structure.BuildProject") :
+      project
+    );
     if (target == null) {
       return;
     }
+    assert project == target || !(SNodeOperations.getModel(target).isTransient());
 
     for (SNode node : SLinkOperations.getTargets(SLinkOperations.getTarget(target, "layout", true), "children", true)) {
       collectInLayout(parent, node);
@@ -70,6 +74,7 @@ public class VisibleArtifacts {
     if (target == null) {
       return;
     }
+    assert !(SNodeOperations.getModel(target).isTransient());
 
     for (SNode node : SLinkOperations.getTargets(target, "children", true)) {
       collectInLayout(parent, node);
@@ -80,7 +85,6 @@ public class VisibleArtifacts {
     if (parentMap.containsKey(node)) {
       return;
     }
-    assert !(SNodeOperations.getModel(node).isTransient());
 
     ListSequence.fromList(visibleArtifacts).addElement(node);
     parentMap.put(node, parent);
