@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="2569834391839970845">
-    <unitInfo nodeId="2569834391839970845" fileName="buildWorkbench.xml" startLine="1" startPosition="0" endLine="510" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildWorkbench" />
+    <unitInfo nodeId="2569834391839970845" fileName="buildWorkbench.xml" startLine="1" startPosition="0" endLine="523" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildWorkbench" />
   </root>
   <root nodeId="4301118715654192646">
-    <unitInfo nodeId="4301118715654192646" fileName="buildIDE.xml" startLine="1" startPosition="0" endLine="97" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildIDE" />
+    <unitInfo nodeId="4301118715654192646" fileName="buildIDE.xml" startLine="1" startPosition="0" endLine="102" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildIDE" />
   </root>
   <root nodeId="4301118715654497533">
     <unitInfo nodeId="4301118715654497533" fileName="buildDistribution.xml" startLine="1" startPosition="0" endLine="31" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildDistribution" />
@@ -17,6 +17,9 @@
   </root>
   <root nodeId="5148601452480491524">
     <unitInfo nodeId="5148601452480491524" fileName="buildPlugin.xml" startLine="1" startPosition="0" endLine="297" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildPlugin" />
+  </root>
+  <root nodeId="6391307088354381121">
+    <unitInfo nodeId="6391307088354381121" fileName="buildPlugins.xml" startLine="1" startPosition="0" endLine="126" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildPlugins" />
   </root>
   <root nodeId="7926701909975931624">
     <unitInfo nodeId="7926701909975931624" fileName="buildCore.xml" startLine="1" startPosition="0" endLine="5623" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildCore" />

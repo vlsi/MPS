@@ -189,6 +189,7 @@
       <fileset dir="${build.tmp}/java/out/execution" />
       <fileset dir="${build.tmp}/java/out/uiLanguage.runtime" />
       <fileset dir="${build.tmp}/java/out/typesystem-ui" />
+      <fileset dir="${build.tmp}/java/out/MpsSupport" />
       <fileset dir="${build.tmp}/default/mps-workbench.jar" />
     </jar>
   </target>
@@ -206,7 +207,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.typesystem-ui, java.compile.uiLanguage.runtime, java.compile.mps-workbench, java.compile.execution, java.compile.startup, java.compile.jetbrains.mps.uiLanguage, java.compile.jetbrains.mps.ide.uiLanguage, java.compile.jetbrains.mps.lang.plugin.standalone" />
+  <target name="compileJava" depends="java.compile.typesystem-ui, java.compile.uiLanguage.runtime, java.compile.mps-workbench, java.compile.execution, java.compile.MpsSupport, java.compile.startup, java.compile.jetbrains.mps.uiLanguage, java.compile.jetbrains.mps.ide.uiLanguage, java.compile.jetbrains.mps.lang.plugin.standalone" />
   
   <target name="processResources" />
   
@@ -341,6 +342,18 @@
     <copy todir="${build.tmp}/java/out/execution">
       <fileset dir="${mps_home}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.api/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.impl/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.MpsSupport">
+    <mkdir dir="${build.tmp}/java/out/MpsSupport" />
+    <javac destdir="${build.tmp}/java/out/MpsSupport" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+      <compilerarg value="-Xlint:none" />
+      <src path="${mps_home}/MPSPlugin/source-api" />
+      <classpath />
+    </javac>
+    <copy todir="${build.tmp}/java/out/MpsSupport">
+      <fileset dir="${mps_home}/MPSPlugin/source-api" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   

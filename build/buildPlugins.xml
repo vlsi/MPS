@@ -1,0 +1,126 @@
+<project name="buildPlugins" default="build" basedir="../">
+  <property name="build.dir" location="build" />
+  <property name="build.tmp" location="${build.dir}/tmp/buildPlugins" />
+  <property name="build.layout" location="${build.dir}/artifacts/buildPlugins" />
+  <property name="idea_home" location="" />
+  <property name="mps_home" location="${basedir}" />
+  <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
+  <property name="artifacts.buildWorkbench" location="${build.dir}/artifacts/buildWorkbench" />
+  <property name="artifacts.IDEA" location="${idea_home}" />
+  
+  <target name="assemble" depends="classes">
+    <mkdir dir="${build.layout}/plugins" />
+    <mkdir dir="${build.tmp}/default/ideaIntegration.jar" />
+    <mkdir dir="${build.tmp}/default/ideaIntegration.jar/META-INF" />
+    <copy todir="${build.tmp}/default/ideaIntegration.jar/META-INF">
+      <fileset file="${mps_home}/plugins/ideaIntegration/META-INF/plugin.xml" />
+    </copy>
+    <jar destfile="${build.layout}/plugins/ideaIntegration.jar">
+      <fileset dir="${build.tmp}/java/out/ideaIntegration" />
+      <fileset dir="${build.tmp}/default/ideaIntegration.jar" />
+    </jar>
+  </target>
+  
+  <target name="buildDependents">
+    <ant antfile="build/buildCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
+  </target>
+  
+  <target name="fetchDependencies" />
+  
+  <target name="build" depends="assemble, check" />
+  
+  <target name="clean">
+    <delete dir="${build.tmp}" />
+    <delete dir="${build.layout}" />
+  </target>
+  
+  <target name="compileJava" depends="java.compile.ideaIntegration, java.compile.jetbrains.mps.platform.conf" />
+  
+  <target name="processResources" />
+  
+  <target name="classes" depends="compileJava, processResources" />
+  
+  <target name="test" depends="classes" />
+  
+  <target name="check" depends="test" />
+  
+  <target name="java.compile.ideaIntegration" depends="fetchDependencies">
+    <mkdir dir="${build.tmp}/java/out/ideaIntegration" />
+    <javac destdir="${build.tmp}/java/out/ideaIntegration" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <pathelement path="${mps_home}/plugins/ideaIntegration/source" />
+        <pathelement path="${mps_home}/plugins/ideaIntegration/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-core.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
+        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
+        <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
+        <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
+        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+      </classpath>
+    </javac>
+    <copy todir="${build.tmp}/java/out/ideaIntegration">
+      <fileset dir="${mps_home}/plugins/ideaIntegration/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/ideaIntegration/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.jetbrains.mps.platform.conf">
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.platform.conf" />
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.platform.conf" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${mps_home}/languages/util/conf/languages/conf/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-core.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
+        <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
+        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+      </classpath>
+    </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.platform.conf">
+      <fileset dir="${mps_home}/languages/util/conf/languages/conf/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+</project>
