@@ -19,7 +19,7 @@
     <unitInfo nodeId="5148601452480491524" fileName="buildPlugin.xml" startLine="1" startPosition="0" endLine="297" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildPlugin" />
   </root>
   <root nodeId="6391307088354381121">
-    <unitInfo nodeId="6391307088354381121" fileName="buildPlugins.xml" startLine="1" startPosition="0" endLine="126" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildPlugins" />
+    <unitInfo nodeId="6391307088354381121" fileName="buildPlugins.xml" startLine="1" startPosition="0" endLine="170" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildPlugins" />
   </root>
   <root nodeId="7926701909975931624">
     <unitInfo nodeId="7926701909975931624" fileName="buildCore.xml" startLine="1" startPosition="0" endLine="5623" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildCore" />

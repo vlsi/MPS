@@ -19,6 +19,15 @@
       <fileset dir="${build.tmp}/java/out/ideaIntegration" />
       <fileset dir="${build.tmp}/default/ideaIntegration.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/migrationAssistant.jar" />
+    <mkdir dir="${build.tmp}/default/migrationAssistant.jar/META-INF" />
+    <copy todir="${build.tmp}/default/migrationAssistant.jar/META-INF">
+      <fileset file="${mps_home}/plugins/migrationAssistant/META-INF/plugin.xml" />
+    </copy>
+    <jar destfile="${build.layout}/plugins/migrationAssistant.jar">
+      <fileset dir="${build.tmp}/java/out/migrationAssistant" />
+      <fileset dir="${build.tmp}/default/migrationAssistant.jar" />
+    </jar>
   </target>
   
   <target name="buildDependents">
@@ -35,7 +44,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.ideaIntegration, java.compile.jetbrains.mps.platform.conf" />
+  <target name="compileJava" depends="java.compile.ideaIntegration, java.compile.migrationAssistant, java.compile.jetbrains.mps.platform.conf" />
   
   <target name="processResources" />
   
@@ -80,6 +89,41 @@
     <copy todir="${build.tmp}/java/out/ideaIntegration">
       <fileset dir="${mps_home}/plugins/ideaIntegration/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/ideaIntegration/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.migrationAssistant" depends="fetchDependencies">
+    <mkdir dir="${build.tmp}/java/out/migrationAssistant" />
+    <javac destdir="${build.tmp}/java/out/migrationAssistant" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${mps_home}/plugins/migrationAssistant/source" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-core.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
+        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
+        <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
+        <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
+        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+      </classpath>
+    </javac>
+    <copy todir="${build.tmp}/java/out/migrationAssistant">
+      <fileset dir="${mps_home}/plugins/migrationAssistant/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
