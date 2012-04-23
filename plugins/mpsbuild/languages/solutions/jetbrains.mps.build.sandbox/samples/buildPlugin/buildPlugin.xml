@@ -23,11 +23,7 @@
     <jar destfile="${build.layout}/xx/xx">
       <fileset dir="${build.tmp}/default/xx" />
     </jar>
-    <echo file="${build.layout}/variables.properties">buildCore.build.number=${buildCore.build.number}
-        buildCore.ver=${buildCore.ver}
-        buildCore.MPS=${buildCore.MPS}
-        buildA.aver1=${buildA.aver1}
-        buildA.aver1=${buildA.aver1}</echo>
+    <echo file="${build.layout}/variables.properties">buildCore.build.number=${buildCore.build.number}${line.separator}buildCore.ver=${buildCore.ver}${line.separator}buildCore.MPS=${buildCore.MPS}${line.separator}buildA.aver1=${buildA.aver1}${line.separator}buildA.aver1=${buildA.aver1}</echo>
   </target>
   
   <target name="buildDependents">
