@@ -16,10 +16,13 @@
     <unitInfo nodeId="4301118715654850396" fileName="buildExecution.xml" startLine="1" startPosition="0" endLine="272" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildExecution" />
   </root>
   <root nodeId="5148601452480491524">
-    <unitInfo nodeId="5148601452480491524" fileName="buildPlugin.xml" startLine="1" startPosition="0" endLine="297" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildPlugin" />
+    <unitInfo nodeId="5148601452480491524" fileName="buildPlugin.xml" startLine="1" startPosition="0" endLine="294" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildPlugin" />
   </root>
   <root nodeId="7926701909975931624">
     <unitInfo nodeId="7926701909975931624" fileName="buildCore.xml" startLine="1" startPosition="0" endLine="5623" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildCore" />
+  </root>
+  <root nodeId="8658995123701267517">
+    <unitInfo nodeId="8658995123701267517" fileName="buildPluginDist.xml" startLine="1" startPosition="0" endLine="27" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildPluginDist" />
   </root>
 </debugInfo>
 

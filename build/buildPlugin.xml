@@ -13,40 +13,41 @@
   </path>
   
   <target name="assemble" depends="classes, fetchDependencies">
-    <mkdir dir="${build.layout}/mps-core" />
-    <mkdir dir="${build.layout}/mps-core/languages" />
-    <copy todir="${build.layout}/mps-core/languages">
+    <mkdir dir="${build.layout}/plugins" />
+    <mkdir dir="${build.layout}/plugins/mps-core" />
+    <mkdir dir="${build.layout}/plugins/mps-core/languages" />
+    <copy todir="${build.layout}/plugins/mps-core/languages">
       <fileset dir="${artifacts.buildCore}/mps-core/languages" />
     </copy>
-    <mkdir dir="${build.layout}/mps-core/lib" />
-    <copy todir="${build.layout}/mps-core/lib">
+    <mkdir dir="${build.layout}/plugins/mps-core/lib" />
+    <copy todir="${build.layout}/plugins/mps-core/lib">
       <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
     </copy>
-    <copy todir="${build.layout}/mps-core/lib">
+    <copy todir="${build.layout}/plugins/mps-core/lib">
       <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
     </copy>
-    <copy todir="${build.layout}/mps-core/lib">
+    <copy todir="${build.layout}/plugins/mps-core/lib">
       <fileset file="${artifacts.buildCore}/mps-core/lib/mps-backend.jar" />
     </copy>
-    <copy todir="${build.layout}/mps-core/lib">
+    <copy todir="${build.layout}/plugins/mps-core/lib">
       <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
     </copy>
-    <copy todir="${build.layout}/mps-core/lib">
+    <copy todir="${build.layout}/plugins/mps-core/lib">
       <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
     </copy>
-    <copy todir="${build.layout}/mps-core/lib">
+    <copy todir="${build.layout}/plugins/mps-core/lib">
       <fileset file="${artifacts.buildCore}/mps-core/lib/mps-core.jar" />
     </copy>
-    <copy todir="${build.layout}/mps-core/lib">
+    <copy todir="${build.layout}/plugins/mps-core/lib">
       <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
     </copy>
-    <copy todir="${build.layout}/mps-core/lib">
+    <copy todir="${build.layout}/plugins/mps-core/lib">
       <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
     </copy>
-    <copy todir="${build.layout}/mps-core/lib">
+    <copy todir="${build.layout}/plugins/mps-core/lib">
       <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
     </copy>
-    <copy todir="${build.layout}/mps-core/lib">
+    <copy todir="${build.layout}/plugins/mps-core/lib">
       <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
     </copy>
     <mkdir dir="${build.tmp}/default/mps-plugin.jar" />
@@ -56,16 +57,6 @@
     </copy>
     <copy todir="${build.tmp}/default/mps-plugin.jar/META-INF">
       <fileset file="${mps_home}/workbench/mps-editor/source/META-INF/MPSEditor.xml" />
-    </copy>
-    <copy todir="${build.tmp}/default/mps-plugin.jar/META-INF">
-      <fileset dir="${mps_home}/workbench/mps-platform/source_gen">
-        <include name="jetbrains/mps/ide/platform/actions/PlatformActions.xml" />
-      </fileset>
-    </copy>
-    <copy todir="${build.tmp}/default/mps-plugin.jar/META-INF">
-      <fileset dir="${mps_home}/workbench/mps-editor/source_gen">
-        <include name="jetbrains/mps/ide/editor/actions/MPSEditorActions.xml" />
-      </fileset>
     </copy>
     <copy todir="${build.tmp}/default/mps-plugin.jar/META-INF">
       <fileset file="${mps_home}/IdeaPlugin/mps-core/META-INF/plugin.xml" />
@@ -78,16 +69,22 @@
         </tokenfilter>
       </filterchain>
     </copy>
-    <jar destfile="${build.layout}/mps-core/lib/mps-plugin.jar">
+    <jar destfile="${build.layout}/plugins/mps-core/lib/mps-plugin.jar">
       <fileset dir="${build.tmp}/java/out/mps-plugin" />
+      <fileset dir="${mps_home}/workbench/mps-platform/source_gen">
+        <include name="jetbrains/mps/ide/platform/actions/PlatformActions.xml" />
+      </fileset>
+      <fileset dir="${mps_home}/workbench/mps-editor/source_gen">
+        <include name="jetbrains/mps/ide/editor/actions/MPSEditorActions.xml" />
+      </fileset>
       <fileset dir="${build.tmp}/default/mps-plugin.jar" />
     </jar>
-    <copy todir="${build.layout}/mps-core">
+    <copy todir="${build.layout}/plugins/mps-core">
       <fileset file="${mps_home}/build.number" />
     </copy>
-    <mkdir dir="${build.layout}/mps-vcs" />
-    <mkdir dir="${build.layout}/mps-vcs/lib" />
-    <jar destfile="${build.layout}/mps-vcs/lib/mps-vcs-core.jar">
+    <mkdir dir="${build.layout}/plugins/mps-vcs" />
+    <mkdir dir="${build.layout}/plugins/mps-vcs/lib" />
+    <jar destfile="${build.layout}/plugins/mps-vcs/lib/mps-vcs-core.jar">
       <fileset dir="${build.tmp}/java/out/mps-vcs-core" />
     </jar>
     <mkdir dir="${build.tmp}/default/mps-vcs-platform.jar" />
@@ -103,7 +100,7 @@
         </tokenfilter>
       </filterchain>
     </copy>
-    <jar destfile="${build.layout}/mps-vcs/lib/mps-vcs-platform.jar">
+    <jar destfile="${build.layout}/plugins/mps-vcs/lib/mps-vcs-platform.jar">
       <fileset dir="${build.tmp}/java/out/mps-vcs-platform" />
       <fileset dir="${build.tmp}/default/mps-vcs-platform.jar" />
     </jar>
@@ -120,7 +117,7 @@
         </tokenfilter>
       </filterchain>
     </copy>
-    <jar destfile="${build.layout}/mps-java.jar">
+    <jar destfile="${build.layout}/plugins/mps-java.jar">
       <fileset dir="${build.tmp}/java/out/mps-java" />
       <fileset dir="${build.tmp}/default/mps-java.jar" />
     </jar>
