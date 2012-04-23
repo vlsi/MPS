@@ -6,6 +6,7 @@
   <property name="mps_home" location="${basedir}" />
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
   <property name="artifacts.buildWorkbench" location="${build.dir}/artifacts/buildWorkbench" />
+  <property name="artifacts.buildUtilLanguages" location="${build.dir}/artifacts/buildUtilLanguages" />
   <property name="artifacts.IDEA" location="${idea_home}" />
   
   <target name="assemble" depends="classes">
@@ -64,11 +65,33 @@
       <fileset dir="${build.tmp}/java/out/samples" />
       <fileset dir="${build.tmp}/default/samples.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/mpsdevkit.jar" />
+    <mkdir dir="${build.tmp}/default/mpsdevkit.jar/META-INF" />
+    <copy todir="${build.tmp}/default/mpsdevkit.jar/META-INF">
+      <fileset file="${mps_home}/plugins/mpsdevkit/META-INF/plugin.xml" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/mpsdevkit.jar/modules" />
+    <mkdir dir="${build.tmp}/default/mpsdevkit.jar/modules/jetbrains.mps.ide.mpsdevkit" />
+    <copy todir="${build.tmp}/default/mpsdevkit.jar/modules/jetbrains.mps.ide.mpsdevkit">
+      <fileset file="${mps_home}/plugins/mpsdevkit/mpsdevkit.msd" />
+    </copy>
+    <copy todir="${build.tmp}/default/mpsdevkit.jar/modules/jetbrains.mps.ide.mpsdevkit">
+      <fileset dir="${mps_home}/plugins/mpsdevkit" includes="icons/**, resources/**" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/mpsdevkit.jar/modules/jetbrains.mps.ide.mpsdevkit/solution" />
+    <copy todir="${build.tmp}/default/mpsdevkit.jar/modules/jetbrains.mps.ide.mpsdevkit/solution">
+      <fileset dir="${mps_home}/plugins/mpsdevkit/solution" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <jar destfile="${build.layout}/plugins/mpsdevkit.jar">
+      <fileset dir="${build.tmp}/java/out/mpsdevkit" />
+      <fileset dir="${build.tmp}/default/mpsdevkit.jar" />
+    </jar>
   </target>
   
   <target name="buildDependents">
     <ant antfile="build/buildCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildUtilLanguages.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies" />
@@ -80,7 +103,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.ideaIntegration, java.compile.migrationAssistant, java.compile.modelchecker, java.compile.mpsjava, java.compile.mpsmake, java.compile.samples" />
+  <target name="compileJava" depends="java.compile.ideaIntegration, java.compile.migrationAssistant, java.compile.modelchecker, java.compile.mpsjava, java.compile.mpsmake, java.compile.samples, java.compile.mpsdevkit" />
   
   <target name="processResources" />
   
@@ -306,6 +329,43 @@
     </javac>
     <copy todir="${build.tmp}/java/out/samples">
       <fileset dir="${mps_home}/plugins/samples/sources" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.mpsdevkit" depends="fetchDependencies">
+    <mkdir dir="${build.tmp}/java/out/mpsdevkit" />
+    <javac destdir="${build.tmp}/java/out/mpsdevkit" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <pathelement path="${mps_home}/plugins/mpsdevkit/source" />
+        <pathelement path="${mps_home}/plugins/mpsdevkit/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-core.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
+        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
+        <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
+        <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
+        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+      </classpath>
+    </javac>
+    <copy todir="${build.tmp}/java/out/mpsdevkit">
+      <fileset dir="${mps_home}/plugins/mpsdevkit/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/mpsdevkit/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
 </project>
