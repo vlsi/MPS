@@ -18,7 +18,7 @@
   <target name="default">
     <property name="dest" value="${mps_home}/build/temp.dst" />
     <fail unless="mps_home" message="Property mps_home unspecified."/>
-    <unzip src="${mps_home}/artifacts/buildDistribution/${mps.zip}" dest="${dest}/MPS ${version}" />
+    <unzip src="${mps_home}/build/artifacts/buildDistribution/${mps.zip}" dest="${dest}/MPS ${version}" />
 
     <mkdir dir="${dest}/buildtests.tmp"/>
     <path id="tests.classpath">
