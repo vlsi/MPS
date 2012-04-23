@@ -71,7 +71,11 @@ public class EvaluationProvider implements IEvaluationProvider {
   private synchronized void dispose() {
     final EvaluationAuxModule module = myAuxModule;
     myAuxModule = null;
-    MPSModuleRepository.getInstance().unregisterModule(module, getDebugSession().getProject().getComponent(MPSProject.class));
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        MPSModuleRepository.getInstance().unregisterModule(module, getDebugSession().getProject().getComponent(MPSProject.class));
+      }
+    });
   }
 
   @Override

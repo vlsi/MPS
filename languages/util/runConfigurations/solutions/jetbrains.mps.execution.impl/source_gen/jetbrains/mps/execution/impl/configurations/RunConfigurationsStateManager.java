@@ -27,13 +27,6 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
-import javax.xml.transform.TransformerFactoryConfigurationError;
-import org.jdom.transform.JDOMSource;
-import org.jdom.transform.JDOMResult;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.stream.StreamSource;
-import javax.xml.transform.TransformerException;
 
 public class RunConfigurationsStateManager implements ProjectComponent {
   protected static Log log = LogFactory.getLog(RunConfigurationsStateManager.class);
@@ -149,10 +142,6 @@ public class RunConfigurationsStateManager implements ProjectComponent {
       getRunManager().writeExternal(newState);
       getSharedConfigurationManager().writeExternal(newSharedState);
 
-      // migrate 
-      newState = migrateConfigurations(newState);
-      newSharedState = migrateConfigurations(newSharedState);
-
       // read 
       getRunManager().readExternal(newState);
       getSharedConfigurationManager().readExternal(newSharedState);
@@ -192,30 +181,6 @@ public class RunConfigurationsStateManager implements ProjectComponent {
       }
     }
     return result.toArray(new ConfigurationType[result.size()]);
-  }
-
-  public static Element migrateConfigurations(Element state) {
-    return RunConfigurationsStateManager.migrateConfigurations(RunConfigurationsStateManager.migrateConfigurations(state, "java.transform.xml"), "junit.transform.xml");
-  }
-
-  private static Element migrateConfigurations(Element state, String string) throws TransformerFactoryConfigurationError {
-    JDOMSource source = new JDOMSource(state);
-    JDOMResult result = new JDOMResult();
-
-    try {
-      Transformer transformer = TransformerFactory.newInstance().newTransformer(new StreamSource(RunConfigurationsStateManager.class.getResourceAsStream(string)));
-      transformer.transform(source, result);
-      List transformResult = result.getResult();
-      if (transformResult.size() == 1) {
-        return (Element) transformResult.get(0);
-      }
-    } catch (TransformerException e) {
-      if (log.isErrorEnabled()) {
-        log.error("Cant transform", e);
-      }
-    }
-
-    return state;
   }
 
   public static RunConfigurationsStateManager getInstance(Project project) {

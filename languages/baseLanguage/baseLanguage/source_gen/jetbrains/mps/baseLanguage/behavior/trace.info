@@ -11270,7 +11270,7 @@
     <nodeInfo nodeId="4313092516461999683" fileName="SwitchStatement_Behavior.java" startLine="26" startPosition="102" endLine="27" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4313092516461999718" fileName="SwitchStatement_Behavior.java" startLine="29" startPosition="78" endLine="30" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5185847984243943358" fileName="SwitchStatement_Behavior.java" startLine="34" startPosition="101" endLine="35" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5185847984243943373" fileName="SwitchStatement_Behavior.java" startLine="36" startPosition="67" endLine="37" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5185847984243943373" fileName="SwitchStatement_Behavior.java" startLine="36" startPosition="95" endLine="37" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5185847984243943355" fileName="SwitchStatement_Behavior.java" startLine="38" startPosition="5" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8317913688490267983" fileName="SwitchStatement_Behavior.java" startLine="40" startPosition="5" endLine="41" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8317913688490267983" fileName="SwitchStatement_Behavior.java" startLine="41" startPosition="24" endLine="42" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -11311,7 +11311,7 @@
     <scopeInfo nodeId="4313092516461999645" fileName="SwitchStatement_Behavior.java" startLine="23" startPosition="35" endLine="24" endPosition="146" />
     <scopeInfo nodeId="4313092516461999672" fileName="SwitchStatement_Behavior.java" startLine="26" startPosition="102" endLine="27" endPosition="122" />
     <scopeInfo nodeId="4313092516461999698" fileName="SwitchStatement_Behavior.java" startLine="29" startPosition="78" endLine="30" endPosition="174" />
-    <scopeInfo nodeId="5185847984243943372" fileName="SwitchStatement_Behavior.java" startLine="36" startPosition="67" endLine="37" endPosition="65" />
+    <scopeInfo nodeId="5185847984243943372" fileName="SwitchStatement_Behavior.java" startLine="36" startPosition="95" endLine="37" endPosition="65" />
     <scopeInfo nodeId="7658027570455079863" fileName="SwitchStatement_Behavior.java" startLine="45" startPosition="90" endLine="46" endPosition="62" />
     <scopeInfo nodeId="5185847984243943916" fileName="SwitchStatement_Behavior.java" startLine="51" startPosition="45" endLine="52" endPosition="20" />
     <scopeInfo nodeId="8967654016644457809" fileName="SwitchStatement_Behavior.java" startLine="62" startPosition="83" endLine="63" endPosition="114" />

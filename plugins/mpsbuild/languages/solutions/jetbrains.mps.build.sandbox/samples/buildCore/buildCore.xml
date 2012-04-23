@@ -41,9 +41,7 @@
     <zip destfile="${build.layout}/default/release.zip">
       <fileset dir="${build.tmp}/default/release.zip" />
     </zip>
-    <echo file="${build.layout}/variables.properties">buildCore.build.number=${build.number}
-        buildCore.ver=${ver}
-        buildCore.MPS=${MPS}</echo>
+    <echo file="${build.layout}/variables.properties">buildCore.build.number=${build.number}${line.separator}buildCore.ver=${ver}${line.separator}buildCore.MPS=${MPS}</echo>
   </target>
   
   <target name="build" depends="assemble, check" />

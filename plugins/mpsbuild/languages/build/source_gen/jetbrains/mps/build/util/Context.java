@@ -120,11 +120,6 @@ public class Context {
       return defaultContext();
     }
 
-    Context context = ((Context) gencontext.getSessionObject(Context.class));
-    if (context == null) {
-      context = new Context(gencontext);
-      gencontext.putSessionObject(Context.class, context);
-    }
-    return context;
+    return new Context(gencontext);
   }
 }

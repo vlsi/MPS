@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.build.behavior.BuildSource_JavaExternalJarRef_Behavior;
 import jetbrains.mps.build.util.JavaExportUtil;
 
 public class BuildMps_Module_Behavior {
@@ -34,7 +35,7 @@ public class BuildMps_Module_Behavior {
         ListSequence.fromList(result).addElement(artifact);
       }
 
-      ListSequence.fromList(requiredJars).addSequence(ListSequence.fromList(SLinkOperations.getTargets(m, "dependencies", true)).select(new ISelector<SNode, SNode>() {
+      for (SNode dep : ListSequence.fromList(SLinkOperations.getTargets(m, "dependencies", true)).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return (SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency") ?
             SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) :
@@ -47,9 +48,18 @@ public class BuildMps_Module_Behavior {
         }
       }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true);
+          return SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar");
         }
-      }));
+      })) {
+        if ((SLinkOperations.getTarget(dep, "customLocation", true) != null)) {
+          artifact = BuildSource_JavaExternalJarRef_Behavior.call_getDependencyTarget_5610619299014309566(SLinkOperations.getTarget(dep, "customLocation", true), artifacts);
+          if (artifact != null) {
+            ListSequence.fromList(result).addElement(artifact);
+          }
+        } else {
+          ListSequence.fromList(requiredJars).addElement(SLinkOperations.getTarget(dep, "path", true));
+        }
+      }
     }
 
     for (SNode lr : Sequence.fromIterable(closure.getLanguagesWithRuntime())) {
@@ -61,8 +71,16 @@ public class BuildMps_Module_Behavior {
         if (!(SNodeOperations.isInstanceOf(runtime, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime"))) {
           continue;
         }
-        SNode path = SLinkOperations.getTarget(SNodeOperations.cast(runtime, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime"), "path", true);
-        ListSequence.fromList(requiredJars).addElement(path);
+
+        SNode jarRuntime = SNodeOperations.cast(runtime, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime");
+        if ((SLinkOperations.getTarget(jarRuntime, "customLocation", true) != null)) {
+          SNode artifact = BuildSource_JavaExternalJarRef_Behavior.call_getDependencyTarget_5610619299014309566(SLinkOperations.getTarget(jarRuntime, "customLocation", true), artifacts);
+          if (artifact != null) {
+            ListSequence.fromList(result).addElement(artifact);
+          }
+        } else {
+          ListSequence.fromList(requiredJars).addElement(SLinkOperations.getTarget(jarRuntime, "path", true));
+        }
       }
     }
 
@@ -70,8 +88,8 @@ public class BuildMps_Module_Behavior {
       SNode artifact = SNodeOperations.as(artifacts.findArtifact(path), "jetbrains.mps.build.structure.BuildLayout_Node");
       if (artifact != null) {
         ListSequence.fromList(result).addElement(artifact);
-        if (SNodeOperations.isInstanceOf(artifact, "jetbrains.mps.build.structure.BuildLayout_Copy")) {
-          SNode file = SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.cast(artifact, "jetbrains.mps.build.structure.BuildLayout_Copy"), "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile");
+        if (SNodeOperations.isInstanceOf(artifact, "jetbrains.mps.build.structure.BuildLayout_AbstractCopy")) {
+          SNode file = SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.cast(artifact, "jetbrains.mps.build.structure.BuildLayout_AbstractCopy"), "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile");
           if ((file != null)) {
             // again, register real path here to enable "import jar ...." construction 
             artifacts.findArtifact(SLinkOperations.getTarget(file, "path", true));

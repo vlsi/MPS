@@ -60,6 +60,18 @@
     <delete dir="${build.home}"/>
   </target>
 
+
+  <target name="build">
+    <ant antfile="../build/buildCore.xml" inheritAll="false" useNativeBasedir="true">
+      <property name="build.dir" location="${build.home}"/>
+      <property name="idea_home" location="${home.idea_ce}"/>
+    </ant>
+    <ant antfile="../build/buildPlugin.xml" inheritAll="false" useNativeBasedir="true">
+      <property name="build.dir" location="${build.home}"/>
+      <property name="idea_home" location="${home.idea_ce}"/>
+    </ant>
+  </target>
+
   <target name="compile">
     <mkdir dir="${dist.dir}/mps-core"/>
     <mkdir dir="${dist.dir}/mps-core/lib"/>

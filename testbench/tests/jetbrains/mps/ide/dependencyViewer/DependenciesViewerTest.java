@@ -19,11 +19,13 @@ import jetbrains.mps.BaseMPSTest;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.TestMain.ProjectRunnable;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.testbench.TestOutputFilter;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.testbench.TestOutputFilter;
 import jetbrains.mps.util.PathManager;
 
 import java.io.File;
@@ -37,7 +39,8 @@ public class DependenciesViewerTest extends BaseMPSTest {
   private final static File tempDir = new File(PathManager.getHomePath(), "TEST_DEPENDENCY");
 
   private TestOutputFilter filter = new TestOutputFilter() {
-    @Override protected boolean isLineOK(String line) {
+    @Override
+    protected boolean isLineOK(String line) {
       return !(line.contains("attribute") && line.contains("undeclared child role:"));
     }
   };
@@ -52,6 +55,8 @@ public class DependenciesViewerTest extends BaseMPSTest {
           public void run() {
             DefaultSModelDescriptor testModel = (DefaultSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
             DefaultSModelDescriptor targetModel = (DefaultSModelDescriptor) TestMain.getModel(project, TARGET_MODEL);
+            assertNotNull("test model is null", testModel);
+            assertNotNull("target model is null", targetModel);
 
             ReferencesFinder finder = new ReferencesFinder();
 
@@ -74,7 +79,7 @@ public class DependenciesViewerTest extends BaseMPSTest {
             SearchResults refSearchResults = finder.getRefSearchResults(references, targetScope, new EmptyProgressMonitor());
             size = refSearchResults.getSearchResults().size();
             if (size != 5) {
-               System.out.println("Results size " + size);
+              System.out.println("Results size " + size);
               res[0] = false;
             }
           }

@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModel;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.ModelAccess;
 
 public class Scope {
@@ -49,6 +50,9 @@ public class Scope {
   }
 
   public boolean contains(SModelDescriptor model) {
+    if (model == null) {
+      return false;
+    }
     if (ListSequence.fromList(myModels).contains(model)) {
       return true;
     }
@@ -58,11 +62,17 @@ public class Scope {
     return false;
   }
 
-  public void add(IModule module) {
+  public void add(@Nullable IModule module) {
+    if (module == null) {
+      return;
+    }
     ListSequence.fromList(myModules).addElement(module);
   }
 
-  public void add(final SModelDescriptor model) {
+  public void add(@Nullable final SModelDescriptor model) {
+    if (model == null) {
+      return;
+    }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (!(contains(model))) {
@@ -72,7 +82,10 @@ public class Scope {
     });
   }
 
-  public void add(final SNode root) {
+  public void add(@Nullable final SNode root) {
+    if (root == null) {
+      return;
+    }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (!(contains(root))) {

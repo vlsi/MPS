@@ -501,7 +501,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.debugger.api.lang" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api/lib" />
     <copy todir="${deploy.dir}/MPS/plugins/debugger-api/nanocProject.zip.tmp/nanocProject">
-      <fileset dir="${mps_home}/plugins/debugger-api/languages/nanoc" excludes="**/*.class, " />
+      <fileset dir="${mps_home}/plugins/debugger-api/languages/nanoc" excludes="**/*.class, **/classes_gen/**, " />
     </copy>
     <zip destfile="${deploy.dir}/MPS/plugins/debugger-api/nanocProject.zip" duplicate="preserve" filesonly="true">
       <zipfileset dir="${deploy.dir}/MPS/plugins/debugger-api/nanocProject.zip.tmp" />

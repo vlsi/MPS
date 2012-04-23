@@ -23,7 +23,7 @@ public class DecisionSample {
     // The cells in a table may contain more complex expressions 
 
     int discount;
-    discount = decisionTable_1dgfoj_a0m0a(person);
+    discount = create(person);
 
 
     System.out.println("Your name: " + MapSequence.fromMap(person).get("name"));
@@ -31,6 +31,10 @@ public class DecisionSample {
 
     // type "dectab" and Control + Space to create a new table 
 
+  }
+
+  private int create(Map<String, Object> person) {
+    return decisionTable_1dgfoj_a0a1(person);
   }
 
   private int seasonalBonus() {
@@ -65,7 +69,7 @@ public class DecisionSample {
     return "Nothing to show here";
   }
 
-  public int decisionTable_1dgfoj_a0m0a(Map<String, Object> person) {
+  public int decisionTable_1dgfoj_a0a1(Map<String, Object> person) {
     if (isMale(person)) {
       if (isBaby(person)) {
         return 100;

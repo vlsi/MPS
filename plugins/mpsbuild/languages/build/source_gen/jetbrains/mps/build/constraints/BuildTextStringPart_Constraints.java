@@ -10,6 +10,8 @@ import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.build.behavior.BuildStringContainer_Behavior;
 
 public class BuildTextStringPart_Constraints extends BaseConstraintsDescriptor {
   public BuildTextStringPart_Constraints() {
@@ -29,6 +31,21 @@ public class BuildTextStringPart_Constraints extends BaseConstraintsDescriptor {
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "name";
         return SPropertyOperations.getString(node, "text");
+      }
+    });
+    properties.put("text", new BasePropertyConstraintsDescriptor("text", this) {
+      @Override
+      public boolean hasOwnValidator() {
+        return true;
+      }
+
+      @Override
+      public boolean validateValue(SNode node, String propertyValue, IScope scope) {
+        String propertyName = "text";
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.build.structure.BuildString") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(node)), "jetbrains.mps.build.structure.BuildStringContainer")) {
+          return BuildStringContainer_Behavior.call_isValidPart_9184644532456897464(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(node)), "jetbrains.mps.build.structure.BuildStringContainer"), (SPropertyOperations.getString(propertyValue)));
+        }
+        return !((SPropertyOperations.getString(propertyValue)).contains("$"));
       }
     });
     return properties;

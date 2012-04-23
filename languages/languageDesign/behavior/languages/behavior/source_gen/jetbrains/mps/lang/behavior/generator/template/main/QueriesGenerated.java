@@ -293,7 +293,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_7923290658387314636(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getNode();
+    return SPropertyOperations.getString(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), "name");
   }
 
   public static Object referenceMacro_GetReferent_1144956008583624154(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -621,7 +621,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_7923290658387314629(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "parameter", true);
+    return SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), "parameter", true);
   }
 
   public static Iterable sourceNodesQuery_1144956008583623917(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
