@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.build.plugin.build.buildBuild" file="buildBuild.xml" />
   <dependency className="jetbrains.mps.build.plugin.build.buildCore" file="buildCore.xml" />
   <dependency className="jetbrains.mps.build.plugin.build.buildDistribution" file="buildDistribution.xml" />
   <dependency className="jetbrains.mps.build.plugin.build.buildExecution" file="buildExecution.xml" />
