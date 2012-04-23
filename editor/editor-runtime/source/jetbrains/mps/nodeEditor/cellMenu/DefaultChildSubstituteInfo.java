@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
-import com.intellij.util.containers.HashMap;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -32,6 +31,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {

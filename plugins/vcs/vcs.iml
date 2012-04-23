@@ -20,7 +20,6 @@
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
-    <orderEntry type="module" module-name="MPS-platform" />
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="library" name="OROMatcher" level="project" />
     <orderEntry type="library" name="Commons-lang" level="project" />
@@ -34,6 +33,8 @@
     <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="module" module-name="mpsmake" />
     <orderEntry type="module" module-name="vcs-core" />
+    <orderEntry type="library" name="Idea-plaform" level="project" />
+    <orderEntry type="library" name="Annotations" level="project" />
   </component>
 </module>
 

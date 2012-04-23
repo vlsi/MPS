@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
-import com.intellij.util.containers.HashMap;
 import jetbrains.mps.editor.runtime.impl.cellMenu.DefaultReferenceSubstituteInfoActionsFactory;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -27,6 +26,7 @@ import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {

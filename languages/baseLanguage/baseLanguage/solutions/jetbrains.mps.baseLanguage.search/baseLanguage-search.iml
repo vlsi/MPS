@@ -9,7 +9,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="MPS-platform" />
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="typesystemEngine" />
@@ -20,6 +19,7 @@
     <orderEntry type="library" name="Commons-lang" level="project" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="Closures-runtime" />
+    <orderEntry type="library" name="Annotations" level="project" />
   </component>
 </module>
 

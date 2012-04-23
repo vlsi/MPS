@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.action;
 
-import com.intellij.util.containers.HashMap;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
@@ -29,6 +28,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 
 import javax.swing.Icon;
 import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  * Igor Alshannikov

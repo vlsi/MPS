@@ -10,7 +10,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="MPS-platform" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module" module-name="collections-runtime" />
@@ -20,6 +19,8 @@
     <orderEntry type="library" name="Commons-logging" level="project" />
     <orderEntry type="module" module-name="mps-workbench" />
     <orderEntry type="module" module-name="mps-platform" />
+    <orderEntry type="library" name="Idea-plaform" level="project" />
+    <orderEntry type="library" name="Annotations" level="project" />
   </component>
 </module>
 
