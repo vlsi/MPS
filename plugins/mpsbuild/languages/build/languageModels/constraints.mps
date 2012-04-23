@@ -112,6 +112,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="3ior.1659807394254261074" resolveInfo="BuildSource_JavaModuleOptions" />
     </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1545517825663202140">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Dependencies" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="3ior.4993211115183250894" resolveInfo="BuildSource_JavaDependencyLibrary" />
+    </node>
   </roots>
   <root id="7389400916848182167">
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="7389400916848182168">
@@ -1445,6 +1449,14 @@
       </node>
       <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="1659807394254175447">
         <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="3ior.927724900262033858" resolveInfo="BuildSource_JavaOptions" />
+      </node>
+    </node>
+  </root>
+  <root id="1545517825663202140">
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1545517825663202141">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="3ior.4993211115183250895" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="1545517825663202142">
+        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="3ior.6057319140845467763" resolveInfo="BuildSource_JavaLibrary" />
       </node>
     </node>
   </root>

@@ -5,8 +5,8 @@ package jetbrains.mps.build.util;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.scope.SimpleRoleScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.scope.DelegatingScope;
 import org.jetbrains.annotations.Nullable;
@@ -31,6 +31,9 @@ public class ScopeUtil {
   public static Scope simpleRoleScope(SNode node, SNode link) {
     return new SimpleRoleScope(node, link) {
       public String getName(SNode child) {
+        if (!(SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
+          return child.toString();
+        }
         return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
       }
     };
@@ -64,6 +67,15 @@ public class ScopeUtil {
         return ScopeProvider_Behavior.call_getScope_3734116213129936182(it, concept, child);
       }
     });
+  }
+
+  public static Scope unique(Scope scope) {
+    return new DelegatingScope(scope) {
+      @Override
+      public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
+        return Sequence.fromIterable(super.getAvailableElements(prefix)).distinct();
+      }
+    };
   }
 
   public static Scope getVisibleArtifactsScope(SNode project) {
