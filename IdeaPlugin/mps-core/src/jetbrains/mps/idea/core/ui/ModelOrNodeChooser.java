@@ -86,15 +86,16 @@ public class ModelOrNodeChooser extends ProjectViewPane implements ModelElementT
   private boolean hasModelRoots(Module module) {
     if (module == null) return false;
     MPSFacet mpsFacet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
-    return !(mpsFacet == null || !(mpsFacet.wasInitialized())) && !(mpsFacet.getConfiguration().getState().getModelRoots().isEmpty());
+    return mpsFacet != null && mpsFacet.wasInitialized() && !(mpsFacet.getConfiguration().getState().getModelRoots().isEmpty());
   }
 
   private boolean isModelRootOrParent(VirtualFile virtualFile) {
+    if (!(virtualFile.isDirectory())) return false;
+
     Module module = ModuleUtil.findModuleForFile(virtualFile, myProject);
     if (module == null) return false;
     MPSFacet mpsFacet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
     if (mpsFacet == null || !(mpsFacet.wasInitialized())) return false;
-    if (!(virtualFile.isDirectory())) return false;
 
     String url = virtualFile.getUrl();
     if (!LocalFileSystem.PROTOCOL.equals(VirtualFileManager.extractProtocol(url))) return false;
