@@ -801,6 +801,7 @@
   </path>
   <path id="cycle.collections_trove.runtime_tjc.classpaths">
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
@@ -1589,6 +1590,7 @@
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc.classpaths">
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
@@ -5156,6 +5158,9 @@
   </path>
   <path id="cycle.jetbrains.mps.gwt.client_tjc.classpaths">
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-dev.jar" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
+    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/ant/classes" />
@@ -9479,6 +9484,7 @@
   </path>
   <path id="cycle.jetbrains.mps.ui.swing.runtime_tjc.classpaths">
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
@@ -9690,6 +9696,7 @@
   </path>
   <path id="cycle.jetbrains.mps.ui.swt.runtime_tjc.classpaths">
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swt/runtime/lib/linux/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/lib/linux/swt.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
