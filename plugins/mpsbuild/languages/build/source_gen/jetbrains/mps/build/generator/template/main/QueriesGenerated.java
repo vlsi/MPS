@@ -13,22 +13,25 @@ import jetbrains.mps.build.behavior.BuildLayout_NamedContainer_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.behavior.BuildString_Behavior;
 import jetbrains.mps.build.behavior.BuildLayout_EchoXml_Behavior;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.build.behavior.BuildLayout_EchoProperties_Behavior;
 import jetbrains.mps.build.behavior.BuildLayout_Node_Behavior;
 import jetbrains.mps.build.behavior.BuildSourcePath_Behavior;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.build.util.RelativePathHelper;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.build.util.MacroHelper;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.build.behavior.BuildSource_SingleFile_Behavior;
 import jetbrains.mps.build.behavior.BuildSource_SingleFolder_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.build.util.JavaModulesClosure;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -36,7 +39,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Collections;
 import jetbrains.mps.build.generator.util.JavaExternalLibraryHelper;
@@ -182,6 +184,22 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4643216374596143015(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "copy." + _context.getNode().getId();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_202934866059116852(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IterableUtils.join(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "entries", true)).select(new ISelector<SNode, String>() {
+      public String select(SNode it) {
+        return SPropertyOperations.getString(it, "key") + "=" + BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(it, "value", true), Context.defaultContext(_context).getMacros(_context.getNode()));
+      }
+    }), "${line.separator}");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_202934866059116755(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildLayout_EchoProperties_Behavior.call_getOutputPath_WithMacro_202934866059116697(_context.getNode(), Context.defaultContext(_context));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_202934866059116833(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "copy." + _context.getNode().getId();
   }
 
@@ -415,7 +433,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5662391463398078669(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((MacroHelper) _context.getVariable("var:macroHelper")).getExportName(_context.getNode()) + "=${" + ((MacroHelper) _context.getVariable("var:macroHelper")).getName(_context.getNode()) + "}";
+    return IterableUtils.join(Sequence.fromIterable(((Iterable<SNode>) ((MacroHelper) _context.getVariable("var:macroHelper")).getMacrosToExport())).select(new ISelector<SNode, String>() {
+      public String select(SNode it) {
+        return ((MacroHelper) _context.getVariable("var:macroHelper")).getExportName(it) + "=${" + ((MacroHelper) _context.getVariable("var:macroHelper")).getName(it) + "}";
+      }
+    }), "${line.separator}");
   }
 
   public static Object propertyMacro_GetPropertyValue_6520682027041196886(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -636,6 +658,14 @@ public class QueriesGenerated {
     return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
   }
 
+  public static Object referenceMacro_GetReferent_202934866059116793(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+  }
+
+  public static Object referenceMacro_GetReferent_202934866059116823(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+  }
+
   public static Object referenceMacro_GetReferent_4701820937132270603(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
   }
@@ -753,6 +783,14 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4643216374596142986(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+  }
+
+  public static boolean ifMacro_Condition_202934866059116774(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+  }
+
+  public static boolean ifMacro_Condition_202934866059116804(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
   }
 
@@ -1125,10 +1163,6 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1117643560963267906(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), "layout", true), "jetbrains.mps.build.structure.BuildLayout_Node", false, new String[]{});
-  }
-
-  public static Iterable sourceNodesQuery_5662391463398047139(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return (Iterable<SNode>) ((MacroHelper) _context.getVariable("var:macroHelper")).getMacrosToExport();
   }
 
   public static Iterable sourceNodesQuery_6520682027041196812(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

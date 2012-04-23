@@ -242,6 +242,299 @@
     </scopeInfo>
     <unitInfo nodeId="1659807394254684404" fileName="BuildSource_JavaResources_Editor.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.build.editor.BuildSource_JavaResources_Editor" />
   </root>
+  <root nodeId="202934866059043950">
+    <nodeInfo nodeId="202934866059043950" fileName="BuildLayout_EchoProperties_Editor.java" startLine="27" startPosition="79" endLine="28" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="202934866059043952" fileName="BuildLayout_EchoProperties_Editor.java" startLine="31" startPosition="89" endLine="32" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043952" fileName="BuildLayout_EchoProperties_Editor.java" startLine="32" startPosition="96" endLine="33" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="202934866059043952" fileName="BuildLayout_EchoProperties_Editor.java" startLine="32" startPosition="96" endLine="33" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043952" fileName="BuildLayout_EchoProperties_Editor.java" startLine="33" startPosition="48" endLine="34" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="202934866059043952" fileName="BuildLayout_EchoProperties_Editor.java" startLine="33" startPosition="48" endLine="34" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043952" fileName="BuildLayout_EchoProperties_Editor.java" startLine="34" startPosition="81" endLine="35" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="202934866059043952" fileName="BuildLayout_EchoProperties_Editor.java" startLine="34" startPosition="81" endLine="35" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043952" fileName="BuildLayout_EchoProperties_Editor.java" startLine="35" startPosition="80" endLine="36" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="202934866059043952" fileName="BuildLayout_EchoProperties_Editor.java" startLine="35" startPosition="80" endLine="36" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043952" fileName="BuildLayout_EchoProperties_Editor.java" startLine="36" startPosition="84" endLine="37" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="202934866059043952" fileName="BuildLayout_EchoProperties_Editor.java" startLine="36" startPosition="84" endLine="37" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043952" fileName="BuildLayout_EchoProperties_Editor.java" startLine="37" startPosition="81" endLine="38" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="202934866059043953" fileName="BuildLayout_EchoProperties_Editor.java" startLine="41" startPosition="88" endLine="42" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043953" fileName="BuildLayout_EchoProperties_Editor.java" startLine="42" startPosition="101" endLine="43" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043953" fileName="BuildLayout_EchoProperties_Editor.java" startLine="43" startPosition="47" endLine="44" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043953" fileName="BuildLayout_EchoProperties_Editor.java" startLine="44" startPosition="68" endLine="45" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043953" fileName="BuildLayout_EchoProperties_Editor.java" startLine="45" startPosition="34" endLine="46" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="202934866059133452" fileName="BuildLayout_EchoProperties_Editor.java" startLine="49" startPosition="88" endLine="50" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059133452" fileName="BuildLayout_EchoProperties_Editor.java" startLine="50" startPosition="86" endLine="51" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="202934866059133452" fileName="BuildLayout_EchoProperties_Editor.java" startLine="50" startPosition="86" endLine="51" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059133452" fileName="BuildLayout_EchoProperties_Editor.java" startLine="51" startPosition="47" endLine="52" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059133452" fileName="BuildLayout_EchoProperties_Editor.java" startLine="52" startPosition="34" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="56" startPosition="91" endLine="57" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="57" startPosition="137" endLine="58" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="58" startPosition="106" endLine="59" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="60" startPosition="5" endLine="61" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="61" startPosition="42" endLine="62" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="62" startPosition="60" endLine="63" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="64" startPosition="5" endLine="65" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="65" startPosition="49" endLine="66" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="202934866059043954" fileName="BuildLayout_EchoProperties_Editor.java" startLine="69" startPosition="87" endLine="70" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043954" fileName="BuildLayout_EchoProperties_Editor.java" startLine="70" startPosition="81" endLine="71" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043954" fileName="BuildLayout_EchoProperties_Editor.java" startLine="71" startPosition="33" endLine="72" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043954" fileName="BuildLayout_EchoProperties_Editor.java" startLine="72" startPosition="46" endLine="73" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043954" fileName="BuildLayout_EchoProperties_Editor.java" startLine="73" startPosition="26" endLine="74" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043954" fileName="BuildLayout_EchoProperties_Editor.java" startLine="75" startPosition="5" endLine="76" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043954" fileName="BuildLayout_EchoProperties_Editor.java" startLine="76" startPosition="42" endLine="77" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043954" fileName="BuildLayout_EchoProperties_Editor.java" startLine="78" startPosition="5" endLine="79" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043954" fileName="BuildLayout_EchoProperties_Editor.java" startLine="79" startPosition="73" endLine="80" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043954" fileName="BuildLayout_EchoProperties_Editor.java" startLine="80" startPosition="57" endLine="81" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043954" fileName="BuildLayout_EchoProperties_Editor.java" startLine="82" startPosition="35" endLine="83" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043954" fileName="BuildLayout_EchoProperties_Editor.java" startLine="83" startPosition="72" endLine="84" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043954" fileName="BuildLayout_EchoProperties_Editor.java" startLine="84" startPosition="78" endLine="85" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="202934866059043954" fileName="BuildLayout_EchoProperties_Editor.java" startLine="86" startPosition="10" endLine="87" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="91" startPosition="99" endLine="92" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="95" startPosition="66" endLine="96" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="96" startPosition="41" endLine="97" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="100" startPosition="86" endLine="101" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="101" startPosition="80" endLine="102" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="102" startPosition="95" endLine="103" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="106" startPosition="68" endLine="107" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="107" startPosition="34" endLine="108" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="108" startPosition="55" endLine="109" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="109" startPosition="87" endLine="110" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="114" startPosition="96" endLine="115" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="116" startPosition="34" endLine="117" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="119" startPosition="131" endLine="120" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043953" fileName="BuildLayout_EchoProperties_Editor.java" startLine="42" startPosition="101" endLine="44" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="90" startPosition="80" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="entriesListHandler_g0z5fa_c0#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="115" startPosition="134" endLine="118" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="118" startPosition="9" endLine="121" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="202934866059043950" fileName="BuildLayout_EchoProperties_Editor.java" startLine="26" startPosition="74" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="202934866059043954" fileName="BuildLayout_EchoProperties_Editor.java" startLine="74" startPosition="58" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="202934866059043954" fileName="BuildLayout_EchoProperties_Editor.java" startLine="74" startPosition="58" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="59" startPosition="48" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="94" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="58" startPosition="106" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="202934866059043954" fileName="BuildLayout_EchoProperties_Editor.java" startLine="73" startPosition="26" endLine="79" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="202934866059043954" fileName="BuildLayout_EchoProperties_Editor.java" startLine="81" startPosition="59" endLine="87" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="99" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="202934866059133452" fileName="BuildLayout_EchoProperties_Editor.java" startLine="48" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_g0z5fa_d0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="105" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="202934866059043953" fileName="BuildLayout_EchoProperties_Editor.java" startLine="40" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_g0z5fa_a0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="113" startPosition="132" endLine="122" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="202934866059043952" fileName="BuildLayout_EchoProperties_Editor.java" startLine="30" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_g0z5fa_a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="112" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="55" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_g0z5fa_c0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="202934866059043954" fileName="BuildLayout_EchoProperties_Editor.java" startLine="68" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_g0z5fa_b0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="202934866059043950" fileName="BuildLayout_EchoProperties_Editor.java" startLine="27" startPosition="79" endLine="28" endPosition="63" />
+    <scopeInfo nodeId="202934866059043952" fileName="BuildLayout_EchoProperties_Editor.java" startLine="32" startPosition="96" endLine="33" endPosition="48" />
+    <scopeInfo nodeId="202934866059043952" fileName="BuildLayout_EchoProperties_Editor.java" startLine="33" startPosition="48" endLine="34" endPosition="81" />
+    <scopeInfo nodeId="202934866059043952" fileName="BuildLayout_EchoProperties_Editor.java" startLine="34" startPosition="81" endLine="35" endPosition="80" />
+    <scopeInfo nodeId="202934866059043952" fileName="BuildLayout_EchoProperties_Editor.java" startLine="35" startPosition="80" endLine="36" endPosition="84" />
+    <scopeInfo nodeId="202934866059043952" fileName="BuildLayout_EchoProperties_Editor.java" startLine="36" startPosition="84" endLine="37" endPosition="81" />
+    <scopeInfo nodeId="202934866059133452" fileName="BuildLayout_EchoProperties_Editor.java" startLine="50" startPosition="86" endLine="51" endPosition="47" />
+    <scopeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="91" startPosition="99" endLine="92" endPosition="50" />
+    <scopeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="116" startPosition="34" endLine="117" endPosition="95" />
+    <scopeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="119" startPosition="131" endLine="120" endPosition="139" />
+    <scopeInfo nodeId="202934866059043953" fileName="BuildLayout_EchoProperties_Editor.java" startLine="42" startPosition="101" endLine="44" endPosition="68" />
+    <scopeInfo nodeId="202934866059043954" fileName="BuildLayout_EchoProperties_Editor.java" startLine="75" startPosition="5" endLine="77" endPosition="62">
+      <varInfo nodeId="202934866059043954" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="95" startPosition="66" endLine="97" endPosition="93">
+      <varInfo nodeId="202934866059043965" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="60" startPosition="5" endLine="63" endPosition="70">
+      <varInfo nodeId="202934866059043965" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043954" fileName="BuildLayout_EchoProperties_Editor.java" startLine="82" startPosition="35" endLine="85" endPosition="105">
+      <varInfo nodeId="202934866059043954" varName="manager" />
+      <varInfo nodeId="202934866059043954" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="90" startPosition="80" endLine="93" endPosition="5">
+      <varInfo nodeId="202934866059043965" varName="childRole" />
+      <varInfo nodeId="202934866059043965" varName="context" />
+      <varInfo nodeId="202934866059043965" varName="ownerNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="100" startPosition="86" endLine="103" endPosition="25">
+      <varInfo nodeId="202934866059043965" varName="elementCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043950" fileName="BuildLayout_EchoProperties_Editor.java" startLine="26" startPosition="74" endLine="30" endPosition="0">
+      <varInfo nodeId="202934866059043950" varName="editorContext" />
+      <varInfo nodeId="202934866059043950" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059133452" fileName="BuildLayout_EchoProperties_Editor.java" startLine="49" startPosition="88" endLine="53" endPosition="22">
+      <varInfo nodeId="202934866059133452" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043954" fileName="BuildLayout_EchoProperties_Editor.java" startLine="74" startPosition="58" endLine="78" endPosition="5" />
+    <scopeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="106" startPosition="68" endLine="110" endPosition="23">
+      <varInfo nodeId="202934866059043965" varName="emptyCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043953" fileName="BuildLayout_EchoProperties_Editor.java" startLine="41" startPosition="88" endLine="46" endPosition="22">
+      <varInfo nodeId="202934866059043953" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="94" startPosition="0" endLine="99" endPosition="0">
+      <varInfo nodeId="202934866059043965" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="58" startPosition="106" endLine="64" endPosition="5" />
+    <scopeInfo nodeId="202934866059043954" fileName="BuildLayout_EchoProperties_Editor.java" startLine="73" startPosition="26" endLine="79" endPosition="73" />
+    <scopeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="99" startPosition="0" endLine="105" endPosition="0">
+      <varInfo nodeId="202934866059043965" varName="editorContext" />
+      <varInfo nodeId="202934866059043965" varName="elementNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043952" fileName="BuildLayout_EchoProperties_Editor.java" startLine="31" startPosition="89" endLine="38" endPosition="22">
+      <varInfo nodeId="202934866059043952" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059133452" fileName="BuildLayout_EchoProperties_Editor.java" startLine="48" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="202934866059133452" varName="editorContext" />
+      <varInfo nodeId="202934866059133452" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="105" startPosition="0" endLine="112" endPosition="0">
+      <varInfo nodeId="202934866059043965" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="114" startPosition="96" endLine="121" endPosition="9" />
+    <scopeInfo nodeId="202934866059043953" fileName="BuildLayout_EchoProperties_Editor.java" startLine="40" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="202934866059043953" varName="editorContext" />
+      <varInfo nodeId="202934866059043953" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="113" startPosition="132" endLine="122" endPosition="7" />
+    <scopeInfo nodeId="202934866059043952" fileName="BuildLayout_EchoProperties_Editor.java" startLine="30" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="202934866059043952" varName="editorContext" />
+      <varInfo nodeId="202934866059043952" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="56" startPosition="91" endLine="66" endPosition="22">
+      <varInfo nodeId="202934866059043965" varName="editorCell" />
+      <varInfo nodeId="202934866059043965" varName="handler" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="112" startPosition="0" endLine="124" endPosition="0">
+      <varInfo nodeId="202934866059043965" varName="editorContext" />
+      <varInfo nodeId="202934866059043965" varName="elementCell" />
+      <varInfo nodeId="202934866059043965" varName="elementNode" />
+      <varInfo nodeId="202934866059043965" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="55" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="202934866059043965" varName="editorContext" />
+      <varInfo nodeId="202934866059043965" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043954" fileName="BuildLayout_EchoProperties_Editor.java" startLine="69" startPosition="87" endLine="87" endPosition="22">
+      <varInfo nodeId="202934866059043954" varName="attributeConcept" />
+      <varInfo nodeId="202934866059043954" varName="attributeKind" />
+      <varInfo nodeId="202934866059043954" varName="editorCell" />
+      <varInfo nodeId="202934866059043954" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043954" fileName="BuildLayout_EchoProperties_Editor.java" startLine="68" startPosition="0" endLine="89" endPosition="0">
+      <varInfo nodeId="202934866059043954" varName="editorContext" />
+      <varInfo nodeId="202934866059043954" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="202934866059043950" fileName="BuildLayout_EchoProperties_Editor.java" startLine="26" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.build.editor.BuildLayout_EchoProperties_Editor" />
+    <unitInfo nodeId="202934866059043965" fileName="BuildLayout_EchoProperties_Editor.java" startLine="90" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.build.editor.BuildLayout_EchoProperties_Editor$entriesListHandler_g0z5fa_c0" />
+  </root>
+  <root nodeId="202934866059043970">
+    <nodeInfo nodeId="202934866059043980" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="43" startPosition="58" endLine="43" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="202934866059043970" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="202934866059043972" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="22" startPosition="89" endLine="23" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043972" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="23" startPosition="96" endLine="24" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="202934866059043972" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="23" startPosition="96" endLine="24" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043972" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="24" startPosition="48" endLine="25" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="202934866059043972" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="24" startPosition="48" endLine="25" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043972" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="25" startPosition="81" endLine="26" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="202934866059043972" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="25" startPosition="81" endLine="26" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043972" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="26" startPosition="81" endLine="27" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="202934866059043972" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="26" startPosition="81" endLine="27" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043972" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="27" startPosition="80" endLine="28" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="202934866059043977" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="31" startPosition="88" endLine="32" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043977" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="32" startPosition="87" endLine="33" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="202934866059043977" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="32" startPosition="87" endLine="33" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043977" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="33" startPosition="47" endLine="34" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043977" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="34" startPosition="34" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="202934866059043980" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="38" startPosition="87" endLine="39" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043980" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="39" startPosition="81" endLine="40" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043980" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="40" startPosition="30" endLine="41" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043980" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="41" startPosition="43" endLine="42" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043980" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="42" startPosition="26" endLine="43" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043980" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="43" startPosition="58" endLine="44" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043980" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="44" startPosition="73" endLine="45" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043980" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="45" startPosition="57" endLine="46" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043980" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="47" startPosition="35" endLine="48" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043980" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="48" startPosition="72" endLine="49" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043980" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="49" startPosition="78" endLine="50" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="202934866059043980" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="51" startPosition="10" endLine="52" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="202934866059043975" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="55" startPosition="88" endLine="56" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043975" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="56" startPosition="82" endLine="57" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043975" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="57" startPosition="28" endLine="58" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043975" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="58" startPosition="41" endLine="59" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043975" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="59" startPosition="26" endLine="60" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043975" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="60" startPosition="58" endLine="61" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="202934866059043975" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="60" startPosition="58" endLine="61" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043975" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="61" startPosition="41" endLine="62" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="202934866059043975" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="62" startPosition="73" endLine="63" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043975" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="63" startPosition="57" endLine="64" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043975" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="65" startPosition="35" endLine="66" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043975" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="66" startPosition="72" endLine="67" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="202934866059043975" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="67" startPosition="78" endLine="68" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="202934866059043975" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="69" startPosition="10" endLine="70" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="202934866059043980" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="42" startPosition="26" endLine="44" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="202934866059043975" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="59" startPosition="26" endLine="62" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="202934866059043970" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="17" startPosition="77" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="202934866059043980" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="46" startPosition="59" endLine="52" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="202934866059043975" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="64" startPosition="59" endLine="70" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="202934866059043977" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="30" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_44sjbh_b0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="202934866059043972" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="21" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_44sjbh_a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="202934866059043980" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="37" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_44sjbh_c0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="202934866059043975" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="54" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_44sjbh_a0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="202934866059043980" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="43" startPosition="58" endLine="43" endPosition="58" />
+    <scopeInfo nodeId="202934866059043970" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" />
+    <scopeInfo nodeId="202934866059043972" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="23" startPosition="96" endLine="24" endPosition="48" />
+    <scopeInfo nodeId="202934866059043972" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="24" startPosition="48" endLine="25" endPosition="81" />
+    <scopeInfo nodeId="202934866059043972" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="25" startPosition="81" endLine="26" endPosition="81" />
+    <scopeInfo nodeId="202934866059043972" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="26" startPosition="81" endLine="27" endPosition="80" />
+    <scopeInfo nodeId="202934866059043977" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="32" startPosition="87" endLine="33" endPosition="47" />
+    <scopeInfo nodeId="202934866059043975" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="60" startPosition="58" endLine="61" endPosition="41" />
+    <scopeInfo nodeId="202934866059043980" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="42" startPosition="26" endLine="44" endPosition="73" />
+    <scopeInfo nodeId="202934866059043980" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="47" startPosition="35" endLine="50" endPosition="105">
+      <varInfo nodeId="202934866059043980" varName="manager" />
+      <varInfo nodeId="202934866059043980" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043975" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="59" startPosition="26" endLine="62" endPosition="73" />
+    <scopeInfo nodeId="202934866059043975" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="65" startPosition="35" endLine="68" endPosition="105">
+      <varInfo nodeId="202934866059043975" varName="manager" />
+      <varInfo nodeId="202934866059043975" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043970" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="17" startPosition="77" endLine="21" endPosition="0">
+      <varInfo nodeId="202934866059043970" varName="editorContext" />
+      <varInfo nodeId="202934866059043970" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043977" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="31" startPosition="88" endLine="35" endPosition="22">
+      <varInfo nodeId="202934866059043977" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043972" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="22" startPosition="89" endLine="28" endPosition="22">
+      <varInfo nodeId="202934866059043972" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043977" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="30" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="202934866059043977" varName="editorContext" />
+      <varInfo nodeId="202934866059043977" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043972" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="21" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="202934866059043972" varName="editorContext" />
+      <varInfo nodeId="202934866059043972" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043980" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="38" startPosition="87" endLine="52" endPosition="22">
+      <varInfo nodeId="202934866059043980" varName="attributeConcept" />
+      <varInfo nodeId="202934866059043980" varName="attributeKind" />
+      <varInfo nodeId="202934866059043980" varName="editorCell" />
+      <varInfo nodeId="202934866059043980" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043975" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="55" startPosition="88" endLine="70" endPosition="22">
+      <varInfo nodeId="202934866059043975" varName="attributeConcept" />
+      <varInfo nodeId="202934866059043975" varName="attributeKind" />
+      <varInfo nodeId="202934866059043975" varName="editorCell" />
+      <varInfo nodeId="202934866059043975" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043980" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="37" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="202934866059043980" varName="editorContext" />
+      <varInfo nodeId="202934866059043980" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="202934866059043975" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="54" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="202934866059043975" varName="editorContext" />
+      <varInfo nodeId="202934866059043975" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="202934866059043970" fileName="BuildLayout_EchoPropertyEntry_Editor.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.build.editor.BuildLayout_EchoPropertyEntry_Editor" />
+  </root>
   <root nodeId="2303926226081001730">
     <nodeInfo nodeId="2303926226081001730" fileName="BuildInputSingleFolder_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2303926226081012709" fileName="BuildInputSingleFolder_Editor.java" startLine="26" startPosition="89" endLine="27" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

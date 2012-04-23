@@ -7018,6 +7018,22 @@
         </node>
       </node>
     </node>
+    <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="202934866059165341">
+      <property name="name" nameId="tpck.1169194664001" value="build.vcs.number" />
+      <node role="value" roleId="3ior.4380385936562281299" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="202934866059165342">
+        <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="202934866059165343">
+          <property name="text" nameId="3ior.4903714810883755350" value="HEAD" />
+        </node>
+      </node>
+    </node>
+    <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="202934866059165346">
+      <property name="name" nameId="tpck.1169194664001" value="teamcity.buildConfName" />
+      <node role="value" roleId="3ior.4380385936562281299" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="202934866059165347">
+        <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="202934866059165348">
+          <property name="text" nameId="3ior.4903714810883755350" value="local" />
+        </node>
+      </node>
+    </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="4301118715654819491">
       <property name="name" nameId="tpck.1169194664001" value="mps_home" />
       <node role="defaultPath" roleId="3ior.7389400916848144618" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="4301118715654819492" />
@@ -7236,20 +7252,50 @@
             </node>
           </node>
         </node>
+        <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_EchoProperties" typeId="3ior.202934866059043946" id="202934866059133442">
+          <node role="fileName" roleId="3ior.202934866059043948" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="202934866059133443">
+            <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="202934866059133445">
+              <property name="text" nameId="3ior.4903714810883755350" value="build.number" />
+            </node>
+          </node>
+          <node role="entries" roleId="3ior.202934866059043962" type="3ior.BuildLayout_EchoPropertyEntry" typeId="3ior.202934866059043959" id="202934866059133447">
+            <property name="key" nameId="3ior.202934866059043960" value="build.number" />
+            <node role="value" roleId="3ior.202934866059043961" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="202934866059133448">
+              <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="202934866059165324">
+                <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="4301118715654465616" resolveInfo="build.number" />
+              </node>
+            </node>
+          </node>
+          <node role="entries" roleId="3ior.202934866059043962" type="3ior.BuildLayout_EchoPropertyEntry" typeId="3ior.202934866059043959" id="202934866059165326">
+            <property name="key" nameId="3ior.202934866059043960" value="revision.number" />
+            <node role="value" roleId="3ior.202934866059043961" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="202934866059165327">
+              <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="202934866059165350">
+                <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="202934866059165341" resolveInfo="build.vcs.number" />
+              </node>
+            </node>
+          </node>
+          <node role="entries" roleId="3ior.202934866059043962" type="3ior.BuildLayout_EchoPropertyEntry" typeId="3ior.202934866059043959" id="202934866059165337">
+            <property name="key" nameId="3ior.202934866059043960" value="configuration.name" />
+            <node role="value" roleId="3ior.202934866059043961" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="202934866059165338">
+              <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="202934866059165349">
+                <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="202934866059165346" resolveInfo="teamcity.buildConfName" />
+              </node>
+            </node>
+          </node>
+          <node role="entries" roleId="3ior.202934866059043962" type="3ior.BuildLayout_EchoPropertyEntry" typeId="3ior.202934866059043959" id="202934866059165328">
+            <property name="key" nameId="3ior.202934866059043960" value="version" />
+            <node role="value" roleId="3ior.202934866059043961" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="202934866059165329">
+              <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="202934866059165332">
+                <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="4301118715654465618" resolveInfo="version" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Copy" typeId="3ior.5248329904287857081" id="4301118715654325717">
           <node role="fileset" roleId="3ior.5248329904287857082" type="3ior.BuildInputSingleFile" typeId="3ior.5248329904287794582" id="4301118715654325718">
             <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="4301118715654325719">
               <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4301118715654325720">
                 <property name="head" nameId="3ior.8618885170173601779" value="about.txt" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Copy" typeId="3ior.5248329904287857081" id="4301118715654325722">
-          <node role="fileset" roleId="3ior.5248329904287857082" type="3ior.BuildInputSingleFile" typeId="3ior.5248329904287794582" id="4301118715654325723">
-            <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="4301118715654325724">
-              <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4301118715654325725">
-                <property name="head" nameId="3ior.8618885170173601779" value="build.number" />
               </node>
             </node>
           </node>
