@@ -9234,6 +9234,31 @@
         <link role="module" roleId="3ior.2754769020641646250" targetNodeId="2569834391839970857" resolveInfo="mps-workbench" />
       </node>
     </node>
+    <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaModule" typeId="3ior.7389400916848073784" id="1580556790195380551">
+      <property name="name" nameId="tpck.1169194664001" value="modelchecker" />
+      <node role="sources" roleId="3ior.7389400916848073826" type="3ior.BuildSource_JavaContentRoot" typeId="3ior.7389400916848073810" id="1580556790195380552">
+        <node role="basePath" roleId="3ior.7389400916848073811" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="1580556790195380554">
+          <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="6391307088354381128" resolveInfo="mps_home" />
+          <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1580556790195380555">
+            <property name="head" nameId="3ior.8618885170173601779" value="plugins" />
+            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1580556790195380556">
+              <property name="head" nameId="3ior.8618885170173601779" value="modelchecker" />
+            </node>
+          </node>
+        </node>
+        <node role="folders" roleId="3ior.2754769020641429197" type="3ior.BuildSource_JavaContentFolder" typeId="3ior.2754769020641429190" id="1580556790195380557">
+          <property name="kind" nameId="3ior.5248329904288265467" value="source" />
+          <property name="relativePath" nameId="3ior.2754769020641429191" value="source" />
+        </node>
+        <node role="folders" roleId="3ior.2754769020641429197" type="3ior.BuildSource_JavaContentFolder" typeId="3ior.2754769020641429190" id="1580556790195380558">
+          <property name="kind" nameId="3ior.5248329904288265467" value="source" />
+          <property name="relativePath" nameId="3ior.2754769020641429191" value="source_gen" />
+        </node>
+      </node>
+      <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyModule" typeId="3ior.2754769020641646247" id="1580556790195380559">
+        <link role="module" roleId="3ior.2754769020641646250" targetNodeId="2569834391839970857" resolveInfo="mps-workbench" />
+      </node>
+    </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="6391307088354381127">
       <property name="name" nameId="tpck.1169194664001" value="idea_home" />
     </node>
@@ -9320,6 +9345,42 @@
             </node>
             <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="1580556790195275000">
               <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="1580556790195275001">
+                <property name="text" nameId="3ior.4903714810883755350" value="META-INF" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Jar" typeId="3ior.7389400916848050074" id="1580556790195433363">
+          <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="1580556790195433364">
+            <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="1580556790195433365">
+              <property name="text" nameId="3ior.4903714810883755350" value="modelchecker.jar" />
+            </node>
+          </node>
+          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_CompileOutputOf" typeId="3ior.2591537044435828004" id="1580556790195433366">
+            <link role="module" roleId="3ior.2591537044435828006" targetNodeId="1580556790195380551" resolveInfo="modelchecker" />
+          </node>
+          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="1580556790195433367">
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Copy" typeId="3ior.5248329904287857081" id="1580556790195433368">
+              <node role="fileset" roleId="3ior.5248329904287857082" type="3ior.BuildInputSingleFile" typeId="3ior.5248329904287794582" id="1580556790195433369">
+                <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="1580556790195433370">
+                  <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="6391307088354381128" resolveInfo="mps_home" />
+                  <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1580556790195433371">
+                    <property name="head" nameId="3ior.8618885170173601779" value="plugins" />
+                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1580556790195433372">
+                      <property name="head" nameId="3ior.8618885170173601779" value="modelchecker" />
+                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1580556790195433373">
+                        <property name="head" nameId="3ior.8618885170173601779" value="META-INF" />
+                        <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1580556790195433374">
+                          <property name="head" nameId="3ior.8618885170173601779" value="plugin.xml" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="1580556790195433375">
+              <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="1580556790195433376">
                 <property name="text" nameId="3ior.4903714810883755350" value="META-INF" />
               </node>
             </node>

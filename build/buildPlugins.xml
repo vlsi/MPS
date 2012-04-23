@@ -28,6 +28,15 @@
       <fileset dir="${build.tmp}/java/out/migrationAssistant" />
       <fileset dir="${build.tmp}/default/migrationAssistant.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/modelchecker.jar" />
+    <mkdir dir="${build.tmp}/default/modelchecker.jar/META-INF" />
+    <copy todir="${build.tmp}/default/modelchecker.jar/META-INF">
+      <fileset file="${mps_home}/plugins/modelchecker/META-INF/plugin.xml" />
+    </copy>
+    <jar destfile="${build.layout}/plugins/modelchecker.jar">
+      <fileset dir="${build.tmp}/java/out/modelchecker" />
+      <fileset dir="${build.tmp}/default/modelchecker.jar" />
+    </jar>
   </target>
   
   <target name="buildDependents">
@@ -44,7 +53,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.ideaIntegration, java.compile.migrationAssistant" />
+  <target name="compileJava" depends="java.compile.ideaIntegration, java.compile.migrationAssistant, java.compile.modelchecker" />
   
   <target name="processResources" />
   
@@ -124,6 +133,43 @@
     </javac>
     <copy todir="${build.tmp}/java/out/migrationAssistant">
       <fileset dir="${mps_home}/plugins/migrationAssistant/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.modelchecker" depends="fetchDependencies">
+    <mkdir dir="${build.tmp}/java/out/modelchecker" />
+    <javac destdir="${build.tmp}/java/out/modelchecker" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <pathelement path="${mps_home}/plugins/modelchecker/source" />
+        <pathelement path="${mps_home}/plugins/modelchecker/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-core.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
+        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
+        <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
+        <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
+        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+      </classpath>
+    </javac>
+    <copy todir="${build.tmp}/java/out/modelchecker">
+      <fileset dir="${mps_home}/plugins/modelchecker/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/modelchecker/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
 </project>
