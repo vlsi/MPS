@@ -1068,6 +1068,10 @@ public final class SNode {
 
   void insertReferenceAt(final int i, final SReference reference) {
     ModelChange.assertLegalNodeChange(this);
+    for (SReference nextReference : myReferences) {
+      assert !nextReference.getRole().equals(reference.getRole()) : "Reference with role \'" + reference.getRole() + "\' is already defined in " + getDebugText();
+    }
+
     _reference().add(i, reference);
 
     SModel model = getModel();
