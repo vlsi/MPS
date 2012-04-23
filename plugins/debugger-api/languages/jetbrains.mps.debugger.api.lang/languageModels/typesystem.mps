@@ -2,7 +2,7 @@
 <model modelUID="r:31e73d62-e873-4ed6-bd22-16d8721ebfa3(jetbrains.mps.debugger.api.lang.typesystem)" version="1">
   <persistence version="7" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
-  <language namespace="fbc14279-5e2a-4c87-a5d1-5f7061e6c456(jetbrains.mps.debug.apiLang)" />
+  <language namespace="fbc14279-5e2a-4c87-a5d1-5f7061e6c456(jetbrains.mps.debugger.api.lang)" />
   <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="86gq" modelUID="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debugger.api.lang.structure)" version="3" />
@@ -18,6 +18,7 @@
   <roots>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="2526721715665547048">
       <property name="name" nameId="tpck.1169194664001" value="typeof_DebuggerReference" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="settings" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="5365453833390544926">
       <property name="name" nameId="tpck.1169194664001" value="typeof_CreateBreakpointOperation" />
@@ -25,35 +26,39 @@
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="3570824963050586846">
       <property name="name" nameId="tpck.1169194664001" value="DebuggerTypeIsDebuggerType" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="settings" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="4030433165041852571">
       <property name="name" nameId="tpck.1169194664001" value="check_DebuggerReferenceThrowableIsCaught" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="6586232406240905081">
       <property name="name" nameId="tpck.1169194664001" value="typeof_DebuggerConfiguration" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="settings" />
     </node>
     <node type="tpd4.ComparisonRule" typeId="tpd4.1188811367543" id="8321799582437916610">
       <property name="name" nameId="tpck.1169194664001" value="DebuggerIsDebugger" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="989489456093734063">
       <property name="name" nameId="tpck.1169194664001" value="typeof_VariableNodeExpression" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Custom.TraceInfo" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="989489456093734085">
       <property name="name" nameId="tpck.1169194664001" value="typeof_VariableNodeItem" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Custom.TraceInfo" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="989489456093734097">
       <property name="name" nameId="tpck.1169194664001" value="typeof_ConceptFunctionParameter_ScopeNode" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Custom.TraceInfo" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="989489456093734119">
       <property name="name" nameId="tpck.1169194664001" value="typeof_ConceptFunctionParameter_DebuggableNode" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="989489456093734141">
       <property name="name" nameId="tpck.1169194664001" value="typeof_ConceptFunctionParameter_UnitNode" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
     </node>
   </roots>
   <root id="2526721715665547048">
