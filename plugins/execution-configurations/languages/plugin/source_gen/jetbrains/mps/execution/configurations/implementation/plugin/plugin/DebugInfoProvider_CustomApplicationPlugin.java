@@ -82,6 +82,9 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
     if (manager == null) {
       return;
     }
+    manager.removeConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.Statement");
+    manager.removeConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+    manager.removeConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
     SetSequence.fromSet(DebugInfoProvider_CustomApplicationPlugin.this.myCreators).visitAll(new IVisitor<Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>>() {
       public void visit(Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> it) {
         manager.removeBreakpointCreator(it);
