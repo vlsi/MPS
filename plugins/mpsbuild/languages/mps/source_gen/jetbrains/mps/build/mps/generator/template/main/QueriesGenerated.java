@@ -207,6 +207,10 @@ public class QueriesGenerated {
     );
   }
 
+  public static Object referenceMacro_GetReferent_202934866058978111(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return (SNode) _context.getNode().getReferent("targetJar");
+  }
+
   public static Object referenceMacro_GetReferent_2591537044436106587(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "module", false), "jetbrains.mps.build.mps.structure.BuildMps_Module"), "javaModule");
   }
@@ -374,7 +378,11 @@ public class QueriesGenerated {
         if (!(SNodeOperations.isInstanceOf(runtime, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime"))) {
           continue;
         }
-        ListSequence.fromList(result).addElement(SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(runtime, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime"), "path", true)));
+        SNode rdep = SNodeOperations.cast(runtime, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime");
+        if ((SLinkOperations.getTarget(rdep, "customLocation", true) == null)) {
+          ListSequence.fromList(result).addElement(SNodeOperations.copyNode(SLinkOperations.getTarget(rdep, "path", true)));
+        }
+
       }
     }
     for (SNode module : Sequence.fromIterable(((MPSModulesClosure) _context.getVariable("var:mdeps")).getModules()).concat(Sequence.fromIterable(Sequence.<SNode>singleton(((MPSModulesClosure) _context.getVariable("var:mdeps")).getInitial()))).where(new IWhereFilter<SNode>() {
@@ -388,7 +396,7 @@ public class QueriesGenerated {
     }, true)) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar");
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && (SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "customLocation", true) == null);
         }
       }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
@@ -414,7 +422,10 @@ public class QueriesGenerated {
         if (!(SNodeOperations.isInstanceOf(runtime, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime"))) {
           continue;
         }
-        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(runtime, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime"), "path", true));
+        SNode rdep = SNodeOperations.cast(runtime, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime");
+        if ((SLinkOperations.getTarget(rdep, "customLocation", true) == null)) {
+          ListSequence.fromList(result).addElement(SLinkOperations.getTarget(rdep, "path", true));
+        }
       }
     }
     for (SNode module : Sequence.fromIterable(((MPSModulesClosure) _context.getVariable("var:mdeps")).getModules()).where(new IWhereFilter<SNode>() {
@@ -435,7 +446,7 @@ public class QueriesGenerated {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar");
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && (SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "customLocation", true) == null);
         }
       }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
@@ -447,6 +458,54 @@ public class QueriesGenerated {
       public SNode select(SNode it) {
         SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
         loopnode.setReferent("targetJarPath", it, false);
+        return loopnode;
+      }
+    });
+  }
+
+  public static Iterable sourceNodesQuery_202934866058978115(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNode lang : Sequence.fromIterable(((MPSModulesClosure) _context.getVariable("var:mdeps")).getLanguagesWithRuntime()).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return SPropertyOperations.getString(it, "name");
+      }
+    }, true)) {
+      for (SNode runtime : SLinkOperations.getTargets(lang, "runtime", true)) {
+        if (!(SNodeOperations.isInstanceOf(runtime, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime"))) {
+          continue;
+        }
+        SNode rdep = SNodeOperations.cast(runtime, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime");
+        if ((SLinkOperations.getTarget(rdep, "customLocation", true) != null)) {
+          ListSequence.fromList(result).addElement(SLinkOperations.getTarget(rdep, "customLocation", true));
+        }
+      }
+    }
+    for (SNode module : Sequence.fromIterable(((MPSModulesClosure) _context.getVariable("var:mdeps")).getModules()).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return SPropertyOperations.getString(it, "name");
+      }
+    }, true)) {
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return (SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency") ?
+            SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) :
+            it
+          );
+        }
+      }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && (SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "customLocation", true) != null);
+        }
+      }).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "customLocation", true);
+        }
+      }));
+    }
+    return ListSequence.fromList(result).distinct().select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
+        loopnode.setReferent("targetJar", SLinkOperations.getTarget(it, "jar", false), false);
         return loopnode;
       }
     });

@@ -12,6 +12,8 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   }
 
   public void init() {
+    add(new AddCustomLocationDependency_Intention(), "2798275735916376328");
+    add(new AddCustomLocationRuntime_Intention(), "202934866058893735");
     add(new ToggleCompactMpsModule_Intention(), "8369506495128778230");
   }
 }

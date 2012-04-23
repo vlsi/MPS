@@ -236,6 +236,7 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildSource_JavaExternalJarRef_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.MPSModulesClosure" />
     <classNode dependClassName="jetbrains.mps.build.util.JavaExportUtil" />
     <classNode dependClassName="jetbrains.mps.build.util.VisibleArtifacts" />

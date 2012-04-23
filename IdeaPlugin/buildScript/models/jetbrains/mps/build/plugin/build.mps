@@ -700,39 +700,6 @@
     <node role="layout" roleId="3ior.5617550519002745372" type="3ior.BuildLayout" typeId="3ior.5617550519002745364" id="7926701909975931625">
       <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="7926701909975931704">
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="7926701909975931707">
-          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="4421917191017303859">
-            <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="4421917191017303860">
-              <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="4421917191017303861">
-                <property name="text" nameId="3ior.4903714810883755350" value="ant" />
-              </node>
-            </node>
-            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="4421917191017303862">
-              <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="4421917191017303863">
-                <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="4421917191017303864">
-                  <property name="text" nameId="3ior.4903714810883755350" value="lib" />
-                </node>
-              </node>
-              <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Copy" typeId="3ior.5248329904287857081" id="4421917191017303865">
-                <node role="fileset" roleId="3ior.5248329904287857082" type="3ior.BuildInputSingleFile" typeId="3ior.5248329904287794582" id="4421917191017303866">
-                  <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="4421917191017303868">
-                    <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="1277685309310599419" resolveInfo="mps_home" />
-                    <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4421917191017303869">
-                      <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4421917191017303870">
-                        <property name="head" nameId="3ior.8618885170173601779" value="ant" />
-                        <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4421917191017303871">
-                          <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-                          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4421917191017303872">
-                            <property name="head" nameId="3ior.8618885170173601779" value="ant.jar" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Copy" typeId="3ior.5248329904287857081" id="6859736767834529002">
             <node role="fileset" roleId="3ior.5248329904287857082" type="3ior.BuildInputSingleFile" typeId="3ior.5248329904287794582" id="6859736767834529003">
               <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="6859736767834529038">
@@ -754,58 +721,6 @@
                   <property name="head" nameId="3ior.8618885170173601779" value="lib" />
                   <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="6859736767834529043">
                     <property name="head" nameId="3ior.8618885170173601779" value="diffutils-1.2.1.jar" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Copy" typeId="3ior.5248329904287857081" id="6859736767834880975">
-            <node role="fileset" roleId="3ior.5248329904287857082" type="3ior.BuildInputSingleFile" typeId="3ior.5248329904287794582" id="6859736767834880976">
-              <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="5551764612445924473">
-                <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="1277685309310599419" resolveInfo="mps_home" />
-                <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5551764612445924474">
-                  <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5551764612445924475">
-                    <property name="head" nameId="3ior.8618885170173601779" value="guava-11.0.1.jar" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Copy" typeId="3ior.5248329904287857081" id="6859736767834880981">
-            <node role="fileset" roleId="3ior.5248329904287857082" type="3ior.BuildInputSingleFile" typeId="3ior.5248329904287794582" id="6859736767834880982">
-              <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="5551764612445924476">
-                <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="1277685309310599419" resolveInfo="mps_home" />
-                <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5551764612445924477">
-                  <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5551764612445924478">
-                    <property name="head" nameId="3ior.8618885170173601779" value="commons-logging-1.1.1.jar" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Copy" typeId="3ior.5248329904287857081" id="6859736767834880987">
-            <node role="fileset" roleId="3ior.5248329904287857082" type="3ior.BuildInputSingleFile" typeId="3ior.5248329904287794582" id="6859736767834880988">
-              <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="5551764612445924479">
-                <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="1277685309310599419" resolveInfo="mps_home" />
-                <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5551764612445924480">
-                  <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5551764612445924481">
-                    <property name="head" nameId="3ior.8618885170173601779" value="commons-lang-2.4.jar" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Copy" typeId="3ior.5248329904287857081" id="4421917191016921684">
-            <node role="fileset" roleId="3ior.5248329904287857082" type="3ior.BuildInputSingleFile" typeId="3ior.5248329904287794582" id="4421917191016921685">
-              <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="4421917191016921687">
-                <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="1277685309310599419" resolveInfo="mps_home" />
-                <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4421917191016921688">
-                  <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4421917191016921689">
-                    <property name="head" nameId="3ior.8618885170173601779" value="junit-4.10.jar" />
                   </node>
                 </node>
               </node>
@@ -2310,6 +2225,9 @@
                 </node>
               </node>
             </node>
+            <node role="customLocation" roleId="kdzh.2798275735916344703" type="3ior.BuildSource_JavaExternalJarRef" typeId="3ior.5610619299014309452" id="202934866058930316">
+              <link role="jar" roleId="3ior.5610619299014309453" targetNodeId="7181125477683417246" />
+            </node>
           </node>
         </node>
         <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="7507666976388974990">
@@ -2386,6 +2304,9 @@
                   </node>
                 </node>
               </node>
+            </node>
+            <node role="customLocation" roleId="kdzh.2798275735916344703" type="3ior.BuildSource_JavaExternalJarRef" typeId="3ior.5610619299014309452" id="202934866058893734">
+              <link role="jar" roleId="3ior.5610619299014309453" targetNodeId="7181125477683417240" />
             </node>
           </node>
         </node>
@@ -3018,6 +2939,9 @@
               </node>
             </node>
           </node>
+          <node role="customLocation" roleId="kdzh.2798275735916344702" type="3ior.BuildSource_JavaExternalJarRef" typeId="3ior.5610619299014309452" id="202934866058930310">
+            <link role="jar" roleId="3ior.5610619299014309453" targetNodeId="7181125477683417225" />
+          </node>
         </node>
         <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="7259033139236387133">
           <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="7259033139236387134">
@@ -3328,6 +3252,9 @@
               </node>
             </node>
           </node>
+          <node role="customLocation" roleId="kdzh.2798275735916344702" type="3ior.BuildSource_JavaExternalJarRef" typeId="3ior.5610619299014309452" id="202934866058930312">
+            <link role="jar" roleId="3ior.5610619299014309453" targetNodeId="7181125477683417230" />
+          </node>
         </node>
         <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4421917191016796072">
           <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyJar" typeId="kdzh.4278635856200826393" id="4421917191016796073">
@@ -3339,6 +3266,9 @@
                   <property name="head" nameId="3ior.8618885170173601779" value="commons-logging-1.1.1.jar" />
                 </node>
               </node>
+            </node>
+            <node role="customLocation" roleId="kdzh.2798275735916344703" type="3ior.BuildSource_JavaExternalJarRef" typeId="3ior.5610619299014309452" id="202934866058930314">
+              <link role="jar" roleId="3ior.5610619299014309453" targetNodeId="7181125477683417230" />
             </node>
           </node>
         </node>
@@ -4790,6 +4720,9 @@
               </node>
             </node>
           </node>
+          <node role="customLocation" roleId="kdzh.2798275735916344702" type="3ior.BuildSource_JavaExternalJarRef" typeId="3ior.5610619299014309452" id="202934866058930308">
+            <link role="jar" roleId="3ior.5610619299014309453" targetNodeId="7181125477683417189" />
+          </node>
         </node>
         <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5551764612445915573">
           <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="5551764612445915574">
@@ -5284,6 +5217,9 @@
                   <property name="head" nameId="3ior.8618885170173601779" value="commons-lang-2.4.jar" />
                 </node>
               </node>
+            </node>
+            <node role="customLocation" roleId="kdzh.2798275735916344703" type="3ior.BuildSource_JavaExternalJarRef" typeId="3ior.5610619299014309452" id="202934866058930318">
+              <link role="jar" roleId="3ior.5610619299014309453" targetNodeId="7181125477683417225" />
             </node>
           </node>
         </node>
@@ -6326,6 +6262,13 @@
             <node role="fileName" roleId="3ior.7181125477683370900" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="7181125477683417241">
               <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7181125477683417242">
                 <property name="text" nameId="3ior.4903714810883755350" value="ant.jar" />
+              </node>
+            </node>
+          </node>
+          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_FileStub" typeId="3ior.7181125477683370806" id="202934866058874807">
+            <node role="fileName" roleId="3ior.7181125477683370900" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="202934866058874808">
+              <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="202934866058874809">
+                <property name="text" nameId="3ior.4903714810883755350" value="ant-launcher.jar" />
               </node>
             </node>
           </node>
@@ -7995,6 +7938,9 @@
                   </node>
                 </node>
               </node>
+            </node>
+            <node role="customLocation" roleId="kdzh.2798275735916344703" type="3ior.BuildSource_JavaExternalJarRef" typeId="3ior.5610619299014309452" id="202934866058874810">
+              <link role="jar" roleId="3ior.5610619299014309453" targetNodeId="202934866058874807" />
             </node>
           </node>
         </node>
