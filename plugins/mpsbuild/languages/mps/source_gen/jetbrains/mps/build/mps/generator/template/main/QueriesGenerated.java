@@ -9,9 +9,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.build.mps.behavior.BuildMps_AbstractModule_Behavior;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.build.util.LocalArtifacts;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.behavior.BuildSourcePath_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.build.util.Context;
+import jetbrains.mps.build.mps.util.ArtifactsRelativePathHelper;
 import jetbrains.mps.build.util.RelativePathHelper;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -20,9 +26,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.build.mps.util.MPSModulesClosure;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -33,6 +36,7 @@ import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.build.mps.util.ModuleLoader;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1500819558096430320(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -75,13 +79,75 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4743026300739052533(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    if (((Tuples._3<LocalArtifacts, SNode, SNode>) _context.getVariable("var:files")) == null) {
+      return "???";
+    }
     SNode path = (SNode) _context.getNode().getReferent("targetJarPath");
-    return BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(path, Context.defaultContext(_context).getMacros(path));
+    final String pathText = BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(path);
+    String result = ListSequence.fromList(SLinkOperations.getTargets(((Tuples._3<LocalArtifacts, SNode, SNode>) _context.getVariable("var:files"))._2(), "jarLocations", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return eq_x583g4_a0a0a0a0a0a0a3a9(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(it, "path", true)), pathText);
+      }
+    }).select(new ISelector<SNode, String>() {
+      public String select(SNode it) {
+        return SPropertyOperations.getString(it, "packagedLocation");
+      }
+    }).first();
+    if (result != null) {
+      return result;
+    }
+
+    LocalArtifacts outputFiles = ((Tuples._3<LocalArtifacts, SNode, SNode>) _context.getVariable("var:files"))._0();
+    SNode myJar = outputFiles.findArtifact(path);
+    if (myJar == null) {
+      String jarName = BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(path, Context.defaultContext(_context).getMacros(path));
+      _context.showErrorMessage(path, "cannot find `" + jarName + "' in local layout");
+      return "???";
+    }
+    SNode container = ((Tuples._3<LocalArtifacts, SNode, SNode>) _context.getVariable("var:files"))._1();
+    try {
+      return new ArtifactsRelativePathHelper(outputFiles, container).getRelativePath(SNodeOperations.cast(myJar, "jetbrains.mps.build.structure.BuildLayout_Node"));
+    } catch (ArtifactsRelativePathHelper.RelativePathException ex) {
+      String jarName = BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(path, Context.defaultContext(_context).getMacros(path));
+      _context.showErrorMessage(_context.getNode(), "cannot build relative path to `" + jarName + "'");
+      return "";
+    }
   }
 
   public static Object propertyMacro_GetPropertyValue_4743026300739052426(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    if (((Tuples._3<LocalArtifacts, SNode, SNode>) _context.getVariable("var:files")) == null) {
+      return "???";
+    }
     SNode path = (SNode) _context.getNode().getReferent("targetJarPath");
-    return BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(path, Context.defaultContext(_context).getMacros(path));
+    final String pathText = BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(path);
+    String result = ListSequence.fromList(SLinkOperations.getTargets(((Tuples._3<LocalArtifacts, SNode, SNode>) _context.getVariable("var:files"))._2(), "jarLocations", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return eq_x583g4_a0a0a0a0a0a0a3a01(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(it, "path", true)), pathText);
+      }
+    }).select(new ISelector<SNode, String>() {
+      public String select(SNode it) {
+        return SPropertyOperations.getString(it, "packagedLocation");
+      }
+    }).first();
+    if (result != null) {
+      return result;
+    }
+
+    LocalArtifacts outputFiles = ((Tuples._3<LocalArtifacts, SNode, SNode>) _context.getVariable("var:files"))._0();
+    SNode myJar = outputFiles.findArtifact(path);
+    if (myJar == null) {
+      String jarName = BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(path, Context.defaultContext(_context).getMacros(path));
+      _context.showErrorMessage(path, "cannot find `" + jarName + "' in local layout");
+      return "???";
+    }
+    SNode container = ((Tuples._3<LocalArtifacts, SNode, SNode>) _context.getVariable("var:files"))._1();
+    try {
+      return new ArtifactsRelativePathHelper(outputFiles, container).getRelativePath(SNodeOperations.cast(myJar, "jetbrains.mps.build.structure.BuildLayout_Node"));
+    } catch (ArtifactsRelativePathHelper.RelativePathException ex) {
+      String jarName = BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(path, Context.defaultContext(_context).getMacros(path));
+      _context.showErrorMessage(_context.getNode(), "cannot build relative path to `" + jarName + "'");
+      return "";
+    }
   }
 
   public static Object propertyMacro_GetPropertyValue_4743026300739110532(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -139,6 +205,10 @@ public class QueriesGenerated {
       _context.getCopiedOutputNodeForInputNode(targetModule) :
       targetModule
     );
+  }
+
+  public static Object referenceMacro_GetReferent_202934866058978111(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return (SNode) _context.getNode().getReferent("targetJar");
   }
 
   public static Object referenceMacro_GetReferent_2591537044436106587(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -308,7 +378,11 @@ public class QueriesGenerated {
         if (!(SNodeOperations.isInstanceOf(runtime, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime"))) {
           continue;
         }
-        ListSequence.fromList(result).addElement(SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(runtime, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime"), "path", true)));
+        SNode rdep = SNodeOperations.cast(runtime, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime");
+        if ((SLinkOperations.getTarget(rdep, "customLocation", true) == null)) {
+          ListSequence.fromList(result).addElement(SNodeOperations.copyNode(SLinkOperations.getTarget(rdep, "path", true)));
+        }
+
       }
     }
     for (SNode module : Sequence.fromIterable(((MPSModulesClosure) _context.getVariable("var:mdeps")).getModules()).concat(Sequence.fromIterable(Sequence.<SNode>singleton(((MPSModulesClosure) _context.getVariable("var:mdeps")).getInitial()))).where(new IWhereFilter<SNode>() {
@@ -322,7 +396,7 @@ public class QueriesGenerated {
     }, true)) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar");
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && (SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "customLocation", true) == null);
         }
       }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
@@ -348,7 +422,10 @@ public class QueriesGenerated {
         if (!(SNodeOperations.isInstanceOf(runtime, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime"))) {
           continue;
         }
-        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(runtime, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime"), "path", true));
+        SNode rdep = SNodeOperations.cast(runtime, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime");
+        if ((SLinkOperations.getTarget(rdep, "customLocation", true) == null)) {
+          ListSequence.fromList(result).addElement(SLinkOperations.getTarget(rdep, "path", true));
+        }
       }
     }
     for (SNode module : Sequence.fromIterable(((MPSModulesClosure) _context.getVariable("var:mdeps")).getModules()).where(new IWhereFilter<SNode>() {
@@ -369,7 +446,7 @@ public class QueriesGenerated {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar");
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && (SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "customLocation", true) == null);
         }
       }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
@@ -381,6 +458,54 @@ public class QueriesGenerated {
       public SNode select(SNode it) {
         SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
         loopnode.setReferent("targetJarPath", it, false);
+        return loopnode;
+      }
+    });
+  }
+
+  public static Iterable sourceNodesQuery_202934866058978115(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNode lang : Sequence.fromIterable(((MPSModulesClosure) _context.getVariable("var:mdeps")).getLanguagesWithRuntime()).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return SPropertyOperations.getString(it, "name");
+      }
+    }, true)) {
+      for (SNode runtime : SLinkOperations.getTargets(lang, "runtime", true)) {
+        if (!(SNodeOperations.isInstanceOf(runtime, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime"))) {
+          continue;
+        }
+        SNode rdep = SNodeOperations.cast(runtime, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime");
+        if ((SLinkOperations.getTarget(rdep, "customLocation", true) != null)) {
+          ListSequence.fromList(result).addElement(SLinkOperations.getTarget(rdep, "customLocation", true));
+        }
+      }
+    }
+    for (SNode module : Sequence.fromIterable(((MPSModulesClosure) _context.getVariable("var:mdeps")).getModules()).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return SPropertyOperations.getString(it, "name");
+      }
+    }, true)) {
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return (SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency") ?
+            SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) :
+            it
+          );
+        }
+      }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && (SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "customLocation", true) != null);
+        }
+      }).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "customLocation", true);
+        }
+      }));
+    }
+    return ListSequence.fromList(result).distinct().select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
+        loopnode.setReferent("targetJar", SLinkOperations.getTarget(it, "jar", false), false);
         return loopnode;
       }
     });
@@ -458,6 +583,10 @@ public class QueriesGenerated {
     });
   }
 
+  public static Iterable sourceNodesQuery_4356762679305730694(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "jarLocations", true);
+  }
+
   public static Iterable sourceNodesQuery_2540145662854694642(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "module", false), "sources", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -514,6 +643,27 @@ public class QueriesGenerated {
     return new MPSModulesClosure(_context, _context.getNode()).closure();
   }
 
+  public static Object insertMacro_varValue_609978641554543025(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    SNode project = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.structure.BuildProject", false, false);
+    if (project == null) {
+      _context.showErrorMessage(_context.getNode(), "no context project defined");
+      return null;
+    }
+
+    SNode parent = SNodeOperations.getParent(_context.getNode());
+    while (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Folder")) {
+      parent = SNodeOperations.getParent(parent);
+    }
+    if (!(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Jar"))) {
+      _context.showErrorMessage(_context.getNode(), "`module descriptor of mps module' should be in a jar");
+      return null;
+    }
+
+    LocalArtifacts output = new LocalArtifacts(project, _context);
+    output.collectOutputArtifacts();
+    return MultiTuple.<LocalArtifacts,SNode,SNode>from(output, SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_Jar"), _context.getNode());
+  }
+
   public static Object insertMacro_varValue_8654221991637263463(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return new RelativePathHelper(BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true), Context.defaultContext(_context)));
   }
@@ -531,5 +681,19 @@ public class QueriesGenerated {
       return null;
     }
     return SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(layoutNode, "jetbrains.mps.build.structure.BuildLayout_Copy"), "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile");
+  }
+
+  private static boolean eq_x583g4_a0a0a0a0a0a0a3a9(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_x583g4_a0a0a0a0a0a0a3a01(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }
