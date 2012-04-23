@@ -7,7 +7,7 @@
     <unitInfo nodeId="2569834391839970845" fileName="buildWorkbench.xml" startLine="1" startPosition="0" endLine="523" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildWorkbench" />
   </root>
   <root nodeId="4301118715654192646">
-    <unitInfo nodeId="4301118715654192646" fileName="buildIDE.xml" startLine="1" startPosition="0" endLine="117" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildIDE" />
+    <unitInfo nodeId="4301118715654192646" fileName="buildIDE.xml" startLine="1" startPosition="0" endLine="127" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildIDE" />
   </root>
   <root nodeId="4301118715654497533">
     <unitInfo nodeId="4301118715654497533" fileName="buildDistribution.xml" startLine="1" startPosition="0" endLine="31" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildDistribution" />
@@ -20,6 +20,12 @@
   </root>
   <root nodeId="5148601452480491524">
     <unitInfo nodeId="5148601452480491524" fileName="buildPlugin.xml" startLine="1" startPosition="0" endLine="294" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildPlugin" />
+  </root>
+  <root nodeId="6164334420696839314">
+    <unitInfo nodeId="6164334420696839314" fileName="buildDebuggerPlugin.xml" startLine="1" startPosition="0" endLine="584" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildDebuggerPlugin" />
+  </root>
+  <root nodeId="6361939271669846483">
+    <unitInfo nodeId="6361939271669846483" fileName="buildExecutionPlugin.xml" startLine="1" startPosition="0" endLine="741" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildExecutionPlugin" />
   </root>
   <root nodeId="6391307088354381121">
     <unitInfo nodeId="6391307088354381121" fileName="buildPlugins.xml" startLine="1" startPosition="0" endLine="371" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildPlugins" />
