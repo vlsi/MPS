@@ -21,7 +21,7 @@ public class SimpleParallelForSample {
   public static void main(String[] args) {
 
     final Iterable<Integer> numbers = SimpleParallelForSample.createNumbers();
-    final String value = null;
+    final String value = "Set me to null to see that potential NPE is correctly detected inside a parallel for loop";
 
     {
       final CountDownLatch latch = new CountDownLatch(Sequence.fromIterable(numbers).count());
@@ -34,10 +34,10 @@ public class SimpleParallelForSample {
         Runnable runnable = new Runnable() {
           public void run() {
             try {
-              log("Current value: " + localA);
-              sleep(localA);
+              SimpleParallelForSample.Logger.log("Current value: " + localA);
+              SimpleParallelForSample.sleep(localA);
               value.length();
-              log("Done with " + localA);
+              SimpleParallelForSample.Logger.log("Done with " + localA);
             } catch (RuntimeException e) {
               ListSequence.fromList(exceptions).addElement(e);
             } finally {
@@ -121,7 +121,12 @@ __switch__:
     }
   }
 
-  private static void log(String msg) {
-    System.out.println(msg);
+  public static class Logger {
+    public Logger() {
+    }
+
+    private static synchronized void log(String msg) {
+      System.out.println(msg);
+    }
   }
 }
