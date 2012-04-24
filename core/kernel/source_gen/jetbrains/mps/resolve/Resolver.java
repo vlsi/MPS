@@ -82,12 +82,12 @@ public class Resolver {
           return false;
         }
         SNode result = null;
+        String resolveInfo = reference.getResolveInfo();
         for (SNode node : refScope.getAvailableElements(null)) {
           if (!(node.isInstanceOfConcept(referentConcept))) {
             continue;
           }
-          String resolveInfo = reference.getResolveInfo();
-          if (resolveInfo != null && resolveInfo.equals(node.getName())) {
+          if (resolveInfo != null && (resolveInfo.equals(node.getName()) || resolveInfo.equals(node.getProperty("nestedName")))) {
             if (result == null) {
               result = node;
             } else {

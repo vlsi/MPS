@@ -20,8 +20,10 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.project.DumbAware;
+import com.intellij.openapi.project.Project;
 import gnu.trove.THashMap;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.ActionPlace;
 import org.jetbrains.annotations.Nullable;
@@ -53,6 +55,10 @@ public abstract class BaseAction extends AnAction implements DumbAware {
 
   public void setExecuteOutsideCommand(boolean executeOutsideCommand) {
     myExecuteOutsideCommand = executeOutsideCommand;
+  }
+
+  public boolean isExecuteOutsideCommand () {
+    return myExecuteOutsideCommand;
   }
 
   public void setIsAlwaysVisible(boolean isAlwaysVisible) {
@@ -117,22 +123,33 @@ public abstract class BaseAction extends AnAction implements DumbAware {
     });
   }
 
-  public final void actionPerformed(final AnActionEvent e) {
+  public final void actionPerformed(final AnActionEvent event) {
     final THashMap<String, Object> params = new THashMap<String, Object>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        collectActionData(e, params);
+        collectActionData(event, params);
       }
     });
     final ModelAccess access = ModelAccess.instance();
     if (myExecuteOutsideCommand) {
-      doExecute(e, params);
+      doExecute(event, params);
     } else {
-      access.runWriteActionInCommand(new Runnable() {
-        public void run() {
-          doExecute(e, params);
-        }
-      });
+      Project project = getEventProject(event);
+      if (project != null) {
+        // modern API
+        access.runWriteActionInCommand(new Runnable() {
+          public void run() {
+            doExecute(event, params);
+          }
+        }, getTemplatePresentation().getText(), null, false, project.getComponent(MPSProject.class));
+      }else {
+        // deprecated API
+        access.runWriteActionInCommand(new Runnable() {
+          public void run() {
+            doExecute(event, params);
+          }
+        });
+      }
     }
   }
 

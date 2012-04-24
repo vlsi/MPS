@@ -30,7 +30,7 @@ public class ConvertActionParameterCondition_MigrationScript extends BaseMigrati
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SPropertyOperations.getBoolean(node, "isOptional") == false;
+        return node.hasProperty("isOptional") && SPropertyOperations.getBoolean(node, "isOptional") == false;
       }
 
       public void doUpdateInstanceNode(SNode node) {

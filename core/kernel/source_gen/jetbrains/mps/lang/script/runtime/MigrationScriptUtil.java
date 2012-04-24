@@ -15,7 +15,10 @@ import jetbrains.mps.smodel.IOperationContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.script.util.ScriptNameUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.structure.modules.SolutionKind;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -56,12 +59,18 @@ public class MigrationScriptUtil {
     Class<BaseMigrationScript> aClass;
     String languageNamespace = NameUtil.namespaceFromLongName(fqClassName);
     languageNamespace = languageNamespace.substring(0, languageNamespace.length() - ".scripts".length());
-    Language l = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
-    if (l == null) {
-      LOG.error("can't find a language " + languageNamespace);
+    IModule mod = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
+    if (mod == null) {
+      Solution sol = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Solution.class);
+      if (sol != null && sol.getModuleDescriptor().getKind() != SolutionKind.NONE) {
+        mod = sol;
+      }
+    }
+    if (mod == null) {
+      LOG.error("Module not found: " + languageNamespace);
       return null;
     }
-    aClass = l.getClass(fqClassName);
+    aClass = mod.getClass(fqClassName);
     if (aClass == null) {
       return null;
     }

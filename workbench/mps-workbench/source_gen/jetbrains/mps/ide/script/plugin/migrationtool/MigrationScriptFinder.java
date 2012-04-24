@@ -13,6 +13,7 @@ import java.util.Map;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import java.util.IdentityHashMap;
+import java.util.Collections;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IScope;
@@ -27,7 +28,7 @@ public class MigrationScriptFinder implements IFinder {
   private IOperationContext myOperationContext;
   private SearchResults<SNode> myResults;
   private Map<SearchResult<SNode>, AbstractMigrationRefactoring> myMigrationBySearchResult = new IdentityHashMap<SearchResult<SNode>, AbstractMigrationRefactoring>();
-  private MigrationScriptsView myMigrationScriptsView;
+  private List<ResultsListener> myResultsListeners = Collections.synchronizedList(new ArrayList<ResultsListener>());
 
   public MigrationScriptFinder(List<SNodePointer> scripts, IOperationContext context) {
     myScripts = scripts;
@@ -63,9 +64,7 @@ public class MigrationScriptFinder implements IFinder {
         }
         monitor.advance(1);
       }
-      if (myMigrationScriptsView != null) {
-        myMigrationScriptsView.searchResultsChanged();
-      }
+      fireResultsChanged();
       return myResults;
     } finally {
       monitor.done();
@@ -80,15 +79,25 @@ public class MigrationScriptFinder implements IFinder {
     return myResults;
   }
 
-  public void setMigrationScriptsView(MigrationScriptsView migrationScriptsView) {
-    myMigrationScriptsView = migrationScriptsView;
-  }
-
   public List<SNodePointer> getScripts() {
     return myScripts;
   }
 
   public IOperationContext getOperationContext() {
     return myOperationContext;
+  }
+
+  public void addResultsListener(ResultsListener listener) {
+    myResultsListeners.add(listener);
+  }
+
+  public void removeResultsListener(ResultsListener listener) {
+    myResultsListeners.remove(listener);
+  }
+
+  private void fireResultsChanged() {
+    for (ResultsListener rl : new ArrayList<ResultsListener>(myResultsListeners)) {
+      rl.resultsChanged(this);
+    }
   }
 }

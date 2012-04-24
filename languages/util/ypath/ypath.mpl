@@ -5,7 +5,6 @@
     <modelRoot path="${language_descriptor}/languageModels" />
   </models>
   <accessoryModels>
-    <model modelUID="r:00000000-0000-4000-0000-011c895905b0(jetbrains.mps.ypath.treepaths)" />
     <model modelUID="r:00000000-0000-4000-0000-011c895905af(jetbrains.mps.ypath.internal.generator.helper)" />
   </accessoryModels>
   <generators>

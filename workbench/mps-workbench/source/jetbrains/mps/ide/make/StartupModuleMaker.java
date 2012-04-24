@@ -17,6 +17,7 @@ package jetbrains.mps.ide.make;
 
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.components.AbstractProjectComponent;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
@@ -48,30 +49,14 @@ public class StartupModuleMaker extends AbstractProjectComponent {
   private final FSChangesWatcher myWatcher;
 
   @SuppressWarnings({"UnusedDeclaration"})
-  public StartupModuleMaker(Project project, MPSProject mpsProject, ProjectLibraryManager plm, final FSChangesWatcher watcher, MPSProjectMigrationState migrationState) {
+  public StartupModuleMaker(Project project, MPSProject mpsProject, ProjectLibraryManager plm, final FSChangesWatcher watcher) {
     super(project);
     myWatcher = watcher;
   }
 
   @Override
   public void projectOpened() {
-    final MPSProjectMigrationState migrationState = myProject.getComponent(MPSProjectMigrationState.class);
-    if (migrationState.isMigrationRequired() && migrationState.hasMigrationAgent()) {
-      migrationState.addMigrationListener(new MPSProjectMigrationListener.DEFAULT() {
-        @Override
-        public void migrationFinished(Project mpsProject) {
-          migrationState.removeMigrationListener(this);
-          compileProjectModulesWithProgress(false);
-        }
-        @Override
-        public void migrationAborted(Project project) {
-          migrationState.removeMigrationListener(this);
-        }
-      });
-    }
-    else {
-      compileProjectModulesWithProgress(true);
-    }
+    compileProjectModulesWithProgress(true);
   }
 
 
