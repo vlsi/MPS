@@ -27,9 +27,9 @@ import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
 import jetbrains.mps.baseLanguage.scopes.Scopes;
-import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.scope.CompositeScope;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -305,19 +305,22 @@ public class Classifier_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, final SNode kind, SNode child) {
-    while (SNodeOperations.getParent(child) != thisNode) {
+    while (SNodeOperations.getParent(child) != thisNode && child != null) {
       child = SNodeOperations.getParent(child);
+    }
+    if (child == null) {
+      return ScopeUtils.lazyParentScope(thisNode, kind);
     }
     boolean isStaticContext = (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember") && ClassifierMember_Behavior.call_isStatic_8986964027630462944(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) || (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.Classifier") && Classifier_Behavior.call_isStatic_521412098689998668(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.Classifier"))) || SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.StaticInitializer");
 
     // todo: remove this logic from Classifier 
     {
-      SNode concept_e0bb;
-      concept_e0bb = kind;
-      if (SConceptOperations.isSubConceptOf(concept_e0bb, "jetbrains.mps.baseLanguage.structure.ContextClassifierKind")) {
+      SNode concept_f0bb;
+      concept_f0bb = kind;
+      if (SConceptOperations.isSubConceptOf(concept_f0bb, "jetbrains.mps.baseLanguage.structure.ContextClassifierKind")) {
         return CompositeWithParentScope.from(thisNode, thisNode, kind);
       }
-      if (SConceptOperations.isSubConceptOf(concept_e0bb, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration")) {
+      if (SConceptOperations.isSubConceptOf(concept_f0bb, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration")) {
         // todo: Classifier should be ClassifierMember! 
         if (!(isStaticContext)) {
           return Scopes.forTypeVariables(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true), ScopeUtils.lazyParentScope(thisNode, kind));
@@ -325,7 +328,7 @@ public class Classifier_Behavior {
           return ScopeUtils.lazyParentScope(thisNode, kind);
         }
       }
-      if (SConceptOperations.isSubConceptOf(concept_e0bb, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) {
+      if (SConceptOperations.isSubConceptOf(concept_f0bb, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) {
         {
           // add 1) instance fields 2) static fields 
           Scope scope = Scopes.forVariables(kind, Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")), ScopeUtils.lazyParentScope(thisNode, kind));
@@ -336,7 +339,7 @@ public class Classifier_Behavior {
           }
         }
       }
-      if (SConceptOperations.isSubConceptOf(concept_e0bb, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
+      if (SConceptOperations.isSubConceptOf(concept_f0bb, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
         // add instance fields + static fields 
         if (!(isStaticContext)) {
           Scope scope = CompositeScope.createComposite(Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")));
@@ -345,7 +348,7 @@ public class Classifier_Behavior {
           return Scopes.forMethods(kind, Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")), ScopeUtils.lazyParentScope(thisNode, kind));
         }
       }
-      if (SConceptOperations.isSubConceptOf(concept_e0bb, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
+      if (SConceptOperations.isSubConceptOf(concept_f0bb, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
         {
           // in other cases - hide everything by name... 
           // todo: change! 
