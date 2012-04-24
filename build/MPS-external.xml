@@ -575,7 +575,6 @@
     </zip>
     <delete dir="${deploy.dir}/MPS/samples.zip.tmp" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.blTypes" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.builders" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.checkedDots" />
@@ -587,7 +586,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.javadoc" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.jdk7" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.logging" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.logging.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.overloadedOperators" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp.runtime" />
@@ -658,7 +656,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.smodel" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.smodelTests" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.structure" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.structure.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.stubs" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.test" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.test.runtime" />
@@ -762,7 +759,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.build.mpsdist" />
     <mkdir dir="${deploy.dir}/MPS/languages/util/deprecated/build" />
     <antcall target="MPS-languages.pack.jetbrains.mps.uiLanguage" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.uiLanguage.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.uiLanguage.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide.uiLanguage" />
     <mkdir dir="${deploy.dir}/MPS/languages/util/deprecated/ui" />
