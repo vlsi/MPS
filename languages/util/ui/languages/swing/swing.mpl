@@ -84,7 +84,6 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
-    <dependency reexport="false">feb13c42-6479-4631-bedd-7524f34b91c0(jetbrains.mps.ui.swing#5725024602606914374)</dependency>
     <dependency reexport="false">acc947bf-6778-444a-9dc7-4cc72d4eb3d0(jetbrains.mps.ui.swing.runtime)</dependency>
   </dependencies>
   <usedLanguages>

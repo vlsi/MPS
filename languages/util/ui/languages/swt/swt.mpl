@@ -85,7 +85,6 @@
   <dependencies>
     <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
     <dependency reexport="false">8a448bd0-1380-4c01-9820-0f051d33888c(jetbrains.mps.ui.modeling)</dependency>
-    <dependency reexport="false">fc9ba4c3-4355-4a86-b84b-1c46c728f9ea(jetbrains.mps.ui.swt#1250358102411218055)</dependency>
     <dependency reexport="true">69934240-945d-492b-83e7-39bda70200e7(jetbrains.mps.ui.swt.runtime)</dependency>
   </dependencies>
   <usedLanguages>
