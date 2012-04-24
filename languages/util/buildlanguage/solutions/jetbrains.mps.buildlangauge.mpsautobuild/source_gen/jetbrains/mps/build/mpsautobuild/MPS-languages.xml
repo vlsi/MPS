@@ -18661,7 +18661,6 @@
       <zipfileset dir="${base_dir}/languages/util/ui/languages/gwt/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/languages/util/ui/languages/gwt/gwt.mpl" prefix="module" />
       <zipfileset dir="${base_dir}/languages/util/ui/languages/gwt/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
-      <zipfileset dir="${base_dir}/languages/util/ui/languages/gwt/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageAccessories" />
       <zipfileset dir="${base_dir}/languages/util/ui/languages/gwt/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.gwt/jetbrains.mps.ui.gwt.jar" compress="true" duplicate="preserve" filesonly="true">
