@@ -15,15 +15,26 @@
  */
 package jetbrains.mps.ide.migration.assistant;
 
+import com.intellij.ide.DataManager;
+import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.ui.*;
 import com.intellij.util.ui.Timer;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.actions.LabelledAnchor;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjectVersion;
 import jetbrains.mps.project.Version;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.workbench.action.BaseAction;
 
+import javax.swing.JComponent;
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
@@ -35,46 +46,33 @@ import java.util.concurrent.atomic.AtomicBoolean;
  */
 public class MigrationProcessor extends AbstractProjectComponent{
   
+  private static Logger LOG = Logger.getLogger(MigrationProcessor.class);
+  
   private List<Callback> myCallbacks = new CopyOnWriteArrayList<Callback>();
   private AtomicBoolean myStarted = new AtomicBoolean();
   private AtomicBoolean myFinished = new AtomicBoolean();
-  private final List<String> myActions = Arrays.asList(new String[]{
-    "Lorem" ,
-      "ipsum" ,
-      "dolor" ,
-      "sit" ,
-      "amet" ,
-      "consectetur" ,
-      "adipisicing" ,
-      "elit" ,
-      "sed" ,
-      "do" ,
-      "eiusmod" ,
-      "tempor" ,
-      "incididunt" ,
-      "ut" ,
-      "labore" ,
-      "et" ,
-      "dolore" ,
-      "magna" ,
-      "aliqua"});
-  private List<?> mySelectedActions = myActions;
+  private AtomicBoolean myInit = new AtomicBoolean();
+  private final List<BaseAction> myActions = new ArrayList<BaseAction>();
+  private List<BaseAction> mySelectedActions = myActions;
 
   protected MigrationProcessor(Project project) {
     super(project);
   }
 
   public List<?> getActions() {
+    init();
     return Collections.unmodifiableList(myActions);
   }
   
   public List<?> getSelectedActions () {
+    init();
     return Collections.unmodifiableList(mySelectedActions);
   }
   
+  @SuppressWarnings("unchecked")
   public void setSelectedActions (List<?> actions) {
     if (!myActions.containsAll(actions)) throw new IllegalArgumentException();
-      mySelectedActions = new ArrayList<Object>(actions);
+      mySelectedActions = new ArrayList<BaseAction>((List<BaseAction>)actions);
   }
   
   public boolean isProcessing() {
@@ -85,44 +83,60 @@ public class MigrationProcessor extends AbstractProjectComponent{
     return myStarted.get() && myFinished.get();
   }
   
-  public void startProcessing () {
+  public void startProcessing(final JComponent component) {
     if (!myStarted.compareAndSet(false, true)) throw new IllegalStateException("already processing");
 
-    final ArrayList<Object> actionsCopy = new ArrayList<Object>(mySelectedActions);
+    final ArrayList<BaseAction> actionsCopy = new ArrayList<BaseAction>(mySelectedActions);
 
-    new Timer("foo", 300) {
-      int myStep = 0;
-      boolean failedone;
-      @Override
-      protected void onTimer() throws InterruptedException {
-        final int step = myStep++;
-        if (step >= actionsCopy.size()) {
-          this.dispose();
-          myFinished.set(true);
-          UIUtil.invokeLaterIfNeeded(new Runnable() {
-            @Override
-            public void run() {
-              fireFinishedAll();
-            }
-          });
-        } else {
-          UIUtil.invokeLaterIfNeeded(new Runnable() {
-            @Override
-            public void run() {
-              fireStartingAction(actionsCopy.get(step));
-              Version version = myProject.getComponent(MPSProjectVersion.class).getVersion();
-              if(!failedone && version.toString().endsWith("5")) {
-                fireFailedAction(actionsCopy.get(step));
-                failedone = true;
-              }
-              else {
-                fireFinishedAction(actionsCopy.get(step));
+    for (final BaseAction action : actionsCopy) {
+      final CountDownLatch latch = new CountDownLatch(1);
+      runCommand(new Runnable() {
+        @Override
+        public void run() {
+          try{
+            fireStartingAction(action);
+            AnActionEvent event = new AnActionEvent(null, DataManager.getInstance().getDataContext(component), ActionPlaces.UNKNOWN, action.getTemplatePresentation(), ActionManager.getInstance(), 0);
+            boolean success = false;
+            boolean oldFlag = action.isExecuteOutsideCommand();
+            try{
+              action.setExecuteOutsideCommand(true);
+              action.update(event);
+              if (action.getTemplatePresentation().isEnabled()) {
+                action.actionPerformed(event);
+                success = true;
               }
             }
-          });
+            catch (Exception e) {
+              LOG.error(e);
+            }
+            finally {
+              action.setExecuteOutsideCommand(oldFlag);
+              if (success) {
+                fireFinishedAction(action);
+              } else {
+                fireFailedAction(action);
+              }
+            }
+          }
+          finally {
+            latch.countDown();
+          }
         }
+      });
+      try {
+        latch.await();
+      } catch (InterruptedException e) {
+        LOG.error(e);
       }
-    }.start();
+    }
+
+    runCommand(new Runnable() {
+      @Override
+      public void run() {
+        myFinished.set(true);
+        fireFinishedAll();
+      }
+    });
   }
   
   public void addCallback (Callback callback) {
@@ -131,6 +145,25 @@ public class MigrationProcessor extends AbstractProjectComponent{
 
   public void removeCallback (Callback callback) {
     myCallbacks.remove(callback);
+  }
+
+  private void runCommand(Runnable cmdRunnable) {
+    ModelAccess.instance().runCommandInEDT(cmdRunnable, myProject.getComponent(MPSProject.class));
+  }
+
+  private void init () {
+    if (myInit.compareAndSet(false, true)) {
+      AnAction group = ActionManager.getInstance().getAction("jetbrains.mps.ide.migration.migration25.Migrations25_ActionGroup");
+      if (group instanceof DefaultActionGroup) {
+        AnAction[] actionsOrStubs = ((DefaultActionGroup) group).getChildActionsOrStubs();
+        for (int i = 0; i < actionsOrStubs.length; i++) {
+          AnAction action = actionsOrStubs[i];
+          if (action instanceof BaseAction && !(action instanceof LabelledAnchor)) {
+            myActions.add((BaseAction)action);
+          }
+        }
+      }
+    }
   }
 
   private void fireStartingAction(Object action) {

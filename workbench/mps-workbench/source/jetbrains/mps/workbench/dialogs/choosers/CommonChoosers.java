@@ -20,8 +20,12 @@ import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.wm.IdeFrame;
+import com.intellij.util.ui.UIUtil;
+import jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
@@ -70,6 +74,22 @@ public class CommonChoosers {
       dialog = new ModuleChooserDialog((Dialog) window, modules, nonProjectModules, entityString, multiSelection);
     }
     dialog.showDialog();
+    return dialog.getResult();
+  }
+
+  @Deprecated
+  public static SNode showDialogNodeChooser(final Component parent, final List<SNode> values) {
+    Component uparent = UIUtil.findUltimateParent(parent);
+    Project project = null;
+    if (uparent instanceof IdeFrame) {
+      project = ((IdeFrame) parent).getProject();
+    }
+    if (project == null) {
+      project = PlatformDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext(uparent));
+    }
+    if (project == null) throw new IllegalStateException("Project not found");
+    NodeChooserDialog dialog = new NodeChooserDialog(project, values);
+    dialog.show();
     return dialog.getResult();
   }
 

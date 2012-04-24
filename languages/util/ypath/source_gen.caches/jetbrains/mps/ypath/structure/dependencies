@@ -21,6 +21,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.ypath.structure.IFunctionParam" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.FeatureGetFun" file="FeatureGetFun.java">
     <classNode dependClassName="java.lang.String" />
@@ -84,6 +85,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.ypath.structure.IDesignFunction" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.GFCardinalParamFun" file="GFCardinalParamFun.java">
     <classNode dependClassName="java.lang.String" />
@@ -98,6 +100,7 @@
     <classNode dependClassName="jetbrains.mps.ypath.structure.IDesignFunction" />
     <classNode dependClassName="jetbrains.mps.ypath.structure.IParamFeatureFun" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.GFGetterFun" file="GFGetterFun.java">
     <classNode dependClassName="java.lang.String" />
@@ -111,6 +114,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.ypath.structure.IDesignFunction" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.GFGetterParamFun" file="GFGetterParamFun.java">
     <classNode dependClassName="java.lang.String" />
@@ -125,6 +129,7 @@
     <classNode dependClassName="jetbrains.mps.ypath.structure.IDesignFunction" />
     <classNode dependClassName="jetbrains.mps.ypath.structure.IParamFeatureFun" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.GeneratorFunctionParam" file="GeneratorFunctionParam.java">
     <classNode dependClassName="java.lang.String" />
@@ -138,6 +143,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.ypath.structure.IFunctionParam" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.GenericFeature" file="GenericFeature.java">
     <classNode dependClassName="java.lang.String" />
@@ -153,6 +159,7 @@
     <classNode dependClassName="jetbrains.mps.ypath.structure.IFeature" />
     <classNode dependClassName="jetbrains.mps.ypath.structure.IGenericFeature" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.GenericParamFeature" file="GenericParamFeature.java">
     <classNode dependClassName="java.lang.String" />
@@ -174,6 +181,7 @@
     <classNode dependClassName="jetbrains.mps.ypath.structure.TargetTypeFun" />
     <classNode dependClassName="jetbrains.mps.ypath.structure.ToStringFun" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.IDesignFunction" file="IDesignFunction.java">
     <classNode dependClassName="java.lang.String" />
@@ -275,6 +283,7 @@
     <classNode dependClassName="jetbrains.mps.ypath.structure.FeatureSizeFun" />
     <classNode dependClassName="jetbrains.mps.ypath.structure.IFeature" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.MatchDefaultPropertyOperation" file="MatchDefaultPropertyOperation.java">
     <classNode dependClassName="java.lang.String" />
@@ -366,6 +375,7 @@
     <classNode dependClassName="jetbrains.mps.ypath.structure.FeatureGetFun" />
     <classNode dependClassName="jetbrains.mps.ypath.structure.IParamFeatureFun" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.ParamFeatureSequenceFun" file="ParamFeatureSequenceFun.java">
     <classNode dependClassName="java.lang.String" />
@@ -379,6 +389,7 @@
     <classNode dependClassName="jetbrains.mps.ypath.structure.FeatureSequenceFun" />
     <classNode dependClassName="jetbrains.mps.ypath.structure.IParamFeatureFun" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.ParamFeatureSizeFun" file="ParamFeatureSizeFun.java">
     <classNode dependClassName="java.lang.String" />
@@ -392,6 +403,7 @@
     <classNode dependClassName="jetbrains.mps.ypath.structure.FeatureSizeFun" />
     <classNode dependClassName="jetbrains.mps.ypath.structure.IParamFeatureFun" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.ParamFunctionParam" file="ParamFunctionParam.java">
     <classNode dependClassName="java.lang.String" />
@@ -405,6 +417,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.ypath.structure.IFunctionParam" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.ParamListFeature" file="ParamListFeature.java">
     <classNode dependClassName="java.lang.String" />
@@ -424,6 +437,7 @@
     <classNode dependClassName="jetbrains.mps.ypath.structure.TargetTypeFun" />
     <classNode dependClassName="jetbrains.mps.ypath.structure.ToStringFun" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.ParamSequenceFeature" file="ParamSequenceFeature.java">
     <classNode dependClassName="java.lang.String" />
@@ -445,6 +459,7 @@
     <classNode dependClassName="jetbrains.mps.ypath.structure.TargetTypeFun" />
     <classNode dependClassName="jetbrains.mps.ypath.structure.ToStringFun" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.ParameterQueryFun" file="ParameterQueryFun.java">
     <classNode dependClassName="java.lang.String" />
@@ -458,6 +473,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.ypath.structure.IDesignFunction" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.ParameterWrapper" file="ParameterWrapper.java">
     <classNode dependClassName="java.lang.String" />
@@ -470,6 +486,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.ParentBlock" file="ParentBlock.java">
     <classNode dependClassName="java.lang.String" />
@@ -503,6 +520,7 @@
     <classNode dependClassName="jetbrains.mps.ypath.structure.FeatureSizeFun" />
     <classNode dependClassName="jetbrains.mps.ypath.structure.IFeature" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.StructureAspectDescriptor" file="StructureAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
@@ -537,6 +555,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.ypath.structure.IDesignFunction" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.ToStringFun" file="ToStringFun.java">
     <classNode dependClassName="java.lang.String" />
@@ -550,6 +569,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.ypath.structure.IDesignFunction" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.TraversalAxis" file="TraversalAxis.java">
     <classNode dependClassName="java.lang.String" />
@@ -577,6 +597,7 @@
     <classNode dependClassName="jetbrains.mps.ypath.structure.KindBlock" />
     <classNode dependClassName="jetbrains.mps.ypath.structure.TreeNodeKindProperty" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.TreeNodeKindOccurrence" file="TreeNodeKindOccurrence.java">
     <classNode dependClassName="java.lang.String" />
@@ -599,6 +620,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.ypath.structure.PropertyGetter" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.TreeNodeKindReference" file="TreeNodeKindReference.java">
     <classNode dependClassName="java.lang.String" />
@@ -650,6 +672,7 @@
     <classNode dependClassName="jetbrains.mps.ypath.structure.TreePath" />
     <classNode dependClassName="jetbrains.mps.ypath.structure.TreePathType" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.TreePathCreator" file="TreePathCreator.java">
     <classNode dependClassName="java.lang.String" />
@@ -667,6 +690,7 @@
     <classNode dependClassName="jetbrains.mps.ypath.structure.TreePath" />
     <classNode dependClassName="jetbrains.mps.ypath.structure.TreePathType" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.TreePathOperation" file="TreePathOperation.java">
     <classNode dependClassName="java.lang.String" />
@@ -679,6 +703,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.TreePathOperationExpression" file="TreePathOperationExpression.java">
     <classNode dependClassName="java.lang.String" />
@@ -692,6 +717,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.ypath.structure.ITreePathExpression" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.TreePathType" file="TreePathType.java">
     <classNode dependClassName="java.lang.String" />
@@ -705,6 +731,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.structure.ValueFunctionParam" file="ValueFunctionParam.java">
     <classNode dependClassName="java.lang.String" />

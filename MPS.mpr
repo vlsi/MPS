@@ -348,7 +348,7 @@
       <modulePath path="${project}/plugins/execution-languages/languages/tests/tests.msd" folder="languages.execution.languages-plugin" />
       <modulePath path="${project}/plugins/ideaIntegration/jetbrains.mps.ideaIntegration.msd" folder="plugins" />
       <modulePath path="${project}/plugins/migration/solution/jetbrains.mps.ide.migration.msd" folder="plugins" />
-      <modulePath path="${project}/plugins/migration21/solution/migration21.msd" folder="plugins" />
+      <modulePath path="${project}/plugins/migration25/solution/migration25.msd" folder="plugins" />
       <modulePath path="${project}/plugins/modelchecker/solution/jetbrains.mps.ide.modelchecker.msd" folder="plugins" />
       <modulePath path="${project}/plugins/mpsbuild/languages/build/build.mpl" folder="build" />
       <modulePath path="${project}/plugins/mpsbuild/languages/deploySolution/deploy.msd" folder="build" />
@@ -360,6 +360,7 @@
       <modulePath path="${project}/plugins/mpsbuild/languages/workflow/workflow.mpl" folder="build" />
       <modulePath path="${project}/plugins/mpsbuild/temp/jetbrains.mps.build.pluginSolution/pluginSolution.msd" folder="build" />
       <modulePath path="${project}/plugins/mpsdevkit/mpsdevkit.msd" folder="plugins" />
+      <modulePath path="${project}/plugins/mpsjava/migration/migration.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/platform/platform.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/testsolution/testMaterial.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/workbench/java.msd" folder="plugins.mpsjava" />
@@ -439,7 +440,7 @@
   </component>
   <component name="ProjectRootManager" version="2" />
   <component name="ProjectVersion">
-    <option name="version" value="2.0" />
+    <option name="version" value="2.5" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />

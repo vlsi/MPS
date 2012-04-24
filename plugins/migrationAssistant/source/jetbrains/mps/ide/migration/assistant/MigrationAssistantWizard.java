@@ -22,6 +22,7 @@ import com.intellij.ide.wizard.CommitStepException;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ex.ApplicationEx;
 import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
@@ -30,6 +31,7 @@ import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
 import com.intellij.ui.components.JBCheckBox;
 import com.intellij.ui.components.JBList;
 import com.intellij.ui.components.JBScrollPane;
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.migration.assistant.MigrationProcessor.Callback;
 import jetbrains.mps.project.MPSProjectMigrationState;
 
@@ -42,6 +44,8 @@ import java.awt.event.ActionListener;
 import java.awt.font.TextAttribute;
 import java.util.*;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by IntelliJ IDEA.
@@ -110,6 +114,8 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
   protected void updateStep() {
     super.updateStep();
     getCancelAction().setEnabled(canCancel());
+    MyStep step = (MyStep) getCurrentStepObject();
+    step.onAfterUpdate();
   }
 
   protected boolean canCancel () {
@@ -184,6 +190,8 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     public boolean isPostComplete() {
       return false;
     }
+
+    public void onAfterUpdate() {}
 
     protected void createComponent() {
       this.myComponent = new JPanel(new BorderLayout(5,5));
@@ -493,6 +501,9 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
             @Override
             public void startingAction(Object action) {
               indicator.setIndeterminate(false);
+              indicator.setFraction(0.0);
+              myList.ensureIndexIsVisible(0);
+              myList.repaint();
             }
 
             @Override
@@ -521,31 +532,39 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
               myList.repaint();
             }
           });
-          indicator.setIndeterminate(true);
-          processor.startProcessing();
+          processor.startProcessing(SwingUtilities.getRootPane(getComponent()));
         }
       };
     }
 
     @Override
-    public void _init() {
-      super._init();
-      if (!myStarted) {
-        // launch migration
-        MPSProjectMigrationState migrationState = myProject.getComponent(MPSProjectMigrationState.class);
-        migrationState.migrationStarted();
-        this.myStarted = true;
-        runProcessWithProgressSynchronously(myTask, myProgressIndicator);
-      }
+    public void onAfterUpdate() {
+      SwingUtilities.invokeLater(new Runnable() {
+        @Override
+        public void run() {
+          if (!myStarted) {
+            // launch migration
+            MPSProjectMigrationState migrationState = myProject.getComponent(MPSProjectMigrationState.class);
+            migrationState.migrationStarted();
+            myStarted = true;
+            runProcessWithProgressSynchronously(myTask, myProgressIndicator);
+          }
+        }
+      });
     }
 
     private void runProcessWithProgressSynchronously(final Task task, final ProgressIndicator progressIndicator) {
-      final boolean result = ((ApplicationEx) ApplicationManager.getApplication())
-        .runProcessWithProgressSynchronously(new Runnable() {
+      ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
           public void run() {
-            task.run(progressIndicator);
+            ProgressManager.getInstance().runProcess(new Runnable() {
+              @Override
+              public void run() {
+                task.run(progressIndicator);
+
+              }
+            }, progressIndicator);
           }
-        }, task.getTitle(), task.isCancellable(), task.getProject(), getComponent(), task.getCancelText());
+        });
     }
 
     @Override
@@ -608,6 +627,12 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     }
 
     @Override
+    public Object getNextStepId() {
+      // next step is the error report
+      return null;
+    }
+
+    @Override
     public boolean isComplete() {
       return true;
     }
@@ -666,11 +691,21 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     private final Set<?> myExcluded;
     private final Set<?> myMarked;
     private final Set<?> myFailed;
+    private static final Pattern ACTION_PRESENTATION = Pattern.compile("(.*).*\\(.*\\)");
 
     public MyListCellRenderer(Set<?> excluded, Set<?> marked, Set<?> failed) {
       myExcluded = excluded;
       myMarked = marked;
       myFailed = failed;
+    }
+
+    @Override
+    public void setText(String text) {
+      Matcher matcher = ACTION_PRESENTATION.matcher(text);
+      if (matcher.matches()) {
+        text = matcher.group(1);
+      }
+      super.setText(text);
     }
 
     @Override

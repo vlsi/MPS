@@ -403,7 +403,6 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
-  @Deprecated
   public SModelDescriptor getModelDescriptor(SModelFqName fqName) {
     if (fqName == null) return null;
     return myFqNameToModelDescriptorMap.get(fqName);

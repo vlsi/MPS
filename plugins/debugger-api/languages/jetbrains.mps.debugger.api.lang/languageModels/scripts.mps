@@ -22,7 +22,7 @@
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="4899606958030665162">
       <property name="name" nameId="tpck.1169194664001" value="DebuggerMovedToPlugin" />
       <property name="type" nameId="tp33.5299416737274925395" value="migration" />
-      <property name="toBuild" nameId="tp33.5299416737274925397" value="2.1" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="2.5" />
       <property name="title" nameId="tp33.1177457669450" value="Fix references to debugger classes" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4899606958030665185">

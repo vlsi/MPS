@@ -7,30 +7,30 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
-  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.smodel.structure.CheckedModuleReference", "jetbrains.mps.lang.smodel.structure.ConceptPropertyNameRefExpression", "jetbrains.mps.lang.smodel.structure.EnumMemberReference", "jetbrains.mps.lang.smodel.structure.IReferenceOperation", "jetbrains.mps.lang.smodel.structure.IfInstanceOfVarReference", "jetbrains.mps.lang.smodel.structure.LinkAttributeAccessQualifier", "jetbrains.mps.lang.smodel.structure.LinkAttributeQualifier", "jetbrains.mps.lang.smodel.structure.LinkNameRefExpression", "jetbrains.mps.lang.smodel.structure.LinkQualifier", "jetbrains.mps.lang.smodel.structure.LinkRefExpression", "jetbrains.mps.lang.smodel.structure.LinkRefQualifier", "jetbrains.mps.lang.smodel.structure.ModelReferenceExpression", "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression", "jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier", "jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier", "jetbrains.mps.lang.smodel.structure.NodeRefExpression", "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", "jetbrains.mps.lang.smodel.structure.Node_GetReferentSearchScopeOperation", "jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation", "jetbrains.mps.lang.smodel.structure.PropertyAttributeAccessQualifier", "jetbrains.mps.lang.smodel.structure.PropertyAttributeQualifier", "jetbrains.mps.lang.smodel.structure.PropertyNameRefExpression", "jetbrains.mps.lang.smodel.structure.PropertyQualifier", "jetbrains.mps.lang.smodel.structure.PropertyRefQualifier", "jetbrains.mps.lang.smodel.structure.SConceptLinkAccess", "jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess", "jetbrains.mps.lang.smodel.structure.SEnumMemberOperation", "jetbrains.mps.lang.smodel.structure.SEnumOperation", "jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation", "jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation", "jetbrains.mps.lang.smodel.structure.SLinkAccess", "jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect", "jetbrains.mps.lang.smodel.structure.SLinkListAccess", "jetbrains.mps.lang.smodel.structure.SPropertyAccess", "jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation", "jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", "jetbrains.mps.lang.smodel.structure._LinkAccessT"};
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.smodel.structure.CheckedModuleReference", "jetbrains.mps.lang.smodel.structure.ConceptPropertyNameRefExpression", "jetbrains.mps.lang.smodel.structure.EnumMemberReference", "jetbrains.mps.lang.smodel.structure.IReferenceOperation", "jetbrains.mps.lang.smodel.structure.IfInstanceOfVarReference", "jetbrains.mps.lang.smodel.structure.LinkAttributeAccessQualifier", "jetbrains.mps.lang.smodel.structure.LinkAttributeQualifier", "jetbrains.mps.lang.smodel.structure.LinkNameRefExpression", "jetbrains.mps.lang.smodel.structure.LinkQualifier", "jetbrains.mps.lang.smodel.structure.LinkRefExpression", "jetbrains.mps.lang.smodel.structure.LinkRefQualifier", "jetbrains.mps.lang.smodel.structure.ModelReferenceExpression", "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression", "jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier", "jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier", "jetbrains.mps.lang.smodel.structure.NodePointerExpression", "jetbrains.mps.lang.smodel.structure.NodeRefExpression", "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", "jetbrains.mps.lang.smodel.structure.Node_GetReferentSearchScopeOperation", "jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation", "jetbrains.mps.lang.smodel.structure.PropertyAttributeAccessQualifier", "jetbrains.mps.lang.smodel.structure.PropertyAttributeQualifier", "jetbrains.mps.lang.smodel.structure.PropertyNameRefExpression", "jetbrains.mps.lang.smodel.structure.PropertyQualifier", "jetbrains.mps.lang.smodel.structure.PropertyRefQualifier", "jetbrains.mps.lang.smodel.structure.SConceptLinkAccess", "jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess", "jetbrains.mps.lang.smodel.structure.SEnumMemberOperation", "jetbrains.mps.lang.smodel.structure.SEnumOperation", "jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation", "jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation", "jetbrains.mps.lang.smodel.structure.SLinkAccess", "jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect", "jetbrains.mps.lang.smodel.structure.SLinkListAccess", "jetbrains.mps.lang.smodel.structure.SPropertyAccess", "jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation", "jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", "jetbrains.mps.lang.smodel.structure._LinkAccessT"};
 
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
-      case 33:
+      case 34:
         return new SPropertyAccess_Constraints();
-      case 19:
+      case 20:
         return new PropertyAttributeAccessQualifier_Constraints();
-      case 16:
+      case 17:
         return new Node_ConceptMethodCall_Constraints();
       case 13:
         return new NodeAttributeAccessQualifier_Constraints();
-      case 24:
+      case 25:
         return new SConceptLinkAccess_Constraints();
-      case 30:
+      case 31:
         return new SLinkAccess_Constraints();
-      case 18:
+      case 19:
         return new Node_IsRoleOperation_Constraints();
-      case 35:
+      case 36:
         return new StaticConceptMethodCall_Constraints();
-      case 32:
+      case 33:
         return new SLinkListAccess_Constraints();
       case 5:
         return new LinkAttributeAccessQualifier_Constraints();
@@ -38,29 +38,29 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new EnumMemberReference_Constraints();
       case 10:
         return new LinkRefQualifier_Constraints();
-      case 25:
+      case 26:
         return new SConceptPropertyAccess_Constraints();
-      case 23:
+      case 24:
         return new PropertyRefQualifier_Constraints();
-      case 36:
+      case 37:
         return new _LinkAccessT_Constraints();
-      case 15:
+      case 16:
         return new NodeRefExpression_Constraints();
-      case 17:
+      case 18:
         return new Node_GetReferentSearchScopeOperation_Constraints();
-      case 34:
+      case 35:
         return new SearchScope_ContainsOperation_Constraints();
       case 9:
         return new LinkRefExpression_Constraints();
-      case 29:
+      case 30:
         return new SEnum_MemberOperation_Constraints();
-      case 28:
+      case 29:
         return new SEnumOperationInvocation_Constraints();
-      case 27:
+      case 28:
         return new SEnumOperation_Constraints();
-      case 26:
+      case 27:
         return new SEnumMemberOperation_Constraints();
-      case 31:
+      case 32:
         return new SLinkImplicitSelect_Constraints();
       case 3:
         return new IReferenceOperation_Constraints();
@@ -70,15 +70,15 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new IfInstanceOfVarReference_Constraints();
       case 7:
         return new LinkNameRefExpression_Constraints();
-      case 21:
+      case 22:
         return new PropertyNameRefExpression_Constraints();
       case 14:
         return new NodeAttributeQualifier_Constraints();
       case 6:
         return new LinkAttributeQualifier_Constraints();
-      case 20:
+      case 21:
         return new PropertyAttributeQualifier_Constraints();
-      case 22:
+      case 23:
         return new PropertyQualifier_Constraints();
       case 8:
         return new LinkQualifier_Constraints();
@@ -88,6 +88,8 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new ModuleReferenceExpression_Constraints();
       case 11:
         return new ModelReferenceExpression_Constraints();
+      case 15:
+        return new NodePointerExpression_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
