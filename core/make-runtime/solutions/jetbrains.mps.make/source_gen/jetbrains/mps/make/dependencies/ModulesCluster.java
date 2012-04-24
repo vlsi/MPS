@@ -20,9 +20,10 @@ import jetbrains.mps.internal.collections.runtime.IListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.project.dependency.DependenciesManager;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.internal.make.runtime.util.GraphAnalyzer;
@@ -214,14 +215,14 @@ __switch__:
 
   private Iterable<ModuleReference> required(IModule mod) {
     mod.getDependenciesManager();
-    DependenciesManager depman = mod.getDependenciesManager();
-    Set<IModule> reqmods = SetSequence.fromSetWithValues(new HashSet<IModule>(), Sequence.fromIterable(((Iterable<Language>) depman.getAllUsedLanguages())).translate(new ITranslator2<Language, Generator>() {
+    GlobalModuleDependenciesManager depman = new GlobalModuleDependenciesManager(mod);
+    Set<IModule> reqmods = SetSequence.fromSetWithValues(new HashSet<IModule>(), Sequence.fromIterable(((Iterable<Language>) depman.getUsedLanguages())).translate(new ITranslator2<Language, Generator>() {
       public Iterable<Generator> translate(Language lang) {
         return lang.getGenerators();
       }
     }));
-    SetSequence.fromSet(reqmods).addSequence(SetSequence.fromSet(depman.getAllRequiredModules()));
-    SetSequence.fromSet(reqmods).addSequence(SetSequence.fromSet(depman.getAllVisibleModules()));
+    SetSequence.fromSet(reqmods).addSequence(CollectionSequence.fromCollection(depman.getModules(GlobalModuleDependenciesManager.Deptype.COMPILE)));
+    SetSequence.fromSet(reqmods).addSequence(CollectionSequence.fromCollection(depman.getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE)));
     Iterable<ModuleReference> reqs = SetSequence.fromSet(reqmods).select(new ISelector<IModule, ModuleReference>() {
       public ModuleReference select(IModule m) {
         return m.getModuleReference();

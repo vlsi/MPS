@@ -18,6 +18,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import org.jetbrains.annotations.Nullable;
 
 public class GlobalFilteredScope extends GlobalScope {
@@ -86,7 +87,7 @@ public class GlobalFilteredScope extends GlobalScope {
       return true;
     }
     for (IModule module : Sequence.fromIterable(requiredModules)) {
-      if (m.getDependenciesManager().getAllUsedLanguages().contains(module)) {
+      if (new GlobalModuleDependenciesManager(module).getUsedLanguages().contains(module)) {
         return true;
       }
     }

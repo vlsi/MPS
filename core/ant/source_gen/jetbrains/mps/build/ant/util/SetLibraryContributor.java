@@ -4,7 +4,7 @@ package jetbrains.mps.build.ant.util;
 
 import jetbrains.mps.library.contributor.LibraryContributor;
 import java.util.Set;
-import java.util.Collections;
+import java.util.HashSet;
 
 public class SetLibraryContributor implements LibraryContributor {
   private Set<String> libraryPaths;
@@ -13,7 +13,11 @@ public class SetLibraryContributor implements LibraryContributor {
     this.libraryPaths = libraryPaths;
   }
 
-  public Set<String> getLibraries() {
-    return Collections.unmodifiableSet(libraryPaths);
+  public Set<LibraryContributor.LibDescriptor> getLibraries() {
+    HashSet<LibraryContributor.LibDescriptor> res = new HashSet<LibraryContributor.LibDescriptor>();
+    for (String path : libraryPaths) {
+      res.add(new LibraryContributor.LibDescriptor(path, null));
+    }
+    return res;
   }
 }

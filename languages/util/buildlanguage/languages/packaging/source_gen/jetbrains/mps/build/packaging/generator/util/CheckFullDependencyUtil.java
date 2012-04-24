@@ -23,7 +23,10 @@ import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.build.packaging.behavior.Plugin_Behavior;
 import com.intellij.ide.plugins.PluginManager;
+import java.util.Collection;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.Generator;
 
 public class CheckFullDependencyUtil {
@@ -163,13 +166,13 @@ public class CheckFullDependencyUtil {
 
   private static List<IModule> getDependencyToCheck(IModule module) {
     List<IModule> dependencyToCheck = ListSequence.fromList(new ArrayList<IModule>());
-    Set<IModule> dependency = module.getDependenciesManager().getAllVisibleModules();
+    Collection<IModule> dependency = new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE);
     if (module instanceof DevKit) {
       dependency.addAll(((DevKit) module).getAllExportedLanguages());
       dependency.addAll(((DevKit) module).getAllExportedSolutions());
       dependency.addAll(((DevKit) module).getAllExtendedDevkits());
     }
-    ListSequence.fromList(dependencyToCheck).addSequence(SetSequence.fromSet(dependency));
+    ListSequence.fromList(dependencyToCheck).addSequence(CollectionSequence.fromCollection(dependency));
     return ListSequence.fromList(dependencyToCheck).where(new IWhereFilter<IModule>() {
       public boolean accept(IModule it) {
         return !(it instanceof Generator) && !(it.isPackaged()) && it.getDescriptorFile() != null;

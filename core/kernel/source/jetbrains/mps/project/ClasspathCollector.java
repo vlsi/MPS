@@ -16,10 +16,13 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.ClasspathReader;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 
 import java.io.IOException;
@@ -36,17 +39,26 @@ public class ClasspathCollector {
   }
 
   public IClassPathItem collect(boolean includeStubSolutions) {
-    Set<IModule> modules = new LinkedHashSet<IModule>();
-    Set<Language> usedLanguages = new LinkedHashSet<Language>();
+    Collection<IModule> modules = new GlobalModuleDependenciesManager(myStart).getModules(Deptype.COMPILE);
 
-    for (IModule m : myStart) {
-      m.getDependenciesManager().collectAllCompileTimeDependencies(modules, usedLanguages);
+    Set<IModule> fromGenerators = new HashSet<IModule>();
+    for (IModule m : modules) {
+      if (!(m instanceof Language)) continue;
+
+      //todo this is a hack since we compile generator with language's classpath, too
+      // 1. Generator is always compiled together with the language (???)
+      // 2. Generator may have its own compile time dependencies (imports in the generated queries)
+      // 3. Let's not ignore them
+      for (Generator generator : ((Language) m).getGenerators()) {
+        if (modules.contains(generator)) continue;
+
+        fromGenerators.addAll(new GlobalModuleDependenciesManager(generator).getModules(Deptype.COMPILE));
+      }
     }
+    modules.addAll(fromGenerators);
+
     for (IModule module : modules) {
       addPart(module.getClassPathItem());
-    }
-    for (Language l : usedLanguages) {
-      addPart(l.getLanguageRuntimeClasspath());
     }
 
     CompositeClassPathItem result = new CompositeClassPathItem();
@@ -62,14 +74,6 @@ public class ClasspathCollector {
           // LOG?
         }
       }
-
-/*
-      for (Solution s : MPSModuleRepository.getInstance().getAllSolutions()) {
-        if (s.isStub()) {
-          result.add(s.getClassPathItem());
-        }
-      }
-*/
     }
 
     for (IClassPathItem item : myResult) {

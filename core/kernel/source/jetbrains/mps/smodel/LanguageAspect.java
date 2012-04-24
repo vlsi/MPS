@@ -20,8 +20,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public enum LanguageAspect {
   STRUCTURE("structure") {
@@ -251,5 +250,16 @@ public enum LanguageAspect {
 
   private SModelFqName getModuleUID(Language l) {
     return new SModelFqName(l.getModuleFqName() + "." + getName(), "");
+  }
+
+  public static Collection<EditableSModelDescriptor> getAspectModels(Language l) {
+    Set<EditableSModelDescriptor> result = new HashSet<EditableSModelDescriptor>();
+    for (LanguageAspect aspect : LanguageAspect.values()) {
+      EditableSModelDescriptor asp = aspect.get(l);
+      if (asp != null) {
+        result.add(asp);
+      }
+    }
+    return result;
   }
 }

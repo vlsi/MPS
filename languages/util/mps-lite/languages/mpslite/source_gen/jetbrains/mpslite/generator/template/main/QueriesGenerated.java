@@ -21,6 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mpslite.behavior.AbstractConceptReference_Behavior;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mpslite.behavior.GenerationUtils;
 import jetbrains.mpslite.behavior.VariableConcept_Behavior;
 import java.util.ArrayList;
@@ -69,8 +70,8 @@ public class QueriesGenerated {
       IMPSLiteConcept_Behavior.call_fillConcept_1239891562930(conceptDeclaration, ((SNode) MapSequence.fromMap(conceptsToTargets).get(conceptDeclaration)), conceptsToTargets, partsToLinkDeclarations);
     }
     // editor 
-    SModel editorModel = language.getEditorModelDescriptor().getSModel();
-    SModel actionsModel = language.getActionsModelDescriptor().getSModel();
+    SModel editorModel = LanguageAspect.EDITOR.get(language).getSModel();
+    SModel actionsModel = LanguageAspect.ACTIONS.get(language).getSModel();
     Map<SNode, SNode> conceptsToEditors = MapSequence.fromMap(new HashMap<SNode, SNode>());
     for (SNode conceptDeclaration : allConcepts) {
       SNode editor = IMPSLiteConcept_Behavior.call_createEditor_1239890004879(conceptDeclaration, conceptsToTargets, partsToLinkDeclarations);
@@ -104,7 +105,7 @@ public class QueriesGenerated {
       ListSequence.fromList(SLinkOperations.getTargets(conceptConstraint, "referent", true)).addElement(varScope);
       MapSequence.fromMap(conceptsToConstraints).put(variableConcept, conceptConstraint);
     }
-    SModel constraintsModel = language.getConstraintsModelDescriptor().getSModel();
+    SModel constraintsModel = LanguageAspect.CONSTRAINTS.get(language).getSModel();
     // 
     // setting roots and deleting input roots 
     for (SNode root : ListSequence.fromListWithValues(new ArrayList<SNode>(), SModelOperations.getRoots(structureModel, null))) {

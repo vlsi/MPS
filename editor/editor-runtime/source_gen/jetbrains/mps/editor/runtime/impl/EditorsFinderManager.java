@@ -37,6 +37,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -168,7 +169,7 @@ public class EditorsFinderManager implements ApplicationComponent {
     if (language == null) {
       return null;
     }
-    SModelDescriptor editorModelDescriptor = language.getEditorModelDescriptor();
+    SModelDescriptor editorModelDescriptor = LanguageAspect.EDITOR.get(language);
     String editorUID = null;
     if (editorModelDescriptor != null) {
       editorUID = editorModelDescriptor.getSModelReference().getSModelFqName().toString();

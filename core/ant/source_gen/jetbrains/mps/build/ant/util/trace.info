@@ -2283,16 +2283,25 @@
   <root nodeId="8638838189258378820">
     <nodeInfo nodeId="8638838189258378835" fileName="SetLibraryContributor.java" startLine="9" startPosition="66" endLine="10" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="libraryPaths" />
     <nodeInfo nodeId="8638838189258378826" fileName="SetLibraryContributor.java" startLine="12" startPosition="58" endLine="13" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8638838189258378845" fileName="SetLibraryContributor.java" startLine="16" startPosition="37" endLine="17" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9038842203622777421" fileName="SetLibraryContributor.java" startLine="16" startPosition="63" endLine="17" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9038842203622777434" fileName="SetLibraryContributor.java" startLine="18" startPosition="38" endLine="19" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902508642865271637" fileName="SetLibraryContributor.java" startLine="20" startPosition="5" endLine="21" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8638838189258378822" fileName="SetLibraryContributor.java" startLine="11" startPosition="0" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SetLibraryContributor#(Ljava/util/Set;)V" />
-    <nodeInfo nodeId="8638838189258378840" fileName="SetLibraryContributor.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLibraries#()Ljava/util/Set;" />
+    <nodeInfo nodeId="4902508642865271629" fileName="SetLibraryContributor.java" startLine="17" startPosition="100" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8638838189258378840" fileName="SetLibraryContributor.java" startLine="15" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLibraries#()Ljava/util/Set;" />
     <scopeInfo nodeId="8638838189258378825" fileName="SetLibraryContributor.java" startLine="12" startPosition="58" endLine="13" endPosition="37" />
-    <scopeInfo nodeId="8638838189258378844" fileName="SetLibraryContributor.java" startLine="16" startPosition="37" endLine="17" endPosition="53" />
+    <scopeInfo nodeId="4902508642865271630" fileName="SetLibraryContributor.java" startLine="18" startPosition="38" endLine="19" endPosition="64" />
     <scopeInfo nodeId="8638838189258378822" fileName="SetLibraryContributor.java" startLine="11" startPosition="0" endLine="14" endPosition="3">
       <varInfo nodeId="8638838189258378832" varName="libraryPaths" />
     </scopeInfo>
-    <scopeInfo nodeId="8638838189258378840" fileName="SetLibraryContributor.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
-    <unitInfo nodeId="8638838189258378820" fileName="SetLibraryContributor.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.build.ant.util.SetLibraryContributor" />
+    <scopeInfo nodeId="4902508642865271629" fileName="SetLibraryContributor.java" startLine="17" startPosition="100" endLine="20" endPosition="5">
+      <varInfo nodeId="4902508642865271632" varName="path" />
+    </scopeInfo>
+    <scopeInfo nodeId="8638838189258378844" fileName="SetLibraryContributor.java" startLine="16" startPosition="63" endLine="21" endPosition="15">
+      <varInfo nodeId="9038842203622777422" varName="res" />
+    </scopeInfo>
+    <scopeInfo nodeId="8638838189258378840" fileName="SetLibraryContributor.java" startLine="15" startPosition="0" endLine="23" endPosition="0" />
+    <unitInfo nodeId="8638838189258378820" fileName="SetLibraryContributor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.build.ant.util.SetLibraryContributor" />
   </root>
   <root nodeId="8638838189258387911">
     <nodeInfo nodeId="8638838189258387913" fileName="SystemInfo.java" startLine="7" startPosition="25" endLine="8" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="OS_NAME" />

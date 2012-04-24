@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.library.contributor;
 
+import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.extensions.PluginId;
@@ -24,26 +25,26 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
 
 public class PluginLibrariesContributor implements LibraryContributor, ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(PluginLibrariesContributor.class);
 
-  public Set<String> getLibraries() {
+  public Set<LibDescriptor> getLibraries() {
     final LanguageLibrary[] libraries = LanguageLibrary.EP_LANGUAGE_LIBS.getExtensions();
-    Set<String> result = new HashSet<String>();
+    Set<LibDescriptor> result = new HashSet<LibDescriptor>();
     for (final LanguageLibrary library : libraries) {
       try {
         PluginId pluginId = library.getPluginDescriptor().getPluginId();
-        final String pluginPath = PluginManager.getPlugin(pluginId).getPath().getCanonicalPath();
+        IdeaPluginDescriptor plugin = PluginManager.getPlugin(pluginId);
+        final String pluginPath = plugin.getPath().getCanonicalPath();
         assert library.dir != null : "library dir should be non-empty: plugin=" + pluginId.getIdString();
         String libraryPath = pluginPath + library.dir;
         if (libraryPath.endsWith("/") || libraryPath.endsWith("\\")) {
-          libraryPath = libraryPath.substring(0, libraryPath.length()-1);
+          libraryPath = libraryPath.substring(0, libraryPath.length() - 1);
         }
-        result.add(libraryPath);
+        result.add(new LibDescriptor(libraryPath, plugin.getPluginClassLoader()));
       } catch (Throwable t) {
         LOG.error("Error instantiating language library", t);
       }

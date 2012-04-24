@@ -74,6 +74,14 @@ public class JarFileClassPathItem extends RealClassPathItem {
     return myFile;
   }
 
+  @Override
+  public boolean hasClass(String name) {
+    checkValidity();
+    ensureInitialized();
+    ZipEntry entry = myEntries.get(name);
+    return entry != null;
+  }
+
   public synchronized byte[] getClass(String name) {
     checkValidity();
     ensureInitialized();

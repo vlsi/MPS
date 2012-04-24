@@ -179,7 +179,7 @@ public class InterpretedConstraintsDataHolder extends ConstraintsDataHolder {
     if (language == null) {
       return null;
     }
-    SModelDescriptor sm = language.getConstraintsModelDescriptor();
+    SModelDescriptor sm = LanguageAspect.CONSTRAINTS.get(language);
     if (sm == null) return null;
     SNode root = SModelOperations.getRootByName(sm.getSModel(), rootName);
     if (root == null) return null;
