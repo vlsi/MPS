@@ -17,4 +17,4 @@ fi
 
 mkdir $mps_home/help
 export ANT_OPTS=-Xmx1024m
-ant -f MPS-distribution.xml -Dmps_home=$mps_home -Dbuild.number=MPS-0 -Dversion=SNAPSHOT -Dbuild.vcs.number=222 -Dteamcity.buildConfName=Local
+ant -f MPS-distribution.xml -Dmps_home=$mps_home -Dbuild.number=7777 "-Dversion=2.1 EAP" -Dbuild.vcs.number=HEAD -Dteamcity.buildConfName=local
