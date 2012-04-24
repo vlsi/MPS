@@ -185,6 +185,7 @@ public class CommonPaths {
   private static void addWorkbenchJars(CompositeClassPathItem result) {
     addIfExists(result, "/lib/mps-workbench.jar");
     addIfExists(result, "/lib/junit-4.8.2.jar");
+    addIfExists(result, "/lib/beansbinding-1.2.1.jar");
   }
 
   private static void addTestJars(CompositeClassPathItem result) {
