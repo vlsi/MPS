@@ -1254,12 +1254,20 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     updated yet.
    */
   private boolean isInvalid() {
-    return getEditorContext() == null ||
-      getEditedNode() == null ||
-      getEditedNode().isDisposed() ||
+    return isInvalidLightweight() ||
       getEditedNode().getModel() == null ||
       getEditedNode().getModel().isDisposed() ||
       getEditedNode().getModel().getModelDescriptor() == null;
+  }
+
+  /*
+    Lightweight check for editor validity state. Similar to isInvalid,
+    but can be called outside of read action.
+   */
+  private boolean isInvalidLightweight() {
+    return getEditorContext() == null ||
+      getEditedNode() == null ||
+      getEditedNode().isDisposed();
   }
 
   private void addOurListeners(@NotNull SModelDescriptor sm) {
@@ -3111,12 +3119,18 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
 
   private class MyCutProvider implements CutProvider {
-    public void performCut(DataContext dataContext) {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    public void performCut(@NotNull DataContext dataContext) {
+      ModelAccess.instance().runCommandInEDT(new Runnable() {
+        @Override
         public void run() {
+          if (isDisposed() || isInvalid() || isReadOnly()) {
+            return;
+          }
           EditorCell selectedCell = getSelectedCell();
           if (selectedCell != null) {
-            selectedCell.executeAction(CellActionType.CUT);
+            if (selectedCell.canExecuteAction(CellActionType.CUT)) {
+              selectedCell.executeAction(CellActionType.CUT);
+            }
           } else {
             getSelectionManager().getSelection().executeAction(CellActionType.CUT);
           }
@@ -3124,30 +3138,31 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }, getCurrentProject());
     }
 
-    public boolean isCutEnabled(DataContext dataContext) {
-      return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-        public Boolean compute() {
-          if (isDisposed() || isInvalid() || isReadOnly()) {
-            return false;
-          }
-          EditorCell selectedCell = getSelectedCell();
-          return selectedCell != null ? selectedCell.canExecuteAction(CellActionType.CUT) : getSelectionManager().getSelection() != null;
-        }
-      });
+    public boolean isCutEnabled(@NotNull DataContext dataContext) {
+      return !isDisposed() &&
+        !isInvalidLightweight() &&
+        !isReadOnly() &&
+        getSelectionManager().getSelection() != null;
     }
 
-    public boolean isCutVisible(DataContext dataContext) {
+    public boolean isCutVisible(@NotNull DataContext dataContext) {
       return true;
     }
   }
 
   private class MyCopyProvider implements CopyProvider {
-    public void performCopy(DataContext dataContext) {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    public void performCopy(@NotNull DataContext dataContext) {
+      ModelAccess.instance().runCommandInEDT(new Runnable() {
+        @Override
         public void run() {
+          if (isDisposed() || isInvalid()) {
+            return;
+          }
           EditorCell selectedCell = getSelectedCell();
           if (selectedCell != null) {
-            selectedCell.executeAction(CellActionType.COPY);
+            if (selectedCell.canExecuteAction(CellActionType.COPY)) {
+              selectedCell.executeAction(CellActionType.COPY);
+            }
           } else {
             getSelectionManager().getSelection().executeAction(CellActionType.COPY);
           }
@@ -3155,30 +3170,30 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }, getCurrentProject());
     }
 
-    public boolean isCopyEnabled(DataContext dataContext) {
-      return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-        public Boolean compute() {
-          if (isDisposed() || isInvalid()) {
-            return false;
-          }
-          EditorCell selectedCell = getSelectedCell();
-          return selectedCell != null ? selectedCell.canExecuteAction(CellActionType.COPY) : getSelectionManager().getSelection() != null;
-        }
-      });
+    public boolean isCopyEnabled(@NotNull DataContext dataContext) {
+      return !isDisposed() &&
+        !isInvalidLightweight() &&
+        getSelectionManager().getSelection() != null;
     }
 
-    public boolean isCopyVisible(DataContext dataContext) {
+    public boolean isCopyVisible(@NotNull DataContext dataContext) {
       return true;
     }
   }
 
   private class MyPasteProvider implements PasteProvider {
-    public void performPaste(DataContext dataContext) {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    public void performPaste(@NotNull DataContext dataContext) {
+      ModelAccess.instance().runCommandInEDT(new Runnable() {
+        @Override
         public void run() {
+          if (isDisposed() || isInvalid() || isReadOnly()) {
+            return;
+          }
           EditorCell selectedCell = getSelectedCell();
           if (selectedCell != null) {
-            selectedCell.executeAction(CellActionType.PASTE);
+            if (selectedCell.canExecuteAction(CellActionType.PASTE)) {
+              selectedCell.executeAction(CellActionType.PASTE);
+            }
           } else {
             getSelectionManager().getSelection().executeAction(CellActionType.PASTE);
           }
@@ -3186,20 +3201,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }, getCurrentProject());
     }
 
-    public boolean isPastePossible(DataContext dataContext) {
-      //this write action is needed because inside of it we can be waiting for buffer, which leads to MPS-14851
-      return ModelAccess.instance().runWriteAction(new Computable<Boolean>() {
-        public Boolean compute() {
-          if (isDisposed() || isInvalid() || isReadOnly()) {
-            return false;
-          }
-          EditorCell selectedCell = getSelectedCell();
-          return selectedCell != null ? selectedCell.canExecuteAction(CellActionType.PASTE) : getSelectionManager().getSelection() != null;
-        }
-      });
+    public boolean isPastePossible(@NotNull DataContext dataContext) {
+      return !isDisposed() &&
+        !isInvalidLightweight() &&
+        !isReadOnly() &&
+        getSelectionManager().getSelection() != null;
     }
 
-    public boolean isPasteEnabled(DataContext dataContext) {
+    public boolean isPasteEnabled(@NotNull DataContext dataContext) {
       return true;
     }
   }
