@@ -19,7 +19,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -72,7 +73,7 @@ public class ChangeMethodSignatureDialog extends RefactoringDialog {
           ChangeMethodSignatureDialog.this.myEditor.addLanguageStructureModel((Language) module);
         }
         IModule m = ChangeMethodSignatureDialog.this.myOperationContext.getModule();
-        for (Language language : SetSequence.fromSet(m.getDependenciesManager().getAllUsedLanguages())) {
+        for (Language language : CollectionSequence.fromCollection(new GlobalModuleDependenciesManager(m).getUsedLanguages())) {
           ChangeMethodSignatureDialog.this.myEditor.addLanguage(language);
         }
         SModel model = ChangeMethodSignatureDialog.this.myDeclaration.getModel();

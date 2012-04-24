@@ -17,6 +17,7 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -75,7 +76,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
   }
 
   private void registerLanguageKeyMaps(Language language) {
-    SModelDescriptor editorModelDescriptor = language.getEditorModelDescriptor();
+    SModelDescriptor editorModelDescriptor = LanguageAspect.EDITOR.get(language);
     SModel editorModel = (editorModelDescriptor != null ?
       editorModelDescriptor.getSModel() :
       null

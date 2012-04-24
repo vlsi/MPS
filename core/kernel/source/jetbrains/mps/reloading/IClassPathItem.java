@@ -27,6 +27,9 @@ import java.util.Set;
  * @author Kostik
  */
 public interface IClassPathItem {
+  //this is for performance reasons
+  boolean hasClass(String name);
+  
   @Nullable
   byte[] getClass(String name);
 

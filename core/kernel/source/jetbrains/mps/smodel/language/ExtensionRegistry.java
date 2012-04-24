@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.ClassLoadingModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -180,14 +181,17 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
         return null;
       }
 
+      if (!(module instanceof ClassLoadingModule)) return null;
+      ClassLoadingModule clm  = ((ClassLoadingModule) module);
+
       if (avoidLogErrors) {
-        ClassLoader cl = ClassLoaderManager.getInstance().getClassLoaderFor(module, false);
+        ClassLoader cl = clm.getClassLoader();
         if (cl == null) {
           return null;
         }
       }
 
-      Class clazz = module.getClass(className);
+      Class clazz = clm.getClass(className);
       if (clazz == null) {
         return null;
       }

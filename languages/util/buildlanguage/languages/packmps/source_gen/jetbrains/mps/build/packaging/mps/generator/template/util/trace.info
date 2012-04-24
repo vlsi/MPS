@@ -57,7 +57,7 @@
     <nodeInfo nodeId="3583849467508042522" fileName="CheckUtil.java" startLine="49" startPosition="99" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3583849467508048947" fileName="CheckUtil.java" startLine="107" startPosition="100" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3583849467508049033" fileName="CheckUtil.java" startLine="69" startPosition="0" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3583849467508049088" fileName="CheckUtil.java" startLine="89" startPosition="110" endLine="101" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3583849467508049088" fileName="CheckUtil.java" startLine="89" startPosition="133" endLine="101" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3583849467508049085" fileName="CheckUtil.java" startLine="88" startPosition="72" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3583849467508042421" fileName="CheckUtil.java" startLine="42" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkSamples#()V" />
     <nodeInfo nodeId="3583849467508042435" fileName="CheckUtil.java" startLine="105" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkIncludedLanguage#()V" />
@@ -107,8 +107,8 @@
       <varInfo nodeId="3583849467508042512" varName="sampleModules" />
       <varInfo nodeId="3583849467508042504" varName="samplesPath" />
     </scopeInfo>
-    <scopeInfo nodeId="3583849467508049087" fileName="CheckUtil.java" startLine="89" startPosition="110" endLine="101" endPosition="9" />
-    <scopeInfo nodeId="3583849467508049088" fileName="CheckUtil.java" startLine="89" startPosition="110" endLine="101" endPosition="9">
+    <scopeInfo nodeId="3583849467508049087" fileName="CheckUtil.java" startLine="89" startPosition="133" endLine="101" endPosition="9" />
+    <scopeInfo nodeId="3583849467508049088" fileName="CheckUtil.java" startLine="89" startPosition="133" endLine="101" endPosition="9">
       <varInfo nodeId="3583849467508049088" varName="mr" />
     </scopeInfo>
     <scopeInfo nodeId="3583849467508049085" fileName="CheckUtil.java" startLine="88" startPosition="72" endLine="102" endPosition="7">

@@ -24,7 +24,6 @@ import java.net.URL;
 import java.net.URI;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.project.StubPath;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.AbstractModule;
@@ -134,13 +133,13 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     } catch (Throwable e) {
     }
     Language testsLanguage = (Language) SNodeOperations.getModel(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodesTestCase")).getModelDescriptor().getModule();
-    for (StubPath path : CollectionSequence.fromCollection(testsLanguage.getRuntimeStubPaths())) {
-      ListSequence.fromList(result).addElement(path.getPath());
+    for (String path : CollectionSequence.fromCollection(testsLanguage.getRuntimeStubPaths())) {
+      ListSequence.fromList(result).addElement(path);
     }
     for (ModuleReference dep : CollectionSequence.fromCollection(testsLanguage.getRuntimeModulesReferences())) {
       AbstractModule module = (AbstractModule) MPSModuleRepository.getInstance().getModule(dep);
-      for (StubPath path : CollectionSequence.fromCollection(module.getStubPaths())) {
-        ListSequence.fromList(result).addElement(path.getPath());
+      for (String path : CollectionSequence.fromCollection(module.getStubPaths())) {
+        ListSequence.fromList(result).addElement(path);
       }
     }
     ListSequence.fromList(result).addSequence(ListSequence.fromList(getPluginClasspath()));

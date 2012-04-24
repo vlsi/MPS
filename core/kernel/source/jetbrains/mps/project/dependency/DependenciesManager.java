@@ -22,34 +22,19 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Set;
 
 public interface DependenciesManager {
-
-  /*
-   *  Transitive closure of all used langs + langs exported from used devkits and all langs being extended by those.
+  /**
+   * All languages in scope of this module
    */
-  Set<Language> getAllUsedLanguages();
+  void collectUsedLanguages(Set<Language> languages);
 
-  /*
-   *  Visible modules, respecting re-export dependencies & solutions exported from used devkits (
+  /**
+   * Collects all visible modules (including current).
    */
-  Set<IModule> getAllVisibleModules();
+  public void collectModules(Set<IModule> reexpRes, Set<IModule> nonReexpRes,boolean runtimes, Reexports reexports);
 
-  /*
-   *  All modules required for compilation (including languages with runtime stub paths)
-   */
-  Set<IModule> getAllRequiredModules();
-
-  /*
-   *  Only direct dependencies, required for compilation.
-   */
-  Set<IModule> getRequiredModules();
-
-  /*
-   *  Collects all visible modules (including current).
-   */
-  void collectVisibleModules(/* out */ Set<IModule> dependencies, boolean reexportOnly);
-
-  /*
-   *  Collects all modules required for compilation + languages with runtime stub paths
-   */
-  void collectAllCompileTimeDependencies(/* out */ Set<IModule> dependencies, /* out */ Set<Language> languagesWithRuntime);
+  public enum Reexports {
+    DONT_RESPECT,
+    ALL_WITH_RESPECT,
+    REEXPORTED_ONLY
+  }
 }

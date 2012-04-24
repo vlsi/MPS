@@ -276,6 +276,7 @@
       <modulePath path="${project}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.sandbox/jetbrains.mps.execution.sandbox.msd" folder="languages.execution" />
       <modulePath path="${project}/languages/util/ui/languages/gwt/gwt.mpl" folder="languages.ui" />
       <modulePath path="${project}/languages/util/ui/languages/gwt/solutions/pluginSolution/pluginSolution.msd" folder="languages.ui" />
+      <modulePath path="${project}/languages/util/ui/languages/gwt/solutions/runtime/runtime.msd" folder="languages.ui" />
       <modulePath path="${project}/languages/util/ui/languages/internal/internal.mpl" folder="languages.ui" />
       <modulePath path="${project}/languages/util/ui/languages/meta/meta.mpl" folder="languages.ui" />
       <modulePath path="${project}/languages/util/ui/languages/meta/solutions/pluginSolution/pluginSolution.msd" folder="languages.ui" />
@@ -304,6 +305,7 @@
       <modulePath path="${project}/languages/util/xmlDeprecated/languageDescriptor.mpl" folder="languages.xml" />
       <modulePath path="${project}/languages/util/xmlDeprecated/solutions/jetbrains.mps.xml.sandbox/jetbrains.mps.xml.sandbox.msd" folder="languages.xml" />
       <modulePath path="${project}/languages/util/xmlDeprecated/solutions/pluginSolution/pluginSolution.msd" folder="languages.xml" />
+      <modulePath path="${project}/languages/util/xmlUnitTest/languages/xmlUnitTest/solutions/runtime/runtime.msd" folder="languages.xml" />
       <modulePath path="${project}/languages/util/xmlUnitTest/languages/xmlUnitTest/xmlUnitTest.mpl" folder="languages.xml" />
       <modulePath path="${project}/languages/util/xmlUnitTest/solutions/jetbrains.mps.xmlUnitTest.sandbox/jetbrains.mps.xmlUnitTest.sandbox.msd" folder="languages.xml" />
       <modulePath path="${project}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/jetbrains.mps.ypath.runtime.msd" folder="languages.ypath" />

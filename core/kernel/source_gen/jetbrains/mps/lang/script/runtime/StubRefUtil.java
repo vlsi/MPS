@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -108,7 +109,7 @@ public class StubRefUtil {
       IModule sourceModule = check_4tnolf_a0d0a0o(model.getModelDescriptor());
       IModule targetModule = check_4tnolf_a0e0a0o(SModelRepository.getInstance().getModelDescriptor(targetModelRef));
       if (sourceModule != null && targetModule != null) {
-        if (!(sourceModule.getDependenciesManager().getAllVisibleModules().contains(targetModule))) {
+        if (!(new GlobalModuleDependenciesManager(sourceModule).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE).contains(targetModule))) {
           sourceModule.addDependency(targetModule.getModuleReference(), false);
         }
       }

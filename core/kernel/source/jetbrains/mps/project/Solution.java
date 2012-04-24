@@ -25,22 +25,20 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CommonPaths;
-import jetbrains.mps.runtime.BytecodeLocator;
-import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.runtime.ModuleClassLoader;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
-import java.net.URL;
 import java.util.*;
 
 /**
  * Igor Alshannikov
  * Aug 26, 2005
  */
-public class Solution extends AbstractModule {
+public class Solution extends ClassLoadingModule {
   private SolutionDescriptor mySolutionDescriptor;
   public static final String SOLUTION_MODELS = "models";
 
@@ -115,8 +113,8 @@ public class Solution extends AbstractModule {
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     }
 
-    invalidateDependencies();
     invalidateCaches();
+    invalidateDependencies();
   }
 
   public void save() {
@@ -160,18 +158,15 @@ public class Solution extends AbstractModule {
   }
 
   @Override
-  public Collection<StubPath> getOwnStubPaths() {
+  public Collection<String> getOwnStubPaths() {
     if (isPackaged()) {
-      return Collections.singletonList(
-        new StubPath(
-          FileSystem.getInstance().getBundleHome(getDescriptorFile()).getPath(),
-          LanguageID.JAVA_MANAGER));
+      return Collections.singletonList(FileSystem.getInstance().getBundleHome(getDescriptorFile()).getPath());
     }
 
     if (!isCompileInMPS()) {
       IFile classes = ProjectPathUtil.getClassesFolder(getDescriptorFile());
       if (classes != null && classes.exists()) {
-        return Collections.singletonList(new StubPath(classes.getPath(), LanguageID.JAVA_MANAGER));
+        return Collections.singletonList(classes.getPath());
       }
       return Collections.emptyList();
     }
@@ -207,26 +202,11 @@ public class Solution extends AbstractModule {
     return (SolutionDescriptor) ModulesMiner.getInstance().loadModuleDescriptor(file);
   }
 
-  public BytecodeLocator getBytecodeLocator() {
-    return new ModuleBytecodeLocator() {
-      public byte[] find(String fqName) {
-        if (!canLoad()) return null;
-        return super.find(fqName);
-      }
+  public boolean canLoadFromSelf(){
+    return getModuleDescriptor().getCompileInMPS();
+  }
 
-      public URL findResource(String name) {
-        if (!canLoad()) return null;
-        return super.findResource(name);
-      }
-
-      private boolean canLoad() {
-        return
-          getModuleDescriptor().getCompileInMPS() &&
-            (
-              MPSCore.getInstance().isTestMode() ||
-                getModuleDescriptor().getKind() != SolutionKind.NONE
-            );
-      }
-    };
+  public boolean canLoad() {
+    return MPSCore.getInstance().isTestMode() || getModuleDescriptor().getKind() != SolutionKind.NONE;
   }
 }

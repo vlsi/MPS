@@ -23,6 +23,7 @@ import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.make.*;
+import jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;
 import jetbrains.mps.library.contributor.PluginLibrariesContributor;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.util.misc.hash.HashSet;
@@ -67,8 +68,8 @@ public class MainMakeTests extends AbstractMakeTest {
         new File(myModule.getProject().getBaseDir().getPath()), false);
 
     PluginLibrariesContributor pluginLibContributor = ApplicationManager.getApplication().getComponent(PluginLibrariesContributor.class);
-    for (String library : pluginLibContributor.getLibraries()) {
-      makeConfiguration.addConfiguredLibrary(library, new File(library), false);
+    for (LibDescriptor library : pluginLibContributor.getLibraries()) {
+      makeConfiguration.addConfiguredLibrary(library.path, new File(library.path), false);
     }
 
     MPSMakeLauncher gl = new MPSMakeLauncher(makeConfiguration, myModule.getProject());

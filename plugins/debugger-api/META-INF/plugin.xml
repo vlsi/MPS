@@ -76,6 +76,5 @@
     <executor implementation="com.intellij.execution.executors.DefaultDebugExecutor" order="after run" id="debug"/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
     <mps.LanguageLibrary dir=""/>
-    <mps.PluginBundle/>
   </extensions>
 </idea-plugin>

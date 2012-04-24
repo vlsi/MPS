@@ -17,19 +17,16 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.StubPath;
+import jetbrains.mps.project.*;
+import jetbrains.mps.project.dependency.GeneratorDependenciesManager;
+import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
-import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.vfs.IFile;
 
-import java.net.URL;
 import java.util.*;
 
-public class Generator extends AbstractModule {
+public class Generator extends ClassLoadingModule {
   public static final Logger LOG = Logger.getLogger(Generator.class);
 
   private Language mySourceLanguage;
@@ -54,6 +51,10 @@ public class Generator extends AbstractModule {
 
     upgradeGeneratorDescriptor();
     reloadAfterDescriptorChange();
+  }
+
+  public String getPluginPath() {
+    return getSourceLanguage().getPluginPath();
   }
 
   private void upgradeGeneratorDescriptor() {
@@ -108,7 +109,7 @@ public class Generator extends AbstractModule {
   }
 
   @Override
-  public Collection<StubPath> getStubPaths() {
+  public Collection<String> getStubPaths() {
     return getSourceLanguage().getRuntimeStubPaths();
   }
 
@@ -170,27 +171,18 @@ public class Generator extends AbstractModule {
 
   public List<Dependency> getDependencies() {
     List<Dependency> result = super.getDependencies();
-    Dependency dep = new Dependency();
-    dep.setModuleRef(mySourceLanguage.getModuleReference());
-    dep.setReexport(false);
-    result.add(dep);
-
-    for (ModuleReference refGenerator : getReferencedGeneratorUIDs()) {
-      Dependency depLocal = new Dependency();
-      depLocal.setModuleRef(refGenerator);
-      depLocal.setReexport(false);
-      result.add(depLocal);
-    }
-
     for (ModuleReference ref : getSourceLanguage().getRuntimeModulesReferences()) {
       result.add(new Dependency(ref, false));
     }
     return result;
   }
 
+  public ModuleDependenciesManager getDependenciesManager() {
+    return new GeneratorDependenciesManager(this);
+  }
+
   public List<ModuleReference> getReferencedGeneratorUIDs() {
     return new ArrayList<ModuleReference>(myGeneratorDescriptor.getDepGenerators());
-
   }
 
   public List<Generator> getReferencedGenerators() {
@@ -244,18 +236,18 @@ public class Generator extends AbstractModule {
       result.add(structureModelDescriptor);
     }
 
-    SModelDescriptor constraints = getSourceLanguage().getConstraintsModelDescriptor();
+    SModelDescriptor constraints = LanguageAspect.CONSTRAINTS.get(getSourceLanguage());
     if (constraints != null) {
       result.add(constraints);
     }
 
-    for (Language language : getSourceLanguage().getExtendedLanguages()) {
+    for (Language language : ModuleUtil.refsToLanguages(getSourceLanguage().getExtendedLanguageRefs())) {
       SModelDescriptor structure = language.getStructureModelDescriptor();
       if (structure != null) {
         result.add(structure);
       }
 
-      SModelDescriptor constr = language.getConstraintsModelDescriptor();
+      SModelDescriptor constr = LanguageAspect.CONSTRAINTS.get(language);
       if (constr != null) {
         result.add(constr);
       }
@@ -275,28 +267,12 @@ public class Generator extends AbstractModule {
     return mySourceLanguage.getClass(fqName);
   }
 
-  public BytecodeLocator getBytecodeLocator() {
-    return new BytecodeLocator() {
-      public byte[] find(String fqName) {
-        return null;
-      }
-
-      public URL findResource(String name) {
-        return null;
-      }
-
-      @Override
-      public String findLibrary(String name) {
-        return null;
-      }
-    };
-  }
-
   public Collection<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
     Set<Language> result = new LinkedHashSet<Language>(super.getImplicitlyImportedLanguages(sm));
     if (SModelStereotype.isGeneratorModel(sm)) {
       result.add(getSourceLanguage());
-      result.addAll(getSourceLanguage().getExtendedLanguages());
+
+      result.addAll(ModuleUtil.refsToLanguages(getSourceLanguage().getExtendedLanguageRefs()));
     }
     return result;
   }

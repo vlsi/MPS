@@ -16,9 +16,9 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -27,7 +27,9 @@ import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 public class LanguageValidator extends BaseModuleValidator<Language> {
   public LanguageValidator(Language module) {
@@ -35,7 +37,8 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
   }
 
   public static boolean checkCyclicInheritance(Language lang) {
-    List<Language> frontier = lang.getExtendedLanguages();
+
+    List<Language> frontier = ModuleUtil.refsToLanguages(lang.getExtendedLanguageRefs());
     ArrayList<Language> passed = new ArrayList<Language>();
     while (!frontier.isEmpty()) {
       List<Language> newFrontier = new ArrayList<Language>();
@@ -44,7 +47,8 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
           return false;
         }
         if (!passed.contains(extendedLang)) {
-          newFrontier.addAll(extendedLang.getExtendedLanguages());
+
+          newFrontier.addAll(ModuleUtil.refsToLanguages(extendedLang.getExtendedLanguageRefs()));
         }
         passed.add(extendedLang);
       }
@@ -54,7 +58,10 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
   }
 
   public static void checkBehaviorAspectPresence(Language lang, List<String> errors) {
-    for (Language language : lang.getAllExtendedLanguages()) {
+    Set<Language> ext = new LinkedHashSet<Language>();
+    lang.getDependenciesManager().collectAllExtendedLanguages(ext);
+
+    for (Language language : ext) {
       EditableSModelDescriptor descriptor = LanguageAspect.BEHAVIOR.get(language);
       if (descriptor == null) {
         if (lang == language)

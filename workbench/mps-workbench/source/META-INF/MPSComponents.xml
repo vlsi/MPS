@@ -186,10 +186,6 @@
     <component>
       <implementation-class>jetbrains.mps.workbench.structureview.NodeStructureViewProviderImpl</implementation-class>
     </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.ideaPlugins.PluginBundleInstaller</implementation-class>
-    </component>
   </application-components>
 
   <project-components>

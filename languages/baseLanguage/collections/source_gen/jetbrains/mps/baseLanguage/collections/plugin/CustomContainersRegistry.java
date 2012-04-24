@@ -13,11 +13,10 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
-import java.util.Set;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SModelDescriptor;
 
 public class CustomContainersRegistry {
@@ -46,13 +45,13 @@ public class CustomContainersRegistry {
     List<SNode> res = new ArrayList<SNode>();
     IModule om = this.getOwningModule(fromModel);
     if (om != null) {
-      final Set<IModule> allVisibleModules = om.getDependenciesManager().getAllVisibleModules();
-      final Set<Language> allUsedLanguages = om.getDependenciesManager().getAllUsedLanguages();
+      final Iterable<IModule> allVisibleModules = new GlobalModuleDependenciesManager(om).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE);
+      final Iterable<Language> allUsedLanguages = new GlobalModuleDependenciesManager(om).getUsedLanguages();
       Iterable<SNode> allCustomContainers = this.primAllCustomContainers();
       ListSequence.fromList(res).addSequence(Sequence.fromIterable(allCustomContainers).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode cc) {
           IModule owner = CustomContainersRegistry.this.getOwningModule(SNodeOperations.getModel(cc));
-          return SetSequence.fromSet(allVisibleModules).contains(owner) || (owner instanceof Language && SetSequence.fromSet(allUsedLanguages).contains((Language) owner));
+          return Sequence.fromIterable(allVisibleModules).contains(owner) || (owner instanceof Language && Sequence.fromIterable(allUsedLanguages).contains((Language) owner));
         }
       }).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode cc) {

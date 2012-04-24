@@ -47,7 +47,7 @@ public class GoToEditorDeclarationHelper {
   }
 
   public static SModelDescriptor getOrCreateEditorAspect(final Language language, final SNode concept, final IScope scope) {
-    final SModelDescriptor languageEditor = language.getEditorModelDescriptor();
+    final SModelDescriptor languageEditor = LanguageAspect.EDITOR.get(language);
     if (languageEditor != null) {
       return languageEditor;
     }
@@ -59,10 +59,10 @@ public class GoToEditorDeclarationHelper {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         LanguageAspect.EDITOR.createNew(language);
-        GoToEditorDeclarationHelper.createEditorDeclaration(concept, language.getEditorModelDescriptor(), scope);
+        GoToEditorDeclarationHelper.createEditorDeclaration(concept, LanguageAspect.EDITOR.get(language), scope);
       }
     });
-    return language.getEditorModelDescriptor();
+    return LanguageAspect.EDITOR.get(language);
   }
 
   public static SNode findEditorDeclaration(SModel editorModel, final SNode conceptDeclaration) {

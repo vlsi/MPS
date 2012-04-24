@@ -18,5 +18,15 @@ package jetbrains.mps.library.contributor;
 import java.util.Set;
 
 public interface LibraryContributor {
-  public Set<String> getLibraries();
+  public Set<LibDescriptor> getLibraries();
+
+  public class LibDescriptor{
+    public String path;
+    public ClassLoader parentLoader;
+
+    public LibDescriptor(String libraryPath, ClassLoader loader) {
+      path = libraryPath;
+      parentLoader = loader;
+    }
+  }
 }

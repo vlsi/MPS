@@ -16,7 +16,8 @@
 package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.project.ModuleUtil;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.smodel.Language;
 
 import java.util.Set;
@@ -26,20 +27,20 @@ public class LanguageDependenciesManager extends ModuleDependenciesManager<Langu
     super(language);
   }
 
-  @Override
-  public Set<IModule> getRequiredModules() {
-    final Set<IModule> result = super.getRequiredModules();
-    result.add(BootstrapLanguages.coreLanguage());
-    return result;
+  public void collectAllExtendedLanguages(Set<Language> result) {
+    if (result.contains(myModule)) return;
+
+    result.add(myModule);
+
+    for (Language l : ModuleUtil.refsToLanguages(myModule.getExtendedLanguageRefs())) {
+      l.getDependenciesManager().collectAllExtendedLanguages(result);
+    }
   }
 
   @Override
-  public void collectAllCompileTimeDependencies(Set<IModule> dependencies, Set<Language> languagesWithRuntime) {
-    super.collectAllCompileTimeDependencies(dependencies, languagesWithRuntime);
-
-    Language core = BootstrapLanguages.coreLanguage();
-    if(!dependencies.contains(core)) {
-      core.getDependenciesManager().collectAllCompileTimeDependencies(dependencies, languagesWithRuntime);
-    }
+  protected void collectUsedModules(boolean runtimes, Set<IModule> reexported, Set<IModule> nonReexported) {
+    super.collectUsedModules(runtimes, reexported, nonReexported);
+    //todo this needs to be reviewed when we understand what is the extended language (after moving generator out and getting rid of extended language dependency in generator case)
+    collectAllExtendedLanguages((Set<Language>) (Set)nonReexported);
   }
 }

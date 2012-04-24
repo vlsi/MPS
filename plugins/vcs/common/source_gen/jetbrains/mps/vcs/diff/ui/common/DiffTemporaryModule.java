@@ -41,10 +41,6 @@ public class DiffTemporaryModule extends AbstractModule {
     myProject = project;
   }
 
-  public Class getClass(String fqName) {
-    return null;
-  }
-
   public ModuleDescriptor getModuleDescriptor() {
     return null;
   }

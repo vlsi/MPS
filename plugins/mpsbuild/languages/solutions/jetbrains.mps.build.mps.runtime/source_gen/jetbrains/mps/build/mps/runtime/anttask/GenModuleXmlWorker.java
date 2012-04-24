@@ -22,8 +22,8 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import java.util.Collection;
 import java.io.IOException;
-import jetbrains.mps.project.dependency.DependenciesManager;
-import java.util.Set;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import java.io.File;
 
 public class GenModuleXmlWorker extends MpsWorker {
@@ -113,26 +113,20 @@ public class GenModuleXmlWorker extends MpsWorker {
     }
   }
 
-  private Collection<IModule> getDepenencies(IModule module) {
-    final DependenciesManager depManager = check_7yxogc_a0a0f(module);
-    if (depManager == null) {
+  private Collection<IModule> getDepenencies(final IModule module) {
+    if (module == null) {
       return null;
     }
-    return ModelAccess.instance().runReadAction(new Computable<Set<IModule>>() {
-      public Set<IModule> compute() {
-        return depManager.getAllRequiredModules();
+    final Wrappers._T<Collection<IModule>> res = new Wrappers._T<Collection<IModule>>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        res.value = new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.COMPILE);
       }
     });
+    return res.value;
   }
 
   public static void main(String[] args) {
     new GenModuleXmlWorker(WhatToDo.fromDumpInFile(new File(args[0])), new MpsWorker.LogLogger()).workFromMain();
-  }
-
-  private static DependenciesManager check_7yxogc_a0a0f(IModule checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getDependenciesManager();
-    }
-    return null;
   }
 }
