@@ -79,7 +79,6 @@
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.unittest/jetbrains.mps.baseLanguage.unittest.msd" folder="baseLanguage.unitTest" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/util.msd" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/pluginSolution/pluginSolution.msd" folder="baseLanguage" />
-      <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/runtime/runtime.msd" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpl" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/blTypes/blTypes.mpl" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/checkDot/languages/checkedDots/checkedDots.mpl" folder="baseLanguage.checkedDots" />
@@ -109,7 +108,6 @@
       <modulePath path="${project}/languages/baseLanguage/jdk7/languages/jdk7/jdk7.mpl" folder="baseLanguage.jdk7" />
       <modulePath path="${project}/languages/baseLanguage/jdk7/solutions/jetbrains.mps.baseLanguage.jdk7.sandbox/jetbrains.mps.baseLanguage.jdk7.sandbox.msd" folder="baseLanguage.jdk7" />
       <modulePath path="${project}/languages/baseLanguage/logging/logging.mpl" folder="baseLanguage" />
-      <modulePath path="${project}/languages/baseLanguage/logging/solutions/runtime/runtime.msd" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/overloadedOperators.mpl" folder="baseLanguage.overloadedOperators" />
       <modulePath path="${project}/languages/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/jetbrains.mps.baseLanguage.overloadedOperators.sandbox.msd" folder="baseLanguage.overloadedOperators" />
       <modulePath path="${project}/languages/baseLanguage/tuples/languages/tuples/tuples.mpl" folder="baseLanguage.tuples" />
@@ -193,7 +191,6 @@
       <modulePath path="${project}/languages/languageDesign/smodel/solutions/typetest/smodelLanguage_typetest.msd" folder="core.smodel" />
       <modulePath path="${project}/languages/languageDesign/structure/languageDescriptor.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/structure/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
-      <modulePath path="${project}/languages/languageDesign/structure/solutions/runtime/runtime.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/stubs/stubs.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/jetbrains.mps.lang.test.runtime.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/test/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
