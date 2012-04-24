@@ -678,7 +678,10 @@ public class ModuleLoader {
           report("jar stub library should be extracted into build script: " + relPath, myOriginalModule);
         }
       } else {
-        report("only jar stub libraries are supported, found: " + path, myOriginalModule);
+        if (!(path.contains("execution")) && !(path.contains("debugger"))) {
+          // FIXME hack was added to make both old and new builds work; REMOVE! 
+          report("only jar stub libraries are supported, found: " + path, myOriginalModule);
+        }
       }
     }
 
@@ -758,7 +761,10 @@ public class ModuleLoader {
         SLinkOperations.setTarget(extr, "dependency", jar, true);
         ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).addElement(extr);
       } else {
-        report("only jar stub libraries are supported, found: " + path, myOriginalModule);
+        if (!(path.contains("plugins/execution")) && !(path.contains("plugins/debugger"))) {
+          // FIXME hack was added to make both old and new builds work; REMOVE! 
+          report("only jar stub libraries are supported, found: " + path, myOriginalModule);
+        }
       }
     }
   }

@@ -17,7 +17,6 @@ import org.junit.runner.JUnitCore;
 import java.io.PrintStream;
 import org.junit.runner.notification.RunListener;
 import org.junit.runner.Description;
-import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
 import org.junit.runner.notification.Failure;
 
 public class TestRunner {
@@ -109,37 +108,45 @@ public class TestRunner {
 
     @Override
     public void testFinished(Description description) throws Exception {
-      this.printSyncToken(TestEvent.END_TEST_PREFIX, description);
+      this.printSyncToken(("<END_TEST>"), description);
       super.testFinished(description);
     }
 
     @Override
     public void testFailure(Failure failure) throws Exception {
-      this.printSyncToken(TestEvent.ERROR_TEST_PREFIX, failure.getDescription());
+      this.printSyncToken(("<TEST_ERROR_BEGIN>"), failure.getDescription());
       failure.getException().printStackTrace(System.out);
-      this.printSyncToken(TestEvent.ERROR_TEST_SUFFIX, failure.getDescription());
+      this.printSyncToken(("<TEST_ERROR_END>"), failure.getDescription());
       super.testFailure(failure);
     }
 
     @Override
     public void testAssumptionFailure(Failure failure) {
-      this.printSyncToken(TestEvent.FAILURE_TEST_PREFIX, failure.getDescription());
+      this.printSyncToken(("<TEST_FAILURE_BEGIN>"), failure.getDescription());
       failure.getException().printStackTrace(System.out);
-      this.printSyncToken(TestEvent.FAILURE_TEST_SUFFIX, failure.getDescription());
+      this.printSyncToken(("<TEST_FAILURE_END>"), failure.getDescription());
       super.testAssumptionFailure(failure);
     }
 
     @Override
     public void testStarted(Description description) throws Exception {
-      printSyncToken(TestEvent.START_TEST_PREFIX, description);
+      printSyncToken(("<START_TEST>"), description);
       super.testStarted(description);
     }
 
     private void printSyncToken(String tokenPrefix, Description description) {
-      TestEvent testEvent = new TestEvent(tokenPrefix, description);
-      String out = testEvent.toString();
+      StringBuilder builder = new StringBuilder();
+      builder.append(tokenPrefix);
+      builder.append(description.getTestClass().getName());
+      if (description.getMethodName() != null) {
+        builder.append(':').append(description.getMethodName());
+      }
+      Runtime runtime = Runtime.getRuntime();
+      builder.append(":memory=").append(runtime.totalMemory() - runtime.freeMemory());
+      builder.append(":time=").append(System.currentTimeMillis());
+
       synchronized (this.myOutput) {
-        this.myOutput.writeCommand(out);
+        this.myOutput.writeCommand(builder.toString());
         myOutput.flushSafe();
       }
     }

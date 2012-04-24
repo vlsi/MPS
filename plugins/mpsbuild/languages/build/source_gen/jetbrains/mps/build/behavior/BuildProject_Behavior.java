@@ -15,15 +15,16 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.build.workflow.behavior.FilteringScope;
 import jetbrains.mps.scope.SimpleRoleScope;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.build.util.ScopeUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.scope.CompositeScope;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 
 public class BuildProject_Behavior {
@@ -74,7 +75,7 @@ public class BuildProject_Behavior {
     }
   }
 
-  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, final SNode child) {
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, final SNode kind, final SNode child) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.structure.BuildMacro")) {
       return BuildProject_Behavior.call_getBuildMacroScope_3767587139141108514(thisNode, child);
     } else if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaOptions")) {
@@ -92,6 +93,15 @@ public class BuildProject_Behavior {
           return StringUtils.isEmpty(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName"));
         }
       };
+    } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.structure.BuildProjectPart")) {
+      List<Scope> scopes = ListSequence.fromList(new ArrayList<Scope>());
+      ListSequence.fromList(scopes).addElement(ScopeUtil.where(ScopeUtil.simpleRoleScope(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "parts")), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
+        public Boolean invoke(SNode node) {
+          return SNodeOperations.isInstanceOf(node, INamedConcept_Behavior.call_getFqName_1213877404258(kind));
+        }
+      }));
+      ListSequence.fromList(scopes).addSequence(Sequence.fromIterable(ScopeUtil.imported(SLinkOperations.getTargets(thisNode, "dependencies", true), kind, child)));
+      return ScopeUtil.unique(new CompositeScope(ListSequence.fromList(scopes).toGenericArray(Scope.class)));
     }
     return null;
   }

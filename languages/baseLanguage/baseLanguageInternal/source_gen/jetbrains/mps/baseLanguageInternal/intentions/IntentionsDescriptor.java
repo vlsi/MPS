@@ -12,6 +12,8 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   }
 
   public void init() {
+    add(new ReplaceWithConstantValue_Intention(), "5332097447638335764");
+    add(new ReplaceWithFieldReference_Intention(), "5332097447638335653");
     add(new add_parameter_to_InternalClassifierType_Intention(), "1229871155083");
   }
 }
