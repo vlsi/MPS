@@ -46,7 +46,8 @@ public class Mps21JavaApiMigration_MigrationScript extends BaseMigrationScript {
         for (SNode arg : SLinkOperations.getTargets(node, "actualArgument", true)) {
           ListSequence.fromList(args).addElement(SNodeOperations.copyNode(arg));
         }
-        StubRefUtil.replaceNode(node, new Mps21JavaApiMigration_MigrationScript.QuotationClass_48m3zj_a1a2a4a0a0a1a0().createNode(args));
+        ListSequence.fromList(args).insertElement(1, new Mps21JavaApiMigration_MigrationScript.QuotationClass_48m3zj_a1a0c0e0a0a0b0a().createNode());
+        StubRefUtil.replaceNode(node, new Mps21JavaApiMigration_MigrationScript.QuotationClass_48m3zj_a1a3a4a0a0a1a0().createNode(args));
       }
 
       public boolean isShowAsIntention() {
@@ -55,8 +56,27 @@ public class Mps21JavaApiMigration_MigrationScript extends BaseMigrationScript {
     });
   }
 
-  public static class QuotationClass_48m3zj_a1a2a4a0a0a1a0 {
-    public QuotationClass_48m3zj_a1a2a4a0a0a1a0() {
+  public static class QuotationClass_48m3zj_a1a0c0e0a0a0b0a {
+    public QuotationClass_48m3zj_a1a0c0e0a0a0b0a() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)"), SNodeId.fromString("~Color")));
+        quotedNode1_2.addReference(SReference.create("variableDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)"), SNodeId.fromString("~Color.BLUE")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_48m3zj_a1a3a4a0a0a1a0 {
+    public QuotationClass_48m3zj_a1a3a4a0a0a1a0() {
     }
 
     public SNode createNode(Object parameter_34) {
