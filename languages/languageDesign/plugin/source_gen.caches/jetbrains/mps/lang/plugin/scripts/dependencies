@@ -43,7 +43,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.scripts.Mps21ApiMigration_MigrationScript" file="Mps21ApiMigration_MigrationScript.java">
+  <dependency className="jetbrains.mps.lang.plugin.scripts.Mps25ApiMigration_MigrationScript" file="Mps25ApiMigration_MigrationScript.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />

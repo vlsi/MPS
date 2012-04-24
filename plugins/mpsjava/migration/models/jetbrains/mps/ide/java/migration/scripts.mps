@@ -18,9 +18,9 @@
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="4397798827966744636">
-      <property name="name" nameId="tpck.1169194664001" value="Mps21JavaApiMigration" />
+      <property name="name" nameId="tpck.1169194664001" value="Mps25JavaApiMigration" />
       <property name="type" nameId="tp33.5299416737274925395" value="migration" />
-      <property name="toBuild" nameId="tp33.5299416737274925397" value="2.1" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="2.5" />
       <property name="title" nameId="tp33.1177457669450" value="Java API Migration" />
     </node>
   </roots>

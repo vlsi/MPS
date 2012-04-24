@@ -15,7 +15,7 @@
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="8980950851470048124">
       <property name="type" nameId="tp33.5299416737274925395" value="migration" />
       <property name="name" nameId="tpck.1169194664001" value="NewProcessHandlerBuilder" />
-      <property name="toBuild" nameId="tp33.5299416737274925397" value="2.1" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="2.5" />
       <property name="title" nameId="tp33.1177457669450" value="Upgrade process builder expressions" />
     </node>
   </roots>
