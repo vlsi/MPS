@@ -27,6 +27,8 @@
   <import index="pvwh" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.workbench.action(MPS.Platform/jetbrains.mps.workbench.action@java_stub)" version="-1" />
   <import index="aw8c" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.ui.components(MPS.Platform/com.intellij.ui.components@java_stub)" version="-1" />
   <import index="ofaw" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.ui.table(MPS.Platform/com.intellij.ui.table@java_stub)" version="-1" />
+  <import index="nbta" modelUID="f:java_stub#c796cd2e-cf67-4a71-88cc-e525c40895f6#org.jdesktop.swingbinding(jetbrains.mps.uiLanguage.runtime/org.jdesktop.swingbinding@java_stub)" version="-1" />
+  <import index="qm95" modelUID="f:java_stub#c796cd2e-cf67-4a71-88cc-e525c40895f6#org.jdesktop.beansbinding(jetbrains.mps.uiLanguage.runtime/org.jdesktop.beansbinding@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <roots>
@@ -2874,7 +2876,7 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1560298786499497784">
             <property name="name" nameId="tpck.1169194664001" value="tableBinding" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1560298786499497785">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="h0ln.~JTableBinding" resolveInfo="JTableBinding" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="nbta.~JTableBinding" resolveInfo="JTableBinding" />
               <node role="parameter" roleId="tpee.1109201940907" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="1560298786499497786">
                 <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="1560298786499497597" resolveInfo="T" />
               </node>
@@ -2889,11 +2891,11 @@
               </node>
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1560298786499497790">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="h0ln.~SwingBindings%dcreateJTableBinding(org%djdesktop%dbeansbinding%dAutoBinding$UpdateStrategy,java%dutil%dList,javax%dswing%dJTable)%corg%djdesktop%dswingbinding%dJTableBinding" resolveInfo="createJTableBinding" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="h0ln.~SwingBindings" resolveInfo="SwingBindings" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1560298786499497791">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="g92e.~AutoBinding$UpdateStrategy%dREAD_WRITE" resolveInfo="READ_WRITE" />
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="g92e.~AutoBinding$UpdateStrategy" resolveInfo="AutoBinding.UpdateStrategy" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="nbta.~SwingBindings" resolveInfo="SwingBindings" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nbta.~SwingBindings%dcreateJTableBinding(org%djdesktop%dbeansbinding%dAutoBinding$UpdateStrategy,java%dutil%dList,javax%dswing%dJTable)%corg%djdesktop%dswingbinding%dJTableBinding" resolveInfo="createJTableBinding" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5966619416142800468">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="qm95.~AutoBinding$UpdateStrategy%dREAD_WRITE" resolveInfo="READ_WRITE" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="qm95.~AutoBinding$UpdateStrategy" resolveInfo="AutoBinding.UpdateStrategy" />
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8692480643148204204">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1560298786499491548" resolveInfo="myList" />
@@ -2922,11 +2924,11 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1560298786499497784" resolveInfo="tableBinding" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1560298786499497808">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="h0ln.~JTableBinding%daddColumnBinding(org%djdesktop%dbeansbinding%dProperty)%corg%djdesktop%dswingbinding%dJTableBinding$ColumnBinding" resolveInfo="addColumnBinding" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nbta.~JTableBinding%daddColumnBinding(org%djdesktop%dbeansbinding%dProperty)%corg%djdesktop%dswingbinding%dJTableBinding$ColumnBinding" resolveInfo="addColumnBinding" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1560298786499497809">
                     <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1560298786499497810">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="g92e.~BeanProperty%dcreate(java%dlang%dString)%corg%djdesktop%dbeansbinding%dBeanProperty" resolveInfo="create" />
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="g92e.~BeanProperty" resolveInfo="BeanProperty" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qm95.~BeanProperty" resolveInfo="BeanProperty" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qm95.~BeanProperty%dcreate(java%dlang%dString)%corg%djdesktop%dbeansbinding%dBeanProperty" resolveInfo="create" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1560298786499497811">
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1560298786499497812">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1560298786499497802" resolveInfo="d" />
@@ -2937,7 +2939,7 @@
                       </node>
                     </node>
                     <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1560298786499497814">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="g92e.~Property" resolveInfo="Property" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="qm95.~Property" resolveInfo="Property" />
                       <node role="parameter" roleId="tpee.1109201940907" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="1560298786499497815">
                         <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="1560298786499497597" resolveInfo="T" />
                       </node>
@@ -2955,7 +2957,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1560298786499497784" resolveInfo="tableBinding" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1560298786499497820">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="g92e.~Binding%dbind()%cvoid" resolveInfo="bind" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qm95.~Binding%dbind()%cvoid" resolveInfo="bind" />
             </node>
           </node>
         </node>
