@@ -348,7 +348,7 @@
       <modulePath path="${project}/plugins/execution-languages/languages/tests/tests.msd" folder="languages.execution.languages-plugin" />
       <modulePath path="${project}/plugins/ideaIntegration/jetbrains.mps.ideaIntegration.msd" folder="plugins" />
       <modulePath path="${project}/plugins/migration/solution/jetbrains.mps.ide.migration.msd" folder="plugins" />
-      <modulePath path="${project}/plugins/migration21/solution/migration21.msd" folder="plugins" />
+      <modulePath path="${project}/plugins/migration25/solution/migration25.msd" folder="plugins" />
       <modulePath path="${project}/plugins/modelchecker/solution/jetbrains.mps.ide.modelchecker.msd" folder="plugins" />
       <modulePath path="${project}/plugins/mpsbuild/languages/build/build.mpl" folder="build" />
       <modulePath path="${project}/plugins/mpsbuild/languages/deploySolution/deploy.msd" folder="build" />
