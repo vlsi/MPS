@@ -90,7 +90,7 @@
       <fileset dir="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang-src.jar">
-      <fileset dir="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/source_gen" />
+      <fileset dir="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.debugger.api.lang-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/nanocProject.zip" />
@@ -174,7 +174,7 @@
       <fileset dir="${mps_home}/plugins/debugger-java/languages/customViewers/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/plugins/debugger-java/languages/jetbrains.mps.debugger.java.customViewers-src.jar">
-      <fileset dir="${mps_home}/plugins/debugger-java/languages/customViewers/source_gen" />
+      <fileset dir="${mps_home}/plugins/debugger-java/languages/customViewers/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.debugger.java.customViewers-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.debugger.java.evaluation.jar" />
@@ -213,7 +213,7 @@
       <fileset dir="${mps_home}/plugins/debugger-java/languages/evaluation/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/plugins/debugger-java/languages/jetbrains.mps.debugger.java.evaluation-src.jar">
-      <fileset dir="${mps_home}/plugins/debugger-java/languages/evaluation/source_gen" />
+      <fileset dir="${mps_home}/plugins/debugger-java/languages/evaluation/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.debugger.java.evaluation-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.debugger.java.privateMembers.jar" />
@@ -248,7 +248,7 @@
       <fileset dir="${mps_home}/plugins/debugger-java/languages/privateMembers/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/plugins/debugger-java/languages/jetbrains.mps.debugger.java.privateMembers-src.jar">
-      <fileset dir="${mps_home}/plugins/debugger-java/languages/privateMembers/source_gen" />
+      <fileset dir="${mps_home}/plugins/debugger-java/languages/privateMembers/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.debugger.java.privateMembers-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/debugger-java-customViewers.jar" />

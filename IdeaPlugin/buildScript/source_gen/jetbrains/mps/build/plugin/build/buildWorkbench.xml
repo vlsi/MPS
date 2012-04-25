@@ -47,7 +47,7 @@
       <fileset dir="${mps_home}/languages/languageDesign/plugin-standalone/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/ui/jetbrains.mps.lang.plugin.standalone-src.jar">
-      <fileset dir="${mps_home}/languages/languageDesign/plugin-standalone/source_gen" />
+      <fileset dir="${mps_home}/languages/languageDesign/plugin-standalone/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.plugin.standalone-src.jar" />
     </jar>
     <mkdir dir="${build.layout}/languages/util/deprecated" />
@@ -88,7 +88,7 @@
       <fileset dir="${mps_home}/languages/util/uiLanguage/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/deprecated/ui/jetbrains.mps.uiLanguage-src.jar">
-      <fileset dir="${mps_home}/languages/util/uiLanguage/source_gen" />
+      <fileset dir="${mps_home}/languages/util/uiLanguage/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.uiLanguage-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.uiLanguage.jar" />
@@ -127,7 +127,7 @@
       <fileset dir="${mps_home}/languages/util/ideUiLanguage/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/deprecated/ui/jetbrains.mps.ide.uiLanguage-src.jar">
-      <fileset dir="${mps_home}/languages/util/ideUiLanguage/source_gen" />
+      <fileset dir="${mps_home}/languages/util/ideUiLanguage/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ide.uiLanguage-src.jar" />
     </jar>
     <mkdir dir="${build.layout}/lib" />

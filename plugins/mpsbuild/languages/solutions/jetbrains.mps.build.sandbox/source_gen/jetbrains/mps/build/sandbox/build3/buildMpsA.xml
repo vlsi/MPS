@@ -4,7 +4,12 @@
   <property name="build.layout" location="${build.dir}/artifacts/buildMpsA" />
   <property name="artifacts.buildMpsB" location="${build.dir}/artifacts/buildMpsB" />
   
-  <target name="assemble" depends="classes" />
+  <target name="assemble" depends="classes, fetchDependencies">
+    <mkdir dir="${build.layout}/temp" />
+    <copy todir="${build.layout}/temp">
+      <fileset file="${build.tmp}/deps/buildMpsB/my.tar.gz/tests.msd" />
+    </copy>
+  </target>
   
   <target name="buildDependents">
     <ant antfile="jetbrains.mps.build.sandbox/samples/buildMpsB.xml" inheritAll="false" useNativeBasedir="true" />
@@ -13,6 +18,8 @@
   <target name="fetchDependencies">
     <mkdir dir="${build.tmp}/deps/buildMpsB/MpsB.zip" />
     <unzip src="${artifacts.buildMpsB}/X/MpsB.zip" dest="${build.tmp}/deps/buildMpsB/MpsB.zip" />
+    <mkdir dir="${build.tmp}/deps/buildMpsB/my.tar.gz" />
+    <untar src="${artifacts.buildMpsB}/my.tar.gz" dest="${build.tmp}/deps/buildMpsB/my.tar.gz" />
   </target>
   
   <target name="build" depends="assemble, check" />

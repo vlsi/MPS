@@ -5405,7 +5405,6 @@
   </target>
   <target name="pack.jetbrains.mps.xmlUnitTest.runtime">
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/solutions/runtime/classes_gen" />
     <mkdir dir="${deploy.dir}/MPS/languages/xml/jetbrains.mps.xmlUnitTest.runtime.jar.jtmp" />
     <echoxml file="${deploy.dir}/MPS/languages/xml/jetbrains.mps.xmlUnitTest.runtime.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.xmlUnitTest.runtime" uuid="dce9f8b9-bf49-4dd4-b00e-fe98fdfa7f2c" type="solution">
@@ -5423,7 +5422,6 @@
     <jar destfile="${deploy.dir}/MPS/languages/xml/jetbrains.mps.xmlUnitTest.runtime.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/languages/xml/jetbrains.mps.xmlUnitTest.runtime.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/solutions/runtime" includes="icons/**, resources/**" />
-      <zipfileset dir="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/solutions/runtime/classes_gen" />
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/xml/jetbrains.mps.xmlUnitTest.runtime.jar.jtmp" />
   </target>
@@ -6338,7 +6336,6 @@
   </target>
   <target name="pack.jetbrains.mps.ui.gwt.runtime">
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/languages/util/ui/languages/gwt/solutions/runtime/classes_gen" />
     <mkdir dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.gwt.runtime.jar.jtmp" />
     <echoxml file="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.gwt.runtime.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.ui.gwt.runtime" uuid="cfae28de-dc36-4914-a95f-7d9a0738cf32" type="solution">
@@ -6358,7 +6355,6 @@
     <jar destfile="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.gwt.runtime.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.gwt.runtime.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/languages/util/ui/languages/gwt/solutions/runtime" includes="icons/**, resources/**" />
-      <zipfileset dir="${base_dir}/languages/util/ui/languages/gwt/solutions/runtime/classes_gen" />
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.gwt.runtime.jar.jtmp" />
   </target>

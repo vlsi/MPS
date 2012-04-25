@@ -103,7 +103,7 @@
       <fileset dir="${mps_home}/plugins/execution-languages/languages/commands/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/plugins/execution-languages/languages/jetbrains.mps.execution.commands-src.jar">
-      <fileset dir="${mps_home}/plugins/execution-languages/languages/commands/source_gen" />
+      <fileset dir="${mps_home}/plugins/execution-languages/languages/commands/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.execution.commands-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.execution.configurations.jar" />
@@ -145,7 +145,7 @@
       <fileset dir="${mps_home}/plugins/execution-languages/languages/configurations/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/plugins/execution-languages/languages/jetbrains.mps.execution.configurations-src.jar">
-      <fileset dir="${mps_home}/plugins/execution-languages/languages/configurations/source_gen" />
+      <fileset dir="${mps_home}/plugins/execution-languages/languages/configurations/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.execution.configurations-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.execution.configurations.deprecated.jar" />
@@ -187,7 +187,7 @@
       <fileset dir="${mps_home}/plugins/execution-languages/languages/deprecated/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/plugins/execution-languages/languages/jetbrains.mps.execution.configurations.deprecated-src.jar">
-      <fileset dir="${mps_home}/plugins/execution-languages/languages/deprecated/source_gen" />
+      <fileset dir="${mps_home}/plugins/execution-languages/languages/deprecated/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.execution.configurations.deprecated-src.jar" />
     </jar>
     <mkdir dir="${build.layout}/plugins/execution-configurations" />
@@ -280,7 +280,7 @@
       <fileset dir="${mps_home}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/plugins/execution-configurations/languages/jetbrains.mps.baseLanguage.execution.startup-src.jar">
-      <fileset dir="${mps_home}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/source_gen" />
+      <fileset dir="${mps_home}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.execution.startup-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.unitTest.execution.startup.jar" />
@@ -310,7 +310,7 @@
       <fileset dir="${mps_home}/plugins/execution-configurations/languages/unitTests/startup/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/plugins/execution-configurations/languages/jetbrains.mps.baseLanguage.unitTest.execution.startup-src.jar">
-      <fileset dir="${mps_home}/plugins/execution-configurations/languages/unitTests/startup/source_gen" />
+      <fileset dir="${mps_home}/plugins/execution-configurations/languages/unitTests/startup/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.unitTest.execution.startup-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.execution.migration.jar" />
@@ -347,7 +347,7 @@
       <fileset dir="${mps_home}/plugins/execution-configurations/languages/migration/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/plugins/execution-configurations/languages/jetbrains.mps.execution.migration-src.jar">
-      <fileset dir="${mps_home}/plugins/execution-configurations/languages/migration/source_gen" />
+      <fileset dir="${mps_home}/plugins/execution-configurations/languages/migration/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.execution.migration-src.jar" />
     </jar>
   </target>
