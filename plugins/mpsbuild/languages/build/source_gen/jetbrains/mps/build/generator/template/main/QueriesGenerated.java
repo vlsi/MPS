@@ -199,6 +199,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "flags");
   }
 
+  public static Object propertyMacro_GetPropertyValue_4198392933254628144(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString_def(_context.getNode(), "eol", "local");
+  }
+
   public static Object propertyMacro_GetPropertyValue_4643216374596142877(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BuildLayout_EchoXml_Behavior.call_getOutputPath_WithMacro_4643216374596143062(_context.getNode(), Context.defaultContext(_context));
   }
@@ -828,6 +832,14 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_9184644532456968252(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+  }
+
+  public static boolean ifMacro_Condition_4198392933254627394(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(SPropertyOperations.hasValue(_context.getNode(), "eol", "local", "local"));
+  }
+
+  public static boolean ifMacro_Condition_4198392933254627361(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "removeEOF");
   }
 
   public static boolean ifMacro_Condition_4643216374596142956(final IOperationContext operationContext, final IfMacroContext _context) {
