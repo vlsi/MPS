@@ -208,7 +208,19 @@ public class BaseEditorTestBody extends BaseTestBody {
         action.actionPerformed(event);
       }
     });
+    flushEventQueueAfterAction();
+  }
+
+  protected static void flushEventQueueAfterAction() throws InvocationTargetException, InterruptedException {
     // flush queue 
+    SwingUtilities.invokeAndWait(new Runnable() {
+      public void run() {
+        // empty task 
+      }
+    });
+    ModelAccess.instance().flushEventQueue();
+
+    // some actions (Copy/Paste) are runing one more command later 
     SwingUtilities.invokeAndWait(new Runnable() {
       public void run() {
         // empty task 
