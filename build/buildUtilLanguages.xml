@@ -51,7 +51,7 @@
       <fileset dir="${mps_home}/languages/util/xmlUnitTest/languages/xmlUnitTest/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/xml/jetbrains.mps.xmlUnitTest/jetbrains.mps.xmlUnitTest-src.jar">
-      <fileset dir="${mps_home}/languages/util/xmlUnitTest/languages/xmlUnitTest/source_gen" />
+      <fileset dir="${mps_home}/languages/util/xmlUnitTest/languages/xmlUnitTest/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.xmlUnitTest-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.core.xml.jar" />
@@ -91,7 +91,7 @@
       <fileset dir="${mps_home}/languages/xml/xml/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/xml/jetbrains.mps.core.xml-src.jar">
-      <fileset dir="${mps_home}/languages/xml/xml/source_gen" />
+      <fileset dir="${mps_home}/languages/xml/xml/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.core.xml-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.core.properties.jar" />
@@ -130,7 +130,7 @@
       <fileset dir="${mps_home}/languages/util/properties/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/xml/jetbrains.mps.core.properties-src.jar">
-      <fileset dir="${mps_home}/languages/util/properties/source_gen" />
+      <fileset dir="${mps_home}/languages/util/properties/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.core.properties-src.jar" />
     </jar>
     <mkdir dir="${build.layout}/languages/util" />
@@ -171,7 +171,7 @@
       <fileset dir="${mps_home}/languages/util/contracts/languages/contracts/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/baseLanguage/jetbrains.mps.baseLanguage.contracts-src.jar">
-      <fileset dir="${mps_home}/languages/util/contracts/languages/contracts/source_gen" />
+      <fileset dir="${mps_home}/languages/util/contracts/languages/contracts/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.contracts-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.math.jar" />
@@ -214,7 +214,7 @@
       <fileset dir="${mps_home}/languages/util/math/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/baseLanguage/jetbrains.mps.baseLanguage.math-src.jar">
-      <fileset dir="${mps_home}/languages/util/math/source_gen" />
+      <fileset dir="${mps_home}/languages/util/math/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.math-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.math.pluginSolution.jar" />
@@ -248,7 +248,7 @@
       <fileset dir="${mps_home}/languages/util/math/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/baseLanguage/jetbrains.mps.baseLanguage.math.pluginSolution-src.jar">
-      <fileset dir="${mps_home}/languages/util/math/solutions/pluginSolution/source_gen" />
+      <fileset dir="${mps_home}/languages/util/math/solutions/pluginSolution/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.math.pluginSolution-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.math.runtime.jar" />
@@ -277,7 +277,7 @@
       <fileset dir="${mps_home}/languages/util/math/runtimeSolution" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/baseLanguage/jetbrains.mps.baseLanguage.math.runtime-src.jar">
-      <fileset dir="${mps_home}/languages/util/math/runtimeSolution/source_gen" />
+      <fileset dir="${mps_home}/languages/util/math/runtimeSolution/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.math.runtime-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.collections.trove.jar" />
@@ -320,7 +320,7 @@
       <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/baseLanguage/jetbrains.mps.baseLanguage.collections.trove-src.jar">
-      <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/source_gen" />
+      <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.collections.trove-src.jar" />
     </jar>
     <mkdir dir="${build.layout}/languages/util/collections_trove.runtime" />
@@ -355,7 +355,7 @@
       <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/collections_trove.runtime/collections_trove.runtime-src.jar">
-      <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/source_gen" />
+      <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/collections_trove.runtime-src.jar" />
     </jar>
     <mkdir dir="${build.layout}/languages/util/quickQueryLanguage" />
@@ -399,7 +399,7 @@
       <fileset dir="${mps_home}/languages/util/quickQueryLanguage/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/quickQueryLanguage/jetbrains.mps.quickQueryLanguage-src.jar">
-      <fileset dir="${mps_home}/languages/util/quickQueryLanguage/source_gen" />
+      <fileset dir="${mps_home}/languages/util/quickQueryLanguage/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.quickQueryLanguage-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.quickQuery.runtime.jar" />
@@ -427,7 +427,7 @@
       <fileset dir="${mps_home}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/quickQueryLanguage/jetbrains.mps.quickQuery.runtime-src.jar">
-      <fileset dir="${mps_home}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/source_gen" />
+      <fileset dir="${mps_home}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.quickQuery.runtime-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.quickQueryLanguage.pluginSolution.jar" />
@@ -465,7 +465,7 @@
       <fileset dir="${mps_home}/languages/util/quickQueryLanguage/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/quickQueryLanguage/jetbrains.mps.quickQueryLanguage.pluginSolution-src.jar">
-      <fileset dir="${mps_home}/languages/util/quickQueryLanguage/solutions/pluginSolution/source_gen" />
+      <fileset dir="${mps_home}/languages/util/quickQueryLanguage/solutions/pluginSolution/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.quickQueryLanguage.pluginSolution-src.jar" />
     </jar>
     <mkdir dir="${build.layout}/languages/util/ypath" />
@@ -510,7 +510,7 @@
       <fileset dir="${mps_home}/languages/util/ypath/generators/baseLanguage/templates" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/ypath/jetbrains.mps.ypath-src.jar">
-      <fileset dir="${mps_home}/languages/util/ypath/source_gen" />
+      <fileset dir="${mps_home}/languages/util/ypath/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ypath-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ypath.pluginSolution.jar" />
@@ -548,7 +548,7 @@
       <fileset dir="${mps_home}/languages/util/ypath/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/ypath/jetbrains.mps.ypath.pluginSolution-src.jar">
-      <fileset dir="${mps_home}/languages/util/ypath/solutions/pluginSolution/source_gen" />
+      <fileset dir="${mps_home}/languages/util/ypath/solutions/pluginSolution/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ypath.pluginSolution-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ypath.runtime.jar" />
@@ -579,7 +579,7 @@
       <fileset dir="${mps_home}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/ypath/jetbrains.mps.ypath.runtime-src.jar">
-      <fileset dir="${mps_home}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/source_gen" />
+      <fileset dir="${mps_home}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ypath.runtime-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/ypath.main.jar" />
@@ -611,7 +611,7 @@
       <fileset dir="${mps_home}/languages/util/ypath/solutions/main" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/ypath/ypath.main-src.jar">
-      <fileset dir="${mps_home}/languages/util/ypath/solutions/main/source_gen" />
+      <fileset dir="${mps_home}/languages/util/ypath/solutions/main/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/ypath.main-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/ypath.test.jar" />
@@ -644,7 +644,7 @@
       <fileset dir="${mps_home}/languages/util/ypath/solutions/test" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/ypath/ypath.test-src.jar">
-      <fileset dir="${mps_home}/languages/util/ypath/solutions/test/source_gen" />
+      <fileset dir="${mps_home}/languages/util/ypath/solutions/test/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/ypath.test-src.jar" />
     </jar>
     <mkdir dir="${build.layout}/languages/util/deprecated" />
@@ -691,7 +691,7 @@
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/custommps/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/deprecated/build/jetbrains.mps.build.custommps-src.jar">
-      <fileset dir="${mps_home}/languages/util/buildlanguage/languages/custommps/source_gen" />
+      <fileset dir="${mps_home}/languages/util/buildlanguage/languages/custommps/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.custommps-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.custommps.pluginSolution.jar" />
@@ -729,7 +729,7 @@
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/custommps/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/deprecated/build/jetbrains.mps.build.custommps.pluginSolution-src.jar">
-      <fileset dir="${mps_home}/languages/util/buildlanguage/languages/custommps/solutions/pluginSolution/source_gen" />
+      <fileset dir="${mps_home}/languages/util/buildlanguage/languages/custommps/solutions/pluginSolution/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.custommps.pluginSolution-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.dependency.jar" />
@@ -769,7 +769,7 @@
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/dependency/generator/buildlanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/deprecated/build/jetbrains.mps.build.dependency-src.jar">
-      <fileset dir="${mps_home}/languages/util/buildlanguage/languages/dependency/source_gen" />
+      <fileset dir="${mps_home}/languages/util/buildlanguage/languages/dependency/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.dependency-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.generictasks.jar" />
@@ -814,7 +814,7 @@
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/generictasks/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/deprecated/build/jetbrains.mps.build.generictasks-src.jar">
-      <fileset dir="${mps_home}/languages/util/buildlanguage/languages/generictasks/source_gen" />
+      <fileset dir="${mps_home}/languages/util/buildlanguage/languages/generictasks/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.generictasks-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.generictasks.pluginSolution.jar" />
@@ -852,7 +852,7 @@
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/deprecated/build/jetbrains.mps.build.generictasks.pluginSolution-src.jar">
-      <fileset dir="${mps_home}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/source_gen" />
+      <fileset dir="${mps_home}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.generictasks.pluginSolution-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.mpsdist.jar" />
@@ -886,7 +886,7 @@
       <fileset dir="${mps_home}/languages/util/buildlanguage/solutions/jetbrains.mps.build.mpsdist" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/deprecated/build/jetbrains.mps.build.mpsdist-src.jar">
-      <fileset dir="${mps_home}/languages/util/buildlanguage/solutions/jetbrains.mps.build.mpsdist/source_gen" />
+      <fileset dir="${mps_home}/languages/util/buildlanguage/solutions/jetbrains.mps.build.mpsdist/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.mpsdist-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.packaging.jar" />
@@ -931,7 +931,7 @@
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/packaging/generator/buildlanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/deprecated/build/jetbrains.mps.build.packaging-src.jar">
-      <fileset dir="${mps_home}/languages/util/buildlanguage/languages/packaging/source_gen" />
+      <fileset dir="${mps_home}/languages/util/buildlanguage/languages/packaging/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.packaging-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.packaging.pluginSolution.jar" />
@@ -970,7 +970,7 @@
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/packaging/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/deprecated/build/jetbrains.mps.build.packaging.pluginSolution-src.jar">
-      <fileset dir="${mps_home}/languages/util/buildlanguage/languages/packaging/solutions/pluginSolution/source_gen" />
+      <fileset dir="${mps_home}/languages/util/buildlanguage/languages/packaging/solutions/pluginSolution/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.packaging.pluginSolution-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.property.jar" />
@@ -1010,7 +1010,7 @@
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/property/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/deprecated/build/jetbrains.mps.build.property-src.jar">
-      <fileset dir="${mps_home}/languages/util/buildlanguage/languages/property/source_gen" />
+      <fileset dir="${mps_home}/languages/util/buildlanguage/languages/property/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.property-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.startup.jar" />
@@ -1049,7 +1049,7 @@
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/startup/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/deprecated/build/jetbrains.mps.build.startup-src.jar">
-      <fileset dir="${mps_home}/languages/util/buildlanguage/languages/startup/source_gen" />
+      <fileset dir="${mps_home}/languages/util/buildlanguage/languages/startup/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.startup-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.buildlanguage.jar" />
@@ -1090,7 +1090,7 @@
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/buildlanguage/generator/xml/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/deprecated/build/jetbrains.mps.buildlanguage-src.jar">
-      <fileset dir="${mps_home}/languages/util/buildlanguage/languages/buildlanguage/source_gen" />
+      <fileset dir="${mps_home}/languages/util/buildlanguage/languages/buildlanguage/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.buildlanguage-src.jar" />
     </jar>
     <mkdir dir="${build.layout}/languages/util/deprecated/ui" />
@@ -1129,7 +1129,7 @@
       <fileset dir="${mps_home}/languages/util/uiLanguage/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/deprecated/ui/jetbrains.mps.uiLanguage.pluginSolution-src.jar">
-      <fileset dir="${mps_home}/languages/util/uiLanguage/solutions/pluginSolution/source_gen" />
+      <fileset dir="${mps_home}/languages/util/uiLanguage/solutions/pluginSolution/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.uiLanguage.pluginSolution-src.jar" />
     </jar>
     <mkdir dir="${build.layout}/languages/util/deprecated/xml" />
@@ -1169,7 +1169,7 @@
       <fileset dir="${mps_home}/languages/util/xmlDeprecated/generator" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/deprecated/xml/jetbrains.mps.xml.deprecated-src.jar">
-      <fileset dir="${mps_home}/languages/util/xmlDeprecated/source_gen" />
+      <fileset dir="${mps_home}/languages/util/xmlDeprecated/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.xml.deprecated-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.xml.deprecated.pluginSolution.jar" />
@@ -1199,7 +1199,7 @@
       <fileset dir="${mps_home}/languages/util/xmlDeprecated/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/deprecated/xml/jetbrains.mps.xml.deprecated.pluginSolution-src.jar">
-      <fileset dir="${mps_home}/languages/util/xmlDeprecated/solutions/pluginSolution/source_gen" />
+      <fileset dir="${mps_home}/languages/util/xmlDeprecated/solutions/pluginSolution/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.xml.deprecated.pluginSolution-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.nanoj.jar" />
@@ -1234,7 +1234,7 @@
       <fileset dir="${mps_home}/languages/util/mps-lite/languages/nanoj/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/deprecated/jetbrains.mps.nanoj-src.jar">
-      <fileset dir="${mps_home}/languages/util/mps-lite/languages/nanoj/source_gen" />
+      <fileset dir="${mps_home}/languages/util/mps-lite/languages/nanoj/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.nanoj-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mpslite.jar" />
@@ -1278,7 +1278,7 @@
       <fileset dir="${mps_home}/languages/util/mps-lite/languages/mpslite/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/deprecated/jetbrains.mpslite-src.jar">
-      <fileset dir="${mps_home}/languages/util/mps-lite/languages/mpslite/source_gen" />
+      <fileset dir="${mps_home}/languages/util/mps-lite/languages/mpslite/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mpslite-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mpslite.pluginSolution.jar" />
@@ -1308,7 +1308,7 @@
       <fileset dir="${mps_home}/languages/util/mps-lite/languages/mpslite/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/deprecated/jetbrains.mpslite.pluginSolution-src.jar">
-      <fileset dir="${mps_home}/languages/util/mps-lite/languages/mpslite/solutions/pluginSolution/source_gen" />
+      <fileset dir="${mps_home}/languages/util/mps-lite/languages/mpslite/solutions/pluginSolution/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mpslite.pluginSolution-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.platform.conf.jar" />
@@ -1343,7 +1343,7 @@
       <fileset dir="${mps_home}/languages/util/conf/languages/conf/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/languages/util/jetbrains.mps.platform.conf-src.jar">
-      <fileset dir="${mps_home}/languages/util/conf/languages/conf/source_gen" />
+      <fileset dir="${mps_home}/languages/util/conf/languages/conf/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.platform.conf-src.jar" />
     </jar>
   </target>

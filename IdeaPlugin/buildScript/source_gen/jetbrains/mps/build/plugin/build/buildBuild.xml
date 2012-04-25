@@ -58,7 +58,7 @@
       <fileset dir="${mps_home}/plugins/mpsbuild/languages/build/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/plugins/mpsbuild/languages/jetbrains.mps.build-src.jar">
-      <fileset dir="${mps_home}/plugins/mpsbuild/languages/build/source_gen" />
+      <fileset dir="${mps_home}/plugins/mpsbuild/languages/build/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.workflow.jar" />
@@ -105,7 +105,7 @@
       <fileset dir="${mps_home}/plugins/mpsbuild/languages/workflow/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/plugins/mpsbuild/languages/jetbrains.mps.build.workflow-src.jar">
-      <fileset dir="${mps_home}/plugins/mpsbuild/languages/workflow/source_gen" />
+      <fileset dir="${mps_home}/plugins/mpsbuild/languages/workflow/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.workflow-src.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.mps.jar" />
@@ -148,7 +148,7 @@
       <fileset dir="${mps_home}/plugins/mpsbuild/languages/mps/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <jar destfile="${build.layout}/plugins/mpsbuild/languages/jetbrains.mps.build.mps-src.jar">
-      <fileset dir="${mps_home}/plugins/mpsbuild/languages/mps/source_gen" />
+      <fileset dir="${mps_home}/plugins/mpsbuild/languages/mps/source_gen" includes="**/*.java" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.mps-src.jar" />
     </jar>
   </target>

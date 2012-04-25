@@ -69,7 +69,7 @@ public class LibraryInitializer implements CoreComponent {
     for (String path : myParentLoaders.keySet()) {
       String pluginPath = module.getPluginPath();
       if (pluginPath == null) continue;
-      if (pluginPath.startsWith(path)) {
+      if (pluginPath.startsWith(FileSystem.getInstance().getFileByPath(path).getPath())) {
         return myParentLoaders.get(path);
       }
     }

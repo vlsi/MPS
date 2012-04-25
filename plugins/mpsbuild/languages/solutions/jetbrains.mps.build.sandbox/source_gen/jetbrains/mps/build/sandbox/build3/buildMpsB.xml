@@ -8,6 +8,12 @@
     <zip destfile="${build.layout}/X/MpsB.zip">
       <fileset file="${basedir}/jetbrains.mps.build.sandbox/samples/buildA/abcde.jar" />
     </zip>
+    <tar destfile="${build.layout}/my.tar.gz">
+      <fileset file="${basedir}/jetbrains.mps.build.tests/tests.msd" />
+      <fileset dir="${basedir}/jetbrains.mps.build.sandbox/models">
+        <include name="*.mps" />
+      </fileset>
+    </tar>
   </target>
   
   <target name="build" depends="assemble" />

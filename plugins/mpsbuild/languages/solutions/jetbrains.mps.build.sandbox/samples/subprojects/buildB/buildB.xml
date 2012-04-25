@@ -8,6 +8,18 @@
   
   <target name="assemble" depends="classes, fetchDependencies">
     <mkdir dir="${build.layout}/result" />
+    <copy todir="${build.layout}/result">
+      <fileset file="${basedir}/buildB.xml" />
+      <filterchain>
+        <fixcrlf eol="crlf" eof="remove" />
+      </filterchain>
+    </copy>
+    <copy todir="${build.layout}/result">
+      <fileset file="${basedir}/../../build.xml" />
+      <filterchain>
+        <fixcrlf eol="cr" />
+      </filterchain>
+    </copy>
     <mkdir dir="${build.layout}/result/A-${buildA.aver}" />
     <copy todir="${build.layout}/result/A-${buildA.aver}/A">
       <fileset dir="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/A" />

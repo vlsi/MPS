@@ -2,6 +2,7 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/buildPlugin" />
   <property name="build.layout" location="${build.dir}/artifacts/buildPlugin" />
+  <property name="plugin.version" value="1.0.SNAPSHOT" />
   <property name="idea_home" location="" />
   <property name="mps_home" location="${basedir}" />
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
@@ -79,9 +80,7 @@
       </fileset>
       <fileset dir="${build.tmp}/default/mps-plugin.jar" />
     </jar>
-    <copy todir="${build.layout}/plugins/mps-core">
-      <fileset file="${mps_home}/build.number" />
-    </copy>
+    <echo file="${build.layout}/plugins/mps-core/build.number">plugin.version=${plugin.version}</echo>
     <mkdir dir="${build.layout}/plugins/mps-vcs" />
     <mkdir dir="${build.layout}/plugins/mps-vcs/lib" />
     <jar destfile="${build.layout}/plugins/mps-vcs/lib/mps-vcs-core.jar">
@@ -121,6 +120,7 @@
       <fileset dir="${build.tmp}/java/out/mps-java" />
       <fileset dir="${build.tmp}/default/mps-java.jar" />
     </jar>
+    <echo file="${build.layout}/variables.properties">buildPlugin.plugin.version=${plugin.version}</echo>
   </target>
   
   <target name="buildDependents">
@@ -259,7 +259,6 @@
       <src>
         <path location="${mps_home}/IdeaPlugin/mps-java/debugger/src" />
         <path location="${mps_home}/plugins/mpsjava/platform/source_gen" />
-        <path location="${mps_home}/workbench/mps-debugger/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
@@ -288,7 +287,6 @@
     <copy todir="${build.tmp}/java/out/mps-java">
       <fileset dir="${mps_home}/IdeaPlugin/mps-java/debugger/src" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/mpsjava/platform/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-      <fileset dir="${mps_home}/workbench/mps-debugger/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
 </project>

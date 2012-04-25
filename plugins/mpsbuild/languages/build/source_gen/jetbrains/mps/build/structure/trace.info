@@ -1,7 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Build_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.structure.Build_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.build.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="215" endPosition="0" unitName="jetbrains.mps.build.structure.StructureAspectDescriptor" />
+  <root nodeId="4198392933254416814">
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="15" startPosition="0" endLine="16" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="15" startPosition="33" endLine="16" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="16" startPosition="24" endLine="17" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="17" startPosition="45" endLine="18" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="19" startPosition="61" endLine="20" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="20" startPosition="5" endLine="21" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="20" startPosition="23" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="24" startPosition="27" endLine="25" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="25" startPosition="24" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="27" startPosition="5" endLine="28" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="28" startPosition="36" endLine="29" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="29" startPosition="33" endLine="30" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="31" startPosition="45" endLine="32" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="32" startPosition="28" endLine="33" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="34" startPosition="5" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="36" startPosition="69" endLine="37" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="37" startPosition="120" endLine="38" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="38" startPosition="49" endLine="39" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="38" startPosition="81" endLine="39" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="39" startPosition="80" endLine="40" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="40" startPosition="27" endLine="41" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="40" startPosition="78" endLine="41" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="41" startPosition="78" endLine="42" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="42" startPosition="5" endLine="43" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="42" startPosition="80" endLine="43" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="46" startPosition="61" endLine="47" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="51" startPosition="24" endLine="52" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="54" startPosition="80" endLine="55" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="57" startPosition="79" endLine="58" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="60" startPosition="77" endLine="61" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="63" startPosition="77" endLine="64" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="66" startPosition="79" endLine="67" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="68" startPosition="5" endLine="69" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="10" startPosition="44" endLine="13" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="16" startPosition="65" endLine="19" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="24" startPosition="47" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="30" startPosition="65" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="39" startPosition="95" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="50" startPosition="73" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="53" startPosition="5" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="56" startPosition="5" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="59" startPosition="5" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="62" startPosition="5" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="65" startPosition="5" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="18" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildLayout_CopyFilterEolStyle#(Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/build/structure/BuildLayout_CopyFilterEolStyle;" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="14" startPosition="137" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="28" startPosition="137" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="37" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="35" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="9" startPosition="85" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="49" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/build/structure/BuildLayout_CopyFilterEolStyle;" />
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" />
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="17" startPosition="45" endLine="18" endPosition="20" />
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="24" startPosition="27" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="25" startPosition="24" endLine="26" endPosition="18" />
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="28" startPosition="36" endLine="29" endPosition="24" />
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="31" startPosition="45" endLine="32" endPosition="43" />
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="32" startPosition="28" endLine="33" endPosition="24" />
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="40" startPosition="27" endLine="41" endPosition="32" />
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="46" startPosition="61" endLine="47" endPosition="48" />
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="51" startPosition="24" endLine="52" endPosition="57" />
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="54" startPosition="80" endLine="55" endPosition="50" />
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="57" startPosition="79" endLine="58" endPosition="49" />
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="60" startPosition="77" endLine="61" endPosition="47" />
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="63" startPosition="77" endLine="64" endPosition="47" />
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="66" startPosition="79" endLine="67" endPosition="49" />
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="19" startPosition="61" endLine="21" endPosition="25" />
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="15" startPosition="33" endLine="19" endPosition="7">
+      <varInfo nodeId="4198392933254416814" varName="constant" />
+    </scopeInfo>
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="18" startPosition="0" endLine="22" endPosition="3">
+      <varInfo nodeId="4198392933254416814" varName="name" />
+      <varInfo nodeId="4198392933254416814" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="29" startPosition="33" endLine="33" endPosition="7">
+      <varInfo nodeId="4198392933254416814" varName="constant" />
+    </scopeInfo>
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="38" startPosition="49" endLine="43" endPosition="14">
+      <varInfo nodeId="4198392933254416814" varName="constant" />
+    </scopeInfo>
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="36" startPosition="69" endLine="43" endPosition="16">
+      <varInfo nodeId="4198392933254416814" varName="list" />
+    </scopeInfo>
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="37" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="4198392933254416814" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="35" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="10" startPosition="44" endLine="21" endPosition="17">
+      <varInfo nodeId="4198392933254416814" varName="constants" />
+    </scopeInfo>
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="24" startPosition="47" endLine="35" endPosition="16">
+      <varInfo nodeId="4198392933254416814" varName="constants" />
+    </scopeInfo>
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="9" startPosition="85" endLine="23" endPosition="0">
+      <varInfo nodeId="4198392933254416814" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="4198392933254416814" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="50" startPosition="73" endLine="69" endPosition="55" />
+    <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="49" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="4198392933254416814" varName="value" />
+    </scopeInfo>
+    <unitInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="9" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.build.structure.BuildLayout_CopyFilterEolStyle" />
+    <unitInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.build.structure.BuildLayout_CopyFilterEolStyle_PropertySupport" />
+  </root>
   <root nodeId="5248329904288265463">
     <nodeInfo nodeId="5248329904288265463" fileName="BuildSource_JavaContentFolderKind_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5248329904288265463" fileName="BuildSource_JavaContentFolderKind.java" startLine="13" startPosition="0" endLine="14" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
