@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.runtime;
 
+import gnu.trove.THashMap;
 import jetbrains.mps.library.LibraryInitializer;
 
 import java.io.IOException;
@@ -27,14 +28,14 @@ public class ModuleClassLoader extends ClassLoader {
   @SuppressWarnings({"UnusedDeclaration", "FieldCanBeLocal"})
   private boolean myDisposed;
   private IClassLoadingModule myModule;
-  private Map<String, Class> myClasses = new ConcurrentHashMap<String, Class>();
+  private Map<String, Class> myClasses = new THashMap<String, Class>();
 
   public ModuleClassLoader(IClassLoadingModule module) {
     super(LibraryInitializer.getInstance().getParentLoaderForModule(module));
     myModule = module;
   }
 
-  protected final Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+  protected synchronized final Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
     if (myClasses.containsKey(name)) {
       Class cl = myClasses.get(name);
       if (cl == null) throw new ClassNotFoundException(name);
