@@ -11380,12 +11380,12 @@
   <root nodeId="4313092516461999911">
     <nodeInfo nodeId="4313092516462065649" fileName="TryCatchStatement_Behavior.java" startLine="20" startPosition="152" endLine="21" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5255918499422580089" fileName="TryCatchStatement_Behavior.java" startLine="24" startPosition="89" endLine="25" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4313092516462065608" fileName="TryCatchStatement_Behavior.java" startLine="28" startPosition="160" endLine="29" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4313092516462065614" fileName="TryCatchStatement_Behavior.java" startLine="29" startPosition="68" endLine="30" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4313092516462065608" fileName="TryCatchStatement_Behavior.java" startLine="28" startPosition="160" endLine="29" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4313092516462065614" fileName="TryCatchStatement_Behavior.java" startLine="29" startPosition="75" endLine="30" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4313092516462065606" fileName="TryCatchStatement_Behavior.java" startLine="30" startPosition="124" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4313092516462065522" fileName="TryCatchStatement_Behavior.java" startLine="31" startPosition="0" endLine="32" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="4313092516462065527" fileName="TryCatchStatement_Behavior.java" startLine="33" startPosition="61" endLine="34" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4313092516462065531" fileName="TryCatchStatement_Behavior.java" startLine="34" startPosition="59" endLine="35" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4313092516462065531" fileName="TryCatchStatement_Behavior.java" startLine="34" startPosition="59" endLine="35" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4313092516462065541" fileName="TryCatchStatement_Behavior.java" startLine="36" startPosition="73" endLine="37" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4313092516462065557" fileName="TryCatchStatement_Behavior.java" startLine="38" startPosition="180" endLine="39" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4313092516462065562" fileName="TryCatchStatement_Behavior.java" startLine="41" startPosition="7" endLine="42" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -11407,7 +11407,7 @@
     <nodeInfo nodeId="4313092516462065576" fileName="TryCatchStatement_Behavior.java" startLine="46" startPosition="51" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4313092516461999911" fileName="TryCatchStatement_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_collectUncaughtMethodThrowables_5412515780383134223#(Ljetbrains/mps/smodel/SNode;Ljava/util/Set;Z)V" />
     <nodeInfo nodeId="4313092516461999911" fileName="TryCatchStatement_Behavior.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getCatchClauses_3718132079121388582#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="4313092516462065537" fileName="TryCatchStatement_Behavior.java" startLine="35" startPosition="63" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4313092516462065537" fileName="TryCatchStatement_Behavior.java" startLine="35" startPosition="70" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4313092516462065551" fileName="TryCatchStatement_Behavior.java" startLine="59" startPosition="32" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4313092516462065551" fileName="TryCatchStatement_Behavior.java" startLine="59" startPosition="32" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4313092516462065524" fileName="TryCatchStatement_Behavior.java" startLine="32" startPosition="35" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -11440,7 +11440,7 @@
     <scopeInfo nodeId="4313092516462065551" fileName="TryCatchStatement_Behavior.java" startLine="60" startPosition="7" endLine="64" endPosition="31">
       <varInfo nodeId="4313092516462065551" varName="quotedNode1_2" />
     </scopeInfo>
-    <scopeInfo nodeId="4313092516462065537" fileName="TryCatchStatement_Behavior.java" startLine="35" startPosition="63" endLine="41" endPosition="7">
+    <scopeInfo nodeId="4313092516462065537" fileName="TryCatchStatement_Behavior.java" startLine="35" startPosition="70" endLine="41" endPosition="7">
       <varInfo nodeId="4313092516462065537" varName="thrownFromBody" />
     </scopeInfo>
     <scopeInfo nodeId="4313092516462065551" fileName="TryCatchStatement_Behavior.java" startLine="59" startPosition="32" endLine="65" endPosition="7" />

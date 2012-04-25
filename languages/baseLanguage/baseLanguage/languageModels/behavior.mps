@@ -31564,7 +31564,11 @@
               </node>
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4313092516462065612">
-              <node role="creator" roleId="tpee.1145553007750" type="tp2q.HashSetCreator" typeId="tp2q.1226516258405" id="4313092516462065613" />
+              <node role="creator" roleId="tpee.1145553007750" type="tp2q.HashSetCreator" typeId="tp2q.1226516258405" id="4313092516462065613">
+                <node role="elementType" roleId="tp2q.1237721435807" type="tp25.SNodeType" typeId="tp25.1138055754698" id="6575309125047383288">
+                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1107461130800" resolveInfo="Classifier" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -31614,7 +31618,11 @@
                   </node>
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4313092516462065535">
-                  <node role="creator" roleId="tpee.1145553007750" type="tp2q.HashSetCreator" typeId="tp2q.1226516258405" id="4313092516462065536" />
+                  <node role="creator" roleId="tpee.1145553007750" type="tp2q.HashSetCreator" typeId="tp2q.1226516258405" id="4313092516462065536">
+                    <node role="elementType" roleId="tp2q.1237721435807" type="tp25.SNodeType" typeId="tp25.1138055754698" id="6575309125047385189">
+                      <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1107461130800" resolveInfo="Classifier" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -31670,8 +31678,8 @@
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4313092516462065559">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4313092516462065532" resolveInfo="toRemove" />
                         </node>
-                        <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddSetElementOperation" typeId="tp2q.1226566855640" id="4313092516462065560">
-                          <node role="argument" roleId="tp2q.1226567214363" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="4313092516462065561">
+                        <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="6575309125047385190">
+                          <node role="argument" roleId="tp2q.1160612519549" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="6575309125047385191">
                             <link role="variable" roleId="tp2q.1153944258490" targetNodeId="4313092516462065538" resolveInfo="thrownFromBody" />
                           </node>
                         </node>
@@ -31686,8 +31694,8 @@
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4313092516462065564">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4313092516462065609" resolveInfo="thrownsFromBody" />
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tp2q.RemoveAllSetElementsOperation" typeId="tp2q.1226593880804" id="4313092516462065565">
-                  <node role="argument" roleId="tp2q.1226593903142" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4313092516462065566">
+                <node role="operation" roleId="tpee.1197027833540" type="tp2q.RemoveAllElementsOperation" typeId="tp2q.1173946412755" id="6575309125047385192">
+                  <node role="argument" roleId="tp2q.1173946412756" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6575309125047385193">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4313092516462065532" resolveInfo="toRemove" />
                   </node>
                 </node>
@@ -31703,8 +31711,8 @@
             <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4313092516462065570">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4313092516462065635" resolveInfo="throwables" />
             </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddAllSetElementsOperation" typeId="tp2q.1226592602759" id="4313092516462065571">
-              <node role="argument" roleId="tp2q.1226592623721" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4313092516462065572">
+            <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddAllElementsOperation" typeId="tp2q.1160666733551" id="6575309125047385202">
+              <node role="argument" roleId="tp2q.1160666822012" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6575309125047385203">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4313092516462065609" resolveInfo="thrownsFromBody" />
               </node>
             </node>
