@@ -30,14 +30,14 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.Nullable;
 
-public class NodeUsageBase implements Navigatable{
+public class NodeUsageBase implements Navigatable {
   protected SNode myNode;
   protected String myPresentation;
   protected SNode myRootNode;
   protected Project myProject;
   protected String myRootName;
 
-  public NodeUsageBase(SNode node, Project project){
+  public NodeUsageBase(SNode node, Project project) {
     myNode = node;
     myProject = project;
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -58,21 +58,17 @@ public class NodeUsageBase implements Navigatable{
   }
 
   public Editor openTextEditor(boolean focus) {
-    Editor editor = FileEditorManager.getInstance(getProject()).openTextEditor(getDescriptor(), focus);
+    Editor editor = FileEditorManager.getInstance(myProject).openTextEditor(getDescriptor(), focus);
     FileEditor fileEditor = FileEditorManager.getInstance(myProject).getSelectedEditor(getFile());
     if (!(fileEditor instanceof MPSFileNodeEditor)) return null;
-    if (!(myNode.isRoot())){
-      ((MPSFileNodeEditor) fileEditor).getNodeEditor().showNode(myNode, true);
-    }else{
-
-    }
+    ((MPSFileNodeEditor) fileEditor).getNodeEditor().showNode(myNode, !myNode.isRoot());
     return editor;
   }
 
   @Nullable
   private OpenFileDescriptor getDescriptor() {
     VirtualFile file = getFile();
-    if(file == null) return null;
+    if (file == null) return null;
     return new OpenFileDescriptor(getProject(), file);
   }
 
@@ -92,7 +88,7 @@ public class NodeUsageBase implements Navigatable{
     return myProject;
   }
 
-  public VirtualFile getFile(){
+  public VirtualFile getFile() {
     return MPSNodesVirtualFileSystem.getInstance().getFileFor(myRootNode);
   }
 }

@@ -30,9 +30,7 @@ import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
 import jetbrains.mps.smodel.SNode;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class RefactoringViewItemImpl implements RefactoringViewItem {
   private UsageView usageView;
@@ -45,17 +43,17 @@ public class RefactoringViewItemImpl implements RefactoringViewItem {
 
   public void showRefactoringView(Project project, final RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
     UsageViewManager viewManager = UsageViewManager.getInstance(project);
-    ArrayList<UsageTarget> usageTargets = new ArrayList<UsageTarget>();
+    Set<UsageTarget> usageTargets = new LinkedHashSet<UsageTarget>();
 
-    for (Object searchedNode : searchResults.getSearchedNodes()) {
+    for (Object searchedNode : searchResults.getAliveNodes()) {
       if (searchedNode instanceof SNode){
         usageTargets.add(new NodeUsageTarget((SNode) searchedNode, project));
       }
     }
 
-    ArrayList<Usage> usages = new ArrayList<Usage>();
-    for (Object searchResult: searchResults.getSearchResults()){
-      Object usage = ((SearchResult) searchResult).getObject();
+    Set<Usage> usages = new LinkedHashSet<Usage>();
+    for (SearchResult searchResult: (List<SearchResult>)searchResults.getAliveResults()){
+      Object usage =  searchResult.getObject();
       if (usage instanceof SNode) {
         usages.add(new NodeUsage((SNode) usage, project));
       }

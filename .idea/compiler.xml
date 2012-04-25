@@ -3,7 +3,6 @@
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
     <excludeFromCompile>
-      <directory url="file://$PROJECT_DIR$/plugins/mpsjava/migration" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/buildlanguage/languages/startup/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/execution-languages/languages/deprecated/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/debugger-api-languages/languages/jetbrains.mps.debugger.api.lang/source_gen" includeSubdirectories="true" />
@@ -60,15 +59,15 @@
       <directory url="file://$PROJECT_DIR$/languages/util/bash/solutions/jetbrains.mps.bash.sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/builders/sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/builders/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/build-deprecated/languages/buildlanguage/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/build-deprecated/languages/custommps/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/build-deprecated/languages/dependency/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/build-deprecated/languages/generictasks/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/buildlanguage/languages/buildlanguage/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/buildlanguage/languages/custommps/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/buildlanguage/languages/dependency/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/buildlanguage/languages/generictasks/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/buildlanguage/languages/gentest/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/build-deprecated/languages/packaging/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/build-deprecated/languages/packmps/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/build-deprecated/languages/property/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/build-deprecated/languages/solutions/jetbrains.mps.buildlangauge.mpsautobuild/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/buildlanguage/languages/packaging/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/buildlanguage/languages/packmps/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/buildlanguage/languages/property/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/buildlanguage/solutions/jetbrains.mps.buildlangauge.mpsautobuild/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/conf/languages/conf/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/conf/solutions/jetbrains.mps.platform.conf.sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/contracts/languages/contracts/source_gen" includeSubdirectories="true" />
@@ -195,6 +194,7 @@
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/typesystem/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/buildlanguage/languages/custommps/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/buildlanguage/languages/gentest/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/buildlanguage/languages/packaging/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/buildlanguage/languages/packmps/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/ypath/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
@@ -298,7 +298,14 @@
       <directory url="file://$PROJECT_DIR$/plugins/execution-configurations/languages/migration/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/nanoc/nanocProject/solutions/jetbrains.mps.nanoc.sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/nanoc/nanocProject/languages/nanoc/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/util/buildlanguage/languages/startup/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/build-deprecated/languages/buildlanguage/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/build-deprecated/languages/custommps/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/build-deprecated/languages/dependency/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/build-deprecated/languages/generictasks/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/build-deprecated/languages/packaging/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/build-deprecated/languages/packmps/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/build-deprecated/languages/property/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/build-deprecated/languages/solutions/jetbrains.mps.buildlangauge.mpsautobuild/source_gen" includeSubdirectories="true" />
     </excludeFromCompile>
     <resourceExtensions>
       <entry name=".+\.(properties|xml|html|dtd|tld)" />

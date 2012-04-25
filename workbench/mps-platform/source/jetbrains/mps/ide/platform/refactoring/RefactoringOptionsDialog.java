@@ -13,20 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.refactoring.framework;
+package jetbrains.mps.ide.platform.refactoring;
 
-import jetbrains.mps.ide.dialogs.BaseDialog;
-import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
+import com.intellij.openapi.ui.DialogWrapper;
+import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
+import jetbrains.mps.refactoring.framework.IRefactoring;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JCheckBox;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
-import java.awt.Frame;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.HeadlessException;
+import java.awt.*;
 
-public class RefactoringOptionsDialog extends BaseDialog {
+public class RefactoringOptionsDialog extends DialogWrapper {
   private RefactoringContext myRefactoringContext;
   private IRefactoring myRefactoring;
 
@@ -34,14 +35,51 @@ public class RefactoringOptionsDialog extends BaseDialog {
   private JCheckBox myGenerateModelsCheckBox;
   private JPanel myInnerPanel;
   private boolean myNeedToBeShown = false;
+  private boolean myHasModelsToGenerate;
 
   private boolean myIsCancelled = true;
 
   public RefactoringOptionsDialog(Frame mainFrame, RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate) throws HeadlessException {
-    super(mainFrame, "Refactoring Options");
+    super(mainFrame, true);
+    setTitle("Refactoring Options");
     myRefactoringContext = refactoringContext;
     myRefactoring = refactoring;
-    myInnerPanel = new JPanel(new GridBagLayout());
+    myHasModelsToGenerate = hasModelsToGenerate;
+    init();
+  }
+
+
+
+  protected JComponent getMainComponent() {
+    return myInnerPanel;
+  }
+
+  public boolean isCancelled() {
+    return myIsCancelled;
+  }
+
+  protected void doOKAction() {
+    myIsCancelled = false;
+    if (myRefactoring instanceof ILoggableRefactoring) {
+      myRefactoringContext.setLocal(myIsLocalCheckBox.isSelected());
+    }
+
+    if (myGenerateModelsCheckBox!=null){
+      myRefactoringContext.setDoesGenerateModels(myGenerateModelsCheckBox.isSelected());
+    } else{
+      myRefactoringContext.setDoesGenerateModels(false);
+    }
+    close(OK_EXIT_CODE);
+  }
+
+
+  public boolean needToBeShown() {
+    return myNeedToBeShown;
+  }
+
+  @Override
+  protected JComponent createCenterPanel() {
+     myInnerPanel = new JPanel(new GridBagLayout());
 
     GridBagConstraints c = new GridBagConstraints();
     c.gridx = 0;
@@ -57,7 +95,7 @@ public class RefactoringOptionsDialog extends BaseDialog {
       myNeedToBeShown = true;
     }
 
-    if (hasModelsToGenerate) {
+    if (myHasModelsToGenerate) {
       myGenerateModelsCheckBox = new JCheckBox("rebuild models");
       myInnerPanel.add(myGenerateModelsCheckBox, c);
       myGenerateModelsCheckBox.setSelected(true);
@@ -66,42 +104,15 @@ public class RefactoringOptionsDialog extends BaseDialog {
 
     c.weighty = 1;
     myInnerPanel.add(new JPanel(), c);
-  }
-
-  public DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensions(200, 200, 300, 250);
-  }
-
-  protected JComponent getMainComponent() {
+    myInnerPanel.setPreferredSize(new Dimension(300,250));
     return myInnerPanel;
   }
 
-  public boolean isCancelled() {
-    return myIsCancelled;
+  @Nullable()
+  @NonNls
+  @Override
+  protected String getDimensionServiceKey() {
+    return getClass().getName();
   }
 
-  @Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
-  public void onOk() {
-    myIsCancelled = false;
-    if (myRefactoring instanceof ILoggableRefactoring) {
-      myRefactoringContext.setLocal(myIsLocalCheckBox.isSelected());
-    }
-
-    if (myGenerateModelsCheckBox!=null){
-      myRefactoringContext.setDoesGenerateModels(myGenerateModelsCheckBox.isSelected());
-    } else{
-      myRefactoringContext.setDoesGenerateModels(false);
-    }
-
-    dispose();
-  }
-
-  @Button(position = 1, name = "Cancel", mnemonic = 'C')
-  public void onCancel() {
-    dispose();
-  }
-
-  public boolean needToBeShown() {
-    return myNeedToBeShown;
-  }
 }
