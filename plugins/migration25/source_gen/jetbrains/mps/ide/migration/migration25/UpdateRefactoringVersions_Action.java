@@ -84,14 +84,14 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
     int modelVersion = model.getVersion();
     int historyVersion = model.getStructureModificationLog().getLatestVersion(model.getSModelReference());
     if (modelVersion < historyVersion) {
-      if (log.isInfoEnabled()) {
-        log.info("updating version of " + model + " from " + modelVersion + " to .history version " + historyVersion);
+      if (log.isErrorEnabled()) {
+        log.error("updating version of " + model + " from " + modelVersion + " to .history version " + historyVersion);
       }
       model.setVersion(historyVersion);
       model.setChanged(true);
     } else if (modelVersion > historyVersion) {
-      if (log.isInfoEnabled()) {
-        log.info("history version of " + model + " is smaller than model version: " + historyVersion + "<" + modelVersion);
+      if (log.isErrorEnabled()) {
+        log.error("history version of " + model + " is smaller than model version: " + historyVersion + "<" + modelVersion);
       }
     }
   }
@@ -104,14 +104,13 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
         continue;
       }
       if (importElement.getUsedVersion() < usedModel.getVersion()) {
-        if (log.isInfoEnabled()) {
-          log.info(model + ": updating used version of " + importElement.getModelReference() + " from " + importElement.getUsedVersion() + " to " + usedModel.getVersion());
+        if (log.isErrorEnabled()) {
+          log.error(model + ": updating used version of " + importElement.getModelReference() + " from " + importElement.getUsedVersion() + " to " + usedModel.getVersion());
         }
       } else if (importElement.getUsedVersion() > usedModel.getVersion()) {
         if (log.isErrorEnabled()) {
           log.error(model + ": used version of " + importElement.getModelReference() + " is greater than model version: " + importElement.getUsedVersion() + ">" + usedModel.getVersion());
         }
-        // fix 
         m.updateImportedModelUsedVersion(importElement.getModelReference(), usedModel.getVersion());
         model.setChanged(true);
       }
