@@ -66,7 +66,7 @@ public class ModuleClassLoader extends ClassLoader {
       for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
         if (m.equals(myModule)) continue;
 
-        if (m.canFindClass(name) && m.canLoad() && m.canLoadFromSelf()) {
+        if (m.canLoad() && m.canLoadFromSelf() && m.canFindClass(name)) {
           try {
             return m.getClassLoader().loadClass(name, false, false);
           } catch (ClassNotFoundException e) {
