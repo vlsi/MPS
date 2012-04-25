@@ -168,7 +168,7 @@ public class ModelReader7Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
 
     @Override
     protected BaseSModelDescriptor.ModelLoadResult createObject(Attributes attrs) {
-      fieldmodel = new SModel(SModelReference.fromString(attrs.getValue("modelUID")), new RegularNodeIdMap());
+      fieldmodel = new SModel(SModelReference.fromString(attrs.getValue("modelUID")));
       fieldmodel.setPersistenceVersion(7);
       fieldmodel.getSModelHeader().updateDefaults(fieldheader);
       fieldmodel.setLoading(true);
