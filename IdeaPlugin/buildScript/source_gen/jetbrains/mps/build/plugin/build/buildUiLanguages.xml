@@ -586,7 +586,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.java.modules.cycle.1, java.compile.jetbrains.mps.ui, java.compile.jetbrains.mps.ui.pluginSolution, java.compile.jetbrains.mps.ui.modeling, java.compile.jetbrains.mps.ui.modeling.pluginSolution, java.compile.jetbrains.mps.ui.internal, java.compile.jetbrains.mps.ui.gwt, java.compile.jetbrains.mps.ui.gwt.runtime, java.compile.jetbrains.mps.ui.gwt.pluginSolution, java.compile.jetbrains.mps.ui.swing, java.compile.jetbrains.mps.ui.swing.pluginSolution, java.compile.jetbrains.mps.ui.swing.runtime, java.compile.jetbrains.mps.ui.swt, java.compile.jetbrains.mps.ui.swt.pluginSolution, java.compile.jetbrains.mps.ui.swt.runtime, java.compile.jetbrains.mps.gwt.client" />
+  <target name="compileJava" depends="java.compile.java.modules.cycle.1, java.compile.jetbrains.mps.ui, java.compile.jetbrains.mps.ui.pluginSolution, java.compile.jetbrains.mps.ui.modeling, java.compile.jetbrains.mps.ui.modeling.pluginSolution, java.compile.jetbrains.mps.ui.internal, java.compile.jetbrains.mps.ui.gwt, java.compile.jetbrains.mps.ui.gwt.pluginSolution, java.compile.jetbrains.mps.ui.swing, java.compile.jetbrains.mps.ui.swing.pluginSolution, java.compile.jetbrains.mps.ui.swing.runtime, java.compile.jetbrains.mps.ui.swt, java.compile.jetbrains.mps.ui.swt.pluginSolution, java.compile.jetbrains.mps.ui.swt.runtime, java.compile.jetbrains.mps.gwt.client" />
   
   <target name="processResources" />
   
@@ -884,37 +884,6 @@
     </javac>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.ui.gwt">
       <fileset dir="${mps_home}/languages/util/ui/languages/gwt/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-    </copy>
-  </target>
-  
-  <target name="java.compile.jetbrains.mps.ui.gwt.runtime" depends="fetchDependencies">
-    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ui.gwt.runtime" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui.gwt.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${mps_home}/languages/util/ui/languages/gwt/solutions/runtime/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-core.jar" />
-        <fileset file="${mps_home}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-        <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
-        <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
-        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
-      </classpath>
-    </javac>
-    <copy todir="${build.tmp}/java/out/jetbrains.mps.ui.gwt.runtime">
-      <fileset dir="${mps_home}/languages/util/ui/languages/gwt/solutions/runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
