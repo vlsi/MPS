@@ -20,12 +20,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.compiler.IClassesData;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import java.util.Collection;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import javax.swing.JComponent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.kernel.model.SModelUtil;
 import java.util.Collections;
 import jetbrains.mps.smodel.SModel;
@@ -71,13 +73,13 @@ public class FindInstancesDialog extends BaseDialog {
       }
     });
     if (module instanceof Language) {
-      final Wrappers._T<Collection<Language>> languageList = new Wrappers._T<Collection<Language>>();
+      final Set<Language> languageList = SetSequence.fromSet(new HashSet<Language>());
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          languageList.value = ((Language) module).getAllExtendedLanguages();
+          ((Language) module).getDependenciesManager().collectAllExtendedLanguages(languageList);
         }
       });
-      for (Language extendedLanguage : languageList.value) {
+      for (Language extendedLanguage : languageList) {
         this.myEditor.addLanguageStructureModel(extendedLanguage);
       }
     }

@@ -54,7 +54,7 @@ public class AddMissingImportsInProject_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      for (IModule module : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getModules())) {
+      for (IModule module : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators())) {
         if (module.isPackaged()) {
           continue;
         }

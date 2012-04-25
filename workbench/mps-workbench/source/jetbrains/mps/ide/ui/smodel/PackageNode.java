@@ -17,10 +17,7 @@ package jetbrains.mps.ide.ui.smodel;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
 
@@ -59,7 +56,7 @@ public class PackageNode extends SNodeGroupTreeNode {
     if (getOperationContext().getModule() instanceof Language) {
       Language l = (Language) getOperationContext().getModule();
 
-      for (SModelDescriptor sm : l.getAspectModelDescriptors()) {
+      for (SModelDescriptor sm : LanguageAspect.getAspectModels(l)) {
         result.addAll(getNodesUnderPackage(sm));
       }
     }

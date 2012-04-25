@@ -15,6 +15,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelOperations;
@@ -63,17 +64,17 @@ public class LanguageUsagesFinder implements IFinder {
     if (ModuleUtil.depsToModules(solution.getDependencies()).contains(searchedLanguage)) {
       searchResults.getSearchResults().add(new SearchResult<Solution>(solution, DEPENDENT_MODULES));
     }
-    if (solution.getDependenciesManager().getAllUsedLanguages().contains(searchedLanguage)) {
+    if (new GlobalModuleDependenciesManager(solution).getUsedLanguages().contains(searchedLanguage)) {
       searchResults.getSearchResults().add(new SearchResult<Solution>(solution, USED_BY));
       collectUsagesInModels(searchedLanguage, solution, searchResults);
     }
   }
 
   private void collectUsagesInLanguage(Language searchedLanguage, Language language, SearchResults searchResults) {
-    if (language.getExtendedLanguages().contains(searchedLanguage)) {
+    if (language.getExtendedLanguageRefs().contains(searchedLanguage.getModuleReference())) {
       searchResults.getSearchResults().add(new SearchResult<Language>(language, EXTENDING_LANGUAGES));
     }
-    if (language.getDependenciesManager().getAllUsedLanguages().contains(searchedLanguage)) {
+    if (new GlobalModuleDependenciesManager(language).getUsedLanguages().contains(searchedLanguage)) {
       searchResults.getSearchResults().add(new SearchResult<Language>(language, USED_BY));
       collectUsagesInModels(searchedLanguage, language, searchResults);
     }

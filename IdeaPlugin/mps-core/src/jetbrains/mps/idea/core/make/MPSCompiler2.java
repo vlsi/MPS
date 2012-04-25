@@ -30,6 +30,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
+import jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;
 import jetbrains.mps.library.contributor.PluginLibrariesContributor;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -186,8 +187,8 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
     makeConfiguration.addProperty("CACHES_OUTPUT_ROOT_DIR", cachesOutputRootDir.getAbsolutePath());
 
     PluginLibrariesContributor pluginLibContributor = ApplicationManager.getApplication().getComponent(PluginLibrariesContributor.class);
-    for (String library : pluginLibContributor.getLibraries()) {
-      makeConfiguration.addConfiguredLibrary(library, new File(library), false);
+    for (LibDescriptor library : pluginLibContributor.getLibraries()) {
+      makeConfiguration.addConfiguredLibrary(library.path, new File(library.path), false);
     }
 
     for (Map.Entry<MPSFacet, List<SModelDescriptor>> chunk : facetToModels.entrySet()) {

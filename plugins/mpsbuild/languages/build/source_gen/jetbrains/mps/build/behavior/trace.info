@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.build.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.build.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BuildAspect_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildAspect_BehaviorDescriptor" />
   <unitInfo fileName="BuildCompositePath_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildCompositePath_BehaviorDescriptor" />
   <unitInfo fileName="BuildCustomWorkflow_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildCustomWorkflow_BehaviorDescriptor" />
@@ -28,6 +28,7 @@
   <unitInfo fileName="BuildLayout_CompileOutputOf_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_CompileOutputOf_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_ContainerAcceptingFileSet_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_ContainerAcceptingFileSet_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_Container_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Container_BehaviorDescriptor" />
+  <unitInfo fileName="BuildLayout_CopyFilterFixCRLF_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_CopyFilterFixCRLF_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_CopyFilterReplaceRegex_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_CopyFilterReplaceRegex_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_CopyFilterReplaceTokens_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_CopyFilterReplaceTokens_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_CopyFilter_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_CopyFilter_BehaviorDescriptor" />
@@ -48,6 +49,7 @@
   <unitInfo fileName="BuildLayout_Node_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Node_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_PathElement_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_PathElement_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_PureNode_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_PureNode_BehaviorDescriptor" />
+  <unitInfo fileName="BuildLayout_Tar_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Tar_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_TransparentContainer_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_TransparentContainer_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_Zip_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Zip_BehaviorDescriptor" />
   <unitInfo fileName="BuildMacro_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildMacro_BehaviorDescriptor" />
@@ -2280,6 +2282,205 @@
       <varInfo nodeId="841011766566205111" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="841011766566205111" fileName="BuildLayout_Import_Behavior.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Import_Behavior" />
+  </root>
+  <root nodeId="8577651205286949056">
+    <nodeInfo nodeId="8577651205286949062" fileName="BuildLayout_Tar_Behavior.java" startLine="19" startPosition="94" endLine="20" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949069" fileName="BuildLayout_Tar_Behavior.java" startLine="20" startPosition="43" endLine="21" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949078" fileName="BuildLayout_Tar_Behavior.java" startLine="21" startPosition="66" endLine="22" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949093" fileName="BuildLayout_Tar_Behavior.java" startLine="22" startPosition="187" endLine="23" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949101" fileName="BuildLayout_Tar_Behavior.java" startLine="23" startPosition="50" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8577651205286949102" fileName="BuildLayout_Tar_Behavior.java" startLine="24" startPosition="0" endLine="25" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949114" fileName="BuildLayout_Tar_Behavior.java" startLine="27" startPosition="33" endLine="28" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949118" fileName="BuildLayout_Tar_Behavior.java" startLine="28" startPosition="26" endLine="29" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="8577651205286949126" fileName="BuildLayout_Tar_Behavior.java" startLine="32" startPosition="21" endLine="33" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949145" fileName="BuildLayout_Tar_Behavior.java" startLine="33" startPosition="259" endLine="34" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949156" fileName="BuildLayout_Tar_Behavior.java" startLine="34" startPosition="103" endLine="35" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949171" fileName="BuildLayout_Tar_Behavior.java" startLine="35" startPosition="116" endLine="36" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949186" fileName="BuildLayout_Tar_Behavior.java" startLine="40" startPosition="76" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="48" startPosition="49" endLine="49" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="49" startPosition="26" endLine="50" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="50" startPosition="67" endLine="51" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="51" startPosition="32" endLine="52" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="52" startPosition="32" endLine="53" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="53" startPosition="32" endLine="54" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="55" startPosition="7" endLine="56" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="56" startPosition="166" endLine="57" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="58" startPosition="9" endLine="59" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="59" startPosition="157" endLine="60" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="60" startPosition="45" endLine="61" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="61" startPosition="66" endLine="62" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="63" startPosition="11" endLine="64" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="64" startPosition="161" endLine="65" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="65" startPosition="47" endLine="66" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="67" startPosition="13" endLine="68" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="68" startPosition="163" endLine="69" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="69" startPosition="49" endLine="70" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="70" startPosition="70" endLine="71" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="72" startPosition="13" endLine="73" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="74" startPosition="11" endLine="75" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="76" startPosition="9" endLine="77" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="78" startPosition="7" endLine="79" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="87" startPosition="71" endLine="88" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="88" startPosition="26" endLine="89" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="89" startPosition="67" endLine="90" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="90" startPosition="32" endLine="91" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="91" startPosition="32" endLine="92" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="92" startPosition="32" endLine="93" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="93" startPosition="32" endLine="94" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="94" startPosition="32" endLine="95" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="96" startPosition="7" endLine="97" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="97" startPosition="166" endLine="98" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="99" startPosition="9" endLine="100" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="100" startPosition="157" endLine="101" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="101" startPosition="45" endLine="102" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="102" startPosition="66" endLine="103" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="104" startPosition="11" endLine="105" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="105" startPosition="161" endLine="106" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="106" startPosition="47" endLine="107" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="108" startPosition="13" endLine="109" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="109" startPosition="163" endLine="110" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="110" startPosition="50" endLine="111" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="111" startPosition="72" endLine="112" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="113" startPosition="13" endLine="114" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="116" startPosition="11" endLine="117" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="117" startPosition="161" endLine="118" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="118" startPosition="48" endLine="119" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="120" startPosition="13" endLine="121" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="121" startPosition="163" endLine="122" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="122" startPosition="50" endLine="123" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="123" startPosition="72" endLine="124" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="125" startPosition="13" endLine="126" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="127" startPosition="11" endLine="128" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="129" startPosition="9" endLine="130" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="131" startPosition="7" endLine="132" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="44" startPosition="55" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_cokct5_a0a0b0h0b#()V" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="83" startPosition="55" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_cokct5_a0a0c0h0b#()V" />
+    <nodeInfo nodeId="8577651205286949056" fileName="BuildLayout_Tar_Behavior.java" startLine="15" startPosition="39" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8577651205286949108" fileName="BuildLayout_Tar_Behavior.java" startLine="26" startPosition="76" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8577651205286949056" fileName="BuildLayout_Tar_Behavior.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isFile_1368030936106753986#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="8577651205286949106" fileName="BuildLayout_Tar_Behavior.java" startLine="25" startPosition="31" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8577651205286949124" fileName="BuildLayout_Tar_Behavior.java" startLine="31" startPosition="5" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="66" startPosition="57" endLine="72" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="66" startPosition="57" endLine="72" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="107" startPosition="57" endLine="113" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="107" startPosition="57" endLine="113" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="119" startPosition="59" endLine="125" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="119" startPosition="59" endLine="125" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="62" startPosition="56" endLine="74" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="62" startPosition="56" endLine="74" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="103" startPosition="56" endLine="115" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="103" startPosition="56" endLine="115" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="115" startPosition="11" endLine="127" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="115" startPosition="11" endLine="127" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="57" startPosition="43" endLine="76" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="57" startPosition="43" endLine="76" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8577651205286949056" fileName="BuildLayout_Tar_Behavior.java" startLine="18" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_unpack_7128123785277710736#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/build/util/UnpackHelper;)V" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="54" startPosition="32" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="54" startPosition="32" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="98" startPosition="43" endLine="129" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="98" startPosition="43" endLine="129" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="47" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="95" startPosition="32" endLine="131" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="95" startPosition="32" endLine="131" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="86" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="8577651205286949058" fileName="BuildLayout_Tar_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="45" startPosition="46" endLine="45" endPosition="46" />
+    <scopeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="84" startPosition="46" endLine="84" endPosition="46" />
+    <scopeInfo nodeId="8577651205286949185" fileName="BuildLayout_Tar_Behavior.java" startLine="40" startPosition="76" endLine="41" endPosition="16" />
+    <scopeInfo nodeId="8577651205286949113" fileName="BuildLayout_Tar_Behavior.java" startLine="27" startPosition="33" endLine="29" endPosition="14" />
+    <scopeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="44" startPosition="55" endLine="46" endPosition="5" />
+    <scopeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="83" startPosition="55" endLine="85" endPosition="5" />
+    <scopeInfo nodeId="8577651205286949056" fileName="BuildLayout_Tar_Behavior.java" startLine="15" startPosition="39" endLine="18" endPosition="0">
+      <varInfo nodeId="8577651205286949056" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8577651205286949107" fileName="BuildLayout_Tar_Behavior.java" startLine="26" startPosition="76" endLine="30" endPosition="7" />
+    <scopeInfo nodeId="8577651205286949125" fileName="BuildLayout_Tar_Behavior.java" startLine="32" startPosition="21" endLine="36" endPosition="56">
+      <varInfo nodeId="8577651205286949127" varName="tempPath" />
+    </scopeInfo>
+    <scopeInfo nodeId="8577651205286949056" fileName="BuildLayout_Tar_Behavior.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="8577651205286949056" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="67" startPosition="13" endLine="71" endPosition="60">
+      <varInfo nodeId="8577651205286949149" varName="quotedNode1_8" />
+    </scopeInfo>
+    <scopeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="108" startPosition="13" endLine="112" endPosition="61">
+      <varInfo nodeId="8577651205286949160" varName="quotedNode1_10" />
+    </scopeInfo>
+    <scopeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="120" startPosition="13" endLine="124" endPosition="61">
+      <varInfo nodeId="8577651205286949160" varName="quotedNode1_12" />
+    </scopeInfo>
+    <scopeInfo nodeId="8577651205286949106" fileName="BuildLayout_Tar_Behavior.java" startLine="25" startPosition="31" endLine="31" endPosition="5">
+      <varInfo nodeId="8577651205286949119" varName="c" />
+    </scopeInfo>
+    <scopeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="66" startPosition="57" endLine="72" endPosition="13" />
+    <scopeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="107" startPosition="57" endLine="113" endPosition="13" />
+    <scopeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="119" startPosition="59" endLine="125" endPosition="13" />
+    <scopeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="63" startPosition="11" endLine="73" endPosition="63">
+      <varInfo nodeId="8577651205286949149" varName="quotedNode1_7" />
+    </scopeInfo>
+    <scopeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="104" startPosition="11" endLine="114" endPosition="63">
+      <varInfo nodeId="8577651205286949160" varName="quotedNode1_9" />
+    </scopeInfo>
+    <scopeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="116" startPosition="11" endLine="126" endPosition="64">
+      <varInfo nodeId="8577651205286949160" varName="quotedNode1_11" />
+    </scopeInfo>
+    <scopeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="62" startPosition="56" endLine="74" endPosition="11" />
+    <scopeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="103" startPosition="56" endLine="115" endPosition="11" />
+    <scopeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="115" startPosition="11" endLine="127" endPosition="11" />
+    <scopeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="58" startPosition="9" endLine="75" endPosition="58">
+      <varInfo nodeId="8577651205286949149" varName="quotedNode1_6" />
+    </scopeInfo>
+    <scopeInfo nodeId="8577651205286949061" fileName="BuildLayout_Tar_Behavior.java" startLine="19" startPosition="94" endLine="37" endPosition="5">
+      <varInfo nodeId="8577651205286949103" varName="needUnpack" />
+      <varInfo nodeId="8577651205286949063" varName="parent" />
+      <varInfo nodeId="8577651205286949070" varName="parentLocation" />
+      <varInfo nodeId="8577651205286949079" varName="tarLocation" />
+    </scopeInfo>
+    <scopeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="57" startPosition="43" endLine="76" endPosition="9" />
+    <scopeInfo nodeId="8577651205286949056" fileName="BuildLayout_Tar_Behavior.java" startLine="18" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="8577651205286949180" varName="helper" />
+      <varInfo nodeId="8577651205286949056" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="55" startPosition="7" endLine="77" endPosition="31">
+      <varInfo nodeId="8577651205286949149" varName="quotedNode1_5" />
+    </scopeInfo>
+    <scopeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="54" startPosition="32" endLine="78" endPosition="7" />
+    <scopeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="99" startPosition="9" endLine="128" endPosition="58">
+      <varInfo nodeId="8577651205286949160" varName="quotedNode1_8" />
+    </scopeInfo>
+    <scopeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="48" startPosition="49" endLine="79" endPosition="20">
+      <varInfo nodeId="8577651205286949149" varName="_parameterValues_129834374" />
+      <varInfo nodeId="8577651205286949149" varName="quotedNode_1" />
+      <varInfo nodeId="8577651205286949149" varName="quotedNode_2" />
+      <varInfo nodeId="8577651205286949149" varName="quotedNode_3" />
+      <varInfo nodeId="8577651205286949149" varName="quotedNode_4" />
+      <varInfo nodeId="8577651205286949149" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="98" startPosition="43" endLine="129" endPosition="9" />
+    <scopeInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="47" startPosition="0" endLine="81" endPosition="0">
+      <varInfo nodeId="8577651205286949149" varName="parameter_9" />
+    </scopeInfo>
+    <scopeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="96" startPosition="7" endLine="130" endPosition="31">
+      <varInfo nodeId="8577651205286949160" varName="quotedNode1_7" />
+    </scopeInfo>
+    <scopeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="95" startPosition="32" endLine="131" endPosition="7" />
+    <scopeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="87" startPosition="71" endLine="132" endPosition="20">
+      <varInfo nodeId="8577651205286949160" varName="_parameterValues_129834374" />
+      <varInfo nodeId="8577651205286949160" varName="quotedNode_1" />
+      <varInfo nodeId="8577651205286949160" varName="quotedNode_2" />
+      <varInfo nodeId="8577651205286949160" varName="quotedNode_3" />
+      <varInfo nodeId="8577651205286949160" varName="quotedNode_4" />
+      <varInfo nodeId="8577651205286949160" varName="quotedNode_5" />
+      <varInfo nodeId="8577651205286949160" varName="quotedNode_6" />
+      <varInfo nodeId="8577651205286949160" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="86" startPosition="0" endLine="134" endPosition="0">
+      <varInfo nodeId="8577651205286949160" varName="parameter_13" />
+      <varInfo nodeId="8577651205286949160" varName="parameter_14" />
+    </scopeInfo>
+    <unitInfo nodeId="8577651205286949056" fileName="BuildLayout_Tar_Behavior.java" startLine="15" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Tar_Behavior" />
+    <unitInfo nodeId="8577651205286949149" fileName="BuildLayout_Tar_Behavior.java" startLine="44" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Tar_Behavior$QuotationClass_cokct5_a0a0b0h0b" />
+    <unitInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="83" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Tar_Behavior$QuotationClass_cokct5_a0a0c0h0b" />
   </root>
   <root nodeId="8618885170173674797">
     <nodeInfo nodeId="5589818551502505428" fileName="BuildCompositePath_Behavior.java" startLine="18" startPosition="43" endLine="19" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

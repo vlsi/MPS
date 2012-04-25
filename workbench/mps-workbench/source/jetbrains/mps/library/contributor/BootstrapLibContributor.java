@@ -24,11 +24,13 @@ import org.jetbrains.annotations.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
-public class BootstrapLibContributor implements LibraryContributor,ApplicationComponent {
-  public Set<String> getLibraries() {
-    Set<String> res = new HashSet<String>();
-    res.addAll(PathManager.getBootstrapPaths());
-    res.add(PathManager.getLanguagesPath());
+public class BootstrapLibContributor implements LibraryContributor, ApplicationComponent {
+  public Set<LibDescriptor> getLibraries() {
+    Set<LibDescriptor> res = new HashSet<LibDescriptor>();
+    for (String path : PathManager.getBootstrapPaths()) {
+      res.add(new LibDescriptor(path, null));
+    }
+    res.add(new LibDescriptor(PathManager.getLanguagesPath(), null));
     return res;
   }
 

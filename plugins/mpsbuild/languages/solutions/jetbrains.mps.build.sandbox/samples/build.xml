@@ -2,6 +2,7 @@
 
   <target name="build" depends="clean">
     <ant antfile="buildA/buildA.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="subprojects/buildB/buildB.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="buildE/buildE.xml" inheritAll="false" useNativeBasedir="true" />
 
     <ant antfile="buildMpsC.xml" inheritAll="false" useNativeBasedir="true" />

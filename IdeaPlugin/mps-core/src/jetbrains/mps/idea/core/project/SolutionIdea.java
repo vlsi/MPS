@@ -148,7 +148,7 @@ public class SolutionIdea extends Solution {
   }
 
   @Override
-  protected void invalidateDependencies() {
+  public void invalidateDependencies() {
     super.invalidateDependencies();
     myDependencies = null;
   }

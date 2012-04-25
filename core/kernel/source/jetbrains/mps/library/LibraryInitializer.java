@@ -19,8 +19,10 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.library.contributor.LibraryContributor;
+import jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -39,9 +41,9 @@ public class LibraryInitializer implements CoreComponent {
 
   private Set<String> myLoadedLibs = new HashSet<String>();
   private Map<String, MPSModuleOwner> myLibsToOwners = new HashMap<String, MPSModuleOwner>();
+  private Map<String, ClassLoader> myParentLoaders = new HashMap<String, ClassLoader>();
 
   private MPSModuleRepository myRepo;
-  private ClassLoaderManager myCLM;
 
   public void init() {
     if (INSTANCE != null) {
@@ -54,23 +56,37 @@ public class LibraryInitializer implements CoreComponent {
     INSTANCE = null;
   }
 
+  @SuppressWarnings("UnusedParameters")
   public LibraryInitializer(MPSModuleRepository repo, ClassLoaderManager clm) {
     myRepo = repo;
-    myCLM = clm;
   }
 
   public void update() {
     update(false);
   }
 
-  public void update(boolean refreshFiles) {
-    Set<String> newLibs = new HashSet<String>();
-
-    for (LibraryContributor lc : myContributors) {
-      for (String s : lc.getLibraries()) {
-        newLibs.add(s);
+  public ClassLoader getParentLoaderForModule(IClassLoadingModule module) {
+    for (String path : myParentLoaders.keySet()) {
+      String pluginPath = module.getPluginPath();
+      if (pluginPath == null) continue;
+      if (pluginPath.startsWith(FileSystem.getInstance().getFileByPath(path).getPath())) {
+        return myParentLoaders.get(path);
       }
     }
+
+    //project module
+    return LibraryInitializer.class.getClassLoader();
+  }
+
+  public void update(boolean refreshFiles) {
+    myParentLoaders.clear();
+    for (LibraryContributor lc : myContributors) {
+      for (LibDescriptor s : lc.getLibraries()) {
+        myParentLoaders.put(s.path, s.parentLoader != null ? s.parentLoader : LibraryInitializer.class.getClassLoader());
+      }
+    }
+
+    Set<String> newLibs = new HashSet<String>(myParentLoaders.keySet());
 
     reload(myLoadedLibs, newLibs, refreshFiles);
 
@@ -120,9 +136,12 @@ public class LibraryInitializer implements CoreComponent {
     CleanupManager.getInstance().cleanup();
     ClassLoaderManager.getInstance().updateClassPath();
 
-    myCLM.initRuntimeEnvironment();
     LanguageRegistry.getInstance().loadLanguages();
     ExtensionRegistry.getInstance().loadExtensionDescriptors();
+
+    for (IModule m:MPSModuleRepository.getInstance().getAllModules()){
+      m.invalidateDependencies();
+    }
   }
 
   protected void fireOnLoad(final MPSModuleOwner owner) {

@@ -7,6 +7,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.LanguageAspect;
 import java.util.Collections;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -26,7 +27,7 @@ public class NodeFactoryUtil {
   }
 
   public static List<SNode> getApplicableNodeFactories(final SNode concept, Language language) {
-    EditableSModelDescriptor actionsModelDescriptor = language.getActionsModelDescriptor();
+    EditableSModelDescriptor actionsModelDescriptor = LanguageAspect.ACTIONS.get(language);
     if (actionsModelDescriptor == null) {
       return Collections.emptyList();
     }

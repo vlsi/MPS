@@ -19,6 +19,7 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -95,7 +96,8 @@ public class ModuleRepositoryFacade implements CoreComponent {
   public Collection<Language> getAllExtendingLanguages(Language l) {
     List<Language> result = new LinkedList<Language>();
     for (Language lang : getAllModules(Language.class)) {
-      if (lang.getExtendedLanguages().contains(l)) {
+
+      if (ModuleUtil.refsToLanguages(lang.getExtendedLanguageRefs()).contains(l)) {
         result.add(lang);
       }
     }

@@ -286,7 +286,7 @@ public class GeneratorUIFacade {
         }
       }
 
-      for (SModelDescriptor sm : g.getSourceLanguage().getAspectModelDescriptors()) {
+      for (SModelDescriptor sm : LanguageAspect.getAspectModels(g.getSourceLanguage())) {
         result.add(sm);
       }
     }

@@ -40,8 +40,6 @@ import org.junit.runner.RunWith;
   "jetbrains.mps.make.dependencies.GraphTestCase",
   "jetbrains.mps.packaged.PackagedLanguageTest",
   "jetbrains.mps.refactoring.RefactoringTest",
-  "jetbrains.mps.runtime.BundleLoadingTest",
-  "jetbrains.mps.runtime.BundleTest",
   "jetbrains.mps.vcs.DiskMemoryConflictsTest",
 //  "jetbrains.mps.vcs.changesmanager.ChangesManagerTest", [temporarily disabled]
   "jetbrains.mps.vcs.diff.merge.MergeCoreTest",

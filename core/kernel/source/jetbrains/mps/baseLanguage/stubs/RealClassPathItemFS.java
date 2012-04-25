@@ -48,6 +48,12 @@ public abstract class RealClassPathItemFS extends AbstractClassPathItem {
     LOG.error("Using outdated classpath: " + this, new Throwable());
   }
 
+  public boolean hasClass(String name) {
+    IFile base = getBaseFile();
+    IFile classFile = base.getDescendant(name.replaceAll("\\.", "/") + MPSExtentions.DOT_CLASSFILE);
+    return classFile.exists();
+  }
+
   public synchronized byte[] getClass(String name) {
     checkValidity();
 

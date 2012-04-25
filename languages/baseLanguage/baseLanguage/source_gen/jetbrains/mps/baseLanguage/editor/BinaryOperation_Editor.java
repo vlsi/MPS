@@ -123,7 +123,6 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
         protected SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope) {
           SNode sourceNode = (SNode) oldChild;
           SNode result = (SNode) newChild;
-          SNode parent = (SNode) parentNode;
           SNodeOperations.replaceWithAnother(sourceNode, result);
           SLinkOperations.setTarget(result, "lValue", SLinkOperations.getTarget(sourceNode, "leftExpression", true), true);
           SLinkOperations.setTarget(result, "rValue", SLinkOperations.getTarget(sourceNode, "rightExpression", true), true);

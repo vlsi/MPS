@@ -259,7 +259,7 @@ public class ModelConstraintsManager implements CoreComponent {
       return null;
     }
     String packageName = languageNamespace + ".constraints";
-    SModelDescriptor constraintsModelDescriptor = l.getConstraintsModelDescriptor();
+    SModelDescriptor constraintsModelDescriptor = LanguageAspect.CONSTRAINTS.get(l);
     if (constraintsModelDescriptor == null) {
       return null;
     }

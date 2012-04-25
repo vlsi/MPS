@@ -21,6 +21,7 @@ public class Migration25_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new AddPluginDependencies_Action());
     addAction(new AddSourcesToModelRoots_Action());
     addAction(new AddStubsToModelRoots_Action());
+    addAction(new ConvertLanguageRuntimes_Action());
     addAction(new CorrectIconsAfterPluhinMove_Action());
     addAction(new ExecuteJavaModelCheckerFixes_Action());
     addAction(new ExecuteModelCheckerFixes_Action());

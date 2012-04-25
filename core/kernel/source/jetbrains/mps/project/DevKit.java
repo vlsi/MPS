@@ -18,8 +18,6 @@ package jetbrains.mps.project;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.dependency.DevkitDependenciesManager;
-import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -209,10 +207,6 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
       result.add(l.getModuleFqName());
     }
     return result;
-  }
-
-  protected ModuleDependenciesManager createDependenciesManager() {
-    return new DevkitDependenciesManager(this);
   }
 
   public void save() {

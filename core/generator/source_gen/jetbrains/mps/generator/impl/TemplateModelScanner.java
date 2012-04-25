@@ -51,7 +51,7 @@ public class TemplateModelScanner {
     }
   }
 
-  private void scanTemplateNode(SNode node) {
+  protected void scanTemplateNode(SNode node) {
     if ((node == null)) {
       return;
     }

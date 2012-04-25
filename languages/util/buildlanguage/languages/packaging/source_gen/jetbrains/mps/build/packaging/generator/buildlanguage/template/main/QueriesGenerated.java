@@ -46,6 +46,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.ArrayList;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.build.packaging.behavior.ModuleCycle_Behavior;
 import java.util.Comparator;
@@ -1331,7 +1332,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_5640794902512565310(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     final String MREF = "mref";
     List<SNode> res = new ArrayList<SNode>();
-    for (IModule m : Module_Behavior.call_getModule_1213877515148(_context.getNode()).getDependenciesManager().getAllRequiredModules()) {
+    for (IModule m : new GlobalModuleDependenciesManager(Module_Behavior.call_getModule_1213877515148(_context.getNode())).getModules(GlobalModuleDependenciesManager.Deptype.COMPILE)) {
       SNode propertyNode = SConceptOperations.createNewNode("jetbrains.mps.lang.core.structure.BaseConcept", null);
       propertyNode.setProperty(MREF, m.getModuleReference().toString());
       ListSequence.fromList(res).addElement(propertyNode);

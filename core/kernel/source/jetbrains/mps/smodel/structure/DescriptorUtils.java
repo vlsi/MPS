@@ -36,7 +36,7 @@ public class DescriptorUtils {
       }
 
       if (avoidLogErrors) {
-        ClassLoader cl = ClassLoaderManager.getInstance().getClassLoaderFor(language, false);
+        ClassLoader cl = language.getClassLoader();
         if (cl == null) {
           return null;
         }

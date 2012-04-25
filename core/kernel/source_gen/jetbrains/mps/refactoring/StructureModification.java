@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
@@ -57,6 +58,30 @@ public class StructureModification {
       }
     });
     return updated.value;
+  }
+
+  public static StructureModification.Relation compare(StructureModification a, StructureModification b) {
+    Map<SModelReference, Integer> aa = a.getDependencies();
+    Map<SModelReference, Integer> bb = b.getDependencies();
+
+    boolean eq = (int) MapSequence.fromMap(aa).count() == (int) MapSequence.fromMap(bb).count();
+    for (SModelReference k : SetSequence.fromSet(MapSequence.fromMap(aa).keySet())) {
+      if (!(MapSequence.fromMap(bb).containsKey(k))) {
+        eq = false;
+        continue;
+      }
+      if ((int) MapSequence.fromMap(aa).get(k) == (int) MapSequence.fromMap(bb).get(k)) {
+        continue;
+      }
+      return (MapSequence.fromMap(aa).get(k) < MapSequence.fromMap(bb).get(k) ?
+        StructureModification.Relation.BEFORE :
+        StructureModification.Relation.AFTER
+      );
+    }
+    return (eq ?
+      StructureModification.Relation.EQUAL :
+      StructureModification.Relation.NONE
+    );
   }
 
   private static <T> T as_hr78sn_a0a0a0a1(Object o, Class<T> type) {
@@ -146,6 +171,27 @@ public class StructureModification {
 
     public Iterable<SModelReference> getDependentModels() {
       return Sequence.fromArray(new SModelReference[]{oldModel, newModel});
+    }
+  }
+
+  public static   enum Relation {
+    EQUAL(),
+    BEFORE(),
+    AFTER(),
+    NONE(),
+    ERROR();
+
+    Relation() {
+    }
+
+    public StructureModification.Relation swap() {
+      if (this == StructureModification.Relation.BEFORE) {
+        return StructureModification.Relation.AFTER;
+      }
+      if (this == StructureModification.Relation.AFTER) {
+        return StructureModification.Relation.BEFORE;
+      }
+      return this;
     }
   }
 }

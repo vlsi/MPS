@@ -9,11 +9,18 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
+import java.util.Map;
+import java.util.Set;
+import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
@@ -37,55 +44,76 @@ public class StructureModificationProcessor {
     return result;
   }
 
-  private boolean playModelRefactorings(DefaultSModelDescriptor model, int usedVersion) {
-    int modelVersion = model.getVersion();
-    if (modelVersion > usedVersion) {
-      boolean played = false;
-      for (StructureModification data : ListSequence.fromList(model.getStructureModificationLog().getHistory())) {
-        if (MapSequence.fromMap(data.getDependencies()).get(model.getSModelReference()) < usedVersion) {
-          continue;
-        }
-        played |= playRefactoring(data);
-      }
-      return played;
-    } else if (modelVersion < usedVersion) {
-      /*
-        {
-          if (log.isErrorEnabled()) {
-            log.error("Model version mismatch for import " + model.getSModelReference().getSModelFqName() + " in model " + myModel.getSModelFqName());
-          }
-        }
-        {
-          if (log.isErrorEnabled()) {
-            log.error("Used version = " + usedVersion + ", current version = " + modelVersion);
-          }
-        }
-        // <node> 
-        // <node> 
-      */
-      return false;
-    } else {
-      return false;
-    }
-  }
-
   public boolean updateModelOnLoad() {
     // should be called in loading state 
     if (!(refactoringsPlaybackEnabled() && SModelStereotype.isUserModel(myModel))) {
       return false;
     }
-    boolean result = false;
-    // todo: calculate the order of refactorings to play and use it 
-    boolean played;
-    do {
-      played = false;
-      for (SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(myModel))) {
-        DefaultSModelDescriptor usedModel = as_etzqsh_a0a0a1a5a2(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), DefaultSModelDescriptor.class);
-        if (usedModel != null && playModelRefactorings(usedModel, importElement.getUsedVersion())) {
-          result = played = true;
+    boolean played = false;
+    for (StructureModification data : ListSequence.fromList(sortModifications(getApplicableModifications()))) {
+      played |= playRefactoring(data);
+    }
+    return played;
+  }
+
+  public List<StructureModification> getApplicableModifications() {
+    List<StructureModification> result = ListSequence.fromList(new ArrayList<StructureModification>());
+    for (SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(myModel))) {
+      DefaultSModelDescriptor usedModel = as_etzqsh_a0a0a1a2(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), DefaultSModelDescriptor.class);
+      if (usedModel == null) {
+        continue;
+      }
+      for (StructureModification data : ListSequence.fromList(usedModel.getStructureModificationLog().getHistory())) {
+        if (importElement.getUsedVersion() <= MapSequence.fromMap(data.getDependencies()).get(usedModel.getSModelReference())) {
+          ListSequence.fromList(result).addElement(data);
         }
       }
-    } while (played);
+    }
+    return result;
+  }
+
+  private List<StructureModification> sortModifications(List<StructureModification> list) {
+    // create graph 
+    Map<Integer, Set<Integer>> graph = MapSequence.fromMap(new HashMap<Integer, Set<Integer>>());
+lCompare:
+    for (int i = 0; i < ListSequence.fromList(list).count(); i++) {
+      Set<Integer> cur = SetSequence.fromSet(new HashSet<Integer>());
+      for (int j = 0; j < i; j++) {
+        StructureModification.Relation rel = StructureModification.compare(ListSequence.fromList(list).getElement(j), ListSequence.fromList(list).getElement(i));
+        if (rel == StructureModification.Relation.EQUAL) {
+          continue lCompare;
+        }
+        if (rel == StructureModification.Relation.BEFORE) {
+          SetSequence.fromSet(cur).addElement(j);
+        }
+        if (rel == StructureModification.Relation.AFTER) {
+          SetSequence.fromSet(MapSequence.fromMap(graph).get(j)).addElement(i);
+        }
+      }
+      MapSequence.fromMap(graph).put(i, cur);
+    }
+    // sort 
+    List<StructureModification> result = ListSequence.fromList(new ArrayList<StructureModification>());
+lfind:
+    while (MapSequence.fromMap(graph).isNotEmpty()) {
+      for (final int k : SetSequence.fromSet(MapSequence.fromMap(graph).keySet())) {
+        if (SetSequence.fromSet(MapSequence.fromMap(graph).get(k)).isEmpty()) {
+          ListSequence.fromList(result).addElement(ListSequence.fromList(list).getElement(k));
+          MapSequence.fromMap(graph).removeKey(k);
+          Sequence.fromIterable(MapSequence.fromMap(graph).values()).visitAll(new IVisitor<Set<Integer>>() {
+            public void visit(Set<Integer> it) {
+              SetSequence.fromSet(it).removeElement(k);
+            }
+          });
+          continue lfind;
+        }
+      }
+      // we have not found next data: loop detected! 
+      if (log.isErrorEnabled()) {
+        log.error("Loop found in applicable refactorings for " + myModel + "");
+      }
+      break;
+    }
     return result;
   }
 
@@ -132,7 +160,7 @@ public class StructureModificationProcessor {
     );
   }
 
-  private static <T> T as_etzqsh_a0a0a1a5a2(Object o, Class<T> type) {
+  private static <T> T as_etzqsh_a0a0a1a2(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

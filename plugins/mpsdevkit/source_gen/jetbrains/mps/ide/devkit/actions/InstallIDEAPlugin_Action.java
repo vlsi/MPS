@@ -32,8 +32,8 @@ import com.intellij.openapi.fileChooser.FileChooserFactory;
 public class InstallIDEAPlugin_Action extends BaseAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(InstallIDEAPlugin_Action.class);
-  private static Pattern REGEXP_gyxeh4_a0a4a4 = Pattern.compile("IntelliJIdea.*", 0);
-  private static Pattern REGEXP_gyxeh4_a0a4a4_0 = Pattern.compile("(?:\\.IntelliJIdea.*)|(?:\\.IdeaIC.*)", 0);
+  private static Pattern REGEXP_gyxeh4_a0a4a4 = Pattern.compile("(?:\\.IntelliJIdea.*)|(?:\\.IdeaIC.*)", 0);
+  private static Pattern REGEXP_gyxeh4_a0a4a4_0 = Pattern.compile("(?:IntelliJIdea.*)|(?:IdeaIC.*)", 0);
 
   public InstallIDEAPlugin_Action() {
     super("Install IntelliJ IDEA Plugin", "", ICON);
@@ -106,8 +106,8 @@ public class InstallIDEAPlugin_Action extends BaseAction {
     );
     final VirtualFile ideaConfigRoot = VirtualFileUtils.getVirtualFile(ideaConfigRootPath);
     final Pattern namePattern = (isMac ?
-      REGEXP_gyxeh4_a0a4a4 :
-      REGEXP_gyxeh4_a0a4a4_0
+      REGEXP_gyxeh4_a0a4a4_0 :
+      REGEXP_gyxeh4_a0a4a4
     );
     List<VirtualFile> existingIdeaConfigs = ListSequence.fromList(new ArrayList<VirtualFile>());
     for (VirtualFile child : ideaConfigRoot.getChildren()) {

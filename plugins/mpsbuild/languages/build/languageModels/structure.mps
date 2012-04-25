@@ -484,6 +484,23 @@
       <property name="name" nameId="tpck.1169194664001" value="BuildLayout_EchoPropertyEntry" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8577651205286814211">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildLayout_Tar" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="7389400916848050060" resolveInfo="BuildLayout_NamedContainer" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4198392933254416812">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File.Handlers" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildLayout_CopyFilterFixCRLF" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="9184644532456814147" resolveInfo="BuildLayout_CopyFilter" />
+    </node>
+    <node type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="4198392933254416814">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File.Handlers" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildLayout_CopyFilterEolStyle" />
+      <property name="hasNoDefaultMember" nameId="tpce.1212080844762" value="false" />
+      <property name="memberIdentifierPolicy" nameId="tpce.1197591154882" value="derive_from_internal_value" />
+      <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
   </roots>
   <root id="5617550519002745363">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5204048710541015587">
@@ -1575,6 +1592,54 @@
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="202934866059133453">
       <property name="value" nameId="tpce.1105725733873" value="entry" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+  </root>
+  <root id="8577651205286814211">
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8577651205286814212">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5248329904288166441" resolveInfo="BuildLayout_ContainerAcceptingFileSet" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8577651205286814214">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7181125477683218683" resolveInfo="BuildLayout_PureNode" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="8577651205286814215">
+      <property name="value" nameId="tpce.1105725733873" value="tar" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+  </root>
+  <root id="4198392933254416812">
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4198392933254416822">
+      <property name="name" nameId="tpck.1169194664001" value="eol" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="4198392933254416814" resolveInfo="BuildLayout_CopyFilterEolStyle" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4198392933254551900">
+      <property name="name" nameId="tpck.1169194664001" value="removeEOF" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="4198392933254416813">
+      <property name="value" nameId="tpce.1105725733873" value="fix eol" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+  </root>
+  <root id="4198392933254416814">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="4198392933254427813">
+      <property name="internalValue" nameId="tpce.1083923523171" value="local" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="use local system line separator" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="4198392933254416815">
+      <property name="internalValue" nameId="tpce.1083923523171" value="asis" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="leave as is" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="4198392933254416816">
+      <property name="internalValue" nameId="tpce.1083923523171" value="cr" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="convert to a single CR" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="4198392933254416817">
+      <property name="internalValue" nameId="tpce.1083923523171" value="lf" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="convert to a single LF" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="4198392933254416818">
+      <property name="internalValue" nameId="tpce.1083923523171" value="crlf" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="convert to the pair CRLF" />
     </node>
   </root>
 </model>

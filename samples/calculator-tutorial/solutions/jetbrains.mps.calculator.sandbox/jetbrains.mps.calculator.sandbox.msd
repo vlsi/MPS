@@ -5,6 +5,7 @@
   </models>
   <sourcePath />
   <usedLanguages>
+    <usedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</usedLanguage>
     <usedLanguage>26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1(jetbrains.mps.calculator)</usedLanguage>
   </usedLanguages>
 </solution>

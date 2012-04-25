@@ -47,7 +47,7 @@ public class check_ConceptFunctionReturns_NonTypesystemRule extends AbstractNonT
         somethingReturned = true;
       }
       if (!(somethingReturned)) {
-        Set<SNode> throwables = SetSequence.fromSet(new HashSet());
+        Set<SNode> throwables = SetSequence.fromSet(new HashSet<SNode>());
         StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(IMethodLike_Behavior.call_getBody_1239354440022(func), throwables, true);
         if (SetSequence.fromSet(throwables).isEmpty()) {
           String whatExpected = ((expectedRetType == null) ?

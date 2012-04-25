@@ -184,10 +184,6 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     }
   }
 
-  public Class getClass(String fqName) {
-    return null;
-  }
-
   public ModuleDescriptor getModuleDescriptor() {
     return null;
   }

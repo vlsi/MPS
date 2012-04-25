@@ -347,6 +347,7 @@
       <src>
         <path path="${base_dir}/workbench/mps-platform/source"/>
         <path path="${base_dir}/workbench/mps-platform/source_gen"/>
+        <path path="${base_dir}/workbench/mps-debugger/source_gen"/>
       </src>
       <classpath>
         <fileset dir="${dist.dir}/mps-core/lib" includes="*.jar"/>
@@ -355,6 +356,7 @@
     </javac>
     <copy includeemptydirs="false" todir="${build_dir}/mpsplatform_jar">
       <fileset dir="${base_dir}/workbench/mps-platform/source" includes="**/*.png"/>
+      <fileset dir="${base_dir}/workbench/mps-debugger/source_gen" includes="**/*.png, **/*.properties, **/*.xml"/>
     </copy>
     <copy includeemptydirs="false" todir="${build_dir}/mpsplatform_jar/modules">
       <fileset dir="${base_dir}/languages/core/stub" includes="MPS.Platform/*.msd"/>
@@ -554,7 +556,6 @@
             debug="${javac.debug}" debuglevel="lines,vars,source">
       <compilerarg value="-Xlint:none"/>
       <src>
-        <path path="${base_dir}/workbench/mps-debugger/source_gen"/>
         <path path="${base_dir}/IdeaPlugin/mps-java/debugger/src"/>
         <path path="${base_dir}/plugins/mpsjava/platform/source_gen"/>
       </src>
@@ -565,7 +566,6 @@
       </classpath>
     </javac2>
     <copy includeemptydirs="false" todir="${build_dir}/mpsjava_jar">
-      <fileset dir="${base_dir}/workbench/mps-debugger/source_gen" includes="**/*.png, **/*.properties, **/*.xml"/>
       <fileset dir="${base_dir}/IdeaPlugin/mps-java/debugger/src" includes="**/*.png, **/*.properties, **/*.xml"/>
       <fileset dir="${base_dir}/plugins/mpsjava/platform/source_gen" includes="**/*.png, **/*.properties, **/*.xml"/>
     </copy>

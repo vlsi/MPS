@@ -39,6 +39,10 @@ public class NonExistingClassPathItem extends RealClassPathItem {
     return myClassPath;
   }
 
+  public boolean hasClass(String name) {
+    return false;
+  }
+
   public synchronized byte[] getClass(String name) {
     checkValidity();
     return null;

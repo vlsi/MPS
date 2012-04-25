@@ -12,6 +12,7 @@
   <property name="artifacts.buildWorkbench" location="${build.dir}/artifacts/buildWorkbench" />
   <property name="artifacts.buildExecution" location="${build.dir}/artifacts/buildExecution" />
   <property name="artifacts.buildUtilLanguages" location="${build.dir}/artifacts/buildUtilLanguages" />
+  <property name="artifacts.buildUiLanguages" location="${build.dir}/artifacts/buildUiLanguages" />
   <property name="artifacts.buildPlugins" location="${build.dir}/artifacts/buildPlugins" />
   <property name="artifacts.buildBuild" location="${build.dir}/artifacts/buildBuild" />
   <property name="artifacts.buildVcs" location="${build.dir}/artifacts/buildVcs" />
@@ -38,15 +39,8 @@
     <copy todir="${build.layout}/MPS ${version}/languages">
       <fileset dir="${artifacts.buildUtilLanguages}/languages" />
     </copy>
-    <mkdir dir="${build.layout}/MPS ${version}/languages/devkits" />
-    <copy todir="${build.layout}/MPS ${version}/languages/devkits">
-      <fileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" />
-    </copy>
-    <copy todir="${build.layout}/MPS ${version}/languages/devkits">
-      <fileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.general-purpose.devkit" />
-    </copy>
-    <copy todir="${build.layout}/MPS ${version}/languages/devkits">
-      <fileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.language-design.devkit" />
+    <copy todir="${build.layout}/MPS ${version}/languages">
+      <fileset dir="${artifacts.buildUiLanguages}/languages" />
     </copy>
     <mkdir dir="${build.layout}/MPS ${version}/lib" />
     <copy todir="${build.layout}/MPS ${version}/lib">
@@ -109,6 +103,7 @@
     <ant antfile="build/buildWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildExecution.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildUtilLanguages.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildUiLanguages.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildPlugins.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildBuild.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildVcs.xml" inheritAll="false" useNativeBasedir="true" />

@@ -699,6 +699,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.xmlInternal" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xmlSchema" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xmlUnitTest" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.xmlUnitTest.runtime" />
     <mkdir dir="${deploy.dir}/MPS/languages/xml" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.dates" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.dates.pluginSolution" />
@@ -726,6 +727,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.ui.modeling.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ui.internal" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ui.gwt" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.ui.gwt.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ui.gwt.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ui.swing" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ui.swing.pluginSolution" />

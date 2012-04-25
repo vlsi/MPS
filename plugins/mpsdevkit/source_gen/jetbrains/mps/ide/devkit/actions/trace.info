@@ -1820,8 +1820,8 @@
   <root nodeId="2191995028863072592">
     <nodeInfo nodeId="2191995028863072592" fileName="InstallIDEAPlugin_Action.java" startLine="32" startPosition="58" endLine="33" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="2191995028863072592" fileName="InstallIDEAPlugin_Action.java" startLine="33" startPosition="40" endLine="34" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
-    <nodeInfo nodeId="3065485475348898500" fileName="InstallIDEAPlugin_Action.java" startLine="34" startPosition="79" endLine="35" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_gyxeh4_a0a4a4" />
-    <nodeInfo nodeId="5068214522080967978" fileName="InstallIDEAPlugin_Action.java" startLine="35" startPosition="85" endLine="36" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_gyxeh4_a0a4a4_0" />
+    <nodeInfo nodeId="5068214522080967978" fileName="InstallIDEAPlugin_Action.java" startLine="34" startPosition="79" endLine="35" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_gyxeh4_a0a4a4" />
+    <nodeInfo nodeId="2089442845145561393" fileName="InstallIDEAPlugin_Action.java" startLine="35" startPosition="108" endLine="36" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_gyxeh4_a0a4a4_0" />
     <nodeInfo nodeId="2191995028863072592" fileName="InstallIDEAPlugin_Action.java" startLine="38" startPosition="37" endLine="39" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2191995028863072592" fileName="InstallIDEAPlugin_Action.java" startLine="39" startPosition="52" endLine="40" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2191995028863072592" fileName="InstallIDEAPlugin_Action.java" startLine="40" startPosition="35" endLine="41" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5379,8 +5379,8 @@
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="34" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="37" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="37" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="49" endLine="12" endPosition="50" conceptFqName="jetbrains.mps.gtext.structure.GText" />
