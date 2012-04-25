@@ -1362,7 +1362,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.java.modules.cycle.1, java.compile.jetbrains.mps.buildlanguage, java.compile.jetbrains.mps.build.custommps, java.compile.jetbrains.mps.build.custommps.pluginSolution, java.compile.jetbrains.mps.build.dependency, java.compile.jetbrains.mps.build.generictasks, java.compile.jetbrains.mps.build.generictasks.pluginSolution, java.compile.jetbrains.mps.build.mpsdist, java.compile.jetbrains.mps.build.packaging, java.compile.jetbrains.mps.build.packaging.pluginSolution, java.compile.jetbrains.mps.build.property, java.compile.jetbrains.mps.build.startup, java.compile.jetbrains.mps.xml.deprecated, java.compile.jetbrains.mps.xml.deprecated.pluginSolution, java.compile.jetbrains.mpslite, java.compile.jetbrains.mpslite.pluginSolution, java.compile.jetbrains.mps.nanoj, java.compile.jetbrains.mps.uiLanguage.pluginSolution, java.compile.java.modules.cycle.2, java.compile.jetbrains.mps.ypath, java.compile.jetbrains.mps.ypath.pluginSolution, java.compile.jetbrains.mps.ypath.runtime, java.compile.ypath.main, java.compile.ypath.test, java.compile.jetbrains.mps.core.xml, java.compile.jetbrains.mps.xmlUnitTest, java.compile.jetbrains.mps.core.properties, java.compile.jetbrains.mps.xmlUnitTest.runtime, java.compile.jetbrains.mps.quickQueryLanguage, java.compile.jetbrains.mps.quickQuery.runtime, java.compile.jetbrains.mps.quickQueryLanguage.pluginSolution, java.compile.jetbrains.mps.bash, java.compile.jetbrains.mps.baseLanguage.contracts, java.compile.jetbrains.mps.baseLanguage.math, java.compile.jetbrains.mps.baseLanguage.math.runtime, java.compile.jetbrains.mps.baseLanguage.math.pluginSolution, java.compile.jetbrains.mps.baseLanguage.collections.trove, java.compile.collections_trove.runtime, java.compile.jetbrains.mps.platform.conf" />
+  <target name="compileJava" depends="java.compile.java.modules.cycle.1, java.compile.jetbrains.mps.buildlanguage, java.compile.jetbrains.mps.build.custommps, java.compile.jetbrains.mps.build.custommps.pluginSolution, java.compile.jetbrains.mps.build.dependency, java.compile.jetbrains.mps.build.generictasks, java.compile.jetbrains.mps.build.generictasks.pluginSolution, java.compile.jetbrains.mps.build.mpsdist, java.compile.jetbrains.mps.build.packaging, java.compile.jetbrains.mps.build.packaging.pluginSolution, java.compile.jetbrains.mps.build.property, java.compile.jetbrains.mps.build.startup, java.compile.jetbrains.mps.xml.deprecated, java.compile.jetbrains.mps.xml.deprecated.pluginSolution, java.compile.jetbrains.mpslite, java.compile.jetbrains.mpslite.pluginSolution, java.compile.jetbrains.mps.nanoj, java.compile.jetbrains.mps.uiLanguage.pluginSolution, java.compile.java.modules.cycle.2, java.compile.jetbrains.mps.ypath, java.compile.jetbrains.mps.ypath.pluginSolution, java.compile.jetbrains.mps.ypath.runtime, java.compile.ypath.main, java.compile.ypath.test, java.compile.jetbrains.mps.core.xml, java.compile.jetbrains.mps.xmlUnitTest, java.compile.jetbrains.mps.core.properties, java.compile.jetbrains.mps.quickQueryLanguage, java.compile.jetbrains.mps.quickQuery.runtime, java.compile.jetbrains.mps.quickQueryLanguage.pluginSolution, java.compile.jetbrains.mps.bash, java.compile.jetbrains.mps.baseLanguage.contracts, java.compile.jetbrains.mps.baseLanguage.math, java.compile.jetbrains.mps.baseLanguage.math.runtime, java.compile.jetbrains.mps.baseLanguage.math.pluginSolution, java.compile.jetbrains.mps.baseLanguage.collections.trove, java.compile.collections_trove.runtime, java.compile.jetbrains.mps.platform.conf" />
   
   <target name="processResources" />
   
@@ -2489,22 +2489,6 @@
     </javac>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.core.properties">
       <fileset dir="${mps_home}/languages/util/properties/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-    </copy>
-  </target>
-  
-  <target name="java.compile.jetbrains.mps.xmlUnitTest.runtime">
-    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.xmlUnitTest.runtime" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.xmlUnitTest.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${mps_home}/languages/util/xmlUnitTest/languages/xmlUnitTest/solutions/runtime/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${mps_home}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
-      </classpath>
-    </javac>
-    <copy todir="${build.tmp}/java/out/jetbrains.mps.xmlUnitTest.runtime">
-      <fileset dir="${mps_home}/languages/util/xmlUnitTest/languages/xmlUnitTest/solutions/runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   

@@ -16,7 +16,7 @@
     <unitInfo nodeId="4301118715654497533" fileName="buildDistribution.xml" startLine="1" startPosition="0" endLine="31" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildDistribution" />
   </root>
   <root nodeId="4301118715654819483">
-    <unitInfo nodeId="4301118715654819483" fileName="buildUtilLanguages.xml" startLine="1" startPosition="0" endLine="2892" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildUtilLanguages" />
+    <unitInfo nodeId="4301118715654819483" fileName="buildUtilLanguages.xml" startLine="1" startPosition="0" endLine="2876" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildUtilLanguages" />
   </root>
   <root nodeId="4301118715654850396">
     <unitInfo nodeId="4301118715654850396" fileName="buildExecution.xml" startLine="1" startPosition="0" endLine="268" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildExecution" />
