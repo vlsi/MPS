@@ -62,10 +62,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.JTree;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane {
   private MyModelAccessListener myModelAccessListener = new MyModelAccessListener();
@@ -150,7 +147,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
   //todo:the same thing for nodes & modules
   protected void onBeforeModelWillBeDeleted(SModelDescriptor sm) {
-    selectNextModel(sm);
+    // unselect model if it was selected ?
   }
 
   public void dispose() {
