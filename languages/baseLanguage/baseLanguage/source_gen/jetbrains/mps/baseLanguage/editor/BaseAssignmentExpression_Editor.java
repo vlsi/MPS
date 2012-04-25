@@ -128,7 +128,6 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
         protected SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope) {
           SNode sourceNode = (SNode) oldChild;
           SNode result = (SNode) newChild;
-          SNode parent = (SNode) parentNode;
           SNodeOperations.replaceWithAnother(sourceNode, result);
           SLinkOperations.setTarget(result, "leftExpression", SLinkOperations.getTarget(sourceNode, "lValue", true), true);
           SLinkOperations.setTarget(result, "rightExpression", SLinkOperations.getTarget(sourceNode, "rValue", true), true);
