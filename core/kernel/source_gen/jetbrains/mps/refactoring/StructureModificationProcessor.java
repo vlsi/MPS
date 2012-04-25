@@ -10,13 +10,18 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
+import java.util.Map;
+import java.util.Set;
+import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class StructureModificationProcessor {
@@ -45,8 +50,7 @@ public class StructureModificationProcessor {
       return false;
     }
     boolean played = false;
-    // <node> 
-    for (StructureModification data : Sequence.fromIterable(StructureModification.sort(getApplicableModifications()))) {
+    for (StructureModification data : ListSequence.fromList(sortModifications(getApplicableModifications()))) {
       played |= playRefactoring(data);
     }
     return played;
@@ -68,45 +72,41 @@ public class StructureModificationProcessor {
     return result;
   }
 
-  private List<StructureModification> getSortedModifications() {
-    List<StructureModification> allData = ListSequence.fromList(new ArrayList<StructureModification>());
-    List<StructureModification.Relation[]> res = ListSequence.fromList(new ArrayList<StructureModification.Relation[]>());
-    for (SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(myModel))) {
-      DefaultSModelDescriptor usedModel = as_etzqsh_a0a0a2a3(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), DefaultSModelDescriptor.class);
-      if (usedModel == null) {
-        continue;
-      }
+  private List<StructureModification> sortModifications(List<StructureModification> list) {
+    // create graph 
+    Map<Integer, Set<Integer>> graph = MapSequence.fromMap(new HashMap<Integer, Set<Integer>>());
 lCompare:
-      for (StructureModification data : ListSequence.fromList(usedModel.getStructureModificationLog().getHistory())) {
-        if (MapSequence.fromMap(data.getDependencies()).get(usedModel.getSModelReference()) < importElement.getUsedVersion()) {
-          continue;
+    for (int i = 0; i < ListSequence.fromList(list).count(); i++) {
+      Set<Integer> cur = SetSequence.fromSet(new HashSet<Integer>());
+      for (int j = 0; j < i; j++) {
+        StructureModification.Relation rel = StructureModification.compare(ListSequence.fromList(list).getElement(j), ListSequence.fromList(list).getElement(i));
+        if (rel == StructureModification.Relation.EQUAL) {
+          continue lCompare;
         }
-        StructureModification.Relation[] comp = new StructureModification.Relation[ListSequence.fromList(allData).count() + 1];
-        for (int i = 0; i < ListSequence.fromList(allData).count(); ++i) {
-          comp[i] = StructureModification.compare(data, ListSequence.fromList(allData).getElement(i));
-          if (comp[i] == StructureModification.Relation.EQUAL) {
-            continue lCompare;
-          }
+        if (rel == StructureModification.Relation.BEFORE) {
+          SetSequence.fromSet(cur).addElement(j);
         }
-        ListSequence.fromList(allData).addElement(data);
-        ListSequence.fromList(res).addElement(comp);
+        if (rel == StructureModification.Relation.AFTER) {
+          SetSequence.fromSet(MapSequence.fromMap(graph).get(j)).addElement(i);
+        }
       }
+      MapSequence.fromMap(graph).put(i, cur);
     }
     // sort 
     List<StructureModification> result = ListSequence.fromList(new ArrayList<StructureModification>());
-label:
-    while (ListSequence.fromList(allData).isNotEmpty()) {
-      // look for node 
-lFind:
-      for (int i = 0; i < ListSequence.fromList(allData).count(); ++i) {
-        for (int j = 0; j < ListSequence.fromList(allData).count(); ++j) {
-          if (i < j && ListSequence.fromList(res).getElement(j)[i] == StructureModification.Relation.BEFORE || i > j && ListSequence.fromList(res).getElement(i)[j] == StructureModification.Relation.AFTER) {
-            continue lFind;
-          }
+lfind:
+    while (MapSequence.fromMap(graph).isNotEmpty()) {
+      for (final int k : SetSequence.fromSet(MapSequence.fromMap(graph).keySet())) {
+        if (SetSequence.fromSet(MapSequence.fromMap(graph).get(k)).isEmpty()) {
+          ListSequence.fromList(result).addElement(ListSequence.fromList(list).getElement(k));
+          MapSequence.fromMap(graph).removeKey(k);
+          Sequence.fromIterable(MapSequence.fromMap(graph).values()).visitAll(new IVisitor<Set<Integer>>() {
+            public void visit(Set<Integer> it) {
+              SetSequence.fromSet(it).removeElement(k);
+            }
+          });
+          continue lfind;
         }
-        ListSequence.fromList(result).addElement(ListSequence.fromList(allData).removeElementAt(i));
-        ListSequence.fromList(res).removeElementAt(i);
-        continue label;
       }
       // we have not found next data: loop detected! 
       if (log.isErrorEnabled()) {
@@ -161,13 +161,6 @@ lFind:
   }
 
   private static <T> T as_etzqsh_a0a0a1a2(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_etzqsh_a0a0a2a3(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

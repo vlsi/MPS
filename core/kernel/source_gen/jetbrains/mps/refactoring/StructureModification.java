@@ -14,9 +14,6 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.Set;
-import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
@@ -85,58 +82,6 @@ public class StructureModification {
       StructureModification.Relation.EQUAL :
       StructureModification.Relation.NONE
     );
-  }
-
-  public static Iterable<StructureModification> sort(final List<StructureModification> list) {
-    StructureModification.Relation[][] rel = new StructureModification.Relation[ListSequence.fromList(list).count()][ListSequence.fromList(list).count()];
-    for (int i = 0; i < ListSequence.fromList(list).count(); ++i) {
-      for (int j = 0; j < i; ++j) {
-        rel[i][j] = compare(ListSequence.fromList(list).getElement(i), ListSequence.fromList(list).getElement(j));
-        rel[j][i] = rel[i][j].swap();
-      }
-      rel[i][i] = StructureModification.Relation.EQUAL;
-    }
-    // create graph 
-    Map<Integer, Set<Integer>> graph = MapSequence.fromMap(new HashMap<Integer, Set<Integer>>());
-label:
-    for (int i = 0; i < ListSequence.fromList(list).count(); i++) {
-      Set<Integer> cur = SetSequence.fromSet(new HashSet<Integer>());
-      for (int j = 0; j < i; j++) {
-        if (rel[j][i] == StructureModification.Relation.EQUAL) {
-          continue label;
-        }
-        if (rel[j][i] == StructureModification.Relation.BEFORE) {
-          SetSequence.fromSet(cur).addElement(j);
-        }
-        if (rel[j][i] == StructureModification.Relation.AFTER) {
-          SetSequence.fromSet(MapSequence.fromMap(graph).get(j)).addElement(i);
-        }
-      }
-      MapSequence.fromMap(graph).put(i, cur);
-    }
-    // sort 
-    List<Integer> ordered = ListSequence.fromList(new ArrayList<Integer>());
-    Set<Integer> visited = SetSequence.fromSet(new HashSet<Integer>());
-    for (int node : SetSequence.fromSet(MapSequence.fromMap(graph).keySet())) {
-      visit(node, graph, visited, ordered);
-    }
-    return ListSequence.fromList(ordered).select(new ISelector<Integer, StructureModification>() {
-      public StructureModification select(Integer it) {
-        return ListSequence.fromList(list).getElement(it);
-      }
-    });
-  }
-
-  private static void visit(int node, Map<Integer, Set<Integer>> graph, Set<Integer> visited, List<Integer> result) {
-    // topoligical sorting 
-    if (SetSequence.fromSet(visited).contains(node)) {
-      return;
-    }
-    SetSequence.fromSet(visited).addElement(node);
-    for (int n : SetSequence.fromSet(MapSequence.fromMap(graph).get(node))) {
-      visit(n, graph, visited, result);
-    }
-    ListSequence.fromList(result).addElement(node);
   }
 
   private static <T> T as_hr78sn_a0a0a0a1(Object o, Class<T> type) {
