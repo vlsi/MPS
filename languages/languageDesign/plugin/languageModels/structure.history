@@ -3540,10 +3540,4 @@
     <move id="tp4v.3339131993542062691" to="fnu3.681855071694758217" />
     <move id="tp4v.3339131993542062684" to="fnu3.681855071694758210" />
   </StructureModification>
-  <StructureModification>
-    <dependencies>
-      <model index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="33" />
-    </dependencies>
-  </StructureModification>
 </history>
-
