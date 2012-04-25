@@ -16,17 +16,18 @@
 package jetbrains.mps.runtime;
 
 import jetbrains.mps.library.LibraryInitializer;
-import sun.reflect.Reflection;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class ModuleClassLoader extends ClassLoader {
   //this is for debug purposes (heap dumps)
   @SuppressWarnings({"UnusedDeclaration", "FieldCanBeLocal"})
   private boolean myDisposed;
   private IClassLoadingModule myModule;
+  private Map<String, Class> myClasses = new ConcurrentHashMap<String, Class>();
 
   public ModuleClassLoader(IClassLoadingModule module) {
     super(LibraryInitializer.getInstance().getParentLoaderForModule(module));
@@ -37,19 +38,29 @@ public class ModuleClassLoader extends ClassLoader {
     return loadClass(name, resolve, true);
   }
 
-  protected final Class<?> loadClass(String name, boolean resolve, boolean dependencies) throws ClassNotFoundException {
+  private Class<?> loadClass(String name, boolean resolve, boolean dependencies) throws ClassNotFoundException {
     if (!myModule.canLoad()) throw new ClassNotFoundException(name);
-
-    Class c = findClassEverywhere(name, dependencies);
-
-    if (resolve) {
-      resolveClass(c);
+    if (myClasses.containsKey(name)) {
+      Class cl = myClasses.get(name);
+      if (cl == null) throw new ClassNotFoundException(name);
+      return cl;
     }
 
-    return c;
+    try {
+      Class c = findClassEverywhere(name, dependencies);
+
+      if (resolve) {
+        resolveClass(c);
+      }
+      myClasses.put(name, c);
+      return c;
+    } catch (ClassNotFoundException cnf) {
+      myClasses.put(name, null);
+      throw cnf;
+    }
   }
 
-  protected final Class<?> findClassEverywhere(String name, boolean dependencies) throws ClassNotFoundException {
+  private Class<?> findClassEverywhere(String name, boolean dependencies) throws ClassNotFoundException {
     if (myModule.canLoadFromSelf()) {
       Class c = findLoadedClass(name);
       if (c != null) return c;
