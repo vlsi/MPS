@@ -73,11 +73,21 @@ public class ClassLoaderManager implements CoreComponent {
       monitor.advance(1);
 
       monitor.step("Updating stub models...");
-      LibrariesLoader.getInstance().loadNewLibs();
+      safeInvoke(new Runnable() {
+        @Override
+        public void run() {
+          LibrariesLoader.getInstance().loadNewLibs();
+        }
+      });
       monitor.advance(1);
 
       monitor.step("Updating language registry...");
-      LanguageRegistry.getInstance().reloadLanguages();
+      safeInvoke(new Runnable() {
+        @Override
+        public void run() {
+          LanguageRegistry.getInstance().reloadLanguages();
+        }
+      });
       monitor.advance(1);
 
       monitor.step("Rebuilding ui...");
@@ -137,6 +147,15 @@ public class ClassLoaderManager implements CoreComponent {
 
   private interface ListenerCaller {
     void call(ReloadListener l);
+  }
+
+  private void safeInvoke(Runnable runnable) {
+    try {
+      runnable.run();
+    }
+    catch (RuntimeException unexpected) {
+        LOG.error("Unexpected exception", unexpected);
+    }
   }
 }
                                           
