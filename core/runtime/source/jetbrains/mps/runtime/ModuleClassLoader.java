@@ -35,32 +35,32 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   protected final Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
-    return loadClass(name, resolve, true);
-  }
-
-  private Class<?> loadClass(String name, boolean resolve, boolean dependencies) throws ClassNotFoundException {
-    if (!myModule.canLoad()) throw new ClassNotFoundException(name);
     if (myClasses.containsKey(name)) {
       Class cl = myClasses.get(name);
       if (cl == null) throw new ClassNotFoundException(name);
       return cl;
     }
-
     try {
-      Class c = findClassEverywhere(name, dependencies);
-
-      if (resolve) {
-        resolveClass(c);
-      }
-      myClasses.put(name, c);
-      return c;
+      return loadClass(name, resolve, true, true);
     } catch (ClassNotFoundException cnf) {
       myClasses.put(name, null);
       throw cnf;
     }
   }
 
-  private Class<?> findClassEverywhere(String name, boolean dependencies) throws ClassNotFoundException {
+  private Class<?> loadClass(String name, boolean resolve, boolean dependencies, boolean loadFromApp) throws ClassNotFoundException {
+    if (!myModule.canLoad()) throw new ClassNotFoundException(name);
+
+    Class c = findClassEverywhere(name, dependencies, loadFromApp);
+
+    if (resolve) {
+      resolveClass(c);
+    }
+    myClasses.put(name, c);
+    return c;
+  }
+
+  private Class<?> findClassEverywhere(String name, boolean dependencies, boolean loadFromApp) throws ClassNotFoundException {
     if (myModule.canLoadFromSelf()) {
       Class c = findLoadedClass(name);
       if (c != null) return c;
@@ -79,7 +79,7 @@ public class ModuleClassLoader extends ClassLoader {
 
         if (m.canLoad() && m.canLoadFromSelf() && m.canFindClass(name)) {
           try {
-            return m.getClassLoader().loadClass(name, false, false);
+            return m.getClassLoader().loadClass(name, false, false, false);
           } catch (ClassNotFoundException e) {
             //ignore
           }
@@ -89,12 +89,14 @@ public class ModuleClassLoader extends ClassLoader {
       }
       for (IClassLoadingModule m : mayContainNonOwned) {
         try {
-          return m.getClassLoader().loadClass(name, false, false);
+          return m.getClassLoader().loadClass(name, false, false, false);
         } catch (ClassNotFoundException e) {
           //ignore
         }
       }
     }
+
+    if (!loadFromApp && getParent() == ModuleClassLoader.class.getClassLoader()) throw new ClassNotFoundException(name);
 
     return getParent().loadClass(name);
   }
