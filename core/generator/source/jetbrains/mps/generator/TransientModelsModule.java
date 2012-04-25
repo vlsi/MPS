@@ -18,11 +18,12 @@ package jetbrains.mps.generator;
 import jetbrains.mps.generator.TransientModelsProvider.TransientSwapSpace;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.ClassLoadingModule;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 
 import java.util.*;
@@ -221,14 +222,12 @@ public class TransientModelsModule extends ClassLoadingModule   {
     protected Set<IModule> getInitialModules() {
       Set<IModule> result = new HashSet<IModule>();
       result.add(TransientModelsModule.this);
-      result.addAll(myOriginalModule.getDependenciesManager().getRequiredModules());
-      // todo: o_O o_O o_O %)
-      result.addAll(myOriginalModule.getDependenciesManager().getAllRequiredModules());
+      result.addAll(new GlobalModuleDependenciesManager(myOriginalModule).getModules(Deptype.COMPILE));
       return result;
     }
 
     protected Set<Language> getInitialUsedLanguages() {
-      return myOriginalModule.getDependenciesManager().getAllUsedLanguages();
+      return new HashSet<Language>(new GlobalModuleDependenciesManager(myOriginalModule).getUsedLanguages());
     }
   }
 
