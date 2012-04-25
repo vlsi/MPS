@@ -10,13 +10,13 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class StructureModificationProcessor {
@@ -45,7 +45,8 @@ public class StructureModificationProcessor {
       return false;
     }
     boolean played = false;
-    for (StructureModification data : ListSequence.fromList(getSortedModifications())) {
+    // <node> 
+    for (StructureModification data : Sequence.fromIterable(StructureModification.sort(getApplicableModifications()))) {
       played |= playRefactoring(data);
     }
     return played;
@@ -67,15 +68,11 @@ public class StructureModificationProcessor {
     return result;
   }
 
-  public List<StructureModification> sortModifications(List<StructureModification> list) {
-    return null;
-  }
-
-  public List<StructureModification> getSortedModifications() {
+  private List<StructureModification> getSortedModifications() {
     List<StructureModification> allData = ListSequence.fromList(new ArrayList<StructureModification>());
     List<StructureModification.Relation[]> res = ListSequence.fromList(new ArrayList<StructureModification.Relation[]>());
     for (SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(myModel))) {
-      DefaultSModelDescriptor usedModel = as_etzqsh_a0a0a2a4(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), DefaultSModelDescriptor.class);
+      DefaultSModelDescriptor usedModel = as_etzqsh_a0a0a2a3(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), DefaultSModelDescriptor.class);
       if (usedModel == null) {
         continue;
       }
@@ -86,7 +83,7 @@ lCompare:
         }
         StructureModification.Relation[] comp = new StructureModification.Relation[ListSequence.fromList(allData).count() + 1];
         for (int i = 0; i < ListSequence.fromList(allData).count(); ++i) {
-          comp[i] = StructureModification.copmare(data, ListSequence.fromList(allData).getElement(i));
+          comp[i] = StructureModification.compare(data, ListSequence.fromList(allData).getElement(i));
           if (comp[i] == StructureModification.Relation.EQUAL) {
             continue lCompare;
           }
@@ -111,7 +108,7 @@ lFind:
         ListSequence.fromList(res).removeElementAt(i);
         continue label;
       }
-      // we have not found next data: loop! 
+      // we have not found next data: loop detected! 
       if (log.isErrorEnabled()) {
         log.error("Loop found in applicable refactorings for " + myModel + "");
       }
@@ -170,7 +167,7 @@ lFind:
     );
   }
 
-  private static <T> T as_etzqsh_a0a0a2a4(Object o, Class<T> type) {
+  private static <T> T as_etzqsh_a0a0a2a3(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
