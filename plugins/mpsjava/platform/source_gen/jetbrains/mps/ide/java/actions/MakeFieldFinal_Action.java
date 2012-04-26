@@ -14,10 +14,10 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 
 public class MakeFieldFinal_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -72,8 +72,6 @@ public class MakeFieldFinal_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      RefactoringContext c = RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.MakeFieldFinal", Arrays.asList(), Arrays.asList(), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
-      RefactoringAccess.getInstance().getRefactoringFacade().execute(c);
       RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.MakeFieldFinal", Arrays.asList(), Arrays.asList(), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
