@@ -1213,25 +1213,25 @@
             </node>
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertEquals" typeId="tpe3.1171978097730" id="5232087255576278233">
-            <node role="expected" roleId="tpe3.8427750732757990724" type="tp2q.MapElement" typeId="tp2q.1197932370469" id="5232087255576278922">
-              <node role="key" roleId="tp2q.1197932525128" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5232087255576278925">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5232087255576278217" resolveInfo="bln" />
-              </node>
-              <node role="map" roleId="tp2q.1197932505799" type="tpee.CastExpression" typeId="tpee.1070534934090" id="5232087255576279607">
-                <node role="expression" roleId="tpee.1070534934092" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5232087255576279608">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6227590151851193125" resolveInfo="mll" />
-                </node>
-                <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5232087255576279609">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Long" resolveInfo="Long" />
-                </node>
-              </node>
-            </node>
             <node role="actual" roleId="tpe3.8427750732757990725" type="tpee.CastExpression" typeId="tpee.1070534934090" id="5232087255576280288">
               <node role="expression" roleId="tpee.1070534934092" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5232087255576280289">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5232087255576278228" resolveInfo="trln" />
               </node>
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5232087255576280290">
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Long" resolveInfo="Long" />
+              </node>
+            </node>
+            <node role="expected" roleId="tpe3.8427750732757990724" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7211295963330318233">
+              <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7211295963330318236">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Long" resolveInfo="Long" />
+              </node>
+              <node role="expression" roleId="tpee.1070534934092" type="tp2q.MapElement" typeId="tp2q.1197932370469" id="7211295963330318227">
+                <node role="key" roleId="tp2q.1197932525128" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7211295963330318230">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5232087255576278217" resolveInfo="bln" />
+                </node>
+                <node role="map" roleId="tp2q.1197932505799" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7211295963330318210">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6227590151851193125" resolveInfo="mll" />
+                </node>
               </node>
             </node>
           </node>
