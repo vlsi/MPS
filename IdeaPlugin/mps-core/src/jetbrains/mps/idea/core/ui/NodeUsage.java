@@ -35,7 +35,7 @@ import java.util.ArrayList;
 
 public class NodeUsage extends NodeUsageBase implements Usage, UsagePresentation, UsageInFile {
 
-  public NodeUsage(SNode node, Project project){
+  public NodeUsage(SNode node, Project project) {
     super(node, project);
   }
 
@@ -62,9 +62,8 @@ public class NodeUsage extends NodeUsageBase implements Usage, UsagePresentation
     FileEditor editor = FileEditorManager.getInstance(myProject).getSelectedEditor(virtualFile);
     if (!(editor instanceof MPSFileNodeEditor)) return null;
 
-    return new TextEditorLocation(0, (TextEditor)editor);
+    return new TextEditorLocation(0, (TextEditor) editor);
   }
-
 
 
   @Override
@@ -78,7 +77,6 @@ public class NodeUsage extends NodeUsageBase implements Usage, UsagePresentation
   }
 
 
-
   @NotNull
   @Override
   public TextChunk[] getText() {
@@ -86,14 +84,18 @@ public class NodeUsage extends NodeUsageBase implements Usage, UsagePresentation
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        result.add(new TextChunk(new TextAttributes(), myNode.getPresentation()));
-        result.add(new TextChunk(new TextAttributes(),"("));
-        result.add(new TextChunk(new TextAttributes(),"role:"));
-        result.add(new TextChunk(new TextAttributes(),myNode.getRole_()));
-        result.add(new TextChunk(new TextAttributes(),";"));
-        result.add(new TextChunk(new TextAttributes(),"in:"));
-        result.add(new TextChunk(new TextAttributes(),myNode.getParent().getPresentation()));
-        result.add(new TextChunk(new TextAttributes(),")"));
+        if (!myNode.isDeleted()) {
+          result.add(new TextChunk(new TextAttributes(), myNode.getPresentation()));
+          result.add(new TextChunk(new TextAttributes(), "("));
+          result.add(new TextChunk(new TextAttributes(), "role:"));
+          result.add(new TextChunk(new TextAttributes(), myNode.getRole_()));
+          result.add(new TextChunk(new TextAttributes(), ";"));
+          result.add(new TextChunk(new TextAttributes(), "in:"));
+          result.add(new TextChunk(new TextAttributes(), myNode.getParent().getPresentation()));
+          result.add(new TextChunk(new TextAttributes(), ")"));
+        } else {
+          result.add(new TextChunk(new TextAttributes(), "disposed"));
+        }
       }
     });
     return result.toArray(new TextChunk[result.size()]);
