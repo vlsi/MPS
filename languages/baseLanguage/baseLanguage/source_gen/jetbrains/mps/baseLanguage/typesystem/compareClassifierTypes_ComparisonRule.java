@@ -20,15 +20,17 @@ public class compareClassifierTypes_ComparisonRule extends ComparisonRule_Runtim
   public boolean areComparable(SNode node1, SNode node2, IsApplicable2Status status) {
     if (SLinkOperations.getTarget(node1, "classifier", false) == SLinkOperations.getTarget(node2, "classifier", false) && (int) ListSequence.fromList(SLinkOperations.getTargets(node1, "parameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(node2, "parameter", true)).count()) {
       SubtypingManager subtypingManager = TypeChecker.getInstance().getSubtypingManager();
-      Iterator<SNode> leftParam_it = ListSequence.fromList(SLinkOperations.getTargets(node1, "parameter", true)).iterator();
-      Iterator<SNode> rightParam_it = ListSequence.fromList(SLinkOperations.getTargets(node2, "parameter", true)).iterator();
-      SNode leftParam_var;
-      SNode rightParam_var;
-      while (leftParam_it.hasNext() && rightParam_it.hasNext()) {
-        leftParam_var = leftParam_it.next();
-        rightParam_var = rightParam_it.next();
-        if (!(subtypingManager.isComparable(leftParam_var, rightParam_var, false))) {
-          return false;
+      {
+        Iterator<SNode> leftParam_it = ListSequence.fromList(SLinkOperations.getTargets(node1, "parameter", true)).iterator();
+        Iterator<SNode> rightParam_it = ListSequence.fromList(SLinkOperations.getTargets(node2, "parameter", true)).iterator();
+        SNode leftParam_var;
+        SNode rightParam_var;
+        while (leftParam_it.hasNext() && rightParam_it.hasNext()) {
+          leftParam_var = leftParam_it.next();
+          rightParam_var = rightParam_it.next();
+          if (!(subtypingManager.isComparable(leftParam_var, rightParam_var, false))) {
+            return false;
+          }
         }
       }
       return true;

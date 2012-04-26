@@ -94,14 +94,16 @@ public class Iterator_Test extends Util_Test {
     Iterable<Integer> seq01 = ListSequence.fromList(Sequence.fromIterable(seq10).toListSequence()).reversedList();
     List<Integer> expected = ListSequence.fromListAndArray(new ArrayList<Integer>(), 11, 11, 11, 11, 11, 11, 11, 11, 11, 11);
     List<Integer> actual = ListSequence.fromList(new ArrayList<Integer>());
-    Iterator<Integer> up_it = Sequence.fromIterable(seq10).iterator();
-    Iterator<Integer> down_it = Sequence.fromIterable(seq01).iterator();
-    Integer up_var;
-    Integer down_var;
-    while (up_it.hasNext() && down_it.hasNext()) {
-      up_var = up_it.next();
-      down_var = down_it.next();
-      ListSequence.fromList(actual).addElement(up_var + down_var);
+    {
+      Iterator<Integer> up_it = Sequence.fromIterable(seq10).iterator();
+      Iterator<Integer> down_it = Sequence.fromIterable(seq01).iterator();
+      Integer up_var;
+      Integer down_var;
+      while (up_it.hasNext() && down_it.hasNext()) {
+        up_var = up_it.next();
+        down_var = down_it.next();
+        ListSequence.fromList(actual).addElement(up_var + down_var);
+      }
     }
     assertIterableEquals(expected, actual);
   }
@@ -110,14 +112,16 @@ public class Iterator_Test extends Util_Test {
     Iterable<Integer> seq10 = input10();
     Iterable<Integer> seq5 = input5();
     int sum = 0;
-    Iterator<Integer> first_it = Sequence.fromIterable(seq10).iterator();
-    Iterator<Integer> second_it = Sequence.fromIterable(seq5).iterator();
-    Integer first_var;
-    Integer second_var;
-    while (first_it.hasNext() && second_it.hasNext()) {
-      first_var = first_it.next();
-      second_var = second_it.next();
-      sum += first_var + second_var;
+    {
+      Iterator<Integer> first_it = Sequence.fromIterable(seq10).iterator();
+      Iterator<Integer> second_it = Sequence.fromIterable(seq5).iterator();
+      Integer first_var;
+      Integer second_var;
+      while (first_it.hasNext() && second_it.hasNext()) {
+        first_var = first_it.next();
+        second_var = second_it.next();
+        sum += first_var + second_var;
+      }
     }
     Assert.assertEquals(2 * (1 + 2 + 3 + 4 + 5), sum);
   }

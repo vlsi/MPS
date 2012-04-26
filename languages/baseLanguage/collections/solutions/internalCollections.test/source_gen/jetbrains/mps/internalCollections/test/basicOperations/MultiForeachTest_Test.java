@@ -13,27 +13,78 @@ import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 
 public class MultiForeachTest_Test extends TestCase {
-  public void test_testNested() throws Exception {
+  public void test_nested() throws Exception {
     Iterable<Integer> sint = ArrayUtils.fromIntegerArray(new int[]{1, 2, 3});
     Iterable<String> sstr = Sequence.fromArray(new String[]{"a", "b", "c"});
     List<String> res = ListSequence.fromList(new ArrayList<String>());
-    Iterator<Integer> foo_it = Sequence.fromIterable(sint).iterator();
-    Iterator<String> bar_it = Sequence.fromIterable(sstr).iterator();
-    int foo_var;
-    String bar_var;
-    while (foo_it.hasNext() && bar_it.hasNext()) {
-      foo_var = foo_it.next();
-      bar_var = bar_it.next();
-      Iterator<Integer> foo2_it = Sequence.fromIterable(sint).iterator();
-      Iterator<String> bar2_it = Sequence.fromIterable(sstr).iterator();
-      int foo2_var;
-      String bar2_var;
-      while (foo2_it.hasNext() && bar2_it.hasNext()) {
-        foo2_var = foo2_it.next();
-        bar2_var = bar2_it.next();
-        ListSequence.fromList(res).addElement(bar_var + foo_var + bar2_var + foo2_var);
+    {
+      Iterator<Integer> foo_it = Sequence.fromIterable(sint).iterator();
+      Iterator<String> bar_it = Sequence.fromIterable(sstr).iterator();
+      int foo_var;
+      String bar_var;
+      while (foo_it.hasNext() && bar_it.hasNext()) {
+        foo_var = foo_it.next();
+        bar_var = bar_it.next();
+        {
+          Iterator<Integer> foo2_it = Sequence.fromIterable(sint).iterator();
+          Iterator<String> bar2_it = Sequence.fromIterable(sstr).iterator();
+          int foo2_var;
+          String bar2_var;
+          while (foo2_it.hasNext() && bar2_it.hasNext()) {
+            foo2_var = foo2_it.next();
+            bar2_var = bar2_it.next();
+            ListSequence.fromList(res).addElement(bar_var + foo_var + bar2_var + foo2_var);
+          }
+        }
       }
     }
     Assert.assertEquals("a1a1a1b2a1c3b2a1b2b2b2c3c3a1c3b2c3c3", IterableUtils.join(ListSequence.fromList(res), ""));
+  }
+
+  public void test_repeated() throws Exception {
+    Iterable<Integer> sint = ArrayUtils.fromIntegerArray(new int[]{1, 2, 3});
+    Iterable<String> sstr = Sequence.fromArray(new String[]{"a", "b", "c"});
+    List<String> res = ListSequence.fromList(new ArrayList<String>());
+    {
+      Iterator<Integer> foo_it = Sequence.fromIterable(sint).iterator();
+      Iterator<String> bar_it = Sequence.fromIterable(sstr).iterator();
+      int foo_var;
+      String bar_var;
+      while (foo_it.hasNext() && bar_it.hasNext()) {
+        foo_var = foo_it.next();
+        bar_var = bar_it.next();
+        ListSequence.fromList(res).addElement(bar_var + foo_var);
+      }
+    }
+    {
+      Iterator<Integer> foo_it = Sequence.fromIterable(sint).iterator();
+      Iterator<String> bar_it = Sequence.fromIterable(sstr).iterator();
+      int foo_var;
+      String bar_var;
+      while (foo_it.hasNext() && bar_it.hasNext()) {
+        foo_var = foo_it.next();
+        bar_var = bar_it.next();
+        ListSequence.fromList(res).addElement(bar_var + foo_var);
+      }
+    }
+    Assert.assertEquals("a1b2c3a1b2c3", IterableUtils.join(ListSequence.fromList(res), ""));
+  }
+
+  public void test_secondShort() throws Exception {
+    Iterable<Integer> sint = ArrayUtils.fromIntegerArray(new int[]{1, 2, 3});
+    Iterable<String> sstr = Sequence.fromArray(new String[]{"a", "b"});
+    List<String> res = ListSequence.fromList(new ArrayList<String>());
+    {
+      Iterator<Integer> foo_it = Sequence.fromIterable(sint).iterator();
+      Iterator<String> bar_it = Sequence.fromIterable(sstr).iterator();
+      int foo_var;
+      String bar_var;
+      while (foo_it.hasNext() && bar_it.hasNext()) {
+        foo_var = foo_it.next();
+        bar_var = bar_it.next();
+        ListSequence.fromList(res).addElement(bar_var + foo_var);
+      }
+    }
+    Assert.assertEquals("a1b2", IterableUtils.join(ListSequence.fromList(res), ""));
   }
 }

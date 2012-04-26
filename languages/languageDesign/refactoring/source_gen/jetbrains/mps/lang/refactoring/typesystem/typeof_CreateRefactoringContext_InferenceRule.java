@@ -54,23 +54,25 @@ public class typeof_CreateRefactoringContext_InferenceRule extends AbstractInfer
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(createContextNode, "wrong number of parameters", "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1817812116819949498", null, errorTarget);
       }
     }
-    Iterator<SNode> inputParameter_it = ListSequence.fromList(SLinkOperations.getTargets(createContextNode, "parameters", true)).iterator();
-    Iterator<SNode> declaredParameter_it = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(createContextNode, "refactoring", false), "parameter", true)).iterator();
-    SNode inputParameter_var;
-    SNode declaredParameter_var;
-    while (inputParameter_it.hasNext() && declaredParameter_it.hasNext()) {
-      inputParameter_var = inputParameter_it.next();
-      declaredParameter_var = declaredParameter_it.next();
-      {
-        SNode _nodeToCheck_1029348928467 = inputParameter_var;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "7340098493333217424", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "7340098493333217426", true), (SNode) typeCheckingContext.typeOf(declaredParameter_var, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "7340098493333217429", true), false, true, _info_12389875345);
+    {
+      Iterator<SNode> inputParameter_it = ListSequence.fromList(SLinkOperations.getTargets(createContextNode, "parameters", true)).iterator();
+      Iterator<SNode> declaredParameter_it = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(createContextNode, "refactoring", false), "parameter", true)).iterator();
+      SNode inputParameter_var;
+      SNode declaredParameter_var;
+      while (inputParameter_it.hasNext() && declaredParameter_it.hasNext()) {
+        inputParameter_var = inputParameter_it.next();
+        declaredParameter_var = declaredParameter_it.next();
+        {
+          SNode _nodeToCheck_1029348928467 = inputParameter_var;
+          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "7340098493333217424", 0, null);
+          typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "7340098493333217426", true), (SNode) typeCheckingContext.typeOf(declaredParameter_var, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "7340098493333217429", true), false, true, _info_12389875345);
+        }
       }
     }
     {
       SNode _nodeToCheck_1029348928467 = createContextNode;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1817812116819936888", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1817812116819936885", true), (SNode) new typeof_CreateRefactoringContext_InferenceRule.QuotationClass_q0qn4n_a0a9a0().createNode(typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1817812116819936885", true), (SNode) new typeof_CreateRefactoringContext_InferenceRule.QuotationClass_q0qn4n_a0a5a0().createNode(typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -177,8 +179,8 @@ public class typeof_CreateRefactoringContext_InferenceRule extends AbstractInfer
     }
   }
 
-  public static class QuotationClass_q0qn4n_a0a9a0 {
-    public QuotationClass_q0qn4n_a0a9a0() {
+  public static class QuotationClass_q0qn4n_a0a5a0 {
+    public QuotationClass_q0qn4n_a0a5a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {

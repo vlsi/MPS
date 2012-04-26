@@ -2031,22 +2031,26 @@ __switch__:
 
   private void assertEquals(List<Iterable<Integer>> exp, List<Iterable<Integer>> res) {
     Assert.assertSame(ListSequence.fromList(exp).count(), ListSequence.fromList(res).count());
-    Iterator<Iterable<Integer>> foo_it = ListSequence.fromList(exp).iterator();
-    Iterator<Iterable<Integer>> bar_it = ListSequence.fromList(res).iterator();
-    Iterable<Integer> foo_var;
-    Iterable<Integer> bar_var;
-    while (foo_it.hasNext() && bar_it.hasNext()) {
-      foo_var = foo_it.next();
-      bar_var = bar_it.next();
-      Assert.assertSame(Sequence.fromIterable(foo_var).count(), Sequence.fromIterable(bar_var).count());
-      Iterator<Integer> a_it = Sequence.fromIterable(foo_var).iterator();
-      Iterator<Integer> b_it = Sequence.fromIterable(bar_var).iterator();
-      int a_var;
-      int b_var;
-      while (a_it.hasNext() && b_it.hasNext()) {
-        a_var = a_it.next();
-        b_var = b_it.next();
-        Assert.assertSame(a_var, b_var);
+    {
+      Iterator<Iterable<Integer>> foo_it = ListSequence.fromList(exp).iterator();
+      Iterator<Iterable<Integer>> bar_it = ListSequence.fromList(res).iterator();
+      Iterable<Integer> foo_var;
+      Iterable<Integer> bar_var;
+      while (foo_it.hasNext() && bar_it.hasNext()) {
+        foo_var = foo_it.next();
+        bar_var = bar_it.next();
+        Assert.assertSame(Sequence.fromIterable(foo_var).count(), Sequence.fromIterable(bar_var).count());
+        {
+          Iterator<Integer> a_it = Sequence.fromIterable(foo_var).iterator();
+          Iterator<Integer> b_it = Sequence.fromIterable(bar_var).iterator();
+          int a_var;
+          int b_var;
+          while (a_it.hasNext() && b_it.hasNext()) {
+            a_var = a_it.next();
+            b_var = b_it.next();
+            Assert.assertSame(a_var, b_var);
+          }
+        }
       }
     }
   }

@@ -19,20 +19,22 @@ public class ILocalDeclaration_Behavior {
 
   public static boolean virtual_isReferencedInClosure_3262277503800823422(SNode thisNode) {
     SNode container = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
-    Iterator<SNode> ref_it = ListSequence.fromList(SNodeOperations.getDescendants(container, "jetbrains.mps.baseLanguage.structure.ILocalReference", false, new String[]{})).iterator();
-    SNode ref_var;
-    while (ref_it.hasNext()) {
-      ref_var = ref_it.next();
-      if (ILocalReference_Behavior.call_getDeclaration_3262277503800831941(ref_var) == thisNode) {
-        SNode referenceContainer = SNodeOperations.getAncestor(ref_var, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
-        while (referenceContainer != null) {
-          if (referenceContainer == container) {
-            return false;
+    {
+      Iterator<SNode> ref_it = ListSequence.fromList(SNodeOperations.getDescendants(container, "jetbrains.mps.baseLanguage.structure.ILocalReference", false, new String[]{})).iterator();
+      SNode ref_var;
+      while (ref_it.hasNext()) {
+        ref_var = ref_it.next();
+        if (ILocalReference_Behavior.call_getDeclaration_3262277503800831941(ref_var) == thisNode) {
+          SNode referenceContainer = SNodeOperations.getAncestor(ref_var, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
+          while (referenceContainer != null) {
+            if (referenceContainer == container) {
+              return false;
+            }
+            if (IStatementListContainer_Behavior.call_isClosure_3262277503800835439(SNodeOperations.getAncestor(referenceContainer, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false))) {
+              return true;
+            }
+            referenceContainer = SNodeOperations.getAncestor(referenceContainer, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
           }
-          if (IStatementListContainer_Behavior.call_isClosure_3262277503800835439(SNodeOperations.getAncestor(referenceContainer, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false))) {
-            return true;
-          }
-          referenceContainer = SNodeOperations.getAncestor(referenceContainer, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
         }
       }
     }
@@ -41,14 +43,16 @@ public class ILocalDeclaration_Behavior {
 
   public static boolean virtual_isReferencedInControlFlowInterrupter_1644061362849513751(SNode thisNode) {
     SNode container = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
-    Iterator<SNode> ref_it = ListSequence.fromList(SNodeOperations.getDescendants(container, "jetbrains.mps.baseLanguage.structure.ILocalReference", false, new String[]{})).iterator();
-    SNode ref_var;
-    while (ref_it.hasNext()) {
-      ref_var = ref_it.next();
-      if (ILocalReference_Behavior.call_getDeclaration_3262277503800831941(ref_var) == thisNode) {
-        SNode interrupter = SNodeOperations.getAncestor(ref_var, "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", false, false);
-        if (interrupter == container || ListSequence.fromList(SNodeOperations.getAncestors(interrupter, null, false)).contains(container)) {
-          return true;
+    {
+      Iterator<SNode> ref_it = ListSequence.fromList(SNodeOperations.getDescendants(container, "jetbrains.mps.baseLanguage.structure.ILocalReference", false, new String[]{})).iterator();
+      SNode ref_var;
+      while (ref_it.hasNext()) {
+        ref_var = ref_it.next();
+        if (ILocalReference_Behavior.call_getDeclaration_3262277503800831941(ref_var) == thisNode) {
+          SNode interrupter = SNodeOperations.getAncestor(ref_var, "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", false, false);
+          if (interrupter == container || ListSequence.fromList(SNodeOperations.getAncestors(interrupter, null, false)).contains(container)) {
+            return true;
+          }
         }
       }
     }

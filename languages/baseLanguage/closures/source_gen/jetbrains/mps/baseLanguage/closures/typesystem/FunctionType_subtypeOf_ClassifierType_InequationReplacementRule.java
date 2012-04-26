@@ -62,18 +62,20 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
             typeCheckingContext.createGreaterThanInequality((SNode) retType, (SNode) SLinkOperations.getTarget(subtype, "resultType", true), false, true, _info_12389875345);
           }
         }
-        Iterator<SNode> fpt_it = ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).iterator();
-        Iterator<SNode> mpt_it = ListSequence.fromList(SLinkOperations.getTargets(md, "parameter", true)).iterator();
-        SNode fpt_var;
-        SNode mpt_var;
-        while (fpt_it.hasNext() && mpt_it.hasNext()) {
-          fpt_var = fpt_it.next();
-          mpt_var = mpt_it.next();
-          {
-            SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-            EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "8701449112292740706", 0, null);
-            _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-            typeCheckingContext.createLessThanInequality((SNode) ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt_var, "type", true), supertype), (SNode) fpt_var, false, true, _info_12389875345);
+        {
+          Iterator<SNode> fpt_it = ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).iterator();
+          Iterator<SNode> mpt_it = ListSequence.fromList(SLinkOperations.getTargets(md, "parameter", true)).iterator();
+          SNode fpt_var;
+          SNode mpt_var;
+          while (fpt_it.hasNext() && mpt_it.hasNext()) {
+            fpt_var = fpt_it.next();
+            mpt_var = mpt_it.next();
+            {
+              SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
+              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "8701449112292740706", 0, null);
+              _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
+              typeCheckingContext.createLessThanInequality((SNode) ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt_var, "type", true), supertype), (SNode) fpt_var, false, true, _info_12389875345);
+            }
           }
         }
         return;
@@ -115,14 +117,16 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
           if (!(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
             result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(subtype, "resultType", true), (SNode) retType, true);
           }
-          Iterator<SNode> fpt_it = ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).iterator();
-          Iterator<SNode> mpt_it = ListSequence.fromList(SLinkOperations.getTargets(md, "parameter", true)).iterator();
-          SNode fpt_var;
-          SNode mpt_var;
-          while (fpt_it.hasNext() && mpt_it.hasNext()) {
-            fpt_var = fpt_it.next();
-            mpt_var = mpt_it.next();
-            result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt_var, "type", true), supertype), (SNode) fpt_var, true);
+          {
+            Iterator<SNode> fpt_it = ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).iterator();
+            Iterator<SNode> mpt_it = ListSequence.fromList(SLinkOperations.getTargets(md, "parameter", true)).iterator();
+            SNode fpt_var;
+            SNode mpt_var;
+            while (fpt_it.hasNext() && mpt_it.hasNext()) {
+              fpt_var = fpt_it.next();
+              mpt_var = mpt_it.next();
+              result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt_var, "type", true), supertype), (SNode) fpt_var, true);
+            }
           }
           return result_14532009;
         } else {
