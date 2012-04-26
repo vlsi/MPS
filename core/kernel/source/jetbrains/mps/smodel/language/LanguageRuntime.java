@@ -63,7 +63,7 @@ public abstract class LanguageRuntime {
   @Deprecated
   private <T> DescriptorProvider<T> getDescriptorProvider(String aspectName, DescriptorProvider<T> defaultProvider) {
     String className = getNamespace() + "." + aspectName;
-    DescriptorProvider<T> compiled = (DescriptorProvider<T>) getObjectByClassNameForLanguageNamespace(className, getNamespace(), true);
+    DescriptorProvider<T> compiled = (DescriptorProvider<T>) getObjectByClassNameForLanguageNamespace(className, DescriptorProvider.class, getNamespace(), true);
     return compiled != null ? compiled : defaultProvider;
   }
 
