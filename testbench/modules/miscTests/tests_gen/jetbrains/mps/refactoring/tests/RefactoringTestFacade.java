@@ -22,10 +22,6 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
     }
   }
 
-  public void executeInThread(RefactoringContext context) {
-    throw new UnsupportedOperationException();
-  }
-
   public void execute(RefactoringContext context) {
     throw new UnsupportedOperationException();
   }
