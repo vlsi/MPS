@@ -64,20 +64,24 @@ public class AddStubsToModelRoots_Action extends BaseAction {
         }
 
         List<ModelRoot> modelRoots = ListSequence.fromList(new ArrayList<ModelRoot>());
-        Iterator<ModelRoot> mr_it = CollectionSequence.fromCollection(descriptor.getModelRoots()).iterator();
-        ModelRoot mr_var;
-        while (mr_it.hasNext()) {
-          mr_var = mr_it.next();
-          if (!(ListSequence.fromList(modelRoots).contains(mr_var))) {
-            ListSequence.fromList(modelRoots).addElement(mr_var);
+        {
+          Iterator<ModelRoot> mr_it = CollectionSequence.fromCollection(descriptor.getModelRoots()).iterator();
+          ModelRoot mr_var;
+          while (mr_it.hasNext()) {
+            mr_var = mr_it.next();
+            if (!(ListSequence.fromList(modelRoots).contains(mr_var))) {
+              ListSequence.fromList(modelRoots).addElement(mr_var);
+            }
           }
         }
-        Iterator<ModelRoot> sm_it = CollectionSequence.fromCollection(descriptor.getStubModelEntries()).iterator();
-        ModelRoot sm_var;
-        while (sm_it.hasNext()) {
-          sm_var = sm_it.next();
-          if (!(ListSequence.fromList(modelRoots).contains(sm_var))) {
-            ListSequence.fromList(modelRoots).addElement(sm_var);
+        {
+          Iterator<ModelRoot> sm_it = CollectionSequence.fromCollection(descriptor.getStubModelEntries()).iterator();
+          ModelRoot sm_var;
+          while (sm_it.hasNext()) {
+            sm_var = sm_it.next();
+            if (!(ListSequence.fromList(modelRoots).contains(sm_var))) {
+              ListSequence.fromList(modelRoots).addElement(sm_var);
+            }
           }
         }
         descriptor.getModelRoots().clear();

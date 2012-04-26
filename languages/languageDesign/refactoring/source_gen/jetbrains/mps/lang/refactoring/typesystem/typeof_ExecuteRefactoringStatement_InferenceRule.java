@@ -56,23 +56,25 @@ public class typeof_ExecuteRefactoringStatement_InferenceRule extends AbstractIn
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(statement, "wrong number of parameters", "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "2298239814950983878", null, errorTarget);
       }
     }
-    Iterator<SNode> inputParameter_it = ListSequence.fromList(SLinkOperations.getTargets(statement, "parameters", true)).iterator();
-    Iterator<SNode> declaredParameter_it = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(statement, "refactoring", false), "parameter", true)).iterator();
-    SNode inputParameter_var;
-    SNode declaredParameter_var;
-    while (inputParameter_it.hasNext() && declaredParameter_it.hasNext()) {
-      inputParameter_var = inputParameter_it.next();
-      declaredParameter_var = declaredParameter_it.next();
-      {
-        SNode _nodeToCheck_1029348928467 = inputParameter_var;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "2298239814950983908", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "2298239814950983910", true), (SNode) typeCheckingContext.typeOf(declaredParameter_var, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "2298239814950983913", true), false, true, _info_12389875345);
+    {
+      Iterator<SNode> inputParameter_it = ListSequence.fromList(SLinkOperations.getTargets(statement, "parameters", true)).iterator();
+      Iterator<SNode> declaredParameter_it = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(statement, "refactoring", false), "parameter", true)).iterator();
+      SNode inputParameter_var;
+      SNode declaredParameter_var;
+      while (inputParameter_it.hasNext() && declaredParameter_it.hasNext()) {
+        inputParameter_var = inputParameter_it.next();
+        declaredParameter_var = declaredParameter_it.next();
+        {
+          SNode _nodeToCheck_1029348928467 = inputParameter_var;
+          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "2298239814950983908", 0, null);
+          typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "2298239814950983910", true), (SNode) typeCheckingContext.typeOf(declaredParameter_var, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "2298239814950983913", true), false, true, _info_12389875345);
+        }
       }
     }
     {
       SNode _nodeToCheck_1029348928467 = statement;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "2298239814950983915", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "2298239814950983917", true), (SNode) new typeof_ExecuteRefactoringStatement_InferenceRule.QuotationClass_yfen1i_a0a9a0().createNode(typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "2298239814950983917", true), (SNode) new typeof_ExecuteRefactoringStatement_InferenceRule.QuotationClass_yfen1i_a0a5a0().createNode(typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -179,8 +181,8 @@ public class typeof_ExecuteRefactoringStatement_InferenceRule extends AbstractIn
     }
   }
 
-  public static class QuotationClass_yfen1i_a0a9a0 {
-    public QuotationClass_yfen1i_a0a9a0() {
+  public static class QuotationClass_yfen1i_a0a5a0 {
+    public QuotationClass_yfen1i_a0a5a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {

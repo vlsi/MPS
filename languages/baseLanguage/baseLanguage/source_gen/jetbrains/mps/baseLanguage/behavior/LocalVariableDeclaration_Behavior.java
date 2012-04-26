@@ -36,14 +36,16 @@ public class LocalVariableDeclaration_Behavior {
 
   public static boolean call_isVariableReferencedInClosures_1229352990212(SNode thisNode) {
     SNode container = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false);
-    Iterator<SNode> ref_it = ListSequence.fromList(SNodeOperations.getDescendants(container, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{})).iterator();
-    SNode ref_var;
-    while (ref_it.hasNext()) {
-      ref_var = ref_it.next();
-      if (SLinkOperations.getTarget(ref_var, "variableDeclaration", false) == thisNode) {
-        SNode referenceContainer = SNodeOperations.getAncestor(ref_var, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false);
-        if (referenceContainer != container && SNodeOperations.isInstanceOf(referenceContainer, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")) {
-          return true;
+    {
+      Iterator<SNode> ref_it = ListSequence.fromList(SNodeOperations.getDescendants(container, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{})).iterator();
+      SNode ref_var;
+      while (ref_it.hasNext()) {
+        ref_var = ref_it.next();
+        if (SLinkOperations.getTarget(ref_var, "variableDeclaration", false) == thisNode) {
+          SNode referenceContainer = SNodeOperations.getAncestor(ref_var, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false);
+          if (referenceContainer != container && SNodeOperations.isInstanceOf(referenceContainer, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")) {
+            return true;
+          }
         }
       }
     }

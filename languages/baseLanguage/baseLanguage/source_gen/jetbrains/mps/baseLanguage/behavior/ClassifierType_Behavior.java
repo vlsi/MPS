@@ -140,20 +140,22 @@ public class ClassifierType_Behavior {
       GeneratedMatchingPattern pattern_hz3823_b0j = new ClassifierType_Behavior.Pattern_hz3823_a0a0a1a01(SLinkOperations.getTarget(thisNode, "classifier", false));
       SNode coercedNode_hz3823_b0j = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_hz3823_b0j);
       if (coercedNode_hz3823_b0j != null) {
-        Iterator<SNode> typeParam_it = ListSequence.fromList(((List<SNode>) pattern_hz3823_b0j.getFieldValue("patternVar_l"))).iterator();
-        Iterator<SNode> myParam_it = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).iterator();
-        SNode typeParam_var;
-        SNode myParam_var;
-        while (typeParam_it.hasNext() && myParam_it.hasNext()) {
-          typeParam_var = typeParam_it.next();
-          myParam_var = myParam_it.next();
-          if (SNodeOperations.isInstanceOf(myParam_var, "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(myParam_var, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
-            if (!(Type_Behavior.call_isSupersetOf_1220438914705(myParam_var, typeParam_var))) {
-              return false;
-            }
-          } else {
-            if (!(MatchingUtil.matchNodes(myParam_var, typeParam_var))) {
-              return false;
+        {
+          Iterator<SNode> typeParam_it = ListSequence.fromList(((List<SNode>) pattern_hz3823_b0j.getFieldValue("patternVar_l"))).iterator();
+          Iterator<SNode> myParam_it = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).iterator();
+          SNode typeParam_var;
+          SNode myParam_var;
+          while (typeParam_it.hasNext() && myParam_it.hasNext()) {
+            typeParam_var = typeParam_it.next();
+            myParam_var = myParam_it.next();
+            if (SNodeOperations.isInstanceOf(myParam_var, "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(myParam_var, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
+              if (!(Type_Behavior.call_isSupersetOf_1220438914705(myParam_var, typeParam_var))) {
+                return false;
+              }
+            } else {
+              if (!(MatchingUtil.matchNodes(myParam_var, typeParam_var))) {
+                return false;
+              }
             }
           }
         }

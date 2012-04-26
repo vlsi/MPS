@@ -110,14 +110,16 @@ public class RefactoringContext {
   }
 
   public void setParameters(List<Object> names, List<Object> parameters) {
-    Iterator<Object> name_it = ListSequence.fromList(names).iterator();
-    Iterator<Object> param_it = ListSequence.fromList(parameters).iterator();
-    Object name_var;
-    Object param_var;
-    while (name_it.hasNext() && param_it.hasNext()) {
-      name_var = name_it.next();
-      param_var = param_it.next();
-      setParameter((String) name_var, param_var);
+    {
+      Iterator<Object> name_it = ListSequence.fromList(names).iterator();
+      Iterator<Object> param_it = ListSequence.fromList(parameters).iterator();
+      Object name_var;
+      Object param_var;
+      while (name_it.hasNext() && param_it.hasNext()) {
+        name_var = name_it.next();
+        param_var = param_it.next();
+        setParameter((String) name_var, param_var);
+      }
     }
   }
 

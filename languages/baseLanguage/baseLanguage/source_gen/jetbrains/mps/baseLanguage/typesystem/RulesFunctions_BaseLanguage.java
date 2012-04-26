@@ -231,20 +231,22 @@ __switch__:
   @InferenceMethod
   public static void inference_matchConcreteTypesWithMethodTypeVariables(final TypeCheckingContext typeCheckingContext, SNode methodCall, Map<SNode, List<SNode>> mmap) {
     if (ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).isNotEmpty() && (SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false) != null) && mmap != null && !(MapSequence.fromMap(mmap).isEmpty())) {
-      Iterator<SNode> tvd_it = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "typeVariableDeclaration", true)).iterator();
-      Iterator<SNode> arg_it = ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).iterator();
-      SNode tvd_var;
-      SNode arg_var;
-      while (tvd_it.hasNext() && arg_it.hasNext()) {
-        tvd_var = tvd_it.next();
-        arg_var = arg_it.next();
-        List<SNode> nodes = MapSequence.fromMap(mmap).get(tvd_var);
-        if (nodes != null) {
-          SNode tvar = ListSequence.fromList(nodes).first();
-          {
-            SNode _nodeToCheck_1029348928467 = null;
-            EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4293892367838067595", 0, null);
-            typeCheckingContext.createEquation((SNode) tvar, (SNode) arg_var, _info_12389875345);
+      {
+        Iterator<SNode> tvd_it = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "typeVariableDeclaration", true)).iterator();
+        Iterator<SNode> arg_it = ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).iterator();
+        SNode tvd_var;
+        SNode arg_var;
+        while (tvd_it.hasNext() && arg_it.hasNext()) {
+          tvd_var = tvd_it.next();
+          arg_var = arg_it.next();
+          List<SNode> nodes = MapSequence.fromMap(mmap).get(tvd_var);
+          if (nodes != null) {
+            SNode tvar = ListSequence.fromList(nodes).first();
+            {
+              SNode _nodeToCheck_1029348928467 = null;
+              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4293892367838067595", 0, null);
+              typeCheckingContext.createEquation((SNode) tvar, (SNode) arg_var, _info_12389875345);
+            }
           }
         }
       }
@@ -342,18 +344,20 @@ __switch__:
         }
       }
     } else {
-      Iterator<SNode> arg_it = ListSequence.fromList(SLinkOperations.getTargets(mc, "actualArgument", true)).iterator();
-      Iterator<SNode> param_it = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(mc, "baseMethodDeclaration", false), "parameter", true)).iterator();
-      SNode arg_var;
-      SNode param_var;
-      while (arg_it.hasNext() && param_it.hasNext()) {
-        arg_var = arg_it.next();
-        param_var = param_it.next();
-        SNode matchedType = inference_matchTypeWithTypeVariables(typeCheckingContext, SLinkOperations.getTarget(param_var, "type", true), mmap);
-        {
-          SNode _nodeToCheck_1029348928467 = arg_var;
-          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4293892367838067557", 0, null);
-          typeCheckingContext.createGreaterThanInequality((SNode) matchedType, (SNode) typeCheckingContext.typeOf(arg_var, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4293892367838067559", true), false, true, _info_12389875345);
+      {
+        Iterator<SNode> arg_it = ListSequence.fromList(SLinkOperations.getTargets(mc, "actualArgument", true)).iterator();
+        Iterator<SNode> param_it = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(mc, "baseMethodDeclaration", false), "parameter", true)).iterator();
+        SNode arg_var;
+        SNode param_var;
+        while (arg_it.hasNext() && param_it.hasNext()) {
+          arg_var = arg_it.next();
+          param_var = param_it.next();
+          SNode matchedType = inference_matchTypeWithTypeVariables(typeCheckingContext, SLinkOperations.getTarget(param_var, "type", true), mmap);
+          {
+            SNode _nodeToCheck_1029348928467 = arg_var;
+            EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4293892367838067557", 0, null);
+            typeCheckingContext.createGreaterThanInequality((SNode) matchedType, (SNode) typeCheckingContext.typeOf(arg_var, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4293892367838067559", true), false, true, _info_12389875345);
+          }
         }
       }
     }

@@ -206,15 +206,17 @@ public class ResolveUtil {
       }
       return true;
     } else if ((int) Sequence.fromIterable(parameterTypes).count() == (int) ListSequence.fromList(arguments).count()) {
-      Iterator<SNode> parameterType_it = Sequence.fromIterable(parameterTypes).iterator();
-      Iterator<SNode> argument_it = ListSequence.fromList(arguments).iterator();
-      SNode parameterType_var;
-      SNode argument_var;
-      while (parameterType_it.hasNext() && argument_it.hasNext()) {
-        parameterType_var = parameterType_it.next();
-        argument_var = argument_it.next();
-        if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(argument_var), parameterType_var))) {
-          return false;
+      {
+        Iterator<SNode> parameterType_it = Sequence.fromIterable(parameterTypes).iterator();
+        Iterator<SNode> argument_it = ListSequence.fromList(arguments).iterator();
+        SNode parameterType_var;
+        SNode argument_var;
+        while (parameterType_it.hasNext() && argument_it.hasNext()) {
+          parameterType_var = parameterType_it.next();
+          argument_var = argument_it.next();
+          if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(argument_var), parameterType_var))) {
+            return false;
+          }
         }
       }
       return true;

@@ -61,28 +61,30 @@ public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesyste
       }
     }
     if ((int) ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).count()) {
-      Iterator<SNode> typeArgument_it = ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).iterator();
-      Iterator<SNode> typeVar_it = ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).iterator();
-      SNode typeArgument_var;
-      SNode typeVar_var;
-      while (typeArgument_it.hasNext() && typeVar_it.hasNext()) {
-        typeArgument_var = typeArgument_it.next();
-        typeVar_var = typeVar_it.next();
-        if (SNodeOperations.isInstanceOf(typeArgument_var, "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(typeArgument_var, "jetbrains.mps.baseLanguage.structure.LowerBoundType") || SNodeOperations.isInstanceOf(typeArgument_var, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
-          continue;
-        }
-        if ((SLinkOperations.getTarget(typeVar_var, "bound", true) != null)) {
-          SNode concreteBound = RulesFunctions_BaseLanguage.concretifyType(SLinkOperations.getTarget(typeVar_var, "bound", true), typeParamsToArgs);
-          if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeArgument_var, concreteBound))) {
-            MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(typeArgument_var, "type parameter is not within its bounds", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2452011492298387662", null, errorTarget);
+      {
+        Iterator<SNode> typeArgument_it = ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).iterator();
+        Iterator<SNode> typeVar_it = ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).iterator();
+        SNode typeArgument_var;
+        SNode typeVar_var;
+        while (typeArgument_it.hasNext() && typeVar_it.hasNext()) {
+          typeArgument_var = typeArgument_it.next();
+          typeVar_var = typeVar_it.next();
+          if (SNodeOperations.isInstanceOf(typeArgument_var, "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(typeArgument_var, "jetbrains.mps.baseLanguage.structure.LowerBoundType") || SNodeOperations.isInstanceOf(typeArgument_var, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
+            continue;
           }
-        }
-        for (SNode auxBound : SLinkOperations.getTargets(typeVar_var, "auxBounds", true)) {
-          SNode concreteBound = RulesFunctions_BaseLanguage.concretifyType(auxBound, typeParamsToArgs);
-          if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeArgument_var, concreteBound))) {
-            MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(typeArgument_var, "type parameter is not within its bounds", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2452011492298387681", null, errorTarget);
+          if ((SLinkOperations.getTarget(typeVar_var, "bound", true) != null)) {
+            SNode concreteBound = RulesFunctions_BaseLanguage.concretifyType(SLinkOperations.getTarget(typeVar_var, "bound", true), typeParamsToArgs);
+            if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeArgument_var, concreteBound))) {
+              MessageTarget errorTarget = new NodeMessageTarget();
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(typeArgument_var, "type parameter is not within its bounds", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2452011492298387662", null, errorTarget);
+            }
+          }
+          for (SNode auxBound : SLinkOperations.getTargets(typeVar_var, "auxBounds", true)) {
+            SNode concreteBound = RulesFunctions_BaseLanguage.concretifyType(auxBound, typeParamsToArgs);
+            if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeArgument_var, concreteBound))) {
+              MessageTarget errorTarget = new NodeMessageTarget();
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(typeArgument_var, "type parameter is not within its bounds", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2452011492298387681", null, errorTarget);
+            }
           }
         }
       }
