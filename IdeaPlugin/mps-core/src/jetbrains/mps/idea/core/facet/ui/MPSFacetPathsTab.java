@@ -74,7 +74,7 @@ public class MPSFacetPathsTab {
     }
 
     private String getGeneratorOutputPath() {
-        return isUseModuleSourceFolder() ? (String) myModuleReferenceCombo.getSelectedItem() : myFieldPanel.getText();
+        return isUseModuleSourceFolder() && myModuleReferenceCombo.getItemCount() > 0 ? (String) myModuleReferenceCombo.getSelectedItem() : myFieldPanel.getText();
     }
 
     public JPanel getRootPanel() {
