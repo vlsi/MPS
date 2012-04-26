@@ -59,7 +59,7 @@
         </node>
       </node>
       <node role="ruleConsequence" roleId="tpf8.1169570368028" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="7287346816896226977">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="7287346816896226975" resolveInfo="weave_ErrorReportingRoot" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="7287346816896226975" resolveInfo="weave_ErrorReportingRootClass1" />
       </node>
     </node>
     <node role="weavingMappingRule" roleId="tpf8.1167172143858" type="tpf8.Weaving_MappingRule" typeId="tpf8.1167171569011" id="6145560071556216090">

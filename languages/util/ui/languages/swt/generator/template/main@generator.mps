@@ -728,7 +728,7 @@
   </root>
   <root id="873604604380645852">
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="873604604380645853">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="sqp9.2663453265345747738" resolveInfo="HLayoutConstraint" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="sqp9.2663453265345747738" resolveInfo="HorizontalConstraint" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="873604604380655261">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="873604604380655263">
           <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="873604604380655264">
@@ -915,7 +915,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="873604604381093106">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="sqp9.2663453265345747738" resolveInfo="HLayoutConstraint" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="sqp9.2663453265345747738" resolveInfo="HorizontalConstraint" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="873604604381093107">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="873604604381093108">
           <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="873604604381093109">
@@ -1078,7 +1078,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="873604604381093227">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="sqp9.2663453265345747738" resolveInfo="HLayoutConstraint" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="sqp9.2663453265345747738" resolveInfo="HorizontalConstraint" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="873604604381093228">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="873604604381093229">
           <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="873604604381093230">
@@ -1443,7 +1443,7 @@
   </root>
   <root id="873604604381093497">
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="873604604381093498">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="sqp9.2663453265345756447" resolveInfo="VLayoutConstraint" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="sqp9.2663453265345756447" resolveInfo="VerticalConstraint" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="873604604381093499">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="873604604381093500">
           <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="873604604381093501">
@@ -1630,7 +1630,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="873604604381093585">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="sqp9.2663453265345756447" resolveInfo="VLayoutConstraint" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="sqp9.2663453265345756447" resolveInfo="VerticalConstraint" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="873604604381093586">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="873604604381093587">
           <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="873604604381093588">
@@ -1793,7 +1793,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="873604604381093659">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="sqp9.2663453265345756447" resolveInfo="VLayoutConstraint" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="sqp9.2663453265345756447" resolveInfo="VerticalConstraint" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="873604604381093660">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="873604604381093661">
           <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="873604604381093662">

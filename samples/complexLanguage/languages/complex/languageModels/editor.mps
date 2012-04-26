@@ -7,13 +7,13 @@
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <roots>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1196264073663">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpo9.1196260832413" resolveInfo="ComplexExpression" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpo9.1196260832413" resolveInfo="SingleComplexExpression" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1196422134243">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpo9.1196421957108" resolveInfo="DegreeComplexExpression" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1196434294865">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpo9.1196434001121" resolveInfo="ImagineI" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpo9.1196434001121" resolveInfo="ImaginaryUnit" />
     </node>
   </roots>
   <root id="1196264073663">

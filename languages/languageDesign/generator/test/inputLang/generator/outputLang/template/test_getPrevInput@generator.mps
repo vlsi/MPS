@@ -50,7 +50,7 @@
     </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="1202255161953">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpm0.1195168316083" resolveInfo="InputRoot" />
-      <link role="template" roleId="tpf8.1167514355421" targetNodeId="1202255620269" resolveInfo="OutputRoot" />
+      <link role="template" roleId="tpf8.1167514355421" targetNodeId="1202255620269" resolveInfo="OutputRoot_1" />
       <link role="labelDeclaration" roleId="tpf8.1200917515464" targetNodeId="1202256252478" resolveInfo="ROOT INPUT" />
       <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="1202255161954">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1202255161955">

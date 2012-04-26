@@ -19,7 +19,7 @@
   </roots>
   <root id="1186668581590">
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1187343068549">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp7v.1186669599053" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp7v.1186669599053" resolveInfo="MoneyType" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1187343204331">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1223451733577">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="m5an.3840741013873804939" resolveInfo="Currency" />
@@ -27,7 +27,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1187344284011">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp7v.1186667651178" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp7v.1186667651178" resolveInfo="MoneyLiteral" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1187344542491">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1187347122162">
           <node role="creator" roleId="tpee.1145553007750" type="tp7v.MoneyCreator" typeId="tp7v.1187340310888" id="1187347127305">
@@ -134,7 +134,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1187347245210">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpee.1145552977093" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpee.1145552977093" resolveInfo="GenericNewExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1187347260618">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1217888417854">
           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1217888417856">
@@ -147,7 +147,7 @@
                     <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1187352621853">
                       <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227831730">
                         <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1187352643046">
-                          <link role="concept" roleId="tp25.1140138128738" targetNodeId="tp7v.1187340310888" />
+                          <link role="concept" roleId="tp25.1140138128738" targetNodeId="tp7v.1187340310888" resolveInfo="MoneyCreator" />
                           <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227929151">
                             <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1187352621854" />
                             <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1187352641874">
@@ -172,7 +172,7 @@
                     <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1187352662490">
                       <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227838016">
                         <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1187352669012">
-                          <link role="concept" roleId="tp25.1140138128738" targetNodeId="tp7v.1187340310888" />
+                          <link role="concept" roleId="tp25.1140138128738" targetNodeId="tp7v.1187340310888" resolveInfo="MoneyCreator" />
                           <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227852670">
                             <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1187352662491" />
                             <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1187352667401">
@@ -204,7 +204,7 @@
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="1187352596997">
                 <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1187352600655">
-                  <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tp7v.1187340310888" />
+                  <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tp7v.1187340310888" resolveInfo="MoneyCreator" />
                 </node>
               </node>
             </node>
@@ -213,13 +213,13 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1187344468783">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpee.1068581242875" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpee.1068581242875" resolveInfo="PlusExpression" />
       <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="1187347436103">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1187347436104">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1187348127021">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1187348130226">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp7p.1187345082782" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp7p.1187345071733" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp7p.1187345082782" resolveInfo="isPlusMinusExpressionMoneyExpression" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp7p.1187345071733" resolveInfo="Util" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1187348135118" />
             </node>
           </node>
@@ -284,7 +284,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1187349818788">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpee.1068581242869" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpee.1068581242869" resolveInfo="MinusExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1187349818789">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1217628887852">
           <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1217888375647">
@@ -346,8 +346,8 @@
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1187349818812">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1187349818813">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1187349818814">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp7p.1187345071733" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp7p.1187345082782" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp7p.1187345071733" resolveInfo="Util" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp7p.1187345082782" resolveInfo="isPlusMinusExpressionMoneyExpression" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1187349818815" />
             </node>
           </node>
@@ -355,13 +355,13 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1187344489147">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpee.1092119917967" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpee.1092119917967" resolveInfo="MulExpression" />
       <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="1187350249789">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1187350249790">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1187350264669">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1187350268968">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp7p.1187348734513" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp7p.1187345071733" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp7p.1187348734513" resolveInfo="isMulDivExpressionMoneyExpression" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp7p.1187345071733" resolveInfo="Util" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1187350283422" />
             </node>
           </node>
@@ -418,13 +418,13 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1187344492617">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpee.1095950406618" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpee.1095950406618" resolveInfo="DivExpression" />
       <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="1187350287829">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1187350287830">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1187350291097">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1187350293224">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp7p.1187345071733" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp7p.1187348734513" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp7p.1187345071733" resolveInfo="Util" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp7p.1187348734513" resolveInfo="isMulDivExpressionMoneyExpression" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1187350300631" />
             </node>
           </node>
@@ -481,7 +481,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1187358324598">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp7v.1187357875552" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp7v.1187357875552" resolveInfo="MoneyGetAmountMethodCall" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1187358409980">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1217628891096">
           <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1217888432989">
@@ -516,7 +516,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1187358330479">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp7v.1187357945755" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp7v.1187357945755" resolveInfo="MoneyGetCurrencyMethodCall" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1187358546118">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1217628856510">
           <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1217888379129">
@@ -549,7 +549,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1187617814395">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp7v.1187617584208" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp7v.1187617584208" resolveInfo="MoneyIsZeroMethodCall" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1187617814396">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1217628855299">
           <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1217888377421">

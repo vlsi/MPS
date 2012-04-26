@@ -818,7 +818,7 @@
                   <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5052799592147788339">
                     <property name="name" nameId="tpck.1169194664001" value="hc" />
                     <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5052799592147788340">
-                      <link role="concept" roleId="tp25.1138405853777" targetNodeId="sqp9.2663453265345747738" resolveInfo="HLayoutConstraint" />
+                      <link role="concept" roleId="tp25.1138405853777" targetNodeId="sqp9.2663453265345747738" resolveInfo="HorizontalConstraint" />
                     </node>
                     <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6030013275785842545">
                       <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="6030013275785842546">
@@ -843,7 +843,7 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5052799592147781221">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5052799592147781224">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5052799592147781223">
-                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="TransientValues" />
+                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="GWTTransientValues" />
                       <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2zrd.5052799592147817965" resolveInfo="ITEM" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5052799592147781228">
@@ -864,7 +864,7 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5052799592147809696">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5052799592147809697">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5052799592147809705">
-                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="TransientValues" />
+                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="GWTTransientValues" />
                       <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2zrd.5052799592147817967" resolveInfo="THIS" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5052799592147809699">
@@ -932,7 +932,7 @@
                   <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5052799592147809708">
                     <property name="name" nameId="tpck.1169194664001" value="vc" />
                     <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5052799592147809709">
-                      <link role="concept" roleId="tp25.1138405853777" targetNodeId="sqp9.2663453265345756447" resolveInfo="VLayoutConstraint" />
+                      <link role="concept" roleId="tp25.1138405853777" targetNodeId="sqp9.2663453265345756447" resolveInfo="VerticalConstraint" />
                     </node>
                     <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6030013275785842554">
                       <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="6030013275785842555">
@@ -957,7 +957,7 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5052799592147809722">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5052799592147809723">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5052799592147809724">
-                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="TransientValues" />
+                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="GWTTransientValues" />
                       <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2zrd.5052799592147817965" resolveInfo="ITEM" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5052799592147809725">
@@ -978,7 +978,7 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5052799592147809731">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5052799592147809732">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5052799592147809733">
-                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="TransientValues" />
+                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="GWTTransientValues" />
                       <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2zrd.5052799592147817967" resolveInfo="THIS" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5052799592147809734">
@@ -1040,7 +1040,7 @@
   </root>
   <root id="2663453265348600609">
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2663453265348600610">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="sqp9.2663453265345747738" resolveInfo="HLayoutConstraint" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="sqp9.2663453265345747738" resolveInfo="HorizontalConstraint" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2663453265348600612">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2663453265348600614">
           <property name="methodName" nameId="tp68.1174294288199" value="setWidgetLeftWidth" />
@@ -1051,7 +1051,7 @@
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5052799592147809778">
                     <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5052799592147809779">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5052799592147809784">
-                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="TransientValues" />
+                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="GWTTransientValues" />
                         <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2zrd.5052799592147817965" resolveInfo="ITEM" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5052799592147809781">
@@ -1147,7 +1147,7 @@
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5052799592147809742">
                     <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5052799592147809746">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5052799592147809745">
-                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="TransientValues" />
+                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="GWTTransientValues" />
                         <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2zrd.5052799592147817967" resolveInfo="THIS" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5052799592147809750">
@@ -1191,7 +1191,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2663453265348629738">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="sqp9.2663453265345747738" resolveInfo="HLayoutConstraint" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="sqp9.2663453265345747738" resolveInfo="HorizontalConstraint" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2663453265348629739">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2663453265348629740">
           <property name="methodName" nameId="tp68.1174294288199" value="setWidgetLeftRight" />
@@ -1202,7 +1202,7 @@
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5052799592147809789">
                     <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5052799592147809790">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5052799592147809791">
-                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="TransientValues" />
+                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="GWTTransientValues" />
                         <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2zrd.5052799592147817965" resolveInfo="ITEM" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5052799592147809792">
@@ -1298,7 +1298,7 @@
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5052799592147809758">
                     <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5052799592147809759">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5052799592147809760">
-                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="TransientValues" />
+                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="GWTTransientValues" />
                         <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2zrd.5052799592147817967" resolveInfo="THIS" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5052799592147809761">
@@ -1342,7 +1342,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2663453265348629803">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="sqp9.2663453265345747738" resolveInfo="HLayoutConstraint" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="sqp9.2663453265345747738" resolveInfo="HorizontalConstraint" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2663453265348629804">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2663453265348629805">
           <property name="methodName" nameId="tp68.1174294288199" value="setWidgetRightWidth" />
@@ -1353,7 +1353,7 @@
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5052799592147809799">
                     <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5052799592147809800">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5052799592147809801">
-                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="TransientValues" />
+                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="GWTTransientValues" />
                         <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2zrd.5052799592147817965" resolveInfo="ITEM" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5052799592147809802">
@@ -1449,7 +1449,7 @@
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5052799592147809768">
                     <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5052799592147809769">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5052799592147809770">
-                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="TransientValues" />
+                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="GWTTransientValues" />
                         <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2zrd.5052799592147817967" resolveInfo="THIS" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5052799592147809771">
@@ -1594,7 +1594,7 @@
   </root>
   <root id="2663453265348629871">
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2663453265348629872">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="sqp9.2663453265345756447" resolveInfo="VLayoutConstraint" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="sqp9.2663453265345756447" resolveInfo="VerticalConstraint" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2663453265348629873">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2663453265348629874">
           <property name="methodName" nameId="tp68.1174294288199" value="setWidgetTopHeight" />
@@ -1605,7 +1605,7 @@
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5052799592147809809">
                     <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5052799592147809810">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5052799592147809811">
-                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="TransientValues" />
+                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="GWTTransientValues" />
                         <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2zrd.5052799592147817965" resolveInfo="ITEM" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5052799592147809812">
@@ -1701,7 +1701,7 @@
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5052799592147809839">
                     <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5052799592147809840">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5052799592147809846">
-                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="TransientValues" />
+                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="GWTTransientValues" />
                         <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2zrd.5052799592147817967" resolveInfo="THIS" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5052799592147809842">
@@ -1745,7 +1745,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2663453265348629934">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="sqp9.2663453265345756447" resolveInfo="VLayoutConstraint" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="sqp9.2663453265345756447" resolveInfo="VerticalConstraint" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2663453265348629935">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2663453265348629936">
           <property name="methodName" nameId="tp68.1174294288199" value="setWidgetTopBottom" />
@@ -1756,7 +1756,7 @@
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5052799592147809819">
                     <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5052799592147809820">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5052799592147809821">
-                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="TransientValues" />
+                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="GWTTransientValues" />
                         <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2zrd.5052799592147817965" resolveInfo="ITEM" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5052799592147809822">
@@ -1852,7 +1852,7 @@
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5052799592147809851">
                     <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5052799592147809852">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5052799592147809853">
-                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="TransientValues" />
+                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="GWTTransientValues" />
                         <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2zrd.5052799592147817967" resolveInfo="THIS" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5052799592147809854">
@@ -1896,7 +1896,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2663453265348629996">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="sqp9.2663453265345756447" resolveInfo="VLayoutConstraint" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="sqp9.2663453265345756447" resolveInfo="VerticalConstraint" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2663453265348629997">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2663453265348629998">
           <property name="methodName" nameId="tp68.1174294288199" value="setWidgetBottomHeight" />
@@ -1907,7 +1907,7 @@
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5052799592147809829">
                     <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5052799592147809830">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5052799592147809831">
-                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="TransientValues" />
+                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="GWTTransientValues" />
                         <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2zrd.5052799592147817965" resolveInfo="ITEM" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5052799592147809832">
@@ -2003,7 +2003,7 @@
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5052799592147809861">
                     <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5052799592147809862">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5052799592147809863">
-                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="TransientValues" />
+                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2zrd.5052799592147817874" resolveInfo="GWTTransientValues" />
                         <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2zrd.5052799592147817967" resolveInfo="THIS" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5052799592147809864">

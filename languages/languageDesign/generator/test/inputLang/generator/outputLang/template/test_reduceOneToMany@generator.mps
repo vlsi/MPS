@@ -86,7 +86,7 @@
     </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="3893401255414086885">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpm0.1195168316083" resolveInfo="InputRoot" />
-      <link role="template" roleId="tpf8.1167514355421" targetNodeId="3893401255414086886" resolveInfo="map_InputRoot" />
+      <link role="template" roleId="tpf8.1167514355421" targetNodeId="3893401255414086886" resolveInfo="OutputRoot" />
       <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="3893401255414129777">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3893401255414129778">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3893401255414131864">
