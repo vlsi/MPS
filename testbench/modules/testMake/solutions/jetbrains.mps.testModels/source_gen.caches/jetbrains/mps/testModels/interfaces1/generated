@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-973ry7smhbnws7kqxysb2jv0iuefb5w">
+<dependencies version="2" modelHash="51slwg42yzxow5bsnqhkxo0q7qx2vo5">
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-3g2jui8rirnxhruh8t7p7qk3adnr3f9" />
-  <common hash="5go54we0ct073qpi2u551lvo4h7ke0x" />
+  <common hash="al4i9icbw1f5ovb2a5x4k8lppb1ur4s" />
   <source id="2265759664131825325" name="MyClass" hash="dompp6tlpabteg97qa7wsgbyp52exfz">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="MyClass.java" />

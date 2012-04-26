@@ -26,7 +26,7 @@
   <root id="1209604518979">
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="1209604563573">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpm0.1195168316083" resolveInfo="InputRoot" />
-      <link role="template" roleId="tpf8.1167514355421" targetNodeId="1209605205934" resolveInfo="OutputRoot_by_MappingRule" />
+      <link role="template" roleId="tpf8.1167514355421" targetNodeId="1209605205934" resolveInfo="outputRoot" />
       <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="1209604575152">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1209604575153">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1209604582248">

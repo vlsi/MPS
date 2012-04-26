@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="bh0c3wxslwht53ynfhbvs8xqiwmxa62">
+<dependencies version="2" modelHash="bdf7wu504hsjjpr2mparz5p4vyild11">
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-3g2jui8rirnxhruh8t7p7qk3adnr3f9" />
-  <common hash="46c657ognwey84x30ydo81r1p5a2irk" />
+  <common hash="9k0amittpf7z4o5xklgs5vwnhy1g94u" />
   <source id="1196985119947853632" name="Superclass" hash="ic9zhuh0yogvomcpoteyvoeoftgjmj">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="Superclass.java" />

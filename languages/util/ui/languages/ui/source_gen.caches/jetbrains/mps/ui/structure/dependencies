@@ -73,6 +73,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.ui.structure.IUIObjectContextProvider" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ui.structure.CompartmentReferenceExpression" file="CompartmentReferenceExpression.java">
     <classNode dependClassName="java.lang.String" />
@@ -97,6 +98,7 @@
     <classNode dependClassName="jetbrains.mps.ui.modeling.structure.Container" />
     <classNode dependClassName="jetbrains.mps.ui.structure.IUIObjectContextProvider" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ui.structure.ContainerType" file="ContainerType.java">
     <classNode dependClassName="java.lang.String" />
@@ -139,6 +141,7 @@
     <classNode dependClassName="jetbrains.mps.ui.structure.IUIObjectDeclaration" />
     <classNode dependClassName="jetbrains.mps.ui.structure.UIObjectStatement" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ui.structure.EnclosingContextCompartmentExpression" file="EnclosingContextCompartmentExpression.java">
     <classNode dependClassName="java.lang.String" />
@@ -170,6 +173,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.ui.modeling.structure.EventProperty" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ui.structure.EventType" file="EventType.java">
     <classNode dependClassName="java.lang.String" />
@@ -232,6 +236,7 @@
     <classNode dependClassName="jetbrains.mps.ui.structure.Controller" />
     <classNode dependClassName="jetbrains.mps.ui.structure.EventHandingBlock" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ui.structure.InsertUIObjectStatement" file="InsertUIObjectStatement.java">
     <classNode dependClassName="java.lang.String" />
@@ -265,6 +270,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ui.structure.IterateContentsVariableReference" file="IterateContentsVariableReference.java">
     <classNode dependClassName="java.lang.String" />
@@ -308,6 +314,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.ui.structure.IUIObjectContextProvider" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ui.structure.UIObjectReference" file="UIObjectReference.java">
     <classNode dependClassName="java.lang.String" />
@@ -322,6 +329,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.ui.structure.IUIObjectDeclaration" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ui.structure.UIObjectStatement" file="UIObjectStatement.java">
     <classNode dependClassName="java.lang.String" />
@@ -385,6 +393,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.ui.structure.ValidateBlock" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ui.structure.View" file="View.java">
     <classNode dependClassName="java.lang.String" />

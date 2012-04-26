@@ -21,6 +21,7 @@
     <classNode dependClassName="jetbrains.mpslite.structure.AbstractConceptReference" />
     <classNode dependClassName="jetbrains.mpslite.structure.IMPSLiteConcept" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mpslite.structure.BlockBodyPart" file="BlockBodyPart.java">
     <classNode dependClassName="java.lang.String" />
@@ -44,6 +45,7 @@
     <classNode dependClassName="jetbrains.mpslite.structure.IMPSLiteConcept" />
     <classNode dependClassName="jetbrains.mpslite.structure.LineList" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mpslite.structure.BlockReference" file="BlockReference.java">
     <classNode dependClassName="java.lang.String" />
@@ -90,6 +92,7 @@
     <classNode dependClassName="jetbrains.mpslite.structure.AbstractConceptReference" />
     <classNode dependClassName="jetbrains.mpslite.structure.ChildPart" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mpslite.structure.ConcretePropertyPart" file="ConcretePropertyPart.java">
     <classNode dependClassName="java.lang.String" />
@@ -104,6 +107,7 @@
     <classNode dependClassName="jetbrains.mpslite.structure.MPSLitePropertyType_Enum" />
     <classNode dependClassName="jetbrains.mpslite.structure.PropertyPart" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mpslite.structure.ConcreteReferencePart" file="ConcreteReferencePart.java">
     <classNode dependClassName="java.lang.String" />
@@ -118,6 +122,7 @@
     <classNode dependClassName="jetbrains.mpslite.structure.AbstractConceptReference" />
     <classNode dependClassName="jetbrains.mpslite.structure.ReferencePart" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mpslite.structure.ConstantLinePart" file="ConstantLinePart.java">
     <classNode dependClassName="java.lang.String" />
@@ -144,6 +149,7 @@
     <classNode dependClassName="jetbrains.mpslite.structure.AbstractConceptReference" />
     <classNode dependClassName="jetbrains.mpslite.structure.IMPSLiteConcept" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mpslite.structure.FeatureAccessConcept" file="FeatureAccessConcept.java">
     <classNode dependClassName="java.lang.String" />
@@ -157,6 +163,7 @@
     <classNode dependClassName="jetbrains.mpslite.structure.AbstractConceptReference" />
     <classNode dependClassName="jetbrains.mpslite.structure.IMPSLiteConcept" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mpslite.structure.IMPSLiteConcept" file="IMPSLiteConcept.java">
     <classNode dependClassName="java.lang.String" />
@@ -216,6 +223,7 @@
     <classNode dependClassName="jetbrains.mpslite.structure.IMPSLiteConcept" />
     <classNode dependClassName="jetbrains.mpslite.structure.LineList" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mpslite.structure.MPSLiteConceptReference" file="MPSLiteConceptReference.java">
     <classNode dependClassName="java.lang.String" />
@@ -305,6 +313,7 @@
     <classNode dependClassName="jetbrains.mpslite.structure.AbstractConceptReference" />
     <classNode dependClassName="jetbrains.mpslite.structure.IMPSLiteConcept" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mpslite.structure.StructureAspectDescriptor" file="StructureAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
@@ -337,6 +346,7 @@
     <classNode dependClassName="jetbrains.mpslite.structure.IMPSLiteConcept" />
     <classNode dependClassName="jetbrains.mpslite.structure.LineList" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
 </dependenciesRoot>
 

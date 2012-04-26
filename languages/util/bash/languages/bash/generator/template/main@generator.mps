@@ -27,15 +27,15 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="6382090206698989808">
       <property name="name" nameId="tpck.1169194664001" value="reduce_CommandList" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="u9e0.3321051580269894529" resolveInfo="CommonCommandList" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="u9e0.3321051580269894529" resolveInfo="CommandList" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="6382090206700058608">
       <property name="name" nameId="tpck.1169194664001" value="reduce_CommandComment" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="u9e0.8457058248751696156" resolveInfo="CommandComment" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="u9e0.8457058248751696156" resolveInfo="CommentedCommandList" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="6382090206702077252">
       <property name="name" nameId="tpck.1169194664001" value="reduce_BaseCommandList" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="u9e0.8474643070102636479" resolveInfo="BaseCommandList" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="u9e0.8474643070102636479" resolveInfo="HeadCommandList" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="6382090206702077335">
       <property name="name" nameId="tpck.1169194664001" value="reduce_FollowingCommandList" />
@@ -43,7 +43,7 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="6382090206702813291">
       <property name="name" nameId="tpck.1169194664001" value="reduce_BasePipeline" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="u9e0.8474643070110245381" resolveInfo="BasePipeline" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="u9e0.8474643070110245381" resolveInfo="HeadPipeline" />
     </node>
     <node type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="6382090206703115199">
       <property name="name" nameId="tpck.1169194664001" value="switch_Commands" />
@@ -60,7 +60,7 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="6382090206703730340">
       <property name="name" nameId="tpck.1169194664001" value="reduce_GeneralizedWordConcept" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="u9e0.8353259571483884165" resolveInfo="ExtendedWordConcept" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="u9e0.8353259571483884165" resolveInfo="GeneralizedWord" />
     </node>
     <node type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="9034131902182652365">
       <property name="name" nameId="tpck.1169194664001" value="switch_Arithmetic" />
@@ -125,27 +125,27 @@
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="6382090206697481815" resolveInfo="shellscript_name" />
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="6382090206702075153">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="u9e0.8474643070102636479" resolveInfo="BaseCommandList" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="u9e0.8474643070102636479" resolveInfo="HeadCommandList" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="6382090206702077254">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="6382090206702077252" resolveInfo="reduce_BaseCommandList" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="6382090206702811190">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="u9e0.8474643070110245381" resolveInfo="BasePipeline" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="u9e0.8474643070110245381" resolveInfo="HeadPipeline" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="6382090206702813293">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="6382090206702813291" resolveInfo="reduce_BasePipeline" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="6382090206703730338">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="u9e0.8353259571483884165" resolveInfo="ExtendedWordConcept" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="u9e0.8353259571483884165" resolveInfo="GeneralizedWord" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="6382090206703730342">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="6382090206703730340" resolveInfo="reduce_ExtendedWordConcept" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="6382090206703730340" resolveInfo="reduce_GeneralizedWordConcept" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="3835416431565518838">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="u9e0.3321051580269917239" resolveInfo="InputLines" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="3835416431565518841">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="3835416431565317075" resolveInfo="reduce_InputLines" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="3835416431565317075" resolveInfo="reduce_IndentInputLines" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="3835416431566491205">
@@ -299,13 +299,13 @@
   </root>
   <root id="6382090206698987697">
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="6382090206698987700">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="u9e0.3321051580269894529" resolveInfo="CommonCommandList" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="u9e0.3321051580269894529" resolveInfo="CommandList" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="6382090206698989810">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="6382090206698989808" resolveInfo="reduce_CommonCommandList" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="6382090206698989808" resolveInfo="reduce_CommandList" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="6382090206700056509">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="u9e0.8457058248751696156" resolveInfo="CommandComment" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="u9e0.8457058248751696156" resolveInfo="CommentedCommandList" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="6382090206700058610">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="6382090206700058608" resolveInfo="reduce_CommandComment" />
       </node>
@@ -716,7 +716,7 @@
   </root>
   <root id="6382090206703115199">
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="6382090206703117300">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="u9e0.3905757829901343108" resolveInfo="CommandKeeper" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="u9e0.3905757829901343108" resolveInfo="Command" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="6382090206703117309">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpih.GNewLine" typeId="tpih.1164413172275" id="6382090206703117312" />
       </node>
@@ -1436,7 +1436,7 @@
   </root>
   <root id="6382090206703623173">
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="6382090206703623174">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="u9e0.8353259571485353280" resolveInfo="JustWord" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="u9e0.8353259571485353280" resolveInfo="SimpleWord" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="6382090206703625273">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpih.GText" typeId="tpih.1164412789837" id="6382090206703625276">
           <property name="text" nameId="tpih.1164413036326" value="TEXT" />
@@ -1556,7 +1556,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="6382090206703730101">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="u9e0.8353259571483884165" resolveInfo="ExtendedWordConcept" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="u9e0.8353259571483884165" resolveInfo="GeneralizedWord" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="6382090206703730111">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpih.GText" typeId="tpih.1164412789837" id="6382090206703730358">
           <property name="text" nameId="tpih.1164413036326" value="&lt; extwc - unit &gt;" />
@@ -2561,7 +2561,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="9034131902182713760">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="u9e0.3999172467438761812" resolveInfo="RightBitwiseExpression" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="u9e0.3999172467438761812" resolveInfo="RightBitwiseShiftExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="9034131902182713762">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpih.GItemList" typeId="tpih.1164412982980" id="9034131902182713763">
           <node role="item" roleId="tpih.1164413016466" type="tpih.GText" typeId="tpih.1164412789837" id="9034131902182713764">

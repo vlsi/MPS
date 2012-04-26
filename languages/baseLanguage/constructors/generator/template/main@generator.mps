@@ -55,7 +55,7 @@
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="606143069297301479">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="fbxt.6820702584719416486" resolveInfo="CustomConstructorUsage" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="606143069297303136">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="606143069297165069" resolveInfo="Reduce_CustomConstructorUsage" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="606143069297165069" resolveInfo="Reduce_CustomConstructorListUsage" />
       </node>
       <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="4563030478605919789">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4563030478605919790">
@@ -357,7 +357,7 @@
             <node role="expression" roleId="tpee.1068580123156" type="tp68.InternalStaticMethodCall" typeId="tp68.1173990517731" id="606143069297663172">
               <property name="fqClassName" nameId="tp68.1173992483054" value="classFQName" />
               <property name="methodName" nameId="tp68.1173992444083" value="methodName" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7451562887563468782">
+              <node role="actualArgument" roleId="tp68.319021450862604085" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7451562887563468782">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~Arrays%dasList(java%dlang%dObject%d%d%d)%cjava%dutil%dList" resolveInfo="asList" />
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="k7g3.~Arrays" resolveInfo="Arrays" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7451562887563468783">
@@ -729,7 +729,7 @@
             <node role="expression" roleId="tpee.1068580123156" type="tp68.InternalStaticMethodCall" typeId="tp68.1173990517731" id="7738355964682458421">
               <property name="fqClassName" nameId="tp68.1173992483054" value="classFQName" />
               <property name="methodName" nameId="tp68.1173992444083" value="methodName" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7738355964682460841">
+              <node role="actualArgument" roleId="tp68.319021450862604085" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7738355964682460841">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7738355964682458415" resolveInfo="l" />
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="7738355964682834052">
                   <node role="sourceNodesQuery" roleId="tpf8.1167952069335" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="7738355964682834053">

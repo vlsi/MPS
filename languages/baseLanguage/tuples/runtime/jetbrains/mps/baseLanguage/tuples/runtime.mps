@@ -5,7 +5,7 @@
   <language-engaged-on-generation namespace="a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1238932916942">
@@ -253,7 +253,7 @@
                       </node>
                       <node role="array" roleId="tpee.1173175590490" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238932917129">
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="1238932917130">
-                          <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1238932916952" resolveInfo="members" />
+                          <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1238932916952" resolveInfo="values" />
                         </node>
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1238932917131" />
                       </node>
@@ -284,7 +284,7 @@
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238932917140">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238932917141">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="1238932917142">
-                  <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1238932916952" resolveInfo="members" />
+                  <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1238932916952" resolveInfo="values" />
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1238932917143" />
               </node>
@@ -351,7 +351,7 @@
               </node>
               <node role="array" roleId="tpee.1173175590490" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238932917169">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="1238932917170">
-                  <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1238932916952" resolveInfo="members" />
+                  <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1238932916952" resolveInfo="values" />
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1238932917171" />
               </node>
@@ -372,7 +372,7 @@
             <node role="array" roleId="tpee.1173175590490" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238932917178">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1238932917179" />
               <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="1238932917180">
-                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1238932916952" resolveInfo="members" />
+                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1238932916952" resolveInfo="values" />
               </node>
             </node>
           </node>
@@ -454,7 +454,7 @@
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238944443695">
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="1238944443696">
-                      <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1238932916952" resolveInfo="members" />
+                      <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1238932916952" resolveInfo="values" />
                     </node>
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1238944443697" />
                   </node>
@@ -520,7 +520,7 @@
                 <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238932917203">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1238932917204" />
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="1238932917205">
-                    <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1238932916952" resolveInfo="members" />
+                    <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1238932916952" resolveInfo="values" />
                   </node>
                 </node>
               </node>
@@ -548,7 +548,7 @@
                   <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238932917217">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1238932917218" />
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="1238932917219">
-                      <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1238932916952" resolveInfo="members" />
+                      <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1238932916952" resolveInfo="values" />
                     </node>
                   </node>
                 </node>
@@ -565,7 +565,7 @@
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238932917224">
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="1238932917225">
-                      <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1238932916952" resolveInfo="members" />
+                      <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1238932916952" resolveInfo="values" />
                     </node>
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1238932917226" />
                   </node>
@@ -602,7 +602,7 @@
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238932917240">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1238932917241" />
               <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="1238932917242">
-                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1238932916952" resolveInfo="members" />
+                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1238932916952" resolveInfo="values" />
               </node>
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="1238932917243">

@@ -11,11 +11,11 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
   <roots>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1206442125570">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp41.1206442055221" resolveInfo="DataBuilder" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp41.1206442055221" resolveInfo="DataFlowBuilderDeclaration" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1206443680940">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Instructions" />
@@ -26,7 +26,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1206444686645">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Instructions.Variable" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp41.1206444622344" resolveInfo="EmitVariableStatement" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp41.1206444622344" resolveInfo="BaseEmitVariableStatement" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1206444931655">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Positions" />
@@ -34,7 +34,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1206445207940">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Instructions.Jump" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp41.1206445181593" resolveInfo="EmitJumpStatement" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp41.1206445181593" resolveInfo="BaseEmitJumpStatement" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1206454086084">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Instructions" />
@@ -42,7 +42,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1206462910372">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Instructions" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp41.1206462858103" resolveInfo="EmitReturnStatement" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp41.1206462858103" resolveInfo="EmitRetStatement" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1206534256454">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Instructions" />
@@ -82,7 +82,7 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp41.8486807419021026914" resolveInfo="InsertAfter" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2959643274329928487">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp41.2959643274329928484" resolveInfo="GetCodeForStatement" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp41.2959643274329928484" resolveInfo="GetCodeForExpression" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7180022869589052766">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="InstructionOperations" />

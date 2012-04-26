@@ -10,7 +10,7 @@
   <import index="tp3j" modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="8" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
@@ -47,7 +47,7 @@
           <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227922707">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227883450">
               <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1192798450070">
-                <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1192798450080" resolveInfo="node" />
+                <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1192798450080" resolveInfo="conceptFunctionParameter_node" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="1192798450071">
                 <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="1192798450072">
@@ -67,7 +67,7 @@
         <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1223982145701">
           <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="1223982145703">
             <node role="term" roleId="tpd4.1174657509053" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1192798450079">
-              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1192798450080" resolveInfo="node" />
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1192798450080" resolveInfo="conceptFunctionParameter_node" />
             </node>
           </node>
         </node>
@@ -199,7 +199,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1240322703525">
       <property name="name" nameId="tpck.1169194664001" value="parameter" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp3j.1240322627579" resolveInfo="ConceptFunctionParameter_parameter" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp3j.1240322627579" resolveInfo="IntentionParameter" />
     </node>
   </root>
   <root id="3618415754251192148">
@@ -253,7 +253,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="4359456199357025389">
       <property name="name" nameId="tpck.1169194664001" value="operation" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp3j.4359456199357025372" resolveInfo="IntentionContextParamRefOperation" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp3j.4359456199357025372" resolveInfo="IntentionContextParamReference" />
     </node>
   </root>
   <root id="1349940517677473367">

@@ -24,6 +24,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameterContainer" file="DefaultGeneratorParameterContainer.java">
     <classNode dependClassName="java.lang.String" />
@@ -37,6 +38,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.generationParameters.structure.GenerationParameters_Language" file="GenerationParameters_Language.java">
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />

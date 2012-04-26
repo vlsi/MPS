@@ -59,7 +59,7 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1238407224170">
       <property name="name" nameId="tpck.1169194664001" value="create_mathcontext" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="39kg.1238402702427" resolveInfo="MathContext" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="39kg.1238402702427" resolveInfo="DecimalBinaryOperation" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1418611629042597009">
       <property name="name" nameId="tpck.1169194664001" value="LinearSolveOperation" />
@@ -674,7 +674,7 @@
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="9161574939227747414">
                           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="9161574939227747416">
                             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="r3rn.1238406290274" resolveInfo="MathUtil" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getElementType" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getUnboxedElementType" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9161574939227747418">
                               <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="9161574939227747417" />
                               <node role="operation" roleId="tpee.1197027833540" type="tpd4.Node_TypeOperation" typeId="tpd4.1176544042499" id="9161574939227748542" />
@@ -738,7 +738,7 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1237220018408">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpck.BaseConcept" typeId="tpck.1133920641626" id="1237220018409">
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="1237220021895">
-            <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="1237219277494" resolveInfo="OverloadedBinaryOperationSwitch" />
+            <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="1237219277494" resolveInfo="BinaryOperationSwitch" />
           </node>
         </node>
       </node>
@@ -1889,7 +1889,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1238326592156">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="39kg.1238326494701" resolveInfo="ILiteral" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="39kg.1238326494701" resolveInfo="LiteralI" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1238326967085">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1238326974541">
           <link role="classifier" roleId="tpee.1144433057691" targetNodeId="k2b1.877422884702771039" resolveInfo="Complex" />
@@ -2799,7 +2799,7 @@
                       </node>
                       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4107669262321384465">
                         <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="r3rn.1238406290274" resolveInfo="MathUtil" />
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getElementType" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getUnboxedElementType" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4107669262321384466">
                           <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="4107669262321384467" />
                           <node role="operation" roleId="tpee.1197027833540" type="tpd4.Node_TypeOperation" typeId="tpd4.1176544042499" id="4107669262321384468" />
@@ -3163,7 +3163,7 @@
                       </node>
                       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4107669262321384516">
                         <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="r3rn.1238406290274" resolveInfo="MathUtil" />
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getElementType" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getUnboxedElementType" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4107669262321384517">
                           <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="4107669262321384518" />
                           <node role="operation" roleId="tpee.1197027833540" type="tpd4.Node_TypeOperation" typeId="tpd4.1176544042499" id="4107669262321384519" />
@@ -4727,7 +4727,7 @@
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7372691256923747523">
                           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7372691256923747525">
                             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="r3rn.1238406290274" resolveInfo="MathUtil" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getElementType" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getUnboxedElementType" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="7372691256923747526" />
                           </node>
                         </node>
@@ -5066,7 +5066,7 @@
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7372691256923748703">
                           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7372691256923748704">
                             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="r3rn.1238406290274" resolveInfo="MathUtil" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getElementType" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getUnboxedElementType" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="7372691256923748705" />
                           </node>
                         </node>
@@ -5428,7 +5428,7 @@
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7372691256923748752">
                           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7372691256923748753">
                             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="r3rn.1238406290274" resolveInfo="MathUtil" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getElementType" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getUnboxedElementType" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="7372691256923748754" />
                           </node>
                         </node>
@@ -5655,7 +5655,7 @@
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7372691256923748869">
                           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7372691256923748870">
                             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="r3rn.1238406290274" resolveInfo="MathUtil" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getElementType" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getUnboxedElementType" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7372691256923748871">
                               <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="7372691256923748872" />
                               <node role="operation" roleId="tpee.1197027833540" type="tpd4.Node_TypeOperation" typeId="tpd4.1176544042499" id="7372691256923748873" />
@@ -6014,7 +6014,7 @@
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8613885519962134302">
                           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8613885519962134303">
                             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="r3rn.1238406290274" resolveInfo="MathUtil" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getElementType" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getUnboxedElementType" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8613885519962134304">
                               <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="8613885519962134305" />
                               <node role="operation" roleId="tpee.1197027833540" type="tpd4.Node_TypeOperation" typeId="tpd4.1176544042499" id="8613885519962134306" />
@@ -6471,7 +6471,7 @@
           </node>
           <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.Expression" typeId="tpee.1068431790191" id="1237807648643">
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IncludeMacro" typeId="tpf8.1194565793557" id="1237807657490">
-              <link role="includeTemplate" roleId="tpf8.1194566366375" targetNodeId="1237807489587" resolveInfo="object_compare" />
+              <link role="includeTemplate" roleId="tpf8.1194566366375" targetNodeId="1237807489587" resolveInfo="comparable_compare" />
             </node>
           </node>
         </node>
@@ -6483,7 +6483,7 @@
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.GreaterThanOrEqualsExpression" typeId="tpee.1153417849900" id="1237807751201">
           <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.Expression" typeId="tpee.1068431790191" id="1237807751202">
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IncludeMacro" typeId="tpf8.1194565793557" id="1237807751203">
-              <link role="includeTemplate" roleId="tpf8.1194566366375" targetNodeId="1237807489587" resolveInfo="object_compare" />
+              <link role="includeTemplate" roleId="tpf8.1194566366375" targetNodeId="1237807489587" resolveInfo="comparable_compare" />
             </node>
           </node>
           <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1237807751204">
@@ -6498,7 +6498,7 @@
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.LessThanExpression" typeId="tpee.1081506773034" id="1237807755377">
           <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.Expression" typeId="tpee.1068431790191" id="1237807755378">
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IncludeMacro" typeId="tpf8.1194565793557" id="1237807755379">
-              <link role="includeTemplate" roleId="tpf8.1194566366375" targetNodeId="1237807489587" resolveInfo="object_compare" />
+              <link role="includeTemplate" roleId="tpf8.1194566366375" targetNodeId="1237807489587" resolveInfo="comparable_compare" />
             </node>
           </node>
           <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1237807755380">
@@ -6513,7 +6513,7 @@
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.LessThanOrEqualsExpression" typeId="tpee.1153422305557" id="1237807766276">
           <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.Expression" typeId="tpee.1068431790191" id="1237807766277">
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IncludeMacro" typeId="tpf8.1194565793557" id="1237807766278">
-              <link role="includeTemplate" roleId="tpf8.1194566366375" targetNodeId="1237807489587" resolveInfo="object_compare" />
+              <link role="includeTemplate" roleId="tpf8.1194566366375" targetNodeId="1237807489587" resolveInfo="comparable_compare" />
             </node>
           </node>
           <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1237807766279">
@@ -6818,7 +6818,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1238941602779">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="39kg.1238940230440" resolveInfo="PlusOperationMathContext" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="39kg.1238940230440" resolveInfo="DecimalPlusExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineSwitch_RuleConsequence" typeId="tpf8.1195158154974" id="1238941629147">
         <node role="case" roleId="tpf8.1195158408710" type="tpf8.InlineSwitch_Case" typeId="tpf8.1195158388553" id="1238941644536">
           <node role="conditionFunction" roleId="tpf8.1195158608805" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="1238941644537">
@@ -7032,7 +7032,7 @@
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1300076822026734616">
                           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1300076822026734617">
                             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="r3rn.1238406290274" resolveInfo="MathUtil" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getElementType" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getUnboxedElementType" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1300076822026734618" />
                           </node>
                         </node>
@@ -7048,7 +7048,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1238941603063">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="39kg.1238940287286" resolveInfo="MinusOperationMathContext" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="39kg.1238940287286" resolveInfo="DecimalMinusExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineSwitch_RuleConsequence" typeId="tpf8.1195158154974" id="1238941632979">
         <node role="case" roleId="tpf8.1195158408710" type="tpf8.InlineSwitch_Case" typeId="tpf8.1195158388553" id="1238942988842">
           <node role="conditionFunction" roleId="tpf8.1195158608805" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="1238942988843">
@@ -7262,7 +7262,7 @@
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1300076822026734661">
                           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1300076822026734662">
                             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="r3rn.1238406290274" resolveInfo="MathUtil" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getElementType" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getUnboxedElementType" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1300076822026734663" />
                           </node>
                         </node>
@@ -7278,7 +7278,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1238941603252">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="39kg.1238940210376" resolveInfo="MulOperationMathContext" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="39kg.1238940210376" resolveInfo="DecimalMulExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineSwitch_RuleConsequence" typeId="tpf8.1195158154974" id="1238941635341">
         <node role="case" roleId="tpf8.1195158408710" type="tpf8.InlineSwitch_Case" typeId="tpf8.1195158388553" id="1238942992886">
           <node role="conditionFunction" roleId="tpf8.1195158608805" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="1238942992887">
@@ -7515,7 +7515,7 @@
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1300076822026734718">
                           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1300076822026734719">
                             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="r3rn.1238406290274" resolveInfo="MathUtil" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getElementType" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getUnboxedElementType" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1300076822026734720" />
                           </node>
                         </node>
@@ -7742,7 +7742,7 @@
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1300076822026734838">
                           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1300076822026734839">
                             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="r3rn.1238406290274" resolveInfo="MathUtil" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getElementType" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getUnboxedElementType" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1300076822026734840">
                               <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1300076822026734841" />
                               <node role="operation" roleId="tpee.1197027833540" type="tpd4.Node_TypeOperation" typeId="tpd4.1176544042499" id="1300076822026734842" />
@@ -7761,7 +7761,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1238941603504">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="39kg.1238940192891" resolveInfo="DivOperationMathContext" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="39kg.1238940192891" resolveInfo="DecimalDivExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineSwitch_RuleConsequence" typeId="tpf8.1195158154974" id="1238941636968">
         <node role="case" roleId="tpf8.1195158408710" type="tpf8.InlineSwitch_Case" typeId="tpf8.1195158388553" id="1238942994595">
           <node role="conditionFunction" roleId="tpf8.1195158608805" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="1238942994596">
@@ -7992,7 +7992,7 @@
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1300076822026734895">
                           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1300076822026734896">
                             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="r3rn.1238406290274" resolveInfo="MathUtil" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getElementType" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getUnboxedElementType" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1300076822026734897">
                               <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1300076822026734898" />
                               <node role="operation" roleId="tpee.1197027833540" type="tpd4.Node_TypeOperation" typeId="tpd4.1176544042499" id="1300076822026734899" />
@@ -8182,14 +8182,14 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4411518219013061246">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4411518219013061247">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9984.1237536712356" resolveInfo="pickExplicitWidening" />
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypesCoercionController" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypeUtil" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4411518219013061248">
                       <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="4411518219013061249" />
                       <node role="operation" roleId="tpee.1197027833540" type="tpd4.Node_TypeOperation" typeId="tpd4.1176544042499" id="4411518219013061250" />
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6389121991275245127">
                       <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="r3rn.1238406290274" resolveInfo="MathUtil" />
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getElementType" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getUnboxedElementType" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6389121991275245128">
                         <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="6389121991275245129">
                           <link role="concept" roleId="tp25.1140138128738" targetNodeId="39kg.4815887568697232005" resolveInfo="MatrixConstructor" />
@@ -8219,14 +8219,14 @@
                   </node>
                   <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6389121991275245135">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9984.1237536712356" resolveInfo="pickExplicitWidening" />
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypesCoercionController" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypeUtil" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6389121991275245136">
                       <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="6389121991275245137" />
                       <node role="operation" roleId="tpee.1197027833540" type="tpd4.Node_TypeOperation" typeId="tpd4.1176544042499" id="6389121991275245138" />
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6389121991275245139">
                       <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="r3rn.1238406290274" resolveInfo="MathUtil" />
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getElementType" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getUnboxedElementType" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6389121991275245140">
                         <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="6389121991275245141">
                           <link role="concept" roleId="tp25.1140138128738" targetNodeId="39kg.4815887568697232005" resolveInfo="MatrixConstructor" />
@@ -8311,7 +8311,7 @@
                   </node>
                   <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7676695779583148828">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9984.1237536712356" resolveInfo="pickExplicitWidening" />
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypesCoercionController" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypeUtil" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7676695779583148829">
                       <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="7676695779583148830" />
                       <node role="operation" roleId="tpee.1197027833540" type="tpd4.Node_TypeOperation" typeId="tpd4.1176544042499" id="7676695779583148831" />
@@ -8358,7 +8358,7 @@
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7676695779583148855">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7676695779583148856">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7676695779583148857">
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypesCoercionController" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypeUtil" />
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9984.1237536712356" resolveInfo="pickExplicitWidening" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7676695779583148858">
                       <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="7676695779583148859" />
@@ -8436,7 +8436,7 @@
                     </node>
                     <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1238319329939">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9984.1237829156389" resolveInfo="binaryOperationRequiresWidening" />
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypesCoercionController" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypeUtil" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1238319329940">
                         <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1081773326031" resolveInfo="BinaryOperation" />
                         <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238319329941">
@@ -8499,7 +8499,7 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1237814500382">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1237814500383">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9984.1237536712356" resolveInfo="pickExplicitWidening" />
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypesCoercionController" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypeUtil" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237814500385">
                       <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1237814500386" />
                       <node role="operation" roleId="tpee.1197027833540" type="tpd4.Node_TypeOperation" typeId="tpd4.1176544042499" id="1237814500387" />
@@ -8572,7 +8572,7 @@
                         </node>
                         <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1238320940387">
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9984.1237536712356" resolveInfo="pickExplicitWidening" />
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypesCoercionController" />
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypeUtil" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238320940389">
                             <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1238320940390" />
                             <node role="operation" roleId="tpee.1197027833540" type="tpd4.Node_TypeOperation" typeId="tpd4.1176544042499" id="1238320940391" />
@@ -8651,7 +8651,7 @@
                 </node>
                 <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1238320934884">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9984.1237536712356" resolveInfo="pickExplicitWidening" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypesCoercionController" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypeUtil" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238320934886">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238320934887">
                       <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1238320934888">
@@ -8709,7 +8709,7 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1237814500478">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1237814500479">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9984.1237536712356" resolveInfo="pickExplicitWidening" />
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypesCoercionController" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypeUtil" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237814500481">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237814500482">
                         <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1237814500483">
@@ -8786,7 +8786,7 @@
                     </node>
                     <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1238320899782">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9984.1237536712356" resolveInfo="pickExplicitWidening" />
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypesCoercionController" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypeUtil" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238320899784">
                         <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1238320899785" />
                         <node role="operation" roleId="tpee.1197027833540" type="tpd4.Node_TypeOperation" typeId="tpd4.1176544042499" id="1238320899786" />
@@ -8865,7 +8865,7 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1237814500549">
                   <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1237814500550">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9984.1237536712356" resolveInfo="pickExplicitWidening" />
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypesCoercionController" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypeUtil" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237814500552">
                       <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1237814500553" />
                       <node role="operation" roleId="tpee.1197027833540" type="tpd4.Node_TypeOperation" typeId="tpd4.1176544042499" id="1237814500554" />
@@ -8905,7 +8905,7 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1237814500568">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1237814500569">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9984.1237536712356" resolveInfo="pickExplicitWidening" />
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypesCoercionController" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypeUtil" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237814500571">
                       <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1237814500572" />
                       <node role="operation" roleId="tpee.1197027833540" type="tpd4.Node_TypeOperation" typeId="tpd4.1176544042499" id="1237814500573" />
@@ -8933,7 +8933,7 @@
                   <property name="value" nameId="tpee.1068580320021" value="0" />
                 </node>
                 <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8471422728814981823">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypesCoercionController" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypeUtil" />
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9984.1237536712356" resolveInfo="pickExplicitWidening" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8471422728814981825">
                     <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="8471422728814981826" />
@@ -9001,7 +9001,7 @@
                       <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
                     </node>
                     <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1237814500620">
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypesCoercionController" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypeUtil" />
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9984.1237555703016" resolveInfo="canMakeReturnStatement" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237814500621">
                         <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1237814500622" />
@@ -9012,7 +9012,7 @@
                 </node>
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1237814500624">
                   <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1237814500625">
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypesCoercionController" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypeUtil" />
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9984.1237536712356" resolveInfo="pickExplicitWidening" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237814500627">
                       <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1237814500628" />
@@ -9039,7 +9039,7 @@
                     <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1237814500638">
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypesCoercionController" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypeUtil" />
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9984.1237555703016" resolveInfo="canMakeReturnStatement" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237814500639">
                       <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1237814500640" />
@@ -9060,7 +9060,7 @@
                         </node>
                         <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1238320912323">
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9984.1237536712356" resolveInfo="pickExplicitWidening" />
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypesCoercionController" />
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypeUtil" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238320912325">
                             <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1238320912326" />
                             <node role="operation" roleId="tpee.1197027833540" type="tpd4.Node_TypeOperation" typeId="tpd4.1176544042499" id="1238320912327" />
@@ -9153,7 +9153,7 @@
                   </node>
                   <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1238320887532">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9984.1237536712356" resolveInfo="pickExplicitWidening" />
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypesCoercionController" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypeUtil" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238320887534">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238320887535">
                         <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1238320887536" />
@@ -9200,7 +9200,7 @@
                     <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1237814500701">
                       <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1237814500702">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9984.1237536712356" resolveInfo="pickExplicitWidening" />
-                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypesCoercionController" />
+                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypeUtil" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237814500704">
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237814500705">
                             <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1237814500706" />
@@ -9362,7 +9362,7 @@
                 </node>
                 <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1238420846452">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9984.1237536712356" resolveInfo="pickExplicitWidening" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypesCoercionController" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypeUtil" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238420846454">
                     <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1238420846456" />
                     <node role="operation" roleId="tpee.1197027833540" type="tpd4.Node_TypeOperation" typeId="tpd4.1176544042499" id="1238420846458" />
@@ -9397,7 +9397,7 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1238420956799">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1238420956800">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9984.1237536712356" resolveInfo="pickExplicitWidening" />
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypesCoercionController" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9984.1237536678090" resolveInfo="MathTypeUtil" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238420956802">
                       <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1238420956803" />
                       <node role="operation" roleId="tpee.1197027833540" type="tpd4.Node_TypeOperation" typeId="tpd4.1176544042499" id="1238420956804" />

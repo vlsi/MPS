@@ -28,7 +28,7 @@
   </roots>
   <root id="1228517278170">
     <node role="createRootRule" roleId="tpf8.1167088157977" type="tpf8.CreateRootRule" typeId="tpf8.1167087469898" id="1228517787089">
-      <link role="templateNode" roleId="tpf8.1167087469901" targetNodeId="1228517514681" resolveInfo="map_Document" />
+      <link role="templateNode" roleId="tpf8.1167087469901" targetNodeId="1228517514681" resolveInfo="DemoApp" />
     </node>
     <node role="dropRootRule" roleId="tpf8.1219952894531" type="tpf8.DropRootRule" typeId="tpf8.1219952072943" id="1228528984907">
       <link role="applicableConcept" roleId="tpf8.1219952338328" targetNodeId="dghb.1225239603382" resolveInfo="Document" />

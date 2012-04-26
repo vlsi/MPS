@@ -7,21 +7,21 @@
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpen" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" implicit="yes" />
   <roots>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1167245582276">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpib.1167227138527" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpib.1167227138527" resolveInfo="LogStatement" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1168401886773">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpib.1168401810208" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpib.1168401810208" resolveInfo="PrintStatement" />
     </node>
   </roots>
   <root id="1167245582276">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1167245583614">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1167245583615">
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpib.1167245565795" />
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpib.1167245565795" resolveInfo="severity" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="1214314934315">
           <property name="style" nameId="tpc2.1186403771423" value="BOLD" />
         </node>
@@ -39,7 +39,7 @@
               <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227930797">
                 <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="1167245583624" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1167245583625">
-                  <link role="property" roleId="tp25.1138056395725" targetNodeId="tpib.1167228628751" />
+                  <link role="property" roleId="tp25.1138056395725" targetNodeId="tpib.1167228628751" resolveInfo="hasException" />
                 </node>
               </node>
             </node>
@@ -73,7 +73,7 @@
         <property name="text" nameId="tpc2.1073389577007" value="Has exception" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1169034779126">
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpib.1167228628751" />
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpib.1167228628751" resolveInfo="hasException" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1169034785409">
         <property name="text" nameId="tpc2.1073389577007" value="Alt+Enter" />

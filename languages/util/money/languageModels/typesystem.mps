@@ -8,7 +8,7 @@
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="tp7v" modelUID="r:00000000-0000-4000-0000-011c895903f7(jetbrains.mps.baseLanguage.money.structure)" version="0" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
@@ -52,7 +52,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1187359971114">
       <property name="name" nameId="tpck.1169194664001" value="moneyGetAmountMethodCall" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp7v.1187357875552" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp7v.1187357875552" resolveInfo="MoneyGetAmountMethodCall" />
     </node>
   </root>
   <root id="1187360305150">
@@ -74,7 +74,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1187360309075">
       <property name="name" nameId="tpck.1169194664001" value="moneyGetCurrencyMethodCall" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp7v.1187357945755" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp7v.1187357945755" resolveInfo="MoneyGetCurrencyMethodCall" />
     </node>
   </root>
   <root id="1187618173694">
@@ -96,7 +96,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1187618190572">
       <property name="name" nameId="tpck.1169194664001" value="moneyIsZeroMethodCall" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp7v.1187617584208" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp7v.1187617584208" resolveInfo="MoneyIsZeroMethodCall" />
     </node>
   </root>
   <root id="1187621915208">
@@ -118,7 +118,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1187621918289">
       <property name="name" nameId="tpck.1169194664001" value="moneyCreator" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp7v.1187340310888" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp7v.1187340310888" resolveInfo="MoneyCreator" />
     </node>
   </root>
   <root id="1187622269431">
@@ -140,7 +140,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1187622272543">
       <property name="name" nameId="tpck.1169194664001" value="moneyLiteral" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp7v.1186667651178" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp7v.1186667651178" resolveInfo="MoneyLiteral" />
     </node>
   </root>
   <root id="1239364210617">

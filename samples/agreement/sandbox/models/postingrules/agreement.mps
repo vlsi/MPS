@@ -17,16 +17,16 @@
   </roots>
   <root id="1112303557868">
     <node role="event" roleId="tpna.1111791084333" type="tpna.Event" typeId="tpna.1111791038612" id="1112383986387">
-      <link role="type" roleId="tpna.1111793668132" targetNodeId="tpnb.1112316681746" />
+      <link role="type" roleId="tpna.1111793668132" targetNodeId="tpnb.1112316681746" resolveInfo="USAGE" />
       <node role="postingRule" roleId="tpna.1111794644919" type="tpna.PostingRuleTemporalProperty" typeId="tpna.1111794734295" id="1112384017937">
         <node role="value" roleId="tpna.1111792463585" type="tpna.PostingRule" typeId="tpna.1111794888922" id="1112384017938">
-          <link role="account" roleId="tpna.1111795211704" targetNodeId="tpnb.1112315990977" />
+          <link role="account" roleId="tpna.1111795211704" targetNodeId="tpnb.1112315990977" resolveInfo="base-usage" />
           <node role="expression" roleId="tpnk.1111784226798" type="tpnk.MultOperation" typeId="tpnk.1112384225757" id="1112384394412">
             <node role="leftOperand" roleId="tpnk.1111784613299" type="tpna.ValueReference" typeId="tpna.1112038445100" id="1112384405975">
-              <link role="value" roleId="tpna.1112038462507" targetNodeId="1112383765038" />
+              <link role="value" roleId="tpna.1112038462507" targetNodeId="1112383765038" resolveInfo="BASE_RATE" />
             </node>
             <node role="rightOperand" roleId="tpnk.1111784647019" type="tpna.EventVariableReference" typeId="tpna.1112036490295" id="1112384408586">
-              <link role="eventVariable" roleId="tpna.1112036516483" targetNodeId="tpnb.1112316685513" />
+              <link role="eventVariable" roleId="tpna.1112036516483" targetNodeId="tpnb.1112316685513" resolveInfo="usage" />
             </node>
           </node>
         </node>
@@ -38,14 +38,14 @@
       </node>
     </node>
     <node role="event" roleId="tpna.1111791084333" type="tpna.Event" typeId="tpna.1111791038612" id="1112384423559">
-      <link role="type" roleId="tpna.1111793668132" targetNodeId="tpnb.1112316021402" />
+      <link role="type" roleId="tpna.1111793668132" targetNodeId="tpnb.1112316021402" resolveInfo="SERVICE CALL" />
       <node role="postingRule" roleId="tpna.1111794644919" type="tpna.PostingRuleTemporalProperty" typeId="tpna.1111794734295" id="1112384647065">
         <node role="value" roleId="tpna.1111792463585" type="tpna.PostingRule" typeId="tpna.1111794888922" id="1112384488572">
-          <link role="account" roleId="tpna.1111795211704" targetNodeId="tpnb.1112316007244" />
+          <link role="account" roleId="tpna.1111795211704" targetNodeId="tpnb.1112316007244" resolveInfo="service" />
           <node role="expression" roleId="tpnk.1111784226798" type="tpnk.PlusOperation" typeId="tpnk.1111786301085" id="1112384458969">
             <node role="leftOperand" roleId="tpnk.1111784613299" type="tpnk.MultOperation" typeId="tpnk.1112384225757" id="1112384462940">
               <node role="leftOperand" roleId="tpnk.1111784613299" type="tpna.EventVariableReference" typeId="tpna.1112036490295" id="1112384464879">
-                <link role="eventVariable" roleId="tpna.1112036516483" targetNodeId="tpnb.1112316252581" />
+                <link role="eventVariable" roleId="tpna.1112036516483" targetNodeId="tpnb.1112316252581" resolveInfo="fee" />
               </node>
               <node role="rightOperand" roleId="tpnk.1111784647019" type="tpnk.FloatingPointConstant" typeId="tpnk.1111784926012" id="1112384472881">
                 <property name="value" nameId="tpnk.1113257000626" value="0.5" />
@@ -67,11 +67,11 @@
       </node>
       <node role="postingRule" roleId="tpna.1111794644919" type="tpna.PostingRuleTemporalProperty" typeId="tpna.1111794734295" id="1112384647066">
         <node role="value" roleId="tpna.1111792463585" type="tpna.PostingRule" typeId="tpna.1111794888922" id="1112384560413">
-          <link role="account" roleId="tpna.1111795211704" targetNodeId="tpnb.1112316007244" />
+          <link role="account" roleId="tpna.1111795211704" targetNodeId="tpnb.1112316007244" resolveInfo="service" />
           <node role="expression" roleId="tpnk.1111784226798" type="tpnk.PlusOperation" typeId="tpnk.1111786301085" id="1112384540389">
             <node role="leftOperand" roleId="tpnk.1111784613299" type="tpnk.MultOperation" typeId="tpnk.1112384225757" id="1112384543203">
               <node role="leftOperand" roleId="tpnk.1111784613299" type="tpna.EventVariableReference" typeId="tpna.1112036490295" id="1112384548298">
-                <link role="eventVariable" roleId="tpna.1112036516483" targetNodeId="tpnb.1112316252581" />
+                <link role="eventVariable" roleId="tpna.1112036516483" targetNodeId="tpnb.1112316252581" resolveInfo="fee" />
               </node>
               <node role="rightOperand" roleId="tpnk.1111784647019" type="tpnk.FloatingPointConstant" typeId="tpnk.1111784926012" id="1112384551659">
                 <property name="value" nameId="tpnk.1113257000626" value="0.5" />
@@ -94,13 +94,13 @@
     </node>
     <node role="event" roleId="tpna.1111791084333" type="tpna.Event" typeId="tpna.1111791038612" id="1112384607478">
       <property name="taxable" nameId="tpna.1116368080504" value="false" />
-      <link role="type" roleId="tpna.1111793668132" targetNodeId="tpnb.1112316644479" />
+      <link role="type" roleId="tpna.1111793668132" targetNodeId="tpnb.1112316644479" resolveInfo="TAX" />
       <node role="postingRule" roleId="tpna.1111794644919" type="tpna.PostingRuleTemporalProperty" typeId="tpna.1111794734295" id="1112384647067">
         <node role="value" roleId="tpna.1111792463585" type="tpna.PostingRule" typeId="tpna.1111794888922" id="1112384638486">
-          <link role="account" roleId="tpna.1111795211704" targetNodeId="tpnb.1112316013167" />
+          <link role="account" roleId="tpna.1111795211704" targetNodeId="tpnb.1112316013167" resolveInfo="tax" />
           <node role="expression" roleId="tpnk.1111784226798" type="tpnk.MultOperation" typeId="tpnk.1112384225757" id="1112384627513">
             <node role="leftOperand" roleId="tpnk.1111784613299" type="tpna.EventVariableReference" typeId="tpna.1112036490295" id="1112384629280">
-              <link role="eventVariable" roleId="tpna.1112036516483" targetNodeId="tpnb.1112316673589" />
+              <link role="eventVariable" roleId="tpna.1112036516483" targetNodeId="tpnb.1112316673589" resolveInfo="fee" />
             </node>
             <node role="rightOperand" roleId="tpnk.1111784647019" type="tpnk.FloatingPointConstant" typeId="tpnk.1111784926012" id="1112384632188">
               <property name="value" nameId="tpnk.1113257000626" value="0.055" />
@@ -140,33 +140,33 @@
   </root>
   <root id="1112304761925">
     <node role="event" roleId="tpna.1111791084333" type="tpna.Event" typeId="tpna.1111791038612" id="1112393068783">
-      <link role="type" roleId="tpna.1111793668132" targetNodeId="tpnb.1112316681746" />
+      <link role="type" roleId="tpna.1111793668132" targetNodeId="tpnb.1112316681746" resolveInfo="USAGE" />
       <node role="postingRule" roleId="tpna.1111794644919" type="tpna.PostingRuleTemporalProperty" typeId="tpna.1111794734295" id="1112393265148">
         <node role="value" roleId="tpna.1111792463585" type="tpna.PostingRule" typeId="tpna.1111794888922" id="1112393120898">
-          <link role="account" roleId="tpna.1111795211704" targetNodeId="tpnb.1112315990977" />
+          <link role="account" roleId="tpna.1111795211704" targetNodeId="tpnb.1112315990977" resolveInfo="base-usage" />
           <node role="expression" roleId="tpnk.1111784226798" type="tpnk.IfFunction" typeId="tpnk.1111785030296" id="1112393084582">
             <node role="valueIfTrue" roleId="tpnk.1111785091720" type="tpnk.MultOperation" typeId="tpnk.1112384225757" id="1112393099763">
               <node role="leftOperand" roleId="tpnk.1111784613299" type="tpna.ValueReference" typeId="tpna.1112038445100" id="1112407052649">
-                <link role="value" roleId="tpna.1112038462507" targetNodeId="1112392957192" />
+                <link role="value" roleId="tpna.1112038462507" targetNodeId="1112392957192" resolveInfo="BASE_RATE" />
               </node>
               <node role="rightOperand" roleId="tpnk.1111784647019" type="tpna.EventVariableReference" typeId="tpna.1112036490295" id="1112393104282">
-                <link role="eventVariable" roleId="tpna.1112036516483" targetNodeId="tpnb.1112316685513" />
+                <link role="eventVariable" roleId="tpna.1112036516483" targetNodeId="tpnb.1112316685513" resolveInfo="usage" />
               </node>
             </node>
             <node role="valueIfFalse" roleId="tpnk.1111785124143" type="tpnk.MultOperation" typeId="tpnk.1112384225757" id="1112393106926">
               <node role="leftOperand" roleId="tpnk.1111784613299" type="tpna.ValueReference" typeId="tpna.1112038445100" id="1112407055697">
-                <link role="value" roleId="tpna.1112038462507" targetNodeId="1112393006024" />
+                <link role="value" roleId="tpna.1112038462507" targetNodeId="1112393006024" resolveInfo="REDUCED_RATE" />
               </node>
               <node role="rightOperand" roleId="tpnk.1111784647019" type="tpna.EventVariableReference" typeId="tpna.1112036490295" id="1112393114163">
-                <link role="eventVariable" roleId="tpna.1112036516483" targetNodeId="tpnb.1112316685513" />
+                <link role="eventVariable" roleId="tpna.1112036516483" targetNodeId="tpnb.1112316685513" resolveInfo="usage" />
               </node>
             </node>
             <node role="logicalTest" roleId="tpnk.1111785044750" type="tpnk.GreaterThanOperation" typeId="tpnk.1112406908640" id="1112717731865">
               <node role="leftOperand" roleId="tpnk.1111784613299" type="tpna.EventVariableReference" typeId="tpna.1112036490295" id="1112717731270">
-                <link role="eventVariable" roleId="tpna.1112036516483" targetNodeId="tpnb.1112316685513" />
+                <link role="eventVariable" roleId="tpna.1112036516483" targetNodeId="tpnb.1112316685513" resolveInfo="usage" />
               </node>
               <node role="rightOperand" roleId="tpnk.1111784647019" type="tpna.ValueReference" typeId="tpna.1112038445100" id="1112717733617">
-                <link role="value" roleId="tpna.1112038462507" targetNodeId="1112393034216" />
+                <link role="value" roleId="tpna.1112038462507" targetNodeId="1112393034216" resolveInfo="CAP" />
               </node>
             </node>
           </node>
@@ -179,10 +179,10 @@
       </node>
     </node>
     <node role="event" roleId="tpna.1111791084333" type="tpna.Event" typeId="tpna.1111791038612" id="1112393126916">
-      <link role="type" roleId="tpna.1111793668132" targetNodeId="tpnb.1112316021402" />
+      <link role="type" roleId="tpna.1111793668132" targetNodeId="tpnb.1112316021402" resolveInfo="SERVICE CALL" />
       <node role="postingRule" roleId="tpna.1111794644919" type="tpna.PostingRuleTemporalProperty" typeId="tpna.1111794734295" id="1112393265149">
         <node role="value" roleId="tpna.1111792463585" type="tpna.PostingRule" typeId="tpna.1111794888922" id="1112393162687">
-          <link role="account" roleId="tpna.1111795211704" targetNodeId="tpnb.1112316007244" />
+          <link role="account" roleId="tpna.1111795211704" targetNodeId="tpnb.1112316007244" resolveInfo="service" />
           <node role="expression" roleId="tpnk.1111784226798" type="tpna.Quantity" typeId="tpna.1111792102248" id="1112393154670">
             <property name="unit" nameId="tpna.1111793358083" value="USD" />
             <node role="amount" roleId="tpna.1111793363741" type="tpnk.FloatingPointConstant" typeId="tpnk.1111784926012" id="1112393154669">
@@ -199,13 +199,13 @@
     </node>
     <node role="event" roleId="tpna.1111791084333" type="tpna.Event" typeId="tpna.1111791038612" id="1112393222389">
       <property name="taxable" nameId="tpna.1116368080504" value="false" />
-      <link role="type" roleId="tpna.1111793668132" targetNodeId="tpnb.1112316644479" />
+      <link role="type" roleId="tpna.1111793668132" targetNodeId="tpnb.1112316644479" resolveInfo="TAX" />
       <node role="postingRule" roleId="tpna.1111794644919" type="tpna.PostingRuleTemporalProperty" typeId="tpna.1111794734295" id="1112393265151">
         <node role="value" roleId="tpna.1111792463585" type="tpna.PostingRule" typeId="tpna.1111794888922" id="1112393255131">
-          <link role="account" roleId="tpna.1111795211704" targetNodeId="tpnb.1112316013167" />
+          <link role="account" roleId="tpna.1111795211704" targetNodeId="tpnb.1112316013167" resolveInfo="tax" />
           <node role="expression" roleId="tpnk.1111784226798" type="tpnk.MultOperation" typeId="tpnk.1112384225757" id="1112393235456">
             <node role="leftOperand" roleId="tpnk.1111784613299" type="tpna.EventVariableReference" typeId="tpna.1112036490295" id="1112393237535">
-              <link role="eventVariable" roleId="tpna.1112036516483" targetNodeId="tpnb.1112316673589" />
+              <link role="eventVariable" roleId="tpna.1112036516483" targetNodeId="tpnb.1112316673589" resolveInfo="fee" />
             </node>
             <node role="rightOperand" roleId="tpnk.1111784647019" type="tpnk.FloatingPointConstant" typeId="tpnk.1111784926012" id="1112393248818">
               <property name="value" nameId="tpnk.1113257000626" value="0.055" />

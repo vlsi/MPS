@@ -8,7 +8,7 @@
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
   <import index="kvg6" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#org.w3c.dom(JDK/org.w3c.dom@java_stub)" version="-1" />
   <import index="9yi" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.xml.parsers(JDK/javax.xml.parsers@java_stub)" version="-1" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpki" modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="0" implicit="yes" />
   <roots>
@@ -82,7 +82,7 @@
               <node role="iterable" roleId="tpee.1144226360166" type="tpki.TreePathOperationExpression" typeId="tpki.1168468602533" id="1175164319381">
                 <node role="operand" roleId="tpki.1168468622494" type="tpki.TreePathOperationExpression" typeId="tpki.1168468602533" id="1175090703444">
                   <node role="operand" roleId="tpki.1168468622494" type="tpki.TreePathAdapterExpression" typeId="tpki.1168890168054" id="1175090703445">
-                    <link role="treepathAspect" roleId="tpki.1168890235188" targetNodeId="tpk9.1175083364493" />
+                    <link role="treepathAspect" roleId="tpki.1168890235188" targetNodeId="tpk9.1175083364493" resolveInfo="DOM" />
                     <node role="expression" roleId="tpki.1168890213786" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1175090701994">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1169048628465" resolveInfo="doc" />
                     </node>
@@ -92,7 +92,7 @@
                   </node>
                 </node>
                 <node role="operation" roleId="tpki.1168468671991" type="tpki.MatchKindOperation" typeId="tpki.1172242735136" id="1175164319382">
-                  <link role="nodeKind" roleId="tpki.1172242802393" targetNodeId="tpk9.1175164209843" />
+                  <link role="nodeKind" roleId="tpki.1172242802393" targetNodeId="tpk9.1175164209843" resolveInfo="ELEMENT" />
                 </node>
               </node>
               <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1175090694728">
@@ -124,7 +124,7 @@
                   <node role="operand" roleId="tpki.1168468622494" type="tpki.TreePathOperationExpression" typeId="tpki.1168468602533" id="1175252783348">
                     <node role="operand" roleId="tpki.1168468622494" type="tpki.TreePathOperationExpression" typeId="tpki.1168468602533" id="1175165777254">
                       <node role="operand" roleId="tpki.1168468622494" type="tpki.TreePathAdapterExpression" typeId="tpki.1168890168054" id="1175165777255">
-                        <link role="treepathAspect" roleId="tpki.1168890235188" targetNodeId="tpk9.1175083364493" />
+                        <link role="treepathAspect" roleId="tpki.1168890235188" targetNodeId="tpk9.1175083364493" resolveInfo="DOM" />
                         <node role="expression" roleId="tpki.1168890213786" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1175165776061">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1169048628465" resolveInfo="doc" />
                         </node>
@@ -134,12 +134,12 @@
                       </node>
                     </node>
                     <node role="operation" roleId="tpki.1168468671991" type="tpki.MatchPropertyOperation" typeId="tpki.1175169769579" id="1175252792856">
-                      <link role="property" roleId="tpki.1175169795791" targetNodeId="tpk9.1175164263587" />
+                      <link role="property" roleId="tpki.1175169795791" targetNodeId="tpk9.1175164263587" resolveInfo="tag" />
                       <node role="matchExpression" roleId="tpki.1175170018451" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1175252802901">
                         <property name="value" nameId="tpee.1070475926801" value="a" />
                       </node>
                       <node role="nodeKindOccurrence" roleId="tpki.1175165403535" type="tpki.TreeNodeKindOccurrence" typeId="tpki.1175165417012" id="1175252792858">
-                        <link role="nodeKind" roleId="tpki.1175167444487" targetNodeId="tpk9.1175164209843" />
+                        <link role="nodeKind" roleId="tpki.1175167444487" targetNodeId="tpk9.1175164209843" resolveInfo="ELEMENT" />
                       </node>
                     </node>
                   </node>
@@ -148,12 +148,12 @@
                   </node>
                 </node>
                 <node role="operation" roleId="tpki.1168468671991" type="tpki.MatchPropertyOperation" typeId="tpki.1175169769579" id="1175170512113">
-                  <link role="property" roleId="tpki.1175169795791" targetNodeId="tpk9.1175164263587" />
+                  <link role="property" roleId="tpki.1175169795791" targetNodeId="tpk9.1175164263587" resolveInfo="tag" />
                   <node role="matchExpression" roleId="tpki.1175170018451" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1175170522726">
                     <property name="value" nameId="tpee.1070475926801" value="findme" />
                   </node>
                   <node role="nodeKindOccurrence" roleId="tpki.1175165403535" type="tpki.TreeNodeKindOccurrence" typeId="tpki.1175165417012" id="1175170512115">
-                    <link role="nodeKind" roleId="tpki.1175167444487" targetNodeId="tpk9.1175164209843" />
+                    <link role="nodeKind" roleId="tpki.1175167444487" targetNodeId="tpk9.1175164209843" resolveInfo="ELEMENT" />
                   </node>
                 </node>
               </node>
@@ -191,7 +191,7 @@
                   <node role="operand" roleId="tpki.1168468622494" type="tpki.TreePathOperationExpression" typeId="tpki.1168468602533" id="1175882277198">
                     <node role="operand" roleId="tpki.1168468622494" type="tpki.TreePathOperationExpression" typeId="tpki.1168468602533" id="1175882271113">
                       <node role="operand" roleId="tpki.1168468622494" type="tpki.TreePathAdapterExpression" typeId="tpki.1168890168054" id="1175882271114">
-                        <link role="treepathAspect" roleId="tpki.1168890235188" targetNodeId="tpk9.1175083364493" />
+                        <link role="treepathAspect" roleId="tpki.1168890235188" targetNodeId="tpk9.1175083364493" resolveInfo="DOM" />
                         <node role="expression" roleId="tpki.1168890213786" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1175882269670">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1169048628465" resolveInfo="doc" />
                         </node>

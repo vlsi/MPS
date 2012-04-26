@@ -7,7 +7,7 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" />
   <import index="tp4h" modelUID="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
@@ -80,7 +80,7 @@
                         </node>
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1205921509776">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp4h.1213877255428" resolveInfo="getBaseClassifier" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp4h.1213877255428" resolveInfo="getMainClassifier" />
                       </node>
                     </node>
                   </node>
@@ -210,7 +210,7 @@
                     <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1219065462507">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1219065462508">
                         <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1219065462509">
-                          <link role="concept" roleId="tp25.1140138128738" targetNodeId="tp4f.1205752633985" resolveInfo="ThisClassifierExpresson" />
+                          <link role="concept" roleId="tp25.1140138128738" targetNodeId="tp4f.1205752633985" resolveInfo="ThisClassifierExpression" />
                           <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1219065462510">
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1219065462511">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1205921924106" resolveInfo="result" />
@@ -270,9 +270,9 @@
   <root id="1219068300354">
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="1219068300355">
       <property name="side" nameId="tpdg.1215605257730" value="left" />
-      <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tp4f.1205752633985" resolveInfo="ThisClassifierExpresson" />
+      <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tp4f.1205752633985" resolveInfo="ThisClassifierExpression" />
       <node role="part" roleId="tpdg.1177442283389" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="1219068300356">
-        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="tp4f.1205752633985" resolveInfo="ThisClassifierExpresson" />
+        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="tp4f.1205752633985" resolveInfo="ThisClassifierExpression" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.ParameterizedSideTransformMenuPart" typeId="tpdg.1177508764419" id="1219068300357">
           <node role="type" roleId="tpdg.1177508914797" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1219068300358">
             <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp4f.1205751982837" resolveInfo="IClassifier" />
@@ -295,7 +295,7 @@
                 <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1219068300368">
                   <property name="name" nameId="tpck.1169194664001" value="expr" />
                   <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1219068300369">
-                    <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp4f.1205752633985" resolveInfo="ThisClassifierExpresson" />
+                    <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp4f.1205752633985" resolveInfo="ThisClassifierExpression" />
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1219068300370">
                     <node role="creator" roleId="tpee.1145553007750" type="tpdg.SNodeCreatorAndInitializer" typeId="tpdg.5979988948250981289" id="6357564549601506768">

@@ -196,7 +196,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1237103949525">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="39kg.1237100849157" resolveInfo="DivOperationFraction" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="39kg.1237100849157" resolveInfo="DivExpressionFraction" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1237103959002">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="1237190307158">
           <node role="expression" roleId="tpee.1079359253376" type="tpee.DivExpression" typeId="tpee.1095950406618" id="1237190308911">
@@ -698,7 +698,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1237114567147">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="39kg.1236428466848" resolveInfo="ProdExpression" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="39kg.1236428466848" resolveInfo="BigProdExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineSwitch_RuleConsequence" typeId="tpf8.1195158154974" id="1418611629041290663">
         <node role="case" roleId="tpf8.1195158408710" type="tpf8.InlineSwitch_Case" typeId="tpf8.1195158388553" id="1418611629041290682">
           <node role="conditionFunction" roleId="tpf8.1195158608805" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="1418611629041290683">
@@ -885,7 +885,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1237112818915">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="39kg.1236428466848" resolveInfo="ProdExpression" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="39kg.1236428466848" resolveInfo="BigProdExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1237129329551">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1237129329552">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="1237129329553">

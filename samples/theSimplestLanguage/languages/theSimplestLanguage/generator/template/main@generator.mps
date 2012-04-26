@@ -23,7 +23,7 @@
   <root id="1222955939856">
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="1222956080813">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="jfvl.1222954937628" resolveInfo="TheSimplestConcept" />
-      <link role="template" roleId="tpf8.1167514355421" targetNodeId="1222955948389" resolveInfo="Test" />
+      <link role="template" roleId="tpf8.1167514355421" targetNodeId="1222955948389" resolveInfo="Hello" />
     </node>
   </root>
   <root id="1222955948389">

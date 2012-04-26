@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c89590425(jetbrains.mps.samples.complex.structure)">
+<model modelUID="r:00000000-0000-4000-0000-011c89590425(jetbrains.mps.samples.complex.structure)" version="4">
   <persistence version="7" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="ff24ab03-965e-4d15-9aed-52dc276658f4(jetbrains.mps.samples.complex)" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" />
   <import index="tpo9" modelUID="r:00000000-0000-4000-0000-011c89590425(jetbrains.mps.samples.complex.structure)" version="4" implicit="yes" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <roots>
@@ -15,7 +15,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1196260743057">
       <property name="name" nameId="tpck.1169194664001" value="ReExpression" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1196260832413" resolveInfo="ComplexExpression" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1196260832413" resolveInfo="SingleComplexExpression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1196260832413">
       <property name="name" nameId="tpck.1169194664001" value="SingleComplexExpression" />
@@ -23,15 +23,15 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1196263843100">
       <property name="name" nameId="tpck.1169194664001" value="ArgExpression" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1196260832413" resolveInfo="ComplexExpression" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1196260832413" resolveInfo="SingleComplexExpression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1196264034207">
       <property name="name" nameId="tpck.1169194664001" value="AbsExpression" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1196260832413" resolveInfo="ComplexExpression" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1196260832413" resolveInfo="SingleComplexExpression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1196261859224">
       <property name="name" nameId="tpck.1169194664001" value="ImExpression" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1196260832413" resolveInfo="ComplexExpression" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1196260832413" resolveInfo="SingleComplexExpression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1196418881524">
       <property name="name" nameId="tpck.1169194664001" value="ConjugateComplexExpression" />
@@ -139,7 +139,7 @@
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1196436438637">
       <property name="value" nameId="tpce.1105725733873" value="complex imaginary unit" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="short_description" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
     </node>
   </root>
 </model>

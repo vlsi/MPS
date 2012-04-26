@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2cjbm2irkseiej8qade9mol0u03d30p">
+<dependencies version="2" modelHash="-b4eaktv49g84tiroz0civrpbvf7mjyv">
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-3g2jui8rirnxhruh8t7p7qk3adnr3f9" />
-  <common hash="30xtcxmc5tgb0km7vjx882olxek21wo" />
+  <common hash="bvhau846nsqshkkhuvpr3wljyh6afzv" />
   <source id="2939287019638088102" name="IconResourceBundle" hash="-9rq7h2fmxl9lfkhx6jglk2de9nx47g1">
     <file name="IconResourceBundle.java" />
   </source>
