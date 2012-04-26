@@ -7,7 +7,7 @@
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpcw" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" implicit="yes" />
@@ -25,7 +25,7 @@
   <root id="1180111910664">
     <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="1180112146087">
       <property name="description" nameId="tpdg.1158952412335" value="builder parts available for node-substitute (apart from defaults)" />
-      <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="tpdg.1177323240852" />
+      <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="tpdg.1177323240852" resolveInfo="MenuBuilderPart" />
       <node role="precondition" roleId="tpdg.1154465386371" type="tpdg.NodeSubstitutePreconditionFunction" typeId="tpdg.1154465102724" id="1180112146090">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1180112146091">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1180112146092">
@@ -47,10 +47,10 @@
         </node>
       </node>
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.ConceptSubstitutePart" typeId="tpdg.1180134965967" id="1180137769604">
-        <link role="concept" roleId="tpdg.1180135092669" targetNodeId="tpdg.1177614709184" />
+        <link role="concept" roleId="tpdg.1180135092669" targetNodeId="tpdg.1177614709184" resolveInfo="RemoveDefaultsPart" />
       </node>
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.ConceptSubstitutePart" typeId="tpdg.1180134965967" id="1180137769605">
-        <link role="concept" roleId="tpdg.1180135092669" targetNodeId="tpdg.1180134965967" />
+        <link role="concept" roleId="tpdg.1180135092669" targetNodeId="tpdg.1180134965967" resolveInfo="ConceptSubstitutePart" />
       </node>
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.ConceptSubstitutePart" typeId="tpdg.1180134965967" id="1197453803590">
         <link role="concept" roleId="tpdg.1180135092669" targetNodeId="tpdg.1177413882405" resolveInfo="RemoveByConditionPart" />
@@ -58,7 +58,7 @@
     </node>
     <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="1180112212391">
       <property name="description" nameId="tpdg.1158952412335" value="builder parts available for right-transform (apart from defaults)" />
-      <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="tpdg.1177323240852" />
+      <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="tpdg.1177323240852" resolveInfo="MenuBuilderPart" />
       <node role="precondition" roleId="tpdg.1154465386371" type="tpdg.NodeSubstitutePreconditionFunction" typeId="tpdg.1154465102724" id="1180112503623">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1180112503624">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1180112512942">
@@ -69,7 +69,7 @@
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="1180112512947">
                   <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="1180112512948">
                     <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1208997649625">
-                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpdg.1138079221458" resolveInfo="RTransformHintSubstituteActionsBuilder" />
+                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpdg.1138079221458" resolveInfo="SideTransformHintSubstituteActionsBuilder" />
                     </node>
                   </node>
                   <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Inclusion" typeId="tp25.1144100932627" id="1180112512949" />
@@ -80,13 +80,13 @@
         </node>
       </node>
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.ConceptSubstitutePart" typeId="tpdg.1180134965967" id="1180137769606">
-        <link role="concept" roleId="tpdg.1180135092669" targetNodeId="tpdg.1180111159572" />
+        <link role="concept" roleId="tpdg.1180135092669" targetNodeId="tpdg.1180111159572" resolveInfo="IncludeRightTransformForNodePart" />
       </node>
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.ConceptSubstitutePart" typeId="tpdg.1180134965967" id="1182819558622">
-        <link role="concept" roleId="tpdg.1180135092669" targetNodeId="tpdg.1182819125053" />
+        <link role="concept" roleId="tpdg.1180135092669" targetNodeId="tpdg.1182819125053" resolveInfo="ConceptRightTransformPart" />
       </node>
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.ConceptSubstitutePart" typeId="tpdg.1180134965967" id="1197454842467">
-        <link role="concept" roleId="tpdg.1180135092669" targetNodeId="tpdg.1197454626277" resolveInfo="RemoveRTByConditionPart" />
+        <link role="concept" roleId="tpdg.1180135092669" targetNodeId="tpdg.1197454626277" resolveInfo="RemoveSTByConditionPart" />
       </node>
     </node>
   </root>

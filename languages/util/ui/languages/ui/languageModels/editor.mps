@@ -12,7 +12,7 @@
   <import index="sqp9" modelUID="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" version="2" />
   <import index="tpen" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
   <import index="t8yi" modelUID="r:c33653ee-1be0-4ff5-9822-83365da4e9b7(jetbrains.mps.ui.modeling.behavior)" version="-1" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" />
   <import index="tpek" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -99,7 +99,7 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb0y.4981225789808356843" resolveInfo="IterateContentsStatement" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4981225789808358216">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb0y.4981225789808358212" resolveInfo="IterateVariable" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb0y.4981225789808358212" resolveInfo="IterateContentsVariable" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4981225789808644364">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb0y.4981225789808644361" resolveInfo="RemoveUIObjectStatement" />
@@ -108,7 +108,7 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb0y.4981225789808819315" resolveInfo="IterateContentsVariableReference" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4981225789808986373">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb0y.4981225789808986371" resolveInfo="RemoveAllUIObjectStatement" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb0y.4981225789808986371" resolveInfo="ClearCompartmentStatement" />
     </node>
     <node type="tpc2.EditorComponentDeclaration" typeId="tpc2.1078938745671" id="4981225789809472789">
       <property name="name" nameId="tpck.1169194664001" value="common_UIObjectStatement" />

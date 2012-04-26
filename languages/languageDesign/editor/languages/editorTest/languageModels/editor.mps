@@ -8,23 +8,23 @@
   <import index="68nn" modelUID="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" version="5" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <roots>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3702466984434609596">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="68nn.3702466984434609595" resolveInfo="TestStatenetList" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="68nn.3702466984434609595" resolveInfo="TestBlockList" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3702466984434806354">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="68nn.3702466984434723497" resolveInfo="TestStatement" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="68nn.3702466984434723497" resolveInfo="IBaseTestBlock" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3702466984434806358">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="68nn.3702466984434723496" resolveInfo="BracesStatement" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="68nn.3702466984434723496" resolveInfo="BracesBlock" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3702466984434811406">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="68nn.3702466984434811404" resolveInfo="StubStatement" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="68nn.3702466984434811404" resolveInfo="StubBlock" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6859592652550843067">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="68nn.6859592652550843066" resolveInfo="VerticalLayoutStatementList" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="68nn.6859592652550843066" resolveInfo="VerticalLayoutBlockList" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8497577741385080310">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="68nn.8497577741385080308" resolveInfo="BracesStubBlock" />
@@ -61,7 +61,7 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="68nn.2613454275903920988" resolveInfo="VariableDeclarationReference" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5633355289409839144">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="68nn.5633355289409839142" resolveInfo="BlockWithNonEmptyProperty" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="68nn.5633355289409839142" resolveInfo="NonEmptyProperty" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4965160547087302662">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="68nn.4965160547087302660" resolveInfo="NotEditableVaraileReference" />

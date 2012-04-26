@@ -6,7 +6,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" />
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -24,12 +24,12 @@
   <root id="1169570915271">
     <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="1169570930693">
       <property name="description" nameId="tpdg.1158952412335" value="choice of consequences for weaving rule" />
-      <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="tpf8.1168559098955" />
+      <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="tpf8.1168559098955" resolveInfo="RuleConsequence" />
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.RemovePart" typeId="tpdg.1177409831820" id="1177412896773">
-        <link role="conceptToRemove" roleId="tpdg.1177409838946" targetNodeId="tpf8.1168559512253" />
+        <link role="conceptToRemove" roleId="tpdg.1177409838946" targetNodeId="tpf8.1168559512253" resolveInfo="DismissTopMappingRule" />
       </node>
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.RemovePart" typeId="tpdg.1177409831820" id="1177412906732">
-        <link role="conceptToRemove" roleId="tpdg.1177409838946" targetNodeId="tpf8.1177093525992" />
+        <link role="conceptToRemove" roleId="tpdg.1177409838946" targetNodeId="tpf8.1177093525992" resolveInfo="InlineTemplate_RuleConsequence" />
       </node>
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.RemovePart" typeId="tpdg.1177409831820" id="8900764248744228861">
         <link role="conceptToRemove" roleId="tpdg.1177409838946" targetNodeId="tpf8.8900764248744213868" resolveInfo="InlineTemplateWithContext_RuleConsequence" />
@@ -47,7 +47,7 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_parentNode" typeId="tpdg.1154465273778" id="1169582460352" />
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="1169582465151">
                 <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1177093043370">
-                  <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1167171569011" />
+                  <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1167171569011" resolveInfo="Weaving_MappingRule" />
                 </node>
               </node>
             </node>

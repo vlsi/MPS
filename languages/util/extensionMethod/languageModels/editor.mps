@@ -8,7 +8,7 @@
   <language namespace="aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="uigu" modelUID="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)" version="0" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
@@ -21,17 +21,17 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="uigu.1894531970723270160" resolveInfo="TypeExtension" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7460368937329709951">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="uigu.1550313277221324859" resolveInfo="MethodExtensionReference" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="uigu.1550313277221324859" resolveInfo="ExtensionMethodCall" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7353029842736914602">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="uigu.1550313277222152185" resolveInfo="ExtensionMethodDeclaration" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="328127298620976295">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="uigu.3316739663067157299" resolveInfo="ExtensionThis" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="uigu.3316739663067157299" resolveInfo="ThisExtensionExpression" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8022092943109332063">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="topLevel" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="uigu.8022092943109322131" resolveInfo="ExtensionMethodsContainer" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="uigu.8022092943109322131" resolveInfo="SimpleExtensionMethodsContainer" />
     </node>
     <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="6513744873655832108">
       <property name="name" nameId="tpck.1169194664001" value="ExtensionMethodDeclaration_Actions" />
@@ -334,7 +334,7 @@
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="8022092943109777041">
                     <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="8022092943109777042">
                       <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="8022092943109777045">
-                        <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="uigu.8022092943109322131" resolveInfo="ExtensionMethodsContainer" />
+                        <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="uigu.8022092943109322131" resolveInfo="SimpleExtensionMethodsContainer" />
                       </node>
                     </node>
                   </node>

@@ -9,7 +9,7 @@
   <import index="pmg0" modelUID="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)" version="0" />
   <import index="j8l" modelUID="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)" version="-1" />
   <import index="tpen" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
@@ -75,7 +75,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5389689214216997400">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="simple" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="pmg0.5389689214216990954" resolveInfo="SimpleBuilderPropertyDeclaration" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="pmg0.5389689214216990954" resolveInfo="SimpleBuilderProperty" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5389689214217248371">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="simple.propertyParams" />
@@ -304,7 +304,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7288041816793412183">
                 <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="7288041816793412182" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="7288041816793412187">
-                  <link role="property" roleId="tp25.1138056395725" targetNodeId="pmg0.7288041816793407210" resolveInfo="empty" />
+                  <link role="property" roleId="tp25.1138056395725" targetNodeId="pmg0.7288041816793407210" resolveInfo="leaf" />
                 </node>
               </node>
             </node>
@@ -567,7 +567,7 @@
           <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="4315270135340543558">
             <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
-            <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="4315270135341045256" resolveInfo="builder" />
+            <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="4315270135341045256" resolveInfo="Builder" />
           </node>
         </node>
       </node>

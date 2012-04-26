@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:fdfa4297-e47f-4051-a403-8ec60f159a16(jetbrains.mps.ui.swt.widgets)">
+<model modelUID="r:fdfa4297-e47f-4051-a403-8ec60f159a16(jetbrains.mps.ui.swt.widgets)" doNotGenerate="true">
   <persistence version="7" />
   <language namespace="8a448bd0-1380-4c01-9820-0f051d33888c(jetbrains.mps.ui.modeling)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
@@ -16,7 +16,7 @@
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="sqp9" modelUID="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" version="2" implicit="yes" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <roots>
     <node type="sqp9.UIObjectTemplate" typeId="sqp9.4643695836678898389" id="7655275107718250835">
@@ -705,7 +705,7 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3c2k.~Composite%dsetLayout(org%declipse%dswt%dwidgets%dLayout)%cvoid" resolveInfo="setLayout" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="262873202872830957">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5902951546270849488">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="c6vp.9003987136928266032" resolveInfo="BorderLayout2" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="c6vp.9003987136928266032" resolveInfo="DockLayout" />
                 </node>
               </node>
             </node>
@@ -739,7 +739,7 @@
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3c2k.~Control%dsetLayoutData(java%dlang%dObject)%cvoid" resolveInfo="setLayoutData" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="4058682321719854797">
                   <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="c6vp.9003987136928268778" resolveInfo="NORTH" />
-                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="BorderData2" />
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="DockLayoutData" />
                 </node>
               </node>
             </node>
@@ -793,13 +793,13 @@
                           </node>
                           <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="9003987136928268873">
                             <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="c6vp.9003987136928268778" resolveInfo="NORTH" />
-                            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="BorderData2" />
+                            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="DockLayoutData" />
                           </node>
                         </node>
                       </node>
                     </node>
                     <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="9003987136928268104">
-                      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" />
+                      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
                     </node>
                   </node>
                 </node>
@@ -861,7 +861,7 @@
                               </node>
                             </node>
                             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="9003987136928268919">
-                              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="BorderData2" />
+                              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="DockLayoutData" />
                               <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="c6vp.9003987136928268778" resolveInfo="NORTH" />
                             </node>
                           </node>
@@ -923,7 +923,7 @@
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3c2k.~Control%dsetLayoutData(java%dlang%dObject)%cvoid" resolveInfo="setLayoutData" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="4058682321719854800">
                   <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="c6vp.9003987136928268791" resolveInfo="SOUTH" />
-                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="BorderData2" />
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="DockLayoutData" />
                 </node>
               </node>
             </node>
@@ -977,7 +977,7 @@
                           </node>
                           <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="9003987136928268973">
                             <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="c6vp.9003987136928268791" resolveInfo="SOUTH" />
-                            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="BorderData2" />
+                            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="DockLayoutData" />
                           </node>
                         </node>
                       </node>
@@ -1046,7 +1046,7 @@
                             </node>
                             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="9003987136928269019">
                               <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="c6vp.9003987136928268791" resolveInfo="SOUTH" />
-                              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="BorderData2" />
+                              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="DockLayoutData" />
                             </node>
                           </node>
                         </node>
@@ -1107,7 +1107,7 @@
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3c2k.~Control%dsetLayoutData(java%dlang%dObject)%cvoid" resolveInfo="setLayoutData" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="4058682321719854802">
                   <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="c6vp.9003987136928268793" resolveInfo="EAST" />
-                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="BorderData2" />
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="DockLayoutData" />
                 </node>
               </node>
             </node>
@@ -1161,7 +1161,7 @@
                           </node>
                           <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="9003987136928269049">
                             <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="c6vp.9003987136928268793" resolveInfo="EAST" />
-                            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="BorderData2" />
+                            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="DockLayoutData" />
                           </node>
                         </node>
                       </node>
@@ -1230,7 +1230,7 @@
                             </node>
                             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="9003987136928269095">
                               <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="c6vp.9003987136928268793" resolveInfo="EAST" />
-                              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="BorderData2" />
+                              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="DockLayoutData" />
                             </node>
                           </node>
                         </node>
@@ -1291,7 +1291,7 @@
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3c2k.~Control%dsetLayoutData(java%dlang%dObject)%cvoid" resolveInfo="setLayoutData" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="4058682321719854804">
                   <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="c6vp.9003987136928268795" resolveInfo="WEST" />
-                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="BorderData2" />
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="DockLayoutData" />
                 </node>
               </node>
             </node>
@@ -1345,7 +1345,7 @@
                           </node>
                           <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="9003987136928269125">
                             <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="c6vp.9003987136928268795" resolveInfo="WEST" />
-                            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="BorderData2" />
+                            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="DockLayoutData" />
                           </node>
                         </node>
                       </node>
@@ -1414,7 +1414,7 @@
                             </node>
                             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="9003987136928269171">
                               <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="c6vp.9003987136928268795" resolveInfo="WEST" />
-                              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="BorderData2" />
+                              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="DockLayoutData" />
                             </node>
                           </node>
                         </node>
@@ -1475,7 +1475,7 @@
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3c2k.~Control%dsetLayoutData(java%dlang%dObject)%cvoid" resolveInfo="setLayoutData" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="4058682321719854806">
                   <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="c6vp.9003987136928268798" resolveInfo="CENTER" />
-                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="BorderData2" />
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="DockLayoutData" />
                 </node>
               </node>
             </node>
@@ -1529,7 +1529,7 @@
                           </node>
                           <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="9003987136928269201">
                             <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="c6vp.9003987136928268798" resolveInfo="CENTER" />
-                            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="BorderData2" />
+                            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="DockLayoutData" />
                           </node>
                         </node>
                       </node>
@@ -1598,7 +1598,7 @@
                             </node>
                             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="9003987136928269247">
                               <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="c6vp.9003987136928268798" resolveInfo="CENTER" />
-                              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="BorderData2" />
+                              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="c6vp.9003987136928268772" resolveInfo="DockLayoutData" />
                             </node>
                           </node>
                         </node>
@@ -1971,7 +1971,7 @@
       </node>
     </node>
     <node role="containerTemplate" roleId="sqp9.4391079257750389359" type="sqp9.ContainerTemplate" typeId="sqp9.4391079257750389358" id="7383889057843473716">
-      <link role="container" roleId="sqp9.4391079257750389360" targetNodeId="2yj1.3616339824038886160" resolveInfo="items" />
+      <link role="container" roleId="sqp9.4391079257750389360" targetNodeId="2yj1.3616339824038886160" resolveInfo="rows" />
       <node role="itemType" roleId="sqp9.4391079257750550448" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7383889057843473720">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3c2k.~TabItem" resolveInfo="TabItem" />
       </node>
@@ -2011,7 +2011,7 @@
       </node>
     </node>
     <node role="propertyAccessor" roleId="sqp9.4643695836678928899" type="sqp9.UIPropertyAccessCode" typeId="sqp9.4643695836678934010" id="7383889057843490635">
-      <link role="property" roleId="sqp9.4643695836678934012" targetNodeId="2yj1.3616339824038886166" resolveInfo="userObject" />
+      <link role="property" roleId="sqp9.4643695836678934012" targetNodeId="2yj1.3616339824038886166" resolveInfo="data" />
       <node role="getter" roleId="sqp9.4643695836679531005" type="sqp9.UIPropertyGetter" typeId="sqp9.4643695836679547748" id="7383889057843490636">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7383889057843490637">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7383889057843490667">
@@ -2310,7 +2310,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7342052348301857953">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7342052348301857955">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7342052348301857954">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7342052348301857942" resolveInfo="ao" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7342052348301857942" resolveInfo="ei" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7342052348301857959">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3c2k.~ExpandItem%dsetControl(org%declipse%dswt%dwidgets%dControl)%cvoid" resolveInfo="setControl" />
@@ -2321,7 +2321,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3230525509414242716">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3230525509414242718">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3230525509414242717">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7342052348301857942" resolveInfo="ao" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7342052348301857942" resolveInfo="ei" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3230525509414242722">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3c2k.~ExpandItem%dsetHeight(int)%cvoid" resolveInfo="setHeight" />
@@ -2338,7 +2338,7 @@
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7342052348301857962">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7342052348301857963">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7342052348301857942" resolveInfo="ao" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7342052348301857942" resolveInfo="ei" />
               </node>
             </node>
           </node>
@@ -2491,7 +2491,7 @@
   </root>
   <root id="873604604380269014">
     <node role="containerTemplate" roleId="sqp9.4391079257750389359" type="sqp9.ContainerTemplate" typeId="sqp9.4391079257750389358" id="873604604380269050">
-      <link role="container" roleId="sqp9.4391079257750389360" targetNodeId="2yj1.2663453265346089637" resolveInfo="children" />
+      <link role="container" roleId="sqp9.4391079257750389360" targetNodeId="2yj1.2663453265346089637" resolveInfo="layoutChildren" />
       <node role="itemType" roleId="sqp9.4391079257750550448" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="873604604380269062">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3c2k.~Widget" resolveInfo="Widget" />
       </node>
