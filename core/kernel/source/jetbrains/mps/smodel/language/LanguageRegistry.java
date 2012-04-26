@@ -143,7 +143,7 @@ public class LanguageRegistry implements CoreComponent {
     // TODO FIXME hack to avoid errors in LOG
     LanguageRuntime languageRuntime = null;
     try{
-      languageRuntime = (LanguageRuntime) getObjectByClassNameForLanguage(l.getModuleFqName() + ".Language", l, tryToLoad);
+      languageRuntime = getObjectByClassNameForLanguage(l.getModuleFqName() + ".Language", LanguageRuntime.class, l, tryToLoad);
     }
     catch (RuntimeException unexpected) {
       LOG.error("Exception loading language: "+unexpected);

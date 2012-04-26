@@ -55,8 +55,44 @@ public class DescriptorUtils {
   }
 
   @Nullable
+  public static <T> T getObjectByClassNameForLanguage(String className, Class<T> castTo, @Nullable Language language, boolean avoidLogErrors) {
+    try {
+      if (language == null) {
+        return null;
+      }
+
+      if (avoidLogErrors) {
+        ClassLoader cl = language.getClassLoader();
+        if (cl == null) {
+          return null;
+        }
+      }
+
+      Class clazz = language.getClass(className);
+      if (clazz == null) {
+        return null;
+      }
+
+      Object o = clazz.newInstance();
+      if (!castTo.isInstance(o)) {
+        return null;
+      }
+
+      return castTo.cast(o);
+    } catch (Throwable e) {
+      LOG.debug("error loading class\""+className+"\"", e);
+    }
+    return null;
+  }
+
+  @Nullable
   public static Object getObjectByClassNameForLanguageNamespace(String className, String languageNamespace, boolean avoidLogErrors) {
     return getObjectByClassNameForLanguage(className, ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class), avoidLogErrors);
+  }
+
+  @Nullable
+  public static <T> T getObjectByClassNameForLanguageNamespace(String className, Class<T> castTo, String languageNamespace, boolean avoidLogErrors) {
+    return getObjectByClassNameForLanguage(className, castTo, ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class), avoidLogErrors);
   }
 
   @Nullable

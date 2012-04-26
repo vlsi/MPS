@@ -72,12 +72,12 @@ public class LanguageRuntimeInterpreted extends LanguageRuntime {
     if (helginsModelDescriptor == null) return null;
     String packageName = helginsModelDescriptor.getLongName();
 
-    Object helginsDescriptor = getObjectByClassNameForLanguage(packageName + ".TypesystemDescriptor", myLanguage, true);
+    Object helginsDescriptor = getObjectByClassNameForLanguage(packageName + ".TypesystemDescriptor", IHelginsDescriptor.class, myLanguage, true);
 
     if (helginsDescriptor != null) {
       return (IHelginsDescriptor) helginsDescriptor;
     } else {
-      return (IHelginsDescriptor) getObjectByClassNameForLanguage(packageName + ".HelginsDescriptor", myLanguage, true);
+      return getObjectByClassNameForLanguage(packageName + ".HelginsDescriptor", IHelginsDescriptor.class, myLanguage, true);
     }
   }
 
