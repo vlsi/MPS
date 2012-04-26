@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8btuomp9fvaw6t29z5obcf68nz5mjnr">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="cllol0k6uon23imzi3i8ftyndeqrkqk" />
+<dependencies version="2" modelHash="-1u2bq8uvpsv9d10mcyyhyl5go09nn56">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3pfv61ztw43crdi9n56ftoapjvy39kp" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-3g2jui8rirnxhruh8t7p7qk3adnr3f9" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="do4uh4fd3dqp1s55v9l4e6fg8bob2ht" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-7zc5n4l9a9zrjq93znk167hfo3dyd2v" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="3ogbc94405e1j8mrhp8fnrksbak1c2a" />
-  <common hash="-eqprtlblvawab0aug6338yg7v2qwboq" />
-  <source id="7948103825060305166" name="DockLayout" hash="965n2zw8yhfbtcvabi6p9cxvefm2ob6">
+  <common hash="-cv9hwr8ieyfyi704es5c7c4bsn4nbju" />
+  <source id="7948103825060305166" name="DockLayout" hash="-68owv3fj128xwzap0m99h8cgswdg9ro">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -14,7 +14,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DockLayout.java" />
   </source>
-  <source id="7948103825060318837" name="DockLayoutData" hash="-6pjkgop5b8qg8rxdphu0nooerlwdj0s">
+  <source id="7948103825060318837" name="DockLayoutData" hash="-956v5dwgiadr3uhin1bnnfjsr8g7hdp">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -22,7 +22,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DockLayoutData.java" />
   </source>
-  <source id="2204726755035753584" name="JXSingleTaskPaneContainer" hash="-2rutxb51vb3sy81j3tvniu54g35ltw7">
+  <source id="2204726755035753584" name="JXSingleTaskPaneContainer" hash="6t5l0jmtyut0tiv2dllkju98qy2farv">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -30,7 +30,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="JXSingleTaskPaneContainer.java" />
   </source>
-  <source id="5220699420101883037" name="JXSingleTaskPane" hash="2yx31sb8c63jiruwfj0ktmcdzyvm9b">
+  <source id="5220699420101883037" name="JXSingleTaskPane" hash="6bouduigzzfrvsy9t9ljfj88rm64lx6">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -38,7 +38,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="JXSingleTaskPane.java" />
   </source>
-  <source id="9201869079511422099" name="VerticalStackLayout" hash="-8gn6xu8n1fucrpldyh9ehjsitqg6t9k">
+  <source id="9201869079511422099" name="VerticalStackLayout" hash="7lwmmeo2nrsfnrqe90w0wqmmq5yw0js">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />

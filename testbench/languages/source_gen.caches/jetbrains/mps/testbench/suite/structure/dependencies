@@ -20,6 +20,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.testbench.suite.structure.ITestRef" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef" file="JUnit4TestCaseRef.java">
     <classNode dependClassName="java.lang.String" />
@@ -33,6 +34,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.testbench.suite.structure.ITestRef" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.suite.structure.ModuleSuite" file="ModuleSuite.java">
     <classNode dependClassName="java.lang.String" />
@@ -47,6 +49,7 @@
     <classNode dependClassName="jetbrains.mps.testbench.suite.structure.IModuleRef" />
     <classNode dependClassName="jetbrains.mps.testbench.suite.structure.ITestRef" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.suite.structure.SolutionRef" file="SolutionRef.java">
     <classNode dependClassName="java.lang.String" />
@@ -59,6 +62,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.testbench.suite.structure.IModuleRef" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.suite.structure.StructureAspectDescriptor" file="StructureAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
@@ -85,6 +89,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.testbench.suite.structure.ITestRef" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
 </dependenciesRoot>
 

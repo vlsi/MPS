@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6jfimacns4i1bf5jtumpkcpoayuomue">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="cllol0k6uon23imzi3i8ftyndeqrkqk" />
+<dependencies version="2" modelHash="6nlyalo6jp6cks8dft8a72b9bhxgspa">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3pfv61ztw43crdi9n56ftoapjvy39kp" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-3g2jui8rirnxhruh8t7p7qk3adnr3f9" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="do4uh4fd3dqp1s55v9l4e6fg8bob2ht" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-7zc5n4l9a9zrjq93znk167hfo3dyd2v" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="3ogbc94405e1j8mrhp8fnrksbak1c2a" />
-  <common hash="4epnbyjwo36o0ac24ys2kbjt3hx68aa" />
-  <source id="6531435794299649861" name="AccountingException" hash="-36ulw91rv6damctfirpvgci2jvxwhsz">
+  <common hash="36v8klws4t8sel72wp89s0z3jp4cj8n" />
+  <source id="6531435794299649861" name="AccountingException" hash="-3ycelhhffkozkde08sh40tj333x8y0b">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AccountingException.java" />
@@ -23,7 +23,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="Subject.java" />
   </source>
-  <source id="6531435794299650989" name="AgreementRegistry" hash="-1gmatm3239aerioma8u9lthdfssahn7">
+  <source id="6531435794299650989" name="AgreementRegistry" hash="bwv7l794bpcgm621030fvhvxmmk1vg4">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -39,7 +39,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MonetaryEvent.java" />
   </source>
-  <source id="6531435794299651140" name="AccountingEvent" hash="1ea25s881p2mz3j401srwwut4vkdkxl">
+  <source id="6531435794299651140" name="AccountingEvent" hash="80w6whn0v7iipmj2fa2hgih1bdp6ha6">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -47,7 +47,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AccountingEvent.java" />
   </source>
-  <source id="6531435794299651566" name="MissingPostingRuleException" hash="bagyt1gxie7kuw8gp235dhf9n5r8oax">
+  <source id="6531435794299651566" name="MissingPostingRuleException" hash="54zpxhxkair3hwxhgoe4foxqr86vpps">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MissingPostingRuleException.java" />
@@ -60,7 +60,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TaxEvent.java" />
   </source>
-  <source id="6531435794299652730" name="Usage" hash="ej0mt0ds1nkygvxcdenk20oz4zuyy90">
+  <source id="6531435794299652730" name="Usage" hash="-6c680ok40mjoqr07rwrgfjkgo380pav">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -68,7 +68,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Usage.java" />
   </source>
-  <source id="6531435794299653396" name="ServiceAgreement" hash="-a9hw100wnpro77v78xswyzoacjtyoay">
+  <source id="6531435794299653396" name="ServiceAgreement" hash="at97m2953aq7tbb0u9ekdngcsrli10g">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -76,7 +76,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ServiceAgreement.java" />
   </source>
-  <source id="6531435794299653584" name="PoorCapPR" hash="-8ya4i7r33hvkrxwn4e8j8tw2zrt6qwj">
+  <source id="6531435794299653584" name="PoorCapPR" hash="ej6tsvizd3du798dkdyzheryu56xr9m">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -84,7 +84,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PoorCapPR.java" />
   </source>
-  <source id="6531435794299651139" name="Entry" hash="-evi78tl3pt898an2yzt7ixh67r3ia44">
+  <source id="6531435794299651139" name="Entry" hash="-8bre65a31r4sfch3mzv62cd02bv9i2q">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -104,7 +104,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="AccountType.java" />
   </source>
-  <source id="6531435794299654975" name="Customer" hash="-16azw4ibpfvs5qia4ijx2p33z59b233">
+  <source id="6531435794299654975" name="Customer" hash="2nvz9qkg8t9kwftpw1khwefmsn7um2p">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -112,7 +112,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Customer.java" />
   </source>
-  <source id="6531435794299655211" name="Adjustment" hash="7bofet8vbs95pthwf4mgchsupa9umzz">
+  <source id="6531435794299655211" name="Adjustment" hash="4kl64clm4f2g0reofrwbd0pfnfie2y0">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -120,7 +120,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Adjustment.java" />
   </source>
-  <source id="6531435794299655311" name="EventList" hash="ccestblde7hhi48toowf5nxumw7nu1">
+  <source id="6531435794299655311" name="EventList" hash="-bv66vmpvlml68043emnrmn9o5cz755q">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -128,13 +128,13 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="EventList.java" />
   </source>
-  <source id="6531435794299655543" name="EventType" hash="3pw92t2f7dlbvomjkrp3ce80vtob1y1">
+  <source id="6531435794299655543" name="EventType" hash="-3iygpoozl93ffy4f97xexs7uo8bg6ej">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="EventType.java" />
   </source>
-  <source id="6531435794299656295" name="MultiplyByRatePR" hash="-dfzma35wa36oye00s30gtv1m90wp7q8">
+  <source id="6531435794299656295" name="MultiplyByRatePR" hash="-su9nhfh4rq6ql8mv2x14geqo57cbiu">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -150,7 +150,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AmountFormulaPR.java" />
   </source>
-  <source id="6531435794299656641" name="Account" hash="-enwh0fkzif56ha0yeho6mwjo185jtvw">
+  <source id="6531435794299656641" name="Account" hash="-5w3z01ylvhtbgykbo3aa11md47jnqf3">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />

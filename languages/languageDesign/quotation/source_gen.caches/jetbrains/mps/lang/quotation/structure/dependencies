@@ -20,6 +20,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.structure.Antiquotation_AnnotationLink" file="Antiquotation_AnnotationLink.java">
     <classNode dependClassName="java.lang.String" />
@@ -39,6 +40,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.structure.ListAntiquotation_AnnotationLink" file="ListAntiquotation_AnnotationLink.java">
     <classNode dependClassName="java.lang.String" />
@@ -58,6 +60,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.structure.PropertyAntiquotation_AnnotationLink" file="PropertyAntiquotation_AnnotationLink.java">
     <classNode dependClassName="java.lang.String" />
@@ -77,6 +80,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.structure.Quotation_Language" file="Quotation_Language.java">
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
@@ -96,6 +100,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation_AnnotationLink" file="ReferenceAntiquotation_AnnotationLink.java">
     <classNode dependClassName="java.lang.String" />
