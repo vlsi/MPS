@@ -199,11 +199,11 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
 
     // Looks like this method can be called from different threads
     if (ModelAccess.instance().isInEDT()) {
-      ModelAccess.instance().executeCommand(new Runnable() {
+      ModelAccess.instance().runReadInEDT(new Runnable() {
         public void run() {
           getTree().rebuildNow();
         }
-      }, myProject.getComponent(MPSProject.class));
+      });
     } else {
       rebuildTreeLater();
     }
