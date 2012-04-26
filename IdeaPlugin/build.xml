@@ -347,7 +347,6 @@
       <src>
         <path path="${base_dir}/workbench/mps-platform/source"/>
         <path path="${base_dir}/workbench/mps-platform/source_gen"/>
-        <path path="${base_dir}/workbench/mps-debugger/source_gen"/>
       </src>
       <classpath>
         <fileset dir="${dist.dir}/mps-core/lib" includes="*.jar"/>
@@ -356,20 +355,10 @@
     </javac>
     <copy includeemptydirs="false" todir="${build_dir}/mpsplatform_jar">
       <fileset dir="${base_dir}/workbench/mps-platform/source" includes="**/*.png"/>
-      <fileset dir="${base_dir}/workbench/mps-debugger/source_gen" includes="**/*.png, **/*.properties, **/*.xml"/>
     </copy>
     <copy includeemptydirs="false" todir="${build_dir}/mpsplatform_jar/modules">
       <fileset dir="${base_dir}/languages/core/stub" includes="MPS.Platform/*.msd"/>
     </copy>
-    <jar destfile="${dist.dir}/mps-core/lib/mps-platform.jar">
-      <fileset dir="${build_dir}/mpsplatform_jar"/>
-      <manifest>
-        <attribute name="Built-By" value="${user.name}"/>
-        <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
-        <attribute name="Implementation-Title" value="IDEA Workbench integration package"/>
-        <attribute name="Implementation-Version" value="1.0"/>
-      </manifest>
-    </jar>
 
     <!-- MPS editor -->
     <mkdir dir="${build_dir}/mpseditor_jar"/>
@@ -392,6 +381,7 @@
       <classpath>
         <fileset dir="${dist.dir}/mps-core/lib" includes="*.jar"/>
         <fileset dir="${ideaPath}/lib" includes="*.jar"/>
+        <pathelement path="${build_dir}/mpsplatform_jar" />
       </classpath>
     </javac>
     <copy includeemptydirs="false" todir="${build_dir}/mpseditor_jar/modules">
@@ -414,6 +404,37 @@
         <attribute name="Implementation-Version" value="1.0"/>
       </manifest>
     </jar>
+
+    <!-- MPS debugger -->
+    <mkdir dir="${build_dir}/mpsdebugger_jar"/>
+    <javac destdir="${build_dir}/mpsdebugger_jar" fork="true"
+           memorymaximumsize="1024m"
+           includeantruntime="false"
+           debug="${javac.debug}" debuglevel="lines,vars,source">
+      <compilerarg value="-Xlint:none"/>
+      <src>
+        <path path="${base_dir}/workbench/mps-debugger/source_gen"/>
+      </src>
+      <classpath>
+        <fileset dir="${dist.dir}/mps-core/lib" includes="*.jar"/>
+        <fileset dir="${ideaPath}/lib" includes="*.jar"/>
+        <pathelement path="${build_dir}/mpsplatform_jar" />
+      </classpath>
+    </javac>
+    <copy includeemptydirs="false" todir="${build_dir}/mpsdebugger_jar">
+      <fileset dir="${base_dir}/workbench/mps-debugger/source_gen" includes="**/*.png, **/*.properties, **/*.xml"/>
+    </copy>
+    <jar destfile="${dist.dir}/mps-core/lib/mps-platform.jar">
+      <fileset dir="${build_dir}/mpsplatform_jar"/>
+      <fileset dir="${build_dir}/mpsdebugger_jar"/>
+      <manifest>
+        <attribute name="Built-By" value="${user.name}"/>
+        <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
+        <attribute name="Implementation-Title" value="IDEA Workbench integration package"/>
+        <attribute name="Implementation-Version" value="1.0"/>
+      </manifest>
+    </jar>
+
 
     <!-- MPS Core plugin -->
     <mkdir dir="${build_dir}/mpsplugin_jar"/>
