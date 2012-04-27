@@ -78,7 +78,7 @@ public class PrimMap_Test extends Util_Test {
     long bln = 1000000000L;
     long trln = 1000000000000L;
     MapSequence.fromMap(mll).put(bln, trln);
-    Assert.assertEquals((Long) mll.get(bln), (Long) trln);
+    Assert.assertEquals((Long) MapSequence.fromMap(mll).get(bln), (Long) trln);
   }
 
   public void test_shortShort() throws Exception {
