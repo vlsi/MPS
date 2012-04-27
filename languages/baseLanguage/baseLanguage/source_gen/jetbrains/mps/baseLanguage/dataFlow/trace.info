@@ -454,16 +454,17 @@
     <nodeInfo nodeId="1206537043333" fileName="TernaryOperatorExpression_DataFlow.java" startLine="17" startPosition="131" endLine="18" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206537049402" fileName="TernaryOperatorExpression_DataFlow.java" startLine="18" startPosition="103" endLine="19" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206537052299" fileName="TernaryOperatorExpression_DataFlow.java" startLine="19" startPosition="84" endLine="20" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8493229414304959335" fileName="TernaryOperatorExpression_DataFlow.java" startLine="20" startPosition="104" endLine="21" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206537015271" fileName="TernaryOperatorExpression_DataFlow.java" startLine="11" startPosition="73" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TernaryOperatorExpression_DataFlow#()V" />
-    <nodeInfo nodeId="1206537015271" fileName="TernaryOperatorExpression_DataFlow.java" startLine="14" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <nodeInfo nodeId="1206537015271" fileName="TernaryOperatorExpression_DataFlow.java" startLine="14" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
     <scopeInfo nodeId="1206537015271" fileName="TernaryOperatorExpression_DataFlow.java" startLine="12" startPosition="47" endLine="12" endPosition="47" />
     <scopeInfo nodeId="1206537015271" fileName="TernaryOperatorExpression_DataFlow.java" startLine="11" startPosition="73" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1206537015273" fileName="TernaryOperatorExpression_DataFlow.java" startLine="15" startPosition="102" endLine="20" endPosition="104" />
-    <scopeInfo nodeId="1206537015271" fileName="TernaryOperatorExpression_DataFlow.java" startLine="14" startPosition="0" endLine="22" endPosition="0">
+    <scopeInfo nodeId="1206537015273" fileName="TernaryOperatorExpression_DataFlow.java" startLine="15" startPosition="102" endLine="21" endPosition="36" />
+    <scopeInfo nodeId="1206537015271" fileName="TernaryOperatorExpression_DataFlow.java" startLine="14" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="1206537015271" varName="_context" />
       <varInfo nodeId="1206537015271" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="1206537015271" fileName="TernaryOperatorExpression_DataFlow.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.TernaryOperatorExpression_DataFlow" />
+    <unitInfo nodeId="1206537015271" fileName="TernaryOperatorExpression_DataFlow.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.TernaryOperatorExpression_DataFlow" />
   </root>
   <root nodeId="1206537062960">
     <nodeInfo nodeId="1206537064620" fileName="SynchronizedStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1446,47 +1447,55 @@
     <nodeInfo nodeId="3383816410303360068" fileName="RuleTernaryOperation.java" startLine="26" startPosition="53" endLine="27" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3383816410303288366" fileName="RuleTernaryOperation.java" startLine="28" startPosition="210" endLine="29" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3383816410303360094" fileName="RuleTernaryOperation.java" startLine="30" startPosition="26" endLine="31" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3383816410303360124" fileName="RuleTernaryOperation.java" startLine="34" startPosition="9" endLine="35" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3383816410303360124" fileName="RuleTernaryOperation.java" startLine="36" startPosition="47" endLine="37" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3383816410303360124" fileName="RuleTernaryOperation.java" startLine="37" startPosition="34" endLine="38" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3383816410303360124" fileName="RuleTernaryOperation.java" startLine="38" startPosition="101" endLine="39" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3383816410303360124" fileName="RuleTernaryOperation.java" startLine="39" startPosition="65" endLine="40" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3383816410303360124" fileName="RuleTernaryOperation.java" startLine="40" startPosition="40" endLine="41" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3383816410303360110" fileName="RuleTernaryOperation.java" startLine="44" startPosition="9" endLine="45" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3383816410303360110" fileName="RuleTernaryOperation.java" startLine="46" startPosition="47" endLine="47" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3383816410303360110" fileName="RuleTernaryOperation.java" startLine="47" startPosition="34" endLine="48" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3383816410303360110" fileName="RuleTernaryOperation.java" startLine="48" startPosition="102" endLine="49" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3383816410303360110" fileName="RuleTernaryOperation.java" startLine="49" startPosition="68" endLine="50" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3383816410303360110" fileName="RuleTernaryOperation.java" startLine="50" startPosition="40" endLine="51" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3383816410303360132" fileName="RuleTernaryOperation.java" startLine="55" startPosition="9" endLine="56" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3383816410303360132" fileName="RuleTernaryOperation.java" startLine="57" startPosition="47" endLine="58" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3383816410303360132" fileName="RuleTernaryOperation.java" startLine="58" startPosition="34" endLine="59" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3383816410303360132" fileName="RuleTernaryOperation.java" startLine="59" startPosition="101" endLine="60" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3383816410303360132" fileName="RuleTernaryOperation.java" startLine="60" startPosition="68" endLine="61" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3383816410303360132" fileName="RuleTernaryOperation.java" startLine="61" startPosition="40" endLine="62" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3383816410303360139" fileName="RuleTernaryOperation.java" startLine="65" startPosition="9" endLine="66" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3383816410303360139" fileName="RuleTernaryOperation.java" startLine="67" startPosition="47" endLine="68" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3383816410303360139" fileName="RuleTernaryOperation.java" startLine="68" startPosition="34" endLine="69" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3383816410303360139" fileName="RuleTernaryOperation.java" startLine="69" startPosition="102" endLine="70" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3383816410303360139" fileName="RuleTernaryOperation.java" startLine="70" startPosition="65" endLine="71" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3383816410303360139" fileName="RuleTernaryOperation.java" startLine="71" startPosition="40" endLine="72" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3383816410303271532" fileName="RuleTernaryOperation.java" startLine="76" startPosition="5" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1016339169644612767" fileName="RuleTernaryOperation.java" startLine="33" startPosition="7" endLine="34" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1016339169644612767" fileName="RuleTernaryOperation.java" startLine="35" startPosition="45" endLine="36" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1016339169644612767" fileName="RuleTernaryOperation.java" startLine="36" startPosition="33" endLine="37" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1016339169644612767" fileName="RuleTernaryOperation.java" startLine="37" startPosition="56" endLine="38" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1016339169644612767" fileName="RuleTernaryOperation.java" startLine="38" startPosition="67" endLine="39" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1016339169644612767" fileName="RuleTernaryOperation.java" startLine="39" startPosition="38" endLine="40" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3383816410303360124" fileName="RuleTernaryOperation.java" startLine="44" startPosition="9" endLine="45" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3383816410303360124" fileName="RuleTernaryOperation.java" startLine="46" startPosition="47" endLine="47" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3383816410303360124" fileName="RuleTernaryOperation.java" startLine="47" startPosition="34" endLine="48" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3383816410303360124" fileName="RuleTernaryOperation.java" startLine="48" startPosition="101" endLine="49" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3383816410303360124" fileName="RuleTernaryOperation.java" startLine="49" startPosition="65" endLine="50" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3383816410303360124" fileName="RuleTernaryOperation.java" startLine="50" startPosition="40" endLine="51" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3383816410303360110" fileName="RuleTernaryOperation.java" startLine="54" startPosition="9" endLine="55" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3383816410303360110" fileName="RuleTernaryOperation.java" startLine="56" startPosition="47" endLine="57" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3383816410303360110" fileName="RuleTernaryOperation.java" startLine="57" startPosition="34" endLine="58" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3383816410303360110" fileName="RuleTernaryOperation.java" startLine="58" startPosition="102" endLine="59" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3383816410303360110" fileName="RuleTernaryOperation.java" startLine="59" startPosition="68" endLine="60" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3383816410303360110" fileName="RuleTernaryOperation.java" startLine="60" startPosition="40" endLine="61" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3383816410303360132" fileName="RuleTernaryOperation.java" startLine="65" startPosition="9" endLine="66" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3383816410303360132" fileName="RuleTernaryOperation.java" startLine="67" startPosition="47" endLine="68" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3383816410303360132" fileName="RuleTernaryOperation.java" startLine="68" startPosition="34" endLine="69" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3383816410303360132" fileName="RuleTernaryOperation.java" startLine="69" startPosition="101" endLine="70" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3383816410303360132" fileName="RuleTernaryOperation.java" startLine="70" startPosition="68" endLine="71" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3383816410303360132" fileName="RuleTernaryOperation.java" startLine="71" startPosition="40" endLine="72" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3383816410303360139" fileName="RuleTernaryOperation.java" startLine="75" startPosition="9" endLine="76" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3383816410303360139" fileName="RuleTernaryOperation.java" startLine="77" startPosition="47" endLine="78" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3383816410303360139" fileName="RuleTernaryOperation.java" startLine="78" startPosition="34" endLine="79" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3383816410303360139" fileName="RuleTernaryOperation.java" startLine="79" startPosition="102" endLine="80" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3383816410303360139" fileName="RuleTernaryOperation.java" startLine="80" startPosition="65" endLine="81" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3383816410303360139" fileName="RuleTernaryOperation.java" startLine="81" startPosition="40" endLine="82" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3383816410303271532" fileName="RuleTernaryOperation.java" startLine="86" startPosition="5" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3383816410303205607" fileName="RuleTernaryOperation.java" startLine="14" startPosition="63" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RuleTernaryOperation#()V" />
     <nodeInfo nodeId="3383816410303360085" fileName="RuleTernaryOperation.java" startLine="29" startPosition="139" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3383816410303205607" fileName="RuleTernaryOperation.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="3383816410303205607" fileName="RuleTernaryOperation.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFqName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3383816410303360124" fileName="RuleTernaryOperation.java" startLine="35" startPosition="74" endLine="42" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3383816410303360110" fileName="RuleTernaryOperation.java" startLine="45" startPosition="75" endLine="52" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3383816410303360132" fileName="RuleTernaryOperation.java" startLine="56" startPosition="74" endLine="63" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3383816410303360139" fileName="RuleTernaryOperation.java" startLine="66" startPosition="75" endLine="73" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3383816410303360124" fileName="RuleTernaryOperation.java" startLine="33" startPosition="109" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3383816410303360110" fileName="RuleTernaryOperation.java" startLine="43" startPosition="9" endLine="53" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3383816410303360132" fileName="RuleTernaryOperation.java" startLine="54" startPosition="14" endLine="64" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3383816410303360139" fileName="RuleTernaryOperation.java" startLine="64" startPosition="9" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3383816410303360108" fileName="RuleTernaryOperation.java" startLine="54" startPosition="12" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3383816410303360096" fileName="RuleTernaryOperation.java" startLine="32" startPosition="7" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3383816410303236864" fileName="RuleTernaryOperation.java" startLine="27" startPosition="73" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3383816410303205607" fileName="RuleTernaryOperation.java" startLine="25" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performActions#(Ljetbrains/mps/lang/dataFlow/framework/Program;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1016339169644612767" fileName="RuleTernaryOperation.java" startLine="34" startPosition="73" endLine="41" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3383816410303360124" fileName="RuleTernaryOperation.java" startLine="45" startPosition="74" endLine="52" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3383816410303360110" fileName="RuleTernaryOperation.java" startLine="55" startPosition="75" endLine="62" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3383816410303360132" fileName="RuleTernaryOperation.java" startLine="66" startPosition="74" endLine="73" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3383816410303360139" fileName="RuleTernaryOperation.java" startLine="76" startPosition="75" endLine="83" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1016339169644612767" fileName="RuleTernaryOperation.java" startLine="32" startPosition="7" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3383816410303360124" fileName="RuleTernaryOperation.java" startLine="43" startPosition="109" endLine="53" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3383816410303360110" fileName="RuleTernaryOperation.java" startLine="53" startPosition="9" endLine="63" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3383816410303360132" fileName="RuleTernaryOperation.java" startLine="64" startPosition="14" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3383816410303360139" fileName="RuleTernaryOperation.java" startLine="74" startPosition="9" endLine="84" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3383816410303360108" fileName="RuleTernaryOperation.java" startLine="64" startPosition="12" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3383816410303360096" fileName="RuleTernaryOperation.java" startLine="42" startPosition="7" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3383816410303236864" fileName="RuleTernaryOperation.java" startLine="27" startPosition="73" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3383816410303205607" fileName="RuleTernaryOperation.java" startLine="25" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performActions#(Ljetbrains/mps/lang/dataFlow/framework/Program;Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="3383816410303205607" fileName="RuleTernaryOperation.java" startLine="15" startPosition="33" endLine="15" endPosition="33" />
     <scopeInfo nodeId="3383816410303205607" fileName="RuleTernaryOperation.java" startLine="18" startPosition="43" endLine="19" endPosition="174" />
     <scopeInfo nodeId="3383816410303205607" fileName="RuleTernaryOperation.java" startLine="22" startPosition="46" endLine="23" endPosition="76" />
@@ -1496,51 +1505,59 @@
       <varInfo nodeId="3383816410303205607" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="3383816410303205607" fileName="RuleTernaryOperation.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="3383816410303360124" fileName="RuleTernaryOperation.java" startLine="36" startPosition="47" endLine="41" endPosition="72">
+    <scopeInfo nodeId="1016339169644612767" fileName="RuleTernaryOperation.java" startLine="35" startPosition="45" endLine="40" endPosition="70">
+      <varInfo nodeId="1016339169644612767" varName="before" />
+      <varInfo nodeId="1016339169644612767" varName="instruction" />
+      <varInfo nodeId="1016339169644612767" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="3383816410303360124" fileName="RuleTernaryOperation.java" startLine="46" startPosition="47" endLine="51" endPosition="72">
       <varInfo nodeId="3383816410303360124" varName="before" />
       <varInfo nodeId="3383816410303360124" varName="instruction" />
       <varInfo nodeId="3383816410303360124" varName="position" />
     </scopeInfo>
-    <scopeInfo nodeId="3383816410303360110" fileName="RuleTernaryOperation.java" startLine="46" startPosition="47" endLine="51" endPosition="72">
+    <scopeInfo nodeId="3383816410303360110" fileName="RuleTernaryOperation.java" startLine="56" startPosition="47" endLine="61" endPosition="72">
       <varInfo nodeId="3383816410303360110" varName="before" />
       <varInfo nodeId="3383816410303360110" varName="instruction" />
       <varInfo nodeId="3383816410303360110" varName="position" />
     </scopeInfo>
-    <scopeInfo nodeId="3383816410303360132" fileName="RuleTernaryOperation.java" startLine="57" startPosition="47" endLine="62" endPosition="72">
+    <scopeInfo nodeId="3383816410303360132" fileName="RuleTernaryOperation.java" startLine="67" startPosition="47" endLine="72" endPosition="72">
       <varInfo nodeId="3383816410303360132" varName="before" />
       <varInfo nodeId="3383816410303360132" varName="instruction" />
       <varInfo nodeId="3383816410303360132" varName="position" />
     </scopeInfo>
-    <scopeInfo nodeId="3383816410303360139" fileName="RuleTernaryOperation.java" startLine="67" startPosition="47" endLine="72" endPosition="72">
+    <scopeInfo nodeId="3383816410303360139" fileName="RuleTernaryOperation.java" startLine="77" startPosition="47" endLine="82" endPosition="72">
       <varInfo nodeId="3383816410303360139" varName="before" />
       <varInfo nodeId="3383816410303360139" varName="instruction" />
       <varInfo nodeId="3383816410303360139" varName="position" />
     </scopeInfo>
-    <scopeInfo nodeId="3383816410303360124" fileName="RuleTernaryOperation.java" startLine="34" startPosition="9" endLine="42" endPosition="11">
+    <scopeInfo nodeId="1016339169644612767" fileName="RuleTernaryOperation.java" startLine="33" startPosition="7" endLine="41" endPosition="9">
+      <varInfo nodeId="1016339169644612767" varName="object" />
+    </scopeInfo>
+    <scopeInfo nodeId="3383816410303360124" fileName="RuleTernaryOperation.java" startLine="44" startPosition="9" endLine="52" endPosition="11">
       <varInfo nodeId="3383816410303360124" varName="object" />
     </scopeInfo>
-    <scopeInfo nodeId="3383816410303360110" fileName="RuleTernaryOperation.java" startLine="44" startPosition="9" endLine="52" endPosition="11">
+    <scopeInfo nodeId="3383816410303360110" fileName="RuleTernaryOperation.java" startLine="54" startPosition="9" endLine="62" endPosition="11">
       <varInfo nodeId="3383816410303360110" varName="object" />
     </scopeInfo>
-    <scopeInfo nodeId="3383816410303360132" fileName="RuleTernaryOperation.java" startLine="55" startPosition="9" endLine="63" endPosition="11">
+    <scopeInfo nodeId="3383816410303360132" fileName="RuleTernaryOperation.java" startLine="65" startPosition="9" endLine="73" endPosition="11">
       <varInfo nodeId="3383816410303360132" varName="object" />
     </scopeInfo>
-    <scopeInfo nodeId="3383816410303360139" fileName="RuleTernaryOperation.java" startLine="65" startPosition="9" endLine="73" endPosition="11">
+    <scopeInfo nodeId="3383816410303360139" fileName="RuleTernaryOperation.java" startLine="75" startPosition="9" endLine="83" endPosition="11">
       <varInfo nodeId="3383816410303360139" varName="object" />
     </scopeInfo>
-    <scopeInfo nodeId="3383816410303360097" fileName="RuleTernaryOperation.java" startLine="33" startPosition="109" endLine="53" endPosition="9" />
-    <scopeInfo nodeId="3383816410303360109" fileName="RuleTernaryOperation.java" startLine="54" startPosition="14" endLine="74" endPosition="9" />
-    <scopeInfo nodeId="3383816410303236866" fileName="RuleTernaryOperation.java" startLine="28" startPosition="210" endLine="75" endPosition="7">
+    <scopeInfo nodeId="3383816410303360097" fileName="RuleTernaryOperation.java" startLine="43" startPosition="109" endLine="63" endPosition="9" />
+    <scopeInfo nodeId="3383816410303360109" fileName="RuleTernaryOperation.java" startLine="64" startPosition="14" endLine="84" endPosition="9" />
+    <scopeInfo nodeId="3383816410303236866" fileName="RuleTernaryOperation.java" startLine="28" startPosition="210" endLine="85" endPosition="7">
       <varInfo nodeId="3383816410303288367" varName="other" />
     </scopeInfo>
-    <scopeInfo nodeId="3383816410303226599" fileName="RuleTernaryOperation.java" startLine="26" startPosition="53" endLine="77" endPosition="0">
+    <scopeInfo nodeId="3383816410303226599" fileName="RuleTernaryOperation.java" startLine="26" startPosition="53" endLine="87" endPosition="0">
       <varInfo nodeId="3383816410303360069" varName="condition" />
     </scopeInfo>
-    <scopeInfo nodeId="3383816410303205607" fileName="RuleTernaryOperation.java" startLine="25" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="3383816410303205607" fileName="RuleTernaryOperation.java" startLine="25" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="3383816410303205607" varName="node" />
       <varInfo nodeId="3383816410303205607" varName="o" />
     </scopeInfo>
-    <unitInfo nodeId="3383816410303205607" fileName="RuleTernaryOperation.java" startLine="14" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleTernaryOperation" />
+    <unitInfo nodeId="3383816410303205607" fileName="RuleTernaryOperation.java" startLine="14" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleTernaryOperation" />
   </root>
   <root nodeId="5730083271929368106">
     <nodeInfo nodeId="5730083271929373008" fileName="RuleAssertNotNull.java" startLine="152" startPosition="17" endLine="152" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2126,7 +2143,9 @@
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="40" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="6868777471677432036" varName="program" />
     </scopeInfo>
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="48" startPosition="45" endLine="53" endPosition="9" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="48" startPosition="45" endLine="53" endPosition="9">
+      <varInfo nodeId="6868777471677432036" varName="rule" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="67" startPosition="73" endLine="72" endPosition="5">
       <varInfo nodeId="6868777471677432036" varName="rule" />
     </scopeInfo>
@@ -2176,9 +2195,7 @@
     <scopeInfo nodeId="4212311917866530301" fileName="NullableAnalyzerRunner.java" startLine="47" startPosition="77" endLine="58" endPosition="7">
       <varInfo nodeId="4212311917866530302" varName="inputElement" />
     </scopeInfo>
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="45" startPosition="57" endLine="58" endPosition="5">
-      <varInfo nodeId="6868777471677432036" varName="descendant" />
-    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="45" startPosition="57" endLine="58" endPosition="5" />
     <scopeInfo nodeId="6868777471677432070" fileName="NullableAnalyzerRunner.java" startLine="46" startPosition="100" endLine="59" endPosition="20">
       <varInfo nodeId="6868777471677432072" varName="result" />
     </scopeInfo>

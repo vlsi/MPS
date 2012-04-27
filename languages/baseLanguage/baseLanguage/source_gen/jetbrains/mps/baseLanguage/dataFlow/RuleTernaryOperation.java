@@ -30,6 +30,16 @@ public class RuleTernaryOperation extends DataFlowConstructor {
       if (other == null) {
         return;
       }
+      {
+        Object object = SLinkOperations.getTarget(node, "ifFalse", true);
+        if (((Program) o).contains(object)) {
+          boolean before = false;
+          int position = ((Program) (o)).getEnd(object);
+          Instruction instruction = new nullableInstruction(other);
+          instruction.setSource(node);
+          ((Program) (o)).insert(instruction, position, true, before);
+        }
+      }
       if (SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.EqualsExpression")) {
         {
           Object object = SLinkOperations.getTarget(node, "ifTrue", true);
