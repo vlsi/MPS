@@ -10,9 +10,9 @@ import com.intellij.util.io.KeyDescriptor;
 import com.intellij.util.io.DataExternalizer;
 import com.intellij.util.indexing.DataIndexer;
 import com.intellij.util.indexing.FileContent;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import org.jetbrains.annotations.NotNull;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -36,6 +36,7 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
   public ClassifierSuccessorsIndexer() {
   }
 
+  @NotNull
   public ID<GlobalSNodeId, List<GlobalSNodeId>> getName() {
     return NAME;
   }
@@ -60,6 +61,7 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
     return myDataExternalizer;
   }
 
+  @NotNull
   public DataIndexer<GlobalSNodeId, List<GlobalSNodeId>, FileContent> getIndexer() {
     return myIndexer;
   }

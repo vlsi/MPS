@@ -1566,6 +1566,7 @@
             </node>
           </node>
         </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitNopStatement" typeId="tp41.1206443660532" id="8493229414304959335" />
       </node>
     </node>
   </root>
@@ -5230,6 +5231,23 @@
               <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="3383816410303360093" />
               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3383816410303360089">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3383816410303288367" resolveInfo="other" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="bj1v.EmitInstruction" typeId="bj1v.4217760266503579796" id="1016339169644612767">
+            <node role="instructionRef" roleId="bj1v.4217760266503650651" type="bj1v.InstructionReference" typeId="bj1v.4217760266503638748" id="1016339169644612770">
+              <link role="instruction" roleId="bj1v.4217760266503638757" targetNodeId="6868777471677432050" resolveInfo="nullable" />
+              <node role="argument" roleId="bj1v.4217760266503638749" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1016339169644612771">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3383816410303288367" resolveInfo="other" />
+              </node>
+            </node>
+            <node role="position" roleId="bj1v.24089196731087404" type="tp3t.InsertAfterPosition" typeId="tp3t.1649655856141352248" id="1016339169644612772" />
+            <node role="target" roleId="bj1v.323410281720600578" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1016339169644620827">
+              <node role="operand" roleId="tpee.1197027771414" type="bj1v.ApplicableNodeReference" typeId="bj1v.4943044633102057744" id="1016339169644612773">
+                <link role="applicableNode" roleId="bj1v.4943044633102057745" targetNodeId="3383816410303205609" resolveInfo="operator" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1016339169644620833">
+                <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1163668934364" />
               </node>
             </node>
           </node>

@@ -18,5 +18,6 @@ public class TernaryOperatorExpression_DataFlow extends DataFlowBuilder {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "ifTrue", true));
     _context.getBuilder().emitJump(_context.getBuilder().after(_context.getNode()));
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "ifFalse", true));
+    _context.getBuilder().emitNop();
   }
 }
