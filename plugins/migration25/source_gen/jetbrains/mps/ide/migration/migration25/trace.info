@@ -1029,17 +1029,17 @@
     <nodeInfo nodeId="2761153619454568090" fileName="Migrations25_ActionGroup.java" startLine="29" startPosition="137" endLine="30" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1828409047608306841" fileName="Migrations25_ActionGroup.java" startLine="30" startPosition="130" endLine="31" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1828409047608306843" fileName="Migrations25_ActionGroup.java" startLine="31" startPosition="129" endLine="32" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3864735057395396950" fileName="Migrations25_ActionGroup.java" startLine="32" startPosition="134" endLine="33" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2761153619454568341" fileName="Migrations25_ActionGroup.java" startLine="33" startPosition="123" endLine="34" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7450649563959273055" fileName="Migrations25_ActionGroup.java" startLine="34" startPosition="130" endLine="35" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6638751950448587423" fileName="Migrations25_ActionGroup.java" startLine="35" startPosition="121" endLine="36" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="647205717978882754" fileName="Migrations25_ActionGroup.java" startLine="36" startPosition="121" endLine="37" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2761153619454568341" fileName="Migrations25_ActionGroup.java" startLine="32" startPosition="134" endLine="33" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6638751950448587423" fileName="Migrations25_ActionGroup.java" startLine="33" startPosition="130" endLine="34" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="647205717978882754" fileName="Migrations25_ActionGroup.java" startLine="34" startPosition="121" endLine="35" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7450649563959273055" fileName="Migrations25_ActionGroup.java" startLine="35" startPosition="125" endLine="36" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3864735057395396950" fileName="Migrations25_ActionGroup.java" startLine="36" startPosition="121" endLine="37" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4250481571544053951" fileName="Migrations25_ActionGroup.java" startLine="38" startPosition="7" endLine="39" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4250481571544053951" fileName="Migrations25_ActionGroup.java" startLine="39" startPosition="95" endLine="40" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4250481571544053951" fileName="Migrations25_ActionGroup.java" startLine="40" startPosition="66" endLine="41" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4250481571544053951" fileName="Migrations25_ActionGroup.java" startLine="41" startPosition="104" endLine="42" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2899596005953728721" fileName="Migrations25_ActionGroup.java" startLine="44" startPosition="27" endLine="45" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4250481571544053951" fileName="Migrations25_ActionGroup.java" startLine="37" startPosition="125" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4250481571544053951" fileName="Migrations25_ActionGroup.java" startLine="37" startPosition="123" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2899596005953728721" fileName="Migrations25_ActionGroup.java" startLine="19" startPosition="24" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="2899596005953728721" fileName="Migrations25_ActionGroup.java" startLine="15" startPosition="0" endLine="47" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Migrations25_ActionGroup#()V" />
     <scopeInfo nodeId="2899596005953728721" fileName="Migrations25_ActionGroup.java" startLine="44" startPosition="0" endLine="45" endPosition="39">
@@ -2502,7 +2502,7 @@
     <nodeInfo nodeId="9164503229271486550" fileName="FixMissingImportsInProject_Action.java" startLine="75" startPosition="61" endLine="76" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="9164503229271487748" fileName="FixMissingImportsInProject_Action.java" startLine="77" startPosition="11" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="9164503229271455486" fileName="FixMissingImportsInProject_Action.java" startLine="78" startPosition="0" endLine="79" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9164503229271532412" fileName="FixMissingImportsInProject_Action.java" startLine="79" startPosition="57" endLine="80" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9164503229271532412" fileName="FixMissingImportsInProject_Action.java" startLine="80" startPosition="9" endLine="81" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9164503229271487753" fileName="FixMissingImportsInProject_Action.java" startLine="84" startPosition="27" endLine="85" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9164503229271455483" fileName="FixMissingImportsInProject_Action.java" startLine="89" startPosition="33" endLine="90" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9164503229271455483" fileName="FixMissingImportsInProject_Action.java" startLine="44" startPosition="27" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2519,8 +2519,8 @@
     <nodeInfo nodeId="7450649563959263244" fileName="FixMissingImportsInProject_Action.java" startLine="82" startPosition="7" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9164503229271455483" fileName="FixMissingImportsInProject_Action.java" startLine="41" startPosition="89" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="9164503229271455483" fileName="FixMissingImportsInProject_Action.java" startLine="51" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="9164503229271486526" fileName="FixMissingImportsInProject_Action.java" startLine="70" startPosition="9" endLine="80" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="9164503229271455483" fileName="FixMissingImportsInProject_Action.java" startLine="40" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="9164503229271486526" fileName="FixMissingImportsInProject_Action.java" startLine="70" startPosition="9" endLine="81" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7002188680044641063" fileName="FixMissingImportsInProject_Action.java" startLine="62" startPosition="193" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="9164503229271455483" fileName="FixMissingImportsInProject_Action.java" startLine="60" startPosition="96" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="9164503229271455483" fileName="FixMissingImportsInProject_Action.java" startLine="59" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
@@ -2552,15 +2552,15 @@
       <varInfo nodeId="9164503229271455483" varName="_params" />
       <varInfo nodeId="9164503229271455483" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="9164503229271486529" fileName="FixMissingImportsInProject_Action.java" startLine="71" startPosition="95" endLine="80" endPosition="36" />
+    <scopeInfo nodeId="9164503229271486529" fileName="FixMissingImportsInProject_Action.java" startLine="71" startPosition="95" endLine="79" endPosition="57" />
+    <scopeInfo nodeId="9164503229271486526" fileName="FixMissingImportsInProject_Action.java" startLine="70" startPosition="9" endLine="80" endPosition="9">
+      <varInfo nodeId="9164503229271486526" varName="model" />
+    </scopeInfo>
     <scopeInfo nodeId="9164503229271455483" fileName="FixMissingImportsInProject_Action.java" startLine="40" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="9164503229271455483" varName="_params" />
       <varInfo nodeId="9164503229271455483" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="9164503229271486526" fileName="FixMissingImportsInProject_Action.java" startLine="70" startPosition="9" endLine="81" endPosition="9">
-      <varInfo nodeId="9164503229271486526" varName="model" />
-    </scopeInfo>
-    <scopeInfo nodeId="7002188680044641065" fileName="FixMissingImportsInProject_Action.java" startLine="63" startPosition="61" endLine="81" endPosition="9">
+    <scopeInfo nodeId="7002188680044641065" fileName="FixMissingImportsInProject_Action.java" startLine="63" startPosition="61" endLine="81" endPosition="34">
       <varInfo nodeId="7002188680044641125" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="9164503229271455483" fileName="FixMissingImportsInProject_Action.java" startLine="61" startPosition="9" endLine="87" endPosition="9">
