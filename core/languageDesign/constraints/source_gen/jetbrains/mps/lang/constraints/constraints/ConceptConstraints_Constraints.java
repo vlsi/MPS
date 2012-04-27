@@ -22,9 +22,15 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Collections;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.LanguageAspect;
 
 public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
@@ -92,9 +98,16 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode concept = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getReferenceNode(), "jetbrains.mps.lang.constraints.structure.ConceptConstraints", true, false), "concept", false);
-            List<SNode> concepts = SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope());
-            return concepts;
+            Language currentLanguage = Language.getLanguageForLanguageAspect(_context.getModel().getModelDescriptor());
+            if (currentLanguage == null) {
+              return ListSequence.fromList(new ArrayList<SNode>());
+            }
+            List<SNode> subConcepts = (List<SNode>) SConceptOperations.getAllSubConcepts(SLinkOperations.getTarget(SNodeOperations.as(_context.getReferenceNode(), "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), "concept", false), Collections.singleton(currentLanguage));
+            return ListSequence.fromList(subConcepts).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return !(SConceptPropertyOperations.getBoolean(it, "abstract"));
+              }
+            });
           }
 
           @Override

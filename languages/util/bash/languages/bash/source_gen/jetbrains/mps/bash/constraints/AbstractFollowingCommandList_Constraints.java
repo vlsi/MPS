@@ -8,8 +8,4 @@ public class AbstractFollowingCommandList_Constraints extends BaseConstraintsDes
   public AbstractFollowingCommandList_Constraints() {
     super("jetbrains.mps.bash.structure.AbstractFollowingCommandList");
   }
-
-  public String getDefaultConcreteConceptFqName() {
-    return "jetbrains.mps.bash.structure.FollowingCommandList";
-  }
 }
