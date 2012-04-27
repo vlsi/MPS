@@ -40,7 +40,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_4102882025198635369(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String value = SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.dependency.structure.ModuleDescription"), "includeResources");
     return (StringUtils.isEmpty(value) ?
-      "**/*.png" :
+      "**/*.png, **/trace.info" :
       value
     );
   }
