@@ -5,6 +5,7 @@
   <property name="idea_home" location="" />
   <property name="mps_home" location="${basedir}" />
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
+  <property name="artifacts.buildCoreEx" location="${build.dir}/artifacts/buildCoreEx" />
   <property name="artifacts.buildWorkbench" location="${build.dir}/artifacts/buildWorkbench" />
   <property name="artifacts.buildUtilLanguages" location="${build.dir}/artifacts/buildUtilLanguages" />
   <property name="artifacts.IDEA" location="${idea_home}" />
@@ -155,6 +156,7 @@
   
   <target name="buildDependents">
     <ant antfile="build/buildCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildCoreEx.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildUtilLanguages.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
@@ -207,8 +209,8 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.runtime.jar" />
-        <fileset file="${artifacts.buildUtilLanguages}/languages/xml/jetbrains.mps.core.properties.jar" />
-        <fileset file="${artifacts.buildUtilLanguages}/languages/xml/jetbrains.mps.core.xml.jar" />
+        <fileset file="${artifacts.buildCoreEx}/languages/xml/jetbrains.mps.core.properties.jar" />
+        <fileset file="${artifacts.buildCoreEx}/languages/xml/jetbrains.mps.core.xml.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
@@ -245,8 +247,8 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.buildUtilLanguages}/languages/xml/jetbrains.mps.core.properties.jar" />
-        <fileset file="${artifacts.buildUtilLanguages}/languages/xml/jetbrains.mps.core.xml.jar" />
+        <fileset file="${artifacts.buildCoreEx}/languages/xml/jetbrains.mps.core.properties.jar" />
+        <fileset file="${artifacts.buildCoreEx}/languages/xml/jetbrains.mps.core.xml.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
@@ -285,8 +287,8 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.buildUtilLanguages}/languages/xml/jetbrains.mps.core.properties.jar" />
-        <fileset file="${artifacts.buildUtilLanguages}/languages/xml/jetbrains.mps.core.xml.jar" />
+        <fileset file="${artifacts.buildCoreEx}/languages/xml/jetbrains.mps.core.properties.jar" />
+        <fileset file="${artifacts.buildCoreEx}/languages/xml/jetbrains.mps.core.xml.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
