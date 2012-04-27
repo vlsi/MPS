@@ -4672,66 +4672,6 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/languageDesign/jetbrains.mps.lang.dataFlow.pluginSolution.jar.jtmp" />
   </target>
-  <target name="pack.jetbrains.mps.devkit.general-purpose">
-    <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.general-purpose.jar.jtmp" />
-    <echoxml file="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.general-purpose.jar.jtmp/module.xml">
-      <module namespace="jetbrains.mps.devkit.general-purpose" uuid="fbc25dd2-5da4-483a-8b19-70928e1b62d7" type="unknown">
-        <dependencies>
-          <module ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-        </dependencies>
-        <sources jar="jetbrains.mps.devkit.general-purpose-src.jar" descriptor="jetbrains.mps.devkit.general-purpose.devkit" />
-      </module>
-    </echoxml>
-    <jar destfile="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.general-purpose-src.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${base_dir}/core/devkits/jetbrains.mps.devkit.general-purpose.devkit" prefix="module" />
-    </jar>
-    <jar destfile="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.general-purpose.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.general-purpose.jar.jtmp/module.xml" prefix="META-INF" />
-      <zipfileset dir="${base_dir}/core/devkits" includes="icons/**, resources/**" />
-    </jar>
-    <delete dir="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.general-purpose.jar.jtmp" />
-  </target>
-  <target name="pack.jetbrains.mps.devkit.language-design">
-    <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.language-design.jar.jtmp" />
-    <echoxml file="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.language-design.jar.jtmp/module.xml">
-      <module namespace="jetbrains.mps.devkit.language-design" uuid="2677cb18-f558-4e33-bc38-a5139cee06dc" type="unknown">
-        <dependencies>
-          <module ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-        </dependencies>
-        <sources jar="jetbrains.mps.devkit.language-design-src.jar" descriptor="jetbrains.mps.devkit.language-design.devkit" />
-      </module>
-    </echoxml>
-    <jar destfile="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.language-design-src.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${base_dir}/core/devkits/jetbrains.mps.devkit.language-design.devkit" prefix="module" />
-    </jar>
-    <jar destfile="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.language-design.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.language-design.jar.jtmp/module.xml" prefix="META-INF" />
-      <zipfileset dir="${base_dir}/core/devkits" includes="icons/**, resources/**" />
-    </jar>
-    <delete dir="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.language-design.jar.jtmp" />
-  </target>
-  <target name="pack.jetbrains.mps.devkit.bootstrap-languages">
-    <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.bootstrap-languages.jar.jtmp" />
-    <echoxml file="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.bootstrap-languages.jar.jtmp/module.xml">
-      <module namespace="jetbrains.mps.devkit.bootstrap-languages" uuid="e073aac8-8c71-4c23-be71-86bf7a6df0a2" type="unknown">
-        <dependencies>
-          <module ref="e073aac8-8c71-4c23-be71-86bf7a6df0a2(jetbrains.mps.devkit.bootstrap-languages)" />
-        </dependencies>
-        <sources jar="jetbrains.mps.devkit.bootstrap-languages-src.jar" descriptor="jetbrains.mps.devkit.bootstrap-languages.devkit" />
-      </module>
-    </echoxml>
-    <jar destfile="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.bootstrap-languages-src.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${base_dir}/core/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" prefix="module" />
-    </jar>
-    <jar destfile="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.bootstrap-languages.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.bootstrap-languages.jar.jtmp/module.xml" prefix="META-INF" />
-      <zipfileset dir="${base_dir}/core/devkits" includes="icons/**, resources/**" />
-    </jar>
-    <delete dir="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.bootstrap-languages.jar.jtmp" />
-  </target>
   <target name="pack.jetbrains.mps.execution.common">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />

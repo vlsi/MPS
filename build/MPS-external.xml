@@ -119,7 +119,6 @@
     <mkdir dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.runtime-src.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/languages/baseLanguage" />
     <mkdir dir="${deploy.dir}/MPS/languages/languageDesign" />
-    <mkdir dir="${deploy.dir}/MPS/languages/devkits" />
     <mkdir dir="${deploy.dir}/MPS/languages/execution" />
     <mkdir dir="${deploy.dir}/MPS/languages/make" />
     <mkdir dir="${deploy.dir}/MPS/languages/xml" />
@@ -135,6 +134,7 @@
     <mkdir dir="${deploy.dir}/MPS/languages/util/deprecated/xml" />
     <mkdir dir="${deploy.dir}/MPS/languages/util/deprecated" />
     <mkdir dir="${deploy.dir}/MPS/languages/util" />
+    <mkdir dir="${deploy.dir}/MPS/languages/devkits" />
     <mkdir dir="${deploy.dir}/MPS/languages" />
     <mkdir dir="${deploy.dir}/MPS/plugin" />
     <mkdir dir="${deploy.dir}/MPS/help-build.append.idea.version" />
@@ -677,10 +677,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.typesystem.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.dataFlow.pluginSolution" />
     <mkdir dir="${deploy.dir}/MPS/languages/languageDesign" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.devkit.general-purpose" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.devkit.language-design" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.devkit.bootstrap-languages" />
-    <mkdir dir="${deploy.dir}/MPS/languages/devkits" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.common" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.settings" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.util" />
@@ -773,6 +769,10 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.platform.conf" />
     <antcall target="MPS-languages.pack.collections_trove.runtime" />
     <mkdir dir="${deploy.dir}/MPS/languages/util" />
+    <copy file="${mps_home}/core/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" tofile="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" />
+    <copy file="${mps_home}/core/devkits/jetbrains.mps.devkit.general-purpose.devkit" tofile="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.general-purpose.devkit" />
+    <copy file="${mps_home}/core/devkits/jetbrains.mps.devkit.language-design.devkit" tofile="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.language-design.devkit" />
+    <mkdir dir="${deploy.dir}/MPS/languages/devkits" />
     <mkdir dir="${deploy.dir}/MPS/languages" />
     <copy todir="${deploy.dir}/MPS/plugin">
       <fileset dir="${mps_home}/plugin" excludes="**/*.java, " />
