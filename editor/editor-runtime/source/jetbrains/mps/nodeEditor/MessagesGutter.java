@@ -268,7 +268,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
             if (((EditorMessage) o1).getStatus() == ((EditorMessage) o2).getStatus()) {
               return getMessageStart(o1) - getMessageStart(o2);
             } else {
-              return ((EditorMessage) o1).getStatus().ordinal() - ((EditorMessage) o1).getStatus().ordinal();
+              return ((EditorMessage) o1).getStatus().ordinal() - ((EditorMessage) o2).getStatus().ordinal();
             }
           } else {
             return getMessageStart(o1) - getMessageStart(o2);
