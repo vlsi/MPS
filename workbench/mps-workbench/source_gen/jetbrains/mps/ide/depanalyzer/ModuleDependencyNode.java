@@ -85,7 +85,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
     for (IModule module : ListSequence.fromList(myModules)) {
       GlobalModuleDependenciesManager depManager = new GlobalModuleDependenciesManager(module);
       SetSequence.fromSet(reqModules).addSequence(CollectionSequence.fromCollection(depManager.getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE)));
-      SetSequence.fromSet(rtModules).addSequence(CollectionSequence.fromCollection(depManager.getModules(GlobalModuleDependenciesManager.Deptype.COMPILE)));
+      SetSequence.fromSet(rtModules).addSequence(CollectionSequence.fromCollection(depManager.getModules(GlobalModuleDependenciesManager.Deptype.EXECUTE)));
       SetSequence.fromSet(usedLanguages).addSequence(CollectionSequence.fromCollection(depManager.getUsedLanguages()));
     }
 
