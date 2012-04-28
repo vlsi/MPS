@@ -59,10 +59,10 @@ public class CommitUtil {
 
     // set new name parameter for refactoring to skip initial dialog 
     refactoringContext.setParameter("newName", newName);
-
+    final IRefactoring fRefactoring = refactoring.value;
     new Thread() {
       public void run() {
-        refactoringContext.setRefactoring(refactoring.value);
+        refactoringContext.setRefactoring(fRefactoring);
         RefactoringAccess.getInstance().getRefactoringFacade().executeInThread(refactoringContext);
       }
     }.start();
