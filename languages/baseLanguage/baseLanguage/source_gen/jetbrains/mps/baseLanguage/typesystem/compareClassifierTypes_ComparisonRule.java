@@ -28,7 +28,7 @@ public class compareClassifierTypes_ComparisonRule extends ComparisonRule_Runtim
         while (leftParam_it.hasNext() && rightParam_it.hasNext()) {
           leftParam_var = leftParam_it.next();
           rightParam_var = rightParam_it.next();
-          if (!(subtypingManager.isComparable(leftParam_var, rightParam_var, false))) {
+          if (!(subtypingManager.isComparable(leftParam_var, rightParam_var, true))) {
             return false;
           }
         }
