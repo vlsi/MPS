@@ -6,12 +6,12 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class BwfPathDeclaration_BehaviorDescriptor extends BwfProjectPart_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
-  public BwfPathDeclaration_BehaviorDescriptor() {
+public class BwfAntTaskDeclaration_BehaviorDescriptor extends BwfProjectPart_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
+  public BwfAntTaskDeclaration_BehaviorDescriptor() {
   }
 
   public int virtual_getPriority_2059109515400548718(SNode thisNode) {
-    return BwfPathDeclaration_Behavior.virtual_getPriority_2059109515400548718(thisNode);
+    return BwfAntTaskDeclaration_Behavior.virtual_getPriority_2059109515400548718(thisNode);
   }
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {
@@ -20,6 +20,6 @@ public class BwfPathDeclaration_BehaviorDescriptor extends BwfProjectPart_Behavi
 
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.build.workflow.structure.BwfPathDeclaration";
+    return "jetbrains.mps.build.workflow.structure.BwfAntTaskDeclaration";
   }
 }

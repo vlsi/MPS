@@ -340,6 +340,14 @@ public class QueriesGenerated {
     );
   }
 
+  public static Object propertyMacro_GetPropertyValue_703815700951902259(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode options = ((SNode) _context.getVariable("var:javaOpts"));
+    return (options != null ?
+      SPropertyOperations.getString(options, "compiler") :
+      null
+    );
+  }
+
   public static Object propertyMacro_GetPropertyValue_7926701909975671869(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildSource_JavaContentRoot"), "basePath", true)) + "/" + SPropertyOperations.getString(_context.getNode(), "relativePath");
   }

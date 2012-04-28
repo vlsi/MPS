@@ -12,16 +12,17 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.build.workflow.behavior.BwfPathDeclaration_Behavior;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.build.workflow.behavior.BwfJavaModule_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.build.workflow.generator.util.SubTaskOrderHelper;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.build.workflow.behavior.BwfProjectPart_Behavior;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -95,6 +96,18 @@ public class QueriesGenerated {
     return BwfPathDeclaration_Behavior.call_getPathId_6647099934207210775(_context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_2059109515400531396(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2059109515400531362(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "classname");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2059109515400531432(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BwfPathDeclaration_Behavior.call_getPathId_6647099934207210775(SLinkOperations.getTarget(_context.getNode(), "classpath", false));
+  }
+
   public static Object propertyMacro_GetPropertyValue_6647099934207210826(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BwfPathDeclaration_Behavior.call_getPathId_6647099934207210775(SLinkOperations.getTarget(_context.getNode(), "target", false));
   }
@@ -126,6 +139,13 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1659807394254658124(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), "heapSize") + "m";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2059109515400317575(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return (StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "compiler")) && SPropertyOperations.getString(_context.getNode(), "compiler").equals("IntelliJ") ?
+      "javac2" :
+      "javac"
+    );
   }
 
   public static Object propertyMacro_GetPropertyValue_1659807394254493229(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -167,6 +187,10 @@ public class QueriesGenerated {
     return StringUtils.isNotEmpty(((String) _context.getVariable("var:deps")));
   }
 
+  public static boolean ifMacro_Condition_2059109515400531495(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "classpath", false) != null);
+  }
+
   public static boolean ifMacro_Condition_6896005762093597671(final IOperationContext operationContext, final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parts", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -191,8 +215,42 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(_context.getNode(), "generateDebugInfo");
   }
 
+  public static boolean ifMacro_Condition_2059109515400349923(final IOperationContext operationContext, final IfMacroContext _context) {
+    return StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "compiler")) && !(SPropertyOperations.getString(_context.getNode(), "compiler").equals("IntelliJ"));
+  }
+
   public static boolean ifMacro_Condition_1659807394254493284(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "resources", true) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "resources", true), "elements", true)).isNotEmpty();
+  }
+
+  public static boolean ifMacro_Condition_2059109515400476889(final IOperationContext operationContext, final IfMacroContext _context) {
+    boolean result = ListSequence.fromList(SNodeOperations.getAllSiblings(_context.getNode(), false)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfJavaModule") && "IntelliJ".equals(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.build.workflow.structure.BwfJavaModule"), "compiler"));
+      }
+    });
+    if (result) {
+      if (!(ListSequence.fromList(SNodeOperations.getAllSiblings(_context.getNode(), false)).any(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfMacro") && "idea_home".equals(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.build.workflow.structure.BwfMacro"), "name"));
+        }
+      }))) {
+        _context.showErrorMessage(ListSequence.fromList(SNodeOperations.getAllSiblings(_context.getNode(), false)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfJavaModule") && "IntelliJ".equals(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.build.workflow.structure.BwfJavaModule"), "compiler"));
+          }
+        }).first(), "${idea_home} macro is required to use IntelliJ compiler");
+      }
+    }
+    return result;
+  }
+
+  public static boolean ifMacro_Condition_2059109515400527266(final IOperationContext operationContext, final IfMacroContext _context) {
+    return ListSequence.fromList(SNodeOperations.getAllSiblings(_context.getNode(), false)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfJavaModule") && "IntelliJ".equals(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.build.workflow.structure.BwfJavaModule"), "compiler"));
+      }
+    });
   }
 
   public static SNode sourceNodeQuery_5369202620937104487(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -246,35 +304,11 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1959471031855450829(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parts", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfMacro") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfMacroListImport");
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parts", true)).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return BwfProjectPart_Behavior.call_getPriority_2059109515400548718(it);
       }
-    });
-  }
-
-  public static Iterable sourceNodesQuery_6647099934207216814(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parts", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfPathDeclaration");
-      }
-    });
-  }
-
-  public static Iterable sourceNodesQuery_7385586609667649350(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parts", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfTask")) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfPathDeclaration")) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfMacro")) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfMacroListImport"));
-      }
-    });
-  }
-
-  public static Iterable sourceNodesQuery_6896005762093596094(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parts", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfTask");
-      }
-    });
+    }, true);
   }
 
   public static Iterable sourceNodesQuery_7926701909975490209(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -344,7 +378,7 @@ public class QueriesGenerated {
   }
 
   public static GeneratedMatchingPattern patternRule_Condition_6647099934207260021(final IOperationContext operationContext, final PatternRuleContext _context) {
-    GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a26();
+    GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a76();
     if (!(pattern.match(_context.getNode()))) {
       return null;
     }
@@ -352,7 +386,7 @@ public class QueriesGenerated {
   }
 
   public static GeneratedMatchingPattern patternRule_Condition_8654221991637509675(final IOperationContext operationContext, final PatternRuleContext _context) {
-    GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a36();
+    GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a86();
     if (!(pattern.match(_context.getNode()))) {
       return null;
     }
@@ -360,7 +394,7 @@ public class QueriesGenerated {
   }
 
   public static GeneratedMatchingPattern patternRule_Condition_7926701909975860432(final IOperationContext operationContext, final PatternRuleContext _context) {
-    GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a46();
+    GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a96();
     if (!(pattern.match(_context.getNode()))) {
       return null;
     }
@@ -368,7 +402,7 @@ public class QueriesGenerated {
   }
 
   public static GeneratedMatchingPattern patternRule_Condition_7926701909975928828(final IOperationContext operationContext, final PatternRuleContext _context) {
-    GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a56();
+    GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a07();
     if (!(pattern.match(_context.getNode()))) {
       return null;
     }
@@ -404,65 +438,65 @@ public class QueriesGenerated {
     return parts;
   }
 
-  public static class Pattern_x583g4_a0a0a26 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_x583g4_a0a0a76 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_pathvalue;
 
-    public Pattern_x583g4_a0a0a26() {
+    public Pattern_x583g4_a0a0a76() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a26;
-        nodeToMatch_QueriesGenerated_x583g4_a0a0a26 = nodeToMatch;
-        if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a26.getConceptFqName()))) {
+        SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a76;
+        nodeToMatch_QueriesGenerated_x583g4_a0a0a76 = nodeToMatch;
+        if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a76.getConceptFqName()))) {
           return false;
         }
-        if (!("src".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a26.getProperty("tagName")))) {
+        if (!("src".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a76.getProperty("tagName")))) {
           return false;
         }
         {
           String childRole_QueriesGenerated_x583g4_ = "content";
-          if (nodeToMatch_QueriesGenerated_x583g4_a0a0a26.getChildCount(childRole_QueriesGenerated_x583g4_) != 1) {
+          if (nodeToMatch_QueriesGenerated_x583g4_a0a0a76.getChildCount(childRole_QueriesGenerated_x583g4_) != 1) {
             return false;
           }
           {
-            SNode childVar_QueriesGenerated_x583g4_a0a0a0kc = nodeToMatch_QueriesGenerated_x583g4_a0a0a26.getChildren(childRole_QueriesGenerated_x583g4_).get(0);
+            SNode childVar_QueriesGenerated_x583g4_a0a0a0pc = nodeToMatch_QueriesGenerated_x583g4_a0a0a76.getChildren(childRole_QueriesGenerated_x583g4_).get(0);
             {
-              SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a0kc;
-              nodeToMatch_QueriesGenerated_x583g4_a0a0a0kc = childVar_QueriesGenerated_x583g4_a0a0a0kc;
-              if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0kc.getConceptFqName()))) {
+              SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a0pc;
+              nodeToMatch_QueriesGenerated_x583g4_a0a0a0pc = childVar_QueriesGenerated_x583g4_a0a0a0pc;
+              if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0pc.getConceptFqName()))) {
                 return false;
               }
-              if (!("true".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0kc.getProperty("shortEmptyNotation")))) {
+              if (!("true".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0pc.getProperty("shortEmptyNotation")))) {
                 return false;
               }
-              if (!("pathelement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0kc.getProperty("tagName")))) {
+              if (!("pathelement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0pc.getProperty("tagName")))) {
                 return false;
               }
               {
                 String childRole_QueriesGenerated_x583g4__0 = "attributes";
-                if (nodeToMatch_QueriesGenerated_x583g4_a0a0a0kc.getChildCount(childRole_QueriesGenerated_x583g4__0) != 1) {
+                if (nodeToMatch_QueriesGenerated_x583g4_a0a0a0pc.getChildCount(childRole_QueriesGenerated_x583g4__0) != 1) {
                   return false;
                 }
                 {
-                  SNode childVar_QueriesGenerated_x583g4_a0a0a0a26 = nodeToMatch_QueriesGenerated_x583g4_a0a0a0kc.getChildren(childRole_QueriesGenerated_x583g4__0).get(0);
+                  SNode childVar_QueriesGenerated_x583g4_a0a0a0a76 = nodeToMatch_QueriesGenerated_x583g4_a0a0a0pc.getChildren(childRole_QueriesGenerated_x583g4__0).get(0);
                   {
-                    SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a0a26;
-                    nodeToMatch_QueriesGenerated_x583g4_a0a0a0a26 = childVar_QueriesGenerated_x583g4_a0a0a0a26;
-                    if (!("jetbrains.mps.core.xml.structure.XmlAttribute".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a26.getConceptFqName()))) {
+                    SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a0a76;
+                    nodeToMatch_QueriesGenerated_x583g4_a0a0a0a76 = childVar_QueriesGenerated_x583g4_a0a0a0a76;
+                    if (!("jetbrains.mps.core.xml.structure.XmlAttribute".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a76.getConceptFqName()))) {
                       return false;
                     }
-                    if (!("path".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a26.getProperty("attrName")))) {
+                    if (!("path".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a76.getProperty("attrName")))) {
                       return false;
                     }
                     {
                       String childRole_QueriesGenerated_x583g4__1 = "value";
-                      if (nodeToMatch_QueriesGenerated_x583g4_a0a0a0a26.getChildCount(childRole_QueriesGenerated_x583g4__1) != 1) {
+                      if (nodeToMatch_QueriesGenerated_x583g4_a0a0a0a76.getChildCount(childRole_QueriesGenerated_x583g4__1) != 1) {
                         return false;
                       }
                       {
-                        SNode childVar_QueriesGenerated_x583g4_a0a0a0a0kc = nodeToMatch_QueriesGenerated_x583g4_a0a0a0a26.getChildren(childRole_QueriesGenerated_x583g4__1).get(0);
-                        this.patternVar_pathvalue = childVar_QueriesGenerated_x583g4_a0a0a0a0kc;
+                        SNode childVar_QueriesGenerated_x583g4_a0a0a0a0pc = nodeToMatch_QueriesGenerated_x583g4_a0a0a0a76.getChildren(childRole_QueriesGenerated_x583g4__1).get(0);
+                        this.patternVar_pathvalue = childVar_QueriesGenerated_x583g4_a0a0a0a0pc;
                       }
                     }
                   }
@@ -496,65 +530,65 @@ public class QueriesGenerated {
     }
   }
 
-  public static class Pattern_x583g4_a0a0a36 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_x583g4_a0a0a86 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_pathvalue;
 
-    public Pattern_x583g4_a0a0a36() {
+    public Pattern_x583g4_a0a0a86() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a36;
-        nodeToMatch_QueriesGenerated_x583g4_a0a0a36 = nodeToMatch;
-        if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a36.getConceptFqName()))) {
+        SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a86;
+        nodeToMatch_QueriesGenerated_x583g4_a0a0a86 = nodeToMatch;
+        if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a86.getConceptFqName()))) {
           return false;
         }
-        if (!("path".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a36.getProperty("tagName")))) {
+        if (!("path".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a86.getProperty("tagName")))) {
           return false;
         }
         {
           String childRole_QueriesGenerated_x583g4__2 = "content";
-          if (nodeToMatch_QueriesGenerated_x583g4_a0a0a36.getChildCount(childRole_QueriesGenerated_x583g4__2) != 1) {
+          if (nodeToMatch_QueriesGenerated_x583g4_a0a0a86.getChildCount(childRole_QueriesGenerated_x583g4__2) != 1) {
             return false;
           }
           {
-            SNode childVar_QueriesGenerated_x583g4_a0a0a0lc = nodeToMatch_QueriesGenerated_x583g4_a0a0a36.getChildren(childRole_QueriesGenerated_x583g4__2).get(0);
+            SNode childVar_QueriesGenerated_x583g4_a0a0a0qc = nodeToMatch_QueriesGenerated_x583g4_a0a0a86.getChildren(childRole_QueriesGenerated_x583g4__2).get(0);
             {
-              SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a0lc;
-              nodeToMatch_QueriesGenerated_x583g4_a0a0a0lc = childVar_QueriesGenerated_x583g4_a0a0a0lc;
-              if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0lc.getConceptFqName()))) {
+              SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a0qc;
+              nodeToMatch_QueriesGenerated_x583g4_a0a0a0qc = childVar_QueriesGenerated_x583g4_a0a0a0qc;
+              if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0qc.getConceptFqName()))) {
                 return false;
               }
-              if (!("true".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0lc.getProperty("shortEmptyNotation")))) {
+              if (!("true".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0qc.getProperty("shortEmptyNotation")))) {
                 return false;
               }
-              if (!("pathelement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0lc.getProperty("tagName")))) {
+              if (!("pathelement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0qc.getProperty("tagName")))) {
                 return false;
               }
               {
                 String childRole_QueriesGenerated_x583g4__3 = "attributes";
-                if (nodeToMatch_QueriesGenerated_x583g4_a0a0a0lc.getChildCount(childRole_QueriesGenerated_x583g4__3) != 1) {
+                if (nodeToMatch_QueriesGenerated_x583g4_a0a0a0qc.getChildCount(childRole_QueriesGenerated_x583g4__3) != 1) {
                   return false;
                 }
                 {
-                  SNode childVar_QueriesGenerated_x583g4_a0a0a0a36 = nodeToMatch_QueriesGenerated_x583g4_a0a0a0lc.getChildren(childRole_QueriesGenerated_x583g4__3).get(0);
+                  SNode childVar_QueriesGenerated_x583g4_a0a0a0a86 = nodeToMatch_QueriesGenerated_x583g4_a0a0a0qc.getChildren(childRole_QueriesGenerated_x583g4__3).get(0);
                   {
-                    SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a0a36;
-                    nodeToMatch_QueriesGenerated_x583g4_a0a0a0a36 = childVar_QueriesGenerated_x583g4_a0a0a0a36;
-                    if (!("jetbrains.mps.core.xml.structure.XmlAttribute".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a36.getConceptFqName()))) {
+                    SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a0a86;
+                    nodeToMatch_QueriesGenerated_x583g4_a0a0a0a86 = childVar_QueriesGenerated_x583g4_a0a0a0a86;
+                    if (!("jetbrains.mps.core.xml.structure.XmlAttribute".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a86.getConceptFqName()))) {
                       return false;
                     }
-                    if (!("location".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a36.getProperty("attrName")))) {
+                    if (!("location".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a86.getProperty("attrName")))) {
                       return false;
                     }
                     {
                       String childRole_QueriesGenerated_x583g4__4 = "value";
-                      if (nodeToMatch_QueriesGenerated_x583g4_a0a0a0a36.getChildCount(childRole_QueriesGenerated_x583g4__4) != 1) {
+                      if (nodeToMatch_QueriesGenerated_x583g4_a0a0a0a86.getChildCount(childRole_QueriesGenerated_x583g4__4) != 1) {
                         return false;
                       }
                       {
-                        SNode childVar_QueriesGenerated_x583g4_a0a0a0a0lc = nodeToMatch_QueriesGenerated_x583g4_a0a0a0a36.getChildren(childRole_QueriesGenerated_x583g4__4).get(0);
-                        this.patternVar_pathvalue = childVar_QueriesGenerated_x583g4_a0a0a0a0lc;
+                        SNode childVar_QueriesGenerated_x583g4_a0a0a0a0qc = nodeToMatch_QueriesGenerated_x583g4_a0a0a0a86.getChildren(childRole_QueriesGenerated_x583g4__4).get(0);
+                        this.patternVar_pathvalue = childVar_QueriesGenerated_x583g4_a0a0a0a0qc;
                       }
                     }
                   }
@@ -588,65 +622,65 @@ public class QueriesGenerated {
     }
   }
 
-  public static class Pattern_x583g4_a0a0a46 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_x583g4_a0a0a96 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_pathvalue;
 
-    public Pattern_x583g4_a0a0a46() {
+    public Pattern_x583g4_a0a0a96() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a46;
-        nodeToMatch_QueriesGenerated_x583g4_a0a0a46 = nodeToMatch;
-        if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a46.getConceptFqName()))) {
+        SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a96;
+        nodeToMatch_QueriesGenerated_x583g4_a0a0a96 = nodeToMatch;
+        if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a96.getConceptFqName()))) {
           return false;
         }
-        if (!("classpath".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a46.getProperty("tagName")))) {
+        if (!("classpath".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a96.getProperty("tagName")))) {
           return false;
         }
         {
           String childRole_QueriesGenerated_x583g4__5 = "content";
-          if (nodeToMatch_QueriesGenerated_x583g4_a0a0a46.getChildCount(childRole_QueriesGenerated_x583g4__5) != 1) {
+          if (nodeToMatch_QueriesGenerated_x583g4_a0a0a96.getChildCount(childRole_QueriesGenerated_x583g4__5) != 1) {
             return false;
           }
           {
-            SNode childVar_QueriesGenerated_x583g4_a0a0a0mc = nodeToMatch_QueriesGenerated_x583g4_a0a0a46.getChildren(childRole_QueriesGenerated_x583g4__5).get(0);
+            SNode childVar_QueriesGenerated_x583g4_a0a0a0rc = nodeToMatch_QueriesGenerated_x583g4_a0a0a96.getChildren(childRole_QueriesGenerated_x583g4__5).get(0);
             {
-              SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a0mc;
-              nodeToMatch_QueriesGenerated_x583g4_a0a0a0mc = childVar_QueriesGenerated_x583g4_a0a0a0mc;
-              if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0mc.getConceptFqName()))) {
+              SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a0rc;
+              nodeToMatch_QueriesGenerated_x583g4_a0a0a0rc = childVar_QueriesGenerated_x583g4_a0a0a0rc;
+              if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0rc.getConceptFqName()))) {
                 return false;
               }
-              if (!("true".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0mc.getProperty("shortEmptyNotation")))) {
+              if (!("true".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0rc.getProperty("shortEmptyNotation")))) {
                 return false;
               }
-              if (!("pathelement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0mc.getProperty("tagName")))) {
+              if (!("pathelement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0rc.getProperty("tagName")))) {
                 return false;
               }
               {
                 String childRole_QueriesGenerated_x583g4__6 = "attributes";
-                if (nodeToMatch_QueriesGenerated_x583g4_a0a0a0mc.getChildCount(childRole_QueriesGenerated_x583g4__6) != 1) {
+                if (nodeToMatch_QueriesGenerated_x583g4_a0a0a0rc.getChildCount(childRole_QueriesGenerated_x583g4__6) != 1) {
                   return false;
                 }
                 {
-                  SNode childVar_QueriesGenerated_x583g4_a0a0a0a46 = nodeToMatch_QueriesGenerated_x583g4_a0a0a0mc.getChildren(childRole_QueriesGenerated_x583g4__6).get(0);
+                  SNode childVar_QueriesGenerated_x583g4_a0a0a0a96 = nodeToMatch_QueriesGenerated_x583g4_a0a0a0rc.getChildren(childRole_QueriesGenerated_x583g4__6).get(0);
                   {
-                    SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a0a46;
-                    nodeToMatch_QueriesGenerated_x583g4_a0a0a0a46 = childVar_QueriesGenerated_x583g4_a0a0a0a46;
-                    if (!("jetbrains.mps.core.xml.structure.XmlAttribute".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a46.getConceptFqName()))) {
+                    SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a0a96;
+                    nodeToMatch_QueriesGenerated_x583g4_a0a0a0a96 = childVar_QueriesGenerated_x583g4_a0a0a0a96;
+                    if (!("jetbrains.mps.core.xml.structure.XmlAttribute".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a96.getConceptFqName()))) {
                       return false;
                     }
-                    if (!("path".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a46.getProperty("attrName")))) {
+                    if (!("path".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a96.getProperty("attrName")))) {
                       return false;
                     }
                     {
                       String childRole_QueriesGenerated_x583g4__7 = "value";
-                      if (nodeToMatch_QueriesGenerated_x583g4_a0a0a0a46.getChildCount(childRole_QueriesGenerated_x583g4__7) != 1) {
+                      if (nodeToMatch_QueriesGenerated_x583g4_a0a0a0a96.getChildCount(childRole_QueriesGenerated_x583g4__7) != 1) {
                         return false;
                       }
                       {
-                        SNode childVar_QueriesGenerated_x583g4_a0a0a0a0mc = nodeToMatch_QueriesGenerated_x583g4_a0a0a0a46.getChildren(childRole_QueriesGenerated_x583g4__7).get(0);
-                        this.patternVar_pathvalue = childVar_QueriesGenerated_x583g4_a0a0a0a0mc;
+                        SNode childVar_QueriesGenerated_x583g4_a0a0a0a0rc = nodeToMatch_QueriesGenerated_x583g4_a0a0a0a96.getChildren(childRole_QueriesGenerated_x583g4__7).get(0);
+                        this.patternVar_pathvalue = childVar_QueriesGenerated_x583g4_a0a0a0a0rc;
                       }
                     }
                   }
@@ -680,65 +714,65 @@ public class QueriesGenerated {
     }
   }
 
-  public static class Pattern_x583g4_a0a0a56 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_x583g4_a0a0a07 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_idvalue;
 
-    public Pattern_x583g4_a0a0a56() {
+    public Pattern_x583g4_a0a0a07() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a56;
-        nodeToMatch_QueriesGenerated_x583g4_a0a0a56 = nodeToMatch;
-        if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a56.getConceptFqName()))) {
+        SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a07;
+        nodeToMatch_QueriesGenerated_x583g4_a0a0a07 = nodeToMatch;
+        if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a07.getConceptFqName()))) {
           return false;
         }
-        if (!("classpath".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a56.getProperty("tagName")))) {
+        if (!("classpath".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a07.getProperty("tagName")))) {
           return false;
         }
         {
           String childRole_QueriesGenerated_x583g4__8 = "content";
-          if (nodeToMatch_QueriesGenerated_x583g4_a0a0a56.getChildCount(childRole_QueriesGenerated_x583g4__8) != 1) {
+          if (nodeToMatch_QueriesGenerated_x583g4_a0a0a07.getChildCount(childRole_QueriesGenerated_x583g4__8) != 1) {
             return false;
           }
           {
-            SNode childVar_QueriesGenerated_x583g4_a0a0a0nc = nodeToMatch_QueriesGenerated_x583g4_a0a0a56.getChildren(childRole_QueriesGenerated_x583g4__8).get(0);
+            SNode childVar_QueriesGenerated_x583g4_a0a0a0sc = nodeToMatch_QueriesGenerated_x583g4_a0a0a07.getChildren(childRole_QueriesGenerated_x583g4__8).get(0);
             {
-              SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a0nc;
-              nodeToMatch_QueriesGenerated_x583g4_a0a0a0nc = childVar_QueriesGenerated_x583g4_a0a0a0nc;
-              if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0nc.getConceptFqName()))) {
+              SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a0sc;
+              nodeToMatch_QueriesGenerated_x583g4_a0a0a0sc = childVar_QueriesGenerated_x583g4_a0a0a0sc;
+              if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0sc.getConceptFqName()))) {
                 return false;
               }
-              if (!("true".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0nc.getProperty("shortEmptyNotation")))) {
+              if (!("true".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0sc.getProperty("shortEmptyNotation")))) {
                 return false;
               }
-              if (!("path".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0nc.getProperty("tagName")))) {
+              if (!("path".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0sc.getProperty("tagName")))) {
                 return false;
               }
               {
                 String childRole_QueriesGenerated_x583g4__9 = "attributes";
-                if (nodeToMatch_QueriesGenerated_x583g4_a0a0a0nc.getChildCount(childRole_QueriesGenerated_x583g4__9) != 1) {
+                if (nodeToMatch_QueriesGenerated_x583g4_a0a0a0sc.getChildCount(childRole_QueriesGenerated_x583g4__9) != 1) {
                   return false;
                 }
                 {
-                  SNode childVar_QueriesGenerated_x583g4_a0a0a0a56 = nodeToMatch_QueriesGenerated_x583g4_a0a0a0nc.getChildren(childRole_QueriesGenerated_x583g4__9).get(0);
+                  SNode childVar_QueriesGenerated_x583g4_a0a0a0a07 = nodeToMatch_QueriesGenerated_x583g4_a0a0a0sc.getChildren(childRole_QueriesGenerated_x583g4__9).get(0);
                   {
-                    SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a0a56;
-                    nodeToMatch_QueriesGenerated_x583g4_a0a0a0a56 = childVar_QueriesGenerated_x583g4_a0a0a0a56;
-                    if (!("jetbrains.mps.core.xml.structure.XmlAttribute".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a56.getConceptFqName()))) {
+                    SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a0a07;
+                    nodeToMatch_QueriesGenerated_x583g4_a0a0a0a07 = childVar_QueriesGenerated_x583g4_a0a0a0a07;
+                    if (!("jetbrains.mps.core.xml.structure.XmlAttribute".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a07.getConceptFqName()))) {
                       return false;
                     }
-                    if (!("refid".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a56.getProperty("attrName")))) {
+                    if (!("refid".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a07.getProperty("attrName")))) {
                       return false;
                     }
                     {
                       String childRole_QueriesGenerated_x583g4__10 = "value";
-                      if (nodeToMatch_QueriesGenerated_x583g4_a0a0a0a56.getChildCount(childRole_QueriesGenerated_x583g4__10) != 1) {
+                      if (nodeToMatch_QueriesGenerated_x583g4_a0a0a0a07.getChildCount(childRole_QueriesGenerated_x583g4__10) != 1) {
                         return false;
                       }
                       {
-                        SNode childVar_QueriesGenerated_x583g4_a0a0a0a0nc = nodeToMatch_QueriesGenerated_x583g4_a0a0a0a56.getChildren(childRole_QueriesGenerated_x583g4__10).get(0);
-                        this.patternVar_idvalue = childVar_QueriesGenerated_x583g4_a0a0a0a0nc;
+                        SNode childVar_QueriesGenerated_x583g4_a0a0a0a0sc = nodeToMatch_QueriesGenerated_x583g4_a0a0a0a07.getChildren(childRole_QueriesGenerated_x583g4__10).get(0);
+                        this.patternVar_idvalue = childVar_QueriesGenerated_x583g4_a0a0a0a0sc;
                       }
                     }
                   }
