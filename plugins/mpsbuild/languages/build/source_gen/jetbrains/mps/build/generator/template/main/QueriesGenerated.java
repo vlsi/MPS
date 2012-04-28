@@ -37,10 +37,10 @@ import jetbrains.mps.build.util.JavaModulesClosure;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
+import java.util.Collections;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import java.util.Collections;
 import jetbrains.mps.build.generator.util.JavaExternalLibraryHelper;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.build.util.GenerationUtil;
@@ -834,6 +834,14 @@ public class QueriesGenerated {
     });
   }
 
+  public static boolean ifMacro_Condition_6977615362525734794(final IOperationContext operationContext, final IfMacroContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "handlers", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_CopyMapper");
+      }
+    }).count() > 1;
+  }
+
   public static boolean ifMacro_Condition_9184644532456968222(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
   }
@@ -1029,6 +1037,26 @@ public class QueriesGenerated {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_CopyFilter");
       }
     });
+  }
+
+  public static Iterable sourceNodesQuery_6977615362525734877(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "handlers", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_CopyMapper");
+      }
+    });
+  }
+
+  public static Iterable sourceNodesQuery_6977615362525734897(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    List<SNode> list = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "handlers", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_CopyMapper");
+      }
+    }).toListSequence();
+    return ((int) ListSequence.fromList(list).count() == 1 ?
+      list :
+      Collections.<SNode>emptyList()
+    );
   }
 
   public static Iterable sourceNodesQuery_7926701909975671841(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
