@@ -37,7 +37,7 @@
     <unitInfo nodeId="6503539749405386437" fileName="buildCoreEx.xml" startLine="1" startPosition="0" endLine="418" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildCoreEx" />
   </root>
   <root nodeId="6977615362525216882">
-    <unitInfo nodeId="6977615362525216882" fileName="buildPluginTests.xml" startLine="1" startPosition="0" endLine="137" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildPluginTests" />
+    <unitInfo nodeId="6977615362525216882" fileName="buildPluginTests.xml" startLine="1" startPosition="0" endLine="144" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildPluginTests" />
   </root>
   <root nodeId="7926701909975931624">
     <unitInfo nodeId="7926701909975931624" fileName="buildCore.xml" startLine="1" startPosition="0" endLine="5363" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildCore" />

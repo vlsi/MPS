@@ -66,11 +66,15 @@
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${home.idea_ce}"/>
     </ant>
-    <ant antfile="../build/buildPlugin.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="buildPlugin.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${home.idea_ce}"/>
     </ant>
-    <ant antfile="../build/buildPluginDist.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="buildPluginTests.xml" inheritAll="false" useNativeBasedir="true">
+      <property name="build.dir" location="${build.home}"/>
+      <property name="idea_home" location="${home.idea_ce}"/>
+    </ant>
+    <ant antfile="buildPluginDist.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${home.idea_ce}"/>
       <property name="plugin.version" value="${plugin.version}"/>
