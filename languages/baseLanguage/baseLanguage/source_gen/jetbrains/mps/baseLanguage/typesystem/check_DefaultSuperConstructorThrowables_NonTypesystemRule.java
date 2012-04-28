@@ -11,7 +11,9 @@ import jetbrains.mps.baseLanguage.behavior.ConstructorDeclaration_Behavior;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_DefaultSuperConstructorThrowables_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -22,8 +24,19 @@ public class check_DefaultSuperConstructorThrowables_NonTypesystemRule extends A
     if (ConstructorDeclaration_Behavior.call_containsImplicitSuperConstructorCall_7152041109751551503(constructorDeclaration)) {
       SNode superConstructor = ConstructorDeclaration_Behavior.call_getSuperDefaultConstructor_7152041109751601013(constructorDeclaration);
       if (superConstructor != null) {
-        Set<SNode> throwables = SetSequence.fromSetWithValues(new HashSet<SNode>(), SLinkOperations.getTargets(superConstructor, "throwsItem", true));
-        RulesFunctions_BaseLanguage.check(typeCheckingContext, throwables, SLinkOperations.getTarget(constructorDeclaration, "body", true), "uncaught exceptions in super constructor:");
+        Set<SNode> throwables = SetSequence.fromSet(new HashSet<SNode>());
+        for (SNode superThrowable : ListSequence.fromList(SLinkOperations.getTargets(superConstructor, "throwsItem", true))) {
+          boolean toAdd = true;
+          for (SNode throwable : ListSequence.fromList(SLinkOperations.getTargets(constructorDeclaration, "throwsItem", true))) {
+            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(superThrowable, throwable)) {
+              toAdd = false;
+            }
+          }
+          if (toAdd) {
+            SetSequence.fromSet(throwables).addElement(superThrowable);
+          }
+        }
+        RulesFunctions_BaseLanguage.check(typeCheckingContext, throwables, SLinkOperations.getTarget(constructorDeclaration, "body", true), "Unhandled exceptions in super constructor:");
       }
     }
   }
