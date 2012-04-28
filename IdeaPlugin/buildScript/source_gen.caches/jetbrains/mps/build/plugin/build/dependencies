@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.build.plugin.build.buildBuild" file="buildBuild.xml" />
   <dependency className="jetbrains.mps.build.plugin.build.buildCore" file="buildCore.xml" />
+  <dependency className="jetbrains.mps.build.plugin.build.buildCoreEx" file="buildCoreEx.xml" />
   <dependency className="jetbrains.mps.build.plugin.build.buildDebuggerPlugin" file="buildDebuggerPlugin.xml" />
   <dependency className="jetbrains.mps.build.plugin.build.buildDistribution" file="buildDistribution.xml" />
   <dependency className="jetbrains.mps.build.plugin.build.buildExecution" file="buildExecution.xml" />

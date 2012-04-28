@@ -770,7 +770,7 @@
                     <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4102882025198635371">
                       <node role="expression" roleId="tpee.1068580123156" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="4102882025198635447">
                         <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4102882025198635451">
-                          <property name="value" nameId="tpee.1070475926801" value="**/*.png" />
+                          <property name="value" nameId="tpee.1070475926801" value="**/*.png, **/trace.info" />
                         </node>
                         <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4102882025198635452">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4102882025198635437" resolveInfo="value" />
