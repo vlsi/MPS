@@ -15,7 +15,7 @@
   </target>
   
   <target name="buildDependents">
-    <ant antfile="build/buildPlugin.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="IdeaPlugin/buildPlugin.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies" />
