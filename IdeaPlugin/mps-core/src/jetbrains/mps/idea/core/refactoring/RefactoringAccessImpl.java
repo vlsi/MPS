@@ -26,6 +26,7 @@ import jetbrains.mps.ide.platform.refactoring.RefactoringFacade;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.idea.core.ui.ModelOrNodeChooser;
 import jetbrains.mps.idea.core.ui.RefactoringViewItemImpl;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
@@ -79,5 +80,11 @@ public class RefactoringAccessImpl extends RefactoringAccess implements Applicat
       RefactoringViewItemImpl refactoringViewItem = new RefactoringViewItemImpl();
       refactoringViewItem.showRefactoringView(project,callback,searchResults,hasModelsToGenerate,name);
     }
+
+  @Override
+  public void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
+    RefactoringViewItemImpl refactoringViewItem = new RefactoringViewItemImpl();
+    refactoringViewItem.showRefactoringView(refactoringContext,callback,searchResults,hasModelsToGenerate);
+  }
 
 }

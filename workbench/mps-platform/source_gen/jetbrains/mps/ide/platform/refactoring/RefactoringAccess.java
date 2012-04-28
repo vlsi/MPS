@@ -6,6 +6,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
 
 public abstract class RefactoringAccess {
   private static RefactoringAccess ourInstance;
@@ -20,6 +21,8 @@ public abstract class RefactoringAccess {
   public abstract ModelElementTargetChooser createTargetChooser(Project project, SModelDescriptor model);
 
   public abstract void showRefactoringView(Project project, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name);
+
+  public abstract void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name);
 
   public static RefactoringAccess getInstance() {
     return ourInstance;

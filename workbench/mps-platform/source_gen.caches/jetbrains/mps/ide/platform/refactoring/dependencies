@@ -53,6 +53,7 @@
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringFacade" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringViewAction" />
+    <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
@@ -130,6 +131,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.refactoring.RefactoringOptionsDialog" file="RefactoringOptionsDialog.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.awt.GridBagConstraints" />

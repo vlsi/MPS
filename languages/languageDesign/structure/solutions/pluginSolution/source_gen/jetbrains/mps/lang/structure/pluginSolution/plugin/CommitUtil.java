@@ -62,8 +62,8 @@ public class CommitUtil {
     final IRefactoring fRefactoring = refactoring.value;
     new Thread() {
       public void run() {
-        refactoringContext.setRefactoring(fRefactoring);
-        RefactoringAccess.getInstance().getRefactoringFacade().executeInThread(refactoringContext);
+        refactoringContext.setRefactoring(refactoring.value);
+        RefactoringAccess.getInstance().getRefactoringFacade().execute(refactoringContext);
       }
     }.start();
   }

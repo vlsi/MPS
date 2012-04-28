@@ -26,14 +26,21 @@ import com.intellij.usages.*;
 import com.intellij.usages.rules.PsiElementUsage;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.platform.refactoring.RefactoringOptionsDialog;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SNode;
 
 import java.util.*;
 
 public class RefactoringViewItemImpl implements RefactoringViewItem {
   private UsageView usageView;
+  private Project myProject;
+  private RefactoringContext myRefactoringContext;
+  private boolean myDoesGenerateModels;
 
 
   @Override
@@ -42,12 +49,22 @@ public class RefactoringViewItemImpl implements RefactoringViewItem {
   }
 
   public void showRefactoringView(Project project, final RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
-    UsageViewManager viewManager = UsageViewManager.getInstance(project);
-    Set<UsageTarget> usageTargets = new LinkedHashSet<UsageTarget>();
+    myProject = project;
+    init(callback, searchResults, name, hasModelsToGenerate);
+  }
 
+  public void showRefactoringView(RefactoringContext refactoringContext, final RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate) {
+    myRefactoringContext = refactoringContext;
+    myProject = ProjectHelper.toIdeaProject(refactoringContext.getSelectedProject());
+    init(callback, searchResults, refactoringContext.getRefactoring().getUserFriendlyName(),hasModelsToGenerate);
+  }
+
+  private void init(final RefactoringViewAction callback, SearchResults searchResults, String name, final boolean hasModelsToGenerate) {
+    Set<UsageTarget> usageTargets = new LinkedHashSet<UsageTarget>();
+    UsageViewManager viewManager = UsageViewManager.getInstance(myProject);
     for (Object searchedNode : searchResults.getAliveNodes()) {
       if (searchedNode instanceof SNode){
-        usageTargets.add(new NodeUsageTarget((SNode) searchedNode, project));
+        usageTargets.add(new NodeUsageTarget((SNode) searchedNode, myProject));
       }
     }
 
@@ -55,7 +72,7 @@ public class RefactoringViewItemImpl implements RefactoringViewItem {
     for (SearchResult searchResult: (List<SearchResult>)searchResults.getAliveResults()){
       Object usage =  searchResult.getObject();
       if (usage instanceof SNode) {
-        usages.add(new NodeUsage((SNode) usage, project));
+        usages.add(new NodeUsage((SNode) usage, myProject));
       }
     }
 
@@ -71,6 +88,26 @@ public class RefactoringViewItemImpl implements RefactoringViewItem {
         callback.performAction(RefactoringViewItemImpl.this);
       }
     }, name, "", RefactoringBundle.message("usageView.doAction"));
+
+    myDoesGenerateModels = hasModelsToGenerate;
+    if (myDoesGenerateModels || myRefactoringContext.getRefactoring() instanceof ILoggableRefactoring){
+      usageView.addButtonToLowerPane(new Runnable() {
+        @Override
+        public void run() {
+          showRefactoringOptions(hasModelsToGenerate);
+        }
+      }, "Set Refactoring Options");
+    }
+
+  }
+
+  private void showRefactoringOptions(boolean hasModelsToGenerate){
+    RefactoringOptionsDialog dialog = new RefactoringOptionsDialog(myProject, myRefactoringContext, myRefactoringContext.getRefactoring(), hasModelsToGenerate, myDoesGenerateModels);
+    dialog.show();
+    boolean cancelled = dialog.isCancelled();
+    if (!cancelled){
+      myDoesGenerateModels = myRefactoringContext.getDoesGenerateModels();
+    }
   }
 
   private static UsageViewPresentation createPresentation(final Usage[] usages) {
