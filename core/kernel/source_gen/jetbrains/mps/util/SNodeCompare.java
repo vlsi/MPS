@@ -35,12 +35,12 @@ public class SNodeCompare {
   private static boolean nodeReferencesEquals(SNode a, SNode b) {
     final Map<String, SReference> aMap = MapSequence.fromMap(new HashMap<String, SReference>());
     final Map<String, SReference> bMap = MapSequence.fromMap(new HashMap<String, SReference>());
-    Sequence.fromIterable(SNodeOperations.getReferences(a)).visitAll(new IVisitor<SReference>() {
+    Sequence.fromIterable(SNodeOperations.getReferences((SNode) a)).visitAll(new IVisitor<SReference>() {
       public void visit(SReference ref) {
         MapSequence.fromMap(aMap).put(SLinkOperations.getRole(ref), ref);
       }
     });
-    Sequence.fromIterable(SNodeOperations.getReferences(b)).visitAll(new IVisitor<SReference>() {
+    Sequence.fromIterable(SNodeOperations.getReferences((SNode) b)).visitAll(new IVisitor<SReference>() {
       public void visit(SReference ref) {
         MapSequence.fromMap(bMap).put(SLinkOperations.getRole(ref), ref);
       }
