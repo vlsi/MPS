@@ -18,6 +18,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -45,7 +47,9 @@ public class IdeaInitializerDescriptor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_bmlzqh_i0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_bmlzqh_j0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_bmlzqh_k0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_bmlzqh_l0(editorContext, node));
+    if (renderingCondition_bmlzqh_a11a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_bmlzqh_l0(editorContext, node));
+    }
     editorCell.addEditorCell(this.createConstant_bmlzqh_m0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_bmlzqh_n0(editorContext, node));
     return editorCell;
@@ -464,6 +468,10 @@ public class IdeaInitializerDescriptor_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private static boolean renderingCondition_bmlzqh_a11a(SNode node, EditorContext editorContext, IScope scope) {
+    return InternalFlag.isInternalMode();
   }
 
   private static class dependencyListHandler_bmlzqh_b1i0 extends RefNodeListHandler {
