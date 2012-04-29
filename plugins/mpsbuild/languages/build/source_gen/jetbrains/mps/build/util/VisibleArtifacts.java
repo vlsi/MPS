@@ -93,8 +93,15 @@ public class VisibleArtifacts {
       for (SNode child : SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"), "children", true)) {
         collectInLayout(node, child);
       }
+    } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_ImportContent")) {
+      SNode target = SNodeOperations.as(toOriginalNode(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildLayout_ImportContent"), "target", false)), "jetbrains.mps.build.structure.BuildLayout_AbstractContainer");
+      if (target != null) {
+        for (SNode child : ListSequence.fromList(SLinkOperations.getTargets(target, "children", true))) {
+          collectInLayout(parent, child);
+        }
+      }
     } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_Import")) {
-      SNode target = SNodeOperations.as(toOriginalNode(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildLayout_Import"), "target", false)), "jetbrains.mps.build.structure.BuildLayout_NamedContainer");
+      SNode target = SNodeOperations.as(toOriginalNode(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildLayout_Import"), "target", false)), "jetbrains.mps.build.structure.BuildLayout_Node");
       if (target != null) {
         collectInLayout(parent, target);
       }

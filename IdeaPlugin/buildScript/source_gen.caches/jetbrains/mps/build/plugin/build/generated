@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-a4ma09le6xv1i2h3uvx25q16f46rxkz">
+<dependencies version="2" modelHash="5isgh1ynk2grjib3kwzm3w6qsdfgkph">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" hash="ev12bd8o8pu5f4ayoalwrka50u3xpij" />
@@ -174,7 +174,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="buildCoreEx.xml" />
   </source>
-  <source id="6977615362525216882" name="buildPluginTests" hash="-5v16pj0kbq9h5858c6y1ok1612zd1z6">
+  <source id="6977615362525216882" name="buildPluginTests" hash="9ffwnqtlnrmanumsenxhvwn46rz25eb">
     <dep root="5148601452480491524" />
     <dep root="7926701909975931624" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />

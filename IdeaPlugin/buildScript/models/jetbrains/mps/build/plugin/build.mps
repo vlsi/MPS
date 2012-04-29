@@ -12969,9 +12969,6 @@
         <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="6977615362525216886" resolveInfo="idea_home" />
       </node>
     </node>
-    <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="6977615362525406320">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="buildCore" />
-    </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="6977615362525406319">
       <link role="script" roleId="3ior.5617550519002745380" targetNodeId="5148601452480491524" resolveInfo="buildPlugin" />
     </node>
