@@ -19,5 +19,8 @@
       <implementation-class>jetbrains.mps.ide.migration.migration25.Migration25_PluginInitializer</implementation-class>
     </component>
   </application-components>
-    
+
+  <extensions defaultExtensionNs="com.intellij">
+    <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"></errorHandler>
+  </extensions>
 </idea-plugin>

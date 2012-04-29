@@ -57,5 +57,6 @@
   <extensions defaultExtensionNs="com.intellij">
     <debugger.positionManagerFactory implementation="jetbrains.mps.idea.debugger.MpsPositionManagerFactory"/>
     <fileBasedIndex implementation="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer"/>
+    <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
   </extensions>
 </idea-plugin>
