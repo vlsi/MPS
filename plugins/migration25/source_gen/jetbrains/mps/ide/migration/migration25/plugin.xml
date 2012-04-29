@@ -20,4 +20,7 @@
     </component>
   </application-components>
     
+  <extensions defaultExtensionNs="com.intellij">
+    <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"></errorHandler>
+  </extensions>
 </idea-plugin>
