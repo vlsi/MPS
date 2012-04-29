@@ -28,7 +28,7 @@
     </fileset>
   </path>
 
-  <target name="prepare">
+  <target name="prepare" depends="buildCore">
     <delete dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/lib" flatten="true">
@@ -38,7 +38,9 @@
       </resources>
     </copy>
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/languages"/>
-    <!-- TODO build languages -->
+    <copy todir="${base_dir}/IdeaPlugin/mps-core/languages">
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildCore/mps-core/languages"/>
+    </copy>
   </target>
 
   <target name="clean">
