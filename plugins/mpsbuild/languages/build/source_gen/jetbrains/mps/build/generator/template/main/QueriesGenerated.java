@@ -514,7 +514,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5610619299013114890(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((String) _context.getVariable("var:targetLocation"));
+    return ((Tuples._2<String, String>) _context.getVariable("var:targetLocation"))._0();
   }
 
   public static Object propertyMacro_GetPropertyValue_5610619299013114897(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -525,6 +525,10 @@ public class QueriesGenerated {
       _context.showErrorMessage(_context.getNode(), "cannot import abstract element, should be file or folder");
     }
     return "dir";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6684802082773280544(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((Tuples._2<String, String>) _context.getVariable("var:targetLocation"))._1();
   }
 
   public static Object propertyMacro_GetPropertyValue_5610619299013115002(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -913,6 +917,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_6520682027041201801(final IOperationContext operationContext, final IfMacroContext _context) {
     return Sequence.fromIterable(((Tuples._2<Iterable<SNode>, String>) _context.getVariable("var:depsAndBasePath"))._0()).isNotEmpty();
+  }
+
+  public static boolean ifMacro_Condition_6684802082773279700(final IOperationContext operationContext, final IfMacroContext _context) {
+    return ((Tuples._2<String, String>) _context.getVariable("var:targetLocation"))._1() != null;
   }
 
   public static boolean ifMacro_Condition_5979287180587467645(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1394,14 +1402,20 @@ public class QueriesGenerated {
     SNode project = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.structure.BuildProject", false, false);
     if (project == null) {
       _context.showErrorMessage(_context.getNode(), "no context project defined");
-      return "???";
+      return MultiTuple.<String,Object>from("???", null);
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
     String val = helper.locations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), "target", false), _context));
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no location for " + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(_context.getNode(), "target", false)));
+    } else if (BuildLayout_Node_Behavior.call_isFolder_1368030936106753980(SLinkOperations.getTarget(_context.getNode(), "target", false))) {
+      int lastSlash = val.lastIndexOf('/');
+      if (lastSlash >= 0) {
+        return MultiTuple.<String,String>from(val.substring(0, lastSlash), val.substring(lastSlash + 1) + "/**");
+      }
+      _context.showErrorMessage(_context.getNode(), "no slash in imported folder name `" + val + "'");
     }
-    return val;
+    return MultiTuple.<String,Object>from(val, null);
   }
 
   public static Object insertMacro_varValue_5610619299013115037(final IOperationContext operationContext, final TemplateQueryContext _context) {

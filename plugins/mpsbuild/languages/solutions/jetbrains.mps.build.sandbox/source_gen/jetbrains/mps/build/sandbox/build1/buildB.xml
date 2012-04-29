@@ -33,6 +33,13 @@
     <jar destfile="${build.layout}/result/A-${buildA.aver}/module-B.jar">
       <fileset dir="${build.tmp}/java/out/module-B" />
     </jar>
+    <mkdir dir="${build.layout}/importTest" />
+    <zip destfile="${build.layout}/importTest/importResult.zip">
+      <fileset dir="${artifacts.buildA}" includes="result/**" />
+    </zip>
+    <zip destfile="${build.layout}/importTest/importResultContent.zip">
+      <fileset dir="${artifacts.buildA}/result" />
+    </zip>
     <echo file="${build.layout}/variables.properties">buildA.aver=${buildA.aver}</echo>
   </target>
   
