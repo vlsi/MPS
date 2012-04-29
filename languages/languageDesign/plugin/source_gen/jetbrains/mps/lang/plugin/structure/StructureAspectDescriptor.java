@@ -140,7 +140,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 61:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.IdeaConfigurationXml", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
       case 62:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"id", "descripttion", "version", "vendor", "vendorUrl", "ideaVersion", "loadModules"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"id", "descripttion", "version", "vendor", "vendorUrl", "ideaVersion", "loadModules", "handleErrors"}, new String[]{});
       case 63:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.IdeaPluginDependency", "jetbrains.mps.lang.plugin.structure.PluginDependency", false, new String[]{"jetbrains.mps.lang.plugin.structure.PluginDependency"}, new String[]{"pluginId"}, new String[]{});
       case 64:

@@ -45,8 +45,9 @@ public class IdeaInitializerDescriptor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_bmlzqh_i0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_bmlzqh_j0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_bmlzqh_k0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_bmlzqh_l0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_bmlzqh_m0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_bmlzqh_l0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_bmlzqh_m0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_bmlzqh_n0(editorContext, node));
     return editorCell;
   }
 
@@ -170,6 +171,18 @@ public class IdeaInitializerDescriptor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createCollection_bmlzqh_l0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_bmlzqh_l0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_bmlzqh_a11a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_bmlzqh_b11a(editorContext, node));
+    return editorCell;
+  }
+
   private EditorCell createConstant_bmlzqh_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "id:");
     editorCell.setCellId("Constant_bmlzqh_a0a");
@@ -247,9 +260,16 @@ public class IdeaInitializerDescriptor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_bmlzqh_l0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_bmlzqh_a11a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "handle errors:");
+    editorCell.setCellId("Constant_bmlzqh_a11a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_bmlzqh_m0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_bmlzqh_l0");
+    editorCell.setCellId("Constant_bmlzqh_m0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -267,7 +287,7 @@ public class IdeaInitializerDescriptor_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private EditorCell createRefNode_bmlzqh_m0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_bmlzqh_n0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("actions");
     provider.setNoTargetText("<no actions>");
@@ -417,6 +437,24 @@ public class IdeaInitializerDescriptor_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_loadModules");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createProperty_bmlzqh_b11a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("handleErrors");
+    provider.setNoTargetText("<no handleErrors>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_handleErrors");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
