@@ -9,6 +9,25 @@
     <copy todir="${build.layout}/temp">
       <fileset file="${build.tmp}/deps/buildMpsB/my.tar.gz/tests.msd" />
     </copy>
+    <mkdir dir="${build.tmp}/default/zipfilesettest1.zip" />
+    <mkdir dir="${build.tmp}/default/zipfilesettest1.zip/AAA" />
+    <copy todir="${build.tmp}/default/zipfilesettest1.zip/AAA">
+      <fileset file="${basedir}/jetbrains.mps.build.tests/tests.msd" />
+      <filterchain>
+        <fixcrlf eol="crlf" eof="remove" />
+      </filterchain>
+    </copy>
+    <zip destfile="${build.layout}/temp/zipfilesettest1.zip">
+      <zipfileset dir="${artifacts.buildMpsB}" includes="X/**" prefix="AAA" />
+      <zipfileset file="${basedir}/jetbrains.mps.build.sandbox/samples/build.xml" prefix="AAA" />
+      <fileset dir="${build.tmp}/default/zipfilesettest1.zip" />
+    </zip>
+    <tar destfile="${build.layout}/temp/tarfilesettest1.tar">
+      <tarfileset dir="${artifacts.buildMpsB}/X" prefix="QQQ/PPP" />
+    </tar>
+    <tar destfile="${build.layout}/temp/tarfilesettest2.tar">
+      <fileset dir="${artifacts.buildMpsB}/X" />
+    </tar>
   </target>
   
   <target name="buildDependents">

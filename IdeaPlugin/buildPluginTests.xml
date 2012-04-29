@@ -32,9 +32,6 @@
     <mkdir dir="${build.tmp}/default/mps-plugin-tests.jar/jetbrains/mps/idea/core" />
     <mkdir dir="${build.tmp}/default/mps-plugin-tests.jar/jetbrains/mps/idea/core/tests" />
     <copy todir="${build.tmp}/default/mps-plugin-tests.jar/jetbrains/mps/idea/core/tests">
-      <fileset file="${mps_home}/IdeaPlugin/tests/editorTests/models/test.mps" />
-    </copy>
-    <copy todir="${build.tmp}/default/mps-plugin-tests.jar/jetbrains/mps/idea/core/tests">
       <fileset dir="${mps_home}/IdeaPlugin/tests/blProject">
         <include name="blProject.iml" />
         <include name="models/main.mps" />
@@ -65,6 +62,7 @@
     </copy>
     <jar destfile="${build.layout}/plugins/mps-core/lib/mps-plugin-tests.jar">
       <fileset dir="${build.tmp}/java/out/mps-plugin-tests" />
+      <zipfileset file="${mps_home}/IdeaPlugin/tests/editorTests/models/test.mps" prefix="jetbrains/mps/idea/core/tests" />
       <fileset dir="${build.tmp}/default/mps-plugin-tests.jar" />
     </jar>
     <echo file="${build.layout}/variables.properties">buildPlugin.plugin.version=${buildPlugin.plugin.version}</echo>

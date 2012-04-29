@@ -34,26 +34,12 @@
       <fileset dir="${mps_home}/languages/util/ui/languages/ui" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ui.jar" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui-src.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui-src.jar/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui-src.jar/module">
-      <fileset file="${mps_home}/languages/util/ui/languages/ui/ui.mpl" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui-src.jar/module/languageAccessories" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui-src.jar/module/languageAccessories">
-      <fileset dir="${mps_home}/languages/util/ui/languages/ui/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui-src.jar/module/languageModels" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui-src.jar/module/languageModels">
-      <fileset dir="${mps_home}/languages/util/ui/languages/ui/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui-src.jar/module/generator/template" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui-src.jar/module/generator/template">
-      <fileset dir="${mps_home}/languages/util/ui/languages/ui/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
     <jar destfile="${build.layout}/languages/util/ui/jetbrains.mps.ui-src.jar">
       <fileset dir="${mps_home}/languages/util/ui/languages/ui/source_gen" includes="**/*.java" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.ui-src.jar" />
+      <zipfileset file="${mps_home}/languages/util/ui/languages/ui/ui.mpl" prefix="module" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/ui/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageAccessories" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/ui/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/ui/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.pluginSolution.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.pluginSolution.jar/META-INF" />
@@ -76,22 +62,11 @@
       <fileset dir="${mps_home}/languages/util/ui/languages/ui/solutions/pluginSolution" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ui.pluginSolution.jar" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.pluginSolution-src.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.pluginSolution-src.jar/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.pluginSolution-src.jar/module">
-      <fileset file="${mps_home}/languages/util/ui/languages/ui/solutions/pluginSolution/pluginSolution.msd" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.pluginSolution-src.jar/module/models" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.pluginSolution-src.jar/module/models">
-      <fileset dir="${mps_home}/languages/util/ui/languages/ui/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.pluginSolution-src.jar/module/" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.pluginSolution-src.jar/module/">
-      <fileset dir="${mps_home}/languages/util/ui/languages/ui/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
     <jar destfile="${build.layout}/languages/util/ui/jetbrains.mps.ui.pluginSolution-src.jar">
       <fileset dir="${mps_home}/languages/util/ui/languages/ui/solutions/pluginSolution/source_gen" includes="**/*.java" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.ui.pluginSolution-src.jar" />
+      <zipfileset file="${mps_home}/languages/util/ui/languages/ui/solutions/pluginSolution/pluginSolution.msd" prefix="module" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/ui/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/ui/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.modeling.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.modeling.jar/META-INF" />
@@ -115,22 +90,11 @@
       <fileset dir="${mps_home}/languages/util/ui/languages/meta" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ui.modeling.jar" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.modeling-src.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.modeling-src.jar/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.modeling-src.jar/module">
-      <fileset file="${mps_home}/languages/util/ui/languages/meta/meta.mpl" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.modeling-src.jar/module/languageAccessories" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.modeling-src.jar/module/languageAccessories">
-      <fileset dir="${mps_home}/languages/util/ui/languages/meta/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.modeling-src.jar/module/languageModels" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.modeling-src.jar/module/languageModels">
-      <fileset dir="${mps_home}/languages/util/ui/languages/meta/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
     <jar destfile="${build.layout}/languages/util/ui/jetbrains.mps.ui.modeling-src.jar">
       <fileset dir="${mps_home}/languages/util/ui/languages/meta/source_gen" includes="**/*.java" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.ui.modeling-src.jar" />
+      <zipfileset file="${mps_home}/languages/util/ui/languages/meta/meta.mpl" prefix="module" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/meta/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageAccessories" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/meta/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.pluginSolution.jar1" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.pluginSolution.jar1/META-INF" />
@@ -153,22 +117,11 @@
       <fileset dir="${mps_home}/languages/util/ui/languages/ui/solutions/pluginSolution" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ui.pluginSolution.jar1" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.pluginSolution-src.jar1" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.pluginSolution-src.jar1/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.pluginSolution-src.jar1/module">
-      <fileset file="${mps_home}/languages/util/ui/languages/ui/solutions/pluginSolution/pluginSolution.msd" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.pluginSolution-src.jar1/module/models" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.pluginSolution-src.jar1/module/models">
-      <fileset dir="${mps_home}/languages/util/ui/languages/ui/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.pluginSolution-src.jar1/module/" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.pluginSolution-src.jar1/module/">
-      <fileset dir="${mps_home}/languages/util/ui/languages/ui/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
     <jar destfile="${build.layout}/languages/util/ui/jetbrains.mps.ui.pluginSolution-src.jar">
       <fileset dir="${mps_home}/languages/util/ui/languages/ui/solutions/pluginSolution/source_gen" includes="**/*.java" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.ui.pluginSolution-src.jar1" />
+      <zipfileset file="${mps_home}/languages/util/ui/languages/ui/solutions/pluginSolution/pluginSolution.msd" prefix="module" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/ui/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/ui/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.internal.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.internal.jar/META-INF" />
@@ -192,22 +145,11 @@
       <fileset dir="${mps_home}/languages/util/ui/languages/internal" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ui.internal.jar" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.internal-src.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.internal-src.jar/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.internal-src.jar/module">
-      <fileset file="${mps_home}/languages/util/ui/languages/internal/internal.mpl" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.internal-src.jar/module/languageModels" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.internal-src.jar/module/languageModels">
-      <fileset dir="${mps_home}/languages/util/ui/languages/internal/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.internal-src.jar/module/generator/template" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.internal-src.jar/module/generator/template">
-      <fileset dir="${mps_home}/languages/util/ui/languages/internal/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
     <jar destfile="${build.layout}/languages/util/ui/jetbrains.mps.ui.internal-src.jar">
       <fileset dir="${mps_home}/languages/util/ui/languages/internal/source_gen" includes="**/*.java" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.ui.internal-src.jar" />
+      <zipfileset file="${mps_home}/languages/util/ui/languages/internal/internal.mpl" prefix="module" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/internal/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/internal/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
     <mkdir dir="${build.layout}/languages/util/ui/jetbrains.mps.ui.gwt" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.gwt.jar" />
@@ -232,22 +174,11 @@
       <fileset dir="${mps_home}/languages/util/ui/languages/gwt" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ui.gwt.jar" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.gwt-src.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.gwt-src.jar/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.gwt-src.jar/module">
-      <fileset file="${mps_home}/languages/util/ui/languages/gwt/gwt.mpl" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.gwt-src.jar/module/languageModels" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.gwt-src.jar/module/languageModels">
-      <fileset dir="${mps_home}/languages/util/ui/languages/gwt/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.gwt-src.jar/module/generator/template" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.gwt-src.jar/module/generator/template">
-      <fileset dir="${mps_home}/languages/util/ui/languages/gwt/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
     <jar destfile="${build.layout}/languages/util/ui/jetbrains.mps.ui.gwt/jetbrains.mps.ui.gwt-src.jar">
       <fileset dir="${mps_home}/languages/util/ui/languages/gwt/source_gen" includes="**/*.java" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.ui.gwt-src.jar" />
+      <zipfileset file="${mps_home}/languages/util/ui/languages/gwt/gwt.mpl" prefix="module" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/gwt/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/gwt/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
     <copy todir="${build.layout}/languages/util/ui/jetbrains.mps.ui.gwt">
       <fileset file="${mps_home}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
@@ -273,22 +204,11 @@
       <fileset dir="${mps_home}/languages/util/ui/languages/gwt/solutions/pluginSolution" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ui.gwt.pluginSolution.jar" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.gwt.pluginSolution-src.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.gwt.pluginSolution-src.jar/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.gwt.pluginSolution-src.jar/module">
-      <fileset file="${mps_home}/languages/util/ui/languages/gwt/solutions/pluginSolution/pluginSolution.msd" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.gwt.pluginSolution-src.jar/module/models" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.gwt.pluginSolution-src.jar/module/models">
-      <fileset dir="${mps_home}/languages/util/ui/languages/gwt/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.gwt.pluginSolution-src.jar/module/" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.gwt.pluginSolution-src.jar/module/">
-      <fileset dir="${mps_home}/languages/util/ui/languages/gwt/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
     <jar destfile="${build.layout}/languages/util/ui/jetbrains.mps.ui.gwt.pluginSolution-src.jar">
       <fileset dir="${mps_home}/languages/util/ui/languages/gwt/solutions/pluginSolution/source_gen" includes="**/*.java" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.ui.gwt.pluginSolution-src.jar" />
+      <zipfileset file="${mps_home}/languages/util/ui/languages/gwt/solutions/pluginSolution/pluginSolution.msd" prefix="module" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/gwt/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/gwt/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swing.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swing.jar/META-INF" />
@@ -312,26 +232,12 @@
       <fileset dir="${mps_home}/languages/util/ui/languages/swing" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ui.swing.jar" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swing-src.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swing-src.jar/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.swing-src.jar/module">
-      <fileset file="${mps_home}/languages/util/ui/languages/swing/swing.mpl" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swing-src.jar/module/languageAccessories" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.swing-src.jar/module/languageAccessories">
-      <fileset dir="${mps_home}/languages/util/ui/languages/swing/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swing-src.jar/module/languageModels" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.swing-src.jar/module/languageModels">
-      <fileset dir="${mps_home}/languages/util/ui/languages/swing/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swing-src.jar/module/generator/template" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.swing-src.jar/module/generator/template">
-      <fileset dir="${mps_home}/languages/util/ui/languages/swing/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
     <jar destfile="${build.layout}/languages/util/ui/jetbrains.mps.ui.swing-src.jar">
       <fileset dir="${mps_home}/languages/util/ui/languages/swing/source_gen" includes="**/*.java" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.ui.swing-src.jar" />
+      <zipfileset file="${mps_home}/languages/util/ui/languages/swing/swing.mpl" prefix="module" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/swing/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageAccessories" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/swing/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/swing/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swing.pluginSolution.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swing.pluginSolution.jar/META-INF" />
@@ -354,22 +260,11 @@
       <fileset dir="${mps_home}/languages/util/ui/languages/swing/solutions/pluginSolution" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ui.swing.pluginSolution.jar" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swing.pluginSolution-src.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swing.pluginSolution-src.jar/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.swing.pluginSolution-src.jar/module">
-      <fileset file="${mps_home}/languages/util/ui/languages/swing/solutions/pluginSolution/pluginSolution.msd" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swing.pluginSolution-src.jar/module/models" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.swing.pluginSolution-src.jar/module/models">
-      <fileset dir="${mps_home}/languages/util/ui/languages/swing/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swing.pluginSolution-src.jar/module/" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.swing.pluginSolution-src.jar/module/">
-      <fileset dir="${mps_home}/languages/util/ui/languages/swing/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
     <jar destfile="${build.layout}/languages/util/ui/jetbrains.mps.ui.swing.pluginSolution-src.jar">
       <fileset dir="${mps_home}/languages/util/ui/languages/swing/solutions/pluginSolution/source_gen" includes="**/*.java" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.ui.swing.pluginSolution-src.jar" />
+      <zipfileset file="${mps_home}/languages/util/ui/languages/swing/solutions/pluginSolution/pluginSolution.msd" prefix="module" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/swing/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/swing/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
     </jar>
     <mkdir dir="${build.layout}/languages/util/ui/jetbrains.mps.ui.swing.runtime" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swing.runtime.jar" />
@@ -388,18 +283,10 @@
       <fileset dir="${mps_home}/languages/util/ui/languages/swing/runtime" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ui.swing.runtime.jar" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swing.runtime-src.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swing.runtime-src.jar/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.swing.runtime-src.jar/module">
-      <fileset file="${mps_home}/languages/util/ui/languages/swing/runtime/runtime.msd" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swing.runtime-src.jar/module/" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.swing.runtime-src.jar/module/">
-      <fileset dir="${mps_home}/languages/util/ui/languages/swing/runtime" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
     <jar destfile="${build.layout}/languages/util/ui/jetbrains.mps.ui.swing.runtime/jetbrains.mps.ui.swing.runtime-src.jar">
       <fileset dir="${mps_home}/languages/util/ui/languages/swing/runtime/source_gen" includes="**/*.java" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.ui.swing.runtime-src.jar" />
+      <zipfileset file="${mps_home}/languages/util/ui/languages/swing/runtime/runtime.msd" prefix="module" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/swing/runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
     </jar>
     <copy todir="${build.layout}/languages/util/ui/jetbrains.mps.ui.swing.runtime">
       <fileset file="${mps_home}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -426,26 +313,12 @@
       <fileset dir="${mps_home}/languages/util/ui/languages/swt" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ui.swt.jar" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swt-src.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swt-src.jar/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.swt-src.jar/module">
-      <fileset file="${mps_home}/languages/util/ui/languages/swt/swt.mpl" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swt-src.jar/module/languageAccessories" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.swt-src.jar/module/languageAccessories">
-      <fileset dir="${mps_home}/languages/util/ui/languages/swt/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swt-src.jar/module/languageModels" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.swt-src.jar/module/languageModels">
-      <fileset dir="${mps_home}/languages/util/ui/languages/swt/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swt-src.jar/module/generator/template" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.swt-src.jar/module/generator/template">
-      <fileset dir="${mps_home}/languages/util/ui/languages/swt/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
     <jar destfile="${build.layout}/languages/util/ui/jetbrains.mps.ui.swt-src.jar">
       <fileset dir="${mps_home}/languages/util/ui/languages/swt/source_gen" includes="**/*.java" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.ui.swt-src.jar" />
+      <zipfileset file="${mps_home}/languages/util/ui/languages/swt/swt.mpl" prefix="module" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/swt/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageAccessories" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/swt/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/swt/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swt.pluginSolution.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swt.pluginSolution.jar/META-INF" />
@@ -468,22 +341,11 @@
       <fileset dir="${mps_home}/languages/util/ui/languages/swt/solutions/pluginSolution" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ui.swt.pluginSolution.jar" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swt.pluginSolution-src.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swt.pluginSolution-src.jar/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.swt.pluginSolution-src.jar/module">
-      <fileset file="${mps_home}/languages/util/ui/languages/swt/solutions/pluginSolution/pluginSolution.msd" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swt.pluginSolution-src.jar/module/models" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.swt.pluginSolution-src.jar/module/models">
-      <fileset dir="${mps_home}/languages/util/ui/languages/swt/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swt.pluginSolution-src.jar/module/" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.swt.pluginSolution-src.jar/module/">
-      <fileset dir="${mps_home}/languages/util/ui/languages/swt/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
     <jar destfile="${build.layout}/languages/util/ui/jetbrains.mps.ui.swt.pluginSolution-src.jar">
       <fileset dir="${mps_home}/languages/util/ui/languages/swt/solutions/pluginSolution/source_gen" includes="**/*.java" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.ui.swt.pluginSolution-src.jar" />
+      <zipfileset file="${mps_home}/languages/util/ui/languages/swt/solutions/pluginSolution/pluginSolution.msd" prefix="module" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/swt/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/swt/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
     </jar>
     <mkdir dir="${build.layout}/languages/util/ui/jetbrains.mps.ui.swt.runtime" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swt.runtime.jar" />
@@ -502,18 +364,10 @@
       <fileset dir="${mps_home}/languages/util/ui/languages/swt/runtime" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ui.swt.runtime.jar" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swt.runtime-src.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swt.runtime-src.jar/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.swt.runtime-src.jar/module">
-      <fileset file="${mps_home}/languages/util/ui/languages/swt/runtime/runtime.msd" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.ui.swt.runtime-src.jar/module/" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.ui.swt.runtime-src.jar/module/">
-      <fileset dir="${mps_home}/languages/util/ui/languages/swt/runtime" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
     <jar destfile="${build.layout}/languages/util/ui/jetbrains.mps.ui.swt.runtime/jetbrains.mps.ui.swt.runtime-src.jar">
       <fileset dir="${mps_home}/languages/util/ui/languages/swt/runtime/source_gen" includes="**/*.java" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.ui.swt.runtime-src.jar" />
+      <zipfileset file="${mps_home}/languages/util/ui/languages/swt/runtime/runtime.msd" prefix="module" />
+      <zipfileset dir="${mps_home}/languages/util/ui/languages/swt/runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
     </jar>
     <copy todir="${build.layout}/languages/util/ui/jetbrains.mps.ui.swt.runtime">
       <fileset file="${mps_home}/languages/util/ui/languages/swt/runtime/lib/linux/swt.jar" />
@@ -544,22 +398,11 @@
       <fileset dir="${mps_home}/languages/util/gwtsupport/languages/client" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.gwt.client.jar" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.gwt.client-src.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.gwt.client-src.jar/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.gwt.client-src.jar/module">
-      <fileset file="${mps_home}/languages/util/gwtsupport/languages/client/client.mpl" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.gwt.client-src.jar/module/languageModels" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.gwt.client-src.jar/module/languageModels">
-      <fileset dir="${mps_home}/languages/util/gwtsupport/languages/client/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.gwt.client-src.jar/module/generator/template" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.gwt.client-src.jar/module/generator/template">
-      <fileset dir="${mps_home}/languages/util/gwtsupport/languages/client/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
     <jar destfile="${build.layout}/languages/util/jetbrains.mps.gwt.client/jetbrains.mps.gwt.client-src.jar">
       <fileset dir="${mps_home}/languages/util/gwtsupport/languages/client/source_gen" includes="**/*.java" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.gwt.client-src.jar" />
+      <zipfileset file="${mps_home}/languages/util/gwtsupport/languages/client/client.mpl" prefix="module" />
+      <zipfileset dir="${mps_home}/languages/util/gwtsupport/languages/client/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="${mps_home}/languages/util/gwtsupport/languages/client/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
     <copy todir="${build.layout}/languages/util/jetbrains.mps.gwt.client">
       <fileset file="${mps_home}/languages/util/gwtsupport/languages/client/redist/gwt-dev.jar" />

@@ -66,12 +66,6 @@
     <mkdir dir="${build.tmp}/default/mps-plugin.jar" />
     <mkdir dir="${build.tmp}/default/mps-plugin.jar/META-INF" />
     <copy todir="${build.tmp}/default/mps-plugin.jar/META-INF">
-      <fileset file="${mps_home}/workbench/mps-platform/source/META-INF/MPSCore.xml" />
-    </copy>
-    <copy todir="${build.tmp}/default/mps-plugin.jar/META-INF">
-      <fileset file="${mps_home}/workbench/mps-editor/source/META-INF/MPSEditor.xml" />
-    </copy>
-    <copy todir="${build.tmp}/default/mps-plugin.jar/META-INF">
       <fileset file="${mps_home}/IdeaPlugin/mps-core/META-INF/plugin.xml" />
       <filterchain>
         <tokenfilter>
@@ -90,6 +84,8 @@
       <fileset dir="${mps_home}/workbench/mps-editor/source_gen">
         <include name="jetbrains/mps/ide/editor/actions/MPSEditorActions.xml" />
       </fileset>
+      <zipfileset file="${mps_home}/workbench/mps-platform/source/META-INF/MPSCore.xml" prefix="META-INF" />
+      <zipfileset file="${mps_home}/workbench/mps-editor/source/META-INF/MPSEditor.xml" prefix="META-INF" />
       <fileset dir="${build.tmp}/default/mps-plugin.jar" />
     </jar>
     <echo file="${build.layout}/plugins/mps-core/build.number">plugin.version=${plugin.version}</echo>
