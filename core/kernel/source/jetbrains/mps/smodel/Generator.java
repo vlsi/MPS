@@ -22,11 +22,12 @@ import jetbrains.mps.project.dependency.GeneratorDependenciesManager;
 import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
+import jetbrains.mps.runtime.ModuleClassLoader;
 import jetbrains.mps.vfs.IFile;
 
 import java.util.*;
 
-public class Generator extends ClassLoadingModule {
+public class Generator extends AbstractModule {
   public static final Logger LOG = Logger.getLogger(Generator.class);
 
   private Language mySourceLanguage;
@@ -261,10 +262,6 @@ public class Generator extends ClassLoadingModule {
     }
 
     return result;
-  }
-
-  public Class getClass(String fqName) {
-    return mySourceLanguage.getClass(fqName);
   }
 
   public Collection<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
