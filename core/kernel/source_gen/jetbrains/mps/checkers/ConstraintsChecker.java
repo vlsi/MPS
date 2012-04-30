@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
-import jetbrains.mps.smodel.structure.ConceptRegistry;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
@@ -43,9 +43,9 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
   }
 
   public void checkNode(final SNode node, LanguageErrorsComponent component, final IOperationContext operationContext, IScope scope) {
-    final ConstraintsDescriptor newDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(node.getConceptFqName());
+    final ConstraintsDescriptor newDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConceptFqName());
 
-    final CheckingNodeContext checkingNodeContext = new jetbrains.mps.smodel.structure.CheckingNodeContext();
+    final CheckingNodeContext checkingNodeContext = new jetbrains.mps.smodel.runtime.impl.CheckingNodeContext();
 
     if (SNodeOperations.getParent(node) != null) {
       component.addDependency(SNodeOperations.getParent(node));

@@ -35,12 +35,7 @@ import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNam
  * evgeny, 4/28/11
  */
 public class LanguageRuntimeInterpreted extends LanguageRuntime {
-  private static final DescriptorProvider<ConstraintsDescriptor> OLD_INTERPRETED_CONSTRAINTS = new InterpretedConstraintsProvider();
-  // todo: rename
-  private static final DescriptorProvider<ConstraintsDescriptor> NEW_INTERPRETED_CONSTRAINTS = new CompiledConstraintsProvider();
-
   public static final DescriptorProvider<BehaviorDescriptor> BEHAVIOR_PROVIDER = new InterpretedBehaviorProvider();
-  public static final DescriptorProvider<ConstraintsDescriptor> CONSTRAINTS_PROVIDER = MixedDescriptorProvider.of(NEW_INTERPRETED_CONSTRAINTS, OLD_INTERPRETED_CONSTRAINTS);
   public static final DescriptorProvider<FacetDescriptor> FACET_PROVIDER = new InterpretedFacetProvider();
 
   private final Language myLanguage;

@@ -16,6 +16,8 @@
 package jetbrains.mps.smodel.structure;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.adapter.BehaviorDescriptorAdapter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -42,13 +44,8 @@ public class ConceptRegistry {
     return new BehaviorDescriptorAdapter(getBehaviorDescriptorForInstanceNodeNew(node));
   }
 
-  @Deprecated
-  public ConceptDescriptor getConceptDescriptorForInstanceNode(@Nullable SNode node) {
-    return new NullableBehaviorConceptDescriptor(getBehaviorDescriptorForInstanceNodeNew(node));
-  }
-
   @NotNull
-  public jetbrains.mps.smodel.runtime.ConceptDescriptor getConceptDescriptor(@Nullable String fqName) {
+  public ConceptDescriptor getConceptDescriptor(@Nullable String fqName) {
     return inner.getConceptDescriptor(fqName);
   }
 
@@ -62,30 +59,7 @@ public class ConceptRegistry {
   }
 
   @NotNull
-  public jetbrains.mps.smodel.runtime.ConstraintsDescriptor getConstraintsDescriptorNew(@Nullable String fqName) {
+  public ConstraintsDescriptor getConstraintsDescriptorNew(@Nullable String fqName) {
     return inner.getConstraintsDescriptor(fqName);
-  }
-
-  private class NullableBehaviorConceptDescriptor extends ConceptDescriptor {
-    private final jetbrains.mps.smodel.runtime.BehaviorDescriptor behaviorDescriptor;
-
-    NullableBehaviorConceptDescriptor(jetbrains.mps.smodel.runtime.BehaviorDescriptor behaviorDescriptor) {
-      this.behaviorDescriptor = behaviorDescriptor;
-    }
-
-    @Override
-    public String fqName() {
-      throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public BehaviorDescriptor behavior() {
-      return new BehaviorDescriptorAdapter(behaviorDescriptor);
-    }
-
-    @Override
-    public ConstraintsDescriptor constraints() {
-      throw new UnsupportedOperationException();
-    }
   }
 }
