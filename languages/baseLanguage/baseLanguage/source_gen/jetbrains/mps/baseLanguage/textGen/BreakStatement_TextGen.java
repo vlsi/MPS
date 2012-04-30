@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -21,7 +20,7 @@ public class BreakStatement_TextGen extends SNodeTextGen {
       this.appendWithIndent("break ");
       this.append(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "loopLabelReference", true), "loopLabel", false), "name"));
       this.append(";");
-    } else if (StringUtils.isNotEmpty(SPropertyOperations.getString(node, "label"))) {
+    } else if ((SPropertyOperations.getString(node, "label") != null && SPropertyOperations.getString(node, "label").length() > 0)) {
       this.appendWithIndent("break ");
       this.append(SPropertyOperations.getString(node, "label"));
       this.append(";");

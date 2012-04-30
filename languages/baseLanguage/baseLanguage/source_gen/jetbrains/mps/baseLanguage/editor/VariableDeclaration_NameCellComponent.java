@@ -26,7 +26,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_Behavior;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.util.NameUtil;
 
 public class VariableDeclaration_NameCellComponent extends AbstractCellProvider {
@@ -90,7 +89,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
         for (String name : names) {
           String prefix = VariableDeclaration_Behavior.call_getPrefix_3012473318495495520(node, project);
           String suffix = VariableDeclaration_Behavior.call_getSuffix_3012473318495499856(node, project);
-          String mainName = (StringUtils.isEmpty(prefix) ?
+          String mainName = ((prefix == null || prefix.length() == 0) ?
             name :
             NameUtil.capitalize(name)
           );
