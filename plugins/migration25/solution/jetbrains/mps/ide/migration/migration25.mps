@@ -76,6 +76,7 @@
       <property name="version" nameId="tp4k.5023285075122009369" value="2.5" />
       <property name="descripttion" nameId="tp4k.5023285075122009368" value="Provides actions to migrate models and languages developed using previous versions of MPS" />
       <property name="name" nameId="tpck.1169194664001" value="Migration 2.5" />
+      <property name="handleErrors" nameId="tp4k.1573568368168371217" value="true" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="2899596005953728721">
       <property name="name" nameId="tpck.1169194664001" value="Migrations25" />

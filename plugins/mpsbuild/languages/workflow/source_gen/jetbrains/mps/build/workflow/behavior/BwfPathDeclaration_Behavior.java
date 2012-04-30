@@ -12,4 +12,8 @@ public class BwfPathDeclaration_Behavior {
   public static String call_getPathId_6647099934207210775(SNode thisNode) {
     return "path." + SPropertyOperations.getString(thisNode, "name");
   }
+
+  public static int virtual_getPriority_2059109515400548718(SNode thisNode) {
+    return 40;
+  }
 }

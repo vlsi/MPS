@@ -41,6 +41,18 @@ public class BuildLayout_Zip_Behavior {
     return true;
   }
 
+  public static String virtual_getFileSetExtension_6408167411310575216(SNode thisNode) {
+    return "zipfileset";
+  }
+
+  public static boolean virtual_hasPrefixAttribute_6408167411310575232(SNode thisNode) {
+    return true;
+  }
+
+  public static boolean virtual_hasFileModeAttribute_6408167411310575237(SNode thisNode) {
+    return true;
+  }
+
   public static class QuotationClass_a0cuzf_a0a0b0h0b {
     public QuotationClass_a0cuzf_a0a0b0h0b() {
     }

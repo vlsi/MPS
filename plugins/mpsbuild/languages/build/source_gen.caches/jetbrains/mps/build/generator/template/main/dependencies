@@ -9,6 +9,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_ContainerAcceptingFileSet_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_Container_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_EchoProperties_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_EchoXml_Behavior" />
@@ -23,6 +24,7 @@
     <classNode dependClassName="jetbrains.mps.build.generator.util.JavaExternalLibraryHelper" />
     <classNode dependClassName="jetbrains.mps.build.util.Context" />
     <classNode dependClassName="jetbrains.mps.build.util.DependenciesHelper" />
+    <classNode dependClassName="jetbrains.mps.build.util.FileSetUtil" />
     <classNode dependClassName="jetbrains.mps.build.util.GenerationUtil" />
     <classNode dependClassName="jetbrains.mps.build.util.JavaModulesClosure" />
     <classNode dependClassName="jetbrains.mps.build.util.MacroHelper" />

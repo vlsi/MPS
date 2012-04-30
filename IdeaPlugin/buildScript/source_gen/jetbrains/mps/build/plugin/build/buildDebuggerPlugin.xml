@@ -25,33 +25,14 @@
       <fileset file="${mps_home}/plugins/debugger-api/META-INF/plugin.xml" />
     </copy>
     <mkdir dir="${build.layout}/plugins/debugger-api/lib" />
-    <mkdir dir="${build.tmp}/default/debugger-api.jar" />
-    <mkdir dir="${build.tmp}/default/debugger-api.jar/modules" />
-    <mkdir dir="${build.tmp}/default/debugger-api.jar/modules/jetbrains.mps.debugger.api.api" />
-    <copy todir="${build.tmp}/default/debugger-api.jar/modules/jetbrains.mps.debugger.api.api">
-      <fileset file="${mps_home}/plugins/debugger-api/api/api.msd" />
-    </copy>
-    <copy todir="${build.tmp}/default/debugger-api.jar/modules/jetbrains.mps.debugger.api.api">
-      <fileset dir="${mps_home}/plugins/debugger-api/api" includes="icons/**, resources/**" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/debugger-api.jar/modules/jetbrains.mps.debugger.api.api/" />
-    <copy todir="${build.tmp}/default/debugger-api.jar/modules/jetbrains.mps.debugger.api.api/">
-      <fileset dir="${mps_home}/plugins/debugger-api/api" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/debugger-api.jar/modules/jetbrains.mps.debugger.api.runtime" />
-    <copy todir="${build.tmp}/default/debugger-api.jar/modules/jetbrains.mps.debugger.api.runtime">
-      <fileset file="${mps_home}/plugins/debugger-api/runtime/jetbrains.mps.debugger-api.msd" />
-    </copy>
-    <copy todir="${build.tmp}/default/debugger-api.jar/modules/jetbrains.mps.debugger.api.runtime">
-      <fileset dir="${mps_home}/plugins/debugger-api/runtime" includes="icons/**, resources/**" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/debugger-api.jar/modules/jetbrains.mps.debugger.api.runtime/" />
-    <copy todir="${build.tmp}/default/debugger-api.jar/modules/jetbrains.mps.debugger.api.runtime/">
-      <fileset dir="${mps_home}/plugins/debugger-api/runtime" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
     <jar destfile="${build.layout}/plugins/debugger-api/lib/debugger-api.jar">
       <fileset dir="${build.tmp}/java/out/debugger-api" />
-      <fileset dir="${build.tmp}/default/debugger-api.jar" />
+      <zipfileset file="${mps_home}/plugins/debugger-api/api/api.msd" prefix="modules/jetbrains.mps.debugger.api.api" />
+      <zipfileset dir="${mps_home}/plugins/debugger-api/api" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.debugger.api.api" />
+      <zipfileset dir="${mps_home}/plugins/debugger-api/api" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.debugger.api.api/" />
+      <zipfileset file="${mps_home}/plugins/debugger-api/runtime/jetbrains.mps.debugger-api.msd" prefix="modules/jetbrains.mps.debugger.api.runtime" />
+      <zipfileset dir="${mps_home}/plugins/debugger-api/runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.debugger.api.runtime" />
+      <zipfileset dir="${mps_home}/plugins/debugger-api/runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.debugger.api.runtime/" />
     </jar>
     <mkdir dir="${build.layout}/plugins/debugger-api/languages" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.debugger.api.lang.jar" />
@@ -76,22 +57,11 @@
       <fileset dir="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.debugger.api.lang.jar" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.debugger.api.lang-src.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.debugger.api.lang-src.jar/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.debugger.api.lang-src.jar/module">
-      <fileset file="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/api.mpl" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.debugger.api.lang-src.jar/module/languageModels" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.debugger.api.lang-src.jar/module/languageModels">
-      <fileset dir="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.debugger.api.lang-src.jar/module/generator/template" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.debugger.api.lang-src.jar/module/generator/template">
-      <fileset dir="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
     <jar destfile="${build.layout}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang-src.jar">
       <fileset dir="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/source_gen" includes="**/*.java" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.debugger.api.lang-src.jar" />
+      <zipfileset file="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/api.mpl" prefix="module" />
+      <zipfileset dir="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
     <mkdir dir="${build.tmp}/default/nanocProject.zip" />
     <mkdir dir="${build.tmp}/default/nanocProject.zip/nanocProject" />
@@ -109,33 +79,14 @@
       <fileset file="${mps_home}/plugins/debugger-java/META-INF/plugin.xml" />
     </copy>
     <mkdir dir="${build.layout}/plugins/debugger-java/lib" />
-    <mkdir dir="${build.tmp}/default/debugger-java.jar" />
-    <mkdir dir="${build.tmp}/default/debugger-java.jar/modules" />
-    <mkdir dir="${build.tmp}/default/debugger-java.jar/modules/jetbrains.mps.debugger.java.api" />
-    <copy todir="${build.tmp}/default/debugger-java.jar/modules/jetbrains.mps.debugger.java.api">
-      <fileset file="${mps_home}/plugins/debugger-java/api/jetbrains.mps.debugger.java.api.msd" />
-    </copy>
-    <copy todir="${build.tmp}/default/debugger-java.jar/modules/jetbrains.mps.debugger.java.api">
-      <fileset dir="${mps_home}/plugins/debugger-java/api" includes="icons/**, resources/**" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/debugger-java.jar/modules/jetbrains.mps.debugger.java.api/" />
-    <copy todir="${build.tmp}/default/debugger-java.jar/modules/jetbrains.mps.debugger.java.api/">
-      <fileset dir="${mps_home}/plugins/debugger-java/api" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/debugger-java.jar/modules/jetbrains.mps.debugger.java.runtime" />
-    <copy todir="${build.tmp}/default/debugger-java.jar/modules/jetbrains.mps.debugger.java.runtime">
-      <fileset file="${mps_home}/plugins/debugger-java/runtime/jetbrains.mps.debugger.java.runtime.msd" />
-    </copy>
-    <copy todir="${build.tmp}/default/debugger-java.jar/modules/jetbrains.mps.debugger.java.runtime">
-      <fileset dir="${mps_home}/plugins/debugger-java/runtime" includes="icons/**, resources/**" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/debugger-java.jar/modules/jetbrains.mps.debugger.java.runtime/models" />
-    <copy todir="${build.tmp}/default/debugger-java.jar/modules/jetbrains.mps.debugger.java.runtime/models">
-      <fileset dir="${mps_home}/plugins/debugger-java/runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
     <jar destfile="${build.layout}/plugins/debugger-java/lib/debugger-java.jar">
       <fileset dir="${build.tmp}/java/out/debugger-java" />
-      <fileset dir="${build.tmp}/default/debugger-java.jar" />
+      <zipfileset file="${mps_home}/plugins/debugger-java/api/jetbrains.mps.debugger.java.api.msd" prefix="modules/jetbrains.mps.debugger.java.api" />
+      <zipfileset dir="${mps_home}/plugins/debugger-java/api" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.debugger.java.api" />
+      <zipfileset dir="${mps_home}/plugins/debugger-java/api" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.debugger.java.api/" />
+      <zipfileset file="${mps_home}/plugins/debugger-java/runtime/jetbrains.mps.debugger.java.runtime.msd" prefix="modules/jetbrains.mps.debugger.java.runtime" />
+      <zipfileset dir="${mps_home}/plugins/debugger-java/runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.debugger.java.runtime" />
+      <zipfileset dir="${mps_home}/plugins/debugger-java/runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.debugger.java.runtime/models" />
     </jar>
     <mkdir dir="${build.layout}/plugins/debugger-java/languages" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.debugger.java.customViewers.jar" />
@@ -160,22 +111,11 @@
       <fileset dir="${mps_home}/plugins/debugger-java/languages/customViewers" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.debugger.java.customViewers.jar" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.debugger.java.customViewers-src.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.debugger.java.customViewers-src.jar/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.debugger.java.customViewers-src.jar/module">
-      <fileset file="${mps_home}/plugins/debugger-java/languages/customViewers/customViewers.mpl" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.debugger.java.customViewers-src.jar/module/languageModels" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.debugger.java.customViewers-src.jar/module/languageModels">
-      <fileset dir="${mps_home}/plugins/debugger-java/languages/customViewers/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.debugger.java.customViewers-src.jar/module/generator/template" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.debugger.java.customViewers-src.jar/module/generator/template">
-      <fileset dir="${mps_home}/plugins/debugger-java/languages/customViewers/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
     <jar destfile="${build.layout}/plugins/debugger-java/languages/jetbrains.mps.debugger.java.customViewers-src.jar">
       <fileset dir="${mps_home}/plugins/debugger-java/languages/customViewers/source_gen" includes="**/*.java" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.debugger.java.customViewers-src.jar" />
+      <zipfileset file="${mps_home}/plugins/debugger-java/languages/customViewers/customViewers.mpl" prefix="module" />
+      <zipfileset dir="${mps_home}/plugins/debugger-java/languages/customViewers/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="${mps_home}/plugins/debugger-java/languages/customViewers/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.debugger.java.evaluation.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.debugger.java.evaluation.jar/META-INF" />
@@ -199,22 +139,11 @@
       <fileset dir="${mps_home}/plugins/debugger-java/languages/evaluation" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.debugger.java.evaluation.jar" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.debugger.java.evaluation-src.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.debugger.java.evaluation-src.jar/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.debugger.java.evaluation-src.jar/module">
-      <fileset file="${mps_home}/plugins/debugger-java/languages/evaluation/evaluation.mpl" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.debugger.java.evaluation-src.jar/module/languageModels" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.debugger.java.evaluation-src.jar/module/languageModels">
-      <fileset dir="${mps_home}/plugins/debugger-java/languages/evaluation/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.debugger.java.evaluation-src.jar/module/generator/template" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.debugger.java.evaluation-src.jar/module/generator/template">
-      <fileset dir="${mps_home}/plugins/debugger-java/languages/evaluation/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
     <jar destfile="${build.layout}/plugins/debugger-java/languages/jetbrains.mps.debugger.java.evaluation-src.jar">
       <fileset dir="${mps_home}/plugins/debugger-java/languages/evaluation/source_gen" includes="**/*.java" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.debugger.java.evaluation-src.jar" />
+      <zipfileset file="${mps_home}/plugins/debugger-java/languages/evaluation/evaluation.mpl" prefix="module" />
+      <zipfileset dir="${mps_home}/plugins/debugger-java/languages/evaluation/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="${mps_home}/plugins/debugger-java/languages/evaluation/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.debugger.java.privateMembers.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.debugger.java.privateMembers.jar/META-INF" />
@@ -238,42 +167,18 @@
       <fileset dir="${mps_home}/plugins/debugger-java/languages/privateMembers" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.debugger.java.privateMembers.jar" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.debugger.java.privateMembers-src.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.debugger.java.privateMembers-src.jar/module" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.debugger.java.privateMembers-src.jar/module">
-      <fileset file="${mps_home}/plugins/debugger-java/languages/privateMembers/privateMembers.mpl" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.debugger.java.privateMembers-src.jar/module/languageModels" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.debugger.java.privateMembers-src.jar/module/languageModels">
-      <fileset dir="${mps_home}/plugins/debugger-java/languages/privateMembers/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
     <jar destfile="${build.layout}/plugins/debugger-java/languages/jetbrains.mps.debugger.java.privateMembers-src.jar">
       <fileset dir="${mps_home}/plugins/debugger-java/languages/privateMembers/source_gen" includes="**/*.java" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.debugger.java.privateMembers-src.jar" />
+      <zipfileset file="${mps_home}/plugins/debugger-java/languages/privateMembers/privateMembers.mpl" prefix="module" />
+      <zipfileset dir="${mps_home}/plugins/debugger-java/languages/privateMembers/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
     </jar>
-    <mkdir dir="${build.tmp}/default/debugger-java-customViewers.jar" />
-    <mkdir dir="${build.tmp}/default/debugger-java-customViewers.jar/META-INF" />
-    <copy todir="${build.tmp}/default/debugger-java-customViewers.jar/META-INF">
-      <fileset file="${mps_home}/plugins/debugger-java-customViewers/META-INF/plugin.xml" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/debugger-java-customViewers.jar/jetbrains.mps.debugger.java.customViewers.plugin" />
-    <copy todir="${build.tmp}/default/debugger-java-customViewers.jar/jetbrains.mps.debugger.java.customViewers.plugin">
-      <fileset file="${mps_home}/plugins/debugger-java-customViewers/plugin.msd" />
-    </copy>
-    <copy todir="${build.tmp}/default/debugger-java-customViewers.jar/jetbrains.mps.debugger.java.customViewers.plugin">
-      <fileset dir="${mps_home}/plugins/debugger-java-customViewers" includes="icons/**, resources/**" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/debugger-java-customViewers.jar/jetbrains.mps.debugger.java.customViewers.plugin/" />
-    <copy todir="${build.tmp}/default/debugger-java-customViewers.jar/jetbrains.mps.debugger.java.customViewers.plugin/">
-      <fileset dir="${mps_home}/plugins/debugger-java-customViewers" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-    <mkdir dir="${build.tmp}/default/debugger-java-customViewers.jar/jetbrains.mps.debugger.java.customViewers.plugin/models" />
-    <copy todir="${build.tmp}/default/debugger-java-customViewers.jar/jetbrains.mps.debugger.java.customViewers.plugin/models">
-      <fileset dir="${mps_home}/plugins/debugger-java-customViewers/models" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
     <jar destfile="${build.layout}/plugins/debugger-java-customViewers.jar">
       <fileset dir="${build.tmp}/java/out/debugger-java-customViewers" />
-      <fileset dir="${build.tmp}/default/debugger-java-customViewers.jar" />
+      <zipfileset file="${mps_home}/plugins/debugger-java-customViewers/META-INF/plugin.xml" prefix="META-INF" />
+      <zipfileset file="${mps_home}/plugins/debugger-java-customViewers/plugin.msd" prefix="jetbrains.mps.debugger.java.customViewers.plugin" />
+      <zipfileset dir="${mps_home}/plugins/debugger-java-customViewers" includes="icons/**, resources/**" prefix="jetbrains.mps.debugger.java.customViewers.plugin" />
+      <zipfileset dir="${mps_home}/plugins/debugger-java-customViewers" includes="**/*.mps, **/*.metadata, **/*.history" prefix="jetbrains.mps.debugger.java.customViewers.plugin/" />
+      <zipfileset dir="${mps_home}/plugins/debugger-java-customViewers/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="jetbrains.mps.debugger.java.customViewers.plugin/models" />
     </jar>
   </target>
   

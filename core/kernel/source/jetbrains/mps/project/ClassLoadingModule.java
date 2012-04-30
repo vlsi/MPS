@@ -25,7 +25,6 @@ import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.vfs.IFile;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Set;
 
 public abstract class ClassLoadingModule extends AbstractModule implements IClassLoadingModule {
@@ -69,6 +68,9 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
   }
 
   public void invalidateClasses() {
+    if (myClassLoader != null) {
+      myClassLoader.dispose();
+    }
     myClassLoader = new ModuleClassLoader(this);
   }
 

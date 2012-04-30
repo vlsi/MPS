@@ -7,17 +7,17 @@
     <unitInfo nodeId="3364920969597702860" fileName="buildC.xml" startLine="1" startPosition="0" endLine="39" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildC" />
   </root>
   <root nodeId="4129895186893541504">
-    <unitInfo nodeId="4129895186893541504" fileName="buildA.xml" startLine="1" startPosition="0" endLine="85" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildA" />
+    <unitInfo nodeId="4129895186893541504" fileName="buildA.xml" startLine="1" startPosition="0" endLine="82" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildA" />
   </root>
   <root nodeId="4129895186893541508">
-    <unitInfo nodeId="4129895186893541508" fileName="buildB.xml" startLine="1" startPosition="0" endLine="78" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildB" />
+    <unitInfo nodeId="4129895186893541508" fileName="buildB.xml" startLine="1" startPosition="0" endLine="85" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildB" />
   </root>
   <root nodeId="4993211115183387839">
     <unitInfo nodeId="4993211115183387839" fileName="buildCore.properties" startLine="1" startPosition="0" endLine="3" endPosition="0" unitName="jetbrains.mps.build.sandbox.build1.buildCore" />
-    <unitInfo nodeId="4993211115183387839" fileName="buildCore.xml" startLine="1" startPosition="0" endLine="75" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildCore" />
+    <unitInfo nodeId="4993211115183387839" fileName="buildCore.xml" startLine="1" startPosition="0" endLine="71" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildCore" />
   </root>
   <root nodeId="4993211115183416028">
-    <unitInfo nodeId="4993211115183416028" fileName="buildPlugin.xml" startLine="1" startPosition="0" endLine="80" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildPlugin" />
+    <unitInfo nodeId="4993211115183416028" fileName="buildPlugin.xml" startLine="1" startPosition="0" endLine="76" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildPlugin" />
   </root>
   <root nodeId="5610619299013213201">
     <unitInfo nodeId="5610619299013213201" fileName="buildE.xml" startLine="1" startPosition="0" endLine="52" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildE" />

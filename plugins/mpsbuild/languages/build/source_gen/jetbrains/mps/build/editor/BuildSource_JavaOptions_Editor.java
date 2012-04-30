@@ -16,8 +16,13 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
+import java.util.List;
+import java.util.Arrays;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -56,21 +61,23 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_nphvgz_f2a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_nphvgz_g2a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_nphvgz_h2a(editorContext, node));
-    if (renderingCondition_nphvgz_a8c0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_nphvgz_i2a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_nphvgz_i2a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_nphvgz_j2a(editorContext, node));
+    if (renderingCondition_nphvgz_a01c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_nphvgz_k2a(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createCollection_nphvgz_i2a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_nphvgz_k2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_nphvgz_i2a");
+    editorCell.setCellId("Collection_nphvgz_k2a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_nphvgz_a8c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_nphvgz_b8c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_nphvgz_a01c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_nphvgz_b01c0(editorContext, node));
     return editorCell;
   }
 
@@ -107,16 +114,24 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nphvgz_g2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "copy resources");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "compiler");
     editorCell.setCellId("Constant_nphvgz_g2a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_nphvgz_a8c0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_nphvgz_i2a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "copy resources");
+    editorCell.setCellId("Constant_nphvgz_i2a");
+    buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_nphvgz_a01c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "resource patterns");
-    editorCell.setCellId("Constant_nphvgz_a8c0");
+    editorCell.setCellId("Constant_nphvgz_a01c0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -137,8 +152,8 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_nphvgz_b8c0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BuildSource_JavaOptions_Editor.resourceSelectorsListHandler_nphvgz_b8c0(node, "resourceSelectors", editorContext);
+  private EditorCell createRefNodeList_nphvgz_b01c0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BuildSource_JavaOptions_Editor.resourceSelectorsListHandler_nphvgz_b01c0(node, "resourceSelectors", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_resourceSelectors");
     {
@@ -242,6 +257,29 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
 
   private EditorCell createProperty_nphvgz_h2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("compiler");
+    provider.setNoTargetText("<default compiler>");
+    provider.setAllowsEmptyTarget(true);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_compiler");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new BuildSource_JavaOptions_Editor.BuildSource_JavaOptions_compiler_cellMenu_a0h2a()}));
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createProperty_nphvgz_j2a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("copyResources");
     provider.setNoTargetText("<no copyResources>");
     EditorCell editorCell;
@@ -262,12 +300,21 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_nphvgz_a8c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_nphvgz_a01c0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "copyResources");
   }
 
-  private static class resourceSelectorsListHandler_nphvgz_b8c0 extends RefNodeListHandler {
-    public resourceSelectorsListHandler_nphvgz_b8c0(SNode ownerNode, String childRole, EditorContext context) {
+  public static class BuildSource_JavaOptions_compiler_cellMenu_a0h2a extends AbstractCellMenuPart_PropertyValues {
+    public BuildSource_JavaOptions_compiler_cellMenu_a0h2a() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+      return Arrays.asList(new String[]{"modern", "IntelliJ", "jikes", "gcj"});
+    }
+  }
+
+  private static class resourceSelectorsListHandler_nphvgz_b01c0 extends RefNodeListHandler {
+    public resourceSelectorsListHandler_nphvgz_b01c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -290,7 +337,7 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_nphvgz_a1i2a(editorContext, node);
+      return this.createConstant_nphvgz_a1k2a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -305,9 +352,9 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_nphvgz_a1i2a(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_nphvgz_a1k2a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_nphvgz_a1i2a");
+      editorCell.setCellId("Constant_nphvgz_a1k2a");
       editorCell.setDefaultText("<all non-java files>");
       return editorCell;
     }

@@ -15,18 +15,21 @@
  */
 package jetbrains.mps.reloading;
 
+import gnu.trove.THashMap;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.ClassLoadingModule;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.stubs.LibrariesLoader;
+import jetbrains.mps.util.InternUtil;
+import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ClassLoaderManager implements CoreComponent {
@@ -38,6 +41,7 @@ public class ClassLoaderManager implements CoreComponent {
     return INSTANCE;
   }
 
+  private final Map<String, ModuleReference> myLoadedClasses = new THashMap<String, ModuleReference>();
   private List<ReloadListener> myReloadHandlers = new CopyOnWriteArrayList<ReloadListener>();
 
   public ClassLoaderManager() {
@@ -118,8 +122,27 @@ public class ClassLoaderManager implements CoreComponent {
     }
   }
 
+  public void classLoaded(String name, ModuleReference id) {
+    synchronized (myLoadedClasses) {
+      if (myLoadedClasses.containsKey(name)) {
+        ModuleReference oldLoaderId = myLoadedClasses.get(name);
+        if (!ObjectUtils.equals(oldLoaderId, id)) {
+          String s = "Class \"" + name + "\" was loaded by multiple module classloaders simultaneously.\n" +
+            "Classloaders: \n" +
+            "  " + id.toString() + "\n" +
+            "  " + oldLoaderId.toString();
+          //throw new IllegalStateException(s);
+          System.out.println(s);
+        }
+      } else {
+        myLoadedClasses.put(InternUtil.intern(name), id);
+      }
+    }
+  }
+
   public void updateClassPath() {
-    for (ClassLoadingModule m: ModuleRepositoryFacade.getInstance().getAllModules(ClassLoadingModule.class)){
+    myLoadedClasses.clear();
+    for (ClassLoadingModule m : ModuleRepositoryFacade.getInstance().getAllModules(ClassLoadingModule.class)) {
       m.invalidateClasses();
     }
     ClassPathFactory.getInstance().invalidateAll();
@@ -152,9 +175,8 @@ public class ClassLoaderManager implements CoreComponent {
   private void safeInvoke(Runnable runnable) {
     try {
       runnable.run();
-    }
-    catch (RuntimeException unexpected) {
-        LOG.error("Unexpected exception", unexpected);
+    } catch (RuntimeException unexpected) {
+      LOG.error("Unexpected exception", unexpected);
     }
   }
 }

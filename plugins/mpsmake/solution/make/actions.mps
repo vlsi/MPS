@@ -78,6 +78,7 @@
       <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
       <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
       <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="3000" />
+      <property name="handleErrors" nameId="tp4k.1573568368168371217" value="true" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5332171957773708940">
       <property name="name" nameId="tpck.1169194664001" value="CheckModelsBeforeGeneration" />

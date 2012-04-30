@@ -501,6 +501,16 @@
       <property name="memberIdentifierPolicy" nameId="tpce.1197591154882" value="derive_from_internal_value" />
       <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6977615362525721938">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File.Mappers" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildLayout_CopyMapper" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="9184644532456508467" resolveInfo="BuildLayout_CopyHandler" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6977615362525721939">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File.Mappers" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildLayout_CopyFlattenMapper" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="6977615362525721938" resolveInfo="BuildLayout_CopyMapper" />
+    </node>
   </roots>
   <root id="5617550519002745363">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5204048710541015587">
@@ -1434,6 +1444,10 @@
       <property name="name" nameId="tpck.1169194664001" value="noWarnings" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
     </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="2059109515400425365">
+      <property name="name" nameId="tpck.1169194664001" value="compiler" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="927724900262213627">
       <property name="value" nameId="tpce.1105725733873" value="java options" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
@@ -1640,6 +1654,17 @@
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="4198392933254416818">
       <property name="internalValue" nameId="tpce.1083923523171" value="crlf" />
       <property name="externalValue" nameId="tpce.1083923523172" value="convert to the pair CRLF" />
+    </node>
+  </root>
+  <root id="6977615362525721938">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="6977615362525721940">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
+    </node>
+  </root>
+  <root id="6977615362525721939">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="6977615362525721941">
+      <property name="value" nameId="tpce.1105725733873" value="flatten" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>
 </model>

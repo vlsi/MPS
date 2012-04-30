@@ -22,5 +22,6 @@
     
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/"></mps.LanguageLibrary>
+    <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"></errorHandler>
   </extensions>
 </idea-plugin>

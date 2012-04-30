@@ -50,7 +50,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class QueriesGenerated {
-  private static Pattern REGEXP_x583g4_a0a0b0b0a0a0a0c0a0c0v = Pattern.compile("[^\\$].*", 0);
+  private static Pattern REGEXP_x583g4_a0a0b0b0a0a0a0c0a0c0x = Pattern.compile("[^\\$].*", 0);
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildCompositePath_8169228734285651483(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     SNode curr = _context.getSourceNode();
@@ -92,6 +92,10 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.build.structure.BuildSource_JavaJar") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(_context.getSourceNode())), "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar");
   }
 
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildInputFiles_6977615362526183509(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.build.structure.BuildLayout_Copy");
+  }
+
   public static void nodeFactory_NodeSetup_BuildProject_6099797596647447257(final IOperationContext operationContext, final NodeSetupContext _context) {
     SModelDescriptor modelDescriptor = _context.getModel().getModelDescriptor();
     if (_context.getModel().isTransient() || modelDescriptor == null) {
@@ -103,7 +107,7 @@ public class QueriesGenerated {
     }
 
     SPropertyOperations.set(_context.getNewNode(), "internalBaseDirectory", ".");
-    SLinkOperations.setTarget(_context.getNewNode(), "scriptsDir", new QueriesGenerated.QuotationClass_x583g4_a2a6a9().createNode(), true);
+    SLinkOperations.setTarget(_context.getNewNode(), "scriptsDir", new QueriesGenerated.QuotationClass_x583g4_a2a6a01().createNode(), true);
   }
 
   public static void nodeFactory_NodeSetup_BuildSourceMacroRelativePath_7389400916848172016(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -147,6 +151,12 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_BuildMacro_6099797596647440631(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.build.structure.BuildMacro")) {
       SPropertyOperations.set(_context.getNewNode(), "name", SPropertyOperations.getString(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.build.structure.BuildMacro"), "name"));
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_BuildLayout_AbstractCopy_6977615362526183836(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.build.structure.BuildLayout_AbstractCopy")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "fileset", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.build.structure.BuildLayout_AbstractCopy"), "fileset", true), true);
     }
   }
 
@@ -356,7 +366,7 @@ public class QueriesGenerated {
               return "text";
             }
             {
-              Pattern _pattern_0 = REGEXP_x583g4_a0a0b0b0a0a0a0c0a0c0v;
+              Pattern _pattern_0 = REGEXP_x583g4_a0a0b0b0a0a0a0c0a0c0x;
               Matcher _matcher_0 = _pattern_0.matcher(pattern);
               if (_matcher_0.find()) {
                 return pattern;
@@ -728,8 +738,29 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static class QuotationClass_x583g4_a2a6a9 {
-    public QuotationClass_x583g4_a2a6a9() {
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_BuildInputFiles_6977615362526183508(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_CustomCopy");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          return SNodeFactoryOperations.replaceWithNewChild(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.build.structure.BuildLayout_CustomCopy");
+        }
+
+        public String getMatchingText(String pattern) {
+          return "copy";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+      });
+    }
+    return result;
+  }
+
+  public static class QuotationClass_x583g4_a2a6a01 {
+    public QuotationClass_x583g4_a2a6a01() {
     }
 
     public SNode createNode() {
