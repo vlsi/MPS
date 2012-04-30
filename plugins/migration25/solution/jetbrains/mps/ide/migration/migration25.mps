@@ -99,7 +99,7 @@
       <property name="name" nameId="tpck.1169194664001" value="PluginMoveHelper" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5318937080028090535">
-      <property name="name" nameId="tpck.1169194664001" value="CorrectIconsAfterPluhinMove" />
+      <property name="name" nameId="tpck.1169194664001" value="CorrectIconsAfterPluginMove" />
       <property name="caption" nameId="tp4k.1205250923097" value="Correct Icons after Plugin Move" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="975723688157231916">
@@ -3864,7 +3864,7 @@
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="1855937925843851060" resolveInfo="MovePluginsOutOfLanguages" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="4636220444987588502">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="5318937080028090535" resolveInfo="CorrectIconsAfterPluhinMove" />
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="5318937080028090535" resolveInfo="CorrectIconsAfterPluginMove" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="9065176582222574817">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="9065176582222574567" resolveInfo="UpdateRefactoringVersions" />
