@@ -14,7 +14,6 @@ import org.jdom.JDOMException;
 import java.io.IOException;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import java.util.Scanner;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
 import com.intellij.openapi.util.IconLoader;
@@ -65,7 +64,10 @@ public class TestMergeDialog {
     if (args.length == 0) {
       System.out.print("Input path to model zip: ");
       String line = new Scanner(System.in).nextLine();
-      args = new String[]{StringUtils.trim(line)};
+      args = new String[]{((line == null ?
+        null :
+        line.trim()
+      ))};
     }
     IdeMain.setTestMode(IdeMain.TestMode.NO_TEST);
     TestMain.configureMPS();

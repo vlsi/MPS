@@ -99,7 +99,6 @@
     <classNode dependClassName="jetbrains.mps.messages.IMessage" />
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.smodel.TimeOutRuntimeException" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IPropertiesAccessor" />
     <classNode extendsClassName="jetbrains.mps.make.script.IPropertiesPool" />
     <classNode extendsClassName="jetbrains.mps.make.script.IResult" />
