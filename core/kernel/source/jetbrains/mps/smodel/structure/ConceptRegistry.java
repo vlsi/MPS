@@ -17,7 +17,6 @@ package jetbrains.mps.smodel.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.runtime.adapter.BehaviorDescriptorAdapter;
-import jetbrains.mps.smodel.runtime.adapter.ConceptDescriptorAdapter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -31,11 +30,6 @@ public class ConceptRegistry {
 
   public static ConceptRegistry getInstance() {
     return REGISTRY;
-  }
-
-  @Deprecated
-  public StructureDescriptor getStructureDescriptor(String fqName) {
-    return new ConceptDescriptorAdapter(getConceptDescriptor(fqName));
   }
 
   @Deprecated
@@ -81,11 +75,6 @@ public class ConceptRegistry {
 
     @Override
     public String fqName() {
-      throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public StructureDescriptor structure() {
       throw new UnsupportedOperationException();
     }
 

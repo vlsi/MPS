@@ -39,7 +39,6 @@ public class LanguageRuntimeInterpreted extends LanguageRuntime {
   // todo: rename
   private static final DescriptorProvider<ConstraintsDescriptor> NEW_INTERPRETED_CONSTRAINTS = new CompiledConstraintsProvider();
 
-  public static final DescriptorProvider<StructureDescriptor> STRUCTURE_PROVIDER = new InterpretedStructureProvider();
   public static final DescriptorProvider<BehaviorDescriptor> BEHAVIOR_PROVIDER = new InterpretedBehaviorProvider();
   public static final DescriptorProvider<ConstraintsDescriptor> CONSTRAINTS_PROVIDER = MixedDescriptorProvider.of(NEW_INTERPRETED_CONSTRAINTS, OLD_INTERPRETED_CONSTRAINTS);
   public static final DescriptorProvider<FacetDescriptor> FACET_PROVIDER = new InterpretedFacetProvider();

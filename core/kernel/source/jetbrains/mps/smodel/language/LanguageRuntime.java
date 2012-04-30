@@ -37,7 +37,6 @@ import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNam
  * evgeny, 3/11/11
  */
 public abstract class LanguageRuntime {
-  private DescriptorProvider<StructureDescriptor> _structureDescriptor;
   private DescriptorProvider<BehaviorDescriptor> _behaviorDescriptor;
   private DescriptorProvider<ConstraintsDescriptor> _constraintsDescriptor;
   private DescriptorProvider<FacetDescriptor> facetDescriptor;
@@ -65,14 +64,6 @@ public abstract class LanguageRuntime {
     String className = getNamespace() + "." + aspectName;
     DescriptorProvider<T> compiled = (DescriptorProvider<T>) getObjectByClassNameForLanguageNamespace(className, DescriptorProvider.class, getNamespace(), true);
     return compiled != null ? compiled : defaultProvider;
-  }
-
-  @Deprecated
-  public DescriptorProvider<StructureDescriptor> getStructureAspect() {
-    if (_structureDescriptor == null) {
-      _structureDescriptor = getDescriptorProvider("structure.StructureAspectDescriptor", LanguageRuntimeInterpreted.STRUCTURE_PROVIDER);
-    }
-    return _structureDescriptor;
   }
 
   @Deprecated
