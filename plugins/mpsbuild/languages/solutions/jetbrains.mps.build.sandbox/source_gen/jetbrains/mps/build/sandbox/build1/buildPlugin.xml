@@ -18,11 +18,7 @@
   <target name="assemble" depends="classes">
     <aaa />
     <mkdir dir="${build.layout}/xx" />
-    <mkdir dir="${build.tmp}/default/xx" />
-    <mkdir dir="${build.tmp}/default/xx/test" />
-    <jar destfile="${build.layout}/xx/xx">
-      <fileset dir="${build.tmp}/default/xx" />
-    </jar>
+    <jar destfile="${build.layout}/xx/xx" />
     <echo file="${build.layout}/variables.properties">buildCore.build.number=${buildCore.build.number}${line.separator}buildCore.ver=${buildCore.ver}${line.separator}buildCore.MPS=${buildCore.MPS}${line.separator}buildA.aver1=${buildA.aver1}${line.separator}buildA.aver1=${buildA.aver1}</echo>
   </target>
   

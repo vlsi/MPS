@@ -14,10 +14,6 @@
     <jar destfile="${build.tmp}/default/A-_dl_{aver}.zip/module-A.jar">
       <fileset dir="${build.tmp}/java/out/module-A" />
     </jar>
-    <mkdir dir="${build.tmp}/default/A-_dl_{aver}.zip/A" />
-    <copy todir="${build.tmp}/default/A-_dl_{aver}.zip/A">
-      <fileset file="${basedir}/testdata/a.txt" />
-    </copy>
     <mkdir dir="${build.tmp}/default/withX.zip" />
     <jar destfile="${build.tmp}/default/withX.zip/X.jar">
       <fileset dir="${build.tmp}/java/out/modX" />
@@ -33,6 +29,7 @@
       <fileset dir="${build.tmp}/default/abcde.zip" />
     </zip>
     <zip destfile="${build.layout}/result/A-${aver}.zip">
+      <zipfileset file="${basedir}/testdata/a.txt" prefix="A" />
       <fileset dir="${build.tmp}/default/A-_dl_{aver}.zip" />
     </zip>
     <echo file="${build.layout}/variables.properties">buildA.aver=${aver}</echo>

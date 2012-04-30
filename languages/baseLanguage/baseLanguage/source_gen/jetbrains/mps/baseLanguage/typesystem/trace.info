@@ -21669,47 +21669,66 @@
     <unitInfo nodeId="6974494769387259317" fileName="Queries.java" startLine="21" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.Queries" />
   </root>
   <root nodeId="7152041109751465917">
-    <nodeInfo nodeId="7152041109751780531" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="22" startPosition="128" endLine="23" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7152041109751780585" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="24" startPosition="37" endLine="25" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7152041109751780595" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="25" startPosition="150" endLine="26" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="31" startPosition="46" endLine="32" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="36" startPosition="5" endLine="37" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="37" startPosition="117" endLine="38" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="42" startPosition="30" endLine="43" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="17" startPosition="151" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_DefaultSuperConstructorThrowables_NonTypesystemRule#()V" />
-    <nodeInfo nodeId="7152041109751780564" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="23" startPosition="139" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="35" startPosition="68" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="7152041109751578066" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="21" startPosition="135" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="18" startPosition="70" endLine="18" endPosition="70" />
-    <scopeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="31" startPosition="46" endLine="32" endPosition="73" />
-    <scopeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="42" startPosition="30" endLine="43" endPosition="17" />
-    <scopeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="17" startPosition="151" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="7152041109751780565" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="24" startPosition="37" endLine="26" endPosition="185">
-      <varInfo nodeId="7152041109751780586" varName="throwables" />
-    </scopeInfo>
-    <scopeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="36" startPosition="5" endLine="38" endPosition="45">
+    <nodeInfo nodeId="7152041109751780531" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="24" startPosition="128" endLine="25" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7152041109751780585" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="26" startPosition="37" endLine="27" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7450078596028079000" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="28" startPosition="126" endLine="29" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7450078596028079005" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="31" startPosition="103" endLine="32" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7450078596028079037" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="35" startPosition="22" endLine="36" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7152041109751780595" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="38" startPosition="9" endLine="39" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="44" startPosition="46" endLine="45" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="49" startPosition="5" endLine="50" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="50" startPosition="117" endLine="51" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="55" startPosition="30" endLine="56" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="19" startPosition="151" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_DefaultSuperConstructorThrowables_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="7450078596028078989" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="30" startPosition="129" endLine="33" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7450078596028079032" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="34" startPosition="11" endLine="37" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="48" startPosition="68" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="7450078596028078982" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="29" startPosition="31" endLine="34" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="47" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="7450078596028078970" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="27" startPosition="74" endLine="38" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7152041109751780564" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="25" startPosition="139" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7152041109751578066" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="23" startPosition="135" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="20" startPosition="70" endLine="20" endPosition="70" />
+    <scopeInfo nodeId="7450078596028078991" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="31" startPosition="103" endLine="32" endPosition="28" />
+    <scopeInfo nodeId="7450078596028079033" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="35" startPosition="22" endLine="36" endPosition="71" />
+    <scopeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="44" startPosition="46" endLine="45" endPosition="73" />
+    <scopeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="55" startPosition="30" endLine="56" endPosition="17" />
+    <scopeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="19" startPosition="151" endLine="21" endPosition="3" />
+    <scopeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="49" startPosition="5" endLine="51" endPosition="45">
       <varInfo nodeId="7152041109751465917" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="35" startPosition="68" endLine="39" endPosition="5" />
-    <scopeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="7152041109751578068" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="22" startPosition="128" endLine="27" endPosition="7">
-      <varInfo nodeId="7152041109751780532" varName="superConstructor" />
+    <scopeInfo nodeId="7450078596028078985" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="30" startPosition="129" endLine="33" endPosition="13" />
+    <scopeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="48" startPosition="68" endLine="52" endPosition="5" />
+    <scopeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="7450078596028078982" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="29" startPosition="31" endLine="34" endPosition="11">
+      <varInfo nodeId="7450078596028078982" varName="throwable" />
     </scopeInfo>
-    <scopeInfo nodeId="7152041109751465918" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="21" startPosition="135" endLine="28" endPosition="5" />
-    <scopeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="47" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="7152041109751465917" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="30" endPosition="0">
+    <scopeInfo nodeId="7450078596028078973" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="28" startPosition="126" endLine="37" endPosition="11">
+      <varInfo nodeId="7450078596028079001" varName="toAdd" />
+    </scopeInfo>
+    <scopeInfo nodeId="7450078596028078970" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="27" startPosition="74" endLine="38" endPosition="9">
+      <varInfo nodeId="7450078596028078970" varName="superThrowable" />
+    </scopeInfo>
+    <scopeInfo nodeId="7152041109751780565" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="26" startPosition="37" endLine="39" endPosition="186">
+      <varInfo nodeId="7152041109751780586" varName="throwables" />
+    </scopeInfo>
+    <scopeInfo nodeId="7152041109751578068" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="24" startPosition="128" endLine="40" endPosition="7">
+      <varInfo nodeId="7152041109751780532" varName="superConstructor" />
+    </scopeInfo>
+    <scopeInfo nodeId="7152041109751465918" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="23" startPosition="135" endLine="41" endPosition="5" />
+    <scopeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="7152041109751465917" varName="constructorDeclaration" />
       <varInfo nodeId="7152041109751465917" varName="status" />
       <varInfo nodeId="7152041109751465917" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_DefaultSuperConstructorThrowables_NonTypesystemRule" />
+    <unitInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_DefaultSuperConstructorThrowables_NonTypesystemRule" />
   </root>
   <root nodeId="7243599812675827514">
     <nodeInfo nodeId="7243599812675828677" fileName="check_ConceptFunctionReturns_NonTypesystemRule.java" startLine="30" startPosition="117" endLine="31" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
