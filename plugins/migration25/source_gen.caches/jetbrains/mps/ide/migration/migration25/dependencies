@@ -105,7 +105,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.migration.migration25.CorrectIconsAfterPluhinMove_Action" file="CorrectIconsAfterPluhinMove_Action.java">
+  <dependency className="jetbrains.mps.ide.migration.migration25.CorrectIconsAfterPluginMove_Action" file="CorrectIconsAfterPluginMove_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -243,7 +243,7 @@
     <classNode dependClassName="jetbrains.mps.ide.migration.migration25.AddSourcesToModelRoots_Action" />
     <classNode dependClassName="jetbrains.mps.ide.migration.migration25.AddStubsToModelRoots_Action" />
     <classNode dependClassName="jetbrains.mps.ide.migration.migration25.ConvertLanguageRuntimes_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.migration.migration25.CorrectIconsAfterPluhinMove_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.migration25.CorrectIconsAfterPluginMove_Action" />
     <classNode dependClassName="jetbrains.mps.ide.migration.migration25.ExecuteJavaModelCheckerFixes_Action" />
     <classNode dependClassName="jetbrains.mps.ide.migration.migration25.ExecuteModelCheckerFixes_Action" />
     <classNode dependClassName="jetbrains.mps.ide.migration.migration25.FixMissingImportsInProject_Action" />

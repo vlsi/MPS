@@ -13,11 +13,11 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.MPSProject;
 
-public class CorrectIconsAfterPluhinMove_Action extends BaseAction {
+public class CorrectIconsAfterPluginMove_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(CorrectIconsAfterPluhinMove_Action.class);
+  protected static Log log = LogFactory.getLog(CorrectIconsAfterPluginMove_Action.class);
 
-  public CorrectIconsAfterPluhinMove_Action() {
+  public CorrectIconsAfterPluginMove_Action() {
     super("Correct Icons after Plugin Move", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
@@ -28,7 +28,7 @@ public class CorrectIconsAfterPluhinMove_Action extends BaseAction {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "CorrectIconsAfterPluhinMove", t);
+        log.error("User's action doUpdate method failed. Action:" + "CorrectIconsAfterPluginMove", t);
       }
       this.disable(event.getPresentation());
     }
@@ -50,7 +50,7 @@ public class CorrectIconsAfterPluhinMove_Action extends BaseAction {
       new PluginMoveHelper(((MPSProject) MapSequence.fromMap(_params).get("project"))).moveIconsInAction();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "CorrectIconsAfterPluhinMove", t);
+        log.error("User's action execute method failed. Action:" + "CorrectIconsAfterPluginMove", t);
       }
     }
   }
