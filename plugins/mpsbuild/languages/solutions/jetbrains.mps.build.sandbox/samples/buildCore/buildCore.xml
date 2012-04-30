@@ -33,12 +33,8 @@
       </fileset>
       <fileset dir="${build.tmp}/default/inrelease.zip" />
     </zip>
-    <mkdir dir="${build.tmp}/default/release.zip/aaa" />
-    <mkdir dir="${build.tmp}/default/release.zip/aaa/bbb" />
-    <copy todir="${build.tmp}/default/release.zip/aaa/bbb">
-      <fileset file="${mps_home}/about.txt" />
-    </copy>
     <zip destfile="${build.layout}/default/release.zip">
+      <zipfileset file="${mps_home}/about.txt" prefix="aaa/bbb" />
       <fileset dir="${build.tmp}/default/release.zip" />
     </zip>
     <echo file="${build.layout}/variables.properties">buildCore.build.number=${build.number}${line.separator}buildCore.ver=${ver}${line.separator}buildCore.MPS=${MPS}</echo>
