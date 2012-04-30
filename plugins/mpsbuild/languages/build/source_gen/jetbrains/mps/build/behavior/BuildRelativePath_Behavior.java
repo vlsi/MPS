@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class BuildRelativePath_Behavior {
@@ -88,13 +87,13 @@ public class BuildRelativePath_Behavior {
     if ((SLinkOperations.getTarget(cp, "tail", true) == null)) {
       return null;
     }
-    if (StringUtils.isEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(cp, "tail", true), "head"))) {
+    if ((SPropertyOperations.getString(SLinkOperations.getTarget(cp, "tail", true), "head") == null || SPropertyOperations.getString(SLinkOperations.getTarget(cp, "tail", true), "head").length() == 0)) {
       return BuildRelativePath_Behavior.next_8654221991637156927(SLinkOperations.getTarget(cp, "tail", true));
     }
     return SLinkOperations.getTarget(cp, "tail", true);
   }
 
   public static boolean isEmptyTail_8654221991637157686(SNode cp) {
-    return cp == null || StringUtils.isEmpty(SPropertyOperations.getString(cp, "head")) && BuildRelativePath_Behavior.isEmptyTail_8654221991637157686(SLinkOperations.getTarget(cp, "tail", true));
+    return cp == null || (SPropertyOperations.getString(cp, "head") == null || SPropertyOperations.getString(cp, "head").length() == 0) && BuildRelativePath_Behavior.isEmptyTail_8654221991637157686(SLinkOperations.getTarget(cp, "tail", true));
   }
 }

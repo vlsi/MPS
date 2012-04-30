@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.ide.DataManager;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -58,7 +57,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
     addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
         final String text = getText();
-        if (StringUtils.isEmpty(text)) {
+        if ((text == null || text.length() == 0)) {
           setNode(null);
           return;
         }

@@ -98,7 +98,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope" />
     <classNode dependClassName="jetbrains.mps.smodel.search.IReferenceInfoResolver" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.scope.Scope" />

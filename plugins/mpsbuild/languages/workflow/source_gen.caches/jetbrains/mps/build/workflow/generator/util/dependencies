@@ -29,7 +29,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode extendsClassName="jetbrains.mps.make.dependencies.graph.IVertex" />
   </dependency>
   <dependency className="jetbrains.mps.build.workflow.generator.util.SubTaskOrderHelper" file="SubTaskOrderHelper.java">

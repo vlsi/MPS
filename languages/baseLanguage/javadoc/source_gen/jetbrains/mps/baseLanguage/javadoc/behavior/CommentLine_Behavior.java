@@ -8,7 +8,6 @@ import jetbrains.mps.baseLanguage.javadoc.editor.NodeCaretPair;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.apache.commons.lang.StringUtils;
 
 public class CommentLine_Behavior {
   public static void init(SNode thisNode) {
@@ -21,10 +20,10 @@ public class CommentLine_Behavior {
       int offset = SPropertyOperations.getString(leftPart, "text").length();
       SNode rightPart = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "part", true)).getElement(index + 1), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
 
-      String text = ((StringUtils.isEmpty(SPropertyOperations.getString(leftPart, "text")) ?
+      String text = (((SPropertyOperations.getString(leftPart, "text") == null || SPropertyOperations.getString(leftPart, "text").length() == 0) ?
         "" :
         SPropertyOperations.getString(leftPart, "text")
-      )) + ((StringUtils.isEmpty(SPropertyOperations.getString(rightPart, "text")) ?
+      )) + (((SPropertyOperations.getString(rightPart, "text") == null || SPropertyOperations.getString(rightPart, "text").length() == 0) ?
         "" :
         SPropertyOperations.getString(rightPart, "text")
       ));

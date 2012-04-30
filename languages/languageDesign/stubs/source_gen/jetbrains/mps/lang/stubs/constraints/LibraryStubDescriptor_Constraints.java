@@ -9,7 +9,6 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.IModule;
@@ -33,7 +32,7 @@ public class LibraryStubDescriptor_Constraints extends BaseConstraintsDescriptor
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "moduleName";
         {
-          if (StringUtils.isEmpty(SPropertyOperations.getString(node, "moduleId"))) {
+          if ((SPropertyOperations.getString(node, "moduleId") == null || SPropertyOperations.getString(node, "moduleId").length() == 0)) {
             return null;
           }
 

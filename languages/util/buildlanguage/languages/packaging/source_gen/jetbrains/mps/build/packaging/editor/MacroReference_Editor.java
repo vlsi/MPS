@@ -20,7 +20,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -81,11 +80,11 @@ public class MacroReference_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_yfwtie_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "name"));
+    return (SPropertyOperations.getString(node, "name") != null && SPropertyOperations.getString(node, "name").length() > 0);
   }
 
   private static boolean renderingCondition_yfwtie_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return StringUtils.isEmpty(SPropertyOperations.getString(node, "name"));
+    return (SPropertyOperations.getString(node, "name") == null || SPropertyOperations.getString(node, "name").length() == 0);
   }
 
   public static class MacroReference_component_cellMenu_a0a0 implements SubstituteInfoPart {

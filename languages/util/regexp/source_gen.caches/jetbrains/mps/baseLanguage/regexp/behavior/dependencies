@@ -252,7 +252,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.LiteralReplacement_BehaviorDescriptor" file="LiteralReplacement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -770,7 +769,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.StringLiteralRegexp_BehaviorDescriptor" file="StringLiteralRegexp_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

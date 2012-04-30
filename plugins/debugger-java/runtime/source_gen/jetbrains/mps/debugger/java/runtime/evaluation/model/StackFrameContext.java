@@ -50,7 +50,6 @@ import com.sun.jdi.CharType;
 import com.sun.jdi.ArrayType;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.debug.evaluation.transform.TransformatorBuilder;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SNodeId;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -345,7 +344,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
       return false;
     }
     String staticContextTypeName = getStaticContextTypeName();
-    if (StringUtils.isEmpty(staticContextTypeName)) {
+    if ((staticContextTypeName == null || staticContextTypeName.length() == 0)) {
       return false;
     }
     return staticContextTypeName.equals(((String) BehaviorManager.getInstance().invoke(Object.class, SLinkOperations.getTarget(SNodeOperations.cast(staticContextType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "virtual_getFqName_1213877404258", new Class[]{SNode.class})));

@@ -25,7 +25,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.util.FileUtil;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
@@ -185,7 +184,7 @@ public class JavaCompiler {
     assert dir.isDirectory();
     for (File file : dir.listFiles()) {
       if (file.isDirectory()) {
-        addSourceFromDirectory(file, packageNameWithoutPrefix + ((StringUtils.isEmpty(packageNameWithoutPrefix) ?
+        addSourceFromDirectory(file, packageNameWithoutPrefix + (((packageNameWithoutPrefix == null || packageNameWithoutPrefix.length() == 0) ?
           "" :
           "."
         )) + file.getName());

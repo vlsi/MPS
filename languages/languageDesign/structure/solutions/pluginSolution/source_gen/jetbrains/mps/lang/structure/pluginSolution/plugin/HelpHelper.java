@@ -5,7 +5,6 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Language;
@@ -42,14 +41,14 @@ public class HelpHelper {
     if ((node == null)) {
       return false;
     }
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "helpURL"));
+    return (SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "helpURL") != null && SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "helpURL").length() > 0);
   }
 
   public static boolean helpForRootIsAvailable(SNode node) {
     if ((node == null)) {
       return false;
     }
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SNodeOperations.getContainingRoot(node)), "helpURL"));
+    return (SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SNodeOperations.getContainingRoot(node)), "helpURL") != null && SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SNodeOperations.getContainingRoot(node)), "helpURL").length() > 0);
   }
 
   public static boolean helpForAspectIsAvailable(IModule module, SModelDescriptor model) {

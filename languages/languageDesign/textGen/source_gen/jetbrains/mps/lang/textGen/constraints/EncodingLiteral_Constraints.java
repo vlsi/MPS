@@ -9,7 +9,6 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.nio.charset.Charset;
 
@@ -30,7 +29,13 @@ public class EncodingLiteral_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean validateValue(SNode node, String propertyValue, IScope scope) {
         String propertyName = "encoding";
-        if (StringUtils.isEmpty(StringUtils.trim((SPropertyOperations.getString(propertyValue))))) {
+        if (((((SPropertyOperations.getString(propertyValue)) == null ?
+          null :
+          (SPropertyOperations.getString(propertyValue)).trim()
+        )) == null || (((SPropertyOperations.getString(propertyValue)) == null ?
+          null :
+          (SPropertyOperations.getString(propertyValue)).trim()
+        )).length() == 0)) {
           return false;
         }
         if ((SPropertyOperations.getString(propertyValue)).equals("binary")) {

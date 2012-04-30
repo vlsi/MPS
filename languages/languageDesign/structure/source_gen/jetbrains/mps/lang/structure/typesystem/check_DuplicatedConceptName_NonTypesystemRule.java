@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -25,7 +24,7 @@ public class check_DuplicatedConceptName_NonTypesystemRule extends AbstractNonTy
 
   public void applyRule(final SNode conceptDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final String name = SPropertyOperations.getString(conceptDeclaration, "name");
-    if (StringUtils.isEmpty(name)) {
+    if ((name == null || name.length() == 0)) {
       return;
     }
     if (ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(conceptDeclaration), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).any(new IWhereFilter<SNode>() {

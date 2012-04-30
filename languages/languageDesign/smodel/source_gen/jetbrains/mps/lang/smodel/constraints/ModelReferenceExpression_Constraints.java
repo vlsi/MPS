@@ -9,7 +9,6 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ModelReferenceExpression_Constraints extends BaseConstraintsDescriptor {
@@ -29,10 +28,10 @@ public class ModelReferenceExpression_Constraints extends BaseConstraintsDescrip
       @Override
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "fqName";
-        if (StringUtils.isEmpty(SPropertyOperations.getString(node, "name"))) {
+        if ((SPropertyOperations.getString(node, "name") == null || SPropertyOperations.getString(node, "name").length() == 0)) {
           return null;
         }
-        return SPropertyOperations.getString(node, "name") + ((StringUtils.isEmpty(SPropertyOperations.getString(node, "stereotype")) ?
+        return SPropertyOperations.getString(node, "name") + (((SPropertyOperations.getString(node, "stereotype") == null || SPropertyOperations.getString(node, "stereotype").length() == 0) ?
           "" :
           "@" + SPropertyOperations.getString(node, "stereotype")
         ));

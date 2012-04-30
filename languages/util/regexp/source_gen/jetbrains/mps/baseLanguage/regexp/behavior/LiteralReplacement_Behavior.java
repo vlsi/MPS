@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -21,7 +20,7 @@ public class LiteralReplacement_Behavior {
   }
 
   public static boolean call_isValid_3796137614137567952(SNode thisNode) {
-    if (StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "text"))) {
+    if ((SPropertyOperations.getString(thisNode, "text") == null || SPropertyOperations.getString(thisNode, "text").length() == 0)) {
       return false;
     }
     return LiteralReplacement_Behavior.call_toRegexp_3796137614137565586(thisNode, SPropertyOperations.getString(thisNode, "text")) != null;

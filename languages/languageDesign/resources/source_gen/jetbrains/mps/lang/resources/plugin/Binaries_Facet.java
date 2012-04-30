@@ -31,7 +31,6 @@ import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.MacrosUtil;
@@ -111,7 +110,7 @@ public class Binaries_Facet extends IFacet.Stub {
                         ListSequence.fromList(deltaList).addElement(fd);
                         return ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.lang.resources.structure.Resource")).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
-                            return StringUtils.isNotEmpty(SPropertyOperations.getString(it, "path"));
+                            return (SPropertyOperations.getString(it, "path") != null && SPropertyOperations.getString(it, "path").length() > 0);
                           }
                         }).select(new ISelector<SNode, String>() {
                           public String select(SNode bin) {

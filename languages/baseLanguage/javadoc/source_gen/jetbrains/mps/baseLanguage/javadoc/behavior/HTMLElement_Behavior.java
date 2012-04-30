@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.javadoc.editor.NodeCaretPair;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -26,7 +25,7 @@ public class HTMLElement_Behavior {
 
     if ((int) Sequence.fromIterable(lines).count() == 0) {
       SNode prev = SNodeOperations.getPrevSibling(thisNode);
-      if (StringUtils.isNotEmpty(SPropertyOperations.getString(SNodeOperations.cast(prev, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
+      if ((SPropertyOperations.getString(SNodeOperations.cast(prev, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text") != null && SPropertyOperations.getString(SNodeOperations.cast(prev, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length() > 0)) {
         caret = SPropertyOperations.getString(SNodeOperations.cast(prev, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
       }
       SNodeOperations.deleteNode(thisNode);

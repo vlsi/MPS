@@ -15,8 +15,8 @@ import com.intellij.openapi.vcs.VcsDirectoryMapping;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.ide.ThreadUtils;
+import org.apache.commons.lang.StringUtils;
 import com.intellij.openapi.vcs.impl.projectlevelman.AllVcses;
 import com.intellij.notification.NotificationType;
 import com.intellij.notification.NotificationListener;
@@ -73,7 +73,7 @@ public class MergeDriverNotification {
       }
     }).where(new IWhereFilter<String>() {
       public boolean accept(String vn) {
-        return StringUtils.isNotEmpty(vn);
+        return (vn != null && vn.length() > 0);
       }
     }));
     ThreadUtils.runInUIThreadNoWait(new Runnable() {

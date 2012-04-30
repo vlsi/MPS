@@ -737,201 +737,201 @@
     <unitInfo nodeId="8294989614925458250" fileName="Scope.java" startLine="89" startPosition="45" endLine="95" endPosition="5" unitName="jetbrains.mps.ide.dependencyViewer.Scope$2" />
   </root>
   <root nodeId="8294989614925458531">
-    <nodeInfo nodeId="8294989614925458532" fileName="TargetsView.java" startLine="34" startPosition="45" endLine="35" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParent" />
-    <nodeInfo nodeId="8294989614925458763" fileName="TargetsView.java" startLine="37" startPosition="65" endLine="38" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8294989614925458773" fileName="TargetsView.java" startLine="38" startPosition="76" endLine="39" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8294989614925458779" fileName="TargetsView.java" startLine="39" startPosition="57" endLine="40" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8294989614925458787" fileName="TargetsView.java" startLine="40" startPosition="101" endLine="41" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8294989614925458791" fileName="TargetsView.java" startLine="41" startPosition="22" endLine="42" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6135653370488158049" fileName="TargetsView.java" startLine="42" startPosition="70" endLine="43" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="940765150354985133" fileName="TargetsView.java" startLine="43" startPosition="34" endLine="44" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4029933853797167737" fileName="TargetsView.java" startLine="50" startPosition="44" endLine="51" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4029933853797167753" fileName="TargetsView.java" startLine="52" startPosition="23" endLine="53" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4029933853797093168" fileName="TargetsView.java" startLine="57" startPosition="50" endLine="58" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4029933853797098608" fileName="TargetsView.java" startLine="58" startPosition="57" endLine="59" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4029933853797167550" fileName="TargetsView.java" startLine="60" startPosition="37" endLine="61" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4029933853797167586" fileName="TargetsView.java" startLine="62" startPosition="29" endLine="63" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4029933853797167658" fileName="TargetsView.java" startLine="64" startPosition="7" endLine="65" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4029933853797167604" fileName="TargetsView.java" startLine="66" startPosition="43" endLine="67" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4029933853797167730" fileName="TargetsView.java" startLine="69" startPosition="62" endLine="70" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4029933853797167734" fileName="TargetsView.java" startLine="74" startPosition="5" endLine="75" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8294989614925458536" fileName="TargetsView.java" startLine="106" startPosition="73" endLine="107" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
-    <nodeInfo nodeId="8294989614925458539" fileName="TargetsView.java" startLine="107" startPosition="30" endLine="108" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDependenciesComponent" />
-    <nodeInfo nodeId="8294989614925458551" fileName="TargetsView.java" startLine="110" startPosition="79" endLine="111" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8294989614925458555" fileName="TargetsView.java" startLine="111" startPosition="20" endLine="112" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8294989614925458566" fileName="TargetsView.java" startLine="115" startPosition="56" endLine="116" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8294989614925458575" fileName="TargetsView.java" startLine="117" startPosition="47" endLine="118" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8294989614925458585" fileName="TargetsView.java" startLine="119" startPosition="7" endLine="120" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8294989614925458592" fileName="TargetsView.java" startLine="121" startPosition="35" endLine="122" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8294989614925458600" fileName="TargetsView.java" startLine="122" startPosition="69" endLine="123" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8294989614925458608" fileName="TargetsView.java" startLine="124" startPosition="45" endLine="125" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8294989614925458619" fileName="TargetsView.java" startLine="126" startPosition="46" endLine="127" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8294989614925458633" fileName="TargetsView.java" startLine="129" startPosition="47" endLine="130" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8294989614925458647" fileName="TargetsView.java" startLine="132" startPosition="45" endLine="133" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8294989614925458665" fileName="TargetsView.java" startLine="136" startPosition="7" endLine="137" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8294989614925458683" fileName="TargetsView.java" startLine="145" startPosition="50" endLine="146" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8294989614925458691" fileName="TargetsView.java" startLine="149" startPosition="48" endLine="150" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8294989614925458703" fileName="TargetsView.java" startLine="153" startPosition="82" endLine="154" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8294989614925458709" fileName="TargetsView.java" startLine="157" startPosition="34" endLine="158" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6554537591061570737" fileName="TargetsView.java" startLine="161" startPosition="55" endLine="162" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6554537591061570757" fileName="TargetsView.java" startLine="163" startPosition="46" endLine="164" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8294989614925458717" fileName="TargetsView.java" startLine="165" startPosition="7" endLine="166" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8294989614925458732" fileName="TargetsView.java" startLine="170" startPosition="47" endLine="171" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8294989614925458672" fileName="TargetsView.java" startLine="141" startPosition="73" endLine="143" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyNodeRepresentator#()V" />
-    <nodeInfo nodeId="8294989614925458796" fileName="TargetsView.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="close#()V" />
-    <nodeInfo nodeId="4029933853797167744" fileName="TargetsView.java" startLine="51" startPosition="42" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4029933853797167577" fileName="TargetsView.java" startLine="61" startPosition="88" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4029933853797167726" fileName="TargetsView.java" startLine="68" startPosition="45" endLine="71" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8294989614925458573" fileName="TargetsView.java" startLine="116" startPosition="52" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8294989614925458617" fileName="TargetsView.java" startLine="125" startPosition="64" endLine="128" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8294989614925458631" fileName="TargetsView.java" startLine="128" startPosition="11" endLine="131" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8294989614925458645" fileName="TargetsView.java" startLine="131" startPosition="11" endLine="134" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6554537591061570747" fileName="TargetsView.java" startLine="162" startPosition="73" endLine="165" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8294989614925458736" fileName="TargetsView.java" startLine="173" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="read#(Lorg/jdom/Element;Ljetbrains/mps/project/Project;)V" />
-    <nodeInfo nodeId="8294989614925458745" fileName="TargetsView.java" startLine="176" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="write#(Lorg/jdom/Element;Ljetbrains/mps/project/Project;)V" />
-    <nodeInfo nodeId="8294989614925458624" fileName="TargetsView.java" startLine="78" startPosition="75" endLine="82" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8294989614925458638" fileName="TargetsView.java" startLine="85" startPosition="75" endLine="89" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8294989614925458652" fileName="TargetsView.java" startLine="92" startPosition="75" endLine="96" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4029933853797167557" fileName="TargetsView.java" startLine="99" startPosition="68" endLine="103" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8294989614925458543" fileName="TargetsView.java" startLine="109" startPosition="0" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyTreeSelectionListener#(Ljetbrains/mps/ide/findusages/view/treeholder/treeview/UsagesTree;Ljetbrains/mps/ide/dependencyViewer/DependenciesPanel;)V" />
-    <nodeInfo nodeId="8294989614925458678" fileName="TargetsView.java" startLine="144" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCategoryKinds#()Ljava/util/List;" />
-    <nodeInfo nodeId="8294989614925458685" fileName="TargetsView.java" startLine="148" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCategoryIcon#(Ljava/lang/String;)Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="8294989614925458693" fileName="TargetsView.java" startLine="152" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCategoryText#(Ljetbrains/mps/ide/findusages/view/treeholder/tree/TextOptions;Ljava/lang/String;Z)Ljava/lang/String;" />
-    <nodeInfo nodeId="8294989614925458705" fileName="TargetsView.java" startLine="156" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResultsIcon#()Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="4029933853797167627" fileName="TargetsView.java" startLine="67" startPosition="62" endLine="72" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8294989614925458725" fileName="TargetsView.java" startLine="168" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4029933853797167560" fileName="TargetsView.java" startLine="49" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="selectModule#(Ljetbrains/mps/project/IModule;)V" />
-    <nodeInfo nodeId="8294989614925458624" fileName="TargetsView.java" startLine="77" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_w7qo2b_a0a0a0a1a2a3a0a#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-    <nodeInfo nodeId="8294989614925458638" fileName="TargetsView.java" startLine="84" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_w7qo2b_a0a0a0a2a2a3a0a#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-    <nodeInfo nodeId="8294989614925458652" fileName="TargetsView.java" startLine="91" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_w7qo2b_a0a0a0a3a2a3a0a#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-    <nodeInfo nodeId="4029933853797167557" fileName="TargetsView.java" startLine="98" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_w7qo2b_a0a0a2a2#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-    <nodeInfo nodeId="4029933853797167602" fileName="TargetsView.java" startLine="65" startPosition="51" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8294989614925458711" fileName="TargetsView.java" startLine="160" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResultsText#(Ljetbrains/mps/ide/findusages/view/treeholder/tree/TextOptions;)Ljava/lang/String;" />
-    <nodeInfo nodeId="8294989614925458755" fileName="TargetsView.java" startLine="36" startPosition="0" endLine="45" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetsView#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/dependencyViewer/DependenciesPanel;)V" />
-    <nodeInfo nodeId="8294989614925458606" fileName="TargetsView.java" startLine="123" startPosition="49" endLine="135" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4029933853797167529" fileName="TargetsView.java" startLine="59" startPosition="75" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="8294989614925458590" fileName="TargetsView.java" startLine="120" startPosition="32" endLine="136" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4029933853797167666" fileName="TargetsView.java" startLine="56" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findModule#(Ljetbrains/mps/project/IModule;)Ljetbrains/mps/ide/ui/MPSTreeNode;" />
-    <nodeInfo nodeId="8294989614925458560" fileName="TargetsView.java" startLine="114" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="valueChanged#(Ljavax/swing/event/TreeSelectionEvent;)V" />
-    <scopeInfo nodeId="8294989614925458799" fileName="TargetsView.java" startLine="47" startPosition="23" endLine="47" endPosition="23" />
-    <scopeInfo nodeId="8294989614925458675" fileName="TargetsView.java" startLine="142" startPosition="34" endLine="142" endPosition="34" />
-    <scopeInfo nodeId="8294989614925458744" fileName="TargetsView.java" startLine="174" startPosition="112" endLine="174" endPosition="112" />
-    <scopeInfo nodeId="8294989614925458753" fileName="TargetsView.java" startLine="177" startPosition="113" endLine="177" endPosition="113" />
-    <scopeInfo nodeId="4029933853797167745" fileName="TargetsView.java" startLine="52" startPosition="23" endLine="53" endPosition="52" />
-    <scopeInfo nodeId="4029933853797167578" fileName="TargetsView.java" startLine="62" startPosition="29" endLine="63" endPosition="17" />
-    <scopeInfo nodeId="4029933853797167727" fileName="TargetsView.java" startLine="69" startPosition="62" endLine="70" endPosition="28" />
-    <scopeInfo nodeId="8294989614925458574" fileName="TargetsView.java" startLine="117" startPosition="47" endLine="118" endPosition="15" />
-    <scopeInfo nodeId="8294989614925458618" fileName="TargetsView.java" startLine="126" startPosition="46" endLine="127" endPosition="97" />
-    <scopeInfo nodeId="8294989614925458632" fileName="TargetsView.java" startLine="129" startPosition="47" endLine="130" endPosition="89" />
-    <scopeInfo nodeId="8294989614925458646" fileName="TargetsView.java" startLine="132" startPosition="45" endLine="133" endPosition="85" />
-    <scopeInfo nodeId="8294989614925458682" fileName="TargetsView.java" startLine="145" startPosition="50" endLine="146" endPosition="37" />
-    <scopeInfo nodeId="8294989614925458690" fileName="TargetsView.java" startLine="149" startPosition="48" endLine="150" endPosition="18" />
-    <scopeInfo nodeId="8294989614925458702" fileName="TargetsView.java" startLine="153" startPosition="82" endLine="154" endPosition="23" />
-    <scopeInfo nodeId="8294989614925458708" fileName="TargetsView.java" startLine="157" startPosition="34" endLine="158" endPosition="34" />
-    <scopeInfo nodeId="6554537591061570748" fileName="TargetsView.java" startLine="163" startPosition="46" endLine="164" endPosition="55" />
-    <scopeInfo nodeId="8294989614925458731" fileName="TargetsView.java" startLine="170" startPosition="47" endLine="171" endPosition="36" />
-    <scopeInfo nodeId="8294989614925458550" fileName="TargetsView.java" startLine="110" startPosition="79" endLine="112" endPosition="39" />
-    <scopeInfo nodeId="8294989614925458672" fileName="TargetsView.java" startLine="141" startPosition="73" endLine="143" endPosition="5" />
-    <scopeInfo nodeId="8294989614925458796" fileName="TargetsView.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="4029933853797167628" fileName="TargetsView.java" startLine="68" startPosition="45" endLine="71" endPosition="11" />
-    <scopeInfo nodeId="8294989614925458736" fileName="TargetsView.java" startLine="173" startPosition="0" endLine="176" endPosition="0">
+    <nodeInfo nodeId="8294989614925458532" fileName="TargetsView.java" startLine="33" startPosition="45" endLine="34" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParent" />
+    <nodeInfo nodeId="8294989614925458763" fileName="TargetsView.java" startLine="36" startPosition="65" endLine="37" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8294989614925458773" fileName="TargetsView.java" startLine="37" startPosition="76" endLine="38" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8294989614925458779" fileName="TargetsView.java" startLine="38" startPosition="57" endLine="39" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8294989614925458787" fileName="TargetsView.java" startLine="39" startPosition="101" endLine="40" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8294989614925458791" fileName="TargetsView.java" startLine="40" startPosition="22" endLine="41" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6135653370488158049" fileName="TargetsView.java" startLine="41" startPosition="70" endLine="42" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="940765150354985133" fileName="TargetsView.java" startLine="42" startPosition="34" endLine="43" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4029933853797167737" fileName="TargetsView.java" startLine="49" startPosition="44" endLine="50" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4029933853797167753" fileName="TargetsView.java" startLine="51" startPosition="23" endLine="52" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4029933853797093168" fileName="TargetsView.java" startLine="56" startPosition="50" endLine="57" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4029933853797098608" fileName="TargetsView.java" startLine="57" startPosition="57" endLine="58" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4029933853797167550" fileName="TargetsView.java" startLine="59" startPosition="37" endLine="60" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4029933853797167586" fileName="TargetsView.java" startLine="61" startPosition="29" endLine="62" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4029933853797167658" fileName="TargetsView.java" startLine="63" startPosition="7" endLine="64" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4029933853797167604" fileName="TargetsView.java" startLine="65" startPosition="43" endLine="66" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4029933853797167730" fileName="TargetsView.java" startLine="68" startPosition="62" endLine="69" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4029933853797167734" fileName="TargetsView.java" startLine="73" startPosition="5" endLine="74" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8294989614925458536" fileName="TargetsView.java" startLine="105" startPosition="73" endLine="106" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
+    <nodeInfo nodeId="8294989614925458539" fileName="TargetsView.java" startLine="106" startPosition="30" endLine="107" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDependenciesComponent" />
+    <nodeInfo nodeId="8294989614925458551" fileName="TargetsView.java" startLine="109" startPosition="79" endLine="110" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8294989614925458555" fileName="TargetsView.java" startLine="110" startPosition="20" endLine="111" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8294989614925458566" fileName="TargetsView.java" startLine="114" startPosition="56" endLine="115" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8294989614925458575" fileName="TargetsView.java" startLine="116" startPosition="47" endLine="117" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8294989614925458585" fileName="TargetsView.java" startLine="118" startPosition="7" endLine="119" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8294989614925458592" fileName="TargetsView.java" startLine="120" startPosition="35" endLine="121" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8294989614925458600" fileName="TargetsView.java" startLine="121" startPosition="69" endLine="122" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8294989614925458608" fileName="TargetsView.java" startLine="123" startPosition="45" endLine="124" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8294989614925458619" fileName="TargetsView.java" startLine="125" startPosition="46" endLine="126" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8294989614925458633" fileName="TargetsView.java" startLine="128" startPosition="47" endLine="129" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8294989614925458647" fileName="TargetsView.java" startLine="131" startPosition="45" endLine="132" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8294989614925458665" fileName="TargetsView.java" startLine="135" startPosition="7" endLine="136" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8294989614925458683" fileName="TargetsView.java" startLine="144" startPosition="50" endLine="145" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8294989614925458691" fileName="TargetsView.java" startLine="148" startPosition="48" endLine="149" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8294989614925458703" fileName="TargetsView.java" startLine="152" startPosition="82" endLine="153" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8294989614925458709" fileName="TargetsView.java" startLine="156" startPosition="34" endLine="157" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6554537591061570737" fileName="TargetsView.java" startLine="160" startPosition="55" endLine="161" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6554537591061570757" fileName="TargetsView.java" startLine="162" startPosition="65" endLine="163" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8294989614925458717" fileName="TargetsView.java" startLine="164" startPosition="7" endLine="165" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8294989614925458732" fileName="TargetsView.java" startLine="169" startPosition="47" endLine="170" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8294989614925458672" fileName="TargetsView.java" startLine="140" startPosition="73" endLine="142" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyNodeRepresentator#()V" />
+    <nodeInfo nodeId="8294989614925458796" fileName="TargetsView.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="close#()V" />
+    <nodeInfo nodeId="4029933853797167744" fileName="TargetsView.java" startLine="50" startPosition="42" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4029933853797167577" fileName="TargetsView.java" startLine="60" startPosition="88" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4029933853797167726" fileName="TargetsView.java" startLine="67" startPosition="45" endLine="70" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8294989614925458573" fileName="TargetsView.java" startLine="115" startPosition="52" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8294989614925458617" fileName="TargetsView.java" startLine="124" startPosition="64" endLine="127" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8294989614925458631" fileName="TargetsView.java" startLine="127" startPosition="11" endLine="130" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8294989614925458645" fileName="TargetsView.java" startLine="130" startPosition="11" endLine="133" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6554537591061570747" fileName="TargetsView.java" startLine="161" startPosition="73" endLine="164" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8294989614925458736" fileName="TargetsView.java" startLine="172" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="read#(Lorg/jdom/Element;Ljetbrains/mps/project/Project;)V" />
+    <nodeInfo nodeId="8294989614925458745" fileName="TargetsView.java" startLine="175" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="write#(Lorg/jdom/Element;Ljetbrains/mps/project/Project;)V" />
+    <nodeInfo nodeId="8294989614925458624" fileName="TargetsView.java" startLine="77" startPosition="75" endLine="81" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8294989614925458638" fileName="TargetsView.java" startLine="84" startPosition="75" endLine="88" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8294989614925458652" fileName="TargetsView.java" startLine="91" startPosition="75" endLine="95" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4029933853797167557" fileName="TargetsView.java" startLine="98" startPosition="68" endLine="102" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8294989614925458543" fileName="TargetsView.java" startLine="108" startPosition="0" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyTreeSelectionListener#(Ljetbrains/mps/ide/findusages/view/treeholder/treeview/UsagesTree;Ljetbrains/mps/ide/dependencyViewer/DependenciesPanel;)V" />
+    <nodeInfo nodeId="8294989614925458678" fileName="TargetsView.java" startLine="143" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCategoryKinds#()Ljava/util/List;" />
+    <nodeInfo nodeId="8294989614925458685" fileName="TargetsView.java" startLine="147" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCategoryIcon#(Ljava/lang/String;)Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="8294989614925458693" fileName="TargetsView.java" startLine="151" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCategoryText#(Ljetbrains/mps/ide/findusages/view/treeholder/tree/TextOptions;Ljava/lang/String;Z)Ljava/lang/String;" />
+    <nodeInfo nodeId="8294989614925458705" fileName="TargetsView.java" startLine="155" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResultsIcon#()Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="4029933853797167627" fileName="TargetsView.java" startLine="66" startPosition="62" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8294989614925458725" fileName="TargetsView.java" startLine="167" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4029933853797167560" fileName="TargetsView.java" startLine="48" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="selectModule#(Ljetbrains/mps/project/IModule;)V" />
+    <nodeInfo nodeId="8294989614925458624" fileName="TargetsView.java" startLine="76" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_w7qo2b_a0a0a0a1a2a3a0a#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+    <nodeInfo nodeId="8294989614925458638" fileName="TargetsView.java" startLine="83" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_w7qo2b_a0a0a0a2a2a3a0a#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+    <nodeInfo nodeId="8294989614925458652" fileName="TargetsView.java" startLine="90" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_w7qo2b_a0a0a0a3a2a3a0a#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+    <nodeInfo nodeId="4029933853797167557" fileName="TargetsView.java" startLine="97" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_w7qo2b_a0a0a2a2#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+    <nodeInfo nodeId="4029933853797167602" fileName="TargetsView.java" startLine="64" startPosition="51" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8294989614925458711" fileName="TargetsView.java" startLine="159" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResultsText#(Ljetbrains/mps/ide/findusages/view/treeholder/tree/TextOptions;)Ljava/lang/String;" />
+    <nodeInfo nodeId="8294989614925458755" fileName="TargetsView.java" startLine="35" startPosition="0" endLine="44" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetsView#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/dependencyViewer/DependenciesPanel;)V" />
+    <nodeInfo nodeId="8294989614925458606" fileName="TargetsView.java" startLine="122" startPosition="49" endLine="134" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4029933853797167529" fileName="TargetsView.java" startLine="58" startPosition="75" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="8294989614925458590" fileName="TargetsView.java" startLine="119" startPosition="32" endLine="135" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4029933853797167666" fileName="TargetsView.java" startLine="55" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findModule#(Ljetbrains/mps/project/IModule;)Ljetbrains/mps/ide/ui/MPSTreeNode;" />
+    <nodeInfo nodeId="8294989614925458560" fileName="TargetsView.java" startLine="113" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="valueChanged#(Ljavax/swing/event/TreeSelectionEvent;)V" />
+    <scopeInfo nodeId="8294989614925458799" fileName="TargetsView.java" startLine="46" startPosition="23" endLine="46" endPosition="23" />
+    <scopeInfo nodeId="8294989614925458675" fileName="TargetsView.java" startLine="141" startPosition="34" endLine="141" endPosition="34" />
+    <scopeInfo nodeId="8294989614925458744" fileName="TargetsView.java" startLine="173" startPosition="112" endLine="173" endPosition="112" />
+    <scopeInfo nodeId="8294989614925458753" fileName="TargetsView.java" startLine="176" startPosition="113" endLine="176" endPosition="113" />
+    <scopeInfo nodeId="4029933853797167745" fileName="TargetsView.java" startLine="51" startPosition="23" endLine="52" endPosition="52" />
+    <scopeInfo nodeId="4029933853797167578" fileName="TargetsView.java" startLine="61" startPosition="29" endLine="62" endPosition="17" />
+    <scopeInfo nodeId="4029933853797167727" fileName="TargetsView.java" startLine="68" startPosition="62" endLine="69" endPosition="28" />
+    <scopeInfo nodeId="8294989614925458574" fileName="TargetsView.java" startLine="116" startPosition="47" endLine="117" endPosition="15" />
+    <scopeInfo nodeId="8294989614925458618" fileName="TargetsView.java" startLine="125" startPosition="46" endLine="126" endPosition="97" />
+    <scopeInfo nodeId="8294989614925458632" fileName="TargetsView.java" startLine="128" startPosition="47" endLine="129" endPosition="89" />
+    <scopeInfo nodeId="8294989614925458646" fileName="TargetsView.java" startLine="131" startPosition="45" endLine="132" endPosition="85" />
+    <scopeInfo nodeId="8294989614925458682" fileName="TargetsView.java" startLine="144" startPosition="50" endLine="145" endPosition="37" />
+    <scopeInfo nodeId="8294989614925458690" fileName="TargetsView.java" startLine="148" startPosition="48" endLine="149" endPosition="18" />
+    <scopeInfo nodeId="8294989614925458702" fileName="TargetsView.java" startLine="152" startPosition="82" endLine="153" endPosition="23" />
+    <scopeInfo nodeId="8294989614925458708" fileName="TargetsView.java" startLine="156" startPosition="34" endLine="157" endPosition="34" />
+    <scopeInfo nodeId="6554537591061570748" fileName="TargetsView.java" startLine="162" startPosition="65" endLine="163" endPosition="55" />
+    <scopeInfo nodeId="8294989614925458731" fileName="TargetsView.java" startLine="169" startPosition="47" endLine="170" endPosition="36" />
+    <scopeInfo nodeId="8294989614925458550" fileName="TargetsView.java" startLine="109" startPosition="79" endLine="111" endPosition="39" />
+    <scopeInfo nodeId="8294989614925458672" fileName="TargetsView.java" startLine="140" startPosition="73" endLine="142" endPosition="5" />
+    <scopeInfo nodeId="8294989614925458796" fileName="TargetsView.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="4029933853797167628" fileName="TargetsView.java" startLine="67" startPosition="45" endLine="70" endPosition="11" />
+    <scopeInfo nodeId="8294989614925458736" fileName="TargetsView.java" startLine="172" startPosition="0" endLine="175" endPosition="0">
       <varInfo nodeId="8294989614925458739" varName="element" />
       <varInfo nodeId="8294989614925458741" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="8294989614925458745" fileName="TargetsView.java" startLine="176" startPosition="0" endLine="179" endPosition="0">
+    <scopeInfo nodeId="8294989614925458745" fileName="TargetsView.java" startLine="175" startPosition="0" endLine="178" endPosition="0">
       <varInfo nodeId="8294989614925458748" varName="element" />
       <varInfo nodeId="8294989614925458750" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="4029933853797167563" fileName="TargetsView.java" startLine="50" startPosition="44" endLine="54" endPosition="5">
+    <scopeInfo nodeId="4029933853797167563" fileName="TargetsView.java" startLine="49" startPosition="44" endLine="53" endPosition="5">
       <varInfo nodeId="4029933853797167738" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8294989614925458624" fileName="TargetsView.java" startLine="78" startPosition="75" endLine="82" endPosition="6" />
-    <scopeInfo nodeId="8294989614925458638" fileName="TargetsView.java" startLine="85" startPosition="75" endLine="89" endPosition="6" />
-    <scopeInfo nodeId="8294989614925458652" fileName="TargetsView.java" startLine="92" startPosition="75" endLine="96" endPosition="6" />
-    <scopeInfo nodeId="4029933853797167557" fileName="TargetsView.java" startLine="99" startPosition="68" endLine="103" endPosition="6" />
-    <scopeInfo nodeId="8294989614925458543" fileName="TargetsView.java" startLine="109" startPosition="0" endLine="113" endPosition="5">
+    <scopeInfo nodeId="8294989614925458624" fileName="TargetsView.java" startLine="77" startPosition="75" endLine="81" endPosition="6" />
+    <scopeInfo nodeId="8294989614925458638" fileName="TargetsView.java" startLine="84" startPosition="75" endLine="88" endPosition="6" />
+    <scopeInfo nodeId="8294989614925458652" fileName="TargetsView.java" startLine="91" startPosition="75" endLine="95" endPosition="6" />
+    <scopeInfo nodeId="4029933853797167557" fileName="TargetsView.java" startLine="98" startPosition="68" endLine="102" endPosition="6" />
+    <scopeInfo nodeId="8294989614925458543" fileName="TargetsView.java" startLine="108" startPosition="0" endLine="112" endPosition="5">
       <varInfo nodeId="8294989614925458546" varName="parent" />
       <varInfo nodeId="8294989614925458544" varName="tree" />
     </scopeInfo>
-    <scopeInfo nodeId="8294989614925458678" fileName="TargetsView.java" startLine="144" startPosition="0" endLine="148" endPosition="0" />
-    <scopeInfo nodeId="8294989614925458685" fileName="TargetsView.java" startLine="148" startPosition="0" endLine="152" endPosition="0">
+    <scopeInfo nodeId="8294989614925458678" fileName="TargetsView.java" startLine="143" startPosition="0" endLine="147" endPosition="0" />
+    <scopeInfo nodeId="8294989614925458685" fileName="TargetsView.java" startLine="147" startPosition="0" endLine="151" endPosition="0">
       <varInfo nodeId="8294989614925458688" varName="string" />
     </scopeInfo>
-    <scopeInfo nodeId="8294989614925458693" fileName="TargetsView.java" startLine="152" startPosition="0" endLine="156" endPosition="0">
+    <scopeInfo nodeId="8294989614925458693" fileName="TargetsView.java" startLine="151" startPosition="0" endLine="155" endPosition="0">
       <varInfo nodeId="8294989614925458700" varName="b" />
       <varInfo nodeId="8294989614925458696" varName="options" />
       <varInfo nodeId="8294989614925458698" varName="string" />
     </scopeInfo>
-    <scopeInfo nodeId="8294989614925458705" fileName="TargetsView.java" startLine="156" startPosition="0" endLine="160" endPosition="0" />
-    <scopeInfo nodeId="8294989614925458716" fileName="TargetsView.java" startLine="161" startPosition="55" endLine="166" endPosition="47">
+    <scopeInfo nodeId="8294989614925458705" fileName="TargetsView.java" startLine="155" startPosition="0" endLine="159" endPosition="0" />
+    <scopeInfo nodeId="8294989614925458716" fileName="TargetsView.java" startLine="160" startPosition="55" endLine="165" endPosition="47">
       <varInfo nodeId="6554537591061570738" varName="presentation" />
     </scopeInfo>
-    <scopeInfo nodeId="8294989614925458725" fileName="TargetsView.java" startLine="168" startPosition="0" endLine="173" endPosition="0">
+    <scopeInfo nodeId="8294989614925458725" fileName="TargetsView.java" startLine="167" startPosition="0" endLine="172" endPosition="0">
       <varInfo nodeId="8294989614925458728" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4029933853797167603" fileName="TargetsView.java" startLine="66" startPosition="43" endLine="72" endPosition="9">
+    <scopeInfo nodeId="4029933853797167603" fileName="TargetsView.java" startLine="65" startPosition="43" endLine="71" endPosition="9">
       <varInfo nodeId="4029933853797167605" varName="data" />
     </scopeInfo>
-    <scopeInfo nodeId="8294989614925458762" fileName="TargetsView.java" startLine="37" startPosition="65" endLine="44" endPosition="39">
+    <scopeInfo nodeId="8294989614925458762" fileName="TargetsView.java" startLine="36" startPosition="65" endLine="43" endPosition="39">
       <varInfo nodeId="8294989614925458774" varName="usagesTree" />
     </scopeInfo>
-    <scopeInfo nodeId="4029933853797167560" fileName="TargetsView.java" startLine="49" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="4029933853797167560" fileName="TargetsView.java" startLine="48" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="4029933853797167564" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="8294989614925458624" fileName="TargetsView.java" startLine="77" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="8294989614925458624" fileName="TargetsView.java" startLine="76" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="8294989614925458624" varName="o" />
       <varInfo nodeId="8294989614925458624" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="8294989614925458638" fileName="TargetsView.java" startLine="84" startPosition="0" endLine="91" endPosition="0">
+    <scopeInfo nodeId="8294989614925458638" fileName="TargetsView.java" startLine="83" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="8294989614925458638" varName="o" />
       <varInfo nodeId="8294989614925458638" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="8294989614925458652" fileName="TargetsView.java" startLine="91" startPosition="0" endLine="98" endPosition="0">
+    <scopeInfo nodeId="8294989614925458652" fileName="TargetsView.java" startLine="90" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="8294989614925458652" varName="o" />
       <varInfo nodeId="8294989614925458652" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="4029933853797167557" fileName="TargetsView.java" startLine="98" startPosition="0" endLine="105" endPosition="0">
+    <scopeInfo nodeId="4029933853797167557" fileName="TargetsView.java" startLine="97" startPosition="0" endLine="104" endPosition="0">
       <varInfo nodeId="4029933853797167557" varName="o" />
       <varInfo nodeId="4029933853797167557" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="8294989614925458711" fileName="TargetsView.java" startLine="160" startPosition="0" endLine="168" endPosition="0">
+    <scopeInfo nodeId="8294989614925458711" fileName="TargetsView.java" startLine="159" startPosition="0" endLine="167" endPosition="0">
       <varInfo nodeId="8294989614925458714" varName="options" />
     </scopeInfo>
-    <scopeInfo nodeId="8294989614925458755" fileName="TargetsView.java" startLine="36" startPosition="0" endLine="45" endPosition="3">
+    <scopeInfo nodeId="8294989614925458755" fileName="TargetsView.java" startLine="35" startPosition="0" endLine="44" endPosition="3">
       <varInfo nodeId="8294989614925458758" varName="parent" />
       <varInfo nodeId="8294989614925458756" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="8294989614925458607" fileName="TargetsView.java" startLine="124" startPosition="45" endLine="134" endPosition="11">
+    <scopeInfo nodeId="8294989614925458607" fileName="TargetsView.java" startLine="123" startPosition="45" endLine="133" endPosition="11">
       <varInfo nodeId="8294989614925458609" varName="data" />
     </scopeInfo>
-    <scopeInfo nodeId="4029933853797167531" fileName="TargetsView.java" startLine="60" startPosition="37" endLine="73" endPosition="7">
+    <scopeInfo nodeId="4029933853797167531" fileName="TargetsView.java" startLine="59" startPosition="37" endLine="72" endPosition="7">
       <varInfo nodeId="4029933853797167551" varName="treeNode" />
       <varInfo nodeId="4029933853797167659" varName="userObject" />
     </scopeInfo>
-    <scopeInfo nodeId="8294989614925458591" fileName="TargetsView.java" startLine="121" startPosition="35" endLine="135" endPosition="9">
+    <scopeInfo nodeId="8294989614925458591" fileName="TargetsView.java" startLine="120" startPosition="35" endLine="134" endPosition="9">
       <varInfo nodeId="8294989614925458593" varName="node" />
       <varInfo nodeId="8294989614925458601" varName="userObject" />
     </scopeInfo>
-    <scopeInfo nodeId="8294989614925458590" fileName="TargetsView.java" startLine="120" startPosition="32" endLine="136" endPosition="7">
+    <scopeInfo nodeId="8294989614925458590" fileName="TargetsView.java" startLine="119" startPosition="32" endLine="135" endPosition="7">
       <varInfo nodeId="8294989614925458662" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="4029933853797167669" fileName="TargetsView.java" startLine="57" startPosition="50" endLine="75" endPosition="16">
+    <scopeInfo nodeId="4029933853797167669" fileName="TargetsView.java" startLine="56" startPosition="50" endLine="74" endPosition="16">
       <varInfo nodeId="4029933853797098609" varName="nodes" />
       <varInfo nodeId="4029933853797093169" varName="usagesTree" />
     </scopeInfo>
-    <scopeInfo nodeId="4029933853797167666" fileName="TargetsView.java" startLine="56" startPosition="0" endLine="77" endPosition="0">
+    <scopeInfo nodeId="4029933853797167666" fileName="TargetsView.java" startLine="55" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="4029933853797167672" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="8294989614925458565" fileName="TargetsView.java" startLine="115" startPosition="56" endLine="137" endPosition="58">
+    <scopeInfo nodeId="8294989614925458565" fileName="TargetsView.java" startLine="114" startPosition="56" endLine="136" endPosition="58">
       <varInfo nodeId="8294989614925458567" varName="paths" />
       <varInfo nodeId="8294989614925458586" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="8294989614925458560" fileName="TargetsView.java" startLine="114" startPosition="0" endLine="139" endPosition="0">
+    <scopeInfo nodeId="8294989614925458560" fileName="TargetsView.java" startLine="113" startPosition="0" endLine="138" endPosition="0">
       <varInfo nodeId="8294989614925458563" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="8294989614925458531" fileName="TargetsView.java" startLine="34" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.ide.dependencyViewer.TargetsView" />
-    <unitInfo nodeId="8294989614925458670" fileName="TargetsView.java" startLine="141" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.ide.dependencyViewer.TargetsView$MyNodeRepresentator" />
-    <unitInfo nodeId="8294989614925458535" fileName="TargetsView.java" startLine="106" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.ide.dependencyViewer.TargetsView$MyTreeSelectionListener" />
+    <unitInfo nodeId="8294989614925458531" fileName="TargetsView.java" startLine="33" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.ide.dependencyViewer.TargetsView" />
+    <unitInfo nodeId="8294989614925458670" fileName="TargetsView.java" startLine="140" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.ide.dependencyViewer.TargetsView$MyNodeRepresentator" />
+    <unitInfo nodeId="8294989614925458535" fileName="TargetsView.java" startLine="105" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.ide.dependencyViewer.TargetsView$MyTreeSelectionListener" />
   </root>
 </debugInfo>
 

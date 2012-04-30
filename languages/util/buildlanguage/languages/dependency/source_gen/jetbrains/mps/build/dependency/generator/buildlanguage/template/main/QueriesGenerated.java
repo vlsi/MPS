@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -39,7 +38,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_4102882025198635369(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String value = SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.dependency.structure.ModuleDescription"), "includeResources");
-    return (StringUtils.isEmpty(value) ?
+    return ((value == null || value.length() == 0) ?
       "**/*.png, **/trace.info" :
       value
     );
@@ -115,11 +114,11 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_4102882025198635389(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode outer = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.dependency.structure.ModuleDescription");
-    return StringUtils.isEmpty(SPropertyOperations.getString(outer, "excludeResources")) || StringUtils.isNotEmpty(SPropertyOperations.getString(outer, "includeResources"));
+    return (SPropertyOperations.getString(outer, "excludeResources") == null || SPropertyOperations.getString(outer, "excludeResources").length() == 0) || (SPropertyOperations.getString(outer, "includeResources") != null && SPropertyOperations.getString(outer, "includeResources").length() > 0);
   }
 
   public static boolean ifMacro_Condition_4102882025198635351(final IOperationContext operationContext, final IfMacroContext _context) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.dependency.structure.ModuleDescription"), "excludeResources"));
+    return (SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.dependency.structure.ModuleDescription"), "excludeResources") != null && SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.dependency.structure.ModuleDescription"), "excludeResources").length() > 0);
   }
 
   public static boolean ifMacro_Condition_1219772493889(final IOperationContext operationContext, final IfMacroContext _context) {

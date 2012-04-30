@@ -5,7 +5,6 @@ package jetbrains.mps.ide.actions;
 import com.intellij.execution.filters.Filter;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
@@ -36,7 +35,10 @@ public class JavaStackTraceFilter implements Filter {
   }
 
   public static Filter.Result tryToParseLine(String line, int offset, Project project) {
-    if (!(StringUtils.trim(line).startsWith(JavaStackTraceFilter.STRING_START))) {
+    if (!(((line == null ?
+      null :
+      line.trim()
+    )).startsWith(JavaStackTraceFilter.STRING_START))) {
       return null;
     }
 

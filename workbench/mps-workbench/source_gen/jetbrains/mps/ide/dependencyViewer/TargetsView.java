@@ -25,7 +25,6 @@ import java.util.Collections;
 import javax.swing.Icon;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.ide.projectPane.Icons;
-import org.apache.commons.lang.StringUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jdom.Element;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
@@ -160,7 +159,7 @@ public class TargetsView extends UsagesView {
 
     public String getResultsText(TextOptions options) {
       String presentation = myParent.getCurrentScope().getPresentation();
-      if (StringUtils.isEmpty(presentation)) {
+      if ((presentation == null || presentation.length() == 0)) {
         presentation = "the left tree scope selection";
       }
       return "Dependencies of " + presentation;

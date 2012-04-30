@@ -25,7 +25,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -191,7 +190,7 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
     SNode project = SNodeOperations.as(SNodeOperations.getContainingRoot(node), "jetbrains.mps.build.structure.BuildProject");
     return ListSequence.fromList(SLinkOperations.getTargets(project, "parts", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaOptions") && StringUtils.isNotEmpty(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName"));
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaOptions") && (SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName") != null && SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName").length() > 0);
       }
     });
   }

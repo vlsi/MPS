@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IScope;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -238,7 +237,7 @@ public class BeforeTask_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_bndx6c_a2a0(SNode node, EditorContext editorContext, IScope scope) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "alias"));
+    return (SPropertyOperations.getString(node, "alias") != null && SPropertyOperations.getString(node, "alias").length() > 0);
   }
 
   private static class parameterListHandler_bndx6c_b2a extends RefNodeListHandler {

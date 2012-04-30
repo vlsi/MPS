@@ -121,7 +121,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode extendsClassName="java.lang.Exception" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.util.VisibleModules" file="VisibleModules.java">

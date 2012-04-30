@@ -621,7 +621,6 @@
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.migration25.UpdateRefactoringVersions_Action" file="UpdateRefactoringVersions_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />

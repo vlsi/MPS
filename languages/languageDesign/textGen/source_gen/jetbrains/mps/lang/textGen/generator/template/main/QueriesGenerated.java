@@ -19,7 +19,6 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.Set;
@@ -308,7 +307,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1237984687060(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "withSeparator") || StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "separator"));
+    return SPropertyOperations.getBoolean(_context.getNode(), "withSeparator") || (SPropertyOperations.getString(_context.getNode(), "separator") != null && SPropertyOperations.getString(_context.getNode(), "separator").length() > 0);
   }
 
   public static boolean ifMacro_Condition_1237470933865(final IOperationContext operationContext, final IfMacroContext _context) {

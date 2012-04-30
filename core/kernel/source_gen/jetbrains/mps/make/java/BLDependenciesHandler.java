@@ -8,7 +8,6 @@ import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.util.InternUtil;
 
 public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
@@ -203,7 +202,7 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
       if ("classNode".equals(tagName)) {
         Object[] child = (Object[]) value;
         String s = (String) child[0];
-        if (StringUtils.isEmpty(s)) {
+        if ((s == null || s.length() == 0)) {
           return;
         }
         if ((Boolean) child[1]) {

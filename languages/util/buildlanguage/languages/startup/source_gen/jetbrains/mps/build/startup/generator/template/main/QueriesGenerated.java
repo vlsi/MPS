@@ -12,7 +12,6 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
-import org.apache.commons.lang.StringUtils;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -135,7 +134,7 @@ public class QueriesGenerated {
     String[] options = MpsStartupScript_Behavior.call_getDefaultVmoptions_5842819808956701267(_context.getNode()).split("\\s");
     List<SNode> lines = ListSequence.fromList(new ArrayList<SNode>());
     for (String option : options) {
-      if (StringUtils.isEmpty(option)) {
+      if ((option == null || option.length() == 0)) {
         continue;
       }
 

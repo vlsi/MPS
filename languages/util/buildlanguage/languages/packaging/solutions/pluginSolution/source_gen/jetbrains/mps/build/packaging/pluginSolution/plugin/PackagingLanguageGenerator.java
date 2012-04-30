@@ -11,7 +11,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.io.File;
 import java.util.ArrayList;
-import org.apache.commons.lang.StringUtils;
 
 public class PackagingLanguageGenerator {
   public PackagingLanguageGenerator() {
@@ -60,7 +59,7 @@ public class PackagingLanguageGenerator {
     if (pathComponents.length > 0) {
       List<SNode> pathComponentNodes = ListSequence.fromList(new ArrayList<SNode>());
       for (String pathComponentName : pathComponents) {
-        if (StringUtils.isEmpty(pathComponentName)) {
+        if ((pathComponentName == null || pathComponentName.length() == 0)) {
           continue;
         }
         ListSequence.fromList(pathComponentNodes).addElement(PackagingLanguageGenerator.createPathComponent(pathComponentName));

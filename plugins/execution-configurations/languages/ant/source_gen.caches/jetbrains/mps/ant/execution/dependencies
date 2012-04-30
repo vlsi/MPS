@@ -68,7 +68,6 @@
     <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
   </dependency>
   <dependency className="jetbrains.mps.ant.execution.ChildChoosePanel" file="ChildChoosePanel.java">
     <classNode dependClassName="java.awt.GridBagLayout" />
@@ -87,7 +86,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="javax.swing.AbstractListModel" />

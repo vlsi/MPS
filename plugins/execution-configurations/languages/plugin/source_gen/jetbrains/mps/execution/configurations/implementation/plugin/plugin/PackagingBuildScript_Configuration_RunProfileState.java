@@ -19,7 +19,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.io.File;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.reloading.CommonPaths;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.ant.execution.Ant_Command;
@@ -62,7 +61,7 @@ public class PackagingBuildScript_Configuration_RunProfileState implements RunPr
     });
     if (compile.value) {
       if (!(new File(Java_Command.getJdkHome() + File.separator + "lib" + File.separator + "tools.jar").exists())) {
-        options = ((StringUtils.isEmpty(options) ?
+        options = (((options == null || options.length() == 0) ?
           "" :
           options + " "
         )) + "-lib" + " " + CommonPaths.getToolsJar();

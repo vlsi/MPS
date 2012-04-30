@@ -6,7 +6,6 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nls;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.annotations.NotNull;
@@ -47,7 +46,7 @@ public class TestUtils {
 
   @Nullable
   public static SNodePointer stringToPointer(@Nls String pointerString) {
-    if (StringUtils.isEmpty(pointerString)) {
+    if ((pointerString == null || pointerString.length() == 0)) {
       return null;
     }
     String[] split = pointerString.split(POINTER_SEPARATOR);
@@ -161,7 +160,7 @@ __switch__:
   @Deprecated
   @ToRemove(version = 2.1)
   public static ITestNodeWrapper getTestMethod(@Nls String caseName, @Nls final String methodName) {
-    if (StringUtils.isEmpty(caseName) || StringUtils.isEmpty(methodName)) {
+    if ((caseName == null || caseName.length() == 0) || (methodName == null || methodName.length() == 0)) {
       return null;
     }
     ITestNodeWrapper caseNodeWrapper = getTestCase(caseName);
@@ -180,7 +179,7 @@ __switch__:
   @Deprecated
   @ToRemove(version = 2.1)
   public static ITestNodeWrapper getTestMethod(@Nls String fullMethodName) {
-    if (StringUtils.isEmpty(fullMethodName)) {
+    if ((fullMethodName == null || fullMethodName.length() == 0)) {
       return null;
     }
     int separatorIndex = fullMethodName.lastIndexOf(SEPARATOR);
@@ -206,7 +205,7 @@ __switch__:
 
   @Nullable
   public static SModel getModel(@Nls String modelName) {
-    if (StringUtils.isEmpty(modelName)) {
+    if ((modelName == null || modelName.length() == 0)) {
       return null;
     }
     SModelDescriptor modelDescriptor = GlobalScope.getInstance().getModelDescriptor(SModelReference.fromString(modelName));
@@ -218,7 +217,7 @@ __switch__:
 
   @Nullable
   public static IModule getModule(@Nls String moduleName) {
-    if (StringUtils.isEmpty(moduleName)) {
+    if ((moduleName == null || moduleName.length() == 0)) {
       return null;
     }
     return MPSModuleRepository.getInstance().getModuleByFqName(moduleName);

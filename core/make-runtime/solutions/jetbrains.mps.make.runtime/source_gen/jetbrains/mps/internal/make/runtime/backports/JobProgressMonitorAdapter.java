@@ -4,7 +4,6 @@ package jetbrains.mps.internal.make.runtime.backports;
 
 import jetbrains.mps.progress.ProgressMonitorBase;
 import jetbrains.mps.make.script.IJobMonitor;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.progress.SubProgressKind;
 
 public class JobProgressMonitorAdapter extends ProgressMonitorBase {
@@ -28,7 +27,7 @@ public class JobProgressMonitorAdapter extends ProgressMonitorBase {
   }
 
   protected void setTitleInternal(String text) {
-    if (StringUtils.isEmpty(text)) {
+    if ((text == null || text.length() == 0)) {
       return;
     }
     int idx = text.indexOf(" :: ");
@@ -46,7 +45,7 @@ public class JobProgressMonitorAdapter extends ProgressMonitorBase {
   }
 
   protected void startInternal(String text) {
-    if (StringUtils.isEmpty(text)) {
+    if ((text == null || text.length() == 0)) {
       return;
     }
     this.myName = text;
@@ -54,24 +53,24 @@ public class JobProgressMonitorAdapter extends ProgressMonitorBase {
   }
 
   protected void doneInternal(String text) {
-    if (StringUtils.isEmpty(text)) {
+    if ((text == null || text.length() == 0)) {
       return;
     }
     myJobMonitor.currentProgress().finishWork(text);
   }
 
   private String comment() {
-    String currsubtitle = (StringUtils.isEmpty(myTitle) || myTitle.startsWith(myName) ?
+    String currsubtitle = ((myTitle == null || myTitle.length() == 0) || myTitle.startsWith(myName) ?
       "" :
       myTitle
     );
-    String currstep = (StringUtils.isNotEmpty(myStep) ?
+    String currstep = ((myStep != null && myStep.length() > 0) ?
       myStep :
       ""
     );
-    return (StringUtils.isEmpty(currsubtitle) ?
+    return ((currsubtitle == null || currsubtitle.length() == 0) ?
       currstep :
-      currsubtitle + ((StringUtils.isEmpty(currstep) ?
+      currsubtitle + (((currstep == null || currstep.length() == 0) ?
         "" :
         " " + currstep
       ))
@@ -105,14 +104,14 @@ public class JobProgressMonitorAdapter extends ProgressMonitorBase {
 
     @Override
     protected void doneInternal(String text) {
-      if (!(StringUtils.isEmpty(text)) && StringUtils.isEmpty(myParentTask)) {
+      if (!((text == null || text.length() == 0)) && (myParentTask == null || myParentTask.length() == 0)) {
         JobProgressMonitorAdapter.this.doneInternal(text);
       }
     }
 
     @Override
     protected void startInternal(String text) {
-      if (!(StringUtils.isEmpty(text)) && StringUtils.isEmpty(myParentTask)) {
+      if (!((text == null || text.length() == 0)) && (myParentTask == null || myParentTask.length() == 0)) {
         JobProgressMonitorAdapter.this.startInternal(text);
       }
     }

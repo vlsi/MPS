@@ -13,7 +13,6 @@ import com.intellij.openapi.util.Key;
 import com.intellij.execution.process.ProcessOutputTypes;
 import javax.swing.SwingUtilities;
 import org.jetbrains.annotations.NotNull;
-import org.apache.commons.lang.StringUtils;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.execution.ui.ConsoleViewContentType;
 import java.util.List;
@@ -90,8 +89,8 @@ public class TestOutputComponent implements TestView {
 
   public void appendWithParameters(String testClass, String testMethod, String text, @NotNull Key type) {
     TestOutputComponent.IMessage message = myRootMessage.addMessage(testClass, testMethod, text, type);
-    if ((StringUtils.isEmpty(myFilterClass) || eq_r62oz9_a0a0b0e(myFilterClass, testClass))) {
-      if ((StringUtils.isEmpty(myFilterMethod) || eq_r62oz9_a0a0a0b0e(myFilterMethod, testMethod))) {
+    if (((myFilterClass == null || myFilterClass.length() == 0) || eq_r62oz9_a0a0b0e(myFilterClass, testClass))) {
+      if (((myFilterMethod == null || myFilterMethod.length() == 0) || eq_r62oz9_a0a0a0b0e(myFilterMethod, testMethod))) {
         message.print();
       }
     }
@@ -277,7 +276,7 @@ public class TestOutputComponent implements TestView {
 
     @Override
     public boolean matches(String testClass, String testMethod) {
-      return StringUtils.isEmpty(testClass) || merges(testClass, testMethod);
+      return (testClass == null || testClass.length() == 0) || merges(testClass, testMethod);
     }
 
     public TestOutputComponent.IMessage createChildMessage(String testClass, String testMethod, String text, Key key) {
@@ -302,7 +301,7 @@ public class TestOutputComponent implements TestView {
 
     @Override
     public boolean matches(String testClass, String testMethod) {
-      return StringUtils.isEmpty(testMethod) || merges(testClass, testMethod);
+      return (testMethod == null || testMethod.length() == 0) || merges(testClass, testMethod);
     }
 
     public TestOutputComponent.IMessage createChildMessage(String testClass, String testMethod, String text, Key key) {

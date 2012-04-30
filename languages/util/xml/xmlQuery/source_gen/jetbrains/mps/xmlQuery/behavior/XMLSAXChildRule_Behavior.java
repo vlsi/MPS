@@ -4,7 +4,6 @@ package jetbrains.mps.xmlQuery.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class XMLSAXChildRule_Behavior {
@@ -12,7 +11,7 @@ public class XMLSAXChildRule_Behavior {
   }
 
   public static String call_getTagName_3444414697307503271(SNode thisNode) {
-    if ((SLinkOperations.getTarget(thisNode, "rule", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "rule", false), "tagName")) && (SPropertyOperations.getBoolean(thisNode, "overrideTag") == false || StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "tagName")))) {
+    if ((SLinkOperations.getTarget(thisNode, "rule", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "rule", false), "tagName") != null && SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "rule", false), "tagName").length() > 0) && (SPropertyOperations.getBoolean(thisNode, "overrideTag") == false || (SPropertyOperations.getString(thisNode, "tagName") == null || SPropertyOperations.getString(thisNode, "tagName").length() == 0))) {
       return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "rule", false), "tagName");
     }
     return SPropertyOperations.getString(thisNode, "tagName");

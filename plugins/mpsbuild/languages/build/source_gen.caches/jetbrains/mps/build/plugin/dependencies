@@ -45,7 +45,6 @@
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.vfs.IFileUtils" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._1" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITargetEx" />
     <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />

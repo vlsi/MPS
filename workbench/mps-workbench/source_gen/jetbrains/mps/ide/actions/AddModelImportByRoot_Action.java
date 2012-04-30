@@ -30,7 +30,6 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import org.apache.commons.lang.StringUtils;
 
 public class AddModelImportByRoot_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -133,7 +132,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
     EditorCell selectedCell = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectedCell();
     if (selectedCell instanceof EditorCell_Label) {
       EditorCell_Label editorCellLabel = (EditorCell_Label) selectedCell;
-      if (editorCellLabel.isErrorState() && !(StringUtils.isEmpty(editorCellLabel.getText()))) {
+      if (editorCellLabel.isErrorState() && !((editorCellLabel.getText() == null || editorCellLabel.getText().length() == 0))) {
         return editorCellLabel;
       }
     }

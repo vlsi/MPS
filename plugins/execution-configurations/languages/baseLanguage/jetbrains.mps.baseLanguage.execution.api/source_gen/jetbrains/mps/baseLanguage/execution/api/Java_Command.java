@@ -15,7 +15,6 @@ import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.execution.api.commands.ListCommandPart;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import jetbrains.mps.execution.api.commands.KeyValueCommandPart;
 import java.io.FileNotFoundException;
@@ -209,7 +208,7 @@ public class Java_Command {
 
   public ProcessHandler createProcess(CommandPart programParameter, String className, List<File> classPath) throws ExecutionException {
     File java = Java_Command.getJavaCommand(myJrePath_String);
-    if (StringUtils.isEmpty(className)) {
+    if ((className == null || className.length() == 0)) {
       throw new ExecutionException("Classname is empty");
     }
     if (check_yvpt_a0c0a2(programParameter) >= Java_Command.getMaxCommandLine()) {
@@ -271,7 +270,7 @@ public class Java_Command {
   }
 
   public static boolean isUnitNode(SNode node) {
-    return StringUtils.isNotEmpty(Java_Command.getClassName(node));
+    return (Java_Command.getClassName(node) != null && Java_Command.getClassName(node).length() > 0);
   }
 
   private static String getClassName(final SNode node) {
@@ -373,10 +372,10 @@ public class Java_Command {
   }
 
   public static File getJavaCommand(@Nullable String javaHome) throws ExecutionException {
-    if (StringUtils.isEmpty(javaHome) || !(new File(javaHome).exists())) {
+    if ((javaHome == null || javaHome.length() == 0) || !(new File(javaHome).exists())) {
       javaHome = Java_Command.getJdkHome();
     }
-    if (StringUtils.isEmpty(javaHome)) {
+    if ((javaHome == null || javaHome.length() == 0)) {
       throw new ExecutionException("Could not find valid java home.");
     }
     return new File(Java_Command.getJavaCommandPath(javaHome));
@@ -403,7 +402,7 @@ public class Java_Command {
     if (systemJavaHome.endsWith("jre") && new File(systemJdkHome + File.separator + "bin").exists()) {
       ListSequence.fromList(homes).addElement(systemJdkHome);
     }
-    if (StringUtils.isNotEmpty(System.getenv("JAVA_HOME"))) {
+    if ((System.getenv("JAVA_HOME") != null && System.getenv("JAVA_HOME").length() > 0)) {
       ListSequence.fromList(homes).addElement(System.getenv("JAVA_HOME"));
     }
     ListSequence.fromList(homes).addElement(systemJavaHome);
