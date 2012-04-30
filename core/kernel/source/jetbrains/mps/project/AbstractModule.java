@@ -158,7 +158,7 @@ public abstract class AbstractModule implements IModule {
 
   //----get deps
 
-  public ModuleDependenciesManager getDependenciesManager() {
+  public DependenciesManager getDependenciesManager() {
     return new ModuleDependenciesManager(this);
   }
 

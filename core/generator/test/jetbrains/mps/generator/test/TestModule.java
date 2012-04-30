@@ -20,6 +20,8 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ClassLoadingModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.dependency.DependenciesManager;
+import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
@@ -36,7 +38,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * Evgeny Gryaznov, 10/18/10
  */
-public class TestModule extends ClassLoadingModule  {
+public class TestModule extends ClassLoadingModule {
 
   private static final Logger LOG = Logger.getLogger(TestModule.class);
 
@@ -88,6 +90,12 @@ public class TestModule extends ClassLoadingModule  {
 
   public void save() {
     // nothing
+  }
+
+  @Override
+  public DependenciesManager getDependenciesManager() {
+    if (myPeer == null) throw new IllegalStateException();
+    return myPeer.getDependenciesManager();
   }
 
   private void clearAll() {
