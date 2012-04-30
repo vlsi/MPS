@@ -72,6 +72,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     myCurrentContext = tcc;
     myParent = parent;
     myStateCopy = new State(tcc, tcc.getState().getOperation());
+    myCurrentState = myStateCopy;
     setGenerationMode(TraceSettings.isGenerationMode());
     myEditorComponent = editorComponent;
     this.rebuildNow();

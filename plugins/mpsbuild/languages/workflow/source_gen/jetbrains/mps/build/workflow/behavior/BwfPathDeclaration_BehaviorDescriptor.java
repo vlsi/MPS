@@ -10,6 +10,10 @@ public class BwfPathDeclaration_BehaviorDescriptor extends BwfProjectPart_Behavi
   public BwfPathDeclaration_BehaviorDescriptor() {
   }
 
+  public int virtual_getPriority_2059109515400548718(SNode thisNode) {
+    return BwfPathDeclaration_Behavior.virtual_getPriority_2059109515400548718(thisNode);
+  }
+
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }

@@ -17,6 +17,12 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
+import java.util.List;
+import jetbrains.mps.smodel.IScope;
+import java.util.Arrays;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -73,6 +79,8 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_y27sly_d0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_y27sly_e0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_y27sly_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_y27sly_g0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_y27sly_h0(editorContext, node));
     return editorCell;
   }
 
@@ -166,6 +174,14 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_y27sly_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "maximum heap size (MB)");
     editorCell.setCellId("Constant_y27sly_e0");
+    workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_y27sly_g0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "compiler");
+    editorCell.setCellId("Constant_y27sly_g0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
@@ -346,6 +362,34 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private EditorCell createProperty_y27sly_h0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("compiler");
+    provider.setNoTargetText("<default compiler>");
+    provider.setAllowsEmptyTarget(true);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_compiler");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new BwfJavaModule_Editor.BwfJavaModule_compiler_cellMenu_a0h0()}));
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  public static class BwfJavaModule_compiler_cellMenu_a0h0 extends AbstractCellMenuPart_PropertyValues {
+    public BwfJavaModule_compiler_cellMenu_a0h0() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+      return Arrays.asList(new String[]{"modern", "IntelliJ", "jikes", "gcj"});
+    }
   }
 
   private static class taskDepsListHandler_y27sly_d0 extends RefNodeListHandler {

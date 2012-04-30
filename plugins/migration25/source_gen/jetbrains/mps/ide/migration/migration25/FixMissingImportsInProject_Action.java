@@ -77,8 +77,8 @@ public class FixMissingImportsInProject_Action extends BaseAction {
           }
 
           new MissingDependenciesFixer(model).fix(false);
-          module.invalidateCaches();
         }
+        module.invalidateCaches();
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {

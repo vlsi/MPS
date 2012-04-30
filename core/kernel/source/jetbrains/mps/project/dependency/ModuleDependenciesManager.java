@@ -57,7 +57,7 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
 
     for (IModule m : reexported) {
       if (reexpRes.contains(m)) continue;
-      ((ModuleDependenciesManager) m.getDependenciesManager()).collectModules(reexpRes, nonReexpRes, runtimes, Reexports.REEXPORTED_ONLY);
+      ((ModuleDependenciesManager) m.getDependenciesManager()).collectModules(reexpRes, nonReexpRes, runtimes, reexports == Reexports.DONT_RESPECT ? Reexports.DONT_RESPECT : Reexports.REEXPORTED_ONLY);
     }
   }
 

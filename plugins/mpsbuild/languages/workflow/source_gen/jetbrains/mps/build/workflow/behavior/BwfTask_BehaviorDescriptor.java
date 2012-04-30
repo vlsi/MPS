@@ -17,6 +17,10 @@ public class BwfTask_BehaviorDescriptor extends BwfProjectPart_BehaviorDescripto
     return ScopeProvider_Behavior.virtual_getScope_7722139651431880752(thisNode, kind, role, index);
   }
 
+  public int virtual_getPriority_2059109515400548718(SNode thisNode) {
+    return BwfTask_Behavior.virtual_getPriority_2059109515400548718(thisNode);
+  }
+
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }

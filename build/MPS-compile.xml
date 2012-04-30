@@ -10860,8 +10860,8 @@
       <src refid="cycle.collections_trove.runtime_tjc.src" />
     </javac>
     <copy todir="${collections_trove.runtime.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/test_gen" />
     </copy>
     <javac classpathref="cycle.collections_trove.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${collections_trove.runtime.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -10966,120 +10966,120 @@
       <src refid="cycle.jetbrains.mps.baseLanguage_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.baseLanguage.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/baseLanguage/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/baseLanguage/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/baseLanguage/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/baseLanguage/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.baseLanguage.blTypes.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/blTypes/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/blTypes/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/blTypes/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/blTypes/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.baseLanguage.classifiers.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/classifiers/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/classifiers/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/classifiers/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/classifiers/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.baseLanguage.closures.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/closures/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/closures/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/closures/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/closures/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.baseLanguage.collections.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/collections/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/collections/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/collections/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/collections/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.baseLanguage.extensionMethods.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/extensionMethod/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/extensionMethod/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/extensionMethod/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/extensionMethod/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.baseLanguage.javadoc.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/javadoc/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/javadoc/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/javadoc/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/javadoc/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.baseLanguage.logging.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/logging/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/logging/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/logging/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/logging/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.baseLanguage.scopes.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.scopes/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.scopes/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.scopes/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.scopes/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.baseLanguage.tuples.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/tuples/languages/tuples/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/tuples/languages/tuples/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/tuples/languages/tuples/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/tuples/languages/tuples/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.baseLanguageInternal.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/baseLanguageInternal/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/baseLanguageInternal/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/baseLanguageInternal/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/baseLanguageInternal/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.lang.behavior.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/behavior/languages/behavior/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/behavior/languages/behavior/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/behavior/languages/behavior/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/behavior/languages/behavior/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.lang.constraints.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/constraints/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/constraints/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/constraints/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/constraints/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.lang.core.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/core/core/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/core/core/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/core/core/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/core/core/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.lang.editor.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/editor/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/editor/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/editor/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/editor/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.lang.generator.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.lang.generator.generationContext.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/generator/languages/generationContext/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/generator/languages/generationContext/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/generator/languages/generationContext/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/generator/languages/generationContext/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.lang.generator.generationParameters.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/generator/languages/generationParameters/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/generator/languages/generationParameters/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/generator/languages/generationParameters/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/generator/languages/generationParameters/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.lang.pattern.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/pattern/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/pattern/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/pattern/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/pattern/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.lang.project.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/project/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/project/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/project/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/project/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.lang.quotation.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/quotation/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/quotation/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/quotation/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/quotation/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.lang.resources.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/resources/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/resources/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/resources/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/resources/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.lang.scopes.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/scopes/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/scopes/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/scopes/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/scopes/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.lang.scopes.runtime.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/scopes/runtime/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/scopes/runtime/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/scopes/runtime/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/scopes/runtime/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.lang.sharedConcepts.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/sharedConcepts/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/sharedConcepts/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/sharedConcepts/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/sharedConcepts/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.lang.smodel.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/smodel/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/smodel/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/smodel/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/smodel/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.lang.structure.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/structure/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/structure/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/structure/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/structure/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.lang.traceable.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/traceable/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/traceable/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/traceable/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/traceable/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.lang.typesystem.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/typesystem/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/typesystem/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/typesystem/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/typesystem/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11268,8 +11268,8 @@
       <src refid="cycle.jetbrains.mps.baseLanguage.builders_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.baseLanguage.builders.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/builders/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/builders/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/builders/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/builders/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.builders_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.builders.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11290,8 +11290,8 @@
       <src refid="cycle.jetbrains.mps.baseLanguage.checkedDots_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.baseLanguage.checkedDots.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/checkDot/languages/checkedDots/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/checkDot/languages/checkedDots/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/checkDot/languages/checkedDots/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/checkDot/languages/checkedDots/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.checkedDots_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.checkedDots.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11312,8 +11312,8 @@
       <src refid="cycle.jetbrains.mps.baseLanguage.collections.trove_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.baseLanguage.collections.trove.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/collections/languages/trove/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/collections/languages/trove/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/collections/languages/trove/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/collections/languages/trove/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.collections.trove_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.collections.trove.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11334,8 +11334,8 @@
       <src refid="cycle.jetbrains.mps.baseLanguage.constructors_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.baseLanguage.constructors.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/constructors/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/constructors/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/constructors/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/constructors/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.constructors_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.constructors.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11356,8 +11356,8 @@
       <src refid="cycle.jetbrains.mps.baseLanguage.contracts_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.baseLanguage.contracts.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/contracts/languages/contracts/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/contracts/languages/contracts/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/contracts/languages/contracts/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/contracts/languages/contracts/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.contracts_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.contracts.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11378,8 +11378,8 @@
       <src refid="cycle.jetbrains.mps.baseLanguage.dates_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.baseLanguage.dates.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/dates/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/dates/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/dates/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/dates/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.dates_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.dates.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11400,8 +11400,8 @@
       <src refid="cycle.jetbrains.mps.baseLanguage.dates.pluginSolution_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.baseLanguage.dates.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/dates/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/dates/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/dates/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/dates/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.dates.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.dates.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11422,8 +11422,8 @@
       <src refid="cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.baseLanguage.dates.runtime.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/dates/runtime/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/dates/runtime/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/dates/runtime/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/dates/runtime/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.dates.runtime.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11444,8 +11444,8 @@
       <src refid="cycle.jetbrains.mps.baseLanguage.datesInternal_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.baseLanguage.datesInternal.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/dates/internal/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/dates/internal/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/dates/internal/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/dates/internal/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.datesInternal_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.datesInternal.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11466,8 +11466,8 @@
       <src refid="cycle.jetbrains.mps.baseLanguage.execution.startup_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.baseLanguage.execution.startup.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.execution.startup_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.execution.startup.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11488,8 +11488,8 @@
       <src refid="cycle.jetbrains.mps.baseLanguage.jdk7_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.baseLanguage.jdk7.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/jdk7/languages/jdk7/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/jdk7/languages/jdk7/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/jdk7/languages/jdk7/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/jdk7/languages/jdk7/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.jdk7_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.jdk7.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11510,8 +11510,8 @@
       <src refid="cycle.jetbrains.mps.baseLanguage.math_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.baseLanguage.math.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/math/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/math/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/math/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/math/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.math_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.math.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11532,8 +11532,8 @@
       <src refid="cycle.jetbrains.mps.baseLanguage.math.pluginSolution_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.baseLanguage.math.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/math/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/math/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/math/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/math/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.math.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.math.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11554,8 +11554,8 @@
       <src refid="cycle.jetbrains.mps.baseLanguage.math.runtime_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.baseLanguage.math.runtime.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/math/runtimeSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/math/runtimeSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/math/runtimeSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/math/runtimeSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.math.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.math.runtime.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11576,8 +11576,8 @@
       <src refid="cycle.jetbrains.mps.baseLanguage.money_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.baseLanguage.money.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/money/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/money/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/money/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/money/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.money_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.money.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11598,8 +11598,8 @@
       <src refid="cycle.jetbrains.mps.baseLanguage.money.runtime_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.baseLanguage.money.runtime.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/money/runtimeSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/money/runtimeSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/money/runtimeSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/money/runtimeSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.money.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.money.runtime.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11620,8 +11620,8 @@
       <src refid="cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.baseLanguage.overloadedOperators.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.overloadedOperators.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11642,8 +11642,8 @@
       <src refid="cycle.jetbrains.mps.baseLanguage.pluginSolution_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.baseLanguage.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/baseLanguage/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/baseLanguage/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/baseLanguage/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/baseLanguage/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11664,8 +11664,8 @@
       <src refid="cycle.jetbrains.mps.baseLanguage.regexp_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.baseLanguage.regexp.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/regexp/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/regexp/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/regexp/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/regexp/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.regexp_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.regexp.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11686,8 +11686,8 @@
       <src refid="cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.baseLanguage.regexp.examples.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.regexp.examples/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.regexp.examples/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.regexp.examples/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.regexp.examples/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.regexp.examples.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11708,8 +11708,8 @@
       <src refid="cycle.jetbrains.mps.baseLanguage.regexp.runtime_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.baseLanguage.regexp.runtime.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.regexp.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.regexp.runtime.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11730,8 +11730,8 @@
       <src refid="cycle.jetbrains.mps.baseLanguage.unitTest_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.baseLanguage.unitTest.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/unitTest/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/unitTest/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/unitTest/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/unitTest/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.unitTest_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.unitTest.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11752,8 +11752,8 @@
       <src refid="cycle.jetbrains.mps.baseLanguage.unitTest.execution.startup_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.baseLanguage.unitTest.execution.startup.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/execution-configurations/languages/unitTests/startup/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/execution-configurations/languages/unitTests/startup/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/execution-configurations/languages/unitTests/startup/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/execution-configurations/languages/unitTests/startup/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.unitTest.execution.startup_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.unitTest.execution.startup.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11774,8 +11774,8 @@
       <src refid="cycle.jetbrains.mps.baseLanguage.varVariable_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.baseLanguage.varVariable.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/varVariable/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/baseLanguage/varVariable/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/varVariable/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/baseLanguage/varVariable/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.varVariable_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.varVariable.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11796,8 +11796,8 @@
       <src refid="cycle.jetbrains.mps.bash_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.bash.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/bash/languages/bash/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/bash/languages/bash/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/bash/languages/bash/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/bash/languages/bash/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.bash_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.bash.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11818,8 +11818,8 @@
       <src refid="cycle.jetbrains.mps.build_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.build.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/mpsbuild/languages/build/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/mpsbuild/languages/build/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/mpsbuild/languages/build/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/mpsbuild/languages/build/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.build_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11840,8 +11840,8 @@
       <src refid="cycle.jetbrains.mps.build.custommps_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.build.custommps.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/custommps/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/custommps/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/custommps/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/custommps/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.build.custommps_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.custommps.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11862,8 +11862,8 @@
       <src refid="cycle.jetbrains.mps.build.custommps.pluginSolution_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.build.custommps.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/custommps/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/custommps/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/custommps/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/custommps/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.build.custommps.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.custommps.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11884,8 +11884,8 @@
       <src refid="cycle.jetbrains.mps.build.dependency_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.build.dependency.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/dependency/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/dependency/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/dependency/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/dependency/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.build.dependency_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.dependency.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11915,20 +11915,20 @@
       <src refid="cycle.jetbrains.mps.build.generictasks_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.build.generictasks.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/generictasks/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/generictasks/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/generictasks/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/generictasks/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.build.generictasks.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.build.property.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/property/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/property/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/property/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/property/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.buildlanguage.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.build.generictasks_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.generictasks.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11967,8 +11967,8 @@
       <src refid="cycle.jetbrains.mps.build.gentest_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.build.gentest.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/gentest/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/gentest/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/gentest/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/gentest/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.build.gentest_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.gentest.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -11989,8 +11989,8 @@
       <src refid="cycle.jetbrains.mps.build.mps_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.build.mps.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/mpsbuild/languages/mps/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/mpsbuild/languages/mps/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/mpsbuild/languages/mps/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/mpsbuild/languages/mps/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.build.mps_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.mps.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12011,8 +12011,8 @@
       <src refid="cycle.jetbrains.mps.build.mpsdist_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.build.mpsdist.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.mpsdist/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.mpsdist/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.mpsdist/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.mpsdist/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.build.mpsdist_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.mpsdist.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12033,8 +12033,8 @@
       <src refid="cycle.jetbrains.mps.build.packaging_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.build.packaging.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/packaging/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/packaging/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/packaging/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/packaging/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.build.packaging_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.packaging.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12055,8 +12055,8 @@
       <src refid="cycle.jetbrains.mps.build.packaging.pluginSolution_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.build.packaging.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/packaging/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/packaging/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/packaging/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/packaging/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.build.packaging.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.packaging.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12077,8 +12077,8 @@
       <src refid="cycle.jetbrains.mps.build.reduced_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.build.reduced.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/reduced/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/reduced/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/reduced/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/reduced/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.build.reduced_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.reduced.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12099,8 +12099,8 @@
       <src refid="cycle.jetbrains.mps.build.startup_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.build.startup.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/startup/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/startup/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/startup/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/startup/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.build.startup_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.startup.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12121,8 +12121,8 @@
       <src refid="cycle.jetbrains.mps.build.workflow_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.build.workflow.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/mpsbuild/languages/workflow/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/mpsbuild/languages/workflow/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/mpsbuild/languages/workflow/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/mpsbuild/languages/workflow/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.build.workflow_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.workflow.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12143,8 +12143,8 @@
       <src refid="cycle.jetbrains.mps.core.properties_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.core.properties.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/properties/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/properties/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/properties/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/properties/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.core.properties_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.core.properties.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12165,8 +12165,8 @@
       <src refid="cycle.jetbrains.mps.core.xml_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.core.xml.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/xml/xml/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/xml/xml/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/xml/xml/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/xml/xml/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.core.xml_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.core.xml.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12187,8 +12187,8 @@
       <src refid="cycle.jetbrains.mps.debugger.api.lang_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.debugger.api.lang.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.debugger.api.lang_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.debugger.api.lang.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12209,8 +12209,8 @@
       <src refid="cycle.jetbrains.mps.debugger.java.customViewers_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.debugger.java.customViewers.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/debugger-java/languages/customViewers/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/debugger-java/languages/customViewers/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/debugger-java/languages/customViewers/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/debugger-java/languages/customViewers/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.debugger.java.customViewers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.debugger.java.customViewers.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12231,8 +12231,8 @@
       <src refid="cycle.jetbrains.mps.debugger.java.evaluation_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.debugger.java.evaluation.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/debugger-java/languages/evaluation/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/debugger-java/languages/evaluation/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/debugger-java/languages/evaluation/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/debugger-java/languages/evaluation/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.debugger.java.evaluation_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.debugger.java.evaluation.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12253,8 +12253,8 @@
       <src refid="cycle.jetbrains.mps.debugger.java.privateMembers_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.debugger.java.privateMembers.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/debugger-java/languages/privateMembers/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/debugger-java/languages/privateMembers/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/debugger-java/languages/privateMembers/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/debugger-java/languages/privateMembers/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.debugger.java.privateMembers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.debugger.java.privateMembers.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12275,8 +12275,8 @@
       <src refid="cycle.jetbrains.mps.execution.commands_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.execution.commands.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/execution-languages/languages/commands/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/execution-languages/languages/commands/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/execution-languages/languages/commands/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/execution-languages/languages/commands/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.execution.commands_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.execution.commands.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12297,8 +12297,8 @@
       <src refid="cycle.jetbrains.mps.execution.common_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.execution.common.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/runConfigurations/languages/common/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/runConfigurations/languages/common/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/runConfigurations/languages/common/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/runConfigurations/languages/common/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.execution.common_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.execution.common.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12319,8 +12319,8 @@
       <src refid="cycle.jetbrains.mps.execution.configurations_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.execution.configurations.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/execution-languages/languages/configurations/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/execution-languages/languages/configurations/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/execution-languages/languages/configurations/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/execution-languages/languages/configurations/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.execution.configurations_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.execution.configurations.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12341,8 +12341,8 @@
       <src refid="cycle.jetbrains.mps.execution.configurations.deprecated_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.execution.configurations.deprecated.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/execution-languages/languages/deprecated/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/execution-languages/languages/deprecated/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/execution-languages/languages/deprecated/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/execution-languages/languages/deprecated/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.execution.configurations.deprecated_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.execution.configurations.deprecated.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12363,8 +12363,8 @@
       <src refid="cycle.jetbrains.mps.execution.configurations.pluginSolution_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.execution.configurations.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/execution-languages/languages/configurations/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/execution-languages/languages/configurations/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/execution-languages/languages/configurations/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/execution-languages/languages/configurations/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.execution.configurations.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.execution.configurations.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12385,8 +12385,8 @@
       <src refid="cycle.jetbrains.mps.execution.migration_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.execution.migration.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/execution-configurations/languages/migration/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/execution-configurations/languages/migration/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/execution-configurations/languages/migration/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/execution-configurations/languages/migration/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.execution.migration_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.execution.migration.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12407,8 +12407,8 @@
       <src refid="cycle.jetbrains.mps.execution.settings_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.execution.settings.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/runConfigurations/languages/settings/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/runConfigurations/languages/settings/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/runConfigurations/languages/settings/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/runConfigurations/languages/settings/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.execution.settings_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.execution.settings.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12429,8 +12429,8 @@
       <src refid="cycle.jetbrains.mps.execution.util_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.execution.util.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/runConfigurations/languages/util/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/runConfigurations/languages/util/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/runConfigurations/languages/util/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/runConfigurations/languages/util/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.execution.util_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.execution.util.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12451,8 +12451,8 @@
       <src refid="cycle.jetbrains.mps.gtext_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.gtext.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/gtext/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/gtext/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/gtext/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/gtext/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.gtext_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.gtext.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12473,8 +12473,8 @@
       <src refid="cycle.jetbrains.mps.gtext.runtime_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.gtext.runtime.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/gtext/runtime/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/gtext/runtime/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/gtext/runtime/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/gtext/runtime/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.gtext.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.gtext.runtime.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12495,8 +12495,8 @@
       <src refid="cycle.jetbrains.mps.gwt.client_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.gwt.client.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/gwtsupport/languages/client/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/gwtsupport/languages/client/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/gwtsupport/languages/client/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/gwtsupport/languages/client/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.gwt.client_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.gwt.client.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12517,8 +12517,8 @@
       <src refid="cycle.jetbrains.mps.ide.java.migration_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.ide.java.migration.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/mpsjava/migration/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/plugins/mpsjava/migration/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/mpsjava/migration/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/mpsjava/migration/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.ide.java.migration_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ide.java.migration.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12539,8 +12539,8 @@
       <src refid="cycle.jetbrains.mps.ide.uiLanguage_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.ide.uiLanguage.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ideUiLanguage/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ideUiLanguage/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ideUiLanguage/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ideUiLanguage/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.ide.uiLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ide.uiLanguage.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12561,8 +12561,8 @@
       <src refid="cycle.jetbrains.mps.lang.access_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.access.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/access/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/access/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/access/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/access/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.access_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.access.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12583,8 +12583,8 @@
       <src refid="cycle.jetbrains.mps.lang.actions_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.actions.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/actions/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/actions/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/actions/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/actions/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.actions_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.actions.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12605,8 +12605,8 @@
       <src refid="cycle.jetbrains.mps.lang.checkedName_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.checkedName.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/checkedName/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/checkedName/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/checkedName/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/checkedName/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.checkedName_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.checkedName.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12627,8 +12627,8 @@
       <src refid="cycle.jetbrains.mps.lang.core.pluginSolution_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.core.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/core/core/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/core/core/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/core/core/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/core/core/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.core.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.core.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12649,8 +12649,8 @@
       <src refid="cycle.jetbrains.mps.lang.dataFlow_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.dataFlow.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/dataFlow/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/dataFlow/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/dataFlow/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/dataFlow/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.dataFlow_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.dataFlow.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12671,8 +12671,8 @@
       <src refid="cycle.jetbrains.mps.lang.dataFlow.analyzers_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.dataFlow.analyzers.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/analyzers/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/analyzers/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/analyzers/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/analyzers/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.dataFlow.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.dataFlow.analyzers.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12693,8 +12693,8 @@
       <src refid="cycle.jetbrains.mps.lang.dataFlow.pluginSolution_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.dataFlow.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/dataFlow/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/dataFlow/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/dataFlow/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/dataFlow/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.dataFlow.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.dataFlow.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12715,8 +12715,8 @@
       <src refid="cycle.jetbrains.mps.lang.descriptor_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.descriptor.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/generator/languages/descriptor/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/generator/languages/descriptor/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/generator/languages/descriptor/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/generator/languages/descriptor/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.descriptor_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.descriptor.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12737,8 +12737,8 @@
       <src refid="cycle.jetbrains.mps.lang.editor.editorTest_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.editor.editorTest.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/editor/languages/editorTest/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/editor/languages/editorTest/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/editor/languages/editorTest/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/editor/languages/editorTest/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.editor.editorTest_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.editor.editorTest.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12759,8 +12759,8 @@
       <src refid="cycle.jetbrains.mps.lang.editor.table_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.editor.table.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/editor/languages/table/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/editor/languages/table/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/editor/languages/table/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/editor/languages/table/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.editor.table_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.editor.table.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12781,8 +12781,8 @@
       <src refid="cycle.jetbrains.mps.lang.editor.table.runtime_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.editor.table.runtime.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/editor/languages/table/runtime/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/editor/languages/table/runtime/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/editor/languages/table/runtime/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/editor/languages/table/runtime/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.editor.table.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.editor.table.runtime.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12803,8 +12803,8 @@
       <src refid="cycle.jetbrains.mps.lang.extension_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.extension.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/extension/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/extension/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/extension/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/extension/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.extension_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.extension.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12828,12 +12828,12 @@
       <src refid="cycle.jetbrains.mps.lang.findUsages_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.findUsages.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/findUsages/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/findUsages/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/findUsages/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/findUsages/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.lang.refactoring.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/refactoring/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/refactoring/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/refactoring/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/refactoring/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.findUsages_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.findUsages.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12860,8 +12860,8 @@
       <src refid="cycle.jetbrains.mps.lang.generator.pluginSolution_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.generator.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.generator.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.generator.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12882,8 +12882,8 @@
       <src refid="cycle.jetbrains.mps.lang.intentions_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.intentions.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/intentions/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/intentions/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/intentions/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/intentions/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.intentions_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.intentions.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12904,8 +12904,8 @@
       <src refid="cycle.jetbrains.mps.lang.pattern.testLang_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.pattern.testLang.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/pattern/languages/testLang/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/pattern/languages/testLang/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/pattern/languages/testLang/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/pattern/languages/testLang/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.pattern.testLang_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.pattern.testLang.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12926,8 +12926,8 @@
       <src refid="cycle.jetbrains.mps.lang.plugin_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.plugin.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/plugin/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/plugin/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/plugin/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/plugin/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.plugin_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.plugin.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12948,8 +12948,8 @@
       <src refid="cycle.jetbrains.mps.lang.plugin.pluginSolution_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.plugin.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/plugin/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/plugin/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/plugin/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/plugin/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.plugin.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.plugin.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12970,8 +12970,8 @@
       <src refid="cycle.jetbrains.mps.lang.plugin.standalone_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.plugin.standalone.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/plugin-standalone/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/plugin-standalone/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/plugin-standalone/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/plugin-standalone/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.plugin.standalone_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.plugin.standalone.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -12992,8 +12992,8 @@
       <src refid="cycle.jetbrains.mps.lang.quotation.pluginSolution_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.quotation.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/quotation/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/quotation/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/quotation/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/quotation/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.quotation.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.quotation.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13014,8 +13014,8 @@
       <src refid="cycle.jetbrains.mps.lang.script_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.script.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/script/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/script/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/script/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/script/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.script_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.script.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13036,8 +13036,8 @@
       <src refid="cycle.jetbrains.mps.lang.script.pluginSolution_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.script.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/script/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/script/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/script/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/script/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.script.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.script.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13058,8 +13058,8 @@
       <src refid="cycle.jetbrains.mps.lang.smodel.pluginSolution_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.smodel.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/smodel/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/smodel/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/smodel/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/smodel/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.smodel.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.smodel.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13080,8 +13080,8 @@
       <src refid="cycle.jetbrains.mps.lang.smodelTests_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.smodelTests.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/smodel/languages/smodelTests/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/smodel/languages/smodelTests/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/smodel/languages/smodelTests/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/smodel/languages/smodelTests/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.smodelTests_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.smodelTests.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13102,8 +13102,8 @@
       <src refid="cycle.jetbrains.mps.lang.structure.pluginSolution_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.structure.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/structure/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/structure/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/structure/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/structure/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.structure.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.structure.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13124,8 +13124,8 @@
       <src refid="cycle.jetbrains.mps.lang.stubs_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.stubs.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/stubs/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/stubs/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/stubs/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/stubs/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.stubs_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.stubs.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13149,12 +13149,12 @@
       <src refid="cycle.jetbrains.mps.lang.test_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.test.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/test/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/test/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/test/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/test/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.lang.test.runtime.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.test_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.test.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13181,8 +13181,8 @@
       <src refid="cycle.jetbrains.mps.lang.test.pluginSolution_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.test.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/test/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/test/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/test/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/test/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.test.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.test.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13203,8 +13203,8 @@
       <src refid="cycle.jetbrains.mps.lang.textGen_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.textGen.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/textGen/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/textGen/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/textGen/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/textGen/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.textGen_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.textGen.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13225,8 +13225,8 @@
       <src refid="cycle.jetbrains.mps.lang.traceable.pluginSolution_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.traceable.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.traceable.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.traceable.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13247,8 +13247,8 @@
       <src refid="cycle.jetbrains.mps.lang.typesystem.pluginSolution_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.typesystem.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.typesystem.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.typesystem.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13269,8 +13269,8 @@
       <src refid="cycle.jetbrains.mps.make.facet_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.make.facet.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/make/languages/facet/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/make/languages/facet/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/make/languages/facet/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/make/languages/facet/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.make.facet_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.make.facet.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13291,8 +13291,8 @@
       <src refid="cycle.jetbrains.mps.make.script_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.make.script.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/make/languages/script/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/make/languages/script/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/make/languages/script/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/make/languages/script/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.make.script_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.make.script.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13313,8 +13313,8 @@
       <src refid="cycle.jetbrains.mps.nanoj_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.nanoj.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/mps-lite/languages/nanoj/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/mps-lite/languages/nanoj/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/mps-lite/languages/nanoj/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/mps-lite/languages/nanoj/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.nanoj_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.nanoj.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13335,8 +13335,8 @@
       <src refid="cycle.jetbrains.mps.platform.conf_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.platform.conf.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/conf/languages/conf/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/conf/languages/conf/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/conf/languages/conf/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/conf/languages/conf/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.platform.conf_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.platform.conf.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13357,8 +13357,8 @@
       <src refid="cycle.jetbrains.mps.quickQuery.runtime_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.quickQuery.runtime.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.quickQuery.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.quickQuery.runtime.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13379,8 +13379,8 @@
       <src refid="cycle.jetbrains.mps.quickQueryLanguage_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.quickQueryLanguage.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/quickQueryLanguage/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/quickQueryLanguage/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/quickQueryLanguage/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/quickQueryLanguage/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.quickQueryLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.quickQueryLanguage.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13401,8 +13401,8 @@
       <src refid="cycle.jetbrains.mps.quickQueryLanguage.pluginSolution_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.quickQueryLanguage.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/quickQueryLanguage/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/quickQueryLanguage/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/quickQueryLanguage/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/quickQueryLanguage/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.quickQueryLanguage.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.quickQueryLanguage.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13423,8 +13423,8 @@
       <src refid="cycle.jetbrains.mps.ui_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.ui.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ui/languages/ui/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ui/languages/ui/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ui/languages/ui/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ui/languages/ui/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.ui_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13445,8 +13445,8 @@
       <src refid="cycle.jetbrains.mps.ui.gwt_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.ui.gwt.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ui/languages/gwt/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ui/languages/gwt/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ui/languages/gwt/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ui/languages/gwt/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.ui.gwt_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.gwt.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13467,8 +13467,8 @@
       <src refid="cycle.jetbrains.mps.ui.gwt.pluginSolution_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.ui.gwt.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ui/languages/gwt/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ui/languages/gwt/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ui/languages/gwt/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ui/languages/gwt/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.ui.gwt.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.gwt.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13489,8 +13489,8 @@
       <src refid="cycle.jetbrains.mps.ui.internal_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.ui.internal.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ui/languages/internal/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ui/languages/internal/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ui/languages/internal/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ui/languages/internal/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.ui.internal_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.internal.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13511,8 +13511,8 @@
       <src refid="cycle.jetbrains.mps.ui.modeling_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.ui.modeling.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ui/languages/meta/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ui/languages/meta/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ui/languages/meta/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ui/languages/meta/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.ui.modeling_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.modeling.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13533,8 +13533,8 @@
       <src refid="cycle.jetbrains.mps.ui.modeling.pluginSolution_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.ui.modeling.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ui/languages/meta/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ui/languages/meta/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ui/languages/meta/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ui/languages/meta/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.ui.modeling.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.modeling.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13555,8 +13555,8 @@
       <src refid="cycle.jetbrains.mps.ui.pluginSolution_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.ui.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ui/languages/ui/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ui/languages/ui/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ui/languages/ui/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ui/languages/ui/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.ui.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13577,8 +13577,8 @@
       <src refid="cycle.jetbrains.mps.ui.swing_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.ui.swing.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ui/languages/swing/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ui/languages/swing/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ui/languages/swing/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ui/languages/swing/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.ui.swing_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.swing.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13599,8 +13599,8 @@
       <src refid="cycle.jetbrains.mps.ui.swing.pluginSolution_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.ui.swing.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ui/languages/swing/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ui/languages/swing/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ui/languages/swing/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ui/languages/swing/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.ui.swing.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.swing.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13621,8 +13621,8 @@
       <src refid="cycle.jetbrains.mps.ui.swing.runtime_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.ui.swing.runtime.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ui/languages/swing/runtime/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ui/languages/swing/runtime/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ui/languages/swing/runtime/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ui/languages/swing/runtime/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.ui.swing.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.swing.runtime.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13643,8 +13643,8 @@
       <src refid="cycle.jetbrains.mps.ui.swt_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.ui.swt.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ui/languages/swt/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ui/languages/swt/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ui/languages/swt/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ui/languages/swt/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.ui.swt_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.swt.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13665,8 +13665,8 @@
       <src refid="cycle.jetbrains.mps.ui.swt.pluginSolution_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.ui.swt.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ui/languages/swt/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ui/languages/swt/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ui/languages/swt/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ui/languages/swt/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.ui.swt.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.swt.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13687,8 +13687,8 @@
       <src refid="cycle.jetbrains.mps.ui.swt.runtime_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.ui.swt.runtime.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ui/languages/swt/runtime/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ui/languages/swt/runtime/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ui/languages/swt/runtime/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ui/languages/swt/runtime/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.ui.swt.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.swt.runtime.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13709,8 +13709,8 @@
       <src refid="cycle.jetbrains.mps.uiLanguage_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.uiLanguage.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/uiLanguage/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/uiLanguage/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/uiLanguage/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/uiLanguage/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.uiLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.uiLanguage.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13731,8 +13731,8 @@
       <src refid="cycle.jetbrains.mps.uiLanguage.pluginSolution_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.uiLanguage.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/uiLanguage/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/uiLanguage/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/uiLanguage/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/uiLanguage/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.uiLanguage.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.uiLanguage.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13756,12 +13756,12 @@
       <src refid="cycle.jetbrains.mps.xml_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.xml.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/xml/xml/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/xml/xml/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/xml/xml/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/xml/xml/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.xmlInternal.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/xml/xmlInternal/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/xml/xmlInternal/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/xml/xmlInternal/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/xml/xmlInternal/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.xml_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xml.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13788,8 +13788,8 @@
       <src refid="cycle.jetbrains.mps.xml.deprecated_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.xml.deprecated.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/xmlDeprecated/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/xmlDeprecated/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/xmlDeprecated/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/xmlDeprecated/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.xml.deprecated_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xml.deprecated.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13810,8 +13810,8 @@
       <src refid="cycle.jetbrains.mps.xml.deprecated.pluginSolution_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.xml.deprecated.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/xmlDeprecated/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/xmlDeprecated/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/xmlDeprecated/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/xmlDeprecated/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.xml.deprecated.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xml.deprecated.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13832,8 +13832,8 @@
       <src refid="cycle.jetbrains.mps.xmlQuery_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.xmlQuery.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/xml/xmlQuery/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/xml/xmlQuery/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/xml/xmlQuery/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/xml/xmlQuery/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.xmlQuery_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xmlQuery.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13854,8 +13854,8 @@
       <src refid="cycle.jetbrains.mps.xmlSchema_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.xmlSchema.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/xml/xmlSchema/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/xml/xmlSchema/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/xml/xmlSchema/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/xml/xmlSchema/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.xmlSchema_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xmlSchema.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13876,8 +13876,8 @@
       <src refid="cycle.jetbrains.mps.xmlUnitTest_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.xmlUnitTest.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.xmlUnitTest_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xmlUnitTest.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13901,12 +13901,12 @@
       <src refid="cycle.jetbrains.mps.ypath_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.ypath.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ypath/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ypath/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ypath/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ypath/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.ypath.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ypath/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ypath/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ypath/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ypath/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.ypath_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ypath.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13933,8 +13933,8 @@
       <src refid="cycle.jetbrains.mps.ypath.runtime_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.ypath.runtime.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.ypath.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ypath.runtime.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13955,8 +13955,8 @@
       <src refid="cycle.jetbrains.mpslite_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mpslite.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/mps-lite/languages/mpslite/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/mps-lite/languages/mpslite/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/mps-lite/languages/mpslite/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/mps-lite/languages/mpslite/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mpslite_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mpslite.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13977,8 +13977,8 @@
       <src refid="cycle.jetbrains.mpslite.pluginSolution_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mpslite.pluginSolution.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/mps-lite/languages/mpslite/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/mps-lite/languages/mpslite/solutions/pluginSolution/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/mps-lite/languages/mpslite/solutions/pluginSolution/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/mps-lite/languages/mpslite/solutions/pluginSolution/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mpslite.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mpslite.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -13999,8 +13999,8 @@
       <src refid="cycle.ypath.main_tjc.src" />
     </javac>
     <copy todir="${ypath.main.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ypath/solutions/main/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ypath/solutions/main/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ypath/solutions/main/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ypath/solutions/main/test_gen" />
     </copy>
     <javac classpathref="cycle.ypath.main_tjc.classpaths" classpath="${classes.dump}" destdir="${ypath.main.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
@@ -14021,8 +14021,8 @@
       <src refid="cycle.ypath.test_tjc.src" />
     </javac>
     <copy todir="${ypath.test.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ypath/solutions/test/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/ypath/solutions/test/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ypath/solutions/test/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/ypath/solutions/test/test_gen" />
     </copy>
     <javac classpathref="cycle.ypath.test_tjc.classpaths" classpath="${classes.dump}" destdir="${ypath.test.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>

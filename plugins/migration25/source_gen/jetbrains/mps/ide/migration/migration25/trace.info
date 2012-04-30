@@ -1029,32 +1029,31 @@
     <nodeInfo nodeId="2761153619454568090" fileName="Migrations25_ActionGroup.java" startLine="29" startPosition="137" endLine="30" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1828409047608306841" fileName="Migrations25_ActionGroup.java" startLine="30" startPosition="130" endLine="31" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1828409047608306843" fileName="Migrations25_ActionGroup.java" startLine="31" startPosition="129" endLine="32" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3010618154278946996" fileName="Migrations25_ActionGroup.java" startLine="32" startPosition="134" endLine="33" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3864735057395396950" fileName="Migrations25_ActionGroup.java" startLine="33" startPosition="120" endLine="34" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2761153619454568341" fileName="Migrations25_ActionGroup.java" startLine="34" startPosition="123" endLine="35" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7450649563959273055" fileName="Migrations25_ActionGroup.java" startLine="35" startPosition="130" endLine="36" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6638751950448587423" fileName="Migrations25_ActionGroup.java" startLine="36" startPosition="121" endLine="37" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="647205717978882754" fileName="Migrations25_ActionGroup.java" startLine="37" startPosition="121" endLine="38" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4250481571544053951" fileName="Migrations25_ActionGroup.java" startLine="39" startPosition="7" endLine="40" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4250481571544053951" fileName="Migrations25_ActionGroup.java" startLine="40" startPosition="95" endLine="41" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4250481571544053951" fileName="Migrations25_ActionGroup.java" startLine="41" startPosition="66" endLine="42" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4250481571544053951" fileName="Migrations25_ActionGroup.java" startLine="42" startPosition="104" endLine="43" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2899596005953728721" fileName="Migrations25_ActionGroup.java" startLine="45" startPosition="27" endLine="46" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4250481571544053951" fileName="Migrations25_ActionGroup.java" startLine="38" startPosition="125" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2899596005953728721" fileName="Migrations25_ActionGroup.java" startLine="19" startPosition="24" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2899596005953728721" fileName="Migrations25_ActionGroup.java" startLine="15" startPosition="0" endLine="48" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Migrations25_ActionGroup#()V" />
-    <scopeInfo nodeId="2899596005953728721" fileName="Migrations25_ActionGroup.java" startLine="45" startPosition="0" endLine="46" endPosition="39">
+    <nodeInfo nodeId="2761153619454568341" fileName="Migrations25_ActionGroup.java" startLine="32" startPosition="134" endLine="33" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6638751950448587423" fileName="Migrations25_ActionGroup.java" startLine="33" startPosition="130" endLine="34" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="647205717978882754" fileName="Migrations25_ActionGroup.java" startLine="34" startPosition="121" endLine="35" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7450649563959273055" fileName="Migrations25_ActionGroup.java" startLine="35" startPosition="125" endLine="36" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3864735057395396950" fileName="Migrations25_ActionGroup.java" startLine="36" startPosition="121" endLine="37" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4250481571544053951" fileName="Migrations25_ActionGroup.java" startLine="38" startPosition="7" endLine="39" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4250481571544053951" fileName="Migrations25_ActionGroup.java" startLine="39" startPosition="95" endLine="40" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4250481571544053951" fileName="Migrations25_ActionGroup.java" startLine="40" startPosition="66" endLine="41" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4250481571544053951" fileName="Migrations25_ActionGroup.java" startLine="41" startPosition="104" endLine="42" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2899596005953728721" fileName="Migrations25_ActionGroup.java" startLine="44" startPosition="27" endLine="45" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4250481571544053951" fileName="Migrations25_ActionGroup.java" startLine="37" startPosition="123" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2899596005953728721" fileName="Migrations25_ActionGroup.java" startLine="19" startPosition="24" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2899596005953728721" fileName="Migrations25_ActionGroup.java" startLine="15" startPosition="0" endLine="47" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Migrations25_ActionGroup#()V" />
+    <scopeInfo nodeId="2899596005953728721" fileName="Migrations25_ActionGroup.java" startLine="44" startPosition="0" endLine="45" endPosition="39">
       <varInfo nodeId="2899596005953728721" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="2899596005953728721" fileName="Migrations25_ActionGroup.java" startLine="45" startPosition="27" endLine="46" endPosition="39" />
-    <scopeInfo nodeId="4250481571544053951" fileName="Migrations25_ActionGroup.java" startLine="39" startPosition="7" endLine="43" endPosition="56">
+    <scopeInfo nodeId="2899596005953728721" fileName="Migrations25_ActionGroup.java" startLine="44" startPosition="27" endLine="45" endPosition="39" />
+    <scopeInfo nodeId="4250481571544053951" fileName="Migrations25_ActionGroup.java" startLine="38" startPosition="7" endLine="42" endPosition="56">
       <varInfo nodeId="4250481571544053951" varName="action" />
       <varInfo nodeId="4250481571544053951" varName="manager" />
     </scopeInfo>
-    <scopeInfo nodeId="2899596005953728721" fileName="Migrations25_ActionGroup.java" startLine="20" startPosition="9" endLine="44" endPosition="7" />
-    <scopeInfo nodeId="2899596005953728721" fileName="Migrations25_ActionGroup.java" startLine="16" startPosition="37" endLine="47" endPosition="5" />
-    <scopeInfo nodeId="2899596005953728721" fileName="Migrations25_ActionGroup.java" startLine="15" startPosition="0" endLine="48" endPosition="3" />
-    <unitInfo nodeId="2899596005953728721" fileName="Migrations25_ActionGroup.java" startLine="11" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.ide.migration.migration25.Migrations25_ActionGroup" />
+    <scopeInfo nodeId="2899596005953728721" fileName="Migrations25_ActionGroup.java" startLine="20" startPosition="9" endLine="43" endPosition="7" />
+    <scopeInfo nodeId="2899596005953728721" fileName="Migrations25_ActionGroup.java" startLine="16" startPosition="37" endLine="46" endPosition="5" />
+    <scopeInfo nodeId="2899596005953728721" fileName="Migrations25_ActionGroup.java" startLine="15" startPosition="0" endLine="47" endPosition="3" />
+    <unitInfo nodeId="2899596005953728721" fileName="Migrations25_ActionGroup.java" startLine="11" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.ide.migration.migration25.Migrations25_ActionGroup" />
   </root>
   <root nodeId="3010618154278839442">
     <nodeInfo nodeId="3010618154278839442" fileName="ConvertLanguageRuntimes_Action.java" startLine="25" startPosition="64" endLine="26" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -1257,17 +1256,18 @@
     <nodeInfo nodeId="4250481571544053957" fileName="OptionalMigrations_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4636220444987588502" fileName="OptionalMigrations_ActionGroup.java" startLine="17" startPosition="128" endLine="18" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9065176582222574817" fileName="OptionalMigrations_ActionGroup.java" startLine="18" startPosition="130" endLine="19" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4250481571544053952" fileName="OptionalMigrations_ActionGroup.java" startLine="20" startPosition="27" endLine="21" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4250481571544053952" fileName="OptionalMigrations_ActionGroup.java" startLine="15" startPosition="24" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4250481571544053952" fileName="OptionalMigrations_ActionGroup.java" startLine="11" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OptionalMigrations_ActionGroup#()V" />
-    <scopeInfo nodeId="4250481571544053952" fileName="OptionalMigrations_ActionGroup.java" startLine="20" startPosition="0" endLine="21" endPosition="39">
+    <nodeInfo nodeId="3010618154278946996" fileName="OptionalMigrations_ActionGroup.java" startLine="19" startPosition="128" endLine="20" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4250481571544053952" fileName="OptionalMigrations_ActionGroup.java" startLine="21" startPosition="27" endLine="22" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4250481571544053952" fileName="OptionalMigrations_ActionGroup.java" startLine="15" startPosition="24" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4250481571544053952" fileName="OptionalMigrations_ActionGroup.java" startLine="11" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OptionalMigrations_ActionGroup#()V" />
+    <scopeInfo nodeId="4250481571544053952" fileName="OptionalMigrations_ActionGroup.java" startLine="21" startPosition="0" endLine="22" endPosition="39">
       <varInfo nodeId="4250481571544053952" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="4250481571544053952" fileName="OptionalMigrations_ActionGroup.java" startLine="20" startPosition="27" endLine="21" endPosition="39" />
-    <scopeInfo nodeId="4250481571544053952" fileName="OptionalMigrations_ActionGroup.java" startLine="16" startPosition="9" endLine="19" endPosition="128" />
-    <scopeInfo nodeId="4250481571544053952" fileName="OptionalMigrations_ActionGroup.java" startLine="12" startPosition="43" endLine="22" endPosition="5" />
-    <scopeInfo nodeId="4250481571544053952" fileName="OptionalMigrations_ActionGroup.java" startLine="11" startPosition="0" endLine="23" endPosition="3" />
-    <unitInfo nodeId="4250481571544053952" fileName="OptionalMigrations_ActionGroup.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.migration.migration25.OptionalMigrations_ActionGroup" />
+    <scopeInfo nodeId="4250481571544053952" fileName="OptionalMigrations_ActionGroup.java" startLine="21" startPosition="27" endLine="22" endPosition="39" />
+    <scopeInfo nodeId="4250481571544053952" fileName="OptionalMigrations_ActionGroup.java" startLine="16" startPosition="9" endLine="20" endPosition="126" />
+    <scopeInfo nodeId="4250481571544053952" fileName="OptionalMigrations_ActionGroup.java" startLine="12" startPosition="43" endLine="23" endPosition="5" />
+    <scopeInfo nodeId="4250481571544053952" fileName="OptionalMigrations_ActionGroup.java" startLine="11" startPosition="0" endLine="24" endPosition="3" />
+    <unitInfo nodeId="4250481571544053952" fileName="OptionalMigrations_ActionGroup.java" startLine="8" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ide.migration.migration25.OptionalMigrations_ActionGroup" />
   </root>
   <root nodeId="495581478240917296">
     <nodeInfo nodeId="495581478240917315" fileName="MethodCallChecker.java" startLine="39" startPosition="140" endLine="40" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2156,8 +2156,8 @@
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="34" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="37" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="37" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="49" endLine="12" endPosition="50" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -2229,11 +2229,43 @@
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="22" startPosition="0" endLine="22" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="22" startPosition="0" endLine="22" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="22" startPosition="4" endLine="22" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="23" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="23" startPosition="0" endLine="23" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="23" startPosition="2" endLine="23" endPosition="13" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="23" startPosition="2" endLine="23" endPosition="13" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="23" startPosition="13" endLine="23" endPosition="14" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="23" startPosition="0" endLine="23" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="23" startPosition="2" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="23" startPosition="3" endLine="23" endPosition="13" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="23" startPosition="3" endLine="23" endPosition="13" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="23" startPosition="13" endLine="23" endPosition="47" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="23" startPosition="13" endLine="23" endPosition="34" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="23" startPosition="34" endLine="23" endPosition="46" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="23" startPosition="34" endLine="23" endPosition="46" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="23" startPosition="46" endLine="23" endPosition="47" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="23" startPosition="47" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="24" startPosition="0" endLine="24" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="24" startPosition="4" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="24" startPosition="5" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="24" startPosition="5" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="24" startPosition="17" endLine="24" endPosition="75" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="24" startPosition="17" endLine="24" endPosition="34" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="24" startPosition="34" endLine="24" endPosition="74" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="24" startPosition="34" endLine="24" endPosition="74" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="24" startPosition="74" endLine="24" endPosition="75" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="24" startPosition="75" endLine="24" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="24" startPosition="76" endLine="24" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="24" startPosition="76" endLine="24" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="24" startPosition="76" endLine="24" endPosition="78" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="24" startPosition="76" endLine="24" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="24" startPosition="78" endLine="24" endPosition="90" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="24" startPosition="78" endLine="24" endPosition="90" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="24" startPosition="90" endLine="24" endPosition="91" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="25" startPosition="0" endLine="25" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="25" startPosition="2" endLine="25" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="25" startPosition="4" endLine="25" endPosition="14" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="25" startPosition="4" endLine="25" endPosition="14" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="25" startPosition="14" endLine="25" endPosition="15" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="26" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="26" startPosition="0" endLine="26" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="26" startPosition="2" endLine="26" endPosition="13" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="26" startPosition="2" endLine="26" endPosition="13" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="26" startPosition="13" endLine="26" endPosition="14" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="1" startPosition="0" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="1" startPosition="21" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="2" startPosition="0" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
@@ -2278,7 +2310,14 @@
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="21" startPosition="27" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="22" startPosition="4" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="23" startPosition="14" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="23" startPosition="48" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="24" startPosition="91" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="25" startPosition="15" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="26" startPosition="14" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="8325776762397714308" fileName="Migration25_PluginInitializer.java" startLine="27" startPosition="36" endLine="28" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8325776762397714308" fileName="Migration25_PluginInitializer.java" startLine="28" startPosition="83" endLine="29" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="3" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
@@ -2291,6 +2330,7 @@
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8325776762397714308" fileName="Migration25_PluginInitializer.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
     <nodeInfo nodeId="8325776762397714308" fileName="Migration25_PluginInitializer.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="1" startPosition="0" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
@@ -2300,11 +2340,11 @@
     <nodeInfo nodeId="8325776762397714308" fileName="Migration25_PluginInitializer.java" startLine="14" startPosition="79" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="create#(Ljava/lang/Class;)null" />
     <nodeInfo nodeId="8325776762397714308" fileName="Migration25_PluginInitializer.java" startLine="13" startPosition="42" endLine="22" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8325776762397714308" fileName="Migration25_PluginInitializer.java" startLine="12" startPosition="76" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Migration25_PluginInitializer#()V" />
-    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="7" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
-    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="7" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="7" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="6" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="1" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="7" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="7" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="7" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="6" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="1" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <scopeInfo nodeId="8325776762397714308" fileName="Migration25_PluginInitializer.java" startLine="32" startPosition="31" endLine="32" endPosition="31" />
     <scopeInfo nodeId="8325776762397714308" fileName="Migration25_PluginInitializer.java" startLine="35" startPosition="34" endLine="35" endPosition="34" />
     <scopeInfo nodeId="8325776762397714308" fileName="Migration25_PluginInitializer.java" startLine="17" startPosition="51" endLine="18" endPosition="57" />
@@ -2320,7 +2360,7 @@
     <scopeInfo nodeId="8325776762397714308" fileName="Migration25_PluginInitializer.java" startLine="12" startPosition="76" endLine="23" endPosition="3" />
     <unitInfo nodeId="8325776762397714308" fileName="Migration25_PluginInitializer.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ide.migration.migration25.Migration25_PluginInitializer" />
     <unitInfo nodeId="8325776762397714308" fileName="Migration25_PluginInitializer.java" startLine="14" startPosition="54" endLine="22" endPosition="5" unitName="jetbrains.mps.ide.migration.migration25.Migration25_PluginInitializer$1" />
-    <unitInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="1" startPosition="0" endLine="24" endPosition="0" unitName="plugin.xml" />
+    <unitInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="1" startPosition="0" endLine="27" endPosition="0" unitName="plugin.xml" />
   </root>
   <root nodeId="9065176582222574567">
     <nodeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="23" startPosition="66" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -2502,7 +2542,7 @@
     <nodeInfo nodeId="9164503229271486550" fileName="FixMissingImportsInProject_Action.java" startLine="75" startPosition="61" endLine="76" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="9164503229271487748" fileName="FixMissingImportsInProject_Action.java" startLine="77" startPosition="11" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="9164503229271455486" fileName="FixMissingImportsInProject_Action.java" startLine="78" startPosition="0" endLine="79" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9164503229271532412" fileName="FixMissingImportsInProject_Action.java" startLine="79" startPosition="57" endLine="80" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9164503229271532412" fileName="FixMissingImportsInProject_Action.java" startLine="80" startPosition="9" endLine="81" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9164503229271487753" fileName="FixMissingImportsInProject_Action.java" startLine="84" startPosition="27" endLine="85" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9164503229271455483" fileName="FixMissingImportsInProject_Action.java" startLine="89" startPosition="33" endLine="90" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9164503229271455483" fileName="FixMissingImportsInProject_Action.java" startLine="44" startPosition="27" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2519,8 +2559,8 @@
     <nodeInfo nodeId="7450649563959263244" fileName="FixMissingImportsInProject_Action.java" startLine="82" startPosition="7" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9164503229271455483" fileName="FixMissingImportsInProject_Action.java" startLine="41" startPosition="89" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="9164503229271455483" fileName="FixMissingImportsInProject_Action.java" startLine="51" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="9164503229271486526" fileName="FixMissingImportsInProject_Action.java" startLine="70" startPosition="9" endLine="80" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="9164503229271455483" fileName="FixMissingImportsInProject_Action.java" startLine="40" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="9164503229271486526" fileName="FixMissingImportsInProject_Action.java" startLine="70" startPosition="9" endLine="81" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7002188680044641063" fileName="FixMissingImportsInProject_Action.java" startLine="62" startPosition="193" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="9164503229271455483" fileName="FixMissingImportsInProject_Action.java" startLine="60" startPosition="96" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="9164503229271455483" fileName="FixMissingImportsInProject_Action.java" startLine="59" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
@@ -2552,15 +2592,15 @@
       <varInfo nodeId="9164503229271455483" varName="_params" />
       <varInfo nodeId="9164503229271455483" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="9164503229271486529" fileName="FixMissingImportsInProject_Action.java" startLine="71" startPosition="95" endLine="80" endPosition="36" />
+    <scopeInfo nodeId="9164503229271486529" fileName="FixMissingImportsInProject_Action.java" startLine="71" startPosition="95" endLine="79" endPosition="57" />
+    <scopeInfo nodeId="9164503229271486526" fileName="FixMissingImportsInProject_Action.java" startLine="70" startPosition="9" endLine="80" endPosition="9">
+      <varInfo nodeId="9164503229271486526" varName="model" />
+    </scopeInfo>
     <scopeInfo nodeId="9164503229271455483" fileName="FixMissingImportsInProject_Action.java" startLine="40" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="9164503229271455483" varName="_params" />
       <varInfo nodeId="9164503229271455483" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="9164503229271486526" fileName="FixMissingImportsInProject_Action.java" startLine="70" startPosition="9" endLine="81" endPosition="9">
-      <varInfo nodeId="9164503229271486526" varName="model" />
-    </scopeInfo>
-    <scopeInfo nodeId="7002188680044641065" fileName="FixMissingImportsInProject_Action.java" startLine="63" startPosition="61" endLine="81" endPosition="9">
+    <scopeInfo nodeId="7002188680044641065" fileName="FixMissingImportsInProject_Action.java" startLine="63" startPosition="61" endLine="81" endPosition="34">
       <varInfo nodeId="7002188680044641125" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="9164503229271455483" fileName="FixMissingImportsInProject_Action.java" startLine="61" startPosition="9" endLine="87" endPosition="9">

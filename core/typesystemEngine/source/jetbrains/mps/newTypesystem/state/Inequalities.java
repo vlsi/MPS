@@ -230,7 +230,7 @@ public class Inequalities {
 
   private boolean lastChance(List<RelationBlock> inequalities) {
     for (RelationBlock inequality : inequalities) {
-      if (!(TypesUtil.isVariable(inequality.getLeftNode()) && TypesUtil.isVariable(inequality.getRightNode()))) {
+      if (!(TypesUtil.isVariable(inequality.getLeftNode()) && TypesUtil.isVariable(inequality.getRightNode())) && myState.getBlocks().contains(inequality)) {
         myState.executeOperation(new RemoveBlockOperation(inequality));
         return true;
       }

@@ -26,4 +26,8 @@ public class BwfTask_Behavior {
     }
     return null;
   }
+
+  public static int virtual_getPriority_2059109515400548718(SNode thisNode) {
+    return 200;
+  }
 }

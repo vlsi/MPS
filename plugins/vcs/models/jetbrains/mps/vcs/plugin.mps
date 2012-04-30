@@ -100,6 +100,7 @@
       <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
       <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
       <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="3000" />
+      <property name="handleErrors" nameId="tp4k.1573568368168371217" value="true" />
     </node>
     <node type="tp4k.InterfaceGroup" typeId="tp4k.1204383956737" id="1156564534683228174">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Groups" />

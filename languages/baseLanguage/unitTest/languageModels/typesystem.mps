@@ -17,6 +17,10 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_Message" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
     </node>
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="7211295963330363318">
+      <property name="name" nameId="tpck.1169194664001" value="check_BTestCase" />
+      <property name="overrides" nameId="tpd4.1195213689297" value="true" />
+    </node>
   </roots>
   <root id="7080278351417151336">
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="7080278351417151337">
@@ -43,6 +47,13 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7080278351417151338">
       <property name="name" nameId="tpck.1169194664001" value="message" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpe3.1172073500303" resolveInfo="Message" />
+    </node>
+  </root>
+  <root id="7211295963330363318">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="7211295963330363319" />
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7211295963330363320">
+      <property name="name" nameId="tpck.1169194664001" value="test" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpe3.1171931851043" resolveInfo="BTestCase" />
     </node>
   </root>
 </model>

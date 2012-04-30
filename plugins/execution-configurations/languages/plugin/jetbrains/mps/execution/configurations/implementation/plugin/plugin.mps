@@ -103,6 +103,7 @@
       <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
       <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="3000" />
       <property name="loadModules" nameId="tp4k.8842945788826116904" value="true" />
+      <property name="handleErrors" nameId="tp4k.1573568368168371217" value="true" />
     </node>
     <node type="uhxm.RunConfiguration" typeId="uhxm.2401501559171345993" id="6062668769033909448">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="java" />

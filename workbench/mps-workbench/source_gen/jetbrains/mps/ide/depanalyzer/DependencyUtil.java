@@ -62,12 +62,13 @@ public class DependencyUtil {
         addDeps(result, devkit.getExportedSolutions(), DependencyUtil.Role.DTDependency_, DependencyUtil.LinkType.ExportsSolution);
         break;
 
+      case UsedExtLanguage:
       case UsedLanguage:
-        LanguageDescriptor lang = as_he47wm_a0a0a2d0a(descr, LanguageDescriptor.class);
+        LanguageDescriptor lang = as_he47wm_a0a0a3d0a(descr, LanguageDescriptor.class);
         if (lang == null) {
           break;
         }
-        addDeps(result, lang.getExtendedLanguages(), DependencyUtil.Role.UsedLanguage, DependencyUtil.LinkType.ExtendsLanguage);
+        addDeps(result, lang.getExtendedLanguages(), DependencyUtil.Role.UsedExtLanguage, DependencyUtil.LinkType.ExtendsLanguage);
         if (trackRuntime) {
           addDeps(result, lang.getRuntimeModules(), DependencyUtil.Role.RTDependency, DependencyUtil.LinkType.ExportsRuntime);
           if (!(lang.getRuntimeStubModels().isEmpty())) {
@@ -79,7 +80,7 @@ public class DependencyUtil {
       case DTDependency_:
         addDeps(result, getReexportDeps(descr), DependencyUtil.Role.DTDependency_, DependencyUtil.LinkType.ReexportsDep);
         if (descr instanceof LanguageDescriptor) {
-          addDeps(result, (as_he47wm_a0a1a0a1a3d0a(descr, LanguageDescriptor.class)).getExtendedLanguages(), DependencyUtil.Role.DTDependency_, DependencyUtil.LinkType.ExtendsLanguage);
+          addDeps(result, (as_he47wm_a0a1a0a1a4d0a(descr, LanguageDescriptor.class)).getExtendedLanguages(), DependencyUtil.Role.DTDependency_, DependencyUtil.LinkType.ExtendsLanguage);
         }
         if (trackRuntime) {
           addDeps(result, getNonreexportDeps(descr), DependencyUtil.Role.RTDependency, DependencyUtil.LinkType.Depends);
@@ -102,8 +103,8 @@ public class DependencyUtil {
         break;
 
       case GeneratorLanguage:
-        addDeps(result, check_he47wm_b0a0h3a0(as_he47wm_a0b0a0h3a0(descr, LanguageDescriptor.class)), DependencyUtil.Role.GeneratorLanguage, DependencyUtil.LinkType.ExtendsLanguage);
-        addDeps(result, check_he47wm_b0b0h3a0(as_he47wm_a0b0b0h3a0(descr, LanguageDescriptor.class)), DependencyUtil.Role.DTDependency, DependencyUtil.LinkType.ExportsRuntime);
+        addDeps(result, check_he47wm_b0a0i3a0(as_he47wm_a0b0a0i3a0(descr, LanguageDescriptor.class)), DependencyUtil.Role.GeneratorLanguage, DependencyUtil.LinkType.ExtendsLanguage);
+        addDeps(result, check_he47wm_b0b0i3a0(as_he47wm_a0b0b0i3a0(descr, LanguageDescriptor.class)), DependencyUtil.Role.DTDependency, DependencyUtil.LinkType.ExportsRuntime);
         break;
 
       default:
@@ -193,14 +194,14 @@ public class DependencyUtil {
     ListSequence.fromList(path).removeLastElement();
   }
 
-  private static Set<ModuleReference> check_he47wm_b0a0h3a0(LanguageDescriptor checkedDotOperand) {
+  private static Set<ModuleReference> check_he47wm_b0a0i3a0(LanguageDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getExtendedLanguages();
     }
     return null;
   }
 
-  private static Set<ModuleReference> check_he47wm_b0b0h3a0(LanguageDescriptor checkedDotOperand) {
+  private static Set<ModuleReference> check_he47wm_b0b0i3a0(LanguageDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getRuntimeModules();
     }
@@ -235,28 +236,28 @@ public class DependencyUtil {
     );
   }
 
-  private static <T> T as_he47wm_a0a0a2d0a(Object o, Class<T> type) {
+  private static <T> T as_he47wm_a0a0a3d0a(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_he47wm_a0a1a0a1a3d0a(Object o, Class<T> type) {
+  private static <T> T as_he47wm_a0a1a0a1a4d0a(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_he47wm_a0b0a0h3a0(Object o, Class<T> type) {
+  private static <T> T as_he47wm_a0b0a0i3a0(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_he47wm_a0b0b0h3a0(Object o, Class<T> type) {
+  private static <T> T as_he47wm_a0b0b0i3a0(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
@@ -297,6 +298,7 @@ public class DependencyUtil {
     RTDependency(),
     RTLibraries(),
     UsedLanguage(),
+    UsedExtLanguage(),
     UsedDevkit(),
     GeneratorLanguage();
 

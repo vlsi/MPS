@@ -17,11 +17,12 @@ package jetbrains.mps.runtime;
 
 import gnu.trove.THashMap;
 import jetbrains.mps.library.LibraryInitializer;
+import jetbrains.mps.project.ClassLoadingModule;
+import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class ModuleClassLoader extends ClassLoader {
   //this is for debug purposes (heap dumps)
@@ -69,6 +70,7 @@ public class ModuleClassLoader extends ClassLoader {
       byte[] bytes = myModule.findClassBytes(name);
       if (bytes != null) {
         definePackageIfNecessary(name);
+        ClassLoaderManager.getInstance().classLoaded(name, ((ClassLoadingModule) myModule).getModuleReference());
         return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
       }
     }
