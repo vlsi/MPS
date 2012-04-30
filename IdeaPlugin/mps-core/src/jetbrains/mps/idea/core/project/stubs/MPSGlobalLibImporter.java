@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.facet;
+package jetbrains.mps.idea.core.project.stubs;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.roots.impl.libraries.ApplicationLibraryTable;

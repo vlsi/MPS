@@ -14,28 +14,12 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.facet;
+package jetbrains.mps.idea.core.project.stubs;
 
-import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.roots.OrderRootType;
 import com.intellij.openapi.roots.impl.libraries.ProjectLibraryTable;
-import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.libraries.LibraryTable;
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.LanguageID;
-import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
 
 public class MPSProjectLibImporter extends BaseLibImporter implements ProjectComponent {
   private ProjectLibraryTable myLibTable;

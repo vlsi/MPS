@@ -37,7 +37,10 @@
       <implementation-class>jetbrains.mps.ide.projectView.ProjectViewSelectInProvider</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.idea.core.facet.MPSGlobalLibImporter</implementation-class>
+      <implementation-class>jetbrains.mps.idea.core.project.stubs.MPSGlobalLibImporter</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager</implementation-class>
     </component>
   </application-components>
 
@@ -50,7 +53,7 @@
 
   <project-components>
     <component>
-      <implementation-class>jetbrains.mps.idea.core.facet.MPSProjectLibImporter</implementation-class>
+      <implementation-class>jetbrains.mps.idea.core.project.stubs.MPSProjectLibImporter</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.project.MPSProject</implementation-class>
