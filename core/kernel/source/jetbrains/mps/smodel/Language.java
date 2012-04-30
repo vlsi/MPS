@@ -128,6 +128,11 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return res;
   }
 
+  @Deprecated //remove after 2.5
+  public List<Language> getExtendedLanguages() {
+    return ModuleUtil.refsToLanguages(getExtendedLanguageRefs());
+  }
+
   public List<Dependency> getDependencies() {
     List<Dependency> result = super.getDependencies();
     for (ModuleReference ref : getExtendedLanguageRefs()) {
