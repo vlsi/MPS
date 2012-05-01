@@ -106,8 +106,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaAbstraction_BehaviorDescriptor" file="LambdaAbstraction_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -169,8 +169,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.lambdaCalculus.behavior.LetExpression_BehaviorDescriptor" file="LetExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -274,8 +274,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.lambdaCalculus.behavior.VariableOwner_BehaviorDescriptor" file="VariableOwner_BehaviorDescriptor.java">
     <classNode dependClassName="java.util.List" />

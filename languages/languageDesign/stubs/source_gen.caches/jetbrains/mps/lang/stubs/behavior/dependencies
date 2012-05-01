@@ -25,8 +25,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.stubs.behavior.BaseCreatorType_BehaviorDescriptor" file="BaseCreatorType_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -159,8 +159,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
   </dependency>
   <dependency className="jetbrains.mps.lang.stubs.behavior.ModelManagerDeclaration_BehaviorDescriptor" file="ModelManagerDeclaration_BehaviorDescriptor.java">
@@ -232,8 +232,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.stubs.behavior.StubsCreatorDeclaration_BehaviorDescriptor" file="StubsCreatorDeclaration_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

@@ -8,8 +8,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.execution.settings.behavior.ApplyTo_Function_BehaviorDescriptor" file="ApplyTo_Function_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -87,8 +87,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.execution.settings.behavior.CreateEditor_Function_BehaviorDescriptor" file="CreateEditor_Function_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -106,8 +106,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.execution.settings.behavior.Dispose_Function_BehaviorDescriptor" file="Dispose_Function_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -144,8 +144,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.execution.settings.behavior.EditorOperationDeclaration_BehaviorDescriptor" file="EditorOperationDeclaration_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -215,8 +215,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.execution.settings.behavior.PersistentConfigurationTemplate_BehaviorDescriptor" file="PersistentConfigurationTemplate_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -236,8 +236,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.execution.settings.behavior.PersistentConfigurationType_BehaviorDescriptor" file="PersistentConfigurationType_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -268,8 +268,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
   </dependency>
   <dependency className="jetbrains.mps.execution.settings.behavior.PersistentConfiguration_BehaviorDescriptor" file="PersistentConfiguration_BehaviorDescriptor.java">
@@ -307,8 +307,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
   </dependency>
   <dependency className="jetbrains.mps.execution.settings.behavior.PersistentPropertyDeclaration_BehaviorDescriptor" file="PersistentPropertyDeclaration_BehaviorDescriptor.java">
@@ -359,8 +359,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.execution.settings.behavior.ResetFrom_Function_BehaviorDescriptor" file="ResetFrom_Function_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

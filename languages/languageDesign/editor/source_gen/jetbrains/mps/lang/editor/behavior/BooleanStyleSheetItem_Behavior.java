@@ -9,8 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Expression_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.style.StyleAttribute;
-import jetbrains.mps.smodel.structure.BehaviorDescriptor;
-import jetbrains.mps.smodel.structure.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
