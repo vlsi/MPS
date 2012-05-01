@@ -335,7 +335,10 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       @Override
       public void run() {
-        getTree().selectNode(mpsTreeNode);
+        ProjectTree tree = getTree();
+        if (tree != null) {
+          tree.selectNode(mpsTreeNode);
+        }
       }
     });
   }
