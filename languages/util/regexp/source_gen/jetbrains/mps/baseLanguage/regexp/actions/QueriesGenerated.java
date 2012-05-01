@@ -35,7 +35,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Set;
 import java.util.HashSet;
@@ -698,7 +697,7 @@ public class QueriesGenerated {
       Computable computable = new Computable() {
         public Object compute() {
           Scope refScope = ModelConstraintsUtil.getScope(_context.getSourceNode(), null, 0, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp"), operationContext);
-          return (List<SNode>) Sequence.fromIterable(refScope.getAvailableElements(null)).toListSequence();
+          return (List<SNode>) refScope.getAvailableElements(null);
         }
       };
       Iterable<SNode> parameterObjects = (Iterable<SNode>) computable.compute();
