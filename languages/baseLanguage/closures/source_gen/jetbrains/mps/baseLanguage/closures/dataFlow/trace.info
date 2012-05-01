@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.dataFlow.DFABuilders" />
+  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.dataFlow.DFABuilders" />
   <root nodeId="1216646381341">
     <nodeInfo nodeId="1216727098945" fileName="ClosureLiteral_DataFlow.java" startLine="17" startPosition="159" endLine="18" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1216646381341" fileName="ClosureLiteral_DataFlow.java" startLine="12" startPosition="62" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClosureLiteral_DataFlow#()V" />
@@ -100,6 +100,24 @@
       <varInfo nodeId="7366956077673440010" varName="operationContext" />
     </scopeInfo>
     <unitInfo nodeId="7366956077673440010" fileName="ClosureControlStatement_DataFlow.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.dataFlow.ClosureControlStatement_DataFlow" />
+  </root>
+  <root nodeId="7932880448807673790">
+    <nodeInfo nodeId="7932880448807673793" fileName="InvokeExpression_DataFlow.java" startLine="17" startPosition="110" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7932880448807673790" fileName="InvokeExpression_DataFlow.java" startLine="12" startPosition="64" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InvokeExpression_DataFlow#()V" />
+    <nodeInfo nodeId="7932880448807680860" fileName="InvokeExpression_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7932880448807673790" fileName="InvokeExpression_DataFlow.java" startLine="15" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="7932880448807673790" fileName="InvokeExpression_DataFlow.java" startLine="13" startPosition="38" endLine="13" endPosition="38" />
+    <scopeInfo nodeId="7932880448807680863" fileName="InvokeExpression_DataFlow.java" startLine="17" startPosition="110" endLine="18" endPosition="45" />
+    <scopeInfo nodeId="7932880448807673790" fileName="InvokeExpression_DataFlow.java" startLine="12" startPosition="64" endLine="14" endPosition="3" />
+    <scopeInfo nodeId="7932880448807673792" fileName="InvokeExpression_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" />
+    <scopeInfo nodeId="7932880448807680860" fileName="InvokeExpression_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5">
+      <varInfo nodeId="7932880448807680860" varName="p" />
+    </scopeInfo>
+    <scopeInfo nodeId="7932880448807673790" fileName="InvokeExpression_DataFlow.java" startLine="15" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="7932880448807673790" varName="_context" />
+      <varInfo nodeId="7932880448807673790" varName="operationContext" />
+    </scopeInfo>
+    <unitInfo nodeId="7932880448807673790" fileName="InvokeExpression_DataFlow.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.dataFlow.InvokeExpression_DataFlow" />
   </root>
 </debugInfo>
 
