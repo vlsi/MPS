@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.smodel.Language;
@@ -133,7 +132,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_5102832340571646536(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode l = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.project.structure.Language");
-    return SPropertyOperations.getString(l, "namespace") + "/" + ((StringUtils.isEmpty(SPropertyOperations.getString(_context.getNode(), "name")) ?
+    return SPropertyOperations.getString(l, "namespace") + "/" + (((SPropertyOperations.getString(_context.getNode(), "name") == null || SPropertyOperations.getString(_context.getNode(), "name").length() == 0) ?
       "<no name>" :
       SPropertyOperations.getString(_context.getNode(), "name")
     ));

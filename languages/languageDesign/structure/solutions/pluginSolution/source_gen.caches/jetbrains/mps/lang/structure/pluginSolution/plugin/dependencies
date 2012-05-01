@@ -54,7 +54,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConcepts_Action" file="MoveConcepts_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />

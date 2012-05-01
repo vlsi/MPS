@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
@@ -36,7 +35,7 @@ public class InequationReference_Constraints extends BaseConstraintsDescriptor {
 
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            if (StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getParameterNode(), "label"))) {
+            if ((SPropertyOperations.getString(_context.getParameterNode(), "label") != null && SPropertyOperations.getString(_context.getParameterNode(), "label").length() > 0)) {
               return SPropertyOperations.getString(_context.getParameterNode(), "label") + " " + SConceptPropertyOperations.getString(_context.getParameterNode(), "alias");
             } else {
               return SConceptPropertyOperations.getString(_context.getParameterNode(), "alias");

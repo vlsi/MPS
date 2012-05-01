@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import jetbrains.mps.project.IModule;
-import org.apache.commons.lang.StringUtils;
 
 public enum JUnitRunTypes2 {
   METHOD() {
@@ -94,7 +93,7 @@ public enum JUnitRunTypes2 {
     }
 
     public String check(JUnitSettings_Configuration configuration, Project project) {
-      if (StringUtils.isEmpty(configuration.getModule())) {
+      if ((configuration.getModule() == null || configuration.getModule().length() == 0)) {
         return "Module is not selected.";
       }
       IModule module = TestUtils.getModule(configuration.getModule());

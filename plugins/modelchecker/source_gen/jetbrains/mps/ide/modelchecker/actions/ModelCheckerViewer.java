@@ -45,7 +45,6 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.icons.IdeIcons;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.ide.messages.Icons;
 import org.apache.commons.lang.StringEscapeUtils;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
@@ -257,7 +256,7 @@ public abstract class ModelCheckerViewer extends JPanel {
     }
 
     public Icon getCategoryIcon(String category) {
-      if (StringUtils.isNotEmpty(category)) {
+      if ((category != null && category.length() > 0)) {
         if (category.startsWith(ModelChecker.SEVERITY_ERROR)) {
           return Icons.ERROR_ICON;
         } else if (category.startsWith(ModelChecker.SEVERITY_WARNING)) {

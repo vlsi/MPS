@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.IScope;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -52,7 +51,7 @@ public class PlaceholderMethodDeclaration_Constraints extends BaseConstraintsDes
       @Override
       public boolean validateValue(SNode node, String propertyValue, IScope scope) {
         String propertyName = "name";
-        return StringUtils.isEmpty((SPropertyOperations.getString(propertyValue)));
+        return ((SPropertyOperations.getString(propertyValue)) == null || (SPropertyOperations.getString(propertyValue)).length() == 0);
       }
     });
     return properties;

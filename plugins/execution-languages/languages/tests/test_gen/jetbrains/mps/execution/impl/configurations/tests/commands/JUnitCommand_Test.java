@@ -21,7 +21,6 @@ import jetbrains.mps.execution.api.commands.OutputRedirector;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.UnitTestProcessListener;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import junit.framework.Assert;
-import org.apache.commons.lang.StringUtils;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
@@ -73,7 +72,7 @@ public class JUnitCommand_Test extends BaseTransformationTest4 {
         } else if (exitcode < 0) {
           Assert.fail("Process running too long.");
         }
-        if (StringUtils.isNotEmpty(checkListener.getMessages())) {
+        if ((checkListener.getMessages() != null && checkListener.getMessages().length() > 0)) {
           Assert.fail(checkListener.getMessages());
         }
       } catch (ExecutionException e) {

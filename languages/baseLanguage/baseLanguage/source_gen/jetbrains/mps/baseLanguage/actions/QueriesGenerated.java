@@ -54,7 +54,6 @@ import jetbrains.mps.baseLanguage.search.VisibleThrowablesScope;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.BootstrapLanguages;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
@@ -1973,7 +1972,7 @@ __switch__:
             for (SNode conceptDeclaration : SModelOperations.getRoots(blStructure, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
               if (SConceptOperations.isSubConceptOf(conceptDeclaration, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
                 SNode param = (SNode) conceptDeclaration;
-                if (StringUtils.isEmpty(SConceptPropertyOperations.getString(param, "alias")) || SConceptPropertyOperations.getBoolean(param, "dontSubstituteByDefault") || SConceptPropertyOperations.getBoolean(param, "abstract")) {
+                if ((SConceptPropertyOperations.getString(param, "alias") == null || SConceptPropertyOperations.getString(param, "alias").length() == 0) || SConceptPropertyOperations.getBoolean(param, "dontSubstituteByDefault") || SConceptPropertyOperations.getBoolean(param, "abstract")) {
                   continue;
                 }
                 ListSequence.fromList(result).addElement(param);
@@ -3927,7 +3926,10 @@ __switch__:
         }
 
         public String getMatchingText(String pattern) {
-          return StringUtils.trim(pattern);
+          return ((pattern == null ?
+            null :
+            pattern.trim()
+          ));
         }
 
         public String getVisibleMatchingText(String pattern) {

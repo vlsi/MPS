@@ -9,7 +9,6 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.IModule;
@@ -33,7 +32,7 @@ public class LanguageRef_Constraints extends BaseConstraintsDescriptor {
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "languageFqName";
         {
-          if (StringUtils.isEmpty(SPropertyOperations.getString(node, "languageId"))) {
+          if ((SPropertyOperations.getString(node, "languageId") == null || SPropertyOperations.getString(node, "languageId").length() == 0)) {
             return null;
           }
 

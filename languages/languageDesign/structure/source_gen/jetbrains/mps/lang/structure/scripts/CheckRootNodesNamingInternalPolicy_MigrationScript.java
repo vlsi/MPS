@@ -8,7 +8,6 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -38,7 +37,7 @@ public class CheckRootNodesNamingInternalPolicy_MigrationScript extends BaseMigr
         if (!(SPropertyOperations.getBoolean(node, "rootable"))) {
           return false;
         }
-        if (StringUtils.isEmpty(SConceptPropertyOperations.getString(node, "alias"))) {
+        if ((SConceptPropertyOperations.getString(node, "alias") == null || SConceptPropertyOperations.getString(node, "alias").length() == 0)) {
           return false;
         }
         return !(SConceptPropertyOperations.getString(node, "alias").equals(NameUtil.multiWordDecapitalize(SConceptPropertyOperations.getString(node, "alias"))));
@@ -77,7 +76,7 @@ public class CheckRootNodesNamingInternalPolicy_MigrationScript extends BaseMigr
         if (!(SPropertyOperations.getBoolean(node, "rootable"))) {
           return false;
         }
-        return StringUtils.isEmpty(SConceptPropertyOperations.getString(node, "alias"));
+        return (SConceptPropertyOperations.getString(node, "alias") == null || SConceptPropertyOperations.getString(node, "alias").length() == 0);
       }
 
       public void doUpdateInstanceNode(SNode node) {

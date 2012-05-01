@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.packaging.behavior.Layout_Behavior;
-import org.apache.commons.lang.StringUtils;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -65,7 +64,7 @@ public class DirctoriesInLayout_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        if (StringUtils.isNotEmpty(SPropertyOperations.getString(node, "scriptsFolder"))) {
+        if ((SPropertyOperations.getString(node, "scriptsFolder") != null && SPropertyOperations.getString(node, "scriptsFolder").length() > 0)) {
           SLinkOperations.setTarget(node, "scriptsDirectory", new DirctoriesInLayout_MigrationScript.QuotationClass_6u5ptb_a0a0a0a0e0a0a0c0a().createNode(Layout_Behavior.getBasedirName_1226509010730(), SPropertyOperations.getString(node, "scriptsFolder")), true);
         } else {
           SLinkOperations.setTarget(node, "scriptsDirectory", new DirctoriesInLayout_MigrationScript.QuotationClass_6u5ptb_a0a0a0a0a4a0a0a2a0().createNode(Layout_Behavior.getBasedirName_1226509010730()), true);

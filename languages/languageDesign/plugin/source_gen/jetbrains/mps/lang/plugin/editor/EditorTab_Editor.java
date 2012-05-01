@@ -27,7 +27,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.nodeEditor.BlockCells;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class EditorTab_Editor extends DefaultNodeEditor {
@@ -432,7 +431,7 @@ public class EditorTab_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_gp0hv6_a2b1b0(SNode node, EditorContext editorContext, IScope scope) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "shortcutChar"));
+    return (SPropertyOperations.getString(node, "shortcutChar") != null && SPropertyOperations.getString(node, "shortcutChar").length() > 0);
   }
 
   private static boolean renderingCondition_gp0hv6_a2a(SNode node, EditorContext editorContext, IScope scope) {

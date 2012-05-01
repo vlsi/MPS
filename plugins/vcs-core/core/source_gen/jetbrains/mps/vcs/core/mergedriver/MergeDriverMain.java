@@ -8,7 +8,6 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.apache.commons.lang.StringUtils;
 import java.util.Properties;
 import org.apache.log4j.PropertyConfigurator;
 
@@ -94,7 +93,7 @@ public class MergeDriverMain {
 
   private static void configureLog4j() {
     String logPath = System.getProperty(LOG_PROPERTY);
-    if (StringUtils.isEmpty(logPath)) {
+    if ((logPath == null || logPath.length() == 0)) {
       return;
     }
     Properties p = new Properties();

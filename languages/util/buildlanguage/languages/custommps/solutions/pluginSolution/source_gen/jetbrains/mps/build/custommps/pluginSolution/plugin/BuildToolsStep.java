@@ -13,7 +13,6 @@ import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior;
-import org.apache.commons.lang.StringUtils;
 import java.io.File;
 
 public class BuildToolsStep extends AbstractStep {
@@ -58,7 +57,7 @@ public class BuildToolsStep extends AbstractStep {
 
   private void updateErrorMessage() {
     String path = this.myPathField.getPath();
-    if (StringUtils.isEmpty(path)) {
+    if ((path == null || path.length() == 0)) {
       this.myErrorHandler.setErrorText("Empty path to " + MPSBuild_Behavior.getMPSBuildToolsZipName_1234294616845() + ".");
     } else if (!(new File(path).exists())) {
       this.myErrorHandler.setErrorText("Illegal path to " + MPSBuild_Behavior.getMPSBuildToolsZipName_1234294616845() + ".");

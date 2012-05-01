@@ -19,7 +19,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.core.xml.constraints.XmlNameUtil;
 import java.util.regex.Matcher;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
@@ -103,7 +102,7 @@ public class QueriesGenerated {
           }
 
           public String getMatchingText(String pattern) {
-            if (StringUtils.isEmpty(pattern) || pattern.startsWith("&")) {
+            if ((pattern == null || pattern.length() == 0) || pattern.startsWith("&")) {
               return "text";
             }
             if (XmlNameUtil.isAttValue(pattern)) {
@@ -134,7 +133,7 @@ public class QueriesGenerated {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode attr = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.core.xml.structure.XmlAttribute", null);
             String attrName = "name";
-            if (!(StringUtils.isEmpty(pattern))) {
+            if (!((pattern == null || pattern.length() == 0))) {
               String name = pattern;
               if (pattern.endsWith("=")) {
                 name = name.substring(0, name.length() - 1);
@@ -152,7 +151,7 @@ public class QueriesGenerated {
           }
 
           public String getMatchingText(String pattern) {
-            if (!(StringUtils.isEmpty(pattern))) {
+            if (!((pattern == null || pattern.length() == 0))) {
               String name = pattern;
               if (pattern.endsWith("=")) {
                 name = name.substring(0, name.length() - 1);
@@ -215,7 +214,7 @@ public class QueriesGenerated {
           }
 
           public String getMatchingText(String pattern) {
-            if (StringUtils.isEmpty(pattern)) {
+            if ((pattern == null || pattern.length() == 0)) {
               return "text";
             }
             if (XmlNameUtil.isCharData(pattern)) {
@@ -250,7 +249,7 @@ public class QueriesGenerated {
           }
 
           public String getMatchingText(String pattern) {
-            if (StringUtils.isEmpty(pattern)) {
+            if ((pattern == null || pattern.length() == 0)) {
               return "text";
             }
             if (XmlNameUtil.isXmlString(pattern)) {

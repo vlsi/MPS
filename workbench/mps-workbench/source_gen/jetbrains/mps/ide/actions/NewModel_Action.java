@@ -27,7 +27,6 @@ import jetbrains.mps.ide.StereotypeProvider;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
 import jetbrains.mps.smodel.Generator;
-import org.apache.commons.lang.StringUtils;
 
 public class NewModel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -173,7 +172,7 @@ public class NewModel_Action extends BaseAction {
       String name = gen.getName();
       String genNamespace = gen.getSourceLanguage().getModuleFqName() + ".generator";
 
-      if (StringUtils.isEmpty(name)) {
+      if ((name == null || name.length() == 0)) {
         return genNamespace;
       }
       return genNamespace + "." + name;

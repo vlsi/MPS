@@ -9,7 +9,6 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ConceptLinkDeclaration_Constraints extends BaseConstraintsDescriptor {
@@ -29,7 +28,7 @@ public class ConceptLinkDeclaration_Constraints extends BaseConstraintsDescripto
       @Override
       public boolean validateValue(SNode node, String propertyValue, IScope scope) {
         String propertyName = "name";
-        return StringUtils.isNotEmpty((SPropertyOperations.getString(propertyValue)));
+        return ((SPropertyOperations.getString(propertyValue)) != null && (SPropertyOperations.getString(propertyValue)).length() > 0);
       }
     });
     return properties;

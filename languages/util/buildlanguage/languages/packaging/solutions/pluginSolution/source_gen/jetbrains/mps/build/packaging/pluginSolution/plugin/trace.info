@@ -1,100 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="5487985028841936100">
-    <nodeInfo nodeId="5487985028841936108" fileName="PackagingLanguageGenerator.java" startLine="20" startPosition="55" endLine="21" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841936114" fileName="PackagingLanguageGenerator.java" startLine="21" startPosition="120" endLine="22" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841936121" fileName="PackagingLanguageGenerator.java" startLine="22" startPosition="56" endLine="23" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841936130" fileName="PackagingLanguageGenerator.java" startLine="26" startPosition="52" endLine="27" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841936136" fileName="PackagingLanguageGenerator.java" startLine="27" startPosition="117" endLine="28" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841936149" fileName="PackagingLanguageGenerator.java" startLine="28" startPosition="105" endLine="29" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841936157" fileName="PackagingLanguageGenerator.java" startLine="32" startPosition="49" endLine="33" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841936163" fileName="PackagingLanguageGenerator.java" startLine="33" startPosition="117" endLine="34" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841936171" fileName="PackagingLanguageGenerator.java" startLine="34" startPosition="88" endLine="35" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841936178" fileName="PackagingLanguageGenerator.java" startLine="35" startPosition="73" endLine="36" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841936186" fileName="PackagingLanguageGenerator.java" startLine="39" startPosition="68" endLine="40" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841936192" fileName="PackagingLanguageGenerator.java" startLine="40" startPosition="118" endLine="41" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841936197" fileName="PackagingLanguageGenerator.java" startLine="41" startPosition="68" endLine="42" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841936207" fileName="PackagingLanguageGenerator.java" startLine="45" startPosition="80" endLine="46" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841936213" fileName="PackagingLanguageGenerator.java" startLine="46" startPosition="140" endLine="47" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841936220" fileName="PackagingLanguageGenerator.java" startLine="47" startPosition="152" endLine="48" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841936229" fileName="PackagingLanguageGenerator.java" startLine="51" startPosition="56" endLine="52" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841936235" fileName="PackagingLanguageGenerator.java" startLine="52" startPosition="122" endLine="53" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841936242" fileName="PackagingLanguageGenerator.java" startLine="53" startPosition="57" endLine="54" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841936257" fileName="PackagingLanguageGenerator.java" startLine="57" startPosition="76" endLine="58" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841936266" fileName="PackagingLanguageGenerator.java" startLine="58" startPosition="91" endLine="59" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841936280" fileName="PackagingLanguageGenerator.java" startLine="60" startPosition="36" endLine="61" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841936291" fileName="PackagingLanguageGenerator.java" startLine="63" startPosition="53" endLine="64" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="5487985028841936295" fileName="PackagingLanguageGenerator.java" startLine="65" startPosition="9" endLine="66" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841936304" fileName="PackagingLanguageGenerator.java" startLine="67" startPosition="7" endLine="68" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841936309" fileName="PackagingLanguageGenerator.java" startLine="68" startPosition="86" endLine="69" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841936102" fileName="PackagingLanguageGenerator.java" startLine="16" startPosition="41" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PackagingLanguageGenerator#()V" />
-    <nodeInfo nodeId="5487985028841936289" fileName="PackagingLanguageGenerator.java" startLine="62" startPosition="55" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841936106" fileName="PackagingLanguageGenerator.java" startLine="19" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createSimpleString#(Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="5487985028841936127" fileName="PackagingLanguageGenerator.java" startLine="25" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createModule#(Ljetbrains/mps/project/IModule;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="5487985028841936183" fileName="PackagingLanguageGenerator.java" startLine="38" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createBasedirPath#(Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="5487985028841936204" fileName="PackagingLanguageGenerator.java" startLine="44" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createCompositePathComponent#(Ljava/util/List;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="5487985028841936226" fileName="PackagingLanguageGenerator.java" startLine="50" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createPathComponent#(Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="5487985028841936287" fileName="PackagingLanguageGenerator.java" startLine="61" startPosition="85" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5487985028841936154" fileName="PackagingLanguageGenerator.java" startLine="31" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createFolder#(Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="5487985028841936278" fileName="PackagingLanguageGenerator.java" startLine="59" startPosition="83" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841936247" fileName="PackagingLanguageGenerator.java" startLine="56" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createPath#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljava/lang/String;)V" />
-    <scopeInfo nodeId="5487985028841936105" fileName="PackagingLanguageGenerator.java" startLine="17" startPosition="39" endLine="17" endPosition="39" />
-    <scopeInfo nodeId="5487985028841936290" fileName="PackagingLanguageGenerator.java" startLine="63" startPosition="53" endLine="64" endPosition="19" />
-    <scopeInfo nodeId="5487985028841936102" fileName="PackagingLanguageGenerator.java" startLine="16" startPosition="41" endLine="18" endPosition="3" />
-    <scopeInfo nodeId="5487985028841936107" fileName="PackagingLanguageGenerator.java" startLine="20" startPosition="55" endLine="23" endPosition="24">
+    <nodeInfo nodeId="5487985028841936108" fileName="PackagingLanguageGenerator.java" startLine="19" startPosition="55" endLine="20" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841936114" fileName="PackagingLanguageGenerator.java" startLine="20" startPosition="120" endLine="21" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841936121" fileName="PackagingLanguageGenerator.java" startLine="21" startPosition="56" endLine="22" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5487985028841936130" fileName="PackagingLanguageGenerator.java" startLine="25" startPosition="52" endLine="26" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841936136" fileName="PackagingLanguageGenerator.java" startLine="26" startPosition="117" endLine="27" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841936149" fileName="PackagingLanguageGenerator.java" startLine="27" startPosition="105" endLine="28" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5487985028841936157" fileName="PackagingLanguageGenerator.java" startLine="31" startPosition="49" endLine="32" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841936163" fileName="PackagingLanguageGenerator.java" startLine="32" startPosition="117" endLine="33" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841936171" fileName="PackagingLanguageGenerator.java" startLine="33" startPosition="88" endLine="34" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841936178" fileName="PackagingLanguageGenerator.java" startLine="34" startPosition="73" endLine="35" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5487985028841936186" fileName="PackagingLanguageGenerator.java" startLine="38" startPosition="68" endLine="39" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841936192" fileName="PackagingLanguageGenerator.java" startLine="39" startPosition="118" endLine="40" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841936197" fileName="PackagingLanguageGenerator.java" startLine="40" startPosition="68" endLine="41" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5487985028841936207" fileName="PackagingLanguageGenerator.java" startLine="44" startPosition="80" endLine="45" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841936213" fileName="PackagingLanguageGenerator.java" startLine="45" startPosition="140" endLine="46" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841936220" fileName="PackagingLanguageGenerator.java" startLine="46" startPosition="152" endLine="47" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5487985028841936229" fileName="PackagingLanguageGenerator.java" startLine="50" startPosition="56" endLine="51" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841936235" fileName="PackagingLanguageGenerator.java" startLine="51" startPosition="122" endLine="52" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841936242" fileName="PackagingLanguageGenerator.java" startLine="52" startPosition="57" endLine="53" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5487985028841936257" fileName="PackagingLanguageGenerator.java" startLine="56" startPosition="76" endLine="57" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841936266" fileName="PackagingLanguageGenerator.java" startLine="57" startPosition="91" endLine="58" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841936280" fileName="PackagingLanguageGenerator.java" startLine="59" startPosition="36" endLine="60" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841936291" fileName="PackagingLanguageGenerator.java" startLine="62" startPosition="77" endLine="63" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="5487985028841936295" fileName="PackagingLanguageGenerator.java" startLine="64" startPosition="9" endLine="65" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841936304" fileName="PackagingLanguageGenerator.java" startLine="66" startPosition="7" endLine="67" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841936309" fileName="PackagingLanguageGenerator.java" startLine="67" startPosition="86" endLine="68" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841936102" fileName="PackagingLanguageGenerator.java" startLine="15" startPosition="41" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PackagingLanguageGenerator#()V" />
+    <nodeInfo nodeId="5487985028841936289" fileName="PackagingLanguageGenerator.java" startLine="61" startPosition="55" endLine="64" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5487985028841936106" fileName="PackagingLanguageGenerator.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createSimpleString#(Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5487985028841936127" fileName="PackagingLanguageGenerator.java" startLine="24" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createModule#(Ljetbrains/mps/project/IModule;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5487985028841936183" fileName="PackagingLanguageGenerator.java" startLine="37" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createBasedirPath#(Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5487985028841936204" fileName="PackagingLanguageGenerator.java" startLine="43" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createCompositePathComponent#(Ljava/util/List;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5487985028841936226" fileName="PackagingLanguageGenerator.java" startLine="49" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createPathComponent#(Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5487985028841936287" fileName="PackagingLanguageGenerator.java" startLine="60" startPosition="85" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5487985028841936154" fileName="PackagingLanguageGenerator.java" startLine="30" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createFolder#(Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5487985028841936278" fileName="PackagingLanguageGenerator.java" startLine="58" startPosition="83" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5487985028841936247" fileName="PackagingLanguageGenerator.java" startLine="55" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createPath#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljava/lang/String;)V" />
+    <scopeInfo nodeId="5487985028841936105" fileName="PackagingLanguageGenerator.java" startLine="16" startPosition="39" endLine="16" endPosition="39" />
+    <scopeInfo nodeId="5487985028841936290" fileName="PackagingLanguageGenerator.java" startLine="62" startPosition="77" endLine="63" endPosition="19" />
+    <scopeInfo nodeId="5487985028841936102" fileName="PackagingLanguageGenerator.java" startLine="15" startPosition="41" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="5487985028841936107" fileName="PackagingLanguageGenerator.java" startLine="19" startPosition="55" endLine="22" endPosition="24">
       <varInfo nodeId="5487985028841936109" varName="simpleString" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841936129" fileName="PackagingLanguageGenerator.java" startLine="26" startPosition="52" endLine="29" endPosition="27">
+    <scopeInfo nodeId="5487985028841936129" fileName="PackagingLanguageGenerator.java" startLine="25" startPosition="52" endLine="28" endPosition="27">
       <varInfo nodeId="5487985028841936131" varName="moduleComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841936185" fileName="PackagingLanguageGenerator.java" startLine="39" startPosition="68" endLine="42" endPosition="23">
+    <scopeInfo nodeId="5487985028841936185" fileName="PackagingLanguageGenerator.java" startLine="38" startPosition="68" endLine="41" endPosition="23">
       <varInfo nodeId="5487985028841936187" varName="basedirPath" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841936206" fileName="PackagingLanguageGenerator.java" startLine="45" startPosition="80" endLine="48" endPosition="34">
+    <scopeInfo nodeId="5487985028841936206" fileName="PackagingLanguageGenerator.java" startLine="44" startPosition="80" endLine="47" endPosition="34">
       <varInfo nodeId="5487985028841936208" varName="compositePathComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841936228" fileName="PackagingLanguageGenerator.java" startLine="51" startPosition="56" endLine="54" endPosition="25">
+    <scopeInfo nodeId="5487985028841936228" fileName="PackagingLanguageGenerator.java" startLine="50" startPosition="56" endLine="53" endPosition="25">
       <varInfo nodeId="5487985028841936230" varName="pathComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841936156" fileName="PackagingLanguageGenerator.java" startLine="32" startPosition="49" endLine="36" endPosition="27">
+    <scopeInfo nodeId="5487985028841936156" fileName="PackagingLanguageGenerator.java" startLine="31" startPosition="49" endLine="35" endPosition="27">
       <varInfo nodeId="5487985028841936158" varName="folderComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841936288" fileName="PackagingLanguageGenerator.java" startLine="62" startPosition="55" endLine="66" endPosition="128" />
-    <scopeInfo nodeId="5487985028841936106" fileName="PackagingLanguageGenerator.java" startLine="19" startPosition="0" endLine="25" endPosition="0">
+    <scopeInfo nodeId="5487985028841936288" fileName="PackagingLanguageGenerator.java" startLine="61" startPosition="55" endLine="65" endPosition="128" />
+    <scopeInfo nodeId="5487985028841936106" fileName="PackagingLanguageGenerator.java" startLine="18" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="5487985028841936124" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841936127" fileName="PackagingLanguageGenerator.java" startLine="25" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="5487985028841936127" fileName="PackagingLanguageGenerator.java" startLine="24" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="5487985028841936151" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841936183" fileName="PackagingLanguageGenerator.java" startLine="38" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="5487985028841936183" fileName="PackagingLanguageGenerator.java" startLine="37" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="5487985028841936200" varName="macro" />
       <varInfo nodeId="5487985028841936202" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841936204" fileName="PackagingLanguageGenerator.java" startLine="44" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="5487985028841936204" fileName="PackagingLanguageGenerator.java" startLine="43" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="5487985028841936223" varName="pathComponents" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841936226" fileName="PackagingLanguageGenerator.java" startLine="50" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="5487985028841936226" fileName="PackagingLanguageGenerator.java" startLine="49" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="5487985028841936245" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841936287" fileName="PackagingLanguageGenerator.java" startLine="61" startPosition="85" endLine="67" endPosition="7">
+    <scopeInfo nodeId="5487985028841936287" fileName="PackagingLanguageGenerator.java" startLine="60" startPosition="85" endLine="66" endPosition="7">
       <varInfo nodeId="5487985028841936302" varName="pathComponentName" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841936154" fileName="PackagingLanguageGenerator.java" startLine="31" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="5487985028841936154" fileName="PackagingLanguageGenerator.java" startLine="30" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="5487985028841936180" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841936279" fileName="PackagingLanguageGenerator.java" startLine="60" startPosition="36" endLine="69" endPosition="94">
+    <scopeInfo nodeId="5487985028841936279" fileName="PackagingLanguageGenerator.java" startLine="59" startPosition="36" endLine="68" endPosition="94">
       <varInfo nodeId="5487985028841936305" varName="compositePathComponent" />
       <varInfo nodeId="5487985028841936281" varName="pathComponentNodes" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841936256" fileName="PackagingLanguageGenerator.java" startLine="57" startPosition="76" endLine="70" endPosition="5">
+    <scopeInfo nodeId="5487985028841936256" fileName="PackagingLanguageGenerator.java" startLine="56" startPosition="76" endLine="69" endPosition="5">
       <varInfo nodeId="5487985028841936267" varName="pathComponents" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841936247" fileName="PackagingLanguageGenerator.java" startLine="56" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="5487985028841936247" fileName="PackagingLanguageGenerator.java" startLine="55" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="5487985028841936252" varName="macro" />
       <varInfo nodeId="5487985028841936250" varName="path" />
       <varInfo nodeId="5487985028841936254" varName="pathTail" />
     </scopeInfo>
-    <unitInfo nodeId="5487985028841936100" fileName="PackagingLanguageGenerator.java" startLine="16" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.build.packaging.pluginSolution.plugin.PackagingLanguageGenerator" />
+    <unitInfo nodeId="5487985028841936100" fileName="PackagingLanguageGenerator.java" startLine="15" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.build.packaging.pluginSolution.plugin.PackagingLanguageGenerator" />
   </root>
   <root nodeId="5487985028841936321">
     <nodeInfo nodeId="5487985028841936321" fileName="GenerateBuildForProjectAction_Action.java" startLine="20" startPosition="70" endLine="21" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />

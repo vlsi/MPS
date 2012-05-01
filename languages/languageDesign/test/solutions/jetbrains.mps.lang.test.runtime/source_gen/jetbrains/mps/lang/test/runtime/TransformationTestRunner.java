@@ -7,7 +7,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectManager;
 import junit.framework.Assert;
@@ -46,7 +45,7 @@ public class TransformationTestRunner {
     clearSystemClipboard();
     // see MPS-10568 
     readSystemMacro();
-    if (StringUtils.isEmpty(projectName)) {
+    if ((projectName == null || projectName.length() == 0)) {
       for (Project project : ProjectManager.getInstance().getOpenProjects()) {
         if (project != null) {
           test.setProject(project);
@@ -121,7 +120,7 @@ public class TransformationTestRunner {
     for (IMapping<Object, Object> property : MapSequence.fromMap(System.getProperties())) {
       if (property.key() instanceof String) {
         String key = (((String) property.key()));
-        if (StringUtils.isNotEmpty(key) && key.startsWith(BaseTransformationTest4.PATH_MACRO_PREFIX)) {
+        if ((key != null && key.length() > 0) && key.startsWith(BaseTransformationTest4.PATH_MACRO_PREFIX)) {
           if (property.value() instanceof String) {
             String canonicalPath = PathUtil.getCanonicalPath(((String) property.value()));
             File file = new File(canonicalPath);

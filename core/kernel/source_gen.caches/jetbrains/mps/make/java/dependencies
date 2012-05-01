@@ -9,7 +9,6 @@
     <classNode dependClassName="jetbrains.mps.make.java.ModelDependencies" />
     <classNode dependClassName="jetbrains.mps.make.java.RootDependencies" />
     <classNode dependClassName="jetbrains.mps.util.InternUtil" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.xml.sax.Attributes" />
     <classNode dependClassName="org.xml.sax.Locator" />
     <classNode dependClassName="org.xml.sax.SAXException" />

@@ -1,302 +1,302 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="757342313568246027">
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="14" startPosition="77" endLine="15" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_ARRAY" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="16" startPosition="0" endLine="17" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="dependenciesRoothandler" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="17" startPosition="148" endLine="18" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="dependencyhandler" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="18" startPosition="130" endLine="19" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="classNodehandler" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="19" startPosition="127" endLine="20" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHandlersStack" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="20" startPosition="122" endLine="21" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValues" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="21" startPosition="55" endLine="22" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLocator" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="22" startPosition="28" endLine="23" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="28" startPosition="40" endLine="29" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="33" startPosition="51" endLine="34" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="43" startPosition="26" endLine="44" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="49" startPosition="90" endLine="50" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="50" startPosition="73" endLine="51" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="52" startPosition="26" endLine="53" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="54" startPosition="36" endLine="55" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="56" startPosition="14" endLine="57" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="68" startPosition="26" endLine="69" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="69" startPosition="14" endLine="70" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="71" startPosition="12" endLine="72" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="73" startPosition="5" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="74" startPosition="0" endLine="75" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="77" startPosition="46" endLine="78" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="80" startPosition="5" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="81" startPosition="0" endLine="82" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="83" startPosition="34" endLine="84" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="85" startPosition="5" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="86" startPosition="0" endLine="87" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="88" startPosition="54" endLine="89" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="89" startPosition="43" endLine="90" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="90" startPosition="44" endLine="91" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="92" startPosition="5" endLine="93" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="93" startPosition="34" endLine="94" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="101" startPosition="53" endLine="102" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="108" startPosition="100" endLine="109" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="112" startPosition="103" endLine="113" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="117" startPosition="39" endLine="118" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="119" startPosition="7" endLine="120" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="123" startPosition="45" endLine="124" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="131" startPosition="92" endLine="132" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="requiredAttributes" />
-    <nodeInfo nodeId="757342313568246040" fileName="BLDependenciesHandler.java" startLine="138" startPosition="64" endLine="139" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="144" startPosition="41" endLine="145" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="146" startPosition="7" endLine="147" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="151" startPosition="103" endLine="152" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="153" startPosition="41" endLine="154" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="757342313568246032" fileName="BLDependenciesHandler.java" startLine="154" startPosition="58" endLine="155" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="155" startPosition="38" endLine="156" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="157" startPosition="7" endLine="158" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="162" startPosition="86" endLine="163" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="requiredAttributes" />
-    <nodeInfo nodeId="757342313568246099" fileName="BLDependenciesHandler.java" startLine="169" startPosition="63" endLine="170" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="174" startPosition="45" endLine="175" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="179" startPosition="104" endLine="180" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="757342313568246083" fileName="BLDependenciesHandler.java" startLine="181" startPosition="37" endLine="182" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="182" startPosition="35" endLine="183" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="757342313568246091" fileName="BLDependenciesHandler.java" startLine="185" startPosition="32" endLine="186" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="186" startPosition="34" endLine="187" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="188" startPosition="7" endLine="189" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="194" startPosition="40" endLine="195" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="196" startPosition="7" endLine="197" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="201" startPosition="103" endLine="202" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="203" startPosition="40" endLine="204" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="757342313568246047" fileName="BLDependenciesHandler.java" startLine="204" startPosition="42" endLine="205" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="757342313568246057" fileName="BLDependenciesHandler.java" startLine="206" startPosition="37" endLine="207" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="757342313568246063" fileName="BLDependenciesHandler.java" startLine="209" startPosition="33" endLine="210" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="757342313568246075" fileName="BLDependenciesHandler.java" startLine="211" startPosition="16" endLine="212" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="213" startPosition="9" endLine="214" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="215" startPosition="7" endLine="216" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="220" startPosition="85" endLine="221" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="requiredAttributes" />
-    <nodeInfo nodeId="757342313568246139" fileName="BLDependenciesHandler.java" startLine="227" startPosition="55" endLine="228" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="232" startPosition="104" endLine="233" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="757342313568246106" fileName="BLDependenciesHandler.java" startLine="234" startPosition="43" endLine="235" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="757342313568246113" fileName="BLDependenciesHandler.java" startLine="235" startPosition="45" endLine="236" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="236" startPosition="34" endLine="237" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="757342313568246122" fileName="BLDependenciesHandler.java" startLine="239" startPosition="44" endLine="240" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="757342313568246129" fileName="BLDependenciesHandler.java" startLine="240" startPosition="45" endLine="241" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="241" startPosition="33" endLine="242" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="243" startPosition="7" endLine="244" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="24" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BLDependenciesHandler#()V" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="56" startPosition="12" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="71" startPosition="10" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="97" startPosition="32" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ElementHandler#()V" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="133" startPosition="0" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DependenciesRootElementHandler#()V" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="164" startPosition="0" endLine="166" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DependencyElementHandler#()V" />
-    <nodeInfo nodeId="757342313568246073" fileName="BLDependenciesHandler.java" startLine="211" startPosition="14" endLine="213" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="222" startPosition="0" endLine="224" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClassNodeElementHandler#()V" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="42" startPosition="6" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="76" startPosition="54" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="82" startPosition="53" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="104" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAttribute#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="116" startPosition="86" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="126" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="validate#(Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="143" startPosition="100" endLine="146" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="193" startPosition="100" endLine="196" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="757342313568246055" fileName="BLDependenciesHandler.java" startLine="205" startPosition="37" endLine="208" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()Ljetbrains/mps/make/java/ModelDependencies;" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="38" startPosition="80" endLine="42" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="63" startPosition="115" endLine="67" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="100" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createObject#(Lorg/xml/sax/Attributes;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="107" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createChild#(Ljava/lang/String;)Ljetbrains/mps/make/java/BLDependenciesHandler/ElementHandler;" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="111" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleChild#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="122" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiredAttributes#()[Ljava/lang/String;" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="180" startPosition="64" endLine="184" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="184" startPosition="7" endLine="188" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="31" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setDocumentLocator#(Lorg/xml/sax/Locator;)V" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="53" startPosition="35" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="75" startPosition="22" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="87" startPosition="25" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="136" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createObject#(Lorg/xml/sax/Attributes;)Ljetbrains/mps/make/java/ModelDependencies;" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="152" startPosition="66" endLine="157" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="167" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createObject#(Lorg/xml/sax/Attributes;)Ljetbrains/mps/make/java/RootDependencies;" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="172" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiredAttributes#()[Ljava/lang/String;" />
-    <nodeInfo nodeId="757342313568246061" fileName="BLDependenciesHandler.java" startLine="208" startPosition="9" endLine="213" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="225" startPosition="0" endLine="230" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createObject#(Lorg/xml/sax/Attributes;)[Ljava/lang/Object;" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="233" startPosition="48" endLine="238" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="238" startPosition="7" endLine="243" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="67" startPosition="6" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="115" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleText#(Ljava/lang/Object;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="51" startPosition="39" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="141" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createChild#(Ljava/lang/String;)Ljetbrains/mps/make/java/BLDependenciesHandler/ElementHandler;" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="191" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createChild#(Ljava/lang/String;)Ljetbrains/mps/make/java/BLDependenciesHandler/ElementHandler;" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="36" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="characters#([CII)V" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="149" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleChild#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="202" startPosition="64" endLine="215" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="47" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="endElement#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="177" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAttribute#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="230" startPosition="0" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAttribute#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="199" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleChild#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="61" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="startElement#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/xml/sax/Attributes;)V" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="25" startPosition="34" endLine="25" endPosition="34" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="98" startPosition="30" endLine="98" endPosition="30" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="105" startPosition="104" endLine="105" endPosition="104" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="127" startPosition="70" endLine="127" endPosition="70" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="134" startPosition="45" endLine="134" endPosition="45" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="165" startPosition="39" endLine="165" endPosition="39" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="223" startPosition="38" endLine="223" endPosition="38" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="28" startPosition="40" endLine="29" endPosition="20" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="33" startPosition="51" endLine="34" endPosition="24" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="43" startPosition="26" endLine="44" endPosition="73" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="54" startPosition="36" endLine="55" endPosition="50" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="56" startPosition="14" endLine="57" endPosition="79" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="71" startPosition="12" endLine="72" endPosition="43" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="77" startPosition="46" endLine="78" endPosition="78" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="83" startPosition="34" endLine="84" endPosition="44" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="101" startPosition="53" endLine="102" endPosition="18" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="108" startPosition="100" endLine="109" endPosition="67" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="112" startPosition="103" endLine="113" endPosition="69" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="117" startPosition="39" endLine="118" endPosition="15" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="123" startPosition="45" endLine="124" endPosition="47" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="138" startPosition="64" endLine="139" endPosition="37" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="144" startPosition="41" endLine="145" endPosition="33" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="169" startPosition="63" endLine="170" endPosition="36" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="174" startPosition="45" endLine="175" endPosition="32" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="194" startPosition="40" endLine="195" endPosition="32" />
-    <scopeInfo nodeId="757342313568246056" fileName="BLDependenciesHandler.java" startLine="206" startPosition="37" endLine="207" endPosition="17" />
-    <scopeInfo nodeId="757342313568246062" fileName="BLDependenciesHandler.java" startLine="209" startPosition="33" endLine="210" endPosition="35" />
-    <scopeInfo nodeId="757342313568246074" fileName="BLDependenciesHandler.java" startLine="211" startPosition="16" endLine="212" endPosition="34" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="227" startPosition="55" endLine="228" endPosition="27" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="24" startPosition="0" endLine="26" endPosition="3" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="68" startPosition="26" endLine="70" endPosition="40" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="97" startPosition="32" endLine="99" endPosition="5" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="133" startPosition="0" endLine="135" endPosition="5" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="164" startPosition="0" endLine="166" endPosition="5" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="181" startPosition="37" endLine="183" endPosition="15" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="185" startPosition="32" endLine="187" endPosition="15" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="222" startPosition="0" endLine="224" endPosition="5" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="76" startPosition="54" endLine="79" endPosition="7" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="88" startPosition="54" endLine="91" endPosition="51">
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="13" startPosition="77" endLine="14" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_ARRAY" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="15" startPosition="0" endLine="16" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="dependenciesRoothandler" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="16" startPosition="148" endLine="17" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="dependencyhandler" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="17" startPosition="130" endLine="18" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="classNodehandler" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="18" startPosition="127" endLine="19" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHandlersStack" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="19" startPosition="122" endLine="20" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValues" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="20" startPosition="55" endLine="21" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLocator" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="21" startPosition="28" endLine="22" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="27" startPosition="40" endLine="28" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="32" startPosition="51" endLine="33" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="42" startPosition="26" endLine="43" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="48" startPosition="90" endLine="49" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="49" startPosition="73" endLine="50" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="51" startPosition="26" endLine="52" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="53" startPosition="36" endLine="54" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="55" startPosition="14" endLine="56" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="67" startPosition="26" endLine="68" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="68" startPosition="14" endLine="69" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="70" startPosition="12" endLine="71" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="72" startPosition="5" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="73" startPosition="0" endLine="74" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="76" startPosition="46" endLine="77" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="79" startPosition="5" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="80" startPosition="0" endLine="81" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="82" startPosition="34" endLine="83" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="84" startPosition="5" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="85" startPosition="0" endLine="86" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="87" startPosition="54" endLine="88" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="88" startPosition="43" endLine="89" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="89" startPosition="44" endLine="90" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="91" startPosition="5" endLine="92" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="92" startPosition="34" endLine="93" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="100" startPosition="53" endLine="101" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="107" startPosition="100" endLine="108" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="111" startPosition="103" endLine="112" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="116" startPosition="39" endLine="117" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="118" startPosition="7" endLine="119" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="122" startPosition="45" endLine="123" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="130" startPosition="92" endLine="131" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="requiredAttributes" />
+    <nodeInfo nodeId="757342313568246040" fileName="BLDependenciesHandler.java" startLine="137" startPosition="64" endLine="138" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="143" startPosition="41" endLine="144" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="145" startPosition="7" endLine="146" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="150" startPosition="103" endLine="151" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="152" startPosition="41" endLine="153" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="757342313568246032" fileName="BLDependenciesHandler.java" startLine="153" startPosition="58" endLine="154" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="154" startPosition="38" endLine="155" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="156" startPosition="7" endLine="157" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="161" startPosition="86" endLine="162" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="requiredAttributes" />
+    <nodeInfo nodeId="757342313568246099" fileName="BLDependenciesHandler.java" startLine="168" startPosition="63" endLine="169" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="173" startPosition="45" endLine="174" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="178" startPosition="104" endLine="179" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="757342313568246083" fileName="BLDependenciesHandler.java" startLine="180" startPosition="37" endLine="181" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="181" startPosition="35" endLine="182" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="757342313568246091" fileName="BLDependenciesHandler.java" startLine="184" startPosition="32" endLine="185" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="185" startPosition="34" endLine="186" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="187" startPosition="7" endLine="188" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="193" startPosition="40" endLine="194" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="195" startPosition="7" endLine="196" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="200" startPosition="103" endLine="201" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="202" startPosition="40" endLine="203" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="757342313568246047" fileName="BLDependenciesHandler.java" startLine="203" startPosition="42" endLine="204" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="757342313568246057" fileName="BLDependenciesHandler.java" startLine="205" startPosition="45" endLine="206" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="757342313568246063" fileName="BLDependenciesHandler.java" startLine="208" startPosition="33" endLine="209" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="757342313568246075" fileName="BLDependenciesHandler.java" startLine="210" startPosition="16" endLine="211" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="212" startPosition="9" endLine="213" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="214" startPosition="7" endLine="215" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="219" startPosition="85" endLine="220" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="requiredAttributes" />
+    <nodeInfo nodeId="757342313568246139" fileName="BLDependenciesHandler.java" startLine="226" startPosition="55" endLine="227" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="231" startPosition="104" endLine="232" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="757342313568246106" fileName="BLDependenciesHandler.java" startLine="233" startPosition="43" endLine="234" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="757342313568246113" fileName="BLDependenciesHandler.java" startLine="234" startPosition="45" endLine="235" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="235" startPosition="34" endLine="236" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="757342313568246122" fileName="BLDependenciesHandler.java" startLine="238" startPosition="44" endLine="239" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="757342313568246129" fileName="BLDependenciesHandler.java" startLine="239" startPosition="45" endLine="240" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="240" startPosition="33" endLine="241" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="242" startPosition="7" endLine="243" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="23" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BLDependenciesHandler#()V" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="55" startPosition="12" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="70" startPosition="10" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="96" startPosition="32" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ElementHandler#()V" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="132" startPosition="0" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DependenciesRootElementHandler#()V" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="163" startPosition="0" endLine="165" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DependencyElementHandler#()V" />
+    <nodeInfo nodeId="757342313568246073" fileName="BLDependenciesHandler.java" startLine="210" startPosition="14" endLine="212" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="221" startPosition="0" endLine="223" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClassNodeElementHandler#()V" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="41" startPosition="6" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="75" startPosition="54" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="81" startPosition="53" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="103" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAttribute#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="115" startPosition="86" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="125" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="validate#(Ljava/lang/Object;)V" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="142" startPosition="100" endLine="145" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="192" startPosition="100" endLine="195" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="757342313568246055" fileName="BLDependenciesHandler.java" startLine="204" startPosition="37" endLine="207" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()Ljetbrains/mps/make/java/ModelDependencies;" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="37" startPosition="80" endLine="41" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="62" startPosition="115" endLine="66" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="99" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createObject#(Lorg/xml/sax/Attributes;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="106" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createChild#(Ljava/lang/String;)Ljetbrains/mps/make/java/BLDependenciesHandler/ElementHandler;" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="110" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleChild#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)V" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="121" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiredAttributes#()[Ljava/lang/String;" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="179" startPosition="64" endLine="183" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="183" startPosition="7" endLine="187" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="30" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setDocumentLocator#(Lorg/xml/sax/Locator;)V" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="52" startPosition="35" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="74" startPosition="22" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="86" startPosition="25" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="135" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createObject#(Lorg/xml/sax/Attributes;)Ljetbrains/mps/make/java/ModelDependencies;" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="151" startPosition="66" endLine="156" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="166" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createObject#(Lorg/xml/sax/Attributes;)Ljetbrains/mps/make/java/RootDependencies;" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="171" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiredAttributes#()[Ljava/lang/String;" />
+    <nodeInfo nodeId="757342313568246061" fileName="BLDependenciesHandler.java" startLine="207" startPosition="9" endLine="212" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="224" startPosition="0" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createObject#(Lorg/xml/sax/Attributes;)[Ljava/lang/Object;" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="232" startPosition="48" endLine="237" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="237" startPosition="7" endLine="242" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="66" startPosition="6" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="114" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleText#(Ljava/lang/Object;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="50" startPosition="39" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="140" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createChild#(Ljava/lang/String;)Ljetbrains/mps/make/java/BLDependenciesHandler/ElementHandler;" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="190" startPosition="0" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createChild#(Ljava/lang/String;)Ljetbrains/mps/make/java/BLDependenciesHandler/ElementHandler;" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="35" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="characters#([CII)V" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="148" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleChild#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)V" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="201" startPosition="64" endLine="214" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="46" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="endElement#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="176" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAttribute#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="229" startPosition="0" endLine="245" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAttribute#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="198" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleChild#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)V" />
+    <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="60" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="startElement#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/xml/sax/Attributes;)V" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="24" startPosition="34" endLine="24" endPosition="34" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="97" startPosition="30" endLine="97" endPosition="30" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="104" startPosition="104" endLine="104" endPosition="104" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="126" startPosition="70" endLine="126" endPosition="70" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="133" startPosition="45" endLine="133" endPosition="45" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="164" startPosition="39" endLine="164" endPosition="39" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="222" startPosition="38" endLine="222" endPosition="38" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="27" startPosition="40" endLine="28" endPosition="20" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="32" startPosition="51" endLine="33" endPosition="24" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="42" startPosition="26" endLine="43" endPosition="73" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="53" startPosition="36" endLine="54" endPosition="50" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="55" startPosition="14" endLine="56" endPosition="79" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="70" startPosition="12" endLine="71" endPosition="43" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="76" startPosition="46" endLine="77" endPosition="78" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="82" startPosition="34" endLine="83" endPosition="44" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="100" startPosition="53" endLine="101" endPosition="18" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="107" startPosition="100" endLine="108" endPosition="67" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="111" startPosition="103" endLine="112" endPosition="69" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="116" startPosition="39" endLine="117" endPosition="15" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="122" startPosition="45" endLine="123" endPosition="47" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="137" startPosition="64" endLine="138" endPosition="37" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="143" startPosition="41" endLine="144" endPosition="33" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="168" startPosition="63" endLine="169" endPosition="36" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="173" startPosition="45" endLine="174" endPosition="32" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="193" startPosition="40" endLine="194" endPosition="32" />
+    <scopeInfo nodeId="757342313568246056" fileName="BLDependenciesHandler.java" startLine="205" startPosition="45" endLine="206" endPosition="17" />
+    <scopeInfo nodeId="757342313568246062" fileName="BLDependenciesHandler.java" startLine="208" startPosition="33" endLine="209" endPosition="35" />
+    <scopeInfo nodeId="757342313568246074" fileName="BLDependenciesHandler.java" startLine="210" startPosition="16" endLine="211" endPosition="34" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="226" startPosition="55" endLine="227" endPosition="27" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="23" startPosition="0" endLine="25" endPosition="3" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="67" startPosition="26" endLine="69" endPosition="40" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="96" startPosition="32" endLine="98" endPosition="5" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="132" startPosition="0" endLine="134" endPosition="5" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="163" startPosition="0" endLine="165" endPosition="5" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="180" startPosition="37" endLine="182" endPosition="15" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="184" startPosition="32" endLine="186" endPosition="15" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="221" startPosition="0" endLine="223" endPosition="5" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="75" startPosition="54" endLine="78" endPosition="7" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="87" startPosition="54" endLine="90" endPosition="51">
       <varInfo nodeId="757342313568246027" varName="name" />
       <varInfo nodeId="757342313568246027" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="104" startPosition="0" endLine="107" endPosition="0">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="103" startPosition="0" endLine="106" endPosition="0">
       <varInfo nodeId="757342313568246027" varName="name" />
       <varInfo nodeId="757342313568246027" varName="resultObject" />
       <varInfo nodeId="757342313568246027" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="126" startPosition="0" endLine="129" endPosition="0">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="125" startPosition="0" endLine="128" endPosition="0">
       <varInfo nodeId="757342313568246027" varName="resultObject" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="153" startPosition="41" endLine="156" endPosition="15">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="152" startPosition="41" endLine="155" endPosition="15">
       <varInfo nodeId="757342313568246027" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="234" startPosition="43" endLine="237" endPosition="15" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="239" startPosition="44" endLine="242" endPosition="15" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="100" startPosition="0" endLine="104" endPosition="0">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="233" startPosition="43" endLine="236" endPosition="15" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="238" startPosition="44" endLine="241" endPosition="15" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="99" startPosition="0" endLine="103" endPosition="0">
       <varInfo nodeId="757342313568246027" varName="attrs" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="107" startPosition="0" endLine="111" endPosition="0">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="106" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="757342313568246027" varName="tagName" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="111" startPosition="0" endLine="115" endPosition="0">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="110" startPosition="0" endLine="114" endPosition="0">
       <varInfo nodeId="757342313568246027" varName="resultObject" />
       <varInfo nodeId="757342313568246027" varName="tagName" />
       <varInfo nodeId="757342313568246027" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="116" startPosition="86" endLine="120" endPosition="64" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="122" startPosition="0" endLine="126" endPosition="0" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="143" startPosition="100" endLine="147" endPosition="40" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="193" startPosition="100" endLine="197" endPosition="40" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="31" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="115" startPosition="86" endLine="119" endPosition="64" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="121" startPosition="0" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="142" startPosition="100" endLine="146" endPosition="40" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="192" startPosition="100" endLine="196" endPosition="40" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="30" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="757342313568246027" varName="locator" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="75" startPosition="22" endLine="80" endPosition="5">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="74" startPosition="22" endLine="79" endPosition="5">
       <varInfo nodeId="757342313568246027" varName="attr" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="87" startPosition="25" endLine="92" endPosition="5">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="86" startPosition="25" endLine="91" endPosition="5">
       <varInfo nodeId="757342313568246027" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="136" startPosition="0" endLine="141" endPosition="0">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="135" startPosition="0" endLine="140" endPosition="0">
       <varInfo nodeId="757342313568246027" varName="attrs" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="167" startPosition="0" endLine="172" endPosition="0">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="166" startPosition="0" endLine="171" endPosition="0">
       <varInfo nodeId="757342313568246027" varName="attrs" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="172" startPosition="0" endLine="177" endPosition="0" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="225" startPosition="0" endLine="230" endPosition="0">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="171" startPosition="0" endLine="176" endPosition="0" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="224" startPosition="0" endLine="229" endPosition="0">
       <varInfo nodeId="757342313568246027" varName="attrs" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="52" startPosition="26" endLine="58" endPosition="7" />
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="38" startPosition="80" endLine="45" endPosition="5">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="51" startPosition="26" endLine="57" endPosition="7" />
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="37" startPosition="80" endLine="44" endPosition="5">
       <varInfo nodeId="757342313568246027" varName="current" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="115" startPosition="0" endLine="122" endPosition="0">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="114" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="757342313568246027" varName="resultObject" />
       <varInfo nodeId="757342313568246027" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="151" startPosition="103" endLine="158" endPosition="54">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="150" startPosition="103" endLine="157" endPosition="54">
       <varInfo nodeId="757342313568246027" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="141" startPosition="0" endLine="149" endPosition="0">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="140" startPosition="0" endLine="148" endPosition="0">
       <varInfo nodeId="757342313568246027" varName="tagName" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="191" startPosition="0" endLine="199" endPosition="0">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="190" startPosition="0" endLine="198" endPosition="0">
       <varInfo nodeId="757342313568246027" varName="tagName" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="49" startPosition="90" endLine="59" endPosition="5">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="48" startPosition="90" endLine="58" endPosition="5">
       <varInfo nodeId="757342313568246027" varName="childValue" />
       <varInfo nodeId="757342313568246027" varName="current" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="179" startPosition="104" endLine="189" endPosition="55">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="178" startPosition="104" endLine="188" endPosition="55">
       <varInfo nodeId="757342313568246027" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="36" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="35" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="757342313568246027" varName="array" />
       <varInfo nodeId="757342313568246027" varName="len" />
       <varInfo nodeId="757342313568246027" varName="start" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="149" startPosition="0" endLine="160" endPosition="0">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="148" startPosition="0" endLine="159" endPosition="0">
       <varInfo nodeId="757342313568246027" varName="resultObject" />
       <varInfo nodeId="757342313568246027" varName="tagName" />
       <varInfo nodeId="757342313568246027" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="203" startPosition="40" endLine="214" endPosition="15">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="202" startPosition="40" endLine="213" endPosition="15">
       <varInfo nodeId="757342313568246027" varName="child" />
       <varInfo nodeId="757342313568246048" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="232" startPosition="104" endLine="244" endPosition="55">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="231" startPosition="104" endLine="243" endPosition="55">
       <varInfo nodeId="757342313568246027" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="47" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="46" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="757342313568246027" varName="localName" />
       <varInfo nodeId="757342313568246027" varName="qName" />
       <varInfo nodeId="757342313568246027" varName="uri" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="177" startPosition="0" endLine="191" endPosition="0">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="176" startPosition="0" endLine="190" endPosition="0">
       <varInfo nodeId="757342313568246027" varName="name" />
       <varInfo nodeId="757342313568246027" varName="resultObject" />
       <varInfo nodeId="757342313568246027" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="201" startPosition="103" endLine="216" endPosition="54">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="200" startPosition="103" endLine="215" endPosition="54">
       <varInfo nodeId="757342313568246027" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="230" startPosition="0" endLine="246" endPosition="0">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="229" startPosition="0" endLine="245" endPosition="0">
       <varInfo nodeId="757342313568246027" varName="name" />
       <varInfo nodeId="757342313568246027" varName="resultObject" />
       <varInfo nodeId="757342313568246027" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="199" startPosition="0" endLine="218" endPosition="0">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="198" startPosition="0" endLine="217" endPosition="0">
       <varInfo nodeId="757342313568246027" varName="resultObject" />
       <varInfo nodeId="757342313568246027" varName="tagName" />
       <varInfo nodeId="757342313568246027" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="63" startPosition="115" endLine="94" endPosition="26">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="62" startPosition="115" endLine="93" endPosition="26">
       <varInfo nodeId="757342313568246027" varName="current" />
       <varInfo nodeId="757342313568246027" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="61" startPosition="0" endLine="96" endPosition="0">
+    <scopeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="60" startPosition="0" endLine="95" endPosition="0">
       <varInfo nodeId="757342313568246027" varName="attributes" />
       <varInfo nodeId="757342313568246027" varName="localName" />
       <varInfo nodeId="757342313568246027" varName="qName" />
       <varInfo nodeId="757342313568246027" varName="uri" />
     </scopeInfo>
-    <unitInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="14" startPosition="0" endLine="248" endPosition="0" unitName="jetbrains.mps.make.java.BLDependenciesHandler" />
-    <unitInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="220" startPosition="0" endLine="247" endPosition="0" unitName="jetbrains.mps.make.java.BLDependenciesHandler$ClassNodeElementHandler" />
-    <unitInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="131" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mps.make.java.BLDependenciesHandler$DependenciesRootElementHandler" />
-    <unitInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="162" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.make.java.BLDependenciesHandler$DependencyElementHandler" />
-    <unitInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="97" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.make.java.BLDependenciesHandler$ElementHandler" />
+    <unitInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="13" startPosition="0" endLine="247" endPosition="0" unitName="jetbrains.mps.make.java.BLDependenciesHandler" />
+    <unitInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="219" startPosition="0" endLine="246" endPosition="0" unitName="jetbrains.mps.make.java.BLDependenciesHandler$ClassNodeElementHandler" />
+    <unitInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="130" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.make.java.BLDependenciesHandler$DependenciesRootElementHandler" />
+    <unitInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="161" startPosition="0" endLine="218" endPosition="0" unitName="jetbrains.mps.make.java.BLDependenciesHandler$DependencyElementHandler" />
+    <unitInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="96" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.make.java.BLDependenciesHandler$ElementHandler" />
   </root>
   <root nodeId="757342313568265361">
     <nodeInfo nodeId="757342313568265492" fileName="ModelDependencies.java" startLine="13" startPosition="32" endLine="14" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEPENDENCY" />

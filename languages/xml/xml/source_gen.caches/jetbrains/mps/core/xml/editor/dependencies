@@ -354,7 +354,6 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Label" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorCellKeyMap" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorCellKeyMapAction" />
   </dependency>

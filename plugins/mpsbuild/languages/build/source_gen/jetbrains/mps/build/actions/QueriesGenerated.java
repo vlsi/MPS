@@ -36,7 +36,6 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.apache.commons.lang.StringUtils;
 import java.util.regex.Matcher;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.nodeEditor.CellSide;
@@ -362,7 +361,7 @@ public class QueriesGenerated {
           }
 
           public String getMatchingText(String pattern) {
-            if (StringUtils.isEmpty(pattern)) {
+            if ((pattern == null || pattern.length() == 0)) {
               return "text";
             }
             {

@@ -85,7 +85,6 @@
     <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.SimpleMerger" />
     <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.TextMerger" />
     <classNode dependClassName="jetbrains.mps.vcs.util.MergeDriverBackupUtil" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.apache.log4j.PropertyConfigurator" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>

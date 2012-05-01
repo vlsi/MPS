@@ -7,13 +7,13 @@ import java.io.File;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -33,7 +33,7 @@ public class AbstractProjectComponent_Behavior {
   public static File call_getPath_1233752667763(SNode thisNode, SNode parentNode) {
     if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent")) {
       String parentTargetDir = IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(SNodeOperations.cast(parentNode, "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent"));
-      if (StringUtils.isEmpty(parentTargetDir)) {
+      if ((parentTargetDir == null || parentTargetDir.length() == 0)) {
         return new File(SPropertyOperations.getString(thisNode, "name"));
       }
       return new File(parentTargetDir + File.separator + SPropertyOperations.getString(thisNode, "name"));

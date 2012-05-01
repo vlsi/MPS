@@ -7,7 +7,6 @@ import jetbrains.mps.util.annotation.ToRemove;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.execution.api.commands.ListCommandPart;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -116,13 +115,13 @@ public class Ant_Command {
 
   public ProcessHandler createProcess(String antFilePath) throws ExecutionException {
     String jdkHome = Java_Command.getJdkHome();
-    if (StringUtils.isEmpty(jdkHome)) {
+    if ((jdkHome == null || jdkHome.length() == 0)) {
       throw new ExecutionException("Could not find valid java home.");
     }
-    return new Java_Command().createProcess(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), new PropertyCommandPart("java.home", jdkHome), new PropertyCommandPart("ant.home", myAntLocation_String), new ListCommandPart(Sequence.fromIterable(Ant_Command.getMacroValues()).toListSequence()), ((StringUtils.isNotEmpty(myOptions_String) ?
+    return new Java_Command().createProcess(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), new PropertyCommandPart("java.home", jdkHome), new PropertyCommandPart("ant.home", myAntLocation_String), new ListCommandPart(Sequence.fromIterable(Ant_Command.getMacroValues()).toListSequence()), (((myOptions_String != null && myOptions_String.length() > 0) ?
       myOptions_String + " " :
       ""
-    )), new KeyValueCommandPart("-" + "f", new File(antFilePath)), ((StringUtils.isEmpty(myTargetName_String) ?
+    )), new KeyValueCommandPart("-" + "f", new File(antFilePath)), (((myTargetName_String == null || myTargetName_String.length() == 0) ?
       "" :
       " " + myTargetName_String
     )))), "org.apache.tools.ant.launch.Launcher", Ant_Command.getAntClassPath(myAntLocation_String));

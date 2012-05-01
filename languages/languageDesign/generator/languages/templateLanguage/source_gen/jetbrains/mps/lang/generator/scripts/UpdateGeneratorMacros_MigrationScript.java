@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -31,7 +30,7 @@ public class UpdateGeneratorMacros_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        if ((SLinkOperations.getTarget(node, "mappingLabel", false) == null) || StringUtils.isEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(node, "mappingLabel", false), "name"))) {
+        if ((SLinkOperations.getTarget(node, "mappingLabel", false) == null) || (SPropertyOperations.getString(SLinkOperations.getTarget(node, "mappingLabel", false), "name") == null || SPropertyOperations.getString(SLinkOperations.getTarget(node, "mappingLabel", false), "name").length() == 0)) {
           return false;
         }
         if ((SLinkOperations.getTarget(node, "alternativeConsequence", true) != null)) {
@@ -71,7 +70,7 @@ public class UpdateGeneratorMacros_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        if ((SLinkOperations.getTarget(node, "mappingLabel", false) == null) || StringUtils.isEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(node, "mappingLabel", false), "name"))) {
+        if ((SLinkOperations.getTarget(node, "mappingLabel", false) == null) || (SPropertyOperations.getString(SLinkOperations.getTarget(node, "mappingLabel", false), "name") == null || SPropertyOperations.getString(SLinkOperations.getTarget(node, "mappingLabel", false), "name").length() == 0)) {
           return false;
         }
         if ((SLinkOperations.getTarget(node, "mapperFunction", true) != null) || (SLinkOperations.getTarget(node, "postMapperFunction", true) != null) || (SLinkOperations.getTarget(node, "sourceNodeQuery", true) != null)) {

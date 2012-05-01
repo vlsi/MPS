@@ -5,7 +5,6 @@ package jetbrains.mps.execution.common.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.regex.Pattern;
 import org.jetbrains.annotations.NonNls;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
@@ -41,7 +40,7 @@ public class IGeneratedToClass_Behavior {
   }
 
   public static String call_getGeneratedClassName_946964771156905516(SNode thisNode, String name) {
-    if (StringUtils.isEmpty(name)) {
+    if ((name == null || name.length() == 0)) {
       return null;
     }
     return IGeneratedToClass_Behavior.call_getValidClassName_2572811016744662265(thisNode, name) + "_" + IGeneratedToClass_Behavior.call_getSuffix_946964771156905483(thisNode);

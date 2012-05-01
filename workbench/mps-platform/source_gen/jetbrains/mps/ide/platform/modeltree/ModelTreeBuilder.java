@@ -16,7 +16,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import org.apache.commons.lang.StringUtils;
 import java.util.Enumeration;
 
 public abstract class ModelTreeBuilder implements TreeExpansionListener {
@@ -76,7 +75,7 @@ public abstract class ModelTreeBuilder implements TreeExpansionListener {
 
   public static void insertChildSNodeTreeNode(ModelTreeNode sModelTreeNode, ModelTreeNode sNodeTreeNode, String virtualPackage) {
     ModelTreeNode parentTreeNode = sModelTreeNode;
-    if (StringUtils.isNotEmpty(virtualPackage)) {
+    if ((virtualPackage != null && virtualPackage.length() > 0)) {
       for (String sub : virtualPackage.split("\\.")) {
         ModelTreeNode packageTreeNode = findChildNodeByText(parentTreeNode, sub);
         if (packageTreeNode == null) {

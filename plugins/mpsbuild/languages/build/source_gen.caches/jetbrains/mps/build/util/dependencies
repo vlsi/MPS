@@ -130,7 +130,6 @@
     <classNode dependClassName="jetbrains.mps.build.util.GenerationUtil" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
   <dependency className="jetbrains.mps.build.util.RelativePathHelper" file="RelativePathHelper.java">
@@ -138,7 +137,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode extendsClassName="java.lang.Exception" />
   </dependency>
   <dependency className="jetbrains.mps.build.util.ScopeUtil" file="ScopeUtil.java">
@@ -166,7 +164,6 @@
     <classNode dependClassName="jetbrains.mps.scope.ModelPlusImportedScope" />
     <classNode dependClassName="jetbrains.mps.scope.SimpleRoleScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.build.util.TransformingScope" />
     <classNode extendsClassName="jetbrains.mps.scope.Scope" />

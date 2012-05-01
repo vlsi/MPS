@@ -9,7 +9,6 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class RegexpDeclaration_Constraints extends BaseConstraintsDescriptor {
@@ -29,7 +28,7 @@ public class RegexpDeclaration_Constraints extends BaseConstraintsDescriptor {
       @Override
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "shortDescription";
-        return (StringUtils.isNotEmpty(SPropertyOperations.getString(node, "description")) ?
+        return ((SPropertyOperations.getString(node, "description") != null && SPropertyOperations.getString(node, "description").length() > 0) ?
           SPropertyOperations.getString(node, "description") :
           "regular expression"
         );

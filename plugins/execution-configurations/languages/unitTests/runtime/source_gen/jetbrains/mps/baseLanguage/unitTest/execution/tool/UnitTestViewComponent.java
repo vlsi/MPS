@@ -35,7 +35,6 @@ import com.intellij.execution.process.ProcessListener;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import com.intellij.ide.util.PropertiesComponent;
-import org.apache.commons.lang.StringUtils;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeEvent;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -191,7 +190,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     final PropertiesComponent propertiesComponent = PropertiesComponent.getInstance();
     String value = propertiesComponent.getValue(UnitTestViewComponent.SPLITTER_SIZE_PROPERTY + "." + id);
     float proportion = defaultProportion;
-    if (StringUtils.isNotEmpty(value)) {
+    if ((value != null && value.length() > 0)) {
       try {
         proportion = Float.parseFloat(value);
       } catch (NumberFormatException ignore) {

@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.apache.commons.lang.StringUtils;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -37,7 +36,7 @@ public class CheckingUtil {
 
   public static boolean isFieldDuplicated(final SNode fieldDecl) {
     final String name = SPropertyOperations.getString(fieldDecl, "name");
-    if (StringUtils.isEmpty(name)) {
+    if ((name == null || name.length() == 0)) {
       return false;
     }
     SNode classifier = SNodeOperations.getAncestor(fieldDecl, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);

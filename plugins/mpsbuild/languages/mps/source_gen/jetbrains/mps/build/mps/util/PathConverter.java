@@ -19,7 +19,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.File;
 import java.io.IOException;
@@ -91,7 +90,7 @@ public class PathConverter {
   private void buildCompositePath(SNode result, String path, SModel model) {
     SNode last = null;
     for (String fname : path.split("/")) {
-      if (StringUtils.isNotEmpty(fname)) {
+      if ((fname != null && fname.length() > 0)) {
         SNode npath = SModelOperations.createNewNode(model, "jetbrains.mps.build.structure.BuildCompositePath", null);
         SPropertyOperations.set(npath, "head", fname);
         if (last == null) {
@@ -105,7 +104,7 @@ public class PathConverter {
   }
 
   private static String normalizePath(String path, boolean addSlash) {
-    if (path == null || StringUtils.isEmpty(path)) {
+    if (path == null || (path == null || path.length() == 0)) {
       return null;
     }
     try {

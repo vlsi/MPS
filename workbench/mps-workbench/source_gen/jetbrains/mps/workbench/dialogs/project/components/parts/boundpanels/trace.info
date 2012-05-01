@@ -292,88 +292,88 @@
     <unitInfo nodeId="1560298786499491524" fileName="ValidateableBoundPanel.java" startLine="224" startPosition="0" endLine="250" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.ValidateableBoundPanel$MyValidator" />
   </root>
   <root nodeId="1560298786499492437">
-    <nodeInfo nodeId="1560298786499492471" fileName="BoundListPanel.java" startLine="20" startPosition="66" endLine="21" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUIList" />
-    <nodeInfo nodeId="1560298786499492486" fileName="BoundListPanel.java" startLine="23" startPosition="74" endLine="24" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1560298786499492501" fileName="BoundListPanel.java" startLine="28" startPosition="33" endLine="29" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499492510" fileName="BoundListPanel.java" startLine="30" startPosition="5" endLine="31" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499492524" fileName="BoundListPanel.java" startLine="31" startPosition="114" endLine="32" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499492536" fileName="BoundListPanel.java" startLine="35" startPosition="78" endLine="36" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499492544" fileName="BoundListPanel.java" startLine="39" startPosition="54" endLine="40" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7648136371139264547" fileName="BoundListPanel.java" startLine="43" startPosition="40" endLine="44" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3416087927885097965" fileName="BoundListPanel.java" startLine="47" startPosition="26" endLine="48" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499492445" fileName="BoundListPanel.java" startLine="51" startPosition="55" endLine="52" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChooser" />
-    <nodeInfo nodeId="1560298786499492548" fileName="BoundListPanel.java" startLine="54" startPosition="57" endLine="55" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1560298786499492552" fileName="BoundListPanel.java" startLine="55" startPosition="22" endLine="56" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499492559" fileName="BoundListPanel.java" startLine="59" startPosition="42" endLine="60" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499492573" fileName="BoundListPanel.java" startLine="61" startPosition="27" endLine="62" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499492576" fileName="BoundListPanel.java" startLine="63" startPosition="7" endLine="64" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499492583" fileName="BoundListPanel.java" startLine="64" startPosition="48" endLine="65" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499492614" fileName="BoundListPanel.java" startLine="78" startPosition="33" endLine="79" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7648136371139264504" fileName="BoundListPanel.java" startLine="82" startPosition="46" endLine="83" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5652969333075991013" fileName="BoundListPanel.java" startLine="84" startPosition="46" endLine="85" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5652969333075991044" fileName="BoundListPanel.java" startLine="87" startPosition="35" endLine="88" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5652969333075991059" fileName="BoundListPanel.java" startLine="89" startPosition="212" endLine="90" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499492476" fileName="BoundListPanel.java" startLine="22" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BoundListPanel#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/util/List;)V" />
-    <nodeInfo nodeId="1560298786499492494" fileName="BoundListPanel.java" startLine="27" startPosition="52" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499492568" fileName="BoundListPanel.java" startLine="60" startPosition="43" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499492464" fileName="BoundListPanel.java" startLine="77" startPosition="61" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyListRemoveAction#()V" />
-    <nodeInfo nodeId="5652969333075990998" fileName="BoundListPanel.java" startLine="83" startPosition="74" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499492528" fileName="BoundListPanel.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAddAction#(Ljetbrains/mps/util/Computable;)Ljetbrains/mps/workbench/dialogs/project/components/parts/actions/BaseValidatedAction;" />
-    <nodeInfo nodeId="1560298786499492540" fileName="BoundListPanel.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRemoveAction#()Ljetbrains/mps/workbench/dialogs/project/components/parts/actions/BaseValidatedAction;" />
-    <nodeInfo nodeId="7648136371139241800" fileName="BoundListPanel.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelectedIndices#()[I" />
-    <nodeInfo nodeId="3416087927885097961" fileName="BoundListPanel.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getList#()Ljavax/swing/JList;" />
-    <nodeInfo nodeId="1560298786499492450" fileName="BoundListPanel.java" startLine="53" startPosition="0" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyListAddAction#(Ljetbrains/mps/util/Computable;)V" />
-    <nodeInfo nodeId="1560298786499492586" fileName="BoundListPanel.java" startLine="65" startPosition="21" endLine="69" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499492599" fileName="BoundListPanel.java" startLine="69" startPosition="9" endLine="73" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5652969333075991021" fileName="BoundListPanel.java" startLine="86" startPosition="7" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499492490" fileName="BoundListPanel.java" startLine="26" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initUIComponentAndBinding#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="1560298786499492466" fileName="BoundListPanel.java" startLine="81" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRemove#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-    <nodeInfo nodeId="1560298786499492456" fileName="BoundListPanel.java" startLine="58" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAdd#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)I" />
-    <scopeInfo nodeId="1560298786499492485" fileName="BoundListPanel.java" startLine="23" startPosition="74" endLine="24" endPosition="30" />
-    <scopeInfo nodeId="1560298786499492500" fileName="BoundListPanel.java" startLine="28" startPosition="33" endLine="29" endPosition="47" />
-    <scopeInfo nodeId="1560298786499492535" fileName="BoundListPanel.java" startLine="35" startPosition="78" endLine="36" endPosition="55" />
-    <scopeInfo nodeId="1560298786499492543" fileName="BoundListPanel.java" startLine="39" startPosition="54" endLine="40" endPosition="51" />
-    <scopeInfo nodeId="7648136371139241804" fileName="BoundListPanel.java" startLine="43" startPosition="40" endLine="44" endPosition="41" />
-    <scopeInfo nodeId="3416087927885097964" fileName="BoundListPanel.java" startLine="47" startPosition="26" endLine="48" endPosition="20" />
-    <scopeInfo nodeId="1560298786499492572" fileName="BoundListPanel.java" startLine="61" startPosition="27" endLine="62" endPosition="18" />
-    <scopeInfo nodeId="1560298786499492613" fileName="BoundListPanel.java" startLine="78" startPosition="33" endLine="79" endPosition="22" />
-    <scopeInfo nodeId="5652969333075990999" fileName="BoundListPanel.java" startLine="84" startPosition="46" endLine="85" endPosition="15" />
-    <scopeInfo nodeId="5652969333075991022" fileName="BoundListPanel.java" startLine="87" startPosition="35" endLine="88" endPosition="112" />
-    <scopeInfo nodeId="5652969333075991056" fileName="BoundListPanel.java" startLine="89" startPosition="212" endLine="90" endPosition="45" />
-    <scopeInfo nodeId="1560298786499492547" fileName="BoundListPanel.java" startLine="54" startPosition="57" endLine="56" endPosition="26" />
-    <scopeInfo nodeId="1560298786499492476" fileName="BoundListPanel.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
+    <nodeInfo nodeId="1560298786499492471" fileName="BoundListPanel.java" startLine="19" startPosition="66" endLine="20" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUIList" />
+    <nodeInfo nodeId="1560298786499492486" fileName="BoundListPanel.java" startLine="22" startPosition="74" endLine="23" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1560298786499492501" fileName="BoundListPanel.java" startLine="27" startPosition="33" endLine="28" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499492510" fileName="BoundListPanel.java" startLine="29" startPosition="5" endLine="30" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499492524" fileName="BoundListPanel.java" startLine="30" startPosition="114" endLine="31" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1560298786499492536" fileName="BoundListPanel.java" startLine="34" startPosition="78" endLine="35" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1560298786499492544" fileName="BoundListPanel.java" startLine="38" startPosition="54" endLine="39" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7648136371139264547" fileName="BoundListPanel.java" startLine="42" startPosition="40" endLine="43" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3416087927885097965" fileName="BoundListPanel.java" startLine="46" startPosition="26" endLine="47" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1560298786499492445" fileName="BoundListPanel.java" startLine="50" startPosition="55" endLine="51" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChooser" />
+    <nodeInfo nodeId="1560298786499492548" fileName="BoundListPanel.java" startLine="53" startPosition="57" endLine="54" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1560298786499492552" fileName="BoundListPanel.java" startLine="54" startPosition="22" endLine="55" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499492559" fileName="BoundListPanel.java" startLine="58" startPosition="42" endLine="59" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560298786499492573" fileName="BoundListPanel.java" startLine="60" startPosition="27" endLine="61" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1560298786499492576" fileName="BoundListPanel.java" startLine="62" startPosition="7" endLine="63" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499492583" fileName="BoundListPanel.java" startLine="63" startPosition="48" endLine="64" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499492614" fileName="BoundListPanel.java" startLine="77" startPosition="33" endLine="78" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7648136371139264504" fileName="BoundListPanel.java" startLine="81" startPosition="46" endLine="82" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5652969333075991013" fileName="BoundListPanel.java" startLine="83" startPosition="65" endLine="84" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5652969333075991044" fileName="BoundListPanel.java" startLine="86" startPosition="35" endLine="87" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5652969333075991059" fileName="BoundListPanel.java" startLine="88" startPosition="212" endLine="89" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499492476" fileName="BoundListPanel.java" startLine="21" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BoundListPanel#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/util/List;)V" />
+    <nodeInfo nodeId="1560298786499492494" fileName="BoundListPanel.java" startLine="26" startPosition="52" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1560298786499492568" fileName="BoundListPanel.java" startLine="59" startPosition="43" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1560298786499492464" fileName="BoundListPanel.java" startLine="76" startPosition="61" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyListRemoveAction#()V" />
+    <nodeInfo nodeId="5652969333075990998" fileName="BoundListPanel.java" startLine="82" startPosition="74" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1560298786499492528" fileName="BoundListPanel.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAddAction#(Ljetbrains/mps/util/Computable;)Ljetbrains/mps/workbench/dialogs/project/components/parts/actions/BaseValidatedAction;" />
+    <nodeInfo nodeId="1560298786499492540" fileName="BoundListPanel.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRemoveAction#()Ljetbrains/mps/workbench/dialogs/project/components/parts/actions/BaseValidatedAction;" />
+    <nodeInfo nodeId="7648136371139241800" fileName="BoundListPanel.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelectedIndices#()[I" />
+    <nodeInfo nodeId="3416087927885097961" fileName="BoundListPanel.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getList#()Ljavax/swing/JList;" />
+    <nodeInfo nodeId="1560298786499492450" fileName="BoundListPanel.java" startLine="52" startPosition="0" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyListAddAction#(Ljetbrains/mps/util/Computable;)V" />
+    <nodeInfo nodeId="1560298786499492586" fileName="BoundListPanel.java" startLine="64" startPosition="21" endLine="68" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560298786499492599" fileName="BoundListPanel.java" startLine="68" startPosition="9" endLine="72" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5652969333075991021" fileName="BoundListPanel.java" startLine="85" startPosition="7" endLine="90" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1560298786499492490" fileName="BoundListPanel.java" startLine="25" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initUIComponentAndBinding#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="1560298786499492466" fileName="BoundListPanel.java" startLine="80" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRemove#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+    <nodeInfo nodeId="1560298786499492456" fileName="BoundListPanel.java" startLine="57" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAdd#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)I" />
+    <scopeInfo nodeId="1560298786499492485" fileName="BoundListPanel.java" startLine="22" startPosition="74" endLine="23" endPosition="30" />
+    <scopeInfo nodeId="1560298786499492500" fileName="BoundListPanel.java" startLine="27" startPosition="33" endLine="28" endPosition="47" />
+    <scopeInfo nodeId="1560298786499492535" fileName="BoundListPanel.java" startLine="34" startPosition="78" endLine="35" endPosition="55" />
+    <scopeInfo nodeId="1560298786499492543" fileName="BoundListPanel.java" startLine="38" startPosition="54" endLine="39" endPosition="51" />
+    <scopeInfo nodeId="7648136371139241804" fileName="BoundListPanel.java" startLine="42" startPosition="40" endLine="43" endPosition="41" />
+    <scopeInfo nodeId="3416087927885097964" fileName="BoundListPanel.java" startLine="46" startPosition="26" endLine="47" endPosition="20" />
+    <scopeInfo nodeId="1560298786499492572" fileName="BoundListPanel.java" startLine="60" startPosition="27" endLine="61" endPosition="18" />
+    <scopeInfo nodeId="1560298786499492613" fileName="BoundListPanel.java" startLine="77" startPosition="33" endLine="78" endPosition="22" />
+    <scopeInfo nodeId="5652969333075990999" fileName="BoundListPanel.java" startLine="83" startPosition="65" endLine="84" endPosition="15" />
+    <scopeInfo nodeId="5652969333075991022" fileName="BoundListPanel.java" startLine="86" startPosition="35" endLine="87" endPosition="112" />
+    <scopeInfo nodeId="5652969333075991056" fileName="BoundListPanel.java" startLine="88" startPosition="212" endLine="89" endPosition="45" />
+    <scopeInfo nodeId="1560298786499492547" fileName="BoundListPanel.java" startLine="53" startPosition="57" endLine="55" endPosition="26" />
+    <scopeInfo nodeId="1560298786499492476" fileName="BoundListPanel.java" startLine="21" startPosition="0" endLine="24" endPosition="3">
       <varInfo nodeId="1560298786499492480" varName="caption" />
       <varInfo nodeId="1560298786499492478" varName="owner" />
       <varInfo nodeId="1560298786499492482" varName="ts" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499492464" fileName="BoundListPanel.java" startLine="77" startPosition="61" endLine="80" endPosition="5" />
-    <scopeInfo nodeId="1560298786499492528" fileName="BoundListPanel.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="1560298786499492464" fileName="BoundListPanel.java" startLine="76" startPosition="61" endLine="79" endPosition="5" />
+    <scopeInfo nodeId="1560298786499492528" fileName="BoundListPanel.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1560298786499492531" varName="chooser" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499492540" fileName="BoundListPanel.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="7648136371139241800" fileName="BoundListPanel.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="3416087927885097961" fileName="BoundListPanel.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="1560298786499492450" fileName="BoundListPanel.java" startLine="53" startPosition="0" endLine="57" endPosition="5">
+    <scopeInfo nodeId="1560298786499492540" fileName="BoundListPanel.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="7648136371139241800" fileName="BoundListPanel.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="3416087927885097961" fileName="BoundListPanel.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="1560298786499492450" fileName="BoundListPanel.java" startLine="52" startPosition="0" endLine="56" endPosition="5">
       <varInfo nodeId="1560298786499492452" varName="chooser" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499492493" fileName="BoundListPanel.java" startLine="27" startPosition="52" endLine="32" endPosition="20" />
-    <scopeInfo nodeId="1560298786499492490" fileName="BoundListPanel.java" startLine="26" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1560298786499492618" fileName="BoundListPanel.java" startLine="82" startPosition="46" endLine="91" endPosition="7">
+    <scopeInfo nodeId="1560298786499492493" fileName="BoundListPanel.java" startLine="26" startPosition="52" endLine="31" endPosition="20" />
+    <scopeInfo nodeId="1560298786499492490" fileName="BoundListPanel.java" startLine="25" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1560298786499492618" fileName="BoundListPanel.java" startLine="81" startPosition="46" endLine="90" endPosition="7">
       <varInfo nodeId="7648136371139264505" varName="errorMessage" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499492466" fileName="BoundListPanel.java" startLine="81" startPosition="0" endLine="93" endPosition="0">
+    <scopeInfo nodeId="1560298786499492466" fileName="BoundListPanel.java" startLine="80" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="1560298786499492469" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499492558" fileName="BoundListPanel.java" startLine="59" startPosition="42" endLine="73" endPosition="8">
+    <scopeInfo nodeId="1560298786499492558" fileName="BoundListPanel.java" startLine="58" startPosition="42" endLine="72" endPosition="8">
       <varInfo nodeId="1560298786499492560" varName="chosen" />
       <varInfo nodeId="1560298786499492587" varName="first" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499492456" fileName="BoundListPanel.java" startLine="58" startPosition="0" endLine="75" endPosition="0">
+    <scopeInfo nodeId="1560298786499492456" fileName="BoundListPanel.java" startLine="57" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="1560298786499492459" varName="e" />
     </scopeInfo>
-    <unitInfo nodeId="1560298786499492437" fileName="BoundListPanel.java" startLine="20" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundListPanel" />
-    <unitInfo nodeId="1560298786499492442" fileName="BoundListPanel.java" startLine="51" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundListPanel$MyListAddAction" />
-    <unitInfo nodeId="1560298786499492461" fileName="BoundListPanel.java" startLine="77" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundListPanel$MyListRemoveAction" />
+    <unitInfo nodeId="1560298786499492437" fileName="BoundListPanel.java" startLine="19" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundListPanel" />
+    <unitInfo nodeId="1560298786499492442" fileName="BoundListPanel.java" startLine="50" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundListPanel$MyListAddAction" />
+    <unitInfo nodeId="1560298786499492461" fileName="BoundListPanel.java" startLine="76" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundListPanel$MyListRemoveAction" />
   </root>
   <root nodeId="1560298786499497595">
     <nodeInfo nodeId="1560298786499497635" fileName="BoundTablePanel.java" startLine="33" startPosition="67" endLine="34" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTable" />

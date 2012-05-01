@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.make.script.IFeedback;
@@ -100,7 +99,7 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
                   public boolean acceptWritten(IFile file) {
                     if (!(Sequence.fromIterable(Sequence.fromArray(new String[]{"dependencies", "generated", "trace.info"})).contains(file.getName()))) {
                       String destPath = MapSequence.fromMap(MapSequence.fromMap(pa.global().properties(new ITarget.Name("jetbrains.mps.build.CopyGeneratedScripts.collectScriptDirectories"), CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters.class).fileNameToDestination()).get(tres.modelDescriptor().getSModelReference())).get(file.getName());
-                      if (StringUtils.isNotEmpty(destPath)) {
+                      if ((destPath != null && destPath.length() > 0)) {
                         IFile destDir = FileSystem.getInstance().getFileByPath(destPath);
                         IFile copy = destDir.getDescendant(file.getName());
                         ListSequence.fromList(toCopy).addElement(MultiTuple.<IFile,IFile>from(file, copy));

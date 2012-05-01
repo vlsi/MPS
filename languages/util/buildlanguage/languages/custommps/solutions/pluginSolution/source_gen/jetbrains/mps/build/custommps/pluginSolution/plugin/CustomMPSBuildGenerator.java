@@ -5,7 +5,6 @@ package jetbrains.mps.build.custommps.pluginSolution.plugin;
 import jetbrains.mps.build.packaging.pluginSolution.plugin.BuildGeneratorImpl;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
-import org.apache.commons.lang.StringUtils;
 import java.util.List;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.util.Arrays;
@@ -40,7 +39,7 @@ public class CustomMPSBuildGenerator extends BuildGeneratorImpl {
   }
 
   public boolean isValid() {
-    return super.isValid() && StringUtils.isNotEmpty(this.myPathToBuildTools);
+    return super.isValid() && (this.myPathToBuildTools != null && this.myPathToBuildTools.length() > 0);
   }
 
   protected List<ModuleReference> getModuleReferencesToAdd() {

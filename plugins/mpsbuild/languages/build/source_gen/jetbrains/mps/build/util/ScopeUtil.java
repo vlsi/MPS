@@ -20,7 +20,6 @@ import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.build.behavior.BuildLayout_Node_Behavior;
-import org.apache.commons.lang.StringUtils;
 import java.util.ArrayList;
 import jetbrains.mps.build.behavior.BuildLayout_PathElement_Behavior;
 
@@ -124,7 +123,7 @@ public class ScopeUtil {
     }
 
     public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
-      if (StringUtils.isEmpty(prefix)) {
+      if ((prefix == null || prefix.length() == 0)) {
         return Sequence.fromIterable(getAllNodes()).toListSequence();
       }
       List<SNode> result = new ArrayList<SNode>();

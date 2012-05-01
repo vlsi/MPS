@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -13,7 +12,7 @@ import jetbrains.mps.textGen.TextGenManager;
 public class EnumConstantDeclaration_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.appendNewLine();
-    if (StringUtils.isEmpty(SPropertyOperations.getString(node, "name"))) {
+    if ((SPropertyOperations.getString(node, "name") == null || SPropertyOperations.getString(node, "name").length() == 0)) {
       this.foundError("enum constant without name");
       this.appendWithIndent("???");
     } else {

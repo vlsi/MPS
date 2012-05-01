@@ -64,7 +64,6 @@
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
     <classNode dependClassName="jetbrains.mps.util.JavaNameUtil" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.textGen.AnonymousClassCreator_TextGen" file="AnonymousClassCreator_TextGen.java">
@@ -234,7 +233,6 @@
     <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.textGen.ByteType_TextGen" file="ByteType_TextGen.java">
@@ -419,7 +417,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.textGen.EnumConstantReference_TextGen" file="EnumConstantReference_TextGen.java">

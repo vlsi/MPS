@@ -7,7 +7,6 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class CreateInternalLabel_Intention extends BaseIntention implements Intention {
@@ -42,7 +41,7 @@ public class CreateInternalLabel_Intention extends BaseIntention implements Inte
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BreakStatement") && StringUtils.isEmpty(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BreakStatement"), "label"))) || (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ContinueStatement") && StringUtils.isEmpty(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ContinueStatement"), "label"))) || (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement") && StringUtils.isEmpty(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label"))) || (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement") && StringUtils.isEmpty(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), "label")));
+    return (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BreakStatement") && (SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BreakStatement"), "label") == null || SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BreakStatement"), "label").length() == 0)) || (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ContinueStatement") && (SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ContinueStatement"), "label") == null || SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ContinueStatement"), "label").length() == 0)) || (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement") && (SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label") == null || SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label").length() == 0)) || (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement") && (SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), "label") == null || SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), "label").length() == 0));
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

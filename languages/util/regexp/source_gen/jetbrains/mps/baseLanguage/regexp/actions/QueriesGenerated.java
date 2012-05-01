@@ -21,7 +21,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SModel;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
@@ -263,7 +262,7 @@ public class QueriesGenerated {
             SNode node = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", _context.getCurrentTargetNode());
             SPropertyOperations.set(node, "name", (pattern.endsWith(":") ?
               pattern.substring(1, pattern.length() - 1) :
-              (StringUtils.isEmpty(pattern) ?
+              ((pattern == null || pattern.length() == 0) ?
                 "" :
                 pattern.substring(1)
               )

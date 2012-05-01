@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
@@ -22,7 +21,7 @@ public class CardinalitiesChecker extends AbstractConstraintsChecker {
     SNode concept = SNodeOperations.getConceptDeclaration(node);
     component.addDependency(concept);
     for (SNode link : ListSequence.fromList((List<SNode>) SModelSearchUtil.getLinkDeclarations(concept))) {
-      if (StringUtils.isEmpty(SPropertyOperations.getString(link, "role"))) {
+      if ((SPropertyOperations.getString(link, "role") == null || SPropertyOperations.getString(link, "role").length() == 0)) {
         continue;
       }
       component.addDependency(link);

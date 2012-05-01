@@ -20,7 +20,6 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import org.jetbrains.annotations.Nullable;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.execution.configurations.RunProfileState;
@@ -116,7 +115,7 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
 
   @Nullable
   public SNode getTarget() {
-    if (StringUtils.isEmpty(this.getTargetId())) {
+    if ((this.getTargetId() == null || this.getTargetId().length() == 0)) {
       return null;
     }
     final Wrappers._T<SNode> target = new Wrappers._T<SNode>();

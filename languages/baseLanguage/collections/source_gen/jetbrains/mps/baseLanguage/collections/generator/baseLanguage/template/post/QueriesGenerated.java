@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -44,7 +43,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1269198486696304732(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if ((SLinkOperations.getTarget(_context.getNode(), "loopLabel", true) != null)) {
       return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "loopLabel", true), "name");
-    } else if (StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "label"))) {
+    } else if ((SPropertyOperations.getString(_context.getNode(), "label") != null && SPropertyOperations.getString(_context.getNode(), "label").length() > 0)) {
       return SPropertyOperations.getString(_context.getNode(), "label");
     } else {
       return null;
@@ -58,7 +57,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1269198486696304802(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if ((SLinkOperations.getTarget(_context.getNode(), "loopLabel", true) != null)) {
       return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "loopLabel", true), "name");
-    } else if (StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "label"))) {
+    } else if ((SPropertyOperations.getString(_context.getNode(), "label") != null && SPropertyOperations.getString(_context.getNode(), "label").length() > 0)) {
       return SPropertyOperations.getString(_context.getNode(), "label");
     } else {
       return null;
@@ -72,7 +71,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1269198486696304886(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if ((SLinkOperations.getTarget(_context.getNode(), "loopLabel", true) != null)) {
       return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "loopLabel", true), "name");
-    } else if (StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "label"))) {
+    } else if ((SPropertyOperations.getString(_context.getNode(), "label") != null && SPropertyOperations.getString(_context.getNode(), "label").length() > 0)) {
       return SPropertyOperations.getString(_context.getNode(), "label");
     } else {
       return null;
@@ -86,7 +85,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1269198486696305020(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if ((SLinkOperations.getTarget(_context.getNode(), "loopLabel", true) != null)) {
       return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "loopLabel", true), "name");
-    } else if (StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "label"))) {
+    } else if ((SPropertyOperations.getString(_context.getNode(), "label") != null && SPropertyOperations.getString(_context.getNode(), "label").length() > 0)) {
       return SPropertyOperations.getString(_context.getNode(), "label");
     } else {
       return null;

@@ -14,7 +14,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -29,7 +28,10 @@ public class QueriesGenerated {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode attr = SConceptOperations.createNewNode("jetbrains.mps.sampleXML.structure.Attribute", null);
-            SPropertyOperations.set(attr, "name", StringUtils.trim(pattern));
+            SPropertyOperations.set(attr, "name", ((pattern == null ?
+              null :
+              pattern.trim()
+            )));
             return attr;
           }
 
@@ -83,7 +85,10 @@ public class QueriesGenerated {
         public SNode doSubstitute(String pattern) {
           //  add next attribute 
           SNode nextAttr = SConceptOperations.createNewNode("jetbrains.mps.sampleXML.structure.Attribute", null);
-          SPropertyOperations.set(nextAttr, "name", StringUtils.trim(pattern));
+          SPropertyOperations.set(nextAttr, "name", ((pattern == null ?
+            null :
+            pattern.trim()
+          )));
           SNodeOperations.insertNextSiblingChild(_context.getSourceNode(), nextAttr);
           return nextAttr;
         }

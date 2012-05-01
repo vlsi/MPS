@@ -7,7 +7,6 @@ import jetbrains.mps.util.annotation.ToRemove;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.execution.ExecutionException;
-import org.apache.commons.lang.StringUtils;
 import java.io.File;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.ThreadUtils;
@@ -42,7 +41,7 @@ public class Gcc_Command {
   }
 
   public ProcessHandler createProcess(SNode file) throws ExecutionException {
-    if (StringUtils.isEmpty(myGccLocation_String) || !(new File(myGccLocation_String).exists())) {
+    if ((myGccLocation_String == null || myGccLocation_String.length() == 0) || !(new File(myGccLocation_String).exists())) {
       throw new ExecutionException("Could not find gcc by path " + myGccLocation_String);
     }
 

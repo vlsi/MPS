@@ -31,7 +31,6 @@ import jetbrains.mps.execution.configurations.behavior.ConfigurationFromExecutor
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.generator.template.IfMacroContext;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.execution.configurations.behavior.StartProcessHandlerStatement_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -417,7 +416,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1754312393816976127(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "icon", true) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
+    return (SLinkOperations.getTarget(_context.getNode(), "icon", true) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path").length() > 0);
   }
 
   public static boolean ifMacro_Condition_2535050848643232592(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -425,7 +424,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7244675116808166482(final IOperationContext operationContext, final IfMacroContext _context) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
+    return (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path").length() > 0);
   }
 
   public static boolean ifMacro_Condition_1594211126127687772(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -449,11 +448,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1474977673367994580(final IOperationContext operationContext, final IfMacroContext _context) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "path"));
+    return (SPropertyOperations.getString(_context.getNode(), "path") != null && SPropertyOperations.getString(_context.getNode(), "path").length() > 0);
   }
 
   public static boolean ifMacro_Condition_6396510228602727619(final IOperationContext operationContext, final IfMacroContext _context) {
-    return StringUtils.isEmpty(SPropertyOperations.getString(_context.getNode(), "alias"));
+    return (SPropertyOperations.getString(_context.getNode(), "alias") == null || SPropertyOperations.getString(_context.getNode(), "alias").length() == 0);
   }
 
   public static boolean ifMacro_Condition_3726880020403335400(final IOperationContext operationContext, final IfMacroContext _context) {

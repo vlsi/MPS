@@ -8,6 +8,5 @@ import java.util.LinkedList;
 public class TraceExample {
   public TraceExample() {
     List<Integer> list = new LinkedList<Integer>();
-    list.add(new RuntimeException());
   }
 }

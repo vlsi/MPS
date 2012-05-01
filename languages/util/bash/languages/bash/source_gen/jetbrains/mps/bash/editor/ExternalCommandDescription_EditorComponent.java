@@ -15,7 +15,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ExternalCommandDescription_EditorComponent extends AbstractCellProvider {
@@ -74,6 +73,6 @@ public class ExternalCommandDescription_EditorComponent extends AbstractCellProv
   }
 
   private static boolean renderingCondition_3xyrme_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "description"));
+    return (SPropertyOperations.getString(node, "description") != null && SPropertyOperations.getString(node, "description").length() > 0);
   }
 }

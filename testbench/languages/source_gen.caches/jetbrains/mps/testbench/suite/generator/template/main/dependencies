@@ -15,7 +15,6 @@
     <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.ITestRef_Behavior" />
     <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
   </dependency>
 </dependenciesRoot>
 

@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.apache.commons.lang.StringUtils;
 import java.io.File;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -25,7 +24,7 @@ public class Zip_Behavior {
   public static String virtual_getChildrenTargetDir_1237389224202(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent")) {
       String parentTargetDir = IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent"));
-      if (StringUtils.isEmpty(parentTargetDir)) {
+      if ((parentTargetDir == null || parentTargetDir.length() == 0)) {
         return Zip_Behavior.call_getTemporalDir_1239622540603(thisNode);
       }
       return parentTargetDir + File.separator + Zip_Behavior.call_getTemporalDir_1239622540603(thisNode);

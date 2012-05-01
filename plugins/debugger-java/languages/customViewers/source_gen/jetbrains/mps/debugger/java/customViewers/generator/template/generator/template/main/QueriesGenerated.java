@@ -13,7 +13,6 @@ import jetbrains.mps.debugger.java.customViewers.behavior.HighLevelCustomViewer_
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -75,7 +74,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4089989733346843275(final IOperationContext operationContext, final IfMacroContext _context) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "iconPath"));
+    return (SPropertyOperations.getString(_context.getNode(), "iconPath") != null && SPropertyOperations.getString(_context.getNode(), "iconPath").length() > 0);
   }
 
   public static boolean ifMacro_Condition_264293128390879160(final IOperationContext operationContext, final IfMacroContext _context) {

@@ -20,7 +20,6 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.apache.commons.lang.StringUtils;
 import java.util.Collections;
 import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.tree.DefaultTreeModel;
@@ -87,7 +86,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
     }, true).toListSequence();
     for (DiffModelTree.RootTreeNode rtn : ListSequence.fromList(myRootNodes)) {
       DiffModelTree.TreeNode parentNode = modelNode;
-      if (StringUtils.isNotEmpty(rtn.myVirtualPackage)) {
+      if ((rtn.myVirtualPackage != null && rtn.myVirtualPackage.length() > 0)) {
         for (final String sub : Sequence.fromIterable(Sequence.fromArray(rtn.myVirtualPackage.split("\\.")))) {
           Iterable<DiffModelTree.TreeNode> children = Collections.list(parentNode.children());
           DiffModelTree.TreeNode child = Sequence.fromIterable(children).findFirst(new IWhereFilter<DiffModelTree.TreeNode>() {
@@ -283,7 +282,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
         }
       });
       coloredRenderer.append(getText(), new SimpleTextAttributes(myTextStyle, getColor()));
-      if (StringUtils.isNotEmpty(myAdditionalText)) {
+      if ((myAdditionalText != null && myAdditionalText.length() > 0)) {
         coloredRenderer.append(" (" + myAdditionalText + ")", new SimpleTextAttributes(SimpleTextAttributes.STYLE_PLAIN, Color.GRAY));
       }
       coloredRenderer.setToolTipText(myTooltipText);

@@ -25,7 +25,6 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.facet.ITargetEx;
 import jetbrains.mps.make.script.IFeedback;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.smodel.TimeOutRuntimeException;
 import jetbrains.mps.make.script.IConfigMonitor;
@@ -292,7 +291,10 @@ with_targets:
               }
             }
 
-            String workName = "__" + StringUtils.trim(trg.getName().toString()) + "__";
+            String workName = "__" + ((trg.getName().toString() == null ?
+              null :
+              trg.getName().toString().trim()
+            )) + "__";
             monit.currentProgress().beginWork(workName, 1000, (trg.requiresInput() || trg.producesOutput() ?
               1000 :
               10

@@ -7,7 +7,6 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.build.behavior.BuildString_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -19,7 +18,7 @@ public class check_BuildStringNotEmpty_NonTypesystemRule extends AbstractNonType
   }
 
   public void applyRule(final SNode str, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (StringUtils.isEmpty(BuildString_Behavior.call_getText_4380385936562005550(str, null))) {
+    if ((BuildString_Behavior.call_getText_4380385936562005550(str, null) == null || BuildString_Behavior.call_getText_4380385936562005550(str, null).length() == 0)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(str, "string is empty", "r:2349e4dd-6518-4a4c-9022-c7887bed8b52(jetbrains.mps.build.typesystem)", "841011766566102235", null, errorTarget);

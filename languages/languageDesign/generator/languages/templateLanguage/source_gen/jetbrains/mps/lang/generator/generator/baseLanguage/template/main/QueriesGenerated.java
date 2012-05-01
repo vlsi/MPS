@@ -24,7 +24,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.generator.behavior.VarMacro_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -952,7 +951,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5015072279636853966(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    if (StringUtils.isEmpty(SPropertyOperations.getString(_context.getNode(), "name"))) {
+    if ((SPropertyOperations.getString(_context.getNode(), "name") == null || SPropertyOperations.getString(_context.getNode(), "name").length() == 0)) {
       _context.showErrorMessage(_context.getNode(), "$VAR$ annotation has no name");
     }
     return VarMacro_Behavior.call_getName_2721957369897649366(_context.getNode());
@@ -1731,11 +1730,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_99767819676237501(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_99767819676237613(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_99767819676237647(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1772,7 +1771,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_99767819676501719(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_99767819676501748(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1780,11 +1779,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_99767819676501778(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name")) || (SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true) != null);
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0) || (SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true) != null);
   }
 
   public static boolean ifMacro_Condition_99767819676501954(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_99767819676501994(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1792,7 +1791,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_99767819676502092(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_99767819676502118(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1852,7 +1851,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4155486055398088768(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_330395710727937993(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1944,11 +1943,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4155486055398089098(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_99767819676502803(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_99767819676502891(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1957,7 +1956,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_99767819676502965(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_99767819676503088(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1972,7 +1971,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_99767819676503188(final IOperationContext operationContext, final IfMacroContext _context) {
     String name = (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), "alternativeConsequence", true));
-    return name != null && (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return name != null && (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_99767819676503220(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1984,7 +1983,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_99767819676503333(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_99767819676503362(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1992,7 +1991,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_99767819676503392(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true) != null) || (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true) != null) || (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_99767819676503510(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2008,7 +2007,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_99767819676502201(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_99767819676502230(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2016,11 +2015,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_99767819676502260(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name")) || (SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true) != null);
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0) || (SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true) != null);
   }
 
   public static boolean ifMacro_Condition_99767819676502473(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_99767819676502513(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2028,7 +2027,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_99767819676502648(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_99767819676502674(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2036,7 +2035,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_99767819676503709(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_99767819676503874(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2058,7 +2057,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_99767819676504021(final IOperationContext operationContext, final IfMacroContext _context) {
     String innervar = GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
-    return innervar != null && (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return innervar != null && (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_99767819676504105(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2092,7 +2091,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_8371596541808966722(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_99767819676504472(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2105,11 +2104,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_8371596541808998376(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_99767819676504543(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_6992377099006889647(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2126,7 +2125,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_99767819676504622(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_8961331321403162002(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2287,7 +2286,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_9191117361655049581(final IOperationContext operationContext, final IfMacroContext _context) {
     String name = (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), "ruleConsequence", true));
-    return name != null && (SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false), "name"));
+    return name != null && (SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_8371596541809145634(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2316,7 +2315,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_9191117361655049520(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_330395710727938219(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2383,7 +2382,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_8196331069071255570(final IOperationContext operationContext, final IfMacroContext _context) {
     String innervar = GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
-    return innervar != null && (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return innervar != null && (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_2321430363679348454(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2405,7 +2404,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_9191117361655049432(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "label", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "label", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "label", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "label", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "label", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_59720043761735644(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2430,7 +2429,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_9191117361655150464(final IOperationContext operationContext, final IfMacroContext _context) {
     String name = (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), "ruleConsequence", true));
-    return name != null && (SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false), "name"));
+    return name != null && (SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_9191117361655150591(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2449,7 +2448,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_9191117361655049733(final IOperationContext operationContext, final IfMacroContext _context) {
     String name = (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), "ruleConsequence", true));
-    return name != null && (SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false), "name"));
+    return name != null && (SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_8371596541809114446(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2607,7 +2606,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2760176984813718960(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_2760176984813719467(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2616,15 +2615,15 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2760176984813719541(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_4672632171991748266(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_3462145372628093916(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_3462145372628094002(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2633,19 +2632,19 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_3462145372628094076(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_812193811988884641(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_812193811988885629(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_5015072279636784389(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static boolean ifMacro_Condition_5015072279636784277(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2654,7 +2653,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_5015072279636784351(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0);
   }
 
   public static SNode sourceNodeQuery_1168025917226(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -3057,7 +3056,7 @@ public class QueriesGenerated {
   }
 
   public static Object templateArgumentQuery_1520710884206584289(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name")) || (SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true) != null) ?
+    return ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0) || (SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true) != null) ?
       "context" + ((int[]) _context.getVariable("varindex"))[0] :
       ((String) _context.getVariable("contextVar"))
     );
@@ -3068,7 +3067,7 @@ public class QueriesGenerated {
   }
 
   public static Object templateArgumentQuery_1520710884206584349(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name")) || (SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true) != null) ?
+    return ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0) || (SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true) != null) ?
       "context" + ((int[]) _context.getVariable("varindex"))[0] :
       ((String) _context.getVariable("contextVar"))
     );
@@ -3103,7 +3102,7 @@ public class QueriesGenerated {
   }
 
   public static Object templateArgumentQuery_99767819676502824(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    if ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"))) {
+    if ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0)) {
       return "context" + ((int[]) _context.getVariable("varindex"))[0];
     }
     return ((String) _context.getVariable("contextVar"));
@@ -3126,7 +3125,7 @@ public class QueriesGenerated {
   }
 
   public static Object templateArgumentQuery_99767819676503024(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    if ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"))) {
+    if ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0)) {
       return (String) _context.getTransientObject(MultiTuple.<String,SNode>from("contextvar", _context.getNode()));
     }
     return ((String) _context.getVariable("contextVar"));
@@ -3169,7 +3168,7 @@ public class QueriesGenerated {
   }
 
   public static Object templateArgumentQuery_99767819676503532(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name")) ?
+    return ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0) ?
       "context" + ((int[]) _context.getVariable("varindex"))[0] :
       ((String) _context.getVariable("contextVar"))
     );
@@ -3312,7 +3311,7 @@ public class QueriesGenerated {
   }
 
   public static Object templateArgumentQuery_2760176984813719400(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    if ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"))) {
+    if ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0)) {
       return "context" + ((int[]) _context.getVariable("varindex"))[0];
     }
     return ((String) _context.getVariable("contextVar"));
@@ -3331,7 +3330,7 @@ public class QueriesGenerated {
   }
 
   public static Object templateArgumentQuery_3462145372628093935(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    if ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"))) {
+    if ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name").length() > 0)) {
       return "context" + ((int[]) _context.getVariable("varindex"))[0];
     }
     return ((String) _context.getVariable("contextVar"));

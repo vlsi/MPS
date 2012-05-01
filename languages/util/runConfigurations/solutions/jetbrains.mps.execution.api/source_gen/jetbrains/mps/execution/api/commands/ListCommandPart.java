@@ -6,7 +6,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import java.util.List;
 import org.jetbrains.annotations.Nullable;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -22,7 +21,7 @@ public class ListCommandPart extends AbstractCommandPart implements CommandPart 
   }
 
   public ListCommandPart(List<? extends Object> list, @Nullable String separator) {
-    if (StringUtils.isEmpty(separator)) {
+    if ((separator == null || separator.length() == 0)) {
       addCommands(getCommands(list));
     } else {
       addCommands(IterableUtils.join(Sequence.fromIterable(getCommands(list)), separator));
@@ -42,12 +41,12 @@ public class ListCommandPart extends AbstractCommandPart implements CommandPart 
       return ListSequence.fromList(new ArrayList<String>());
     }
     if (item instanceof String) {
-      if (StringUtils.isNotEmpty(((String) item))) {
+      if ((((String) item) != null && ((String) item).length() > 0)) {
         return ProcessHandlerBuilder.splitCommandInParts((String) item);
       }
     } else if (item instanceof File) {
       String path = ((File) item).getAbsolutePath();
-      if (StringUtils.isNotEmpty(path)) {
+      if ((path != null && path.length() > 0)) {
         return Sequence.<String>singleton(path);
       }
     } else if (item instanceof CommandPart) {
