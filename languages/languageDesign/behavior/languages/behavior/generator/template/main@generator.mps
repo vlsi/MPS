@@ -9,11 +9,9 @@
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
-  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
   <language namespace="96ee7a94-411d-4cf8-9b94-96cad7e52411(jetbrains.mps.baseLanguage.jdk7)" />
   <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
-  <import index="tpcu" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <import index="tpek" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
@@ -21,13 +19,13 @@
   <import index="csvn" modelUID="r:a91e42c5-728b-4866-86c4-d97454f4aee4(jetbrains.mps.lang.behavior.behavior)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
   <import index="tpcn" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" version="-1" />
-  <import index="bltl" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.structure(MPS.Core/jetbrains.mps.smodel.structure@java_stub)" version="-1" />
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="cl8j" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.behaviour(MPS.Core/jetbrains.mps.smodel.behaviour@java_stub)" version="-1" />
   <import index="msyo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" />
   <import index="fwv2" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)" version="-1" />
   <import index="vwd8" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.interpreted(MPS.Core/jetbrains.mps.smodel.runtime.interpreted@java_stub)" version="-1" />
   <import index="qgg" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" version="-1" />
+  <import index="n55e" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.language(MPS.Core/jetbrains.mps.smodel.language@java_stub)" version="-1" />
   <import index="tpf3" modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" implicit="yes" />
   <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -517,19 +515,19 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3248195274271235548">
             <property name="name" nameId="tpck.1169194664001" value="descriptor" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5553523630497682148">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5553523630497682124">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bltl.~ConceptRegistry%dgetInstance()%cjetbrains%dmps%dsmodel%dstructure%dConceptRegistry" resolveInfo="getInstance" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="bltl.~ConceptRegistry" resolveInfo="ConceptRegistry" />
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6986918185621615605">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n55e.~ConceptRegistry%dgetInstance()%cjetbrains%dmps%dsmodel%dlanguage%dConceptRegistry" resolveInfo="getInstance" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="n55e.~ConceptRegistry" resolveInfo="ConceptRegistry" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5553523630497682175">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bltl.~ConceptRegistry%dgetBehaviorDescriptorForInstanceNode(jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dsmodel%dstructure%dBehaviorDescriptor" resolveInfo="getBehaviorDescriptorForInstanceNode" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n55e.~ConceptRegistry%dgetBehaviorDescriptorForInstanceNode(jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dsmodel%druntime%dBehaviorDescriptor" resolveInfo="getBehaviorDescriptorForInstanceNode" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5553523630497682199">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1225195370452" resolveInfo="thisNode" />
                 </node>
               </node>
             </node>
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5553523630497682076">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bltl.~BehaviorDescriptor" resolveInfo="BehaviorDescriptor" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6986918185621625785">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fwv2.~BehaviorDescriptor" resolveInfo="BehaviorDescriptor" />
             </node>
           </node>
         </node>
@@ -540,7 +538,7 @@
                 <property name="name" nameId="tpck.1169194664001" value="casted" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tp68.InternalClassifierType" typeId="tp68.1174914042989" id="7733335381515704470">
                   <property name="fqClassName" nameId="tp68.1174914081067" value="BehaviorDescriptor" />
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bltl.~BehaviorDescriptor" resolveInfo="BehaviorDescriptor" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fwv2.~BehaviorDescriptor" resolveInfo="BehaviorDescriptor" />
                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="7733335381515704521">
                     <property name="propertyName" nameId="tpck.1757699476691236117" value="fqClassName" />
                     <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="7733335381515704522">
@@ -594,7 +592,7 @@
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7733335381515738120">
                   <node role="type" roleId="tpee.1070534934091" type="tp68.InternalClassifierType" typeId="tp68.1174914042989" id="7733335381515738121">
                     <property name="fqClassName" nameId="tp68.1174914081067" value="BehaviorDescriptor" />
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bltl.~BehaviorDescriptor" resolveInfo="BehaviorDescriptor" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fwv2.~BehaviorDescriptor" resolveInfo="BehaviorDescriptor" />
                     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="7733335381515738122">
                       <property name="propertyName" nameId="tpck.1757699476691236117" value="fqClassName" />
                       <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="7733335381515738123">
@@ -840,7 +838,7 @@
           <node role="condition" roleId="tpee.1068580123160" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="7733335381515663921">
             <node role="classType" roleId="tpee.1081256993305" type="tp68.InternalClassifierType" typeId="tp68.1174914042989" id="8679953248944166894">
               <property name="fqClassName" nameId="tp68.1174914081067" value="BehaviorDescriptor" />
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bltl.~BehaviorDescriptor" resolveInfo="BehaviorDescriptor" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fwv2.~BehaviorDescriptor" resolveInfo="BehaviorDescriptor" />
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="8679953248944166959">
                 <property name="propertyName" nameId="tpck.1757699476691236117" value="fqClassName" />
                 <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="8679953248944166960">
@@ -909,7 +907,7 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7733335381515695927">
             <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7733335381515695928">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7733335381515695930">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bltl.~BehaviorDescriptor%dinvoke(java%dlang%dClass,jetbrains%dmps%dsmodel%dSNode,java%dlang%dString,java%dlang%dClass[],java%dlang%dObject%d%d%d)%cjava%dlang%dObject" resolveInfo="invoke" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fwv2.~BehaviorDescriptor%dinvoke(java%dlang%dClass,jetbrains%dmps%dsmodel%dSNode,java%dlang%dString,java%dlang%dClass[],java%dlang%dObject%d%d%d)%cjava%dlang%dObject" resolveInfo="invoke" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="7733335381515695931">
                   <link role="classifier" roleId="tpee.1116615189566" targetNodeId="e2lb.~Object" resolveInfo="Object" />
                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="7733335381515695932">
@@ -1132,7 +1130,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7733335381515696079">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7733335381515696080">
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7733335381515696082">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bltl.~BehaviorDescriptor%dinvoke(java%dlang%dClass,jetbrains%dmps%dsmodel%dSNode,java%dlang%dString,java%dlang%dClass[],java%dlang%dObject%d%d%d)%cjava%dlang%dObject" resolveInfo="invoke" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fwv2.~BehaviorDescriptor%dinvoke(java%dlang%dClass,jetbrains%dmps%dsmodel%dSNode,java%dlang%dString,java%dlang%dClass[],java%dlang%dObject%d%d%d)%cjava%dlang%dObject" resolveInfo="invoke" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="7733335381515696083">
                 <link role="classifier" roleId="tpee.1116615189566" targetNodeId="e2lb.~Object" resolveInfo="Object" />
               </node>
