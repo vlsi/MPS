@@ -34,8 +34,20 @@
       <fileset dir="${build.tmp}/java/out/module-B" />
     </jar>
     <mkdir dir="${build.layout}/importTest" />
+    <mkdir dir="${build.tmp}/default/importResult.zip_f754_d752" />
+    <mkdir dir="${build.tmp}/default/importResult.zip_f754_d752/aaa" />
+    <copy todir="${build.tmp}/default/importResult.zip_f754_d752/aaa">
+      <fileset file="${basedir}/buildB.xml" />
+      <filterchain>
+        <fixcrlf eol="crlf" />
+      </filterchain>
+    </copy>
     <zip destfile="${build.layout}/importTest/importResult.zip">
-      <fileset dir="${artifacts.buildA}" includes="result/**" />
+      <zipfileset dir="${artifacts.buildA}" includes="result/**" filemode="754" dirmode="752" />
+      <zipfileset dir="${build.tmp}/deps/buildA/A-_dl_{aver}.zip" filemode="754" dirmode="752" />
+      <zipfileset file="${basedir}/buildB.xml" filemode="754" />
+      <zipfileset dir="${basedir}/moduleB/src/jetbrains/moduleB" filemode="754" dirmode="752" />
+      <zipfileset dir="${build.tmp}/default/importResult.zip_f754_d752" filemode="754" dirmode="752" />
     </zip>
     <zip destfile="${build.layout}/importTest/importResultContent.zip">
       <fileset dir="${artifacts.buildA}/result" />

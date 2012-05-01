@@ -15,6 +15,7 @@
   <target name="clean">
     <delete dir="${basedir}/build" />
     <delete dir="${basedir}/../../build" />
+    <delete dir="${basedir}/subprojects/buildB/build" />
   </target>
 
 </project>

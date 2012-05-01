@@ -25,8 +25,31 @@
     <tar destfile="${build.layout}/temp/tarfilesettest1.tar">
       <tarfileset dir="${artifacts.buildMpsB}/X" prefix="QQQ/PPP" />
     </tar>
+    <mkdir dir="${build.tmp}/default/tarfilesettest2.tar_f600" />
+    <copy todir="${build.tmp}/default/tarfilesettest2.tar_f600">
+      <fileset file="${basedir}/jetbrains.mps.build.tests/tests.msd" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/tarfilesettest2.tar_f640_d750" />
+    <mkdir dir="${build.tmp}/default/tarfilesettest2.tar_f6001" />
+    <copy todir="${build.tmp}/default/tarfilesettest2.tar_f6001">
+      <fileset dir="${basedir}/jetbrains.mps.build.tests">
+        <include name="*.msd" />
+      </fileset>
+      <flattenmapper />
+    </copy>
+    <mkdir dir="${build.tmp}/default/tarfilesettest2.tar_f640_d750/prefix3" />
+    <copy todir="${build.tmp}/default/tarfilesettest2.tar_f640_d750/prefix3">
+      <fileset file="${basedir}/jetbrains.mps.build.sandbox/models/build1.mps" />
+      <filterchain>
+        <fixcrlf eol="crlf" />
+      </filterchain>
+    </copy>
     <tar destfile="${build.layout}/temp/tarfilesettest2.tar">
-      <fileset dir="${artifacts.buildMpsB}/X" />
+      <tarfileset dir="${artifacts.buildMpsB}/X" prefix="prefix1/prefix2" filemode="640" dirmode="750" />
+      <tarfileset file="${basedir}/jetbrains.mps.build.sandbox/sandbox.msd" prefix="prefix1/prefix2/prefix3" filemode="640" />
+      <tarfileset dir="${build.tmp}/default/tarfilesettest2.tar_f600" filemode="600" prefix="prefix1" />
+      <tarfileset dir="${build.tmp}/default/tarfilesettest2.tar_f640_d750" filemode="640" dirmode="750" prefix="prefix1/prefix2" />
+      <tarfileset dir="${build.tmp}/default/tarfilesettest2.tar_f6001" filemode="600" prefix="prefix1/prefix2" />
     </tar>
   </target>
   

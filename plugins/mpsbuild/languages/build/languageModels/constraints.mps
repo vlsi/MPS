@@ -116,6 +116,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Dependencies" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="3ior.4993211115183250894" resolveInfo="BuildSource_JavaDependencyLibrary" />
     </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="7801138212747054669">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="3ior.7801138212747054656" resolveInfo="BuildLayout_Filemode" />
+    </node>
   </roots>
   <root id="7389400916848182167">
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="7389400916848182168">
@@ -1457,6 +1461,22 @@
       <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="3ior.4993211115183250895" />
       <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="1545517825663202142">
         <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="3ior.6057319140845467763" resolveInfo="BuildSource_JavaLibrary" />
+      </node>
+    </node>
+  </root>
+  <root id="7801138212747054669">
+    <node role="canBeChild" roleId="tp1t.1213106463729" type="tp1t.ConstraintFunction_CanBeAChild" typeId="tp1t.1202989531578" id="7801138212747054670">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7801138212747054672">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="7801138212747311050">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="7801138212747311051">
+            <property name="text" nameId="tpee.6329021646629104958" value="TODO only in Archives..." />
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7801138212747054683">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="7801138212747054684">
+            <property name="value" nameId="tpee.1068580123138" value="true" />
+          </node>
+        </node>
       </node>
     </node>
   </root>
