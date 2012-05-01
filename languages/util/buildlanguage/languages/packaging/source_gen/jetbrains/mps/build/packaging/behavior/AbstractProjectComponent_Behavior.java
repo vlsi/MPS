@@ -14,8 +14,8 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
 import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.smodel.structure.BehaviorDescriptor;
-import jetbrains.mps.smodel.structure.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class AbstractProjectComponent_Behavior {
