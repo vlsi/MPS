@@ -14,12 +14,12 @@ import jetbrains.mps.lang.script.runtime.StubRefUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.ide.navigation.NodeNavigatable;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.smodel.ModuleOperationContext;
+import jetbrains.mps.ide.navigation.NodeNavigatable;
 import jetbrains.mps.smodel.SNodeId;
 import java.util.Set;
 import java.util.HashSet;
@@ -996,40 +996,6 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
-        return "NodeNavigationItem getNode()";
-      }
-
-      public String getAdditionalInfo() {
-        return "NodeNavigationItem getNode()";
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.DotExpression";
-      }
-
-      public boolean isApplicableInstanceNode(SNode node) {
-        if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))) {
-          return false;
-        }
-        SNode operation = SNodeOperations.cast(SLinkOperations.getTarget(node, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
-        SReference reference = SNodeOperations.getReference(operation, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "instanceMethodDeclaration"));
-        if (reference.getTargetNodeSilently() != null) {
-          return false;
-        }
-        return ReferenceUtil.isReferenceToModel(reference, "jetbrains.mps.baseLanguage.plugin") && "getNode".equals(reference.getResolveInfo());
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-        NodeNavigatable n = null;
-        SNodeOperations.replaceWithAnother(node, new Mps25ApiMigration_MigrationScript.QuotationClass_dibvm8_a0a0b0e0a0a0nb0a().createNode(SLinkOperations.getTarget(node, "operand", true)));
-      }
-
-      public boolean isShowAsIntention() {
-        return false;
-      }
-    });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-      public String getName() {
         return "References to baseLanguage.plugin";
       }
 
@@ -1066,6 +1032,40 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
           }
           Resolver.resolve1(ref, new ModuleOperationContext(module));
         }
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "NodeNavigationItem getNode()";
+      }
+
+      public String getAdditionalInfo() {
+        return "NodeNavigationItem getNode()";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.DotExpression";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))) {
+          return false;
+        }
+        SNode operation = SNodeOperations.cast(SLinkOperations.getTarget(node, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
+        SReference reference = SNodeOperations.getReference(operation, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "instanceMethodDeclaration"));
+        if (reference.getTargetNodeSilently() != null) {
+          return false;
+        }
+        return ReferenceUtil.isReferenceToModel(reference, "jetbrains.mps.baseLanguage.plugin") && "getNode".equals(reference.getResolveInfo());
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        NodeNavigatable n = null;
+        SNodeOperations.replaceWithAnother(node, new Mps25ApiMigration_MigrationScript.QuotationClass_dibvm8_a0a0b0e0a0a0ob0a().createNode(SLinkOperations.getTarget(node, "operand", true)));
       }
 
       public boolean isShowAsIntention() {
@@ -2732,8 +2732,8 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_dibvm8_a0a0b0e0a0a0nb0a {
-    public QuotationClass_dibvm8_a0a0b0e0a0a0nb0a() {
+  public static class QuotationClass_dibvm8_a0a0b0e0a0a0ob0a {
+    public QuotationClass_dibvm8_a0a0b0e0a0a0ob0a() {
     }
 
     public SNode createNode(Object parameter_11) {
