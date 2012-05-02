@@ -31,6 +31,7 @@ public class ModuleClassLoader extends ClassLoader {
   private boolean myDisposed;
   private IClassLoadingModule myModule;
 
+  private final Object LOADING_LOCK = new Object();
   private final Map<String, Class> myClasses = new THashMap<String, Class>();
 
   public ModuleClassLoader(IClassLoadingModule module) {
@@ -67,17 +68,23 @@ public class ModuleClassLoader extends ClassLoader {
 
   private Class<?> findClassEverywhere(String name, boolean selfOnly) throws ClassNotFoundException {
     if (myModule.canLoadFromSelf()) {
-      Class c = findLoadedClass(name);
-      if (c != null) return c;
+      //The purpose of this lock is to load class only once
+      //This method can be called either explicitly or by module dependency
+      //This lock guarantees that the same class is not loaded simultaneously by 2 threads (only sequential loads),
+      //and if it was already loaded, the user will get the loaded instance, not a new one
+      synchronized (LOADING_LOCK) {
+        Class c = findLoadedClass(name);
+        if (c != null) return c;
 
-      byte[] bytes = myModule.findClassBytes(name);
-      if (bytes != null) {
-        String pack = NameUtil.namespaceFromLongName(name);
-        if (getPackage(pack) == null) {
-          definePackage(pack, null, null, null, null, null, null, null);
+        byte[] bytes = myModule.findClassBytes(name);
+        if (bytes != null) {
+          String pack = NameUtil.namespaceFromLongName(name);
+          if (getPackage(pack) == null) {
+            definePackage(pack, null, null, null, null, null, null, null);
+          }
+          ClassLoaderManager.getInstance().classLoaded(name, ((ClassLoadingModule) myModule).getModuleReference());
+          return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
         }
-        ClassLoaderManager.getInstance().classLoaded(name, ((ClassLoadingModule) myModule).getModuleReference());
-        return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
       }
     }
 
