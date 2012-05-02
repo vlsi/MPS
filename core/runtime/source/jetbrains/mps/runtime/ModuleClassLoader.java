@@ -33,7 +33,8 @@ public class ModuleClassLoader extends ClassLoader {
   private IClassLoadingModule myModule;
 
   private final Object LOADING_LOCK = new Object();
-  private final Map<String, Class> myClasses = new ConcurrentHashMap<String, Class>();
+  //this must be thread-safe
+  private final Map<String, Class> myClasses = Collections.synchronizedMap(new THashMap<String, Class>());
 
   public ModuleClassLoader(IClassLoadingModule module) {
     super(LibraryInitializer.getInstance().getParentLoaderForModule(module));
