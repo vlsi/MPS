@@ -21,13 +21,20 @@ import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.OpenFileDescriptor;
+import com.intellij.openapi.module.ModuleUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.pom.Navigatable;
+import jetbrains.mps.ide.editor.MPSEditorOpener;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class NodeUsageBase implements Navigatable {
@@ -36,8 +43,9 @@ public class NodeUsageBase implements Navigatable {
   protected SNode myRootNode;
   protected Project myProject;
   protected String myRootName;
+  protected VirtualFile myFile;
 
-  public NodeUsageBase(SNode node, Project project) {
+  public NodeUsageBase(@NotNull SNode node, Project project) {
     myNode = node;
     myProject = project;
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -46,6 +54,7 @@ public class NodeUsageBase implements Navigatable {
         myPresentation = myNode.getPresentation();
         myRootNode = myNode.getContainingRoot();
         myRootName = myRootNode.getName();
+        myFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(myRootNode);
       }
     });
   }
@@ -57,12 +66,18 @@ public class NodeUsageBase implements Navigatable {
     }
   }
 
-  public Editor openTextEditor(boolean focus) {
-    Editor editor = FileEditorManager.getInstance(myProject).openTextEditor(getDescriptor(), focus);
-    FileEditor fileEditor = FileEditorManager.getInstance(myProject).getSelectedEditor(getFile());
-    if (!(fileEditor instanceof MPSFileNodeEditor)) return null;
-    ((MPSFileNodeEditor) fileEditor).getNodeEditor().showNode(myNode, !myNode.isRoot());
-    return editor;
+  public void openTextEditor(final boolean focus) {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
+      @Override
+      public void run() {
+        NavigationSupport.getInstance().openNode(new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), myNode, focus, !myNode.isRoot());
+      }
+    });
+
+  }
+
+  public String getRole(){
+    return myNode.getConceptShortName();
   }
 
   @Nullable
@@ -84,11 +99,11 @@ public class NodeUsageBase implements Navigatable {
   }
 
 
-  private Project getProject() {
+  protected Project getProject() {
     return myProject;
   }
 
   public VirtualFile getFile() {
-    return MPSNodesVirtualFileSystem.getInstance().getFileFor(myRootNode);
+    return myFile;
   }
 }

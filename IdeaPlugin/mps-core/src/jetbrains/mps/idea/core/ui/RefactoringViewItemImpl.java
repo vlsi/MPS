@@ -77,7 +77,7 @@ public class RefactoringViewItemImpl implements RefactoringViewItem {
     }
 
 
-    final UsageViewPresentation presentation = createPresentation(usages.toArray(new Usage[usages.size()]));
+    final UsageViewPresentation presentation = createPresentation(usages.toArray(new Usage[usages.size()]), usageTargets.toArray(new UsageTarget[usageTargets.size()]));
 
     usageView = viewManager.showUsages(usageTargets.toArray(new UsageTarget[usageTargets.size()]), usages.toArray(new Usage[usages.size()]), presentation);
 
@@ -110,44 +110,17 @@ public class RefactoringViewItemImpl implements RefactoringViewItem {
     }
   }
 
-  private static UsageViewPresentation createPresentation(final Usage[] usages) {
+  private static UsageViewPresentation createPresentation(final Usage[] usages, final UsageTarget[] targets) {
     UsageViewPresentation presentation = new UsageViewPresentation();
     presentation.setTabText(RefactoringBundle.message("usageView.tabText"));
-    // presentation.setTargetsNodeText(descriptor.getProcessedElementsHeader());
+    if (!(targets.length == 0) && targets[0] instanceof NodeUsageTarget){
+      presentation.setTargetsNodeText(((NodeUsageTarget)targets[0]).getRole());
+    }
+
     presentation.setShowReadOnlyStatusAsRed(true);
     presentation.setShowCancelButton(true);
     presentation.setUsagesString(RefactoringBundle.message("usageView.usagesText"));
-    int codeUsageCount = 0;
-    int nonCodeUsageCount = 0;
-    int dynamicUsagesCount = 0;
-    Set<PsiFile> codeFiles = new HashSet<PsiFile>();
-    Set<PsiFile> nonCodeFiles = new HashSet<PsiFile>();
-    Set<PsiFile> dynamicUsagesCodeFiles = new HashSet<PsiFile>();
 
-    for (Usage usage : usages) {
-      if (usage instanceof PsiElementUsage) {
-        final PsiElementUsage elementUsage = (PsiElementUsage) usage;
-        final PsiFile containingFile = elementUsage.getElement().getContainingFile();
-        if (elementUsage.isNonCodeUsage()) {
-          nonCodeUsageCount++;
-          nonCodeFiles.add(containingFile);
-        } else {
-          codeUsageCount++;
-          codeFiles.add(containingFile);
-        }
-        if (usage instanceof UsageInfo2UsageAdapter) {
-          final UsageInfo usageInfo = ((UsageInfo2UsageAdapter) usage).getUsageInfo();
-          if (usageInfo instanceof MoveRenameUsageInfo && usageInfo.isDynamicUsage()) {
-            dynamicUsagesCount++;
-            dynamicUsagesCodeFiles.add(containingFile);
-          }
-        }
-      }
-    }
-    codeFiles.remove(null);
-    nonCodeFiles.remove(null);
-    dynamicUsagesCodeFiles.remove(null);
-
-    return presentation;
+   return presentation;
   }
 }

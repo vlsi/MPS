@@ -18,12 +18,17 @@ package jetbrains.mps.idea.core.ui;
 
 import com.intellij.openapi.editor.markup.TextAttributes;
 import com.intellij.openapi.fileEditor.*;
+import com.intellij.openapi.module.Module;
+import com.intellij.openapi.module.ModuleUtil;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.roots.ProjectFileIndex;
+import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.usages.TextChunk;
 import com.intellij.usages.Usage;
 import com.intellij.usages.UsagePresentation;
 import com.intellij.usages.rules.UsageInFile;
+import com.intellij.usages.rules.UsageInModule;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
@@ -33,7 +38,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.Icon;
 import java.util.ArrayList;
 
-public class NodeUsage extends NodeUsageBase implements Usage, UsagePresentation, UsageInFile {
+public class NodeUsage extends NodeUsageBase implements UsagePresentation, UsageInFile, UsageInModule {
 
   public NodeUsage(SNode node, Project project) {
     super(node, project);
@@ -61,8 +66,7 @@ public class NodeUsage extends NodeUsageBase implements Usage, UsagePresentation
     if (virtualFile == null) return null;
     FileEditor editor = FileEditorManager.getInstance(myProject).getSelectedEditor(virtualFile);
     if (!(editor instanceof MPSFileNodeEditor)) return null;
-
-    return new TextEditorLocation(0, (TextEditor) editor);
+    return editor.getCurrentLocation();
   }
 
 
@@ -115,5 +119,16 @@ public class NodeUsage extends NodeUsageBase implements Usage, UsagePresentation
   @Override
   public String getTooltipText() {
     return null;
+  }
+
+  @Override
+  public Module getModule() {
+    if (!isValid()) return null;
+    VirtualFile virtualFile = getFile();
+    if (virtualFile == null) return null;
+
+    ProjectRootManager projectRootManager = ProjectRootManager.getInstance(getProject());
+    ProjectFileIndex fileIndex = projectRootManager.getFileIndex();
+    return fileIndex.getModuleForFile(virtualFile);
   }
 }
