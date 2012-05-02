@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-b8gzar4texi5tb8rzmubjukylqc5h6j">
+<dependencies version="2" modelHash="-907i8blcmyjz3484wa1o1wn1blay12c">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8ddyvtwlgdy2b4rcc23nz4xk6wzma49" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-cw4cuvzqiy6cv9vv4yy2w5dj04351kw" />
   <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" hash="ev12bd8o8pu5f4ayoalwrka50u3xpij" />
@@ -136,7 +136,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="buildDebuggerPlugin.xml" />
   </source>
-  <source id="6361939271669846483" name="buildExecutionPlugin" hash="52ds3u2aq348ekaqjpkrrmzgd0l03qk">
+  <source id="6361939271669846483" name="buildExecutionPlugin" hash="5vxtuegn1icbu1k8gvk9oucej3i63v">
     <dep root="2569834391839970845" />
     <dep root="4301118715654850396" />
     <dep root="6164334420696839314" />
@@ -185,8 +185,11 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="buildPluginTests.xml" />
   </source>
-  <source id="8227093612176368028" name="buildBuildUI" hash="-3cb2p461qac7z08dhh1aqz66zperyxf">
+  <source id="8227093612176368028" name="buildBuildUI" hash="2h4j61kgnmt2jclzm00y5npngxc1r96">
     <dep root="2569834391839970845" />
+    <dep root="4301118715654850396" />
+    <dep root="6164334420696839314" />
+    <dep root="6361939271669846483" />
     <dep root="7926701909975931624" />
     <dep root="8524659923334108558" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
