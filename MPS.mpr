@@ -42,7 +42,7 @@
   </component>
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${project}/IdeaPlugin/buildScript/plugin.msd" folder="build" />
+      <modulePath path="${project}/build/solution/build.msd" folder="build" />
       <modulePath path="${project}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/jetbrains.mps.analyzers.runtime.msd" folder="core.analyzers" />
       <modulePath path="${project}/core/analyzers/solutions/sandbox/sandbox.msd" folder="core.analyzers" />
       <modulePath path="${project}/core/ant/jetbrains.mps.build.antsupport.msd" folder="core" />
