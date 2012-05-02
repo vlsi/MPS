@@ -24,6 +24,7 @@ import jetbrains.mps.util.NameUtil;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class ModuleClassLoader extends ClassLoader {
   //this is for debug purposes (heap dumps)
@@ -32,7 +33,7 @@ public class ModuleClassLoader extends ClassLoader {
   private IClassLoadingModule myModule;
 
   private final Object LOADING_LOCK = new Object();
-  private final Map<String, Class> myClasses = new THashMap<String, Class>();
+  private final Map<String, Class> myClasses = new ConcurrentHashMap<String, Class>();
 
   public ModuleClassLoader(IClassLoadingModule module) {
     super(LibraryInitializer.getInstance().getParentLoaderForModule(module));
@@ -44,6 +45,8 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   private Class<?> loadClass(String name, boolean resolve, boolean selfOnly) throws ClassNotFoundException {
+    //This does not guarantee that if one class was loaded, it will be returned by sequential loadClass immediately,
+    //but only makes classloading faster. The uniqueness is guaranteed by sync-block with LOADING_LOCK
     if (myClasses.containsKey(name)) {
       Class cl = myClasses.get(name);
       if (cl == null) throw new ClassNotFoundException(name);
