@@ -5,6 +5,7 @@ package jetbrains.mps.core.xml.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.apache.commons.lang.StringUtils;
 
 public class XmlDeclaration_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
@@ -15,6 +16,22 @@ public class XmlDeclaration_TextGen extends SNodeTextGen {
     this.append("\"");
     this.append(SPropertyOperations.getString(node, "version"));
     this.append("\"");
+    if (StringUtils.isNotEmpty(SPropertyOperations.getString(node, "encoding"))) {
+      this.append(" ");
+      this.append("encoding");
+      this.append(" = ");
+      this.append("\"");
+      this.append(SPropertyOperations.getString(node, "encoding"));
+      this.append("\"");
+    }
+    if (StringUtils.isNotEmpty(SPropertyOperations.getString(node, "standalone"))) {
+      this.append(" ");
+      this.append("standalone");
+      this.append(" = ");
+      this.append("\"");
+      this.append(SPropertyOperations.getString(node, "standalone"));
+      this.append("\"");
+    }
     this.append("?>");
   }
 }

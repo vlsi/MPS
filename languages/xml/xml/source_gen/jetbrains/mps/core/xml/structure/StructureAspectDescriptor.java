@@ -36,7 +36,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 9:
         return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlContent", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.core.xml.structure.XmlPart"}, new String[]{}, new String[]{});
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlDeclaration", "jetbrains.mps.core.xml.structure.XmlBasePrologElement", false, new String[]{"jetbrains.mps.core.xml.structure.XmlBasePrologElement", "jetbrains.mps.core.xml.structure.XmlPrologElement"}, new String[]{"version"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlDeclaration", "jetbrains.mps.core.xml.structure.XmlBasePrologElement", false, new String[]{"jetbrains.mps.core.xml.structure.XmlBasePrologElement", "jetbrains.mps.core.xml.structure.XmlPrologElement"}, new String[]{"version", "encoding", "standalone"}, new String[]{});
       case 11:
         return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration", "jetbrains.mps.core.xml.structure.XmlBasePrologElement", false, new String[]{"jetbrains.mps.core.xml.structure.XmlBasePrologElement", "jetbrains.mps.core.xml.structure.XmlPrologElement"}, new String[]{"doctypeName"}, new String[]{});
       case 12:

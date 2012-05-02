@@ -60,6 +60,8 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_axvdb8_b0");
     editorCell.addEditorCell(this.createConstant_axvdb8_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_axvdb8_b1a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_axvdb8_c1a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_axvdb8_d1a(editorContext, node));
     return editorCell;
   }
 
@@ -75,6 +77,36 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_axvdb8_c1b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_axvdb8_d1b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_axvdb8_e1b0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_axvdb8_c1a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_axvdb8_c1a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_axvdb8_a2b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_axvdb8_b2b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_axvdb8_c2b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_axvdb8_d2b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_axvdb8_e2b0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_axvdb8_d1a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_axvdb8_d1a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_axvdb8_a3b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_axvdb8_b3b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_axvdb8_c3b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_axvdb8_d3b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_axvdb8_e3b0(editorContext, node));
     return editorCell;
   }
 
@@ -152,6 +184,84 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_axvdb8_a2b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "encoding");
+    editorCell.setCellId("Constant_axvdb8_a2b0");
+    XmlSS_StyleSheet.getXmlAttributeName(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_axvdb8_b2b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
+    editorCell.setCellId("Constant_axvdb8_b2b0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_axvdb8_c2b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
+    editorCell.setCellId("Constant_axvdb8_c2b0");
+    XmlSS_StyleSheet.getXmlAttributeValue(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_axvdb8_e2b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
+    editorCell.setCellId("Constant_axvdb8_e2b0");
+    XmlSS_StyleSheet.getXmlAttributeValue(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_axvdb8_a3b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "standalone");
+    editorCell.setCellId("Constant_axvdb8_a3b0");
+    XmlSS_StyleSheet.getXmlAttributeName(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_axvdb8_b3b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
+    editorCell.setCellId("Constant_axvdb8_b3b0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_axvdb8_c3b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
+    editorCell.setCellId("Constant_axvdb8_c3b0");
+    XmlSS_StyleSheet.getXmlAttributeValue(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_axvdb8_e3b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
+    editorCell.setCellId("Constant_axvdb8_e3b0");
+    XmlSS_StyleSheet.getXmlAttributeValue(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createConstant_axvdb8_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "?>");
     editorCell.setCellId("Constant_axvdb8_a2a");
@@ -184,6 +294,46 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_version");
+    XmlSS_StyleSheet.getXmlAttributeValue(editorCell).apply(editorCell);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createProperty_axvdb8_d2b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("encoding");
+    provider.setNoTargetText("default");
+    provider.setAllowsEmptyTarget(true);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_encoding");
+    XmlSS_StyleSheet.getXmlAttributeValue(editorCell).apply(editorCell);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createProperty_axvdb8_d3b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("standalone");
+    provider.setNoTargetText("default");
+    provider.setAllowsEmptyTarget(true);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_standalone");
     XmlSS_StyleSheet.getXmlAttributeValue(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
