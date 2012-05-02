@@ -107,6 +107,11 @@
       <zipfileset dir="${mps_home}/plugins/mpsbuild/languages/mps/util" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/util" />
       <zipfileset dir="${mps_home}/plugins/mpsbuild/languages/mps/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
+    <jar destfile="${build.layout}/plugins/mpsbuild/languages/jetbrains.mps.ide.build.jar">
+      <zipfileset file="${mps_home}/build/solution/build.msd" prefix="modules/jetbrains.mps.ide.build" />
+      <zipfileset dir="${mps_home}/build/solution" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.build" />
+      <zipfileset dir="${mps_home}/build/solution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide.build/models" />
+    </jar>
   </target>
   
   <target name="buildDependents">

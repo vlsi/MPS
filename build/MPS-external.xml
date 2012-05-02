@@ -85,6 +85,8 @@
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsjava/languages" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsjava" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsbuild/META-INF" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.ide.build.jar.tmp/modules" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.ide.build.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsbuild/languages" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsbuild" />
     <mkdir dir="${deploy.dir}/MPS/plugins/svn4idea" />
@@ -488,6 +490,12 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.build" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.workflow" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.mps" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.ide.build" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.ide.build.jar.tmp/modules" />
+    <jar destfile="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.ide.build.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.ide.build.jar.tmp" excludes="" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.ide.build.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsbuild/languages" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsbuild" />
     <copy todir="${deploy.dir}/MPS/plugins/svn4idea">
@@ -836,6 +844,7 @@
     <delete dir="${deploy.dir}/MPS/plugins/modelchecker.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/samples.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/mpsjava/lib/mpsjava.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.ide.build.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/debugger-java-customViewers.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/execution-configurations/lib/jetbrains.mps.execution.configurations.implementation.plugin.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/execution-languages/lib/jetbrains.mps.execution.languages.jar.tmp" />

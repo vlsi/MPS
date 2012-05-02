@@ -43,7 +43,7 @@
     <unitInfo nodeId="7926701909975931624" fileName="buildCore.xml" startLine="1" startPosition="0" endLine="4402" endPosition="10" unitName="jetbrains.mps.ide.build.buildCore" />
   </root>
   <root nodeId="8524659923334108558">
-    <unitInfo nodeId="8524659923334108558" fileName="buildBuild.xml" startLine="1" startPosition="0" endLine="255" endPosition="10" unitName="jetbrains.mps.ide.build.buildBuild" />
+    <unitInfo nodeId="8524659923334108558" fileName="buildBuild.xml" startLine="1" startPosition="0" endLine="260" endPosition="10" unitName="jetbrains.mps.ide.build.buildBuild" />
   </root>
   <root nodeId="8658995123701267517">
     <unitInfo nodeId="8658995123701267517" fileName="buildPluginDist.xml" startLine="1" startPosition="0" endLine="29" endPosition="10" unitName="jetbrains.mps.ide.build.buildPluginDist" />
