@@ -23,7 +23,7 @@ import javax.swing.UIManager;
   public GroupedTree(IOperationContext context) {
     myContext = context;
     setCellRenderer(new CheckBoxNodeRenderer(true));
-    setCellEditor(new CheckBoxNodeRenderer.CheckBoxNodeEditor(true) {
+    setCellEditor(new CheckBoxNodeRenderer.CheckBoxNodeEditor<CheckBoxNodeRenderer.NodeData>(true) {
       @Override
       protected CheckBoxNodeRenderer.NodeData createNodeData(boolean selected) {
         CheckBoxNodeRenderer.NodeData data = getObject();
