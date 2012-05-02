@@ -16796,6 +16796,11 @@
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="3573019447813594748" />
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3573019447813594749">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="3671207155728952074">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="3671207155728952075">
+            <property name="text" nameId="tpee.6329021646629104958" value="if constraint == CLASSIFIER_INSTANCE_METHOD use classifierType.classifier.getVisibleMembers(contextNode, concept/InstanceMethodDeclaration) instead" />
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3573019447813594750">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="3573019447813594751">
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3573019447813594752">
@@ -17485,6 +17490,16 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="3573019447813594662" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3573019447813594663" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3573019447813594664">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="3671207155728925344">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="3671207155728925345">
+            <property name="text" nameId="tpee.6329021646629104958" value="if constraint == STATIC_FIELD use classifier.getVisibleMembers(contextNode, concept/StaticFieldDeclaration)" />
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="3671207155728925348">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="3671207155728925349">
+            <property name="text" nameId="tpee.6329021646629104958" value="if constraint == STATIC_METHOD use classifier.getVisibleMembers(contextNode, concept/StaticMethodDeclaration)" />
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="3573019447813594675">
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3573019447813594739" resolveInfo="ClassifierVisibleMembersScope" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="3573019447813594676">
@@ -17530,7 +17545,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="8464025797199042935" />
       </node>
     </node>
     <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="3161373106581143501">

@@ -26,6 +26,7 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
 
   @Deprecated
   public ClassifierVisibleMembersScope(@Nullable SNode classifierType, @Nullable SNode contextNode, int constraint) {
+    // if constraint == CLASSIFIER_INSTANCE_METHOD use classifierType.classifier.getVisibleMembers(contextNode, concept/InstanceMethodDeclaration) instead 
     this.myClassifierType = classifierType;
     this.myContextNode = contextNode;
     this.myClassifierScope = new ClassifierAndSuperClassifiersScope(SLinkOperations.getTarget(classifierType, "classifier", false), constraint);

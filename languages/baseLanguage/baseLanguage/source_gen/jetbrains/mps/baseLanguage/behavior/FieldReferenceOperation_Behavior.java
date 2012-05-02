@@ -7,8 +7,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
-import jetbrains.mps.baseLanguage.search.ParameterScope;
-import jetbrains.mps.baseLanguage.search.LocalVariablesScope;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.scopes.Adapters;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 
@@ -32,8 +32,8 @@ public class FieldReferenceOperation_Behavior {
     if (!(SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(thisNode), "jetbrains.mps.baseLanguage.structure.ThisExpression"))) {
       return false;
     }
-    List<SNode> param = new ParameterScope(thisNode).getNodes();
-    List<SNode> vars = new LocalVariablesScope(thisNode).getNodes();
+    List<SNode> param = Sequence.fromIterable(Adapters.getParameterScope(thisNode).getAvailableElements(null)).toListSequence();
+    List<SNode> vars = Sequence.fromIterable(Adapters.getLocalVariableScope(thisNode).getAvailableElements(null)).toListSequence();
     vars.addAll(param);
     SNode field = SLinkOperations.getTarget(thisNode, "fieldDeclaration", false);
     if (field == null) {
