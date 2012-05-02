@@ -16,6 +16,7 @@
   <property name="artifacts.buildUiLanguages" location="${build.dir}/artifacts/buildUiLanguages" />
   <property name="artifacts.buildPlugins" location="${build.dir}/artifacts/buildPlugins" />
   <property name="artifacts.buildBuild" location="${build.dir}/artifacts/buildBuild" />
+  <property name="artifacts.buildBuildUI" location="${build.dir}/artifacts/buildBuildUI" />
   <property name="artifacts.buildVcs" location="${build.dir}/artifacts/buildVcs" />
   <property name="artifacts.buildDebuggerPlugin" location="${build.dir}/artifacts/buildDebuggerPlugin" />
   <property name="artifacts.buildExecutionPlugin" location="${build.dir}/artifacts/buildExecutionPlugin" />
@@ -69,6 +70,9 @@
       <fileset dir="${artifacts.buildBuild}/plugins" />
     </copy>
     <copy todir="${build.layout}/MPS ${version}/plugins">
+      <fileset dir="${artifacts.buildBuildUI}/plugins" />
+    </copy>
+    <copy todir="${build.layout}/MPS ${version}/plugins">
       <fileset dir="${artifacts.buildVcs}/plugins" />
     </copy>
     <copy todir="${build.layout}/MPS ${version}/plugins">
@@ -111,6 +115,7 @@
     <ant antfile="build/buildUiLanguages.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildPlugins.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildBuild.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildBuildUI.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildVcs.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildDebuggerPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildExecutionPlugin.xml" inheritAll="false" useNativeBasedir="true" />
