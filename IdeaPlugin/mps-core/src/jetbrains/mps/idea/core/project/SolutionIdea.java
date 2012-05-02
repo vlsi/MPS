@@ -21,7 +21,6 @@ import com.intellij.facet.Facet;
 import com.intellij.facet.FacetManager;
 import com.intellij.facet.FacetManagerAdapter;
 import com.intellij.openapi.module.Module;
-import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.roots.*;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -138,6 +137,12 @@ public class SolutionIdea extends Solution {
       }
 
       addUsedLibraries(myDependencies);
+
+      // adding JDK module to a set of dependencies
+      Solution jdkSolution = (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065"));
+      if (jdkSolution != null) {
+        myDependencies.add(new Dependency(jdkSolution.getModuleReference(), false));
+      }
     }
     return myDependencies;
   }
@@ -153,26 +158,14 @@ public class SolutionIdea extends Solution {
         if (loe.isModuleLevel() || loe.getLibrary() == null) {
           return true;
         }
-        Solution s = findSolution(loe.getLibrary().getName());
+
+        Solution s = (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.foreign(loe.getLibrary().getName()));
         if (s != null) {
           dependencies.add(new Dependency(s.getModuleReference(), false));
         }
         return true;
       }
     });
-
-    Sdk sdk = moduleRootManager.getSdk();
-    if (sdk != null) {
-      Solution s = findSolution(sdk.getName());
-      if (s != null) {
-        dependencies.add(new Dependency(s.getModuleReference(), false));
-      }
-    }
-  }
-
-  private Solution findSolution(String solutionID) {
-    ModuleId id = ModuleId.foreign(solutionID);
-    return (Solution) MPSModuleRepository.getInstance().getModuleById(id);
   }
 
   @Override

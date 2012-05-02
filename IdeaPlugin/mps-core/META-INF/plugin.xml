@@ -39,9 +39,15 @@
     <component>
       <implementation-class>jetbrains.mps.idea.core.project.stubs.MPSGlobalLibImporter</implementation-class>
     </component>
-    <component>
-      <implementation-class>jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager</implementation-class>
-    </component>
+    <!--
+
+      JdkStubSolutionManager was commented since we decided to use same logic as works in MPS with loading
+      JDKclasses for now.In future should be uncommented and modified if necessary.
+
+        <component>
+          <implementation-class>jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager</implementation-class>
+        </component>
+    -->
   </application-components>
 
   <xi:include href="../classes/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
