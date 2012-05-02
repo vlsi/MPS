@@ -8,9 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.File;
-import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.smodel.structure.BehaviorDescriptor;
-import jetbrains.mps.smodel.structure.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
@@ -69,7 +68,7 @@ public class Path_Behavior {
   }
 
   public static boolean call_hasMacro_4323997179924030474(SNode thisNode) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", true), "name"));
+    return (SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", true), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", true), "name").length() > 0);
   }
 
   public static String call_getName_1221141245424(SNode thisNode) {

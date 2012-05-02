@@ -18,7 +18,6 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.typesystem.behavior.IRuleWithTwoNodes_Behavior;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.typesystem.generator.baseLanguage.template.genUtil.TypesystemGenUtil;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
@@ -219,7 +218,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_4197825331980858388(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return StringUtils.isEmpty(SPropertyOperations.getString(_context.getNode(), "fqName"));
+    return (SPropertyOperations.getString(_context.getNode(), "fqName") == null || SPropertyOperations.getString(_context.getNode(), "fqName").length() == 0);
   }
 
   public static boolean baseMappingRule_Condition_1175150707078(final IOperationContext operationContext, final BaseMappingRuleContext _context) {

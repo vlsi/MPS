@@ -8,7 +8,6 @@ import jetbrains.mps.build.workflow.behavior.BwfPathDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.core.xml.behavior.XmlValuePart_Behavior;
 
 
@@ -61,7 +60,7 @@ public class XmlSignature {
     for (SNode content : SLinkOperations.getTargets(element, "content", true)) {
       if (SNodeOperations.isInstanceOf(content, "jetbrains.mps.core.xml.structure.XmlBaseElement")) {
         add(SNodeOperations.cast(content, "jetbrains.mps.core.xml.structure.XmlElement"));
-      } else if (SNodeOperations.isInstanceOf(content, "jetbrains.mps.core.xml.structure.XmlText") && StringUtils.isEmpty(SPropertyOperations.getString(SNodeOperations.cast(content, "jetbrains.mps.core.xml.structure.XmlText"), "value"))) {
+      } else if (SNodeOperations.isInstanceOf(content, "jetbrains.mps.core.xml.structure.XmlText") && (SPropertyOperations.getString(SNodeOperations.cast(content, "jetbrains.mps.core.xml.structure.XmlText"), "value") == null || SPropertyOperations.getString(SNodeOperations.cast(content, "jetbrains.mps.core.xml.structure.XmlText"), "value").length() == 0)) {
         // ignore 
       } else {
         hasErrors = true;

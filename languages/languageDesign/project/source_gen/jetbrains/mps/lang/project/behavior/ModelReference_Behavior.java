@@ -4,7 +4,6 @@ package jetbrains.mps.lang.project.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.apache.commons.lang.StringUtils;
 
 public class ModelReference_Behavior {
   public static void init(SNode thisNode) {
@@ -12,10 +11,10 @@ public class ModelReference_Behavior {
 
   public static String call_getModelReference_6236774123822284799(SNode thisNode) {
     String result = SPropertyOperations.getString(thisNode, "qualifiedName");
-    if (StringUtils.isNotEmpty(SPropertyOperations.getString(thisNode, "stereotype"))) {
+    if ((SPropertyOperations.getString(thisNode, "stereotype") != null && SPropertyOperations.getString(thisNode, "stereotype").length() > 0)) {
       result = result + "@" + SPropertyOperations.getString(thisNode, "stereotype");
     }
-    if (StringUtils.isNotEmpty(SPropertyOperations.getString(thisNode, "uuid"))) {
+    if ((SPropertyOperations.getString(thisNode, "uuid") != null && SPropertyOperations.getString(thisNode, "uuid").length() > 0)) {
       result = SPropertyOperations.getString(thisNode, "uuid") + "(" + result + ")";
     }
     return result;

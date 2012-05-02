@@ -24,7 +24,6 @@ import jetbrains.mps.lang.editor.behavior.StyleSheetClass_Behavior;
 import jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior;
 import jetbrains.mps.lang.editor.behavior.CellMenuUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -565,7 +564,7 @@ public class QueriesGenerated {
     }
     String result = "";
     for (SNode tagWrapper : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "tags", true))) {
-      if (StringUtils.isNotEmpty(result)) {
+      if ((result != null && result.length() > 0)) {
         result += SideTransformHintSubstituteActionsHelper.SIDE_TRANSFORM_TAG_SEPARATOR;
       }
       result += SPropertyOperations.getString_def(tagWrapper, "tag", null);

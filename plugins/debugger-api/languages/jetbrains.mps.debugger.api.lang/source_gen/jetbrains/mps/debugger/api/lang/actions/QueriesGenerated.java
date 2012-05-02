@@ -22,7 +22,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
 
@@ -80,7 +79,7 @@ public class QueriesGenerated {
         Computable computable = new Computable() {
           public Object compute() {
             SNode debuggerType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.debugger.api.lang.structure.DebuggerType"), true);
-            if (debuggerType != null && StringUtils.isNotEmpty(SPropertyOperations.getString(debuggerType, "name"))) {
+            if (debuggerType != null && (SPropertyOperations.getString(debuggerType, "name") != null && SPropertyOperations.getString(debuggerType, "name").length() > 0)) {
               IBreakpointsProvider provider = Debuggers.getInstance().getDebuggerByName(SPropertyOperations.getString(debuggerType, "name")).getBreakpointsProvider();
               if (provider != null) {
                 return (List<IBreakpointKind>) provider.getAllKinds();

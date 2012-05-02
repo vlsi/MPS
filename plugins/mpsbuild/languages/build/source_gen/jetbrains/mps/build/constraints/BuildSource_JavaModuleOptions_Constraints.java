@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
@@ -48,7 +47,7 @@ public class BuildSource_JavaModuleOptions_Constraints extends BaseConstraintsDe
 
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return ((StringUtils.isEmpty(SPropertyOperations.getString(_context.getParameterNode(), "optionsName")) ?
+            return (((SPropertyOperations.getString(_context.getParameterNode(), "optionsName") == null || SPropertyOperations.getString(_context.getParameterNode(), "optionsName").length() == 0) ?
               "<default options>" :
               SPropertyOperations.getString(_context.getParameterNode(), "optionsName")
             ));

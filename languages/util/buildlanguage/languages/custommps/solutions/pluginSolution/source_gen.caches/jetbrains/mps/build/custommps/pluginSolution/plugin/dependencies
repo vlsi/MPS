@@ -14,7 +14,6 @@
     <classNode dependClassName="jetbrains.mps.build.packaging.pluginSolution.plugin.IErrorHandler" />
     <classNode dependClassName="jetbrains.mps.ide.common.PathField" />
     <classNode dependClassName="jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode extendsClassName="jetbrains.mps.build.packaging.pluginSolution.plugin.AbstractStep" />
   </dependency>
   <dependency className="jetbrains.mps.build.custommps.pluginSolution.plugin.CustomMPSBuildGenerator" file="CustomMPSBuildGenerator.java">
@@ -39,7 +38,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode extendsClassName="jetbrains.mps.build.packaging.pluginSolution.plugin.BuildGeneratorImpl" />
   </dependency>
   <dependency className="jetbrains.mps.build.custommps.pluginSolution.plugin.GenerateCustomMPSBuildForProjectAction_Action" file="GenerateCustomMPSBuildForProjectAction_Action.java">

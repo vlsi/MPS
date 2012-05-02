@@ -14,10 +14,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
-import jetbrains.mps.smodel.structure.BehaviorDescriptor;
-import jetbrains.mps.smodel.structure.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -102,13 +101,13 @@ public class EvaluatorConcept_Behavior {
     if (operation == null) {
       return "????";
     }
-    if (StringUtils.isNotEmpty(SConceptPropertyOperations.getString(operation, "alias"))) {
+    if ((SConceptPropertyOperations.getString(operation, "alias") != null && SConceptPropertyOperations.getString(operation, "alias").length() > 0)) {
       return SConceptPropertyOperations.getString(operation, "alias");
     }
     if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
       return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "name") + "(" + ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument", true)).foldLeft("", new ILeftCombinator<SNode, String>() {
         public String combine(String s, SNode it) {
-          return ((StringUtils.isEmpty(s) ?
+          return (((s == null || s.length() == 0) ?
             "" :
             s + ","
           )) + EvaluatorConcept_Behavior.call_getPresentation_9172312269976661829(thisNode, it);

@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.build.workflow.behavior.BwfPathDeclaration_Behavior;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.build.workflow.behavior.BwfJavaModule_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -142,7 +141,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2059109515400317575(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "compiler")) && SPropertyOperations.getString(_context.getNode(), "compiler").equals("IntelliJ") ?
+    return ((SPropertyOperations.getString(_context.getNode(), "compiler") != null && SPropertyOperations.getString(_context.getNode(), "compiler").length() > 0) && SPropertyOperations.getString(_context.getNode(), "compiler").equals("IntelliJ") ?
       "javac2" :
       "javac"
     );
@@ -184,7 +183,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7385586609667799754(final IOperationContext operationContext, final IfMacroContext _context) {
-    return StringUtils.isNotEmpty(((String) _context.getVariable("var:deps")));
+    return (((String) _context.getVariable("var:deps")) != null && ((String) _context.getVariable("var:deps")).length() > 0);
   }
 
   public static boolean ifMacro_Condition_2059109515400531495(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -200,7 +199,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1841835149314837357(final IOperationContext operationContext, final IfMacroContext _context) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "baseDirectory"));
+    return (SPropertyOperations.getString(_context.getNode(), "baseDirectory") != null && SPropertyOperations.getString(_context.getNode(), "baseDirectory").length() > 0);
   }
 
   public static boolean ifMacro_Condition_1659807394254658074(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -216,7 +215,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2059109515400349923(final IOperationContext operationContext, final IfMacroContext _context) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "compiler")) && !(SPropertyOperations.getString(_context.getNode(), "compiler").equals("IntelliJ"));
+    return (SPropertyOperations.getString(_context.getNode(), "compiler") != null && SPropertyOperations.getString(_context.getNode(), "compiler").length() > 0) && !(SPropertyOperations.getString(_context.getNode(), "compiler").equals("IntelliJ"));
   }
 
   public static boolean ifMacro_Condition_1659807394254493284(final IOperationContext operationContext, final IfMacroContext _context) {

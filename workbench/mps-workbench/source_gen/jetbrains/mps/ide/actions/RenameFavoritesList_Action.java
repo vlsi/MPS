@@ -16,7 +16,6 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 import com.intellij.openapi.ui.Messages;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
 import java.util.List;
 
@@ -64,7 +63,7 @@ public class RenameFavoritesList_Action extends BaseAction {
       FavoritesProjectPane pane = FavoritesUtil.getCurrentPane(((Project) MapSequence.fromMap(_params).get("project")));
       String oldName = pane.getSubId();
       String newName = Messages.showInputDialog("Input favorites list new name", "New Name For Favorites List", Messages.getQuestionIcon(), oldName, null);
-      if (newName == null || StringUtils.isEmpty(newName)) {
+      if (newName == null || (newName == null || newName.length() == 0)) {
         return;
       }
       MPSFavoritesManager favoritesManager = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSFavoritesManager.class);

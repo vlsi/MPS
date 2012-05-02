@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -431,7 +430,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_b42orx_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "tagName"));
+    return (SPropertyOperations.getString(node, "tagName") != null && SPropertyOperations.getString(node, "tagName").length() > 0);
   }
 
   private static boolean renderingCondition_b42orx_a9a(SNode node, EditorContext editorContext, IScope scope) {

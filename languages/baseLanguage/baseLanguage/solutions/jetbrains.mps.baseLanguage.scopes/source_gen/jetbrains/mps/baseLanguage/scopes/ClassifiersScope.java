@@ -14,23 +14,23 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IterableUtils;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import java.util.Collection;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.StubMigrationHelper;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import java.util.Collection;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import java.util.Collections;
@@ -63,6 +63,31 @@ public class ClassifiersScope extends DelegatingScope {
 
   @Override
   public SNode resolve(SNode contextNode, String refText) {
+    SModelReference targetModelReference = model.getSModelReference();
+    // hack for [model]node construction, remove it 
+    if (refText.startsWith("[")) {
+      String[] modelNameAndTheRest = refText.split("]");
+      if (modelNameAndTheRest.length > 1 || (modelNameAndTheRest.length == 1 && refText.endsWith("]"))) {
+        refText = refText.substring(refText.indexOf("]") + 1).trim();
+        String modelName = modelNameAndTheRest[0].substring(1).trim();
+        if (modelName.length() > 0) {
+          //  model: either current output or java_stub 
+          if (!(modelName.equals(model.getLongName()))) {
+            //  external java_stub 
+            String stereo = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
+            Iterable<IModule> modules = model.getModelDescriptor().getModule().getScope().getVisibleModules();
+            SModelId id = StubMigrationHelper.convertModelUIDInScope(stereo + "#" + modelName, Sequence.fromIterable(modules).translate(new ITranslator2<IModule, SModelDescriptor>() {
+              public Iterable<SModelDescriptor> translate(IModule it) {
+                return it.getOwnModelDescriptors();
+              }
+            }));
+            targetModelReference = new SModelReference(new SModelFqName(modelName, stereo), id);
+          }
+        }
+      }
+    }
+    // end of hack 
+
     // todo: CRAP, rewrite it! 
     String classname = refText;
     int dotIndex = classname.lastIndexOf(".");
@@ -96,7 +121,6 @@ public class ClassifiersScope extends DelegatingScope {
       return resolveClass(package_, null, classname);
     }
 
-    SModelReference targetModelReference = model.getSModelReference();
     if (targetModelReference.getSModelId() != null) {
       SModelDescriptor targetModel = scope.getModelDescriptor(targetModelReference);
       if (targetModel == null) {

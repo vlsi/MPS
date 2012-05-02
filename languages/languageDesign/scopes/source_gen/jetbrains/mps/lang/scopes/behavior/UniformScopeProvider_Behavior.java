@@ -5,8 +5,8 @@ package jetbrains.mps.lang.scopes.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.scopes.runtime.ScopeProviderContext;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.structure.BehaviorDescriptor;
-import jetbrains.mps.smodel.structure.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 

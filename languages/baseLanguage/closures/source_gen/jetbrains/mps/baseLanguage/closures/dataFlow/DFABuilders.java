@@ -10,6 +10,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement", new ClosureControlStatement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", new ClosureLiteral_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", new CompactInvokeFunctionExpression_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.closures.structure.InvokeExpression", new InvokeExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation", new InvokeFunctionOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement", new YieldAllStatement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.closures.structure.YieldStatement", new YieldStatement_DataFlow());

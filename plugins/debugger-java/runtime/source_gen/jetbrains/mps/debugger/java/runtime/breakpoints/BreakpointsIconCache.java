@@ -23,7 +23,6 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debugger.api.ui.icons.Icons;
-import org.apache.commons.lang.StringUtils;
 import org.jetbrains.annotations.NonNls;
 
 public class BreakpointsIconCache implements ProjectComponent {
@@ -170,7 +169,7 @@ public class BreakpointsIconCache implements ProjectComponent {
           jetbrains.mps.debugger.java.runtime.ui.Icons.DISABLED_EXCEPTION_BREAKPOINT
         );
       case LINE_BREAKPOINT:
-        return (breakpoint.isValid() && StringUtils.isEmpty(warning) ?
+        return (breakpoint.isValid() && (warning == null || warning.length() == 0) ?
           ((breakpoint.isEnabled() ?
             Icons.BREAKPOINT :
             Icons.DISABLED_BREAKPOINT
@@ -178,7 +177,7 @@ public class BreakpointsIconCache implements ProjectComponent {
           Icons.INV_BREAKPOINT
         );
       case METHOD_BREAKPOINT:
-        return (breakpoint.isValid() && StringUtils.isEmpty(warning) ?
+        return (breakpoint.isValid() && (warning == null || warning.length() == 0) ?
           ((breakpoint.isEnabled() ?
             jetbrains.mps.debugger.java.runtime.ui.Icons.METHOD_BREAKPOINT :
             jetbrains.mps.debugger.java.runtime.ui.Icons.DISABLED_METHOD_BREAKPOINT
@@ -186,7 +185,7 @@ public class BreakpointsIconCache implements ProjectComponent {
           jetbrains.mps.debugger.java.runtime.ui.Icons.INVALID_METHOD_BREAKPOINT
         );
       case FIELD_BREAKPOINT:
-        return (breakpoint.isValid() && StringUtils.isEmpty(warning) ?
+        return (breakpoint.isValid() && (warning == null || warning.length() == 0) ?
           ((breakpoint.isEnabled() ?
             jetbrains.mps.debugger.java.runtime.ui.Icons.FIELD_BREAKPOINT :
             jetbrains.mps.debugger.java.runtime.ui.Icons.DISABLED_FIELD_BREAKPOINT

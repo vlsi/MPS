@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bash.behavior.CommandList_Behavior;
@@ -31,7 +30,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_6382090206703015630(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String result = SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "comment", true), "comment");
-    if (StringUtils.isEmpty(result)) {
+    if ((result == null || result.length() == 0)) {
       result = "<< comment >>";
     }
     return result;

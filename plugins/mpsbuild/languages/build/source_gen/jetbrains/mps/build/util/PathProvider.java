@@ -9,7 +9,6 @@ import java.util.concurrent.ConcurrentMap;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.smodel.SNode;
-import org.apache.commons.lang.StringUtils;
 
 public class PathProvider {
   private static Set<String> reservedNames = new HashSet<String>(Arrays.asList("con", "prn", "aux", "clock$", "nul", "com0", "com1", "com2", "com3", "com4", "com5", "com6", "com7", "com8", "com9", "lpt0", "lpt1", "lpt2", "lpt3", "lpt4", "lpt5", "lpt6", "lpt7", "lpt8", "lpt9"));
@@ -24,7 +23,7 @@ public class PathProvider {
     StringBuilder sb = new StringBuilder("${build.tmp}/");
     int before;
     for (String s : categories) {
-      if (StringUtils.isEmpty(s)) {
+      if ((s == null || s.length() == 0)) {
         continue;
       }
       before = sb.length();

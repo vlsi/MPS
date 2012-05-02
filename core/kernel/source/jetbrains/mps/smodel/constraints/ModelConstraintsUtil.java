@@ -360,14 +360,6 @@ public class ModelConstraintsUtil {
       public SNodePointer getSearchScopeValidatorNodePointer() {
         return provider.getSearchScopeValidatorNode();
       }
-
-      @Override
-      public void registerSelf(ModelConstraintsManager manager) {
-      }
-
-      @Override
-      public void unRegisterSelf(ModelConstraintsManager manager) {
-      }
     };
   }
 

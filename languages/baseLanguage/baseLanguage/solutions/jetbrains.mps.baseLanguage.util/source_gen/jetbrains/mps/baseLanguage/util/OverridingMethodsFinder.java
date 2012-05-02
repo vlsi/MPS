@@ -23,7 +23,6 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
-import org.apache.commons.lang.StringUtils;
 import java.util.LinkedHashSet;
 
 public class OverridingMethodsFinder {
@@ -149,11 +148,11 @@ public class OverridingMethodsFinder {
   }
 
   public static boolean canOverride(SNode method) {
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) && StringUtils.isNotEmpty(SPropertyOperations.getString(method, "name"));
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) && (SPropertyOperations.getString(method, "name") != null && SPropertyOperations.getString(method, "name").length() > 0);
   }
 
   public static boolean canBeOverriden(SNode method) {
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) && StringUtils.isNotEmpty(SPropertyOperations.getString(method, "name"));
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) && (SPropertyOperations.getString(method, "name") != null && SPropertyOperations.getString(method, "name").length() > 0);
   }
 
   public static <K, V> Set<V> safeGet(Map<K, Set<V>> map, K key) {

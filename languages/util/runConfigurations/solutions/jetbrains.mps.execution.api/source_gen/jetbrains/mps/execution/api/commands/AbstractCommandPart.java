@@ -7,7 +7,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 
 public abstract class AbstractCommandPart implements CommandPart {
@@ -31,7 +30,7 @@ public abstract class AbstractCommandPart implements CommandPart {
   protected final void addCommands(Iterable<String> list) {
     ListSequence.fromList(myCommand).addSequence(Sequence.fromIterable(list).where(new IWhereFilter<String>() {
       public boolean accept(String it) {
-        return StringUtils.isNotEmpty(it);
+        return (it != null && it.length() > 0);
       }
     }));
   }

@@ -16,7 +16,6 @@ import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IJobMonitor;
@@ -138,12 +137,18 @@ public class TestGenerationWorker extends MpsWorker {
 
     final _FunctionTypes._void_P1_E0<? super String> startTestFormat = new _FunctionTypes._void_P1_E0<String>() {
       public void invoke(String msg) {
-        myReporter.testStarted(StringUtils.trim(msg));
+        myReporter.testStarted(((msg == null ?
+          null :
+          msg.trim()
+        )));
       }
     };
     final _FunctionTypes._void_P1_E0<? super String> finishTestFormat = new _FunctionTypes._void_P1_E0<String>() {
       public void invoke(String msg) {
-        myReporter.testFinished(StringUtils.trim(msg));
+        myReporter.testFinished(((msg == null ?
+          null :
+          msg.trim()
+        )));
       }
     };
     final int[] count = new int[]{1};
@@ -248,7 +253,10 @@ public class TestGenerationWorker extends MpsWorker {
 
   private void reportIfStartsWith(String prefix, String work, _FunctionTypes._void_P1_E0<? super String> format) {
     if (work != null && work.startsWith(prefix)) {
-      format.invoke(work.substring(prefix.length()) + ".Test." + StringUtils.trim(prefix));
+      format.invoke(work.substring(prefix.length()) + ".Test." + ((prefix == null ?
+        null :
+        prefix.trim()
+      )));
     }
   }
 

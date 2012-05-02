@@ -4,7 +4,6 @@ package jetbrains.mps.core.xml.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class XmlTextValue_Behavior {
@@ -23,13 +22,13 @@ public class XmlTextValue_Behavior {
     SNode left = SNodeOperations.getPrevSibling(thisNode);
     if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.core.xml.structure.XmlValuePart")) {
       SNode leftContent = SNodeOperations.cast(left, "jetbrains.mps.core.xml.structure.XmlValuePart");
-      return SNodeOperations.isInstanceOf(leftContent, "jetbrains.mps.core.xml.structure.XmlTextValue") || StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "text")) && (SNodeOperations.getNextSibling(thisNode) == null);
+      return SNodeOperations.isInstanceOf(leftContent, "jetbrains.mps.core.xml.structure.XmlTextValue") || (SPropertyOperations.getString(thisNode, "text") == null || SPropertyOperations.getString(thisNode, "text").length() == 0) && (SNodeOperations.getNextSibling(thisNode) == null);
     }
     return false;
   }
 
   public static boolean virtual_hasNewLineAfter_3080189811177340429(SNode thisNode) {
-    if (StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "text")) && (SNodeOperations.getNextSibling(thisNode) != null)) {
+    if ((SPropertyOperations.getString(thisNode, "text") == null || SPropertyOperations.getString(thisNode, "text").length() == 0) && (SNodeOperations.getNextSibling(thisNode) != null)) {
       return !(XmlValuePart_Behavior.call_onNewLine_3080189811177340422(thisNode));
     }
     return false;

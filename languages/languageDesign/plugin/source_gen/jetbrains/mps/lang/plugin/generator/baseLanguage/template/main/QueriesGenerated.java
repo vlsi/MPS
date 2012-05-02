@@ -34,7 +34,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.plugin.behavior.OrderConstraints_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -971,7 +970,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6769912430829078916(final IOperationContext operationContext, final IfMacroContext _context) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "shortcutChar"));
+    return (SPropertyOperations.getString(_context.getNode(), "shortcutChar") != null && SPropertyOperations.getString(_context.getNode(), "shortcutChar").length() > 0);
   }
 
   public static boolean ifMacro_Condition_3038738109029045717(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1015,7 +1014,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6789255557380212758(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "isPopup") && StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "caption"));
+    return SPropertyOperations.getBoolean(_context.getNode(), "isPopup") && (SPropertyOperations.getString(_context.getNode(), "caption") != null && SPropertyOperations.getString(_context.getNode(), "caption").length() > 0);
   }
 
   public static boolean ifMacro_Condition_6789255557380212884(final IOperationContext operationContext, final IfMacroContext _context) {

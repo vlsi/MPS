@@ -17,6 +17,10 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
   </dependency>
+  <dependency className="jetbrains.mps.build.structure.BuildLayout_UnixFilemode_PropertySupport" file="BuildLayout_UnixFilemode_PropertySupport.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
+  </dependency>
   <dependency className="jetbrains.mps.build.structure.BuildSource_JavaContentFolderKind" file="BuildSource_JavaContentFolderKind.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />

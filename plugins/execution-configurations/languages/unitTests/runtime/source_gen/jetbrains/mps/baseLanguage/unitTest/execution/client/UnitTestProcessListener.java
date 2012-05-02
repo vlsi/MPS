@@ -8,7 +8,6 @@ import com.intellij.execution.process.ProcessTerminatedListener;
 import com.intellij.execution.process.ProcessEvent;
 import com.intellij.openapi.util.Key;
 import com.intellij.execution.process.ProcessOutputTypes;
-import org.apache.commons.lang.StringUtils;
 
 public class UnitTestProcessListener extends ProcessAdapter {
   private final StringBuffer myBuffer = new StringBuffer();
@@ -55,7 +54,10 @@ public class UnitTestProcessListener extends ProcessAdapter {
     if (text == null) {
       return;
     }
-    String textTrimmed = StringUtils.trim(text);
+    String textTrimmed = ((text == null ?
+      null :
+      text.trim()
+    ));
     TestEvent testEvent = TestEvent.parse(textTrimmed);
     if (testEvent != null) {
       myLastEvent = testEvent;

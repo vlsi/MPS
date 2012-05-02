@@ -11,7 +11,6 @@ import java.io.File;
 import java.io.LineNumberReader;
 import java.io.FileReader;
 import java.util.ArrayList;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.junit.runner.JUnitCore;
 import java.io.PrintStream;
@@ -47,7 +46,7 @@ public class TestRunner {
           if (line == null) {
             break;
           }
-          if (StringUtils.isEmpty(line)) {
+          if ((line == null || line.length() == 0)) {
             continue;
           }
           ListSequence.fromList(fileContents).addElement(line);

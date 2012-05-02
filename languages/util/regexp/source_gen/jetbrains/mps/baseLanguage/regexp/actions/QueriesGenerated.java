@@ -21,7 +21,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SModel;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
@@ -36,7 +35,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Set;
 import java.util.HashSet;
@@ -263,7 +261,7 @@ public class QueriesGenerated {
             SNode node = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", _context.getCurrentTargetNode());
             SPropertyOperations.set(node, "name", (pattern.endsWith(":") ?
               pattern.substring(1, pattern.length() - 1) :
-              (StringUtils.isEmpty(pattern) ?
+              ((pattern == null || pattern.length() == 0) ?
                 "" :
                 pattern.substring(1)
               )
@@ -699,7 +697,7 @@ public class QueriesGenerated {
       Computable computable = new Computable() {
         public Object compute() {
           Scope refScope = ModelConstraintsUtil.getScope(_context.getSourceNode(), null, 0, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp"), operationContext);
-          return (List<SNode>) Sequence.fromIterable(refScope.getAvailableElements(null)).toListSequence();
+          return (List<SNode>) refScope.getAvailableElements(null);
         }
       };
       Iterable<SNode> parameterObjects = (Iterable<SNode>) computable.compute();

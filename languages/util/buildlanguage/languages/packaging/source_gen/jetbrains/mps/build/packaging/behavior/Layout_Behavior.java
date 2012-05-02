@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.List;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.File;
 import java.util.ArrayList;
@@ -67,7 +66,7 @@ public class Layout_Behavior {
   public static String virtual_getPath_1234976932856(SNode thisNode) {
     String macro = IMacroHolder_Behavior.call_evaluateMacro_1234975967990(thisNode, SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "baseDirectory", true), "macro", true), "name"));
     String fullPathWithoutMacro = Path_Behavior.call_getFullPathWithoutMacro_1226511495568(SLinkOperations.getTarget(thisNode, "baseDirectory", true));
-    if (StringUtils.isEmpty(macro)) {
+    if ((macro == null || macro.length() == 0)) {
       if (Sequence.fromIterable(Sequence.fromArray(File.listRoots())).contains(new File("/")) && !(fullPathWithoutMacro.startsWith("/"))) {
         fullPathWithoutMacro = "/" + fullPathWithoutMacro;
       }

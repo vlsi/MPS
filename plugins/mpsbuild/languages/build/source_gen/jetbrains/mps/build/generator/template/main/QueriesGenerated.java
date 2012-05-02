@@ -23,7 +23,6 @@ import jetbrains.mps.build.behavior.BuildLayout_Node_Behavior;
 import jetbrains.mps.build.behavior.BuildSourcePath_Behavior;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.build.util.RelativePathHelper;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.build.util.MacroHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -49,6 +48,7 @@ import jetbrains.mps.build.util.GenerationUtil;
 import jetbrains.mps.build.generator.util.FetchDependenciesProcessor;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.util.Pair;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_5248329904288166450(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -95,6 +95,22 @@ public class QueriesGenerated {
     return BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(_context.getNode(), Context.defaultContext(_context));
   }
 
+  public static Object propertyMacro_GetPropertyValue_7801138212747394521(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(_context.getNode(), Context.defaultContext(_context));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7801138212747394625(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "filemode");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7801138212747394765(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "dirmode");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7801138212747420785(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((String) _context.getVariable("var:prefix"));
+  }
+
   public static Object propertyMacro_GetPropertyValue_1117643560963351294(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(_context.getNode(), Context.defaultContext(_context));
   }
@@ -113,6 +129,22 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1117643560963358535(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(_context.getNode(), Context.defaultContext(_context));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7801138212747394825(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(_context.getNode(), Context.defaultContext(_context));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7801138212747394845(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "filemode");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7801138212747394863(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "dirmode");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7801138212747420743(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((String) _context.getVariable("var:prefix"));
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963358569(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -135,11 +167,39 @@ public class QueriesGenerated {
     return BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(_context.getNode(), Context.defaultContext(_context));
   }
 
+  public static Object propertyMacro_GetPropertyValue_7801138212747394903(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(_context.getNode(), Context.defaultContext(_context));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7801138212747394923(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "filemode");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7801138212747394941(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "dirmode");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7801138212747405865(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((String) _context.getVariable("var:prefix"));
+  }
+
   public static Object propertyMacro_GetPropertyValue_8577651205286952577(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(_context.getNode(), Context.defaultContext(_context));
   }
 
   public static Object propertyMacro_GetPropertyValue_8577651205286952606(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7801138212747391977(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(_context.getNode(), Context.defaultContext(_context));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7801138212747392029(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7801138212747392100(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(_context.getNode());
   }
 
@@ -425,7 +485,7 @@ public class QueriesGenerated {
     }
     try {
       String relative = new RelativePathHelper(((String) _context.getVariable("var:basePath"))).makeRelative(filePath);
-      if (StringUtils.isEmpty(relative)) {
+      if ((relative == null || relative.length() == 0)) {
         return "${build.dir}/artifacts/" + SPropertyOperations.getString(script, "name");
       }
       if (!(relative.endsWith("/"))) {
@@ -486,7 +546,7 @@ public class QueriesGenerated {
     }
     try {
       String relative = new RelativePathHelper(((Tuples._2<Iterable<SNode>, String>) _context.getVariable("var:depsAndBasePath"))._1()).makeRelative(filePath);
-      if (StringUtils.isEmpty(relative)) {
+      if ((relative == null || relative.length() == 0)) {
         return SPropertyOperations.getString(script, "name") + ".xml";
       }
       if (!(relative.endsWith("/"))) {
@@ -529,16 +589,24 @@ public class QueriesGenerated {
     return "dir";
   }
 
-  public static Object propertyMacro_GetPropertyValue_6684802082773280544(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((Tuples._2<String, String>) _context.getVariable("var:targetLocation"))._1();
+  public static Object propertyMacro_GetPropertyValue_6408167411310656493(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._1();
   }
 
-  public static Object propertyMacro_GetPropertyValue_6408167411310656493(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((Tuples._2<String, String>) _context.getVariable("var:archive"))._1();
+  public static Object propertyMacro_GetPropertyValue_7801138212747257296(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._3();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7801138212747257318(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._2();
   }
 
   public static Object propertyMacro_GetPropertyValue_6408167411310656514(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((Tuples._2<String, String>) _context.getVariable("var:archive"))._0();
+    return ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._0();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1979010778008906784(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((Tuples._2<String, String>) _context.getVariable("var:targetLocation"))._1();
   }
 
   public static Object propertyMacro_GetPropertyValue_5610619299013115002(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -546,11 +614,19 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6408167411310656471(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((Tuples._2<String, String>) _context.getVariable("var:archive"))._1();
+    return ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._1();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7801138212747257252(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._3();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7801138212747257274(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._2();
   }
 
   public static Object propertyMacro_GetPropertyValue_6408167411310656570(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((Tuples._2<String, String>) _context.getVariable("var:archive"))._0();
+    return ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._0();
   }
 
   public static Object propertyMacro_GetPropertyValue_6408167411310621645(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -558,11 +634,19 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6408167411310656150(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((Tuples._2<String, String>) _context.getVariable("var:archive"))._1();
+    return ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._1();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7801138212747257072(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._3();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7801138212747257129(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._2();
   }
 
   public static Object propertyMacro_GetPropertyValue_6408167411310655109(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((Tuples._2<String, String>) _context.getVariable("var:archive"))._0();
+    return ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._0();
   }
 
   public static Object propertyMacro_GetPropertyValue_6408167411310621703(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -570,11 +654,15 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6408167411310656275(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((Tuples._2<String, String>) _context.getVariable("var:archive"))._1();
+    return ((Tuples._3<String, String, String>) _context.getVariable("var:archive"))._1();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7801138212747257208(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((Tuples._3<String, String, String>) _context.getVariable("var:archive"))._2();
   }
 
   public static Object propertyMacro_GetPropertyValue_6408167411310656264(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((Tuples._2<String, String>) _context.getVariable("var:archive"))._0();
+    return ((Tuples._3<String, String, String>) _context.getVariable("var:archive"))._0();
   }
 
   public static Object propertyMacro_GetPropertyValue_4821808014881207505(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -712,6 +800,14 @@ public class QueriesGenerated {
     return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
   }
 
+  public static Object referenceMacro_GetReferent_7801138212747392057(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+  }
+
+  public static Object referenceMacro_GetReferent_7801138212747392071(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+  }
+
   public static Object referenceMacro_GetReferent_2913098736709502314(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
   }
@@ -778,7 +874,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_6408167411310933885(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode parent = SNodeOperations.getParent(_context.getNode());
-    while (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Folder")) {
+    while (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Folder") || SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode")) {
       parent = SNodeOperations.getParent(parent);
     }
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet") && BuildLayout_ContainerAcceptingFileSet_Behavior.call_hasPrefixAttribute_6408167411310575232(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"))) {
@@ -803,6 +899,18 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
   }
 
+  public static boolean ifMacro_Condition_7801138212747394539(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SPropertyOperations.getString(_context.getNode(), "filemode") != null && SPropertyOperations.getString(_context.getNode(), "filemode").length() > 0);
+  }
+
+  public static boolean ifMacro_Condition_7801138212747394681(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SPropertyOperations.getString(_context.getNode(), "dirmode") != null && SPropertyOperations.getString(_context.getNode(), "dirmode").length() > 0);
+  }
+
+  public static boolean ifMacro_Condition_7801138212747420804(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (((String) _context.getVariable("var:prefix")) != null && ((String) _context.getVariable("var:prefix")).length() > 0);
+  }
+
   public static boolean ifMacro_Condition_1117643560963351259(final IOperationContext operationContext, final IfMacroContext _context) {
     return FileSetUtil.hasExplicitFilesets(_context.getNode());
   }
@@ -817,6 +925,18 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1117643560963363844(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+  }
+
+  public static boolean ifMacro_Condition_7801138212747394835(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SPropertyOperations.getString(_context.getNode(), "filemode") != null && SPropertyOperations.getString(_context.getNode(), "filemode").length() > 0);
+  }
+
+  public static boolean ifMacro_Condition_7801138212747394853(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SPropertyOperations.getString(_context.getNode(), "dirmode") != null && SPropertyOperations.getString(_context.getNode(), "dirmode").length() > 0);
+  }
+
+  public static boolean ifMacro_Condition_7801138212747420762(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (((String) _context.getVariable("var:prefix")) != null && ((String) _context.getVariable("var:prefix")).length() > 0);
   }
 
   public static boolean ifMacro_Condition_1117643560963358578(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -835,11 +955,46 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
   }
 
+  public static boolean ifMacro_Condition_7801138212747394913(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SPropertyOperations.getString(_context.getNode(), "filemode") != null && SPropertyOperations.getString(_context.getNode(), "filemode").length() > 0);
+  }
+
+  public static boolean ifMacro_Condition_7801138212747394931(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SPropertyOperations.getString(_context.getNode(), "dirmode") != null && SPropertyOperations.getString(_context.getNode(), "dirmode").length() > 0);
+  }
+
+  public static boolean ifMacro_Condition_7801138212747420622(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (((String) _context.getVariable("var:prefix")) != null && ((String) _context.getVariable("var:prefix")).length() > 0);
+  }
+
   public static boolean ifMacro_Condition_8577651205286952586(final IOperationContext operationContext, final IfMacroContext _context) {
     return FileSetUtil.hasExplicitFilesets(_context.getNode());
   }
 
   public static boolean ifMacro_Condition_8577651205286952616(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+  }
+
+  public static boolean ifMacro_Condition_7801138212747391986(final IOperationContext operationContext, final IfMacroContext _context) {
+    SNode parent = SNodeOperations.getParent(_context.getNode());
+    boolean hasPrefix = false;
+    while (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Folder") || SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode")) {
+      if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Folder")) {
+        hasPrefix = true;
+      }
+      parent = SNodeOperations.getParent(parent);
+    }
+    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet") && BuildLayout_ContainerAcceptingFileSet_Behavior.call_hasFileModeAttribute_6408167411310575237(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet")) && (!(hasPrefix) || BuildLayout_ContainerAcceptingFileSet_Behavior.call_hasPrefixAttribute_6408167411310575232(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet")))) {
+      return FileSetUtil.hasExplicitFilesets(_context.getNode());
+    }
+    return false;
+  }
+
+  public static boolean ifMacro_Condition_7801138212747392038(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+  }
+
+  public static boolean ifMacro_Condition_7801138212747392081(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
   }
 
@@ -948,24 +1103,52 @@ public class QueriesGenerated {
     return Sequence.fromIterable(((Tuples._2<Iterable<SNode>, String>) _context.getVariable("var:depsAndBasePath"))._0()).isNotEmpty();
   }
 
-  public static boolean ifMacro_Condition_6684802082773279700(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_6408167411310656502(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._1() != null && ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._1().length() > 0);
+  }
+
+  public static boolean ifMacro_Condition_7801138212747257284(final IOperationContext operationContext, final IfMacroContext _context) {
+    return ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._3() != null;
+  }
+
+  public static boolean ifMacro_Condition_7801138212747257306(final IOperationContext operationContext, final IfMacroContext _context) {
+    return ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._2() != null;
+  }
+
+  public static boolean ifMacro_Condition_1979010778008906788(final IOperationContext operationContext, final IfMacroContext _context) {
     return ((Tuples._2<String, String>) _context.getVariable("var:targetLocation"))._1() != null;
   }
 
-  public static boolean ifMacro_Condition_6408167411310656502(final IOperationContext operationContext, final IfMacroContext _context) {
-    return StringUtils.isNotEmpty(((Tuples._2<String, String>) _context.getVariable("var:archive"))._1());
+  public static boolean ifMacro_Condition_6408167411310656480(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._1() != null && ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._1().length() > 0);
   }
 
-  public static boolean ifMacro_Condition_6408167411310656480(final IOperationContext operationContext, final IfMacroContext _context) {
-    return StringUtils.isNotEmpty(((Tuples._2<String, String>) _context.getVariable("var:archive"))._1());
+  public static boolean ifMacro_Condition_7801138212747257240(final IOperationContext operationContext, final IfMacroContext _context) {
+    return ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._3() != null;
+  }
+
+  public static boolean ifMacro_Condition_7801138212747257262(final IOperationContext operationContext, final IfMacroContext _context) {
+    return ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._2() != null;
   }
 
   public static boolean ifMacro_Condition_6408167411310656070(final IOperationContext operationContext, final IfMacroContext _context) {
-    return StringUtils.isNotEmpty(((Tuples._2<String, String>) _context.getVariable("var:archive"))._1());
+    return (((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._1() != null && ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._1().length() > 0);
+  }
+
+  public static boolean ifMacro_Condition_7801138212747256991(final IOperationContext operationContext, final IfMacroContext _context) {
+    return ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._3() != null;
+  }
+
+  public static boolean ifMacro_Condition_7801138212747256885(final IOperationContext operationContext, final IfMacroContext _context) {
+    return ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._2() != null;
   }
 
   public static boolean ifMacro_Condition_6408167411310656284(final IOperationContext operationContext, final IfMacroContext _context) {
-    return StringUtils.isNotEmpty(((Tuples._2<String, String>) _context.getVariable("var:archive"))._1());
+    return (((Tuples._3<String, String, String>) _context.getVariable("var:archive"))._1() != null && ((Tuples._3<String, String, String>) _context.getVariable("var:archive"))._1().length() > 0);
+  }
+
+  public static boolean ifMacro_Condition_7801138212747257196(final IOperationContext operationContext, final IfMacroContext _context) {
+    return ((Tuples._3<String, String, String>) _context.getVariable("var:archive"))._2() != null;
   }
 
   public static boolean ifMacro_Condition_6408167411310620878(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1069,12 +1252,24 @@ public class QueriesGenerated {
     return FileSetUtil.getImplicitFilesets(_context.getNode());
   }
 
+  public static Iterable sourceNodesQuery_7801138212747391938(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return FileSetUtil.getExplicitFilemodeRoots(_context.getNode());
+  }
+
   public static Iterable sourceNodesQuery_1117643560963358547(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return FileSetUtil.getImplicitFilesets(_context.getNode());
   }
 
+  public static Iterable sourceNodesQuery_7801138212747394870(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return FileSetUtil.getExplicitFilemodeRoots(_context.getNode());
+  }
+
   public static Iterable sourceNodesQuery_8577651205286952555(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return FileSetUtil.getImplicitFilesets(_context.getNode());
+  }
+
+  public static Iterable sourceNodesQuery_7801138212747394948(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return FileSetUtil.getExplicitFilemodeRoots(_context.getNode());
   }
 
   public static Iterable sourceNodesQuery_9184644532456968384(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -1375,6 +1570,18 @@ public class QueriesGenerated {
     }
   }
 
+  public static Object insertMacro_varValue_7801138212747420792(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return FileSetUtil.getContainerPrefix(_context.getNode(), Context.defaultContext(_context).getMacros(_context.getNode()));
+  }
+
+  public static Object insertMacro_varValue_7801138212747420750(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return FileSetUtil.getContainerPrefix(_context.getNode(), Context.defaultContext(_context).getMacros(_context.getNode()));
+  }
+
+  public static Object insertMacro_varValue_7801138212747420576(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return FileSetUtil.getContainerPrefix(_context.getNode(), Context.defaultContext(_context).getMacros(_context.getNode()));
+  }
+
   public static Object insertMacro_varValue_7517237557345560699(final IOperationContext operationContext, final TemplateQueryContext _context) {
     SNode project = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.structure.BuildProject", false, false);
     if (project == null) {
@@ -1415,7 +1622,7 @@ public class QueriesGenerated {
     if (options == null) {
       options = ListSequence.fromList(SNodeOperations.getAllSiblings(_context.getNode(), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaOptions") && StringUtils.isEmpty(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName"));
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaOptions") && (SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName") == null || SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName").length() == 0);
         }
       }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
@@ -1473,13 +1680,21 @@ public class QueriesGenerated {
   }
 
   public static Object insertMacro_varValue_6408167411310656423(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    MacroHelper macros = Context.defaultContext(_context).getMacros(_context.getNode());
     String fsetExt = "fileset";
-    String prefix = FileSetUtil.getPrefix(_context.getNode(), Context.defaultContext(_context).getMacros(_context.getNode()));
-    if (StringUtils.isNotEmpty(prefix)) {
+    String prefix = FileSetUtil.getPrefix(_context.getNode(), macros);
+    Pair<String, String> filemode = FileSetUtil.getFilemode(_context.getNode(), macros);
+    if ((prefix != null && prefix.length() > 0) || filemode != null) {
       SNode filesetContainer = FileSetUtil.getFilesetContainer(_context.getNode());
       fsetExt = BuildLayout_ContainerAcceptingFileSet_Behavior.call_getFileSetExtension_6408167411310575216(filesetContainer);
     }
-    return MultiTuple.<String,String>from(fsetExt, prefix);
+    return MultiTuple.<String,String,String,String>from(fsetExt, prefix, (filemode != null ?
+      filemode.o1 :
+      null
+    ), (filemode != null ?
+      filemode.o2 :
+      null
+    ));
   }
 
   public static Object insertMacro_varValue_5610619299013115037(final IOperationContext operationContext, final TemplateQueryContext _context) {
@@ -1497,13 +1712,21 @@ public class QueriesGenerated {
   }
 
   public static Object insertMacro_varValue_6408167411310656356(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    MacroHelper macros = Context.defaultContext(_context).getMacros(_context.getNode());
     String fsetExt = "fileset";
-    String prefix = FileSetUtil.getPrefix(_context.getNode(), Context.defaultContext(_context).getMacros(_context.getNode()));
-    if (StringUtils.isNotEmpty(prefix)) {
+    String prefix = FileSetUtil.getPrefix(_context.getNode(), macros);
+    Pair<String, String> filemode = FileSetUtil.getFilemode(_context.getNode(), macros);
+    if ((prefix != null && prefix.length() > 0) || filemode != null) {
       SNode filesetContainer = FileSetUtil.getFilesetContainer(_context.getNode());
       fsetExt = BuildLayout_ContainerAcceptingFileSet_Behavior.call_getFileSetExtension_6408167411310575216(filesetContainer);
     }
-    return MultiTuple.<String,String>from(fsetExt, prefix);
+    return MultiTuple.<String,String,String,String>from(fsetExt, prefix, (filemode != null ?
+      filemode.o1 :
+      null
+    ), (filemode != null ?
+      filemode.o2 :
+      null
+    ));
   }
 
   public static Object insertMacro_varValue_6408167411310655877(final IOperationContext operationContext, final TemplateQueryContext _context) {
@@ -1511,13 +1734,22 @@ public class QueriesGenerated {
     String prefix = null;
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Copy")) {
       SNode copyContainer = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Copy");
-      prefix = FileSetUtil.getPrefix(copyContainer, Context.defaultContext(_context).getMacros(_context.getNode()));
-      if (StringUtils.isNotEmpty(prefix)) {
+      MacroHelper macros = Context.defaultContext(_context).getMacros(_context.getNode());
+      prefix = FileSetUtil.getPrefix(copyContainer, macros);
+      Pair<String, String> filemode = FileSetUtil.getFilemode(copyContainer, macros);
+      if ((prefix != null && prefix.length() > 0) || filemode != null) {
         SNode filesetContainer = FileSetUtil.getFilesetContainer(copyContainer);
         fsetExt = BuildLayout_ContainerAcceptingFileSet_Behavior.call_getFileSetExtension_6408167411310575216(filesetContainer);
       }
+      return MultiTuple.<String,String,String,String>from(fsetExt, prefix, (filemode != null ?
+        filemode.o1 :
+        null
+      ), (filemode != null ?
+        filemode.o2 :
+        null
+      ));
     }
-    return MultiTuple.<String,String>from(fsetExt, prefix);
+    return MultiTuple.<String,String,Object,Object>from(fsetExt, prefix, null, null);
   }
 
   public static Object insertMacro_varValue_6408167411310656207(final IOperationContext operationContext, final TemplateQueryContext _context) {
@@ -1525,12 +1757,18 @@ public class QueriesGenerated {
     String prefix = null;
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Copy")) {
       SNode copyContainer = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Copy");
-      prefix = FileSetUtil.getPrefix(copyContainer, Context.defaultContext(_context).getMacros(_context.getNode()));
-      if (StringUtils.isNotEmpty(prefix)) {
+      MacroHelper macros = Context.defaultContext(_context).getMacros(_context.getNode());
+      prefix = FileSetUtil.getPrefix(copyContainer, macros);
+      Pair<String, String> filemode = FileSetUtil.getFilemode(copyContainer, macros);
+      if ((prefix != null && prefix.length() > 0) || filemode != null && filemode.o2 != null) {
         SNode filesetContainer = FileSetUtil.getFilesetContainer(copyContainer);
         fsetExt = BuildLayout_ContainerAcceptingFileSet_Behavior.call_getFileSetExtension_6408167411310575216(filesetContainer);
       }
+      return MultiTuple.<String,String,String>from(fsetExt, prefix, (filemode != null ?
+        filemode.o2 :
+        null
+      ));
     }
-    return MultiTuple.<String,String>from(fsetExt, prefix);
+    return MultiTuple.<String,String,Object>from(fsetExt, prefix, null);
   }
 }

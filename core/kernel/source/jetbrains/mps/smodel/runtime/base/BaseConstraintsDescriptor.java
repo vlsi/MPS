@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.runtime.base;
 
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;

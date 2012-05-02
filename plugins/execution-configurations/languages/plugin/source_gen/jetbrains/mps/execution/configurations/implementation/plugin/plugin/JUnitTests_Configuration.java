@@ -20,7 +20,6 @@ import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitRunTypes2;
 import java.util.List;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.project.ProjectHelper;
-import org.apache.commons.lang.StringUtils;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
@@ -144,11 +143,11 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
   }
 
   public void migrate() {
-    if (StringUtils.isNotEmpty(this.getModel())) {
+    if ((this.getModel() != null && this.getModel().length() > 0)) {
       this.getJUnitSettings().setModel(this.getModel());
       this.setModel(null);
     }
-    if (StringUtils.isNotEmpty(this.getModule())) {
+    if ((this.getModule() != null && this.getModule().length() > 0)) {
       this.getJUnitSettings().setModule(this.getModule());
       this.setModule(null);
     }

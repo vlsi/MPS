@@ -1176,41 +1176,41 @@
     <unitInfo nodeId="5622704259074443414" fileName="OperationContextExpression_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.OperationContextExpression_Constraints" />
   </root>
   <root nodeId="7857223919215948959">
-    <nodeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="20" startPosition="44" endLine="21" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="25" startPosition="83" endLine="26" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="33" startPosition="44" endLine="34" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7857223919215949539" fileName="InequationReference_Constraints.java" startLine="39" startPosition="110" endLine="40" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7857223919215949562" fileName="InequationReference_Constraints.java" startLine="41" startPosition="20" endLine="42" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="47" startPosition="7" endLine="48" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7857223919215949560" fileName="InequationReference_Constraints.java" startLine="41" startPosition="18" endLine="43" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="19" startPosition="80" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InequationReference_Constraints#()V" />
-    <nodeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="31" startPosition="40" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasPresentation#()Z" />
-    <nodeInfo nodeId="7857223919215949531" fileName="InequationReference_Constraints.java" startLine="38" startPosition="128" endLine="43" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="36" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferencePresentationContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="30" startPosition="56" endLine="45" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="27" startPosition="93" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="26" startPosition="75" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="23" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
-    <scopeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="20" startPosition="44" endLine="21" endPosition="73" />
-    <scopeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="33" startPosition="44" endLine="34" endPosition="24" />
-    <scopeInfo nodeId="7857223919215949537" fileName="InequationReference_Constraints.java" startLine="39" startPosition="110" endLine="40" endPosition="172" />
-    <scopeInfo nodeId="7857223919215949561" fileName="InequationReference_Constraints.java" startLine="41" startPosition="20" endLine="42" endPosition="96" />
-    <scopeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="19" startPosition="80" endLine="22" endPosition="3" />
-    <scopeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="31" startPosition="40" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="7857223919215948962" fileName="InequationReference_Constraints.java" startLine="38" startPosition="128" endLine="43" endPosition="13" />
-    <scopeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="36" startPosition="0" endLine="45" endPosition="0">
+    <nodeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="19" startPosition="44" endLine="20" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="24" startPosition="83" endLine="25" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7857223919215949539" fileName="InequationReference_Constraints.java" startLine="38" startPosition="180" endLine="39" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7857223919215949562" fileName="InequationReference_Constraints.java" startLine="40" startPosition="20" endLine="41" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="46" startPosition="7" endLine="47" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7857223919215949560" fileName="InequationReference_Constraints.java" startLine="40" startPosition="18" endLine="42" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="18" startPosition="80" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InequationReference_Constraints#()V" />
+    <nodeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="30" startPosition="40" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasPresentation#()Z" />
+    <nodeInfo nodeId="7857223919215949531" fileName="InequationReference_Constraints.java" startLine="37" startPosition="128" endLine="42" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="35" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferencePresentationContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="29" startPosition="56" endLine="44" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="26" startPosition="93" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="25" startPosition="75" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="22" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <scopeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="19" startPosition="44" endLine="20" endPosition="73" />
+    <scopeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="24" />
+    <scopeInfo nodeId="7857223919215949537" fileName="InequationReference_Constraints.java" startLine="38" startPosition="180" endLine="39" endPosition="172" />
+    <scopeInfo nodeId="7857223919215949561" fileName="InequationReference_Constraints.java" startLine="40" startPosition="20" endLine="41" endPosition="96" />
+    <scopeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="18" startPosition="80" endLine="21" endPosition="3" />
+    <scopeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="30" startPosition="40" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="7857223919215948962" fileName="InequationReference_Constraints.java" startLine="37" startPosition="128" endLine="42" endPosition="13" />
+    <scopeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="35" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="7857223919215948959" varName="_context" />
       <varInfo nodeId="7857223919215948959" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="30" startPosition="56" endLine="45" endPosition="10" />
-    <scopeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="27" startPosition="93" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="25" startPosition="83" endLine="48" endPosition="22">
+    <scopeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="29" startPosition="56" endLine="44" endPosition="10" />
+    <scopeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="26" startPosition="93" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="24" startPosition="83" endLine="47" endPosition="22">
       <varInfo nodeId="7857223919215948959" varName="references" />
     </scopeInfo>
-    <scopeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="23" startPosition="0" endLine="50" endPosition="0" />
-    <unitInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="19" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.InequationReference_Constraints" />
-    <unitInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="27" startPosition="37" endLine="47" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.InequationReference_Constraints$1" />
-    <unitInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="31" startPosition="19" endLine="45" endPosition="9" unitName="jetbrains.mps.lang.typesystem.constraints.InequationReference_Constraints$2" />
+    <scopeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="22" startPosition="0" endLine="49" endPosition="0" />
+    <unitInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="18" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.InequationReference_Constraints" />
+    <unitInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="26" startPosition="37" endLine="46" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.InequationReference_Constraints$1" />
+    <unitInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="30" startPosition="19" endLine="44" endPosition="9" unitName="jetbrains.mps.lang.typesystem.constraints.InequationReference_Constraints$2" />
   </root>
   <root nodeId="8090891477833132962">
     <nodeInfo nodeId="8090891477833132962" fileName="QuickFixFieldReference_Constraints.java" startLine="23" startPosition="83" endLine="24" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_rgybaw_a0a1a0a0a1a0b0a1a0" />

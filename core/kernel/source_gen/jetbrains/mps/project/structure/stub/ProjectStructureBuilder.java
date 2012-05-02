@@ -21,7 +21,6 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.model.ModelRootManager;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal;
@@ -191,7 +190,7 @@ public abstract class ProjectStructureBuilder {
     fill(generator, source);
     SPropertyOperations.set(generator, "generatorUID", source.getGeneratorUID());
     SPropertyOperations.set(generator, "generateTemplates", "" + source.isGenerateTemplates());
-    SPropertyOperations.set(generator, "namespace", (StringUtils.isNotEmpty(source.getNamespace()) ?
+    SPropertyOperations.set(generator, "namespace", ((source.getNamespace() != null && source.getNamespace().length() > 0) ?
       source.getNamespace() :
       null
     ));

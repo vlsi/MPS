@@ -22,7 +22,6 @@ import java.awt.Color;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.resources.behavior.IconResource_Behavior;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.editor.util.EditorUtil;
@@ -152,7 +151,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_79r3b6_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return StringUtils.isEmpty(SPropertyOperations.getString(node, "path"));
+    return (SPropertyOperations.getString(node, "path") == null || SPropertyOperations.getString(node, "path").length() == 0);
   }
 
   private static boolean renderingCondition_79r3b6_a0a0(SNode node, EditorContext editorContext, IScope scope) {

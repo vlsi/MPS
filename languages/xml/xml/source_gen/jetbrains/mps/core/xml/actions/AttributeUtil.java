@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -28,7 +27,7 @@ public class AttributeUtil {
     SNode lastValue = null;
     for (SNode part : SLinkOperations.getTargets(attr, "value", true)) {
       if (SNodeOperations.isInstanceOf(part, "jetbrains.mps.core.xml.structure.XmlTextValue")) {
-        if (StringUtils.isEmpty(SPropertyOperations.getString(SNodeOperations.cast(part, "jetbrains.mps.core.xml.structure.XmlTextValue"), "text"))) {
+        if ((SPropertyOperations.getString(SNodeOperations.cast(part, "jetbrains.mps.core.xml.structure.XmlTextValue"), "text") == null || SPropertyOperations.getString(SNodeOperations.cast(part, "jetbrains.mps.core.xml.structure.XmlTextValue"), "text").length() == 0)) {
           ListSequence.fromList(valuesToDelete).addElement(part);
         } else if (lastValue != null) {
           SPropertyOperations.set(lastValue, "text", SPropertyOperations.getString_def(lastValue, "text", "") + SPropertyOperations.getString(SNodeOperations.cast(part, "jetbrains.mps.core.xml.structure.XmlTextValue"), "text"));

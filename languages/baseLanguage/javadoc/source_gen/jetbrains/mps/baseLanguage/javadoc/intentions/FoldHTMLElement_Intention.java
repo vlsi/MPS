@@ -6,7 +6,6 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -34,7 +33,7 @@ public class FoldHTMLElement_Intention extends BaseIntention implements Intentio
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    String name = (StringUtils.isEmpty(SPropertyOperations.getString(node, "name")) ?
+    String name = ((SPropertyOperations.getString(node, "name") == null || SPropertyOperations.getString(node, "name").length() == 0) ?
       "..." :
       SPropertyOperations.getString(node, "name")
     );

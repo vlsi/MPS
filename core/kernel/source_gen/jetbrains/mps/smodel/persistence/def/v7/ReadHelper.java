@@ -11,7 +11,6 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.v5.ModelUtil;
 import org.jetbrains.annotations.NotNull;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeId;
@@ -51,7 +50,7 @@ public class ReadHelper {
   }
 
   public SModelReference getSModelReference(@NotNull String ix) {
-    return (StringUtils.isEmpty(ix) ?
+    return ((ix == null || ix.length() == 0) ?
       myModelRef :
       MapSequence.fromMap(myModelByIx).get(ix)
     );

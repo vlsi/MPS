@@ -7,7 +7,6 @@ import jetbrains.mps.build.util.Context;
 import jetbrains.mps.build.util.RelativePathHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -43,7 +42,7 @@ public class BuildProject_Behavior {
       // model is packaged, i.e. no base path for it 
       return null;
     }
-    if (StringUtils.isNotEmpty(SPropertyOperations.getString(thisNode, "internalBaseDirectory"))) {
+    if ((SPropertyOperations.getString(thisNode, "internalBaseDirectory") != null && SPropertyOperations.getString(thisNode, "internalBaseDirectory").length() > 0)) {
       try {
         return relativePathHelper.makeAbsolute(SPropertyOperations.getString(thisNode, "internalBaseDirectory"));
       } catch (RelativePathHelper.PathException ex) {
@@ -82,7 +81,7 @@ public class BuildProject_Behavior {
       return new FilteringScope(new SimpleRoleScope(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "parts"), "jetbrains.mps.build.structure.BuildSource_JavaOptions") {
         public String getName(SNode jo) {
           String optionsName = SPropertyOperations.getString(SNodeOperations.cast(jo, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName");
-          return (StringUtils.isEmpty(optionsName) ?
+          return ((optionsName == null || optionsName.length() == 0) ?
             "<default options>" :
             optionsName
           );
@@ -90,7 +89,7 @@ public class BuildProject_Behavior {
       }) {
         @Override
         public boolean isExcluded(SNode node) {
-          return StringUtils.isEmpty(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName"));
+          return (SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName") == null || SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName").length() == 0);
         }
       };
     } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.structure.BuildProjectPart")) {

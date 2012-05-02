@@ -94,7 +94,6 @@ public class MPSCore extends ComponentPlugin {
     init(new LanguageHierarchyCache(myModuleRepository));
     init(new StructureAspectInterpreted());
     init(new OldBehaviorManager(classLoaderManager));
-    init(new ModelConstraintsManager()); // depends on MPSModuleRepository, ClassLoaderManager, ConceptRegistry
     init(new SModelUtil_new(classLoaderManager, myGlobalSModelEventsManager));
     init(new CachesManager(classLoaderManager, myModelRepository));
     init(new LanguageDescriptorModelProvider(myModuleRepository, myModelRepository));

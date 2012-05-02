@@ -15,7 +15,6 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.apache.commons.lang.StringUtils;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -47,7 +46,7 @@ public class ReportModelMergeProblem_Action extends BaseAction {
     List<VcsDirectoryMapping> mappings = ProjectLevelVcsManager.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getDirectoryMappings();
     return ListSequence.fromList(mappings).any(new IWhereFilter<VcsDirectoryMapping>() {
       public boolean accept(VcsDirectoryMapping m) {
-        return StringUtils.isNotEmpty(m.getVcs());
+        return (m.getVcs() != null && m.getVcs().length() > 0);
       }
     });
   }

@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SNode;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.MacrosFactory;
@@ -96,7 +95,7 @@ public class PluginMoveHelper {
         SModel m = ListSequence.fromList(models).first().getSModel();
         ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.lang.resources.structure.IconResource")).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return (it != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(it, "path")) && !(isValid(it));
+            return (it != null) && (SPropertyOperations.getString(it, "path") != null && SPropertyOperations.getString(it, "path").length() > 0) && !(isValid(it));
           }
         }).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {

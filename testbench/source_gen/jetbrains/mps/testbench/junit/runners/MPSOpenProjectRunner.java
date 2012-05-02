@@ -17,7 +17,6 @@ import java.io.File;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import org.apache.commons.lang.StringUtils;
 import com.intellij.util.PathUtil;
 import com.intellij.openapi.application.PathMacros;
 import java.lang.annotation.Retention;
@@ -80,7 +79,7 @@ public class MPSOpenProjectRunner extends Runner {
       }
       String propertyKey = (String) property.getKey();
       String propertyValue = (String) property.getValue();
-      if (StringUtils.isEmpty(propertyKey) || !(propertyKey.startsWith(PROPERTY_PREFIX_PATH_MACRO))) {
+      if ((propertyKey == null || propertyKey.length() == 0) || !(propertyKey.startsWith(PROPERTY_PREFIX_PATH_MACRO))) {
         continue;
       }
       String canonicalPath = PathUtil.getCanonicalPath(propertyValue);

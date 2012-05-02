@@ -6,7 +6,6 @@ import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -27,7 +26,7 @@ public class UpdateIcons_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "iconPath")) && (SLinkOperations.getTarget(node, "icon", true) == null);
+        return (SPropertyOperations.getString(node, "iconPath") != null && SPropertyOperations.getString(node, "iconPath").length() > 0) && (SLinkOperations.getTarget(node, "icon", true) == null);
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -54,7 +53,7 @@ public class UpdateIcons_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "icon")) && (SLinkOperations.getTarget(node, "toolIcon", true) == null);
+        return (SPropertyOperations.getString(node, "icon") != null && SPropertyOperations.getString(node, "icon").length() > 0) && (SLinkOperations.getTarget(node, "toolIcon", true) == null);
       }
 
       public void doUpdateInstanceNode(SNode node) {

@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.make.dependencies.graph.Graphs;
 import java.util.Collections;
@@ -54,7 +53,7 @@ public class CycleHelper {
     for (SNode jm : modules) {
       CycleHelper.Module module = new CycleHelper.Module(jm);
       map.put(jm, module);
-      if (StringUtils.isEmpty(SPropertyOperations.getString(jm, "outputFolder"))) {
+      if ((SPropertyOperations.getString(jm, "outputFolder") == null || SPropertyOperations.getString(jm, "outputFolder").length() == 0)) {
         genContext.showErrorMessage(jm, "empty output path");
       } else if (SPropertyOperations.getString(jm, "outputFolder").endsWith("/") || SPropertyOperations.getString(jm, "outputFolder").endsWith("\\")) {
         genContext.showErrorMessage(jm, "output path shouldn't end with slash");

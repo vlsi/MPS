@@ -9,10 +9,10 @@
       <fileset file="${basedir}/jetbrains.mps.build.sandbox/samples/buildA/abcde.jar" />
     </zip>
     <tar destfile="${build.layout}/my.tar.gz">
-      <fileset file="${basedir}/jetbrains.mps.build.tests/tests.msd" />
-      <fileset dir="${basedir}/jetbrains.mps.build.sandbox/models">
+      <tarfileset file="${basedir}/jetbrains.mps.build.tests/tests.msd" filemode="640" />
+      <tarfileset dir="${basedir}/jetbrains.mps.build.sandbox/models" filemode="640" dirmode="750">
         <include name="*.mps" />
-      </fileset>
+      </tarfileset>
     </tar>
   </target>
   

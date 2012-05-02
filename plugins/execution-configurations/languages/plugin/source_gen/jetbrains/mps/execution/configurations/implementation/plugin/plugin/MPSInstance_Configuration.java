@@ -9,7 +9,6 @@ import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
-import org.apache.commons.lang.StringUtils;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
@@ -46,10 +45,10 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
   }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
-    if (StringUtils.isEmpty(this.getConfigurationPath())) {
+    if ((this.getConfigurationPath() == null || this.getConfigurationPath().length() == 0)) {
       throw new RuntimeConfigurationException("Configuration path is empty.");
     }
-    if (StringUtils.isEmpty(this.getSystemPath())) {
+    if ((this.getSystemPath() == null || this.getSystemPath().length() == 0)) {
       throw new RuntimeConfigurationException("System path is empty.");
     }
   }
@@ -116,14 +115,14 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
   }
 
   public String expandPath(String path) {
-    if (StringUtils.isEmpty(path)) {
+    if ((path == null || path.length() == 0)) {
       return path;
     }
     return MacrosFactory.getGlobal().expandPath(path).replace(File.separator, "/");
   }
 
   public String shinkPath(String path) {
-    if (StringUtils.isEmpty(path)) {
+    if ((path == null || path.length() == 0)) {
       return path;
     }
     return MacrosFactory.getGlobal().shrinkPath(path).replace(File.separator, "/");
@@ -167,7 +166,7 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
   private void replacePathMacro(Element element, Project project) {
     String path = "path";
     String value = element.getAttributeValue(path);
-    if (StringUtils.isNotEmpty(value)) {
+    if ((value != null && value.length() > 0)) {
       element.setAttribute(path, MacrosFactory.forProjectFile(FileSystem.getInstance().getFileByPath(getProjectFile(project).getPath())).expandPath(value));
     }
     for (Object child : element.getChildren()) {

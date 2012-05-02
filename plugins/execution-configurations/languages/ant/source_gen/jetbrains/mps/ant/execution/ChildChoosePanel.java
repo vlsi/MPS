@@ -15,7 +15,6 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import javax.swing.AbstractListModel;
 import javax.swing.ComboBoxModel;
@@ -73,7 +72,7 @@ public abstract class ChildChoosePanel<N extends SNode, C extends SNode> extends
   }
 
   private void selectChild(@Nullable String childId) {
-    if (StringUtils.isEmpty(childId) || (this.myNode == null)) {
+    if ((childId == null || childId.length() == 0) || (this.myNode == null)) {
       this.myChild = null;
       return;
     }

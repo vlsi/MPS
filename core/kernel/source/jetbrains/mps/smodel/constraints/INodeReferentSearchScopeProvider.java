@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.search.ISearchScope;
 
-public interface INodeReferentSearchScopeProvider extends IModelConstraints {
+public interface INodeReferentSearchScopeProvider {
   ISearchScope createNodeReferentSearchScope(IOperationContext operationContext, ReferentConstraintContext _context);
 
   boolean hasPresentation();

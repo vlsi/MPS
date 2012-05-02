@@ -19,7 +19,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ant.execution.AntSettings_Configuration;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
-import org.apache.commons.lang.StringUtils;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
@@ -62,7 +61,7 @@ public class CustomMPSApplication_Configuration extends BaseMpsRunConfiguration 
   }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
-    if (StringUtils.isEmpty(this.getConfigurationId())) {
+    if ((this.getConfigurationId() == null || this.getConfigurationId().length() == 0)) {
       throw new RuntimeConfigurationException("Configuration to run is not selected.");
     } else if ((getConfiguration() == null)) {
       throw new RuntimeConfigurationException("Could not find configuration with id " + this.getConfigurationId() + ".");

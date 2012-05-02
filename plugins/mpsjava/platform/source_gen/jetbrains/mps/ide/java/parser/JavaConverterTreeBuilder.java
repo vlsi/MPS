@@ -1118,6 +1118,12 @@ public class JavaConverterTreeBuilder {
     return result;
   }
 
+  /*package*/ SNode processStatement(ExplicitConstructorCall x) {
+    SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", null);
+    addCallArgs(x.arguments, result);
+    return result;
+  }
+
   /*package*/ SNode processStatement(ForeachStatement x) {
     SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ForeachStatement", null);
     SNode action = processStatementRefl(x.action);
@@ -1323,7 +1329,7 @@ public class JavaConverterTreeBuilder {
   }
 
   private SNode createCommentStatement(String text) {
-    return new JavaConverterTreeBuilder.QuotationClass_m30mvz_a0a0bd().createNode(text);
+    return new JavaConverterTreeBuilder.QuotationClass_m30mvz_a0a0cd().createNode(text);
   }
 
   public SNode processType(TypeDeclaration x) {
@@ -1780,8 +1786,8 @@ public class JavaConverterTreeBuilder {
     }
   }
 
-  public static class QuotationClass_m30mvz_a0a0bd {
-    public QuotationClass_m30mvz_a0a0bd() {
+  public static class QuotationClass_m30mvz_a0a0cd {
+    public QuotationClass_m30mvz_a0a0cd() {
     }
 
     public SNode createNode(Object parameter_5) {

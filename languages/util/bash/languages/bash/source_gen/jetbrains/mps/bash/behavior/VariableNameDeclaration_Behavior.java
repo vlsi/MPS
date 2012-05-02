@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.ArrayList;
@@ -19,7 +18,7 @@ public class VariableNameDeclaration_Behavior {
 
   public static SNode getDefinedName_9034131902192956167(IScope scope, String name) {
     for (SNode definedVar : ListSequence.fromList(SConceptOperations.findConceptInstances(SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.VariableNameDeclaration"), scope))) {
-      if (StringUtils.isNotEmpty(SPropertyOperations.getString(definedVar, "name")) && SPropertyOperations.getString(definedVar, "name").equals(name)) {
+      if ((SPropertyOperations.getString(definedVar, "name") != null && SPropertyOperations.getString(definedVar, "name").length() > 0) && SPropertyOperations.getString(definedVar, "name").equals(name)) {
         return definedVar;
       }
     }
@@ -55,7 +54,7 @@ public class VariableNameDeclaration_Behavior {
 
   public static SNode testName_9034131902194480300(SNode node, String name) {
     for (SNode v : ListSequence.fromList(VariableNameDeclaration_Behavior.getDefinedInShell_9034131902194381915(node))) {
-      if (StringUtils.isNotEmpty(SPropertyOperations.getString(v, "name")) && SPropertyOperations.getString(v, "name").equals(name)) {
+      if ((SPropertyOperations.getString(v, "name") != null && SPropertyOperations.getString(v, "name").length() > 0) && SPropertyOperations.getString(v, "name").equals(name)) {
         return v;
       }
     }

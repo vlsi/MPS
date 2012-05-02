@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.build.util.Context;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -44,7 +43,7 @@ public class check_ModulesImport_NonTypesystemRule extends AbstractNonTypesystem
         visible = new VisibleModules(buildProject, null);
         visible.collect();
         workingDir = BuildProject_Behavior.call_getBasePath_4959435991187146924(buildProject, Context.defaultContext());
-        if (StringUtils.isEmpty(workingDir)) {
+        if ((workingDir == null || workingDir.length() == 0)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(buildProject, "working directory is unavailable", "r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)", "2531699772406302731", null, errorTarget);

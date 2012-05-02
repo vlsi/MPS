@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -34,7 +33,7 @@ public class CheckedModuleReference_Constraints extends BaseConstraintsDescripto
         String propertyName = "moduleId";
         {
           String original = SPropertyOperations.getString(node, "moduleId");
-          if (StringUtils.isEmpty(original)) {
+          if ((original == null || original.length() == 0)) {
             return original;
           }
           ModuleReference moduleReference = ModuleReference.fromString(original);

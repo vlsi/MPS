@@ -11,7 +11,9 @@
   
   <target name="assemble" depends="fetchDependencies">
     <zip destfile="${build.layout}/${buildIDE.build.number}.zip">
-      <fileset dir="${artifacts.buildIDE}" includes="MPS ${buildIDE.version}/**" />
+      <fileset dir="${artifacts.buildIDE}">
+        <include name="MPS ${buildIDE.version}/**" />
+      </fileset>
     </zip>
     <echo file="${build.layout}/variables.properties">buildIDE.build.number=${buildIDE.build.number}${line.separator}buildIDE.version=${buildIDE.version}${line.separator}buildIDE.build.vcs.number=${buildIDE.build.vcs.number}${line.separator}buildIDE.teamcity.buildConfName=${buildIDE.teamcity.buildConfName}</echo>
   </target>

@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.textGen.TextGenManager;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -32,7 +31,7 @@ public class Annotation_TextGen extends SNodeTextGen {
       this.append("static ");
     }
     this.appendWithIndent("@interface ");
-    if (StringUtils.isEmpty(SPropertyOperations.getString(node, "name"))) {
+    if ((SPropertyOperations.getString(node, "name") == null || SPropertyOperations.getString(node, "name").length() == 0)) {
       this.foundError("annotation name is empty");
       this.append("???");
     } else {

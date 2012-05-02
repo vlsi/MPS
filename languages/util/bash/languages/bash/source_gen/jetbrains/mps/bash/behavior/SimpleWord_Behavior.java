@@ -4,7 +4,6 @@ package jetbrains.mps.bash.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -17,17 +16,17 @@ public class SimpleWord_Behavior {
   }
 
   public static boolean call_splitValue_3147078024759753598(SNode thisNode, String value, IScope scope) {
-    if (StringUtils.isEmpty(value)) {
+    if ((value == null || value.length() == 0)) {
       return false;
     }
     SNode refConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.IConcreteWordUnit");
     for (SNode unit : ListSequence.fromList(SConceptOperations.getAllSubConcepts(refConcept, SNodeOperations.getModel(thisNode), scope))) {
-      if (StringUtils.isNotEmpty(SConceptPropertyOperations.getString(unit, "pattern"))) {
+      if ((SConceptPropertyOperations.getString(unit, "pattern") != null && SConceptPropertyOperations.getString(unit, "pattern").length() > 0)) {
         int index = value.indexOf(SConceptPropertyOperations.getString(unit, "pattern"));
         if (index != -1) {
           SNode endOfWord = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.SimpleWord", null);
           String dummy = value.substring(index + SConceptPropertyOperations.getString(unit, "pattern").length());
-          if (StringUtils.isNotEmpty(dummy)) {
+          if ((dummy != null && dummy.length() > 0)) {
             SPropertyOperations.set(endOfWord, "word", dummy);
             SNodeOperations.insertNextSiblingChild(thisNode, endOfWord);
           }

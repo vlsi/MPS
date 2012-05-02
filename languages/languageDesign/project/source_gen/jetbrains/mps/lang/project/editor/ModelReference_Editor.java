@@ -15,7 +15,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ModelReference_Editor extends DefaultNodeEditor {
@@ -211,6 +210,6 @@ public class ModelReference_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_i85no5_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "stereotype"));
+    return (SPropertyOperations.getString(node, "stereotype") != null && SPropertyOperations.getString(node, "stereotype").length() > 0);
   }
 }

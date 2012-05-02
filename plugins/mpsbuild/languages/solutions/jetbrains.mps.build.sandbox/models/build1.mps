@@ -293,8 +293,61 @@
               <property name="text" nameId="3ior.4903714810883755350" value="importResult.zip" />
             </node>
           </node>
-          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Import" typeId="3ior.841011766565753074" id="6684802082773271834">
-            <link role="target" roleId="3ior.841011766565753076" targetNodeId="6520682027041143027" resolveInfo="result" />
+          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Filemode" typeId="3ior.7801138212747054656" id="7801138212747206000">
+            <property name="filemode" nameId="3ior.7801138212747054660" value="754" />
+            <property name="dirmode" nameId="3ior.7801138212747054661" value="752" />
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Import" typeId="3ior.841011766565753074" id="6684802082773271834">
+              <link role="target" roleId="3ior.841011766565753076" targetNodeId="6520682027041143027" resolveInfo="result" />
+            </node>
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="7801138212747307495">
+              <link role="target" roleId="3ior.5610619299013057365" targetNodeId="6520682027041143033" resolveInfo="A-${aver}.zip" />
+            </node>
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Copy" typeId="3ior.5248329904287857081" id="7801138212747239002">
+              <node role="fileset" roleId="3ior.5248329904287857082" type="3ior.BuildInputSingleFile" typeId="3ior.5248329904287794582" id="7801138212747239003">
+                <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="7801138212747239004">
+                  <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7801138212747239005">
+                    <property name="head" nameId="3ior.8618885170173601779" value="buildB.xml" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Copy" typeId="3ior.5248329904287857081" id="7801138212747301640">
+              <node role="fileset" roleId="3ior.5248329904287857082" type="3ior.BuildInputFiles" typeId="3ior.5248329904287794596" id="7801138212747301641">
+                <node role="dir" roleId="3ior.5248329904287794598" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="7801138212747301642">
+                  <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7801138212747301643">
+                    <property name="head" nameId="3ior.8618885170173601779" value="moduleB" />
+                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7801138212747301644">
+                      <property name="head" nameId="3ior.8618885170173601779" value="src" />
+                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7801138212747301645">
+                        <property name="head" nameId="3ior.8618885170173601779" value="jetbrains" />
+                        <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7801138212747301646">
+                          <property name="head" nameId="3ior.8618885170173601779" value="moduleB" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="7801138212747308447">
+              <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="7801138212747308448">
+                <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7801138212747308449">
+                  <property name="text" nameId="3ior.4903714810883755350" value="aaa" />
+                </node>
+              </node>
+              <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_CustomCopy" typeId="3ior.9184644532456495794" id="7801138212747308450">
+                <node role="fileset" roleId="3ior.5248329904287857082" type="3ior.BuildInputSingleFile" typeId="3ior.5248329904287794582" id="7801138212747308451">
+                  <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="7801138212747308452">
+                    <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7801138212747308453">
+                      <property name="head" nameId="3ior.8618885170173601779" value="buildB.xml" />
+                    </node>
+                  </node>
+                </node>
+                <node role="handlers" roleId="3ior.9184644532456533278" type="3ior.BuildLayout_CopyFilterFixCRLF" typeId="3ior.4198392933254416812" id="7801138212747309430">
+                  <property name="eol" nameId="3ior.4198392933254416822" value="crlf" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Zip" typeId="3ior.7389400916848050071" id="6684802082773271835">
