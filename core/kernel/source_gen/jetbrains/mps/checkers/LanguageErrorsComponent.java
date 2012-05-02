@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.AbstractNodesReadListener;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 
@@ -143,6 +144,9 @@ public class LanguageErrorsComponent {
 
   public boolean check(SNode root, Set<AbstractConstraintsChecker> checkers, IOperationContext operationContext) {
     // returns whether state has been changed after check 
+    if (root == null) {
+      return false;
+    }
     invalidate();
     if (myCheckedRoot && SetSequence.fromSet(myInvalidNodes).isEmpty()) {
       return false;
@@ -150,7 +154,7 @@ public class LanguageErrorsComponent {
     Set<SNode> frontier = new HashSet<SNode>(1);
     SetSequence.fromSet(frontier).addElement(root);
     Set<SNode> newFrontier = new HashSet<SNode>(1);
-    IScope scope = SNodeOperations.getModel(root).getModelDescriptor().getModule().getScope();
+    IScope scope = check_29uvfh_a0h0i(check_29uvfh_a0a7a8(check_29uvfh_a0a0h0i(SNodeOperations.getModel(root))));
     while (!(SetSequence.fromSet(frontier).isEmpty())) {
       for (SNode node : frontier) {
         if (!(myCheckedRoot) || SetSequence.fromSet(myInvalidNodes).contains(node)) {
@@ -278,6 +282,27 @@ public class LanguageErrorsComponent {
       addDependency(accessedNode);
     }
     return (Result) result[0];
+  }
+
+  private static IScope check_29uvfh_a0h0i(IModule checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getScope();
+    }
+    return null;
+  }
+
+  private static IModule check_29uvfh_a0a7a8(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
+  }
+
+  private static SModelDescriptor check_29uvfh_a0a0h0i(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelDescriptor();
+    }
+    return null;
   }
 
   public class MyModelListener extends SModelAdapter {
