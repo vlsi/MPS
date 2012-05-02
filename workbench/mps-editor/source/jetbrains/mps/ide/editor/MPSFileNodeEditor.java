@@ -147,7 +147,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
   }
 
   public boolean isValid() {
-    return myFile.isValid() && myIsValid;
+    return myFile.isValid() && myIsValid && !myDisposed;
   }
 
   public void selectNotify() {
