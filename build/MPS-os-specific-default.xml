@@ -145,6 +145,7 @@
     <delete dir="${deploy.dir}/MPS/plugins/modelchecker.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/samples.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/mpsjava/lib/mpsjava.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.ide.build.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/debugger-java-customViewers.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/execution-configurations/lib/jetbrains.mps.execution.configurations.implementation.plugin.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/execution-languages/lib/jetbrains.mps.execution.languages.jar.tmp" />

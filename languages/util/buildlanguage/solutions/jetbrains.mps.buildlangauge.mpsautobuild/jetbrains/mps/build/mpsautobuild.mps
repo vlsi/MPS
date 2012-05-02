@@ -450,6 +450,22 @@
               <property name="id" nameId="tps4.1222447189012" value="0cf935df-4699-4e9c-a132-fa109541cba3" />
               <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.build.mps" />
             </node>
+            <node role="entry" roleId="tps4.1203617897549" type="tps4.Jar" typeId="tps4.1203598417283" id="8227093612175711630">
+              <node role="delete" roleId="tps4.1239622410040" type="tps4.Delete" typeId="tps4.1204122781510" id="8227093612175711631" />
+              <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="8227093612175711632">
+                <property name="name" nameId="tps4.1223641503366" value="jetbrains.mps.ide.build.jar" />
+              </node>
+              <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="8227093612175711634">
+                <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="8227093612175711637">
+                  <property name="name" nameId="tps4.1223641503366" value="modules" />
+                </node>
+                <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="8227093612175711638">
+                  <property name="id" nameId="tps4.1222447189012" value="422c2909-59d6-41a9-b318-40e6256b250f" />
+                  <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.ide.build" />
+                  <property name="doNotJar" nameId="tps4.2850282874221099799" value="true" />
+                </node>
+              </node>
+            </node>
             <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="4756543669711411800">
               <property name="name" nameId="tps4.1223641503366" value="languages" />
             </node>

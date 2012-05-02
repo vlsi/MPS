@@ -546,6 +546,17 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.build.mps.jar.jtmp" />
   </target>
+  <target name="pack.jetbrains.mps.ide.build">
+    <fail unless="base_dir" message="Property base_dir unspecified." />
+    <mkdir dir="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.ide.build.jar.tmp/modules/jetbrains.mps.ide.build" />
+    <copy todir="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.ide.build.jar.tmp/modules/jetbrains.mps.ide.build">
+      <fileset file="${base_dir}/build/solution/build.msd" />
+      <fileset dir="${base_dir}/build/solution" includes="icons/**, resources/**" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.ide.build.jar.tmp/modules/jetbrains.mps.ide.build/models">
+      <fileset dir="${base_dir}/build/solution/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
   <target name="pack.jetbrains.mps.debugger.api.runtime">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/plugins/debugger-api/runtime/classes" />

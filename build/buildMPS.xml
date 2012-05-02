@@ -1,7 +1,7 @@
-<project name="buildIDE" default="build" basedir="../">
+<project name="buildMPS" default="build" basedir="../">
   <property name="build.dir" location="build" />
-  <property name="build.tmp" location="${build.dir}/tmp/buildIDE" />
-  <property name="build.layout" location="${build.dir}/artifacts/buildIDE" />
+  <property name="build.tmp" location="${build.dir}/tmp/buildMPS" />
+  <property name="build.layout" location="${build.dir}/artifacts/buildMPS" />
   <property name="build.number" value="7777" />
   <property name="version" value="2.1 EAP" />
   <property name="build.vcs.number" value="HEAD" />
@@ -99,7 +99,7 @@
     <copy todir="${build.layout}/MPS ${version}">
       <fileset file="${basedir}/readme.txt" />
     </copy>
-    <echo file="${build.layout}/variables.properties">buildIDE.build.number=${build.number}${line.separator}buildIDE.version=${version}${line.separator}buildIDE.build.vcs.number=${build.vcs.number}${line.separator}buildIDE.teamcity.buildConfName=${teamcity.buildConfName}</echo>
+    <echo file="${build.layout}/variables.properties">buildMPS.build.number=${build.number}${line.separator}buildMPS.version=${version}${line.separator}buildMPS.build.vcs.number=${build.vcs.number}${line.separator}buildMPS.teamcity.buildConfName=${teamcity.buildConfName}</echo>
   </target>
   
   <target name="buildDependents">

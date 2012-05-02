@@ -6,8 +6,6 @@
   <property name="mps_home" location="${basedir}" />
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
   <property name="artifacts.buildCoreEx" location="${build.dir}/artifacts/buildCoreEx" />
-  <property name="artifacts.buildWorkbench" location="${build.dir}/artifacts/buildWorkbench" />
-  <property name="artifacts.buildUtilLanguages" location="${build.dir}/artifacts/buildUtilLanguages" />
   <property name="artifacts.IDEA" location="${idea_home}" />
   
   <target name="assemble" depends="classes">
@@ -107,13 +105,16 @@
       <zipfileset dir="${mps_home}/plugins/mpsbuild/languages/mps/util" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/util" />
       <zipfileset dir="${mps_home}/plugins/mpsbuild/languages/mps/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
+    <jar destfile="${build.layout}/plugins/mpsbuild/languages/jetbrains.mps.ide.build.jar">
+      <zipfileset file="${mps_home}/build/solution/build.msd" prefix="modules/jetbrains.mps.ide.build" />
+      <zipfileset dir="${mps_home}/build/solution" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.build" />
+      <zipfileset dir="${mps_home}/build/solution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide.build/models" />
+    </jar>
   </target>
   
   <target name="buildDependents">
     <ant antfile="build/buildCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildCoreEx.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildUtilLanguages.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies" />

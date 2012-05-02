@@ -134,21 +134,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator" />
   </dependency>
-  <dependency className="jetbrains.mps.build.pluginSolution.plugin.ExtensionDescriptor" file="ExtensionDescriptor.java">
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="jetbrains.mps.build.pluginSolution.plugin.Extension_CanEditBaseDir_" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.DefaultExtensionDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.build.pluginSolution.plugin.Extension_CanEditBaseDir_" file="Extension_CanEditBaseDir_.java">
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.Default" />
-  </dependency>
   <dependency className="jetbrains.mps.build.pluginSolution.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" file="RunConfigurationsInitializer_CustomApplicationPlugin.java">
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
     <classNode dependClassName="com.intellij.execution.junit.RuntimeConfigurationProducer" />
