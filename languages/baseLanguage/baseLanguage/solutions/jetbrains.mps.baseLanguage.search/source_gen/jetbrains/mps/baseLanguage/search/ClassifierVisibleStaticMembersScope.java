@@ -9,7 +9,9 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
+@Deprecated
 public class ClassifierVisibleStaticMembersScope extends ClassifierVisibleMembersScope {
+  @Deprecated
   public ClassifierVisibleStaticMembersScope(@Nullable SNode classifier, @Nullable SNode contextNode, int constraint) {
     super(toClassifierType(classifier), contextNode, constraint);
     if ((constraint & IClassifiersSearchScope.STATIC_MEMBER) != constraint) {

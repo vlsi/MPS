@@ -1671,6 +1671,24 @@
     <unitInfo nodeId="6320759254352298076" fileName="MemberScopes.java" startLine="98" startPosition="15" endLine="103" endPosition="5" unitName="jetbrains.mps.baseLanguage.scopes.MemberScopes$4" />
     <unitInfo nodeId="6320759254352298150" fileName="MemberScopes.java" startLine="107" startPosition="15" endLine="112" endPosition="5" unitName="jetbrains.mps.baseLanguage.scopes.MemberScopes$5" />
   </root>
+  <root nodeId="6405505214478616703">
+    <nodeInfo nodeId="6405505214478624707" fileName="Adapters.java" startLine="13" startPosition="64" endLine="14" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6405505214478624767" fileName="Adapters.java" startLine="17" startPosition="60" endLine="18" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6405505214478616705" fileName="Adapters.java" startLine="9" startPosition="23" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Adapters#()V" />
+    <nodeInfo nodeId="6405505214478623785" fileName="Adapters.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLocalVariableScope#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="6405505214478624760" fileName="Adapters.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getParameterScope#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/scope/Scope;" />
+    <scopeInfo nodeId="6405505214478616708" fileName="Adapters.java" startLine="10" startPosition="22" endLine="10" endPosition="22" />
+    <scopeInfo nodeId="6405505214478623788" fileName="Adapters.java" startLine="13" startPosition="64" endLine="14" endPosition="174" />
+    <scopeInfo nodeId="6405505214478624763" fileName="Adapters.java" startLine="17" startPosition="60" endLine="18" endPosition="170" />
+    <scopeInfo nodeId="6405505214478616705" fileName="Adapters.java" startLine="9" startPosition="23" endLine="11" endPosition="3" />
+    <scopeInfo nodeId="6405505214478623785" fileName="Adapters.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="6405505214478623789" varName="contextNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6405505214478624760" fileName="Adapters.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="6405505214478624764" varName="contextNode" />
+    </scopeInfo>
+    <unitInfo nodeId="6405505214478616703" fileName="Adapters.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.scopes.Adapters" />
+  </root>
   <root nodeId="8483743094179640481">
     <nodeInfo nodeId="8483743094179640481" fileName="ClassifierScopes.java" startLine="24" startPosition="31" endLine="25" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="7619836347971033657" fileName="ClassifierScopes.java" startLine="32" startPosition="32" endLine="33" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

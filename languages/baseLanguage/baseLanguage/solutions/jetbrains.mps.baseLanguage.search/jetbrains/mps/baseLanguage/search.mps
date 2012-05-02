@@ -36,6 +36,7 @@
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3161373106581136688">
       <property name="name" nameId="tpck.1169194664001" value="ClassifiersCache" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3161373106581137350">
       <property name="isFinal" nameId="tpee.1221565133444" value="true" />
@@ -44,64 +45,82 @@
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3161373106581136687">
       <property name="isFinal" nameId="tpee.1221565133444" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="ClassifierAndSuperClassifiersCache" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3161373106581139670">
       <property name="name" nameId="tpck.1169194664001" value="ReachableClassifiersScope" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3161373106581139869">
       <property name="name" nameId="tpck.1169194664001" value="GenericTypesUtil" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3161373106581140033">
       <property name="name" nameId="tpck.1169194664001" value="InstanceMethodReferenceInfoResolver" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3161373106581140178">
       <property name="name" nameId="tpck.1169194664001" value="StaticMethodReferenceInfoResolver" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3161373106581140309">
       <property name="name" nameId="tpck.1169194664001" value="LocalVariablesScope" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3161373106581140806">
       <property name="name" nameId="tpck.1169194664001" value="ClassifierAndSuperClassifiersScope" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
     </node>
     <node type="tpee.Interface" typeId="tpee.1107796713796" id="3161373106581141431">
       <property name="name" nameId="tpck.1169194664001" value="IClassifiersSearchScope" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3161373106581141525">
       <property name="name" nameId="tpck.1169194664001" value="AllSubclassifiersScope" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3161373106581141805">
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="AbstractClassifiersScope" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3161373106581142281">
       <property name="name" nameId="tpck.1169194664001" value="VisibleClassifiersScope" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3161373106581142361">
       <property name="name" nameId="tpck.1169194664001" value="MethodResolveUtil" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3161373106581143187">
       <property name="name" nameId="tpck.1169194664001" value="ClassifierVisibleMembersScope" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3161373106581143413">
       <property name="name" nameId="tpck.1169194664001" value="VisibleThrowablesScope" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3161373106581143470">
       <property name="name" nameId="tpck.1169194664001" value="ClassifierVisibleStaticMembersScope" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4579166930940566542">
       <property name="name" nameId="tpck.1169194664001" value="ParameterScope" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8442551749397137296">
       <property name="name" nameId="tpck.1169194664001" value="BaseLanguageUtil" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3024565449487105984">
       <property name="name" nameId="tpck.1169194664001" value="InstanceMethodCall_InstanceMethodScope" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3024565449487117498">
       <property name="name" nameId="tpck.1169194664001" value="SuperMethodCall_InstanceMethodScope" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3024565449487117567">
       <property name="name" nameId="tpck.1169194664001" value="VisibleClassConstructorsScope" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1289622777586550823">
       <property name="name" nameId="tpck.1169194664001" value="MPSBaseLanguage" />
@@ -1491,6 +1510,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6405505214478649106">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
     </node>
   </root>
   <root id="3161373106581137350">
@@ -7134,6 +7156,9 @@
         </node>
       </node>
     </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6405505214478649407">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
+    </node>
   </root>
   <root id="3161373106581139670">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3161373106581139671" />
@@ -8119,6 +8144,11 @@
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3161373106581139709">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="6405505214478649556">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="6405505214478649591">
+            <property name="text" nameId="tpee.6329021646629104958" value="use ClassifierScopes.getReachableClassifiersScope instead" />
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="3161373106581139710">
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3161373106581141812" resolveInfo="AbstractClassifiersScope" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3161373106581139711">
@@ -8362,6 +8392,9 @@
       <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="5740522748854854942">
         <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
       </node>
+    </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6405505214478649136">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
     </node>
   </root>
   <root id="3161373106581139869">
@@ -8740,6 +8773,9 @@
         </node>
       </node>
     </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6405505214478649112">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
+    </node>
   </root>
   <root id="3161373106581140033">
     <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5740522748854855033">
@@ -9045,6 +9081,9 @@
         </node>
       </node>
     </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6405505214478649115">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
+    </node>
   </root>
   <root id="3161373106581140178">
     <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5740522748854855002">
@@ -9318,6 +9357,9 @@
         </node>
       </node>
     </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6405505214478649138">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
+    </node>
   </root>
   <root id="3161373106581140309">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3161373106581140310" />
@@ -9348,6 +9390,11 @@
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3161373106581140323">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="6405505214478624750">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="6405505214478624751">
+            <property name="text" nameId="tpee.6329021646629104958" value="use Adapters.getLocalVariableScope in jetbrains.mps.baseLanguage.scopes instead" />
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3161373106581140324">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="3161373106581140325">
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3161373106581140326">
@@ -10869,6 +10916,9 @@
         <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
       </node>
     </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6405505214478581311">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
+    </node>
   </root>
   <root id="3161373106581140806">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3161373106581140807" />
@@ -12263,6 +12313,9 @@
         <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
       </node>
     </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6405505214478649422">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
+    </node>
   </root>
   <root id="3161373106581141431">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3161373106581141432" />
@@ -12473,6 +12526,9 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeListType" typeId="tp25.1145383075378" id="2434295018755137692">
         <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="tpee.1107461130800" resolveInfo="Classifier" />
       </node>
+    </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6405505214478649113">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
     </node>
   </root>
   <root id="3161373106581141525">
@@ -13079,6 +13135,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6405505214478624776">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
     </node>
   </root>
   <root id="3161373106581141805">
@@ -14040,6 +14099,9 @@
         </node>
       </node>
     </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6405505214478624774">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
+    </node>
   </root>
   <root id="3161373106581142281">
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="2433178749262262897">
@@ -14071,6 +14133,11 @@
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3161373106581142292">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="6405505214478649617">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="6405505214478649618">
+            <property name="text" nameId="tpee.6329021646629104958" value="use ClassifierScopes.getVisibleClassifiersScope instead" />
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="3161373106581142293">
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3161373106581139701" resolveInfo="ReachableClassifiersScope" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3161373106581142294">
@@ -14333,6 +14400,9 @@
         <property name="name" nameId="tpck.1169194664001" value="node" />
         <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1525004132330486874" />
       </node>
+    </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6405505214478649145">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
     </node>
   </root>
   <root id="3161373106581142361">
@@ -17219,6 +17289,9 @@
         </node>
       </node>
     </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6405505214478649100">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
+    </node>
   </root>
   <root id="3161373106581143413">
     <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="1874070707401052380">
@@ -17253,6 +17326,11 @@
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3161373106581143424">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="6405505214478649643">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="6405505214478649644">
+            <property name="text" nameId="tpee.6329021646629104958" value="use ClassifierScopes.getThrowablesScope instead" />
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="3161373106581143425">
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2433178749262262939" resolveInfo="VisibleClassifiersScope" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3161373106581143426">
@@ -17374,6 +17452,9 @@
         <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="tpee.1107461130800" resolveInfo="Classifier" />
       </node>
     </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6405505214478649148">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
+    </node>
   </root>
   <root id="3161373106581143470">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3161373106581143471" />
@@ -17493,6 +17574,9 @@
         </node>
       </node>
     </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6405505214478649102">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
+    </node>
   </root>
   <root id="4579166930940566542">
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="4579166930940578066">
@@ -17513,6 +17597,11 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="4579166930940566545" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4579166930940566546" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4579166930940566547">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="6405505214478624754">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="6405505214478624759">
+            <property name="text" nameId="tpee.6329021646629104958" value="use Adapters.getParameterScope in jetbrains.mps.baseLanguage.scopes instead" />
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="8866852874177041155">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8866852874177041156">
             <property name="name" nameId="tpck.1169194664001" value="methods" />
@@ -17760,6 +17849,9 @@
         </node>
       </node>
     </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6405505214478624752">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
+    </node>
   </root>
   <root id="8442551749397137296">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8442551749397137297" />
@@ -17928,6 +18020,37 @@
         <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="3024565449487364591" />
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3024565449487105994">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="6405505214478649502">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="6405505214478649505">
+            <property name="text" nameId="tpee.6329021646629104958" value="use" />
+          </node>
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.StatementCommentPart" typeId="tpee.6329021646629175143" id="6405505214478649503">
+            <node role="commentedStatement" roleId="tpee.6329021646629175144" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6405505214478649439">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6405505214478649489">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6405505214478649461">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6405505214478649440">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3024565449487105990" resolveInfo="instanceType" />
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6405505214478649467">
+                    <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1107535924139" />
+                  </node>
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="6405505214478649495">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.8083692786967356611" resolveInfo="getVisibleMembers" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6405505214478649500">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3024565449487105992" resolveInfo="contextNode" />
+                  </node>
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="6405505214478649496">
+                    <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="6405505214478649508">
+            <property name="text" nameId="tpee.6329021646629104958" value="instead" />
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="3024565449487105995">
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3573019447813594739" resolveInfo="ClassifierVisibleMembersScope" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3024565449487105996">
@@ -17942,6 +18065,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6405505214478649114">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
     </node>
   </root>
   <root id="3024565449487117498">
@@ -17971,6 +18097,11 @@
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3024565449487117510">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="6405505214478649593">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="6405505214478649594">
+            <property name="text" nameId="tpee.6329021646629104958" value="use classifier.getMembers(concept/SuperMethodKind)" />
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="3024565449487117511">
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3573019447813594739" resolveInfo="ClassifierVisibleMembersScope" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3024565449487117512">
@@ -18121,6 +18252,9 @@
       <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="3024565449487117566">
         <link role="annotation" roleId="tpee.1188208074048" targetNodeId="68ai.~NotNull" resolveInfo="NotNull" />
       </node>
+    </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6405505214478649139">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
     </node>
   </root>
   <root id="3024565449487117567">
@@ -18598,6 +18732,11 @@
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3024565449487117769">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="6405505214478649614">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="6405505214478649615">
+            <property name="text" nameId="tpee.6329021646629104958" value="use VisibleClassConstructorsScope in j.m.baseLanguage.scopes instead" />
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="3024565449487117770">
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2433178749262262939" resolveInfo="VisibleClassifiersScope" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3024565449487117771">
@@ -18829,6 +18968,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6405505214478649144">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
     </node>
   </root>
   <root id="1289622777586550823">

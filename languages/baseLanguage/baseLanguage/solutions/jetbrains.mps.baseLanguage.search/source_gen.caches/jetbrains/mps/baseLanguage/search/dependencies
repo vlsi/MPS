@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.baseLanguage.search.AbstractClassifiersScope" file="AbstractClassifiersScope.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -16,6 +17,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.AllSubclassifiersScope" file="AllSubclassifiersScope.java">
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -46,6 +48,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersCache" file="ClassifierAndSuperClassifiersCache.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -78,6 +81,7 @@
     <classNode extendsClassName="jetbrains.mps.cache.DataSet" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope" file="ClassifierAndSuperClassifiersScope.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -107,6 +111,7 @@
     <classNode extendsClassName="jetbrains.mps.components.CoreComponent" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope" file="ClassifierVisibleMembersScope.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.InstanceMethodReferenceInfoResolver" />
@@ -126,6 +131,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.search.AbstractSearchScope" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope" file="ClassifierVisibleStaticMembersScope.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.HashSet" />
@@ -138,6 +144,7 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.ClassifiersCache" file="ClassifiersCache.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -162,6 +169,7 @@
     <classNode extendsClassName="jetbrains.mps.cache.AbstractCache" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.GenericTypesUtil" file="GenericTypesUtil.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -170,17 +178,20 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.IClassifiersSearchScope" file="IClassifiersSearchScope.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.smodel.search.ISearchScope" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.InstanceMethodCall_InstanceMethodScope" file="InstanceMethodCall_InstanceMethodScope.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.IClassifiersSearchScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.InstanceMethodReferenceInfoResolver" file="InstanceMethodReferenceInfoResolver.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
@@ -194,6 +205,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.LocalVariablesScope" file="LocalVariablesScope.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -254,6 +266,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.ParameterScope" file="ParameterScope.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -265,6 +278,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.search.AbstractSearchScope" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.ReachableClassifiersScope" file="ReachableClassifiersScope.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -298,6 +312,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.search.IReferenceInfoResolver" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.StaticMethodReferenceInfoResolver" file="StaticMethodReferenceInfoResolver.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
@@ -312,6 +327,7 @@
   <dependency className="jetbrains.mps.baseLanguage.search.SuperMethodCall_InstanceMethodScope" file="SuperMethodCall_InstanceMethodScope.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.IClassifiersSearchScope" />
@@ -386,6 +402,7 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.search.ReachableClassifiersScope" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.VisibleThrowablesScope" file="VisibleThrowablesScope.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />

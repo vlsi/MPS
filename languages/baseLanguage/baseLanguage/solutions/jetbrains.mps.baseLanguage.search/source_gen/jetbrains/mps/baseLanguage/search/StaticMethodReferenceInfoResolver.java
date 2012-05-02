@@ -9,11 +9,13 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Map;
 
+@Deprecated
 /*package*/ class StaticMethodReferenceInfoResolver implements IReferenceInfoResolver {
   private SNode myClass;
   private List<SNode> myActualArguments;
   private ClassifierAndSuperClassifiersScope mySearchScope;
 
+  @Deprecated
   public StaticMethodReferenceInfoResolver(ClassifierAndSuperClassifiersScope searchScope, SNode class_, List<SNode> actualArguments) {
     this.myClass = class_;
     this.myActualArguments = actualArguments;

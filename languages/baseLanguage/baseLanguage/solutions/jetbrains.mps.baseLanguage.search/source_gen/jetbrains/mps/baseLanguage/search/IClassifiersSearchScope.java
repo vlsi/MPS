@@ -7,6 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 
+@Deprecated
 public interface IClassifiersSearchScope extends ISearchScope {
   public static final int INTERFACE = 1;
   public static final int CLASS = 2;

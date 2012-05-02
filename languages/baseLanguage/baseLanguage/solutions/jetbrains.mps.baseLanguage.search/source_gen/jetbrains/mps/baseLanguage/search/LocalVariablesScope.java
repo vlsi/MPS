@@ -20,11 +20,14 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.scope.Scope;
 
+@Deprecated
 public class LocalVariablesScope extends AbstractSearchScope {
   private SNode myContextNode;
   private List<SNode> myLocalVariables;
 
+  @Deprecated
   public LocalVariablesScope(SNode contextNode) {
+    // use Adapters.getLocalVariableScope in jetbrains.mps.baseLanguage.scopes instead 
     this.myContextNode = contextNode;
   }
 

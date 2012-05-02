@@ -28,6 +28,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
+@Deprecated
 /*package*/ final class ClassifierAndSuperClassifiersCache extends AbstractCache {
   private static final KeyProducer keyProducer = new KeyProducer();
   private static final AbstractCache.DataSetCreator<ClassifierAndSuperClassifiersCache> CLASSIFIERS_CACHE_CREATOR = new AbstractCache.DataSetCreator<ClassifierAndSuperClassifiersCache>() {
@@ -48,6 +49,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
   private final SNode myTopClassifier;
 
+  @Deprecated
   private ClassifierAndSuperClassifiersCache(Object key, SNode topClassifier) {
     super(key);
     this.myTopClassifier = topClassifier;

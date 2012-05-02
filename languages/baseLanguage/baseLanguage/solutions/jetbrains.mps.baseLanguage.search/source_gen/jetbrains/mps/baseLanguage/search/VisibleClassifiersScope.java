@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
+@Deprecated
 public class VisibleClassifiersScope extends ReachableClassifiersScope {
   protected static Log log = LogFactory.getLog(VisibleClassifiersScope.class);
 
@@ -20,9 +21,11 @@ public class VisibleClassifiersScope extends ReachableClassifiersScope {
 
   @Deprecated
   public VisibleClassifiersScope(SModel model, int constraint, IScope scope) {
+    // use ClassifierScopes.getVisibleClassifiersScope instead 
     super(model, constraint, scope);
   }
 
+  @Deprecated
   public VisibleClassifiersScope(@NotNull SNode contextNode, int constraint, IScope scope) {
     super(SNodeOperations.getModel(contextNode), constraint, scope);
     myContextNode = contextNode;

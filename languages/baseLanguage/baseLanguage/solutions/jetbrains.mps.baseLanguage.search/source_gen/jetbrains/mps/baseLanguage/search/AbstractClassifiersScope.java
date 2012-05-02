@@ -14,9 +14,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
+@Deprecated
 public abstract class AbstractClassifiersScope extends AbstractSearchScope implements IClassifiersSearchScope {
   private int myConstraint;
 
+  @Deprecated
   protected AbstractClassifiersScope(int constraint) {
     this.myConstraint = constraint;
   }

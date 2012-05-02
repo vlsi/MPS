@@ -11,10 +11,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.NameUtil;
 
+@Deprecated
 public class VisibleThrowablesScope extends VisibleClassifiersScope {
   private static String THROWABLE_FQ_NAME = "java.lang.Throwable";
 
+  @Deprecated
   public VisibleThrowablesScope(@NotNull SNode contextNode, int constraint, IScope scope) {
+    // use ClassifierScopes.getThrowablesScope instead 
     super(contextNode, constraint, scope);
   }
 
