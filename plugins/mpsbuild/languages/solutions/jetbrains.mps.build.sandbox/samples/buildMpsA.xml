@@ -7,7 +7,7 @@
   <target name="assemble" depends="classes, fetchDependencies">
     <mkdir dir="${build.layout}/temp" />
     <copy todir="${build.layout}/temp">
-      <fileset file="${build.tmp}/deps/buildMpsB/my.tar.gz/tests.msd" />
+      <fileset file="${build.tmp}/deps/buildMpsB/my.tar.bz2/tests.msd" />
     </copy>
     <mkdir dir="${build.tmp}/default/zipfilesettest1.zip" />
     <mkdir dir="${build.tmp}/default/zipfilesettest1.zip/AAA" />
@@ -25,33 +25,35 @@
       <fileset dir="${build.tmp}/default/zipfilesettest1.zip" />
     </zip>
     <tar destfile="${build.layout}/temp/tarfilesettest1.tar">
+      <tarfileset file="${build.tmp}/deps/buildMpsB/my.tar.gz/A2/A3/tests.msd" prefix="repack/none" />
+      <tarfileset file="${build.tmp}/deps/buildMpsB/my.tar/A1/tests.msd" prefix="repack/gzip" />
       <tarfileset dir="${artifacts.buildMpsB}/X" prefix="QQQ/PPP" />
     </tar>
-    <mkdir dir="${build.tmp}/default/tarfilesettest2.tar_f600" />
-    <copy todir="${build.tmp}/default/tarfilesettest2.tar_f600">
+    <mkdir dir="${build.tmp}/default/tarfilesettest2.tar.gz_f600" />
+    <copy todir="${build.tmp}/default/tarfilesettest2.tar.gz_f600">
       <fileset file="${basedir}/jetbrains.mps.build.tests/tests.msd" />
     </copy>
-    <mkdir dir="${build.tmp}/default/tarfilesettest2.tar_f640_d750" />
-    <mkdir dir="${build.tmp}/default/tarfilesettest2.tar_f6001" />
-    <copy todir="${build.tmp}/default/tarfilesettest2.tar_f6001">
+    <mkdir dir="${build.tmp}/default/tarfilesettest2.tar.gz_f640_d750" />
+    <mkdir dir="${build.tmp}/default/tarfilesettest2.tar.gz_f6001" />
+    <copy todir="${build.tmp}/default/tarfilesettest2.tar.gz_f6001">
       <fileset dir="${basedir}/jetbrains.mps.build.tests">
         <include name="*.msd" />
       </fileset>
       <flattenmapper />
     </copy>
-    <mkdir dir="${build.tmp}/default/tarfilesettest2.tar_f640_d750/prefix3" />
-    <copy todir="${build.tmp}/default/tarfilesettest2.tar_f640_d750/prefix3">
+    <mkdir dir="${build.tmp}/default/tarfilesettest2.tar.gz_f640_d750/prefix3" />
+    <copy todir="${build.tmp}/default/tarfilesettest2.tar.gz_f640_d750/prefix3">
       <fileset file="${basedir}/jetbrains.mps.build.sandbox/models/build1.mps" />
       <filterchain>
         <fixcrlf eol="crlf" />
       </filterchain>
     </copy>
-    <tar destfile="${build.layout}/temp/tarfilesettest2.tar">
+    <tar destfile="${build.layout}/temp/tarfilesettest2.tar.gz" compression="gzip">
       <tarfileset dir="${artifacts.buildMpsB}/X" prefix="prefix1/prefix2" filemode="640" dirmode="750" />
       <tarfileset file="${basedir}/jetbrains.mps.build.sandbox/sandbox.msd" prefix="prefix1/prefix2/prefix3" filemode="640" />
-      <tarfileset dir="${build.tmp}/default/tarfilesettest2.tar_f600" filemode="600" prefix="prefix1" />
-      <tarfileset dir="${build.tmp}/default/tarfilesettest2.tar_f640_d750" filemode="640" dirmode="750" prefix="prefix1/prefix2" />
-      <tarfileset dir="${build.tmp}/default/tarfilesettest2.tar_f6001" filemode="600" prefix="prefix1/prefix2" />
+      <tarfileset dir="${build.tmp}/default/tarfilesettest2.tar.gz_f600" filemode="600" prefix="prefix1" />
+      <tarfileset dir="${build.tmp}/default/tarfilesettest2.tar.gz_f640_d750" filemode="640" dirmode="750" prefix="prefix1/prefix2" />
+      <tarfileset dir="${build.tmp}/default/tarfilesettest2.tar.gz_f6001" filemode="600" prefix="prefix1/prefix2" />
     </tar>
   </target>
   
@@ -62,8 +64,12 @@
   <target name="fetchDependencies">
     <mkdir dir="${build.tmp}/deps/buildMpsB/MpsB.zip" />
     <unzip src="${artifacts.buildMpsB}/X/MpsB.zip" dest="${build.tmp}/deps/buildMpsB/MpsB.zip" />
+    <mkdir dir="${build.tmp}/deps/buildMpsB/my.tar.bz2" />
+    <untar src="${artifacts.buildMpsB}/my.tar.bz2" dest="${build.tmp}/deps/buildMpsB/my.tar.bz2" compression="bzip2" />
     <mkdir dir="${build.tmp}/deps/buildMpsB/my.tar.gz" />
-    <untar src="${artifacts.buildMpsB}/my.tar.gz" dest="${build.tmp}/deps/buildMpsB/my.tar.gz" />
+    <untar src="${artifacts.buildMpsB}/my.tar.gz" dest="${build.tmp}/deps/buildMpsB/my.tar.gz" compression="gzip" />
+    <mkdir dir="${build.tmp}/deps/buildMpsB/my.tar" />
+    <untar src="${artifacts.buildMpsB}/my.tar" dest="${build.tmp}/deps/buildMpsB/my.tar" compression="none" />
   </target>
   
   <target name="build" depends="assemble, check" />

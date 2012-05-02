@@ -167,6 +167,10 @@ public class QueriesGenerated {
     return BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(_context.getNode(), Context.defaultContext(_context));
   }
 
+  public static Object propertyMacro_GetPropertyValue_1979010778009295389(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString_def(_context.getNode(), "compression", "none");
+  }
+
   public static Object propertyMacro_GetPropertyValue_7801138212747394903(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(_context.getNode(), Context.defaultContext(_context));
   }
@@ -953,6 +957,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_8577651205286952509(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+  }
+
+  public static boolean ifMacro_Condition_1979010778009294646(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(SPropertyOperations.hasValue(_context.getNode(), "compression", "none", "none"));
   }
 
   public static boolean ifMacro_Condition_7801138212747394913(final IOperationContext operationContext, final IfMacroContext _context) {

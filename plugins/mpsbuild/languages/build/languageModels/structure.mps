@@ -521,6 +521,12 @@
       <property name="name" nameId="tpck.1169194664001" value="BuildLayout_UnixFilemode" />
       <property name="constraint" nameId="tpce.1083066089218" value="[0-7]{3}" />
     </node>
+    <node type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1979010778009209124">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildLayout_TarCompression" />
+      <property name="memberIdentifierPolicy" nameId="tpce.1197591154882" value="derive_from_internal_value" />
+      <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
   </roots>
   <root id="5617550519002745363">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5204048710541015587">
@@ -1619,6 +1625,10 @@
     </node>
   </root>
   <root id="8577651205286814211">
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1979010778009209128">
+      <property name="name" nameId="tpck.1169194664001" value="compression" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1979010778009209124" resolveInfo="BuildLayout_TarCompression" />
+    </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8577651205286814212">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5248329904288166441" resolveInfo="BuildLayout_ContainerAcceptingFileSet" />
     </node>
@@ -1692,5 +1702,19 @@
     </node>
   </root>
   <root id="7801138212747054659" />
+  <root id="1979010778009209124">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1979010778009209125">
+      <property name="internalValue" nameId="tpce.1083923523171" value="none" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="none" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1979010778009209126">
+      <property name="internalValue" nameId="tpce.1083923523171" value="gzip" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="gzip" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1979010778009209127">
+      <property name="internalValue" nameId="tpce.1083923523171" value="bzip2" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="bzip2" />
+    </node>
+  </root>
 </model>
 

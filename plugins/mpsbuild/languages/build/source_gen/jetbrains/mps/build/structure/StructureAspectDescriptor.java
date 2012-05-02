@@ -118,7 +118,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 50:
         return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildLayout_PureNode", null, true, new String[]{}, new String[]{}, new String[]{});
       case 51:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildLayout_Tar", "jetbrains.mps.build.structure.BuildLayout_NamedContainer", false, new String[]{"jetbrains.mps.build.structure.BuildLayout_NamedContainer", "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet", "jetbrains.mps.build.structure.BuildLayout_PureNode"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildLayout_Tar", "jetbrains.mps.build.structure.BuildLayout_NamedContainer", false, new String[]{"jetbrains.mps.build.structure.BuildLayout_NamedContainer", "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet", "jetbrains.mps.build.structure.BuildLayout_PureNode"}, new String[]{"compression"}, new String[]{});
       case 52:
         return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildLayout_TransparentContainer", "jetbrains.mps.build.structure.BuildLayout_AbstractContainer", false, new String[]{"jetbrains.mps.build.structure.BuildLayout_AbstractContainer"}, new String[]{}, new String[]{});
       case 53:
