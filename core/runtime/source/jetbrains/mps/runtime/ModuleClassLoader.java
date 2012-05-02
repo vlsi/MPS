@@ -19,6 +19,7 @@ import gnu.trove.THashMap;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.project.ClassLoadingModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.util.NameUtil;
 
 import java.io.IOException;
 import java.net.URL;
@@ -29,60 +30,65 @@ public class ModuleClassLoader extends ClassLoader {
   @SuppressWarnings({"UnusedDeclaration", "FieldCanBeLocal"})
   private boolean myDisposed;
   private IClassLoadingModule myModule;
-  private Map<String, Class> myClasses = new THashMap<String, Class>();
+
+  private final Map<String, Class> myClasses = new THashMap<String, Class>();
 
   public ModuleClassLoader(IClassLoadingModule module) {
     super(LibraryInitializer.getInstance().getParentLoaderForModule(module));
     myModule = module;
   }
 
-  protected synchronized final Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+  protected final Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+    return loadClass(name, resolve, false);
+  }
+
+  private Class<?> loadClass(String name, boolean resolve, boolean selfOnly) throws ClassNotFoundException {
     if (myClasses.containsKey(name)) {
       Class cl = myClasses.get(name);
       if (cl == null) throw new ClassNotFoundException(name);
       return cl;
     }
+
     try {
-      return loadClass(name, resolve, true, true);
+      if (!myModule.canLoad()) throw new ClassNotFoundException(name);
+
+      Class c = findClassEverywhere(name, selfOnly);
+
+      if (resolve) {
+        resolveClass(c);
+      }
+      myClasses.put(name, c);
+      return c;
     } catch (ClassNotFoundException cnf) {
       myClasses.put(name, null);
       throw cnf;
     }
   }
 
-  private Class<?> loadClass(String name, boolean resolve, boolean dependencies, boolean loadFromApp) throws ClassNotFoundException {
-    if (!myModule.canLoad()) throw new ClassNotFoundException(name);
-
-    Class c = findClassEverywhere(name, dependencies, loadFromApp);
-
-    if (resolve) {
-      resolveClass(c);
-    }
-    myClasses.put(name, c);
-    return c;
-  }
-
-  private Class<?> findClassEverywhere(String name, boolean dependencies, boolean loadFromApp) throws ClassNotFoundException {
+  private Class<?> findClassEverywhere(String name, boolean selfOnly) throws ClassNotFoundException {
     if (myModule.canLoadFromSelf()) {
       Class c = findLoadedClass(name);
       if (c != null) return c;
 
       byte[] bytes = myModule.findClassBytes(name);
       if (bytes != null) {
-        definePackageIfNecessary(name);
+        String pack = NameUtil.namespaceFromLongName(name);
+        if (getPackage(pack) == null) {
+          definePackage(pack, null, null, null, null, null, null, null);
+        }
         ClassLoaderManager.getInstance().classLoaded(name, ((ClassLoadingModule) myModule).getModuleReference());
         return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
       }
     }
 
-    if (dependencies) {
+    if (!selfOnly) {
       Set<IClassLoadingModule> mayContainNonOwned = new HashSet<IClassLoadingModule>();
       for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
         if (m.equals(myModule)) continue;
 
         if (m.canLoad() && m.canLoadFromSelf() && m.canFindClass(name)) {
           try {
-            return m.getClassLoader().loadClass(name, false, false, false);
+            return m.getClassLoader().loadClass(name, false, true);
           } catch (ClassNotFoundException e) {
             //ignore
           }
@@ -92,29 +98,16 @@ public class ModuleClassLoader extends ClassLoader {
       }
       for (IClassLoadingModule m : mayContainNonOwned) {
         try {
-          return m.getClassLoader().loadClass(name, false, false, false);
+          return m.getClassLoader().loadClass(name, false, true);
         } catch (ClassNotFoundException e) {
           //ignore
         }
       }
     }
 
-    if (!loadFromApp && getParent() == ModuleClassLoader.class.getClassLoader()) throw new ClassNotFoundException(name);
+    if (!selfOnly && getParent() == ModuleClassLoader.class.getClassLoader()) throw new ClassNotFoundException(name);
 
     return getParent().loadClass(name);
-  }
-
-  private void definePackageIfNecessary(String name) {
-    String pack = getNamespace(name);
-    if (getPackage(pack) != null) return;
-    definePackage(pack, null, null, null, null, null, null, null);
-  }
-
-  //todo replace with NameUtil.namespaceFromLongName(name)
-  private String getNamespace(String fqName) {
-    int lastIndex = fqName.lastIndexOf('.');
-    if (lastIndex == -1) return "";
-    return fqName.substring(0, lastIndex);
   }
 
   protected URL findResource(String name) {
