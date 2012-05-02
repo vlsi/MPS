@@ -24,7 +24,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.scope.CompositeScope;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.structure.ExtensionPoint;
 
 public class BuildProject_Behavior {
   public static void init(SNode thisNode) {
@@ -144,13 +143,8 @@ public class BuildProject_Behavior {
     return new CompositeScope(ListSequence.fromList(scopes).toGenericArray(Scope.class));
   }
 
-  public static boolean call_canEditBaseDir_631271972590018330(final SNode thisNode) {
-    ExtensionPoint<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> point = ExtensionPoint.<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>generify(new ExtensionPoint("jetbrains.mps.build.CanEditBaseDir", _FunctionTypes._return_P1_E0.class));
-    return Sequence.fromIterable(point.getObjects()).findFirst(new IWhereFilter<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>() {
-      public boolean accept(_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> it) {
-        return it.invoke(thisNode);
-      }
-    }) != null;
+  public static boolean call_canEditBaseDir_631271972590018330(SNode thisNode) {
+    return true;
   }
 
   private static boolean neq_save77_a0c0g(Object a, Object b) {

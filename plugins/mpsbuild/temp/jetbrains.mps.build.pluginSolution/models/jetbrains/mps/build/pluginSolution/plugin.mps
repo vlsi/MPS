@@ -35,7 +35,6 @@
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
   <import index="rzqf" modelUID="r:d78df0bb-be4f-4e0d-8142-c0b2df70a5a3(jetbrains.mps.execution.commands.structure)" version="0" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
-  <import index="v54s" modelUID="r:2a0fe383-d602-4f5b-813c-e41afdbbb97e(jetbrains.mps.lang.extension.structure)" version="-1" implicit="yes" />
   <import index="1oap" modelUID="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" version="0" implicit="yes" />
   <import index="qff7" modelUID="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" version="0" implicit="yes" />
   <roots>
@@ -56,9 +55,6 @@
     </node>
     <node type="uhxm.RunConfigurationProducer" typeId="uhxm.4366236229294105349" id="3767587139140991018">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
-    </node>
-    <node type="v54s.ExtensionDeclaration" typeId="v54s.3729007189729192404" id="1357788371930488530">
-      <link role="extensionPoint" roleId="v54s.3729007189729192405" targetNodeId="d3bl.8419583202466290080" resolveInfo="CanEditBaseDir" />
     </node>
   </roots>
   <root id="4468328282078607076">
@@ -652,37 +648,6 @@
         </node>
       </node>
       <node role="source" roleId="uhxm.7301162575811113551" type="uhxm.NodeSource" typeId="uhxm.7301162575811126385" id="3767587139140991024" />
-    </node>
-  </root>
-  <root id="1357788371930488530">
-    <node role="objectGetter" roleId="v54s.8029776554053057811" type="v54s.ExtensionObjectGetter" typeId="v54s.8029776554053043557" id="1357788371930488531">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1357788371930488532">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="1357788371930491095">
-          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="1357788371930491096">
-            <property name="text" nameId="tpee.6329021646629104958" value="we are here =&gt; we are in standalone MPS =&gt; can edit basedir" />
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1357788371930491089">
-          <node role="expression" roleId="tpee.1068580123156" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="1357788371930491090">
-            <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="1357788371930491091">
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1357788371930491092">
-                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="631271972590064556">
-                  <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="631271972590064551">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="631271972590064549" resolveInfo="p" />
-                  </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsNotNullOperation" typeId="tp25.1172008320231" id="631271972590065756" />
-                </node>
-              </node>
-            </node>
-            <node role="parameter" roleId="tp2c.1199569906740" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="631271972590064549">
-              <property name="name" nameId="tpck.1169194664001" value="p" />
-              <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="631271972590064550">
-                <link role="concept" roleId="tp25.1138405853777" targetNodeId="3ior.5617550519002745363" resolveInfo="BuildProject" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
   </root>
 </model>

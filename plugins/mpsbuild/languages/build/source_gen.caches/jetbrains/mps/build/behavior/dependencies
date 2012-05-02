@@ -869,7 +869,6 @@
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
     <classNode dependClassName="jetbrains.mps.scope.SimpleRoleScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.ExtensionPoint" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildProject_BehaviorDescriptor" file="BuildProject_BehaviorDescriptor.java">
