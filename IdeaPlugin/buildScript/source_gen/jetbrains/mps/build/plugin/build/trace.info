@@ -13,7 +13,7 @@
     <unitInfo nodeId="4301118715654192646" fileName="buildIDE.xml" startLine="1" startPosition="0" endLine="127" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildIDE" />
   </root>
   <root nodeId="4301118715654497533">
-    <unitInfo nodeId="4301118715654497533" fileName="buildDistribution.xml" startLine="1" startPosition="0" endLine="31" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildDistribution" />
+    <unitInfo nodeId="4301118715654497533" fileName="buildDistribution.xml" startLine="1" startPosition="0" endLine="33" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildDistribution" />
   </root>
   <root nodeId="4301118715654819483">
     <unitInfo nodeId="4301118715654819483" fileName="buildUtilLanguages.xml" startLine="1" startPosition="0" endLine="2283" endPosition="10" unitName="jetbrains.mps.build.plugin.build.buildUtilLanguages" />

@@ -589,10 +589,6 @@ public class QueriesGenerated {
     return "dir";
   }
 
-  public static Object propertyMacro_GetPropertyValue_6684802082773280544(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((Tuples._2<String, String>) _context.getVariable("var:targetLocation"))._1();
-  }
-
   public static Object propertyMacro_GetPropertyValue_6408167411310656493(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._1();
   }
@@ -607,6 +603,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_6408167411310656514(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._0();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1979010778008906784(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((Tuples._2<String, String>) _context.getVariable("var:targetLocation"))._1();
   }
 
   public static Object propertyMacro_GetPropertyValue_5610619299013115002(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1103,10 +1103,6 @@ public class QueriesGenerated {
     return Sequence.fromIterable(((Tuples._2<Iterable<SNode>, String>) _context.getVariable("var:depsAndBasePath"))._0()).isNotEmpty();
   }
 
-  public static boolean ifMacro_Condition_6684802082773279700(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ((Tuples._2<String, String>) _context.getVariable("var:targetLocation"))._1() != null;
-  }
-
   public static boolean ifMacro_Condition_6408167411310656502(final IOperationContext operationContext, final IfMacroContext _context) {
     return (((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._1() != null && ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._1().length() > 0);
   }
@@ -1117,6 +1113,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_7801138212747257306(final IOperationContext operationContext, final IfMacroContext _context) {
     return ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._2() != null;
+  }
+
+  public static boolean ifMacro_Condition_1979010778008906788(final IOperationContext operationContext, final IfMacroContext _context) {
+    return ((Tuples._2<String, String>) _context.getVariable("var:targetLocation"))._1() != null;
   }
 
   public static boolean ifMacro_Condition_6408167411310656480(final IOperationContext operationContext, final IfMacroContext _context) {

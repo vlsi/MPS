@@ -18,7 +18,9 @@
       </filterchain>
     </copy>
     <zip destfile="${build.layout}/temp/zipfilesettest1.zip">
-      <zipfileset dir="${artifacts.buildMpsB}" includes="X/**" prefix="AAA" />
+      <zipfileset dir="${artifacts.buildMpsB}" prefix="AAA">
+        <include name="X/**" />
+      </zipfileset>
       <zipfileset file="${basedir}/jetbrains.mps.build.sandbox/samples/build.xml" prefix="AAA" />
       <fileset dir="${build.tmp}/default/zipfilesettest1.zip" />
     </zip>
