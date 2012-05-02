@@ -2,24 +2,24 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/buildDistribution" />
   <property name="build.layout" location="${build.dir}/artifacts/buildDistribution" />
-  <property name="artifacts.buildIDE" location="${build.dir}/artifacts/buildIDE" />
-  <property file="${artifacts.buildIDE}/variables.properties" prefix="import.buildIDE" />
-  <property name="buildIDE.build.number" value="${import.buildIDE.buildIDE.build.number}" />
-  <property name="buildIDE.version" value="${import.buildIDE.buildIDE.version}" />
-  <property name="buildIDE.build.vcs.number" value="${import.buildIDE.buildIDE.build.vcs.number}" />
-  <property name="buildIDE.teamcity.buildConfName" value="${import.buildIDE.buildIDE.teamcity.buildConfName}" />
+  <property name="artifacts.buildMPS" location="${build.dir}/artifacts/buildMPS" />
+  <property file="${artifacts.buildMPS}/variables.properties" prefix="import.buildMPS" />
+  <property name="buildMPS.build.number" value="${import.buildMPS.buildMPS.build.number}" />
+  <property name="buildMPS.version" value="${import.buildMPS.buildMPS.version}" />
+  <property name="buildMPS.build.vcs.number" value="${import.buildMPS.buildMPS.build.vcs.number}" />
+  <property name="buildMPS.teamcity.buildConfName" value="${import.buildMPS.buildMPS.teamcity.buildConfName}" />
   
   <target name="assemble" depends="fetchDependencies">
-    <zip destfile="${build.layout}/${buildIDE.build.number}.zip">
-      <fileset dir="${artifacts.buildIDE}">
-        <include name="MPS ${buildIDE.version}/**" />
+    <zip destfile="${build.layout}/${buildMPS.build.number}.zip">
+      <fileset dir="${artifacts.buildMPS}">
+        <include name="MPS ${buildMPS.version}/**" />
       </fileset>
     </zip>
-    <echo file="${build.layout}/variables.properties">buildIDE.build.number=${buildIDE.build.number}${line.separator}buildIDE.version=${buildIDE.version}${line.separator}buildIDE.build.vcs.number=${buildIDE.build.vcs.number}${line.separator}buildIDE.teamcity.buildConfName=${buildIDE.teamcity.buildConfName}</echo>
+    <echo file="${build.layout}/variables.properties">buildMPS.build.number=${buildMPS.build.number}${line.separator}buildMPS.version=${buildMPS.version}${line.separator}buildMPS.build.vcs.number=${buildMPS.build.vcs.number}${line.separator}buildMPS.teamcity.buildConfName=${buildMPS.teamcity.buildConfName}</echo>
   </target>
   
   <target name="buildDependents">
-    <ant antfile="build/buildIDE.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildMPS.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies" />

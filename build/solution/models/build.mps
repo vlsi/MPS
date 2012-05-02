@@ -31,7 +31,7 @@
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4301118715654192646">
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
-      <property name="name" nameId="tpck.1169194664001" value="buildIDE" />
+      <property name="name" nameId="tpck.1169194664001" value="buildMPS" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4301118715654850396">
@@ -7034,7 +7034,7 @@
       </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="4301118715654497536">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4301118715654192646" resolveInfo="buildIDE" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4301118715654192646" resolveInfo="buildMPS" />
     </node>
   </root>
   <root id="4301118715654192646">
