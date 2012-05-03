@@ -33,7 +33,7 @@
           </node>
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="8056730377013685556">
-          <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8056730377013685549" resolveInfo="jetbrains.mps.build.tests" />
+          <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8056730377013685549" resolveInfo="jetbrains.mps.build.sandbox" />
         </node>
       </node>
     </node>
@@ -42,14 +42,14 @@
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Solution" typeId="kdzh.3189788309731840247" id="8056730377013685549">
       <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
-      <property name="uuid" nameId="kdzh.322010710375892619" value="39742b07-848c-43a7-be0a-845055dd3333" />
-      <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.build.tests" />
+      <property name="uuid" nameId="kdzh.322010710375892619" value="d029512f-7357-432e-b758-ecdc37cc94f5" />
+      <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.build.sandbox" />
       <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
       <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="8056730377013685550">
         <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8056730377013686185">
-          <property name="head" nameId="3ior.8618885170173601779" value="jetbrains.mps.build.tests" />
+          <property name="head" nameId="3ior.8618885170173601779" value="jetbrains.mps.build.sandbox" />
           <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8056730377013686186">
-            <property name="head" nameId="3ior.8618885170173601779" value="tests.msd" />
+            <property name="head" nameId="3ior.8618885170173601779" value="sandbox.msd" />
           </node>
         </node>
       </node>
