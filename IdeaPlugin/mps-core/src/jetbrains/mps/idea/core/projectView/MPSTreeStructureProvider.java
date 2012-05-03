@@ -27,6 +27,7 @@ import com.intellij.psi.PsiElement;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -67,24 +68,11 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     if (selected == null) {
       return null;
     }
-    if (MPSCommonDataKeys.CONTEXT_MODEL.is(dataName)) {
-      if (selected.size() != 1) return null;
-      AbstractTreeNode node = selected.iterator().next();
-      IFile modelFile = getModelFile(node);
-      if (modelFile == null) return null;
-      return SModelRepository.getInstance().findModel(modelFile);
-    }
-    if (MPSCommonDataKeys.MODEL.is(dataName)) {
-      if (selected.size() != 1) return null;
-      AbstractTreeNode node = selected.iterator().next();
-      if (!(node instanceof PsiFileNode)) return null;
-      IFile modelFile = getModelFile(node);
-      if (modelFile == null) return null;
-      return SModelRepository.getInstance().findModel(modelFile);
-    }
+
     if (MPSDataKeys.MODEL_FILES.is(dataName)) {
       return getModelFiles(selected);
     }
+
     if (PlatformDataKeys.DELETE_ELEMENT_PROVIDER.is(dataName)) {
       List<MPSProjectViewNode> projectViewNodes = new ArrayList<MPSProjectViewNode>();
       for (AbstractTreeNode treeNode : selected) {
@@ -96,7 +84,34 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
         return new MPSProjectViewNodeDeleteProvider(projectViewNodes);
       }
     }
+
+    if (selected.size() != 1) {
+      return null;
+    }
+
+    // Applicable only to single element selection
+    if (MPSCommonDataKeys.CONTEXT_MODEL.is(dataName)) {
+      AbstractTreeNode selectedNode = selected.iterator().next();
+      return getContextModel(selectedNode);
+    }
+    if (MPSCommonDataKeys.MODEL.is(dataName)) {
+      AbstractTreeNode selectedNode = selected.iterator().next();
+      return selectedNode instanceof PsiFileNode ? getContextModel(selectedNode) : null;
+    }
+    if (MPSCommonDataKeys.MODULE.is(dataName)) {
+      AbstractTreeNode selectedNode = selected.iterator().next();
+      EditableSModelDescriptor contextModel = getContextModel(selectedNode);
+      return contextModel != null ? contextModel.getModule() : null;
+    }
     return null;
+  }
+
+  private EditableSModelDescriptor getContextModel(AbstractTreeNode selectedNode) {
+    IFile modelFile = getModelFile(selectedNode);
+    if (modelFile == null) {
+      return null;
+    }
+    return SModelRepository.getInstance().findModel(modelFile);
   }
 
   private Set<IFile> getModelFiles(Collection<AbstractTreeNode> selected) {
