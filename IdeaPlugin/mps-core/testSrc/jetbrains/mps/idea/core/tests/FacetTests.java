@@ -36,7 +36,6 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.NonNls;
@@ -61,7 +60,8 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     // Default Solution settings
     Solution solution = myFacet.getSolution();
     assertEmpty(solution.getSModelRoots());
-    assertEmpty(solution.getDependencies());
+    // JDK solution should be always returned as module dependencies for now
+    assertEquals(1, solution.getDependencies().size());
     assertEmpty(solution.getUsedLanguagesReferences());
 
     assertEquals(getModuleHome() + "/source_gen", solution.getGeneratorOutputPath());
@@ -134,7 +134,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
   }
 
   public void testAddRemoveUsedLanguage() throws InterruptedException {
-    Language baseLanguage = ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage",Language.class);
+    Language baseLanguage = ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage", Language.class);
     assertNotNull(baseLanguage);
     Language editorLanguage = ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.lang.editor", Language.class);
     assertNotNull(editorLanguage);
@@ -195,8 +195,16 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     flushEDT();
 
     List<Dependency> solution2Dependencies = mpsFacet2.getSolution().getDependencies();
-    assertEquals(1, solution2Dependencies.size());
-    assertEquals(myFacet.getSolution().getModuleReference(), solution2Dependencies.get(0).getModuleRef());
+    // JDK solution should be always returned as module dependencies for now
+    assertEquals(2, solution2Dependencies.size());
+    boolean found = false;
+    for (Dependency dependency : solution2Dependencies) {
+      if (myFacet.getSolution().getModuleReference().equals(dependency.getModuleRef())) {
+        found = true;
+        break;
+      }
+    }
+    assertTrue("Cross-Module dependency was not exposed in faced dependencies", found);
 
     ApplicationManager.getApplication().runWriteAction(new Runnable() {
       @Override
@@ -213,7 +221,9 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     });
     flushEDT();
 
-    assertEmpty(mpsFacet2.getSolution().getDependencies());
+    // JDK solution should be always returned as module dependencies for now
+    assertEquals(1, mpsFacet2.getSolution().getDependencies().size());
+    assertFalse(myFacet.getSolution().getModuleReference().equals(mpsFacet2.getSolution().getDependencies().get(0).getModuleRef()));
   }
 
   public void testUpdateNamespaceOnModuleRename() throws InterruptedException {
