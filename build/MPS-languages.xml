@@ -546,6 +546,94 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.build.mps.jar.jtmp" />
   </target>
+  <target name="pack.jetbrains.mps.build.mps.pluginSolution">
+    <fail unless="base_dir" message="Property base_dir unspecified." />
+    <mkdir dir="${base_dir}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.pluginSolution/classes_gen" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.build.mps.pluginSolution.jar.jtmp" />
+    <echoxml file="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.build.mps.pluginSolution.jar.jtmp/module.xml">
+      <module namespace="jetbrains.mps.build.mps.pluginSolution" uuid="cd8f3434-3f27-4218-9562-76b5cb935b0c" type="solution">
+        <dependencies>
+          <module ref="0cf935df-4699-4e9c-a132-fa109541cba3(jetbrains.mps.build.mps)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
+          <module ref="479c7a8c-02f9-43b5-9139-d910cb22f298(jetbrains.mps.core.xml)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="58f98fef-90ad-4b72-a390-fad66ec7005a(jetbrains.mps.core.properties)" />
+          <module ref="5b1f863d-65a0-41a6-a801-33896be24202(jetbrains.mps.ide.editor)" />
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="698a8d22-a104-47a0-ba8d-10e3ec237f13(jetbrains.mps.build.workflow)" />
+          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
+          <module ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" />
+          <module ref="798100da-4f0a-421a-b991-71f8c50ce5d2(jetbrains.mps.build)" />
+          <module ref="86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="9ded098b-ad6a-4657-bfd9-48636cfe8bc3(jetbrains.mps.lang.traceable)" />
+          <module ref="cd8f3434-3f27-4218-9562-76b5cb935b0c(jetbrains.mps.build.mps.pluginSolution)" />
+          <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.build.mps.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.build.mps.pluginSolution-src.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset dir="${base_dir}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.pluginSolution/source_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset dir="${base_dir}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.pluginSolution/test_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset file="${base_dir}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.pluginSolution/pluginSolution.msd" prefix="module" />
+      <zipfileset dir="${base_dir}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
+    </jar>
+    <jar destfile="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.build.mps.pluginSolution.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.build.mps.pluginSolution.jar.jtmp/module.xml" prefix="META-INF" />
+      <zipfileset dir="${base_dir}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.pluginSolution" includes="icons/**, resources/**" />
+      <zipfileset dir="${base_dir}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.pluginSolution/classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.build.mps.pluginSolution.jar.jtmp" />
+  </target>
+  <target name="pack.jetbrains.mps.build.pluginSolution">
+    <fail unless="base_dir" message="Property base_dir unspecified." />
+    <mkdir dir="${base_dir}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.pluginSolution/classes_gen" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.build.pluginSolution.jar.jtmp" />
+    <echoxml file="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.build.pluginSolution.jar.jtmp/module.xml">
+      <module namespace="jetbrains.mps.build.pluginSolution" uuid="111204cc-c25e-4ae1-9c79-b7af36c083cc" type="solution">
+        <dependencies>
+          <module ref="04b376d5-fc16-403b-a344-c68b30193c6a(jetbrains.mps.execution.lib)" />
+          <module ref="111204cc-c25e-4ae1-9c79-b7af36c083cc(jetbrains.mps.build.pluginSolution)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="268ae620-360b-4da4-bb01-fad761632e6c(jetbrains.mps.ant.execution)" />
+          <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
+          <module ref="479c7a8c-02f9-43b5-9139-d910cb22f298(jetbrains.mps.core.xml)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="58f98fef-90ad-4b72-a390-fad66ec7005a(jetbrains.mps.core.properties)" />
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="698a8d22-a104-47a0-ba8d-10e3ec237f13(jetbrains.mps.build.workflow)" />
+          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
+          <module ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" />
+          <module ref="798100da-4f0a-421a-b991-71f8c50ce5d2(jetbrains.mps.build)" />
+          <module ref="86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)" />
+          <module ref="933a68f9-aab6-401b-b5c5-5ca7783dce5f(jetbrains.mps.execution.configurations.pluginSolution)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="9ded098b-ad6a-4657-bfd9-48636cfe8bc3(jetbrains.mps.lang.traceable)" />
+          <module ref="cc7da2f6-419f-4133-a811-31fcd3295a85(jetbrains.mps.debugger.api.api)" />
+          <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.build.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.build.pluginSolution-src.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset dir="${base_dir}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.pluginSolution/source_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset dir="${base_dir}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.pluginSolution/test_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset file="${base_dir}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.pluginSolution/pluginSolution.msd" prefix="module" />
+      <zipfileset dir="${base_dir}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
+    </jar>
+    <jar destfile="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.build.pluginSolution.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.build.pluginSolution.jar.jtmp/module.xml" prefix="META-INF" />
+      <zipfileset dir="${base_dir}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.pluginSolution" includes="icons/**, resources/**" />
+      <zipfileset dir="${base_dir}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.pluginSolution/classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.build.pluginSolution.jar.jtmp" />
+  </target>
   <target name="pack.jetbrains.mps.ide.build">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.ide.build.jar.tmp/modules/jetbrains.mps.ide.build" />

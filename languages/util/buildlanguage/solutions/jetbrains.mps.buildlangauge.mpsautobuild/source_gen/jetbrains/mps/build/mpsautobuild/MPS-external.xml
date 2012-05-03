@@ -490,6 +490,8 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.build" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.workflow" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.mps" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.build.mps.pluginSolution" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.build.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide.build" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.ide.build.jar.tmp/modules" />
     <jar destfile="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.ide.build.jar" duplicate="preserve" filesonly="true">
