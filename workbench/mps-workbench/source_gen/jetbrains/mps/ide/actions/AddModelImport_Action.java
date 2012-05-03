@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.workbench.actions.imports.ImportHelper;
+import jetbrains.mps.platform.actions.ImportHelper;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
 
