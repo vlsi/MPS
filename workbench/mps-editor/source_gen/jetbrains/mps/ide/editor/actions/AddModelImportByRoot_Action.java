@@ -23,13 +23,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 public class AddModelImportByRoot_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -77,9 +77,6 @@ public class AddModelImportByRoot_Action extends BaseAction {
     }
     MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.NODE));
     MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("editorContext", event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
     return true;
   }
@@ -87,14 +84,16 @@ public class AddModelImportByRoot_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<String> initialText = new Wrappers._T<String>("");
+
       final EditorCell_Label errorLabel = AddModelImportByRoot_Action.this.getErrorCell(_params);
-      final SNode n = (SNode) ((SNode) MapSequence.fromMap(_params).get("node"));
-      final boolean unresolvedName = SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.UnresolvedNameReference");
+      final SNode unresolvedReference = SNodeOperations.as(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.UnresolvedNameReference");
+
       if (errorLabel != null) {
         initialText.value = errorLabel.getRenderedText();
-      } else if (unresolvedName) {
-        initialText.value = SPropertyOperations.getString(SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.UnresolvedNameReference"), "resolveName");
+      } else if (unresolvedReference != null) {
+        initialText.value = SPropertyOperations.getString(unresolvedReference, "resolveName");
       }
+
       ImportHelper.addModelImportByRoot(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), initialText.value, new ImportHelper.ModelImportByRootCallback() {
         public void importForRootAdded(String rootName) {
           String textToMatch = (rootName != null ?
@@ -107,8 +106,8 @@ public class AddModelImportByRoot_Action extends BaseAction {
           NodeSubstituteInfo substituteInfo = null;
           if (errorLabel != null) {
             substituteInfo = errorLabel.getSubstituteInfo();
-          } else if (unresolvedName) {
-            substituteInfo = new DefaultChildSubstituteInfo(SNodeOperations.getParent(n), n, SNodeOperations.getContainingLinkDeclaration(n), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+          } else if (unresolvedReference != null && ((EditorContext) MapSequence.fromMap(_params).get("editorContext")) != null) {
+            substituteInfo = new DefaultChildSubstituteInfo(SNodeOperations.getParent(unresolvedReference), unresolvedReference, SNodeOperations.getContainingLinkDeclaration(unresolvedReference), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
             substituteInfo.setOriginalText(initialText.value);
           }
           if (substituteInfo == null) {
@@ -129,6 +128,9 @@ public class AddModelImportByRoot_Action extends BaseAction {
   }
 
   private EditorCell_Label getErrorCell(final Map<String, Object> _params) {
+    if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")) == null) {
+      return null;
+    }
     EditorCell selectedCell = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectedCell();
     if (selectedCell instanceof EditorCell_Label) {
       EditorCell_Label editorCellLabel = (EditorCell_Label) selectedCell;
