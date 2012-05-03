@@ -1,5 +1,5 @@
 <component>
-  <version codename="MPS" major="2" minor="1" eap="true" update-channel="MPS21EAP" />
+  <version codename="MPS" major="2" minor="5" eap="true" update-channel="MPS25EAP" />
   <build date="${DSTAMP}" number="${build.number}" />
   <logo url="/splash.png" textcolor="002387" />
   <about url="/mpsAbout.png" />
