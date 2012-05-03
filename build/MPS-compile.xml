@@ -44,7 +44,7 @@
   <property name="jetbrains.mps.build.generictasks.classes" value="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
   <property name="jetbrains.mps.build.generictasks.pluginSolution.classes" value="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
   <property name="jetbrains.mps.build.gentest.classes" value="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
-  <property name="jetbrains.mps.build.mps.classes" value="${base_dir}/plugins/mpsbuild/languages/mps/classes_gen" />
+  <property name="jetbrains.mps.build.mps.classes" value="${base_dir}/plugins/mpsbuild/languages/build.mps/classes_gen" />
   <property name="jetbrains.mps.build.mps.pluginSolution.classes" value="${base_dir}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.pluginSolution/classes_gen" />
   <property name="jetbrains.mps.build.mpsdist.classes" value="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.mpsdist/classes_gen" />
   <property name="jetbrains.mps.build.packaging.classes" value="${base_dir}/languages/util/buildlanguage/languages/packaging/classes_gen" />
@@ -53,7 +53,7 @@
   <property name="jetbrains.mps.build.property.classes" value="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
   <property name="jetbrains.mps.build.reduced.classes" value="${base_dir}/languages/util/buildlanguage/languages/reduced/classes_gen" />
   <property name="jetbrains.mps.build.startup.classes" value="${base_dir}/languages/util/buildlanguage/languages/startup/classes_gen" />
-  <property name="jetbrains.mps.build.workflow.classes" value="${base_dir}/plugins/mpsbuild/languages/workflow/classes_gen" />
+  <property name="jetbrains.mps.build.workflow.classes" value="${base_dir}/plugins/mpsbuild/languages/build.workflow/classes_gen" />
   <property name="jetbrains.mps.buildlanguage.classes" value="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
   <property name="jetbrains.mps.core.properties.classes" value="${base_dir}/languages/util/properties/classes_gen" />
   <property name="jetbrains.mps.core.xml.classes" value="${base_dir}/languages/xml/xml/classes_gen" />
@@ -406,8 +406,8 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.build.mps_tjc.src">
-    <path path="${base_dir}/plugins/mpsbuild/languages/mps/source_gen" />
-    <path path="${base_dir}/plugins/mpsbuild/languages/mps/test_gen" />
+    <path path="${base_dir}/plugins/mpsbuild/languages/build.mps/source_gen" />
+    <path path="${base_dir}/plugins/mpsbuild/languages/build.mps/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.build.mps.pluginSolution_tjc.src">
     <path path="${base_dir}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.pluginSolution/source_gen" />
@@ -438,8 +438,8 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/startup/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.build.workflow_tjc.src">
-    <path path="${base_dir}/plugins/mpsbuild/languages/workflow/source_gen" />
-    <path path="${base_dir}/plugins/mpsbuild/languages/workflow/test_gen" />
+    <path path="${base_dir}/plugins/mpsbuild/languages/build.workflow/source_gen" />
+    <path path="${base_dir}/plugins/mpsbuild/languages/build.workflow/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.core.properties_tjc.src">
     <path path="${base_dir}/languages/util/properties/source_gen" />
@@ -2665,8 +2665,8 @@
     <path path="${base_dir}/lib/trove4j.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
+    <path path="${base_dir}/plugins/mpsbuild/languages/build.workflow/classes_gen" />
     <path path="${base_dir}/plugins/mpsbuild/languages/build/classes_gen" />
-    <path path="${base_dir}/plugins/mpsbuild/languages/workflow/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
@@ -3177,7 +3177,7 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.build.mps_tjc.classpaths">
-    <path path="${base_dir}/plugins/mpsbuild/languages/mps/classes_gen" />
+    <path path="${base_dir}/plugins/mpsbuild/languages/build.mps/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/ant/classes" />
@@ -3250,9 +3250,9 @@
     <path path="${base_dir}/lib/trove4j.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
+    <path path="${base_dir}/plugins/mpsbuild/languages/build.mps/classes_gen" />
+    <path path="${base_dir}/plugins/mpsbuild/languages/build.workflow/classes_gen" />
     <path path="${base_dir}/plugins/mpsbuild/languages/build/classes_gen" />
-    <path path="${base_dir}/plugins/mpsbuild/languages/mps/classes_gen" />
-    <path path="${base_dir}/plugins/mpsbuild/languages/workflow/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
@@ -3337,10 +3337,10 @@
     <path path="${base_dir}/lib/trove4j.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
+    <path path="${base_dir}/plugins/mpsbuild/languages/build.mps/classes_gen" />
+    <path path="${base_dir}/plugins/mpsbuild/languages/build.workflow/classes_gen" />
     <path path="${base_dir}/plugins/mpsbuild/languages/build/classes_gen" />
-    <path path="${base_dir}/plugins/mpsbuild/languages/mps/classes_gen" />
     <path path="${base_dir}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.pluginSolution/classes_gen" />
-    <path path="${base_dir}/plugins/mpsbuild/languages/workflow/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
@@ -3676,9 +3676,9 @@
     <path path="${base_dir}/plugins/execution-configurations/languages/ant/classes" />
     <path path="${base_dir}/plugins/execution-languages/languages/configurations/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes" />
+    <path path="${base_dir}/plugins/mpsbuild/languages/build.workflow/classes_gen" />
     <path path="${base_dir}/plugins/mpsbuild/languages/build/classes_gen" />
     <path path="${base_dir}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.pluginSolution/classes_gen" />
-    <path path="${base_dir}/plugins/mpsbuild/languages/workflow/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
@@ -3822,7 +3822,7 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.build.workflow_tjc.classpaths">
-    <path path="${base_dir}/plugins/mpsbuild/languages/workflow/classes_gen" />
+    <path path="${base_dir}/plugins/mpsbuild/languages/build.workflow/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/ant/classes" />
@@ -3895,7 +3895,7 @@
     <path path="${base_dir}/lib/trove4j.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
-    <path path="${base_dir}/plugins/mpsbuild/languages/workflow/classes_gen" />
+    <path path="${base_dir}/plugins/mpsbuild/languages/build.workflow/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
@@ -12170,21 +12170,21 @@
   <target name="compile.cycle.jetbrains.mps.build.mps_tjc" depends="compile.cycle.jetbrains.mps.build.gentest_tjc">
     <property name="classes.dump" value="${jetbrains.mps.build.mps.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/plugins/mpsbuild/languages/mps/source_gen" />
-    <mkdir dir="${base_dir}/plugins/mpsbuild/languages/mps/test_gen" />
+    <mkdir dir="${base_dir}/plugins/mpsbuild/languages/build.mps/source_gen" />
+    <mkdir dir="${base_dir}/plugins/mpsbuild/languages/build.mps/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.build.mps.classes}" />
     <javac classpathref="cycle.jetbrains.mps.build.mps_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.build.mps_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.build.mps.classes}">
-      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/mpsbuild/languages/mps/source_gen" />
-      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/mpsbuild/languages/mps/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/mpsbuild/languages/build.mps/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/mpsbuild/languages/build.mps/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.build.mps_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.mps.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
-        <path path="${base_dir}/plugins/mpsbuild/languages/mps/source_gen" />
-        <path path="${base_dir}/plugins/mpsbuild/languages/mps/test_gen" />
+        <path path="${base_dir}/plugins/mpsbuild/languages/build.mps/source_gen" />
+        <path path="${base_dir}/plugins/mpsbuild/languages/build.mps/test_gen" />
       </src>
     </javac>
     <delete dir="${classes.dump}" />
@@ -12346,21 +12346,21 @@
   <target name="compile.cycle.jetbrains.mps.build.workflow_tjc" depends="compile.cycle.jetbrains.mps.core.xml_tjc">
     <property name="classes.dump" value="${jetbrains.mps.build.workflow.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/plugins/mpsbuild/languages/workflow/source_gen" />
-    <mkdir dir="${base_dir}/plugins/mpsbuild/languages/workflow/test_gen" />
+    <mkdir dir="${base_dir}/plugins/mpsbuild/languages/build.workflow/source_gen" />
+    <mkdir dir="${base_dir}/plugins/mpsbuild/languages/build.workflow/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.build.workflow.classes}" />
     <javac classpathref="cycle.jetbrains.mps.build.workflow_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.build.workflow_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.build.workflow.classes}">
-      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/mpsbuild/languages/workflow/source_gen" />
-      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/mpsbuild/languages/workflow/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/mpsbuild/languages/build.workflow/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/mpsbuild/languages/build.workflow/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.build.workflow_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.workflow.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
-        <path path="${base_dir}/plugins/mpsbuild/languages/workflow/source_gen" />
-        <path path="${base_dir}/plugins/mpsbuild/languages/workflow/test_gen" />
+        <path path="${base_dir}/plugins/mpsbuild/languages/build.workflow/source_gen" />
+        <path path="${base_dir}/plugins/mpsbuild/languages/build.workflow/test_gen" />
       </src>
     </javac>
     <delete dir="${classes.dump}" />
