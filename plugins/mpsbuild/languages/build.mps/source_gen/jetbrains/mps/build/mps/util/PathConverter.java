@@ -44,7 +44,7 @@ public class PathConverter {
         }
       }
     });
-    ListSequence.fromList(result).addElement(MultiTuple.<String,SNode>from(workingDir, (SNode) null));
+    ListSequence.fromList(result).addElement(MultiTuple.<String,SNode>from(this.workingDirectory, (SNode) null));
     macros = ListSequence.fromList(result).sort(new ISelector<Tuples._2<String, SNode>, Comparable<?>>() {
       public Comparable<?> select(Tuples._2<String, SNode> it) {
         return it._0().length() * 2 - ((it._1() == null ?
