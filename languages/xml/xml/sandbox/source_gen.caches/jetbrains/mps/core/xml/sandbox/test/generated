@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="b5f69aisb3c2vc5gzwnlskekb9miptr">
+<dependencies version="2" modelHash="-7ffd28nl8i7hzmi939z6lg9wu3yjkbo">
   <common hash="ege79l5r0ysx128gb5tnmvc3j9xmvcs" />
-  <source id="6666499814681526040" name="test1" hash="b5lu00uiypggwcqb1bkvxei0nxvdffz">
+  <source id="6666499814681526040" name="test1" hash="-cwelu2mkvc5403jo2qayp1qz68n8nv2">
     <file name="test1.xml" />
   </source>
   <source id="175285232894469943" name="test2" hash="-764zdco66hwkc9kophlkd53ipyg6m6w">

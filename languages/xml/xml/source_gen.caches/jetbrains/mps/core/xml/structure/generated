@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-13e9b3y1m29rmd0ywtowl7gw9cwpnmn">
+<dependencies version="2" modelHash="-ojqb8i1rga20yg4cb2pt0llgd3xsoh">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8ddyvtwlgdy2b4rcc23nz4xk6wzma49" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-zc5lfpvtc0vlos0w4u3sk0brzqaqs7" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3pfv61ztw43crdi9n56ftoapjvy39kp" />
@@ -119,7 +119,7 @@
   <source id="7604553062773750440" name="XmlWhitespace" hash="51jkso99d5jaglfyu10j1ds66w81lgy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5228786488744996718" name="XmlDeclaration" hash="9cafj1g3w6h6eoc5vzzh1qqui1695ay">
+  <source id="5228786488744996718" name="XmlDeclaration" hash="7411avzcceagtbtekqh6l9mfawsoyp6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="5491461270226117666" name="xmlVersionString" hash="-6azbwyz63j12mt8vkrp3cgrvwo9lktq">
@@ -139,7 +139,7 @@
   <source id="2133624044437669768" name="XmlBasePrologElement" hash="-4syklzp3di2tu3he5nc7ykk8f5zx8bg">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2133624044437898907" name="XmlDoctypeDeclaration" hash="-7cjwzkaloz7hvx4q2923d5mrlbn3ugl">
+  <source id="2133624044437898907" name="XmlDoctypeDeclaration" hash="-765ak171wetaylqwwmz7k8ve6y3983c">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="2133624044438029119" name="XmlExternalId" hash="-6533uh3vn6a6xz7o58w0qhw0kp4aem8">

@@ -10,8 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
@@ -50,9 +48,6 @@ public class XmlProlog_Editor extends DefaultNodeEditor {
     }
 
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "elements", true)).isEmpty()) {
-        return SConceptOperations.createNewNode("jetbrains.mps.core.xml.structure.XmlDeclaration", null);
-      }
       return SConceptOperations.createNewNode("jetbrains.mps.core.xml.structure.XmlWhitespace", null);
     }
 

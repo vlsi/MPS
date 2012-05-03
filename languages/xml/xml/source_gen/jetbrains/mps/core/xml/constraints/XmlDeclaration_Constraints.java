@@ -9,12 +9,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class XmlDeclaration_Constraints extends BaseConstraintsDescriptor {
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:edc2e1a3-c4ab-4f36-a908-e29e4c77f1bb(jetbrains.mps.core.xml.constraints)", "3116093476406607764");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:edc2e1a3-c4ab-4f36-a908-e29e4c77f1bb(jetbrains.mps.core.xml.constraints)", "3374336260036088532");
 
   public XmlDeclaration_Constraints() {
     super("jetbrains.mps.core.xml.structure.XmlDeclaration");
@@ -37,16 +34,6 @@ public class XmlDeclaration_Constraints extends BaseConstraintsDescriptor {
   }
 
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    if (SNodeOperations.getIndexInParent(node) == 0) {
-      return true;
-    }
-    if (SNodeOperations.getIndexInParent(node) > 0) {
-      return false;
-    }
-    return ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.core.xml.structure.XmlPrologElement", false, new String[]{})).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SConceptPropertyOperations.getBoolean(it, "isFirst");
-      }
-    }).isEmpty();
+    return SNodeOperations.getIndexInParent(node) <= 0;
   }
 }

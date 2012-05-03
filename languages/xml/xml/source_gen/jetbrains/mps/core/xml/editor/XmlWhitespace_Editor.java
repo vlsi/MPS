@@ -6,10 +6,9 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -27,9 +26,37 @@ public class XmlWhitespace_Editor extends DefaultNodeEditor {
     alternationCondition = XmlWhitespace_Editor.renderingCondition_2bpkx8_a0a(node, editorContext, editorContext.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createProperty_2bpkx8_a0a(editorContext, node);
+      editorCell = this.createAlternation_2bpkx8_a0a(editorContext, node);
     } else {
-      editorCell = this.createProperty_2bpkx8_a0a_0(editorContext, node);
+      editorCell = this.createAlternation_2bpkx8_a0a_0(editorContext, node);
+    }
+    return editorCell;
+  }
+
+  private EditorCell createAlternation_2bpkx8_a0a(EditorContext editorContext, SNode node) {
+    boolean alternationCondition = true;
+    alternationCondition = XmlWhitespace_Editor.renderingCondition_2bpkx8_a0a0(node, editorContext, editorContext.getOperationContext().getScope());
+    EditorCell editorCell = null;
+    if (alternationCondition) {
+      editorCell = this.createProperty_2bpkx8_a0a0(editorContext, node);
+    } else {
+      editorCell = this.createProperty_2bpkx8_a0a0_0(editorContext, node);
+    }
+    return editorCell;
+  }
+
+  private EditorCell createAlternation_2bpkx8_a0a_0(EditorContext editorContext, SNode node) {
+    boolean alternationCondition = true;
+    alternationCondition = XmlWhitespace_Editor.renderingCondition_2bpkx8_a0a0_0(node, editorContext, editorContext.getOperationContext().getScope());
+    EditorCell editorCell = null;
+    if (alternationCondition) {
+      editorCell = this.createProperty_2bpkx8_a0a0_1(editorContext, node);
+    } else {
+      editorCell = this.createProperty_2bpkx8_a0a0_2(editorContext, node);
+    }
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     return editorCell;
   }
@@ -38,25 +65,10 @@ public class XmlWhitespace_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2bpkx8_a");
     editorCell.addEditorCell(this.createAlternation_2bpkx8_a0(editorContext, node));
-    if (renderingCondition_2bpkx8_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_2bpkx8_b0(editorContext, node));
-    }
     return editorCell;
   }
 
-  private EditorCell createConstant_2bpkx8_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_2bpkx8_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createProperty_2bpkx8_a0a(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_2bpkx8_a0a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");
     provider.setNoTargetText("");
@@ -67,7 +79,7 @@ public class XmlWhitespace_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
-      style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -80,7 +92,7 @@ public class XmlWhitespace_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_2bpkx8_a0a_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_2bpkx8_a0a0_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");
     provider.setNoTargetText("");
@@ -90,8 +102,46 @@ public class XmlWhitespace_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_value_1");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createProperty_2bpkx8_a0a0_1(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("value");
+    provider.setNoTargetText("");
+    provider.setAllowsEmptyTarget(true);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_value_2");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createProperty_2bpkx8_a0a0_2(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("value");
+    provider.setNoTargetText("");
+    provider.setAllowsEmptyTarget(true);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_value_3");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -107,7 +157,11 @@ public class XmlWhitespace_Editor extends DefaultNodeEditor {
     return XmlPart_Behavior.call_onNewLine_2133624044437631588(node);
   }
 
-  private static boolean renderingCondition_2bpkx8_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2bpkx8_a0a0(SNode node, EditorContext editorContext, IScope scope) {
+    return XmlPart_Behavior.call_hasNewLineAfter_2133624044437631594(node);
+  }
+
+  private static boolean renderingCondition_2bpkx8_a0a0_0(SNode node, EditorContext editorContext, IScope scope) {
     return XmlPart_Behavior.call_hasNewLineAfter_2133624044437631594(node);
   }
 }

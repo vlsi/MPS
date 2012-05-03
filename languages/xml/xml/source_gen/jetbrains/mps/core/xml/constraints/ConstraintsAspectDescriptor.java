@@ -42,12 +42,12 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new XmlValuePart_Constraints();
       case 16:
         return new XmlWhitespace_Constraints();
-      case 6:
-        return new XmlDeclaration_Constraints();
       case 7:
         return new XmlDoctypeDeclaration_Constraints();
       case 11:
         return new XmlExternalId_Constraints();
+      case 6:
+        return new XmlDeclaration_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);

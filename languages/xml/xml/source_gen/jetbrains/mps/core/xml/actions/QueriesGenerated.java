@@ -4,14 +4,12 @@ package jetbrains.mps.core.xml.actions;
 
 import java.util.regex.Pattern;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
@@ -23,6 +21,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.core.xml.constraints.XmlNameUtil;
 import java.util.regex.Matcher;
+import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
@@ -33,20 +33,8 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 
 public class QueriesGenerated {
-  private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a0a2a0a1a7 = Pattern.compile("^<([\\w0-9]+)>?$", 0);
-  private static Pattern REGEXP_x583g4_a0a0a1a1a0a0a0a2a0a1a7 = Pattern.compile("^<([\\w0-9]+)>?$", 0);
-
-  public static boolean nodeSubstituteActionsBuilder_Precondition_XmlPrologElement_3374336260036054061(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return SNodeOperations.getIndexInParent(_context.getCurrentTargetNode()) > 0;
-  }
-
-  public static boolean nodeSubstituteActionsBuilder_Precondition_XmlPrologElement_3374336260036054151(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return ListSequence.fromList(SNodeOperations.getAllSiblings(_context.getCurrentTargetNode(), false)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration");
-      }
-    }).isNotEmpty();
-  }
+  private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a0a2a0a1a5 = Pattern.compile("^<([\\w0-9]+)>?$", 0);
+  private static Pattern REGEXP_x583g4_a0a0a1a1a0a0a0a2a0a1a5 = Pattern.compile("^<([\\w0-9]+)>?$", 0);
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_XmlBaseAttribute_6666499814681619369(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.core.xml.structure.XmlElement");
@@ -194,18 +182,18 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            Matcher _matcher_x583g4_a1a0a0a0a0a2a0a1a7;
+            Matcher _matcher_x583g4_a1a0a0a0a0a2a0a1a5;
             SNode element = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.core.xml.structure.XmlElement", null);
-            if ((_matcher_x583g4_a1a0a0a0a0a2a0a1a7 = REGEXP_x583g4_a0a0a2a0a0a0a0a2a0a1a7.matcher(pattern)).find()) {
-              SPropertyOperations.set(element, "tagName", _matcher_x583g4_a1a0a0a0a0a2a0a1a7.group(1));
+            if ((_matcher_x583g4_a1a0a0a0a0a2a0a1a5 = REGEXP_x583g4_a0a0a2a0a0a0a0a2a0a1a5.matcher(pattern)).find()) {
+              SPropertyOperations.set(element, "tagName", _matcher_x583g4_a1a0a0a0a0a2a0a1a5.group(1));
             }
             return element;
           }
 
           public String getMatchingText(String pattern) {
-            Matcher _matcher_x583g4_a0a1a0a0a0a2a0a1a7;
-            if ((_matcher_x583g4_a0a1a0a0a0a2a0a1a7 = REGEXP_x583g4_a0a0a1a1a0a0a0a2a0a1a7.matcher(pattern)).find()) {
-              return "<" + _matcher_x583g4_a0a1a0a0a0a2a0a1a7.group(1) + ">";
+            Matcher _matcher_x583g4_a0a1a0a0a0a2a0a1a5;
+            if ((_matcher_x583g4_a0a1a0a0a0a2a0a1a5 = REGEXP_x583g4_a0a0a1a1a0a0a0a2a0a1a5.matcher(pattern)).find()) {
+              return "<" + _matcher_x583g4_a0a1a0a0a0a2a0a1a5.group(1) + ">";
             }
             return "<element/>";
           }
@@ -284,13 +272,82 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_XmlPrologElement_3374336260036054056(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_XmlPrologElement_8411468024378177418(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
-    return result;
-  }
+    {
+      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlComment");
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
+    }
+    {
+      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlProcessingInstruction");
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
+    }
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlPrologElement");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            return SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.core.xml.structure.XmlDeclaration", null);
+          }
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_XmlPrologElement_3374336260036054149(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+          public boolean hasSubstitute() {
+            return true;
+          }
+
+          public boolean canSubstitute_internal(String pattern, boolean strictly) {
+            return SNodeOperations.getIndexInParent(_context.getCurrentTargetNode()) <= 0;
+          }
+
+          public String getDescriptionText(String pattern) {
+            return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlDeclaration"), "shortDescription");
+          }
+
+          public String getMatchingText(String pattern) {
+            return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlDeclaration"), "alias");
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+        });
+      }
+    }
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlPrologElement");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            return SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration", null);
+          }
+
+          public boolean hasSubstitute() {
+            return true;
+          }
+
+          public boolean canSubstitute_internal(String pattern, boolean strictly) {
+            List<SNode> descendants = SNodeOperations.getDescendants(_context.getParentNode(), "jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration", false, new String[]{});
+            ListSequence.fromList(descendants).removeElement(_context.getCurrentTargetNode());
+            return ListSequence.fromList(descendants).isEmpty();
+          }
+
+          public String getDescriptionText(String pattern) {
+            return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration"), "shortDescription");
+          }
+
+          public String getMatchingText(String pattern) {
+            return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration"), "alias");
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+        });
+      }
+    }
     return result;
   }
 
