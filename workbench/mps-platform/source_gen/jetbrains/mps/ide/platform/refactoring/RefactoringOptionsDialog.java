@@ -25,22 +25,16 @@ public class RefactoringOptionsDialog extends DialogWrapper {
   private JPanel myInnerPanel;
   private boolean myNeedToBeShown = false;
   private boolean myHasModelsToGenerate;
-  private boolean myDoesGenerateModels;
   private boolean myIsCancelled = true;
 
   public RefactoringOptionsDialog(Frame mainFrame, RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate) {
     super(mainFrame, true);
-    initDialog(refactoringContext, refactoring, hasModelsToGenerate, true);
+    initDialog(refactoringContext, refactoring, hasModelsToGenerate);
   }
 
   public RefactoringOptionsDialog(Project project, RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate) {
     super(project, true);
-    initDialog(refactoringContext, refactoring, hasModelsToGenerate, true);
-  }
-
-  public RefactoringOptionsDialog(Project project, RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate, boolean doesGenerateModels) {
-    super(project, true);
-    initDialog(refactoringContext, refactoring, hasModelsToGenerate, doesGenerateModels);
+    initDialog(refactoringContext, refactoring, hasModelsToGenerate);
   }
 
   protected JComponent createCenterPanel() {
@@ -60,7 +54,7 @@ public class RefactoringOptionsDialog extends DialogWrapper {
     if (myHasModelsToGenerate) {
       myGenerateModelsCheckBox = new JCheckBox("rebuild models");
       myInnerPanel.add(myGenerateModelsCheckBox, c);
-      myGenerateModelsCheckBox.setSelected(myDoesGenerateModels);
+      myGenerateModelsCheckBox.setSelected(true);
       myNeedToBeShown = true;
     }
     c.weighty = 1;
@@ -97,12 +91,11 @@ public class RefactoringOptionsDialog extends DialogWrapper {
     return getClass().getName();
   }
 
-  private void initDialog(RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate, boolean doesGenerateModels) {
+  private void initDialog(RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate) {
     setTitle("Refactoring Options");
     myRefactoringContext = refactoringContext;
     myRefactoring = refactoring;
     myHasModelsToGenerate = hasModelsToGenerate;
-    myDoesGenerateModels = doesGenerateModels;
     init();
   }
 }

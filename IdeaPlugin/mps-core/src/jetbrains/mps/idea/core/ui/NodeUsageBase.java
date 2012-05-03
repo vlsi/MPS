@@ -17,21 +17,14 @@
 package jetbrains.mps.idea.core.ui;
 
 
-import com.intellij.openapi.editor.Editor;
-import com.intellij.openapi.fileEditor.FileEditor;
-import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.OpenFileDescriptor;
-import com.intellij.openapi.module.ModuleUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.pom.Navigatable;
-import jetbrains.mps.ide.editor.MPSEditorOpener;
-import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModuleOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
@@ -62,11 +55,11 @@ public class NodeUsageBase implements Navigatable {
   @Override
   public void navigate(boolean focus) {
     if (canNavigate()) {
-      openTextEditor(focus);
+      openEditor(focus);
     }
   }
 
-  public void openTextEditor(final boolean focus) {
+  public void openEditor(final boolean focus) {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       @Override
       public void run() {
@@ -76,8 +69,15 @@ public class NodeUsageBase implements Navigatable {
 
   }
 
-  public String getRole(){
-    return myNode.getConceptShortName();
+  public boolean isValid() {
+    final boolean[] result = new boolean[1];
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        result[0] = !myNode.isDeleted();
+      }
+    });
+    return result[0];
   }
 
   @Nullable
@@ -89,6 +89,7 @@ public class NodeUsageBase implements Navigatable {
 
   @Override
   public boolean canNavigate() {
+    if (!isValid()) return false;
     VirtualFile file = getFile();
     return file != null && file.isValid();
   }

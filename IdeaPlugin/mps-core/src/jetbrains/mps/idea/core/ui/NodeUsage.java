@@ -27,18 +27,22 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.usages.TextChunk;
 import com.intellij.usages.Usage;
 import com.intellij.usages.UsagePresentation;
+import com.intellij.usages.rules.MergeableUsage;
 import com.intellij.usages.rules.UsageInFile;
+import com.intellij.usages.rules.UsageInFiles;
 import com.intellij.usages.rules.UsageInModule;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
+import org.junit.Test;
 
 import javax.swing.Icon;
-import java.util.ArrayList;
+import java.util.*;
 
-public class NodeUsage extends NodeUsageBase implements UsagePresentation, UsageInFile, UsageInModule {
+public class NodeUsage extends NodeUsageBase implements UsagePresentation, UsageInFile, UsageInModule, MergeableUsage, UsageInFiles {
 
   public NodeUsage(SNode node, Project project) {
     super(node, project);
@@ -50,10 +54,7 @@ public class NodeUsage extends NodeUsageBase implements UsagePresentation, Usage
     return this;
   }
 
-  @Override
-  public boolean isValid() {
-    return true;
-  }
+
 
   @Override
   public boolean isReadOnly() {
@@ -72,12 +73,12 @@ public class NodeUsage extends NodeUsageBase implements UsagePresentation, Usage
 
   @Override
   public void selectInEditor() {
-    //To change body of implemented methods use File | Settings | File Templates.
+
   }
 
   @Override
   public void highlightInEditor() {
-    //To change body of implemented methods use File | Settings | File Templates.
+
   }
 
 
@@ -89,16 +90,17 @@ public class NodeUsage extends NodeUsageBase implements UsagePresentation, Usage
       @Override
       public void run() {
         if (!myNode.isDeleted()) {
-          result.add(new TextChunk(new TextAttributes(), myNode.getPresentation()));
-          result.add(new TextChunk(new TextAttributes(), "("));
-          result.add(new TextChunk(new TextAttributes(), "role:"));
-          result.add(new TextChunk(new TextAttributes(), myNode.getRole_()));
-          result.add(new TextChunk(new TextAttributes(), ";"));
-          result.add(new TextChunk(new TextAttributes(), "in:"));
-          result.add(new TextChunk(new TextAttributes(), myNode.getParent().getPresentation()));
-          result.add(new TextChunk(new TextAttributes(), ")"));
+          TextAttributes attributes = new TextAttributes();
+          result.add(new TextChunk(attributes, myNode.getPresentation()));
+          result.add(new TextChunk(attributes, " ("));
+          result.add(new TextChunk(attributes, "role: "));
+          result.add(new TextChunk(attributes, myNode.getRole_()));
+          result.add(new TextChunk(attributes, ";"));
+          result.add(new TextChunk(attributes, " in: "));
+          result.add(new TextChunk(attributes, myNode.getParent().getPresentation()));
+          result.add(new TextChunk(attributes, ")"));
         } else {
-          result.add(new TextChunk(new TextAttributes(), "disposed"));
+          result.add(new TextChunk(new TextAttributes(), "INVALID"));
         }
       }
     });
@@ -124,11 +126,29 @@ public class NodeUsage extends NodeUsageBase implements UsagePresentation, Usage
   @Override
   public Module getModule() {
     if (!isValid()) return null;
-    VirtualFile virtualFile = getFile();
+    VirtualFile virtualFile = getFile().getParent();
     if (virtualFile == null) return null;
+    return ModuleUtil.findModuleForFile(virtualFile,myProject);
+  }
 
-    ProjectRootManager projectRootManager = ProjectRootManager.getInstance(getProject());
-    ProjectFileIndex fileIndex = projectRootManager.getFileIndex();
-    return fileIndex.getModuleForFile(virtualFile);
+  @Override
+  public boolean merge(MergeableUsage mergeableUsage) {
+    return mergeableUsage instanceof NodeUsage && myNode.equals(((NodeUsage) mergeableUsage).myNode);
+  }
+
+  @Override
+  public void reset() {
+    //To change body of implemented methods use File | Settings | File Templates.
+  }
+
+  @Override
+  public VirtualFile[] getFiles() {
+    List<VirtualFile> files = new LinkedList<VirtualFile>();
+    VirtualFile currentFile = myFile;
+    while (!currentFile.equals(myProject.getBaseDir())){
+      files.add(currentFile);
+      currentFile = currentFile.getParent();
+    }
+    return files.toArray(new VirtualFile[files.size()]);
   }
 }
