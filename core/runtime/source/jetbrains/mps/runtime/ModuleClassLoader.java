@@ -24,7 +24,6 @@ import jetbrains.mps.util.NameUtil;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class ModuleClassLoader extends ClassLoader {
   //this is for debug purposes (heap dumps)
@@ -33,7 +32,7 @@ public class ModuleClassLoader extends ClassLoader {
   private IClassLoadingModule myModule;
 
   private final Object LOADING_LOCK = new Object();
-  //this must be thread-safe
+  //This must be thread-safe. This does not include results of parent classloader
   private final Map<String, Class> myClasses = Collections.synchronizedMap(new THashMap<String, Class>());
 
   public ModuleClassLoader(IClassLoadingModule module) {
@@ -41,36 +40,34 @@ public class ModuleClassLoader extends ClassLoader {
     myModule = module;
   }
 
-  protected final Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
-    return loadClass(name, resolve, false);
-  }
+  protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+    if (!myModule.canLoad()) throw new ClassNotFoundException(name);
 
-  private Class<?> loadClass(String name, boolean resolve, boolean selfOnly) throws ClassNotFoundException {
     //This does not guarantee that if one class was loaded, it will be returned by sequential loadClass immediately,
     //but only makes classloading faster. The uniqueness is guaranteed by sync-block with LOADING_LOCK
     if (myClasses.containsKey(name)) {
       Class cl = myClasses.get(name);
-      if (cl == null) throw new ClassNotFoundException(name);
+      if (cl == null) return getParent().loadClass(name);
       return cl;
     }
 
+    Class<?> clazz = null;
     try {
-      if (!myModule.canLoad()) throw new ClassNotFoundException(name);
-
-      Class c = findClassEverywhere(name, selfOnly);
-
-      if (resolve) {
-        resolveClass(c);
-      }
-      myClasses.put(name, c);
-      return c;
+      clazz = findInSelfAndDependencies(name, false);
+      myClasses.put(name, clazz);
+      return clazz;
     } catch (ClassNotFoundException cnf) {
-      myClasses.put(name, null);
-      throw cnf;
+      clazz = getParent().loadClass(name);
+      return clazz;
+    } finally {
+      if (resolve && clazz != null) {
+        resolveClass(clazz);
+      }
     }
   }
 
-  private Class<?> findClassEverywhere(String name, boolean selfOnly) throws ClassNotFoundException {
+  private Class<?> findInSelfAndDependencies(String name, boolean selfOnly) throws ClassNotFoundException {
+    //from self
     if (myModule.canLoadFromSelf()) {
       //The purpose of this lock is to load class only once
       //This method can be called either explicitly or by module dependency
@@ -92,31 +89,32 @@ public class ModuleClassLoader extends ClassLoader {
       }
     }
 
-    if (!selfOnly) {
-      Set<IClassLoadingModule> mayContainNonOwned = new HashSet<IClassLoadingModule>();
-      for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
-        if (m.equals(myModule)) continue;
+    if (selfOnly) throw new ClassNotFoundException(name);
 
-        if (m.canLoad() && m.canLoadFromSelf() && m.canFindClass(name)) {
-          try {
-            return m.getClassLoader().loadClass(name, false, true);
-          } catch (ClassNotFoundException e) {
-            //ignore
-          }
-        } else {
-          mayContainNonOwned.add(m);
-        }
-      }
-      for (IClassLoadingModule m : mayContainNonOwned) {
-        try {
-          return m.getClassLoader().loadClass(name, false, true);
-        } catch (ClassNotFoundException e) {
-          //ignore
-        }
+    //from dependencies (try modules only)
+    List<IClassLoadingModule> queue = new ArrayList<IClassLoadingModule>();
+    for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
+      if (m.equals(myModule)) continue;
+      if (!m.canLoad()) continue;
+
+      if (m.canLoadFromSelf() && m.canFindClass(name)) {
+        return m.getClassLoader().findInSelfAndDependencies(name, true);
+      } else {
+        queue.add(m);
       }
     }
 
-    if (!selfOnly && getParent() == ModuleClassLoader.class.getClassLoader()) throw new ClassNotFoundException(name);
+    //from dependencies (try parent class loaders also)
+    for (IClassLoadingModule m : queue) {
+      try {
+        return m.getClassLoader().findInSelfAndDependencies(name, false);
+      } catch (ClassNotFoundException e) {
+        //ignore
+      }
+    }
+
+    //from my parent, if it's not an app class loader
+    if (getParent() == ModuleClassLoader.class.getClassLoader()) throw new ClassNotFoundException(name);
 
     return getParent().loadClass(name);
   }
