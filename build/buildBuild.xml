@@ -65,16 +65,16 @@
     </echoxml>
     <jar destfile="${build.layout}/plugins/mpsbuild/languages/jetbrains.mps.build.workflow.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.workflow" />
-      <fileset dir="${mps_home}/plugins/mpsbuild/languages/workflow" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/mpsbuild/languages/build.workflow" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.workflow.jar" />
     </jar>
     <jar destfile="${build.layout}/plugins/mpsbuild/languages/jetbrains.mps.build.workflow-src.jar">
-      <fileset dir="${mps_home}/plugins/mpsbuild/languages/workflow/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/mpsbuild/languages/workflow/workflow.mpl" prefix="module" />
-      <zipfileset dir="${mps_home}/plugins/mpsbuild/languages/workflow/accessoryModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/accessoryModels" />
-      <zipfileset dir="${mps_home}/plugins/mpsbuild/languages/workflow/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
-      <zipfileset dir="${mps_home}/plugins/mpsbuild/languages/workflow/util" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/util" />
-      <zipfileset dir="${mps_home}/plugins/mpsbuild/languages/workflow/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
+      <fileset dir="${mps_home}/plugins/mpsbuild/languages/build.workflow/source_gen" includes="**/*.java" />
+      <zipfileset file="${mps_home}/plugins/mpsbuild/languages/build.workflow/workflow.mpl" prefix="module" />
+      <zipfileset dir="${mps_home}/plugins/mpsbuild/languages/build.workflow/accessoryModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/accessoryModels" />
+      <zipfileset dir="${mps_home}/plugins/mpsbuild/languages/build.workflow/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="${mps_home}/plugins/mpsbuild/languages/build.workflow/util" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/util" />
+      <zipfileset dir="${mps_home}/plugins/mpsbuild/languages/build.workflow/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.mps.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.mps.jar/META-INF" />
@@ -95,15 +95,15 @@
     </echoxml>
     <jar destfile="${build.layout}/plugins/mpsbuild/languages/jetbrains.mps.build.mps.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.mps" />
-      <fileset dir="${mps_home}/plugins/mpsbuild/languages/mps" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/mpsbuild/languages/build.mps" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.mps.jar" />
     </jar>
     <jar destfile="${build.layout}/plugins/mpsbuild/languages/jetbrains.mps.build.mps-src.jar">
-      <fileset dir="${mps_home}/plugins/mpsbuild/languages/mps/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/mpsbuild/languages/mps/mps.mpl" prefix="module" />
-      <zipfileset dir="${mps_home}/plugins/mpsbuild/languages/mps/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
-      <zipfileset dir="${mps_home}/plugins/mpsbuild/languages/mps/util" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/util" />
-      <zipfileset dir="${mps_home}/plugins/mpsbuild/languages/mps/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
+      <fileset dir="${mps_home}/plugins/mpsbuild/languages/build.mps/source_gen" includes="**/*.java" />
+      <zipfileset file="${mps_home}/plugins/mpsbuild/languages/build.mps/mps.mpl" prefix="module" />
+      <zipfileset dir="${mps_home}/plugins/mpsbuild/languages/build.mps/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="${mps_home}/plugins/mpsbuild/languages/build.mps/util" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/util" />
+      <zipfileset dir="${mps_home}/plugins/mpsbuild/languages/build.mps/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
     <jar destfile="${build.layout}/plugins/mpsbuild/languages/jetbrains.mps.ide.build.jar">
       <zipfileset file="${mps_home}/build/solution/build.msd" prefix="modules/jetbrains.mps.ide.build" />
@@ -181,7 +181,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.workflow" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${mps_home}/plugins/mpsbuild/languages/workflow/source_gen" />
+        <path location="${mps_home}/plugins/mpsbuild/languages/build.workflow/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
@@ -210,7 +210,7 @@
       </classpath>
     </javac>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.build.workflow">
-      <fileset dir="${mps_home}/plugins/mpsbuild/languages/workflow/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/mpsbuild/languages/build.workflow/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -219,7 +219,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.mps" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${mps_home}/plugins/mpsbuild/languages/mps/source_gen" />
+        <path location="${mps_home}/plugins/mpsbuild/languages/build.mps/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
@@ -250,7 +250,7 @@
       </classpath>
     </javac>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.build.mps">
-      <fileset dir="${mps_home}/plugins/mpsbuild/languages/mps/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/mpsbuild/languages/build.mps/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
 </project>

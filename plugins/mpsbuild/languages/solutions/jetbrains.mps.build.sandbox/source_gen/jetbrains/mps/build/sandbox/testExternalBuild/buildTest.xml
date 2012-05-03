@@ -9,7 +9,7 @@
   <property name="buildMPS.build.vcs.number" value="${import.buildMPS.buildMPS.build.vcs.number}" />
   <property name="buildMPS.teamcity.buildConfName" value="${import.buildMPS.buildMPS.teamcity.buildConfName}" />
   
-  <target name="assemble">
+  <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/sandbox" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.tests.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.tests.jar/META-INF" />
@@ -45,12 +45,22 @@
   
   <target name="fetchDependencies" />
   
-  <target name="build" depends="assemble" />
+  <target name="build" depends="assemble, check" />
   
   <target name="clean">
     <delete dir="${build.tmp}" />
     <delete dir="${build.layout}" />
   </target>
+  
+  <target name="compileJava" depends="java.compile.jetbrains.mps.build.tests" />
+  
+  <target name="processResources" />
+  
+  <target name="classes" depends="compileJava, processResources" />
+  
+  <target name="test" depends="classes" />
+  
+  <target name="check" depends="test" />
   
   <target name="java.compile.jetbrains.mps.build.tests" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.tests" />

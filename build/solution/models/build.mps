@@ -9726,7 +9726,7 @@
               <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8524659923334108722">
                 <property name="head" nameId="3ior.8618885170173601779" value="languages" />
                 <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8524659923334108723">
-                  <property name="head" nameId="3ior.8618885170173601779" value="workflow" />
+                  <property name="head" nameId="3ior.8618885170173601779" value="build.workflow" />
                   <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8524659923334108724">
                     <property name="head" nameId="3ior.8618885170173601779" value="workflow.mpl" />
                   </node>
@@ -9760,7 +9760,7 @@
               <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8524659923334108729">
                 <property name="head" nameId="3ior.8618885170173601779" value="languages" />
                 <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8524659923334108730">
-                  <property name="head" nameId="3ior.8618885170173601779" value="mps" />
+                  <property name="head" nameId="3ior.8618885170173601779" value="build.mps" />
                   <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8524659923334108731">
                     <property name="head" nameId="3ior.8618885170173601779" value="mps.mpl" />
                   </node>

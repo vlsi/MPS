@@ -352,14 +352,13 @@
       <modulePath path="${project}/plugins/migration25/solution/migration25.msd" folder="plugins" />
       <modulePath path="${project}/plugins/modelchecker/solution/jetbrains.mps.ide.modelchecker.msd" folder="plugins" />
       <modulePath path="${project}/plugins/mpsbuild/languages/build/build.mpl" folder="build" />
-      <modulePath path="${project}/plugins/mpsbuild/languages/deploySolution/deploy.msd" folder="build" />
-      <modulePath path="${project}/plugins/mpsbuild/languages/mps/mps.mpl" folder="build" />
+      <modulePath path="${project}/plugins/mpsbuild/languages/build.mps/mps.mpl" folder="build" />
+      <modulePath path="${project}/plugins/mpsbuild/languages/build.workflow/workflow.mpl" folder="build" />
       <modulePath path="${project}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.pluginSolution/pluginSolution.msd" folder="build" />
       <modulePath path="${project}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.runtime/runtime.msd" folder="build" />
       <modulePath path="${project}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.pluginSolution/pluginSolution.msd" folder="build" />
       <modulePath path="${project}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.sandbox/sandbox.msd" folder="build" />
       <modulePath path="${project}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.tests/tests.msd" folder="build" />
-      <modulePath path="${project}/plugins/mpsbuild/languages/workflow/workflow.mpl" folder="build" />
       <modulePath path="${project}/plugins/mpsdevkit/mpsdevkit.msd" folder="plugins" />
       <modulePath path="${project}/plugins/mpsjava/migration/migration.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/platform/platform.msd" folder="plugins.mpsjava" />

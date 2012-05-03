@@ -54,6 +54,8 @@
         </node>
       </node>
     </node>
+    <node role="plugins" roleId="3ior.6647099934206700656" type="3ior.BuildJavaPlugin" typeId="3ior.6647099934206700647" id="8056730377013773363" />
+    <node role="plugins" roleId="3ior.6647099934206700656" type="kdzh.BuildMPSPlugin" typeId="kdzh.868032131020265945" id="8056730377013773365" />
   </root>
 </model>
 
