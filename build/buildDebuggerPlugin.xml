@@ -421,9 +421,9 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-core.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <pathelement path="${build.tmp}/java/out/debugger-api" />
         <pathelement path="${build.tmp}/java/out/debugger-java" />

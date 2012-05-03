@@ -77,10 +77,10 @@ public class MPSModulesClosure {
     });
   }
 
-  private Iterable<SNode> getDependencies(SNode module, final boolean reexport) {
+  private Iterable<SNode> getDependencies(SNode module, final boolean reexportOnly) {
     Iterable<SNode> dependencies = Sequence.fromIterable(dependencies(module)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule") && SPropertyOperations.getBoolean(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule"), "reexport") == reexport;
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule") && (!(reexportOnly) || SPropertyOperations.getBoolean(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule"), "reexport"));
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
@@ -88,20 +88,18 @@ public class MPSModulesClosure {
       }
     });
 
-    if (reexport) {
-      // add extended langs 
-      dependencies = Sequence.fromIterable(dependencies).concat(Sequence.fromIterable(dependencies(module)).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage");
-        }
-      }).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage"), "language", false);
-        }
-      }));
-    }
+    // add extended langs 
+    dependencies = Sequence.fromIterable(dependencies).concat(Sequence.fromIterable(dependencies(module)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage");
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage"), "language", false);
+      }
+    }));
 
-    if (reexport) {
+    if (reexportOnly) {
       return toOriginal(dependencies);
     }
 
@@ -195,20 +193,17 @@ public class MPSModulesClosure {
     };
   }
 
-  private void collectAllCompileTimeDependencies(SNode module, boolean reexportOnly, Set<SNode> nonreexportDeps) {
+  private void collectAllCompileTimeDependencies(SNode module, boolean reexportOnly) {
     // copy of ModuleDependenciesManager.collectAllCompileTimeDependencies (ignoring "core" language) 
     modules.add(module);
-    for (SNode m : getDependencies(module, true)) {
+    for (SNode m : getDependencies(module, reexportOnly)) {
       if (!(modules.contains(m))) {
-        collectAllCompileTimeDependencies(m, true, nonreexportDeps);
+        collectAllCompileTimeDependencies(m, true);
       }
     }
 
     if (reexportOnly) {
       return;
-    }
-    for (SNode m : getDependencies(module, false)) {
-      nonreexportDeps.add(m);
     }
 
     // NOTE: generator dependencies are imported into language in ModuleLoader.collectDependencies() 
@@ -222,7 +217,7 @@ public class MPSModulesClosure {
         }
         SNode runtimeSolution = SNodeOperations.as(toOriginal(SLinkOperations.getTarget(SNodeOperations.cast(rdep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime"), "solution", false)), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
         if (!(modules.contains(runtimeSolution))) {
-          collectAllCompileTimeDependencies(runtimeSolution, true, nonreexportDeps);
+          collectAllCompileTimeDependencies(runtimeSolution, true);
         }
 
       }
@@ -233,15 +228,12 @@ public class MPSModulesClosure {
   }
 
   public MPSModulesClosure closure() {
-    Set<SNode> nonreexportDeps = new LinkedHashSet<SNode>();
-    collectAllCompileTimeDependencies(initial, false, nonreexportDeps);
-    modules.addAll(nonreexportDeps);
+    collectAllCompileTimeDependencies(initial, false);
     modules.remove(initial);
     return this;
   }
 
   public MPSModulesClosure runtimeDependencies() {
-    Set<SNode> nonreexportDeps = new LinkedHashSet<SNode>();
     modules.add(initial);
     for (SNode language : getUsedLanguages(initial)) {
       boolean hasRuntime = false;
@@ -259,7 +251,6 @@ public class MPSModulesClosure {
       }
     }
 
-    modules.addAll(nonreexportDeps);
     modules.remove(initial);
     return this;
   }
