@@ -110,6 +110,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
 
     List<SNodePointer> selectedNodePointers = new ArrayList<SNodePointer>();
     Project project = null;
+    EditableSModelDescriptor modelDescriptor = null;
     for (AbstractTreeNode treeNode : selected) {
       if (treeNode instanceof MPSProjectViewNode) {
         selectedNodePointers.add(((MPSProjectViewNode) treeNode).getValue());
@@ -121,13 +122,19 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
       } else if (project != treeNode.getProject()) {
         return null;
       }
+      if (modelDescriptor == null) {
+        modelDescriptor = getContextModel(treeNode);
+      } else if (modelDescriptor != getModel(treeNode)) {
+        return null;
+      }
+
     }
     jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
-    if (mpsProject == null) {
+    if (mpsProject == null || modelDescriptor == null) {
       return null;
     }
 
-    return new CutCopyProvider(selectedNodePointers, mpsProject);
+    return new CutCopyProvider(selectedNodePointers, modelDescriptor, mpsProject);
   }
 
   private Set<IFile> getModelFiles(Collection<AbstractTreeNode> selected) {
@@ -186,7 +193,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     if (sModel == null) {
       return null;
     }
-    return new PasteProvider(sModel, mpsProject);
+    return new PasteProvider(sModel, mpsProject, modelDescriptor);
   }
 
   private IFile getModelFile(AbstractTreeNode treeNode) {

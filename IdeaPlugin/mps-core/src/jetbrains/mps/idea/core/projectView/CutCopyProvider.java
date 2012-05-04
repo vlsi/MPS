@@ -25,6 +25,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -37,10 +38,12 @@ import java.util.List;
 public class CutCopyProvider implements CopyProvider, CutProvider {
   private List<SNodePointer> mySelectedNodes;
   private Project myProject;
+  private EditableSModelDescriptor myModelDescriptor;
 
-  public CutCopyProvider(List<SNodePointer> selectedNodes, Project project) {
+  public CutCopyProvider(List<SNodePointer> selectedNodes, @NotNull EditableSModelDescriptor modelDescriptor, @NotNull Project project) {
     mySelectedNodes = selectedNodes;
     myProject = project;
+    myModelDescriptor = modelDescriptor;
   }
 
   @Override
@@ -100,6 +103,7 @@ public class CutCopyProvider implements CopyProvider, CutProvider {
           for (SNode node : nodes) {
             SNodeOperations.deleteNode(node);
           }
+          myModelDescriptor.save();
         }
       }
     }, myProject);

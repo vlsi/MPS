@@ -24,6 +24,7 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
@@ -37,10 +38,12 @@ import java.util.Set;
 public class PasteProvider implements com.intellij.ide.PasteProvider, Runnable {
   private Project myProject;
   private SModel myModel;
+  private EditableSModelDescriptor myModelDescriptor;
 
-  public PasteProvider(SModel sModel, Project project) {
+  public PasteProvider(SModel sModel, Project project, EditableSModelDescriptor modelDescriptor) {
     myProject = project;
     myModel = sModel;
+    myModelDescriptor = modelDescriptor;
   }
 
   @Override
@@ -98,6 +101,7 @@ public class PasteProvider implements com.intellij.ide.PasteProvider, Runnable {
         }
         pasteProcessor.pasteAsRoots(myModel, "");
         Resolver.resolveReferences(referencesToResolve, operationContext);
+        myModelDescriptor.save();
       }
     };
   }
