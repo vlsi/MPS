@@ -1118,7 +1118,6 @@
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="2omo.AppendOperation" typeId="2omo.1237306079178" id="2133624044438029061">
-          <property name="left_transform_hint" value="true" />
           <node role="part" roleId="2omo.1237306115446" type="2omo.ConstantStringAppendPart" typeId="2omo.1237305557638" id="2133624044438029062">
             <property name="value" nameId="2omo.1237305576108" value="&lt;!DOCTYPE" />
           </node>
