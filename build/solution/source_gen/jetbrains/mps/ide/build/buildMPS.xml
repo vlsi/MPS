@@ -26,7 +26,9 @@
     <mkdir dir="${build.layout}/MPS ${version}" />
     <mkdir dir="${build.layout}/MPS ${version}/bin" />
     <copy todir="${build.layout}/MPS ${version}/bin">
-      <fileset dir="${mps_home}/bin" />
+      <fileset dir="${mps_home}/bin">
+        <exclude name="**/*.dll, **/*.exe, **/bin/linux/, **/bin/mac/, **/bin/nix/, **/bin/win/" />
+      </fileset>
     </copy>
     <mkdir dir="${build.layout}/MPS ${version}/languages" />
     <copy todir="${build.layout}/MPS ${version}/languages">
@@ -102,6 +104,117 @@
     </copy>
     <copy todir="${build.layout}/MPS ${version}">
       <fileset file="${basedir}/readme.txt" />
+    </copy>
+    <mkdir dir="${build.layout}/MPS-linux" />
+    <mkdir dir="${build.layout}/MPS-linux/bin" />
+    <copy todir="${build.layout}/MPS-linux/bin">
+      <fileset file="${mps_home}/build/mps.vmoptions" />
+      <filterchain>
+        <fixcrlf eol="lf" eof="remove" />
+      </filterchain>
+    </copy>
+    <copy todir="${build.layout}/MPS-linux/bin">
+      <fileset dir="${mps_home}/bin/linux">
+        <exclude name="**/fsnotifier, **/fsnotifier64" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/bin_f755">
+      <fileset file="${mps_home}/bin/linux/fsnotifier" />
+    </copy>
+    <copy todir="${build.tmp}/default/bin_f755">
+      <fileset file="${mps_home}/bin/linux/fsnotifier64" />
+    </copy>
+    <mkdir dir="${build.layout}/MPS-linux/help" />
+    <copy todir="${build.layout}/MPS-linux/help">
+      <fileset dir="${mps_home}">
+        <include name="help/mpshelp.jar" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/MPS-linux_f755">
+      <fileset file="${mps_home}/build/mps.sh" />
+      <filterchain>
+        <fixcrlf eol="lf" eof="remove" />
+      </filterchain>
+    </copy>
+    <mkdir dir="${build.layout}/MPS-mac" />
+    <mkdir dir="${build.layout}/MPS-mac/bin" />
+    <copy todir="${build.layout}/MPS-mac/bin">
+      <fileset file="${mps_home}/build/mps.vmoptions" />
+      <filterchain>
+        <fixcrlf eol="lf" eof="remove" />
+      </filterchain>
+    </copy>
+    <copy todir="${build.layout}/MPS-mac/bin">
+      <fileset dir="${mps_home}/bin/mac">
+        <exclude name="**/fsnotifier" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/bin_f7551">
+      <fileset file="${mps_home}/bin/mac/fsnotifier" />
+    </copy>
+    <mkdir dir="${build.layout}/MPS-mac/Contents" />
+    <mkdir dir="${build.layout}/MPS-mac/Contents/Resources" />
+    <copy todir="${build.layout}/MPS-mac/Contents/Resources">
+      <fileset file="${mps_home}/build/resources/mps.icns" />
+    </copy>
+    <mkdir dir="${build.layout}/MPS-mac/Contents/MacOs" />
+    <copy todir="${build.layout}/MPS-mac/Contents/MacOs">
+      <fileset file="${mps_home}/build/resources/mps" />
+    </copy>
+    <copy todir="${build.layout}/MPS-mac/Contents">
+      <fileset file="${mps_home}/build/Info.plist.xml" />
+      <filterchain>
+        <replacetokens>
+          <token key="$version$" value="${version}" />
+        </replacetokens>
+        <replacetokens>
+          <token key="$build$" value="${build.number}" />
+        </replacetokens>
+        <fixcrlf eol="cr" eof="remove" />
+      </filterchain>
+    </copy>
+    <copy todir="${build.tmp}/default/MPS-mac_f755">
+      <fileset file="${mps_home}/build/mps.sh" />
+      <filterchain>
+        <fixcrlf eol="lf" eof="remove" />
+      </filterchain>
+    </copy>
+    <mkdir dir="${build.layout}/MPS-win" />
+    <mkdir dir="${build.layout}/MPS-win/bin" />
+    <copy todir="${build.layout}/MPS-win/bin">
+      <fileset file="${mps_home}/build/mps.vmoptions" />
+      <filterchain>
+        <fixcrlf eol="crlf" />
+      </filterchain>
+    </copy>
+    <copy todir="${build.layout}/MPS-win/bin">
+      <fileset dir="${mps_home}/bin/win">
+        <exclude name="**/fsnotifier, **/fsnotifier64" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/bin_f7552">
+      <fileset file="${mps_home}/bin/win/fsnotifier.exe" />
+    </copy>
+    <copy todir="${build.tmp}/default/bin_f7552">
+      <fileset file="${mps_home}/bin/win/restarter.exe" />
+    </copy>
+    <copy todir="${build.tmp}/default/bin_f7552">
+      <fileset file="${mps_home}/bin/win/runnerw.exe" />
+    </copy>
+    <copy todir="${build.tmp}/default/bin_f7552">
+      <fileset file="${mps_home}/bin/win/vistalauncher.exe" />
+    </copy>
+    <mkdir dir="${build.layout}/MPS-win/help" />
+    <copy todir="${build.layout}/MPS-win/help">
+      <fileset dir="${mps_home}">
+        <include name="help/mpshelp.jar" />
+      </fileset>
+    </copy>
+    <copy todir="${build.tmp}/default/MPS-win_f755">
+      <fileset file="${mps_home}/build/mps.bat" />
+      <filterchain>
+        <fixcrlf eol="crlf" />
+      </filterchain>
     </copy>
     <echo file="${build.layout}/variables.properties">buildMPS.build.number=${build.number}${line.separator}buildMPS.version=${version}${line.separator}buildMPS.build.vcs.number=${build.vcs.number}${line.separator}buildMPS.teamcity.buildConfName=${teamcity.buildConfName}</echo>
   </target>
