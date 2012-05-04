@@ -1,0 +1,95 @@
+<project name="buildTest" default="build" basedir="../../../">
+  <property name="build.dir" location="build" />
+  <property name="build.tmp" location="${build.dir}/tmp/buildTest" />
+  <property name="build.layout" location="${build.dir}/artifacts/buildTest" />
+  <property name="artifacts.buildMPS" location="../../../../build/artifacts/buildMPS" />
+  <property file="${artifacts.buildMPS}/variables.properties" prefix="import.buildMPS" />
+  <property name="buildMPS.build.number" value="${import.buildMPS.buildMPS.build.number}" />
+  <property name="buildMPS.version" value="${import.buildMPS.buildMPS.version}" />
+  <property name="buildMPS.build.vcs.number" value="${import.buildMPS.buildMPS.build.vcs.number}" />
+  <property name="buildMPS.teamcity.buildConfName" value="${import.buildMPS.buildMPS.teamcity.buildConfName}" />
+  
+  <target name="assemble" depends="classes">
+    <mkdir dir="${build.layout}/sandbox" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.build.sandbox.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.build.sandbox.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.build.sandbox.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.build.sandbox" type="solution" uuid="d029512f-7357-432e-b758-ecdc37cc94f5">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.build.sandbox-src.jar" descriptor="sandbox.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/sandbox/jetbrains.mps.build.sandbox.jar">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.sandbox" />
+      <fileset dir="${basedir}/jetbrains.mps.build.sandbox" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.build.sandbox.jar" />
+    </jar>
+    <jar destfile="${build.layout}/sandbox/jetbrains.mps.build.sandbox-src.jar">
+      <fileset dir="${basedir}/jetbrains.mps.build.sandbox/source_gen" includes="**/*.java" />
+      <zipfileset file="${basedir}/jetbrains.mps.build.sandbox/sandbox.msd" prefix="module" />
+      <zipfileset dir="${basedir}/jetbrains.mps.build.sandbox/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
+    </jar>
+    <echo file="${build.layout}/variables.properties">buildMPS.build.number=${buildMPS.build.number}${line.separator}buildMPS.version=${buildMPS.version}${line.separator}buildMPS.build.vcs.number=${buildMPS.build.vcs.number}${line.separator}buildMPS.teamcity.buildConfName=${buildMPS.teamcity.buildConfName}</echo>
+  </target>
+  
+  <target name="buildDependents">
+    <ant antfile="../../../../build/buildMPS.xml" inheritAll="false" useNativeBasedir="true" />
+  </target>
+  
+  <target name="fetchDependencies" />
+  
+  <target name="build" depends="assemble, check" />
+  
+  <target name="clean">
+    <delete dir="${build.tmp}" />
+    <delete dir="${build.layout}" />
+  </target>
+  
+  <target name="compileJava" depends="java.compile.jetbrains.mps.build.sandbox" />
+  
+  <target name="processResources" />
+  
+  <target name="classes" depends="compileJava, processResources" />
+  
+  <target name="test" depends="classes" />
+  
+  <target name="check" depends="test" />
+  
+  <target name="java.compile.jetbrains.mps.build.sandbox" depends="fetchDependencies">
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.sandbox" />
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.sandbox" fork="true" includeantruntime="false">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/jetbrains.mps.build.sandbox/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.buildMPS}/MPS ${buildMPS.version}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.buildMPS}/MPS ${buildMPS.version}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.buildMPS}/MPS ${buildMPS.version}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.buildMPS}/MPS ${buildMPS.version}/lib/mps-core.jar" />
+        <fileset file="${artifacts.buildMPS}/MPS ${buildMPS.version}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
+        <fileset file="${artifacts.buildMPS}/MPS ${buildMPS.version}/lib/guava-11.0.1.jar" />
+        <fileset file="${artifacts.buildMPS}/MPS ${buildMPS.version}/lib/jdom.jar" />
+        <fileset file="${artifacts.buildMPS}/MPS ${buildMPS.version}/lib/log4j.jar" />
+        <fileset file="${artifacts.buildMPS}/MPS ${buildMPS.version}/lib/trove4j.jar" />
+        <fileset file="${artifacts.buildMPS}/MPS ${buildMPS.version}/lib/xstream.jar" />
+        <fileset file="${artifacts.buildMPS}/MPS ${buildMPS.version}/lib/annotations.jar" />
+        <fileset file="${artifacts.buildMPS}/MPS ${buildMPS.version}/lib/commons-lang-2.4.jar" />
+        <fileset file="${artifacts.buildMPS}/MPS ${buildMPS.version}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.buildMPS}/MPS ${buildMPS.version}/lib/asm.jar" />
+        <fileset file="${artifacts.buildMPS}/MPS ${buildMPS.version}/lib/diffutils-1.2.1.jar" />
+        <fileset file="${artifacts.buildMPS}/MPS ${buildMPS.version}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
+        <fileset file="${artifacts.buildMPS}/MPS ${buildMPS.version}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
+        <fileset file="${artifacts.buildMPS}/MPS ${buildMPS.version}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
+        <fileset file="${artifacts.buildMPS}/MPS ${buildMPS.version}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <fileset file="${artifacts.buildMPS}/MPS ${buildMPS.version}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
+        <fileset file="${artifacts.buildMPS}/MPS ${buildMPS.version}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+      </classpath>
+    </javac>
+  </target>
+</project>

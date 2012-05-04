@@ -1208,6 +1208,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "classpath", true);
   }
 
+  public static SNode sourceNodeQuery_8056730377013464320(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "classpath", true);
+  }
+
   public static SNode sourceNodeQuery_3717132724153138073(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "jars", true);
   }

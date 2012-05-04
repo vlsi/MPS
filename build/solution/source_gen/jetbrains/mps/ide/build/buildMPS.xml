@@ -47,15 +47,15 @@
     <copy todir="${build.layout}/MPS ${version}/languages">
       <fileset dir="${artifacts.buildUiLanguages}/languages" />
     </copy>
+    <copy todir="${build.layout}/MPS ${version}/lib">
+      <fileset dir="${artifacts.IDEA}/lib" />
+    </copy>
     <mkdir dir="${build.layout}/MPS ${version}/lib" />
     <copy todir="${build.layout}/MPS ${version}/lib">
       <fileset dir="${artifacts.buildCore}/mps-core/lib" />
     </copy>
     <copy todir="${build.layout}/MPS ${version}/lib">
       <fileset dir="${artifacts.buildWorkbench}/lib" />
-    </copy>
-    <copy todir="${build.layout}/MPS ${version}/lib">
-      <fileset dir="${artifacts.IDEA}/lib" />
     </copy>
     <mkdir dir="${build.layout}/MPS ${version}/license" />
     <copy todir="${build.layout}/MPS ${version}/license">
