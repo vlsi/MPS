@@ -51,7 +51,7 @@
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="5842819808956701256">
       <property name="keepSourceRoot" nameId="tpf8.1177959072138" value="true" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="s7om.3885435385580582152" resolveInfo="MpsStartupScript" />
-      <link role="template" roleId="tpf8.1167514355421" targetNodeId="3885435385580639723" resolveInfo="Info" />
+      <link role="template" roleId="tpf8.1167514355421" targetNodeId="8979762117546970698" resolveInfo="Info.plist" />
     </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="5842819808956716889">
       <property name="keepSourceRoot" nameId="tpf8.1177959072138" value="true" />
@@ -2812,7 +2812,16 @@
           </node>
         </node>
       </node>
-      <node role="prolog" roleId="iuxj.6666499814681299060" type="iuxj.XmlProlog" typeId="iuxj.6666499814681299057" id="8979762117547236936" />
+      <node role="prolog" roleId="iuxj.6666499814681299060" type="iuxj.XmlProlog" typeId="iuxj.6666499814681299057" id="8979762117547236936">
+        <node role="elements" roleId="iuxj.7604553062773674214" type="iuxj.XmlDoctypeDeclaration" typeId="iuxj.2133624044437898907" id="2133624044438137905">
+          <property name="doctypeName" nameId="iuxj.2133624044437898910" value="plist" />
+          <node role="externalId" roleId="iuxj.2133624044438029120" type="iuxj.XmlExternalId" typeId="iuxj.2133624044438029119" id="2133624044438137907">
+            <property name="isPublic" nameId="iuxj.2133624044438029125" value="true" />
+            <property name="systemId" nameId="iuxj.2133624044438029124" value="http://www.apple.com/DTDs/PropertyList-1.0.dtd" />
+            <property name="publicId" nameId="iuxj.2133624044438029123" value="-//Apple Computer//DTD PLIST 1.0//EN" />
+          </node>
+        </node>
+      </node>
     </node>
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.RootTemplateAnnotation" typeId="tpf8.1168619357332" id="8979762117546970701">
       <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="s7om.3885435385580582152" resolveInfo="MpsStartupScript" />

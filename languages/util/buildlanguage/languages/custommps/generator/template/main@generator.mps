@@ -1773,7 +1773,7 @@
         <node role="sourcePath" roleId="tps4.1220981955937" type="tps4.Path" typeId="tps4.1220973916698" id="4514696390934965360">
           <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="4514696390934965362">
             <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="4514696390934965364">
-              <property name="path" nameId="tps4.1220974398640" value="Info.plist" />
+              <property name="path" nameId="tps4.1220974398640" value="Info.plist.xml" />
             </node>
           </node>
           <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="4514696390935050185">

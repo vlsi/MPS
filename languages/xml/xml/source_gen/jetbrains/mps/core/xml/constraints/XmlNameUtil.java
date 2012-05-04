@@ -216,7 +216,7 @@ public class XmlNameUtil {
    * @return whether character is valid public id character
    */
   public static boolean isPublicIdChar(int c) {
-    if (c <= 0x1F) {
+    if (c <= 0x20) {
       return c == 0x20 || c == 0xD || c == 0xA;
     }
     // [0-9] 

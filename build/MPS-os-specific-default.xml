@@ -80,7 +80,7 @@
     <copy todir="${deploy.dir}/MPS-os-specific.mac/help">
       <fileset dir="${base_dir}/help" />
     </copy>
-    <copy file="${base_dir}/build/Info.plist" tofile="${deploy.dir}/MPS-os-specific.mac/Info.plist" />
+    <copy file="${base_dir}/build/Info.plist.xml" tofile="${deploy.dir}/MPS-os-specific.mac/Info.plist.xml" />
     <copy file="${base_dir}/build/resources/mps.icns" tofile="${deploy.dir}/MPS-os-specific.mac/mps.icns" />
     <copy file="${base_dir}/build/resources/mps" tofile="${deploy.dir}/MPS-os-specific.mac/mps.executable" />
     <antcall target="MPS-os-specific.mac" inheritall="true">

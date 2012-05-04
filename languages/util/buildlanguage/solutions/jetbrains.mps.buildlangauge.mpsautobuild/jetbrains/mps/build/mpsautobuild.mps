@@ -4086,8 +4086,8 @@
             <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="4514696390933853692">
               <property name="path" nameId="tps4.1220974398640" value="build" />
             </node>
-            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="4514696390933853693">
-              <property name="path" nameId="tps4.1220974398640" value="Info.plist" />
+            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="2133624044438145619">
+              <property name="path" nameId="tps4.1220974398640" value="Info.plist.xml" />
             </node>
           </node>
         </node>
