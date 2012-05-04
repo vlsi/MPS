@@ -6,10 +6,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 
@@ -33,9 +34,16 @@ public class FieldReferenceOperation_Behavior {
     if (!(SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(thisNode), "jetbrains.mps.baseLanguage.structure.ThisExpression"))) {
       return false;
     }
-    List<SNode> param = Sequence.fromIterable(Scope.getScope(Scope.parent(thisNode), thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration")).getAvailableElements(null)).toListSequence();
-    List<SNode> vars = Sequence.fromIterable(Scope.getScope(Scope.parent(thisNode), thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")).getAvailableElements(null)).toListSequence();
-    vars.addAll(param);
+    Scope paramsScope = Scope.getScope(Scope.parent(thisNode), thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration"));
+    Scope localsScope = Scope.getScope(Scope.parent(thisNode), thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
+    List<SNode> vars = new ArrayList<SNode>();
+    if (localsScope != null) {
+      vars.addAll(Sequence.fromIterable(localsScope.getAvailableElements(null)).toListSequence());
+    }
+    if (paramsScope != null) {
+      vars.addAll(Sequence.fromIterable(paramsScope.getAvailableElements(null)).toListSequence());
+    }
+
     SNode field = SLinkOperations.getTarget(thisNode, "fieldDeclaration", false);
     if (field == null) {
       return false;

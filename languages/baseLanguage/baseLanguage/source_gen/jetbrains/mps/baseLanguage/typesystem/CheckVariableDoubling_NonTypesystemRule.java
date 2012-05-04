@@ -7,12 +7,12 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -26,9 +26,15 @@ public class CheckVariableDoubling_NonTypesystemRule extends AbstractNonTypesyst
   }
 
   public void applyRule(final SNode iVariableDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    List<SNode> param = Sequence.fromIterable(Scope.getScope(Scope.parent(iVariableDeclaration), iVariableDeclaration, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration")).getAvailableElements(null)).toListSequence();
-    List<SNode> vars = Sequence.fromIterable(Scope.getScope(Scope.parent(iVariableDeclaration), iVariableDeclaration, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")).getAvailableElements(null)).toListSequence();
-    vars.addAll(param);
+    Scope paramsScope = Scope.getScope(Scope.parent(iVariableDeclaration), iVariableDeclaration, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration"));
+    Scope localsScope = Scope.getScope(Scope.parent(iVariableDeclaration), iVariableDeclaration, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
+    List<SNode> vars = new ArrayList<SNode>();
+    if (localsScope != null) {
+      vars.addAll(Sequence.fromIterable(localsScope.getAvailableElements(null)).toListSequence());
+    }
+    if (paramsScope != null) {
+      vars.addAll(Sequence.fromIterable(paramsScope.getAvailableElements(null)).toListSequence());
+    }
     SNode nearestMethod = SNodeOperations.getAncestor(iVariableDeclaration, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
     List<SNode> methodVariables = SNodeOperations.getDescendants(nearestMethod, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", false, new String[]{});
     List<SNode> intersection = new ArrayList<SNode>();
