@@ -19,6 +19,7 @@ import gnu.trove.THashMap;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.project.ClassLoadingModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.util.NameUtil;
 
 import java.io.IOException;
 import java.net.URL;
@@ -29,92 +30,96 @@ public class ModuleClassLoader extends ClassLoader {
   @SuppressWarnings({"UnusedDeclaration", "FieldCanBeLocal"})
   private boolean myDisposed;
   private IClassLoadingModule myModule;
-  private Map<String, Class> myClasses = new THashMap<String, Class>();
+
+  private final Object LOADING_LOCK = new Object();
+  //This must be thread-safe. This does not include results of parent classloader
+  private final Map<String, Class> myClasses = Collections.synchronizedMap(new THashMap<String, Class>());
 
   public ModuleClassLoader(IClassLoadingModule module) {
     super(LibraryInitializer.getInstance().getParentLoaderForModule(module));
     myModule = module;
   }
 
-  protected synchronized final Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+  protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+    if (!myModule.canLoad()) throw new ClassNotFoundException(name);
+
+    //This does not guarantee that if one class was loaded, it will be returned by sequential loadClass immediately,
+    //but only makes classloading faster. The uniqueness is guaranteed by sync-block with LOADING_LOCK
     if (myClasses.containsKey(name)) {
       Class cl = myClasses.get(name);
       if (cl == null) throw new ClassNotFoundException(name);
       return cl;
     }
+
+    Class<?> clazz = null;
     try {
-      return loadClass(name, resolve, true, true);
-    } catch (ClassNotFoundException cnf) {
-      myClasses.put(name, null);
-      throw cnf;
+      clazz = findInSelfAndDependencies(name, true, true);
+      if (resolve) {
+        resolveClass(clazz);
+      }
+      return clazz;
+    } finally {
+      myClasses.put(name, clazz);
     }
   }
 
-  private Class<?> loadClass(String name, boolean resolve, boolean dependencies, boolean loadFromApp) throws ClassNotFoundException {
-    if (!myModule.canLoad()) throw new ClassNotFoundException(name);
-
-    Class c = findClassEverywhere(name, dependencies, loadFromApp);
-
-    if (resolve) {
-      resolveClass(c);
-    }
-    myClasses.put(name, c);
-    return c;
-  }
-
-  private Class<?> findClassEverywhere(String name, boolean dependencies, boolean loadFromApp) throws ClassNotFoundException {
+  private Class<?> findInSelfAndDependencies(String name, boolean includeDependencies, boolean includeParents) throws ClassNotFoundException {
+    //from self
     if (myModule.canLoadFromSelf()) {
-      Class c = findLoadedClass(name);
-      if (c != null) return c;
+      //The purpose of this lock is to load class only once
+      //This method can be called either explicitly or by module dependency
+      //This lock guarantees that the same class is not loaded simultaneously by 2 threads (only sequential loads),
+      //and if it was already loaded, the user will get the loaded instance, not a new one
+      synchronized (LOADING_LOCK) {
+        Class c = findLoadedClass(name);
+        if (c != null) return c;
 
-      byte[] bytes = myModule.findClassBytes(name);
-      if (bytes != null) {
-        definePackageIfNecessary(name);
-        ClassLoaderManager.getInstance().classLoaded(name, ((ClassLoadingModule) myModule).getModuleReference());
-        return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
+        byte[] bytes = myModule.findClassBytes(name);
+        if (bytes != null) {
+          String pack = NameUtil.namespaceFromLongName(name);
+          if (getPackage(pack) == null) {
+            definePackage(pack, null, null, null, null, null, null, null);
+          }
+          ClassLoaderManager.getInstance().classLoaded(name, ((ClassLoadingModule) myModule).getModuleReference());
+          return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
+        }
       }
     }
 
-    if (dependencies) {
-      Set<IClassLoadingModule> mayContainNonOwned = new HashSet<IClassLoadingModule>();
+    if (includeDependencies) {
+      //from dependencies (try modules only)
+      List<IClassLoadingModule> queue = new ArrayList<IClassLoadingModule>();
       for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
         if (m.equals(myModule)) continue;
+        if (!m.canLoad()) continue;
 
-        if (m.canLoad() && m.canLoadFromSelf() && m.canFindClass(name)) {
+        if (m.canLoadFromSelf() && m.canFindClass(name)) {
+          //here it will load with self, with any values as two last parameters
+          return m.getClassLoader().findInSelfAndDependencies(name, false, false);
+        } else {
+          queue.add(m);
+        }
+      }
+
+
+      if (includeParents) {
+        //from dependencies (try parent class loaders also)
+        for (IClassLoadingModule m : queue) {
           try {
-            return m.getClassLoader().loadClass(name, false, false, false);
+            return m.getClassLoader().findInSelfAndDependencies(name, false, true);
           } catch (ClassNotFoundException e) {
             //ignore
           }
-        } else {
-          mayContainNonOwned.add(m);
-        }
-      }
-      for (IClassLoadingModule m : mayContainNonOwned) {
-        try {
-          return m.getClassLoader().loadClass(name, false, false, false);
-        } catch (ClassNotFoundException e) {
-          //ignore
         }
       }
     }
 
-    if (!loadFromApp && getParent() == ModuleClassLoader.class.getClassLoader()) throw new ClassNotFoundException(name);
+    if (includeParents) {
+      //from my parent
+      return getParent().loadClass(name);
+    }
 
-    return getParent().loadClass(name);
-  }
-
-  private void definePackageIfNecessary(String name) {
-    String pack = getNamespace(name);
-    if (getPackage(pack) != null) return;
-    definePackage(pack, null, null, null, null, null, null, null);
-  }
-
-  //todo replace with NameUtil.namespaceFromLongName(name)
-  private String getNamespace(String fqName) {
-    int lastIndex = fqName.lastIndexOf('.');
-    if (lastIndex == -1) return "";
-    return fqName.substring(0, lastIndex);
+    throw new ClassNotFoundException(name);
   }
 
   protected URL findResource(String name) {
