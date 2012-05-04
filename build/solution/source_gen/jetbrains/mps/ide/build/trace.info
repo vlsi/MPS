@@ -40,7 +40,7 @@
     <unitInfo nodeId="6977615362525216882" fileName="buildPluginTests.xml" startLine="1" startPosition="0" endLine="140" endPosition="10" unitName="jetbrains.mps.ide.build.buildPluginTests" />
   </root>
   <root nodeId="7926701909975931624">
-    <unitInfo nodeId="7926701909975931624" fileName="buildCore.xml" startLine="1" startPosition="0" endLine="4486" endPosition="10" unitName="jetbrains.mps.ide.build.buildCore" />
+    <unitInfo nodeId="7926701909975931624" fileName="buildCore.xml" startLine="1" startPosition="0" endLine="4488" endPosition="10" unitName="jetbrains.mps.ide.build.buildCore" />
   </root>
   <root nodeId="8227093612176368028">
     <unitInfo nodeId="8227093612176368028" fileName="buildBuildUI.xml" startLine="1" startPosition="0" endLine="189" endPosition="10" unitName="jetbrains.mps.ide.build.buildBuildUI" />

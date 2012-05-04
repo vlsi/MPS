@@ -950,6 +950,7 @@
     <path path="${base_dir}/editor/intentions-runtime/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/baseLanguage/baseLanguage/classes_gen" />
+    <path path="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.scopes/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes" />
     <path path="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/languages/baseLanguage/baseLanguageInternal/classes_gen" />
@@ -10337,6 +10338,7 @@
     <path path="${base_dir}/editor/intentions-runtime/classes" />
     <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/baseLanguage/baseLanguage/classes_gen" />
+    <path path="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.scopes/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes" />
     <path path="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/languages/baseLanguage/baseLanguageInternal/classes_gen" />

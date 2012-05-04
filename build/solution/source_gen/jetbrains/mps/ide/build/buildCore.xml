@@ -2858,7 +2858,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.baseLanguage.builders" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.traceable, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.baseLanguage.builders" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.baseLanguage.scopes, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.traceable, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.builders" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.builders" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -2876,6 +2876,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.blTypes" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closures" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.scopes" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <path refid="path.java.library.core-libraries" />
@@ -4274,7 +4275,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.xmlQuery" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.builders, java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.baseLanguage.collections, java.compile.jetbrains.mps.gtext, java.compile.jetbrains.mps.gtext.runtime, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.structure, java.compile.jetbrains.mps.lang.traceable, java.compile.jetbrains.mps.xml, java.compile.jetbrains.mps.xmlSchema, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.xmlQuery" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.builders, java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.baseLanguage.collections, java.compile.jetbrains.mps.baseLanguage.scopes, java.compile.jetbrains.mps.gtext, java.compile.jetbrains.mps.gtext.runtime, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.structure, java.compile.jetbrains.mps.lang.traceable, java.compile.jetbrains.mps.xml, java.compile.jetbrains.mps.xmlSchema, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.xmlQuery" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.xmlQuery" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -4294,6 +4295,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.builders" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closures" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collections" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.scopes" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.gtext" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.gtext.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
