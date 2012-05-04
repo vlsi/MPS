@@ -8,7 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.scopes.Adapters;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 
@@ -32,8 +33,8 @@ public class FieldReferenceOperation_Behavior {
     if (!(SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(thisNode), "jetbrains.mps.baseLanguage.structure.ThisExpression"))) {
       return false;
     }
-    List<SNode> param = Sequence.fromIterable(Adapters.getParameterScope(thisNode).getAvailableElements(null)).toListSequence();
-    List<SNode> vars = Sequence.fromIterable(Adapters.getLocalVariableScope(thisNode).getAvailableElements(null)).toListSequence();
+    List<SNode> param = Sequence.fromIterable(Scope.getScope(Scope.parent(thisNode), thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration")).getAvailableElements(null)).toListSequence();
+    List<SNode> vars = Sequence.fromIterable(Scope.getScope(Scope.parent(thisNode), thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")).getAvailableElements(null)).toListSequence();
     vars.addAll(param);
     SNode field = SLinkOperations.getTarget(thisNode, "fieldDeclaration", false);
     if (field == null) {

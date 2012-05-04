@@ -9,7 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.scopes.Adapters;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -25,8 +26,8 @@ public class CheckVariableDoubling_NonTypesystemRule extends AbstractNonTypesyst
   }
 
   public void applyRule(final SNode iVariableDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    List<SNode> param = Sequence.fromIterable(Adapters.getParameterScope(iVariableDeclaration).getAvailableElements(null)).toListSequence();
-    List<SNode> vars = Sequence.fromIterable(Adapters.getLocalVariableScope(iVariableDeclaration).getAvailableElements(null)).toListSequence();
+    List<SNode> param = Sequence.fromIterable(Scope.getScope(Scope.parent(iVariableDeclaration), iVariableDeclaration, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration")).getAvailableElements(null)).toListSequence();
+    List<SNode> vars = Sequence.fromIterable(Scope.getScope(Scope.parent(iVariableDeclaration), iVariableDeclaration, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")).getAvailableElements(null)).toListSequence();
     vars.addAll(param);
     SNode nearestMethod = SNodeOperations.getAncestor(iVariableDeclaration, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
     List<SNode> methodVariables = SNodeOperations.getDescendants(nearestMethod, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", false, new String[]{});

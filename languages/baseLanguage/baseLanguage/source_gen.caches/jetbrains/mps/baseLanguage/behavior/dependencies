@@ -1744,13 +1744,14 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_Behavior" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.Adapters" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.IClassifiersSearchScope" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.scope.Scope" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.FieldReferenceOperation_BehaviorDescriptor" file="FieldReferenceOperation_BehaviorDescriptor.java">
