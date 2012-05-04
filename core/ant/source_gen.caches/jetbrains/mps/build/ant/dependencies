@@ -31,7 +31,6 @@
     <classNode dependClassName="jetbrains.mps.MPSCore" />
     <classNode dependClassName="jetbrains.mps.build.ant.FileMPSProject" />
     <classNode dependClassName="jetbrains.mps.build.ant.MpsPlatform" />
-    <classNode dependClassName="jetbrains.mps.build.ant.WhatToDo" />
     <classNode dependClassName="jetbrains.mps.build.ant.util.MapPathMacrosProvider" />
     <classNode dependClassName="jetbrains.mps.build.ant.util.PathManager" />
     <classNode dependClassName="jetbrains.mps.build.ant.util.PathUtil" />
