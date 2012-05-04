@@ -7,7 +7,7 @@ if [ "${UNAME}" = "Linux" ]; then
   SCRIPT_PATH=`readlink -f "$0"`
 fi
 PROJECT_HOME=`dirname "${SCRIPT_PATH}"`
-PROJECT_HOME_FROM_STARTUP_DIR=util/buildlanguage/solutions/jetbrains.mps.buildlangauge.mpsautobuild
+PROJECT_HOME_FROM_STARTUP_DIR=..
 
 if [ -z "${JDK_HOME}" ]; then
   JAVA=java
@@ -19,7 +19,7 @@ fi
 MAIN_CLASS=jetbrains.mps.Launcher
 
 if [ -z "${MPS_VM_OPTIONS}" ]; then
-  MPS_VM_OPTIONS="${PROJECT_HOME}/bin/mpsvmoptions"
+  MPS_VM_OPTIONS="${PROJECT_HOME}/bin/mps.vmoptions"
 else
   echo "$0 info: Using vmoptions defined in ${MPS_VM_OPTIONS}."
 fi
