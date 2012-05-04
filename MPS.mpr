@@ -202,6 +202,7 @@
       <modulePath path="${project}/languages/languageDesign/typesystem/solutions/jetbrains.mps.bootstrap.helgins.sandbox/jetbrains.mps.bootstrap.helgins.sandbox.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/typesystem/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/typesystem/typesystem.mpl" folder="core.language-design" />
+      <modulePath path="${project}/languages/mpsbuild/startup/startup.mpl" folder="build" />
       <modulePath path="${project}/languages/util/bash/languages/bash/bash.mpl" folder="languages.bash" />
       <modulePath path="${project}/languages/util/bash/solutions/jetbrains.mps.bash.sandbox/jetbrains.mps.bash.sandbox.msd" folder="languages.bash" />
       <modulePath path="${project}/languages/util/builders/builders.mpl" folder="baseLanguage.builders" />
@@ -219,7 +220,6 @@
       <modulePath path="${project}/languages/util/buildlanguage/languages/packmps/solutions/pluginSolution/pluginSolution.msd" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/languages/property/property.mpl" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/languages/reduced/reduced.mpl" folder="languages.build" />
-      <modulePath path="${project}/languages/util/buildlanguage/languages/startup/startup.mpl" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/solutions/jetbrains.mps.build.mpsautobuild.test/test.msd" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/solutions/jetbrains.mps.build.mpsdist/mpsdist.msd" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/solutions/jetbrains.mps.buildlangauge.mpsautobuild/jetbrains.mps.buildlangauge.mpsautobuild.msd" folder="languages.build" />
