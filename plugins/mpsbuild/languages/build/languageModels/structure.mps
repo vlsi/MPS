@@ -5,8 +5,7 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <import index="8xvf" modelUID="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" version="0" implicit="yes" />
-  <import index="3ior" modelUID="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" version="2" implicit="yes" />
-  <import index="iuxj" modelUID="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" version="-1" implicit="yes" />
+  <import index="iuxj" modelUID="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" version="2" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5617550519002745363">
       <property name="name" nameId="tpck.1169194664001" value="BuildProject" />
@@ -501,25 +500,25 @@
       <property name="memberIdentifierPolicy" nameId="tpce.1197591154882" value="derive_from_internal_value" />
       <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6977615362525721938">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File.Mappers" />
-      <property name="name" nameId="tpck.1169194664001" value="BuildLayout_CopyMapper" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="9184644532456508467" resolveInfo="BuildLayout_CopyHandler" />
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7801138212747054656">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildLayout_Filemode" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="2913098736709313156" resolveInfo="BuildLayout_TransparentContainer" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6977615362525721939">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File.Mappers" />
       <property name="name" nameId="tpck.1169194664001" value="BuildLayout_CopyFlattenMapper" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="6977615362525721938" resolveInfo="BuildLayout_CopyMapper" />
     </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7801138212747054656">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File" />
-      <property name="name" nameId="tpck.1169194664001" value="BuildLayout_Filemode" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="2913098736709313156" resolveInfo="BuildLayout_TransparentContainer" />
-    </node>
     <node type="tpce.ConstrainedDataTypeDeclaration" typeId="tpce.1082978499127" id="7801138212747054659">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File" />
       <property name="name" nameId="tpck.1169194664001" value="BuildLayout_UnixFilemode" />
       <property name="constraint" nameId="tpce.1083066089218" value="[0-7]{3}" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6977615362525721938">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File.Mappers" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildLayout_CopyMapper" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="9184644532456508467" resolveInfo="BuildLayout_CopyHandler" />
     </node>
     <node type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1979010778009209124">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File" />
@@ -1681,17 +1680,6 @@
       <property name="externalValue" nameId="tpce.1083923523172" value="convert to the pair CRLF" />
     </node>
   </root>
-  <root id="6977615362525721938">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="6977615362525721940">
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
-    </node>
-  </root>
-  <root id="6977615362525721939">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="6977615362525721941">
-      <property name="value" nameId="tpce.1105725733873" value="flatten" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-  </root>
   <root id="7801138212747054656">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="7801138212747054660">
       <property name="name" nameId="tpck.1169194664001" value="filemode" />
@@ -1706,7 +1694,18 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>
+  <root id="6977615362525721939">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="6977615362525721941">
+      <property name="value" nameId="tpce.1105725733873" value="flatten" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+  </root>
   <root id="7801138212747054659" />
+  <root id="6977615362525721938">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="6977615362525721940">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
+    </node>
+  </root>
   <root id="1979010778009209124">
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1979010778009209125">
       <property name="internalValue" nameId="tpce.1083923523171" value="none" />

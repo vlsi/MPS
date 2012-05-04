@@ -7,45 +7,53 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.core.xml.structure.XmlAttribute", "jetbrains.mps.core.xml.structure.XmlCDATA", "jetbrains.mps.core.xml.structure.XmlCharRef", "jetbrains.mps.core.xml.structure.XmlCharRefValue", "jetbrains.mps.core.xml.structure.XmlComment", "jetbrains.mps.core.xml.structure.XmlCommentLine", "jetbrains.mps.core.xml.structure.XmlDocument", "jetbrains.mps.core.xml.structure.XmlElement", "jetbrains.mps.core.xml.structure.XmlEntityRef", "jetbrains.mps.core.xml.structure.XmlEntityRefValue", "jetbrains.mps.core.xml.structure.XmlFile", "jetbrains.mps.core.xml.structure.XmlNoSpaceValue", "jetbrains.mps.core.xml.structure.XmlProcessingInstruction", "jetbrains.mps.core.xml.structure.XmlProlog", "jetbrains.mps.core.xml.structure.XmlText", "jetbrains.mps.core.xml.structure.XmlTextValue"};
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.core.xml.structure.XmlAttribute", "jetbrains.mps.core.xml.structure.XmlCDATA", "jetbrains.mps.core.xml.structure.XmlCharRef", "jetbrains.mps.core.xml.structure.XmlCharRefValue", "jetbrains.mps.core.xml.structure.XmlComment", "jetbrains.mps.core.xml.structure.XmlCommentLine", "jetbrains.mps.core.xml.structure.XmlDeclaration", "jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration", "jetbrains.mps.core.xml.structure.XmlDocument", "jetbrains.mps.core.xml.structure.XmlElement", "jetbrains.mps.core.xml.structure.XmlEntityRef", "jetbrains.mps.core.xml.structure.XmlEntityRefValue", "jetbrains.mps.core.xml.structure.XmlExternalId", "jetbrains.mps.core.xml.structure.XmlFile", "jetbrains.mps.core.xml.structure.XmlNoSpaceValue", "jetbrains.mps.core.xml.structure.XmlProcessingInstruction", "jetbrains.mps.core.xml.structure.XmlProlog", "jetbrains.mps.core.xml.structure.XmlText", "jetbrains.mps.core.xml.structure.XmlTextValue", "jetbrains.mps.core.xml.structure.XmlWhitespace"};
 
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
-      case 6:
+      case 8:
         return new XmlDocument_BehaviorDescriptor();
-      case 13:
+      case 16:
         return new XmlProlog_BehaviorDescriptor();
-      case 12:
+      case 15:
         return new XmlProcessingInstruction_BehaviorDescriptor();
       case 4:
         return new XmlComment_BehaviorDescriptor();
       case 1:
         return new XmlCDATA_BehaviorDescriptor();
-      case 7:
+      case 9:
         return new XmlElement_BehaviorDescriptor();
       case 0:
         return new XmlAttribute_BehaviorDescriptor();
-      case 10:
+      case 13:
         return new XmlFile_BehaviorDescriptor();
-      case 15:
+      case 18:
         return new XmlTextValue_BehaviorDescriptor();
-      case 9:
+      case 11:
         return new XmlEntityRefValue_BehaviorDescriptor();
-      case 14:
+      case 17:
         return new XmlText_BehaviorDescriptor();
       case 5:
         return new XmlCommentLine_BehaviorDescriptor();
-      case 8:
+      case 10:
         return new XmlEntityRef_BehaviorDescriptor();
       case 2:
         return new XmlCharRef_BehaviorDescriptor();
       case 3:
         return new XmlCharRefValue_BehaviorDescriptor();
-      case 11:
+      case 14:
         return new XmlNoSpaceValue_BehaviorDescriptor();
+      case 19:
+        return new XmlWhitespace_BehaviorDescriptor();
+      case 6:
+        return new XmlDeclaration_BehaviorDescriptor();
+      case 7:
+        return new XmlDoctypeDeclaration_BehaviorDescriptor();
+      case 12:
+        return new XmlExternalId_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

@@ -136,10 +136,10 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new BuildLayout_Tar_BehaviorDescriptor();
       case 16:
         return new BuildLayout_CopyFilterFixCRLF_BehaviorDescriptor();
-      case 19:
-        return new BuildLayout_CopyFlattenMapper_BehaviorDescriptor();
       case 26:
         return new BuildLayout_Filemode_BehaviorDescriptor();
+      case 19:
+        return new BuildLayout_CopyFlattenMapper_BehaviorDescriptor();
       case 42:
         return new BuildSource_JavaDependencyFileset_BehaviorDescriptor();
       default:

@@ -132,19 +132,19 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "outputFolder");
   }
 
+  public static Object propertyMacro_GetPropertyValue_2059109515400317575(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((SPropertyOperations.getString(_context.getNode(), "compiler") != null && SPropertyOperations.getString(_context.getNode(), "compiler").length() > 0) && SPropertyOperations.getString(_context.getNode(), "compiler").equals("IntelliJ") ?
+      "javac2" :
+      "javac"
+    );
+  }
+
   public static Object propertyMacro_GetPropertyValue_6647099934207240060(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "outputFolder");
   }
 
   public static Object propertyMacro_GetPropertyValue_1659807394254658124(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), "heapSize") + "m";
-  }
-
-  public static Object propertyMacro_GetPropertyValue_2059109515400317575(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((SPropertyOperations.getString(_context.getNode(), "compiler") != null && SPropertyOperations.getString(_context.getNode(), "compiler").length() > 0) && SPropertyOperations.getString(_context.getNode(), "compiler").equals("IntelliJ") ?
-      "javac2" :
-      "javac"
-    );
   }
 
   public static Object propertyMacro_GetPropertyValue_1659807394254493229(final IOperationContext operationContext, final PropertyMacroContext _context) {

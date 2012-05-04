@@ -126,6 +126,22 @@ public class XmlNameUtil {
   }
 
   /**
+   * Extensible Markup Language (XML) 1.0 (Fifth Edition): 2.3 Common Syntactic Constructs
+   * Token "White Space"
+   * Empty string is allowed
+   */
+  public static boolean isWhitespace(String s) {
+    // S ::=   \t(#x20 | #x9 | #xD | #xA)+ 
+    for (int i = 0; i < s.length(); i++) {
+      int c = s.codePointAt(i);
+      if (c != 0x20 && c != 0x9 && c != 0xa && c != 0xd) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  /**
    * Extensible Markup Language (XML) 1.0 (Fifth Edition): 2.5 Comments
    * Token "Comment": ((Char - '-') | ('-' (Char - '-')))*
    * 
@@ -145,6 +161,77 @@ public class XmlNameUtil {
       }
     }
     return true;
+  }
+
+  /**
+   * Extensible Markup Language (XML) 1.0 (Fifth Edition): 2.3 Common Syntactic Constructs
+   * SystemLiteral ::= ('"' [^"]* '"') | ("'" [^']* "'")
+   * 
+   * @param id id to test
+   * @return whether id is valid system id stinrg
+   */
+  public static boolean isSystemId(String id) {
+    boolean hasQuote = false;
+    boolean hasDoubleQuote = false;
+    for (int i = 0; i < id.length(); i++) {
+      int c = id.codePointAt(i);
+      if (c == '\'') {
+        if (hasDoubleQuote) {
+          return false;
+        }
+        hasQuote = true;
+      }
+      if (c == '"') {
+        if (hasQuote) {
+          return false;
+        }
+        hasDoubleQuote = true;
+      }
+    }
+    return true;
+  }
+
+  /**
+   * Extensible Markup Language (XML) 1.0 (Fifth Edition): 2.3 Common Syntactic Constructs
+   * PubidLiteral ::= '"' PubidChar* '"' | "'" (PubidChar - "'")* "'"
+   * 
+   * @param id id to test
+   * @return whether id is valid public id stinrg
+   */
+  public static boolean isPublicId(String id) {
+    for (int i = 0; i < id.length(); i++) {
+      int c = id.codePointAt(i);
+      if (!(isPublicIdChar(c))) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  /**
+   * Extensible Markup Language (XML) 1.0 (Fifth Edition): 2.3 Common Syntactic Constructs
+   * PubidChar ::= #x20 | #xD | #xA | [a-zA-Z0-9] | [-'()+,./:=?;!*#@$_%]
+   * 
+   * @param c character to test
+   * @return whether character is valid public id character
+   */
+  public static boolean isPublicIdChar(int c) {
+    if (c <= 0x1F) {
+      return c == 0x20 || c == 0xD || c == 0xA;
+    }
+    // [0-9] 
+    if (c >= 0x30 && c <= 0x39) {
+      return true;
+    }
+    // [A-Z] 
+    if (c >= 0x41 && c <= 0x5A) {
+      return true;
+    }
+    // [a-z] 
+    if (c >= 0x61 && c <= 0x7A) {
+      return true;
+    }
+    return c == '-' || c == '\'' || c == '(' || c == ')' || c == '+' || c == ',' || c == '.' || c == '/' || c == ':' || c == '=' || c == '?' || c == ';' || c == '*' || c == '#' || c == '@' || c == '$' || c == '_' || c == '%';
   }
 
   /**

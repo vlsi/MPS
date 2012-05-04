@@ -9,13 +9,17 @@
     <classNode dependClassName="jetbrains.mps.core.xml.constraints.XmlCharRef_Constraints" />
     <classNode dependClassName="jetbrains.mps.core.xml.constraints.XmlCommentLine_Constraints" />
     <classNode dependClassName="jetbrains.mps.core.xml.constraints.XmlContent_Constraints" />
+    <classNode dependClassName="jetbrains.mps.core.xml.constraints.XmlDeclaration_Constraints" />
+    <classNode dependClassName="jetbrains.mps.core.xml.constraints.XmlDoctypeDeclaration_Constraints" />
     <classNode dependClassName="jetbrains.mps.core.xml.constraints.XmlElement_Constraints" />
     <classNode dependClassName="jetbrains.mps.core.xml.constraints.XmlEntityRefValue_Constraints" />
     <classNode dependClassName="jetbrains.mps.core.xml.constraints.XmlEntityRef_Constraints" />
+    <classNode dependClassName="jetbrains.mps.core.xml.constraints.XmlExternalId_Constraints" />
     <classNode dependClassName="jetbrains.mps.core.xml.constraints.XmlProcessingInstruction_Constraints" />
     <classNode dependClassName="jetbrains.mps.core.xml.constraints.XmlTextValue_Constraints" />
     <classNode dependClassName="jetbrains.mps.core.xml.constraints.XmlText_Constraints" />
     <classNode dependClassName="jetbrains.mps.core.xml.constraints.XmlValuePart_Constraints" />
+    <classNode dependClassName="jetbrains.mps.core.xml.constraints.XmlWhitespace_Constraints" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
@@ -89,6 +93,31 @@
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.core.xml.constraints.XmlDeclaration_Constraints" file="XmlDeclaration_Constraints.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.core.xml.constraints.XmlDoctypeDeclaration_Constraints" file="XmlDoctypeDeclaration_Constraints.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.core.xml.constraints.XmlNameUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.core.xml.constraints.XmlElement_Constraints" file="XmlElement_Constraints.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -116,6 +145,19 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.constraints.XmlEntityRef_Constraints" file="XmlEntityRef_Constraints.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.core.xml.constraints.XmlNameUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.core.xml.constraints.XmlExternalId_Constraints" file="XmlExternalId_Constraints.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
@@ -172,6 +214,25 @@
   </dependency>
   <dependency className="jetbrains.mps.core.xml.constraints.XmlValuePart_Constraints" file="XmlValuePart_Constraints.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.core.xml.constraints.XmlWhitespace_Constraints" file="XmlWhitespace_Constraints.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlProlog_Behavior" />
+    <classNode dependClassName="jetbrains.mps.core.xml.constraints.XmlNameUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
 </dependenciesRoot>
