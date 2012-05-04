@@ -113,16 +113,27 @@
         <fixcrlf eol="lf" eof="remove" />
       </filterchain>
     </copy>
-    <copy todir="${build.layout}/MPS-linux/bin">
+    <mkdir dir="${build.layout}/MPS-linux/bin/linux" />
+    <copy todir="${build.layout}/MPS-linux/bin/linux">
       <fileset dir="${mps_home}/bin/linux">
         <exclude name="**/fsnotifier, **/fsnotifier64" />
       </fileset>
     </copy>
-    <copy todir="${build.tmp}/default/bin_f755">
+    <copy todir="${build.tmp}/default/linux_f755">
       <fileset file="${mps_home}/bin/linux/fsnotifier" />
     </copy>
-    <copy todir="${build.tmp}/default/bin_f755">
+    <copy todir="${build.tmp}/default/linux_f755">
       <fileset file="${mps_home}/bin/linux/fsnotifier64" />
+    </copy>
+    <mkdir dir="${build.layout}/MPS-linux/bin/nix" />
+    <copy todir="${build.tmp}/default/nix_f755">
+      <fileset file="${mps_home}/bin/nix/idea.sh" />
+    </copy>
+    <copy todir="${build.tmp}/default/nix_f755">
+      <fileset file="${mps_home}/bin/nix/inspect.sh" />
+    </copy>
+    <copy todir="${build.tmp}/default/nix_f755">
+      <fileset file="${mps_home}/bin/nix/idea.sh" />
     </copy>
     <mkdir dir="${build.layout}/MPS-linux/help" />
     <copy todir="${build.layout}/MPS-linux/help">
@@ -144,12 +155,13 @@
         <fixcrlf eol="lf" eof="remove" />
       </filterchain>
     </copy>
-    <copy todir="${build.layout}/MPS-mac/bin">
+    <mkdir dir="${build.layout}/MPS-mac/bin/mac" />
+    <copy todir="${build.layout}/MPS-mac/bin/mac">
       <fileset dir="${mps_home}/bin/mac">
         <exclude name="**/fsnotifier" />
       </fileset>
     </copy>
-    <copy todir="${build.tmp}/default/bin_f7551">
+    <copy todir="${build.tmp}/default/mac_f755">
       <fileset file="${mps_home}/bin/mac/fsnotifier" />
     </copy>
     <mkdir dir="${build.layout}/MPS-mac/Contents" />
@@ -187,21 +199,22 @@
         <fixcrlf eol="crlf" />
       </filterchain>
     </copy>
-    <copy todir="${build.layout}/MPS-win/bin">
+    <mkdir dir="${build.layout}/MPS-win/bin/win" />
+    <copy todir="${build.layout}/MPS-win/bin/win">
       <fileset dir="${mps_home}/bin/win">
         <exclude name="**/fsnotifier, **/fsnotifier64" />
       </fileset>
     </copy>
-    <copy todir="${build.tmp}/default/bin_f7552">
+    <copy todir="${build.tmp}/default/win_f755">
       <fileset file="${mps_home}/bin/win/fsnotifier.exe" />
     </copy>
-    <copy todir="${build.tmp}/default/bin_f7552">
+    <copy todir="${build.tmp}/default/win_f755">
       <fileset file="${mps_home}/bin/win/restarter.exe" />
     </copy>
-    <copy todir="${build.tmp}/default/bin_f7552">
+    <copy todir="${build.tmp}/default/win_f755">
       <fileset file="${mps_home}/bin/win/runnerw.exe" />
     </copy>
-    <copy todir="${build.tmp}/default/bin_f7552">
+    <copy todir="${build.tmp}/default/win_f755">
       <fileset file="${mps_home}/bin/win/vistalauncher.exe" />
     </copy>
     <mkdir dir="${build.layout}/MPS-win/help" />
