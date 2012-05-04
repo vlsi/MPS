@@ -83,29 +83,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_3885435385580640060(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String pathString = "";
-    String prefix = "$APP_PACKAGE/";
-    List<SNode> classPathItemList = SLinkOperations.getTargets(_context.getNode(), "bootClasspath", true);
-    for (SNode cpItem : ListSequence.fromList(classPathItemList).cut(1)) {
-      pathString += prefix + SPropertyOperations.getString(cpItem, "path").replace("\\", "/") + ":";
-    }
-    pathString += prefix + SPropertyOperations.getString(ListSequence.fromList(classPathItemList).last(), "path").replace("\\", "/");
-    return pathString;
-  }
-
-  public static Object propertyMacro_GetPropertyValue_3885435385580640126(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "startupClass");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_3885435385580640150(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MpsStartupScript_Behavior.call_getDefaultVmoptions_5842819808956701267(_context.getNode());
-  }
-
-  public static Object propertyMacro_GetPropertyValue_5842819808956621526(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getTemplateValue() + "/" + SPropertyOperations.getString(_context.getNode(), "startupFolder");
-  }
-
   public static Object propertyMacro_GetPropertyValue_4962066449779579863(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return MpsStartupScript_Behavior.call_getVmOptionsExtension_5842819808956911479(_context.getNode());
   }
@@ -161,13 +138,13 @@ public class QueriesGenerated {
         continue;
       }
 
-      ListSequence.fromList(lines).addElement(new QueriesGenerated.QuotationClass_x583g4_a0a0c0c0cb().createNode(option));
+      ListSequence.fromList(lines).addElement(new QueriesGenerated.QuotationClass_x583g4_a0a0c0c0y().createNode(option));
     }
     return lines;
   }
 
-  public static class QuotationClass_x583g4_a0a0c0c0cb {
-    public QuotationClass_x583g4_a0a0c0c0cb() {
+  public static class QuotationClass_x583g4_a0a0c0c0y {
+    public QuotationClass_x583g4_a0a0c0c0y() {
     }
 
     public SNode createNode(Object parameter_5) {
