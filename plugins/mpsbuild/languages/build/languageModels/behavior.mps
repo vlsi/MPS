@@ -27,7 +27,7 @@
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tpf3" modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" implicit="yes" />
   <import index="8xvf" modelUID="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" version="0" implicit="yes" />
-  <import index="iuxj" modelUID="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" version="-1" implicit="yes" />
+  <import index="iuxj" modelUID="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" version="2" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="nq57" modelUID="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)" version="-1" implicit="yes" />
   <roots>
@@ -229,13 +229,13 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="3ior.8577651205286814211" resolveInfo="BuildLayout_Tar" />
     </node>
-    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="6408167411310575209">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="3ior.5248329904288166441" resolveInfo="BuildLayout_ContainerAcceptingFileSet" />
-    </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="7801138212747310472">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="3ior.7801138212747054656" resolveInfo="BuildLayout_Filemode" />
+    </node>
+    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="6408167411310575209">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="3ior.5248329904288166441" resolveInfo="BuildLayout_ContainerAcceptingFileSet" />
     </node>
   </roots>
   <root id="7389400916848004877">
@@ -7955,35 +7955,6 @@
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8577651205286949058" />
     </node>
   </root>
-  <root id="6408167411310575209">
-    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="6408167411310575216">
-      <property name="isAbstract" nameId="1i04.1225194472834" value="true" />
-      <property name="isVirtual" nameId="1i04.1225194472832" value="true" />
-      <property name="name" nameId="tpck.1169194664001" value="getFileSetExtension" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6408167411310575217" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="6408167411310575220" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6408167411310575219" />
-    </node>
-    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="6408167411310575232">
-      <property name="isAbstract" nameId="1i04.1225194472834" value="true" />
-      <property name="isVirtual" nameId="1i04.1225194472832" value="true" />
-      <property name="name" nameId="tpck.1169194664001" value="hasPrefixAttribute" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6408167411310575233" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="6408167411310575236" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6408167411310575235" />
-    </node>
-    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="6408167411310575237">
-      <property name="isAbstract" nameId="1i04.1225194472834" value="true" />
-      <property name="isVirtual" nameId="1i04.1225194472832" value="true" />
-      <property name="name" nameId="tpck.1169194664001" value="hasFileModeAttribute" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6408167411310575238" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="6408167411310575241" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6408167411310575240" />
-    </node>
-    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="6408167411310575210">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6408167411310575211" />
-    </node>
-  </root>
   <root id="7801138212747310472">
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="7801138212747310473">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7801138212747310474" />
@@ -8220,6 +8191,35 @@
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="7801138212747310485" />
+    </node>
+  </root>
+  <root id="6408167411310575209">
+    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="6408167411310575216">
+      <property name="isAbstract" nameId="1i04.1225194472834" value="true" />
+      <property name="isVirtual" nameId="1i04.1225194472832" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="getFileSetExtension" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6408167411310575217" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="6408167411310575220" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6408167411310575219" />
+    </node>
+    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="6408167411310575232">
+      <property name="isAbstract" nameId="1i04.1225194472834" value="true" />
+      <property name="isVirtual" nameId="1i04.1225194472832" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="hasPrefixAttribute" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6408167411310575233" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="6408167411310575236" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6408167411310575235" />
+    </node>
+    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="6408167411310575237">
+      <property name="isAbstract" nameId="1i04.1225194472834" value="true" />
+      <property name="isVirtual" nameId="1i04.1225194472832" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="hasFileModeAttribute" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6408167411310575238" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="6408167411310575241" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6408167411310575240" />
+    </node>
+    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="6408167411310575210">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6408167411310575211" />
     </node>
   </root>
 </model>

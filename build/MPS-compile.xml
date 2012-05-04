@@ -52,7 +52,7 @@
   <property name="jetbrains.mps.build.pluginSolution.classes" value="${base_dir}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.pluginSolution/classes_gen" />
   <property name="jetbrains.mps.build.property.classes" value="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
   <property name="jetbrains.mps.build.reduced.classes" value="${base_dir}/languages/util/buildlanguage/languages/reduced/classes_gen" />
-  <property name="jetbrains.mps.build.startup.classes" value="${base_dir}/languages/util/buildlanguage/languages/startup/classes_gen" />
+  <property name="jetbrains.mps.build.startup.classes" value="${base_dir}/languages/mpsbuild/startup/classes_gen" />
   <property name="jetbrains.mps.build.workflow.classes" value="${base_dir}/plugins/mpsbuild/languages/build.workflow/classes_gen" />
   <property name="jetbrains.mps.buildlanguage.classes" value="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
   <property name="jetbrains.mps.core.properties.classes" value="${base_dir}/languages/util/properties/classes_gen" />
@@ -434,8 +434,8 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/reduced/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.build.startup_tjc.src">
-    <path path="${base_dir}/languages/util/buildlanguage/languages/startup/source_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/startup/test_gen" />
+    <path path="${base_dir}/languages/mpsbuild/startup/source_gen" />
+    <path path="${base_dir}/languages/mpsbuild/startup/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.build.workflow_tjc.src">
     <path path="${base_dir}/plugins/mpsbuild/languages/build.workflow/source_gen" />
@@ -2731,13 +2731,13 @@
     <path path="${base_dir}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
+    <path path="${base_dir}/languages/mpsbuild/startup/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/custommps/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/dependency/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/packaging/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/startup/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.mpsdist/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -2757,6 +2757,7 @@
     <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/languages/xml/xml/classes_gen" />
     <path path="${base_dir}/lib/annotations.jar" />
     <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
@@ -2842,6 +2843,7 @@
     <path path="${base_dir}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
+    <path path="${base_dir}/languages/mpsbuild/startup/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/custommps/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/custommps/solutions/pluginSolution/classes_gen" />
@@ -2850,7 +2852,6 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/packaging/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/packaging/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/startup/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.mpsdist/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -2870,6 +2871,7 @@
     <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/languages/xml/xml/classes_gen" />
     <path path="${base_dir}/lib/annotations.jar" />
     <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
@@ -3734,7 +3736,7 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.build.startup_tjc.classpaths">
-    <path path="${base_dir}/languages/util/buildlanguage/languages/startup/classes_gen" />
+    <path path="${base_dir}/languages/mpsbuild/startup/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/ant/classes" />
@@ -3773,7 +3775,7 @@
     <path path="${base_dir}/languages/languageDesign/scopes/runtime/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/traceable/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/startup/classes_gen" />
+    <path path="${base_dir}/languages/mpsbuild/startup/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -3788,9 +3790,9 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/languages/xml/xml/classes_gen" />
     <path path="${base_dir}/lib/annotations.jar" />
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
@@ -12324,21 +12326,21 @@
   <target name="compile.cycle.jetbrains.mps.build.startup_tjc" depends="compile.cycle.jetbrains.mps.build.packaging_tjc">
     <property name="classes.dump" value="${jetbrains.mps.build.startup.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/startup/source_gen" />
-    <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/startup/test_gen" />
+    <mkdir dir="${base_dir}/languages/mpsbuild/startup/source_gen" />
+    <mkdir dir="${base_dir}/languages/mpsbuild/startup/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.build.startup.classes}" />
     <javac classpathref="cycle.jetbrains.mps.build.startup_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.build.startup_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.build.startup.classes}">
-      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/startup/source_gen" />
-      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/startup/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/mpsbuild/startup/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/mpsbuild/startup/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.build.startup_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.startup.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
-        <path path="${base_dir}/languages/util/buildlanguage/languages/startup/source_gen" />
-        <path path="${base_dir}/languages/util/buildlanguage/languages/startup/test_gen" />
+        <path path="${base_dir}/languages/mpsbuild/startup/source_gen" />
+        <path path="${base_dir}/languages/mpsbuild/startup/test_gen" />
       </src>
     </javac>
     <delete dir="${classes.dump}" />

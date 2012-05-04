@@ -18,6 +18,7 @@
       </dependencies>
       <usedLanguages>
         <usedLanguage>798100da-4f0a-421a-b991-71f8c50ce5d2(jetbrains.mps.build)</usedLanguage>
+        <usedLanguage>698a8d22-a104-47a0-ba8d-10e3ec237f13(jetbrains.mps.build.workflow)</usedLanguage>
       </usedLanguages>
       <usedDevKits>
         <usedDevKit>fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)</usedDevKit>

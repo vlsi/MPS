@@ -4,11 +4,14 @@ package jetbrains.mps.core.xml.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.textGen.TextGenManager;
 
 public class XmlDocument_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
+    if ((SLinkOperations.getTarget(node, "prolog", true) != null)) {
+      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "prolog", true), this.getSNode());
+    }
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "rootElement", true), this.getSNode());
   }
 }

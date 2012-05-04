@@ -17,7 +17,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.core.xml.behavior.XmlContent_Behavior;
+import jetbrains.mps.core.xml.behavior.XmlPart_Behavior;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -132,12 +132,12 @@ public class XmlEntityRef_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_40aq2x_a0a(SNode node, EditorContext editorContext, IScope scope) {
     // see MPS-15260 
-    return XmlContent_Behavior.call_isFirstPositionAllowed_6999033275467334890(node);
+    return XmlPart_Behavior.call_isFirstPositionAllowed_2133624044437631446(node);
   }
 
   private static boolean renderingCondition_40aq2x_a2a(SNode node, EditorContext editorContext, IScope scope) {
     // see MPS-15260 
-    return XmlContent_Behavior.call_isLastPositionAllowed_6999033275467334895(node);
+    return XmlPart_Behavior.call_isLastPositionAllowed_2133624044437631519(node);
   }
 
   public static class XmlEntityRef_entityName_cellMenu_a0b0 extends AbstractCellMenuPart_PropertyValues {

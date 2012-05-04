@@ -13,5 +13,17 @@
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
   </dependency>
+  <dependency className="jetbrains.mps.core.xml.structure.xmlEncoding_PropertySupport" file="xmlEncoding_PropertySupport.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
+  </dependency>
+  <dependency className="jetbrains.mps.core.xml.structure.xmlVersionString_PropertySupport" file="xmlVersionString_PropertySupport.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
+  </dependency>
+  <dependency className="jetbrains.mps.core.xml.structure.yesNoString_PropertySupport" file="yesNoString_PropertySupport.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
+  </dependency>
 </dependenciesRoot>
 

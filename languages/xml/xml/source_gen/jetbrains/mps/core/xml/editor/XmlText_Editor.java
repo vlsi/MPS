@@ -17,7 +17,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.core.xml.behavior.XmlContent_Behavior;
+import jetbrains.mps.core.xml.behavior.XmlPart_Behavior;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class XmlText_Editor extends DefaultNodeEditor {
@@ -107,11 +107,11 @@ public class XmlText_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_crdhdg_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return XmlContent_Behavior.call_onNewLine_6999033275467469862(node);
+    return XmlPart_Behavior.call_onNewLine_2133624044437631588(node);
   }
 
   private static boolean renderingCondition_crdhdg_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return XmlContent_Behavior.call_hasNewLineAfter_6999033275467469870(node);
+    return XmlPart_Behavior.call_hasNewLineAfter_2133624044437631594(node);
   }
 
   public static class ReplaceWith_XmlContent_cellMenu_a0a0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

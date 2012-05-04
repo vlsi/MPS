@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.build.mpsautobuild.Info" file="Info.plist" />
+  <dependency className="jetbrains.mps.build.mpsautobuild.Info.plist" file="Info.plist.xml" />
   <dependency className="jetbrains.mps.build.mpsautobuild.MPS-buildserver" file="MPS-buildserver.xml" />
   <dependency className="jetbrains.mps.build.mpsautobuild.MPS-compile" file="MPS-compile.xml" />
   <dependency className="jetbrains.mps.build.mpsautobuild.MPS-distribution" file="MPS-distribution.xml" />
