@@ -65,12 +65,11 @@ public class ClassifierScopes {
   }
 
   public static Scope getVisibleClassesScope(@NotNull final SNode contextNode, IScope scope) {
-    return filterWithClassExpressionClassifiers(filterVisibleClassifiersScope(contextNode, new ClassifiersScope(SNodeOperations.getModel(contextNode), scope, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
+    return filterVisibleClassifiersScope(contextNode, new ClassifiersScope(SNodeOperations.getModel(contextNode), scope, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
 
   public static Scope getVisibleInterfacesScope(@NotNull final SNode contextNode, IScope scope) {
-    // todo: it's should be normal, so implement filter on withClassExpression in ClassifiersScope 
-    return filterWithClassExpressionClassifiers(filterVisibleClassifiersScope(contextNode, new ClassifiersScope(SNodeOperations.getModel(contextNode), scope, "jetbrains.mps.baseLanguage.structure.Interface")));
+    return filterVisibleClassifiersScope(contextNode, new ClassifiersScope(SNodeOperations.getModel(contextNode), scope, "jetbrains.mps.baseLanguage.structure.Interface"));
   }
 
   public static Scope getWithClassExpressionClassifiers(SNode contextNode, IScope scope) {

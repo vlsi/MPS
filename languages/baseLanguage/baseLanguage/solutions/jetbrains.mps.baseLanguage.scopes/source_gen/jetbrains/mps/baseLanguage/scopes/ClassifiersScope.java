@@ -14,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
@@ -25,7 +26,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.Collection;
@@ -59,6 +59,11 @@ public class ClassifiersScope extends FilteringScope {
       }
     }
     return result;
+  }
+
+  @Override
+  public boolean isExcluded(SNode node) {
+    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AnonymousClass");
   }
 
   @Override
@@ -154,7 +159,7 @@ public class ClassifiersScope extends FilteringScope {
         if (SNodeOperations.getModel(cls) == model) {
           return cls;
         }
-        if (check_npo0wh_a0b0a0e0c_0(check_npo0wh_a0a1a0a4a2_0(model)) == check_npo0wh_a0b0a0e0c(check_npo0wh_a0a1a0a4a2(SNodeOperations.getModel(cls)))) {
+        if (check_npo0wh_a0b0a0e0d_0(check_npo0wh_a0a1a0a4a3_0(model)) == check_npo0wh_a0b0a0e0d(check_npo0wh_a0a1a0a4a3(SNodeOperations.getModel(cls)))) {
           return cls;
         }
       }
@@ -219,11 +224,6 @@ public class ClassifiersScope extends FilteringScope {
     return getRefName(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"));
   }
 
-  @Override
-  public boolean isExcluded(SNode node) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AnonymousClass");
-  }
-
   private static String getRefName(SNode classifier) {
     String name = SPropertyOperations.getString(classifier, "name");
     if (name == null) {
@@ -260,28 +260,28 @@ public class ClassifiersScope extends FilteringScope {
     });
   }
 
-  private static IModule check_npo0wh_a0b0a0e0c(SModelDescriptor checkedDotOperand) {
+  private static IModule check_npo0wh_a0b0a0e0d(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_npo0wh_a0a1a0a4a2(SModel checkedDotOperand) {
+  private static SModelDescriptor check_npo0wh_a0a1a0a4a3(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static IModule check_npo0wh_a0b0a0e0c_0(SModelDescriptor checkedDotOperand) {
+  private static IModule check_npo0wh_a0b0a0e0d_0(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_npo0wh_a0a1a0a4a2_0(SModel checkedDotOperand) {
+  private static SModelDescriptor check_npo0wh_a0a1a0a4a3_0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
