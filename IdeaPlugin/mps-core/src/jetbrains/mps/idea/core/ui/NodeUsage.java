@@ -17,35 +17,37 @@
 package jetbrains.mps.idea.core.ui;
 
 import com.intellij.openapi.editor.markup.TextAttributes;
-import com.intellij.openapi.fileEditor.*;
+import com.intellij.openapi.fileEditor.FileEditor;
+import com.intellij.openapi.fileEditor.FileEditorLocation;
+import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleUtil;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.roots.ProjectFileIndex;
-import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.usages.TextChunk;
-import com.intellij.usages.Usage;
 import com.intellij.usages.UsagePresentation;
 import com.intellij.usages.rules.MergeableUsage;
-import com.intellij.usages.rules.UsageInFile;
-import com.intellij.usages.rules.UsageInFiles;
 import com.intellij.usages.rules.UsageInModule;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
-import org.junit.Test;
 
 import javax.swing.Icon;
-import java.util.*;
+import java.util.ArrayList;
 
-public class NodeUsage extends NodeUsageBase implements UsagePresentation, UsageInFile, UsageInModule, MergeableUsage, UsageInFiles {
-
+public class NodeUsage extends NodeUsageBase implements UsagePresentation, UsageInModule, MergeableUsage, UsageInRoot, UsageInModel {
+  private SModel myModel;
   public NodeUsage(SNode node, Project project) {
     super(node, project);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        myModel = myNode.getModel();
+      }
+    });
   }
 
   @NotNull
@@ -89,7 +91,7 @@ public class NodeUsage extends NodeUsageBase implements UsagePresentation, Usage
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        if (!myNode.isDeleted()) {
+        if (isValid()) {
           TextAttributes attributes = new TextAttributes();
           result.add(new TextChunk(attributes, myNode.getPresentation()));
           result.add(new TextChunk(attributes, " ("));
@@ -110,7 +112,7 @@ public class NodeUsage extends NodeUsageBase implements UsagePresentation, Usage
   @NotNull
   @Override
   public String getPlainText() {
-    return myRootName;
+    return myPresentation;
   }
 
   @Override
@@ -141,14 +143,19 @@ public class NodeUsage extends NodeUsageBase implements UsagePresentation, Usage
     //To change body of implemented methods use File | Settings | File Templates.
   }
 
+
   @Override
-  public VirtualFile[] getFiles() {
-    List<VirtualFile> files = new LinkedList<VirtualFile>();
-    VirtualFile currentFile = myFile;
-    while (!currentFile.equals(myProject.getBaseDir())){
-      files.add(currentFile);
-      currentFile = currentFile.getParent();
-    }
-    return files.toArray(new VirtualFile[files.size()]);
+  public VirtualFile getFile() {
+    return myFile;
+  }
+
+  @Override
+  public SModel getModel() {
+    return myModel;
+  }
+
+  @Override
+  public SNode getRoot() {
+    return myRootNode;
   }
 }

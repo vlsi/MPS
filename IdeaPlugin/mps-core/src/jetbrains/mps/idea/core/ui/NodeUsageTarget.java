@@ -51,11 +51,6 @@ public class NodeUsageTarget extends NodeUsageBase implements UsageTarget{
   }
 
   @Override
-  public boolean isValid() {
-    return true;
-  }
-
-  @Override
   public boolean isReadOnly() {
     return false;
   }
@@ -71,8 +66,6 @@ public class NodeUsageTarget extends NodeUsageBase implements UsageTarget{
       @Override
       public void run() {
         myPresentation = myNode.getPresentation();
-        myRootNode = myNode.getContainingRoot();
-        myRootName = myRootNode.getName();
       }
     });
   }

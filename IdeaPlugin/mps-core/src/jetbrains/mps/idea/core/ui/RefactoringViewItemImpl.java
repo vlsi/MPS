@@ -18,13 +18,8 @@ package jetbrains.mps.idea.core.ui;
 
 
 import com.intellij.openapi.project.Project;
-import com.intellij.psi.PsiFile;
 import com.intellij.refactoring.RefactoringBundle;
-import com.intellij.refactoring.util.MoveRenameUsageInfo;
-import com.intellij.usageView.UsageInfo;
 import com.intellij.usages.*;
-import com.intellij.usages.rules.PsiElementUsage;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.platform.refactoring.RefactoringOptionsDialog;
@@ -35,7 +30,9 @@ import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SNode;
 
-import java.util.*;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
 public class RefactoringViewItemImpl implements RefactoringViewItem {
   private UsageView usageView;
@@ -86,6 +83,8 @@ public class RefactoringViewItemImpl implements RefactoringViewItem {
     final UsageViewPresentation presentation = createPresentation(usages.toArray(new Usage[usages.size()]), usageTargets.toArray(new UsageTarget[usageTargets.size()]));
 
     usageView = viewManager.showUsages(usageTargets.toArray(new UsageTarget[usageTargets.size()]), usages.toArray(new Usage[usages.size()]), presentation);
+    String canNotMakeString = RefactoringBundle.message("usageView.need.reRun");
+
     usageView.addPerformOperationAction(new Runnable() {
       @Override
       public void run() {
@@ -96,7 +95,7 @@ public class RefactoringViewItemImpl implements RefactoringViewItem {
         }
 
       }
-    }, name, "", RefactoringBundle.message("usageView.doAction"));
+    }, name, canNotMakeString, RefactoringBundle.message("usageView.doAction"));
   }
 
 

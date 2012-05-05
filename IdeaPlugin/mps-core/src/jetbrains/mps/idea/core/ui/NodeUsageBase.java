@@ -17,7 +17,6 @@
 package jetbrains.mps.idea.core.ui;
 
 
-import com.intellij.openapi.fileEditor.OpenFileDescriptor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.pom.Navigatable;
@@ -28,17 +27,15 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 public class NodeUsageBase implements Navigatable {
   protected SNode myNode;
   protected String myPresentation;
   protected SNode myRootNode;
   protected Project myProject;
-  protected String myRootName;
   protected VirtualFile myFile;
 
-  public NodeUsageBase(@NotNull SNode node, Project project) {
+  public NodeUsageBase(@NotNull SNode node, @NotNull Project project) {
     myNode = node;
     myProject = project;
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -46,7 +43,6 @@ public class NodeUsageBase implements Navigatable {
       public void run() {
         myPresentation = myNode.getPresentation();
         myRootNode = myNode.getContainingRoot();
-        myRootName = myRootNode.getName();
         myFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(myRootNode);
       }
     });
@@ -80,12 +76,6 @@ public class NodeUsageBase implements Navigatable {
     return result[0];
   }
 
-  @Nullable
-  private OpenFileDescriptor getDescriptor() {
-    VirtualFile file = getFile();
-    if (file == null) return null;
-    return new OpenFileDescriptor(getProject(), file);
-  }
 
   @Override
   public boolean canNavigate() {
