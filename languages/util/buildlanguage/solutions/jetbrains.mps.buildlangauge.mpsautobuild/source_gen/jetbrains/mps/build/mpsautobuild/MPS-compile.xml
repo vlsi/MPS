@@ -204,9 +204,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -922,9 +920,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -1019,9 +1015,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -1107,9 +1101,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -1204,9 +1196,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -1292,9 +1282,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -1380,9 +1368,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -1478,9 +1464,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -1577,9 +1561,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -1674,9 +1656,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -1767,9 +1747,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -1865,9 +1843,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -2002,9 +1978,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -2095,9 +2069,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -2184,9 +2156,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -2272,9 +2242,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -2371,9 +2339,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -2526,9 +2492,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -2615,9 +2579,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -2703,9 +2665,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -2817,9 +2777,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -2933,9 +2891,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -3028,9 +2984,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -3126,9 +3080,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -3214,9 +3166,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -3303,9 +3253,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -3393,9 +3341,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -3533,9 +3479,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -3644,9 +3588,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -3737,9 +3679,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -3871,9 +3811,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -3958,9 +3896,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -4043,9 +3979,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -4128,9 +4062,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -4233,9 +4165,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -4341,9 +4271,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -4431,9 +4359,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -4519,9 +4445,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -4627,9 +4551,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -4716,9 +4638,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -4827,9 +4747,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -4938,9 +4856,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -5049,9 +4965,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -5157,9 +5071,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -5250,9 +5162,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -5382,9 +5292,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -5484,9 +5392,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -5572,9 +5478,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -5671,9 +5575,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -5771,9 +5673,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -5869,9 +5769,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -5968,9 +5866,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -6023,9 +5919,7 @@
     <path path="${base_dir}/lib/xstream.jar" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -6121,9 +6015,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -6219,9 +6111,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -6273,9 +6163,7 @@
     <path path="${base_dir}/lib/xstream.jar" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -6375,9 +6263,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -6487,9 +6373,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -6587,9 +6471,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -6683,9 +6565,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -6771,9 +6651,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -6877,9 +6755,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -6980,9 +6856,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -7079,9 +6953,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -7187,9 +7059,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -7291,9 +7161,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -7394,9 +7262,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -7497,9 +7363,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -7552,9 +7416,7 @@
     <path path="${base_dir}/lib/xstream.jar" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -7649,9 +7511,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -7747,9 +7607,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -7801,9 +7659,7 @@
     <path path="${base_dir}/lib/xstream.jar" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -7951,9 +7807,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -8049,9 +7903,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -8158,9 +8010,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -8266,9 +8116,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -8363,9 +8211,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -8417,9 +8263,7 @@
     <path path="${base_dir}/lib/xstream.jar" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -8517,9 +8361,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -8614,9 +8456,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -8711,9 +8551,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -8799,9 +8637,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -8926,9 +8762,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -9025,9 +8859,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -9125,9 +8957,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -9229,9 +9059,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -9335,9 +9163,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -9434,9 +9260,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -9531,9 +9355,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -9629,9 +9451,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -9683,9 +9503,7 @@
     <path path="${base_dir}/lib/xstream.jar" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -9783,9 +9601,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -9889,9 +9705,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -9998,9 +9812,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -10104,9 +9916,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -10209,9 +10019,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -10308,9 +10116,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -10409,9 +10215,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -10493,9 +10297,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -10600,9 +10402,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -10697,9 +10497,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -10788,9 +10586,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -10888,9 +10684,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -11029,9 +10823,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -11132,9 +10924,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
@@ -11232,9 +11022,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-editor/source_gen" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
-    <path path="${base_dir}/workbench/mps-platform/source_gen" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />

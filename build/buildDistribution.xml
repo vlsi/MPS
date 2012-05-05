@@ -11,21 +11,20 @@
   
   <target name="assemble" depends="fetchDependencies">
     <tar destfile="${build.layout}/${buildMPS.build.number}-linux.tar.gz" compression="gzip">
-      <fileset dir="${artifacts.buildMPS}">
-        <include name="MPS ${buildMPS.version}/**" />
-      </fileset>
-      <tarfileset dir="${artifacts.buildMPS}/MPS-linux" prefix="MPS ${buildMPS.version}" />
+      <tarfileset dir="${artifacts.buildMPS}/MPS ${buildMPS.version}" prefix="MPS ${buildMPS.version}" />
+      <tarfileset dir="${artifacts.buildMPS}/MPS-linux-executable" prefix="MPS ${buildMPS.version}" />
     </tar>
     <zip destfile="${build.layout}/${buildMPS.build.number}.zip">
-      <fileset dir="${artifacts.buildMPS}">
-        <include name="MPS ${buildMPS.version}/**" />
-      </fileset>
+      <zipfileset dir="${artifacts.buildMPS}/MPS ${buildMPS.version}" prefix="MPS ${buildMPS.version}" />
       <zipfileset dir="${artifacts.buildMPS}/MPS-linux" prefix="MPS ${buildMPS.version}" />
       <zipfileset dir="${artifacts.buildMPS}/MPS-win" prefix="MPS ${buildMPS.version}" />
+      <zipfileset dir="${artifacts.buildMPS}/MPS-linux-executable" prefix="MPS ${buildMPS.version}" filemode="755" />
+      <zipfileset dir="${artifacts.buildMPS}/MPS-win-executable" prefix="MPS ${buildMPS.version}" filemode="755" />
     </zip>
     <zip destfile="${build.layout}/${buildMPS.build.number}-macos.zip">
       <zipfileset dir="${artifacts.buildMPS}/MPS ${buildMPS.version}" prefix="MPS ${buildMPS.version}.app" />
       <zipfileset dir="${artifacts.buildMPS}/MPS-mac" prefix="MPS ${buildMPS.version}.app" />
+      <zipfileset dir="${artifacts.buildMPS}/MPS-mac-executable" prefix="MPS ${buildMPS.version}.app" filemode="755" />
     </zip>
     <echo file="${build.layout}/variables.properties">buildMPS.build.number=${buildMPS.build.number}${line.separator}buildMPS.version=${buildMPS.version}${line.separator}buildMPS.build.vcs.number=${buildMPS.build.vcs.number}${line.separator}buildMPS.teamcity.buildConfName=${buildMPS.teamcity.buildConfName}</echo>
   </target>
