@@ -30,9 +30,9 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 
-public class NodeUsageTarget extends NodeUsageBase implements UsageTarget{
-  public NodeUsageTarget(SNode node, Project project){
-    super(node,project);
+public class NodeUsageTarget extends NodeUsageBase implements UsageTarget {
+  public NodeUsageTarget(@NotNull SNode node, @NotNull Project project) {
+    super(node, project);
   }
 
   @Override
@@ -75,11 +75,11 @@ public class NodeUsageTarget extends NodeUsageBase implements UsageTarget{
     return myPresentation;
   }
 
-  public ItemPresentation getPresentation(){
+  public ItemPresentation getPresentation() {
     return new ItemPresentation() {
       @Override
       public String getPresentableText() {
-         return myPresentation;
+        return myPresentation;
       }
 
       @Override

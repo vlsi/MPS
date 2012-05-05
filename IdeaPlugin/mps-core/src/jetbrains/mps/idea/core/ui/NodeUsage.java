@@ -40,7 +40,8 @@ import java.util.ArrayList;
 
 public class NodeUsage extends NodeUsageBase implements UsagePresentation, UsageInModule, MergeableUsage, UsageInRoot, UsageInModel {
   private SModel myModel;
-  public NodeUsage(SNode node, Project project) {
+
+  public NodeUsage(@NotNull SNode node, @NotNull Project project) {
     super(node, project);
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
@@ -55,7 +56,6 @@ public class NodeUsage extends NodeUsageBase implements UsagePresentation, Usage
   public UsagePresentation getPresentation() {
     return this;
   }
-
 
 
   @Override
@@ -130,7 +130,7 @@ public class NodeUsage extends NodeUsageBase implements UsagePresentation, Usage
     if (!isValid()) return null;
     VirtualFile virtualFile = getFile().getParent();
     if (virtualFile == null) return null;
-    return ModuleUtil.findModuleForFile(virtualFile,myProject);
+    return ModuleUtil.findModuleForFile(virtualFile, myProject);
   }
 
   @Override
@@ -140,7 +140,7 @@ public class NodeUsage extends NodeUsageBase implements UsagePresentation, Usage
 
   @Override
   public void reset() {
-    //To change body of implemented methods use File | Settings | File Templates.
+
   }
 
 

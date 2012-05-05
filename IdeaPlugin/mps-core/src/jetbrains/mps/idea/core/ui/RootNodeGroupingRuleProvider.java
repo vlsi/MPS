@@ -27,13 +27,13 @@ import com.intellij.usages.rules.UsageGroupingRuleProvider;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 
-public class NodeGroupingRuleProvider implements UsageGroupingRuleProvider{
+public class RootNodeGroupingRuleProvider implements UsageGroupingRuleProvider {
 
 
   @NotNull
   @Override
-  public UsageGroupingRule[] getActiveRules(Project project) {
-    return new UsageGroupingRule[]{new NodeUsageGroupingRule(project)};
+  public UsageGroupingRule[] getActiveRules(@NotNull Project project) {
+    return new UsageGroupingRule[]{new RootNodeUsageGroupingRule(project)};
   }
 
   @NotNull
@@ -42,13 +42,13 @@ public class NodeGroupingRuleProvider implements UsageGroupingRuleProvider{
     return AnAction.EMPTY_ARRAY;
   }
 
-  public static class NodeUsageGroupingRule extends FileGroupingRule {
+  public static class RootNodeUsageGroupingRule extends FileGroupingRule {
     private Project project;
-    public NodeUsageGroupingRule(Project project) {
+
+    public RootNodeUsageGroupingRule(Project project) {
       super(project);
       this.project = project;
     }
-
 
 
     @Override
@@ -58,7 +58,6 @@ public class NodeGroupingRuleProvider implements UsageGroupingRuleProvider{
       }
       return null;
     }
-
 
 
   }

@@ -20,5 +20,5 @@ package jetbrains.mps.idea.core.ui;
 import jetbrains.mps.smodel.SNode;
 
 public interface UsageInRoot {
-  public SNode getRoot();
+  SNode getRoot();
 }

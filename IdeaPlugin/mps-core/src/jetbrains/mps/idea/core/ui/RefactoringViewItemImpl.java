@@ -29,6 +29,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -47,7 +48,7 @@ public class RefactoringViewItemImpl implements RefactoringViewItem {
     usageView.close();
   }
 
-  public void showRefactoringView(Project project, final RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
+  public void showRefactoringView(@NotNull Project project, @NotNull final RefactoringViewAction callback, @NotNull SearchResults searchResults, boolean hasModelsToGenerate, String name) {
     myProject = project;
     init(callback, searchResults, name, hasModelsToGenerate);
   }

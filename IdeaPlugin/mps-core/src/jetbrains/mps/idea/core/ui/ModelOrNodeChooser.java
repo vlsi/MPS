@@ -31,6 +31,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser;
+import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.projectView.MPSDataKeys;
@@ -86,7 +87,10 @@ public class ModelOrNodeChooser extends ProjectViewPane implements ModelElementT
   private boolean hasModelRoots(Module module) {
     if (module == null) return false;
     MPSFacet mpsFacet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
-    return mpsFacet != null && mpsFacet.wasInitialized() && !(mpsFacet.getConfiguration().getState().getModelRoots().isEmpty());
+    if(mpsFacet == null || !mpsFacet.wasInitialized()) return false;
+
+    MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getState();
+    return configurationBean != null && !(configurationBean.getModelRoots().isEmpty());
   }
 
   private boolean isModelRootOrParent(VirtualFile virtualFile) {
@@ -97,11 +101,15 @@ public class ModelOrNodeChooser extends ProjectViewPane implements ModelElementT
     MPSFacet mpsFacet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
     if (mpsFacet == null || !(mpsFacet.wasInitialized())) return false;
 
+    MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getState();
+    if (configurationBean == null) return false;
+
     String url = virtualFile.getUrl();
     if (!LocalFileSystem.PROTOCOL.equals(VirtualFileManager.extractProtocol(url))) return false;
 
     String path = VirtualFileManager.extractPath(url);
-    for (ModelRoot mr : mpsFacet.getConfiguration().getState().getModelRoots()) {
+
+    for (ModelRoot mr : configurationBean.getModelRoots()) {
       if (mr.getPath().startsWith(path)) return true;
     }
     return false;

@@ -32,7 +32,7 @@ public class ModelGroupingRuleProvider implements UsageGroupingRuleProvider{
 
   @NotNull
   @Override
-  public UsageGroupingRule[] getActiveRules(Project project) {
+  public UsageGroupingRule[] getActiveRules(@NotNull Project project) {
     return new UsageGroupingRule[]{new ModelUsageGroupingRule(project)};
   }
 
