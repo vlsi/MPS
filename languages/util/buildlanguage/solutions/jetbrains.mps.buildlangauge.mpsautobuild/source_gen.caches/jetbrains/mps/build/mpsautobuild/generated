@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ecf0v7j218s4961mysykzx8qdi68fxb">
+<dependencies version="2" modelHash="9519hmkgqseisn0hgwvl16pxk04i0qj">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8ddyvtwlgdy2b4rcc23nz4xk6wzma49" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-cw4cuvzqiy6cv9vv4yy2w5dj04351kw" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-ad6sacrydlyivgq1a8s9zj6b37xpgsf" />
@@ -91,7 +91,7 @@
   <source id="8431776905956472400" name="MPS-src.zip" hash="-73rv39a05wqowqnfejf1hxi0a1eoi0v" />
   <source id="8431776905956472682" name="mps-backend.jar" hash="9g7fi14zyann9c0ifj679cvpokawfbq" />
   <source id="8431776905956472694" name="mps-resources.jar" hash="1eg79qn0am7cye4gbz75znjh2qhovlv" />
-  <source id="8431776905956472723" name="mps-core.jar" hash="2kjby9ze3oitg34tyxgu7dh4rfd3aql" />
+  <source id="8431776905956472723" name="mps-core.jar" hash="-7lzevnvn2g3tq1myvvfjcj80imfj2ok" />
   <source id="8431776905956472858" name="core" hash="7sgap8pz95f9a8kl3kk87u38tjwfbqf">
     <dep model="r:00000000-0000-4000-0000-011c895904d9(jetbrains.mps.build.packaging.generator.buildlanguage.template.main@generator)" />
   </source>

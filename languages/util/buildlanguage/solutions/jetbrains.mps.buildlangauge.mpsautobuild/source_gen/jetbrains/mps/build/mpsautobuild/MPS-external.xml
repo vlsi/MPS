@@ -205,7 +205,7 @@
       <fileset dir="${mps_home}/core/kernel/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp">
-      <fileset dir="${mps_home}/core/runtime/classes" />
+      <fileset dir="${mps_home}/core/runtime/classes" excludes="**/InternerTest.class, " />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp">
       <fileset dir="${mps_home}/core/findUsages-runtime/classes" />
