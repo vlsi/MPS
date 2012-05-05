@@ -64,6 +64,9 @@
       <fileset dir="${basedir}/license" />
     </copy>
     <mkdir dir="${build.layout}/MPS ${version}/plugin" />
+    <copy todir="${build.layout}/MPS ${version}/plugin">
+      <fileset file="${mps_home}/plugin/MPSPlugin.jar" />
+    </copy>
     <mkdir dir="${build.layout}/MPS ${version}/plugins" />
     <copy todir="${build.layout}/MPS ${version}/plugins">
       <fileset dir="${artifacts.buildPlugins}/plugins" />
