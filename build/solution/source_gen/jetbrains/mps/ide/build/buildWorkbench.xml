@@ -740,7 +740,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.ide.uiLanguage" depends="java.compile.uiLanguage.runtime, java.compile.jetbrains.mps.uiLanguage, java.compile.mps-workbench, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.ide.uiLanguage" depends="java.compile.uiLanguage.runtime, java.compile.jetbrains.mps.uiLanguage, java.compile.mps-workbench, java.compile.execution, java.compile.typesystem-ui, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ide.uiLanguage" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.ide.uiLanguage" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -758,6 +758,8 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.uiLanguage" />
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
+        <pathelement path="${build.tmp}/java/out/execution" />
+        <pathelement path="${build.tmp}/java/out/typesystem-ui" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -784,7 +786,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.plugin.standalone" depends="java.compile.mps-workbench, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.plugin.standalone" depends="java.compile.mps-workbench, java.compile.execution, java.compile.typesystem-ui, java.compile.uiLanguage.runtime, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.plugin.standalone" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.plugin.standalone" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -800,6 +802,9 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
+        <pathelement path="${build.tmp}/java/out/execution" />
+        <pathelement path="${build.tmp}/java/out/typesystem-ui" />
+        <pathelement path="${build.tmp}/java/out/uiLanguage.runtime" />
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
@@ -894,7 +899,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.baseLanguage.pluginSolution" depends="java.compile.mps-workbench, java.compile.jetbrains.mps.lang.dataFlow.pluginSolution, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.baseLanguage.pluginSolution" depends="java.compile.mps-workbench, java.compile.execution, java.compile.typesystem-ui, java.compile.uiLanguage.runtime, java.compile.jetbrains.mps.lang.dataFlow.pluginSolution, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.pluginSolution" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -910,6 +915,9 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
+        <pathelement path="${build.tmp}/java/out/execution" />
+        <pathelement path="${build.tmp}/java/out/typesystem-ui" />
+        <pathelement path="${build.tmp}/java/out/uiLanguage.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.dataFlow.pluginSolution" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
@@ -934,7 +942,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.core.pluginSolution" depends="java.compile.mps-workbench, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.core.pluginSolution" depends="java.compile.mps-workbench, java.compile.execution, java.compile.typesystem-ui, java.compile.uiLanguage.runtime, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.core.pluginSolution" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.core.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -950,6 +958,9 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
+        <pathelement path="${build.tmp}/java/out/execution" />
+        <pathelement path="${build.tmp}/java/out/typesystem-ui" />
+        <pathelement path="${build.tmp}/java/out/uiLanguage.runtime" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -970,7 +981,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.dataFlow.pluginSolution" depends="java.compile.mps-workbench, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.dataFlow.pluginSolution" depends="java.compile.mps-workbench, java.compile.execution, java.compile.typesystem-ui, java.compile.uiLanguage.runtime, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.dataFlow.pluginSolution" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.dataFlow.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -986,6 +997,9 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
+        <pathelement path="${build.tmp}/java/out/execution" />
+        <pathelement path="${build.tmp}/java/out/typesystem-ui" />
+        <pathelement path="${build.tmp}/java/out/uiLanguage.runtime" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -1005,7 +1019,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.generator.pluginSolution" depends="java.compile.mps-workbench, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.generator.pluginSolution" depends="java.compile.mps-workbench, java.compile.execution, java.compile.typesystem-ui, java.compile.uiLanguage.runtime, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.generator.pluginSolution" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.generator.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -1021,6 +1035,9 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
+        <pathelement path="${build.tmp}/java/out/execution" />
+        <pathelement path="${build.tmp}/java/out/typesystem-ui" />
+        <pathelement path="${build.tmp}/java/out/uiLanguage.runtime" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -1054,7 +1071,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.plugin.pluginSolution" depends="java.compile.mps-workbench, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.plugin.pluginSolution" depends="java.compile.mps-workbench, java.compile.execution, java.compile.typesystem-ui, java.compile.uiLanguage.runtime, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.plugin.pluginSolution" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.plugin.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -1070,6 +1087,9 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
+        <pathelement path="${build.tmp}/java/out/execution" />
+        <pathelement path="${build.tmp}/java/out/typesystem-ui" />
+        <pathelement path="${build.tmp}/java/out/uiLanguage.runtime" />
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
@@ -1101,7 +1121,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.quotation.pluginSolution" depends="java.compile.mps-workbench, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.quotation.pluginSolution" depends="java.compile.mps-workbench, java.compile.execution, java.compile.typesystem-ui, java.compile.uiLanguage.runtime, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.quotation.pluginSolution" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.quotation.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -1117,6 +1137,9 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
+        <pathelement path="${build.tmp}/java/out/execution" />
+        <pathelement path="${build.tmp}/java/out/typesystem-ui" />
+        <pathelement path="${build.tmp}/java/out/uiLanguage.runtime" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -1137,7 +1160,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.script.pluginSolution" depends="java.compile.mps-workbench, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.script.pluginSolution" depends="java.compile.mps-workbench, java.compile.execution, java.compile.typesystem-ui, java.compile.uiLanguage.runtime, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.script.pluginSolution" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.script.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -1153,6 +1176,9 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
+        <pathelement path="${build.tmp}/java/out/execution" />
+        <pathelement path="${build.tmp}/java/out/typesystem-ui" />
+        <pathelement path="${build.tmp}/java/out/uiLanguage.runtime" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -1180,7 +1206,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.smodel.pluginSolution" depends="java.compile.mps-workbench, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.smodel.pluginSolution" depends="java.compile.mps-workbench, java.compile.execution, java.compile.typesystem-ui, java.compile.uiLanguage.runtime, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.smodel.pluginSolution" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.smodel.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -1196,6 +1222,9 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
+        <pathelement path="${build.tmp}/java/out/execution" />
+        <pathelement path="${build.tmp}/java/out/typesystem-ui" />
+        <pathelement path="${build.tmp}/java/out/uiLanguage.runtime" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -1215,7 +1244,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.structure.pluginSolution" depends="java.compile.mps-workbench, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.structure.pluginSolution" depends="java.compile.mps-workbench, java.compile.execution, java.compile.typesystem-ui, java.compile.uiLanguage.runtime, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.structure.pluginSolution" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.structure.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -1231,6 +1260,9 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
+        <pathelement path="${build.tmp}/java/out/execution" />
+        <pathelement path="${build.tmp}/java/out/typesystem-ui" />
+        <pathelement path="${build.tmp}/java/out/uiLanguage.runtime" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -1266,7 +1298,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.test.pluginSolution" depends="java.compile.mps-workbench, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.test.pluginSolution" depends="java.compile.mps-workbench, java.compile.execution, java.compile.typesystem-ui, java.compile.uiLanguage.runtime, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.test.pluginSolution" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.test.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -1282,6 +1314,9 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
+        <pathelement path="${build.tmp}/java/out/execution" />
+        <pathelement path="${build.tmp}/java/out/typesystem-ui" />
+        <pathelement path="${build.tmp}/java/out/uiLanguage.runtime" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/bsh-core-2.0b4.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/cglib-nodep-2.1_3.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/hamcrest-core-1.1.jar" />
@@ -1324,7 +1359,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.typesystem.pluginSolution" depends="java.compile.mps-workbench, java.compile.typesystem-ui, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.typesystem.pluginSolution" depends="java.compile.mps-workbench, java.compile.execution, java.compile.typesystem-ui, java.compile.uiLanguage.runtime, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.typesystem.pluginSolution" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.typesystem.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -1340,7 +1375,9 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
+        <pathelement path="${build.tmp}/java/out/execution" />
         <pathelement path="${build.tmp}/java/out/typesystem-ui" />
+        <pathelement path="${build.tmp}/java/out/uiLanguage.runtime" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
