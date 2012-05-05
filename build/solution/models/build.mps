@@ -6388,6 +6388,9 @@
             </node>
           </node>
         </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ModuleDependencyOnJavaModule" typeId="kdzh.3189788309731928315" id="4695457396354764061">
+          <link role="module" roleId="kdzh.3189788309731928317" targetNodeId="2569834391839970846" resolveInfo="typesystem-ui" />
+        </node>
       </node>
     </node>
     <node role="scriptsDir" roleId="3ior.4796668409958418110" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="2569834391839970977">

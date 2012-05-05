@@ -1324,7 +1324,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.typesystem.pluginSolution" depends="java.compile.mps-workbench, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.typesystem.pluginSolution" depends="java.compile.mps-workbench, java.compile.typesystem-ui, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.typesystem.pluginSolution" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.typesystem.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -1340,6 +1340,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
+        <pathelement path="${build.tmp}/java/out/typesystem-ui" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
