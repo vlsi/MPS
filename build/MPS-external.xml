@@ -684,7 +684,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.script.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.smodel.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.test.pluginSolution" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.traceable.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.typesystem.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.dataFlow.pluginSolution" />
     <mkdir dir="${deploy.dir}/MPS/languages/languageDesign" />

@@ -4671,32 +4671,6 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/languageDesign/jetbrains.mps.lang.test.pluginSolution.jar.jtmp" />
   </target>
-  <target name="pack.jetbrains.mps.lang.traceable.pluginSolution">
-    <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
-    <mkdir dir="${deploy.dir}/MPS/languages/languageDesign/jetbrains.mps.lang.traceable.pluginSolution.jar.jtmp" />
-    <echoxml file="${deploy.dir}/MPS/languages/languageDesign/jetbrains.mps.lang.traceable.pluginSolution.jar.jtmp/module.xml">
-      <module namespace="jetbrains.mps.lang.traceable.pluginSolution" uuid="637890c3-bc55-4720-9931-6bf18c1082df" type="solution">
-        <dependencies>
-          <module ref="637890c3-bc55-4720-9931-6bf18c1082df(jetbrains.mps.lang.traceable.pluginSolution)" />
-        </dependencies>
-        <sources jar="jetbrains.mps.lang.traceable.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
-      </module>
-    </echoxml>
-    <jar destfile="${deploy.dir}/MPS/languages/languageDesign/jetbrains.mps.lang.traceable.pluginSolution-src.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset dir="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/source_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset dir="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/test_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset file="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/pluginSolution.msd" prefix="module" />
-      <zipfileset dir="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
-      <zipfileset dir="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
-    </jar>
-    <jar destfile="${deploy.dir}/MPS/languages/languageDesign/jetbrains.mps.lang.traceable.pluginSolution.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${deploy.dir}/MPS/languages/languageDesign/jetbrains.mps.lang.traceable.pluginSolution.jar.jtmp/module.xml" prefix="META-INF" />
-      <zipfileset dir="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution" includes="icons/**, resources/**" />
-      <zipfileset dir="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
-    </jar>
-    <delete dir="${deploy.dir}/MPS/languages/languageDesign/jetbrains.mps.lang.traceable.pluginSolution.jar.jtmp" />
-  </target>
   <target name="pack.jetbrains.mps.lang.typesystem.pluginSolution">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />

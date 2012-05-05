@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7vysx5svwv0uydwwwlh5vg5p8gpa9sp">
+<dependencies version="2" modelHash="-ecf0v7j218s4961mysykzx8qdi68fxb">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8ddyvtwlgdy2b4rcc23nz4xk6wzma49" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-cw4cuvzqiy6cv9vv4yy2w5dj04351kw" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-ad6sacrydlyivgq1a8s9zj6b37xpgsf" />
@@ -20,7 +20,7 @@
   <dep model="r:7a6a35c6-e369-4565-b91b-c7c8dfa2c8d7(jetbrains.mps.build.generictasks.generated)" />
   <dep model="r:9eaefcec-a5af-4365-b04c-b6940eebe416(jetbrains.mps.build.startup.generator.template.main@generator)" hash="-hvjueidzqrrx09vct216rrlhmsxwpj" />
   <dep model="r:a8223385-58f6-47fc-9412-c59396fbedb5(jetbrains.mps.bash.builtin)" />
-  <dep model="r:ac652b40-7fbf-42e0-aa7e-798b06f8ad7f(jetbrains.mps.build.mpsautobuild.distrib)" hash="4u6ff6incaywk9553pdtpe23h7of02b" />
+  <dep model="r:ac652b40-7fbf-42e0-aa7e-798b06f8ad7f(jetbrains.mps.build.mpsautobuild.distrib)" hash="-dvoza5z0nwa425bjktk09vsx7jedwp8" />
   <dep model="r:dcaa78c3-0033-4464-8747-37a798d5e2e6(jetbrains.mps.bash.generator.template.main@generator)" hash="-4g61ornyzx3o96u2yydte3oczilgfet" />
   <dep model="r:e4eacb3c-606c-4e9e-bd5e-ca89808d18ab(jetbrains.mps.build.packaging.mps.generator.template.main@generator)" hash="b1ovoa1pwje8k0x25u1tyqikqh858vx" />
   <dep model="r:ea5ebe15-8287-48fa-903b-179b2fdbe69c(jetbrains.mps.build.property.generator.template.main@generator)" hash="bvdhm2jo5t4eh10gbtqxm6t1d778xll" />
@@ -98,7 +98,7 @@
   <source id="8431776905956472865" name="core.baseLanguage" hash="1f3esd4rqf2afye6wuljwj7i9lt9p35">
     <dep model="r:00000000-0000-4000-0000-011c895904d9(jetbrains.mps.build.packaging.generator.buildlanguage.template.main@generator)" />
   </source>
-  <source id="8431776905956472907" name="core.languageDesign" hash="-6tmw9c3o7wgb5tjfqa4lgc8vy9978tz" />
+  <source id="8431776905956472907" name="core.languageDesign" hash="-btjy73uopsdfp9wc3e5ylfjch3cii6t" />
   <source id="8431776905956472948" name="util" hash="zau15j442df299tk585ke82gcuexqy" />
   <source id="7715871110555971738" name="mps-boot.jar" hash="2sic6pbuzj4rx7hsfvo0vxlzdnkk2ou" />
   <source id="2738111162319948310" name="core.execution" hash="-bozmnxwobv4imjckazksojfg8nshtzi" />
