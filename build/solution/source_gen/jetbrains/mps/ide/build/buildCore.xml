@@ -1998,37 +1998,6 @@
       <zipfileset dir="${mps_home}/languages/baseLanguage/baseLanguageInternal/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/baseLanguageInternal/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.closures.runtime-src.jar" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.closures.runtime-src.jar">
-      <fileset dir="${mps_home}/languages/baseLanguage/closures/runtime/source_gen" />
-    </copy>
-    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.runtime-src.jar">
-      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.closures.runtime-src.jar" />
-    </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.collections.runtime-src.jar" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.collections.runtime-src.jar">
-      <fileset dir="${mps_home}/languages/baseLanguage/collections/runtime/source_gen" />
-    </copy>
-    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime-src.jar">
-      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.collections.runtime-src.jar" />
-    </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.collections.runtime.gwt-src.jar" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.collections.runtime.gwt-src.jar">
-      <fileset dir="${mps_home}/languages/baseLanguage/collections/runtime/source_gen.gwt" />
-    </copy>
-    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime.gwt-src.jar">
-      <zipfileset file="${mps_home}/languages/baseLanguage/collections/runtime/gwt/collections.runtime.gwt.msd" prefix="modules/collections.runtime.gwt" />
-      <zipfileset dir="${mps_home}/languages/baseLanguage/collections/runtime/gwt" includes="icons/**, resources/**" prefix="modules/collections.runtime.gwt" />
-      <zipfileset dir="${mps_home}/languages/baseLanguage/collections/runtime/gwt" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/collections.runtime.gwt/" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.collections.runtime.gwt-src.jar" />
-    </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.tuples.runtime-src.jar" />
-    <copy todir="${build.tmp}/default/jetbrains.mps.baseLanguage.tuples.runtime-src.jar">
-      <fileset dir="${mps_home}/languages/baseLanguage/tuples/runtime/source_gen" />
-    </copy>
-    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.runtime-src.jar">
-      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.tuples.runtime-src.jar" />
-    </jar>
     <mkdir dir="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.unitTest.libs.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.unitTest.libs.jar/META-INF" />
