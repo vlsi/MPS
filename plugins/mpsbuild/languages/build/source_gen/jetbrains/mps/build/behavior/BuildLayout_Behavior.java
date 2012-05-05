@@ -4,8 +4,6 @@ package jetbrains.mps.build.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.Context;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class BuildLayout_Behavior {
   public static void init(SNode thisNode) {
@@ -24,10 +22,6 @@ public class BuildLayout_Behavior {
   }
 
   public static void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildProject")) {
-      sb.append(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildProject"), "name"));
-      sb.append(".");
-    }
-    sb.append("default");
+    sb.append("/");
   }
 }

@@ -36,7 +36,7 @@
     <node type="tpc2.EditorComponentDeclaration" typeId="tpc2.1078938745671" id="7389400916848036998">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
       <property name="name" nameId="tpck.1169194664001" value="BuildLayout_containerElements" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.7389400916848004876" resolveInfo="BuildLayout_AbstractContainer" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.4701820937132344003" resolveInfo="BuildLayout_Container" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7389400916848043095">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />

@@ -26,7 +26,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 4:
         return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildExternalDependency", null, true, new String[]{}, new String[]{}, new String[]{});
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildExternalLayout", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.build.structure.BuildLayout_Container"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildExternalLayout", "jetbrains.mps.build.structure.BuildLayout_AbstractContainer", false, new String[]{"jetbrains.mps.build.structure.BuildLayout_AbstractContainer", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
       case 6:
         return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildExternalLayoutDependency", "jetbrains.mps.build.structure.BuildDependency", false, new String[]{"jetbrains.mps.build.structure.BuildDependency", "jetbrains.mps.build.structure.BuildLayout_PathElement"}, new String[]{}, new String[]{"layout"});
       case 7:
