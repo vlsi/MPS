@@ -40,6 +40,7 @@
     <mkdir dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp/modules" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/META-INF" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-boot.jar.tmp" />
@@ -261,41 +262,50 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/lib/mps-editor-api.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp">
-      <fileset dir="${mps_home}/editor/editor-runtime/classes" />
+      <fileset dir="${mps_home}/editor/editor-runtime/classes" excludes="**/MPSEditor.xml, **/MPSEditorActions.xml" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp">
-      <fileset dir="${mps_home}/editor/actions-runtime/classes" />
+      <fileset dir="${mps_home}/editor/actions-runtime/classes" excludes="**/MPSEditor.xml, **/MPSEditorActions.xml" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp">
-      <fileset dir="${mps_home}/editor/intentions-runtime/classes" />
+      <fileset dir="${mps_home}/editor/intentions-runtime/classes" excludes="**/MPSEditor.xml, **/MPSEditorActions.xml" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp">
-      <fileset dir="${mps_home}/editor/typesystemIntegration/classes" />
+      <fileset dir="${mps_home}/editor/typesystemIntegration/classes" excludes="**/MPSEditor.xml, **/MPSEditorActions.xml" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp">
-      <fileset dir="${mps_home}/workbench/mps-editor/classes" />
+      <fileset dir="${mps_home}/workbench/mps-editor/classes" excludes="**/MPSEditor.xml, **/MPSEditorActions.xml" />
     </copy>
     <antcall target="MPS-languages.pack.MPS.Editor" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide.editor" />
     <antcall target="MPS-languages.pack.jetbrains.mps.editor.runtime" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp/modules" />
     <jar destfile="${deploy.dir}/MPS/lib/mps-editor.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp" />
+      <fileset dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp" excludes="**/MPSEditor.xml, **/MPSEditorActions.xml" />
     </jar>
     <delete dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp">
-      <fileset dir="${mps_home}/workbench/mps-platform/classes" />
+      <fileset dir="${mps_home}/workbench/mps-platform/classes" excludes="**/MPSCore.xml, **/PlatformActions.xml" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp">
-      <fileset dir="${mps_home}/workbench/mps-debugger/classes" />
+      <fileset dir="${mps_home}/workbench/mps-debugger/classes" excludes="**/MPSCore.xml, **/PlatformActions.xml" />
     </copy>
     <antcall target="MPS-languages.pack.MPS.Platform" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide.platform" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp/modules" />
     <jar destfile="${deploy.dir}/MPS/lib/mps-platform.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp" />
+      <fileset dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp" excludes="**/MPSCore.xml, **/PlatformActions.xml" />
     </jar>
     <delete dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp" />
+    <copy file="${mps_home}/workbench/mps-platform/source/META-INF/MPSCore.xml" tofile="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/META-INF/MPSCore.xml" />
+    <copy file="${mps_home}/workbench/mps-editor/source/META-INF/MPSEditor.xml" tofile="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/META-INF/MPSEditor.xml" />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/META-INF" />
+    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
+      <fileset dir="${mps_home}/workbench/mps-platform/source_gen" includes="jetbrains/mps/ide/platform/actions/PlatformActions.xml, " />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
+      <fileset dir="${mps_home}/workbench/mps-editor/source_gen" includes="jetbrains/mps/ide/editor/actions/MPSEditorActions.xml, " />
+    </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
       <fileset dir="${mps_home}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.api/classes" />
     </copy>
