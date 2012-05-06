@@ -10,10 +10,10 @@
     <unitInfo nodeId="2569834391839970845" fileName="buildWorkbench.xml" startLine="1" startPosition="0" endLine="458" endPosition="10" unitName="jetbrains.mps.ide.build.buildWorkbench" />
   </root>
   <root nodeId="4301118715654192646">
-    <unitInfo nodeId="4301118715654192646" fileName="buildMPS.xml" startLine="1" startPosition="0" endLine="132" endPosition="10" unitName="jetbrains.mps.ide.build.buildMPS" />
+    <unitInfo nodeId="4301118715654192646" fileName="buildMPS.xml" startLine="1" startPosition="0" endLine="131" endPosition="10" unitName="jetbrains.mps.ide.build.buildMPS" />
   </root>
   <root nodeId="4301118715654497533">
-    <unitInfo nodeId="4301118715654497533" fileName="buildDistribution.xml" startLine="1" startPosition="0" endLine="33" endPosition="10" unitName="jetbrains.mps.ide.build.buildDistribution" />
+    <unitInfo nodeId="4301118715654497533" fileName="buildDistribution.xml" startLine="1" startPosition="0" endLine="31" endPosition="10" unitName="jetbrains.mps.ide.build.buildDistribution" />
   </root>
   <root nodeId="4301118715654819483">
     <unitInfo nodeId="4301118715654819483" fileName="buildUtilLanguages.xml" startLine="1" startPosition="0" endLine="2370" endPosition="10" unitName="jetbrains.mps.ide.build.buildUtilLanguages" />

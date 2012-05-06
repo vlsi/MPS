@@ -11,9 +11,7 @@
   
   <target name="assemble" depends="fetchDependencies">
     <zip destfile="${build.layout}/${buildMPS.build.number}.zip">
-      <fileset dir="${artifacts.buildMPS}">
-        <include name="MPS ${buildMPS.version}/**" />
-      </fileset>
+      <zipfileset dir="${artifacts.buildMPS}" prefix="MPS ${buildMPS.version}" />
     </zip>
     <echo file="${build.layout}/variables.properties">buildMPS.build.number=${buildMPS.build.number}${line.separator}buildMPS.version=${buildMPS.version}${line.separator}buildMPS.build.vcs.number=${buildMPS.build.vcs.number}${line.separator}buildMPS.teamcity.buildConfName=${buildMPS.teamcity.buildConfName}</echo>
   </target>
