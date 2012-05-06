@@ -15,30 +15,30 @@ public class UnpackHelper extends DependenciesHelper {
   private final VisibleArtifacts visible;
   private final List<SNode> required = new ArrayList<SNode>();
   private final Set<SNode> requiredSet = new HashSet<SNode>();
+  private final Set<SNode> requiredWithContent = new HashSet<SNode>();
   private boolean evaluated = false;
   private final List<SNode> statements = new ArrayList<SNode>();
   private PathProvider myPathProvider;
   private TemplateQueryContext genContext;
 
-  public UnpackHelper(VisibleArtifacts visible, Iterable<SNode> required, TemplateQueryContext genContext) {
+  public UnpackHelper(VisibleArtifacts visible, TemplateQueryContext genContext) {
     super(genContext, visible.getProject());
     this.visible = visible;
     this.myPathProvider = new PathProvider(genContext, visible.getProject());
-
-    for (SNode node : required) {
-      add(node);
-    }
     this.genContext = genContext;
   }
 
-  private void add(SNode n) {
+  /*package*/ void add(SNode n, boolean withContent) {
+    if (withContent) {
+      requiredWithContent.add(n);
+    }
     if (!(requiredSet.add(n))) {
       return;
     }
 
     SNode parent = visible.parent(n);
     if (parent != null) {
-      add(parent);
+      add(parent, true);
     }
     ListSequence.fromList(required).addElement(n);
   }
@@ -56,6 +56,10 @@ public class UnpackHelper extends DependenciesHelper {
 
   public boolean isRequired(SNode n) {
     return requiredSet.contains(n);
+  }
+
+  public boolean isContentRequired(SNode n) {
+    return requiredWithContent.contains(n);
   }
 
   public void emit(SNode st) {

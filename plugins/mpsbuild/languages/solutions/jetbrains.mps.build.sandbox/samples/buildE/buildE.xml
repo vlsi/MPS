@@ -37,10 +37,10 @@
   <target name="fetchDependencies">
     <mkdir dir="${build.tmp}/deps/buildA/A-_dl_{aver}.zip" />
     <unzip src="${artifacts.buildA}/result/A-${buildA.aver}.zip" dest="${build.tmp}/deps/buildA/A-_dl_{aver}.zip" />
-    <mkdir dir="${build.tmp}/deps/buildA/module-A.jar" />
-    <unzip src="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/module-A.jar" dest="${build.tmp}/deps/buildA/module-A.jar" />
     <mkdir dir="${build.tmp}/deps/buildA/withX.zip" />
     <unzip src="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/withX.zip" dest="${build.tmp}/deps/buildA/withX.zip" />
+    <mkdir dir="${build.tmp}/deps/buildA/module-A.jar" />
+    <unzip src="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/module-A.jar" dest="${build.tmp}/deps/buildA/module-A.jar" />
   </target>
   
   <target name="build" depends="assemble" />

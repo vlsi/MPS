@@ -22,17 +22,10 @@ public class BuildLayout_Tar_Behavior {
     String tarLocation = parentLocation + "/" + BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(thisNode, "containerName", true), helper.getMacroHelper());
     helper.locations().put(thisNode, tarLocation);
 
-    boolean needUnpack = false;
-    for (SNode c : SLinkOperations.getTargets(thisNode, "children", true)) {
-      if (helper.isRequired(c)) {
-        needUnpack = true;
-        break;
-      }
-    }
-    if (needUnpack) {
+    if (helper.isContentRequired(thisNode)) {
       String tempPath = helper.getPathProvider().createTempPath(SPropertyOperations.getString(thisNode, "name"), "deps", SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.structure.BuildProject", false, false), "name"));
-      helper.emit(new BuildLayout_Tar_Behavior.QuotationClass_cokct5_a0a0b0h0b().createNode(tempPath));
-      helper.emit(new BuildLayout_Tar_Behavior.QuotationClass_cokct5_a0a0c0h0b().createNode(tarLocation, tempPath, SPropertyOperations.getString_def(thisNode, "compression", "none")));
+      helper.emit(new BuildLayout_Tar_Behavior.QuotationClass_cokct5_a0a0b0f0b().createNode(tempPath));
+      helper.emit(new BuildLayout_Tar_Behavior.QuotationClass_cokct5_a0a0c0f0b().createNode(tarLocation, tempPath, SPropertyOperations.getString_def(thisNode, "compression", "none")));
       helper.contentLocations().put(thisNode, tempPath);
     }
   }
@@ -53,8 +46,8 @@ public class BuildLayout_Tar_Behavior {
     return true;
   }
 
-  public static class QuotationClass_cokct5_a0a0b0h0b {
-    public QuotationClass_cokct5_a0a0b0h0b() {
+  public static class QuotationClass_cokct5_a0a0b0f0b {
+    public QuotationClass_cokct5_a0a0b0f0b() {
     }
 
     public SNode createNode(Object parameter_9) {
@@ -92,8 +85,8 @@ public class BuildLayout_Tar_Behavior {
     }
   }
 
-  public static class QuotationClass_cokct5_a0a0c0h0b {
-    public QuotationClass_cokct5_a0a0c0h0b() {
+  public static class QuotationClass_cokct5_a0a0c0f0b {
+    public QuotationClass_cokct5_a0a0c0f0b() {
     }
 
     public SNode createNode(Object parameter_17, Object parameter_18, Object parameter_19) {

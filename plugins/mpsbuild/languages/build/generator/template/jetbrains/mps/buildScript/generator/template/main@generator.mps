@@ -11668,7 +11668,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4701820937132157296">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5745174517193856666">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4701820937132157272">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2o8t.5745174517193855237" resolveInfo="FetchDependenciesProcessor" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o3n2.4000645496941791293" resolveInfo="FetchDependenciesProcessor" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4701820937132157273">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="841011766566205063" resolveInfo="root" />
                     </node>
@@ -11676,7 +11676,7 @@
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4701820937132157301">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2o8t.4701820937132157276" resolveInfo="process" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o3n2.4000645496941791167" resolveInfo="process" />
                 </node>
               </node>
             </node>

@@ -4,6 +4,7 @@ package jetbrains.mps.build.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.Context;
+import jetbrains.mps.build.util.UnpackHelper;
 
 public class BuildLayout_Behavior {
   public static void init(SNode thisNode) {
@@ -23,5 +24,11 @@ public class BuildLayout_Behavior {
 
   public static void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
     sb.append("/");
+  }
+
+  public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
+    SNode parent = helper.parent(thisNode);
+    String parentLocation = helper.contentLocations().get(parent);
+    helper.contentLocations().put(thisNode, parentLocation);
   }
 }

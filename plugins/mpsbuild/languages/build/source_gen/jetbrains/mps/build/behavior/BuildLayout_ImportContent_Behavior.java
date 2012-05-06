@@ -4,6 +4,7 @@ package jetbrains.mps.build.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.VisibleArtifacts;
+import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -11,16 +12,15 @@ public class BuildLayout_ImportContent_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static Iterable<SNode> virtual_getDependencyTargets_841011766566205095(SNode thisNode, VisibleArtifacts artifacts) {
+  public static void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
     if (SNodeOperations.getContainingRoot(thisNode) == SNodeOperations.getContainingRoot(SLinkOperations.getTarget(thisNode, "target", false))) {
-      return null;
+      return;
     }
 
     SNode target = SNodeOperations.as(artifacts.toOriginalNode(SLinkOperations.getTarget(thisNode, "target", false)), "jetbrains.mps.build.structure.BuildLayout_Node");
     if (SNodeOperations.isInstanceOf(target, "jetbrains.mps.build.structure.BuildLayout_Container") && artifacts.contains(target)) {
       artifacts.needsFetch(SNodeOperations.getAncestorWhereConceptInList(thisNode, new String[]{"jetbrains.mps.build.structure.BuildLayout", "jetbrains.mps.build.structure.BuildNamedLayout"}, false, false));
-      return SLinkOperations.getTargets(SNodeOperations.cast(target, "jetbrains.mps.build.structure.BuildLayout_Container"), "children", true);
+      builder.addWithContent(target);
     }
-    return null;
   }
 }

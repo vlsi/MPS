@@ -45,7 +45,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.build.generator.util.JavaExternalLibraryHelper;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.build.util.GenerationUtil;
-import jetbrains.mps.build.generator.util.FetchDependenciesProcessor;
+import jetbrains.mps.build.util.FetchDependenciesProcessor;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.util.Pair;

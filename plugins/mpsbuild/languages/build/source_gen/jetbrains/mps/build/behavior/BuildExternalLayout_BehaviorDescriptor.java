@@ -4,6 +4,7 @@ package jetbrains.mps.build.behavior;
 
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.build.util.UnpackHelper;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
@@ -13,6 +14,10 @@ public class BuildExternalLayout_BehaviorDescriptor extends BuildLayout_Abstract
 
   public String virtual_getAssembleSubTaskId_4701820937132344052(SNode thisNode) {
     return BuildExternalLayout_Behavior.virtual_getAssembleSubTaskId_4701820937132344052(thisNode);
+  }
+
+  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
+    BuildExternalLayout_Behavior.virtual_unpack_7128123785277710736(thisNode, helper);
   }
 
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
