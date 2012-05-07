@@ -60,7 +60,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
         if (model == null) return;
 
         for (SNode root : model.roots()) {
-          newChildren.add(new MPSProjectViewNode(parent.getProject(), new SNodePointer(root), settings));
+          newChildren.add(new MPSProjectViewNode(parent.getProject(), root, settings));
         }
       }
     });
