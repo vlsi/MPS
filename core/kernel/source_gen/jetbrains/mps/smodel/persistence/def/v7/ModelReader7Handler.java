@@ -16,7 +16,6 @@ import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
 import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
@@ -168,7 +167,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
 
     @Override
     protected ModelLoadResult createObject(Attributes attrs) {
-      fieldmodel = new SModel(SModelReference.fromString(attrs.getValue("modelUID")), new RegularNodeIdMap());
+      fieldmodel = new SModel(SModelReference.fromString(attrs.getValue("modelUID")));
       fieldmodel.setPersistenceVersion(7);
       fieldmodel.getSModelHeader().updateDefaults(fieldheader);
       fieldhelper = new ReadHelper(fieldmodel.getSModelReference());
