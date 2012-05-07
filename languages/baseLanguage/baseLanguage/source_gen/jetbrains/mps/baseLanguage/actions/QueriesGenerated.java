@@ -50,7 +50,8 @@ import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
-import jetbrains.mps.baseLanguage.search.VisibleThrowablesScope;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.BootstrapLanguages;
@@ -1518,7 +1519,11 @@ __switch__:
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Computable computable = new Computable() {
           public Object compute() {
-            return (List<SNode>) new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.NON_FINAL_CLASS, operationContext.getScope()).getNodes();
+            return (List<SNode>) Sequence.fromIterable(ClassifierScopes.getVisibleClassesScope(_context.getParentNode(), operationContext.getScope()).getAvailableElements(null)).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return !(SPropertyOperations.getBoolean(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "isFinal"));
+              }
+            }).toListSequence();
           }
         };
         Iterable<SNode> queryResult = (Iterable) computable.compute();
@@ -1546,7 +1551,7 @@ __switch__:
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Computable computable = new Computable() {
           public Object compute() {
-            return (List<SNode>) new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.INTERFACE, operationContext.getScope()).getNodes();
+            return (List<SNode>) Sequence.fromIterable(ClassifierScopes.getVisibleInterfacesScope(_context.getParentNode(), operationContext.getScope()).getAvailableElements(null)).toListSequence();
           }
         };
         Iterable<SNode> queryResult = (Iterable) computable.compute();
@@ -1574,7 +1579,7 @@ __switch__:
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Computable computable = new Computable() {
           public Object compute() {
-            return (List<SNode>) new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.INTERFACE, operationContext.getScope()).getNodes();
+            return (List<SNode>) Sequence.fromIterable(ClassifierScopes.getVisibleInterfacesScope(_context.getParentNode(), operationContext.getScope()).getAvailableElements(null)).toListSequence();
           }
         };
         Iterable<SNode> queryResult = (Iterable) computable.compute();
@@ -1627,7 +1632,7 @@ __switch__:
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Computable computable = new Computable() {
           public Object compute() {
-            return ((List<SNode>) new VisibleThrowablesScope(_context.getParentNode(), IClassifiersSearchScope.CLASS, operationContext.getScope()).getClassifierNodes());
+            return (List<SNode>) Sequence.fromIterable(ClassifierScopes.getThrowablesScope(_context.getParentNode(), operationContext.getScope()).getAvailableElements(null)).toListSequence();
           }
         };
         Iterable<SNode> queryResult = (Iterable) computable.compute();

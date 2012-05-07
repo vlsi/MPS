@@ -4,23 +4,24 @@ package jetbrains.mps.build.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.VisibleArtifacts;
+import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BuildExternalDependency_Behavior {
-  private static Class[] PARAMETERS_841011766566205095 = {SNode.class, VisibleArtifacts.class};
+  private static Class[] PARAMETERS_5908258303322131137 = {SNode.class, VisibleArtifacts.class, RequiredDependenciesBuilder.class};
 
   public static void init(SNode thisNode) {
   }
 
-  public static Iterable<SNode> call_getDependencyTargets_841011766566205095(SNode thisNode, VisibleArtifacts artifacts) {
+  public static void call_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Iterable<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildExternalDependency"), "virtual_getDependencyTargets_841011766566205095", PARAMETERS_841011766566205095, artifacts);
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildExternalDependency"), "virtual_fetchDependencies_5908258303322131137", PARAMETERS_5908258303322131137, artifacts, builder);
   }
 
-  public static Iterable<SNode> callSuper_getDependencyTargets_841011766566205095(SNode thisNode, String callerConceptFqName, VisibleArtifacts artifacts) {
-    return (Iterable<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildExternalDependency"), callerConceptFqName, "virtual_getDependencyTargets_841011766566205095", PARAMETERS_841011766566205095, artifacts);
+  public static void callSuper_fetchDependencies_5908258303322131137(SNode thisNode, String callerConceptFqName, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
+    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildExternalDependency"), callerConceptFqName, "virtual_fetchDependencies_5908258303322131137", PARAMETERS_5908258303322131137, artifacts, builder);
   }
 }

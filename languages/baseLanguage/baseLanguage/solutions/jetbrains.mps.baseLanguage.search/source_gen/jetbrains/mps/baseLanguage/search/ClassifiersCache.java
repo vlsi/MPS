@@ -22,12 +22,14 @@ import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.cache.CachesManager;
 
+@Deprecated
 /*package*/ class ClassifiersCache extends AbstractCache {
   private static final KeyProducer keyProducer = new KeyProducer();
 
   private Map<String, List<SNode>> myClassifiersByName = MapSequence.fromMap(new HashMap<String, List<SNode>>());
   private Map<SNode, String> myNameByClassifier = MapSequence.fromMap(new HashMap<SNode, String>());
 
+  @Deprecated
   protected ClassifiersCache(Object key, SModelDescriptor model) {
     super(key);
     for (SNode node : model.getSModel().roots()) {

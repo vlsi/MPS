@@ -10,11 +10,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Map;
 
+@Deprecated
 /*package*/ class InstanceMethodReferenceInfoResolver implements IReferenceInfoResolver {
   private SNode myInstanceType;
   private List<SNode> myActualArguments;
   private ClassifierAndSuperClassifiersScope mySearchScope;
 
+  @Deprecated
   public InstanceMethodReferenceInfoResolver(ClassifierAndSuperClassifiersScope searchScope, SNode instanceType, List<SNode> actualArguments) {
     this.myInstanceType = instanceType;
     this.myActualArguments = actualArguments;

@@ -4,6 +4,8 @@ package jetbrains.mps.build.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.Context;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.build.util.UnpackHelper;
 
 public class BuildExternalLayout_Behavior {
   public static void init(SNode thisNode) {
@@ -19,5 +21,19 @@ public class BuildExternalLayout_Behavior {
 
   public static String virtual_getAssembleSubTaskId_4701820937132344052(SNode thisNode) {
     return null;
+  }
+
+  public static void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
+    sb.append("/");
+  }
+
+  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
+    return SPropertyOperations.getString(thisNode, "name");
+  }
+
+  public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
+    SNode parent = helper.parent(thisNode);
+    String parentLocation = helper.contentLocations().get(parent);
+    helper.contentLocations().put(thisNode, parentLocation);
   }
 }

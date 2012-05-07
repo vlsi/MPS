@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
+@Deprecated
 public class ClassifierVisibleMembersScope extends AbstractSearchScope {
   protected static Log log = LogFactory.getLog(ClassifierVisibleMembersScope.class);
 
@@ -23,7 +24,9 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
   private final SNode myContextNode;
   private final ClassifierAndSuperClassifiersScope myClassifierScope;
 
+  @Deprecated
   public ClassifierVisibleMembersScope(@Nullable SNode classifierType, @Nullable SNode contextNode, int constraint) {
+    // if constraint == CLASSIFIER_INSTANCE_METHOD use classifierType.classifier.getVisibleMembers(contextNode, concept/InstanceMethodDeclaration) instead 
     this.myClassifierType = classifierType;
     this.myContextNode = contextNode;
     this.myClassifierScope = new ClassifierAndSuperClassifiersScope(SLinkOperations.getTarget(classifierType, "classifier", false), constraint);

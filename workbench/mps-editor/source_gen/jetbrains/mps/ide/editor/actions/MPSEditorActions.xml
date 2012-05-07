@@ -1,5 +1,17 @@
 <components>
   <actions>
+    <action id="jetbrains.mps.ide.editor.actions.AddLanguageImport_Action" class="jetbrains.mps.ide.editor.actions.AddLanguageImport_Action">
+      <keyboard-shortcut first-keystroke="ctrl L" keymap="$default"/>
+      <keyboard-shortcut first-keystroke="ctrl L" keymap="Mac OS X"/>
+    </action>
+    <action id="jetbrains.mps.ide.editor.actions.AddModelImportByRoot_Action" class="jetbrains.mps.ide.editor.actions.AddModelImportByRoot_Action">
+      <keyboard-shortcut first-keystroke="ctrl R" keymap="$default"/>
+      <keyboard-shortcut first-keystroke="ctrl R" keymap="Mac OS X"/>
+    </action>
+    <action id="jetbrains.mps.ide.editor.actions.AddModelImport_Action" class="jetbrains.mps.ide.editor.actions.AddModelImport_Action">
+      <keyboard-shortcut first-keystroke="ctrl M" keymap="$default"/>
+      <keyboard-shortcut first-keystroke="ctrl M" keymap="Mac OS X"/>
+    </action>
     <action id="jetbrains.mps.ide.editor.actions.Backspace_Action" class="jetbrains.mps.ide.editor.actions.Backspace_Action">
       <keyboard-shortcut first-keystroke=" BACK_SPACE" keymap="$default"/>
     </action>
@@ -188,15 +200,16 @@
       <reference ref="jetbrains.mps.ide.editor.actions.SelectUp_Action"/>
       <add-to-group group-id="EditorActions" anchor="last"/>
     </group>
-    <group id="jetbrains.mps.ide.editor.actions.EditMenuActions_ActionGroup">
-      <reference ref="jetbrains.mps.ide.editor.actions.CopyThisDown_Action"/>
-      <reference ref="jetbrains.mps.ide.editor.actions.DeleteLine_Action"/>
-      <reference ref="jetbrains.mps.ide.editor.actions.ExtractComponent_Action"/>
-      <add-to-group group-id="IDE_Edit_ActionGroupcustom" anchor="last"/>
-    </group>
     <group id="jetbrains.mps.ide.editor.actions.IDE_Edit_ActionGroup">
       <reference ref="IDE_Edit_ActionGrouptoplevel"/>
       <separator/>
+      <reference ref="jetbrains.mps.ide.editor.actions.AddModelImport_Action"/>
+      <reference ref="jetbrains.mps.ide.editor.actions.AddModelImportByRoot_Action"/>
+      <reference ref="jetbrains.mps.ide.editor.actions.AddLanguageImport_Action"/>
+      <separator/>
+      <reference ref="jetbrains.mps.ide.editor.actions.CopyThisDown_Action"/>
+      <reference ref="jetbrains.mps.ide.editor.actions.DeleteLine_Action"/>
+      <reference ref="jetbrains.mps.ide.editor.actions.ExtractComponent_Action"/>
       <reference ref="IDE_Edit_ActionGroupcustom"/>
       <add-to-group group-id="EditMenu" anchor="last"/>
     </group>

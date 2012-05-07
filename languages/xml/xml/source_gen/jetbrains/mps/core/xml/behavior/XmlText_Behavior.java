@@ -11,22 +11,22 @@ public class XmlText_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static boolean virtual_isLastPositionAllowed_6999033275467334895(SNode thisNode) {
+  public static boolean virtual_isLastPositionAllowed_2133624044437631519(SNode thisNode) {
     return true;
   }
 
-  public static boolean virtual_isFirstPositionAllowed_6999033275467334890(SNode thisNode) {
+  public static boolean virtual_isFirstPositionAllowed_2133624044437631446(SNode thisNode) {
     return true;
   }
 
-  public static boolean virtual_hasNewLineAfter_6999033275467469870(SNode thisNode) {
+  public static boolean virtual_hasNewLineAfter_2133624044437631594(SNode thisNode) {
     if ((SPropertyOperations.getString(thisNode, "value") == null || SPropertyOperations.getString(thisNode, "value").length() == 0) && (SNodeOperations.getNextSibling(thisNode) != null)) {
-      return !(XmlContent_Behavior.call_onNewLine_6999033275467469862(thisNode));
+      return !(XmlPart_Behavior.call_onNewLine_2133624044437631588(thisNode));
     }
     return false;
   }
 
-  public static boolean virtual_onNewLine_6999033275467469862(SNode thisNode) {
+  public static boolean virtual_onNewLine_2133624044437631588(SNode thisNode) {
     SNode left = SNodeOperations.getPrevSibling(thisNode);
     if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.core.xml.structure.XmlContent")) {
       SNode leftContent = SNodeOperations.cast(left, "jetbrains.mps.core.xml.structure.XmlContent");

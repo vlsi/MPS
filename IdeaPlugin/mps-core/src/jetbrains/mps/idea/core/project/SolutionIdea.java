@@ -24,17 +24,18 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.roots.*;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.util.Processor;
 import com.intellij.util.messages.MessageBusConnection;
-import jetbrains.mps.idea.core.facet.LibHelper;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
+import jetbrains.mps.idea.core.project.stubs.AbstractJavaStubSolutionManager;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.stubs.LibrariesLoader;
 import jetbrains.mps.vfs.FileSystem;
@@ -135,11 +136,36 @@ public class SolutionIdea extends Solution {
         }
       }
 
-      for (Solution s : LibHelper.getAllLibsToImport(myModule)) {
-        myDependencies.add(new Dependency(s.getModuleReference(), false));
+      addUsedLibraries(myDependencies);
+
+      // adding JDK module to a set of dependencies
+      Solution jdkSolution = (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065"));
+      if (jdkSolution != null) {
+        myDependencies.add(new Dependency(jdkSolution.getModuleReference(), false));
       }
     }
     return myDependencies;
+  }
+
+  private void addUsedLibraries(final List<Dependency> dependencies) {
+    ModuleRootManager moduleRootManager = ModuleRootManager.getInstance(myModule);
+    moduleRootManager.orderEntries().forEach(new Processor<OrderEntry>() {
+      public boolean process(OrderEntry oe) {
+        if (!(oe instanceof LibraryOrderEntry)) {
+          return true;
+        }
+        LibraryOrderEntry loe = (LibraryOrderEntry) oe;
+        if (loe.isModuleLevel() || loe.getLibrary() == null) {
+          return true;
+        }
+
+        Solution s = (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.foreign(loe.getLibrary().getName()));
+        if (s != null) {
+          dependencies.add(new Dependency(s.getModuleReference(), false));
+        }
+        return true;
+      }
+    });
   }
 
   @Override
@@ -206,11 +232,13 @@ public class SolutionIdea extends Solution {
   }
 
   private void addLibs(SolutionDescriptor solutionDescriptor) {
+    // removing all existing libraries
     for (Iterator<ModelRoot> i = solutionDescriptor.getModelRoots().iterator(); i.hasNext(); ) {
       if (i.next().getManager() == null) continue;//regular model
       i.remove();
     }
 
+    // adding libraries
     for (OrderEntry e : ModuleRootManager.getInstance(myModule).getOrderEntries()) {
       if (!(e instanceof LibraryOrderEntry)) continue;
 
@@ -220,14 +248,7 @@ public class SolutionIdea extends Solution {
       Library library = loe.getLibrary();
       if (library == null) continue;
 
-      for (VirtualFile f : library.getFiles(OrderRootType.CLASSES)) {
-        ModelRoot mr = new ModelRoot();
-        mr.setPath(LibHelper.getLocalPath(f));
-        mr.setManager(LanguageID.JAVA_MANAGER);
-
-        if (solutionDescriptor.getModelRoots().contains(mr)) continue;
-        solutionDescriptor.getModelRoots().add(mr);
-      }
+      AbstractJavaStubSolutionManager.addModelRoots(solutionDescriptor, library.getFiles(OrderRootType.CLASSES));
     }
   }
 

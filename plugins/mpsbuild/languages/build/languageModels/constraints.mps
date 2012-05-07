@@ -485,6 +485,9 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1368030936106707807">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1368030936106707789" resolveInfo="contextProject" />
                     </node>
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1446021890180364805">
+                      <property name="value" nameId="tpee.1068580123138" value="false" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -603,6 +606,9 @@
                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="o3n2.3767587139141109579" resolveInfo="ScopeUtil" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1368030936106707786">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="841011766566141826" resolveInfo="contextProject" />
+                  </node>
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1446021890180364803">
+                    <property name="value" nameId="tpee.1068580123138" value="false" />
                   </node>
                 </node>
               </node>
@@ -761,6 +767,9 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5610619299013068385">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5610619299013068367" resolveInfo="contextProject" />
                     </node>
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1446021890180364801">
+                      <property name="value" nameId="tpee.1068580123138" value="true" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -888,6 +897,9 @@
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o3n2.1368030936106563330" resolveInfo="getVisibleArtifactsScope" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5610619299013068440">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5610619299013068428" resolveInfo="contextProject" />
+                        </node>
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1446021890180364799">
+                          <property name="value" nameId="tpee.1068580123138" value="true" />
                         </node>
                       </node>
                       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5610619299013225658">

@@ -23,10 +23,6 @@ public class Edit_ActionGroup extends GeneratedActionGroup {
       Edit_ActionGroup.this.addSeparator();
       Edit_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyNodeReference_Action");
       Edit_ActionGroup.this.addSeparator();
-      Edit_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddModelImport_Action");
-      Edit_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddModelImportByRoot_Action");
-      Edit_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddLanguageImport_Action");
-      Edit_ActionGroup.this.addSeparator();
       {
         LabelledAnchor action = new LabelledAnchor(Edit_ActionGroup.LABEL_ID_custom);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();

@@ -16,17 +16,22 @@
 
 package jetbrains.mps.idea.core.projectView;
 
+import com.intellij.ide.DeleteProvider;
 import com.intellij.ide.projectView.SelectableTreeStructureProvider;
 import com.intellij.ide.projectView.ViewSettings;
 import com.intellij.ide.projectView.impl.nodes.PsiFileNode;
 import com.intellij.ide.util.treeView.AbstractTreeNode;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.DumbAware;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiElement;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -67,36 +72,69 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     if (selected == null) {
       return null;
     }
-    if (MPSCommonDataKeys.CONTEXT_MODEL.is(dataName)) {
-      if (selected.size() != 1) return null;
-      AbstractTreeNode node = selected.iterator().next();
-      IFile modelFile = getModelFile(node);
-      if (modelFile == null) return null;
-      return SModelRepository.getInstance().findModel(modelFile);
-    }
-    if (MPSCommonDataKeys.MODEL.is(dataName)) {
-      if (selected.size() != 1) return null;
-      AbstractTreeNode node = selected.iterator().next();
-      if (!(node instanceof PsiFileNode)) return null;
-      IFile modelFile = getModelFile(node);
-      if (modelFile == null) return null;
-      return SModelRepository.getInstance().findModel(modelFile);
+
+    if (PlatformDataKeys.COPY_PROVIDER.is(dataName) || PlatformDataKeys.CUT_PROVIDER.is(dataName)) {
+      return getCutCopyProvider(selected);
     }
     if (MPSDataKeys.MODEL_FILES.is(dataName)) {
       return getModelFiles(selected);
     }
     if (PlatformDataKeys.DELETE_ELEMENT_PROVIDER.is(dataName)) {
-      List<MPSProjectViewNode> projectViewNodes = new ArrayList<MPSProjectViewNode>();
-      for (AbstractTreeNode treeNode : selected) {
-        if (treeNode instanceof MPSProjectViewNode) {
-          projectViewNodes.add((MPSProjectViewNode) treeNode);
-        }
-      }
-      if (!projectViewNodes.isEmpty()) {
-        return new MPSProjectViewNodeDeleteProvider(projectViewNodes);
-      }
+      return getDeleteElementProvider(selected);
+    }
+
+    if (selected.size() != 1) {
+      return null;
+    }
+
+    // Applicable only to single element selection
+    if (PlatformDataKeys.PASTE_PROVIDER.is(dataName)) {
+      return getPasteProvider(selected.iterator().next());
+    }
+    if (MPSCommonDataKeys.CONTEXT_MODEL.is(dataName)) {
+      return getContextModel(selected.iterator().next());
+    }
+    if (MPSCommonDataKeys.MODEL.is(dataName)) {
+      return getModel(selected.iterator().next());
+    }
+    if (MPSCommonDataKeys.MODULE.is(dataName)) {
+      return getModule(selected.iterator().next());
     }
     return null;
+  }
+
+  private CutCopyProvider getCutCopyProvider(Collection<AbstractTreeNode> selected) {
+    if (selected.size() == 0) {
+      return null;
+    }
+
+    List<SNodePointer> selectedNodePointers = new ArrayList<SNodePointer>();
+    Project project = null;
+    EditableSModelDescriptor modelDescriptor = null;
+    for (AbstractTreeNode treeNode : selected) {
+      if (treeNode instanceof MPSProjectViewNode) {
+        selectedNodePointers.add(((MPSProjectViewNode) treeNode).getValue());
+      } else {
+        return null;
+      }
+      if (project == null) {
+        project = treeNode.getProject();
+      } else if (project != treeNode.getProject()) {
+        return null;
+      }
+      if (modelDescriptor == null) {
+        modelDescriptor = getContextModel(treeNode);
+      } else if (modelDescriptor != getModel(treeNode)) {
+        return null;
+      }
+
+    }
+    jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
+    if (mpsProject == null || modelDescriptor == null) {
+      return null;
+    }
+
+    return new CutCopyProvider(selectedNodePointers, modelDescriptor, mpsProject);
   }
 
   private Set<IFile> getModelFiles(Collection<AbstractTreeNode> selected) {
@@ -108,6 +146,54 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
       }
     }
     return modelFiles;
+  }
+
+  private DeleteProvider getDeleteElementProvider(Collection<AbstractTreeNode> selected) {
+    List<MPSProjectViewNode> projectViewNodes = new ArrayList<MPSProjectViewNode>();
+    for (AbstractTreeNode treeNode : selected) {
+      if (treeNode instanceof MPSProjectViewNode) {
+        projectViewNodes.add((MPSProjectViewNode) treeNode);
+      } else {
+        return null;
+      }
+    }
+    if (!projectViewNodes.isEmpty()) {
+      return new MPSProjectViewNodeDeleteProvider(projectViewNodes);
+    }
+    return null;
+  }
+
+  private IModule getModule(AbstractTreeNode selectedNode) {
+    EditableSModelDescriptor contextModel = getContextModel(selectedNode);
+    return contextModel != null ? contextModel.getModule() : null;
+  }
+
+  private EditableSModelDescriptor getModel(AbstractTreeNode selectedNode) {
+    return selectedNode instanceof PsiFileNode ? getContextModel(selectedNode) : null;
+  }
+
+  private EditableSModelDescriptor getContextModel(AbstractTreeNode selectedNode) {
+    IFile modelFile = getModelFile(selectedNode);
+    if (modelFile == null) {
+      return null;
+    }
+    return SModelRepository.getInstance().findModel(modelFile);
+  }
+
+  private PasteProvider getPasteProvider(AbstractTreeNode selectedNode) {
+    jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(selectedNode.getProject());
+    if (mpsProject == null) {
+      return null;
+    }
+    EditableSModelDescriptor modelDescriptor = getModel(selectedNode);
+    if (modelDescriptor == null) {
+      return null;
+    }
+    SModel sModel = modelDescriptor.getSModel();
+    if (sModel == null) {
+      return null;
+    }
+    return new PasteProvider(sModel, mpsProject, modelDescriptor);
   }
 
   private IFile getModelFile(AbstractTreeNode treeNode) {

@@ -9,13 +9,16 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
+@Deprecated
 public class ClassifierVisibleStaticMembersScope extends ClassifierVisibleMembersScope {
+  @Deprecated
   public ClassifierVisibleStaticMembersScope(@Nullable SNode classifier, @Nullable SNode contextNode, int constraint) {
+    // if constraint == STATIC_FIELD use classifier.getVisibleMembers(contextNode, concept/StaticFieldDeclaration) 
+    // if constraint == STATIC_METHOD use classifier.getVisibleMembers(contextNode, concept/StaticMethodDeclaration) 
     super(toClassifierType(classifier), contextNode, constraint);
     if ((constraint & IClassifiersSearchScope.STATIC_MEMBER) != constraint) {
       throw new IllegalArgumentException("only static members are applicable");
     }
-
   }
 
   private static SNode toClassifierType(SNode classifier) {

@@ -4,13 +4,14 @@ package jetbrains.mps.build.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.VisibleArtifacts;
+import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 
 public class BuildLayout_ImportContent_BehaviorDescriptor extends BuildLayout_Node_BehaviorDescriptor implements BuildExternalDependency_BehaviorDescriptor, BuildLayout_FileSet_BehaviorDescriptor {
   public BuildLayout_ImportContent_BehaviorDescriptor() {
   }
 
-  public Iterable<SNode> virtual_getDependencyTargets_841011766566205095(SNode thisNode, VisibleArtifacts artifacts) {
-    return BuildLayout_ImportContent_Behavior.virtual_getDependencyTargets_841011766566205095(thisNode, artifacts);
+  public void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
+    BuildLayout_ImportContent_Behavior.virtual_fetchDependencies_5908258303322131137(thisNode, artifacts, builder);
   }
 
   @Override

@@ -8,7 +8,13 @@
     <zip destfile="${build.layout}/X/MpsB.zip">
       <fileset file="${basedir}/jetbrains.mps.build.sandbox/samples/buildA/abcde.jar" />
     </zip>
-    <tar destfile="${build.layout}/my.tar.gz">
+    <tar destfile="${build.layout}/my.tar">
+      <tarfileset file="${basedir}/jetbrains.mps.build.tests/tests.msd" prefix="A1" />
+    </tar>
+    <tar destfile="${build.layout}/my.tar.gz" compression="gzip">
+      <tarfileset file="${basedir}/jetbrains.mps.build.tests/tests.msd" prefix="A2/A3" />
+    </tar>
+    <tar destfile="${build.layout}/my.tar.bz2" compression="bzip2">
       <tarfileset file="${basedir}/jetbrains.mps.build.tests/tests.msd" filemode="640" />
       <tarfileset dir="${basedir}/jetbrains.mps.build.sandbox/models" filemode="640" dirmode="750">
         <include name="*.mps" />

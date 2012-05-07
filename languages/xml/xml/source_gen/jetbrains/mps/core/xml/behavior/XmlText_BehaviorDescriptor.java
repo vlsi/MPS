@@ -8,20 +8,20 @@ public class XmlText_BehaviorDescriptor extends XmlContent_BehaviorDescriptor {
   public XmlText_BehaviorDescriptor() {
   }
 
-  public boolean virtual_isLastPositionAllowed_6999033275467334895(SNode thisNode) {
-    return XmlText_Behavior.virtual_isLastPositionAllowed_6999033275467334895(thisNode);
+  public boolean virtual_onNewLine_2133624044437631588(SNode thisNode) {
+    return XmlText_Behavior.virtual_onNewLine_2133624044437631588(thisNode);
   }
 
-  public boolean virtual_hasNewLineAfter_6999033275467469870(SNode thisNode) {
-    return XmlText_Behavior.virtual_hasNewLineAfter_6999033275467469870(thisNode);
+  public boolean virtual_isFirstPositionAllowed_2133624044437631446(SNode thisNode) {
+    return XmlText_Behavior.virtual_isFirstPositionAllowed_2133624044437631446(thisNode);
   }
 
-  public boolean virtual_isFirstPositionAllowed_6999033275467334890(SNode thisNode) {
-    return XmlText_Behavior.virtual_isFirstPositionAllowed_6999033275467334890(thisNode);
+  public boolean virtual_isLastPositionAllowed_2133624044437631519(SNode thisNode) {
+    return XmlText_Behavior.virtual_isLastPositionAllowed_2133624044437631519(thisNode);
   }
 
-  public boolean virtual_onNewLine_6999033275467469862(SNode thisNode) {
-    return XmlText_Behavior.virtual_onNewLine_6999033275467469862(thisNode);
+  public boolean virtual_hasNewLineAfter_2133624044437631594(SNode thisNode) {
+    return XmlText_Behavior.virtual_hasNewLineAfter_2133624044437631594(thisNode);
   }
 
   @Override

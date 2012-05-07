@@ -4,7 +4,8 @@ package jetbrains.mps.build.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.VisibleArtifacts;
+import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 
 public interface BuildExternalDependency_BehaviorDescriptor {
-  public Iterable<SNode> virtual_getDependencyTargets_841011766566205095(SNode thisNode, VisibleArtifacts artifacts);
+  public void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder);
 }

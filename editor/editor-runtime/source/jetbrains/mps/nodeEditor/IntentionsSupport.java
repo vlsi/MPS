@@ -24,7 +24,6 @@ import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.openapi.util.Pair;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.ide.actions.MPSActions;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.intentions.*;
 import jetbrains.mps.intentions.IntentionsManager.QueryDescriptor;
@@ -33,6 +32,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionListener;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -41,19 +41,15 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.AbstractAction;
-import javax.swing.Icon;
-import javax.swing.JComponent;
-import javax.swing.KeyStroke;
+import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import java.awt.Dimension;
-import java.awt.Point;
-import java.awt.Rectangle;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.util.*;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class IntentionsSupport {
@@ -121,7 +117,6 @@ public class IntentionsSupport {
   private void checkAndShowMenu() {
     if (isInconsistentEditor()) return;
     if (myEditor.isReadOnly() || myEditor.getSelectedNode().getModel().isNotEditable()) return;
-    if (!hasIntentions()) return;
 
     showIntentionsMenu();
   }
@@ -142,6 +137,7 @@ public class IntentionsSupport {
           boolean show = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
             public Boolean compute() {
               if (isInconsistentEditor() || myEditor.isReadOnly()) return false;
+              // TODO check for ActionsAsIntentions
               return !getEnabledIntentions(false).isEmpty();
             }
           });
@@ -287,13 +283,19 @@ public class IntentionsSupport {
     return intentionActionGroup;
   }
 
-  private BaseGroup getIntentionsGroup() {
-    BaseGroup group = new BaseGroup("");
+  private BaseGroup getIntentionsGroup(final DataContext dataContext) {
+    // intentions
     List<Pair<Intention, SNode>> groupItems = new ArrayList<Pair<Intention, SNode>>();
     groupItems.addAll(getEnabledIntentions(true));
-    if (groupItems.isEmpty()) {
+
+    // actions as intentions
+    List<AnAction> actions = new ArrayList<AnAction>();
+    collectActionsAsIntentions(ActionManager.getInstance().getAction(MPSActions.ACTIONS_AS_INTENTIONS_GROUP), actions, dataContext);
+
+    if (groupItems.isEmpty() && actions.isEmpty()) {
       return null;
     }
+    // TODO sort actions & intentions together
     Collections.sort(groupItems, new Comparator<Pair<Intention, SNode>>() {
       public int compare(Pair<Intention, SNode> o1, Pair<Intention, SNode> o2) {
         Intention intention1 = o1.getFirst();
@@ -308,56 +310,59 @@ public class IntentionsSupport {
         return intention1.getDescription(node1, context).compareTo(intention2.getDescription(node2, context));
       }
     });
+    BaseGroup group = new BaseGroup("");
     for (final Pair<Intention, SNode> pair : groupItems) {
       group.add(getIntentionGroup(pair.getFirst(), pair.getSecond()));
     }
+    group.addAll(actions);
     return group;
   }
-  
-  private void addActionsAsIntentions(AnAction action, BaseGroup group, DataContext dataContext) {
+
+  private void collectActionsAsIntentions(AnAction action, List<AnAction> actions, DataContext dataContext) {
     if (action instanceof ActionGroup) {
-      for (AnAction child : ((ActionGroup)action).getChildren(null)) {
-        addActionsAsIntentions(child, group, dataContext);
+      for (AnAction child : ((ActionGroup) action).getChildren(null)) {
+        collectActionsAsIntentions(child, actions, dataContext);
       }
-    }
-    if (action instanceof BaseAction) {
+    } else if (action instanceof BaseAction) {
       Presentation presentation = new Presentation();
       presentation.setDescription(action.getTemplatePresentation().getDescription());
-      ((BaseAction) action).isApplicable(new AnActionEvent(null, dataContext, "", presentation,
-        ActionManager.getInstance(), 0));
-      group.add(action);
+      action.update(new AnActionEvent(null, dataContext, "", presentation, ActionManager.getInstance(), 0));
+      if (presentation.isVisible()) {
+        actions.add(action);
+      }
     }
   }
 
   private void showIntentionsMenu() {
-    EditorContext editorContext = myEditor.getEditorContext();
+    final EditorContext editorContext = myEditor.getEditorContext();
+    ListPopup popup = ModelAccess.instance().runReadAction(new Computable<ListPopup>() {
+      public ListPopup compute() {
+        DataContext dataContext = DataManager.getInstance().getDataContext(editorContext.getNodeEditorComponent());
+        BaseGroup group = getIntentionsGroup(dataContext);
+        if (group == null) {
+          return null;
+        }
+        return JBPopupFactory.getInstance().createActionGroupPopup(
+          "Intentions",
+          group,
+          dataContext,
+          JBPopupFactory.ActionSelectionAid.SPEEDSEARCH,
+          false);
+      }
+    });
+
+    if (popup == null) {
+      return;
+    }
+
     final EditorCell selectedCell = editorContext.getSelectedCell();
     int x = selectedCell.getX();
     int y = selectedCell.getY();
     if (selectedCell instanceof EditorCell_Label) {
       y += ((EditorCell_Label) selectedCell).getHeight();
     }
-    final DataContext dataContext = DataManager.getInstance().getDataContext(editorContext.getNodeEditorComponent(), x, y);
-    ListPopup popup = ModelAccess.instance().runReadAction(new Computable<ListPopup>() {
-      public ListPopup compute() {
-        BaseGroup group = getIntentionsGroup();
-        addActionsAsIntentions(ActionManager.getInstance().getAction(MPSActions.ACTIONS_AS_INTENTIONS_GROUP), group, dataContext);
-        ListPopup popup = null;
-        if (group != null) {
-          popup = JBPopupFactory.getInstance()
-            .createActionGroupPopup("Intentions",
-              group,
-              dataContext,
-              JBPopupFactory.ActionSelectionAid.SPEEDSEARCH,
-              false);
-        }
-        return popup;
-      }
-    });
     RelativePoint relativePoint = new RelativePoint(editorContext.getNodeEditorComponent(), new Point(x, y));
-    if (popup != null) {
-      popup.show(relativePoint);
-    }
+    popup.show(relativePoint);
   }
 
   private void showLightBulb(Computable<Boolean> terminated) {
@@ -374,29 +379,6 @@ public class IntentionsSupport {
       }
     }
     showLightBulbComponent(typeToShow == IntentionType.NORMAL ? Icons.INTENTION : typeToShow.getIcon());
-  }
-
-  private boolean hasIntentions() {
-    SNode node = myEditor.getSelectedNode();
-    EditorContext editorContext = myEditor.getEditorContext();
-
-    QueryDescriptor query = new QueryDescriptor();
-    query.setIntentionClass(BaseIntention.class);
-
-    return !IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext).isEmpty();
-  }
-
-  private Set<Pair<Intention, SNode>> getAvailableIntentions() {
-    final Set<Pair<Intention, SNode>> result = new LinkedHashSet<Pair<Intention, SNode>>();
-    SNode node = myEditor.getSelectedNode();
-    EditorContext editorContext = myEditor.getEditorContext();
-    if (node != null && editorContext != null) {
-      QueryDescriptor query = new QueryDescriptor();
-      query.setIntentionClass(BaseIntention.class);
-      query.setInstantiate(true);
-      result.addAll(IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext));
-    }
-    return result;
   }
 
   private Set<Pair<Intention, SNode>> getEnabledIntentions(boolean instantiateParameterized) {

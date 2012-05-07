@@ -43,7 +43,9 @@
       </filterchain>
     </copy>
     <zip destfile="${build.layout}/importTest/importResult.zip">
-      <zipfileset dir="${artifacts.buildA}" includes="result/**" filemode="754" dirmode="752" />
+      <zipfileset dir="${artifacts.buildA}" filemode="754" dirmode="752">
+        <include name="result/**" />
+      </zipfileset>
       <zipfileset dir="${build.tmp}/deps/buildA/A-_dl_{aver}.zip" filemode="754" dirmode="752" />
       <zipfileset file="${basedir}/buildB.xml" filemode="754" />
       <zipfileset dir="${basedir}/moduleB/src/jetbrains/moduleB" filemode="754" dirmode="752" />

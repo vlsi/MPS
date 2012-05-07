@@ -12,10 +12,13 @@ import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.Condition;
 
+@Deprecated
 public class ParameterScope extends AbstractSearchScope {
   private List<SNode> params;
 
+  @Deprecated
   public ParameterScope(SNode contextNode) {
+    // use Adapters.getParameterScope in jetbrains.mps.baseLanguage.scopes instead 
     List<SNode> methods = ListSequence.fromList(new ArrayList<SNode>());
     SNode current = contextNode;
     while ((current != null)) {

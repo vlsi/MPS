@@ -22,17 +22,10 @@ public class BuildLayout_Tar_Behavior {
     String tarLocation = parentLocation + "/" + BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(thisNode, "containerName", true), helper.getMacroHelper());
     helper.locations().put(thisNode, tarLocation);
 
-    boolean needUnpack = false;
-    for (SNode c : SLinkOperations.getTargets(thisNode, "children", true)) {
-      if (helper.isRequired(c)) {
-        needUnpack = true;
-        break;
-      }
-    }
-    if (needUnpack) {
+    if (helper.isContentRequired(thisNode)) {
       String tempPath = helper.getPathProvider().createTempPath(SPropertyOperations.getString(thisNode, "name"), "deps", SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.structure.BuildProject", false, false), "name"));
-      helper.emit(new BuildLayout_Tar_Behavior.QuotationClass_cokct5_a0a0b0h0b().createNode(tempPath));
-      helper.emit(new BuildLayout_Tar_Behavior.QuotationClass_cokct5_a0a0c0h0b().createNode(tarLocation, tempPath));
+      helper.emit(new BuildLayout_Tar_Behavior.QuotationClass_cokct5_a0a0b0f0b().createNode(tempPath));
+      helper.emit(new BuildLayout_Tar_Behavior.QuotationClass_cokct5_a0a0c0f0b().createNode(tarLocation, tempPath, SPropertyOperations.getString_def(thisNode, "compression", "none")));
       helper.contentLocations().put(thisNode, tempPath);
     }
   }
@@ -53,8 +46,8 @@ public class BuildLayout_Tar_Behavior {
     return true;
   }
 
-  public static class QuotationClass_cokct5_a0a0b0h0b {
-    public QuotationClass_cokct5_a0a0b0h0b() {
+  public static class QuotationClass_cokct5_a0a0b0f0b {
+    public QuotationClass_cokct5_a0a0b0f0b() {
     }
 
     public SNode createNode(Object parameter_9) {
@@ -92,11 +85,11 @@ public class BuildLayout_Tar_Behavior {
     }
   }
 
-  public static class QuotationClass_cokct5_a0a0c0h0b {
-    public QuotationClass_cokct5_a0a0c0h0b() {
+  public static class QuotationClass_cokct5_a0a0c0f0b {
+    public QuotationClass_cokct5_a0a0c0f0b() {
     }
 
-    public SNode createNode(Object parameter_13, Object parameter_14) {
+    public SNode createNode(Object parameter_17, Object parameter_18, Object parameter_19) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -105,41 +98,55 @@ public class BuildLayout_Tar_Behavior {
       SNode quotedNode_4 = null;
       SNode quotedNode_5 = null;
       SNode quotedNode_6 = null;
+      SNode quotedNode_7 = null;
+      SNode quotedNode_8 = null;
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfAntStatement", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_7 = quotedNode_1;
+        SNode quotedNode1_9 = quotedNode_1;
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlElement", null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_8 = quotedNode_2;
-          quotedNode1_8.setProperty("shortEmptyNotation", "true");
-          quotedNode1_8.setProperty("tagName", "untar");
+          SNode quotedNode1_10 = quotedNode_2;
+          quotedNode1_10.setProperty("shortEmptyNotation", "true");
+          quotedNode1_10.setProperty("tagName", "untar");
           {
             quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, GlobalScope.getInstance(), false);
-            SNode quotedNode1_9 = quotedNode_3;
-            quotedNode1_9.setProperty("attrName", "src");
-            {
-              quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, GlobalScope.getInstance(), false);
-              SNode quotedNode1_10 = quotedNode_5;
-              quotedNode1_10.setProperty("text", (String) parameter_13);
-              quotedNode_3.addChild("value", quotedNode1_10);
-            }
-            quotedNode_2.addChild("attributes", quotedNode1_9);
-          }
-          {
-            quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, GlobalScope.getInstance(), false);
-            SNode quotedNode1_11 = quotedNode_4;
-            quotedNode1_11.setProperty("attrName", "dest");
+            SNode quotedNode1_11 = quotedNode_3;
+            quotedNode1_11.setProperty("attrName", "src");
             {
               quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_12 = quotedNode_6;
-              quotedNode1_12.setProperty("text", (String) parameter_14);
-              quotedNode_4.addChild("value", quotedNode1_12);
+              quotedNode1_12.setProperty("text", (String) parameter_17);
+              quotedNode_3.addChild("value", quotedNode1_12);
             }
             quotedNode_2.addChild("attributes", quotedNode1_11);
           }
-          quotedNode_1.addChild("element", quotedNode1_8);
+          {
+            quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, GlobalScope.getInstance(), false);
+            SNode quotedNode1_13 = quotedNode_4;
+            quotedNode1_13.setProperty("attrName", "dest");
+            {
+              quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, GlobalScope.getInstance(), false);
+              SNode quotedNode1_14 = quotedNode_7;
+              quotedNode1_14.setProperty("text", (String) parameter_18);
+              quotedNode_4.addChild("value", quotedNode1_14);
+            }
+            quotedNode_2.addChild("attributes", quotedNode1_13);
+          }
+          {
+            quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, GlobalScope.getInstance(), false);
+            SNode quotedNode1_15 = quotedNode_5;
+            quotedNode1_15.setProperty("attrName", "compression");
+            {
+              quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, GlobalScope.getInstance(), false);
+              SNode quotedNode1_16 = quotedNode_8;
+              quotedNode1_16.setProperty("text", (String) parameter_19);
+              quotedNode_5.addChild("value", quotedNode1_16);
+            }
+            quotedNode_2.addChild("attributes", quotedNode1_15);
+          }
+          quotedNode_1.addChild("element", quotedNode1_10);
         }
-        result = quotedNode1_7;
+        result = quotedNode1_9;
       }
       return result;
     }

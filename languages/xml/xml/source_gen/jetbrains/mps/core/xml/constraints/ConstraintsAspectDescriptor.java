@@ -7,20 +7,20 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
-  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.core.xml.structure.XmlAttribute", "jetbrains.mps.core.xml.structure.XmlCDATA", "jetbrains.mps.core.xml.structure.XmlCharRef", "jetbrains.mps.core.xml.structure.XmlCharRefValue", "jetbrains.mps.core.xml.structure.XmlCommentLine", "jetbrains.mps.core.xml.structure.XmlContent", "jetbrains.mps.core.xml.structure.XmlElement", "jetbrains.mps.core.xml.structure.XmlEntityRef", "jetbrains.mps.core.xml.structure.XmlEntityRefValue", "jetbrains.mps.core.xml.structure.XmlProcessingInstruction", "jetbrains.mps.core.xml.structure.XmlText", "jetbrains.mps.core.xml.structure.XmlTextValue", "jetbrains.mps.core.xml.structure.XmlValuePart"};
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.core.xml.structure.XmlAttribute", "jetbrains.mps.core.xml.structure.XmlCDATA", "jetbrains.mps.core.xml.structure.XmlCharRef", "jetbrains.mps.core.xml.structure.XmlCharRefValue", "jetbrains.mps.core.xml.structure.XmlCommentLine", "jetbrains.mps.core.xml.structure.XmlContent", "jetbrains.mps.core.xml.structure.XmlDeclaration", "jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration", "jetbrains.mps.core.xml.structure.XmlElement", "jetbrains.mps.core.xml.structure.XmlEntityRef", "jetbrains.mps.core.xml.structure.XmlEntityRefValue", "jetbrains.mps.core.xml.structure.XmlExternalId", "jetbrains.mps.core.xml.structure.XmlProcessingInstruction", "jetbrains.mps.core.xml.structure.XmlText", "jetbrains.mps.core.xml.structure.XmlTextValue", "jetbrains.mps.core.xml.structure.XmlValuePart", "jetbrains.mps.core.xml.structure.XmlWhitespace"};
 
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
-      case 9:
+      case 12:
         return new XmlProcessingInstruction_Constraints();
-      case 6:
-        return new XmlElement_Constraints();
       case 8:
+        return new XmlElement_Constraints();
+      case 10:
         return new XmlEntityRefValue_Constraints();
-      case 11:
+      case 14:
         return new XmlTextValue_Constraints();
       case 0:
         return new XmlAttribute_Constraints();
@@ -30,16 +30,24 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new XmlCDATA_Constraints();
       case 4:
         return new XmlCommentLine_Constraints();
-      case 7:
+      case 9:
         return new XmlEntityRef_Constraints();
-      case 10:
+      case 13:
         return new XmlText_Constraints();
       case 2:
         return new XmlCharRef_Constraints();
       case 3:
         return new XmlCharRefValue_Constraints();
-      case 12:
+      case 15:
         return new XmlValuePart_Constraints();
+      case 16:
+        return new XmlWhitespace_Constraints();
+      case 7:
+        return new XmlDoctypeDeclaration_Constraints();
+      case 11:
+        return new XmlExternalId_Constraints();
+      case 6:
+        return new XmlDeclaration_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);

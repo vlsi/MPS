@@ -22,7 +22,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodDeclaration_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.baseLanguage.search.InstanceMethodCall_InstanceMethodScope;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 
 public class QueriesGenerated {
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_5246850046234986611(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
@@ -82,7 +83,7 @@ public class QueriesGenerated {
           public Object compute() {
             SNode instance = ExtensionMethodDeclaration_Behavior.call_getThisType_8022092943109893938(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration", false, false));
             SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(instance, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
-            return new InstanceMethodCall_InstanceMethodScope(classifierType, _context.getCurrentTargetNode()).getNodes();
+            return Sequence.fromIterable(Classifier_Behavior.call_getVisibleMembers_8083692786967356611(SLinkOperations.getTarget(classifierType, "classifier", false), _context.getCurrentTargetNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")).getAvailableElements(null)).toListSequence();
           }
         };
         Iterable<SNode> queryResult = (Iterable) computable.compute();

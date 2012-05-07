@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)">
+<model modelUID="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" version="2">
   <persistence version="7" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <import index="356a" modelUID="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" version="0" implicit="yes" />
-  <import index="iuxj" modelUID="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" version="-1" implicit="yes" />
+  <import index="iuxj" modelUID="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" version="2" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6786756355279841993">
       <property name="name" nameId="tpck.1169194664001" value="XmlDocument" />
@@ -88,6 +88,44 @@
       <property name="name" nameId="tpck.1169194664001" value="XmlNoSpaceValue" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="6666499814681541916" resolveInfo="XmlValuePart" />
     </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="7604553062773674213">
+      <property name="name" nameId="tpck.1169194664001" value="XmlPrologElement" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7604553062773750440">
+      <property name="name" nameId="tpck.1169194664001" value="XmlWhitespace" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="2133624044437669768" resolveInfo="XmlBasePrologElement" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5228786488744996718">
+      <property name="name" nameId="tpck.1169194664001" value="XmlDeclaration" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="2133624044437669768" resolveInfo="XmlBasePrologElement" />
+    </node>
+    <node type="tpce.ConstrainedDataTypeDeclaration" typeId="tpce.1082978499127" id="5491461270226117666">
+      <property name="name" nameId="tpck.1169194664001" value="xmlVersionString" />
+      <property name="constraint" nameId="tpce.1083066089218" value="1.[0-9]+" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="2133624044437631294">
+      <property name="name" nameId="tpck.1169194664001" value="XmlPart" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2133624044437669768">
+      <property name="name" nameId="tpck.1169194664001" value="XmlBasePrologElement" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2133624044437898907">
+      <property name="name" nameId="tpck.1169194664001" value="XmlDoctypeDeclaration" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="2133624044437669768" resolveInfo="XmlBasePrologElement" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2133624044438029119">
+      <property name="name" nameId="tpck.1169194664001" value="XmlExternalId" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node type="tpce.ConstrainedDataTypeDeclaration" typeId="tpce.1082978499127" id="3374336260035925079">
+      <property name="name" nameId="tpck.1169194664001" value="xmlEncoding" />
+      <property name="constraint" nameId="tpce.1083066089218" value="[A-Za-z]([A-Za-z0-9._]|-)*" />
+    </node>
+    <node type="tpce.ConstrainedDataTypeDeclaration" typeId="tpce.1082978499127" id="3374336260035925081">
+      <property name="name" nameId="tpck.1169194664001" value="yesNoString" />
+      <property name="constraint" nameId="tpce.1083066089218" value="yes|no" />
+    </node>
   </roots>
   <root id="6786756355279841993">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6666499814681299060">
@@ -115,6 +153,9 @@
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="6666499814681299056">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2133624044437631295">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2133624044437631294" resolveInfo="XmlPart" />
+    </node>
   </root>
   <root id="6666499814681299053">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="6666499814681415857">
@@ -122,9 +163,11 @@
     </node>
   </root>
   <root id="6666499814681299057">
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6666499814681299059">
-      <property name="name" nameId="tpck.1169194664001" value="xmlVersion" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7604553062773674214">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="elements" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="7604553062773674213" resolveInfo="XmlPrologElement" />
     </node>
   </root>
   <root id="6666499814681299061">
@@ -147,6 +190,9 @@
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="8362121812264012161">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="1622293396949027983" resolveInfo="oneLineBlock" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7604553062773674216">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7604553062773674213" resolveInfo="XmlPrologElement" />
+    </node>
   </root>
   <root id="6666499814681299064">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="8886258982030605043">
@@ -161,6 +207,9 @@
       <property name="role" nameId="tpce.1071599776563" value="lines" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1622293396949036126" resolveInfo="XmlCommentLine" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7604553062773674215">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7604553062773674213" resolveInfo="XmlPrologElement" />
     </node>
   </root>
   <root id="6666499814681299066">
@@ -377,5 +426,112 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
     </node>
   </root>
+  <root id="7604553062773674213">
+    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2133624044437631435">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2133624044437631294" resolveInfo="XmlPart" />
+    </node>
+    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="3374336260035871157">
+      <property name="name" nameId="tpck.1169194664001" value="isFirst" />
+      <property name="inheritable" nameId="tpce.1218571350029" value="true" />
+    </node>
+    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="3374336260035871159">
+      <property name="name" nameId="tpck.1169194664001" value="isSingle" />
+      <property name="inheritable" nameId="tpce.1218571350029" value="true" />
+    </node>
+  </root>
+  <root id="7604553062773750440">
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5228786488744844115">
+      <property name="name" nameId="tpck.1169194664001" value="value" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3116093476406591728">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7604553062773674213" resolveInfo="XmlPrologElement" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="5491461270226101392">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </root>
+  <root id="5228786488744996718">
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5228786488744996719">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7604553062773674213" resolveInfo="XmlPrologElement" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5491461270226117667">
+      <property name="name" nameId="tpck.1169194664001" value="version" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="5491461270226117666" resolveInfo="xmlVersionString" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="3374336260035925078">
+      <property name="name" nameId="tpck.1169194664001" value="encoding" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="3374336260035925079" resolveInfo="xmlEncoding" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="3374336260035925080">
+      <property name="name" nameId="tpck.1169194664001" value="standalone" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="3374336260035925081" resolveInfo="yesNoString" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="2133624044437742230">
+      <property name="value" nameId="tpce.1105725733873" value="&lt;?xml" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="8411468024378228773">
+      <property name="value" nameId="tpce.1105725733873" value="xml declaration" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="3374336260035871164">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="3374336260035871157" resolveInfo="isFirst" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="3374336260035871168">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="3374336260035871159" resolveInfo="isSingle" />
+    </node>
+  </root>
+  <root id="5491461270226117666" />
+  <root id="2133624044437631294" />
+  <root id="2133624044437669768">
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2133624044437669769">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7604553062773674213" resolveInfo="XmlPrologElement" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="2133624044437669770">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
+    </node>
+  </root>
+  <root id="2133624044437898907">
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2133624044437898908">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7604553062773674213" resolveInfo="XmlPrologElement" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="2133624044437898909">
+      <property name="value" nameId="tpce.1105725733873" value="&lt;!DOCTYPE" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="8411468024378228775">
+      <property name="value" nameId="tpce.1105725733873" value="xml doctype declaration" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="3374336260035871162">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="3374336260035871159" resolveInfo="isSingle" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="2133624044437898910">
+      <property name="name" nameId="tpck.1169194664001" value="doctypeName" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2133624044438029120">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="externalId" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="2133624044438029119" resolveInfo="XmlExternalId" />
+    </node>
+  </root>
+  <root id="2133624044438029119">
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="2133624044438029123">
+      <property name="name" nameId="tpck.1169194664001" value="publicId" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="2133624044438029124">
+      <property name="name" nameId="tpck.1169194664001" value="systemId" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="2133624044438029125">
+      <property name="name" nameId="tpck.1169194664001" value="isPublic" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+  </root>
+  <root id="3374336260035925079" />
+  <root id="3374336260035925081" />
 </model>
 

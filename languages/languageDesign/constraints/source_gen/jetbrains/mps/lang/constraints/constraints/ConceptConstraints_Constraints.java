@@ -107,10 +107,13 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
             List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
 
             for (String descendant : allDescendants) {
-              SNode declaration = SNodeOperations.cast(SModelUtil.findConceptDeclaration(descendant, GlobalScope.getInstance()), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+              SNode declaration = SNodeOperations.cast(SModelUtil.findConceptDeclaration(descendant, GlobalScope.getInstance()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+              if (!(SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+                continue;
+              }
               Language declaringLanguage = SModelUtil.getDeclaringLanguage(declaration);
-              if (eq_guz8cy_a0c0i0a0a0a0b0a1a0b0d(currentLanguage, declaringLanguage)) {
-                ListSequence.fromList(result).addElement(declaration);
+              if (eq_guz8cy_a0d0i0a0a0a0b0a1a0b0d(currentLanguage, declaringLanguage)) {
+                ListSequence.fromList(result).addElement(SNodeOperations.cast(declaration, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
               }
             }
 
@@ -131,7 +134,7 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
     return LanguageAspect.CONSTRAINTS.is(model);
   }
 
-  private static boolean eq_guz8cy_a0c0i0a0a0a0b0a1a0b0d(Object a, Object b) {
+  private static boolean eq_guz8cy_a0d0i0a0a0a0b0a1a0b0d(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

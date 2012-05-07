@@ -17,16 +17,19 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModelReference;
 
+@Deprecated
 public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope {
   private SNode myTopClassifier;
   private int myOriginalConstraint;
 
+  @Deprecated
   public ClassifierAndSuperClassifiersScope(@Nullable SNode topClassifier, int constraint) {
     super(constraint ^ (constraint & (INSTANCE_METHOD | STATIC_METHOD | CONSTRUCTOR | INSTANCE_FIELD | STATIC_FIELD)));
     this.myTopClassifier = topClassifier;
     this.myOriginalConstraint = constraint;
   }
 
+  @Deprecated
   public ClassifierAndSuperClassifiersScope(@Nullable SNode topClassifier) {
     this(topClassifier, ANYTHING);
   }

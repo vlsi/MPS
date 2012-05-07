@@ -24,17 +24,10 @@ public class BuildLayout_Jar_Behavior {
     String zipLocation = parentLocation + "/" + BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(thisNode, "containerName", true), helper.getMacroHelper());
     helper.locations().put(thisNode, zipLocation);
 
-    boolean needUnpack = false;
-    for (SNode c : SLinkOperations.getTargets(thisNode, "children", true)) {
-      if (helper.isRequired(c)) {
-        needUnpack = true;
-        break;
-      }
-    }
-    if (needUnpack) {
+    if (helper.isContentRequired(thisNode)) {
       String tempPath = helper.getPathProvider().createTempPath(SPropertyOperations.getString(thisNode, "name"), "deps", SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.structure.BuildProject", false, false), "name"));
-      helper.emit(new BuildLayout_Jar_Behavior.QuotationClass_20awhq_a0a0b0h0b().createNode(tempPath));
-      helper.emit(new BuildLayout_Jar_Behavior.QuotationClass_20awhq_a0a0c0h0b().createNode(zipLocation, tempPath));
+      helper.emit(new BuildLayout_Jar_Behavior.QuotationClass_20awhq_a0a0b0f0b().createNode(tempPath));
+      helper.emit(new BuildLayout_Jar_Behavior.QuotationClass_20awhq_a0a0c0f0b().createNode(zipLocation, tempPath));
       helper.contentLocations().put(thisNode, tempPath);
     }
   }
@@ -73,8 +66,8 @@ public class BuildLayout_Jar_Behavior {
     return true;
   }
 
-  public static class QuotationClass_20awhq_a0a0b0h0b {
-    public QuotationClass_20awhq_a0a0b0h0b() {
+  public static class QuotationClass_20awhq_a0a0b0f0b {
+    public QuotationClass_20awhq_a0a0b0f0b() {
     }
 
     public SNode createNode(Object parameter_9) {
@@ -112,8 +105,8 @@ public class BuildLayout_Jar_Behavior {
     }
   }
 
-  public static class QuotationClass_20awhq_a0a0c0h0b {
-    public QuotationClass_20awhq_a0a0c0h0b() {
+  public static class QuotationClass_20awhq_a0a0c0f0b {
+    public QuotationClass_20awhq_a0a0c0f0b() {
     }
 
     public SNode createNode(Object parameter_13, Object parameter_14) {

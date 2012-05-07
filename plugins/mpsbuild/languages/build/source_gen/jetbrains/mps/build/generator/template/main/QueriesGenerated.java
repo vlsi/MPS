@@ -45,7 +45,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.build.generator.util.JavaExternalLibraryHelper;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.build.util.GenerationUtil;
-import jetbrains.mps.build.generator.util.FetchDependenciesProcessor;
+import jetbrains.mps.build.util.FetchDependenciesProcessor;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.util.Pair;
@@ -165,6 +165,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_8577651205286952543(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(_context.getNode(), Context.defaultContext(_context));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1979010778009295389(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString_def(_context.getNode(), "compression", "none");
   }
 
   public static Object propertyMacro_GetPropertyValue_7801138212747394903(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -575,6 +579,10 @@ public class QueriesGenerated {
     return Context.defaultContext(_context).getTempPath(SLinkOperations.getTarget(_context.getNode(), "module", false), SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "module", false), "name"), "java", "out");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1979010778008906784(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((Tuples._2<String, String>) _context.getVariable("var:targetLocation"))._1();
+  }
+
   public static Object propertyMacro_GetPropertyValue_5610619299013114890(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ((Tuples._2<String, String>) _context.getVariable("var:targetLocation"))._0();
   }
@@ -587,10 +595,6 @@ public class QueriesGenerated {
       _context.showErrorMessage(_context.getNode(), "cannot import abstract element, should be file or folder");
     }
     return "dir";
-  }
-
-  public static Object propertyMacro_GetPropertyValue_6684802082773280544(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((Tuples._2<String, String>) _context.getVariable("var:targetLocation"))._1();
   }
 
   public static Object propertyMacro_GetPropertyValue_6408167411310656493(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -955,6 +959,10 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
   }
 
+  public static boolean ifMacro_Condition_1979010778009294646(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(SPropertyOperations.hasValue(_context.getNode(), "compression", "none", "none"));
+  }
+
   public static boolean ifMacro_Condition_7801138212747394913(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SPropertyOperations.getString(_context.getNode(), "filemode") != null && SPropertyOperations.getString(_context.getNode(), "filemode").length() > 0);
   }
@@ -1103,7 +1111,12 @@ public class QueriesGenerated {
     return Sequence.fromIterable(((Tuples._2<Iterable<SNode>, String>) _context.getVariable("var:depsAndBasePath"))._0()).isNotEmpty();
   }
 
-  public static boolean ifMacro_Condition_6684802082773279700(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_6408167411310620878(final IOperationContext operationContext, final IfMacroContext _context) {
+    _context.showErrorMessage(_context.getNode(), "cannot reduce fileset, unknown concept: " + _context.getNode().getConceptFqName());
+    return false;
+  }
+
+  public static boolean ifMacro_Condition_1979010778008906788(final IOperationContext operationContext, final IfMacroContext _context) {
     return ((Tuples._2<String, String>) _context.getVariable("var:targetLocation"))._1() != null;
   }
 
@@ -1151,11 +1164,6 @@ public class QueriesGenerated {
     return ((Tuples._3<String, String, String>) _context.getVariable("var:archive"))._2() != null;
   }
 
-  public static boolean ifMacro_Condition_6408167411310620878(final IOperationContext operationContext, final IfMacroContext _context) {
-    _context.showErrorMessage(_context.getNode(), "cannot reduce fileset, unknown concept: " + _context.getNode().getConceptFqName());
-    return false;
-  }
-
   public static boolean ifMacro_Condition_5979287180587467645(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.getContainingRoot(_context.getNode()) != SNodeOperations.getContainingRoot(((SNode) _context.getVariable("library")));
   }
@@ -1197,6 +1205,10 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_3717132724152951510(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "classpath", true);
+  }
+
+  public static SNode sourceNodeQuery_8056730377013464320(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "classpath", true);
   }
 

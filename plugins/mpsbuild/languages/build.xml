@@ -1,8 +1,0 @@
-<project name="build-langs-plugin" default="default">
-    <property file="./build.properties"/>
-    <import file="./deploySolution/source_gen/jetbrains/mps/buildScript/deploy/build/buildLanguage-default.xml"/>
-
-    <target name="default">
-        <antcall target="main"/>
-    </target>
-</project>

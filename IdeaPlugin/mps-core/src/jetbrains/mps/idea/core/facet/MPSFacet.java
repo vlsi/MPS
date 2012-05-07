@@ -61,7 +61,7 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
             myMpsProject = ProjectHelper.toMPSProject(project);
 
             MPSModuleRepository repository = MPSModuleRepository.getInstance();
-            if (ModuleRepositoryFacade.getInstance().getModule(solutionDescriptor.getModuleReference()) !=null) {
+            if (ModuleRepositoryFacade.getInstance().getModule(solutionDescriptor.getModuleReference()) != null) {
               MessagesViewTool.log(project, MessageKind.ERROR, MPSBundle.message("facet.cannot.load.second.module", solutionDescriptor.getNamespace()));
               return;
             }
@@ -77,6 +77,9 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
 
   @Override
   public void disposeFacet() {
+    if (!wasInitialized()) {
+      return;
+    }
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
@@ -92,14 +95,15 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
   }
 
   public void setConfiguration(final MPSConfigurationBean configurationBean) {
-    if (wasInitialized()) {
-      ModelAccess.instance().runWriteInEDT(new Runnable() {
-        @Override
-        public void run() {
-          mySolution.setSolutionDescriptor(configurationBean.getSolutionDescriptor(), false);
-        }
-      });
+    if (!wasInitialized()) {
+      return;
     }
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
+      public void run() {
+        mySolution.setSolutionDescriptor(configurationBean.getSolutionDescriptor(), false);
+      }
+    });
   }
 
   public Solution getSolution() {
