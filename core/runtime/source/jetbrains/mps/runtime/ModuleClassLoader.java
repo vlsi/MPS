@@ -40,7 +40,10 @@ public class ModuleClassLoader extends ClassLoader {
     myModule = module;
   }
 
-  protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+  /**
+   * This method inherits its synchronized modifier from the overridden method. See MPS-15811
+   */
+  protected synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
     if (!myModule.canLoad()) throw new ClassNotFoundException(name);
 
     //This does not guarantee that if one class was loaded, it will be returned by sequential loadClass immediately,
@@ -70,7 +73,7 @@ public class ModuleClassLoader extends ClassLoader {
       //This method can be called either explicitly or by module dependency
       //This lock guarantees that the same class is not loaded simultaneously by 2 threads (only sequential loads),
       //and if it was already loaded, the user will get the loaded instance, not a new one
-      synchronized (LOADING_LOCK) {
+      synchronized (this /*LOADING_LOCK*/) {
         Class c = findLoadedClass(name);
         if (c != null) return c;
 
