@@ -68,7 +68,7 @@ public class ModuleClassLoader extends ClassLoader {
 
   private Class<?> findInSelfAndDependencies(String name, boolean includeDependencies, boolean includeParents) throws ClassNotFoundException {
     //from self
-    if (myModule.canLoadFromSelf()) {
+    if (myModule.canLoadFromSelf() && myModule.canFindClass(name)) {
       //The purpose of this lock is to load class only once
       //This method can be called either explicitly or by module dependency
       //This lock guarantees that the same class is not loaded simultaneously by 2 threads (only sequential loads),
