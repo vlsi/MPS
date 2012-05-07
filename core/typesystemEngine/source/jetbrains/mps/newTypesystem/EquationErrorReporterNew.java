@@ -21,6 +21,7 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.typesystem.PresentationManager;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
@@ -32,7 +33,7 @@ public class EquationErrorReporterNew extends AbstractErrorReporter implements I
   private SNode myLeft;
   private SNode myRight;
 
-  private SNode mySNode;
+  private SNodePointer mySNodePointer;
 
   public EquationErrorReporterNew(SNode node, jetbrains.mps.newTypesystem.state.State state, String before, SNode left, String between, SNode right,
                                   String after, String ruleModel, String ruleId) {
@@ -43,7 +44,7 @@ public class EquationErrorReporterNew extends AbstractErrorReporter implements I
     myBetween = between;
     myLeft = left;
     myRight = right;
-    mySNode = node;
+    mySNodePointer = new SNodePointer(node);
   }
 
   public EquationErrorReporterNew(SNode node, jetbrains.mps.newTypesystem.state.State state, String before, SNode left, String between, SNode right,
@@ -74,6 +75,6 @@ public class EquationErrorReporterNew extends AbstractErrorReporter implements I
   }
 
   public SNode getSNode() {
-    return mySNode;
+    return mySNodePointer.getNode();
   }
 }
