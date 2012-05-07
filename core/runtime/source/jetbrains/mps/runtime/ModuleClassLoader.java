@@ -31,7 +31,7 @@ public class ModuleClassLoader extends ClassLoader {
   private boolean myDisposed;
   private IClassLoadingModule myModule;
 
-  private final Object LOADING_LOCK = new Object();
+  private static final Object LOADING_LOCK = new Object();
   //This must be thread-safe. This does not include results of parent classloader
   private final Map<String, Class> myClasses = Collections.synchronizedMap(new THashMap<String, Class>());
 
@@ -40,52 +40,45 @@ public class ModuleClassLoader extends ClassLoader {
     myModule = module;
   }
 
-  /**
-   * This method inherits its synchronized modifier from the overridden method. See MPS-15811
-   */
-  protected synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
-    if (!myModule.canLoad()) throw new ClassNotFoundException(name);
+  protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+    synchronized (LOADING_LOCK) {
+      if (!myModule.canLoad()) throw new ClassNotFoundException(name);
 
-    //This does not guarantee that if one class was loaded, it will be returned by sequential loadClass immediately,
-    //but only makes classloading faster. The uniqueness is guaranteed by sync-block with LOADING_LOCK
-    if (myClasses.containsKey(name)) {
-      Class cl = myClasses.get(name);
-      if (cl == null) throw new ClassNotFoundException(name);
-      return cl;
-    }
-
-    Class<?> clazz = null;
-    try {
-      clazz = findInSelfAndDependencies(name, true, true);
-      if (resolve) {
-        resolveClass(clazz);
+      //This does not guarantee that if one class was loaded, it will be returned by sequential loadClass immediately,
+      //but only makes classloading faster.
+      if (myClasses.containsKey(name)) {
+        Class cl = myClasses.get(name);
+        if (cl == null) throw new ClassNotFoundException(name);
+        return cl;
       }
-      return clazz;
-    } finally {
-      myClasses.put(name, clazz);
+
+      Class<?> clazz = null;
+      try {
+        clazz = findInSelfAndDependencies(name, true, true);
+        if (resolve) {
+          resolveClass(clazz);
+        }
+        return clazz;
+      } finally {
+        myClasses.put(name, clazz);
+      }
     }
   }
 
   private Class<?> findInSelfAndDependencies(String name, boolean includeDependencies, boolean includeParents) throws ClassNotFoundException {
     //from self
-    if (myModule.canLoadFromSelf() && myModule.canFindClass(name)) {
-      //The purpose of this lock is to load class only once
-      //This method can be called either explicitly or by module dependency
-      //This lock guarantees that the same class is not loaded simultaneously by 2 threads (only sequential loads),
-      //and if it was already loaded, the user will get the loaded instance, not a new one
-      synchronized (this /*LOADING_LOCK*/) {
-        Class c = findLoadedClass(name);
-        if (c != null) return c;
+    if (myModule.canLoadFromSelf()) {
+      Class c = findLoadedClass(name);
+      if (c != null) return c;
 
-        byte[] bytes = myModule.findClassBytes(name);
-        if (bytes != null) {
-          String pack = NameUtil.namespaceFromLongName(name);
-          if (getPackage(pack) == null) {
-            definePackage(pack, null, null, null, null, null, null, null);
-          }
-          ClassLoaderManager.getInstance().classLoaded(name, ((ClassLoadingModule) myModule).getModuleReference());
-          return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
+      byte[] bytes = myModule.findClassBytes(name);
+      if (bytes != null) {
+        String pack = NameUtil.namespaceFromLongName(name);
+        if (getPackage(pack) == null) {
+          definePackage(pack, null, null, null, null, null, null, null);
         }
+        ClassLoaderManager.getInstance().classLoaded(name, ((ClassLoadingModule) myModule).getModuleReference());
+        return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
       }
     }
 
@@ -103,7 +96,6 @@ public class ModuleClassLoader extends ClassLoader {
           queue.add(m);
         }
       }
-
 
       if (includeParents) {
         //from dependencies (try parent class loaders also)
