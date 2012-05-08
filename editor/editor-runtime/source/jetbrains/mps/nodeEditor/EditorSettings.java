@@ -278,8 +278,8 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
     private boolean myPowerSaveMode = false;
     private boolean myHighlightChanges = false;
 
-    private boolean showPlain = true;
-    private boolean showGrayed = true;
+    private boolean showPlain = false;
+    private boolean showGrayed = false;
     private boolean show = true;
 
     @Override
