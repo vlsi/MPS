@@ -184,13 +184,6 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
       if (!(module instanceof ClassLoadingModule)) return null;
       ClassLoadingModule clm  = ((ClassLoadingModule) module);
 
-      if (avoidLogErrors) {
-        ClassLoader cl = clm.getClassLoader();
-        if (cl == null) {
-          return null;
-        }
-      }
-
       Class clazz = clm.getClass(className);
       if (clazz == null) {
         return null;

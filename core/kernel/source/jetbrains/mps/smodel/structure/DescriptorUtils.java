@@ -35,13 +35,6 @@ public class DescriptorUtils {
         return null;
       }
 
-      if (avoidLogErrors) {
-        ClassLoader cl = language.getClassLoader();
-        if (cl == null) {
-          return null;
-        }
-      }
-
       Class clazz = language.getClass(className);
       if (clazz == null) {
         return null;
@@ -59,13 +52,6 @@ public class DescriptorUtils {
     try {
       if (language == null) {
         return null;
-      }
-
-      if (avoidLogErrors) {
-        ClassLoader cl = language.getClassLoader();
-        if (cl == null) {
-          return null;
-        }
       }
 
       Class clazz = language.getClass(className);

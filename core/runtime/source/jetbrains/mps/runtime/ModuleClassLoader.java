@@ -31,7 +31,6 @@ public class ModuleClassLoader extends ClassLoader {
   private boolean myDisposed;
   private IClassLoadingModule myModule;
 
-  private static final Object LOADING_LOCK = new Object();
   //This must be thread-safe. This does not include results of parent classloader
   private final Map<String, Class> myClasses = Collections.synchronizedMap(new THashMap<String, Class>());
 
@@ -41,27 +40,25 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
-    synchronized (LOADING_LOCK) {
-      if (!myModule.canLoad()) throw new ClassNotFoundException(name);
+    if (!myModule.canLoad()) throw new ClassNotFoundException(name);
 
-      //This does not guarantee that if one class was loaded, it will be returned by sequential loadClass immediately,
-      //but only makes classloading faster.
-      if (myClasses.containsKey(name)) {
-        Class cl = myClasses.get(name);
-        if (cl == null) throw new ClassNotFoundException(name);
-        return cl;
-      }
+    //This does not guarantee that if one class was loaded, it will be returned by sequential loadClass immediately,
+    //but only makes classloading faster.
+    if (myClasses.containsKey(name)) {
+      Class cl = myClasses.get(name);
+      if (cl == null) throw new ClassNotFoundException(name);
+      return cl;
+    }
 
-      Class<?> clazz = null;
-      try {
-        clazz = findInSelfAndDependencies(name, true, true);
-        if (resolve) {
-          resolveClass(clazz);
-        }
-        return clazz;
-      } finally {
-        myClasses.put(name, clazz);
+    Class<?> clazz = null;
+    try {
+      clazz = findInSelfAndDependencies(name, true, true);
+      if (resolve) {
+        resolveClass(clazz);
       }
+      return clazz;
+    } finally {
+      myClasses.put(name, clazz);
     }
   }
 
