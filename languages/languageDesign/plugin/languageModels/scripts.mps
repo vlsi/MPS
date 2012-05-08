@@ -915,7 +915,7 @@
                   </node>
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3777417014413113787">
-                  <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.project.dependency.ModuleDependenciesManager.getAllRequiredModules():java.util.Set" />
+                  <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.project.dependency.DependenciesManager.getAllRequiredModules():java.util.Set" />
                 </node>
               </node>
             </node>
@@ -989,7 +989,7 @@
                   </node>
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3777417014413121108">
-                  <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.project.dependency.ModuleDependenciesManager.getAllUsedLanguages():java.util.Set" />
+                  <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.project.dependency.DependenciesManager.getAllUsedLanguages():java.util.Set" />
                 </node>
               </node>
             </node>

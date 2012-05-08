@@ -153,7 +153,7 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation") && StubRefUtil.isInstanceMethodCall(SNodeOperations.cast(SLinkOperations.getTarget(node, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "jetbrains.mps.project.dependency.ModuleDependenciesManager.getAllRequiredModules():java.util.Set");
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation") && StubRefUtil.isInstanceMethodCall(SNodeOperations.cast(SLinkOperations.getTarget(node, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "jetbrains.mps.project.dependency.DependenciesManager.getAllRequiredModules():java.util.Set");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -178,7 +178,7 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation") && StubRefUtil.isInstanceMethodCall(SNodeOperations.cast(SLinkOperations.getTarget(node, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "jetbrains.mps.project.dependency.ModuleDependenciesManager.getAllUsedLanguages():java.util.Set");
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation") && StubRefUtil.isInstanceMethodCall(SNodeOperations.cast(SLinkOperations.getTarget(node, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "jetbrains.mps.project.dependency.DependenciesManager.getAllUsedLanguages():java.util.Set");
       }
 
       public void doUpdateInstanceNode(SNode node) {
