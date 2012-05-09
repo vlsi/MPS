@@ -260,6 +260,7 @@
     <classNode dependClassName="jetbrains.mps.ide.migration.migration25.Migrations25_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.migration.migration25.MovePluginsOutOfLanguages_Action" />
     <classNode dependClassName="jetbrains.mps.ide.migration.migration25.OptimizeImportsInProject_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.migration25.OptimizeProjectImports_Action" />
     <classNode dependClassName="jetbrains.mps.ide.migration.migration25.OptionalMigrations_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.migration.migration25.UpdateRefactoringVersions_Action" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
@@ -565,6 +566,24 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.migration.migration25.OptimizeProjectImports_Action" file="OptimizeProjectImports_Action.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.project.OptimizeImportsHelper" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
