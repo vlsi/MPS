@@ -8,6 +8,7 @@
     </path>
 
     <target name="test" depends="build">
+        <delete dir="testBuild"/>
         <mkdir dir="testBuild"/>
         <unzip dest="testBuild/new" src="../../build/artifacts/buildDistribution/${build.number}.zip"/>
         <unzip dest="testBuild/old" src="../../artifacts/${build.number}.zip"/>

@@ -7059,6 +7059,222 @@
     </node>
   </root>
   <root id="4301118715654192646">
+    <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Branding" typeId="kdzh.7753544965996377997" id="7753544965996546378">
+      <property name="major" nameId="kdzh.3497141547781541444" value="2" />
+      <property name="minor" nameId="kdzh.3497141547781541445" value="5" />
+      <property name="eap" nameId="kdzh.3497141547781541446" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="MPS" />
+      <node role="buildNumber" roleId="kdzh.6108265972537229337" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="7753544965996546381">
+        <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="7753544965996568568">
+          <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="4301118715654465616" resolveInfo="build.number" />
+        </node>
+      </node>
+      <node role="icon16" roleId="kdzh.6108265972537229339" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="7753544965996546383">
+        <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996590692">
+          <property name="head" nameId="3ior.8618885170173601779" value="workbench" />
+          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996590693">
+            <property name="head" nameId="3ior.8618885170173601779" value="mps-workbench" />
+            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996590696">
+              <property name="head" nameId="3ior.8618885170173601779" value="source" />
+              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996590697">
+                <property name="head" nameId="3ior.8618885170173601779" value="MPS_16.png" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="shortName" roleId="kdzh.6108265972537372847" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="7753544965996546386">
+        <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7753544965996568514">
+          <property name="text" nameId="3ior.4903714810883755350" value="MPS" />
+        </node>
+      </node>
+      <node role="fullName" roleId="kdzh.6108265972537372848" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="7753544965996546387">
+        <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7753544965996568564">
+          <property name="text" nameId="3ior.4903714810883755350" value="JetBrains MPS 2.5 EAP" />
+        </node>
+      </node>
+      <node role="updateWebsite" roleId="kdzh.6108265972537335245" type="kdzh.BuildMps_BrandingUpdateSite" typeId="kdzh.7753544965996489991" id="7753544965996568505">
+        <node role="checkUrl" roleId="kdzh.6108265972537335224" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="7753544965996568506">
+          <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7753544965996568510">
+            <property name="text" nameId="3ior.4903714810883755350" value="http://www.jetbrains.com/mps/update.xml" />
+          </node>
+        </node>
+        <node role="updateUrl" roleId="kdzh.6108265972537335225" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="7753544965996568507">
+          <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7753544965996568511">
+            <property name="text" nameId="3ior.4903714810883755350" value="http://confluence.jetbrains.com/display/MPS/JetBrains+MPS+EAP+Download+Page" />
+          </node>
+        </node>
+        <node role="updateChannel" roleId="kdzh.8795525031433091059" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="7753544965996568508">
+          <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7753544965996568509">
+            <property name="text" nameId="3ior.4903714810883755350" value="MPS25EAP" />
+          </node>
+        </node>
+      </node>
+      <node role="codename" roleId="kdzh.3497141547781549827" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="7753544965996568512">
+        <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7753544965996568513">
+          <property name="text" nameId="3ior.4903714810883755350" value="MPS" />
+        </node>
+      </node>
+      <node role="splashScreen" roleId="kdzh.6108265972537182996" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="7753544965996568516">
+        <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568517">
+          <property name="head" nameId="3ior.8618885170173601779" value="workbench" />
+          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568518">
+            <property name="head" nameId="3ior.8618885170173601779" value="mps-workbench" />
+            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568519">
+              <property name="head" nameId="3ior.8618885170173601779" value="source" />
+              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568520">
+                <property name="head" nameId="3ior.8618885170173601779" value="jetbrains" />
+                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568521">
+                  <property name="head" nameId="3ior.8618885170173601779" value="mps" />
+                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568522">
+                    <property name="head" nameId="3ior.8618885170173601779" value="workbench" />
+                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568523">
+                      <property name="head" nameId="3ior.8618885170173601779" value="icons" />
+                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568524">
+                        <property name="head" nameId="3ior.8618885170173601779" value="splash.png" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="textColor" roleId="kdzh.8795525031433238889" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="7753544965996568525">
+        <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7753544965996568526">
+          <property name="text" nameId="3ior.4903714810883755350" value="002387" />
+        </node>
+      </node>
+      <node role="aboutScreen" roleId="kdzh.6108265972537182997" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="7753544965996568528">
+        <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568529">
+          <property name="head" nameId="3ior.8618885170173601779" value="workbench" />
+          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568530">
+            <property name="head" nameId="3ior.8618885170173601779" value="mps-workbench" />
+            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568531">
+              <property name="head" nameId="3ior.8618885170173601779" value="source" />
+              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568532">
+                <property name="head" nameId="3ior.8618885170173601779" value="jetbrains" />
+                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568533">
+                  <property name="head" nameId="3ior.8618885170173601779" value="mps" />
+                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568534">
+                    <property name="head" nameId="3ior.8618885170173601779" value="workbench" />
+                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568535">
+                      <property name="head" nameId="3ior.8618885170173601779" value="icons" />
+                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568536">
+                        <property name="head" nameId="3ior.8618885170173601779" value="mpsAbout.png" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="welcomeCaption" roleId="kdzh.7753544965996489990" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="7753544965996568537">
+        <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568538">
+          <property name="head" nameId="3ior.8618885170173601779" value="workbench" />
+          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568539">
+            <property name="head" nameId="3ior.8618885170173601779" value="mps-workbench" />
+            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568540">
+              <property name="head" nameId="3ior.8618885170173601779" value="source" />
+              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568541">
+                <property name="head" nameId="3ior.8618885170173601779" value="jetbrains" />
+                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568542">
+                  <property name="head" nameId="3ior.8618885170173601779" value="mps" />
+                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568543">
+                    <property name="head" nameId="3ior.8618885170173601779" value="workbench" />
+                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568544">
+                      <property name="head" nameId="3ior.8618885170173601779" value="icons" />
+                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568545">
+                        <property name="head" nameId="3ior.8618885170173601779" value="mpsWelcomeCaption.png" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="welcomeSlogan" roleId="kdzh.6108265972537335222" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="7753544965996568546">
+        <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568547">
+          <property name="head" nameId="3ior.8618885170173601779" value="workbench" />
+          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568548">
+            <property name="head" nameId="3ior.8618885170173601779" value="mps-workbench" />
+            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568549">
+              <property name="head" nameId="3ior.8618885170173601779" value="source" />
+              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568550">
+                <property name="head" nameId="3ior.8618885170173601779" value="jetbrains" />
+                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568551">
+                  <property name="head" nameId="3ior.8618885170173601779" value="mps" />
+                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568552">
+                    <property name="head" nameId="3ior.8618885170173601779" value="workbench" />
+                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568553">
+                      <property name="head" nameId="3ior.8618885170173601779" value="icons" />
+                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996568554">
+                        <property name="head" nameId="3ior.8618885170173601779" value="mpsSlogan.png" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="help" roleId="kdzh.437343344536486297" type="kdzh.BuildMps_BrandingHelp" typeId="kdzh.7753544965996489992" id="7753544965996568556">
+        <node role="url" roleId="kdzh.437343344536486294" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="7753544965996568557">
+          <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7753544965996568563">
+            <property name="text" nameId="3ior.4903714810883755350" value="http://www.jetbrains.com/mps/webhelp/" />
+          </node>
+        </node>
+        <node role="root" roleId="kdzh.437343344536486295" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="7753544965996568558">
+          <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7753544965996568562">
+            <property name="text" nameId="3ior.4903714810883755350" value="mps" />
+          </node>
+        </node>
+        <node role="file" roleId="kdzh.437343344536486296" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="7753544965996568559">
+          <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7753544965996568560">
+            <property name="text" nameId="3ior.4903714810883755350" value="mpshelp.jar" />
+          </node>
+        </node>
+      </node>
+      <node role="icon32" roleId="kdzh.6108265972537229338" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="7753544965996590698">
+        <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996590699">
+          <property name="head" nameId="3ior.8618885170173601779" value="workbench" />
+          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996590700">
+            <property name="head" nameId="3ior.8618885170173601779" value="mps-workbench" />
+            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996590701">
+              <property name="head" nameId="3ior.8618885170173601779" value="source" />
+              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996590702">
+                <property name="head" nameId="3ior.8618885170173601779" value="MPS_32.png" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="icon32opaque" roleId="kdzh.6108265972537229340" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="7753544965996590703">
+        <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996590704">
+          <property name="head" nameId="3ior.8618885170173601779" value="workbench" />
+          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996590705">
+            <property name="head" nameId="3ior.8618885170173601779" value="mps-workbench" />
+            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996590706">
+              <property name="head" nameId="3ior.8618885170173601779" value="source" />
+              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7753544965996590707">
+                <property name="head" nameId="3ior.8618885170173601779" value="MPS_32.png" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="buildDate" roleId="kdzh.1462305029084462472" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="5996470108026228809">
+        <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="5996470108026228810">
+          <property name="text" nameId="3ior.4903714810883755350" value="000000" />
+        </node>
+      </node>
+    </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="4301118715654465616">
       <property name="name" nameId="tpck.1169194664001" value="build.number" />
       <node role="value" roleId="3ior.4380385936562281299" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="4301118715654465625">
@@ -7160,6 +7376,16 @@
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="4301118715654325736">
           <link role="target" roleId="3ior.5610619299013057365" targetNodeId="6361939271669594326" resolveInfo="lib" />
+        </node>
+        <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Jar" typeId="3ior.7389400916848050074" id="7753544965996745406">
+          <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="7753544965996745407">
+            <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7753544965996745408">
+              <property name="text" nameId="3ior.4903714810883755350" value="branding.jar" />
+            </node>
+          </node>
+          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_FilesOf" typeId="3ior.7753544965996647428" id="7753544965996853790">
+            <link role="element" roleId="3ior.7753544965996647430" targetNodeId="7753544965996546378" resolveInfo="MPS" />
+          </node>
         </node>
       </node>
       <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="4301118715654325708">
