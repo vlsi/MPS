@@ -1376,6 +1376,38 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
         return false;
       }
     });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "GetToolOperation";
+      }
+
+      public String getAdditionalInfo() {
+        return "GetToolOperation";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.DotExpression";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        SNode operation = SLinkOperations.getTarget(node, "operation", true);
+        return SNodeOperations.getConceptDeclaration(operation) == null && "jetbrains.mps.lang.plugin.structure.GetToolOperation".equals(operation.getConceptFqName());
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode operation = SLinkOperations.getTarget(node, "operation", true);
+        SNode tool = null;
+        if (operation.getReferences().size() > 0) {
+          SReference sref = operation.getReferences().get(0);
+          tool = sref.getTargetNode();
+        }
+        StubRefUtil.replaceNode(node, new Mps25ApiMigration_MigrationScript.QuotationClass_dibvm8_a1a3a4a0a0a35a0().createNode(tool, SLinkOperations.getTarget(node, "operand", true)));
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
   }
 
   private static String check_d0rs9v_a0a0a0a0a0a0(SModelReference checkedDotOperand) {
@@ -3365,6 +3397,60 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
           quotedNode_1.addChild("operation", quotedNode1_8);
         }
         result = quotedNode1_6;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_dibvm8_a1a3a4a0a0a35a0 {
+    public QuotationClass_dibvm8_a1a3a4a0a0a35a0() {
+    }
+
+    public SNode createNode(Object parameter_14, Object parameter_15) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
+      SNode quotedNode_5 = null;
+      SNode quotedNode_6 = null;
+      SNode quotedNode_7 = null;
+      SNode quotedNode_8 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_9 = quotedNode_1;
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.standalone.structure.GetToolInProjectOperation", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_10 = quotedNode_2;
+          quotedNode1_10.setReferent("tool", (SNode) parameter_14);
+          quotedNode_1.addChild("operation", quotedNode1_10);
+        }
+        {
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_11 = quotedNode_3;
+          {
+            quotedNode_4 = (SNode) parameter_15;
+            SNode quotedNode1_12;
+            if (_parameterValues_129834374.contains(quotedNode_4)) {
+              quotedNode1_12 = HUtil.copyIfNecessary(quotedNode_4);
+            } else {
+              _parameterValues_129834374.add(quotedNode_4);
+              quotedNode1_12 = quotedNode_4;
+            }
+            if (quotedNode1_12 != null) {
+              quotedNode_3.addChild("operand", HUtil.copyIfNecessary(quotedNode1_12));
+            }
+          }
+          {
+            quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
+            SNode quotedNode1_13 = quotedNode_5;
+            quotedNode1_13.addReference(SReference.create("baseMethodDeclaration", quotedNode1_13, SModelReference.fromString("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.project(MPS.Platform/jetbrains.mps.project@java_stub)"), SNodeId.fromString("~MPSProject.getProject():com.intellij.openapi.project.Project")));
+            quotedNode_3.addChild("operation", quotedNode1_13);
+          }
+          quotedNode_1.addChild("operand", quotedNode1_11);
+        }
+        result = quotedNode1_9;
       }
       return result;
     }
