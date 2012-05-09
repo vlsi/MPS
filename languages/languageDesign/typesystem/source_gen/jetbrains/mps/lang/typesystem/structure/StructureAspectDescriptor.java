@@ -250,7 +250,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 116:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"quickFixArgument"});
       case 117:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier"}, new String[]{}, new String[]{});
       case 118:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.VariableConverterItem", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 119:
