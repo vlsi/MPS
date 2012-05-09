@@ -2675,6 +2675,467 @@
     <unitInfo nodeId="3767587139141067103" fileName="BuildVariableMacro_Editor.java" startLine="23" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.build.editor.BuildVariableMacro_Editor" />
     <unitInfo nodeId="6099797596647366813" fileName="BuildVariableMacro_Editor.java" startLine="94" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.build.editor.BuildVariableMacro_Editor$ReplaceWith_BuildMacro_cellMenu_a0a0_0" />
   </root>
+  <root nodeId="3970102152660842792">
+    <nodeInfo nodeId="3970102152660874516" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="75" startPosition="58" endLine="75" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660842792" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3970102152660842794" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="26" startPosition="89" endLine="27" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660842794" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="27" startPosition="96" endLine="28" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660842794" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="27" startPosition="96" endLine="28" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660842794" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="28" startPosition="48" endLine="29" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660842794" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="28" startPosition="48" endLine="29" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660842794" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="29" startPosition="88" endLine="30" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660842794" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="29" startPosition="88" endLine="30" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660842794" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="30" startPosition="81" endLine="31" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660842794" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="30" startPosition="81" endLine="31" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660842794" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="31" startPosition="81" endLine="32" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660842794" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="31" startPosition="81" endLine="32" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660842794" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="32" startPosition="81" endLine="33" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660842794" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="32" startPosition="81" endLine="33" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660842794" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660842794" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660842794" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="34" startPosition="80" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3970102152660874499" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="38" startPosition="88" endLine="39" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660874499" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="39" startPosition="88" endLine="40" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660874499" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="41" startPosition="5" endLine="42" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660874499" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="42" startPosition="42" endLine="43" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660874499" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="43" startPosition="57" endLine="44" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660874499" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="45" startPosition="5" endLine="46" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660874499" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="46" startPosition="34" endLine="47" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3970102152660874501" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="50" startPosition="88" endLine="51" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660874501" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="51" startPosition="88" endLine="52" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660874501" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="53" startPosition="5" endLine="54" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660874501" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="54" startPosition="42" endLine="55" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660874501" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="55" startPosition="56" endLine="56" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660874501" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="57" startPosition="5" endLine="58" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660874501" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="58" startPosition="34" endLine="59" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3970102152660874514" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="62" startPosition="88" endLine="63" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660874514" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="63" startPosition="88" endLine="64" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660874514" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="64" startPosition="47" endLine="65" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660874514" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="65" startPosition="68" endLine="66" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660874514" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="66" startPosition="34" endLine="67" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3970102152660874516" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="70" startPosition="87" endLine="71" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660874516" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="71" startPosition="81" endLine="72" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660874516" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="72" startPosition="27" endLine="73" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660874516" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="73" startPosition="40" endLine="74" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660874516" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="74" startPosition="26" endLine="75" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660874516" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="75" startPosition="58" endLine="76" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660874516" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="76" startPosition="73" endLine="77" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660874516" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="77" startPosition="57" endLine="78" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660874516" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="79" startPosition="35" endLine="80" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660874516" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="80" startPosition="72" endLine="81" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660874516" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="81" startPosition="78" endLine="82" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3970102152660874516" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="83" startPosition="10" endLine="84" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3970102152660874511" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="87" startPosition="88" endLine="88" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660874511" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="88" startPosition="82" endLine="89" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660874511" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="89" startPosition="29" endLine="90" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660874511" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="90" startPosition="42" endLine="91" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660874511" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="91" startPosition="26" endLine="92" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660874511" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="92" startPosition="58" endLine="93" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660874511" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="94" startPosition="5" endLine="95" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660874511" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="95" startPosition="42" endLine="96" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660874511" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="97" startPosition="5" endLine="98" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660874511" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="98" startPosition="73" endLine="99" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660874511" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="99" startPosition="57" endLine="100" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660874511" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="101" startPosition="35" endLine="102" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660874511" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="102" startPosition="72" endLine="103" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660874511" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="103" startPosition="78" endLine="104" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3970102152660874511" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="105" startPosition="10" endLine="106" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3970102152660842798" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="109" startPosition="95" endLine="110" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660842798" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="110" startPosition="89" endLine="111" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660842798" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="111" startPosition="30" endLine="112" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660842798" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="112" startPosition="43" endLine="113" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660842798" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="113" startPosition="26" endLine="114" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660842798" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="114" startPosition="58" endLine="115" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660842798" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="115" startPosition="50" endLine="116" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660842798" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="116" startPosition="68" endLine="117" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660842798" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="117" startPosition="73" endLine="118" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660842798" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="118" startPosition="57" endLine="119" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660842798" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="120" startPosition="35" endLine="121" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660842798" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="121" startPosition="72" endLine="122" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660842798" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="122" startPosition="78" endLine="123" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3970102152660842798" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="124" startPosition="10" endLine="125" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3970102152660874514" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="63" startPosition="88" endLine="65" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660874516" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="74" startPosition="26" endLine="76" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660842798" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="114" startPosition="58" endLine="116" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660842792" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="21" startPosition="74" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3970102152660874511" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="93" startPosition="42" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660842798" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="113" startPosition="26" endLine="117" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660874499" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="40" startPosition="47" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660874501" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="52" startPosition="47" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660874511" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="92" startPosition="58" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660874499" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="39" startPosition="88" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660874501" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="51" startPosition="88" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660874516" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="78" startPosition="59" endLine="84" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3970102152660874511" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="100" startPosition="59" endLine="106" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3970102152660842798" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="119" startPosition="59" endLine="125" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3970102152660874511" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="91" startPosition="26" endLine="98" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660874514" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="61" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_wl5djv_e0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3970102152660842794" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="25" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_wl5djv_a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3970102152660874499" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="37" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_wl5djv_b0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3970102152660874501" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="49" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_wl5djv_d0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3970102152660874516" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="69" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_wl5djv_f0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3970102152660842798" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="108" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConceptProperty_wl5djv_a0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3970102152660874511" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="86" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_wl5djv_c0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="3970102152660874516" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="75" startPosition="58" endLine="75" endPosition="58" />
+    <scopeInfo nodeId="3970102152660842792" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" />
+    <scopeInfo nodeId="3970102152660842794" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="27" startPosition="96" endLine="28" endPosition="48" />
+    <scopeInfo nodeId="3970102152660842794" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="28" startPosition="48" endLine="29" endPosition="88" />
+    <scopeInfo nodeId="3970102152660842794" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="29" startPosition="88" endLine="30" endPosition="81" />
+    <scopeInfo nodeId="3970102152660842794" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="30" startPosition="81" endLine="31" endPosition="81" />
+    <scopeInfo nodeId="3970102152660842794" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="31" startPosition="81" endLine="32" endPosition="81" />
+    <scopeInfo nodeId="3970102152660842794" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="32" startPosition="81" endLine="33" endPosition="81" />
+    <scopeInfo nodeId="3970102152660842794" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="80" />
+    <scopeInfo nodeId="3970102152660874514" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="63" startPosition="88" endLine="65" endPosition="68" />
+    <scopeInfo nodeId="3970102152660874516" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="74" startPosition="26" endLine="76" endPosition="73" />
+    <scopeInfo nodeId="3970102152660874511" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="94" startPosition="5" endLine="96" endPosition="60">
+      <varInfo nodeId="3970102152660874511" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660842798" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="114" startPosition="58" endLine="116" endPosition="68" />
+    <scopeInfo nodeId="3970102152660874499" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="41" startPosition="5" endLine="44" endPosition="60">
+      <varInfo nodeId="3970102152660874499" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660874501" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="53" startPosition="5" endLine="56" endPosition="60">
+      <varInfo nodeId="3970102152660874501" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660874516" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="79" startPosition="35" endLine="82" endPosition="105">
+      <varInfo nodeId="3970102152660874516" varName="manager" />
+      <varInfo nodeId="3970102152660874516" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660874511" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="101" startPosition="35" endLine="104" endPosition="105">
+      <varInfo nodeId="3970102152660874511" varName="manager" />
+      <varInfo nodeId="3970102152660874511" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660842798" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="120" startPosition="35" endLine="123" endPosition="105">
+      <varInfo nodeId="3970102152660842798" varName="manager" />
+      <varInfo nodeId="3970102152660842798" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660842792" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="21" startPosition="74" endLine="25" endPosition="0">
+      <varInfo nodeId="3970102152660842792" varName="editorContext" />
+      <varInfo nodeId="3970102152660842792" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660842798" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="113" startPosition="26" endLine="117" endPosition="73" />
+    <scopeInfo nodeId="3970102152660874514" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="62" startPosition="88" endLine="67" endPosition="22">
+      <varInfo nodeId="3970102152660874514" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660874511" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="92" startPosition="58" endLine="97" endPosition="5" />
+    <scopeInfo nodeId="3970102152660874499" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="39" startPosition="88" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="3970102152660874501" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="51" startPosition="88" endLine="57" endPosition="5" />
+    <scopeInfo nodeId="3970102152660874511" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="91" startPosition="26" endLine="98" endPosition="73" />
+    <scopeInfo nodeId="3970102152660874514" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="61" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="3970102152660874514" varName="editorContext" />
+      <varInfo nodeId="3970102152660874514" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660842794" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="26" startPosition="89" endLine="35" endPosition="22">
+      <varInfo nodeId="3970102152660842794" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660874499" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="38" startPosition="88" endLine="47" endPosition="22">
+      <varInfo nodeId="3970102152660874499" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660874501" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="50" startPosition="88" endLine="59" endPosition="22">
+      <varInfo nodeId="3970102152660874501" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660842794" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="25" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="3970102152660842794" varName="editorContext" />
+      <varInfo nodeId="3970102152660842794" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660874499" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="37" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="3970102152660874499" varName="editorContext" />
+      <varInfo nodeId="3970102152660874499" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660874501" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="49" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="3970102152660874501" varName="editorContext" />
+      <varInfo nodeId="3970102152660874501" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660874516" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="70" startPosition="87" endLine="84" endPosition="22">
+      <varInfo nodeId="3970102152660874516" varName="attributeConcept" />
+      <varInfo nodeId="3970102152660874516" varName="attributeKind" />
+      <varInfo nodeId="3970102152660874516" varName="editorCell" />
+      <varInfo nodeId="3970102152660874516" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660842798" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="109" startPosition="95" endLine="125" endPosition="22">
+      <varInfo nodeId="3970102152660842798" varName="attributeConcept" />
+      <varInfo nodeId="3970102152660842798" varName="attributeKind" />
+      <varInfo nodeId="3970102152660842798" varName="editorCell" />
+      <varInfo nodeId="3970102152660842798" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660874516" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="69" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="3970102152660874516" varName="editorContext" />
+      <varInfo nodeId="3970102152660874516" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660874511" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="87" startPosition="88" endLine="106" endPosition="22">
+      <varInfo nodeId="3970102152660874511" varName="attributeConcept" />
+      <varInfo nodeId="3970102152660874511" varName="attributeKind" />
+      <varInfo nodeId="3970102152660874511" varName="editorCell" />
+      <varInfo nodeId="3970102152660874511" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660842798" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="108" startPosition="0" endLine="127" endPosition="0">
+      <varInfo nodeId="3970102152660842798" varName="editorContext" />
+      <varInfo nodeId="3970102152660842798" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660874511" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="86" startPosition="0" endLine="108" endPosition="0">
+      <varInfo nodeId="3970102152660874511" varName="editorContext" />
+      <varInfo nodeId="3970102152660874511" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="3970102152660842792" fileName="BuildLayout_CopyGlobMapper_Editor.java" startLine="21" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.build.editor.BuildLayout_CopyGlobMapper_Editor" />
+  </root>
+  <root nodeId="3970102152660876450">
+    <nodeInfo nodeId="3970102152660876450" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="25" startPosition="89" endLine="26" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="26" startPosition="96" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="26" startPosition="96" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="27" startPosition="48" endLine="28" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="27" startPosition="48" endLine="28" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="28" startPosition="88" endLine="29" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="28" startPosition="88" endLine="29" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="29" startPosition="81" endLine="30" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="29" startPosition="81" endLine="30" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="30" startPosition="81" endLine="31" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="30" startPosition="81" endLine="31" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="31" startPosition="81" endLine="32" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="31" startPosition="81" endLine="32" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="32" startPosition="81" endLine="33" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="32" startPosition="81" endLine="33" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="34" startPosition="81" endLine="35" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="34" startPosition="81" endLine="35" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="35" startPosition="81" endLine="36" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3970102152660876454" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="39" startPosition="88" endLine="40" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660876454" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="40" startPosition="88" endLine="41" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876454" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="42" startPosition="5" endLine="43" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660876454" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="43" startPosition="42" endLine="44" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876454" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="44" startPosition="57" endLine="45" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876454" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="46" startPosition="5" endLine="47" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876454" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="47" startPosition="34" endLine="48" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3970102152660876459" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="51" startPosition="88" endLine="52" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660876459" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="52" startPosition="88" endLine="53" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876459" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="54" startPosition="5" endLine="55" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660876459" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="55" startPosition="42" endLine="56" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876459" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="56" startPosition="56" endLine="57" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876459" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="58" startPosition="5" endLine="59" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876459" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="59" startPosition="34" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3970102152660876465" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="63" startPosition="88" endLine="64" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660876465" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="64" startPosition="88" endLine="65" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876465" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="65" startPosition="47" endLine="66" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876465" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="66" startPosition="68" endLine="67" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876465" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="67" startPosition="34" endLine="68" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3970102152660876468" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="71" startPosition="88" endLine="72" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660876468" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="72" startPosition="88" endLine="73" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876468" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="74" startPosition="5" endLine="75" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660876468" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="75" startPosition="42" endLine="76" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876468" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="76" startPosition="57" endLine="77" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876468" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="78" startPosition="5" endLine="79" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876468" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="79" startPosition="34" endLine="80" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3970102152660876473" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="83" startPosition="88" endLine="84" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660876473" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="84" startPosition="88" endLine="85" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876473" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="86" startPosition="5" endLine="87" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660876473" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="87" startPosition="42" endLine="88" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876473" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="88" startPosition="56" endLine="89" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876473" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="90" startPosition="5" endLine="91" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876473" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="91" startPosition="34" endLine="92" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3970102152660876457" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="95" startPosition="88" endLine="96" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660876457" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="96" startPosition="82" endLine="97" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876457" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="97" startPosition="32" endLine="98" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876457" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="98" startPosition="45" endLine="99" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660876457" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="99" startPosition="26" endLine="100" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876457" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="100" startPosition="58" endLine="101" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876457" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="102" startPosition="5" endLine="103" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660876457" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="103" startPosition="42" endLine="104" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876457" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="105" startPosition="5" endLine="106" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876457" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="106" startPosition="73" endLine="107" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660876457" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="107" startPosition="57" endLine="108" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660876457" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="109" startPosition="35" endLine="110" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660876457" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="110" startPosition="72" endLine="111" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660876457" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="111" startPosition="78" endLine="112" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3970102152660876457" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="113" startPosition="10" endLine="114" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3970102152660876471" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="117" startPosition="88" endLine="118" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660876471" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="118" startPosition="82" endLine="119" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876471" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="119" startPosition="32" endLine="120" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876471" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="120" startPosition="45" endLine="121" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660876471" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="121" startPosition="26" endLine="122" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876471" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="122" startPosition="58" endLine="123" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876471" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="124" startPosition="5" endLine="125" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660876471" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="125" startPosition="42" endLine="126" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876471" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="127" startPosition="5" endLine="128" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660876471" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="128" startPosition="73" endLine="129" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660876471" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="129" startPosition="57" endLine="130" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660876471" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="131" startPosition="35" endLine="132" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660876471" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="132" startPosition="72" endLine="133" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660876471" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="133" startPosition="78" endLine="134" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3970102152660876471" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="135" startPosition="10" endLine="136" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3970102152660979530" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="139" startPosition="95" endLine="140" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660979530" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="140" startPosition="89" endLine="141" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660979530" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="141" startPosition="30" endLine="142" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660979530" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="142" startPosition="43" endLine="143" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660979530" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="143" startPosition="26" endLine="144" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660979530" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="144" startPosition="58" endLine="145" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660979530" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="145" startPosition="50" endLine="146" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660979530" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="146" startPosition="68" endLine="147" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3970102152660979530" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="147" startPosition="73" endLine="148" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660979530" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="148" startPosition="57" endLine="149" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660979530" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="150" startPosition="35" endLine="151" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660979530" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="151" startPosition="72" endLine="152" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3970102152660979530" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="152" startPosition="78" endLine="153" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3970102152660979530" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="154" startPosition="10" endLine="155" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3970102152660876465" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="64" startPosition="88" endLine="66" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660979530" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="144" startPosition="58" endLine="146" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660876450" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="20" startPosition="75" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3970102152660876457" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="101" startPosition="45" endLine="105" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660876471" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="123" startPosition="45" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660979530" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="143" startPosition="26" endLine="147" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660876454" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="41" startPosition="47" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660876459" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="53" startPosition="47" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660876468" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="73" startPosition="47" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660876473" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="85" startPosition="47" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660876457" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="100" startPosition="58" endLine="105" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660876471" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="122" startPosition="58" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660876454" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="40" startPosition="88" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660876459" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="52" startPosition="88" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660876468" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="72" startPosition="88" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660876473" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="84" startPosition="88" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660876457" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="108" startPosition="59" endLine="114" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3970102152660876471" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="130" startPosition="59" endLine="136" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3970102152660979530" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="149" startPosition="59" endLine="155" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3970102152660876457" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="99" startPosition="26" endLine="106" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660876471" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="121" startPosition="26" endLine="128" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3970102152660876465" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="62" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_do9qzk_e0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3970102152660876454" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="38" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_do9qzk_b0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3970102152660876459" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="50" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_do9qzk_d0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3970102152660876468" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="70" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_do9qzk_f0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3970102152660876473" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="82" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_do9qzk_h0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="24" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_do9qzk_a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3970102152660979530" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="138" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConceptProperty_do9qzk_a0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3970102152660876457" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="94" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_do9qzk_c0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3970102152660876471" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="116" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_do9qzk_g0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="3970102152660876450" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" />
+    <scopeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="26" startPosition="96" endLine="27" endPosition="48" />
+    <scopeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="27" startPosition="48" endLine="28" endPosition="88" />
+    <scopeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="28" startPosition="88" endLine="29" endPosition="81" />
+    <scopeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="29" startPosition="81" endLine="30" endPosition="81" />
+    <scopeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="30" startPosition="81" endLine="31" endPosition="81" />
+    <scopeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="31" startPosition="81" endLine="32" endPosition="81" />
+    <scopeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="32" startPosition="81" endLine="33" endPosition="81" />
+    <scopeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="81" />
+    <scopeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="34" startPosition="81" endLine="35" endPosition="81" />
+    <scopeInfo nodeId="3970102152660876465" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="64" startPosition="88" endLine="66" endPosition="68" />
+    <scopeInfo nodeId="3970102152660876457" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="102" startPosition="5" endLine="104" endPosition="60">
+      <varInfo nodeId="3970102152660876457" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660876471" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="124" startPosition="5" endLine="126" endPosition="60">
+      <varInfo nodeId="3970102152660876471" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660979530" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="144" startPosition="58" endLine="146" endPosition="68" />
+    <scopeInfo nodeId="3970102152660876454" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="42" startPosition="5" endLine="45" endPosition="60">
+      <varInfo nodeId="3970102152660876454" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660876459" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="54" startPosition="5" endLine="57" endPosition="60">
+      <varInfo nodeId="3970102152660876459" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660876468" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="74" startPosition="5" endLine="77" endPosition="60">
+      <varInfo nodeId="3970102152660876468" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660876473" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="86" startPosition="5" endLine="89" endPosition="60">
+      <varInfo nodeId="3970102152660876473" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660876457" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="109" startPosition="35" endLine="112" endPosition="105">
+      <varInfo nodeId="3970102152660876457" varName="manager" />
+      <varInfo nodeId="3970102152660876457" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660876471" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="131" startPosition="35" endLine="134" endPosition="105">
+      <varInfo nodeId="3970102152660876471" varName="manager" />
+      <varInfo nodeId="3970102152660876471" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660979530" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="150" startPosition="35" endLine="153" endPosition="105">
+      <varInfo nodeId="3970102152660979530" varName="manager" />
+      <varInfo nodeId="3970102152660979530" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660876450" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="20" startPosition="75" endLine="24" endPosition="0">
+      <varInfo nodeId="3970102152660876450" varName="editorContext" />
+      <varInfo nodeId="3970102152660876450" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660979530" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="143" startPosition="26" endLine="147" endPosition="73" />
+    <scopeInfo nodeId="3970102152660876465" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="63" startPosition="88" endLine="68" endPosition="22">
+      <varInfo nodeId="3970102152660876465" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660876457" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="100" startPosition="58" endLine="105" endPosition="5" />
+    <scopeInfo nodeId="3970102152660876471" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="122" startPosition="58" endLine="127" endPosition="5" />
+    <scopeInfo nodeId="3970102152660876454" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="40" startPosition="88" endLine="46" endPosition="5" />
+    <scopeInfo nodeId="3970102152660876459" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="52" startPosition="88" endLine="58" endPosition="5" />
+    <scopeInfo nodeId="3970102152660876468" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="72" startPosition="88" endLine="78" endPosition="5" />
+    <scopeInfo nodeId="3970102152660876473" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="84" startPosition="88" endLine="90" endPosition="5" />
+    <scopeInfo nodeId="3970102152660876457" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="99" startPosition="26" endLine="106" endPosition="73" />
+    <scopeInfo nodeId="3970102152660876471" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="121" startPosition="26" endLine="128" endPosition="73" />
+    <scopeInfo nodeId="3970102152660876465" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="62" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="3970102152660876465" varName="editorContext" />
+      <varInfo nodeId="3970102152660876465" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660876454" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="39" startPosition="88" endLine="48" endPosition="22">
+      <varInfo nodeId="3970102152660876454" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660876459" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="51" startPosition="88" endLine="60" endPosition="22">
+      <varInfo nodeId="3970102152660876459" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660876468" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="71" startPosition="88" endLine="80" endPosition="22">
+      <varInfo nodeId="3970102152660876468" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660876473" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="83" startPosition="88" endLine="92" endPosition="22">
+      <varInfo nodeId="3970102152660876473" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="25" startPosition="89" endLine="36" endPosition="22">
+      <varInfo nodeId="3970102152660876452" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660876454" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="38" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="3970102152660876454" varName="editorContext" />
+      <varInfo nodeId="3970102152660876454" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660876459" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="50" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="3970102152660876459" varName="editorContext" />
+      <varInfo nodeId="3970102152660876459" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660876468" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="70" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="3970102152660876468" varName="editorContext" />
+      <varInfo nodeId="3970102152660876468" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660876473" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="82" startPosition="0" endLine="94" endPosition="0">
+      <varInfo nodeId="3970102152660876473" varName="editorContext" />
+      <varInfo nodeId="3970102152660876473" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660876452" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="24" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="3970102152660876452" varName="editorContext" />
+      <varInfo nodeId="3970102152660876452" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660979530" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="139" startPosition="95" endLine="155" endPosition="22">
+      <varInfo nodeId="3970102152660979530" varName="attributeConcept" />
+      <varInfo nodeId="3970102152660979530" varName="attributeKind" />
+      <varInfo nodeId="3970102152660979530" varName="editorCell" />
+      <varInfo nodeId="3970102152660979530" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660876457" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="95" startPosition="88" endLine="114" endPosition="22">
+      <varInfo nodeId="3970102152660876457" varName="attributeConcept" />
+      <varInfo nodeId="3970102152660876457" varName="attributeKind" />
+      <varInfo nodeId="3970102152660876457" varName="editorCell" />
+      <varInfo nodeId="3970102152660876457" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660876471" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="117" startPosition="88" endLine="136" endPosition="22">
+      <varInfo nodeId="3970102152660876471" varName="attributeConcept" />
+      <varInfo nodeId="3970102152660876471" varName="attributeKind" />
+      <varInfo nodeId="3970102152660876471" varName="editorCell" />
+      <varInfo nodeId="3970102152660876471" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660979530" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="138" startPosition="0" endLine="157" endPosition="0">
+      <varInfo nodeId="3970102152660979530" varName="editorContext" />
+      <varInfo nodeId="3970102152660979530" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660876457" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="94" startPosition="0" endLine="116" endPosition="0">
+      <varInfo nodeId="3970102152660876457" varName="editorContext" />
+      <varInfo nodeId="3970102152660876457" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3970102152660876471" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="116" startPosition="0" endLine="138" endPosition="0">
+      <varInfo nodeId="3970102152660876471" varName="editorContext" />
+      <varInfo nodeId="3970102152660876471" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="3970102152660876450" fileName="BuildLayout_CopyRegexMapper_Editor.java" startLine="20" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mps.build.editor.BuildLayout_CopyRegexMapper_Editor" />
+  </root>
   <root nodeId="4198392933254416823">
     <nodeInfo nodeId="4198392933254416823" fileName="BuildLayout_CopyFilterFixCRLF_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4198392933254427809" fileName="BuildLayout_CopyFilterFixCRLF_Editor.java" startLine="23" startPosition="89" endLine="24" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

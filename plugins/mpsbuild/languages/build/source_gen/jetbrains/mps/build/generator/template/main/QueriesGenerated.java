@@ -269,6 +269,22 @@ public class QueriesGenerated {
     return SPropertyOperations.getString_def(_context.getNode(), "eol", "local");
   }
 
+  public static Object propertyMacro_GetPropertyValue_3970102152660874527(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "from");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3970102152660874559(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), "to", true), Context.defaultContext(_context).getMacros(_context.getNode()));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3970102152660876483(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "pattern").replaceAll("\\$", "\\$\\$");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3970102152660876492(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "replace").replaceAll("\\$", "\\$\\$");
+  }
+
   public static Object propertyMacro_GetPropertyValue_4643216374596142877(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BuildLayout_EchoXml_Behavior.call_getOutputPath_WithMacro_4643216374596143062(_context.getNode(), Context.defaultContext(_context));
   }

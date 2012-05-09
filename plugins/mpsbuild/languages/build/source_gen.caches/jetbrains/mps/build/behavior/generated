@@ -32,7 +32,7 @@
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" />
   <dep model="r:d64ba0fe-173d-44e2-ab7b-bde40d7e9b7e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.pre@generator)" />
-  <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" hash="3cwewrs4res5msmdgkiiy0o5hr0pgv8" />
+  <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" hash="-953xop3i3lth307umvr62hw87o3i8lm" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
   <common hash="-2m4az107y1ff1m3hkzkucx3qek4wr6v" dependsOnNodes="true">
@@ -135,8 +135,10 @@
     <file name="BuildLayout_CopyFilterReplaceTokens_BehaviorDescriptor.java" />
     <file name="BuildLayout_CopyFilter_BehaviorDescriptor.java" />
     <file name="BuildLayout_CopyFlattenMapper_BehaviorDescriptor.java" />
+    <file name="BuildLayout_CopyGlobMapper_BehaviorDescriptor.java" />
     <file name="BuildLayout_CopyHandler_BehaviorDescriptor.java" />
     <file name="BuildLayout_CopyMapper_BehaviorDescriptor.java" />
+    <file name="BuildLayout_CopyRegexMapper_BehaviorDescriptor.java" />
     <file name="BuildLayout_Copy_BehaviorDescriptor.java" />
     <file name="BuildLayout_CustomCopy_BehaviorDescriptor.java" />
     <file name="BuildLayout_EchoProperties_BehaviorDescriptor.java" />

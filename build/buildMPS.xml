@@ -2,8 +2,8 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/buildMPS" />
   <property name="build.layout" location="${build.dir}/artifacts/buildMPS" />
-  <property name="build.number" value="7777" />
-  <property name="version" value="2.1 EAP" />
+  <property name="build.number" value="MPS-25.SNAPSHOT" />
+  <property name="version" value="2.5 EAP" />
   <property name="build.vcs.number" value="HEAD" />
   <property name="teamcity.buildConfName" value="local" />
   <property name="mps_home" location="${basedir}" />
@@ -23,10 +23,6 @@
   <property name="artifacts.IDEA" location="${idea_home}" />
   
   <target name="assemble" depends="fetchDependencies">
-    <mkdir dir="${build.layout}/bin" />
-    <copy todir="${build.layout}/bin">
-      <fileset dir="${mps_home}/bin" />
-    </copy>
     <mkdir dir="${build.layout}/languages" />
     <copy todir="${build.layout}/languages">
       <fileset dir="${artifacts.buildCore}/mps-core/languages" />
@@ -126,6 +122,9 @@
     </copy>
     <copy todir="${build.layout}">
       <fileset file="${basedir}/readme.txt" />
+    </copy>
+    <copy todir="${build.layout}">
+      <fileset file="${basedir}/releaseNotes.txt" />
     </copy>
     <echo file="${build.layout}/variables.properties">buildMPS.build.number=${build.number}${line.separator}buildMPS.version=${version}${line.separator}buildMPS.build.vcs.number=${build.vcs.number}${line.separator}buildMPS.teamcity.buildConfName=${teamcity.buildConfName}</echo>
   </target>
