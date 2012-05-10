@@ -100,12 +100,6 @@ public class FolderCompare {
 
     }
 
-    private boolean isBinaryFile(String fileName) {
-        return fileName.endsWith(".png") || fileName.endsWith(".so") || fileName.endsWith(".dll")
-                || fileName.endsWith(".exe") || fileName.endsWith(".jnilib") || fileName.equals("dependencies")
-                || fileName.endsWith(".gif") || fileName.endsWith(".mod") || fileName.startsWith(".") || fileName.endsWith(".ico");
-    }
-
     private void compareZipEntries(ZipEntry expected, ZipFile ezip, ZipEntry actual, ZipFile azip, String path) {
         String fileName = toShortName(expected.getName()).toLowerCase();
         if (fileName.endsWith(".jar") || fileName.endsWith(".zip")) {
@@ -114,12 +108,10 @@ public class FolderCompare {
         }
         if (isTextFile(fileName)) {
             reportCompare(read(expected, ezip), read(actual, azip), path);
-        } else if (isBinaryFile(fileName)) {
+        } else if (!isIgnoredFile(fileName)) {
             if (!equal(open(expected, ezip), open(actual, azip))) {
                 status.stream("binary_diff", path).println(path);
             }
-        } else if(!isIgnoredFile(fileName)) {
-            status.stream("unknown_files", path).println(path);
         }
     }
 
@@ -141,12 +133,10 @@ public class FolderCompare {
 
         if (isTextFile(fileName)) {
             reportCompare(read(expected), read(actual), path);
-        } else if (isBinaryFile(fileName)) {
+        } else if (!isIgnoredFile(fileName)) {
             if (!equal(open(expected), open(actual))) {
                 status.stream("binary_diff", path).println(path);
             }
-        } else if(!isIgnoredFile(fileName)) {
-            status.stream("unknown_files", path).println(path);
         }
     }
 

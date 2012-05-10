@@ -83,7 +83,7 @@ public class OptimizeImportsHelper {
       modelsToOptimize.addAll(g.getOwnModelDescriptors());
     }
     Result result = optimizeModelsImports_internal(modelsToOptimize);
-
+    SModelRepository.getInstance().saveAll();
     LanguageDescriptor descriptor = language.getModuleDescriptor();
     for (Generator g : language.getGenerators()) {
       GeneratorDescriptor gd = g.getModuleDescriptor();

@@ -33,7 +33,14 @@ import com.intellij.ui.components.JBList;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.migration.assistant.MigrationProcessor.Callback;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjectMigrationState;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.persistence.def.v3.ModelPersistence3;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -82,6 +89,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
   public MigrationAssistantWizard(Project project) {
     super("Migration Assistant Wizard", project, Arrays.asList(
       new InitialStep(project),
+      new OldPersistenceDetectedStep(project),
       new MigrationsActionsStep(project),
       new MigrationsProgressStep(project),
       new MigrationsFinishedStep(project),
@@ -156,6 +164,11 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       return idx < STEP_IDS.size() ? STEP_IDS.get(idx) : null;
     }
 
+    protected Object getSkipNextStepId(int skip) {
+      int idx = STEP_IDS.indexOf(myId) + skip + 1;
+      return idx < STEP_IDS.size() ? STEP_IDS.get(idx) : null;
+    }
+
     @Override
     public Object getPreviousStepId() {
       int idx = STEP_IDS.indexOf(myId) - 1;
@@ -213,6 +226,11 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     protected final void createComponent() {
       super.createComponent();
 
+      GridBagLayout layout = new GridBagLayout();
+      JPanel pagePanel = new JPanel(layout);
+      Insets insets = new Insets(0,0,0,0);
+      GridBagConstraints gbc = new GridBagConstraints(0,0,1,1,1.,1.,GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, insets, 0, 0);
+
       JPanel infoHolder = new JPanel(new BorderLayout());
       infoHolder.setBorder(BorderFactory.createEmptyBorder(2,2,2,2));
 
@@ -232,11 +250,21 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
       infoHolder.add(info, BorderLayout.CENTER);
 
-      myComponent.add(infoHolder, BorderLayout.NORTH);
+      pagePanel.add(infoHolder);
+      layout.setConstraints(infoHolder, gbc);
+
+      gbc.gridy++;
+      gbc.anchor = GridBagConstraints.LAST_LINE_START;
+      gbc.weightx = 0.;
+      gbc.weighty = 0.;
 
       mySelectActions = new JBCheckBox("Select Migration Actions");
       mySelectActions.setSelected(false);
-      myComponent.add(mySelectActions, BorderLayout.SOUTH);
+
+      pagePanel.add(mySelectActions);
+      layout.setConstraints(mySelectActions, gbc);
+
+      myComponent.add(pagePanel, BorderLayout.CENTER);
     }
 
     @Override
@@ -246,7 +274,90 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
     @Override
     public Object getNextStepId() {
-      return mySelectActions.isSelected() ? super.getNextStepId() : super.getSkipNextStepId();
+      if (hasModelsInOldPersistence()) return super.getNextStepId();
+      return mySelectActions.isSelected() ? super.getSkipNextStepId(1) : super.getSkipNextStepId(2);
+    }
+
+    private boolean hasModelsInOldPersistence() {
+      return new ModelPersistenceDetector(myProject).hasModelsInOldPersistence();
+    }
+  }
+
+  private static class OldPersistenceDetectedStep extends MyStep {
+
+    private JBList myList;
+
+    public OldPersistenceDetectedStep(Project project) {
+      super(project, "Models In Old Persistence Detected", "oldPersistence");
+      createComponent();
+    }
+
+    @Override
+    protected final void createComponent() {
+      super.createComponent();
+
+      GridBagLayout layout = new GridBagLayout();
+      JPanel pagePanel = new JPanel(layout);
+      Insets insets = new Insets(0,0,0,0);
+      GridBagConstraints gbc = new GridBagConstraints(0,0,1,1,1.,1.,GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, insets, 0, 0);
+
+      final JPanel infoHolder = new JPanel(new BorderLayout());
+      infoHolder.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
+
+      final JTextArea info = new JTextArea(
+        "Some models in this project are stored in the persistence version that is no longer supported." +
+          "\n\n" +
+          "You have to manually upgrade persistence of these models using a previous version of MPS." +
+          "\n\n" +
+          "The migration cannot proceed.",
+        10, 40);
+      info.setLineWrap(true);
+      info.setWrapStyleWord(true);
+      info.setEditable(false);
+      info.setBorder(BorderFactory.createLoweredBevelBorder());
+
+      infoHolder.add(info, BorderLayout.CENTER);
+
+      pagePanel.add(infoHolder);
+      layout.setConstraints(infoHolder, gbc);
+
+      gbc.gridy++;
+      gbc.anchor = GridBagConstraints.LAST_LINE_START;
+      gbc.weightx = 0.;
+
+      myList = new JBList(getModelPaths());
+
+      JPanel listPanel = new JPanel(new BorderLayout(5, 5)) {
+        @Override
+        public Dimension getPreferredSize() {
+          Dimension preferredSize = super.getPreferredSize();
+          return new Dimension(infoHolder.getPreferredSize().width, preferredSize.height);
+        }
+      };
+      listPanel.setBorder(BorderFactory.createCompoundBorder(
+        BorderFactory.createEmptyBorder(2, 2, 2, 2),
+        BorderFactory.createEtchedBorder()));
+      listPanel.add(new JBScrollPane(myList), BorderLayout.CENTER);
+
+      pagePanel.add(listPanel);
+      layout.setConstraints(listPanel, gbc);
+
+      myComponent.add(pagePanel, BorderLayout.CENTER);
+    }
+
+    @Override
+    public Object getNextStepId() {
+      // cannot proceed
+      return null;
+    }
+
+    @Override
+    public boolean isComplete() {
+      return getModelPaths().isEmpty();
+    }
+
+    private List<String> getModelPaths () {
+      return new ModelPersistenceDetector(myProject).getModelsWithPersistenceVersionAtMost(ModelPersistenceDetector.OLD_VERSION);
     }
   }
 
@@ -528,7 +639,6 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
               myFinished = true;
               processor.removeCallback(this);
               indicator.setFraction(1.0);
-              indicator.stop();
               indicator.setText("Done");
               fireStateChanged();
             }
@@ -765,6 +875,43 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       }
       return myOriginalFont;
     }
+  }
+
+  private static class ModelPersistenceDetector {
+
+    private static final int OLD_VERSION = 3;
+
+    private final Project myProject;
+
+    public ModelPersistenceDetector(Project project) {
+      myProject = project;
+    }
+
+    public boolean hasModelsInOldPersistence() {
+      return getModelsWithPersistenceVersionAtMost(OLD_VERSION).size() > 0;
+    }
+
+    public List<String> getModelsWithPersistenceVersionAtMost(final int version) {
+      final List<String> result = new ArrayList<String>();
+      final MPSProject mpsProject = myProject.getComponent(MPSProject.class);
+      ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          for (IModule module : mpsProject.getModulesWithGenerators()) {
+            for (SModelDescriptor smd : SModelRepository.getInstance().getModelDescriptors(module)) {
+              if (smd instanceof DefaultSModelDescriptor) {
+                int modelVersion = ((DefaultSModelDescriptor) smd).getSModelHeader().getPersistenceVersion();
+                if (modelVersion <= version) {
+                  result.add(((DefaultSModelDescriptor) smd).getModelFile().getPath());
+                }
+              }
+            }
+          }
+        }
+      });
+      return result;
+    }
+
   }
 
 }
