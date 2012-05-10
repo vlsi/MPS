@@ -52,7 +52,7 @@ public class ModuleClassLoader extends ClassLoader {
 
     Class<?> clazz = null;
     try {
-      clazz = findInSelfAndDependencies(name, true, true);
+      clazz = findInSelfAndDependencies(name);
       if (resolve) {
         resolveClass(clazz);
       }
@@ -62,8 +62,7 @@ public class ModuleClassLoader extends ClassLoader {
     }
   }
 
-  private Class<?> findInSelfAndDependencies(String name, boolean includeDependencies, boolean includeParents) throws ClassNotFoundException {
-    //from self
+  private Class<?> loadFromSelf(String name) {
     if (myModule.canLoadFromSelf()) {
       Class c = findLoadedClass(name);
       if (c != null) return c;
@@ -78,40 +77,43 @@ public class ModuleClassLoader extends ClassLoader {
         return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
       }
     }
+    return null;
+  }
 
-    if (includeDependencies) {
-      //from dependencies (try modules only)
-      List<IClassLoadingModule> queue = new ArrayList<IClassLoadingModule>();
-      for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
-        if (m.equals(myModule)) continue;
-        if (!m.canLoad()) continue;
+  private Class<?> loadFromParent(String name) throws ClassNotFoundException {
+    return getParent().loadClass(name);
+  }
 
-        if (m.canLoadFromSelf() && m.canFindClass(name)) {
-          //here it will load with self, with any values as two last parameters
-          return m.getClassLoader().findInSelfAndDependencies(name, false, false);
-        } else {
-          queue.add(m);
-        }
-      }
+  private Class<?> findInSelfAndDependencies(String name) throws ClassNotFoundException {
+    //from self
+    Class c = loadFromSelf(name);
+    if (c != null) {
+      return c;
+    }
 
-      if (includeParents) {
-        //from dependencies (try parent class loaders also)
-        for (IClassLoadingModule m : queue) {
-          try {
-            return m.getClassLoader().findInSelfAndDependencies(name, false, true);
-          } catch (ClassNotFoundException e) {
-            //ignore
-          }
-        }
+    //from dependencies (try modules only)
+    List<IClassLoadingModule> queue = new ArrayList<IClassLoadingModule>();
+    for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
+      if (m.equals(myModule)) continue;
+      if (!m.canLoad()) continue;
+
+      if (m.canLoadFromSelf() && m.canFindClass(name)) {
+        //here it will load with self, with any values as two last parameters
+        return m.getClassLoader().loadFromSelf(name);
+      } else {
+        queue.add(m);
       }
     }
 
-    if (includeParents) {
-      //from my parent
-      return getParent().loadClass(name);
+    //from dependencies (try parent class loaders also)
+    for (IClassLoadingModule m : queue) {
+      try {
+        return m.getClassLoader().loadFromParent(name);
+      } catch (ClassNotFoundException e) {
+        //ignore
+      }
     }
-
-    throw new ClassNotFoundException(name);
+    return loadFromParent(name);
   }
 
   protected URL findResource(String name) {
