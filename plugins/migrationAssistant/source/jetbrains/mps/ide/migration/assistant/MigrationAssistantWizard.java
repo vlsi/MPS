@@ -639,7 +639,6 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
               myFinished = true;
               processor.removeCallback(this);
               indicator.setFraction(1.0);
-              indicator.stop();
               indicator.setText("Done");
               fireStateChanged();
             }
