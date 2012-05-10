@@ -19,10 +19,6 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.make.IMakeNotificationListener;
-import jetbrains.mps.make.IMakeNotificationListener.Stub;
-import jetbrains.mps.make.IMakeService;
-import jetbrains.mps.make.MakeNotification;
 import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -33,20 +29,15 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class PluginReloader implements ApplicationComponent {
   private ReloadAdapter myReloadListener = new MyReloadAdapter();
-  private IMakeNotificationListener myMakeListener = new MyMakeListener();
 
   private final List<PluginReloadingListener> myListeners = new ArrayList<PluginReloadingListener>();
 
   private ClassLoaderManager myClassLoaderManager;
   private ProjectManager myProjectManager;
   private ApplicationPluginManager myPluginManager;
-  private IMakeService myMakeService;
-
-  private AtomicReference<Runnable> myLoadPluginsRunnable = new AtomicReference<Runnable>();
 
   @SuppressWarnings({"UnusedDeclaration"})
   public PluginReloader(MPSCoreComponents coreComponents, ProjectManager projectManager, ApplicationPluginManager pluginManager) {
@@ -100,15 +91,6 @@ public class PluginReloader implements ApplicationComponent {
     return result;
   }
 
-  public void setMakeService(IMakeService makeService) {
-    if (myMakeService == null && makeService != null) {
-      this.myMakeService = makeService;
-      myMakeService.addListener(myMakeListener);
-    } else if (myMakeService != null && makeService == null) {
-      myMakeService.removeListener(myMakeListener);
-      this.myMakeService = null;
-    }
-  }
   //----------------COMPONENT STUFF---------------------
 
   @NonNls
@@ -138,7 +120,6 @@ public class PluginReloader implements ApplicationComponent {
   }
 
   private class MyReloadAdapter extends ReloadAdapter {
-
     public void unload() {
       ModelAccess.instance().runWriteInEDT(new Runnable() {
         public void run() {
@@ -155,22 +136,7 @@ public class PluginReloader implements ApplicationComponent {
           if (!isDisposed()) loadPlugins();
         }
       };
-      if (myLoadPluginsRunnable.compareAndSet(null, runnable)) {
-        if (myMakeService == null || !myMakeService.isSessionActive()) {
-          myLoadPluginsRunnable.set(null);
-          ModelAccess.instance().runWriteInEDT(runnable);
-        }
-      }
-    }
-  }
-
-  private class MyMakeListener extends Stub {
-    @Override
-    public void sessionClosed(MakeNotification notification) {
-      Runnable runnable = myLoadPluginsRunnable.getAndSet(null);
-      if (runnable != null) {
-        ModelAccess.instance().runWriteInEDT(runnable);
-      }
+      ModelAccess.instance().runWriteInEDT(runnable);
     }
   }
 }
