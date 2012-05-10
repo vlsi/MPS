@@ -26,6 +26,7 @@ import java.net.URL;
 import java.util.*;
 
 public class ModuleClassLoader extends ClassLoader {
+  public static final Object LOCK = new Object();
   //this is for debug purposes (heap dumps)
   @SuppressWarnings({"UnusedDeclaration", "FieldCanBeLocal"})
   private boolean myDisposed;
@@ -40,25 +41,27 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   protected synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
-    if (!myModule.canLoad()) throw new ClassNotFoundException(name);
+    synchronized (LOCK) {
+      if (!myModule.canLoad()) throw new ClassNotFoundException(name);
 
-    //This does not guarantee that if one class was loaded, it will be returned by sequential loadClass immediately,
-    //but only makes classloading faster.
-    if (myClasses.containsKey(name)) {
-      Class cl = myClasses.get(name);
-      if (cl == null) throw new ClassNotFoundException(name);
-      return cl;
-    }
-
-    Class<?> clazz = null;
-    try {
-      clazz = findInSelfAndDependencies(name);
-      if (resolve) {
-        resolveClass(clazz);
+      //This does not guarantee that if one class was loaded, it will be returned by sequential loadClass immediately,
+      //but only makes classloading faster.
+      if (myClasses.containsKey(name)) {
+        Class cl = myClasses.get(name);
+        if (cl == null) throw new ClassNotFoundException(name);
+        return cl;
       }
-      return clazz;
-    } finally {
-      myClasses.put(name, clazz);
+
+      Class<?> clazz = null;
+      try {
+        clazz = findInSelfAndDependencies(name);
+        if (resolve) {
+          resolveClass(clazz);
+        }
+        return clazz;
+      } finally {
+        myClasses.put(name, clazz);
+      }
     }
   }
 
