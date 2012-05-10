@@ -106,14 +106,20 @@ public class ModuleClassLoader extends ClassLoader {
     }
 
     //from dependencies (try parent class loaders also)
+    Set<ClassLoader> processedParentClassLoaders = new HashSet<ClassLoader>();
     for (IClassLoadingModule m : queue) {
       try {
-        return m.getClassLoader().loadFromParent(name);
+        ModuleClassLoader classLoader = m.getClassLoader();
+        if (processedParentClassLoaders.contains(classLoader.getParent())) {
+          continue;
+        }
+        processedParentClassLoaders.add(classLoader.getParent());
+        return classLoader.loadFromParent(name);
       } catch (ClassNotFoundException e) {
         //ignore
       }
     }
-    return loadFromParent(name);
+    return processedParentClassLoaders.contains(getParent()) ? null : loadFromParent(name);
   }
 
   protected URL findResource(String name) {
