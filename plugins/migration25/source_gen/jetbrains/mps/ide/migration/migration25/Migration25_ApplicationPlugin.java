@@ -41,6 +41,7 @@ public class Migration25_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new OptimizeImportsInProject_Action());
     addAction(new OptimizeProjectImports_Action());
     addAction(new UpdateRefactoringVersions_Action());
+    addAction(new UpgradePersistence_Action());
     // groups 
     addGroup(new Migrations25_ActionGroup());
     addGroup(new OptionalMigrations_ActionGroup());
