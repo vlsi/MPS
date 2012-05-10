@@ -26,6 +26,7 @@ public class Migration25_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ExecuteJavaModelCheckerFixes_Action());
     addAction(new ExecuteModelCheckerFixes_Action());
     addAction(new FixMissingImportsInProject_Action());
+    addAction(new MigrationScript_APIMigrationStandalone_Action());
     addAction(new MigrationScript_APIMigration_Action());
     addAction(new MigrationScript_ConvertActionParameterCondition_Action());
     addAction(new MigrationScript_DebuggerMoved_Action());
