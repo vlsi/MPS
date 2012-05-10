@@ -40,7 +40,7 @@ public class ModuleClassLoader extends ClassLoader {
     myModule = module;
   }
 
-  protected synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+  protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
     synchronized (LOCK) {
       if (!myModule.canLoad()) throw new ClassNotFoundException(name);
 
