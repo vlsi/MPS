@@ -18,6 +18,7 @@ public class Migrations25_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(true);
     try {
+      Migrations25_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration25.UpgradePersistence_Action");
       Migrations25_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration25.AddStubsToModelRoots_Action");
       Migrations25_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration25.AddSourcesToModelRoots_Action");
       Migrations25_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration25.AddPluginDependencies_Action");
