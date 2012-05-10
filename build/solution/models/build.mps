@@ -6260,6 +6260,45 @@
             </node>
           </node>
         </node>
+        <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Zip" typeId="3ior.7389400916848050071" id="8621428143896499183">
+          <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="8621428143896499184">
+            <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="8621428143896499185">
+              <property name="text" nameId="3ior.4903714810883755350" value="MPS-src.zip" />
+            </node>
+          </node>
+          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_CustomCopy" typeId="3ior.9184644532456495794" id="8621428143896499186">
+            <node role="fileset" roleId="3ior.5248329904287857082" type="3ior.BuildInputFiles" typeId="3ior.5248329904287794596" id="8621428143896499187">
+              <node role="dir" roleId="3ior.5248329904287794598" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="8621428143896499189">
+                <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="2569834391839970983" resolveInfo="mps_home" />
+              </node>
+              <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileIncludeSelector" typeId="3ior.5248329904288051100" id="8621428143896499190">
+                <property name="pattern" nameId="3ior.5248329904288051101" value="MPSPlugin/**/*.java" />
+              </node>
+              <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileIncludeSelector" typeId="3ior.5248329904288051100" id="8621428143896499191">
+                <property name="pattern" nameId="3ior.5248329904288051101" value="core/**/*.java" />
+              </node>
+              <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileIncludeSelector" typeId="3ior.5248329904288051100" id="8621428143896499192">
+                <property name="pattern" nameId="3ior.5248329904288051101" value="languages/**/*.java" />
+              </node>
+              <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileIncludeSelector" typeId="3ior.5248329904288051100" id="8621428143896499193">
+                <property name="pattern" nameId="3ior.5248329904288051101" value="plugins/**/*.java" />
+              </node>
+              <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileIncludeSelector" typeId="3ior.5248329904288051100" id="8621428143896499197">
+                <property name="pattern" nameId="3ior.5248329904288051101" value="workbench/**/*.java" />
+              </node>
+              <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileIncludeSelector" typeId="3ior.5248329904288051100" id="8621428143896499198">
+                <property name="pattern" nameId="3ior.5248329904288051101" value="testbench/**/*.java" />
+              </node>
+              <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileExcludeSelector" typeId="3ior.5248329904288051111" id="8621428143896499195">
+                <property name="pattern" nameId="3ior.5248329904288051112" value="**/sandbox/**" />
+              </node>
+            </node>
+            <node role="handlers" roleId="3ior.9184644532456533278" type="3ior.BuildLayout_CopyRegexMapper" typeId="3ior.3970102152660876447" id="8621428143896499199">
+              <property name="pattern" nameId="3ior.3970102152660876448" value="(.*)(/|\\)(src|sources|source|source_gen|source-api)(/|\\)(.*)" />
+              <property name="replace" nameId="3ior.3970102152660876449" value="\5" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="plugins" roleId="3ior.6647099934206700656" type="3ior.BuildJavaPlugin" typeId="3ior.6647099934206700647" id="2569834391839970980" />
