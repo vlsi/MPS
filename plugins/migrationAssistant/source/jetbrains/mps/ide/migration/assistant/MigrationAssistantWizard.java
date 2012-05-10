@@ -464,7 +464,12 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     public MigrationsProgressStep(Project project) {
       super(project, "Migration In Progress", "progress");
       myTask = createTask();
-      myProgressIndicator = new InlineProgressIndicator(true, myTask);
+      myProgressIndicator = new InlineProgressIndicator(true, myTask) {
+        @Override
+        protected boolean isFinished() {
+          return myFinished;
+        }
+      };
       createComponent();
     }
 
@@ -502,7 +507,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
             public void startingAction(Object action) {
               indicator.setIndeterminate(false);
               indicator.setFraction(0.0);
-              myList.ensureIndexIsVisible(0);
+              myList.ensureIndexIsVisible(actions.indexOf(action));
               myList.repaint();
             }
 
@@ -520,9 +525,11 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
             @Override
             public void finishedAll() {
+              myFinished = true;
               processor.removeCallback(this);
               indicator.setFraction(1.0);
-              myFinished = true;
+              indicator.stop();
+              indicator.setText("Done");
               fireStateChanged();
             }
 

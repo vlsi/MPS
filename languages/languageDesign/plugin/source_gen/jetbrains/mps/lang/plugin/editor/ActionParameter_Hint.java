@@ -124,7 +124,7 @@ public class ActionParameter_Hint extends AbstractCellProvider {
         }
         SNode longDescription = ListSequence.fromList(SLinkOperations.getTargets(annotation, "value", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SPropertyOperations.getString(SLinkOperations.getTarget(it, "key", false), "name").equals("longDescription");
+            return it != null && SLinkOperations.getTarget(it, "key", false) != null && "longDescription".equals(SPropertyOperations.getString(SLinkOperations.getTarget(it, "key", false), "name"));
           }
         }).last();
         if (longDescription == null) {

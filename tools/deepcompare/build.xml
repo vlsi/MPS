@@ -20,6 +20,23 @@
         <zip destfile="testBuild/diff-${build.number}.zip">
             <fileset dir="testBuild/diffreports"/>
         </zip>
+        
+        <!-- macos -->
+
+        <delete dir="testBuild/new"/>
+        <delete dir="testBuild/old"/>
+        <delete dir="testBuild/diffreports"/>
+
+        <unzip dest="testBuild/new" src="../../build/artifacts/buildDistribution/${build.number}-macos.zip"/>
+        <unzip dest="testBuild/old" src="../../artifacts/${build.number}-macos.zip"/>
+
+        <java jar="build/deepcompare.jar" fork="true" dir="testBuild">
+            <arg value="old"/>
+            <arg value="new"/>
+        </java>
+        <zip destfile="testBuild/diff-${build.number}-macos.zip">
+            <fileset dir="testBuild/diffreports"/>
+        </zip>
     </target>
 
     <target name="clean">
