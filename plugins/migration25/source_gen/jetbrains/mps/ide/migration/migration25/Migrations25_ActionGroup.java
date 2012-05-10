@@ -35,7 +35,7 @@ public class Migrations25_ActionGroup extends GeneratedActionGroup {
       Migrations25_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration25.MigrationScript_ResolveBrokenRefs_Action");
       Migrations25_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration25.ExecuteModelCheckerFixes_Action");
       Migrations25_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration25.ExecuteJavaModelCheckerFixes_Action");
-      Migrations25_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration25.OptimizeProjectImports_Action");
+      Migrations25_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration25.OptimizeImportsInProject_Action");
       Migrations25_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration25.FixMissingImportsInProject_Action");
       {
         LabelledAnchor action = new LabelledAnchor(Migrations25_ActionGroup.LABEL_ID_optional);
