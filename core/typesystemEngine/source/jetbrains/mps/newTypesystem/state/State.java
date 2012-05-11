@@ -399,7 +399,7 @@ public class State {
   }
 
   public void checkNonConcreteWhenConcretes() {
-    for (Block block : myBlocks) {
+    for (Block block : getBlocks()) {
       if (block.getBlockKind().equals(BlockKind.WHEN_CONCRETE)) {
         WhenConcreteBlock wCBlock = (WhenConcreteBlock) block;
         if (!wCBlock.isSkipError()) {
@@ -485,17 +485,16 @@ public class State {
     SNode typeVar = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable",
       myTypeCheckingContext.getRuntimeTypesModel(), GlobalScope.getInstance(), false);
     typeVar.setName(myVariableIdentifier.getNewVarName());
-//  registerTypeVariable(typeVar);          todo ?
     return typeVar;
   }
 
   public Set<Block> getBlocks() {
-    return myBlocks;
+    return Collections.unmodifiableSet(myBlocks);
   }
 
   public Set<Block> getBlocks(BlockKind kind) {
     Set<Block> result = new THashSet<Block>();
-    for (Block block : myBlocks) {
+    for (Block block : getBlocks()) {
       if (block.getBlockKind() == kind) {
         result.add(block);
       }
