@@ -51,7 +51,7 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import java.util.concurrent.ExecutionException;
 
-public abstract class RefactoringFacade {
+public class RefactoringFacade {
   protected Logger myLog = Logger.getLogger(this.getClass());
 
   public RefactoringFacade() {

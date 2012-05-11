@@ -17,6 +17,7 @@
 package jetbrains.mps.idea.core.ui;
 
 
+import com.intellij.navigation.ItemPresentation;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.pom.Navigatable;
@@ -25,6 +26,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.choose.nodes.NodePresentation;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 
@@ -34,14 +36,16 @@ public class NodeUsageBase implements Navigatable {
   protected SNode myRootNode;
   protected Project myProject;
   protected VirtualFile myFile;
+  protected ItemPresentation myItemPresentation;
 
   public NodeUsageBase(@NotNull SNode node, @NotNull Project project) {
     myNode = node;
     myProject = project;
+    myItemPresentation = new NodePresentation(node);
+    myPresentation = myItemPresentation.getPresentableText();
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        myPresentation = myNode.getPresentation();
         myRootNode = myNode.getContainingRoot();
         myFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(myRootNode);
       }

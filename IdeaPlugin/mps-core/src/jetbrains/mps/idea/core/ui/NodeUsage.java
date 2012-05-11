@@ -24,12 +24,12 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.ui.SimpleTextAttributes;
 import com.intellij.usages.TextChunk;
 import com.intellij.usages.UsagePresentation;
 import com.intellij.usages.rules.MergeableUsage;
 import com.intellij.usages.rules.UsageInModule;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -40,6 +40,10 @@ import java.util.ArrayList;
 
 public class NodeUsage extends NodeUsageBase implements UsagePresentation, UsageInModule, MergeableUsage, UsageInRoot, UsageInModel {
   private SModel myModel;
+  private TextChunk[] myChunks;
+  private boolean myIsValid;
+  private String myParentPresentation;
+  private String myRole;
 
   public NodeUsage(@NotNull SNode node, @NotNull Project project) {
     super(node, project);
@@ -47,8 +51,12 @@ public class NodeUsage extends NodeUsageBase implements UsagePresentation, Usage
       @Override
       public void run() {
         myModel = myNode.getModel();
+        myParentPresentation = myNode.getParent().getPresentation();
+        myRole = myNode.getRole_();
       }
     });
+    myIsValid = isValid();
+    myChunks = initChunks();
   }
 
   @NotNull
@@ -87,25 +95,30 @@ public class NodeUsage extends NodeUsageBase implements UsagePresentation, Usage
   @NotNull
   @Override
   public TextChunk[] getText() {
+    final boolean currentIsValid = isValid();
+    if (myIsValid != currentIsValid) {
+      myIsValid = isValid();
+      myChunks = initChunks();
+    }
+    return myChunks;
+  }
+
+  private TextChunk[] initChunks() {
     final ArrayList<TextChunk> result = new ArrayList<TextChunk>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        if (isValid()) {
-          TextAttributes attributes = new TextAttributes();
-          result.add(new TextChunk(attributes, myNode.getPresentation()));
-          result.add(new TextChunk(attributes, " ("));
-          result.add(new TextChunk(attributes, "role: "));
-          result.add(new TextChunk(attributes, myNode.getRole_()));
-          result.add(new TextChunk(attributes, ";"));
-          result.add(new TextChunk(attributes, " in: "));
-          result.add(new TextChunk(attributes, myNode.getParent().getPresentation()));
-          result.add(new TextChunk(attributes, ")"));
-        } else {
-          result.add(new TextChunk(new TextAttributes(), "INVALID"));
-        }
-      }
-    });
+    TextAttributes attributes;
+    if (myIsValid) {
+      attributes = SimpleTextAttributes.SIMPLE_CELL_ATTRIBUTES.toTextAttributes();
+    } else {
+      attributes = SimpleTextAttributes.GRAY_ITALIC_ATTRIBUTES.toTextAttributes();
+    }
+    result.add(new TextChunk(attributes, myPresentation));
+    result.add(new TextChunk(attributes, " ("));
+    result.add(new TextChunk(attributes, "role: "));
+    result.add(new TextChunk(attributes, myRole));
+    result.add(new TextChunk(attributes, ";"));
+    result.add(new TextChunk(attributes, " in: "));
+    result.add(new TextChunk(attributes, myParentPresentation));
+    result.add(new TextChunk(attributes, ")"));
     return result.toArray(new TextChunk[result.size()]);
   }
 
@@ -117,7 +130,7 @@ public class NodeUsage extends NodeUsageBase implements UsagePresentation, Usage
 
   @Override
   public Icon getIcon() {
-    return IconManager.getIconFor(myNode);
+    return myItemPresentation.getIcon(false);
   }
 
   @Override

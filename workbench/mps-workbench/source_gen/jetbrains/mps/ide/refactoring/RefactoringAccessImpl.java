@@ -56,7 +56,7 @@ public class RefactoringAccessImpl extends RefactoringAccess implements Applicat
 
   public RefactoringFacade getRefactoringFacade() {
     if (myRefactoringFacade == null) {
-      myRefactoringFacade = new RefactoringFacadeImpl();
+      myRefactoringFacade = new RefactoringFacade();
     }
     return myRefactoringFacade;
   }

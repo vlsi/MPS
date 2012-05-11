@@ -47,16 +47,18 @@ import java.util.Set;
 public class ModelOrNodeChooser extends ProjectViewPane implements ModelElementTargetChooser {
   private Object myInitialValue;
   private Project myProject;
+  private JComponent myComponent;
 
   public ModelOrNodeChooser(Project project, Object initialValue) {
     super(project);
     myInitialValue = initialValue;
     myProject = project;
+    myComponent = createComponent();
   }
 
   @Override
   public JComponent getComponent() {
-    return createComponent();
+    return myComponent;
   }
 
 
@@ -87,7 +89,7 @@ public class ModelOrNodeChooser extends ProjectViewPane implements ModelElementT
   private boolean hasModelRoots(Module module) {
     if (module == null) return false;
     MPSFacet mpsFacet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
-    if(mpsFacet == null || !mpsFacet.wasInitialized()) return false;
+    if (mpsFacet == null || !mpsFacet.wasInitialized()) return false;
 
     MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getState();
     return configurationBean != null && !(configurationBean.getModelRoots().isEmpty());

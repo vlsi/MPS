@@ -46,7 +46,7 @@
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2183214647889839513">
       <property name="name" nameId="tpck.1169194664001" value="RefactoringFacade" />
-      <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
+      <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1685972956014264534">
       <property name="name" nameId="tpck.1169194664001" value="RefactoringDialog" />

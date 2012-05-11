@@ -89,7 +89,7 @@ public class RefactoringViewItemImpl implements RefactoringViewItem {
     usageView.addPerformOperationAction(new Runnable() {
       @Override
       public void run() {
-        if (myHasModelsToGenerate || myRefactoringContext.getRefactoring() instanceof ILoggableRefactoring) {
+        if (myRefactoringContext.getRefactoring() instanceof ILoggableRefactoring) {
           showRefactoringOptions();
         } else {
           myCallback.performAction(RefactoringViewItemImpl.this);
@@ -101,7 +101,7 @@ public class RefactoringViewItemImpl implements RefactoringViewItem {
 
 
   private void showRefactoringOptions() {
-    RefactoringOptionsDialog dialog = new RefactoringOptionsDialog(myProject, myRefactoringContext, myRefactoringContext.getRefactoring(), myHasModelsToGenerate);
+    RefactoringOptionsDialog dialog = new RefactoringOptionsDialog(myProject, myRefactoringContext, myRefactoringContext.getRefactoring(), false);
     dialog.show();
     boolean cancelled = dialog.isCancelled();
     if (!cancelled) {

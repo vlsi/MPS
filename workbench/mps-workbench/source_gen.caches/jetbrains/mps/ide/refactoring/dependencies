@@ -65,7 +65,6 @@
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringFacade" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringViewAction" />
     <classNode dependClassName="jetbrains.mps.ide.refactoring.ModelOrNodeChooser" />
-    <classNode dependClassName="jetbrains.mps.ide.refactoring.RefactoringFacadeImpl" />
     <classNode dependClassName="jetbrains.mps.ide.refactoring.RefactoringView" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
@@ -74,9 +73,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccess" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.refactoring.RefactoringFacadeImpl" file="RefactoringFacadeImpl.java">
-    <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringFacade" />
   </dependency>
   <dependency className="jetbrains.mps.ide.refactoring.RefactoringView" file="RefactoringView.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />

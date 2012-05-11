@@ -23,14 +23,12 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiFile;
 import com.intellij.usages.UsageTarget;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.Icon;
-
 public class NodeUsageTarget extends NodeUsageBase implements UsageTarget {
+
   public NodeUsageTarget(@NotNull SNode node, @NotNull Project project) {
     super(node, project);
   }
@@ -76,22 +74,7 @@ public class NodeUsageTarget extends NodeUsageBase implements UsageTarget {
   }
 
   public ItemPresentation getPresentation() {
-    return new ItemPresentation() {
-      @Override
-      public String getPresentableText() {
-        return myPresentation;
-      }
-
-      @Override
-      public String getLocationString() {
-        return null;
-      }
-
-      @Override
-      public Icon getIcon(boolean b) {
-        return IconManager.getIconFor(myNode);
-      }
-    };
+    return myItemPresentation;
   }
 
 }
