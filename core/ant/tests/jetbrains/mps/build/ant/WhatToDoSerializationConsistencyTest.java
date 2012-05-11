@@ -98,11 +98,8 @@ public class WhatToDoSerializationConsistencyTest extends TestCase {
       WhatToDo toDoCloned = new WhatToDo();
       toDo.cloneTo(toDoCloned);
 
-      assertEquals(toDoCloned.toString(), toDoFromString.toString());
       assertDeepObjectEquals(toDoCloned, toDoFromString);
-      assertEquals(toDo.toString(), toDoFromString.toString());
       assertDeepObjectEquals(toDo, toDoFromString);
-      assertEquals(toDoCloned.toString(), toDo.toString());
       assertDeepObjectEquals(toDoCloned, toDo);
     } catch (IllegalAccessException e) {
       fail(e.getMessage());
