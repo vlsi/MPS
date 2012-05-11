@@ -10,6 +10,7 @@
   <property name="idea_home" location="" />
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
   <property name="artifacts.buildCoreEx" location="${build.dir}/artifacts/buildCoreEx" />
+  <property name="artifacts.buildCoreUI" location="${build.dir}/artifacts/buildCoreUI" />
   <property name="artifacts.buildWorkbench" location="${build.dir}/artifacts/buildWorkbench" />
   <property name="artifacts.buildExecution" location="${build.dir}/artifacts/buildExecution" />
   <property name="artifacts.buildUtilLanguages" location="${build.dir}/artifacts/buildUtilLanguages" />
@@ -29,6 +30,9 @@
     </copy>
     <copy todir="${build.layout}/languages">
       <fileset dir="${artifacts.buildCoreEx}/languages" />
+    </copy>
+    <copy todir="${build.layout}/languages">
+      <fileset dir="${artifacts.buildCoreUI}/languages" />
     </copy>
     <copy todir="${build.layout}/languages">
       <fileset dir="${artifacts.buildWorkbench}/languages" />
@@ -82,6 +86,9 @@
       <fileset dir="${basedir}/license" />
     </copy>
     <mkdir dir="${build.layout}/plugin" />
+    <copy todir="${build.layout}/plugin">
+      <fileset file="${basedir}/plugin/MPSPlugin.jar" />
+    </copy>
     <mkdir dir="${build.layout}/plugins" />
     <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.buildPlugins}/plugins" />
@@ -132,6 +139,7 @@
   <target name="buildDependents">
     <ant antfile="build/buildCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildCoreEx.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildCoreUI.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildExecution.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildUtilLanguages.xml" inheritAll="false" useNativeBasedir="true" />
