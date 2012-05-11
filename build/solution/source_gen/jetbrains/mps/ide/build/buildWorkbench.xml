@@ -179,7 +179,7 @@
   
   <target name="java.compile.typesystem-ui" depends="java.compile.mps-workbench, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/typesystem-ui" />
-    <javac destdir="${build.tmp}/java/out/typesystem-ui" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/typesystem-ui" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/workbench/typesystemUi/source" />
@@ -214,7 +214,7 @@
   
   <target name="java.compile.uiLanguage.runtime">
     <mkdir dir="${build.tmp}/java/out/uiLanguage.runtime" />
-    <javac destdir="${build.tmp}/java/out/uiLanguage.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/uiLanguage.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/uiLanguage/runtime/source_gen" />
@@ -270,7 +270,7 @@
   
   <target name="java.compile.execution" depends="java.compile.mps-workbench, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/execution" />
-    <javac destdir="${build.tmp}/java/out/execution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/execution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.api/source_gen" />
@@ -307,7 +307,7 @@
   
   <target name="java.compile.MpsSupport">
     <mkdir dir="${build.tmp}/java/out/MpsSupport" />
-    <javac destdir="${build.tmp}/java/out/MpsSupport" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/MpsSupport" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src path="${mps_home}/MPSPlugin/source-api" />
       <classpath />
@@ -319,7 +319,7 @@
   
   <target name="java.compile.startup">
     <mkdir dir="${build.tmp}/java/out/startup" />
-    <javac destdir="${build.tmp}/java/out/startup" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/startup" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/startup/src" />
@@ -341,7 +341,7 @@
   
   <target name="java.compile.jetbrains.mps.uiLanguage" depends="java.compile.uiLanguage.runtime, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.uiLanguage" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.uiLanguage" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.uiLanguage" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/uiLanguage/source_gen" />
@@ -383,7 +383,7 @@
   
   <target name="java.compile.jetbrains.mps.ide.uiLanguage" depends="java.compile.uiLanguage.runtime, java.compile.jetbrains.mps.uiLanguage, java.compile.mps-workbench, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ide.uiLanguage" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ide.uiLanguage" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ide.uiLanguage" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/ideUiLanguage/source_gen" />
@@ -427,7 +427,7 @@
   
   <target name="java.compile.jetbrains.mps.lang.plugin.standalone" depends="java.compile.mps-workbench, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.plugin.standalone" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.plugin.standalone" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.plugin.standalone" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/languageDesign/plugin-standalone/source_gen" />

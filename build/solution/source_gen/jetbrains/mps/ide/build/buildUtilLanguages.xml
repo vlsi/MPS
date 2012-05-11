@@ -1119,7 +1119,7 @@
   
   <target name="java.compile.jetbrains.mps.buildlanguage" depends="java.compile.jetbrains.mps.xml.deprecated, java.compile.java.modules.cycle.1, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.buildlanguage" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.buildlanguage" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.buildlanguage" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/buildlanguage/languages/buildlanguage/source_gen" />
@@ -1168,7 +1168,7 @@
   
   <target name="java.compile.jetbrains.mps.build.custommps" depends="java.compile.jetbrains.mps.build.generictasks, java.compile.jetbrains.mps.build.mpsdist, java.compile.jetbrains.mps.build.packaging, java.compile.jetbrains.mps.build.property, java.compile.jetbrains.mps.build.startup, java.compile.jetbrains.mps.buildlanguage, java.compile.jetbrains.mps.xml.deprecated, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.custommps" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.custommps" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.custommps" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/buildlanguage/languages/custommps/source_gen" />
@@ -1230,7 +1230,7 @@
   
   <target name="java.compile.jetbrains.mps.build.custommps.pluginSolution" depends="java.compile.jetbrains.mps.build.custommps, java.compile.jetbrains.mps.build.generictasks, java.compile.jetbrains.mps.build.packaging, java.compile.jetbrains.mps.build.packaging.pluginSolution, java.compile.jetbrains.mps.build.property, java.compile.jetbrains.mps.build.startup, java.compile.jetbrains.mps.buildlanguage, java.compile.jetbrains.mps.xml.deprecated, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.custommps.pluginSolution" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.custommps.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.custommps.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/buildlanguage/languages/custommps/solutions/pluginSolution/source_gen" />
@@ -1293,7 +1293,7 @@
   
   <target name="java.compile.jetbrains.mps.build.dependency" depends="java.compile.jetbrains.mps.build.generictasks, java.compile.jetbrains.mps.buildlanguage, java.compile.jetbrains.mps.xml.deprecated, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.dependency" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.dependency" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.dependency" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/buildlanguage/languages/dependency/source_gen" />
@@ -1339,7 +1339,7 @@
   
   <target name="java.compile.jetbrains.mps.build.generictasks" depends="java.compile.jetbrains.mps.xml.deprecated, java.compile.java.modules.cycle.1, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.generictasks" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.generictasks" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.generictasks" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/buildlanguage/languages/generictasks/source_gen" />
@@ -1384,7 +1384,7 @@
   
   <target name="java.compile.jetbrains.mps.build.generictasks.pluginSolution" depends="java.compile.jetbrains.mps.xml.deprecated, java.compile.java.modules.cycle.1, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.generictasks.pluginSolution" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.generictasks.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.generictasks.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/source_gen" />
@@ -1429,7 +1429,7 @@
   
   <target name="java.compile.jetbrains.mps.build.mpsdist" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.mpsdist" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.mpsdist" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.mpsdist" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/buildlanguage/solutions/jetbrains.mps.build.mpsdist/source_gen" />
@@ -1461,7 +1461,7 @@
   
   <target name="java.compile.jetbrains.mps.build.packaging" depends="java.compile.jetbrains.mps.build.dependency, java.compile.jetbrains.mps.build.generictasks, java.compile.jetbrains.mps.build.property, java.compile.jetbrains.mps.buildlanguage, java.compile.jetbrains.mps.xml.deprecated, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.packaging" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.packaging" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.packaging" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/buildlanguage/languages/packaging/source_gen" />
@@ -1520,7 +1520,7 @@
   
   <target name="java.compile.jetbrains.mps.build.packaging.pluginSolution" depends="java.compile.jetbrains.mps.build.generictasks, java.compile.jetbrains.mps.build.packaging, java.compile.jetbrains.mps.build.property, java.compile.jetbrains.mps.buildlanguage, java.compile.jetbrains.mps.xml.deprecated, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.packaging.pluginSolution" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.packaging.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.packaging.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/buildlanguage/languages/packaging/solutions/pluginSolution/source_gen" />
@@ -1579,7 +1579,7 @@
   
   <target name="java.compile.jetbrains.mps.build.property" depends="java.compile.jetbrains.mps.xml.deprecated, java.compile.java.modules.cycle.1, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.property" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.property" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.property" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/buildlanguage/languages/property/source_gen" />
@@ -1627,7 +1627,7 @@
   
   <target name="java.compile.jetbrains.mps.baseLanguage.dates" depends="java.compile.jetbrains.mps.baseLanguage.dates.runtime, java.compile.jetbrains.mps.baseLanguage.datesInternal, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.dates" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.dates" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.dates" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/dates/source_gen" />
@@ -1671,7 +1671,7 @@
   
   <target name="java.compile.jetbrains.mps.baseLanguage.datesInternal" depends="java.compile.jetbrains.mps.baseLanguage.dates.runtime, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.datesInternal" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.datesInternal" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.datesInternal" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/dates/internal/source_gen" />
@@ -1711,7 +1711,7 @@
   
   <target name="java.compile.jetbrains.mps.baseLanguage.dates.runtime" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.dates.runtime" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.dates.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.dates.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/dates/runtime/source_gen" />
@@ -1729,7 +1729,7 @@
   
   <target name="java.compile.jetbrains.mps.baseLanguage.dates.pluginSolution" depends="java.compile.jetbrains.mps.baseLanguage.dates, java.compile.jetbrains.mps.baseLanguage.dates.runtime, java.compile.jetbrains.mps.baseLanguage.datesInternal, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.dates.pluginSolution" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.dates.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.dates.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/dates/solutions/pluginSolution/source_gen" />
@@ -1774,7 +1774,7 @@
   
   <target name="java.compile.jetbrains.mps.xml.deprecated" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.xml.deprecated" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.xml.deprecated" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.xml.deprecated" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/xmlDeprecated/source_gen" />
@@ -1809,7 +1809,7 @@
   
   <target name="java.compile.jetbrains.mps.xml.deprecated.pluginSolution">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.xml.deprecated.pluginSolution" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.xml.deprecated.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.xml.deprecated.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/xmlDeprecated/solutions/pluginSolution/source_gen" />
@@ -1823,7 +1823,7 @@
   
   <target name="java.compile.jetbrains.mpslite" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mpslite" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mpslite" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mpslite" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/mps-lite/languages/mpslite/source_gen" />
@@ -1875,7 +1875,7 @@
   
   <target name="java.compile.jetbrains.mpslite.pluginSolution">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mpslite.pluginSolution" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mpslite.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mpslite.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/mps-lite/languages/mpslite/solutions/pluginSolution/source_gen" />
@@ -1889,7 +1889,7 @@
   
   <target name="java.compile.jetbrains.mps.nanoj" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.nanoj" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.nanoj" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.nanoj" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/mps-lite/languages/nanoj/source_gen" />
@@ -1930,7 +1930,7 @@
   
   <target name="java.compile.jetbrains.mps.uiLanguage.pluginSolution">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.uiLanguage.pluginSolution" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.uiLanguage.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.uiLanguage.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/uiLanguage/solutions/pluginSolution/source_gen" />
@@ -2019,7 +2019,7 @@
   
   <target name="java.compile.jetbrains.mps.ypath" depends="java.compile.jetbrains.mps.ypath.runtime, java.compile.java.modules.cycle.2, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ypath" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ypath" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ypath" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/ypath/source_gen" />
@@ -2067,7 +2067,7 @@
   
   <target name="java.compile.jetbrains.mps.ypath.pluginSolution" depends="java.compile.java.modules.cycle.2, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ypath.pluginSolution" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ypath.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ypath.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/ypath/solutions/pluginSolution/source_gen" />
@@ -2111,7 +2111,7 @@
   
   <target name="java.compile.jetbrains.mps.ypath.runtime" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ypath.runtime" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ypath.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ypath.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/source_gen" />
@@ -2150,7 +2150,7 @@
   
   <target name="java.compile.ypath.main" depends="java.compile.jetbrains.mps.ypath, java.compile.jetbrains.mps.ypath.runtime, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/ypath.main" />
-    <javac destdir="${build.tmp}/java/out/ypath.main" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/ypath.main" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/ypath/solutions/main/source_gen" />
@@ -2194,7 +2194,7 @@
   
   <target name="java.compile.ypath.test" depends="java.compile.jetbrains.mps.ypath, java.compile.jetbrains.mps.ypath.runtime, java.compile.ypath.main, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/ypath.test" />
-    <javac destdir="${build.tmp}/java/out/ypath.test" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/ypath.test" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/ypath/solutions/test/source_gen" />
@@ -2249,7 +2249,7 @@
   
   <target name="java.compile.jetbrains.mps.quickQueryLanguage" depends="java.compile.jetbrains.mps.quickQuery.runtime, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.quickQueryLanguage" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.quickQueryLanguage" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.quickQueryLanguage" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/quickQueryLanguage/source_gen" />
@@ -2294,7 +2294,7 @@
   
   <target name="java.compile.jetbrains.mps.quickQuery.runtime" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.quickQuery.runtime" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.quickQuery.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.quickQuery.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/source_gen" />
@@ -2324,7 +2324,7 @@
   
   <target name="java.compile.jetbrains.mps.quickQueryLanguage.pluginSolution" depends="java.compile.jetbrains.mps.quickQuery.runtime, java.compile.jetbrains.mps.quickQueryLanguage, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.quickQueryLanguage.pluginSolution" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.quickQueryLanguage.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.quickQueryLanguage.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/quickQueryLanguage/solutions/pluginSolution/source_gen" />
@@ -2371,7 +2371,7 @@
   
   <target name="java.compile.jetbrains.mps.bash" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.bash" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.bash" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.bash" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/bash/languages/bash/source_gen" />
@@ -2413,7 +2413,7 @@
   
   <target name="java.compile.jetbrains.mps.build.startup">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.startup" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.startup" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.startup" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/mpsbuild/startup/source_gen" />
@@ -2455,7 +2455,7 @@
   
   <target name="java.compile.jetbrains.mps.baseLanguage.contracts" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.contracts" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.contracts" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.contracts" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/contracts/languages/contracts/source_gen" />
@@ -2493,7 +2493,7 @@
   
   <target name="java.compile.jetbrains.mps.baseLanguage.math" depends="java.compile.jetbrains.mps.baseLanguage.math.pluginSolution, java.compile.jetbrains.mps.baseLanguage.math.runtime, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.math" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.math" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.math" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/math/source_gen" />
@@ -2535,7 +2535,7 @@
   
   <target name="java.compile.jetbrains.mps.baseLanguage.math.runtime" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.math.runtime" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.math.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.math.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/math/runtimeSolution/source_gen" />
@@ -2551,7 +2551,7 @@
   
   <target name="java.compile.jetbrains.mps.baseLanguage.math.pluginSolution" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.math.pluginSolution" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.math.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.math.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/math/solutions/pluginSolution/source_gen" />
@@ -2585,7 +2585,7 @@
   
   <target name="java.compile.jetbrains.mps.baseLanguage.collections.trove" depends="java.compile.collections_trove.runtime, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collections.trove" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collections.trove" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collections.trove" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/baseLanguage/collections/languages/trove/source_gen" />
@@ -2627,7 +2627,7 @@
   
   <target name="java.compile.collections_trove.runtime" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/collections_trove.runtime" />
-    <javac destdir="${build.tmp}/java/out/collections_trove.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/collections_trove.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/source_gen" />
@@ -2645,7 +2645,7 @@
   
   <target name="java.compile.jetbrains.mps.baseLanguage.regexp.examples" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.examples" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.examples" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.examples" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/regexp/solutions/jetbrains.mps.regexp.examples/source_gen" />
@@ -2661,7 +2661,7 @@
   
   <target name="java.compile.jetbrains.mps.platform.conf" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.platform.conf" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.platform.conf" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.platform.conf" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/conf/languages/conf/source_gen" />

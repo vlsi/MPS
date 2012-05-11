@@ -28,7 +28,7 @@
     <unitInfo nodeId="5970299968953452763" fileName="buildConnectorPlugin.xml" startLine="1" startPosition="0" endLine="57" endPosition="10" unitName="jetbrains.mps.ide.build.buildConnectorPlugin" />
   </root>
   <root nodeId="5970299968953599871">
-    <unitInfo nodeId="5970299968953599871" fileName="buildCoreUI.xml" startLine="1" startPosition="0" endLine="795" endPosition="10" unitName="jetbrains.mps.ide.build.buildCoreUI" />
+    <unitInfo nodeId="5970299968953599871" fileName="buildCoreUI.xml" startLine="1" startPosition="0" endLine="831" endPosition="10" unitName="jetbrains.mps.ide.build.buildCoreUI" />
   </root>
   <root nodeId="6164334420696839314">
     <unitInfo nodeId="6164334420696839314" fileName="buildDebuggerPlugin.xml" startLine="1" startPosition="0" endLine="507" endPosition="10" unitName="jetbrains.mps.ide.build.buildDebuggerPlugin" />
@@ -40,7 +40,7 @@
     <unitInfo nodeId="6391307088354381121" fileName="buildPlugins.xml" startLine="1" startPosition="0" endLine="327" endPosition="10" unitName="jetbrains.mps.ide.build.buildPlugins" />
   </root>
   <root nodeId="6503539749405386437">
-    <unitInfo nodeId="6503539749405386437" fileName="buildCoreEx.xml" startLine="1" startPosition="0" endLine="387" endPosition="10" unitName="jetbrains.mps.ide.build.buildCoreEx" />
+    <unitInfo nodeId="6503539749405386437" fileName="buildCoreEx.xml" startLine="1" startPosition="0" endLine="402" endPosition="10" unitName="jetbrains.mps.ide.build.buildCoreEx" />
   </root>
   <root nodeId="6977615362525216882">
     <unitInfo nodeId="6977615362525216882" fileName="buildPluginTests.xml" startLine="1" startPosition="0" endLine="140" endPosition="10" unitName="jetbrains.mps.ide.build.buildPluginTests" />

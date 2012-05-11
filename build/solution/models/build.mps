@@ -5409,6 +5409,7 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="1659807394255099741">
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
       <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
+      <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="8055294676438936914">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -7998,6 +7999,7 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="4301118715654850400">
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
       <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
+      <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="4301118715654850401">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -8172,6 +8174,7 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="5875180246329088819">
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
       <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
+      <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="5875180246329088820">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -9953,6 +9956,7 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="6391307088354381144">
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
       <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
+      <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="6391307088354381145">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -10559,6 +10563,7 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="5249031859942907433">
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
       <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
+      <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="5249031859942907434">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -10686,6 +10691,7 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="1545517825663017279">
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
       <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
+      <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="1545517825663017280">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -10937,6 +10943,7 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="5249031859942907430">
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
       <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
+      <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="5249031859942907431">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -11706,6 +11713,7 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="5249031859942907427">
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
       <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
+      <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="5249031859942907428">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -12596,6 +12604,7 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="2075442863766408896">
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
       <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
+      <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="2075442863766408897">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -13672,6 +13681,14 @@
         </node>
       </node>
     </node>
+    <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="1185869098826025451">
+      <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
+      <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
+      <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="1185869098826025452">
+        <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      </node>
+    </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Group" typeId="kdzh.1500819558095907805" id="6503539749405386443">
       <property name="name" nameId="tpck.1169194664001" value="languageDesign" />
       <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Language" typeId="kdzh.3189788309731840248" id="8939513996048535883">
@@ -13972,6 +13989,7 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="8227093612176368070">
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
       <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
+      <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="8227093612176368071">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -14572,6 +14590,14 @@
             <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="5970299968953600178" resolveInfo="jetbrains.mps.lang.typesystem.pluginSolution" />
           </node>
         </node>
+      </node>
+    </node>
+    <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="1185869098826025448">
+      <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
+      <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
+      <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="1185869098826025449">
+        <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Group" typeId="kdzh.1500819558095907805" id="5970299968953600508">
