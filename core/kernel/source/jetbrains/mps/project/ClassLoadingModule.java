@@ -30,6 +30,7 @@ import java.util.Set;
 public abstract class ClassLoadingModule extends AbstractModule implements IClassLoadingModule {
   private static Logger LOG = Logger.getLogger(ClassLoadingModule.class);
 
+  private static final Object LOADING_LOCK = new Object();
   private ModuleClassLoader myClassLoader = null;
   private Set<IClassLoadingModule> myClassLoadingDepsCache = null;
   private final Object LOCK = new Object();
@@ -44,7 +45,9 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
     try {
       fqName = InternUtil.intern(fqName);
       try {
-        return Class.forName(fqName, false, myClassLoader);
+        synchronized (LOADING_LOCK) {
+          return myClassLoader.loadClass(fqName);
+        }
       } catch (ClassNotFoundException e) {
         return null;
       }
