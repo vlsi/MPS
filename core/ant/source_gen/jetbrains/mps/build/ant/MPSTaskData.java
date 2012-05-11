@@ -41,7 +41,9 @@ public class MPSTaskData {
 
   public void save(File file) throws IOException {
     myXML = new Element("taskdata");
-    myXML.setAttribute("worker", myWorker);
+    if (myWorker != null) {
+      myXML.setAttribute("worker", myWorker);
+    }
     myXML.setAttribute("failOnError", myFailOnError + "");
     myXML.setAttribute("logLevel", myLogLevel + "");
     myXML.setAttribute("loadBootstrapLibraries", myLoadBootstrapLibraries + "");
