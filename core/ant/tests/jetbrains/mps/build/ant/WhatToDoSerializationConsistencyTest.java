@@ -18,6 +18,7 @@ package jetbrains.mps.build.ant;
 import junit.framework.TestCase;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
@@ -92,11 +93,11 @@ public class WhatToDoSerializationConsistencyTest extends TestCase {
   }
 
   private void testToDoConsistency(WhatToDo toDo) {
-    WhatToDo toDoFromString = WhatToDo.fromCommandLine(toDo.toString());
-    WhatToDo toDoCloned = new WhatToDo();
-    toDo.cloneTo(toDoCloned);
-
     try {
+      WhatToDo toDoFromString = WhatToDo.fromDumpInFile(toDo.dumpToTmpFile());
+      WhatToDo toDoCloned = new WhatToDo();
+      toDo.cloneTo(toDoCloned);
+
       assertEquals(toDoCloned.toString(), toDoFromString.toString());
       assertDeepObjectEquals(toDoCloned, toDoFromString);
       assertEquals(toDo.toString(), toDoFromString.toString());
@@ -106,6 +107,8 @@ public class WhatToDoSerializationConsistencyTest extends TestCase {
     } catch (IllegalAccessException e) {
       fail(e.getMessage());
     } catch (InvocationTargetException e) {
+      fail(e.getMessage());
+    } catch (FileNotFoundException e) {
       fail(e.getMessage());
     }
   }

@@ -15,24 +15,26 @@ import java.util.Collections;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
 import org.apache.tools.ant.BuildException;
+import org.jdom.Element;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import jetbrains.mps.build.ant.generation.TestGenerationOnTeamcity;
 import java.io.IOException;
-import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.build.ant.generation.TestGenerationOnTeamcity;
+import org.jdom.JDOMException;
 
 public class WhatToDo {
-  private static final String EXCLUDE_FROM_DIFF_FILE = "EXCLUDE_FROM_DIFF_FILE";
-  private static final String MODEL_FILE = "MODEL_FILE";
-  private static final String MODULE_FILE = "MODULE_FILE";
-  private static final String MPS_PROJECT = "MPS_PROJECT";
-  private static final String MPS_LIBRARY = "MPS_LIBRARY";
-  private static final String MPS_MACRO = "MPS_MACRO";
-  private static final String FAIL_ON_ERROR = "FAIL_ON_ERROR";
-  private static final String LOG_LEVEL = "LOG_LEVEL";
-  private static final String LIBRARY_COMPILE = "LIBRARY_COMPILE";
-  private static final String MPS_PARAMETER = "MPS_PARAMETER";
-  private static final String LOAD_BOOTSTAP_LIBRARIES = "LOAD_BOOTSTAP_LIBRARIES";
+  private static final String ELEMENT_TODO = "todo";
+  private static final String ELEMENT_MODEL = "model";
+  private static final String ELEMENT_MODULE = "module";
+  private static final String ELEMENT_EXCLUDEDFROMDIFF = "excludedFromDiff";
+  private static final String ELEMENT_PROJECT = "project";
+  private static final String ELEMENT_PARAMETER = "parameter";
+  private static final String ELEMENT_PROPERTY = "property";
+  private static final String PATH = "path";
+  private static final String VALUE = "value";
 
   private final Set<File> myModels = new LinkedHashSet<File>();
   private final Set<File> myModules = new LinkedHashSet<File>();
@@ -215,91 +217,66 @@ public class WhatToDo {
     }
   }
 
-  @Override
-  public String toString() {
-    final StringBuffer sb = new StringBuffer();
-    for (File f : myModels) {
-      sb.append(MODEL_FILE);
-      sb.append("=");
-      sb.append(f.getAbsolutePath());
-      sb.append(" ");
+  private Element prepareData() {
+    Element data = new Element(ELEMENT_TODO);
+    for (File f : SetSequence.fromSet(myModels)) {
+      data.addContent(new Element(ELEMENT_MODEL).setAttribute(PATH, f.getAbsolutePath()));
     }
-    for (File f : myExcludedFromDiff) {
-      sb.append(EXCLUDE_FROM_DIFF_FILE);
-      sb.append("=");
-      sb.append(f.getAbsolutePath());
-      sb.append(" ");
+    for (File f : SetSequence.fromSet(myModules)) {
+      data.addContent(new Element(ELEMENT_MODULE).setAttribute(PATH, f.getAbsolutePath()));
     }
-    for (File f : myModules) {
-      sb.append(MODULE_FILE);
-      sb.append("=");
-      sb.append(f.getAbsolutePath());
-      sb.append(" ");
+    for (File f : SetSequence.fromSet(myExcludedFromDiff)) {
+      data.addContent(new Element(ELEMENT_EXCLUDEDFROMDIFF).setAttribute(PATH, f.getAbsolutePath()));
     }
-    for (File f : myMPSProjects.keySet()) {
-      sb.append(MPS_PROJECT);
-      sb.append("=");
-      sb.append(f.getAbsolutePath());
-      sb.append("[");
-      for (String s : myMPSProjects.get(f)) {
-        sb.append(s);
-        sb.append(",");
+    for (IMapping<File, List<String>> p : MapSequence.fromMap(myMPSProjects)) {
+      Element elem = new Element(ELEMENT_PROJECT).setAttribute(PATH, p.key().getAbsolutePath());
+      for (String s : ListSequence.fromList(p.value())) {
+        elem.addContent(new Element(ELEMENT_PROPERTY).setAttribute(VALUE, s));
       }
-      sb.append("]");
-      sb.append(" ");
+      data.addContent(elem);
     }
-    for (String libraryName : myLibraries.keySet()) {
-      sb.append(MPS_LIBRARY);
-      sb.append("=");
-      sb.append("[");
-      sb.append(libraryName);
-      if (myCompiledLibraries.contains(libraryName)) {
-        sb.append("," + LIBRARY_COMPILE);
-      }
-      sb.append("]");
-      sb.append(myLibraries.get(libraryName).getAbsolutePath());
-      sb.append(" ");
+    for (String p : ListSequence.fromList(myParameters)) {
+      data.addContent(new Element(ELEMENT_PARAMETER).setAttribute(VALUE, p));
     }
-    for (String macroName : myMacro.keySet()) {
-      sb.append(MPS_MACRO);
-      sb.append("=");
-      sb.append("[");
-      sb.append(macroName);
-      sb.append("]");
-      sb.append(myMacro.get(macroName));
-      sb.append(" ");
-    }
-    for (String parameter : myParameters) {
-      sb.append(MPS_PARAMETER).append("=").append(parameter).append(" ");
-    }
-    for (String name : myProperties.keySet()) {
-      sb.append(name);
-      sb.append("=");
-      sb.append(myProperties.get(name));
-      sb.append(" ");
-    }
-    sb.append(FAIL_ON_ERROR);
-    sb.append("=");
-    sb.append(myFailOnError);
-    sb.append(" ");
-    sb.append(LOG_LEVEL);
-    sb.append("=");
-    sb.append(myLogLevel);
-    sb.append(" ");
-    sb.append(LOAD_BOOTSTAP_LIBRARIES);
-    sb.append("=");
-    sb.append(myLoadBootstrapLibraries);
-    sb.append(" ");
+    return data;
+  }
 
-    return sb.toString();
+  public void parseData(Element elem) {
+    for (Object o : elem.getChildren()) {
+      Element e = (Element) o;
+      String elementName = e.getName();
+      if (ELEMENT_MODEL.equals(elementName)) {
+        addModelFile(new File(e.getAttributeValue(PATH)));
+      } else if (ELEMENT_MODULE.equals(elementName)) {
+        addModuleFile(new File(e.getAttributeValue(PATH)));
+      } else if (ELEMENT_EXCLUDEDFROMDIFF.equals(elementName)) {
+        excludeFileFromDiff(new File(e.getAttributeValue(PATH)));
+      } else if (ELEMENT_PROJECT.equals(elementName)) {
+        List<String> properties = new ArrayList<String>();
+        for (Object prop : e.getChildren(ELEMENT_PROPERTY)) {
+          properties.add(((Element) prop).getAttributeValue(VALUE));
+        }
+        addProjectFile(new File(e.getAttributeValue(PATH)), properties.toArray(new String[properties.size()]));
+      } else if (ELEMENT_PARAMETER.equals(elementName)) {
+        addParameter(e.getAttributeValue(VALUE));
+      }
+    }
   }
 
   public File dumpToTmpFile() throws FileNotFoundException {
     File tmpFile = WhatToDo.createTmpFile();
-    PrintWriter writer = new PrintWriter(tmpFile);
-    writer.append(toString());
-    writer.flush();
-    writer.close();
+    MPSTaskData data = new MPSTaskData();
+    data.setFailOnError(myFailOnError);
+    data.setLogLevel(myLogLevel);
+    data.setLoadBootstrapLibraries(myLoadBootstrapLibraries);
+    data.setMacros(myMacro);
+    data.setProperties(myProperties);
+    data.setData(ELEMENT_TODO, prepareData());
+    try {
+      data.save(tmpFile);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
     return tmpFile;
   }
 
@@ -342,69 +319,27 @@ public class WhatToDo {
   }
 
   public static WhatToDo fromDumpInFile(File file) {
-    String dump = FileUtil.read(file);
-    if (!(file.delete())) {
-      throw new RuntimeException("File " + file + " was not deleted.");
-    }
-    return WhatToDo.fromCommandLine(dump);
-  }
-
-  public static WhatToDo fromCommandLine(String... args) {
-    WhatToDo whatToDo = new WhatToDo();
-    for (String arg : args) {
-      String[] argsplit = arg.split("\\s+");
-      for (String s : argsplit) {
-        String[] propertyValuePair = s.split("=");
-        if (propertyValuePair[0].equals(MODEL_FILE)) {
-          whatToDo.addModelFile(new File(propertyValuePair[1]));
-        } else if (propertyValuePair[0].equals(EXCLUDE_FROM_DIFF_FILE)) {
-          whatToDo.excludeFileFromDiff(new File(propertyValuePair[1]));
-        } else
-        if (propertyValuePair[0].equals(MODULE_FILE)) {
-          whatToDo.addModuleFile(new File(propertyValuePair[1]));
-        } else
-        if (propertyValuePair[0].equals(MPS_LIBRARY)) {
-          String[] nameValuePair = propertyValuePair[1].split("\\[|\\]");
-          String name = nameValuePair[1];
-          String[] strings = name.split(",");
-          if (strings.length == 1) {
-            whatToDo.addLibrary(name, new File(nameValuePair[2]), false);
-          } else
-          if (strings[1].equals(LIBRARY_COMPILE)) {
-            whatToDo.addLibrary(strings[0], new File(nameValuePair[2]), true);
-          } else {
-            System.err.println("Don't know what to do with input " + name);
-          }
-        } else
-        if (propertyValuePair[0].equals(MPS_MACRO)) {
-          String[] nameValuePair = propertyValuePair[1].split("\\[|\\]");
-          whatToDo.addMacro(nameValuePair[1], nameValuePair[2]);
-        } else
-        if (propertyValuePair[0].equals(MPS_PROJECT)) {
-          String[] nameValuePair = propertyValuePair[1].split("\\[|\\]");
-          String projectName = nameValuePair[0];
-          if (nameValuePair.length > 1) {
-            String[] properties = nameValuePair[1].split(",");
-            whatToDo.addProjectFile(new File(projectName), properties);
-          } else {
-            whatToDo.addProjectFile(new File(projectName));
-          }
-        } else
-        if (propertyValuePair[0].equals(FAIL_ON_ERROR)) {
-          whatToDo.myFailOnError = Boolean.parseBoolean(propertyValuePair[1]);
-        } else if (propertyValuePair[0].equals(LOG_LEVEL)) {
-          whatToDo.myLogLevel = Integer.parseInt(propertyValuePair[1]);
-        } else if (propertyValuePair[0].equals(MPS_PARAMETER)) {
-          whatToDo.addParameter(propertyValuePair[1]);
-        } else if (propertyValuePair[0].equals(LOAD_BOOTSTAP_LIBRARIES)) {
-          whatToDo.myLoadBootstrapLibraries = Boolean.parseBoolean(propertyValuePair[1]);
-        } else if (propertyValuePair.length == 2) {
-          whatToDo.putProperty(propertyValuePair[0], propertyValuePair[1]);
-        } else {
-          //           System.err.println("ERROR: Don't know what to do: [" + s + "]"); 
-        }
+    MPSTaskData data = new MPSTaskData();
+    try {
+      data.load(file);
+    } catch (JDOMException e) {
+      e.printStackTrace();
+    } catch (IOException e) {
+      e.printStackTrace();
+    } finally {
+      if (!(file.delete())) {
+        throw new RuntimeException("File " + file + " was not deleted.");
       }
     }
+
+    WhatToDo whatToDo = new WhatToDo();
+    whatToDo.myFailOnError = data.getFailOnError();
+    whatToDo.myLogLevel = data.getLogLevel();
+    whatToDo.myLoadBootstrapLibraries = data.getLoadBootstrapLibraries();
+    whatToDo.myProperties.putAll(data.getProperties());
+    whatToDo.myMacro.putAll(data.getMacros());
+    whatToDo.myLibraries.putAll(data.getLibraries());
+    whatToDo.parseData(data.getData(ELEMENT_TODO));
     return whatToDo;
   }
 }
