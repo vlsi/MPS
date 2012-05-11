@@ -82,6 +82,9 @@
       <fileset dir="${basedir}/license" />
     </copy>
     <mkdir dir="${build.layout}/plugin" />
+    <copy todir="${build.layout}/plugin">
+      <fileset file="${basedir}/plugin/MPSPlugin.jar" />
+    </copy>
     <mkdir dir="${build.layout}/plugins" />
     <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.buildPlugins}/plugins" />
