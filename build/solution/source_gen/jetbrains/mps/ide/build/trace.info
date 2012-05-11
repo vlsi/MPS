@@ -10,13 +10,13 @@
     <unitInfo nodeId="2569834391839970845" fileName="buildWorkbench.xml" startLine="1" startPosition="0" endLine="474" endPosition="10" unitName="jetbrains.mps.ide.build.buildWorkbench" />
   </root>
   <root nodeId="4301118715654192646">
-    <unitInfo nodeId="4301118715654192646" fileName="buildMPS.xml" startLine="1" startPosition="0" endLine="158" endPosition="10" unitName="jetbrains.mps.ide.build.buildMPS" />
+    <unitInfo nodeId="4301118715654192646" fileName="buildMPS.xml" startLine="1" startPosition="0" endLine="163" endPosition="10" unitName="jetbrains.mps.ide.build.buildMPS" />
   </root>
   <root nodeId="4301118715654497533">
     <unitInfo nodeId="4301118715654497533" fileName="buildDistribution.xml" startLine="1" startPosition="0" endLine="67" endPosition="10" unitName="jetbrains.mps.ide.build.buildDistribution" />
   </root>
   <root nodeId="4301118715654819483">
-    <unitInfo nodeId="4301118715654819483" fileName="buildUtilLanguages.xml" startLine="1" startPosition="0" endLine="2662" endPosition="10" unitName="jetbrains.mps.ide.build.buildUtilLanguages" />
+    <unitInfo nodeId="4301118715654819483" fileName="buildUtilLanguages.xml" startLine="1" startPosition="0" endLine="2699" endPosition="10" unitName="jetbrains.mps.ide.build.buildUtilLanguages" />
   </root>
   <root nodeId="4301118715654850396">
     <unitInfo nodeId="4301118715654850396" fileName="buildExecution.xml" startLine="1" startPosition="0" endLine="241" endPosition="10" unitName="jetbrains.mps.ide.build.buildExecution" />
@@ -26,6 +26,9 @@
   </root>
   <root nodeId="5970299968953452763">
     <unitInfo nodeId="5970299968953452763" fileName="buildConnectorPlugin.xml" startLine="1" startPosition="0" endLine="57" endPosition="10" unitName="jetbrains.mps.ide.build.buildConnectorPlugin" />
+  </root>
+  <root nodeId="5970299968953599871">
+    <unitInfo nodeId="5970299968953599871" fileName="buildCoreUI.xml" startLine="1" startPosition="0" endLine="795" endPosition="10" unitName="jetbrains.mps.ide.build.buildCoreUI" />
   </root>
   <root nodeId="6164334420696839314">
     <unitInfo nodeId="6164334420696839314" fileName="buildDebuggerPlugin.xml" startLine="1" startPosition="0" endLine="507" endPosition="10" unitName="jetbrains.mps.ide.build.buildDebuggerPlugin" />

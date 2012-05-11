@@ -143,6 +143,27 @@
       <zipfileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.regexp.examples.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.regexp.examples.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.baseLanguage.regexp.examples.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.baseLanguage.regexp.examples" type="solution" uuid="c23bca8e-629a-4cd7-84b4-411b6024469f">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.baseLanguage.regexp.examples-src.jar" descriptor="jetbrains.mps.regexp.examples.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/languages/util/baseLanguage/jetbrains.mps.baseLanguage.regexp.examples.jar">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.examples" />
+      <fileset dir="${mps_home}/languages/util/regexp/solutions/jetbrains.mps.regexp.examples" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.regexp.examples.jar" />
+    </jar>
+    <jar destfile="${build.layout}/languages/util/baseLanguage/jetbrains.mps.baseLanguage.regexp.examples-src.jar">
+      <fileset dir="${mps_home}/languages/util/regexp/solutions/jetbrains.mps.regexp.examples/source_gen" includes="**/*.java" />
+      <zipfileset file="${mps_home}/languages/util/regexp/solutions/jetbrains.mps.regexp.examples/jetbrains.mps.regexp.examples.msd" prefix="module" />
+      <zipfileset dir="${mps_home}/languages/util/regexp/solutions/jetbrains.mps.regexp.examples" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
+    </jar>
     <mkdir dir="${build.layout}/languages/util/bash" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.bash.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.bash.jar/META-INF" />
@@ -1038,7 +1059,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.java.modules.cycle.1, java.compile.jetbrains.mps.buildlanguage, java.compile.jetbrains.mps.build.custommps, java.compile.jetbrains.mps.build.custommps.pluginSolution, java.compile.jetbrains.mps.build.dependency, java.compile.jetbrains.mps.build.generictasks, java.compile.jetbrains.mps.build.generictasks.pluginSolution, java.compile.jetbrains.mps.build.mpsdist, java.compile.jetbrains.mps.build.packaging, java.compile.jetbrains.mps.build.packaging.pluginSolution, java.compile.jetbrains.mps.build.property, java.compile.jetbrains.mps.baseLanguage.dates, java.compile.jetbrains.mps.baseLanguage.datesInternal, java.compile.jetbrains.mps.baseLanguage.dates.runtime, java.compile.jetbrains.mps.baseLanguage.dates.pluginSolution, java.compile.jetbrains.mps.xml.deprecated, java.compile.jetbrains.mps.xml.deprecated.pluginSolution, java.compile.jetbrains.mpslite, java.compile.jetbrains.mpslite.pluginSolution, java.compile.jetbrains.mps.nanoj, java.compile.jetbrains.mps.uiLanguage.pluginSolution, java.compile.java.modules.cycle.2, java.compile.jetbrains.mps.ypath, java.compile.jetbrains.mps.ypath.pluginSolution, java.compile.jetbrains.mps.ypath.runtime, java.compile.ypath.main, java.compile.ypath.test, java.compile.jetbrains.mps.quickQueryLanguage, java.compile.jetbrains.mps.quickQuery.runtime, java.compile.jetbrains.mps.quickQueryLanguage.pluginSolution, java.compile.jetbrains.mps.bash, java.compile.jetbrains.mps.build.startup, java.compile.jetbrains.mps.baseLanguage.contracts, java.compile.jetbrains.mps.baseLanguage.math, java.compile.jetbrains.mps.baseLanguage.math.runtime, java.compile.jetbrains.mps.baseLanguage.math.pluginSolution, java.compile.jetbrains.mps.baseLanguage.collections.trove, java.compile.collections_trove.runtime, java.compile.jetbrains.mps.platform.conf" />
+  <target name="compileJava" depends="java.compile.java.modules.cycle.1, java.compile.jetbrains.mps.buildlanguage, java.compile.jetbrains.mps.build.custommps, java.compile.jetbrains.mps.build.custommps.pluginSolution, java.compile.jetbrains.mps.build.dependency, java.compile.jetbrains.mps.build.generictasks, java.compile.jetbrains.mps.build.generictasks.pluginSolution, java.compile.jetbrains.mps.build.mpsdist, java.compile.jetbrains.mps.build.packaging, java.compile.jetbrains.mps.build.packaging.pluginSolution, java.compile.jetbrains.mps.build.property, java.compile.jetbrains.mps.baseLanguage.dates, java.compile.jetbrains.mps.baseLanguage.datesInternal, java.compile.jetbrains.mps.baseLanguage.dates.runtime, java.compile.jetbrains.mps.baseLanguage.dates.pluginSolution, java.compile.jetbrains.mps.xml.deprecated, java.compile.jetbrains.mps.xml.deprecated.pluginSolution, java.compile.jetbrains.mpslite, java.compile.jetbrains.mpslite.pluginSolution, java.compile.jetbrains.mps.nanoj, java.compile.jetbrains.mps.uiLanguage.pluginSolution, java.compile.java.modules.cycle.2, java.compile.jetbrains.mps.ypath, java.compile.jetbrains.mps.ypath.pluginSolution, java.compile.jetbrains.mps.ypath.runtime, java.compile.ypath.main, java.compile.ypath.test, java.compile.jetbrains.mps.quickQueryLanguage, java.compile.jetbrains.mps.quickQuery.runtime, java.compile.jetbrains.mps.quickQueryLanguage.pluginSolution, java.compile.jetbrains.mps.bash, java.compile.jetbrains.mps.build.startup, java.compile.jetbrains.mps.baseLanguage.contracts, java.compile.jetbrains.mps.baseLanguage.math, java.compile.jetbrains.mps.baseLanguage.math.runtime, java.compile.jetbrains.mps.baseLanguage.math.pluginSolution, java.compile.jetbrains.mps.baseLanguage.collections.trove, java.compile.collections_trove.runtime, java.compile.jetbrains.mps.baseLanguage.regexp.examples, java.compile.jetbrains.mps.platform.conf" />
   
   <target name="processResources" />
   
@@ -2619,6 +2640,22 @@
     </javac>
     <copy todir="${build.tmp}/java/out/collections_trove.runtime">
       <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.jetbrains.mps.baseLanguage.regexp.examples" depends="fetchDependencies">
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.examples" />
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.examples" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${mps_home}/languages/util/regexp/solutions/jetbrains.mps.regexp.examples/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.runtime.jar" />
+      </classpath>
+    </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.examples">
+      <fileset dir="${mps_home}/languages/util/regexp/solutions/jetbrains.mps.regexp.examples/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
