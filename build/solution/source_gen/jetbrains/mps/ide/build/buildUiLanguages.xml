@@ -529,7 +529,7 @@
   
   <target name="java.compile.jetbrains.mps.ui" depends="java.compile.jetbrains.mps.ui.modeling, java.compile.jetbrains.mps.ui.pluginSolution, java.compile.java.modules.cycle.1, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ui" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/ui/languages/ui/source_gen" />
@@ -575,7 +575,7 @@
   
   <target name="java.compile.jetbrains.mps.ui.pluginSolution" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ui.pluginSolution" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/ui/languages/ui/solutions/pluginSolution/source_gen" />
@@ -610,7 +610,7 @@
   
   <target name="java.compile.jetbrains.mps.ui.modeling" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ui.modeling" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui.modeling" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui.modeling" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/ui/languages/meta/source_gen" />
@@ -651,7 +651,7 @@
   
   <target name="java.compile.jetbrains.mps.ui.modeling.pluginSolution" depends="java.compile.jetbrains.mps.ui.modeling, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ui.modeling.pluginSolution" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui.modeling.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui.modeling.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/ui/languages/meta/solutions/pluginSolution/source_gen" />
@@ -694,7 +694,7 @@
   
   <target name="java.compile.jetbrains.mps.ui.internal" depends="java.compile.jetbrains.mps.ui.modeling, java.compile.java.modules.cycle.1, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ui.internal" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui.internal" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui.internal" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/ui/languages/internal/source_gen" />
@@ -738,7 +738,7 @@
   
   <target name="java.compile.jetbrains.mps.ui.gwt" depends="java.compile.jetbrains.mps.gwt.client, java.compile.jetbrains.mps.ui, java.compile.jetbrains.mps.ui.modeling, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ui.gwt" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui.gwt" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui.gwt" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/ui/languages/gwt/source_gen" />
@@ -784,7 +784,7 @@
   
   <target name="java.compile.jetbrains.mps.ui.gwt.pluginSolution" depends="java.compile.jetbrains.mps.ui.modeling.pluginSolution, java.compile.jetbrains.mps.ui.pluginSolution, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ui.gwt.pluginSolution" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui.gwt.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui.gwt.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/ui/languages/gwt/solutions/pluginSolution/source_gen" />
@@ -834,7 +834,7 @@
   
   <target name="java.compile.jetbrains.mps.ui.swing" depends="java.compile.jetbrains.mps.ui, java.compile.jetbrains.mps.ui.modeling, java.compile.jetbrains.mps.ui.swing.runtime, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ui.swing" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui.swing" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui.swing" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/ui/languages/swing/source_gen" />
@@ -879,7 +879,7 @@
   
   <target name="java.compile.jetbrains.mps.ui.swing.pluginSolution" depends="java.compile.jetbrains.mps.ui.modeling.pluginSolution, java.compile.jetbrains.mps.ui.pluginSolution, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ui.swing.pluginSolution" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui.swing.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui.swing.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/ui/languages/swing/solutions/pluginSolution/source_gen" />
@@ -929,7 +929,7 @@
   
   <target name="java.compile.jetbrains.mps.ui.swing.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ui.swing.runtime" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui.swing.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui.swing.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/ui/languages/swing/runtime/source_gen" />
@@ -945,7 +945,7 @@
   
   <target name="java.compile.jetbrains.mps.ui.swt" depends="java.compile.jetbrains.mps.ui, java.compile.jetbrains.mps.ui.modeling, java.compile.jetbrains.mps.ui.swt.runtime, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ui.swt" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui.swt" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui.swt" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/ui/languages/swt/source_gen" />
@@ -990,7 +990,7 @@
   
   <target name="java.compile.jetbrains.mps.ui.swt.pluginSolution" depends="java.compile.jetbrains.mps.ui.modeling.pluginSolution, java.compile.jetbrains.mps.ui.pluginSolution, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ui.swt.pluginSolution" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui.swt.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui.swt.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/ui/languages/swt/solutions/pluginSolution/source_gen" />
@@ -1040,7 +1040,7 @@
   
   <target name="java.compile.jetbrains.mps.ui.swt.runtime">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ui.swt.runtime" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui.swt.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ui.swt.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/ui/languages/swt/runtime/source_gen" />
@@ -1056,7 +1056,7 @@
   
   <target name="java.compile.jetbrains.mps.gwt.client" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.gwt.client" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.gwt.client" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.gwt.client" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/gwtsupport/languages/client/source_gen" />

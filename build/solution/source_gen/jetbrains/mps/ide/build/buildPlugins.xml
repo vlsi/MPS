@@ -71,7 +71,7 @@
   
   <target name="java.compile.ideaIntegration" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/ideaIntegration" />
-    <javac destdir="${build.tmp}/java/out/ideaIntegration" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/ideaIntegration" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <pathelement path="${mps_home}/plugins/ideaIntegration/source" />
@@ -109,7 +109,7 @@
   
   <target name="java.compile.migrationAssistant" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/migrationAssistant" />
-    <javac destdir="${build.tmp}/java/out/migrationAssistant" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/migrationAssistant" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/migrationAssistant/source" />
@@ -144,7 +144,7 @@
   
   <target name="java.compile.modelchecker" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/modelchecker" />
-    <javac destdir="${build.tmp}/java/out/modelchecker" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/modelchecker" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <pathelement path="${mps_home}/plugins/modelchecker/source" />
@@ -181,7 +181,7 @@
   
   <target name="java.compile.mpsjava" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mpsjava" />
-    <javac destdir="${build.tmp}/java/out/mpsjava" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/mpsjava" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <pathelement path="${mps_home}/plugins/mpsjava/platform/source_gen" />
@@ -218,7 +218,7 @@
   
   <target name="java.compile.mpsmake" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mpsmake" />
-    <javac destdir="${build.tmp}/java/out/mpsmake" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/mpsmake" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <pathelement path="${mps_home}/plugins/mpsmake/source" />
@@ -255,7 +255,7 @@
   
   <target name="java.compile.samples" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/samples" />
-    <javac destdir="${build.tmp}/java/out/samples" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/samples" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/samples/sources" />
@@ -290,7 +290,7 @@
   
   <target name="java.compile.mpsdevkit" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mpsdevkit" />
-    <javac destdir="${build.tmp}/java/out/mpsdevkit" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/mpsdevkit" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <pathelement path="${mps_home}/plugins/mpsdevkit/source" />
