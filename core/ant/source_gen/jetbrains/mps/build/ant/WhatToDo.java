@@ -269,6 +269,7 @@ public class WhatToDo {
     data.setFailOnError(myFailOnError);
     data.setLogLevel(myLogLevel);
     data.setLoadBootstrapLibraries(myLoadBootstrapLibraries);
+    data.setLibraries(myLibraries);
     data.setMacros(myMacro);
     data.setProperties(myProperties);
     data.setData(ELEMENT_TODO, prepareData());

@@ -124,6 +124,8 @@
   <dependency className="jetbrains.mps.build.ant.MPSTaskData" file="MPSTaskData.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.LinkedHashMap" />

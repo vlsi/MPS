@@ -61,7 +61,7 @@ public class WhatToDoSerializationConsistencyTest extends TestCase {
     WhatToDo toDo = new WhatToDo();
 
     toDo.addLibrary("name1", new File("dir1").getAbsoluteFile(), false);
-    toDo.addLibrary("name2", new File("dir3").getAbsoluteFile(), true);
+    toDo.addLibrary("name2", new File("dir3").getAbsoluteFile(), false /*true*/);
     toDo.addLibrary("name3", new File("dir4").getAbsoluteFile(), false);
 
     testToDoConsistency(toDo);
