@@ -40,13 +40,13 @@ public class MPSTaskData {
   }
 
   public void save(File file) throws IOException {
-    myXML = new Element("taskdata");
+    myXML = new Element(ROOT_TASKDATA);
     if (myWorker != null) {
-      myXML.setAttribute("worker", myWorker);
+      myXML.setAttribute(PROP_WORKER, myWorker);
     }
-    myXML.setAttribute("failOnError", myFailOnError + "");
-    myXML.setAttribute("logLevel", myLogLevel + "");
-    myXML.setAttribute("loadBootstrapLibraries", myLoadBootstrapLibraries + "");
+    myXML.setAttribute(PROP_FAILONERROR, myFailOnError + "");
+    myXML.setAttribute(PROP_LOGLEVEL, myLogLevel + "");
+    myXML.setAttribute(PROP_LOADBOOTSTRAPLIBRARIES, myLoadBootstrapLibraries + "");
     for (String key : myProperties.keySet()) {
       myXML.addContent(new Element(ELEM_PROPERTIES).setAttribute(NAME, key).setAttribute(VALUE, myProperties.get(key)));
     }
@@ -67,6 +67,11 @@ public class MPSTaskData {
 
   public void load(File file) throws IOException, JDOMException {
     myXML = JDOMUtil.loadDocument(file).getRootElement();
+    myWorker = myXML.getAttributeValue(PROP_WORKER);
+    myFailOnError = Boolean.parseBoolean(myXML.getAttributeValue(PROP_FAILONERROR));
+    myLogLevel = Integer.parseInt(myXML.getAttributeValue(PROP_LOGLEVEL));
+    myLoadBootstrapLibraries = Boolean.parseBoolean(myXML.getAttributeValue(PROP_LOADBOOTSTRAPLIBRARIES));
+
     for (Object o : myXML.getChildren()) {
       Element elem = (Element) o;
       if (elem.getName().equals(ELEM_PROPERTIES)) {
