@@ -62,7 +62,7 @@ public class ModuleClassLoader extends ClassLoader {
     }
   }
 
-  private Class<?> loadFromSelf(String name) {
+  private synchronized Class<?> loadFromSelf(String name) {
     if (myModule.canLoadFromSelf()) {
       Class c = findLoadedClass(name);
       if (c != null) return c;
@@ -81,7 +81,7 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   private Class<?> loadFromParent(String name) throws ClassNotFoundException {
-    return getParent().loadClass(name);
+    return Class.forName(name, false, getParent());
   }
 
   private Class<?> findInSelfAndDependencies(String name) throws ClassNotFoundException {
@@ -99,7 +99,7 @@ public class ModuleClassLoader extends ClassLoader {
 
       if (m.canLoadFromSelf() && m.canFindClass(name)) {
         //here it will load with self, with any values as two last parameters
-        return m.getClassLoader().loadFromSelf(name);
+        return Class.forName(name, false, m.getClassLoader());
       } else {
         queue.add(m);
       }
@@ -114,7 +114,7 @@ public class ModuleClassLoader extends ClassLoader {
           continue;
         }
         processedParentClassLoaders.add(classLoader.getParent());
-        return classLoader.loadFromParent(name);
+        return Class.forName(name, false, classLoader.getParent());
       } catch (ClassNotFoundException e) {
         //ignore
       }
