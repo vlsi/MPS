@@ -147,6 +147,9 @@
       <zipfileset file="${mps_home}/editor/editor-runtime/jetbrains.mps.editor.runtime.msd" prefix="modules/jetbrains.mps.editor.runtime" />
       <zipfileset dir="${mps_home}/editor/editor-runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.editor.runtime" />
       <zipfileset dir="${mps_home}/editor/editor-runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.editor.runtime/models" />
+      <zipfileset file="${mps_home}/editor/typesystemIntegration/typesystemIntegration.msd" prefix="modules/typesystemIntegration" />
+      <zipfileset dir="${mps_home}/editor/typesystemIntegration" includes="icons/**, resources/**" prefix="modules/typesystemIntegration" />
+      <zipfileset dir="${mps_home}/editor/typesystemIntegration/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/typesystemIntegration/models" />
     </jar>
     <jar destfile="${build.layout}/mps-core/lib/mps-editor-api.jar">
       <fileset dir="${build.tmp}/java/out/mps-editor-api" />

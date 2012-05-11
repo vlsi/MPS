@@ -279,6 +279,7 @@
     <antcall target="MPS-languages.pack.MPS.Editor" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide.editor" />
     <antcall target="MPS-languages.pack.jetbrains.mps.editor.runtime" />
+    <antcall target="MPS-languages.pack.typesystemIntegration" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp/modules" />
     <jar destfile="${deploy.dir}/MPS/lib/mps-editor.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp" />
@@ -678,7 +679,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.typesystem" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.scopes" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.scopes.runtime" />
-    <antcall target="MPS-languages.pack.typesystemIntegration" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.core.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.structure.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.generator.pluginSolution" />
