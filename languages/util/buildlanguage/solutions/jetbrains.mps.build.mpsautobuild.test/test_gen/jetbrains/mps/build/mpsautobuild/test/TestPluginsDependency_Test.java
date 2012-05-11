@@ -56,6 +56,7 @@ public class TestPluginsDependency_Test extends BaseTransformationTest4 {
           sb.append("\n");
         }
       }
+
       Assert.assertTrue(sb.toString(), sb.length() == 0);
     }
   }
