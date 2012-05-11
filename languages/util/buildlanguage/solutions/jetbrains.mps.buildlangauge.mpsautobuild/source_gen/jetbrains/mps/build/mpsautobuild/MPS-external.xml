@@ -160,7 +160,7 @@
       <fileset dir="${mps_home}/bin" excludes="**/*.hprof, " />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib">
-      <fileset dir="${mps_home}/lib" excludes="src/, **/*.zip, " />
+      <fileset dir="${mps_home}/lib" />
     </copy>
     <antcall target="MPS-external.pack.branding_b1a" />
     <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/MPSPlugin">

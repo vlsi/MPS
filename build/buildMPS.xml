@@ -49,11 +49,8 @@
     <copy todir="${build.layout}/MPS ${version}/languages">
       <fileset dir="${artifacts.buildUiLanguages}/languages" />
     </copy>
-    <copy todir="${build.layout}/MPS ${version}">
-      <fileset dir="${idea_home}">
-        <include name="lib/**/*.jar" />
-        <exclude name="lib/src/**, **/*.zip" />
-      </fileset>
+    <copy todir="${build.layout}/MPS ${version}/lib">
+      <fileset dir="${artifacts.IDEA}/lib" />
     </copy>
     <mkdir dir="${build.layout}/MPS ${version}/lib" />
     <copy todir="${build.layout}/MPS ${version}/lib">
@@ -147,25 +144,25 @@
         <include name="help/mpshelp.jar" />
       </fileset>
     </copy>
-    <mkdir dir="${build.layout}/MPS-linux-executable" />
-    <mkdir dir="${build.layout}/MPS-linux-executable/linux" />
-    <copy todir="${build.layout}/MPS-linux-executable/linux">
+    <mkdir dir="${build.layout}/MPS-linux-exeuctable" />
+    <mkdir dir="${build.layout}/MPS-linux-exeuctable/linux" />
+    <copy todir="${build.layout}/MPS-linux-exeuctable/linux">
       <fileset file="${mps_home}/bin/linux/fsnotifier" />
     </copy>
-    <copy todir="${build.layout}/MPS-linux-executable/linux">
+    <copy todir="${build.layout}/MPS-linux-exeuctable/linux">
       <fileset file="${mps_home}/bin/linux/fsnotifier64" />
     </copy>
-    <mkdir dir="${build.layout}/MPS-linux-executable/nix" />
-    <copy todir="${build.layout}/MPS-linux-executable/nix">
+    <mkdir dir="${build.layout}/MPS-linux-exeuctable/nix" />
+    <copy todir="${build.layout}/MPS-linux-exeuctable/nix">
       <fileset file="${mps_home}/bin/nix/idea.sh" />
     </copy>
-    <copy todir="${build.layout}/MPS-linux-executable/nix">
+    <copy todir="${build.layout}/MPS-linux-exeuctable/nix">
       <fileset file="${mps_home}/bin/nix/inspect.sh" />
     </copy>
-    <copy todir="${build.layout}/MPS-linux-executable/nix">
+    <copy todir="${build.layout}/MPS-linux-exeuctable/nix">
       <fileset file="${mps_home}/bin/nix/idea.sh" />
     </copy>
-    <copy todir="${build.layout}/MPS-linux-executable">
+    <copy todir="${build.layout}/MPS-linux-exeuctable">
       <fileset file="${mps_home}/build/mps.sh" />
       <filterchain>
         <fixcrlf eol="lf" eof="remove" />

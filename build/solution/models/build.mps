@@ -7823,18 +7823,8 @@
             <link role="target" roleId="3ior.5610619299013057365" targetNodeId="2075442863766409112" resolveInfo="languages" />
           </node>
         </node>
-        <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Copy" typeId="3ior.5248329904287857081" id="4650500121812433549">
-          <node role="fileset" roleId="3ior.5248329904287857082" type="3ior.BuildInputFiles" typeId="3ior.5248329904287794596" id="4650500121812433550">
-            <node role="dir" roleId="3ior.5248329904287794598" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="4650500121812433552">
-              <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="8291918201563364171" resolveInfo="idea_home" />
-            </node>
-            <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileIncludeSelector" typeId="3ior.5248329904288051100" id="4650500121812712332">
-              <property name="pattern" nameId="3ior.5248329904288051101" value="lib/**/*.jar" />
-            </node>
-            <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileExcludeSelector" typeId="3ior.5248329904288051111" id="4650500121812433553">
-              <property name="pattern" nameId="3ior.5248329904288051112" value="lib/src/**, **/*.zip" />
-            </node>
-          </node>
+        <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Import" typeId="3ior.841011766565753074" id="6151822486848026620">
+          <link role="target" roleId="3ior.841011766565753076" targetNodeId="7181125477683295472" resolveInfo="lib" />
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="4301118715654325704">
           <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="4301118715654325705">
@@ -8311,7 +8301,7 @@
         </node>
         <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="6151822486846982587">
           <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="6151822486846982588">
-            <property name="text" nameId="3ior.4903714810883755350" value="MPS-linux-executable" />
+            <property name="text" nameId="3ior.4903714810883755350" value="MPS-linux-exeuctable" />
           </node>
         </node>
       </node>
