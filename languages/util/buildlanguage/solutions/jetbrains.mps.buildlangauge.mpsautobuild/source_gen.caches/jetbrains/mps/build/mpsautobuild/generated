@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7vysx5svwv0uydwwwlh5vg5p8gpa9sp">
+<dependencies version="2" modelHash="-4ksf192mjsbmrc1zay4xo1hnhy5fbc0">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8ddyvtwlgdy2b4rcc23nz4xk6wzma49" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-cw4cuvzqiy6cv9vv4yy2w5dj04351kw" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-ad6sacrydlyivgq1a8s9zj6b37xpgsf" />
@@ -95,8 +95,8 @@
   <source id="8431776905956472865" name="core.baseLanguage" hash="1f3esd4rqf2afye6wuljwj7i9lt9p35">
     <dep model="r:00000000-0000-4000-0000-011c895904d9(jetbrains.mps.build.packaging.generator.buildlanguage.template.main@generator)" />
   </source>
-  <source id="8431776905956472907" name="core.languageDesign" hash="-6tmw9c3o7wgb5tjfqa4lgc8vy9978tz" />
-  <source id="8431776905956472948" name="util" hash="zau15j442df299tk585ke82gcuexqy" />
+  <source id="8431776905956472907" name="core.languageDesign" hash="9qwvazlexlf0yferarimi177ammrvaz" />
+  <source id="8431776905956472948" name="util" hash="etvkjo5us9wynq6a50o3hsbykz668kt" />
   <source id="7715871110555971738" name="mps-boot.jar" hash="2sic6pbuzj4rx7hsfvo0vxlzdnkk2ou" />
   <source id="2738111162319948310" name="core.execution" hash="-bozmnxwobv4imjckazksojfg8nshtzi" />
   <source id="5358686142361317193" name="mps-test.jar" hash="5hps3e0pbymmb5f9dpeja3fk5psu7y1" />
@@ -148,7 +148,7 @@
   <source id="3413212504041565455" name="mps-editor-api.jar" hash="fh27pvagz1f7qk2hhc9zleydv0q5ly" />
   <source id="4155373682043500272" name="mps-resources_en.jar" hash="n34lpnhrackqycq0e2p1am1vvels6u" />
   <source id="4416609728987027532" name="vcs" hash="-rmito9zd7nqrx70k55nq2t4th8pur7" />
-  <source id="7947179031518546993" name="core.xml" hash="-eigcdft70iazo1svrg02w2jed2nh6xs" />
+  <source id="7947179031518546993" name="core.xml" hash="ctue8jqbb3wpp43d44a4mluokiq70ns" />
   <source id="4397798827966744592" name="mpsjava" hash="-3e65iydcx3ho2ak5xxe562qma3aed9b" />
 </dependencies>
 

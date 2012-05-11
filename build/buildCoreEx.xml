@@ -42,6 +42,22 @@
       <zipfileset dir="${mps_home}/languages/util/xmlUnitTest/languages/xmlUnitTest/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/util/xmlUnitTest/languages/xmlUnitTest/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.xmlUnitTest.runtime.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.xmlUnitTest.runtime.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.xmlUnitTest.runtime.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.xmlUnitTest.runtime" type="solution" uuid="dce9f8b9-bf49-4dd4-b00e-fe98fdfa7f2c">
+        <dependencies />
+        <library jar="xmlunit-1.3.jar" />
+        <sources jar="jetbrains.mps.xmlUnitTest.runtime-src.jar" descriptor="runtime.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/languages/xml/jetbrains.mps.xmlUnitTest/jetbrains.mps.xmlUnitTest.runtime.jar">
+      <fileset dir="${mps_home}/languages/util/xmlUnitTest/languages/xmlUnitTest/solutions/runtime" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.xmlUnitTest.runtime.jar" />
+    </jar>
+    <jar destfile="${build.layout}/languages/xml/jetbrains.mps.xmlUnitTest/jetbrains.mps.xmlUnitTest.runtime-src.jar">
+      <zipfileset file="${mps_home}/languages/util/xmlUnitTest/languages/xmlUnitTest/solutions/runtime/runtime.msd" prefix="module" />
+    </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.core.xml.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.core.xml.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.core.xml.jar/META-INF/module.xml">
