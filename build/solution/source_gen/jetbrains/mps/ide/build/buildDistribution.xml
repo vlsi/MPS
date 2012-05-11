@@ -12,13 +12,13 @@
   <target name="assemble" depends="fetchDependencies">
     <tar destfile="${build.layout}/${buildMPS.build.number}-linux.tar.gz" compression="gzip">
       <tarfileset dir="${artifacts.buildMPS}/MPS ${buildMPS.version}" prefix="MPS ${buildMPS.version}" />
-      <tarfileset dir="${artifacts.buildMPS}/MPS-linux-exeuctable" prefix="MPS ${buildMPS.version}" />
+      <tarfileset dir="${artifacts.buildMPS}/MPS-linux-executable" prefix="MPS ${buildMPS.version}" />
     </tar>
     <zip destfile="${build.layout}/${buildMPS.build.number}.zip">
       <zipfileset dir="${artifacts.buildMPS}/MPS ${buildMPS.version}" prefix="MPS ${buildMPS.version}" />
       <zipfileset dir="${artifacts.buildMPS}/MPS-linux" prefix="MPS ${buildMPS.version}" />
       <zipfileset dir="${artifacts.buildMPS}/MPS-win" prefix="MPS ${buildMPS.version}" />
-      <zipfileset dir="${artifacts.buildMPS}/MPS-linux-exeuctable" prefix="MPS ${buildMPS.version}" filemode="755" />
+      <zipfileset dir="${artifacts.buildMPS}/MPS-linux-executable" prefix="MPS ${buildMPS.version}" filemode="755" />
       <zipfileset dir="${artifacts.buildMPS}/MPS-win-executable" prefix="MPS ${buildMPS.version}" filemode="755" />
     </zip>
     <zip destfile="${build.layout}/${buildMPS.build.number}-macos.zip">
