@@ -385,7 +385,7 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/lib/mps-tuples.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/lib/mps-backend.jar.tmp">
-      <fileset dir="${mps_home}/core/ant/classes" includes="**/*.class, **/*.xml, " />
+      <fileset dir="${mps_home}/core/ant/classes" includes="**/*.class, **/*.xml, **/trace.info, " />
     </copy>
     <echo file="${deploy.dir}/MPS/lib/mps-backend.jar.tmp/build.number">build.number=${build.number}${line.separator}date=${DSTAMP}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}${line.separator}version=${version}</echo>
     <antcall target="MPS-languages.pack.Ant" />
