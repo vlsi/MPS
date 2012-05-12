@@ -570,11 +570,12 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.debugger.java.privateMembers" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java/languages" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java" />
+    <copy file="${mps_home}/plugins/debugger-java-customViewers/META-INF/plugin.xml" tofile="${deploy.dir}/MPS/plugins/debugger-java-customViewers.jar.tmp/META-INF/plugin.xml" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java-customViewers.jar.tmp/META-INF" />
     <copy todir="${deploy.dir}/MPS/plugins/debugger-java-customViewers.jar.tmp">
       <fileset dir="${mps_home}/plugins/debugger-java-customViewers/classes" />
     </copy>
-    <antcall target="MPS-external.replace_a1p3a" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/debugger-java-customViewers.jar.tmp/META-INF" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.debugger.java.customViewers.plugin" />
     <jar destfile="${deploy.dir}/MPS/plugins/debugger-java-customViewers.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/plugins/debugger-java-customViewers.jar.tmp" excludes="" />
     </jar>
@@ -597,6 +598,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.execution.util" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.execution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ant.execution" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.configurations.implementation.plugin" />
     <mkdir dir="${deploy.dir}/MPS/plugins/execution-configurations/lib/execution-configurations.jar.tmp/modules" />
     <jar destfile="${deploy.dir}/MPS/plugins/execution-configurations/lib/execution-configurations.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/plugins/execution-configurations/lib/execution-configurations.jar.tmp" excludes="" />
@@ -613,6 +615,7 @@
     </copy>
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.configurations.deprecated.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.library" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.languages" />
     <mkdir dir="${deploy.dir}/MPS/plugins/execution-languages/lib/execution-languages.jar.tmp/modules" />
     <copy todir="${deploy.dir}/MPS/plugins/execution-languages/lib/execution-languages.jar.tmp">
       <fileset dir="${mps_home}/plugins/execution-languages/languages/plugin/classes" />
@@ -952,10 +955,6 @@
   <target name="replace_a1a0k3a">
     <copy file="${mps_home}/plugins/mpsjava/META-INF/plugin.xml" tofile="${deploy.dir}/MPS/plugins/mpsjava/lib/mpsjava.jar.tmp/META-INF/plugin.xml" />
     <replace file="${deploy.dir}/MPS/plugins/mpsjava/lib/mpsjava.jar.tmp/META-INF/plugin.xml" token="../classes/" value="../" />
-  </target>
-  <target name="replace_a1p3a">
-    <copy file="${mps_home}/plugins/debugger-java-customViewers/META-INF/plugin.xml" tofile="${deploy.dir}/MPS/plugins/debugger-java-customViewers.jar.tmp/META-INF/plugin.xml" />
-    <replace file="${deploy.dir}/MPS/plugins/debugger-java-customViewers.jar.tmp/META-INF/plugin.xml" token="../classes/" value="/" />
   </target>
   <target name="pack.branding_b1a">
     <property name="tmpdir" value="${java.io.tmpdir}/branding_b1a_0" />
