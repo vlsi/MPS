@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7sftosdhba23q3pnfirb7e0dh11r3lr">
+<dependencies version="2" modelHash="-ep46l1aznpg5yyvc2sk9mto3m2ywptw">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8ddyvtwlgdy2b4rcc23nz4xk6wzma49" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-cw4cuvzqiy6cv9vv4yy2w5dj04351kw" />
   <dep model="r:00000000-0000-4000-0000-011c89590575(jetbrains.mps.gtext.structure)" hash="-4iv38643b336rgds590u3shyjqnrivh" />
@@ -195,7 +195,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="buildUiLanguages.xml" />
   </source>
-  <source id="6503539749405386437" name="buildCoreEx" hash="ae0qd44g77tacxt2wnnojjp2qw64jyx">
+  <source id="6503539749405386437" name="buildCoreEx" hash="-33abfvae2alim42yegnjw74pekiti3g">
     <dep root="7181125477683264500" />
     <dep root="7926701909975931624" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
