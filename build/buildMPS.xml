@@ -101,7 +101,9 @@
     </copy>
     <mkdir dir="${build.layout}/MPS ${version}/plugins/git4idea" />
     <copy todir="${build.layout}/MPS ${version}/plugins/git4idea">
-      <fileset dir="${basedir}/plugins/git4idea" />
+      <fileset dir="${basedir}/plugins/git4idea">
+        <exclude name="**/*.zip" />
+      </fileset>
     </copy>
     <copy todir="${build.layout}/MPS ${version}">
       <fileset dir="${basedir}" includes="help/**" />

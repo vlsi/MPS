@@ -7968,6 +7968,9 @@
                     </node>
                   </node>
                 </node>
+                <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileExcludeSelector" typeId="3ior.5248329904288051111" id="7149524275926528670">
+                  <property name="pattern" nameId="3ior.5248329904288051112" value="**/*.zip" />
+                </node>
               </node>
             </node>
           </node>
