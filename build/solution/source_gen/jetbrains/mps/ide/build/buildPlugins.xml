@@ -30,9 +30,9 @@
     <copy todir="${build.tmp}/default/mpsjava.jar/META-INF">
       <fileset file="${mps_home}/plugins/mpsjava/META-INF/plugin.xml" />
       <filterchain>
-        <replacetokens>
-          <token key="../classes/" value="../" />
-        </replacetokens>
+        <tokenfilter>
+          <replaceregex pattern="../classes/jetbrains/" replace="../jetbrains/" flags="gi" />
+        </tokenfilter>
       </filterchain>
     </copy>
     <jar destfile="${build.layout}/plugins/mpsjava/lib/mpsjava.jar">
