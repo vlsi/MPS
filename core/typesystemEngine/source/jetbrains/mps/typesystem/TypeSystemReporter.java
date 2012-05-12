@@ -25,6 +25,7 @@ import java.util.Map.Entry;
 
 public class TypeSystemReporter {
   private static TypeSystemReporter instance = null;
+  private boolean isEnabled = false;
   private Map<String, Pair<Long, Long>> myGetTypeOfTime = new HashMap<String, Pair<Long, Long>>();
   private Map<String, Pair<Long, Long>> myIsSubTypeTime = new HashMap<String, Pair<Long, Long>>();
   private Map<String, Pair<Long, Long>> myCoerceTime = new HashMap<String, Pair<Long, Long>>();
@@ -41,17 +42,20 @@ public class TypeSystemReporter {
   }
 
   public void reset() {
+    isEnabled = true;
     myGetTypeOfTime.clear();
     myIsSubTypeTime.clear();
     myCoerceTime.clear();
   }
 
   public void reportTypeOf(SNode node, long time) {
+    if (!isEnabled) return;
     String conceptFqName = node.getConceptFqName();
     report(time, conceptFqName, myGetTypeOfTime);
   }
 
   private void report(long time, String conceptFqName, Map<String, Pair<Long, Long>> map) {
+    if (!isEnabled) return;
     Pair<Long, Long> value = map.get(conceptFqName);
     if (value == null) {
       value = new Pair<Long, Long>(0L, 0L);
@@ -62,13 +66,13 @@ public class TypeSystemReporter {
   }
 
   public void reportIsSubType(SNode subType, SNode superType, long time) {
-    if (null == subType || null == superType) return;
+    if (!isEnabled || null == subType || null == superType) return;
     String conceptFqName = subType.getConceptFqName() + "   " + superType.getConceptFqName();
     report(time, conceptFqName, myIsSubTypeTime);
   }
 
   public void reportCoerce(SNode subType, String fq, long time) {
-    if (null == subType) return;
+    if (!isEnabled || null == subType) return;
     String conceptFqName = subType.getConceptFqName() + "   " + fq;
     report(time, conceptFqName, myCoerceTime);
   }
@@ -80,9 +84,11 @@ public class TypeSystemReporter {
     printMapReport(myIsSubTypeTime, numTop, tracer);
     tracer.addText("Time spent on coerce operation");
     printMapReport(myCoerceTime, numTop, tracer);
+    isEnabled = false;
   }
 
   public void printMapReport(Map<String, Pair<Long, Long>> map, int numTop, IPerformanceTracer tracer) {
+    if (!isEnabled) return;
     ArrayList<Entry<String, Pair<Long, Long>>> list = new ArrayList<Entry<String, Pair<Long, Long>>>();
     list.addAll(map.entrySet());
 
