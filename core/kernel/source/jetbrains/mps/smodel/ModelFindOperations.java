@@ -106,31 +106,6 @@ public class ModelFindOperations {
     return SModelOperations.getImportElement(model, modelDescriptor.getSModelReference()) != null;
   }
 
-  public Set<SNode> findDescendants(SNode node, Set<SNode> descendantsKnownInModel) {
-    if (myDataSource == null) return new HashSet<SNode>();
-    boolean changed = false;
-    if (myModelDescriptor instanceof EditableSModelDescriptor) {
-      changed = ((EditableSModelDescriptor) myModelDescriptor).isChanged();
-    }
-
-    if (!myNeedSearchForStrings && !changed && !descendantsKnownInModel.isEmpty())
-      return descendantsKnownInModel;
-
-    if (myNeedSearchForStrings && !myDataSource.containsString(myModelDescriptor, node.getId()))
-      return descendantsKnownInModel;
-
-    SModel model = myModelDescriptor.getSModel();
-    Set<SNode> result = new HashSet<SNode>();
-    if (model != null) {
-      for (SNode root : model.roots()) {
-        addDescendants(root, node, result);
-      }
-    }
-    descendantsKnownInModel.clear();
-    descendantsKnownInModel.addAll(result);
-    return descendantsKnownInModel;
-  }
-
   private void addUsages(SNode current, Set<SNode> nodes, Set<SReference> result) {
     for (SReference ref : current.getReferences()) {
       if (nodes.contains(ref.getTargetNode())) {
@@ -139,31 +114,6 @@ public class ModelFindOperations {
     }
     for (SNode child : current.getChildren()) {
       addUsages(child, nodes, result);
-    }
-  }
-
-  private void addDescendants(SNode current, SNode node, Set<SNode> result) {
-    if (SNodeUtil.isInstanceOfConceptDeclaration(current)) {
-      for (SNode interfaceConcept : SNodeUtil.getConceptDeclaration_Implements(current)) {
-        if (interfaceConcept != null && interfaceConcept == node) {
-          result.add(current);
-          break;
-        }
-      }
-      if (SNodeUtil.getConceptDeclaration_Extends(current) == node) {
-        result.add(current);
-      }
-    } else if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(current)) {
-      for (SNode interfaceConcept : SNodeUtil.getInterfaceConceptDeclaration_Extends(current)) {
-        if (interfaceConcept != null && interfaceConcept == node) {
-          result.add(interfaceConcept);
-          break;
-        }
-      }
-    }
-
-    for (SNode child : current.getChildren()) {  // are there any "inner" concepts?
-      addDescendants(child, node, result);
     }
   }
 
