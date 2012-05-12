@@ -88,8 +88,6 @@
   <property name="jetbrains.mps.lang.editor.classes" value="${base_dir}/languages/languageDesign/editor/classes_gen" />
   <property name="jetbrains.mps.lang.editor.editorTest.classes" value="${base_dir}/languages/languageDesign/editor/languages/editorTest/classes_gen" />
   <property name="jetbrains.mps.lang.editor.table.classes" value="${base_dir}/languages/languageDesign/editor/languages/table/classes_gen" />
-  <property name="jetbrains.mps.lang.editor.table.classes" value="${base_dir}/languages/languageDesign/editor/languages/table/classes_gen" />
-  <property name="jetbrains.mps.lang.editor.table.runtime.classes" value="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
   <property name="jetbrains.mps.lang.editor.table.runtime.classes" value="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
   <property name="jetbrains.mps.lang.extension.classes" value="${base_dir}/languages/languageDesign/extension/classes_gen" />
   <property name="jetbrains.mps.lang.findUsages.classes" value="${base_dir}/languages/languageDesign/findUsages/classes_gen" />
@@ -557,12 +555,8 @@
   <path id="cycle.jetbrains.mps.lang.editor.table_tjc.src">
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/source_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/test_gen" />
-    <path path="${base_dir}/languages/languageDesign/editor/languages/table/source_gen" />
-    <path path="${base_dir}/languages/languageDesign/editor/languages/table/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.lang.editor.table.runtime_tjc.src">
-    <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/source_gen" />
-    <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/test_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/source_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/test_gen" />
   </path>
@@ -6389,7 +6383,6 @@
   </path>
   <path id="cycle.jetbrains.mps.lang.editor.table_tjc.classpaths">
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/editor/languages/table/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/ant/classes" />
@@ -6487,7 +6480,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.lang.editor.table.runtime_tjc.classpaths">
-    <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
@@ -12988,10 +12980,7 @@
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/languageDesign/editor/languages/table/source_gen" />
     <mkdir dir="${base_dir}/languages/languageDesign/editor/languages/table/test_gen" />
-    <mkdir dir="${base_dir}/languages/languageDesign/editor/languages/table/source_gen" />
-    <mkdir dir="${base_dir}/languages/languageDesign/editor/languages/table/test_gen" />
     <mkdir dir="${classes.dump}" />
-    <mkdir dir="${jetbrains.mps.lang.editor.table.classes}" />
     <mkdir dir="${jetbrains.mps.lang.editor.table.classes}" />
     <javac classpathref="cycle.jetbrains.mps.lang.editor.table_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.lang.editor.table_tjc.src" />
@@ -13000,16 +12989,6 @@
       <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/editor/languages/table/source_gen" />
       <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/editor/languages/table/test_gen" />
     </copy>
-    <copy todir="${jetbrains.mps.lang.editor.table.classes}">
-      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/editor/languages/table/source_gen" />
-      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/editor/languages/table/test_gen" />
-    </copy>
-    <javac classpathref="cycle.jetbrains.mps.lang.editor.table_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.editor.table.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
-      <src>
-        <path path="${base_dir}/languages/languageDesign/editor/languages/table/source_gen" />
-        <path path="${base_dir}/languages/languageDesign/editor/languages/table/test_gen" />
-      </src>
-    </javac>
     <javac classpathref="cycle.jetbrains.mps.lang.editor.table_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.editor.table.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
         <path path="${base_dir}/languages/languageDesign/editor/languages/table/source_gen" />
@@ -13023,10 +13002,7 @@
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/languageDesign/editor/languages/table/runtime/source_gen" />
     <mkdir dir="${base_dir}/languages/languageDesign/editor/languages/table/runtime/test_gen" />
-    <mkdir dir="${base_dir}/languages/languageDesign/editor/languages/table/runtime/source_gen" />
-    <mkdir dir="${base_dir}/languages/languageDesign/editor/languages/table/runtime/test_gen" />
     <mkdir dir="${classes.dump}" />
-    <mkdir dir="${jetbrains.mps.lang.editor.table.runtime.classes}" />
     <mkdir dir="${jetbrains.mps.lang.editor.table.runtime.classes}" />
     <javac classpathref="cycle.jetbrains.mps.lang.editor.table.runtime_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.lang.editor.table.runtime_tjc.src" />
@@ -13035,16 +13011,6 @@
       <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/editor/languages/table/runtime/source_gen" />
       <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/editor/languages/table/runtime/test_gen" />
     </copy>
-    <copy todir="${jetbrains.mps.lang.editor.table.runtime.classes}">
-      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/editor/languages/table/runtime/source_gen" />
-      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/editor/languages/table/runtime/test_gen" />
-    </copy>
-    <javac classpathref="cycle.jetbrains.mps.lang.editor.table.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.editor.table.runtime.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
-      <src>
-        <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/source_gen" />
-        <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/test_gen" />
-      </src>
-    </javac>
     <javac classpathref="cycle.jetbrains.mps.lang.editor.table.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.editor.table.runtime.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
         <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/source_gen" />
@@ -14374,8 +14340,6 @@
     <delete dir="${jetbrains.mps.lang.descriptor.classes}" />
     <delete dir="${jetbrains.mps.lang.editor.editorTest.classes}" />
     <delete dir="${jetbrains.mps.lang.editor.table.classes}" />
-    <delete dir="${jetbrains.mps.lang.editor.table.classes}" />
-    <delete dir="${jetbrains.mps.lang.editor.table.runtime.classes}" />
     <delete dir="${jetbrains.mps.lang.editor.table.runtime.classes}" />
     <delete dir="${jetbrains.mps.lang.extension.classes}" />
     <delete dir="${jetbrains.mps.lang.findUsages.classes}" />

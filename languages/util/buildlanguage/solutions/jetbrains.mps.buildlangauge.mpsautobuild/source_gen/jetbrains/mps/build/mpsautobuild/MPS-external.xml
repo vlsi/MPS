@@ -765,8 +765,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.test.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.typesystem.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.dataFlow.pluginSolution" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor.table" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor.table.runtime" />
     <mkdir dir="${deploy.dir}/MPS/languages/languageDesign" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.common" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.settings" />
