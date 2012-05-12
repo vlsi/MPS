@@ -107,6 +107,14 @@
         <exclude name="**/*.zip" />
       </fileset>
     </copy>
+    <mkdir dir="${build.tmp}/default/samples.zip" />
+    <mkdir dir="${build.tmp}/default/samples.zip/MPSSamples" />
+    <copy todir="${build.tmp}/default/samples.zip/MPSSamples">
+      <fileset dir="${mps_home}/samples" />
+    </copy>
+    <zip destfile="${build.layout}/MPS ${version}/samples.zip">
+      <fileset dir="${build.tmp}/default/samples.zip" />
+    </zip>
     <copy todir="${build.layout}/MPS ${version}">
       <fileset dir="${basedir}" includes="help/**" />
     </copy>
