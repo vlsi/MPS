@@ -21,6 +21,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.ide.findusages.MPSModelsIndexer</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.ide.findusages.FastFindUsagesManager</implementation-class>
     </component>
 

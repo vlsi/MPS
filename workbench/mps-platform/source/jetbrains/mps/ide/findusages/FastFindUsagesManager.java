@@ -60,7 +60,6 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
   }
 
   public void initComponent() {
-    IdTableBuilding.registerIdIndexer(MPSFileTypeFactory.MODEL_FILE_TYPE, new MyFileTypeIdIndexer());
     myProxyManager.setManager(this);
   }
 
@@ -264,7 +263,6 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
   }
 
   private Set<VirtualFile> getCandidates(final Set<VirtualFile> scopeFiles, final String nodeId) {
-
     final Set<VirtualFile> candidates = new HashSet<VirtualFile>();
     FileBasedIndex.getInstance().processValues(IdIndex.NAME, new IdIndexEntry(nodeId, true), null,
       new FileBasedIndex.ValueProcessor<Integer>() {
@@ -291,29 +289,5 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
       }
     );
     return candidates;
-  }
-
-  private static class MyFileTypeIdIndexer extends FileTypeIdIndexer {
-    @NotNull
-    public Map<IdIndexEntry, Integer> map(FileContent inputData) {
-      CharSequence data = inputData.getContentAsText();
-      char[] charsArray = CharArrayUtil.fromSequenceWithoutCopying(data);
-      if (charsArray == null) {
-        charsArray = CharArrayUtil.fromSequence(data);
-      }
-
-      final Map<IndexEntry, Integer> res;
-      try {
-        res = ModelPersistence.index(charsArray);
-      } catch (ModelReadException e) {
-        return Collections.emptyMap();
-      }
-
-      HashMap<IdIndexEntry, Integer> result = new HashMap<IdIndexEntry, Integer>();
-      for (Entry<IndexEntry, Integer> ie : res.entrySet()) {
-        result.put(new IdIndexEntry(ie.getKey().data, ie.getKey().caseSensitive), ie.getValue());
-      }
-      return result;
-    }
   }
 }
