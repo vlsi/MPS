@@ -14205,6 +14205,9 @@
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="5875180246328869236">
               <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="5875180246328869202" resolveInfo="jetbrains.mps.xmlUnitTest" />
             </node>
+            <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="7149524275925893958">
+              <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="9038842203622887545" resolveInfo="jetbrains.mps.xmlUnitTest.runtime" />
+            </node>
           </node>
           <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="5875180246328869261">
             <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="5875180246328869238" resolveInfo="jetbrains.mps.core.xml" />
