@@ -73,6 +73,7 @@ public class HighlightInstances_Action extends BaseAction {
     try {
       NodeHighlightManager highlightManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager();
       EditorMessageOwner messageOwner = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner();
+
       for (SNode ref : SetSequence.fromSet(new ModelFindOperations(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).findInstances(SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node"))), false))) {
         if (ref.getContainingRoot() == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getContainingRoot()) {
           highlightManager.mark(ref, HighlightConstants.INSTANCES_COLOR, "usage", messageOwner);

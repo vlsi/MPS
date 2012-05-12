@@ -11,7 +11,6 @@ import java.util.Set;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.Collection;
 import jetbrains.mps.smodel.Language;
 import java.util.HashSet;
@@ -54,8 +53,8 @@ public class RefactoringUtil {
     final List<SNode> availableRefactorings = new ArrayList<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        Set<SNode> newRefactorings = FindUsagesManager.getInstance().findInstances(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.refactoring.structure.Refactoring"), false, GlobalScope.getInstance(), new EmptyProgressMonitor());
-        Set<SNode> oldRefactorings = FindUsagesManager.getInstance().findInstances(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.refactoring.structure.OldRefactoring"), false, GlobalScope.getInstance(), new EmptyProgressMonitor());
+        Set<SNode> newRefactorings = FindUsagesManager.getInstance().findInstances(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.refactoring.structure.Refactoring"), false, GlobalScope.getInstance(), null);
+        Set<SNode> oldRefactorings = FindUsagesManager.getInstance().findInstances(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.refactoring.structure.OldRefactoring"), false, GlobalScope.getInstance(), null);
         availableRefactorings.addAll(newRefactorings);
         availableRefactorings.addAll(oldRefactorings);
       }
