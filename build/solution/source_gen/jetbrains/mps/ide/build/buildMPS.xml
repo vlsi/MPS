@@ -117,6 +117,12 @@
     <copy todir="${build.layout}/MPS ${version}">
       <fileset file="${basedir}/readme.txt" />
     </copy>
+    <copy todir="${build.layout}/MPS ${version}">
+      <fileset file="${basedir}/entryPoints.xml" />
+    </copy>
+    <copy todir="${build.layout}/MPS ${version}">
+      <fileset file="${basedir}/releaseNotes.txt" />
+    </copy>
     <mkdir dir="${build.layout}/MPS-linux" />
     <mkdir dir="${build.layout}/MPS-linux/bin" />
     <copy todir="${build.layout}/MPS-linux/bin">
