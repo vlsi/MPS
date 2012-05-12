@@ -114,12 +114,19 @@
     </copy>
     <mkdir dir="${build.layout}/plugins/svn4idea" />
     <copy todir="${build.layout}/plugins/svn4idea">
-      <fileset dir="${basedir}/plugins/svn4idea" />
+      <fileset dir="${basedir}/plugins/svn4idea">
+        <exclude name="**/*.zip" />
+      </fileset>
     </copy>
     <mkdir dir="${build.layout}/plugins/git4idea" />
     <copy todir="${build.layout}/plugins/git4idea">
-      <fileset dir="${basedir}/plugins/git4idea" />
+      <fileset dir="${basedir}/plugins/git4idea">
+        <exclude name="**/*.zip" />
+      </fileset>
     </copy>
+    <zip destfile="${build.layout}/samples.zip">
+      <zipfileset dir="${basedir}/samples" prefix="MPSSamples" />
+    </zip>
     <copy todir="${build.layout}">
       <fileset dir="${basedir}" includes="help/**" />
     </copy>

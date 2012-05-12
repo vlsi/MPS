@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4fm8ppnzgs2cxkelb6b28wticegud2u">
+<dependencies version="2" modelHash="-1oicb6icq99efiz9udstbxlepa3a1n6">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8ddyvtwlgdy2b4rcc23nz4xk6wzma49" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-cw4cuvzqiy6cv9vv4yy2w5dj04351kw" />
   <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" hash="-9a8mibbxrosfc3djbcax071n54m8fgc" />
@@ -55,7 +55,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="buildDistribution.xml" />
   </source>
-  <source id="4301118715654192646" name="buildMPS" hash="2sdj8hgyfvz9iwry7fduj2y2s6prpa4">
+  <source id="4301118715654192646" name="buildMPS" hash="8q5xvlb98aangp21f86vor5h7rvtt8s">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" />
     <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
@@ -89,7 +89,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="buildUtilLanguages.xml" />
   </source>
-  <source id="6391307088354381121" name="buildPlugins" hash="-1ehw22yfs8mrh5349fk959512vhzwic">
+  <source id="6391307088354381121" name="buildPlugins" hash="d66sfev6yjf887dp4ygzta7o6hsd5jz">
     <dep root="2569834391839970845" />
     <dep root="7926701909975931624" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -111,7 +111,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="buildBuild.xml" />
   </source>
-  <source id="1545517825663017278" name="buildVcs" hash="-97ww4aybsj09m40qxyyw2f5foaei2jv">
+  <source id="1545517825663017278" name="buildVcs" hash="aniwz0zz904blgl4f8r5f49qra17uoc">
     <dep root="2569834391839970845" />
     <dep root="6391307088354381121" />
     <dep root="7926701909975931624" />
