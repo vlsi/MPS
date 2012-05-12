@@ -154,21 +154,6 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
     return result;
   }
 
-  public Set<SNode> findDescendants(SNode node, IScope scope) {
-    Set<String> fqNames = LanguageHierarchyCache.getInstance().getDescendantsOfConcept(NameUtil.nodeFQName(node));
-    Set<SNode> result = new HashSet<SNode>();
-    for (String fqName : fqNames) {
-      SNode foundNode = SModelUtil.findNodeByFQName(fqName, node, scope);
-      if (foundNode == null) continue;
-      result.add(foundNode);
-    }
-    return result;
-  }
-
-  public Set<SReference> findUsages(SNode node, IScope scope, ProgressMonitor monitor) {
-    return findUsages(CollectionUtil.set(node), scope, monitor, true);
-  }
-
   public Set<SReference> findUsages(Set<SNode> nodes, final IScope scope, ProgressMonitor monitor, boolean manageTasks) {
     Set<SReference> result = new HashSet<SReference>();
     if (monitor == null) monitor = new EmptyProgressMonitor();
@@ -204,16 +189,6 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
       monitor.done();
     }
     return result;
-  }
-
-  public List<SNode> findInstances(SNode conceptDeclaration, IScope scope) {
-    Set<SNode> set = findInstances(conceptDeclaration, scope, null, true);
-    return new ArrayList<SNode>(set);
-  }
-
-  public List<SNode> findInstances(SNode conceptDeclaration, IScope scope, ProgressMonitor monitor) {
-    Set<SNode> set = findInstances(conceptDeclaration, scope, monitor, true);
-    return new ArrayList<SNode>(set);
   }
 
   private Set<SNode> findInstancesOfNodeInCache(SNode concept, final IScope scope, boolean isExact) {

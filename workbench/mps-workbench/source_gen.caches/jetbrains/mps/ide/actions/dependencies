@@ -3084,7 +3084,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.TodoFinder" file="TodoFinder.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.findUsages.FindUsagesManager" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />

@@ -82,6 +82,7 @@
   <dependency className="jetbrains.mps.ide.hierarchy.BaseLanguageHierarchyViewTool" file="BaseLanguageHierarchyViewTool.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.IconContainer" />

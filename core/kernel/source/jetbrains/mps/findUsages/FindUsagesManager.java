@@ -28,15 +28,7 @@ public abstract class FindUsagesManager {
     return FindUsagesManagerFactory.getProxyInstance().getManager();
   }
 
-  public abstract Set<SNode> findDescendants(SNode node, IScope scope);
-
-  public abstract Set<SReference> findUsages(SNode node, IScope scope, ProgressMonitor monitor);
-
   public abstract Set<SReference> findUsages(Set<SNode> nodes, IScope scope, ProgressMonitor monitor, boolean manageTasks);
-
-  public abstract List<SNode> findInstances(SNode conceptDeclaration, IScope scope);
-
-  public abstract List<SNode> findInstances(SNode conceptDeclaration, IScope scope, ProgressMonitor monitor);
 
   public abstract Set<SNode> findInstances(SNode concept, IScope scope, ProgressMonitor monitor, boolean manageTasks);
 

@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SModelOperations;
 import java.util.Set;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 
 public final class SConceptOperations {
@@ -121,16 +120,6 @@ public final class SConceptOperations {
       }
     }
     return result;
-  }
-
-  public static List<SNode> findConceptInstances(SNode conceptDeclarationNode, IScope scope) {
-    if (conceptDeclarationNode == null) {
-      return new ArrayList<SNode>();
-    }
-    if (scope == null) {
-      scope = GlobalScope.getInstance();
-    }
-    return FindUsagesManager.getInstance().findInstances(conceptDeclarationNode, scope);
   }
 
   public static SNode createNewNode(String conceptFqName) {

@@ -48,43 +48,6 @@ class DefaultFindUsagesManager extends FindUsagesManager {
     myClassLoaderManager.removeReloadHandler(myReloadHandler);
   }
 
-  public Set<SNode> findDescendants(SNode node, IScope scope) {
-    LOG.assertCanRead();
-    Map<SModelDescriptor, Set<SNode>> knownDescendantsInModelDescriptors = myConceptsToKnownDescendantsInModelDescriptors.get(node);
-    if (knownDescendantsInModelDescriptors == null) {
-      knownDescendantsInModelDescriptors = new HashMap<SModelDescriptor, Set<SNode>>();
-      myConceptsToKnownDescendantsInModelDescriptors.put(node, knownDescendantsInModelDescriptors);
-    }
-    Set<SNode> result = new HashSet<SNode>();
-    for (SModelDescriptor model : scope.getModelDescriptors()) {
-      if (SModelStereotype.isStubModelStereotype(model.getStereotype())) continue;
-      Set<SNode> descendantsKnownInModel = knownDescendantsInModelDescriptors.get(model);
-      if (descendantsKnownInModel == null) {
-        descendantsKnownInModel = new HashSet<SNode>();
-        knownDescendantsInModelDescriptors.put(model, descendantsKnownInModel);
-      }
-      result.addAll(new ModelFindOperations(model).findDescendants(node, descendantsKnownInModel));
-    }
-
-    return result;
-  }
-
-  /**
-   * Fully equivalent to <code>findUsages(CollectionsUtil.asSet(node),scope,progress)</code>
-   * <p>
-   * <strong>NB!</strong> This method is long-running, don't use where execution time is critical.
-   * </p>
-   *
-   * @param node
-   * @param scope
-   * @param monitor
-   * @return
-   */
-  public Set<SReference> findUsages(SNode node, IScope scope, ProgressMonitor monitor) {
-    LOG.assertCanRead();
-    return findUsages(CollectionUtil.set(node), scope, monitor, true);
-  }
-
   public Set<SReference> findUsages(Set<SNode> nodes, IScope scope, ProgressMonitor monitor, boolean manageTasks) {
     if (monitor == null) monitor = new EmptyProgressMonitor();
     LOG.assertCanRead();
@@ -115,37 +78,6 @@ class DefaultFindUsagesManager extends FindUsagesManager {
     } finally {
       monitor.done();
     }
-  }
-
-  /**
-   * Fully equivalent to <code>findInstances((ConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, null)</code>
-   * <p>
-   * <strong>NB!</strong> This method is long-running, don't use where execution time is critical.
-   * </p>
-   *
-   * @param conceptDeclaration
-   * @param scope
-   * @return
-   */
-  public List<SNode> findInstances(SNode conceptDeclaration, IScope scope) {
-    Set<SNode> set = findInstances(conceptDeclaration, scope, null, true);
-    return new ArrayList<SNode>(set);
-  }
-
-  /**
-   * Fully equivalent to <code>findInstances((ConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, null)</code>
-   * <p>
-   * <strong>NB!</strong> This method is long-running, don't use where execution time is critical.
-   * </p>
-   *
-   * @param conceptDeclaration
-   * @param scope
-   * @param monitor
-   * @return
-   */
-  public List<SNode> findInstances(SNode conceptDeclaration, IScope scope, ProgressMonitor monitor) {
-    Set<SNode> set = findInstances(conceptDeclaration, scope, monitor, true);
-    return new ArrayList<SNode>(set);
   }
 
   public Set<SNode> findInstances(SNode concept, IScope scope, ProgressMonitor monitor, boolean manageTasks) {
