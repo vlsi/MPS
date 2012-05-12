@@ -14,8 +14,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.generator.template.MappingScriptContext;
 
 public class QueriesGenerated {
@@ -160,17 +158,11 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_5428983789737856721(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    Iterable<SNode> seq = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "5428983789737854526"), "entry", true)).first(), "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "5428983789737854526"), "entry", true)).first(), "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.packaging.structure.Copy") && !(CompositePathComponent_Behavior.call_getPath_1220983419344(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.packaging.structure.Copy"), "sourcePath", true), "compositePathComponent", true)).contains("source_gen"));
       }
     });
-    Sequence.fromIterable(seq).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode it) {
-        System.err.println(CompositePathComponent_Behavior.call_getPath_1220983419344(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.packaging.structure.Copy"), "sourcePath", true), "compositePathComponent", true)));
-      }
-    });
-    return seq;
   }
 
   public static Iterable sourceNodesQuery_1864513465247672240(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
