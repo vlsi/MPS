@@ -21,13 +21,16 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.HashMap;
 
+@Deprecated
 public class VisibleClassConstructorsScope extends VisibleClassifiersScope {
   @Deprecated
   public VisibleClassConstructorsScope(SModel model, IScope scope) {
     super(model, IClassifiersSearchScope.CONSTRUCTOR, scope);
   }
 
+  @Deprecated
   public VisibleClassConstructorsScope(@NotNull SNode contextNode, IScope scope) {
+    // use VisibleClassConstructorsScope in j.m.baseLanguage.scopes instead 
     super(contextNode, IClassifiersSearchScope.CONSTRUCTOR, scope);
   }
 

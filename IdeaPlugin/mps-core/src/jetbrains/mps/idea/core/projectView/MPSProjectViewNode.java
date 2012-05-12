@@ -37,8 +37,8 @@ import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.Icon;
+import java.awt.Color;
 import java.util.Collection;
 import java.util.Collections;
 
@@ -46,20 +46,24 @@ import java.util.Collections;
  * evgeny, 11/9/11
  */
 public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> implements ValidateableNode {
-  private SNodePointer nodePointer;
   private Icon myIcon;
+  private MPSNodeVirtualFile myVirtualFile;
 
   /**
    * Creates an instance of the project view node.
+   * Constructor should be executed within read action.
    *
    * @param project      the project containing the node.
-   * @param nodePointer  ? part of value
+   * @param node         SNode
    * @param viewSettings the settings of the project view.
    */
-  public MPSProjectViewNode(Project project, SNodePointer nodePointer, ViewSettings viewSettings) {
-    super(project, nodePointer, viewSettings);
-    this.nodePointer = nodePointer;
-    myIcon = IconManager.getIconFor(nodePointer.getNode());
+  public MPSProjectViewNode(Project project, SNode node, ViewSettings viewSettings) {
+    super(project, new SNodePointer(node), viewSettings);
+    myIcon = IconManager.getIconFor(node);
+    if (getValue().getNode() != null) {
+      // has valid virtual file
+      myVirtualFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(getValue());
+    }
   }
 
   @Override
@@ -73,7 +77,7 @@ public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> implements
 
   @Override
   public VirtualFile getVirtualFile() {
-    return MPSNodesVirtualFileSystem.getInstance().getFileFor(getValue());
+    return myVirtualFile;
   }
 
   @NotNull
@@ -88,7 +92,7 @@ public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> implements
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SNode node = nodePointer.getNode();
+        SNode node = getValue().getNode();
         try {
           name[0] = node.getName();
         } catch (Exception ex) {
@@ -109,9 +113,10 @@ public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> implements
 
   private Color getNodeColor() {
     final FileStatusManager fileStatusManager = FileStatusManager.getInstance(myProject);
-    Color statusColor = fileStatusManager != null ? fileStatusManager.getStatus(getVirtualFile()).getColor() : Color.BLACK;
-    if (statusColor == null) statusColor = Color.BLACK;
-    return statusColor;
+    if (fileStatusManager != null && getVirtualFile() != null) {
+      return fileStatusManager.getStatus(getVirtualFile()).getColor();
+    }
+    return Color.BLACK;
   }
 
   @Override

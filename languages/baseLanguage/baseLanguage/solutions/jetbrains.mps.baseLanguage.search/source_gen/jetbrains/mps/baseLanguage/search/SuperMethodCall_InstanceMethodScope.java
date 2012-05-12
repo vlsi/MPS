@@ -11,8 +11,11 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
+@Deprecated
 public class SuperMethodCall_InstanceMethodScope extends ClassifierVisibleMembersScope {
+  @Deprecated
   public SuperMethodCall_InstanceMethodScope(@Nullable SNode superclassType, @Nullable SNode contextNode) {
+    // use classifier.getMembers(concept/SuperMethodKind) 
     super(superclassType, contextNode, IClassifiersSearchScope.INSTANCE_METHOD);
   }
 

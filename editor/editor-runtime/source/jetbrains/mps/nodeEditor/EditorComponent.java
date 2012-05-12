@@ -1213,7 +1213,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private String getNodeDisposedMessage() {
-    StringBuilder sb = new StringBuilder("editor is invalid");
+    StringBuilder sb = new StringBuilder("editor (" + this + ") is invalid");
     if (myNode != null) {
       sb.append(", myNode is disposed");
       StackTraceElement[] modelDisposedTrace = myNode.getModelDisposedTrace();
@@ -1226,6 +1226,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     } else {
       sb.append(", myNode == null");
     }
+    sb.append("____________________________");
     return sb.toString();
   }
 

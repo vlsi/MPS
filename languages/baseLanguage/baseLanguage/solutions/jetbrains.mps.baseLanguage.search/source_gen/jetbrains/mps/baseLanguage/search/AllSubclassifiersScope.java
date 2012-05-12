@@ -19,6 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
+@Deprecated
 public class AllSubclassifiersScope extends AbstractClassifiersScope {
   private final SModel model;
   private final IScope scope;
@@ -26,6 +27,7 @@ public class AllSubclassifiersScope extends AbstractClassifiersScope {
   private final SNode rootClassifier;
   private List<SNode> foundClassifiers;
 
+  @Deprecated
   public AllSubclassifiersScope(SNode classifier, SModel model, int constraint, IScope scope) {
     super(constraint);
     this.rootClassifier = classifier;

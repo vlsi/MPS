@@ -4,8 +4,11 @@ package jetbrains.mps.baseLanguage.search;
 
 import jetbrains.mps.smodel.SNode;
 
+@Deprecated
 public class InstanceMethodCall_InstanceMethodScope extends ClassifierVisibleMembersScope {
+  @Deprecated
   public InstanceMethodCall_InstanceMethodScope(SNode instanceType, SNode contextNode) {
+    // use <node> instead 
     super(instanceType, contextNode, IClassifiersSearchScope.INSTANCE_METHOD);
   }
 }

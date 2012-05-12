@@ -238,7 +238,7 @@
     <nodeInfo nodeId="1171743928471867549" fileName="ActionParameter_Hint.java" startLine="71" startPosition="34" endLine="72" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1171743928471867477" fileName="ActionParameter_Hint.java" startLine="79" startPosition="43" endLine="80" endPosition="365" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1171743928471867498" fileName="ActionParameter_Hint.java" startLine="83" startPosition="33" endLine="84" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1171743928471867513" fileName="ActionParameter_Hint.java" startLine="87" startPosition="43" endLine="88" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1171743928471867513" fileName="ActionParameter_Hint.java" startLine="87" startPosition="43" endLine="88" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1171743928471867525" fileName="ActionParameter_Hint.java" startLine="91" startPosition="34" endLine="92" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1171743928471867530" fileName="ActionParameter_Hint.java" startLine="93" startPosition="9" endLine="94" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1171743928471867539" fileName="ActionParameter_Hint.java" startLine="94" startPosition="205" endLine="95" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -250,7 +250,7 @@
     <nodeInfo nodeId="1171743928471867458" fileName="ActionParameter_Hint.java" startLine="110" startPosition="5" endLine="111" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1171743928471867570" fileName="ActionParameter_Hint.java" startLine="118" startPosition="43" endLine="119" endPosition="365" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1171743928471867591" fileName="ActionParameter_Hint.java" startLine="122" startPosition="33" endLine="123" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1171743928471867606" fileName="ActionParameter_Hint.java" startLine="126" startPosition="43" endLine="127" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1171743928471867606" fileName="ActionParameter_Hint.java" startLine="126" startPosition="43" endLine="127" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1171743928471867618" fileName="ActionParameter_Hint.java" startLine="130" startPosition="38" endLine="131" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1171743928471867623" fileName="ActionParameter_Hint.java" startLine="132" startPosition="9" endLine="133" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1171743928471867632" fileName="ActionParameter_Hint.java" startLine="133" startPosition="213" endLine="134" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -337,12 +337,12 @@
     <scopeInfo nodeId="1171743928471867457" fileName="ActionParameter_Hint.java" startLine="59" startPosition="82" endLine="60" endPosition="95" />
     <scopeInfo nodeId="1171743928471867476" fileName="ActionParameter_Hint.java" startLine="79" startPosition="43" endLine="80" endPosition="365" />
     <scopeInfo nodeId="1171743928471867497" fileName="ActionParameter_Hint.java" startLine="83" startPosition="33" endLine="84" endPosition="20" />
-    <scopeInfo nodeId="1171743928471867512" fileName="ActionParameter_Hint.java" startLine="87" startPosition="43" endLine="88" endPosition="124" />
+    <scopeInfo nodeId="1171743928471867512" fileName="ActionParameter_Hint.java" startLine="87" startPosition="43" endLine="88" endPosition="193" />
     <scopeInfo nodeId="1171743928471867524" fileName="ActionParameter_Hint.java" startLine="91" startPosition="34" endLine="92" endPosition="20" />
     <scopeInfo nodeId="1171743928471867458" fileName="ActionParameter_Hint.java" startLine="101" startPosition="44" endLine="102" endPosition="51" />
     <scopeInfo nodeId="1171743928471867569" fileName="ActionParameter_Hint.java" startLine="118" startPosition="43" endLine="119" endPosition="365" />
     <scopeInfo nodeId="1171743928471867590" fileName="ActionParameter_Hint.java" startLine="122" startPosition="33" endLine="123" endPosition="20" />
-    <scopeInfo nodeId="1171743928471867605" fileName="ActionParameter_Hint.java" startLine="126" startPosition="43" endLine="127" endPosition="128" />
+    <scopeInfo nodeId="1171743928471867605" fileName="ActionParameter_Hint.java" startLine="126" startPosition="43" endLine="127" endPosition="197" />
     <scopeInfo nodeId="1171743928471867617" fileName="ActionParameter_Hint.java" startLine="130" startPosition="38" endLine="131" endPosition="20" />
     <scopeInfo nodeId="1171743928471867551" fileName="ActionParameter_Hint.java" startLine="140" startPosition="44" endLine="141" endPosition="51" />
     <scopeInfo nodeId="1171743928471867643" fileName="ActionParameter_Hint.java" startLine="153" startPosition="111" endLine="154" endPosition="95" />

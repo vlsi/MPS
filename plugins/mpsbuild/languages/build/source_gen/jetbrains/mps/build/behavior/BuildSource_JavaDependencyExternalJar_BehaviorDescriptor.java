@@ -4,13 +4,14 @@ package jetbrains.mps.build.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.VisibleArtifacts;
+import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 
 public class BuildSource_JavaDependencyExternalJar_BehaviorDescriptor extends BuildSource_JavaDependency_BehaviorDescriptor implements BuildExternalDependency_BehaviorDescriptor {
   public BuildSource_JavaDependencyExternalJar_BehaviorDescriptor() {
   }
 
-  public Iterable<SNode> virtual_getDependencyTargets_841011766566205095(SNode thisNode, VisibleArtifacts artifacts) {
-    return BuildSource_JavaDependencyExternalJar_Behavior.virtual_getDependencyTargets_841011766566205095(thisNode, artifacts);
+  public void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
+    BuildSource_JavaDependencyExternalJar_Behavior.virtual_fetchDependencies_5908258303322131137(thisNode, artifacts, builder);
   }
 
   @Override

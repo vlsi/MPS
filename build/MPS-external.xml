@@ -41,6 +41,8 @@
     <mkdir dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp/modules" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/META-INF" />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/jetbrains" />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/META-INF" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-boot.jar.tmp" />
@@ -136,6 +138,7 @@
     <mkdir dir="${deploy.dir}/MPS/languages/util/dates" />
     <mkdir dir="${deploy.dir}/MPS/languages/util/baseLanguage" />
     <mkdir dir="${deploy.dir}/MPS/languages/util/ypath" />
+    <mkdir dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.gwt.runtime" />
     <mkdir dir="${deploy.dir}/MPS/languages/util/ui" />
     <mkdir dir="${deploy.dir}/MPS/languages/util/bash" />
     <mkdir dir="${deploy.dir}/MPS/languages/util/quickQueryLanguage" />
@@ -281,18 +284,19 @@
       <fileset dir="${mps_home}/editor/typesystemIntegration/classes" excludes="**/MPSEditor.xml, **/MPSEditorActions.xml" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp">
-      <fileset dir="${mps_home}/workbench/mps-editor/classes" excludes="**/MPSEditor.xml, **/MPSEditorActions.xml" />
+      <fileset dir="${mps_home}/workbench/mps-editor/classes" excludes="META-INF/MPSEditor.xml, jetbrains/mps/ide/editor/actions/MPSEditorActions.xml, **/MPSEditor.xml, **/MPSEditorActions.xml" />
     </copy>
     <antcall target="MPS-languages.pack.MPS.Editor" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide.editor" />
     <antcall target="MPS-languages.pack.jetbrains.mps.editor.runtime" />
+    <antcall target="MPS-languages.pack.typesystemIntegration" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp/modules" />
     <jar destfile="${deploy.dir}/MPS/lib/mps-editor.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp" excludes="**/MPSEditor.xml, **/MPSEditorActions.xml" />
     </jar>
     <delete dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp">
-      <fileset dir="${mps_home}/workbench/mps-platform/classes" excludes="**/MPSCore.xml, **/PlatformActions.xml" />
+      <fileset dir="${mps_home}/workbench/mps-platform/classes" excludes="META-INF/MPSCore.xml, jetbrains/mps/ide/platform/actions/PlatformActions.xml, **/MPSCore.xml, **/PlatformActions.xml" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp">
       <fileset dir="${mps_home}/workbench/mps-debugger/classes" excludes="**/MPSCore.xml, **/PlatformActions.xml" />
@@ -331,6 +335,20 @@
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
       <fileset dir="${mps_home}/MPSPlugin/apiclasses" />
     </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/jetbrains">
+      <fileset dir="${mps_home}/workbench/mps-platform/source_gen/jetbrains" includes="mps/ide/platform/actions/PlatformActions.xml, " />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/jetbrains">
+      <fileset dir="${mps_home}/workbench/mps-editor/source_gen/jetbrains" includes="mps/ide/editor/actions/MPSEditorActions.xml, " />
+    </copy>
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/jetbrains" />
+    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/META-INF">
+      <fileset dir="${mps_home}/workbench/mps-platform/source/META-INF" includes="MPSCore.xml, " />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/META-INF">
+      <fileset dir="${mps_home}/workbench/mps-editor/source/META-INF" includes="MPSEditor.xml, " />
+    </copy>
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/META-INF" />
     <antcall target="MPS-languages.pack.MPS.Workbench" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide.uiLanguage.runtime" />
@@ -384,7 +402,7 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/lib/mps-tuples.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/lib/mps-backend.jar.tmp">
-      <fileset dir="${mps_home}/core/ant/classes" includes="**/*.class, **/*.xml, " />
+      <fileset dir="${mps_home}/core/ant/classes" includes="**/*.class, **/*.xml, **/trace.info, " />
     </copy>
     <echo file="${deploy.dir}/MPS/lib/mps-backend.jar.tmp/build.number">build.number=${build.number}${line.separator}date=${DSTAMP}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}${line.separator}version=${version}</echo>
     <antcall target="MPS-languages.pack.Ant" />
@@ -708,6 +726,8 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.dataFlow.analyzers" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.descriptor" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor.table" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor.table.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor.editorTest" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.extension" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.findUsages" />
@@ -735,7 +755,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.typesystem" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.scopes" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.scopes.runtime" />
-    <antcall target="MPS-languages.pack.typesystemIntegration" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.core.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.structure.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.generator.pluginSolution" />
@@ -791,13 +810,14 @@
     <antcall target="MPS-languages.pack.ypath.main" />
     <antcall target="MPS-languages.pack.ypath.test" />
     <mkdir dir="${deploy.dir}/MPS/languages/util/ypath" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.ui.gwt.runtime" />
+    <mkdir dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.gwt.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ui" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ui.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ui.modeling" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ui.modeling.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ui.internal" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ui.gwt" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.ui.gwt.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ui.gwt.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ui.swing" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ui.swing.pluginSolution" />

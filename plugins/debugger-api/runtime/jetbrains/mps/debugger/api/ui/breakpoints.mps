@@ -11660,6 +11660,9 @@
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4474271214083125337">
                     <property name="value" nameId="tpee.1068580123138" value="true" />
                   </node>
+                  <node role="typeParameter" roleId="tpee.1201186121363" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9089804454209478489">
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4w4v.~CheckBoxNodeRenderer$NodeData" resolveInfo="CheckBoxNodeRenderer.NodeData" />
+                  </node>
                 </node>
               </node>
             </node>

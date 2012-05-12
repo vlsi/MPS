@@ -28,13 +28,16 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
+@Deprecated
 public class ReachableClassifiersScope extends AbstractClassifiersScope {
   protected static Log log = LogFactory.getLog(ReachableClassifiersScope.class);
 
   private IScope myScope;
   private SModel myModel;
 
+  @Deprecated
   public ReachableClassifiersScope(SModel model, int constraint, IScope scope) {
+    // use ClassifierScopes.getReachableClassifiersScope instead 
     super(constraint);
     this.myModel = model;
     this.myScope = scope;

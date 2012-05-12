@@ -4,6 +4,7 @@ package jetbrains.mps.build.mps.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.VisibleArtifacts;
+import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 import jetbrains.mps.build.mps.util.MPSModulesClosure;
 import java.util.List;
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ public class BuildMps_Module_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static Iterable<SNode> virtual_getDependencyTargets_841011766566205095(SNode thisNode, VisibleArtifacts artifacts) {
+  public static void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
     MPSModulesClosure closure = new MPSModulesClosure(artifacts.getGenContext(), thisNode).closure();
 
     List<SNode> result = new ArrayList<SNode>();
@@ -116,8 +117,7 @@ public class BuildMps_Module_Behavior {
 
     if (ListSequence.fromList(result).isNotEmpty()) {
       artifacts.needsFetch(thisNode);
-      return result;
+      builder.addAll(result);
     }
-    return null;
   }
 }

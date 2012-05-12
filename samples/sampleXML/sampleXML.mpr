@@ -4,6 +4,9 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="FileProjectViewPane">
+    <subPane />
+  </component>
   <component name="IssueNavigationConfiguration">
     <option name="links">
       <list>
@@ -14,13 +17,10 @@
       </list>
     </option>
   </component>
-  <component name="FileProjectViewPane">
-    <subPane />
-  </component>
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${project}/solutions/sandbox/sampleXML.sandbox.msd" />
       <modulePath path="${project}/languages/sampleXML/sampleXML.mpl" />
+      <modulePath path="${project}/solutions/sandbox/sampleXML.sandbox.msd" />
     </projectModules>
     <genConfs>
       <genConfModule name="sampleXML" moduleRef="jetbrains.mps.sampleXML" />

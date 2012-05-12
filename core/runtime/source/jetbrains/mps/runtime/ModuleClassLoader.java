@@ -31,7 +31,6 @@ public class ModuleClassLoader extends ClassLoader {
   private boolean myDisposed;
   private IClassLoadingModule myModule;
 
-  private final Object LOADING_LOCK = new Object();
   //This must be thread-safe. This does not include results of parent classloader
   private final Map<String, Class> myClasses = Collections.synchronizedMap(new THashMap<String, Class>());
 
@@ -40,11 +39,11 @@ public class ModuleClassLoader extends ClassLoader {
     myModule = module;
   }
 
-  protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+  protected synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
     if (!myModule.canLoad()) throw new ClassNotFoundException(name);
 
     //This does not guarantee that if one class was loaded, it will be returned by sequential loadClass immediately,
-    //but only makes classloading faster. The uniqueness is guaranteed by sync-block with LOADING_LOCK
+    //but only makes classloading faster.
     if (myClasses.containsKey(name)) {
       Class cl = myClasses.get(name);
       if (cl == null) throw new ClassNotFoundException(name);
@@ -53,7 +52,7 @@ public class ModuleClassLoader extends ClassLoader {
 
     Class<?> clazz = null;
     try {
-      clazz = findInSelfAndDependencies(name, true, true);
+      clazz = findInSelfAndDependencies(name);
       if (resolve) {
         resolveClass(clazz);
       }
@@ -63,63 +62,64 @@ public class ModuleClassLoader extends ClassLoader {
     }
   }
 
-  private Class<?> findInSelfAndDependencies(String name, boolean includeDependencies, boolean includeParents) throws ClassNotFoundException {
-    //from self
+  private synchronized Class<?> loadFromSelf(String name) {
     if (myModule.canLoadFromSelf()) {
-      //The purpose of this lock is to load class only once
-      //This method can be called either explicitly or by module dependency
-      //This lock guarantees that the same class is not loaded simultaneously by 2 threads (only sequential loads),
-      //and if it was already loaded, the user will get the loaded instance, not a new one
-      synchronized (LOADING_LOCK) {
-        Class c = findLoadedClass(name);
-        if (c != null) return c;
+      Class c = findLoadedClass(name);
+      if (c != null) return c;
 
-        byte[] bytes = myModule.findClassBytes(name);
-        if (bytes != null) {
-          String pack = NameUtil.namespaceFromLongName(name);
-          if (getPackage(pack) == null) {
-            definePackage(pack, null, null, null, null, null, null, null);
-          }
-          ClassLoaderManager.getInstance().classLoaded(name, ((ClassLoadingModule) myModule).getModuleReference());
-          return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
+      byte[] bytes = myModule.findClassBytes(name);
+      if (bytes != null) {
+        String pack = NameUtil.namespaceFromLongName(name);
+        if (getPackage(pack) == null) {
+          definePackage(pack, null, null, null, null, null, null, null);
         }
+        ClassLoaderManager.getInstance().classLoaded(name, ((ClassLoadingModule) myModule).getModuleReference());
+        return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
+      }
+    }
+    return null;
+  }
+
+  private Class<?> loadFromParent(String name) throws ClassNotFoundException {
+    return Class.forName(name, false, getParent());
+  }
+
+  private Class<?> findInSelfAndDependencies(String name) throws ClassNotFoundException {
+    //from self
+    Class c = loadFromSelf(name);
+    if (c != null) {
+      return c;
+    }
+
+    //from dependencies (try modules only)
+    List<IClassLoadingModule> queue = new ArrayList<IClassLoadingModule>();
+    for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
+      if (m.equals(myModule)) continue;
+      if (!m.canLoad()) continue;
+
+      if (m.canLoadFromSelf() && m.canFindClass(name)) {
+        //here it will load with self, with any values as two last parameters
+        return Class.forName(name, false, m.getClassLoader());
+      } else {
+        queue.add(m);
       }
     }
 
-    if (includeDependencies) {
-      //from dependencies (try modules only)
-      List<IClassLoadingModule> queue = new ArrayList<IClassLoadingModule>();
-      for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
-        if (m.equals(myModule)) continue;
-        if (!m.canLoad()) continue;
-
-        if (m.canLoadFromSelf() && m.canFindClass(name)) {
-          //here it will load with self, with any values as two last parameters
-          return m.getClassLoader().findInSelfAndDependencies(name, false, false);
-        } else {
-          queue.add(m);
+    //from dependencies (try parent class loaders also)
+    Set<ClassLoader> processedParentClassLoaders = new HashSet<ClassLoader>();
+    for (IClassLoadingModule m : queue) {
+      try {
+        ModuleClassLoader classLoader = m.getClassLoader();
+        if (processedParentClassLoaders.contains(classLoader.getParent())) {
+          continue;
         }
-      }
-
-
-      if (includeParents) {
-        //from dependencies (try parent class loaders also)
-        for (IClassLoadingModule m : queue) {
-          try {
-            return m.getClassLoader().findInSelfAndDependencies(name, false, true);
-          } catch (ClassNotFoundException e) {
-            //ignore
-          }
-        }
+        processedParentClassLoaders.add(classLoader.getParent());
+        return Class.forName(name, false, classLoader.getParent());
+      } catch (ClassNotFoundException e) {
+        //ignore
       }
     }
-
-    if (includeParents) {
-      //from my parent
-      return getParent().loadClass(name);
-    }
-
-    throw new ClassNotFoundException(name);
+    return processedParentClassLoaders.contains(getParent()) ? null : loadFromParent(name);
   }
 
   protected URL findResource(String name) {

@@ -91,7 +91,7 @@
     <nodeInfo nodeId="4474271214083125277" fileName="GroupedTree.java" startLine="162" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGroup#()null" />
     <nodeInfo nodeId="4474271214083125280" fileName="GroupedTree.java" startLine="167" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Z)V" />
     <nodeInfo nodeId="4474271214083125715" fileName="GroupedTree.java" startLine="198" startPosition="49" endLine="205" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083125332" fileName="GroupedTree.java" startLine="26" startPosition="69" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeData#(Z)Ljetbrains/mps/ide/platform/ui/CheckBoxNodeRenderer/NodeData;" />
+    <nodeInfo nodeId="4474271214083125332" fileName="GroupedTree.java" startLine="26" startPosition="100" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeData#(Z)Ljetbrains/mps/ide/platform/ui/CheckBoxNodeRenderer/NodeData;" />
     <nodeInfo nodeId="4474271214083125374" fileName="GroupedTree.java" startLine="48" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findNodeForData#(null)Ljetbrains/mps/ide/ui/MPSTreeNode;" />
     <nodeInfo nodeId="4474271214083125327" fileName="GroupedTree.java" startLine="25" startPosition="52" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083125423" fileName="GroupedTree.java" startLine="60" startPosition="63" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -197,7 +197,7 @@
       <varInfo nodeId="4474271214083125511" varName="group" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214083125714" fileName="GroupedTree.java" startLine="198" startPosition="49" endLine="205" endPosition="11" />
-    <scopeInfo nodeId="4474271214083125332" fileName="GroupedTree.java" startLine="26" startPosition="69" endLine="34" endPosition="0">
+    <scopeInfo nodeId="4474271214083125332" fileName="GroupedTree.java" startLine="26" startPosition="100" endLine="34" endPosition="0">
       <varInfo nodeId="4474271214083125335" varName="selected" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214083125374" fileName="GroupedTree.java" startLine="48" startPosition="0" endLine="56" endPosition="0">

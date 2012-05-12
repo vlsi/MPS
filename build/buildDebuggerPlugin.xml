@@ -211,7 +211,7 @@
   
   <target name="java.compile.debugger-api" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/debugger-api" />
-    <javac destdir="${build.tmp}/java/out/debugger-api" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/debugger-api" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/debugger-api/api/source_gen" />
@@ -248,7 +248,7 @@
   
   <target name="java.compile.debugger-java" depends="java.compile.debugger-api, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/debugger-java" />
-    <javac destdir="${build.tmp}/java/out/debugger-java" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/debugger-java" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/debugger-java/api/source_gen" />
@@ -287,7 +287,7 @@
   
   <target name="java.compile.debugger-java-customViewers" depends="java.compile.debugger-api, java.compile.debugger-java, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/debugger-java-customViewers" />
-    <javac destdir="${build.tmp}/java/out/debugger-java-customViewers" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/debugger-java-customViewers" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/debugger-java-customViewers/source_gen" />
@@ -325,7 +325,7 @@
   
   <target name="java.compile.jetbrains.mps.debugger.api.lang" depends="java.compile.debugger-api, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.debugger.api.lang" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.debugger.api.lang" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.debugger.api.lang" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/source_gen" />
@@ -375,7 +375,7 @@
   
   <target name="java.compile.jetbrains.mps.debugger.java.privateMembers" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.debugger.java.privateMembers" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.debugger.java.privateMembers" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.debugger.java.privateMembers" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/debugger-java/languages/privateMembers/source_gen" />
@@ -413,7 +413,7 @@
   
   <target name="java.compile.jetbrains.mps.debugger.java.customViewers" depends="java.compile.debugger-api, java.compile.debugger-java, java.compile.jetbrains.mps.debugger.java.evaluation, java.compile.jetbrains.mps.debugger.java.privateMembers, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.debugger.java.customViewers" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.debugger.java.customViewers" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.debugger.java.customViewers" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/debugger-java/languages/customViewers/source_gen" />
@@ -466,7 +466,7 @@
   
   <target name="java.compile.jetbrains.mps.debugger.java.evaluation" depends="java.compile.jetbrains.mps.debugger.java.privateMembers, java.compile.debugger-api, java.compile.debugger-java, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.debugger.java.evaluation" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.debugger.java.evaluation" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.debugger.java.evaluation" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/debugger-java/languages/evaluation/source_gen" />

@@ -6,13 +6,14 @@ import jetbrains.mps.build.behavior.BuildSource_CompilablePart_BehaviorDescripto
 import jetbrains.mps.build.behavior.BuildExternalDependency_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.VisibleArtifacts;
+import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 
 public abstract class BuildMps_Module_BehaviorDescriptor extends BuildMps_AbstractModule_BehaviorDescriptor implements BuildSource_CompilablePart_BehaviorDescriptor, BuildExternalDependency_BehaviorDescriptor {
   public BuildMps_Module_BehaviorDescriptor() {
   }
 
-  public Iterable<SNode> virtual_getDependencyTargets_841011766566205095(SNode thisNode, VisibleArtifacts artifacts) {
-    return BuildMps_Module_Behavior.virtual_getDependencyTargets_841011766566205095(thisNode, artifacts);
+  public void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
+    BuildMps_Module_Behavior.virtual_fetchDependencies_5908258303322131137(thisNode, artifacts, builder);
   }
 
   @Override

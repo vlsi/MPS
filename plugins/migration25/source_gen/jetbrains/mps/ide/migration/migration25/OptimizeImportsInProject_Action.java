@@ -31,7 +31,6 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelRepository;
@@ -85,7 +84,7 @@ public class OptimizeImportsInProject_Action extends BaseAction {
               if (module instanceof Language) {
                 QueueSequence.fromQueue(modules).addSequence(CollectionSequence.fromCollection(((Language) module).getGenerators()));
               }
-              final IScope moduleScope = module.getScope();
+              IScope moduleScope = module.getScope();
               for (SModelDescriptor model : ListSequence.fromList(module.getOwnModelDescriptors())) {
                 if (!(SModelStereotype.isUserModel(model))) {
                   continue;
@@ -95,13 +94,7 @@ public class OptimizeImportsInProject_Action extends BaseAction {
                 }
 
                 List<SModelReference> imports = SModelOperations.getImportedModelUIDs(model.getSModel());
-                if (ListSequence.fromList(imports).any(new IWhereFilter<SModelReference>() {
-                  public boolean accept(SModelReference imp) {
-                    return moduleScope.getModelDescriptor(imp) == null;
-                  }
-                })) {
-                  ListSequence.fromList(modelsToFix).addElement(model);
-                }
+                ListSequence.fromList(modelsToFix).addElement(model);
               }
             }
           } finally {

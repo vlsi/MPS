@@ -10,21 +10,156 @@
   <property name="buildMPS.teamcity.buildConfName" value="${import.buildMPS.buildMPS.teamcity.buildConfName}" />
   
   <target name="assemble" depends="fetchDependencies">
+    <mkdir dir="${build.tmp}/default/_dl_{build.number}-linux.tar.gz" />
+    <mkdir dir="${build.tmp}/default/_dl_{build.number}-linux.tar.gz/MPS ${buildMPS.version}" />
+    <mkdir dir="${build.tmp}/default/_dl_{build.number}-linux.tar.gz/MPS ${buildMPS.version}/bin" />
+    <copy todir="${build.tmp}/default/_dl_{build.number}-linux.tar.gz/MPS ${buildMPS.version}/bin">
+      <fileset file="${basedir}/build/mps.vmoptions" />
+      <filterchain>
+        <fixcrlf eol="lf" eof="remove" />
+      </filterchain>
+    </copy>
+    <copy todir="${build.tmp}/default/_dl_{build.number}-linux.tar.gz/MPS ${buildMPS.version}/bin">
+      <fileset dir="${basedir}/bin/linux">
+        <exclude name="**/fsnotifier" />
+        <exclude name="**/fsnotifier64" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/_dl_{build.number}-linux.tar.gz/MPS ${buildMPS.version}/help" />
+    <copy todir="${build.tmp}/default/_dl_{build.number}-linux.tar.gz/MPS ${buildMPS.version}/help">
+      <fileset dir="${basedir}">
+        <include name="help/mpshelp.jar" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/_dl_{build.number}-linux.tar.gz_f755" />
+    <copy todir="${build.tmp}/default/_dl_{build.number}-linux.tar.gz_f755">
+      <fileset file="${basedir}/build/mps.sh" />
+      <filterchain>
+        <fixcrlf eol="lf" eof="remove" />
+      </filterchain>
+    </copy>
     <tar destfile="${build.layout}/${buildMPS.build.number}-linux.tar.gz" compression="gzip">
-      <tarfileset dir="${artifacts.buildMPS}/MPS ${buildMPS.version}" prefix="MPS ${buildMPS.version}" />
-      <tarfileset dir="${artifacts.buildMPS}/MPS-linux-executable" prefix="MPS ${buildMPS.version}" />
+      <tarfileset dir="${artifacts.buildMPS}" prefix="MPS ${buildMPS.version}" />
+      <tarfileset file="${basedir}/bin/linux/fsnotifier" prefix="MPS ${buildMPS.version}/bin" filemode="755" />
+      <tarfileset file="${basedir}/bin/linux/fsnotifier64" prefix="MPS ${buildMPS.version}/bin" filemode="755" />
+      <tarfileset file="${basedir}/bin/nix/idea.sh" prefix="MPS ${buildMPS.version}/bin" filemode="755" />
+      <tarfileset file="${basedir}/bin/nix/inspect.sh" prefix="MPS ${buildMPS.version}/bin" filemode="755" />
+      <tarfileset file="${basedir}/bin/nix/inspect_diff.sh" prefix="MPS ${buildMPS.version}/bin" filemode="755" />
+      <tarfileset dir="${build.tmp}/default/_dl_{build.number}-linux.tar.gz_f755" filemode="755" prefix="MPS ${buildMPS.version}" />
+      <tarfileset dir="${build.tmp}/default/_dl_{build.number}-linux.tar.gz" />
     </tar>
+    <mkdir dir="${build.tmp}/default/_dl_{build.number}.zip" />
+    <mkdir dir="${build.tmp}/default/_dl_{build.number}.zip/MPS ${buildMPS.version}" />
+    <mkdir dir="${build.tmp}/default/_dl_{build.number}.zip/MPS ${buildMPS.version}/bin" />
+    <copy todir="${build.tmp}/default/_dl_{build.number}.zip/MPS ${buildMPS.version}/bin">
+      <fileset file="${basedir}/build/mps.vmoptions" />
+      <filterchain>
+        <fixcrlf eol="lf" eof="remove" />
+      </filterchain>
+    </copy>
+    <copy todir="${build.tmp}/default/_dl_{build.number}.zip/MPS ${buildMPS.version}/bin">
+      <fileset file="${basedir}/build/mps.vmoptions" />
+      <filterchain>
+        <fixcrlf eol="crlf" />
+      </filterchain>
+      <globmapper from="*" to="mps.exe.vmoptions" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/_dl_{build.number}.zip/MPS ${buildMPS.version}/bin/win" />
+    <copy todir="${build.tmp}/default/_dl_{build.number}.zip/MPS ${buildMPS.version}/bin/win">
+      <fileset dir="${basedir}/bin/win">
+        <exclude name="**/*.exe" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/_dl_{build.number}.zip/MPS ${buildMPS.version}/bin/linux" />
+    <copy todir="${build.tmp}/default/_dl_{build.number}.zip/MPS ${buildMPS.version}/bin/linux">
+      <fileset dir="${basedir}/bin/linux">
+        <exclude name="**/fsnotifier" />
+        <exclude name="**/fsnotifier64" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/_dl_{build.number}.zip/MPS ${buildMPS.version}/help" />
+    <copy todir="${build.tmp}/default/_dl_{build.number}.zip/MPS ${buildMPS.version}/help">
+      <fileset dir="${basedir}">
+        <include name="help/mpshelp.jar" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.tmp}/default/_dl_{build.number}.zip_f755" />
+    <copy todir="${build.tmp}/default/_dl_{build.number}.zip_f755">
+      <fileset file="${basedir}/build/mps.sh" />
+      <filterchain>
+        <fixcrlf eol="lf" eof="remove" />
+      </filterchain>
+    </copy>
+    <copy todir="${build.tmp}/default/_dl_{build.number}.zip_f755">
+      <fileset file="${basedir}/build/mps.bat" />
+      <filterchain>
+        <fixcrlf eol="crlf" />
+      </filterchain>
+    </copy>
     <zip destfile="${build.layout}/${buildMPS.build.number}.zip">
-      <zipfileset dir="${artifacts.buildMPS}/MPS ${buildMPS.version}" prefix="MPS ${buildMPS.version}" />
-      <zipfileset dir="${artifacts.buildMPS}/MPS-linux" prefix="MPS ${buildMPS.version}" />
-      <zipfileset dir="${artifacts.buildMPS}/MPS-win" prefix="MPS ${buildMPS.version}" />
-      <zipfileset dir="${artifacts.buildMPS}/MPS-linux-executable" prefix="MPS ${buildMPS.version}" filemode="755" />
-      <zipfileset dir="${artifacts.buildMPS}/MPS-win-executable" prefix="MPS ${buildMPS.version}" filemode="755" />
+      <zipfileset dir="${artifacts.buildMPS}" prefix="MPS ${buildMPS.version}" />
+      <zipfileset file="${basedir}/bin/win/fsnotifier.exe" prefix="MPS ${buildMPS.version}/bin/win" filemode="755" />
+      <zipfileset file="${basedir}/bin/win/restarter.exe" prefix="MPS ${buildMPS.version}/bin/win" filemode="755" />
+      <zipfileset file="${basedir}/bin/win/runnerw.exe" prefix="MPS ${buildMPS.version}/bin/win" filemode="755" />
+      <zipfileset file="${basedir}/bin/win/vistalauncher.exe" prefix="MPS ${buildMPS.version}/bin/win" filemode="755" />
+      <zipfileset file="${basedir}/bin/linux/fsnotifier" prefix="MPS ${buildMPS.version}/bin/linux" filemode="755" />
+      <zipfileset file="${basedir}/bin/linux/fsnotifier64" prefix="MPS ${buildMPS.version}/bin/linux" filemode="755" />
+      <zipfileset file="${basedir}/bin/nix/idea.sh" prefix="MPS ${buildMPS.version}/bin/nix" filemode="755" />
+      <zipfileset file="${basedir}/bin/nix/inspect.sh" prefix="MPS ${buildMPS.version}/bin/nix" filemode="755" />
+      <zipfileset file="${basedir}/bin/nix/inspect_diff.sh" prefix="MPS ${buildMPS.version}/bin/nix" filemode="755" />
+      <zipfileset file="${basedir}/bin/mac/info_plist_parser.scpt" prefix="MPS ${buildMPS.version}/bin/mac" filemode="755" />
+      <zipfileset file="${basedir}/bin/mac/libbreakgen.jnilib" prefix="MPS ${buildMPS.version}/bin/mac" filemode="755" />
+      <zipfileset file="${basedir}/bin/mac/libbreakgen64.jnilib" prefix="MPS ${buildMPS.version}/bin/mac" filemode="755" />
+      <zipfileset file="${basedir}/bin/mac/libquaqua.jnilib" prefix="MPS ${buildMPS.version}/bin/mac" filemode="755" />
+      <zipfileset file="${basedir}/bin/mac/libquaqua64.jnilib" prefix="MPS ${buildMPS.version}/bin/mac" filemode="755" />
+      <zipfileset file="${basedir}/bin/mac/relaunch" prefix="MPS ${buildMPS.version}/bin/mac" filemode="755" />
+      <zipfileset file="${basedir}/bin/mac/fsnotifier" prefix="MPS ${buildMPS.version}/bin/mac" filemode="755" />
+      <zipfileset dir="${build.tmp}/default/_dl_{build.number}.zip_f755" filemode="755" prefix="MPS ${buildMPS.version}" />
+      <fileset dir="${build.tmp}/default/_dl_{build.number}.zip" />
     </zip>
+    <mkdir dir="${build.tmp}/default/_dl_{build.number}-macos.zip" />
+    <mkdir dir="${build.tmp}/default/_dl_{build.number}-macos.zip/MPS ${buildMPS.version}.app" />
+    <mkdir dir="${build.tmp}/default/_dl_{build.number}-macos.zip/MPS ${buildMPS.version}.app/Contents" />
+    <copy todir="${build.tmp}/default/_dl_{build.number}-macos.zip/MPS ${buildMPS.version}.app/Contents">
+      <fileset file="${basedir}/build/Info.plist.xml" />
+      <filterchain>
+        <tokenfilter>
+          <replaceregex pattern="\$version\$" replace="${buildMPS.version}" flags="" />
+        </tokenfilter>
+        <tokenfilter>
+          <replaceregex pattern="\$build\$" replace="${buildMPS.build.number}" flags="" />
+        </tokenfilter>
+        <fixcrlf eol="lf" eof="remove" />
+      </filterchain>
+      <globmapper from="*" to="Info.plist" />
+    </copy>
+    <mkdir dir="${build.tmp}/default/_dl_{build.number}-macos.zip/MPS ${buildMPS.version}.app/bin" />
+    <copy todir="${build.tmp}/default/_dl_{build.number}-macos.zip/MPS ${buildMPS.version}.app/bin">
+      <fileset file="${basedir}/build/mps.vmoptions" />
+      <filterchain>
+        <fixcrlf eol="lf" eof="remove" />
+      </filterchain>
+    </copy>
+    <mkdir dir="${build.tmp}/default/_dl_{build.number}-macos.zip_f755" />
+    <copy todir="${build.tmp}/default/_dl_{build.number}-macos.zip_f755">
+      <fileset file="${basedir}/build/mps.sh" />
+      <filterchain>
+        <fixcrlf eol="lf" eof="remove" />
+      </filterchain>
+    </copy>
     <zip destfile="${build.layout}/${buildMPS.build.number}-macos.zip">
-      <zipfileset dir="${artifacts.buildMPS}/MPS ${buildMPS.version}" prefix="MPS ${buildMPS.version}.app" />
-      <zipfileset dir="${artifacts.buildMPS}/MPS-mac" prefix="MPS ${buildMPS.version}.app" />
-      <zipfileset dir="${artifacts.buildMPS}/MPS-mac-executable" prefix="MPS ${buildMPS.version}.app" filemode="755" />
+      <zipfileset dir="${artifacts.buildMPS}" prefix="MPS ${buildMPS.version}.app" />
+      <zipfileset file="${basedir}/build/resources/mps.icns" prefix="MPS ${buildMPS.version}.app/Contents/Resources" />
+      <zipfileset file="${basedir}/build/resources/mps" prefix="MPS ${buildMPS.version}.app/Contents/MacOS" filemode="755" />
+      <zipfileset file="${basedir}/bin/mac/info_plist_parser.scpt" prefix="MPS ${buildMPS.version}.app/bin" />
+      <zipfileset file="${basedir}/bin/mac/libbreakgen.jnilib" prefix="MPS ${buildMPS.version}.app/bin" />
+      <zipfileset file="${basedir}/bin/mac/libbreakgen64.jnilib" prefix="MPS ${buildMPS.version}.app/bin" />
+      <zipfileset file="${basedir}/bin/mac/libquaqua.jnilib" prefix="MPS ${buildMPS.version}.app/bin" />
+      <zipfileset file="${basedir}/bin/mac/libquaqua64.jnilib" prefix="MPS ${buildMPS.version}.app/bin" />
+      <zipfileset file="${basedir}/bin/mac/relaunch" prefix="MPS ${buildMPS.version}.app/bin" filemode="755" />
+      <zipfileset file="${basedir}/bin/mac/fsnotifier" prefix="MPS ${buildMPS.version}.app/bin" filemode="755" />
+      <zipfileset dir="${build.tmp}/default/_dl_{build.number}-macos.zip_f755" filemode="755" prefix="MPS ${buildMPS.version}.app" />
+      <fileset dir="${build.tmp}/default/_dl_{build.number}-macos.zip" />
     </zip>
     <echo file="${build.layout}/variables.properties">buildMPS.build.number=${buildMPS.build.number}${line.separator}buildMPS.version=${buildMPS.version}${line.separator}buildMPS.build.vcs.number=${buildMPS.build.vcs.number}${line.separator}buildMPS.teamcity.buildConfName=${buildMPS.teamcity.buildConfName}</echo>
   </target>
