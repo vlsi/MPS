@@ -596,7 +596,7 @@
     <echoxml file="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.build.pluginSolution.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.build.pluginSolution" uuid="111204cc-c25e-4ae1-9c79-b7af36c083cc" type="solution">
         <dependencies>
-          <module ref="04b376d5-fc16-403b-a344-c68b30193c6a(jetbrains.mps.execution.lib)" />
+          <module ref="04b376d5-fc16-403b-a344-c68b30193c6a(jetbrains.mps.execution.library)" />
           <module ref="111204cc-c25e-4ae1-9c79-b7af36c083cc(jetbrains.mps.build.pluginSolution)" />
           <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
           <module ref="268ae620-360b-4da4-bb01-fad761632e6c(jetbrains.mps.ant.execution)" />
@@ -980,7 +980,7 @@
     <echoxml file="${deploy.dir}/MPS/plugins/execution-configurations/languages/jetbrains.mps.execution.migration.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.execution.migration" uuid="92f5dc44-466d-4972-9f92-b03994f153c4" type="language">
         <dependencies>
-          <module ref="04b376d5-fc16-403b-a344-c68b30193c6a(jetbrains.mps.execution.lib)" />
+          <module ref="04b376d5-fc16-403b-a344-c68b30193c6a(jetbrains.mps.execution.library)" />
           <module ref="0a4126f7-80aa-49b3-88c4-7fd3bf7596a2(jetbrains.mps.execution.configurations.deprecated.runtime)" />
           <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
           <module ref="22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)" />
@@ -1041,14 +1041,14 @@
       <fileset dir="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
   </target>
-  <target name="pack.jetbrains.mps.execution.lib">
+  <target name="pack.jetbrains.mps.execution.library">
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${deploy.dir}/MPS/plugins/execution-languages/lib/execution-languages.jar.tmp/modules/jetbrains.mps.execution.lib" />
-    <copy todir="${deploy.dir}/MPS/plugins/execution-languages/lib/execution-languages.jar.tmp/modules/jetbrains.mps.execution.lib">
+    <mkdir dir="${deploy.dir}/MPS/plugins/execution-languages/lib/execution-languages.jar.tmp/modules/jetbrains.mps.execution.library" />
+    <copy todir="${deploy.dir}/MPS/plugins/execution-languages/lib/execution-languages.jar.tmp/modules/jetbrains.mps.execution.library">
       <fileset file="${base_dir}/plugins/execution-languages/languages/library/jetbrains.mps.execution.lib.msd" />
       <fileset dir="${base_dir}/plugins/execution-languages/languages/library" includes="icons/**, resources/**" />
     </copy>
-    <copy todir="${deploy.dir}/MPS/plugins/execution-languages/lib/execution-languages.jar.tmp/modules/jetbrains.mps.execution.lib">
+    <copy todir="${deploy.dir}/MPS/plugins/execution-languages/lib/execution-languages.jar.tmp/modules/jetbrains.mps.execution.library">
       <fileset dir="${base_dir}/plugins/execution-languages/languages/library" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
   </target>
@@ -1112,7 +1112,7 @@
     <echoxml file="${deploy.dir}/MPS/plugins/execution-languages/languages/jetbrains.mps.execution.configurations.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.execution.configurations" uuid="22e72e4c-0f69-46ce-8403-6750153aa615" type="language">
         <dependencies>
-          <module ref="04b376d5-fc16-403b-a344-c68b30193c6a(jetbrains.mps.execution.lib)" />
+          <module ref="04b376d5-fc16-403b-a344-c68b30193c6a(jetbrains.mps.execution.library)" />
           <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
           <module ref="22e72e4c-0f69-46ce-8403-6750153aa615(jetbrains.mps.execution.configurations)" />
           <module ref="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />

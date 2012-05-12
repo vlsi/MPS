@@ -21,9 +21,9 @@
     <mkdir dir="${build.layout}/plugins/execution-languages/lib" />
     <jar destfile="${build.layout}/plugins/execution-languages/lib/execution-languages.jar">
       <fileset dir="${build.tmp}/java/out/execution-languages" />
-      <zipfileset file="${mps_home}/plugins/execution-languages/languages/library/jetbrains.mps.execution.lib.msd" prefix="modules/jetbrains.mps.execution.lib" />
-      <zipfileset dir="${mps_home}/plugins/execution-languages/languages/library" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.execution.lib" />
-      <zipfileset dir="${mps_home}/plugins/execution-languages/languages/library" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.execution.lib/" />
+      <zipfileset file="${mps_home}/plugins/execution-languages/languages/library/jetbrains.mps.execution.lib.msd" prefix="modules/jetbrains.mps.execution.library" />
+      <zipfileset dir="${mps_home}/plugins/execution-languages/languages/library" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.execution.library" />
+      <zipfileset dir="${mps_home}/plugins/execution-languages/languages/library" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.execution.library/" />
       <zipfileset file="${mps_home}/plugins/execution-languages/languages/plugin/languages.msd" prefix="modules/jetbrains.mps.execution.languages" />
       <zipfileset dir="${mps_home}/plugins/execution-languages/languages/plugin" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.execution.languages" />
       <zipfileset dir="${mps_home}/plugins/execution-languages/languages/plugin" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.execution.languages/" />

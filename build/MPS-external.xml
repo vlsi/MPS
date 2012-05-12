@@ -611,7 +611,7 @@
       <fileset dir="${mps_home}/plugins/execution-languages/META-INF" excludes="**/*.zip, " />
     </copy>
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.configurations.deprecated.runtime" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.execution.lib" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.library" />
     <mkdir dir="${deploy.dir}/MPS/plugins/execution-languages/lib/execution-languages.jar.tmp/modules" />
     <copy todir="${deploy.dir}/MPS/plugins/execution-languages/lib/execution-languages.jar.tmp">
       <fileset dir="${mps_home}/plugins/execution-languages/languages/plugin/classes" />
