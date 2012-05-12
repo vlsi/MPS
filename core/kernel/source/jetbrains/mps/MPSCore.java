@@ -21,7 +21,7 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.datatransfer.CopyPasteManager;
 import jetbrains.mps.datatransfer.PasteWrappersManager;
-import jetbrains.mps.findUsages.ProxyFindUsagesManager;
+import jetbrains.mps.findUsages.FindUsagesManagerFactory;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.make.java.BLDependenciesCache;
@@ -34,7 +34,6 @@ import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.behaviour.OldBehaviorManager;
-import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -101,7 +100,7 @@ public class MPSCore extends ComponentPlugin {
     init(new CopyPasteManager(classLoaderManager));
     init(new PasteWrappersManager(classLoaderManager));
     init(new BLDependenciesCache(myModelRepository));
-    init(new ProxyFindUsagesManager(classLoaderManager));
+    init(new FindUsagesManagerFactory(classLoaderManager));
     init(new DataFlowManager(classLoaderManager, myModuleRepository));
 
     init(new CheckersComponent());

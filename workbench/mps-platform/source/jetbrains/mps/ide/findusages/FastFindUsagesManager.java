@@ -28,7 +28,7 @@ import com.intellij.util.indexing.FileContent;
 import com.intellij.util.text.CharArrayUtil;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.findUsages.ProxyFindUsagesManager;
+import jetbrains.mps.findUsages.FindUsagesManagerFactory;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -48,7 +48,7 @@ import java.util.*;
 import java.util.Map.Entry;
 
 public class FastFindUsagesManager extends FindUsagesManager implements ApplicationComponent {
-  private final ProxyFindUsagesManager myProxyManager;
+  private final FindUsagesManagerFactory myProxyManager;
 
   public FastFindUsagesManager(MPSCoreComponents coreComponents) {
     myProxyManager = coreComponents.getFindUsagesManager();
@@ -61,11 +61,11 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
 
   public void initComponent() {
     IdTableBuilding.registerIdIndexer(MPSFileTypeFactory.MODEL_FILE_TYPE, new MyFileTypeIdIndexer());
-    myProxyManager.setFastManager(this);
+    myProxyManager.setManager(this);
   }
 
   public void disposeComponent() {
-    myProxyManager.setFastManager(null);
+    myProxyManager.setManager(null);
   }
 
   @Override
@@ -137,6 +137,14 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
     return result;
   }
 
+  public void init() {
+
+  }
+
+  public void dispose() {
+
+  }
+
   public Set<SNode> findDescendants(SNode node, IScope scope) {
     Set<String> fqNames = LanguageHierarchyCache.getInstance().getDescendantsOfConcept(NameUtil.nodeFQName(node));
     Set<SNode> result = new HashSet<SNode>();
@@ -203,47 +211,6 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
     return new ArrayList<SNode>(set);
   }
 
-  private Set<VirtualFile> getScopeFiles(IScope scope) {
-    final Set<VirtualFile> scopeFiles = new HashSet<VirtualFile>();
-    for (SModelDescriptor sm : scope.getModelDescriptors()) {
-      if (!(sm instanceof EditableSModelDescriptor)) continue;
-      IFile modelFile = ((EditableSModelDescriptor) sm).getModelFile();
-      if (modelFile == null) continue;
-      scopeFiles.add(VirtualFileUtils.getVirtualFile(modelFile));
-    }
-    return scopeFiles;
-  }
-
-  private Set<VirtualFile> getCandidates(final Set<VirtualFile> scopeFiles, final String nodeId) {
-
-    final Set<VirtualFile> candidates = new HashSet<VirtualFile>();
-    FileBasedIndex.getInstance().processValues(IdIndex.NAME, new IdIndexEntry(nodeId, true), null,
-      new FileBasedIndex.ValueProcessor<Integer>() {
-        public boolean process(final VirtualFile file, final Integer value) {
-          candidates.add(file);
-          return true;
-        }
-      }, new GlobalSearchScope(null) {
-      public boolean contains(VirtualFile file) {
-        return scopeFiles.contains(file);
-      }
-
-      public int compare(VirtualFile file1, VirtualFile file2) {
-        return file1.getPath().compareTo(file2.getPath());
-      }
-
-      public boolean isSearchInModuleContent(@NotNull Module aModule) {
-        return true;
-      }
-
-      public boolean isSearchInLibraries() {
-        return false;
-      }
-    }
-    );
-    return candidates;
-  }
-
   private Set<SNode> findInstancesOfNodeInCache(SNode concept, final IScope scope, boolean isExact) {
     Set<VirtualFile> candidates = new HashSet<VirtualFile>();
     final Set<VirtualFile> scopeFiles = getScopeFiles(scope);
@@ -271,7 +238,7 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
     return result;
   }
 
-  private Set<SReference> findUsagesOfNodeInCache(SNode node, final IScope scope) {
+  public Set<SReference> findUsagesOfNodeInCache(SNode node, final IScope scope) {
     final Set<VirtualFile> scopeFiles = getScopeFiles(scope);
     String nodeId = node.getId();
     final Set<VirtualFile> candidates = getCandidates(scopeFiles, nodeId);
@@ -283,6 +250,47 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
       result.addAll(new ModelFindOperations(sm).findUsages(node));
     }
     return result;
+  }
+
+  private Set<VirtualFile> getScopeFiles(IScope scope) {
+    final Set<VirtualFile> scopeFiles = new HashSet<VirtualFile>();
+    for (SModelDescriptor sm : scope.getModelDescriptors()) {
+      if (!(sm instanceof EditableSModelDescriptor)) continue;
+      IFile modelFile = ((EditableSModelDescriptor) sm).getModelFile();
+      if (modelFile == null) continue;
+      scopeFiles.add(VirtualFileUtils.getVirtualFile(modelFile));
+    }
+    return scopeFiles;
+  }
+
+  private Set<VirtualFile> getCandidates(final Set<VirtualFile> scopeFiles, final String nodeId) {
+
+    final Set<VirtualFile> candidates = new HashSet<VirtualFile>();
+    FileBasedIndex.getInstance().processValues(IdIndex.NAME, new IdIndexEntry(nodeId, true), null,
+      new FileBasedIndex.ValueProcessor<Integer>() {
+        public boolean process(final VirtualFile file, final Integer value) {
+          candidates.add(file);
+          return true;
+        }
+      }, new GlobalSearchScope(null) {
+        public boolean contains(VirtualFile file) {
+          return scopeFiles.contains(file);
+        }
+
+        public int compare(VirtualFile file1, VirtualFile file2) {
+          return file1.getPath().compareTo(file2.getPath());
+        }
+
+        public boolean isSearchInModuleContent(@NotNull Module aModule) {
+          return true;
+        }
+
+        public boolean isSearchInLibraries() {
+          return false;
+        }
+      }
+    );
+    return candidates;
   }
 
   private static class MyFileTypeIdIndexer extends FileTypeIdIndexer {

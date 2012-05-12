@@ -24,9 +24,8 @@ import java.util.List;
 import java.util.Set;
 
 public abstract class FindUsagesManager {
-
   public static FindUsagesManager getInstance() {
-    return ProxyFindUsagesManager.getProxyInstance();
+    return FindUsagesManagerFactory.getProxyInstance().getManager();
   }
 
   public abstract Set<SNode> findDescendants(SNode node, IScope scope);
@@ -44,4 +43,8 @@ public abstract class FindUsagesManager {
   public abstract Set<SNode> findInstances(SNode concept, IScope scope, ProgressMonitor monitor, boolean manageTasks);
 
   public abstract Set<SNode> findExactInstances(SNode concept, IScope scope, ProgressMonitor monitor, boolean manageTasks);
+
+  public abstract void init();
+
+  public abstract void dispose();
 }
