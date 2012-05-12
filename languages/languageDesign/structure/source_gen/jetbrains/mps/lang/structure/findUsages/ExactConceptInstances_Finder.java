@@ -33,7 +33,7 @@ public class ExactConceptInstances_Finder extends GeneratedFinder {
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 0);
     try {
-      List<SNode> resNodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findExactInstances(node, scope, monitor, false));
+      List<SNode> resNodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findInstances(node, true, scope, monitor));
       for (SNode resNode : resNodes) {
         ListSequence.fromList(_results).addElement(resNode);
       }

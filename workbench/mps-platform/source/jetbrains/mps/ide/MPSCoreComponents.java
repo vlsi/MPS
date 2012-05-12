@@ -96,6 +96,6 @@ public class MPSCoreComponents implements ApplicationComponent {
   }
 
   public FindUsagesManagerFactory getFindUsagesManager() {
-    return FindUsagesManagerFactory.getProxyInstance();
+    return FindUsagesManagerFactory.getInstance();
   }
 }

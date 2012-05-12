@@ -18,35 +18,17 @@ package jetbrains.mps.findUsages;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
+import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 class DefaultFindUsagesManager extends FindUsagesManager {
   private static final Logger LOG = Logger.getLogger(DefaultFindUsagesManager.class);
 
-  private ClassLoaderManager myClassLoaderManager;
-  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
-    public void unload() {
-      DefaultFindUsagesManager.invalidateCaches();
-    }
-  };
-
-  public DefaultFindUsagesManager(ClassLoaderManager manager) {
-    myClassLoaderManager = manager;
-  }
-
-  public void init() {
-    myClassLoaderManager.addReloadHandler(myReloadHandler);
-  }
-
-  public void dispose() {
-    myClassLoaderManager.removeReloadHandler(myReloadHandler);
-  }
-
-  public Set<SReference> findUsages(Set<SNode> nodes, IScope scope, ProgressMonitor monitor, boolean manageTasks) {
+  public Set<SReference> findUsages(Set<SNode> nodes, IScope scope, @Nullable ProgressMonitor monitor) {
     if (monitor == null) monitor = new EmptyProgressMonitor();
     LOG.assertCanRead();
     Set<SReference> result = new HashSet<SReference>();
@@ -78,7 +60,7 @@ class DefaultFindUsagesManager extends FindUsagesManager {
     }
   }
 
-  public Set<SNode> findInstances(SNode concept, IScope scope, ProgressMonitor monitor, boolean manageTasks) {
+  public Set<SNode> findInstances(SNode concept, boolean exact, IScope scope, @Nullable ProgressMonitor monitor) {
     if (monitor == null) monitor = new EmptyProgressMonitor();
     LOG.assertCanRead();
     Set<SNode> result = new HashSet<SNode>();
@@ -99,7 +81,7 @@ class DefaultFindUsagesManager extends FindUsagesManager {
 
       for (SModelDescriptor model : models) {
         monitor.step(model.getLongName());
-        result.addAll(new ModelFindOperations(model).findInstances(concept, false));
+        result.addAll(new ModelFindOperations(model).findInstances(concept, exact));
         if (monitor.isCanceled()) {
           return result;
         }
@@ -109,41 +91,5 @@ class DefaultFindUsagesManager extends FindUsagesManager {
     } finally {
       monitor.done();
     }
-  }
-
-  public Set<SNode> findExactInstances(SNode concept, IScope scope, ProgressMonitor monitor, boolean manageTasks) {
-    if (monitor == null) monitor = new EmptyProgressMonitor();
-    LOG.assertCanRead();
-    Set<SNode> result = new HashSet<SNode>();
-    //noinspection EmptyFinallyBlock
-    try {
-      Iterable<SModelDescriptor> models = scope.getModelDescriptors();
-      int count;
-      if (models instanceof Collection) {
-        count = ((Collection) models).size();
-      } else {
-        count = 0;
-        for (SModelDescriptor model : models) {
-          count++;
-        }
-      }
-
-      monitor.start("Finding exact instances...", count);
-
-      for (SModelDescriptor model : models) {
-        monitor.step(model.getLongName());
-        result.addAll(new ModelFindOperations(model).findInstances(concept, true));
-        if (monitor.isCanceled()) {
-          return result;
-        }
-        monitor.advance(1);
-      }
-      return result;
-    } finally {
-      monitor.done();
-    }
-  }
-
-  private static void invalidateCaches() {
   }
 }

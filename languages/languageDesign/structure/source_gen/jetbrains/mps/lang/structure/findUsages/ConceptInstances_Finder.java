@@ -33,7 +33,7 @@ public class ConceptInstances_Finder extends GeneratedFinder {
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 0);
     try {
-      List<SNode> resNodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findInstances(node, scope, monitor, false));
+      List<SNode> resNodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findInstances(node, false, scope, monitor));
       for (SNode resNode : resNodes) {
         ListSequence.fromList(_results).addElement(resNode);
       }

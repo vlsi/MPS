@@ -22,33 +22,22 @@ import org.jetbrains.annotations.Nullable;
 public class FindUsagesManagerFactory implements CoreComponent {
   private static FindUsagesManagerFactory INSTANCE;
 
-  public static FindUsagesManagerFactory getProxyInstance() {
+  public static FindUsagesManagerFactory getInstance() {
     return INSTANCE;
   }
 
   private FindUsagesManager myManager;
-  private ClassLoaderManager myClassLoaderManager;
 
-  public FindUsagesManagerFactory(ClassLoaderManager classLoaderManager) {
-    myClassLoaderManager = classLoaderManager;
+  public FindUsagesManagerFactory() {
     setManager(null);
   }
 
   public void setManager(@Nullable FindUsagesManager manager) {
-    //dispose old manager
-    if (myManager != null) {
-      myManager.dispose();
-    }
-
-    //set new manager
     if (manager != null) {
       myManager = manager;
     } else {
-      myManager = new DefaultFindUsagesManager(myClassLoaderManager);
+      myManager = new DefaultFindUsagesManager();
     }
-
-    //init new manager
-    myManager.init();
   }
 
   public FindUsagesManager getManager() {
@@ -61,11 +50,9 @@ public class FindUsagesManagerFactory implements CoreComponent {
     }
 
     INSTANCE = this;
-    myManager.init();
   }
 
   public void dispose() {
-    myManager.dispose();
     INSTANCE = null;
   }
 }

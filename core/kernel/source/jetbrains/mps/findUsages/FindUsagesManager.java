@@ -19,22 +19,16 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
+import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
 import java.util.Set;
 
 public abstract class FindUsagesManager {
   public static FindUsagesManager getInstance() {
-    return FindUsagesManagerFactory.getProxyInstance().getManager();
+    return FindUsagesManagerFactory.getInstance().getManager();
   }
 
-  public abstract Set<SReference> findUsages(Set<SNode> nodes, IScope scope, ProgressMonitor monitor, boolean manageTasks);
+  public abstract Set<SReference> findUsages(Set<SNode> nodes, IScope scope, @Nullable ProgressMonitor monitor);
 
-  public abstract Set<SNode> findInstances(SNode concept, IScope scope, ProgressMonitor monitor, boolean manageTasks);
-
-  public abstract Set<SNode> findExactInstances(SNode concept, IScope scope, ProgressMonitor monitor, boolean manageTasks);
-
-  public abstract void init();
-
-  public abstract void dispose();
+  public abstract Set<SNode> findInstances(SNode concept, boolean exact, IScope scope, @Nullable ProgressMonitor monitor);
 }

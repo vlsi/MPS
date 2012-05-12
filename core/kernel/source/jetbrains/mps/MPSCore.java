@@ -100,7 +100,7 @@ public class MPSCore extends ComponentPlugin {
     init(new CopyPasteManager(classLoaderManager));
     init(new PasteWrappersManager(classLoaderManager));
     init(new BLDependenciesCache(myModelRepository));
-    init(new FindUsagesManagerFactory(classLoaderManager));
+    init(new FindUsagesManagerFactory());
     init(new DataFlowManager(classLoaderManager, myModuleRepository));
 
     init(new CheckersComponent());

@@ -80,7 +80,7 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView {
     }
 
     protected Set<SNode> getDescendants(SNode node, Set<SNode> visited) {
-      Set<SReference> usages = myUsagesManager.findUsages(Collections.singleton(node), GlobalScope.getInstance(), new EmptyProgressMonitor(), true);
+      Set<SReference> usages = myUsagesManager.findUsages(Collections.singleton(node), GlobalScope.getInstance(), new EmptyProgressMonitor());
       Set<SNode> result = new HashSet<SNode>();
       for (SReference usage : usages) {
         SNode sourceNode = usage.getSourceNode();

@@ -18,7 +18,7 @@ public class TodoFinder implements IFinder {
   }
 
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
-    Set<SNode> nodes = (Set<SNode>) FindUsagesManager.getInstance().findInstances(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TextCommentPart"), query.getScope(), null, true);
+    Set<SNode> nodes = (Set<SNode>) FindUsagesManager.getInstance().findInstances(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TextCommentPart"), false, query.getScope(), null);
     SearchResults<SNode> results = new SearchResults<SNode>();
     for (SNode node : nodes) {
       String text = SPropertyOperations.getString(node, "text");

@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -43,7 +42,7 @@ public class ModuleChooserComponent extends BaseChooserComponent {
     ListSequence.fromList(this.myCheckedModules).clear();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        List<SNode> nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findInstances(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), GlobalScope.getInstance(), new EmptyProgressMonitor(), false));
+        List<SNode> nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findInstances(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), false, GlobalScope.getInstance(), null));
         for (SNode node : nodes) {
           SModel model = SNodeOperations.getModel(node);
           SModelDescriptor md = model.getModelDescriptor();

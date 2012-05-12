@@ -73,7 +73,7 @@ public class MainNodeChooser<C extends SNode> extends AbstractMainNodeChooser {
   }
 
   protected List<SNode> findToChooseFromOnInit(FindUsagesManager manager, ProgressMonitor monitor) {
-    Set<SNode> instances = manager.findInstances(this.myTargetConcept, myScope, monitor, false);
+    Set<SNode> instances = manager.findInstances(this.myTargetConcept, false, myScope, monitor);
     if (this.myAcceptor == null) {
       return ListSequence.fromListWithValues(new ArrayList<SNode>(), instances);
     } else {

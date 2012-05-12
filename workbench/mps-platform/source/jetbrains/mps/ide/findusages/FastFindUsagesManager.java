@@ -33,15 +33,16 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public class FastFindUsagesManager extends FindUsagesManager implements ApplicationComponent {
-  private final FindUsagesManagerFactory myProxyManager;
+  private final FindUsagesManagerFactory myFactory;
 
   public FastFindUsagesManager(MPSCoreComponents coreComponents) {
-    myProxyManager = coreComponents.getFindUsagesManager();
+    myFactory = coreComponents.getFindUsagesManager();
   }
 
   @NotNull
@@ -50,24 +51,14 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
   }
 
   public void initComponent() {
-    myProxyManager.setManager(this);
+    myFactory.setManager(this);
   }
 
   public void disposeComponent() {
-    myProxyManager.setManager(null);
+    myFactory.setManager(null);
   }
 
-  public void init() {
-
-  }
-
-  public void dispose() {
-
-  }
-
-
-  @Override
-  public Set<SNode> findInstances(SNode concept, IScope scope, ProgressMonitor monitor, boolean manageTasks) {
+  public Set<SNode> findInstances(SNode concept, boolean exact, IScope scope, @Nullable ProgressMonitor monitor) {
     if (monitor == null) monitor = new EmptyProgressMonitor();
     Set<SNode> result = new HashSet<SNode>();
 
@@ -82,13 +73,13 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
     monitor.start("Finding instances...", 5 + count);
     try {
       monitor.step("Loading cache");
-      result.addAll(findInstancesOfNodeInCache(concept, scope, false));
+      result.addAll(findInstancesOfNodeInCache(concept, scope, exact));
       monitor.advance(5);
 
       for (SModelDescriptor model : models) {
         if ((model instanceof EditableSModelDescriptor) && ((EditableSModelDescriptor) model).isChanged()) {
           monitor.step(model.getLongName());
-          result.addAll(new ModelFindOperations(model).findInstances(concept, false));
+          result.addAll(new ModelFindOperations(model).findInstances(concept, exact));
           monitor.advance(1);
         }
         if (monitor.isCanceled()) {
@@ -101,41 +92,7 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
     return result;
   }
 
-  @Override
-  public Set<SNode> findExactInstances(SNode concept, IScope scope, ProgressMonitor monitor, boolean manageTasks) {
-    Set<SNode> result = new HashSet<SNode>();
-    if (monitor == null) monitor = new EmptyProgressMonitor();
-
-    final Iterable<SModelDescriptor> models = scope.getModelDescriptors();
-    int count = 0;
-    for (SModelDescriptor model : models) {
-      if ((model instanceof EditableSModelDescriptor) && ((EditableSModelDescriptor) model).isChanged()) {
-        count++;
-      }
-    }
-
-    monitor.start("Finding exact instances...", 5 + count);
-    try {
-      monitor.step("Loading cache");
-      result.addAll(findInstancesOfNodeInCache(concept, scope, true));
-
-      for (SModelDescriptor model : models) {
-        if ((model instanceof EditableSModelDescriptor) && ((EditableSModelDescriptor) model).isChanged()) {
-          monitor.step(model.getLongName());
-          result.addAll(new ModelFindOperations(model).findInstances(concept, true));
-          monitor.advance(1);
-        }
-        if (monitor.isCanceled()) {
-          return result;
-        }
-      }
-    } finally {
-      monitor.done();
-    }
-    return result;
-  }
-
-  public Set<SReference> findUsages(Set<SNode> nodes, final IScope scope, ProgressMonitor monitor, boolean manageTasks) {
+  public Set<SReference> findUsages(Set<SNode> nodes, final IScope scope, @Nullable ProgressMonitor monitor) {
     Set<SReference> result = new HashSet<SReference>();
     if (monitor == null) monitor = new EmptyProgressMonitor();
 
@@ -181,7 +138,6 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
     if (!isExact) {
       Set<String> fqNames = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(NameUtil.nodeFQName(concept));
       for (String fqName : fqNames) {
-//        candidates.addAll(getCandidates(scopeFiles, fqName));
         candidates.addAll(getCandidates(scopeFiles, fqName.substring(fqName.lastIndexOf('.') + 1)));
       }
     }
