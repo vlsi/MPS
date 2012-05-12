@@ -24,9 +24,8 @@
   <property name="artifacts.IDEA" location="${idea_home}" />
   
   <target name="assemble" depends="fetchDependencies">
-    <mkdir dir="${build.layout}/MPS ${version}" />
-    <mkdir dir="${build.layout}/MPS ${version}/bin" />
-    <copy todir="${build.layout}/MPS ${version}/bin">
+    <mkdir dir="${build.layout}/bin" />
+    <copy todir="${build.layout}/bin">
       <fileset dir="${mps_home}/bin">
         <exclude name="**/*.dll" />
         <exclude name="**/*.exe" />
@@ -36,36 +35,36 @@
         <exclude name="**/win/" />
       </fileset>
     </copy>
-    <mkdir dir="${build.layout}/MPS ${version}/languages" />
-    <copy todir="${build.layout}/MPS ${version}/languages">
+    <mkdir dir="${build.layout}/languages" />
+    <copy todir="${build.layout}/languages">
       <fileset dir="${artifacts.buildCore}/mps-core/languages" />
     </copy>
-    <copy todir="${build.layout}/MPS ${version}/languages">
+    <copy todir="${build.layout}/languages">
       <fileset dir="${artifacts.buildCoreEx}/languages" />
     </copy>
-    <copy todir="${build.layout}/MPS ${version}/languages">
+    <copy todir="${build.layout}/languages">
       <fileset dir="${artifacts.buildCoreUI}/languages" />
     </copy>
-    <copy todir="${build.layout}/MPS ${version}/languages">
+    <copy todir="${build.layout}/languages">
       <fileset dir="${artifacts.buildWorkbench}/languages" />
     </copy>
-    <copy todir="${build.layout}/MPS ${version}/languages">
+    <copy todir="${build.layout}/languages">
       <fileset dir="${artifacts.buildExecution}/languages" />
     </copy>
-    <copy todir="${build.layout}/MPS ${version}/languages">
+    <copy todir="${build.layout}/languages">
       <fileset dir="${artifacts.buildUtilLanguages}/languages" />
     </copy>
-    <copy todir="${build.layout}/MPS ${version}/languages">
+    <copy todir="${build.layout}/languages">
       <fileset dir="${artifacts.buildUiLanguages}/languages" />
     </copy>
-    <copy todir="${build.layout}/MPS ${version}/lib">
+    <copy todir="${build.layout}/lib">
       <fileset dir="${artifacts.IDEA}/lib" />
     </copy>
-    <mkdir dir="${build.layout}/MPS ${version}/lib" />
-    <copy todir="${build.layout}/MPS ${version}/lib">
+    <mkdir dir="${build.layout}/lib" />
+    <copy todir="${build.layout}/lib">
       <fileset dir="${artifacts.buildCore}/mps-core/lib" />
     </copy>
-    <copy todir="${build.layout}/MPS ${version}/lib">
+    <copy todir="${build.layout}/lib">
       <fileset dir="${artifacts.buildWorkbench}/lib" />
     </copy>
     <mkdir dir="${build.tmp}/default/branding.jar" />
@@ -84,7 +83,7 @@
         <help file="mpshelp.jar" root="mps" webhelp-url="http://www.jetbrains.com/mps/webhelp/" />
       </component>
     </echoxml>
-    <jar destfile="${build.layout}/MPS ${version}/lib/branding.jar">
+    <jar destfile="${build.layout}/lib/branding.jar">
       <fileset file="${basedir}/workbench/mps-workbench/source/MPS_16.png" />
       <fileset file="${basedir}/workbench/mps-workbench/source/MPS_32.png" />
       <fileset file="${basedir}/workbench/mps-workbench/source/jetbrains/mps/workbench/icons/mpsWelcomeCaption.png" />
@@ -93,45 +92,45 @@
       <fileset file="${basedir}/workbench/mps-workbench/source/jetbrains/mps/workbench/icons/mpsAbout.png" />
       <fileset dir="${build.tmp}/default/branding.jar" />
     </jar>
-    <mkdir dir="${build.layout}/MPS ${version}/license" />
-    <copy todir="${build.layout}/MPS ${version}/license">
+    <mkdir dir="${build.layout}/license" />
+    <copy todir="${build.layout}/license">
       <fileset dir="${basedir}/license" />
     </copy>
-    <mkdir dir="${build.layout}/MPS ${version}/plugin" />
-    <copy todir="${build.layout}/MPS ${version}/plugin">
+    <mkdir dir="${build.layout}/plugin" />
+    <copy todir="${build.layout}/plugin">
       <fileset file="${basedir}/plugin/MPSPlugin.jar" />
     </copy>
-    <mkdir dir="${build.layout}/MPS ${version}/plugins" />
-    <copy todir="${build.layout}/MPS ${version}/plugins">
+    <mkdir dir="${build.layout}/plugins" />
+    <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.buildPlugins}/plugins" />
     </copy>
-    <copy todir="${build.layout}/MPS ${version}/plugins">
+    <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.buildBuild}/plugins" />
     </copy>
-    <copy todir="${build.layout}/MPS ${version}/plugins">
+    <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.buildBuildUI}/plugins" />
     </copy>
-    <copy todir="${build.layout}/MPS ${version}/plugins">
+    <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.buildVcs}/plugins" />
     </copy>
-    <copy todir="${build.layout}/MPS ${version}/plugins">
+    <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.buildDebuggerPlugin}/plugins" />
     </copy>
-    <copy todir="${build.layout}/MPS ${version}/plugins">
+    <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.buildExecutionPlugin}/plugins" />
     </copy>
-    <mkdir dir="${build.layout}/MPS ${version}/plugins/cvsIntegration" />
-    <copy todir="${build.layout}/MPS ${version}/plugins/cvsIntegration">
+    <mkdir dir="${build.layout}/plugins/cvsIntegration" />
+    <copy todir="${build.layout}/plugins/cvsIntegration">
       <fileset dir="${basedir}/plugins/cvsIntegration" />
     </copy>
-    <mkdir dir="${build.layout}/MPS ${version}/plugins/svn4idea" />
-    <copy todir="${build.layout}/MPS ${version}/plugins/svn4idea">
+    <mkdir dir="${build.layout}/plugins/svn4idea" />
+    <copy todir="${build.layout}/plugins/svn4idea">
       <fileset dir="${basedir}/plugins/svn4idea">
         <exclude name="**/*.zip" />
       </fileset>
     </copy>
-    <mkdir dir="${build.layout}/MPS ${version}/plugins/git4idea" />
-    <copy todir="${build.layout}/MPS ${version}/plugins/git4idea">
+    <mkdir dir="${build.layout}/plugins/git4idea" />
+    <copy todir="${build.layout}/plugins/git4idea">
       <fileset dir="${basedir}/plugins/git4idea">
         <exclude name="**/*.zip" />
       </fileset>
@@ -141,187 +140,24 @@
     <copy todir="${build.tmp}/default/samples.zip/MPSSamples">
       <fileset dir="${mps_home}/samples" />
     </copy>
-    <zip destfile="${build.layout}/MPS ${version}/samples.zip">
+    <zip destfile="${build.layout}/samples.zip">
       <fileset dir="${build.tmp}/default/samples.zip" />
     </zip>
-    <copy todir="${build.layout}/MPS ${version}">
+    <copy todir="${build.layout}">
       <fileset dir="${basedir}" includes="help/**" />
     </copy>
-    <echo file="${build.layout}/MPS ${version}/build.number">build.number=${build.number}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}${line.separator}version=${version}</echo>
-    <copy todir="${build.layout}/MPS ${version}">
+    <echo file="${build.layout}/build.number">build.number=${build.number}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}${line.separator}version=${version}</echo>
+    <copy todir="${build.layout}">
       <fileset file="${basedir}/about.txt" />
     </copy>
-    <copy todir="${build.layout}/MPS ${version}">
+    <copy todir="${build.layout}">
       <fileset file="${basedir}/readme.txt" />
     </copy>
-    <copy todir="${build.layout}/MPS ${version}">
+    <copy todir="${build.layout}">
       <fileset file="${basedir}/releaseNotes.txt" />
     </copy>
-    <copy todir="${build.layout}/MPS ${version}">
+    <copy todir="${build.layout}">
       <fileset file="${basedir}/entryPoints.xml" />
-    </copy>
-    <mkdir dir="${build.layout}/MPS-linux" />
-    <mkdir dir="${build.layout}/MPS-linux/bin" />
-    <copy todir="${build.layout}/MPS-linux/bin">
-      <fileset file="${mps_home}/build/mps.vmoptions" />
-      <filterchain>
-        <fixcrlf eol="lf" eof="remove" />
-      </filterchain>
-    </copy>
-    <mkdir dir="${build.layout}/MPS-linux/bin/linux" />
-    <copy todir="${build.layout}/MPS-linux/bin/linux">
-      <fileset dir="${mps_home}/bin/linux">
-        <exclude name="**/fsnotifier" />
-        <exclude name="**/fsnotifier64" />
-      </fileset>
-    </copy>
-    <mkdir dir="${build.layout}/MPS-linux/bin/nix" />
-    <copy todir="${build.layout}/MPS-linux/bin/nix">
-      <fileset dir="${mps_home}/bin/nix" />
-    </copy>
-    <mkdir dir="${build.layout}/MPS-linux/help" />
-    <copy todir="${build.layout}/MPS-linux/help">
-      <fileset dir="${mps_home}">
-        <include name="help/mpshelp.jar" />
-      </fileset>
-    </copy>
-    <mkdir dir="${build.layout}/MPS-linux-executable" />
-    <mkdir dir="${build.layout}/MPS-linux-executable/bin" />
-    <mkdir dir="${build.layout}/MPS-linux-executable/bin/linux" />
-    <copy todir="${build.layout}/MPS-linux-executable/bin/linux">
-      <fileset file="${mps_home}/bin/linux/fsnotifier" />
-    </copy>
-    <copy todir="${build.layout}/MPS-linux-executable/bin/linux">
-      <fileset file="${mps_home}/bin/linux/fsnotifier64" />
-    </copy>
-    <mkdir dir="${build.layout}/MPS-linux-executable/bin/nix" />
-    <copy todir="${build.layout}/MPS-linux-executable/bin/nix">
-      <fileset file="${mps_home}/bin/nix/idea.sh" />
-    </copy>
-    <copy todir="${build.layout}/MPS-linux-executable/bin/nix">
-      <fileset file="${mps_home}/bin/nix/inspect.sh" />
-    </copy>
-    <copy todir="${build.layout}/MPS-linux-executable/bin/nix">
-      <fileset file="${mps_home}/bin/nix/idea.sh" />
-    </copy>
-    <copy todir="${build.layout}/MPS-linux-executable">
-      <fileset file="${mps_home}/build/mps.sh" />
-      <filterchain>
-        <fixcrlf eol="lf" eof="remove" />
-      </filterchain>
-    </copy>
-    <mkdir dir="${build.layout}/MPS-mac" />
-    <mkdir dir="${build.layout}/MPS-mac/Contents" />
-    <mkdir dir="${build.layout}/MPS-mac/Contents/Resources" />
-    <copy todir="${build.layout}/MPS-mac/Contents/Resources">
-      <fileset file="${basedir}/build/resources/mps.icns" />
-    </copy>
-    <mkdir dir="${build.layout}/MPS-mac/Contents/MacOS" />
-    <copy todir="${build.tmp}/default/MacOS_f755">
-      <fileset file="${basedir}/build/resources/mps" />
-    </copy>
-    <copy todir="${build.layout}/MPS-mac/Contents">
-      <fileset file="${basedir}/build/Info.plist.xml" />
-      <filterchain>
-        <tokenfilter>
-          <replaceregex pattern="\$version\$" replace="${version}" flags="" />
-        </tokenfilter>
-        <tokenfilter>
-          <replaceregex pattern="\$build\$" replace="${build.number}" flags="" />
-        </tokenfilter>
-        <fixcrlf eol="lf" eof="remove" />
-      </filterchain>
-      <globmapper from="*" to="Info.plist" />
-    </copy>
-    <mkdir dir="${build.layout}/MPS-mac/bin" />
-    <copy todir="${build.layout}/MPS-mac/bin">
-      <fileset file="${basedir}/bin/idea.properties" />
-    </copy>
-    <copy todir="${build.layout}/MPS-mac/bin">
-      <fileset file="${basedir}/bin/log.xml" />
-    </copy>
-    <copy todir="${build.layout}/MPS-mac/bin">
-      <fileset file="${basedir}/bin/log4j.dtd" />
-    </copy>
-    <copy todir="${build.layout}/MPS-mac/bin">
-      <fileset file="${basedir}/bin/appletviewer.policy" />
-    </copy>
-    <copy todir="${build.layout}/MPS-mac/bin">
-      <fileset file="${basedir}/bin/mac/info_plist_parser.scpt" />
-    </copy>
-    <copy todir="${build.layout}/MPS-mac/bin">
-      <fileset file="${basedir}/bin/mac/libbreakgen.jnilib" />
-    </copy>
-    <copy todir="${build.layout}/MPS-mac/bin">
-      <fileset file="${basedir}/bin/mac/libbreakgen64.jnilib" />
-    </copy>
-    <copy todir="${build.layout}/MPS-mac/bin">
-      <fileset file="${basedir}/bin/mac/libquaqua.jnilib" />
-    </copy>
-    <copy todir="${build.layout}/MPS-mac/bin">
-      <fileset file="${basedir}/bin/mac/libquaqua64.jnilib" />
-    </copy>
-    <copy todir="${build.layout}/MPS-mac/bin">
-      <fileset file="${mps_home}/build/mps.vmoptions" />
-      <filterchain>
-        <fixcrlf eol="lf" eof="remove" />
-      </filterchain>
-    </copy>
-    <mkdir dir="${build.layout}/MPS-mac-executable" />
-    <mkdir dir="${build.layout}/MPS-mac-executable/bin" />
-    <mkdir dir="${build.layout}/MPS-mac-executable/bin/mac" />
-    <copy todir="${build.layout}/MPS-mac-executable/bin/mac">
-      <fileset file="${basedir}/bin/mac/relaunch" />
-    </copy>
-    <copy todir="${build.layout}/MPS-mac-executable/bin/mac">
-      <fileset file="${basedir}/bin/mac/fsnotifier" />
-    </copy>
-    <copy todir="${build.layout}/MPS-mac-executable">
-      <fileset file="${mps_home}/build/mps.sh" />
-      <filterchain>
-        <fixcrlf eol="lf" eof="remove" />
-      </filterchain>
-    </copy>
-    <mkdir dir="${build.layout}/MPS-win" />
-    <mkdir dir="${build.layout}/MPS-win/bin" />
-    <copy todir="${build.layout}/MPS-win/bin">
-      <fileset file="${mps_home}/build/mps.vmoptions" />
-      <filterchain>
-        <fixcrlf eol="crlf" />
-      </filterchain>
-    </copy>
-    <mkdir dir="${build.layout}/MPS-win/bin/win" />
-    <copy todir="${build.layout}/MPS-win/bin/win">
-      <fileset dir="${mps_home}/bin/win">
-        <exclude name="**/*.exe" />
-      </fileset>
-    </copy>
-    <mkdir dir="${build.layout}/MPS-win/help" />
-    <copy todir="${build.layout}/MPS-win/help">
-      <fileset dir="${mps_home}">
-        <include name="help/mpshelp.jar" />
-      </fileset>
-    </copy>
-    <mkdir dir="${build.layout}/MPS-win-executable" />
-    <mkdir dir="${build.layout}/MPS-win-executable/bin" />
-    <mkdir dir="${build.layout}/MPS-win-executable/bin/win" />
-    <copy todir="${build.layout}/MPS-win-executable/bin/win">
-      <fileset file="${mps_home}/bin/win/fsnotifier.exe" />
-    </copy>
-    <copy todir="${build.layout}/MPS-win-executable/bin/win">
-      <fileset file="${mps_home}/bin/win/restarter.exe" />
-    </copy>
-    <copy todir="${build.layout}/MPS-win-executable/bin/win">
-      <fileset file="${mps_home}/bin/win/runnerw.exe" />
-    </copy>
-    <copy todir="${build.layout}/MPS-win-executable/bin/win">
-      <fileset file="${mps_home}/bin/win/vistalauncher.exe" />
-    </copy>
-    <copy todir="${build.layout}/MPS-win-executable">
-      <fileset file="${mps_home}/build/mps.bat" />
-      <filterchain>
-        <fixcrlf eol="crlf" />
-      </filterchain>
     </copy>
     <echo file="${build.layout}/variables.properties">buildMPS.build.number=${build.number}${line.separator}buildMPS.version=${version}${line.separator}buildMPS.build.vcs.number=${build.vcs.number}${line.separator}buildMPS.teamcity.buildConfName=${teamcity.buildConfName}</echo>
   </target>
