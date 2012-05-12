@@ -10,44 +10,22 @@
   <property name="buildMPS.teamcity.buildConfName" value="${import.buildMPS.buildMPS.teamcity.buildConfName}" />
   
   <target name="assemble" depends="fetchDependencies">
+    <tar destfile="${build.layout}/${buildMPS.build.number}-linux.tar.gz" compression="gzip">
+      <tarfileset dir="${artifacts.buildMPS}/MPS ${buildMPS.version}" prefix="MPS ${buildMPS.version}" />
+      <tarfileset dir="${artifacts.buildMPS}/MPS-linux" prefix="MPS ${buildMPS.version}" />
+      <tarfileset dir="${artifacts.buildMPS}/MPS-linux-executable" prefix="MPS ${buildMPS.version}" filemode="755" />
+    </tar>
     <zip destfile="${build.layout}/${buildMPS.build.number}.zip">
-      <zipfileset dir="${artifacts.buildMPS}" prefix="MPS ${buildMPS.version}" />
-      <zipfileset dir="${basedir}/bin" prefix="MPS ${buildMPS.version}/bin" />
+      <zipfileset dir="${artifacts.buildMPS}/MPS ${buildMPS.version}" prefix="MPS ${buildMPS.version}" />
+      <zipfileset dir="${artifacts.buildMPS}/MPS-linux" prefix="MPS ${buildMPS.version}" />
+      <zipfileset dir="${artifacts.buildMPS}/MPS-win" prefix="MPS ${buildMPS.version}" />
+      <zipfileset dir="${artifacts.buildMPS}/MPS-linux-executable" prefix="MPS ${buildMPS.version}" filemode="755" />
+      <zipfileset dir="${artifacts.buildMPS}/MPS-win-executable" prefix="MPS ${buildMPS.version}" filemode="755" />
     </zip>
-    <mkdir dir="${build.tmp}/default/_dl_{build.number}-macos.zip" />
-    <mkdir dir="${build.tmp}/default/_dl_{build.number}-macos.zip/MPS ${buildMPS.version}.app" />
-    <mkdir dir="${build.tmp}/default/_dl_{build.number}-macos.zip/MPS ${buildMPS.version}.app/Contents" />
-    <copy todir="${build.tmp}/default/_dl_{build.number}-macos.zip/MPS ${buildMPS.version}.app/Contents">
-      <fileset file="${basedir}/build/Info.plist.xml" />
-      <filterchain>
-        <tokenfilter>
-          <replaceregex pattern="\$version\$" replace="${buildMPS.version}" flags="" />
-        </tokenfilter>
-        <tokenfilter>
-          <replaceregex pattern="\$build\$" replace="${buildMPS.build.number}" flags="" />
-        </tokenfilter>
-        <fixcrlf eol="lf" eof="remove" />
-      </filterchain>
-      <globmapper from="*" to="Info.plist" />
-    </copy>
     <zip destfile="${build.layout}/${buildMPS.build.number}-macos.zip">
-      <zipfileset dir="${artifacts.buildMPS}" prefix="MPS ${buildMPS.version}.app" />
-      <zipfileset file="${basedir}/build/resources/mps.icns" prefix="MPS ${buildMPS.version}.app/Contents/Resources" />
-      <zipfileset file="${basedir}/build/resources/mps" prefix="MPS ${buildMPS.version}.app/Contents/MacOS" filemode="755" />
-      <zipfileset file="${basedir}/bin/idea.properties" prefix="MPS ${buildMPS.version}.app/bin" />
-      <zipfileset file="${basedir}/bin/log.xml" prefix="MPS ${buildMPS.version}.app/bin" />
-      <zipfileset file="${basedir}/bin/log4j.dtd" prefix="MPS ${buildMPS.version}.app/bin" />
-      <zipfileset file="${basedir}/bin/appletviewer.policy" prefix="MPS ${buildMPS.version}.app/bin" />
-      <zipfileset file="${basedir}/bin/mac/info_plist_parser.scpt" prefix="MPS ${buildMPS.version}.app/bin" />
-      <zipfileset file="${basedir}/bin/mac/libbreakgen.jnilib" prefix="MPS ${buildMPS.version}.app/bin" />
-      <zipfileset file="${basedir}/bin/mac/libbreakgen64.jnilib" prefix="MPS ${buildMPS.version}.app/bin" />
-      <zipfileset file="${basedir}/bin/mac/libquaqua.jnilib" prefix="MPS ${buildMPS.version}.app/bin" />
-      <zipfileset file="${basedir}/bin/mac/libquaqua64.jnilib" prefix="MPS ${buildMPS.version}.app/bin" />
-      <zipfileset file="${basedir}/build/mps.vmoptions" prefix="MPS ${buildMPS.version}.app/bin" />
-      <zipfileset file="${basedir}/bin/mac/relaunch" prefix="MPS ${buildMPS.version}.app/bin" filemode="755" />
-      <zipfileset file="${basedir}/bin/mac/fsnotifier" prefix="MPS ${buildMPS.version}.app/bin" filemode="755" />
-      <zipfileset file="${basedir}/build/mps.sh" prefix="MPS ${buildMPS.version}.app" filemode="755" />
-      <fileset dir="${build.tmp}/default/_dl_{build.number}-macos.zip" />
+      <zipfileset dir="${artifacts.buildMPS}/MPS ${buildMPS.version}" prefix="MPS ${buildMPS.version}.app" />
+      <zipfileset dir="${artifacts.buildMPS}/MPS-mac" prefix="MPS ${buildMPS.version}.app" />
+      <zipfileset dir="${artifacts.buildMPS}/MPS-mac-executable" prefix="MPS ${buildMPS.version}.app" filemode="755" />
     </zip>
     <echo file="${build.layout}/variables.properties">buildMPS.build.number=${buildMPS.build.number}${line.separator}buildMPS.version=${buildMPS.version}${line.separator}buildMPS.build.vcs.number=${buildMPS.build.vcs.number}${line.separator}buildMPS.teamcity.buildConfName=${buildMPS.teamcity.buildConfName}</echo>
   </target>

@@ -88,6 +88,8 @@
   <property name="jetbrains.mps.lang.editor.classes" value="${base_dir}/languages/languageDesign/editor/classes_gen" />
   <property name="jetbrains.mps.lang.editor.editorTest.classes" value="${base_dir}/languages/languageDesign/editor/languages/editorTest/classes_gen" />
   <property name="jetbrains.mps.lang.editor.table.classes" value="${base_dir}/languages/languageDesign/editor/languages/table/classes_gen" />
+  <property name="jetbrains.mps.lang.editor.table.classes" value="${base_dir}/languages/languageDesign/editor/languages/table/classes_gen" />
+  <property name="jetbrains.mps.lang.editor.table.runtime.classes" value="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
   <property name="jetbrains.mps.lang.editor.table.runtime.classes" value="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
   <property name="jetbrains.mps.lang.extension.classes" value="${base_dir}/languages/languageDesign/extension/classes_gen" />
   <property name="jetbrains.mps.lang.findUsages.classes" value="${base_dir}/languages/languageDesign/findUsages/classes_gen" />
@@ -122,7 +124,6 @@
   <property name="jetbrains.mps.lang.test.runtime.classes" value="${base_dir}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
   <property name="jetbrains.mps.lang.textGen.classes" value="${base_dir}/languages/languageDesign/textGen/classes_gen" />
   <property name="jetbrains.mps.lang.traceable.classes" value="${base_dir}/languages/languageDesign/traceable/classes_gen" />
-  <property name="jetbrains.mps.lang.traceable.pluginSolution.classes" value="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
   <property name="jetbrains.mps.lang.typesystem.classes" value="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
   <property name="jetbrains.mps.lang.typesystem.pluginSolution.classes" value="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
   <property name="jetbrains.mps.make.facet.classes" value="${base_dir}/languages/languageDesign/make/languages/facet/classes_gen" />
@@ -556,8 +557,12 @@
   <path id="cycle.jetbrains.mps.lang.editor.table_tjc.src">
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/source_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/test_gen" />
+    <path path="${base_dir}/languages/languageDesign/editor/languages/table/source_gen" />
+    <path path="${base_dir}/languages/languageDesign/editor/languages/table/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.lang.editor.table.runtime_tjc.src">
+    <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/source_gen" />
+    <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/test_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/source_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/test_gen" />
   </path>
@@ -636,10 +641,6 @@
   <path id="cycle.jetbrains.mps.lang.textGen_tjc.src">
     <path path="${base_dir}/languages/languageDesign/textGen/source_gen" />
     <path path="${base_dir}/languages/languageDesign/textGen/test_gen" />
-  </path>
-  <path id="cycle.jetbrains.mps.lang.traceable.pluginSolution_tjc.src">
-    <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/source_gen" />
-    <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.lang.typesystem.pluginSolution_tjc.src">
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/source_gen" />
@@ -6388,6 +6389,7 @@
   </path>
   <path id="cycle.jetbrains.mps.lang.editor.table_tjc.classpaths">
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/editor/languages/table/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/ant/classes" />
@@ -6485,6 +6487,7 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.lang.editor.table.runtime_tjc.classpaths">
+    <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
@@ -8222,11 +8225,6 @@
     <path path="${base_dir}/workbench/resources/classes" />
     <path path="${base_dir}/workbench/resources_en/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
-    <path refid="common.classpath" />
-  </path>
-  <path id="cycle.jetbrains.mps.lang.traceable.pluginSolution_tjc.classpaths">
-    <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.lang.typesystem.pluginSolution_tjc.classpaths">
@@ -11041,7 +11039,7 @@
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
-  <target name="compile.all" depends="compile.cycle.collections_trove.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.checkedDots_tjc,compile.cycle.jetbrains.mps.baseLanguage.collections.trove_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates.pluginSolution_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.datesInternal_tjc,compile.cycle.jetbrains.mps.baseLanguage.execution.startup_tjc,compile.cycle.jetbrains.mps.baseLanguage.jdk7_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.math.pluginSolution_tjc,compile.cycle.jetbrains.mps.baseLanguage.math.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.money.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.pluginSolution_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.unitTest_tjc,compile.cycle.jetbrains.mps.baseLanguage.unitTest.execution.startup_tjc,compile.cycle.jetbrains.mps.baseLanguage.varVariable_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.custommps.pluginSolution_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.build.gentest_tjc,compile.cycle.jetbrains.mps.build.mps_tjc,compile.cycle.jetbrains.mps.build.mps.pluginSolution_tjc,compile.cycle.jetbrains.mps.build.mpsdist_tjc,compile.cycle.jetbrains.mps.build.packaging_tjc,compile.cycle.jetbrains.mps.build.packaging.pluginSolution_tjc,compile.cycle.jetbrains.mps.build.pluginSolution_tjc,compile.cycle.jetbrains.mps.build.reduced_tjc,compile.cycle.jetbrains.mps.build.startup_tjc,compile.cycle.jetbrains.mps.build.workflow_tjc,compile.cycle.jetbrains.mps.core.properties_tjc,compile.cycle.jetbrains.mps.core.xml_tjc,compile.cycle.jetbrains.mps.debugger.api.lang_tjc,compile.cycle.jetbrains.mps.debugger.java.customViewers_tjc,compile.cycle.jetbrains.mps.debugger.java.evaluation_tjc,compile.cycle.jetbrains.mps.debugger.java.privateMembers_tjc,compile.cycle.jetbrains.mps.execution.commands_tjc,compile.cycle.jetbrains.mps.execution.common_tjc,compile.cycle.jetbrains.mps.execution.configurations_tjc,compile.cycle.jetbrains.mps.execution.configurations.deprecated_tjc,compile.cycle.jetbrains.mps.execution.configurations.pluginSolution_tjc,compile.cycle.jetbrains.mps.execution.migration_tjc,compile.cycle.jetbrains.mps.execution.settings_tjc,compile.cycle.jetbrains.mps.execution.util_tjc,compile.cycle.jetbrains.mps.gtext_tjc,compile.cycle.jetbrains.mps.gtext.runtime_tjc,compile.cycle.jetbrains.mps.gwt.client_tjc,compile.cycle.jetbrains.mps.ide.java.migration_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.lang.access_tjc,compile.cycle.jetbrains.mps.lang.actions_tjc,compile.cycle.jetbrains.mps.lang.checkedName_tjc,compile.cycle.jetbrains.mps.lang.core.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.dataFlow_tjc,compile.cycle.jetbrains.mps.lang.dataFlow.analyzers_tjc,compile.cycle.jetbrains.mps.lang.dataFlow.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.descriptor_tjc,compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.editor.table.runtime_tjc,compile.cycle.jetbrains.mps.lang.extension_tjc,compile.cycle.jetbrains.mps.lang.findUsages_tjc,compile.cycle.jetbrains.mps.lang.generator.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.intentions_tjc,compile.cycle.jetbrains.mps.lang.pattern.testLang_tjc,compile.cycle.jetbrains.mps.lang.plugin_tjc,compile.cycle.jetbrains.mps.lang.plugin.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.plugin.standalone_tjc,compile.cycle.jetbrains.mps.lang.quotation.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.script_tjc,compile.cycle.jetbrains.mps.lang.script.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.smodel.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.smodelTests_tjc,compile.cycle.jetbrains.mps.lang.structure.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.stubs_tjc,compile.cycle.jetbrains.mps.lang.test_tjc,compile.cycle.jetbrains.mps.lang.test.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.textGen_tjc,compile.cycle.jetbrains.mps.lang.traceable.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.typesystem.pluginSolution_tjc,compile.cycle.jetbrains.mps.make.facet_tjc,compile.cycle.jetbrains.mps.make.script_tjc,compile.cycle.jetbrains.mps.nanoj_tjc,compile.cycle.jetbrains.mps.platform.conf_tjc,compile.cycle.jetbrains.mps.quickQuery.runtime_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage.pluginSolution_tjc,compile.cycle.jetbrains.mps.ui_tjc,compile.cycle.jetbrains.mps.ui.gwt_tjc,compile.cycle.jetbrains.mps.ui.gwt.pluginSolution_tjc,compile.cycle.jetbrains.mps.ui.internal_tjc,compile.cycle.jetbrains.mps.ui.modeling_tjc,compile.cycle.jetbrains.mps.ui.modeling.pluginSolution_tjc,compile.cycle.jetbrains.mps.ui.pluginSolution_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swing.pluginSolution_tjc,compile.cycle.jetbrains.mps.ui.swing.runtime_tjc,compile.cycle.jetbrains.mps.ui.swt_tjc,compile.cycle.jetbrains.mps.ui.swt.pluginSolution_tjc,compile.cycle.jetbrains.mps.ui.swt.runtime_tjc,compile.cycle.jetbrains.mps.uiLanguage_tjc,compile.cycle.jetbrains.mps.uiLanguage.pluginSolution_tjc,compile.cycle.jetbrains.mps.xml_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xml.deprecated.pluginSolution_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mps.xmlSchema_tjc,compile.cycle.jetbrains.mps.xmlUnitTest_tjc,compile.cycle.jetbrains.mps.ypath_tjc,compile.cycle.jetbrains.mps.ypath.runtime_tjc,compile.cycle.jetbrains.mpslite_tjc,compile.cycle.jetbrains.mpslite.pluginSolution_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
+  <target name="compile.all" depends="compile.cycle.collections_trove.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.checkedDots_tjc,compile.cycle.jetbrains.mps.baseLanguage.collections.trove_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates.pluginSolution_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.datesInternal_tjc,compile.cycle.jetbrains.mps.baseLanguage.execution.startup_tjc,compile.cycle.jetbrains.mps.baseLanguage.jdk7_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.math.pluginSolution_tjc,compile.cycle.jetbrains.mps.baseLanguage.math.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.money.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.pluginSolution_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.unitTest_tjc,compile.cycle.jetbrains.mps.baseLanguage.unitTest.execution.startup_tjc,compile.cycle.jetbrains.mps.baseLanguage.varVariable_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.custommps.pluginSolution_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.build.gentest_tjc,compile.cycle.jetbrains.mps.build.mps_tjc,compile.cycle.jetbrains.mps.build.mps.pluginSolution_tjc,compile.cycle.jetbrains.mps.build.mpsdist_tjc,compile.cycle.jetbrains.mps.build.packaging_tjc,compile.cycle.jetbrains.mps.build.packaging.pluginSolution_tjc,compile.cycle.jetbrains.mps.build.pluginSolution_tjc,compile.cycle.jetbrains.mps.build.reduced_tjc,compile.cycle.jetbrains.mps.build.startup_tjc,compile.cycle.jetbrains.mps.build.workflow_tjc,compile.cycle.jetbrains.mps.core.properties_tjc,compile.cycle.jetbrains.mps.core.xml_tjc,compile.cycle.jetbrains.mps.debugger.api.lang_tjc,compile.cycle.jetbrains.mps.debugger.java.customViewers_tjc,compile.cycle.jetbrains.mps.debugger.java.evaluation_tjc,compile.cycle.jetbrains.mps.debugger.java.privateMembers_tjc,compile.cycle.jetbrains.mps.execution.commands_tjc,compile.cycle.jetbrains.mps.execution.common_tjc,compile.cycle.jetbrains.mps.execution.configurations_tjc,compile.cycle.jetbrains.mps.execution.configurations.deprecated_tjc,compile.cycle.jetbrains.mps.execution.configurations.pluginSolution_tjc,compile.cycle.jetbrains.mps.execution.migration_tjc,compile.cycle.jetbrains.mps.execution.settings_tjc,compile.cycle.jetbrains.mps.execution.util_tjc,compile.cycle.jetbrains.mps.gtext_tjc,compile.cycle.jetbrains.mps.gtext.runtime_tjc,compile.cycle.jetbrains.mps.gwt.client_tjc,compile.cycle.jetbrains.mps.ide.java.migration_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.lang.access_tjc,compile.cycle.jetbrains.mps.lang.actions_tjc,compile.cycle.jetbrains.mps.lang.checkedName_tjc,compile.cycle.jetbrains.mps.lang.core.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.dataFlow_tjc,compile.cycle.jetbrains.mps.lang.dataFlow.analyzers_tjc,compile.cycle.jetbrains.mps.lang.dataFlow.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.descriptor_tjc,compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.editor.table.runtime_tjc,compile.cycle.jetbrains.mps.lang.extension_tjc,compile.cycle.jetbrains.mps.lang.findUsages_tjc,compile.cycle.jetbrains.mps.lang.generator.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.intentions_tjc,compile.cycle.jetbrains.mps.lang.pattern.testLang_tjc,compile.cycle.jetbrains.mps.lang.plugin_tjc,compile.cycle.jetbrains.mps.lang.plugin.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.plugin.standalone_tjc,compile.cycle.jetbrains.mps.lang.quotation.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.script_tjc,compile.cycle.jetbrains.mps.lang.script.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.smodel.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.smodelTests_tjc,compile.cycle.jetbrains.mps.lang.structure.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.stubs_tjc,compile.cycle.jetbrains.mps.lang.test_tjc,compile.cycle.jetbrains.mps.lang.test.pluginSolution_tjc,compile.cycle.jetbrains.mps.lang.textGen_tjc,compile.cycle.jetbrains.mps.lang.typesystem.pluginSolution_tjc,compile.cycle.jetbrains.mps.make.facet_tjc,compile.cycle.jetbrains.mps.make.script_tjc,compile.cycle.jetbrains.mps.nanoj_tjc,compile.cycle.jetbrains.mps.platform.conf_tjc,compile.cycle.jetbrains.mps.quickQuery.runtime_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage.pluginSolution_tjc,compile.cycle.jetbrains.mps.ui_tjc,compile.cycle.jetbrains.mps.ui.gwt_tjc,compile.cycle.jetbrains.mps.ui.gwt.pluginSolution_tjc,compile.cycle.jetbrains.mps.ui.internal_tjc,compile.cycle.jetbrains.mps.ui.modeling_tjc,compile.cycle.jetbrains.mps.ui.modeling.pluginSolution_tjc,compile.cycle.jetbrains.mps.ui.pluginSolution_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swing.pluginSolution_tjc,compile.cycle.jetbrains.mps.ui.swing.runtime_tjc,compile.cycle.jetbrains.mps.ui.swt_tjc,compile.cycle.jetbrains.mps.ui.swt.pluginSolution_tjc,compile.cycle.jetbrains.mps.ui.swt.runtime_tjc,compile.cycle.jetbrains.mps.uiLanguage_tjc,compile.cycle.jetbrains.mps.uiLanguage.pluginSolution_tjc,compile.cycle.jetbrains.mps.xml_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xml.deprecated.pluginSolution_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mps.xmlSchema_tjc,compile.cycle.jetbrains.mps.xmlUnitTest_tjc,compile.cycle.jetbrains.mps.ypath_tjc,compile.cycle.jetbrains.mps.ypath.runtime_tjc,compile.cycle.jetbrains.mpslite_tjc,compile.cycle.jetbrains.mpslite.pluginSolution_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
   <target name="compile.cycle.collections_trove.runtime_tjc">
     <property name="classes.dump" value="${collections_trove.runtime.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
@@ -12990,7 +12988,10 @@
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/languageDesign/editor/languages/table/source_gen" />
     <mkdir dir="${base_dir}/languages/languageDesign/editor/languages/table/test_gen" />
+    <mkdir dir="${base_dir}/languages/languageDesign/editor/languages/table/source_gen" />
+    <mkdir dir="${base_dir}/languages/languageDesign/editor/languages/table/test_gen" />
     <mkdir dir="${classes.dump}" />
+    <mkdir dir="${jetbrains.mps.lang.editor.table.classes}" />
     <mkdir dir="${jetbrains.mps.lang.editor.table.classes}" />
     <javac classpathref="cycle.jetbrains.mps.lang.editor.table_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.lang.editor.table_tjc.src" />
@@ -12999,6 +13000,16 @@
       <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/editor/languages/table/source_gen" />
       <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/editor/languages/table/test_gen" />
     </copy>
+    <copy todir="${jetbrains.mps.lang.editor.table.classes}">
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/editor/languages/table/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/editor/languages/table/test_gen" />
+    </copy>
+    <javac classpathref="cycle.jetbrains.mps.lang.editor.table_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.editor.table.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
+      <src>
+        <path path="${base_dir}/languages/languageDesign/editor/languages/table/source_gen" />
+        <path path="${base_dir}/languages/languageDesign/editor/languages/table/test_gen" />
+      </src>
+    </javac>
     <javac classpathref="cycle.jetbrains.mps.lang.editor.table_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.editor.table.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
         <path path="${base_dir}/languages/languageDesign/editor/languages/table/source_gen" />
@@ -13012,7 +13023,10 @@
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/languageDesign/editor/languages/table/runtime/source_gen" />
     <mkdir dir="${base_dir}/languages/languageDesign/editor/languages/table/runtime/test_gen" />
+    <mkdir dir="${base_dir}/languages/languageDesign/editor/languages/table/runtime/source_gen" />
+    <mkdir dir="${base_dir}/languages/languageDesign/editor/languages/table/runtime/test_gen" />
     <mkdir dir="${classes.dump}" />
+    <mkdir dir="${jetbrains.mps.lang.editor.table.runtime.classes}" />
     <mkdir dir="${jetbrains.mps.lang.editor.table.runtime.classes}" />
     <javac classpathref="cycle.jetbrains.mps.lang.editor.table.runtime_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.lang.editor.table.runtime_tjc.src" />
@@ -13021,6 +13035,16 @@
       <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/editor/languages/table/runtime/source_gen" />
       <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/editor/languages/table/runtime/test_gen" />
     </copy>
+    <copy todir="${jetbrains.mps.lang.editor.table.runtime.classes}">
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/editor/languages/table/runtime/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/editor/languages/table/runtime/test_gen" />
+    </copy>
+    <javac classpathref="cycle.jetbrains.mps.lang.editor.table.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.editor.table.runtime.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
+      <src>
+        <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/source_gen" />
+        <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/test_gen" />
+      </src>
+    </javac>
     <javac classpathref="cycle.jetbrains.mps.lang.editor.table.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.editor.table.runtime.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
         <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/source_gen" />
@@ -13451,29 +13475,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.lang.traceable.pluginSolution_tjc" depends="compile.cycle.jetbrains.mps.lang.test.pluginSolution_tjc">
-    <property name="classes.dump" value="${jetbrains.mps.lang.traceable.pluginSolution.classes}.tmp" />
-    <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/source_gen" />
-    <mkdir dir="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/test_gen" />
-    <mkdir dir="${classes.dump}" />
-    <mkdir dir="${jetbrains.mps.lang.traceable.pluginSolution.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.lang.traceable.pluginSolution_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
-      <src refid="cycle.jetbrains.mps.lang.traceable.pluginSolution_tjc.src" />
-    </javac>
-    <copy todir="${jetbrains.mps.lang.traceable.pluginSolution.classes}">
-      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/source_gen" />
-      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/test_gen" />
-    </copy>
-    <javac classpathref="cycle.jetbrains.mps.lang.traceable.pluginSolution_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.traceable.pluginSolution.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
-      <src>
-        <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/source_gen" />
-        <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/test_gen" />
-      </src>
-    </javac>
-    <delete dir="${classes.dump}" />
-  </target>
-  <target name="compile.cycle.jetbrains.mps.lang.typesystem.pluginSolution_tjc" depends="compile.cycle.jetbrains.mps.lang.traceable.pluginSolution_tjc">
+  <target name="compile.cycle.jetbrains.mps.lang.typesystem.pluginSolution_tjc" depends="compile.cycle.jetbrains.mps.lang.test.pluginSolution_tjc">
     <property name="classes.dump" value="${jetbrains.mps.lang.typesystem.pluginSolution.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/source_gen" />
@@ -14372,6 +14374,8 @@
     <delete dir="${jetbrains.mps.lang.descriptor.classes}" />
     <delete dir="${jetbrains.mps.lang.editor.editorTest.classes}" />
     <delete dir="${jetbrains.mps.lang.editor.table.classes}" />
+    <delete dir="${jetbrains.mps.lang.editor.table.classes}" />
+    <delete dir="${jetbrains.mps.lang.editor.table.runtime.classes}" />
     <delete dir="${jetbrains.mps.lang.editor.table.runtime.classes}" />
     <delete dir="${jetbrains.mps.lang.extension.classes}" />
     <delete dir="${jetbrains.mps.lang.findUsages.classes}" />
@@ -14393,7 +14397,6 @@
     <delete dir="${jetbrains.mps.lang.test.runtime.classes}" />
     <delete dir="${jetbrains.mps.lang.test.pluginSolution.classes}" />
     <delete dir="${jetbrains.mps.lang.textGen.classes}" />
-    <delete dir="${jetbrains.mps.lang.traceable.pluginSolution.classes}" />
     <delete dir="${jetbrains.mps.lang.typesystem.pluginSolution.classes}" />
     <delete dir="${jetbrains.mps.make.facet.classes}" />
     <delete dir="${jetbrains.mps.make.script.classes}" />

@@ -67,7 +67,9 @@
     <mkdir dir="${build.tmp}/default/nanocProject.zip/nanocProject" />
     <copy todir="${build.tmp}/default/nanocProject.zip/nanocProject">
       <fileset dir="${mps_home}/plugins/debugger-api/languages/nanoc">
-        <exclude name="**/*.class, **/classes_gen/**" />
+        <exclude name="**/*.class" />
+        <exclude name="**/classes_gen/**" />
+        <exclude name="**/classes_gen" />
       </fileset>
     </copy>
     <zip destfile="${build.layout}/plugins/debugger-api/nanocProject.zip">
