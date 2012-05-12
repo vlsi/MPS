@@ -51,12 +51,24 @@ public class QueriesGenerated {
     return "localA";
   }
 
+  public static boolean ifMacro_Condition_8374756414439004441(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(SPropertyOperations.getBoolean(_context.getNode(), "nowait"));
+  }
+
+  public static boolean ifMacro_Condition_8374756414439004406(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(SPropertyOperations.getBoolean(_context.getNode(), "nowait"));
+  }
+
   public static boolean ifMacro_Condition_633195941006966360(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "threadPool", true) == null;
   }
 
   public static boolean ifMacro_Condition_633195941006966388(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "threadPool", true) != null;
+  }
+
+  public static boolean ifMacro_Condition_8374756414438972401(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(SPropertyOperations.getBoolean(_context.getNode(), "nowait"));
   }
 
   public static SNode sourceNodeQuery_8923957828369611237(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

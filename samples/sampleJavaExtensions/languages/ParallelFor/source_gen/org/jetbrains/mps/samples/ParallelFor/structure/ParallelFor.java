@@ -18,6 +18,7 @@ public class ParallelFor extends AbstractLoopStatement implements IMethodLike {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NOWAIT = "nowait";
   public static final String LOOP_VARIABLE = "loopVariable";
   public static final String INPUT_SEQUENCE = "inputSequence";
   public static final String THREAD_POOL = "threadPool";
@@ -49,6 +50,14 @@ public class ParallelFor extends AbstractLoopStatement implements IMethodLike {
 
   public void setVirtualPackage(String value) {
     this.setProperty(ParallelFor.VIRTUAL_PACKAGE, value);
+  }
+
+  public boolean getNowait() {
+    return this.getBooleanProperty(ParallelFor.NOWAIT);
+  }
+
+  public void setNowait(boolean value) {
+    this.setBooleanProperty(ParallelFor.NOWAIT, value);
   }
 
   public ParallelLoopVariable getLoopVariable() {
