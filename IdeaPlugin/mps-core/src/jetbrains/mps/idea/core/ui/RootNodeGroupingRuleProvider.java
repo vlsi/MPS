@@ -21,6 +21,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.usages.Usage;
 import com.intellij.usages.UsageGroup;
 import com.intellij.usages.UsageView;
+import com.intellij.usages.UsageViewSettings;
 import com.intellij.usages.impl.rules.FileGroupingRule;
 import com.intellij.usages.rules.UsageGroupingRule;
 import com.intellij.usages.rules.UsageGroupingRuleProvider;
@@ -33,7 +34,10 @@ public class RootNodeGroupingRuleProvider implements UsageGroupingRuleProvider {
   @NotNull
   @Override
   public UsageGroupingRule[] getActiveRules(@NotNull Project project) {
-    return new UsageGroupingRule[]{new RootNodeUsageGroupingRule(project)};
+    if (UsageViewSettings.getInstance().GROUP_BY_FILE_STRUCTURE){
+      return new UsageGroupingRule[]{new RootNodeUsageGroupingRule(project)};
+    }
+    return UsageGroupingRule.EMPTY_ARRAY;
   }
 
   @NotNull

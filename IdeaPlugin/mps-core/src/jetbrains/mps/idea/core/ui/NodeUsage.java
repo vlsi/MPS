@@ -38,14 +38,15 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.Icon;
 import java.util.ArrayList;
 
-public class NodeUsage extends NodeUsageBase implements UsagePresentation, UsageInModule, MergeableUsage, UsageInRoot, UsageInModel {
+public class NodeUsage extends NodeUsageBase implements UsagePresentation, UsageInModule, MergeableUsage, UsageInRoot, UsageInModel, UsageByCategory {
   private SModel myModel;
   private TextChunk[] myChunks;
   private boolean myIsValid;
   private String myParentPresentation;
   private String myRole;
+  private String myCategory;
 
-  public NodeUsage(@NotNull SNode node, @NotNull Project project) {
+  public NodeUsage(@NotNull SNode node, @NotNull Project project, String category) {
     super(node, project);
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
@@ -57,6 +58,7 @@ public class NodeUsage extends NodeUsageBase implements UsagePresentation, Usage
     });
     myIsValid = isValid();
     myChunks = initChunks();
+    myCategory = category;
   }
 
   @NotNull
@@ -170,5 +172,10 @@ public class NodeUsage extends NodeUsageBase implements UsagePresentation, Usage
   @Override
   public SNode getRoot() {
     return myRootNode;
+  }
+
+  @Override
+  public String getCategory() {
+    return myCategory;
   }
 }

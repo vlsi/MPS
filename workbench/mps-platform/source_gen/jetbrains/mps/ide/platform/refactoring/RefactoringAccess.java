@@ -11,10 +11,17 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 public abstract class RefactoringAccess {
   private static RefactoringAccess ourInstance;
 
+  private RefactoringFacade myRefactoringFacade;
+
   public RefactoringAccess() {
   }
 
-  public abstract RefactoringFacade getRefactoringFacade();
+  public RefactoringFacade getRefactoringFacade() {
+    if (myRefactoringFacade == null) {
+      myRefactoringFacade = new RefactoringFacade();
+    }
+    return myRefactoringFacade;
+  }
 
   public abstract ModelElementTargetChooser createTargetChooser(Project project, SNode node);
 

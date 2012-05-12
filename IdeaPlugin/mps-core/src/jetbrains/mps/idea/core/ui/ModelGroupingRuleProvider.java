@@ -23,6 +23,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.usages.Usage;
 import com.intellij.usages.UsageGroup;
 import com.intellij.usages.UsageView;
+import com.intellij.usages.UsageViewSettings;
 import com.intellij.usages.impl.rules.FileGroupingRule;
 import com.intellij.usages.rules.UsageGroupingRule;
 import com.intellij.usages.rules.UsageGroupingRuleProvider;
@@ -34,7 +35,10 @@ public class ModelGroupingRuleProvider implements UsageGroupingRuleProvider {
   @NotNull
   @Override
   public UsageGroupingRule[] getActiveRules(@NotNull Project project) {
-    return new UsageGroupingRule[]{new ModelUsageGroupingRule(project)};
+    if (UsageViewSettings.getInstance().GROUP_BY_PACKAGE){
+      return new UsageGroupingRule[]{new ModelUsageGroupingRule(project)};
+    }
+    return UsageGroupingRule.EMPTY_ARRAY;
   }
 
   @NotNull

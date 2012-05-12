@@ -22,7 +22,6 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
-import jetbrains.mps.ide.platform.refactoring.RefactoringFacade;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.idea.core.ui.ModelOrNodeChooser;
 import jetbrains.mps.idea.core.ui.RefactoringViewItemImpl;
@@ -36,7 +35,6 @@ import org.jetbrains.annotations.NotNull;
  * Date: 2/20/12
  */
 public class RefactoringAccessImpl extends RefactoringAccess implements ApplicationComponent {
-  private RefactoringFacade myRefactoringFacade;
 
   public RefactoringAccessImpl(MPSCoreComponents coreComponents) {
   }
@@ -57,13 +55,6 @@ public class RefactoringAccessImpl extends RefactoringAccess implements Applicat
     return "IDEA Plugin-specific Refactoring Access implementation";
   }
 
-  @Override
-  public RefactoringFacade getRefactoringFacade() {
-    if (myRefactoringFacade == null) {
-      myRefactoringFacade = new RefactoringFacade();
-    }
-    return myRefactoringFacade;
-  }
 
   @Override
   public ModelElementTargetChooser createTargetChooser(Project project, SNode node) {

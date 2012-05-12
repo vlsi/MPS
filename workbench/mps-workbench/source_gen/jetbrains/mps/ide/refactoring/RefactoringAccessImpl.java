@@ -4,7 +4,6 @@ package jetbrains.mps.ide.refactoring;
 
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.ide.platform.refactoring.RefactoringFacade;
 import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -17,8 +16,6 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 
 public class RefactoringAccessImpl extends RefactoringAccess implements ApplicationComponent {
-  private RefactoringFacade myRefactoringFacade;
-
   public RefactoringAccessImpl(MPSCoreComponents coreComponents) {
   }
 
@@ -52,12 +49,5 @@ public class RefactoringAccessImpl extends RefactoringAccess implements Applicat
   public void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
     RefactoringView refactoringView = refactoringContext.getCurrentOperationContext().getComponent(RefactoringView.class);
     refactoringView.showRefactoringView(refactoringContext, callback, searchResults, hasModelsToGenerate);
-  }
-
-  public RefactoringFacade getRefactoringFacade() {
-    if (myRefactoringFacade == null) {
-      myRefactoringFacade = new RefactoringFacade();
-    }
-    return myRefactoringFacade;
   }
 }

@@ -790,72 +790,64 @@
     <unitInfo nodeId="5101259057297948769" fileName="OptionDialog.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.refactoring.OptionDialog" />
   </root>
   <root nodeId="5814231631271803738">
-    <nodeInfo nodeId="5814231631271810233" fileName="RefactoringAccessImpl.java" startLine="19" startPosition="94" endLine="20" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRefactoringFacade" />
-    <nodeInfo nodeId="5814231631271810184" fileName="RefactoringAccessImpl.java" startLine="25" startPosition="31" endLine="26" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5814231631271810188" fileName="RefactoringAccessImpl.java" startLine="29" startPosition="34" endLine="30" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5814231631271810196" fileName="RefactoringAccessImpl.java" startLine="35" startPosition="36" endLine="36" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4930770434913670970" fileName="RefactoringAccessImpl.java" startLine="39" startPosition="97" endLine="40" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4930770434913670979" fileName="RefactoringAccessImpl.java" startLine="43" startPosition="85" endLine="44" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3748064186690642734" fileName="RefactoringAccessImpl.java" startLine="47" startPosition="155" endLine="48" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3748064186690642750" fileName="RefactoringAccessImpl.java" startLine="48" startPosition="82" endLine="49" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7396266131581082226" fileName="RefactoringAccessImpl.java" startLine="52" startPosition="177" endLine="53" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7396266131581082233" fileName="RefactoringAccessImpl.java" startLine="53" startPosition="122" endLine="54" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5814231631271810253" fileName="RefactoringAccessImpl.java" startLine="58" startPosition="38" endLine="59" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5814231631271810250" fileName="RefactoringAccessImpl.java" startLine="60" startPosition="5" endLine="61" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5814231631271803740" fileName="RefactoringAccessImpl.java" startLine="21" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RefactoringAccessImpl#(Ljetbrains/mps/ide/MPSCoreComponents;)V" />
-    <nodeInfo nodeId="5814231631271810238" fileName="RefactoringAccessImpl.java" startLine="57" startPosition="51" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5814231631271810164" fileName="RefactoringAccessImpl.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="5814231631271810168" fileName="RefactoringAccessImpl.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="5814231631271810219" fileName="RefactoringAccessImpl.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTargetChooser#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/ide/platform/refactoring/ModelElementTargetChooser;" />
-    <nodeInfo nodeId="5814231631271810209" fileName="RefactoringAccessImpl.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTargetChooser#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/ide/platform/refactoring/ModelElementTargetChooser;" />
-    <nodeInfo nodeId="3748064186690641041" fileName="RefactoringAccessImpl.java" startLine="46" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showRefactoringView#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/platform/refactoring/RefactoringViewAction;Ljetbrains/mps/ide/findusages/model/SearchResults;ZLjava/lang/String;)V" />
-    <nodeInfo nodeId="7396266131581082212" fileName="RefactoringAccessImpl.java" startLine="51" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showRefactoringView#(Ljetbrains/mps/refactoring/framework/RefactoringContext;Ljetbrains/mps/ide/platform/refactoring/RefactoringViewAction;Ljetbrains/mps/ide/findusages/model/SearchResults;ZLjava/lang/String;)V" />
-    <nodeInfo nodeId="5814231631271810172" fileName="RefactoringAccessImpl.java" startLine="32" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5814231631271810203" fileName="RefactoringAccessImpl.java" startLine="56" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringFacade#()Ljetbrains/mps/ide/platform/refactoring/RefactoringFacade;" />
-    <scopeInfo nodeId="5814231631271803743" fileName="RefactoringAccessImpl.java" startLine="22" startPosition="66" endLine="22" endPosition="66" />
-    <scopeInfo nodeId="5814231631271810167" fileName="RefactoringAccessImpl.java" startLine="25" startPosition="31" endLine="26" endPosition="40" />
-    <scopeInfo nodeId="5814231631271810171" fileName="RefactoringAccessImpl.java" startLine="29" startPosition="34" endLine="30" endPosition="40" />
-    <scopeInfo nodeId="5814231631271810177" fileName="RefactoringAccessImpl.java" startLine="35" startPosition="36" endLine="36" endPosition="70" />
-    <scopeInfo nodeId="5814231631271810226" fileName="RefactoringAccessImpl.java" startLine="39" startPosition="97" endLine="40" endPosition="50" />
-    <scopeInfo nodeId="5814231631271810216" fileName="RefactoringAccessImpl.java" startLine="43" startPosition="85" endLine="44" endPosition="49" />
-    <scopeInfo nodeId="5814231631271810239" fileName="RefactoringAccessImpl.java" startLine="58" startPosition="38" endLine="59" endPosition="52" />
-    <scopeInfo nodeId="5814231631271803740" fileName="RefactoringAccessImpl.java" startLine="21" startPosition="0" endLine="23" endPosition="3">
+    <nodeInfo nodeId="5814231631271810184" fileName="RefactoringAccessImpl.java" startLine="22" startPosition="31" endLine="23" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5814231631271810188" fileName="RefactoringAccessImpl.java" startLine="26" startPosition="34" endLine="27" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5814231631271810196" fileName="RefactoringAccessImpl.java" startLine="32" startPosition="36" endLine="33" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4930770434913670970" fileName="RefactoringAccessImpl.java" startLine="36" startPosition="97" endLine="37" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4930770434913670979" fileName="RefactoringAccessImpl.java" startLine="40" startPosition="85" endLine="41" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3748064186690642734" fileName="RefactoringAccessImpl.java" startLine="44" startPosition="155" endLine="45" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3748064186690642750" fileName="RefactoringAccessImpl.java" startLine="45" startPosition="82" endLine="46" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7396266131581082226" fileName="RefactoringAccessImpl.java" startLine="49" startPosition="177" endLine="50" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7396266131581082233" fileName="RefactoringAccessImpl.java" startLine="50" startPosition="122" endLine="51" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5814231631271803740" fileName="RefactoringAccessImpl.java" startLine="18" startPosition="94" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RefactoringAccessImpl#(Ljetbrains/mps/ide/MPSCoreComponents;)V" />
+    <nodeInfo nodeId="5814231631271810164" fileName="RefactoringAccessImpl.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <nodeInfo nodeId="5814231631271810168" fileName="RefactoringAccessImpl.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="5814231631271810219" fileName="RefactoringAccessImpl.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTargetChooser#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/ide/platform/refactoring/ModelElementTargetChooser;" />
+    <nodeInfo nodeId="5814231631271810209" fileName="RefactoringAccessImpl.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTargetChooser#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/ide/platform/refactoring/ModelElementTargetChooser;" />
+    <nodeInfo nodeId="3748064186690641041" fileName="RefactoringAccessImpl.java" startLine="43" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showRefactoringView#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/platform/refactoring/RefactoringViewAction;Ljetbrains/mps/ide/findusages/model/SearchResults;ZLjava/lang/String;)V" />
+    <nodeInfo nodeId="7396266131581082212" fileName="RefactoringAccessImpl.java" startLine="48" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showRefactoringView#(Ljetbrains/mps/refactoring/framework/RefactoringContext;Ljetbrains/mps/ide/platform/refactoring/RefactoringViewAction;Ljetbrains/mps/ide/findusages/model/SearchResults;ZLjava/lang/String;)V" />
+    <nodeInfo nodeId="5814231631271810172" fileName="RefactoringAccessImpl.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <scopeInfo nodeId="5814231631271803743" fileName="RefactoringAccessImpl.java" startLine="19" startPosition="66" endLine="19" endPosition="66" />
+    <scopeInfo nodeId="5814231631271810167" fileName="RefactoringAccessImpl.java" startLine="22" startPosition="31" endLine="23" endPosition="40" />
+    <scopeInfo nodeId="5814231631271810171" fileName="RefactoringAccessImpl.java" startLine="26" startPosition="34" endLine="27" endPosition="40" />
+    <scopeInfo nodeId="5814231631271810177" fileName="RefactoringAccessImpl.java" startLine="32" startPosition="36" endLine="33" endPosition="70" />
+    <scopeInfo nodeId="5814231631271810226" fileName="RefactoringAccessImpl.java" startLine="36" startPosition="97" endLine="37" endPosition="50" />
+    <scopeInfo nodeId="5814231631271810216" fileName="RefactoringAccessImpl.java" startLine="40" startPosition="85" endLine="41" endPosition="49" />
+    <scopeInfo nodeId="5814231631271803740" fileName="RefactoringAccessImpl.java" startLine="18" startPosition="94" endLine="20" endPosition="3">
       <varInfo nodeId="4450057996090661301" varName="coreComponents" />
     </scopeInfo>
-    <scopeInfo nodeId="3748064186690641052" fileName="RefactoringAccessImpl.java" startLine="47" startPosition="155" endLine="49" endPosition="101">
+    <scopeInfo nodeId="3748064186690641052" fileName="RefactoringAccessImpl.java" startLine="44" startPosition="155" endLine="46" endPosition="101">
       <varInfo nodeId="3748064186690642735" varName="refactoringView" />
     </scopeInfo>
-    <scopeInfo nodeId="7396266131581082225" fileName="RefactoringAccessImpl.java" startLine="52" startPosition="177" endLine="54" endPosition="106">
+    <scopeInfo nodeId="7396266131581082225" fileName="RefactoringAccessImpl.java" startLine="49" startPosition="177" endLine="51" endPosition="106">
       <varInfo nodeId="7396266131581082227" varName="refactoringView" />
     </scopeInfo>
-    <scopeInfo nodeId="5814231631271810164" fileName="RefactoringAccessImpl.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="5814231631271810168" fileName="RefactoringAccessImpl.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="5814231631271810219" fileName="RefactoringAccessImpl.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="5814231631271810164" fileName="RefactoringAccessImpl.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="5814231631271810168" fileName="RefactoringAccessImpl.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="5814231631271810219" fileName="RefactoringAccessImpl.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="5814231631271810222" varName="model" />
       <varInfo nodeId="5814231631271810220" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="5814231631271810209" fileName="RefactoringAccessImpl.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="5814231631271810209" fileName="RefactoringAccessImpl.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="5814231631271810212" varName="node" />
       <varInfo nodeId="5814231631271810210" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="5814231631271810206" fileName="RefactoringAccessImpl.java" startLine="57" startPosition="51" endLine="61" endPosition="31" />
-    <scopeInfo nodeId="3748064186690641041" fileName="RefactoringAccessImpl.java" startLine="46" startPosition="0" endLine="51" endPosition="0">
+    <scopeInfo nodeId="3748064186690641041" fileName="RefactoringAccessImpl.java" startLine="43" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="3748064186690641044" varName="callback" />
       <varInfo nodeId="3748064186690641048" varName="hasModelsToGenerate" />
       <varInfo nodeId="3748064186690643403" varName="name" />
       <varInfo nodeId="3748064186690641042" varName="project" />
       <varInfo nodeId="3748064186690641046" varName="searchResults" />
     </scopeInfo>
-    <scopeInfo nodeId="7396266131581082212" fileName="RefactoringAccessImpl.java" startLine="51" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="7396266131581082212" fileName="RefactoringAccessImpl.java" startLine="48" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="7396266131581082215" varName="callback" />
       <varInfo nodeId="7396266131581082219" varName="hasModelsToGenerate" />
       <varInfo nodeId="7396266131581082221" varName="name" />
       <varInfo nodeId="7396266131581082213" varName="refactoringContext" />
       <varInfo nodeId="7396266131581082217" varName="searchResults" />
     </scopeInfo>
-    <scopeInfo nodeId="5814231631271810172" fileName="RefactoringAccessImpl.java" startLine="32" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="5814231631271810203" fileName="RefactoringAccessImpl.java" startLine="56" startPosition="0" endLine="63" endPosition="0" />
-    <unitInfo nodeId="5814231631271803738" fileName="RefactoringAccessImpl.java" startLine="19" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.ide.refactoring.RefactoringAccessImpl" />
+    <scopeInfo nodeId="5814231631271810172" fileName="RefactoringAccessImpl.java" startLine="29" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="5814231631271803738" fileName="RefactoringAccessImpl.java" startLine="18" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ide.refactoring.RefactoringAccessImpl" />
   </root>
   <root nodeId="6188135140808769438">
     <nodeInfo nodeId="6188135140808769526" fileName="NodeHierarchyChooser.java" startLine="16" startPosition="56" endLine="17" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />

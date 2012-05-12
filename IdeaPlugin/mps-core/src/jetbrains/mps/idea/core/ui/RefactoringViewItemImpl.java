@@ -76,7 +76,7 @@ public class RefactoringViewItemImpl implements RefactoringViewItem {
     for (SearchResult searchResult : (List<SearchResult>) searchResults.getAliveResults()) {
       Object usage = searchResult.getObject();
       if (usage instanceof SNode) {
-        usages.add(new NodeUsage((SNode) usage, myProject));
+        usages.add(new NodeUsage((SNode) usage, myProject, searchResult.getCategory()));
       }
     }
 
@@ -85,7 +85,6 @@ public class RefactoringViewItemImpl implements RefactoringViewItem {
 
     usageView = viewManager.showUsages(usageTargets.toArray(new UsageTarget[usageTargets.size()]), usages.toArray(new Usage[usages.size()]), presentation);
     String canNotMakeString = RefactoringBundle.message("usageView.need.reRun");
-
     usageView.addPerformOperationAction(new Runnable() {
       @Override
       public void run() {
