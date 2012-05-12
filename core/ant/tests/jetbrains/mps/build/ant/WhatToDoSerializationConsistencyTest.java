@@ -18,6 +18,7 @@ package jetbrains.mps.build.ant;
 import junit.framework.TestCase;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
@@ -60,7 +61,7 @@ public class WhatToDoSerializationConsistencyTest extends TestCase {
     WhatToDo toDo = new WhatToDo();
 
     toDo.addLibrary("name1", new File("dir1").getAbsoluteFile(), false);
-    toDo.addLibrary("name2", new File("dir3").getAbsoluteFile(), true);
+    toDo.addLibrary("name2", new File("dir3").getAbsoluteFile(), false /*true*/);
     toDo.addLibrary("name3", new File("dir4").getAbsoluteFile(), false);
 
     testToDoConsistency(toDo);
@@ -92,20 +93,19 @@ public class WhatToDoSerializationConsistencyTest extends TestCase {
   }
 
   private void testToDoConsistency(WhatToDo toDo) {
-    WhatToDo toDoFromString = WhatToDo.fromCommandLine(toDo.toString());
-    WhatToDo toDoCloned = new WhatToDo();
-    toDo.cloneTo(toDoCloned);
-
     try {
-      assertEquals(toDoCloned.toString(), toDoFromString.toString());
+      WhatToDo toDoFromString = WhatToDo.fromDumpInFile(toDo.dumpToTmpFile());
+      WhatToDo toDoCloned = new WhatToDo();
+      toDo.cloneTo(toDoCloned);
+
       assertDeepObjectEquals(toDoCloned, toDoFromString);
-      assertEquals(toDo.toString(), toDoFromString.toString());
       assertDeepObjectEquals(toDo, toDoFromString);
-      assertEquals(toDoCloned.toString(), toDo.toString());
       assertDeepObjectEquals(toDoCloned, toDo);
     } catch (IllegalAccessException e) {
       fail(e.getMessage());
     } catch (InvocationTargetException e) {
+      fail(e.getMessage());
+    } catch (FileNotFoundException e) {
       fail(e.getMessage());
     }
   }

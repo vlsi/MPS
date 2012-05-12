@@ -46,7 +46,7 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
       fqName = InternUtil.intern(fqName);
       try {
         synchronized (LOADING_LOCK) {
-          return Class.forName(fqName, false, myClassLoader);
+          return myClassLoader.loadClass(fqName);
         }
       } catch (ClassNotFoundException e) {
         return null;

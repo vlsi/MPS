@@ -15,8 +15,8 @@ import java.util.Set;
 import java.util.Hashtable;
 import org.apache.tools.ant.util.JavaEnvUtils;
 import java.io.FileNotFoundException;
-import org.apache.tools.ant.taskdefs.Execute;
 import java.io.IOException;
+import org.apache.tools.ant.taskdefs.Execute;
 import java.net.URL;
 import java.net.MalformedURLException;
 import java.net.URLClassLoader;
@@ -165,6 +165,8 @@ public abstract class MpsLoadTask extends Task {
       try {
         commandLine.add(myWhatToDo.dumpToTmpFile().getAbsolutePath());
       } catch (FileNotFoundException e) {
+        throw new BuildException(e);
+      } catch (IOException e) {
         throw new BuildException(e);
       }
       Execute exe = new Execute(getExecuteStreamHandler());

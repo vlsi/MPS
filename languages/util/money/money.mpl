@@ -5,7 +5,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="jetbrains.accounting.money#1186668571599" uuid="e7cb62aa-0cf6-4a49-bf95-a592cd1ba5e5">
+    <generator generatorUID="jetbrains.mps.baseLanguage.money#1186668571599" uuid="e7cb62aa-0cf6-4a49-bf95-a592cd1ba5e5">
       <models>
         <modelRoot path="${language_descriptor}/generator/baseLanguage/template" />
       </models>
@@ -18,7 +18,7 @@
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <generator generatorUID="e7cb62aa-0cf6-4a49-bf95-a592cd1ba5e5(jetbrains.accounting.money#1186668571599)" />
+            <generator generatorUID="e7cb62aa-0cf6-4a49-bf95-a592cd1ba5e5(jetbrains.mps.baseLanguage.money#1186668571599)" />
             <external-mapping>
               <mapping-node modelUID="r:00000000-0000-4000-0000-011c895903f8(jetbrains.mps.baseLanguage.money.generator.baseLanguage.template.main@generator)" nodeID="*" />
             </external-mapping>

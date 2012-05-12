@@ -15,7 +15,6 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
-import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.PrintStream;
 import jetbrains.mps.project.Solution;
@@ -82,7 +81,6 @@ public class GenModuleXmlWorker extends MpsWorker {
   public void writeFile(IFile file, ModuleReference moduleRef, IModule module, String extraText) {
 
     try {
-      OutputStreamWriter ow = new OutputStreamWriter(file.openOutputStream());
       PrintWriter wr = new PrintWriter(new PrintStream(file.openOutputStream()));
       wr.println("<module namespace=\"" + moduleRef.getModuleFqName() + "\" uuid=\"" + moduleRef.getModuleId() + "\" type=\"" + ((module instanceof Solution ?
         "solution" :

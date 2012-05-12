@@ -122,7 +122,7 @@
   
   <target name="java.compile.jetbrains.mps.execution.common" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.execution.common" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.execution.common" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.execution.common" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/runConfigurations/languages/common/source_gen" />
@@ -162,7 +162,7 @@
   
   <target name="java.compile.jetbrains.mps.execution.settings" depends="java.compile.jetbrains.mps.execution.common, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.execution.settings" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.execution.settings" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.execution.settings" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/runConfigurations/languages/settings/source_gen" />
@@ -206,7 +206,7 @@
   
   <target name="java.compile.jetbrains.mps.execution.util" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.execution.util" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.execution.util" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.execution.util" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/runConfigurations/languages/util/source_gen" />

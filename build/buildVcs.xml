@@ -69,7 +69,7 @@
   
   <target name="java.compile.vcs-core" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/vcs-core" />
-    <javac destdir="${build.tmp}/java/out/vcs-core" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/vcs-core" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src path="${mps_home}/plugins/vcs-core/core/source_gen" />
       <classpath>
@@ -98,7 +98,7 @@
   
   <target name="java.compile.vcs" depends="java.compile.vcs-core, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/vcs" />
-    <javac destdir="${build.tmp}/java/out/vcs" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/vcs" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <pathelement path="${mps_home}/plugins/vcs/source" />

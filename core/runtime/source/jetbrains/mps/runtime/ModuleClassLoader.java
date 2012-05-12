@@ -26,7 +26,6 @@ import java.net.URL;
 import java.util.*;
 
 public class ModuleClassLoader extends ClassLoader {
-  public static final Object LOCK = new Object();
   //this is for debug purposes (heap dumps)
   @SuppressWarnings({"UnusedDeclaration", "FieldCanBeLocal"})
   private boolean myDisposed;
@@ -40,32 +39,30 @@ public class ModuleClassLoader extends ClassLoader {
     myModule = module;
   }
 
-  protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
-    synchronized (LOCK) {
-      if (!myModule.canLoad()) throw new ClassNotFoundException(name);
+  protected synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+    if (!myModule.canLoad()) throw new ClassNotFoundException(name);
 
-      //This does not guarantee that if one class was loaded, it will be returned by sequential loadClass immediately,
-      //but only makes classloading faster.
-      if (myClasses.containsKey(name)) {
-        Class cl = myClasses.get(name);
-        if (cl == null) throw new ClassNotFoundException(name);
-        return cl;
-      }
+    //This does not guarantee that if one class was loaded, it will be returned by sequential loadClass immediately,
+    //but only makes classloading faster.
+    if (myClasses.containsKey(name)) {
+      Class cl = myClasses.get(name);
+      if (cl == null) throw new ClassNotFoundException(name);
+      return cl;
+    }
 
-      Class<?> clazz = null;
-      try {
-        clazz = findInSelfAndDependencies(name);
-        if (resolve) {
-          resolveClass(clazz);
-        }
-        return clazz;
-      } finally {
-        myClasses.put(name, clazz);
+    Class<?> clazz = null;
+    try {
+      clazz = findInSelfAndDependencies(name);
+      if (resolve) {
+        resolveClass(clazz);
       }
+      return clazz;
+    } finally {
+      myClasses.put(name, clazz);
     }
   }
 
-  private Class<?> loadFromSelf(String name) {
+  private synchronized Class<?> loadFromSelf(String name) {
     if (myModule.canLoadFromSelf()) {
       Class c = findLoadedClass(name);
       if (c != null) return c;
@@ -84,7 +81,7 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   private Class<?> loadFromParent(String name) throws ClassNotFoundException {
-    return getParent().loadClass(name);
+    return Class.forName(name, false, getParent());
   }
 
   private Class<?> findInSelfAndDependencies(String name) throws ClassNotFoundException {
@@ -102,7 +99,7 @@ public class ModuleClassLoader extends ClassLoader {
 
       if (m.canLoadFromSelf() && m.canFindClass(name)) {
         //here it will load with self, with any values as two last parameters
-        return m.getClassLoader().loadFromSelf(name);
+        return Class.forName(name, false, m.getClassLoader());
       } else {
         queue.add(m);
       }
@@ -117,7 +114,7 @@ public class ModuleClassLoader extends ClassLoader {
           continue;
         }
         processedParentClassLoaders.add(classLoader.getParent());
-        return classLoader.loadFromParent(name);
+        return Class.forName(name, false, classLoader.getParent());
       } catch (ClassNotFoundException e) {
         //ignore
       }
