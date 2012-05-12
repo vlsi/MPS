@@ -97,7 +97,9 @@
     </copy>
     <mkdir dir="${build.layout}/MPS ${version}/plugins/svn4idea" />
     <copy todir="${build.layout}/MPS ${version}/plugins/svn4idea">
-      <fileset dir="${basedir}/plugins/svn4idea" />
+      <fileset dir="${basedir}/plugins/svn4idea">
+        <exclude name="**/*.zip" />
+      </fileset>
     </copy>
     <mkdir dir="${build.layout}/MPS ${version}/plugins/git4idea" />
     <copy todir="${build.layout}/MPS ${version}/plugins/git4idea">
