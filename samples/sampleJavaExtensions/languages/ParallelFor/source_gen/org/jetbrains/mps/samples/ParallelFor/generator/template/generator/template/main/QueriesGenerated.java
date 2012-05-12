@@ -14,10 +14,21 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_8923957828369629274(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5337045848190803509(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.createUniqueName("latch", null);
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5337045848190803543(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.createUniqueName("exceptions", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_633195941006880942(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -30,6 +41,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_633195941006945119(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), "numberOfThreads");
+  }
+
+  public static Object referenceMacro_GetReferent_5337045848190718664(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getNode();
   }
 
   public static Object referenceMacro_GetReferent_7793246093815939787(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -70,5 +85,13 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_633195941006921760(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true);
+  }
+
+  public static Iterable sourceNodesQuery_5337045848190669725(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SetSequence.fromSet(StatementList_Behavior.call_uncaughtThrowables_3331512479731115649(SLinkOperations.getTarget(_context.getNode(), "body", true), false)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return it != SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~RuntimeException");
+      }
+    }).toListSequence();
   }
 }

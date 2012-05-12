@@ -79,8 +79,8 @@ __switch__:
 
     // The optional reference to a thread pool is set in the Inspector (Alt|Command + 2) 
     {
-      final CountDownLatch latch = new CountDownLatch(Sequence.fromIterable(numbers).count());
-      final List<Exception> exceptions = new CopyOnWriteArrayList<Exception>();
+      final CountDownLatch latch_i0a = new CountDownLatch(Sequence.fromIterable(numbers).count());
+      final List<Exception> exceptions_i0a = new CopyOnWriteArrayList<Exception>();
 
       for (final int a : Collections.unmodifiableList(ListSequence.fromListWithValues(new ArrayList<Integer>(), numbers))) {
 
@@ -89,14 +89,15 @@ __switch__:
         Runnable runnable = new Runnable() {
           public void run() {
             try {
+              System.out.println("FooBar");
               log("Starting calculation for number " + localA + " in thread " + Thread.currentThread());
               ParallelForSample.sleep(localA * 1000);
               // External (compiled) method calls can be annotated as thread-safe to indicate that they are safe to call 
               log("Finished calculation for number " + localA + " in thread " + Thread.currentThread());
             } catch (RuntimeException e) {
-              ListSequence.fromList(exceptions).addElement(e);
+              ListSequence.fromList(exceptions_i0a).addElement(e);
             } finally {
-              latch.countDown();
+              latch_i0a.countDown();
             }
           }
         };
@@ -105,12 +106,12 @@ __switch__:
 
       }
       try {
-        latch.await();
+        latch_i0a.await();
       } catch (InterruptedException e) {
-        ListSequence.fromList(exceptions).addElement(e);
+        ListSequence.fromList(exceptions_i0a).addElement(e);
       }
-      if (ListSequence.fromList(exceptions).isNotEmpty()) {
-        throw new ParallelLoopException("Some parallel calculations failed", exceptions);
+      if (ListSequence.fromList(exceptions_i0a).isNotEmpty()) {
+        throw new ParallelLoopException("Some parallel calculations failed", exceptions_i0a);
       }
 
     }
@@ -128,8 +129,8 @@ __switch__:
     final AtomicInteger counter = new AtomicInteger(0);
 
     {
-      final CountDownLatch latch = new CountDownLatch(Sequence.fromIterable(numbers).count());
-      final List<Exception> exceptions = new CopyOnWriteArrayList<Exception>();
+      final CountDownLatch latch_w0a = new CountDownLatch(Sequence.fromIterable(numbers).count());
+      final List<Exception> exceptions_w0a = new CopyOnWriteArrayList<Exception>();
 
       for (final int b : Collections.unmodifiableList(ListSequence.fromListWithValues(new ArrayList<Integer>(), numbers))) {
 
@@ -138,6 +139,7 @@ __switch__:
         Runnable runnable = new Runnable() {
           public void run() {
             try {
+              System.out.println("FooBar");
               log("Touching " + doNotMessupWith);
 
               int messupWithMeSinceImlocal = 1;
@@ -156,9 +158,9 @@ __switch__:
 
               ParallelForSample.sleep(1000);
             } catch (RuntimeException e) {
-              ListSequence.fromList(exceptions).addElement(e);
+              ListSequence.fromList(exceptions_w0a).addElement(e);
             } finally {
-              latch.countDown();
+              latch_w0a.countDown();
             }
           }
         };
@@ -167,12 +169,12 @@ __switch__:
 
       }
       try {
-        latch.await();
+        latch_w0a.await();
       } catch (InterruptedException e) {
-        ListSequence.fromList(exceptions).addElement(e);
+        ListSequence.fromList(exceptions_w0a).addElement(e);
       }
-      if (ListSequence.fromList(exceptions).isNotEmpty()) {
-        throw new ParallelLoopException("Some parallel calculations failed", exceptions);
+      if (ListSequence.fromList(exceptions_w0a).isNotEmpty()) {
+        throw new ParallelLoopException("Some parallel calculations failed", exceptions_w0a);
       }
 
     }
@@ -180,8 +182,8 @@ __switch__:
     // Iterating over a collection of strings 
     // No thread pool is set (Alt|Command + 2) so using threads directly 
     {
-      final CountDownLatch latch = new CountDownLatch(ListSequence.fromList(names).count());
-      final List<Exception> exceptions = new CopyOnWriteArrayList<Exception>();
+      final CountDownLatch latch_ab0a = new CountDownLatch(ListSequence.fromList(names).count());
+      final List<Exception> exceptions_ab0a = new CopyOnWriteArrayList<Exception>();
 
       for (final String c : Collections.unmodifiableList(ListSequence.fromListWithValues(new ArrayList<String>(), names))) {
 
@@ -190,14 +192,15 @@ __switch__:
         Runnable runnable = new Runnable() {
           public void run() {
             try {
+              System.out.println("FooBar");
               log("Name: " + localA);
               if (localA == "Joe") {
                 throw new RuntimeException("test");
               }
             } catch (RuntimeException e) {
-              ListSequence.fromList(exceptions).addElement(e);
+              ListSequence.fromList(exceptions_ab0a).addElement(e);
             } finally {
-              latch.countDown();
+              latch_ab0a.countDown();
             }
           }
         };
@@ -206,12 +209,12 @@ __switch__:
 
       }
       try {
-        latch.await();
+        latch_ab0a.await();
       } catch (InterruptedException e) {
-        ListSequence.fromList(exceptions).addElement(e);
+        ListSequence.fromList(exceptions_ab0a).addElement(e);
       }
-      if (ListSequence.fromList(exceptions).isNotEmpty()) {
-        throw new ParallelLoopException("Some parallel calculations failed", exceptions);
+      if (ListSequence.fromList(exceptions_ab0a).isNotEmpty()) {
+        throw new ParallelLoopException("Some parallel calculations failed", exceptions_ab0a);
       }
 
     }

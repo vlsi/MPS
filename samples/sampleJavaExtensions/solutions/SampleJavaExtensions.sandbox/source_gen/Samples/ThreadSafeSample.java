@@ -41,8 +41,8 @@ public class ThreadSafeSample {
     final List<String> names = ListSequence.fromListAndArray(new ArrayList<String>(), "Joe", "Dave", "Alice");
 
     {
-      final CountDownLatch latch = new CountDownLatch(ListSequence.fromList(names).count());
-      final List<Exception> exceptions = new CopyOnWriteArrayList<Exception>();
+      final CountDownLatch latch_n0a = new CountDownLatch(ListSequence.fromList(names).count());
+      final List<Exception> exceptions_n0a = new CopyOnWriteArrayList<Exception>();
 
       for (final String name : Collections.unmodifiableList(ListSequence.fromListWithValues(new ArrayList<String>(), names))) {
 
@@ -51,6 +51,7 @@ public class ThreadSafeSample {
         Runnable runnable = new Runnable() {
           public void run() {
             try {
+              System.out.println("FooBar");
               try {
                 // Notice no warning nor error reported 
                 box.store(localA);
@@ -60,9 +61,9 @@ public class ThreadSafeSample {
                 throw new RuntimeException(e);
               }
             } catch (RuntimeException e) {
-              ListSequence.fromList(exceptions).addElement(e);
+              ListSequence.fromList(exceptions_n0a).addElement(e);
             } finally {
-              latch.countDown();
+              latch_n0a.countDown();
             }
           }
         };
@@ -71,12 +72,12 @@ public class ThreadSafeSample {
 
       }
       try {
-        latch.await();
+        latch_n0a.await();
       } catch (InterruptedException e) {
-        ListSequence.fromList(exceptions).addElement(e);
+        ListSequence.fromList(exceptions_n0a).addElement(e);
       }
-      if (ListSequence.fromList(exceptions).isNotEmpty()) {
-        throw new ParallelLoopException("Some parallel calculations failed", exceptions);
+      if (ListSequence.fromList(exceptions_n0a).isNotEmpty()) {
+        throw new ParallelLoopException("Some parallel calculations failed", exceptions_n0a);
       }
 
     }
@@ -87,8 +88,8 @@ public class ThreadSafeSample {
     final String fixedValue = "fixed value";
 
     {
-      final CountDownLatch latch = new CountDownLatch(ListSequence.fromList(names).count());
-      final List<Exception> exceptions = new CopyOnWriteArrayList<Exception>();
+      final CountDownLatch latch_u0a = new CountDownLatch(ListSequence.fromList(names).count());
+      final List<Exception> exceptions_u0a = new CopyOnWriteArrayList<Exception>();
 
       for (final String name : Collections.unmodifiableList(ListSequence.fromListWithValues(new ArrayList<String>(), names))) {
 
@@ -97,12 +98,13 @@ public class ThreadSafeSample {
         Runnable runnable = new Runnable() {
           public void run() {
             try {
+              System.out.println("FooBar");
               String finalString = localA + fixedValue.toUpperCase() + fixedFieldValue;
               log("Result: " + finalString);
             } catch (RuntimeException e) {
-              ListSequence.fromList(exceptions).addElement(e);
+              ListSequence.fromList(exceptions_u0a).addElement(e);
             } finally {
-              latch.countDown();
+              latch_u0a.countDown();
             }
           }
         };
@@ -111,12 +113,12 @@ public class ThreadSafeSample {
 
       }
       try {
-        latch.await();
+        latch_u0a.await();
       } catch (InterruptedException e) {
-        ListSequence.fromList(exceptions).addElement(e);
+        ListSequence.fromList(exceptions_u0a).addElement(e);
       }
-      if (ListSequence.fromList(exceptions).isNotEmpty()) {
-        throw new ParallelLoopException("Some parallel calculations failed", exceptions);
+      if (ListSequence.fromList(exceptions_u0a).isNotEmpty()) {
+        throw new ParallelLoopException("Some parallel calculations failed", exceptions_u0a);
       }
 
     }

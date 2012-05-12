@@ -24,8 +24,8 @@ public class SimpleParallelForSample {
     final String value = "Set me to null to see that potential NPE is correctly detected inside a parallel for loop";
 
     {
-      final CountDownLatch latch = new CountDownLatch(Sequence.fromIterable(numbers).count());
-      final List<Exception> exceptions = new CopyOnWriteArrayList<Exception>();
+      final CountDownLatch latch_e0a = new CountDownLatch(Sequence.fromIterable(numbers).count());
+      final List<Exception> exceptions_e0a = new CopyOnWriteArrayList<Exception>();
 
       for (final int a : Collections.unmodifiableList(ListSequence.fromListWithValues(new ArrayList<Integer>(), numbers))) {
 
@@ -34,14 +34,15 @@ public class SimpleParallelForSample {
         Runnable runnable = new Runnable() {
           public void run() {
             try {
+              System.out.println("FooBar");
               SimpleParallelForSample.Logger.log("Current value: " + localA);
               SimpleParallelForSample.sleep(localA);
               value.length();
               SimpleParallelForSample.Logger.log("Done with " + localA);
             } catch (RuntimeException e) {
-              ListSequence.fromList(exceptions).addElement(e);
+              ListSequence.fromList(exceptions_e0a).addElement(e);
             } finally {
-              latch.countDown();
+              latch_e0a.countDown();
             }
           }
         };
@@ -50,12 +51,12 @@ public class SimpleParallelForSample {
 
       }
       try {
-        latch.await();
+        latch_e0a.await();
       } catch (InterruptedException e) {
-        ListSequence.fromList(exceptions).addElement(e);
+        ListSequence.fromList(exceptions_e0a).addElement(e);
       }
-      if (ListSequence.fromList(exceptions).isNotEmpty()) {
-        throw new ParallelLoopException("Some parallel calculations failed", exceptions);
+      if (ListSequence.fromList(exceptions_e0a).isNotEmpty()) {
+        throw new ParallelLoopException("Some parallel calculations failed", exceptions_e0a);
       }
 
     }

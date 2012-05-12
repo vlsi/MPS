@@ -50,6 +50,9 @@
       <property name="value" nameId="tpce.1105725733873" value="parallelFor" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5337045848190935661">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.1239354281271" resolveInfo="IMethodLike" />
+    </node>
   </root>
   <root id="8923957828369477803" />
   <root id="633195941006921788">
