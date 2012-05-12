@@ -18,34 +18,24 @@ package jetbrains.mps.ide.findusages;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.psi.impl.cache.impl.id.FileTypeIdIndexer;
 import com.intellij.psi.impl.cache.impl.id.IdIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
-import com.intellij.psi.impl.cache.impl.id.IdTableBuilding;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
-import com.intellij.util.indexing.FileContent;
-import com.intellij.util.text.CharArrayUtil;
-import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.findUsages.FindUsagesManagerFactory;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence.IndexEntry;
-import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
-import java.util.Map.Entry;
+import java.util.HashSet;
+import java.util.Set;
 
 public class FastFindUsagesManager extends FindUsagesManager implements ApplicationComponent {
   private final FindUsagesManagerFactory myProxyManager;
@@ -76,15 +66,6 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
   }
 
 
-
-
-
-
-
-
-
-
-
   @Override
   public Set<SNode> findInstances(SNode concept, IScope scope, ProgressMonitor monitor, boolean manageTasks) {
     if (monitor == null) monitor = new EmptyProgressMonitor();
@@ -107,7 +88,7 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
       for (SModelDescriptor model : models) {
         if ((model instanceof EditableSModelDescriptor) && ((EditableSModelDescriptor) model).isChanged()) {
           monitor.step(model.getLongName());
-          result.addAll(new ModelFindOperations(model).findInstances(concept, scope));
+          result.addAll(new ModelFindOperations(model).findInstances(concept, false));
           monitor.advance(1);
         }
         if (monitor.isCanceled()) {
@@ -141,7 +122,7 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
       for (SModelDescriptor model : models) {
         if ((model instanceof EditableSModelDescriptor) && ((EditableSModelDescriptor) model).isChanged()) {
           monitor.step(model.getLongName());
-          result.addAll(new ModelFindOperations(model).findExactInstances(concept, scope));
+          result.addAll(new ModelFindOperations(model).findInstances(concept, true));
           monitor.advance(1);
         }
         if (monitor.isCanceled()) {
@@ -209,11 +190,7 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
       SModelDescriptor sm = SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(file));
       if (sm == null) continue;
       sm.getSModel();
-      if (isExact) {
-        result.addAll(new ModelFindOperations(sm).findExactInstances(concept, scope));
-      } else {
-        result.addAll(new ModelFindOperations(sm).findInstances(concept, scope));
-      }
+      result.addAll(new ModelFindOperations(sm).findInstances(concept, isExact));
     }
     return result;
   }

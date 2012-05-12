@@ -21,14 +21,12 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
 
 class DefaultFindUsagesManager extends FindUsagesManager {
   private static final Logger LOG = Logger.getLogger(DefaultFindUsagesManager.class);
 
-  private HashMap<SNode, Map<SModelDescriptor, Set<SNode>>> myConceptsToKnownDescendantsInModelDescriptors = new HashMap<SNode, Map<SModelDescriptor, Set<SNode>>>();
   private ClassLoaderManager myClassLoaderManager;
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
     public void unload() {
@@ -101,7 +99,7 @@ class DefaultFindUsagesManager extends FindUsagesManager {
 
       for (SModelDescriptor model : models) {
         monitor.step(model.getLongName());
-        result.addAll(new ModelFindOperations(model).findInstances(concept, scope));
+        result.addAll(new ModelFindOperations(model).findInstances(concept, false));
         if (monitor.isCanceled()) {
           return result;
         }
@@ -134,7 +132,7 @@ class DefaultFindUsagesManager extends FindUsagesManager {
 
       for (SModelDescriptor model : models) {
         monitor.step(model.getLongName());
-        result.addAll(new ModelFindOperations(model).findExactInstances(concept, scope));
+        result.addAll(new ModelFindOperations(model).findInstances(concept, true));
         if (monitor.isCanceled()) {
           return result;
         }

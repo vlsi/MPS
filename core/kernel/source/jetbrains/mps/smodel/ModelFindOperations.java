@@ -117,7 +117,7 @@ public class ModelFindOperations {
     }
   }
 
-  public Set<SNode> findInstances(SNode concept, IScope scope) {
+  public Set<SNode> findInstances(SNode concept, boolean exact) {
     if (myDataSource == null) return Collections.emptySet();
 
     SModel model = myModelDescriptor.getSModel();
@@ -125,37 +125,22 @@ public class ModelFindOperations {
 
     Set<SNode> result = new HashSet<SNode>();
     for (SNode root : model.roots()) {
-      addInstances(root, concept, result, scope);
+      addInstances(root, concept, result, exact);
     }
     return result;
   }
 
-  public Set<SNode> findExactInstances(SNode concept, IScope scope) {
-    if (myDataSource == null) return Collections.emptySet();
-
-    SModel model = myModelDescriptor.getSModel();
-    if (model == null) return Collections.emptySet();
-
-    Set<SNode> result = new HashSet<SNode>();
-    for (SNode root : model.roots()) {
-      addExactInstances(root, concept, result, scope);
+  private void addInstances(SNode current, SNode concept, Set<SNode> result, boolean exact) {
+    if (exact) {
+      if (current.getConceptFqName().equals(NameUtil.nodeFQName(concept))) {
+        result.add(current);
+      }
+    } else {
+      if (current.isInstanceOfConcept(NameUtil.nodeFQName(concept))) result.add(current);
     }
-    return result;
-  }
 
-  private void addInstances(SNode current, SNode concept, Set<SNode> result, IScope scope) {
-    if (current.isInstanceOfConcept(NameUtil.nodeFQName(concept))) result.add(current);
     for (SNode child : current.getChildren()) {
-      addInstances(child, concept, result, scope);
-    }
-  }
-
-  private void addExactInstances(SNode current, SNode concept, Set<SNode> result, IScope scope) {
-    if (current.getConceptFqName().equals(NameUtil.nodeFQName(concept))) {
-      result.add(current);
-    }
-    for (SNode child : current.getChildren()) {
-      addExactInstances(child, concept, result, scope);
+      addInstances(child, concept, result, exact);
     }
   }
 }

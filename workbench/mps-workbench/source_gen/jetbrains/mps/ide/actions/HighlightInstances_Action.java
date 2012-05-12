@@ -19,7 +19,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.ModelFindOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.IScope;
 
 public class HighlightInstances_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -54,10 +53,6 @@ public class HighlightInstances_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("editorCell") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("scope", event.getData(MPSCommonDataKeys.SCOPE));
-    if (MapSequence.fromMap(_params).get("scope") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
     if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
@@ -78,7 +73,7 @@ public class HighlightInstances_Action extends BaseAction {
     try {
       NodeHighlightManager highlightManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager();
       EditorMessageOwner messageOwner = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner();
-      for (SNode ref : SetSequence.fromSet(new ModelFindOperations(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).findInstances(SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node"))), ((IScope) MapSequence.fromMap(_params).get("scope"))))) {
+      for (SNode ref : SetSequence.fromSet(new ModelFindOperations(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).findInstances(SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node"))), false))) {
         if (ref.getContainingRoot() == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getContainingRoot()) {
           highlightManager.mark(ref, HighlightConstants.INSTANCES_COLOR, "usage", messageOwner);
         }
