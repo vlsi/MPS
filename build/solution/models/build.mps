@@ -7793,7 +7793,22 @@
                 </node>
               </node>
               <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileExcludeSelector" typeId="3ior.5248329904288051111" id="7116777190972898140">
-                <property name="pattern" nameId="3ior.5248329904288051112" value="**/*.dll, **/*.exe, **/bin/linux/**, **/bin/mac/**, **/bin/nix/**, **/bin/win/**" />
+                <property name="pattern" nameId="3ior.5248329904288051112" value="**/*.dll" />
+              </node>
+              <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileExcludeSelector" typeId="3ior.5248329904288051111" id="6151822486848881303">
+                <property name="pattern" nameId="3ior.5248329904288051112" value="**/*.exe" />
+              </node>
+              <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileExcludeSelector" typeId="3ior.5248329904288051111" id="6151822486848881306">
+                <property name="pattern" nameId="3ior.5248329904288051112" value="**/linux/" />
+              </node>
+              <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileExcludeSelector" typeId="3ior.5248329904288051111" id="6151822486848881309">
+                <property name="pattern" nameId="3ior.5248329904288051112" value="**/mac/" />
+              </node>
+              <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileExcludeSelector" typeId="3ior.5248329904288051111" id="6151822486848881311">
+                <property name="pattern" nameId="3ior.5248329904288051112" value="**/nix/" />
+              </node>
+              <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileExcludeSelector" typeId="3ior.5248329904288051111" id="6151822486848881313">
+                <property name="pattern" nameId="3ior.5248329904288051112" value="**/win/" />
               </node>
             </node>
           </node>
@@ -8065,7 +8080,10 @@
                   </node>
                 </node>
                 <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileExcludeSelector" typeId="3ior.5248329904288051111" id="2050402128794954921">
-                  <property name="pattern" nameId="3ior.5248329904288051112" value="**/fsnotifier, **/fsnotifier64" />
+                  <property name="pattern" nameId="3ior.5248329904288051112" value="**/fsnotifier" />
+                </node>
+                <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileExcludeSelector" typeId="3ior.5248329904288051111" id="6151822486848881319">
+                  <property name="pattern" nameId="3ior.5248329904288051112" value="**/fsnotifier64" />
                 </node>
               </node>
             </node>
@@ -8547,7 +8565,7 @@
                   </node>
                 </node>
                 <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileExcludeSelector" typeId="3ior.5248329904288051111" id="2050402128794954980">
-                  <property name="pattern" nameId="3ior.5248329904288051112" value="**/fsnotifier, **/fsnotifier64" />
+                  <property name="pattern" nameId="3ior.5248329904288051112" value="**/*.exe" />
                 </node>
               </node>
             </node>
@@ -12086,7 +12104,13 @@
                     </node>
                   </node>
                   <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileExcludeSelector" typeId="3ior.5248329904288051111" id="5115063890373639794">
-                    <property name="pattern" nameId="3ior.5248329904288051112" value="**/*.class, **/classes_gen/**, **/classes_gen" />
+                    <property name="pattern" nameId="3ior.5248329904288051112" value="**/*.class" />
+                  </node>
+                  <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileExcludeSelector" typeId="3ior.5248329904288051111" id="6151822486848881315">
+                    <property name="pattern" nameId="3ior.5248329904288051112" value="**/classes_gen/**" />
+                  </node>
+                  <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileExcludeSelector" typeId="3ior.5248329904288051111" id="6151822486848881317">
+                    <property name="pattern" nameId="3ior.5248329904288051112" value="**/classes_gen" />
                   </node>
                 </node>
               </node>

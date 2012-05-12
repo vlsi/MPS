@@ -27,7 +27,12 @@
     <mkdir dir="${build.layout}/MPS ${version}/bin" />
     <copy todir="${build.layout}/MPS ${version}/bin">
       <fileset dir="${mps_home}/bin">
-        <exclude name="**/*.dll, **/*.exe, **/bin/linux/**, **/bin/mac/**, **/bin/nix/**, **/bin/win/**" />
+        <exclude name="**/*.dll" />
+        <exclude name="**/*.exe" />
+        <exclude name="**/linux/" />
+        <exclude name="**/mac/" />
+        <exclude name="**/nix/" />
+        <exclude name="**/win/" />
       </fileset>
     </copy>
     <mkdir dir="${build.layout}/MPS ${version}/languages" />
@@ -119,7 +124,8 @@
     <mkdir dir="${build.layout}/MPS-linux/bin/linux" />
     <copy todir="${build.layout}/MPS-linux/bin/linux">
       <fileset dir="${mps_home}/bin/linux">
-        <exclude name="**/fsnotifier, **/fsnotifier64" />
+        <exclude name="**/fsnotifier" />
+        <exclude name="**/fsnotifier64" />
       </fileset>
     </copy>
     <copy todir="${build.tmp}/default/linux_f755">
@@ -227,7 +233,7 @@
     <mkdir dir="${build.layout}/MPS-win/bin/win" />
     <copy todir="${build.layout}/MPS-win/bin/win">
       <fileset dir="${mps_home}/bin/win">
-        <exclude name="**/fsnotifier, **/fsnotifier64" />
+        <exclude name="**/*.exe" />
       </fileset>
     </copy>
     <mkdir dir="${build.layout}/MPS-win/help" />
