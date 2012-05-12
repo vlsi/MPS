@@ -67,6 +67,24 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
     myProxyManager.setManager(null);
   }
 
+  public void init() {
+
+  }
+
+  public void dispose() {
+
+  }
+
+
+
+
+
+
+
+
+
+
+
   @Override
   public Set<SNode> findInstances(SNode concept, IScope scope, ProgressMonitor monitor, boolean manageTasks) {
     if (monitor == null) monitor = new EmptyProgressMonitor();
@@ -136,14 +154,6 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
     return result;
   }
 
-  public void init() {
-
-  }
-
-  public void dispose() {
-
-  }
-
   public Set<SNode> findDescendants(SNode node, IScope scope) {
     Set<String> fqNames = LanguageHierarchyCache.getInstance().getDescendantsOfConcept(NameUtil.nodeFQName(node));
     Set<SNode> result = new HashSet<SNode>();
@@ -153,10 +163,6 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
       result.add(foundNode);
     }
     return result;
-  }
-
-  public Set<SReference> findUsages(SNode node, IScope scope) {
-    return findUsages(node, scope, (ProgressMonitor) null);
   }
 
   public Set<SReference> findUsages(SNode node, IScope scope, ProgressMonitor monitor) {

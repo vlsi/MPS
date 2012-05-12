@@ -30,8 +30,6 @@ public abstract class FindUsagesManager {
 
   public abstract Set<SNode> findDescendants(SNode node, IScope scope);
 
-  public abstract Set<SReference> findUsages(SNode node, IScope scope);
-
   public abstract Set<SReference> findUsages(SNode node, IScope scope, ProgressMonitor monitor);
 
   public abstract Set<SReference> findUsages(Set<SNode> nodes, IScope scope, ProgressMonitor monitor, boolean manageTasks);

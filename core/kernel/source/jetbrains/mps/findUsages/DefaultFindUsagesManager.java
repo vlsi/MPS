@@ -69,10 +69,6 @@ class DefaultFindUsagesManager extends FindUsagesManager {
     return result;
   }
 
-  public Set<SReference> findUsages(SNode node, IScope scope) {
-    return findUsages(node, scope, (ProgressMonitor) null);
-  }
-
   /**
    * Fully equivalent to <code>findUsages(CollectionsUtil.asSet(node),scope,progress)</code>
    * <p>
