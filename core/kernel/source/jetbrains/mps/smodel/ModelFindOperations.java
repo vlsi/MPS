@@ -44,29 +44,19 @@ public class ModelFindOperations {
         );
   }
 
-  public Set<SReference> findUsages(Set<SNode> nodes) {
-    if (myDataSource == null) return Collections.emptySet();
-
-    if (myNeedSearchForStrings) {
-      Set<String> strings = new HashSet<String>();
-      for (SNode node : nodes) {
-        strings.add(quoteSpecialXMLCharacters(node.getId()));
-      }
-      if (!myDataSource.containsSomeString(myModelDescriptor, strings)) return Collections.emptySet();
-    }
-
-    SModel model = myModelDescriptor.getSModel();
-    if (model == null) return Collections.emptySet();
-
-    Set<SReference> result = new HashSet<SReference>();
-    for (SNode root : model.roots()) {
-      addUsages(root, nodes, result);
-    }
-    return result;
+  private static String quoteSpecialXMLCharacters(String s) {
+    return s.replaceAll("<", "&lt;").replaceAll(">", "&gt;");
   }
 
-  public Set<SReference> findUsages(SNode node) {
-    return findUsages(Collections.singleton(node));
+  public boolean hasImportedModel(SModelDescriptor modelDescriptor) {
+    if (myDataSource == null) return false;
+    if (myNeedSearchForStrings && !myDataSource.containsString(myModelDescriptor, modelDescriptor.toString()))
+      return false;
+
+    SModel model = myModelDescriptor.getSModel();
+    if (model == null) return false;
+
+    return SModelOperations.getImportElement(model, modelDescriptor.getSModelReference()) != null;
   }
 
   public boolean hasUsages(Set<SModelReference> models) {
@@ -91,19 +81,29 @@ public class ModelFindOperations {
     return false;
   }
 
-  private static String quoteSpecialXMLCharacters(String s) {
-    return s.replaceAll("<", "&lt;").replaceAll(">", "&gt;");
-  }
+  public Set<SReference> findUsages(Set<SNode> nodes) {
+    if (myDataSource == null) return Collections.emptySet();
 
-  public boolean hasImportedModel(SModelDescriptor modelDescriptor) {
-    if (myDataSource == null) return false;
-    if (myNeedSearchForStrings && !myDataSource.containsString(myModelDescriptor, modelDescriptor.toString()))
-      return false;
+    if (myNeedSearchForStrings) {
+      Set<String> strings = new HashSet<String>();
+      for (SNode node : nodes) {
+        strings.add(quoteSpecialXMLCharacters(node.getId()));
+      }
+      if (!myDataSource.containsSomeString(myModelDescriptor, strings)) return Collections.emptySet();
+    }
 
     SModel model = myModelDescriptor.getSModel();
-    if (model == null) return false;
+    if (model == null) return Collections.emptySet();
 
-    return SModelOperations.getImportElement(model, modelDescriptor.getSModelReference()) != null;
+    Set<SReference> result = new HashSet<SReference>();
+    for (SNode root : model.roots()) {
+      addUsages(root, nodes, result);
+    }
+    return result;
+  }
+
+  public Set<SReference> findUsages(SNode node) {
+    return findUsages(Collections.singleton(node));
   }
 
   private void addUsages(SNode current, Set<SNode> nodes, Set<SReference> result) {
