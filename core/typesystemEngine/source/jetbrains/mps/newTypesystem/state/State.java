@@ -200,6 +200,7 @@ public class State {
   }
 
   private void testInputsResolved(Block block) {
+    if (!myBlocks.contains(block)) return;
     boolean concrete = true;
     for (ManyToManyMap<SNode, Block> map : myBlocksAndInputs.values()) {
       concrete = concrete && map.getBySecond(block).isEmpty();
