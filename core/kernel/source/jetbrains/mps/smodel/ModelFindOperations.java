@@ -60,7 +60,6 @@ public class ModelFindOperations {
   }
 
   public boolean hasUsages(Set<SModelReference> models) {
-    123
     if (myDataSource == null) return false;
 
     if (myNeedSearchForStrings) {

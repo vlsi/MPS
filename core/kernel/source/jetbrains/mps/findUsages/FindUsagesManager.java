@@ -76,32 +76,36 @@ public class FindUsagesManager implements CoreComponent {
     }
 
     Set<T> result = new HashSet<T>();
-    final ProgressMonitor finalMon = monitor != null ? monitor : new EmptyProgressMonitor();
+    if (monitor == null) monitor = new EmptyProgressMonitor();
 
-    finalMon.start("Finding usages...", changed.size() + notChanged.size());
+    monitor.start("Finding usages...", changed.size() + notChanged.size());
 
     try {
-      finalMon.step("Finding in cache");
+      monitor.step("Finding in cache");
+      Computable<Boolean> progressNotifier = new MyProgressNotifier(monitor);
       if (myCacheHandler != null) {
-        result.addAll(type.findInUnchanged(nodes, notChanged, myCacheHandler, new Computable<Boolean>() {
-          public Boolean compute() {
-            finalMon.advance(1);
-            return !finalMon.isCanceled();
-          }
-        }));
+        result.addAll(type.findInUnchanged(nodes, notChanged, myCacheHandler, progressNotifier));
       }
-      finalMon.advance(nodes.size());
+      monitor.advance(nodes.size());
 
-      finalMon.step("Finding in changed models");
-      result.addAll(type.findInChanged(nodes, changed, new Computable<Boolean>() {
-        public Boolean compute() {
-          finalMon.advance(1);
-          return !finalMon.isCanceled();
-        }
-      }));
+      monitor.step("Finding in changed models");
+      result.addAll(type.findInChanged(nodes, changed, progressNotifier));
     } finally {
-      finalMon.done();
+      monitor.done();
     }
     return result;
+  }
+
+  private static class MyProgressNotifier implements Computable<Boolean> {
+    private final ProgressMonitor myProgress;
+
+    public MyProgressNotifier(ProgressMonitor progress) {
+      myProgress = progress;
+    }
+
+    public Boolean compute() {
+      myProgress.advance(1);
+      return !myProgress.isCanceled();
+    }
   }
 }
