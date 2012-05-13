@@ -37,6 +37,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.regex.Matcher;
+import jetbrains.mps.build.behavior.BuildStringContainer_Behavior;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
@@ -368,7 +369,18 @@ public class QueriesGenerated {
               Pattern _pattern_0 = REGEXP_x583g4_a0a0b0b0a0a0a0c0a0c0x;
               Matcher _matcher_0 = _pattern_0.matcher(pattern);
               if (_matcher_0.find()) {
-                return pattern;
+                SNode container = (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.structure.BuildString") ?
+                  SNodeOperations.getParent(_context.getParentNode()) :
+                  _context.getParentNode()
+                );
+                if (SNodeOperations.isInstanceOf(container, "jetbrains.mps.build.structure.BuildStringContainer")) {
+                  if (BuildStringContainer_Behavior.call_isValidPart_9184644532456897464(SNodeOperations.cast(container, "jetbrains.mps.build.structure.BuildStringContainer"), pattern)) {
+                    return pattern;
+                  }
+                } else if (!(pattern.contains("$"))) {
+                  return pattern;
+                }
+                return "text";
               }
             }
             return null;

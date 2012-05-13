@@ -33,36 +33,16 @@
       <fileset dir="${artifacts.buildCore}/mps-core/languages" />
     </copy>
     <mkdir dir="${build.layout}/plugins/mps-core/lib" />
-    <copy todir="${build.layout}/plugins/mps-core/lib">
-      <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
-    </copy>
-    <copy todir="${build.layout}/plugins/mps-core/lib">
-      <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
-    </copy>
-    <copy todir="${build.layout}/plugins/mps-core/lib">
-      <fileset file="${artifacts.buildCore}/mps-core/lib/mps-backend.jar" />
-    </copy>
-    <copy todir="${build.layout}/plugins/mps-core/lib">
-      <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
-    </copy>
-    <copy todir="${build.layout}/plugins/mps-core/lib">
-      <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
-    </copy>
-    <copy todir="${build.layout}/plugins/mps-core/lib">
-      <fileset file="${artifacts.buildCore}/mps-core/lib/mps-core.jar" />
-    </copy>
-    <copy todir="${build.layout}/plugins/mps-core/lib">
-      <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
-    </copy>
-    <copy todir="${build.layout}/plugins/mps-core/lib">
-      <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
-    </copy>
-    <copy todir="${build.layout}/plugins/mps-core/lib">
-      <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
-    </copy>
-    <copy todir="${build.layout}/plugins/mps-core/lib">
-      <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
-    </copy>
+    <copy file="${artifacts.buildCore}/mps-core/lib/asm.jar" todir="${build.layout}/plugins/mps-core/lib" />
+    <copy file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" todir="${build.layout}/plugins/mps-core/lib" />
+    <copy file="${artifacts.buildCore}/mps-core/lib/mps-backend.jar" todir="${build.layout}/plugins/mps-core/lib" />
+    <copy file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" todir="${build.layout}/plugins/mps-core/lib" />
+    <copy file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" todir="${build.layout}/plugins/mps-core/lib" />
+    <copy file="${artifacts.buildCore}/mps-core/lib/mps-core.jar" todir="${build.layout}/plugins/mps-core/lib" />
+    <copy file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" todir="${build.layout}/plugins/mps-core/lib" />
+    <copy file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" todir="${build.layout}/plugins/mps-core/lib" />
+    <copy file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" todir="${build.layout}/plugins/mps-core/lib" />
+    <copy file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" todir="${build.layout}/plugins/mps-core/lib" />
     <mkdir dir="${build.tmp}/default/mps-plugin.jar" />
     <mkdir dir="${build.tmp}/default/mps-plugin.jar/META-INF" />
     <copy todir="${build.tmp}/default/mps-plugin.jar/META-INF">

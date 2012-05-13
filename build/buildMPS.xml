@@ -57,6 +57,7 @@
     <copy todir="${build.layout}/languages">
       <fileset dir="${artifacts.buildUiLanguages}/languages" />
     </copy>
+    <mkdir dir="${build.layout}/lib" />
     <copy todir="${build.layout}/lib">
       <fileset dir="${artifacts.IDEA}/lib" />
     </copy>

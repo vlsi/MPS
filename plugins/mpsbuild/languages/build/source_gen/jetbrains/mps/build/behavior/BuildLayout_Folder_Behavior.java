@@ -26,4 +26,8 @@ public class BuildLayout_Folder_Behavior {
   public static boolean virtual_isFolder_1368030936106753980(SNode thisNode) {
     return true;
   }
+
+  public static boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue) {
+    return !(propertyValue.contains("$") || propertyValue.contains("\\"));
+  }
 }
