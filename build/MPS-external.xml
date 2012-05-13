@@ -726,7 +726,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.generator.generationParameters" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.intentions" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.pattern" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.pattern.testLang" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.project" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.quotation" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.plugin" />
