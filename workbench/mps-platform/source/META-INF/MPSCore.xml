@@ -25,7 +25,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.ide.findusages.FastFindUsagesManager</implementation-class>
+      <implementation-class>jetbrains.mps.ide.findusages.MPSModelsCacheHandler</implementation-class>
     </component>
 
     <component>

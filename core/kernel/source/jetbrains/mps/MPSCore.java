@@ -21,7 +21,7 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.datatransfer.CopyPasteManager;
 import jetbrains.mps.datatransfer.PasteWrappersManager;
-import jetbrains.mps.findUsages.FindUsagesManagerFactory;
+import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.make.java.BLDependenciesCache;
@@ -100,7 +100,7 @@ public class MPSCore extends ComponentPlugin {
     init(new CopyPasteManager(classLoaderManager));
     init(new PasteWrappersManager(classLoaderManager));
     init(new BLDependenciesCache(myModelRepository));
-    init(new FindUsagesManagerFactory());
+    init(new FindUsagesManager());
     init(new DataFlowManager(classLoaderManager, myModuleRepository));
 
     init(new CheckersComponent());

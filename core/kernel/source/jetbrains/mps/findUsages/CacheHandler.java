@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2012 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,16 @@
  */
 package jetbrains.mps.findUsages;
 
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.util.Computable;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Set;
 
-/**
- * Evgeny Gryaznov, Sep 10, 2010
- */
-public interface UsagesList {
-  Set<SModel> getAffectedModels();
+public interface CacheHandler {
+  Set<SNode> findInstancesOfNodeInCache(Set<SModelDescriptor> models, Set<SNode> nodes, boolean exact, @Nullable Computable<Boolean> callback);
+
+  Set<SReference> findUsagesOfNodeInCache(Set<SModelDescriptor> models, Set<SNode> nodes, @Nullable Computable<Boolean> callback);
 }

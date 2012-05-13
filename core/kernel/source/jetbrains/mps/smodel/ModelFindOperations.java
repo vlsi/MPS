@@ -60,6 +60,7 @@ public class ModelFindOperations {
   }
 
   public boolean hasUsages(Set<SModelReference> models) {
+    123
     if (myDataSource == null) return false;
 
     if (myNeedSearchForStrings) {
@@ -79,68 +80,5 @@ public class ModelFindOperations {
       }
     }
     return false;
-  }
-
-  public Set<SReference> findUsages(Set<SNode> nodes) {
-    if (myDataSource == null) return Collections.emptySet();
-
-    if (myNeedSearchForStrings) {
-      Set<String> strings = new HashSet<String>();
-      for (SNode node : nodes) {
-        strings.add(quoteSpecialXMLCharacters(node.getId()));
-      }
-      if (!myDataSource.containsSomeString(myModelDescriptor, strings)) return Collections.emptySet();
-    }
-
-    SModel model = myModelDescriptor.getSModel();
-    if (model == null) return Collections.emptySet();
-
-    Set<SReference> result = new HashSet<SReference>();
-    for (SNode root : model.roots()) {
-      addUsages(root, nodes, result);
-    }
-    return result;
-  }
-
-  public Set<SReference> findUsages(SNode node) {
-    return findUsages(Collections.singleton(node));
-  }
-
-  private void addUsages(SNode current, Set<SNode> nodes, Set<SReference> result) {
-    for (SReference ref : current.getReferences()) {
-      if (nodes.contains(ref.getTargetNode())) {
-        result.add(ref);
-      }
-    }
-    for (SNode child : current.getChildren()) {
-      addUsages(child, nodes, result);
-    }
-  }
-
-  public Set<SNode> findInstances(SNode concept, boolean exact) {
-    if (myDataSource == null) return Collections.emptySet();
-
-    SModel model = myModelDescriptor.getSModel();
-    if (model == null) return Collections.emptySet();
-
-    Set<SNode> result = new HashSet<SNode>();
-    for (SNode root : model.roots()) {
-      addInstances(root, concept, result, exact);
-    }
-    return result;
-  }
-
-  private void addInstances(SNode current, SNode concept, Set<SNode> result, boolean exact) {
-    if (exact) {
-      if (current.getConceptFqName().equals(NameUtil.nodeFQName(concept))) {
-        result.add(current);
-      }
-    } else {
-      if (current.isInstanceOfConcept(NameUtil.nodeFQName(concept))) result.add(current);
-    }
-
-    for (SNode child : current.getChildren()) {
-      addInstances(child, concept, result, exact);
-    }
   }
 }
