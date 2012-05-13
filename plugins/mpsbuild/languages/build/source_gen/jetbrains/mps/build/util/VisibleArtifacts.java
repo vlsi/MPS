@@ -168,8 +168,17 @@ public class VisibleArtifacts {
   }
 
   public SNode findArtifact(Object id) {
-    if (id instanceof SNode && ((SNode) id).getModel().isTransient()) {
-      throw new IllegalArgumentException("findArtifact() cannot be called for transient nodes");
+    if (id == null) {
+      return null;
+    }
+    if (id instanceof SNode) {
+      SNode node = (SNode) id;
+      if (parentMap.containsKey(node) && SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_PathElement")) {
+        return SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildLayout_PathElement");
+      }
+      if (SNodeOperations.getModel(node).isTransient()) {
+        throw new IllegalArgumentException("findArtifact() cannot be called for transient nodes");
+      }
     }
     if (dependenciesHelper == null) {
       throw new IllegalStateException("findArtifact() should be called in generation context only");

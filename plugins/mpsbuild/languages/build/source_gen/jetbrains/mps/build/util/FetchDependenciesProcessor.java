@@ -91,7 +91,9 @@ public class FetchDependenciesProcessor {
 
     public void addAll(Iterable<SNode> nodes) {
       for (SNode n : Sequence.fromIterable(nodes)) {
-        add(n);
+        if (n != null) {
+          add(n);
+        }
       }
     }
   }

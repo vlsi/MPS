@@ -18,9 +18,10 @@ public class BuildLayout_Import_Behavior {
     }
 
     SNode target = SNodeOperations.as(artifacts.toOriginalNode(SLinkOperations.getTarget(thisNode, "target", false)), "jetbrains.mps.build.structure.BuildLayout_Node");
-    if (target != null && artifacts.contains(target)) {
+    SNode artifact = SNodeOperations.as(artifacts.findArtifact(target), "jetbrains.mps.build.structure.BuildLayout_Node");
+    if (artifact != null) {
       artifacts.needsFetch(SNodeOperations.getAncestorWhereConceptInList(thisNode, new String[]{"jetbrains.mps.build.structure.BuildLayout", "jetbrains.mps.build.structure.BuildNamedLayout"}, false, false));
-      builder.add(target);
+      builder.add(artifact);
     }
   }
 }

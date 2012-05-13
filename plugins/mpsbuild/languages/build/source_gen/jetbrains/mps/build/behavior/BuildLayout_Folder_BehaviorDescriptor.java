@@ -18,6 +18,10 @@ public class BuildLayout_Folder_BehaviorDescriptor extends BuildLayout_NamedCont
     BuildLayout_Folder_Behavior.virtual_unpack_7128123785277710736(thisNode, helper);
   }
 
+  public boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
+    return BuildLayout_Folder_Behavior.virtual_exports_6547494638219603457(thisNode, object);
+  }
+
   public boolean virtual_isFolder_1368030936106753980(SNode thisNode) {
     return BuildLayout_Folder_Behavior.virtual_isFolder_1368030936106753980(thisNode);
   }
