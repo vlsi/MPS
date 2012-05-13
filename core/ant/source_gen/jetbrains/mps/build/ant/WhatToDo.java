@@ -16,10 +16,6 @@ import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
 import org.apache.tools.ant.BuildException;
 import org.jdom.Element;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import jetbrains.mps.build.ant.generation.TestGenerationOnTeamcity;
@@ -219,23 +215,23 @@ public class WhatToDo {
 
   private Element prepareData() {
     Element data = new Element(ELEMENT_TODO);
-    for (File f : SetSequence.fromSet(myModels)) {
+    for (File f : myModels) {
       data.addContent(new Element(ELEMENT_MODEL).setAttribute(PATH, f.getAbsolutePath()));
     }
-    for (File f : SetSequence.fromSet(myModules)) {
+    for (File f : myModules) {
       data.addContent(new Element(ELEMENT_MODULE).setAttribute(PATH, f.getAbsolutePath()));
     }
-    for (File f : SetSequence.fromSet(myExcludedFromDiff)) {
+    for (File f : myExcludedFromDiff) {
       data.addContent(new Element(ELEMENT_EXCLUDEDFROMDIFF).setAttribute(PATH, f.getAbsolutePath()));
     }
-    for (IMapping<File, List<String>> p : MapSequence.fromMap(myMPSProjects)) {
-      Element elem = new Element(ELEMENT_PROJECT).setAttribute(PATH, p.key().getAbsolutePath());
-      for (String s : ListSequence.fromList(p.value())) {
+    for (File f : myMPSProjects.keySet()) {
+      Element elem = new Element(ELEMENT_PROJECT).setAttribute(PATH, f.getAbsolutePath());
+      for (String s : myMPSProjects.get(f)) {
         elem.addContent(new Element(ELEMENT_PROPERTY).setAttribute(VALUE, s));
       }
       data.addContent(elem);
     }
-    for (String p : ListSequence.fromList(myParameters)) {
+    for (String p : myParameters) {
       data.addContent(new Element(ELEMENT_PARAMETER).setAttribute(VALUE, p));
     }
     return data;
