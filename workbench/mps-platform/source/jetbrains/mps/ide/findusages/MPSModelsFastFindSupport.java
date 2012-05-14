@@ -24,12 +24,13 @@ import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.sun.istack.Nullable;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
-import jetbrains.mps.findUsages.FindUsagesManager;
+import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -39,11 +40,11 @@ import java.util.Set;
 
 public class MPSModelsFastFindSupport implements ApplicationComponent, FastFindSupport {
   public void initComponent() {
-    FindUsagesManager.getInstance().setCacheHandler(this);
+    FastFindSupportRegistry.getInstance().addFastFindSupport(RegularModelDataSource.FAST_FIND_ID, this);
   }
 
   public void disposeComponent() {
-    FindUsagesManager.getInstance().setCacheHandler(null);
+    FastFindSupportRegistry.getInstance().removeFastFindSupport(RegularModelDataSource.FAST_FIND_ID);
   }
 
   @NotNull
