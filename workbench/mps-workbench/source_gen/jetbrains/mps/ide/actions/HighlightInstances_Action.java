@@ -15,10 +15,14 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.smodel.ModelFindOperations;
-import jetbrains.mps.smodel.SModelDescriptor;
+import java.util.Set;
+import jetbrains.mps.findUsages.FindUsagesManager;
+import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.findUsages.SearchType;
+import jetbrains.mps.smodel.ModelsOnlyScope;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class HighlightInstances_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -74,7 +78,8 @@ public class HighlightInstances_Action extends BaseAction {
       NodeHighlightManager highlightManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager();
       EditorMessageOwner messageOwner = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner();
 
-      for (SNode ref : SetSequence.fromSet(new ModelFindOperations(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).findInstances(SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node"))), false))) {
+      Set<SNode> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton(SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node")))), SearchType.INSTANCES, new ModelsOnlyScope(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))), null);
+      for (SNode ref : SetSequence.fromSet(usages)) {
         if (ref.getContainingRoot() == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getContainingRoot()) {
           highlightManager.mark(ref, HighlightConstants.INSTANCES_COLOR, "usage", messageOwner);
         }

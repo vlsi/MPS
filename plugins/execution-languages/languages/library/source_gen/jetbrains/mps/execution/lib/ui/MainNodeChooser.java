@@ -17,6 +17,8 @@ import java.util.List;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.progress.ProgressMonitor;
 import java.util.Set;
+import java.util.Collections;
+import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -73,7 +75,7 @@ public class MainNodeChooser<C extends SNode> extends AbstractMainNodeChooser {
   }
 
   protected List<SNode> findToChooseFromOnInit(FindUsagesManager manager, ProgressMonitor monitor) {
-    Set<SNode> instances = manager.findInstances(this.myTargetConcept, false, myScope, monitor);
+    Set<SNode> instances = manager.findUsages(Collections.singleton(((SNode) this.myTargetConcept)), SearchType.INSTANCES, myScope, monitor);
     if (this.myAcceptor == null) {
       return ListSequence.fromListWithValues(new ArrayList<SNode>(), instances);
     } else {

@@ -11,6 +11,8 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.findUsages.FindUsagesManager;
+import java.util.Collections;
+import jetbrains.mps.findUsages.SearchType;
 
 public class ConceptInstances_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
@@ -33,7 +35,7 @@ public class ConceptInstances_Finder extends GeneratedFinder {
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 0);
     try {
-      List<SNode> resNodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findInstances(node, false, scope, monitor));
+      List<SNode> resNodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findUsages(Collections.singleton(node), SearchType.INSTANCES, scope, monitor));
       for (SNode resNode : resNodes) {
         ListSequence.fromList(_results).addElement(resNode);
       }

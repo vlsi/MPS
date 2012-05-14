@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.Set;
 import jetbrains.mps.findUsages.FindUsagesManager;
+import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Collection;
 import jetbrains.mps.smodel.Language;
@@ -28,7 +30,6 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.util.LinkedHashMap;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
-import java.util.Collections;
 
 public class RefactoringUtil {
   private static final Logger LOG = Logger.getLogger(RefactoringUtil.class);
@@ -53,8 +54,8 @@ public class RefactoringUtil {
     final List<SNode> availableRefactorings = new ArrayList<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        Set<SNode> newRefactorings = FindUsagesManager.getInstance().findInstances(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.refactoring.structure.Refactoring"), false, GlobalScope.getInstance(), null);
-        Set<SNode> oldRefactorings = FindUsagesManager.getInstance().findInstances(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.refactoring.structure.OldRefactoring"), false, GlobalScope.getInstance(), null);
+        Set<SNode> newRefactorings = FindUsagesManager.getInstance().findUsages(Collections.singleton(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.refactoring.structure.Refactoring")), SearchType.INSTANCES, GlobalScope.getInstance(), null);
+        Set<SNode> oldRefactorings = FindUsagesManager.getInstance().findUsages(Collections.singleton(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.refactoring.structure.OldRefactoring")), SearchType.INSTANCES, GlobalScope.getInstance(), null);
         availableRefactorings.addAll(newRefactorings);
         availableRefactorings.addAll(oldRefactorings);
       }

@@ -25,6 +25,8 @@ import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Set;
+import java.util.Collections;
+import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
@@ -78,7 +80,7 @@ public class MultiConceptChooser extends AbstractMainNodeChooser {
       public Iterable<SNode> translate(Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
         SNode targetConcept = it._0();
         final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> function = it._1();
-        Set<SNode> instances = manager.findInstances(targetConcept, false, myScope, monitor);
+        Set<SNode> instances = manager.findUsages(Collections.singleton(targetConcept), SearchType.INSTANCES, myScope, monitor);
         if (function == null) {
           return ListSequence.fromListWithValues(new ArrayList<SNode>(), instances);
         } else {

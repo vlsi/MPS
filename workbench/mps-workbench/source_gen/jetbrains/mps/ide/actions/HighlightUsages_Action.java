@@ -19,7 +19,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.util.Set;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.ModelFindOperations;
+import jetbrains.mps.findUsages.FindUsagesManager;
+import java.util.Collections;
+import jetbrains.mps.findUsages.SearchType;
+import jetbrains.mps.smodel.ModelsOnlyScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.EditorMessage;
@@ -73,7 +76,7 @@ public class HighlightUsages_Action extends BaseAction {
           NodeHighlightManager highlightManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager();
           EditorMessageOwner messageOwner = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner();
           SNode node = ((EditorCell) MapSequence.fromMap(_params).get("editorCell")).getSNodeWRTReference();
-          Set<SReference> usages = new ModelFindOperations(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).findUsages(node);
+          Set<SReference> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton(node), SearchType.USAGES, new ModelsOnlyScope(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))), null);
           boolean highlight = highlightManager.getMessagesFor(node, messageOwner).isEmpty();
           if (SNodeOperations.getContainingRoot(node) == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getContainingRoot()) {
             if (highlight) {
