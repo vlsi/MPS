@@ -6,8 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.MacrosFactory;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Solution;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.io.File;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -22,10 +24,8 @@ import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.PathManager;
@@ -58,7 +58,11 @@ public class Module_Behavior {
   }
 
   public static List<SNode> call_getSourcesDirectories_1775602641704992067(SNode thisNode) {
-    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<String>(), Module_Behavior.call_getModule_1213877515148(thisNode).getSourcePaths())).select(new ISelector<String, String>() {
+    IModule module = Module_Behavior.call_getModule_1213877515148(thisNode);
+    if (module instanceof Solution && !(module.isCompileInMPS())) {
+      return new ArrayList<SNode>();
+    }
+    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<String>(), module.getSourcePaths())).select(new ISelector<String, String>() {
       public String select(String it) {
         return it.replace(File.separator, Util.SEPARATOR);
       }

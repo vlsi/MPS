@@ -8,9 +8,7 @@
   
   <target name="assemble" depends="classes, fetchDependencies">
     <mkdir dir="${build.layout}/as" />
-    <copy todir="${build.layout}/as">
-      <fileset file="${artifacts.buildB}/result/A-${buildA.aver}/A/a.txt" />
-    </copy>
+    <copy file="${artifacts.buildB}/result/A-${buildA.aver}/A/a.txt" todir="${build.layout}/as" />
     <echo file="${build.layout}/variables.properties">buildA.aver=${buildA.aver}</echo>
   </target>
   

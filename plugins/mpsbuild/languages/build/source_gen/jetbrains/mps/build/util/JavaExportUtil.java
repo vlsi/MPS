@@ -10,15 +10,15 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 public class JavaExportUtil {
   public JavaExportUtil() {
   }
 
-  public static Iterable<SNode> requireLibrary(VisibleArtifacts artifacts, SNode library, SNode contextNode) {
+  public static Iterable<SNode> requireLibrary(final VisibleArtifacts artifacts, SNode library, SNode contextNode) {
     if (SNodeOperations.getContainingRoot(library) == SNodeOperations.getContainingRoot(contextNode)) {
       return null;
     }
@@ -71,7 +71,11 @@ public class JavaExportUtil {
     if (artifact != null) {
       artifacts.needsFetch(contextNode);
       if (SNodeOperations.isInstanceOf(artifact, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary")) {
-        return SLinkOperations.getTargets(SNodeOperations.cast(artifact, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary"), "children", true);
+        return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(artifact, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary"), "children", true)).select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SNodeOperations.as(artifacts.findArtifact(it), "jetbrains.mps.build.structure.BuildLayout_Node");
+          }
+        });
       } else {
         return Sequence.<SNode>singleton(artifact);
       }
@@ -146,7 +150,7 @@ public class JavaExportUtil {
 
     SNode artifact = null;
     if (SNodeOperations.isInstanceOf(target, "jetbrains.mps.build.structure.BuildLayout_Node")) {
-      artifact = SNodeOperations.cast(target, "jetbrains.mps.build.structure.BuildLayout_Node");
+      artifact = SNodeOperations.as(artifacts.findArtifact(target), "jetbrains.mps.build.structure.BuildLayout_Node");
     } else if (SNodeOperations.isInstanceOf(target, "jetbrains.mps.build.structure.BuildInputSingleFile")) {
       artifact = SNodeOperations.as(artifacts.findArtifact(SLinkOperations.getTarget(SNodeOperations.cast(target, "jetbrains.mps.build.structure.BuildInputSingleFile"), "path", true)), "jetbrains.mps.build.structure.BuildLayout_Node");
     }
@@ -165,7 +169,7 @@ public class JavaExportUtil {
 
     SNode artifact = null;
     if (SNodeOperations.isInstanceOf(target, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer")) {
-      artifact = SNodeOperations.cast(target, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer");
+      artifact = SNodeOperations.as(artifacts.findArtifact(target), "jetbrains.mps.build.structure.BuildLayout_AbstractContainer");
     } else if (SNodeOperations.isInstanceOf(target, "jetbrains.mps.build.structure.BuildInputSingleFolder")) {
       artifact = SNodeOperations.as(artifacts.findArtifact(SLinkOperations.getTarget(SNodeOperations.cast(target, "jetbrains.mps.build.structure.BuildInputSingleFolder"), "path", true)), "jetbrains.mps.build.structure.BuildLayout_AbstractContainer");
     }

@@ -9,6 +9,22 @@
   
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/languages" />
+    <mkdir dir="${build.layout}/languages/baseLanguage" />
+    <jar destfile="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.runtime-src.jar">
+      <fileset dir="${mps_home}/languages/baseLanguage/closures/runtime/source_gen" />
+    </jar>
+    <jar destfile="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime-src.jar">
+      <fileset dir="${mps_home}/languages/baseLanguage/collections/runtime/source_gen" />
+    </jar>
+    <jar destfile="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime.gwt-src.jar">
+      <fileset dir="${mps_home}/languages/baseLanguage/collections/runtime/source_gen.gwt" />
+      <zipfileset file="${mps_home}/languages/baseLanguage/collections/runtime/gwt/collections.runtime.gwt.msd" prefix="modules/collections.runtime.gwt" />
+      <zipfileset dir="${mps_home}/languages/baseLanguage/collections/runtime/gwt" includes="icons/**, resources/**" prefix="modules/collections.runtime.gwt" />
+      <zipfileset dir="${mps_home}/languages/baseLanguage/collections/runtime/gwt" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/collections.runtime.gwt/" />
+    </jar>
+    <jar destfile="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.runtime-src.jar">
+      <fileset dir="${mps_home}/languages/baseLanguage/tuples/runtime/source_gen" />
+    </jar>
     <mkdir dir="${build.layout}/languages/util" />
     <mkdir dir="${build.layout}/languages/util/ui" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.plugin.standalone.jar" />
@@ -381,7 +397,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.ide.uiLanguage" depends="java.compile.uiLanguage.runtime, java.compile.jetbrains.mps.uiLanguage, java.compile.mps-workbench, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.ide.uiLanguage" depends="java.compile.uiLanguage.runtime, java.compile.jetbrains.mps.uiLanguage, java.compile.mps-workbench, java.compile.execution, java.compile.typesystem-ui, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ide.uiLanguage" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.ide.uiLanguage" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -399,6 +415,8 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.uiLanguage" />
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
+        <pathelement path="${build.tmp}/java/out/execution" />
+        <pathelement path="${build.tmp}/java/out/typesystem-ui" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -425,7 +443,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.plugin.standalone" depends="java.compile.mps-workbench, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.plugin.standalone" depends="java.compile.mps-workbench, java.compile.execution, java.compile.typesystem-ui, java.compile.uiLanguage.runtime, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.plugin.standalone" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.plugin.standalone" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -441,6 +459,9 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
+        <pathelement path="${build.tmp}/java/out/execution" />
+        <pathelement path="${build.tmp}/java/out/typesystem-ui" />
+        <pathelement path="${build.tmp}/java/out/uiLanguage.runtime" />
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />

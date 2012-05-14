@@ -24,6 +24,17 @@
   <property name="artifacts.IDEA" location="${idea_home}" />
   
   <target name="assemble" depends="fetchDependencies">
+    <mkdir dir="${build.layout}/bin" />
+    <copy todir="${build.layout}/bin">
+      <fileset dir="${mps_home}/bin">
+        <exclude name="**/*.dll" />
+        <exclude name="**/*.exe" />
+        <exclude name="**/linux/" />
+        <exclude name="**/mac/" />
+        <exclude name="**/nix/" />
+        <exclude name="**/win/" />
+      </fileset>
+    </copy>
     <mkdir dir="${build.layout}/languages" />
     <copy todir="${build.layout}/languages">
       <fileset dir="${artifacts.buildCore}/mps-core/languages" />
@@ -46,10 +57,13 @@
     <copy todir="${build.layout}/languages">
       <fileset dir="${artifacts.buildUiLanguages}/languages" />
     </copy>
-    <copy todir="${build.layout}/lib">
-      <fileset dir="${artifacts.IDEA}/lib" />
-    </copy>
     <mkdir dir="${build.layout}/lib" />
+    <copy todir="${build.layout}/lib">
+      <fileset dir="${artifacts.IDEA}/lib">
+        <exclude name="src/" />
+        <exclude name="ant/docs.zip" />
+      </fileset>
+    </copy>
     <copy todir="${build.layout}/lib">
       <fileset dir="${artifacts.buildCore}/mps-core/lib" />
     </copy>
@@ -114,12 +128,19 @@
     </copy>
     <mkdir dir="${build.layout}/plugins/svn4idea" />
     <copy todir="${build.layout}/plugins/svn4idea">
-      <fileset dir="${basedir}/plugins/svn4idea" />
+      <fileset dir="${basedir}/plugins/svn4idea">
+        <exclude name="**/*.zip" />
+      </fileset>
     </copy>
     <mkdir dir="${build.layout}/plugins/git4idea" />
     <copy todir="${build.layout}/plugins/git4idea">
-      <fileset dir="${basedir}/plugins/git4idea" />
+      <fileset dir="${basedir}/plugins/git4idea">
+        <exclude name="**/*.zip" />
+      </fileset>
     </copy>
+    <zip destfile="${build.layout}/samples.zip">
+      <zipfileset dir="${basedir}/samples" prefix="MPSSamples" />
+    </zip>
     <copy todir="${build.layout}">
       <fileset dir="${basedir}" includes="help/**" />
     </copy>
@@ -132,6 +153,9 @@
     </copy>
     <copy todir="${build.layout}">
       <fileset file="${basedir}/releaseNotes.txt" />
+    </copy>
+    <copy todir="${build.layout}">
+      <fileset file="${basedir}/entryPoints.xml" />
     </copy>
     <echo file="${build.layout}/variables.properties">buildMPS.build.number=${build.number}${line.separator}buildMPS.version=${version}${line.separator}buildMPS.build.vcs.number=${build.vcs.number}${line.separator}buildMPS.teamcity.buildConfName=${teamcity.buildConfName}</echo>
   </target>
