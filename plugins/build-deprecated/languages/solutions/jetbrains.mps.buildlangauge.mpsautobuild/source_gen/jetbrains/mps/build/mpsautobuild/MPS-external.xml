@@ -142,7 +142,6 @@
     <mkdir dir="${deploy.dir}/MPS/languages/util/ypath" />
     <mkdir dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.gwt.runtime" />
     <mkdir dir="${deploy.dir}/MPS/languages/util/ui" />
-    <mkdir dir="${deploy.dir}/MPS/languages/util/bash" />
     <mkdir dir="${deploy.dir}/MPS/languages/util/quickQueryLanguage" />
     <mkdir dir="${deploy.dir}/MPS/languages/util/deprecated/ui" />
     <mkdir dir="${deploy.dir}/MPS/languages/util/deprecated/xml" />
@@ -520,6 +519,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.build.mps.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.startup" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.bash" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide.build" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.ide.build.jar.tmp/modules" />
     <jar destfile="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.ide.build.jar" duplicate="preserve" filesonly="true">
@@ -830,8 +830,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.ui.swt.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.plugin.standalone" />
     <mkdir dir="${deploy.dir}/MPS/languages/util/ui" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.bash" />
-    <mkdir dir="${deploy.dir}/MPS/languages/util/bash" />
     <antcall target="MPS-languages.pack.jetbrains.mps.quickQueryLanguage" />
     <antcall target="MPS-languages.pack.jetbrains.mps.quickQueryLanguage.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.quickQuery.runtime" />
