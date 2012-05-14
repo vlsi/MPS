@@ -43,7 +43,7 @@
   <property name="jetbrains.mps.build.dependency.classes" value="${base_dir}/plugins/build-deprecated/languages/dependency/classes_gen" />
   <property name="jetbrains.mps.build.generictasks.classes" value="${base_dir}/plugins/build-deprecated/languages/generictasks/classes_gen" />
   <property name="jetbrains.mps.build.generictasks.pluginSolution.classes" value="${base_dir}/plugins/build-deprecated/languages/generictasks/solutions/pluginSolution/classes_gen" />
-  <property name="jetbrains.mps.build.gentest.classes" value="${base_dir}/plugins/build-deprecated/languages/gentest/classes_gen" />
+  <property name="jetbrains.mps.build.gentest.classes" value="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
   <property name="jetbrains.mps.build.mps.classes" value="${base_dir}/plugins/mpsbuild/languages/build.mps/classes_gen" />
   <property name="jetbrains.mps.build.mps.pluginSolution.classes" value="${base_dir}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.pluginSolution/classes_gen" />
   <property name="jetbrains.mps.build.mpsdist.classes" value="${base_dir}/plugins/build-deprecated/languages/solutions/jetbrains.mps.build.mpsdist/classes_gen" />
@@ -51,7 +51,7 @@
   <property name="jetbrains.mps.build.packaging.pluginSolution.classes" value="${base_dir}/plugins/build-deprecated/languages/packaging/solutions/pluginSolution/classes_gen" />
   <property name="jetbrains.mps.build.pluginSolution.classes" value="${base_dir}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.pluginSolution/classes_gen" />
   <property name="jetbrains.mps.build.property.classes" value="${base_dir}/plugins/build-deprecated/languages/property/classes_gen" />
-  <property name="jetbrains.mps.build.reduced.classes" value="${base_dir}/plugins/build-deprecated/languages/reduced/classes_gen" />
+  <property name="jetbrains.mps.build.reduced.classes" value="${base_dir}/languages/util/buildlanguage/languages/reduced/classes_gen" />
   <property name="jetbrains.mps.build.startup.classes" value="${base_dir}/languages/mpsbuild/startup/classes_gen" />
   <property name="jetbrains.mps.build.workflow.classes" value="${base_dir}/plugins/mpsbuild/languages/build.workflow/classes_gen" />
   <property name="jetbrains.mps.buildlanguage.classes" value="${base_dir}/plugins/build-deprecated/languages/buildlanguage/classes_gen" />
@@ -400,8 +400,8 @@
     <path path="${base_dir}/plugins/build-deprecated/languages/buildlanguage/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.build.gentest_tjc.src">
-    <path path="${base_dir}/plugins/build-deprecated/languages/gentest/source_gen" />
-    <path path="${base_dir}/plugins/build-deprecated/languages/gentest/test_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/source_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.build.mps_tjc.src">
     <path path="${base_dir}/plugins/mpsbuild/languages/build.mps/source_gen" />
@@ -428,8 +428,8 @@
     <path path="${base_dir}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.pluginSolution/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.build.reduced_tjc.src">
-    <path path="${base_dir}/plugins/build-deprecated/languages/reduced/source_gen" />
-    <path path="${base_dir}/plugins/build-deprecated/languages/reduced/test_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/reduced/source_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/reduced/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.build.startup_tjc.src">
     <path path="${base_dir}/languages/mpsbuild/startup/source_gen" />
@@ -3084,7 +3084,7 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.build.gentest_tjc.classpaths">
-    <path path="${base_dir}/plugins/build-deprecated/languages/gentest/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/ant/classes" />
@@ -3123,6 +3123,7 @@
     <path path="${base_dir}/languages/languageDesign/scopes/runtime/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/traceable/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
@@ -3158,7 +3159,6 @@
     <path path="${base_dir}/lib/trove4j.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
-    <path path="${base_dir}/plugins/build-deprecated/languages/gentest/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
@@ -3683,7 +3683,7 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.build.reduced_tjc.classpaths">
-    <path path="${base_dir}/plugins/build-deprecated/languages/reduced/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/reduced/classes_gen" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -3703,6 +3703,7 @@
     <path path="${base_dir}/languages/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/languages/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/reduced/classes_gen" />
     <path path="${base_dir}/lib/annotations.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
@@ -3720,7 +3721,6 @@
     <path path="${base_dir}/lib/trove4j.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
-    <path path="${base_dir}/plugins/build-deprecated/languages/reduced/classes_gen" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -12031,21 +12031,21 @@
   <target name="compile.cycle.jetbrains.mps.build.gentest_tjc" depends="compile.cycle.jetbrains.mps.build.dependency_tjc">
     <property name="classes.dump" value="${jetbrains.mps.build.gentest.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/plugins/build-deprecated/languages/gentest/source_gen" />
-    <mkdir dir="${base_dir}/plugins/build-deprecated/languages/gentest/test_gen" />
+    <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/gentest/source_gen" />
+    <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/gentest/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.build.gentest.classes}" />
     <javac classpathref="cycle.jetbrains.mps.build.gentest_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.build.gentest_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.build.gentest.classes}">
-      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/build-deprecated/languages/gentest/source_gen" />
-      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/build-deprecated/languages/gentest/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/gentest/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/gentest/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.build.gentest_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.gentest.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
-        <path path="${base_dir}/plugins/build-deprecated/languages/gentest/source_gen" />
-        <path path="${base_dir}/plugins/build-deprecated/languages/gentest/test_gen" />
+        <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/source_gen" />
+        <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/test_gen" />
       </src>
     </javac>
     <delete dir="${classes.dump}" />
@@ -12185,21 +12185,21 @@
   <target name="compile.cycle.jetbrains.mps.build.reduced_tjc" depends="compile.cycle.jetbrains.mps.build.pluginSolution_tjc">
     <property name="classes.dump" value="${jetbrains.mps.build.reduced.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/plugins/build-deprecated/languages/reduced/source_gen" />
-    <mkdir dir="${base_dir}/plugins/build-deprecated/languages/reduced/test_gen" />
+    <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/reduced/source_gen" />
+    <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/reduced/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.build.reduced.classes}" />
     <javac classpathref="cycle.jetbrains.mps.build.reduced_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.build.reduced_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.build.reduced.classes}">
-      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/build-deprecated/languages/reduced/source_gen" />
-      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/plugins/build-deprecated/languages/reduced/test_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/reduced/source_gen" />
+      <fileset includes="**/*.png, **/trace.info" dir="${base_dir}/languages/util/buildlanguage/languages/reduced/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.build.reduced_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.reduced.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
-        <path path="${base_dir}/plugins/build-deprecated/languages/reduced/source_gen" />
-        <path path="${base_dir}/plugins/build-deprecated/languages/reduced/test_gen" />
+        <path path="${base_dir}/languages/util/buildlanguage/languages/reduced/source_gen" />
+        <path path="${base_dir}/languages/util/buildlanguage/languages/reduced/test_gen" />
       </src>
     </javac>
     <delete dir="${classes.dump}" />

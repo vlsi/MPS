@@ -5175,7 +5175,7 @@
   </target>
   <target name="pack.jetbrains.mps.build.reduced">
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/plugins/build-deprecated/languages/reduced/classes_gen" />
+    <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/reduced/classes_gen" />
     <mkdir dir="${deploy.dir}/MPS/languages/make/jetbrains.mps.build.reduced.jar.jtmp" />
     <echoxml file="${deploy.dir}/MPS/languages/make/jetbrains.mps.build.reduced.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.build.reduced" uuid="b608bb31-cbf1-4d56-a8e8-8fa2f751be68" type="language">
@@ -5199,21 +5199,21 @@
       </module>
     </echoxml>
     <jar destfile="${deploy.dir}/MPS/languages/make/jetbrains.mps.build.reduced-src.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset dir="${base_dir}/plugins/build-deprecated/languages/reduced/source_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset dir="${base_dir}/plugins/build-deprecated/languages/reduced/test_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset file="${base_dir}/plugins/build-deprecated/languages/reduced/reduced.mpl" prefix="module" />
-      <zipfileset dir="${base_dir}/plugins/build-deprecated/languages/reduced/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="${base_dir}/languages/util/buildlanguage/languages/reduced/source_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset dir="${base_dir}/languages/util/buildlanguage/languages/reduced/test_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset file="${base_dir}/languages/util/buildlanguage/languages/reduced/reduced.mpl" prefix="module" />
+      <zipfileset dir="${base_dir}/languages/util/buildlanguage/languages/reduced/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/languages/make/jetbrains.mps.build.reduced.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/languages/make/jetbrains.mps.build.reduced.jar.jtmp/module.xml" prefix="META-INF" />
-      <zipfileset dir="${base_dir}/plugins/build-deprecated/languages/reduced" includes="icons/**, resources/**" />
-      <zipfileset dir="${base_dir}/plugins/build-deprecated/languages/reduced/classes_gen" />
+      <zipfileset dir="${base_dir}/languages/util/buildlanguage/languages/reduced" includes="icons/**, resources/**" />
+      <zipfileset dir="${base_dir}/languages/util/buildlanguage/languages/reduced/classes_gen" />
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/make/jetbrains.mps.build.reduced.jar.jtmp" />
   </target>
   <target name="pack.jetbrains.mps.build.gentest">
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/plugins/build-deprecated/languages/gentest/classes_gen" />
+    <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <mkdir dir="${deploy.dir}/MPS/languages/make/jetbrains.mps.build.gentest.jar.jtmp" />
     <echoxml file="${deploy.dir}/MPS/languages/make/jetbrains.mps.build.gentest.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.build.gentest" uuid="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7" type="language">
@@ -5245,15 +5245,15 @@
       </module>
     </echoxml>
     <jar destfile="${deploy.dir}/MPS/languages/make/jetbrains.mps.build.gentest-src.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset dir="${base_dir}/plugins/build-deprecated/languages/gentest/source_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset dir="${base_dir}/plugins/build-deprecated/languages/gentest/test_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset file="${base_dir}/plugins/build-deprecated/languages/gentest/gentest.mpl" prefix="module" />
-      <zipfileset dir="${base_dir}/plugins/build-deprecated/languages/gentest/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="${base_dir}/languages/util/buildlanguage/languages/gentest/source_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset dir="${base_dir}/languages/util/buildlanguage/languages/gentest/test_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset file="${base_dir}/languages/util/buildlanguage/languages/gentest/gentest.mpl" prefix="module" />
+      <zipfileset dir="${base_dir}/languages/util/buildlanguage/languages/gentest/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/languages/make/jetbrains.mps.build.gentest.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/languages/make/jetbrains.mps.build.gentest.jar.jtmp/module.xml" prefix="META-INF" />
-      <zipfileset dir="${base_dir}/plugins/build-deprecated/languages/gentest" includes="icons/**, resources/**" />
-      <zipfileset dir="${base_dir}/plugins/build-deprecated/languages/gentest/classes_gen" />
+      <zipfileset dir="${base_dir}/languages/util/buildlanguage/languages/gentest" includes="icons/**, resources/**" />
+      <zipfileset dir="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/make/jetbrains.mps.build.gentest.jar.jtmp" />
   </target>
