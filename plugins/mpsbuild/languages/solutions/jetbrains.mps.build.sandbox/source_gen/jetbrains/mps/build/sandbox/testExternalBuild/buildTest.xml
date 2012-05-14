@@ -3,7 +3,7 @@
   <property name="build.tmp" location="${build.dir}/tmp/buildTest" />
   <property name="build.layout" location="${build.dir}/artifacts/buildTest" />
   <property name="artifacts.buildMPS" location="../../../../build/artifacts/buildMPS" />
-  <property file="${artifacts.buildMPS}/variables.properties" prefix="import.buildMPS" />
+  <property file="${artifacts.buildMPS}/build.properties" prefix="import.buildMPS" />
   <property name="buildMPS.build.number" value="${import.buildMPS.buildMPS.build.number}" />
   <property name="buildMPS.version" value="${import.buildMPS.buildMPS.version}" />
   <property name="buildMPS.build.vcs.number" value="${import.buildMPS.buildMPS.build.vcs.number}" />
@@ -34,7 +34,7 @@
       <zipfileset file="${basedir}/jetbrains.mps.build.sandbox/sandbox.msd" prefix="module" />
       <zipfileset dir="${basedir}/jetbrains.mps.build.sandbox/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
     </jar>
-    <echo file="${build.layout}/variables.properties">buildMPS.build.number=${buildMPS.build.number}${line.separator}buildMPS.version=${buildMPS.version}${line.separator}buildMPS.build.vcs.number=${buildMPS.build.vcs.number}${line.separator}buildMPS.teamcity.buildConfName=${buildMPS.teamcity.buildConfName}</echo>
+    <echo file="${build.layout}/build.properties">buildMPS.build.number=${buildMPS.build.number}${line.separator}buildMPS.version=${buildMPS.version}${line.separator}buildMPS.build.vcs.number=${buildMPS.build.vcs.number}${line.separator}buildMPS.teamcity.buildConfName=${buildMPS.teamcity.buildConfName}</echo>
   </target>
   
   <target name="buildDependents">

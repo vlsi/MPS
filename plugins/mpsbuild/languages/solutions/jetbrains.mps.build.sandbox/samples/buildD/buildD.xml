@@ -3,14 +3,14 @@
   <property name="build.tmp" location="${build.dir}/tmp/buildD" />
   <property name="build.layout" location="${build.dir}/artifacts/buildD" />
   <property name="artifacts.buildA" location="${build.dir}/artifacts/buildA" />
-  <property file="${artifacts.buildA}/variables.properties" prefix="import.buildA" />
+  <property file="${artifacts.buildA}/build.properties" prefix="import.buildA" />
   <property name="buildA.aver" value="${import.buildA.buildA.aver}" />
   
   <target name="assemble" depends="classes">
     <jar destfile="${build.layout}/aaaa.jar">
       <fileset dir="${build.tmp}/java/out/AAA" />
     </jar>
-    <echo file="${build.layout}/variables.properties">buildA.aver=${buildA.aver}</echo>
+    <echo file="${build.layout}/build.properties">buildA.aver=${buildA.aver}</echo>
   </target>
   
   <target name="buildDependents">

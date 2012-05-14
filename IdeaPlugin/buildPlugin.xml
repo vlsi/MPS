@@ -108,7 +108,7 @@
       <fileset dir="${build.tmp}/java/out/mps-java" />
       <fileset dir="${build.tmp}/default/mps-java.jar" />
     </jar>
-    <echo file="${build.layout}/variables.properties">buildPlugin.plugin.version=${plugin.version}</echo>
+    <echo file="${build.layout}/build.properties">buildPlugin.plugin.version=${plugin.version}</echo>
   </target>
   
   <target name="buildDependents">

@@ -32,7 +32,7 @@
       <zipfileset file="${basedir}/testdata/a.txt" prefix="A" />
       <fileset dir="${build.tmp}/default/A-_dl_{aver}.zip" />
     </zip>
-    <echo file="${build.layout}/variables.properties">buildA.aver=${aver}</echo>
+    <echo file="${build.layout}/build.properties">buildA.aver=${aver}</echo>
   </target>
   
   <target name="build" depends="assemble, check" />

@@ -37,7 +37,7 @@
       <zipfileset file="${mps_home}/about.txt" prefix="aaa/bbb" />
       <fileset dir="${build.tmp}/default/release.zip" />
     </zip>
-    <echo file="${build.layout}/variables.properties">buildCore.build.number=${build.number}${line.separator}buildCore.ver=${ver}${line.separator}buildCore.MPS=${MPS}</echo>
+    <echo file="${build.layout}/build.properties">buildCore.build.number=${build.number}${line.separator}buildCore.ver=${ver}${line.separator}buildCore.MPS=${MPS}</echo>
   </target>
   
   <target name="build" depends="assemble, check" />
