@@ -27,6 +27,8 @@ import java.io.File;
 import java.io.IOException;
 
 public class JavaStubModelDataSource extends StubModelDataSource {
+  public static final String FAST_FIND_ID = "java_stubs";
+
   private boolean skipPrivate;
   private String langId;
 
