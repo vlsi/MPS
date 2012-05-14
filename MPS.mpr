@@ -206,6 +206,8 @@
       <modulePath path="${project}/languages/util/bash/solutions/jetbrains.mps.bash.sandbox/jetbrains.mps.bash.sandbox.msd" folder="languages.bash" />
       <modulePath path="${project}/languages/util/builders/builders.mpl" folder="baseLanguage.builders" />
       <modulePath path="${project}/languages/util/builders/sandbox/jetbrains.mps.builders.msd" folder="baseLanguage.builders" />
+      <modulePath path="${project}/languages/util/buildlanguage/languages/gentest/gentest.mpl" folder="languages.build" />
+      <modulePath path="${project}/languages/util/buildlanguage/languages/reduced/reduced.mpl" folder="languages.build" />
       <modulePath path="${project}/languages/util/conf/languages/conf/conf.mpl" folder="languages" />
       <modulePath path="${project}/languages/util/conf/solutions/jetbrains.mps.platform.conf.sandbox/jetbrains.mps.platform.conf.sandbox.msd" folder="languages" />
       <modulePath path="${project}/languages/util/contracts/languages/contracts/contracts.mpl" folder="baseLanguage" />
@@ -422,8 +424,6 @@
       <modulePath path="${project}/testbench/modules/testRefactoring/solutions/testRefactoring.sandbox/testRefactoring.sandbox.msd" folder="testbench" />
       <modulePath path="${project}/testbench/solution/jetbrains.mps.testbench.msd" folder="testbench" />
       <modulePath path="${project}/testbench/solutions/jetbrains.mps.testbench.make.msd" folder="testbench" />
-      <modulePath path="${project}/util/buildlanguage/languages/gentest/gentest.mpl" folder="languages.build" />
-      <modulePath path="${project}/util/buildlanguage/languages/reduced/reduced.mpl" folder="languages.build" />
       <modulePath path="${project}/workbench/mps-debugger/core.msd" folder="debugger" />
       <modulePath path="${project}/workbench/mps-editor/jetbrains.mps.ide.editor.msd" folder="workbench.editor" />
       <modulePath path="${project}/workbench/mps-platform/base.msd" folder="workbench.platform" />
