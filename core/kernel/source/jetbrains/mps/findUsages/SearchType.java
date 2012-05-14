@@ -25,6 +25,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -44,8 +45,8 @@ public abstract class SearchType<T> {
   public abstract Set<T> findInModel(Set<SNode> nodes, Set<SModelDescriptor> models, @Nullable Computable<Boolean> callback);
 
   protected static Map<FastFindSupport, Set<SModelDescriptor>> groupModels(Set<SModelDescriptor> models) {
-    Map<FastFindSupport, Set<SModelDescriptor>> result = new THashMap<FastFindSupport, Set<SModelDescriptor>>();
-    result.put(null, new THashSet<SModelDescriptor>());
+    Map<FastFindSupport, Set<SModelDescriptor>> result = new HashMap<FastFindSupport, Set<SModelDescriptor>>();
+    result.put(null, new HashSet<SModelDescriptor>());
 
     for (SModelDescriptor model : models) {
       if (!(model instanceof BaseSModelDescriptorWithSource)) {
@@ -68,7 +69,7 @@ public abstract class SearchType<T> {
 
       Set<SModelDescriptor> descs = result.get(ffs);
       if (descs == null) {
-        descs = new THashSet<SModelDescriptor>();
+        descs = new HashSet<SModelDescriptor>();
         result.put(ffs, descs);
       }
       descs.add(model);
