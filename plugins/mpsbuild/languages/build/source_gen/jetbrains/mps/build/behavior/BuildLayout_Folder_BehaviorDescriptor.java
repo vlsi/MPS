@@ -10,8 +10,16 @@ public class BuildLayout_Folder_BehaviorDescriptor extends BuildLayout_NamedCont
   public BuildLayout_Folder_BehaviorDescriptor() {
   }
 
+  public boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue) {
+    return BuildLayout_Folder_Behavior.virtual_isValidPart_9184644532456897464(thisNode, propertyValue);
+  }
+
   public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
     BuildLayout_Folder_Behavior.virtual_unpack_7128123785277710736(thisNode, helper);
+  }
+
+  public boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
+    return BuildLayout_Folder_Behavior.virtual_exports_6547494638219603457(thisNode, object);
   }
 
   public boolean virtual_isFolder_1368030936106753980(SNode thisNode) {

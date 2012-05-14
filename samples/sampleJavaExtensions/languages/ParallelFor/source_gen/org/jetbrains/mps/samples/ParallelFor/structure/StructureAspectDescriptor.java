@@ -18,7 +18,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new CompiledConceptDescriptor("org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{});
       case 1:
-        return new CompiledConceptDescriptor("org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", "jetbrains.mps.baseLanguage.structure.IMethodLike"}, new String[]{"nowait"}, new String[]{});
       case 2:
         return new CompiledConceptDescriptor("org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"}, new String[]{}, new String[]{});
       case 3:

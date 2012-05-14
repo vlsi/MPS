@@ -57,10 +57,13 @@
     <copy todir="${build.layout}/languages">
       <fileset dir="${artifacts.buildUiLanguages}/languages" />
     </copy>
-    <copy todir="${build.layout}/lib">
-      <fileset dir="${artifacts.IDEA}/lib" />
-    </copy>
     <mkdir dir="${build.layout}/lib" />
+    <copy todir="${build.layout}/lib">
+      <fileset dir="${artifacts.IDEA}/lib">
+        <exclude name="src/" />
+        <exclude name="ant/docs.zip" />
+      </fileset>
+    </copy>
     <copy todir="${build.layout}/lib">
       <fileset dir="${artifacts.buildCore}/mps-core/lib" />
     </copy>
@@ -135,13 +138,8 @@
         <exclude name="**/*.zip" />
       </fileset>
     </copy>
-    <mkdir dir="${build.tmp}/default/samples.zip" />
-    <mkdir dir="${build.tmp}/default/samples.zip/MPSSamples" />
-    <copy todir="${build.tmp}/default/samples.zip/MPSSamples">
-      <fileset dir="${mps_home}/samples" />
-    </copy>
     <zip destfile="${build.layout}/samples.zip">
-      <fileset dir="${build.tmp}/default/samples.zip" />
+      <zipfileset dir="${basedir}/samples" prefix="MPSSamples" />
     </zip>
     <copy todir="${build.layout}">
       <fileset dir="${basedir}" includes="help/**" />

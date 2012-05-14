@@ -284,16 +284,14 @@ public abstract class AbstractModule implements IModule {
       String path = sme.getPath();
       String canonicalPath = FileUtil.getCanonicalPath(path).toLowerCase();
 
-      if (!descriptor.getCompileInMPS()) {
-        if (canonicalPath.endsWith("classes")) {
-          IFile parent = getDescriptorFile().getParent();
-          IFile classes = parent != null ? parent.getDescendant("classes") : null;
-          addBundleAsModelRoot = classes != null && FileUtil.getCanonicalPath(classes.getPath()).equalsIgnoreCase(canonicalPath);
-        } else if (FileUtil.getCanonicalPath(bundleHomeFile.getPath()).equalsIgnoreCase(canonicalPath)) {
-          addBundleAsModelRoot = true;
-        }
+      String suffix = descriptor.getCompileInMPS() ? "classes_gen" : "classes";
+      if (canonicalPath.endsWith(suffix)) {
+        IFile parent = getDescriptorFile().getParent();
+        IFile classes = parent != null ? parent.getDescendant(suffix) : null;
+        addBundleAsModelRoot = classes != null && FileUtil.getCanonicalPath(classes.getPath()).equalsIgnoreCase(canonicalPath);
+      } else if (FileUtil.getCanonicalPath(bundleHomeFile.getPath()).equalsIgnoreCase(canonicalPath)) {
+        addBundleAsModelRoot = true;
       }
-
 
       if (packagedSourcesPath == null || !canonicalPath.startsWith(packagedSourcesPath)) {
         String shrinked = MacrosFactory.forModuleFile(getDescriptorFile()).shrinkPath(path);

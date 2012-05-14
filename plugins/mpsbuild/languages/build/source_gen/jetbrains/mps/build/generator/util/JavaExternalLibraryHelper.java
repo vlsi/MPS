@@ -103,7 +103,7 @@ public class JavaExternalLibraryHelper {
     }
 
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode pe : artifacts) {
+    for (SNode pe : ListSequence.fromList(artifacts).distinct()) {
       String val = helper.locations().get(pe);
       if (val == null) {
         genContext.showErrorMessage(pe, "no location for " + BaseConcept_Behavior.call_getPresentation_1213877396640(pe) + " (unsupported layout element)");

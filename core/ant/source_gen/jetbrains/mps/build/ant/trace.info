@@ -1160,461 +1160,461 @@
     <unitInfo nodeId="4003657351907888830" fileName="MyTeamcityAwareExecuteStreamHandler.java" startLine="7" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.ant.MyTeamcityAwareExecuteStreamHandler" />
   </root>
   <root nodeId="4003657351907888945">
-    <nodeInfo nodeId="1060288745360397647" fileName="WhatToDo.java" startLine="28" startPosition="23" endLine="29" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ELEMENT_TODO" />
-    <nodeInfo nodeId="1060288745360409464" fileName="WhatToDo.java" startLine="29" startPosition="52" endLine="30" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ELEMENT_MODEL" />
-    <nodeInfo nodeId="1060288745360409513" fileName="WhatToDo.java" startLine="30" startPosition="54" endLine="31" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ELEMENT_MODULE" />
-    <nodeInfo nodeId="1060288745360409606" fileName="WhatToDo.java" startLine="31" startPosition="56" endLine="32" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ELEMENT_EXCLUDEDFROMDIFF" />
-    <nodeInfo nodeId="1060288745360409531" fileName="WhatToDo.java" startLine="32" startPosition="76" endLine="33" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ELEMENT_PROJECT" />
-    <nodeInfo nodeId="1060288745360409549" fileName="WhatToDo.java" startLine="33" startPosition="58" endLine="34" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ELEMENT_PARAMETER" />
-    <nodeInfo nodeId="1060288745360410528" fileName="WhatToDo.java" startLine="34" startPosition="62" endLine="35" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ELEMENT_PROPERTY" />
-    <nodeInfo nodeId="1060288745360410580" fileName="WhatToDo.java" startLine="35" startPosition="60" endLine="36" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PATH" />
-    <nodeInfo nodeId="1060288745360410737" fileName="WhatToDo.java" startLine="36" startPosition="44" endLine="37" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VALUE" />
-    <nodeInfo nodeId="4003657351907892103" fileName="WhatToDo.java" startLine="38" startPosition="0" endLine="39" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModels" />
-    <nodeInfo nodeId="4003657351907892110" fileName="WhatToDo.java" startLine="39" startPosition="63" endLine="40" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModules" />
-    <nodeInfo nodeId="3449270742160235844" fileName="WhatToDo.java" startLine="40" startPosition="64" endLine="41" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myExcludedFromDiff" />
-    <nodeInfo nodeId="4003657351907892117" fileName="WhatToDo.java" startLine="41" startPosition="73" endLine="42" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMPSProjects" />
-    <nodeInfo nodeId="4003657351907892128" fileName="WhatToDo.java" startLine="42" startPosition="96" endLine="43" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFailOnError" />
-    <nodeInfo nodeId="4003657351907892132" fileName="WhatToDo.java" startLine="43" startPosition="39" endLine="44" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLibraries" />
-    <nodeInfo nodeId="4003657351907892141" fileName="WhatToDo.java" startLine="44" startPosition="82" endLine="45" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCompiledLibraries" />
-    <nodeInfo nodeId="4003657351907892148" fileName="WhatToDo.java" startLine="45" startPosition="78" endLine="46" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMacro" />
-    <nodeInfo nodeId="4003657351907892157" fileName="WhatToDo.java" startLine="46" startPosition="82" endLine="47" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLogLevel" />
-    <nodeInfo nodeId="4003657351907892193" fileName="WhatToDo.java" startLine="47" startPosition="44" endLine="48" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProperties" />
-    <nodeInfo nodeId="233723665931887943" fileName="WhatToDo.java" startLine="48" startPosition="87" endLine="49" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParameters" />
-    <nodeInfo nodeId="5949858627350802398" fileName="WhatToDo.java" startLine="49" startPosition="68" endLine="50" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLoadBootstrapLibraries" />
-    <nodeInfo nodeId="4003657351907892212" fileName="WhatToDo.java" startLine="55" startPosition="40" endLine="56" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4003657351907892226" fileName="WhatToDo.java" startLine="56" startPosition="83" endLine="57" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892237" fileName="WhatToDo.java" startLine="60" startPosition="39" endLine="61" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4003657351907892251" fileName="WhatToDo.java" startLine="61" startPosition="83" endLine="62" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3449270742160235863" fileName="WhatToDo.java" startLine="65" startPosition="46" endLine="66" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="3449270742160235872" fileName="WhatToDo.java" startLine="66" startPosition="50" endLine="67" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892262" fileName="WhatToDo.java" startLine="70" startPosition="48" endLine="71" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4003657351907892277" fileName="WhatToDo.java" startLine="72" startPosition="52" endLine="73" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892294" fileName="WhatToDo.java" startLine="77" startPosition="68" endLine="78" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4003657351907892302" fileName="WhatToDo.java" startLine="78" startPosition="56" endLine="79" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907892315" fileName="WhatToDo.java" startLine="80" startPosition="36" endLine="81" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892321" fileName="WhatToDo.java" startLine="81" startPosition="50" endLine="82" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892327" fileName="WhatToDo.java" startLine="83" startPosition="5" endLine="84" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892338" fileName="WhatToDo.java" startLine="87" startPosition="32" endLine="88" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907892348" fileName="WhatToDo.java" startLine="91" startPosition="46" endLine="92" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3449270742160235897" fileName="WhatToDo.java" startLine="95" startPosition="47" endLine="96" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3449270742160235901" fileName="WhatToDo.java" startLine="99" startPosition="63" endLine="100" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892358" fileName="WhatToDo.java" startLine="103" startPosition="33" endLine="104" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907892368" fileName="WhatToDo.java" startLine="107" startPosition="48" endLine="108" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892380" fileName="WhatToDo.java" startLine="111" startPosition="55" endLine="112" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907892392" fileName="WhatToDo.java" startLine="115" startPosition="74" endLine="116" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892401" fileName="WhatToDo.java" startLine="119" startPosition="35" endLine="120" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907892409" fileName="WhatToDo.java" startLine="123" startPosition="52" endLine="124" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892419" fileName="WhatToDo.java" startLine="127" startPosition="46" endLine="128" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907892430" fileName="WhatToDo.java" startLine="131" startPosition="64" endLine="132" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892445" fileName="WhatToDo.java" startLine="135" startPosition="66" endLine="136" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892454" fileName="WhatToDo.java" startLine="137" startPosition="18" endLine="138" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892465" fileName="WhatToDo.java" startLine="142" startPosition="43" endLine="143" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907892476" fileName="WhatToDo.java" startLine="146" startPosition="60" endLine="147" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892486" fileName="WhatToDo.java" startLine="150" startPosition="45" endLine="151" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907892496" fileName="WhatToDo.java" startLine="154" startPosition="62" endLine="155" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892509" fileName="WhatToDo.java" startLine="158" startPosition="51" endLine="159" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892521" fileName="WhatToDo.java" startLine="162" startPosition="41" endLine="163" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907892532" fileName="WhatToDo.java" startLine="166" startPosition="54" endLine="167" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892543" fileName="WhatToDo.java" startLine="170" startPosition="41" endLine="171" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892551" fileName="WhatToDo.java" startLine="174" startPosition="28" endLine="175" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="233723665931911267" fileName="WhatToDo.java" startLine="178" startPosition="46" endLine="179" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="233723665931911137" fileName="WhatToDo.java" startLine="182" startPosition="39" endLine="183" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="233723665931911208" fileName="WhatToDo.java" startLine="186" startPosition="57" endLine="187" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5949858627350825425" fileName="WhatToDo.java" startLine="190" startPosition="45" endLine="191" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5949858627350825462" fileName="WhatToDo.java" startLine="194" startPosition="55" endLine="195" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892559" fileName="WhatToDo.java" startLine="198" startPosition="36" endLine="199" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907892567" fileName="WhatToDo.java" startLine="199" startPosition="57" endLine="200" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907892575" fileName="WhatToDo.java" startLine="200" startPosition="56" endLine="201" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907892587" fileName="WhatToDo.java" startLine="202" startPosition="41" endLine="203" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907892599" fileName="WhatToDo.java" startLine="204" startPosition="44" endLine="205" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907892629" fileName="WhatToDo.java" startLine="206" startPosition="13" endLine="207" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907892639" fileName="WhatToDo.java" startLine="207" startPosition="92" endLine="208" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907894274" fileName="WhatToDo.java" startLine="209" startPosition="43" endLine="210" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4003657351907892614" fileName="WhatToDo.java" startLine="211" startPosition="47" endLine="212" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4003657351907892622" fileName="WhatToDo.java" startLine="213" startPosition="44" endLine="214" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3143004140831101739" fileName="WhatToDo.java" startLine="220" startPosition="33" endLine="221" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3143004140831101832" fileName="WhatToDo.java" startLine="222" startPosition="50" endLine="223" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3143004140831101955" fileName="WhatToDo.java" startLine="225" startPosition="51" endLine="226" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3143004140831148049" fileName="WhatToDo.java" startLine="228" startPosition="60" endLine="229" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3143004140831102087" fileName="WhatToDo.java" startLine="231" startPosition="79" endLine="232" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3143004140831102208" fileName="WhatToDo.java" startLine="233" startPosition="57" endLine="234" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3143004140831102066" fileName="WhatToDo.java" startLine="235" startPosition="7" endLine="236" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1060288745360409640" fileName="WhatToDo.java" startLine="238" startPosition="58" endLine="239" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3143004140831101746" fileName="WhatToDo.java" startLine="240" startPosition="5" endLine="241" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1060288745360410977" fileName="WhatToDo.java" startLine="245" startPosition="41" endLine="246" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1060288745360411088" fileName="WhatToDo.java" startLine="246" startPosition="30" endLine="247" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1060288745360411030" fileName="WhatToDo.java" startLine="248" startPosition="46" endLine="249" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1060288745360411294" fileName="WhatToDo.java" startLine="250" startPosition="54" endLine="251" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1060288745360411236" fileName="WhatToDo.java" startLine="252" startPosition="64" endLine="253" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1060288745360411968" fileName="WhatToDo.java" startLine="254" startPosition="55" endLine="255" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1060288745360417087" fileName="WhatToDo.java" startLine="256" startPosition="61" endLine="257" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1060288745360411781" fileName="WhatToDo.java" startLine="258" startPosition="9" endLine="259" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1060288745360418031" fileName="WhatToDo.java" startLine="260" startPosition="57" endLine="261" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892952" fileName="WhatToDo.java" startLine="266" startPosition="60" endLine="267" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3143004140831100532" fileName="WhatToDo.java" startLine="267" startPosition="44" endLine="268" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3143004140831100620" fileName="WhatToDo.java" startLine="268" startPosition="41" endLine="269" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3143004140831100874" fileName="WhatToDo.java" startLine="269" startPosition="39" endLine="270" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1060288745360408129" fileName="WhatToDo.java" startLine="270" startPosition="33" endLine="271" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6583362212437293317" fileName="WhatToDo.java" startLine="271" startPosition="61" endLine="272" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1060288745360408435" fileName="WhatToDo.java" startLine="272" startPosition="35" endLine="273" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1060288745360408458" fileName="WhatToDo.java" startLine="273" startPosition="28" endLine="274" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3143004140831101748" fileName="WhatToDo.java" startLine="274" startPosition="37" endLine="275" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1060288745360407811" fileName="WhatToDo.java" startLine="276" startPosition="9" endLine="277" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="176725375005731234" fileName="WhatToDo.java" startLine="278" startPosition="29" endLine="279" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892975" fileName="WhatToDo.java" startLine="280" startPosition="5" endLine="281" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907893365" fileName="WhatToDo.java" startLine="284" startPosition="54" endLine="285" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907893377" fileName="WhatToDo.java" startLine="288" startPosition="42" endLine="289" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907893388" fileName="WhatToDo.java" startLine="292" startPosition="45" endLine="293" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907893400" fileName="WhatToDo.java" startLine="294" startPosition="26" endLine="295" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907893410" fileName="WhatToDo.java" startLine="297" startPosition="31" endLine="298" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907893414" fileName="WhatToDo.java" startLine="299" startPosition="5" endLine="300" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907893418" fileName="WhatToDo.java" startLine="300" startPosition="17" endLine="301" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892982" fileName="WhatToDo.java" startLine="304" startPosition="38" endLine="305" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907892989" fileName="WhatToDo.java" startLine="305" startPosition="62" endLine="306" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907893007" fileName="WhatToDo.java" startLine="308" startPosition="53" endLine="309" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="4003657351907893008" fileName="WhatToDo.java" startLine="310" startPosition="7" endLine="311" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907893011" fileName="WhatToDo.java" startLine="312" startPosition="5" endLine="313" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907893030" fileName="WhatToDo.java" startLine="314" startPosition="9" endLine="315" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907893023" fileName="WhatToDo.java" startLine="316" startPosition="29" endLine="317" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907893034" fileName="WhatToDo.java" startLine="318" startPosition="5" endLine="319" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3143004140831100382" fileName="WhatToDo.java" startLine="322" startPosition="52" endLine="323" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3143004140831100389" fileName="WhatToDo.java" startLine="324" startPosition="9" endLine="325" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3143004140831100449" fileName="WhatToDo.java" startLine="326" startPosition="31" endLine="327" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3143004140831100475" fileName="WhatToDo.java" startLine="328" startPosition="29" endLine="329" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907893053" fileName="WhatToDo.java" startLine="331" startPosition="29" endLine="332" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3143004140831100528" fileName="WhatToDo.java" startLine="334" startPosition="5" endLine="335" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3143004140831148284" fileName="WhatToDo.java" startLine="335" startPosition="0" endLine="336" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1060288745360408480" fileName="WhatToDo.java" startLine="336" startPosition="39" endLine="337" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1060288745360408628" fileName="WhatToDo.java" startLine="337" startPosition="51" endLine="338" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1060288745360408772" fileName="WhatToDo.java" startLine="338" startPosition="45" endLine="339" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1060288745360409002" fileName="WhatToDo.java" startLine="339" startPosition="73" endLine="340" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1060288745360409060" fileName="WhatToDo.java" startLine="340" startPosition="55" endLine="341" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1060288745360409205" fileName="WhatToDo.java" startLine="341" startPosition="46" endLine="342" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3143004140831148291" fileName="WhatToDo.java" startLine="342" startPosition="53" endLine="343" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3143004140831148317" fileName="WhatToDo.java" startLine="343" startPosition="51" endLine="344" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907892202" fileName="WhatToDo.java" startLine="51" startPosition="0" endLine="53" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WhatToDo#()V" />
-    <nodeInfo nodeId="4003657351907892270" fileName="WhatToDo.java" startLine="71" startPosition="56" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907892451" fileName="WhatToDo.java" startLine="136" startPosition="31" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3143004140831101806" fileName="WhatToDo.java" startLine="221" startPosition="45" endLine="224" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3143004140831101948" fileName="WhatToDo.java" startLine="224" startPosition="5" endLine="227" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3143004140831148045" fileName="WhatToDo.java" startLine="227" startPosition="5" endLine="230" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3143004140831102182" fileName="WhatToDo.java" startLine="232" startPosition="96" endLine="235" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1060288745360409635" fileName="WhatToDo.java" startLine="237" startPosition="5" endLine="240" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1060288745360417052" fileName="WhatToDo.java" startLine="255" startPosition="58" endLine="258" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4003657351907893395" fileName="WhatToDo.java" startLine="293" startPosition="92" endLine="296" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907893404" fileName="WhatToDo.java" startLine="296" startPosition="5" endLine="299" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907892996" fileName="WhatToDo.java" startLine="307" startPosition="18" endLine="310" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907893047" fileName="WhatToDo.java" startLine="330" startPosition="15" endLine="333" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907892310" fileName="WhatToDo.java" startLine="79" startPosition="68" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907892333" fileName="WhatToDo.java" startLine="86" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModels#()Ljava/util/Set;" />
-    <nodeInfo nodeId="4003657351907892341" fileName="WhatToDo.java" startLine="90" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateModels#(Ljava/util/Set;)V" />
-    <nodeInfo nodeId="3449270742160235882" fileName="WhatToDo.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExcludedFromDiffFiles#()Ljava/util/Set;" />
-    <nodeInfo nodeId="3449270742160235889" fileName="WhatToDo.java" startLine="98" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateExcludedFromDiffFiles#(Ljava/util/Set;)V" />
-    <nodeInfo nodeId="4003657351907892353" fileName="WhatToDo.java" startLine="102" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModules#()Ljava/util/Set;" />
-    <nodeInfo nodeId="4003657351907892361" fileName="WhatToDo.java" startLine="106" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateModules#(Ljava/util/Set;)V" />
-    <nodeInfo nodeId="4003657351907892373" fileName="WhatToDo.java" startLine="110" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMPSProjectFiles#()Ljava/util/Map;" />
-    <nodeInfo nodeId="4003657351907892383" fileName="WhatToDo.java" startLine="114" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateMPSProjectFiles#(Ljava/util/Map;)V" />
-    <nodeInfo nodeId="4003657351907892397" fileName="WhatToDo.java" startLine="118" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFailOnError#()Z" />
-    <nodeInfo nodeId="4003657351907892403" fileName="WhatToDo.java" startLine="122" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateFailOnError#(Z)V" />
-    <nodeInfo nodeId="4003657351907892413" fileName="WhatToDo.java" startLine="126" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProperties#()Ljava/util/Map;" />
-    <nodeInfo nodeId="4003657351907892422" fileName="WhatToDo.java" startLine="130" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateProperties#(Ljava/util/Map;)V" />
-    <nodeInfo nodeId="4003657351907892459" fileName="WhatToDo.java" startLine="141" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLibraries#()Ljava/util/Map;" />
-    <nodeInfo nodeId="4003657351907892468" fileName="WhatToDo.java" startLine="145" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateLibraries#(Ljava/util/Map;)V" />
-    <nodeInfo nodeId="4003657351907892481" fileName="WhatToDo.java" startLine="149" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCompiledLibraries#()Ljava/util/Set;" />
-    <nodeInfo nodeId="4003657351907892489" fileName="WhatToDo.java" startLine="153" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateCompiledLibraries#(Ljava/util/Set;)V" />
-    <nodeInfo nodeId="4003657351907892501" fileName="WhatToDo.java" startLine="157" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addMacro#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4003657351907892515" fileName="WhatToDo.java" startLine="161" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMacro#()Ljava/util/Map;" />
-    <nodeInfo nodeId="4003657351907892524" fileName="WhatToDo.java" startLine="165" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateMacro#(Ljava/util/Map;)V" />
-    <nodeInfo nodeId="4003657351907892537" fileName="WhatToDo.java" startLine="169" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateLogLevel#(I)V" />
-    <nodeInfo nodeId="4003657351907892547" fileName="WhatToDo.java" startLine="173" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLogLevel#()I" />
-    <nodeInfo nodeId="233723665931911233" fileName="WhatToDo.java" startLine="177" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addParameter#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="233723665931911102" fileName="WhatToDo.java" startLine="181" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParameters#()Ljava/util/List;" />
-    <nodeInfo nodeId="233723665931911172" fileName="WhatToDo.java" startLine="185" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateParameters#(Ljava/util/List;)V" />
-    <nodeInfo nodeId="5949858627350825392" fileName="WhatToDo.java" startLine="189" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isLoadBootstrapLibraries#()Z" />
-    <nodeInfo nodeId="5949858627350825427" fileName="WhatToDo.java" startLine="193" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setLoadBootstrapLibraries#(Z)V" />
-    <nodeInfo nodeId="4003657351907893357" fileName="WhatToDo.java" startLine="283" startPosition="0" endLine="287" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="putProperty#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4003657351907893371" fileName="WhatToDo.java" startLine="287" startPosition="0" endLine="291" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProperty#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4003657351907892206" fileName="WhatToDo.java" startLine="54" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addModuleFile#(Ljava/io/File;)V" />
-    <nodeInfo nodeId="4003657351907892231" fileName="WhatToDo.java" startLine="59" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addModelFile#(Ljava/io/File;)V" />
-    <nodeInfo nodeId="3449270742160235856" fileName="WhatToDo.java" startLine="64" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="excludeFileFromDiff#(Ljava/io/File;)V" />
-    <nodeInfo nodeId="176725375005731226" fileName="WhatToDo.java" startLine="275" startPosition="46" endLine="280" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4003657351907893020" fileName="WhatToDo.java" startLine="313" startPosition="47" endLine="318" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4003657351907892993" fileName="WhatToDo.java" startLine="306" startPosition="14" endLine="312" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="4003657351907892256" fileName="WhatToDo.java" startLine="69" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addProjectFile#(Ljava/io/File;)V" />
-    <nodeInfo nodeId="4003657351907892435" fileName="WhatToDo.java" startLine="134" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addLibrary#(Ljava/lang/String;Ljava/io/File;Z)V" />
-    <nodeInfo nodeId="3143004140831102059" fileName="WhatToDo.java" startLine="230" startPosition="5" endLine="237" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4003657351907892285" fileName="WhatToDo.java" startLine="76" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addProjectFile#(Ljava/io/File;null)V" />
-    <nodeInfo nodeId="4003657351907892607" fileName="WhatToDo.java" startLine="205" startPosition="70" endLine="215" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3143004140831100438" fileName="WhatToDo.java" startLine="323" startPosition="41" endLine="334" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="4003657351907893382" fileName="WhatToDo.java" startLine="291" startPosition="0" endLine="303" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addPerfomanceReport#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4003657351907892593" fileName="WhatToDo.java" startLine="203" startPosition="49" endLine="216" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1060288745360410986" fileName="WhatToDo.java" startLine="247" startPosition="39" endLine="262" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907892582" fileName="WhatToDo.java" startLine="201" startPosition="48" endLine="217" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4003657351907892948" fileName="WhatToDo.java" startLine="265" startPosition="0" endLine="283" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dumpToTmpFile#()Ljava/io/File;" />
-    <nodeInfo nodeId="4003657351907892978" fileName="WhatToDo.java" startLine="303" startPosition="0" endLine="321" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createTmpFile#()Ljava/io/File;" />
-    <nodeInfo nodeId="1060288745360410932" fileName="WhatToDo.java" startLine="244" startPosition="39" endLine="263" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4003657351907892553" fileName="WhatToDo.java" startLine="197" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="cloneTo#(Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="3143004140831148191" fileName="WhatToDo.java" startLine="243" startPosition="0" endLine="265" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parseData#(Lorg/jdom/Element;)V" />
-    <nodeInfo nodeId="3143004140831101670" fileName="WhatToDo.java" startLine="219" startPosition="0" endLine="243" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="prepareData#()Lorg/jdom/Element;" />
-    <nodeInfo nodeId="4003657351907893036" fileName="WhatToDo.java" startLine="321" startPosition="0" endLine="346" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromDumpInFile#(Ljava/io/File;)Ljetbrains/mps/build/ant/WhatToDo;" />
-    <scopeInfo nodeId="4003657351907892205" fileName="WhatToDo.java" startLine="52" startPosition="21" endLine="52" endPosition="21" />
-    <scopeInfo nodeId="4003657351907892276" fileName="WhatToDo.java" startLine="72" startPosition="52" endLine="73" endPosition="62" />
-    <scopeInfo nodeId="4003657351907892337" fileName="WhatToDo.java" startLine="87" startPosition="32" endLine="88" endPosition="49" />
-    <scopeInfo nodeId="4003657351907892347" fileName="WhatToDo.java" startLine="91" startPosition="46" endLine="92" endPosition="28" />
-    <scopeInfo nodeId="3449270742160235885" fileName="WhatToDo.java" startLine="95" startPosition="47" endLine="96" endPosition="59" />
-    <scopeInfo nodeId="3449270742160235892" fileName="WhatToDo.java" startLine="99" startPosition="63" endLine="100" endPosition="40" />
-    <scopeInfo nodeId="4003657351907892357" fileName="WhatToDo.java" startLine="103" startPosition="33" endLine="104" endPosition="50" />
-    <scopeInfo nodeId="4003657351907892367" fileName="WhatToDo.java" startLine="107" startPosition="48" endLine="108" endPosition="30" />
-    <scopeInfo nodeId="4003657351907892379" fileName="WhatToDo.java" startLine="111" startPosition="55" endLine="112" endPosition="54" />
-    <scopeInfo nodeId="4003657351907892391" fileName="WhatToDo.java" startLine="115" startPosition="74" endLine="116" endPosition="38" />
-    <scopeInfo nodeId="4003657351907892400" fileName="WhatToDo.java" startLine="119" startPosition="35" endLine="120" endPosition="25" />
-    <scopeInfo nodeId="4003657351907892408" fileName="WhatToDo.java" startLine="123" startPosition="52" endLine="124" endPosition="30" />
-    <scopeInfo nodeId="4003657351907892418" fileName="WhatToDo.java" startLine="127" startPosition="46" endLine="128" endPosition="53" />
-    <scopeInfo nodeId="4003657351907892429" fileName="WhatToDo.java" startLine="131" startPosition="64" endLine="132" endPosition="36" />
-    <scopeInfo nodeId="4003657351907892453" fileName="WhatToDo.java" startLine="137" startPosition="18" endLine="138" endPosition="36" />
-    <scopeInfo nodeId="4003657351907892464" fileName="WhatToDo.java" startLine="142" startPosition="43" endLine="143" endPosition="52" />
-    <scopeInfo nodeId="4003657351907892475" fileName="WhatToDo.java" startLine="146" startPosition="60" endLine="147" endPosition="34" />
-    <scopeInfo nodeId="4003657351907892485" fileName="WhatToDo.java" startLine="150" startPosition="45" endLine="151" endPosition="60" />
-    <scopeInfo nodeId="4003657351907892495" fileName="WhatToDo.java" startLine="154" startPosition="62" endLine="155" endPosition="42" />
-    <scopeInfo nodeId="4003657351907892508" fileName="WhatToDo.java" startLine="158" startPosition="51" endLine="159" endPosition="29" />
-    <scopeInfo nodeId="4003657351907892520" fileName="WhatToDo.java" startLine="162" startPosition="41" endLine="163" endPosition="48" />
-    <scopeInfo nodeId="4003657351907892531" fileName="WhatToDo.java" startLine="166" startPosition="54" endLine="167" endPosition="26" />
-    <scopeInfo nodeId="4003657351907892542" fileName="WhatToDo.java" startLine="170" startPosition="41" endLine="171" endPosition="23" />
-    <scopeInfo nodeId="4003657351907892550" fileName="WhatToDo.java" startLine="174" startPosition="28" endLine="175" endPosition="22" />
-    <scopeInfo nodeId="233723665931911236" fileName="WhatToDo.java" startLine="178" startPosition="46" endLine="179" endPosition="32" />
-    <scopeInfo nodeId="233723665931911105" fileName="WhatToDo.java" startLine="182" startPosition="39" endLine="183" endPosition="24" />
-    <scopeInfo nodeId="233723665931911175" fileName="WhatToDo.java" startLine="186" startPosition="57" endLine="187" endPosition="36" />
-    <scopeInfo nodeId="5949858627350825395" fileName="WhatToDo.java" startLine="190" startPosition="45" endLine="191" endPosition="36" />
-    <scopeInfo nodeId="5949858627350825430" fileName="WhatToDo.java" startLine="194" startPosition="55" endLine="195" endPosition="36" />
-    <scopeInfo nodeId="4003657351907892608" fileName="WhatToDo.java" startLine="209" startPosition="0" endLine="210" endPosition="28">
+    <nodeInfo nodeId="1060288745360397647" fileName="WhatToDo.java" startLine="24" startPosition="23" endLine="25" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ELEMENT_TODO" />
+    <nodeInfo nodeId="1060288745360409464" fileName="WhatToDo.java" startLine="25" startPosition="52" endLine="26" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ELEMENT_MODEL" />
+    <nodeInfo nodeId="1060288745360409513" fileName="WhatToDo.java" startLine="26" startPosition="54" endLine="27" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ELEMENT_MODULE" />
+    <nodeInfo nodeId="1060288745360409606" fileName="WhatToDo.java" startLine="27" startPosition="56" endLine="28" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ELEMENT_EXCLUDEDFROMDIFF" />
+    <nodeInfo nodeId="1060288745360409531" fileName="WhatToDo.java" startLine="28" startPosition="76" endLine="29" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ELEMENT_PROJECT" />
+    <nodeInfo nodeId="1060288745360409549" fileName="WhatToDo.java" startLine="29" startPosition="58" endLine="30" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ELEMENT_PARAMETER" />
+    <nodeInfo nodeId="1060288745360410528" fileName="WhatToDo.java" startLine="30" startPosition="62" endLine="31" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ELEMENT_PROPERTY" />
+    <nodeInfo nodeId="1060288745360410580" fileName="WhatToDo.java" startLine="31" startPosition="60" endLine="32" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PATH" />
+    <nodeInfo nodeId="1060288745360410737" fileName="WhatToDo.java" startLine="32" startPosition="44" endLine="33" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VALUE" />
+    <nodeInfo nodeId="4003657351907892103" fileName="WhatToDo.java" startLine="34" startPosition="0" endLine="35" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModels" />
+    <nodeInfo nodeId="4003657351907892110" fileName="WhatToDo.java" startLine="35" startPosition="63" endLine="36" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModules" />
+    <nodeInfo nodeId="3449270742160235844" fileName="WhatToDo.java" startLine="36" startPosition="64" endLine="37" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myExcludedFromDiff" />
+    <nodeInfo nodeId="4003657351907892117" fileName="WhatToDo.java" startLine="37" startPosition="73" endLine="38" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMPSProjects" />
+    <nodeInfo nodeId="4003657351907892128" fileName="WhatToDo.java" startLine="38" startPosition="96" endLine="39" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFailOnError" />
+    <nodeInfo nodeId="4003657351907892132" fileName="WhatToDo.java" startLine="39" startPosition="39" endLine="40" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLibraries" />
+    <nodeInfo nodeId="4003657351907892141" fileName="WhatToDo.java" startLine="40" startPosition="82" endLine="41" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCompiledLibraries" />
+    <nodeInfo nodeId="4003657351907892148" fileName="WhatToDo.java" startLine="41" startPosition="78" endLine="42" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMacro" />
+    <nodeInfo nodeId="4003657351907892157" fileName="WhatToDo.java" startLine="42" startPosition="82" endLine="43" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLogLevel" />
+    <nodeInfo nodeId="4003657351907892193" fileName="WhatToDo.java" startLine="43" startPosition="44" endLine="44" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProperties" />
+    <nodeInfo nodeId="233723665931887943" fileName="WhatToDo.java" startLine="44" startPosition="87" endLine="45" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParameters" />
+    <nodeInfo nodeId="5949858627350802398" fileName="WhatToDo.java" startLine="45" startPosition="68" endLine="46" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLoadBootstrapLibraries" />
+    <nodeInfo nodeId="4003657351907892212" fileName="WhatToDo.java" startLine="51" startPosition="40" endLine="52" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="4003657351907892226" fileName="WhatToDo.java" startLine="52" startPosition="83" endLine="53" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892237" fileName="WhatToDo.java" startLine="56" startPosition="39" endLine="57" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="4003657351907892251" fileName="WhatToDo.java" startLine="57" startPosition="83" endLine="58" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3449270742160235863" fileName="WhatToDo.java" startLine="61" startPosition="46" endLine="62" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="3449270742160235872" fileName="WhatToDo.java" startLine="62" startPosition="50" endLine="63" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892262" fileName="WhatToDo.java" startLine="66" startPosition="48" endLine="67" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="4003657351907892277" fileName="WhatToDo.java" startLine="68" startPosition="52" endLine="69" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892294" fileName="WhatToDo.java" startLine="73" startPosition="68" endLine="74" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="4003657351907892302" fileName="WhatToDo.java" startLine="74" startPosition="56" endLine="75" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907892315" fileName="WhatToDo.java" startLine="76" startPosition="36" endLine="77" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892321" fileName="WhatToDo.java" startLine="77" startPosition="50" endLine="78" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892327" fileName="WhatToDo.java" startLine="79" startPosition="5" endLine="80" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892338" fileName="WhatToDo.java" startLine="83" startPosition="32" endLine="84" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907892348" fileName="WhatToDo.java" startLine="87" startPosition="46" endLine="88" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3449270742160235897" fileName="WhatToDo.java" startLine="91" startPosition="47" endLine="92" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3449270742160235901" fileName="WhatToDo.java" startLine="95" startPosition="63" endLine="96" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892358" fileName="WhatToDo.java" startLine="99" startPosition="33" endLine="100" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907892368" fileName="WhatToDo.java" startLine="103" startPosition="48" endLine="104" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892380" fileName="WhatToDo.java" startLine="107" startPosition="55" endLine="108" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907892392" fileName="WhatToDo.java" startLine="111" startPosition="74" endLine="112" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892401" fileName="WhatToDo.java" startLine="115" startPosition="35" endLine="116" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907892409" fileName="WhatToDo.java" startLine="119" startPosition="52" endLine="120" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892419" fileName="WhatToDo.java" startLine="123" startPosition="46" endLine="124" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907892430" fileName="WhatToDo.java" startLine="127" startPosition="64" endLine="128" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892445" fileName="WhatToDo.java" startLine="131" startPosition="66" endLine="132" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892454" fileName="WhatToDo.java" startLine="133" startPosition="18" endLine="134" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892465" fileName="WhatToDo.java" startLine="138" startPosition="43" endLine="139" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907892476" fileName="WhatToDo.java" startLine="142" startPosition="60" endLine="143" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892486" fileName="WhatToDo.java" startLine="146" startPosition="45" endLine="147" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907892496" fileName="WhatToDo.java" startLine="150" startPosition="62" endLine="151" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892509" fileName="WhatToDo.java" startLine="154" startPosition="51" endLine="155" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892521" fileName="WhatToDo.java" startLine="158" startPosition="41" endLine="159" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907892532" fileName="WhatToDo.java" startLine="162" startPosition="54" endLine="163" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892543" fileName="WhatToDo.java" startLine="166" startPosition="41" endLine="167" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892551" fileName="WhatToDo.java" startLine="170" startPosition="28" endLine="171" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="233723665931911267" fileName="WhatToDo.java" startLine="174" startPosition="46" endLine="175" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="233723665931911137" fileName="WhatToDo.java" startLine="178" startPosition="39" endLine="179" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="233723665931911208" fileName="WhatToDo.java" startLine="182" startPosition="57" endLine="183" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5949858627350825425" fileName="WhatToDo.java" startLine="186" startPosition="45" endLine="187" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5949858627350825462" fileName="WhatToDo.java" startLine="190" startPosition="55" endLine="191" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892559" fileName="WhatToDo.java" startLine="194" startPosition="36" endLine="195" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907892567" fileName="WhatToDo.java" startLine="195" startPosition="57" endLine="196" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907892575" fileName="WhatToDo.java" startLine="196" startPosition="56" endLine="197" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907892587" fileName="WhatToDo.java" startLine="198" startPosition="41" endLine="199" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907892599" fileName="WhatToDo.java" startLine="200" startPosition="44" endLine="201" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907892629" fileName="WhatToDo.java" startLine="202" startPosition="13" endLine="203" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907892639" fileName="WhatToDo.java" startLine="203" startPosition="92" endLine="204" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907894274" fileName="WhatToDo.java" startLine="205" startPosition="43" endLine="206" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4003657351907892614" fileName="WhatToDo.java" startLine="207" startPosition="47" endLine="208" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4003657351907892622" fileName="WhatToDo.java" startLine="209" startPosition="44" endLine="210" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="3143004140831101739" fileName="WhatToDo.java" startLine="216" startPosition="33" endLine="217" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3143004140831101832" fileName="WhatToDo.java" startLine="218" startPosition="29" endLine="219" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3143004140831101955" fileName="WhatToDo.java" startLine="221" startPosition="30" endLine="222" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3143004140831148049" fileName="WhatToDo.java" startLine="224" startPosition="39" endLine="225" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3143004140831102087" fileName="WhatToDo.java" startLine="227" startPosition="43" endLine="228" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3143004140831102208" fileName="WhatToDo.java" startLine="229" startPosition="45" endLine="230" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3143004140831102066" fileName="WhatToDo.java" startLine="231" startPosition="7" endLine="232" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1060288745360409640" fileName="WhatToDo.java" startLine="234" startPosition="35" endLine="235" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3143004140831101746" fileName="WhatToDo.java" startLine="236" startPosition="5" endLine="237" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1060288745360410977" fileName="WhatToDo.java" startLine="241" startPosition="41" endLine="242" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1060288745360411088" fileName="WhatToDo.java" startLine="242" startPosition="30" endLine="243" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1060288745360411030" fileName="WhatToDo.java" startLine="244" startPosition="46" endLine="245" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1060288745360411294" fileName="WhatToDo.java" startLine="246" startPosition="54" endLine="247" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1060288745360411236" fileName="WhatToDo.java" startLine="248" startPosition="64" endLine="249" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1060288745360411968" fileName="WhatToDo.java" startLine="250" startPosition="55" endLine="251" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1060288745360417087" fileName="WhatToDo.java" startLine="252" startPosition="61" endLine="253" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1060288745360411781" fileName="WhatToDo.java" startLine="254" startPosition="9" endLine="255" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1060288745360418031" fileName="WhatToDo.java" startLine="256" startPosition="57" endLine="257" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892952" fileName="WhatToDo.java" startLine="262" startPosition="60" endLine="263" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3143004140831100532" fileName="WhatToDo.java" startLine="263" startPosition="44" endLine="264" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3143004140831100620" fileName="WhatToDo.java" startLine="264" startPosition="41" endLine="265" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3143004140831100874" fileName="WhatToDo.java" startLine="265" startPosition="39" endLine="266" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1060288745360408129" fileName="WhatToDo.java" startLine="266" startPosition="33" endLine="267" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6583362212437293317" fileName="WhatToDo.java" startLine="267" startPosition="61" endLine="268" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1060288745360408435" fileName="WhatToDo.java" startLine="268" startPosition="35" endLine="269" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1060288745360408458" fileName="WhatToDo.java" startLine="269" startPosition="28" endLine="270" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3143004140831101748" fileName="WhatToDo.java" startLine="270" startPosition="37" endLine="271" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1060288745360407811" fileName="WhatToDo.java" startLine="272" startPosition="9" endLine="273" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="176725375005731234" fileName="WhatToDo.java" startLine="274" startPosition="29" endLine="275" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892975" fileName="WhatToDo.java" startLine="276" startPosition="5" endLine="277" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907893365" fileName="WhatToDo.java" startLine="280" startPosition="54" endLine="281" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907893377" fileName="WhatToDo.java" startLine="284" startPosition="42" endLine="285" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907893388" fileName="WhatToDo.java" startLine="288" startPosition="45" endLine="289" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907893400" fileName="WhatToDo.java" startLine="290" startPosition="26" endLine="291" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907893410" fileName="WhatToDo.java" startLine="293" startPosition="31" endLine="294" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907893414" fileName="WhatToDo.java" startLine="295" startPosition="5" endLine="296" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907893418" fileName="WhatToDo.java" startLine="296" startPosition="17" endLine="297" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892982" fileName="WhatToDo.java" startLine="300" startPosition="38" endLine="301" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907892989" fileName="WhatToDo.java" startLine="301" startPosition="62" endLine="302" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907893007" fileName="WhatToDo.java" startLine="304" startPosition="53" endLine="305" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="4003657351907893008" fileName="WhatToDo.java" startLine="306" startPosition="7" endLine="307" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907893011" fileName="WhatToDo.java" startLine="308" startPosition="5" endLine="309" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907893030" fileName="WhatToDo.java" startLine="310" startPosition="9" endLine="311" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907893023" fileName="WhatToDo.java" startLine="312" startPosition="29" endLine="313" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907893034" fileName="WhatToDo.java" startLine="314" startPosition="5" endLine="315" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3143004140831100382" fileName="WhatToDo.java" startLine="318" startPosition="52" endLine="319" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3143004140831100389" fileName="WhatToDo.java" startLine="320" startPosition="9" endLine="321" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3143004140831100449" fileName="WhatToDo.java" startLine="322" startPosition="31" endLine="323" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3143004140831100475" fileName="WhatToDo.java" startLine="324" startPosition="29" endLine="325" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907893053" fileName="WhatToDo.java" startLine="327" startPosition="29" endLine="328" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="3143004140831100528" fileName="WhatToDo.java" startLine="330" startPosition="5" endLine="331" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3143004140831148284" fileName="WhatToDo.java" startLine="331" startPosition="0" endLine="332" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1060288745360408480" fileName="WhatToDo.java" startLine="332" startPosition="39" endLine="333" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1060288745360408628" fileName="WhatToDo.java" startLine="333" startPosition="51" endLine="334" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1060288745360408772" fileName="WhatToDo.java" startLine="334" startPosition="45" endLine="335" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1060288745360409002" fileName="WhatToDo.java" startLine="335" startPosition="73" endLine="336" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1060288745360409060" fileName="WhatToDo.java" startLine="336" startPosition="55" endLine="337" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1060288745360409205" fileName="WhatToDo.java" startLine="337" startPosition="46" endLine="338" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3143004140831148291" fileName="WhatToDo.java" startLine="338" startPosition="53" endLine="339" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3143004140831148317" fileName="WhatToDo.java" startLine="339" startPosition="51" endLine="340" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907892202" fileName="WhatToDo.java" startLine="47" startPosition="0" endLine="49" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WhatToDo#()V" />
+    <nodeInfo nodeId="4003657351907892270" fileName="WhatToDo.java" startLine="67" startPosition="56" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907892451" fileName="WhatToDo.java" startLine="132" startPosition="31" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="711197555740304345" fileName="WhatToDo.java" startLine="217" startPosition="45" endLine="220" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="711197555740304361" fileName="WhatToDo.java" startLine="220" startPosition="5" endLine="223" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="711197555740304376" fileName="WhatToDo.java" startLine="223" startPosition="5" endLine="226" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="711197555740304462" fileName="WhatToDo.java" startLine="228" startPosition="90" endLine="231" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="711197555740304486" fileName="WhatToDo.java" startLine="233" startPosition="5" endLine="236" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1060288745360417052" fileName="WhatToDo.java" startLine="251" startPosition="58" endLine="254" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4003657351907893395" fileName="WhatToDo.java" startLine="289" startPosition="92" endLine="292" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907893404" fileName="WhatToDo.java" startLine="292" startPosition="5" endLine="295" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907892996" fileName="WhatToDo.java" startLine="303" startPosition="18" endLine="306" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907893047" fileName="WhatToDo.java" startLine="326" startPosition="15" endLine="329" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907892310" fileName="WhatToDo.java" startLine="75" startPosition="68" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907892333" fileName="WhatToDo.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModels#()Ljava/util/Set;" />
+    <nodeInfo nodeId="4003657351907892341" fileName="WhatToDo.java" startLine="86" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateModels#(Ljava/util/Set;)V" />
+    <nodeInfo nodeId="3449270742160235882" fileName="WhatToDo.java" startLine="90" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExcludedFromDiffFiles#()Ljava/util/Set;" />
+    <nodeInfo nodeId="3449270742160235889" fileName="WhatToDo.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateExcludedFromDiffFiles#(Ljava/util/Set;)V" />
+    <nodeInfo nodeId="4003657351907892353" fileName="WhatToDo.java" startLine="98" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModules#()Ljava/util/Set;" />
+    <nodeInfo nodeId="4003657351907892361" fileName="WhatToDo.java" startLine="102" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateModules#(Ljava/util/Set;)V" />
+    <nodeInfo nodeId="4003657351907892373" fileName="WhatToDo.java" startLine="106" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMPSProjectFiles#()Ljava/util/Map;" />
+    <nodeInfo nodeId="4003657351907892383" fileName="WhatToDo.java" startLine="110" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateMPSProjectFiles#(Ljava/util/Map;)V" />
+    <nodeInfo nodeId="4003657351907892397" fileName="WhatToDo.java" startLine="114" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFailOnError#()Z" />
+    <nodeInfo nodeId="4003657351907892403" fileName="WhatToDo.java" startLine="118" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateFailOnError#(Z)V" />
+    <nodeInfo nodeId="4003657351907892413" fileName="WhatToDo.java" startLine="122" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProperties#()Ljava/util/Map;" />
+    <nodeInfo nodeId="4003657351907892422" fileName="WhatToDo.java" startLine="126" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateProperties#(Ljava/util/Map;)V" />
+    <nodeInfo nodeId="4003657351907892459" fileName="WhatToDo.java" startLine="137" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLibraries#()Ljava/util/Map;" />
+    <nodeInfo nodeId="4003657351907892468" fileName="WhatToDo.java" startLine="141" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateLibraries#(Ljava/util/Map;)V" />
+    <nodeInfo nodeId="4003657351907892481" fileName="WhatToDo.java" startLine="145" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCompiledLibraries#()Ljava/util/Set;" />
+    <nodeInfo nodeId="4003657351907892489" fileName="WhatToDo.java" startLine="149" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateCompiledLibraries#(Ljava/util/Set;)V" />
+    <nodeInfo nodeId="4003657351907892501" fileName="WhatToDo.java" startLine="153" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addMacro#(Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4003657351907892515" fileName="WhatToDo.java" startLine="157" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMacro#()Ljava/util/Map;" />
+    <nodeInfo nodeId="4003657351907892524" fileName="WhatToDo.java" startLine="161" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateMacro#(Ljava/util/Map;)V" />
+    <nodeInfo nodeId="4003657351907892537" fileName="WhatToDo.java" startLine="165" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateLogLevel#(I)V" />
+    <nodeInfo nodeId="4003657351907892547" fileName="WhatToDo.java" startLine="169" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLogLevel#()I" />
+    <nodeInfo nodeId="233723665931911233" fileName="WhatToDo.java" startLine="173" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addParameter#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="233723665931911102" fileName="WhatToDo.java" startLine="177" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParameters#()Ljava/util/List;" />
+    <nodeInfo nodeId="233723665931911172" fileName="WhatToDo.java" startLine="181" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateParameters#(Ljava/util/List;)V" />
+    <nodeInfo nodeId="5949858627350825392" fileName="WhatToDo.java" startLine="185" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isLoadBootstrapLibraries#()Z" />
+    <nodeInfo nodeId="5949858627350825427" fileName="WhatToDo.java" startLine="189" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setLoadBootstrapLibraries#(Z)V" />
+    <nodeInfo nodeId="4003657351907893357" fileName="WhatToDo.java" startLine="279" startPosition="0" endLine="283" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="putProperty#(Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4003657351907893371" fileName="WhatToDo.java" startLine="283" startPosition="0" endLine="287" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProperty#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4003657351907892206" fileName="WhatToDo.java" startLine="50" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addModuleFile#(Ljava/io/File;)V" />
+    <nodeInfo nodeId="4003657351907892231" fileName="WhatToDo.java" startLine="55" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addModelFile#(Ljava/io/File;)V" />
+    <nodeInfo nodeId="3449270742160235856" fileName="WhatToDo.java" startLine="60" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="excludeFileFromDiff#(Ljava/io/File;)V" />
+    <nodeInfo nodeId="176725375005731226" fileName="WhatToDo.java" startLine="271" startPosition="46" endLine="276" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4003657351907893020" fileName="WhatToDo.java" startLine="309" startPosition="47" endLine="314" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4003657351907892993" fileName="WhatToDo.java" startLine="302" startPosition="14" endLine="308" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="4003657351907892256" fileName="WhatToDo.java" startLine="65" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addProjectFile#(Ljava/io/File;)V" />
+    <nodeInfo nodeId="4003657351907892435" fileName="WhatToDo.java" startLine="130" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addLibrary#(Ljava/lang/String;Ljava/io/File;Z)V" />
+    <nodeInfo nodeId="711197555740304394" fileName="WhatToDo.java" startLine="226" startPosition="5" endLine="233" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4003657351907892285" fileName="WhatToDo.java" startLine="72" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addProjectFile#(Ljava/io/File;null)V" />
+    <nodeInfo nodeId="4003657351907892607" fileName="WhatToDo.java" startLine="201" startPosition="70" endLine="211" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3143004140831100438" fileName="WhatToDo.java" startLine="319" startPosition="41" endLine="330" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="4003657351907893382" fileName="WhatToDo.java" startLine="287" startPosition="0" endLine="299" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addPerfomanceReport#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4003657351907892593" fileName="WhatToDo.java" startLine="199" startPosition="49" endLine="212" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1060288745360410986" fileName="WhatToDo.java" startLine="243" startPosition="39" endLine="258" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907892582" fileName="WhatToDo.java" startLine="197" startPosition="48" endLine="213" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4003657351907892948" fileName="WhatToDo.java" startLine="261" startPosition="0" endLine="279" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dumpToTmpFile#()Ljava/io/File;" />
+    <nodeInfo nodeId="4003657351907892978" fileName="WhatToDo.java" startLine="299" startPosition="0" endLine="317" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createTmpFile#()Ljava/io/File;" />
+    <nodeInfo nodeId="1060288745360410932" fileName="WhatToDo.java" startLine="240" startPosition="39" endLine="259" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4003657351907892553" fileName="WhatToDo.java" startLine="193" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="cloneTo#(Ljava/lang/Object;)V" />
+    <nodeInfo nodeId="3143004140831148191" fileName="WhatToDo.java" startLine="239" startPosition="0" endLine="261" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parseData#(Lorg/jdom/Element;)V" />
+    <nodeInfo nodeId="3143004140831101670" fileName="WhatToDo.java" startLine="215" startPosition="0" endLine="239" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="prepareData#()Lorg/jdom/Element;" />
+    <nodeInfo nodeId="4003657351907893036" fileName="WhatToDo.java" startLine="317" startPosition="0" endLine="342" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromDumpInFile#(Ljava/io/File;)Ljetbrains/mps/build/ant/WhatToDo;" />
+    <scopeInfo nodeId="4003657351907892205" fileName="WhatToDo.java" startLine="48" startPosition="21" endLine="48" endPosition="21" />
+    <scopeInfo nodeId="4003657351907892276" fileName="WhatToDo.java" startLine="68" startPosition="52" endLine="69" endPosition="62" />
+    <scopeInfo nodeId="4003657351907892337" fileName="WhatToDo.java" startLine="83" startPosition="32" endLine="84" endPosition="49" />
+    <scopeInfo nodeId="4003657351907892347" fileName="WhatToDo.java" startLine="87" startPosition="46" endLine="88" endPosition="28" />
+    <scopeInfo nodeId="3449270742160235885" fileName="WhatToDo.java" startLine="91" startPosition="47" endLine="92" endPosition="59" />
+    <scopeInfo nodeId="3449270742160235892" fileName="WhatToDo.java" startLine="95" startPosition="63" endLine="96" endPosition="40" />
+    <scopeInfo nodeId="4003657351907892357" fileName="WhatToDo.java" startLine="99" startPosition="33" endLine="100" endPosition="50" />
+    <scopeInfo nodeId="4003657351907892367" fileName="WhatToDo.java" startLine="103" startPosition="48" endLine="104" endPosition="30" />
+    <scopeInfo nodeId="4003657351907892379" fileName="WhatToDo.java" startLine="107" startPosition="55" endLine="108" endPosition="54" />
+    <scopeInfo nodeId="4003657351907892391" fileName="WhatToDo.java" startLine="111" startPosition="74" endLine="112" endPosition="38" />
+    <scopeInfo nodeId="4003657351907892400" fileName="WhatToDo.java" startLine="115" startPosition="35" endLine="116" endPosition="25" />
+    <scopeInfo nodeId="4003657351907892408" fileName="WhatToDo.java" startLine="119" startPosition="52" endLine="120" endPosition="30" />
+    <scopeInfo nodeId="4003657351907892418" fileName="WhatToDo.java" startLine="123" startPosition="46" endLine="124" endPosition="53" />
+    <scopeInfo nodeId="4003657351907892429" fileName="WhatToDo.java" startLine="127" startPosition="64" endLine="128" endPosition="36" />
+    <scopeInfo nodeId="4003657351907892453" fileName="WhatToDo.java" startLine="133" startPosition="18" endLine="134" endPosition="36" />
+    <scopeInfo nodeId="4003657351907892464" fileName="WhatToDo.java" startLine="138" startPosition="43" endLine="139" endPosition="52" />
+    <scopeInfo nodeId="4003657351907892475" fileName="WhatToDo.java" startLine="142" startPosition="60" endLine="143" endPosition="34" />
+    <scopeInfo nodeId="4003657351907892485" fileName="WhatToDo.java" startLine="146" startPosition="45" endLine="147" endPosition="60" />
+    <scopeInfo nodeId="4003657351907892495" fileName="WhatToDo.java" startLine="150" startPosition="62" endLine="151" endPosition="42" />
+    <scopeInfo nodeId="4003657351907892508" fileName="WhatToDo.java" startLine="154" startPosition="51" endLine="155" endPosition="29" />
+    <scopeInfo nodeId="4003657351907892520" fileName="WhatToDo.java" startLine="158" startPosition="41" endLine="159" endPosition="48" />
+    <scopeInfo nodeId="4003657351907892531" fileName="WhatToDo.java" startLine="162" startPosition="54" endLine="163" endPosition="26" />
+    <scopeInfo nodeId="4003657351907892542" fileName="WhatToDo.java" startLine="166" startPosition="41" endLine="167" endPosition="23" />
+    <scopeInfo nodeId="4003657351907892550" fileName="WhatToDo.java" startLine="170" startPosition="28" endLine="171" endPosition="22" />
+    <scopeInfo nodeId="233723665931911236" fileName="WhatToDo.java" startLine="174" startPosition="46" endLine="175" endPosition="32" />
+    <scopeInfo nodeId="233723665931911105" fileName="WhatToDo.java" startLine="178" startPosition="39" endLine="179" endPosition="24" />
+    <scopeInfo nodeId="233723665931911175" fileName="WhatToDo.java" startLine="182" startPosition="57" endLine="183" endPosition="36" />
+    <scopeInfo nodeId="5949858627350825395" fileName="WhatToDo.java" startLine="186" startPosition="45" endLine="187" endPosition="36" />
+    <scopeInfo nodeId="5949858627350825430" fileName="WhatToDo.java" startLine="190" startPosition="55" endLine="191" endPosition="36" />
+    <scopeInfo nodeId="4003657351907892608" fileName="WhatToDo.java" startLine="205" startPosition="0" endLine="206" endPosition="28">
       <varInfo nodeId="4003657351907892610" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892609" fileName="WhatToDo.java" startLine="209" startPosition="43" endLine="210" endPosition="28" />
-    <scopeInfo nodeId="4003657351907892612" fileName="WhatToDo.java" startLine="211" startPosition="0" endLine="212" endPosition="38">
+    <scopeInfo nodeId="4003657351907892609" fileName="WhatToDo.java" startLine="205" startPosition="43" endLine="206" endPosition="28" />
+    <scopeInfo nodeId="4003657351907892612" fileName="WhatToDo.java" startLine="207" startPosition="0" endLine="208" endPosition="38">
       <varInfo nodeId="4003657351907892618" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892613" fileName="WhatToDo.java" startLine="211" startPosition="47" endLine="212" endPosition="38" />
-    <scopeInfo nodeId="4003657351907892620" fileName="WhatToDo.java" startLine="213" startPosition="0" endLine="214" endPosition="38">
+    <scopeInfo nodeId="4003657351907892613" fileName="WhatToDo.java" startLine="207" startPosition="47" endLine="208" endPosition="38" />
+    <scopeInfo nodeId="4003657351907892620" fileName="WhatToDo.java" startLine="209" startPosition="0" endLine="210" endPosition="38">
       <varInfo nodeId="4003657351907892626" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892621" fileName="WhatToDo.java" startLine="213" startPosition="44" endLine="214" endPosition="38" />
-    <scopeInfo nodeId="3143004140831101809" fileName="WhatToDo.java" startLine="222" startPosition="50" endLine="223" endPosition="90" />
-    <scopeInfo nodeId="3143004140831101951" fileName="WhatToDo.java" startLine="225" startPosition="51" endLine="226" endPosition="91" />
-    <scopeInfo nodeId="3143004140831148048" fileName="WhatToDo.java" startLine="228" startPosition="60" endLine="229" endPosition="101" />
-    <scopeInfo nodeId="3143004140831102185" fileName="WhatToDo.java" startLine="233" startPosition="57" endLine="234" endPosition="78" />
-    <scopeInfo nodeId="1060288745360409638" fileName="WhatToDo.java" startLine="238" startPosition="58" endLine="239" endPosition="77" />
-    <scopeInfo nodeId="1060288745360410987" fileName="WhatToDo.java" startLine="248" startPosition="46" endLine="249" endPosition="58" />
-    <scopeInfo nodeId="1060288745360411138" fileName="WhatToDo.java" startLine="250" startPosition="54" endLine="251" endPosition="59" />
-    <scopeInfo nodeId="1060288745360411214" fileName="WhatToDo.java" startLine="252" startPosition="64" endLine="253" endPosition="65" />
-    <scopeInfo nodeId="1060288745360417053" fileName="WhatToDo.java" startLine="256" startPosition="61" endLine="257" endPosition="68" />
-    <scopeInfo nodeId="1060288745360417989" fileName="WhatToDo.java" startLine="260" startPosition="57" endLine="261" endPosition="49" />
-    <scopeInfo nodeId="176725375005731227" fileName="WhatToDo.java" startLine="276" startPosition="9" endLine="277" endPosition="25" />
-    <scopeInfo nodeId="176725375005731229" fileName="WhatToDo.java" startLine="278" startPosition="0" endLine="279" endPosition="26">
+    <scopeInfo nodeId="4003657351907892621" fileName="WhatToDo.java" startLine="209" startPosition="44" endLine="210" endPosition="38" />
+    <scopeInfo nodeId="711197555740304346" fileName="WhatToDo.java" startLine="218" startPosition="29" endLine="219" endPosition="90" />
+    <scopeInfo nodeId="711197555740304362" fileName="WhatToDo.java" startLine="221" startPosition="30" endLine="222" endPosition="91" />
+    <scopeInfo nodeId="711197555740304377" fileName="WhatToDo.java" startLine="224" startPosition="39" endLine="225" endPosition="101" />
+    <scopeInfo nodeId="711197555740304463" fileName="WhatToDo.java" startLine="229" startPosition="45" endLine="230" endPosition="78" />
+    <scopeInfo nodeId="711197555740304487" fileName="WhatToDo.java" startLine="234" startPosition="35" endLine="235" endPosition="77" />
+    <scopeInfo nodeId="1060288745360410987" fileName="WhatToDo.java" startLine="244" startPosition="46" endLine="245" endPosition="58" />
+    <scopeInfo nodeId="1060288745360411138" fileName="WhatToDo.java" startLine="246" startPosition="54" endLine="247" endPosition="59" />
+    <scopeInfo nodeId="1060288745360411214" fileName="WhatToDo.java" startLine="248" startPosition="64" endLine="249" endPosition="65" />
+    <scopeInfo nodeId="1060288745360417053" fileName="WhatToDo.java" startLine="252" startPosition="61" endLine="253" endPosition="68" />
+    <scopeInfo nodeId="1060288745360417989" fileName="WhatToDo.java" startLine="256" startPosition="57" endLine="257" endPosition="49" />
+    <scopeInfo nodeId="176725375005731227" fileName="WhatToDo.java" startLine="272" startPosition="9" endLine="273" endPosition="25" />
+    <scopeInfo nodeId="176725375005731229" fileName="WhatToDo.java" startLine="274" startPosition="0" endLine="275" endPosition="26">
       <varInfo nodeId="176725375005731230" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="176725375005731232" fileName="WhatToDo.java" startLine="278" startPosition="29" endLine="279" endPosition="26" />
-    <scopeInfo nodeId="4003657351907893364" fileName="WhatToDo.java" startLine="284" startPosition="54" endLine="285" endPosition="34" />
-    <scopeInfo nodeId="4003657351907893376" fileName="WhatToDo.java" startLine="288" startPosition="42" endLine="289" endPosition="34" />
-    <scopeInfo nodeId="4003657351907893399" fileName="WhatToDo.java" startLine="294" startPosition="26" endLine="295" endPosition="19" />
-    <scopeInfo nodeId="4003657351907893409" fileName="WhatToDo.java" startLine="297" startPosition="31" endLine="298" endPosition="21" />
-    <scopeInfo nodeId="4003657351907893006" fileName="WhatToDo.java" startLine="308" startPosition="53" endLine="309" endPosition="14" />
-    <scopeInfo nodeId="4003657351907893029" fileName="WhatToDo.java" startLine="314" startPosition="9" endLine="315" endPosition="29" />
-    <scopeInfo nodeId="4003657351907893021" fileName="WhatToDo.java" startLine="316" startPosition="0" endLine="317" endPosition="26">
+    <scopeInfo nodeId="176725375005731232" fileName="WhatToDo.java" startLine="274" startPosition="29" endLine="275" endPosition="26" />
+    <scopeInfo nodeId="4003657351907893364" fileName="WhatToDo.java" startLine="280" startPosition="54" endLine="281" endPosition="34" />
+    <scopeInfo nodeId="4003657351907893376" fileName="WhatToDo.java" startLine="284" startPosition="42" endLine="285" endPosition="34" />
+    <scopeInfo nodeId="4003657351907893399" fileName="WhatToDo.java" startLine="290" startPosition="26" endLine="291" endPosition="19" />
+    <scopeInfo nodeId="4003657351907893409" fileName="WhatToDo.java" startLine="293" startPosition="31" endLine="294" endPosition="21" />
+    <scopeInfo nodeId="4003657351907893006" fileName="WhatToDo.java" startLine="304" startPosition="53" endLine="305" endPosition="14" />
+    <scopeInfo nodeId="4003657351907893029" fileName="WhatToDo.java" startLine="310" startPosition="9" endLine="311" endPosition="29" />
+    <scopeInfo nodeId="4003657351907893021" fileName="WhatToDo.java" startLine="312" startPosition="0" endLine="313" endPosition="26">
       <varInfo nodeId="4003657351907893027" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907893022" fileName="WhatToDo.java" startLine="316" startPosition="29" endLine="317" endPosition="26" />
-    <scopeInfo nodeId="3143004140831100432" fileName="WhatToDo.java" startLine="324" startPosition="9" endLine="325" endPosition="22" />
-    <scopeInfo nodeId="3143004140831100434" fileName="WhatToDo.java" startLine="326" startPosition="0" endLine="327" endPosition="26">
+    <scopeInfo nodeId="4003657351907893022" fileName="WhatToDo.java" startLine="312" startPosition="29" endLine="313" endPosition="26" />
+    <scopeInfo nodeId="3143004140831100432" fileName="WhatToDo.java" startLine="320" startPosition="9" endLine="321" endPosition="22" />
+    <scopeInfo nodeId="3143004140831100434" fileName="WhatToDo.java" startLine="322" startPosition="0" endLine="323" endPosition="26">
       <varInfo nodeId="3143004140831100435" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="3143004140831100437" fileName="WhatToDo.java" startLine="326" startPosition="31" endLine="327" endPosition="26" />
-    <scopeInfo nodeId="3143004140831100470" fileName="WhatToDo.java" startLine="328" startPosition="0" endLine="329" endPosition="26">
+    <scopeInfo nodeId="3143004140831100437" fileName="WhatToDo.java" startLine="322" startPosition="31" endLine="323" endPosition="26" />
+    <scopeInfo nodeId="3143004140831100470" fileName="WhatToDo.java" startLine="324" startPosition="0" endLine="325" endPosition="26">
       <varInfo nodeId="3143004140831100471" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="3143004140831100473" fileName="WhatToDo.java" startLine="328" startPosition="29" endLine="329" endPosition="26" />
-    <scopeInfo nodeId="4003657351907893052" fileName="WhatToDo.java" startLine="331" startPosition="29" endLine="332" endPosition="73" />
-    <scopeInfo nodeId="4003657351907892202" fileName="WhatToDo.java" startLine="51" startPosition="0" endLine="53" endPosition="3" />
-    <scopeInfo nodeId="4003657351907892211" fileName="WhatToDo.java" startLine="55" startPosition="40" endLine="57" endPosition="24" />
-    <scopeInfo nodeId="4003657351907892236" fileName="WhatToDo.java" startLine="60" startPosition="39" endLine="62" endPosition="23" />
-    <scopeInfo nodeId="3449270742160235859" fileName="WhatToDo.java" startLine="65" startPosition="46" endLine="67" endPosition="33" />
-    <scopeInfo nodeId="4003657351907892314" fileName="WhatToDo.java" startLine="80" startPosition="36" endLine="82" endPosition="56" />
-    <scopeInfo nodeId="4003657351907892628" fileName="WhatToDo.java" startLine="206" startPosition="13" endLine="208" endPosition="58">
+    <scopeInfo nodeId="3143004140831100473" fileName="WhatToDo.java" startLine="324" startPosition="29" endLine="325" endPosition="26" />
+    <scopeInfo nodeId="4003657351907893052" fileName="WhatToDo.java" startLine="327" startPosition="29" endLine="328" endPosition="73" />
+    <scopeInfo nodeId="4003657351907892202" fileName="WhatToDo.java" startLine="47" startPosition="0" endLine="49" endPosition="3" />
+    <scopeInfo nodeId="4003657351907892211" fileName="WhatToDo.java" startLine="51" startPosition="40" endLine="53" endPosition="24" />
+    <scopeInfo nodeId="4003657351907892236" fileName="WhatToDo.java" startLine="56" startPosition="39" endLine="58" endPosition="23" />
+    <scopeInfo nodeId="3449270742160235859" fileName="WhatToDo.java" startLine="61" startPosition="46" endLine="63" endPosition="33" />
+    <scopeInfo nodeId="4003657351907892314" fileName="WhatToDo.java" startLine="76" startPosition="36" endLine="78" endPosition="56" />
+    <scopeInfo nodeId="4003657351907892628" fileName="WhatToDo.java" startLine="202" startPosition="13" endLine="204" endPosition="58">
       <varInfo nodeId="4003657351907892630" varName="destMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="3143004140831101806" fileName="WhatToDo.java" startLine="221" startPosition="45" endLine="224" endPosition="5">
-      <varInfo nodeId="3143004140831101806" varName="f" />
+    <scopeInfo nodeId="711197555740304345" fileName="WhatToDo.java" startLine="217" startPosition="45" endLine="220" endPosition="5">
+      <varInfo nodeId="711197555740304348" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="3143004140831101948" fileName="WhatToDo.java" startLine="224" startPosition="5" endLine="227" endPosition="5">
-      <varInfo nodeId="3143004140831101948" varName="f" />
+    <scopeInfo nodeId="711197555740304361" fileName="WhatToDo.java" startLine="220" startPosition="5" endLine="223" endPosition="5">
+      <varInfo nodeId="711197555740304364" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="3143004140831148045" fileName="WhatToDo.java" startLine="227" startPosition="5" endLine="230" endPosition="5">
-      <varInfo nodeId="3143004140831148045" varName="f" />
+    <scopeInfo nodeId="711197555740304376" fileName="WhatToDo.java" startLine="223" startPosition="5" endLine="226" endPosition="5">
+      <varInfo nodeId="711197555740304379" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="3143004140831102182" fileName="WhatToDo.java" startLine="232" startPosition="96" endLine="235" endPosition="7">
-      <varInfo nodeId="3143004140831102182" varName="s" />
+    <scopeInfo nodeId="711197555740304462" fileName="WhatToDo.java" startLine="228" startPosition="90" endLine="231" endPosition="7">
+      <varInfo nodeId="711197555740304465" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="1060288745360409635" fileName="WhatToDo.java" startLine="237" startPosition="5" endLine="240" endPosition="5">
-      <varInfo nodeId="1060288745360409635" varName="p" />
+    <scopeInfo nodeId="711197555740304486" fileName="WhatToDo.java" startLine="233" startPosition="5" endLine="236" endPosition="5">
+      <varInfo nodeId="711197555740304489" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="1060288745360417052" fileName="WhatToDo.java" startLine="255" startPosition="58" endLine="258" endPosition="9">
+    <scopeInfo nodeId="1060288745360417052" fileName="WhatToDo.java" startLine="251" startPosition="58" endLine="254" endPosition="9">
       <varInfo nodeId="1060288745360417055" varName="prop" />
     </scopeInfo>
-    <scopeInfo nodeId="3143004140831100439" fileName="WhatToDo.java" startLine="330" startPosition="15" endLine="333" endPosition="7" />
-    <scopeInfo nodeId="4003657351907892261" fileName="WhatToDo.java" startLine="70" startPosition="48" endLine="74" endPosition="5" />
-    <scopeInfo nodeId="4003657351907892333" fileName="WhatToDo.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="4003657351907892341" fileName="WhatToDo.java" startLine="90" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="3143004140831100439" fileName="WhatToDo.java" startLine="326" startPosition="15" endLine="329" endPosition="7" />
+    <scopeInfo nodeId="4003657351907892261" fileName="WhatToDo.java" startLine="66" startPosition="48" endLine="70" endPosition="5" />
+    <scopeInfo nodeId="4003657351907892333" fileName="WhatToDo.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="4003657351907892341" fileName="WhatToDo.java" startLine="86" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="4003657351907892344" varName="models" />
     </scopeInfo>
-    <scopeInfo nodeId="3449270742160235882" fileName="WhatToDo.java" startLine="94" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="3449270742160235889" fileName="WhatToDo.java" startLine="98" startPosition="0" endLine="102" endPosition="0">
+    <scopeInfo nodeId="3449270742160235882" fileName="WhatToDo.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="3449270742160235889" fileName="WhatToDo.java" startLine="94" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="3449270742160235893" varName="excluded" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892353" fileName="WhatToDo.java" startLine="102" startPosition="0" endLine="106" endPosition="0" />
-    <scopeInfo nodeId="4003657351907892361" fileName="WhatToDo.java" startLine="106" startPosition="0" endLine="110" endPosition="0">
+    <scopeInfo nodeId="4003657351907892353" fileName="WhatToDo.java" startLine="98" startPosition="0" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="4003657351907892361" fileName="WhatToDo.java" startLine="102" startPosition="0" endLine="106" endPosition="0">
       <varInfo nodeId="4003657351907892364" varName="modules" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892373" fileName="WhatToDo.java" startLine="110" startPosition="0" endLine="114" endPosition="0" />
-    <scopeInfo nodeId="4003657351907892383" fileName="WhatToDo.java" startLine="114" startPosition="0" endLine="118" endPosition="0">
+    <scopeInfo nodeId="4003657351907892373" fileName="WhatToDo.java" startLine="106" startPosition="0" endLine="110" endPosition="0" />
+    <scopeInfo nodeId="4003657351907892383" fileName="WhatToDo.java" startLine="110" startPosition="0" endLine="114" endPosition="0">
       <varInfo nodeId="4003657351907892386" varName="mpsProjects" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892397" fileName="WhatToDo.java" startLine="118" startPosition="0" endLine="122" endPosition="0" />
-    <scopeInfo nodeId="4003657351907892403" fileName="WhatToDo.java" startLine="122" startPosition="0" endLine="126" endPosition="0">
+    <scopeInfo nodeId="4003657351907892397" fileName="WhatToDo.java" startLine="114" startPosition="0" endLine="118" endPosition="0" />
+    <scopeInfo nodeId="4003657351907892403" fileName="WhatToDo.java" startLine="118" startPosition="0" endLine="122" endPosition="0">
       <varInfo nodeId="4003657351907892406" varName="showError" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892413" fileName="WhatToDo.java" startLine="126" startPosition="0" endLine="130" endPosition="0" />
-    <scopeInfo nodeId="4003657351907892422" fileName="WhatToDo.java" startLine="130" startPosition="0" endLine="134" endPosition="0">
+    <scopeInfo nodeId="4003657351907892413" fileName="WhatToDo.java" startLine="122" startPosition="0" endLine="126" endPosition="0" />
+    <scopeInfo nodeId="4003657351907892422" fileName="WhatToDo.java" startLine="126" startPosition="0" endLine="130" endPosition="0">
       <varInfo nodeId="4003657351907892425" varName="properties" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892444" fileName="WhatToDo.java" startLine="135" startPosition="66" endLine="139" endPosition="5" />
-    <scopeInfo nodeId="4003657351907892459" fileName="WhatToDo.java" startLine="141" startPosition="0" endLine="145" endPosition="0" />
-    <scopeInfo nodeId="4003657351907892468" fileName="WhatToDo.java" startLine="145" startPosition="0" endLine="149" endPosition="0">
+    <scopeInfo nodeId="4003657351907892444" fileName="WhatToDo.java" startLine="131" startPosition="66" endLine="135" endPosition="5" />
+    <scopeInfo nodeId="4003657351907892459" fileName="WhatToDo.java" startLine="137" startPosition="0" endLine="141" endPosition="0" />
+    <scopeInfo nodeId="4003657351907892468" fileName="WhatToDo.java" startLine="141" startPosition="0" endLine="145" endPosition="0">
       <varInfo nodeId="4003657351907892471" varName="libraries" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892481" fileName="WhatToDo.java" startLine="149" startPosition="0" endLine="153" endPosition="0" />
-    <scopeInfo nodeId="4003657351907892489" fileName="WhatToDo.java" startLine="153" startPosition="0" endLine="157" endPosition="0">
+    <scopeInfo nodeId="4003657351907892481" fileName="WhatToDo.java" startLine="145" startPosition="0" endLine="149" endPosition="0" />
+    <scopeInfo nodeId="4003657351907892489" fileName="WhatToDo.java" startLine="149" startPosition="0" endLine="153" endPosition="0">
       <varInfo nodeId="4003657351907892492" varName="libraries" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892501" fileName="WhatToDo.java" startLine="157" startPosition="0" endLine="161" endPosition="0">
+    <scopeInfo nodeId="4003657351907892501" fileName="WhatToDo.java" startLine="153" startPosition="0" endLine="157" endPosition="0">
       <varInfo nodeId="4003657351907892504" varName="name" />
       <varInfo nodeId="4003657351907892506" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892515" fileName="WhatToDo.java" startLine="161" startPosition="0" endLine="165" endPosition="0" />
-    <scopeInfo nodeId="4003657351907892524" fileName="WhatToDo.java" startLine="165" startPosition="0" endLine="169" endPosition="0">
+    <scopeInfo nodeId="4003657351907892515" fileName="WhatToDo.java" startLine="157" startPosition="0" endLine="161" endPosition="0" />
+    <scopeInfo nodeId="4003657351907892524" fileName="WhatToDo.java" startLine="161" startPosition="0" endLine="165" endPosition="0">
       <varInfo nodeId="4003657351907892527" varName="macro" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892537" fileName="WhatToDo.java" startLine="169" startPosition="0" endLine="173" endPosition="0">
+    <scopeInfo nodeId="4003657351907892537" fileName="WhatToDo.java" startLine="165" startPosition="0" endLine="169" endPosition="0">
       <varInfo nodeId="4003657351907892540" varName="level" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892547" fileName="WhatToDo.java" startLine="173" startPosition="0" endLine="177" endPosition="0" />
-    <scopeInfo nodeId="233723665931911233" fileName="WhatToDo.java" startLine="177" startPosition="0" endLine="181" endPosition="0">
+    <scopeInfo nodeId="4003657351907892547" fileName="WhatToDo.java" startLine="169" startPosition="0" endLine="173" endPosition="0" />
+    <scopeInfo nodeId="233723665931911233" fileName="WhatToDo.java" startLine="173" startPosition="0" endLine="177" endPosition="0">
       <varInfo nodeId="233723665931911251" varName="parameter" />
     </scopeInfo>
-    <scopeInfo nodeId="233723665931911102" fileName="WhatToDo.java" startLine="181" startPosition="0" endLine="185" endPosition="0" />
-    <scopeInfo nodeId="233723665931911172" fileName="WhatToDo.java" startLine="185" startPosition="0" endLine="189" endPosition="0">
+    <scopeInfo nodeId="233723665931911102" fileName="WhatToDo.java" startLine="177" startPosition="0" endLine="181" endPosition="0" />
+    <scopeInfo nodeId="233723665931911172" fileName="WhatToDo.java" startLine="181" startPosition="0" endLine="185" endPosition="0">
       <varInfo nodeId="233723665931911190" varName="parameters" />
     </scopeInfo>
-    <scopeInfo nodeId="5949858627350825392" fileName="WhatToDo.java" startLine="189" startPosition="0" endLine="193" endPosition="0" />
-    <scopeInfo nodeId="5949858627350825427" fileName="WhatToDo.java" startLine="193" startPosition="0" endLine="197" endPosition="0">
+    <scopeInfo nodeId="5949858627350825392" fileName="WhatToDo.java" startLine="185" startPosition="0" endLine="189" endPosition="0" />
+    <scopeInfo nodeId="5949858627350825427" fileName="WhatToDo.java" startLine="189" startPosition="0" endLine="193" endPosition="0">
       <varInfo nodeId="5949858627350825445" varName="load" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907893357" fileName="WhatToDo.java" startLine="283" startPosition="0" endLine="287" endPosition="0">
+    <scopeInfo nodeId="4003657351907893357" fileName="WhatToDo.java" startLine="279" startPosition="0" endLine="283" endPosition="0">
       <varInfo nodeId="4003657351907893360" varName="name" />
       <varInfo nodeId="4003657351907893362" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907893371" fileName="WhatToDo.java" startLine="287" startPosition="0" endLine="291" endPosition="0">
+    <scopeInfo nodeId="4003657351907893371" fileName="WhatToDo.java" startLine="283" startPosition="0" endLine="287" endPosition="0">
       <varInfo nodeId="4003657351907893374" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892995" fileName="WhatToDo.java" startLine="307" startPosition="18" endLine="311" endPosition="10" />
-    <scopeInfo nodeId="4003657351907892206" fileName="WhatToDo.java" startLine="54" startPosition="0" endLine="59" endPosition="0">
+    <scopeInfo nodeId="4003657351907892995" fileName="WhatToDo.java" startLine="303" startPosition="18" endLine="307" endPosition="10" />
+    <scopeInfo nodeId="4003657351907892206" fileName="WhatToDo.java" startLine="50" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="4003657351907892209" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892231" fileName="WhatToDo.java" startLine="59" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="4003657351907892231" fileName="WhatToDo.java" startLine="55" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="4003657351907892234" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="3449270742160235856" fileName="WhatToDo.java" startLine="64" startPosition="0" endLine="69" endPosition="0">
+    <scopeInfo nodeId="3449270742160235856" fileName="WhatToDo.java" startLine="60" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="3449270742160235860" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="3143004140831102062" fileName="WhatToDo.java" startLine="231" startPosition="79" endLine="236" endPosition="28">
+    <scopeInfo nodeId="711197555740304395" fileName="WhatToDo.java" startLine="227" startPosition="43" endLine="232" endPosition="28">
       <varInfo nodeId="3143004140831102088" varName="elem" />
     </scopeInfo>
-    <scopeInfo nodeId="1060288745360411780" fileName="WhatToDo.java" startLine="254" startPosition="55" endLine="259" endPosition="111">
+    <scopeInfo nodeId="1060288745360411780" fileName="WhatToDo.java" startLine="250" startPosition="55" endLine="255" endPosition="111">
       <varInfo nodeId="1060288745360411969" varName="properties" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892256" fileName="WhatToDo.java" startLine="69" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="4003657351907892256" fileName="WhatToDo.java" startLine="65" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="4003657351907892259" varName="projectFile" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892293" fileName="WhatToDo.java" startLine="77" startPosition="68" endLine="84" endPosition="54">
+    <scopeInfo nodeId="4003657351907892293" fileName="WhatToDo.java" startLine="73" startPosition="68" endLine="80" endPosition="54">
       <varInfo nodeId="4003657351907892303" varName="projectProperties" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892435" fileName="WhatToDo.java" startLine="134" startPosition="0" endLine="141" endPosition="0">
+    <scopeInfo nodeId="4003657351907892435" fileName="WhatToDo.java" startLine="130" startPosition="0" endLine="137" endPosition="0">
       <varInfo nodeId="4003657351907892442" varName="compile" />
       <varInfo nodeId="4003657351907892440" varName="dir" />
       <varInfo nodeId="4003657351907892438" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="3143004140831102059" fileName="WhatToDo.java" startLine="230" startPosition="5" endLine="237" endPosition="5">
-      <varInfo nodeId="3143004140831102059" varName="p" />
+    <scopeInfo nodeId="711197555740304394" fileName="WhatToDo.java" startLine="226" startPosition="5" endLine="233" endPosition="5">
+      <varInfo nodeId="711197555740304397" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907893387" fileName="WhatToDo.java" startLine="292" startPosition="45" endLine="301" endPosition="84">
+    <scopeInfo nodeId="4003657351907893387" fileName="WhatToDo.java" startLine="288" startPosition="45" endLine="297" endPosition="84">
       <varInfo nodeId="4003657351907893389" varName="reports" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892285" fileName="WhatToDo.java" startLine="76" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="4003657351907892285" fileName="WhatToDo.java" startLine="72" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="4003657351907892288" varName="projectFile" />
       <varInfo nodeId="4003657351907892290" varName="property" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892598" fileName="WhatToDo.java" startLine="204" startPosition="44" endLine="215" endPosition="9">
+    <scopeInfo nodeId="4003657351907892598" fileName="WhatToDo.java" startLine="200" startPosition="44" endLine="211" endPosition="9">
       <varInfo nodeId="4003657351907892600" varName="dstMethodName" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907893382" fileName="WhatToDo.java" startLine="291" startPosition="0" endLine="303" endPosition="0">
+    <scopeInfo nodeId="4003657351907893382" fileName="WhatToDo.java" startLine="287" startPosition="0" endLine="299" endPosition="0">
       <varInfo nodeId="4003657351907893385" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892586" fileName="WhatToDo.java" startLine="202" startPosition="41" endLine="216" endPosition="7">
+    <scopeInfo nodeId="4003657351907892586" fileName="WhatToDo.java" startLine="198" startPosition="41" endLine="212" endPosition="7">
       <varInfo nodeId="4003657351907892588" varName="srcMethodName" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892951" fileName="WhatToDo.java" startLine="266" startPosition="60" endLine="281" endPosition="19">
+    <scopeInfo nodeId="4003657351907892951" fileName="WhatToDo.java" startLine="262" startPosition="60" endLine="277" endPosition="19">
       <varInfo nodeId="3143004140831100533" varName="data" />
       <varInfo nodeId="4003657351907892953" varName="tmpFile" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892981" fileName="WhatToDo.java" startLine="304" startPosition="38" endLine="319" endPosition="18">
+    <scopeInfo nodeId="4003657351907892981" fileName="WhatToDo.java" startLine="300" startPosition="38" endLine="315" endPosition="18">
       <varInfo nodeId="4003657351907892990" varName="i" />
       <varInfo nodeId="4003657351907893012" varName="result" />
       <varInfo nodeId="4003657351907892983" varName="tmp" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892582" fileName="WhatToDo.java" startLine="201" startPosition="48" endLine="217" endPosition="5">
+    <scopeInfo nodeId="4003657351907892582" fileName="WhatToDo.java" startLine="197" startPosition="48" endLine="213" endPosition="5">
       <varInfo nodeId="4003657351907892584" varName="srcMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="1060288745360410933" fileName="WhatToDo.java" startLine="245" startPosition="41" endLine="262" endPosition="7">
+    <scopeInfo nodeId="1060288745360410933" fileName="WhatToDo.java" startLine="241" startPosition="41" endLine="258" endPosition="7">
       <varInfo nodeId="1060288745360410978" varName="e" />
       <varInfo nodeId="1060288745360411089" varName="elementName" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892948" fileName="WhatToDo.java" startLine="265" startPosition="0" endLine="283" endPosition="0" />
-    <scopeInfo nodeId="4003657351907892978" fileName="WhatToDo.java" startLine="303" startPosition="0" endLine="321" endPosition="0" />
-    <scopeInfo nodeId="4003657351907892558" fileName="WhatToDo.java" startLine="198" startPosition="36" endLine="217" endPosition="5">
+    <scopeInfo nodeId="4003657351907892948" fileName="WhatToDo.java" startLine="261" startPosition="0" endLine="279" endPosition="0" />
+    <scopeInfo nodeId="4003657351907892978" fileName="WhatToDo.java" startLine="299" startPosition="0" endLine="317" endPosition="0" />
+    <scopeInfo nodeId="4003657351907892558" fileName="WhatToDo.java" startLine="194" startPosition="36" endLine="213" endPosition="5">
       <varInfo nodeId="4003657351907892568" varName="destClass" />
       <varInfo nodeId="4003657351907892560" varName="srcClass" />
       <varInfo nodeId="4003657351907892576" varName="srcMethods" />
     </scopeInfo>
-    <scopeInfo nodeId="1060288745360410932" fileName="WhatToDo.java" startLine="244" startPosition="39" endLine="263" endPosition="5">
+    <scopeInfo nodeId="1060288745360410932" fileName="WhatToDo.java" startLine="240" startPosition="39" endLine="259" endPosition="5">
       <varInfo nodeId="1060288745360410940" varName="o" />
     </scopeInfo>
-    <scopeInfo nodeId="3143004140831148194" fileName="WhatToDo.java" startLine="244" startPosition="39" endLine="263" endPosition="5" />
-    <scopeInfo nodeId="3143004140831101673" fileName="WhatToDo.java" startLine="220" startPosition="33" endLine="241" endPosition="16">
+    <scopeInfo nodeId="3143004140831148194" fileName="WhatToDo.java" startLine="240" startPosition="39" endLine="259" endPosition="5" />
+    <scopeInfo nodeId="3143004140831101673" fileName="WhatToDo.java" startLine="216" startPosition="33" endLine="237" endPosition="16">
       <varInfo nodeId="3143004140831101740" varName="data" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892553" fileName="WhatToDo.java" startLine="197" startPosition="0" endLine="219" endPosition="0">
+    <scopeInfo nodeId="4003657351907892553" fileName="WhatToDo.java" startLine="193" startPosition="0" endLine="215" endPosition="0">
       <varInfo nodeId="4003657351907892556" varName="dest" />
     </scopeInfo>
-    <scopeInfo nodeId="3143004140831148191" fileName="WhatToDo.java" startLine="243" startPosition="0" endLine="265" endPosition="0">
+    <scopeInfo nodeId="3143004140831148191" fileName="WhatToDo.java" startLine="239" startPosition="0" endLine="261" endPosition="0">
       <varInfo nodeId="3143004140831148214" varName="elem" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907893041" fileName="WhatToDo.java" startLine="322" startPosition="52" endLine="344" endPosition="20">
+    <scopeInfo nodeId="4003657351907893041" fileName="WhatToDo.java" startLine="318" startPosition="52" endLine="340" endPosition="20">
       <varInfo nodeId="3143004140831100383" varName="data" />
       <varInfo nodeId="3143004140831148285" varName="whatToDo" />
     </scopeInfo>
-    <scopeInfo nodeId="3143004140831101670" fileName="WhatToDo.java" startLine="219" startPosition="0" endLine="243" endPosition="0" />
-    <scopeInfo nodeId="4003657351907893036" fileName="WhatToDo.java" startLine="321" startPosition="0" endLine="346" endPosition="0">
+    <scopeInfo nodeId="3143004140831101670" fileName="WhatToDo.java" startLine="215" startPosition="0" endLine="239" endPosition="0" />
+    <scopeInfo nodeId="4003657351907893036" fileName="WhatToDo.java" startLine="317" startPosition="0" endLine="342" endPosition="0">
       <varInfo nodeId="4003657351907893039" varName="file" />
     </scopeInfo>
-    <unitInfo nodeId="4003657351907888945" fileName="WhatToDo.java" startLine="28" startPosition="0" endLine="347" endPosition="0" unitName="jetbrains.mps.build.ant.WhatToDo" />
+    <unitInfo nodeId="4003657351907888945" fileName="WhatToDo.java" startLine="24" startPosition="0" endLine="343" endPosition="0" unitName="jetbrains.mps.build.ant.WhatToDo" />
   </root>
   <root nodeId="4003657351907889184">
     <nodeInfo nodeId="4003657351907889186" fileName="IBuildServerMessageFormat.java" startLine="7" startPosition="44" endLine="8" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="escapeBuildMessage#(Ljava/lang/StringBuffer;)Ljava/lang/StringBuffer;" />
