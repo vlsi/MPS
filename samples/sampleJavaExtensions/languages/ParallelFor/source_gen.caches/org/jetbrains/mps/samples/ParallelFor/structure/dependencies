@@ -16,6 +16,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Expression" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.IMethodLike" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.IStatementListContainer" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />

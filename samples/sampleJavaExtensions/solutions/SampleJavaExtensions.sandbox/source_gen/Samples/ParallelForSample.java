@@ -40,10 +40,12 @@ public class ParallelForSample {
             try {
               System.out.println("FooBar");
               log("Starting calculation for number " + localA + " in thread " + Thread.currentThread());
-              ParallelForSample.sleep(localA * 1000);
+              Thread.sleep(localA * 1000);
               // External (compiled) method calls can be annotated as thread-safe to indicate that they are safe to call 
               log("Finished calculation for number " + localA + " in thread " + Thread.currentThread());
             } catch (RuntimeException e) {
+              ListSequence.fromList(exceptions_i0a).addElement(e);
+            } catch (InterruptedException e) {
               ListSequence.fromList(exceptions_i0a).addElement(e);
             } finally {
               latch_i0a.countDown();
@@ -95,7 +97,7 @@ public class ParallelForSample {
               messupWithMeSinceImlocal += 10;
               log("Local variables can be used without restrictions " + messupWithMeSinceImlocal);
 
-              // Warning since we are accessing a non-local object 
+              // Warning since we are accessing a non-local non-thread-safe object 
               ListSequence.fromList(names).removeElement("Joe");
 
               List<String> localNames = ListSequence.fromList(new ArrayList<String>());
@@ -105,8 +107,10 @@ public class ParallelForSample {
               // Thread-safe objects are safe to use as well 
               log("Counter: " + counter.incrementAndGet());
 
-              ParallelForSample.sleep(1000);
+              Thread.sleep(localA);
             } catch (RuntimeException e) {
+              ListSequence.fromList(exceptions_w0a).addElement(e);
+            } catch (InterruptedException e) {
               ListSequence.fromList(exceptions_w0a).addElement(e);
             } finally {
               latch_w0a.countDown();
@@ -171,14 +175,6 @@ public class ParallelForSample {
     // Shutdown the thread pools 
     myPool.shutdown();
     youPool.shutdown();
-  }
-
-  private static void sleep(final int timeout) {
-    try {
-      Thread.sleep(timeout);
-    } catch (InterruptedException e) {
-      System.out.println("Interrupted");
-    }
   }
 
   private static void log(String message) {

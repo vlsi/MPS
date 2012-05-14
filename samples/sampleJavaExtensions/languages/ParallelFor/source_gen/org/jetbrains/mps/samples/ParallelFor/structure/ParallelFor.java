@@ -4,6 +4,7 @@ package org.jetbrains.mps.samples.ParallelFor.structure;
 
 import jetbrains.mps.baseLanguage.structure.AbstractLoopStatement;
 import jetbrains.mps.baseLanguage.structure.IMethodLike;
+import jetbrains.mps.baseLanguage.structure.IStatementListContainer;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import java.util.Iterator;
@@ -13,7 +14,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ParallelFor extends AbstractLoopStatement implements IMethodLike {
+public class ParallelFor extends AbstractLoopStatement implements IMethodLike, IStatementListContainer {
   public static final String concept = "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";

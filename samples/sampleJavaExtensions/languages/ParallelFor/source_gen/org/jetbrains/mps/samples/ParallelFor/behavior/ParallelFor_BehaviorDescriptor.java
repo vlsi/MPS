@@ -4,13 +4,15 @@ package org.jetbrains.mps.samples.ParallelFor.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.AbstractLoopStatement_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IStatementListContainer_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.behavior.IStatementListContainer_Behavior;
 import java.util.List;
 import java.util.Set;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
 import jetbrains.mps.scope.Scope;
 
-public class ParallelFor_BehaviorDescriptor extends AbstractLoopStatement_BehaviorDescriptor implements IMethodLike_BehaviorDescriptor {
+public class ParallelFor_BehaviorDescriptor extends AbstractLoopStatement_BehaviorDescriptor implements IMethodLike_BehaviorDescriptor, IStatementListContainer_BehaviorDescriptor {
   public ParallelFor_BehaviorDescriptor() {
   }
 
@@ -18,8 +20,16 @@ public class ParallelFor_BehaviorDescriptor extends AbstractLoopStatement_Behavi
     return ParallelFor_Behavior.virtual_getExpectedRetType_1239354342632(thisNode);
   }
 
+  public boolean virtual_isExecuteSynchronous_1230212745736(SNode thisNode) {
+    return IStatementListContainer_Behavior.virtual_isExecuteSynchronous_1230212745736(thisNode);
+  }
+
   public List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
     return ParallelFor_Behavior.virtual_getThrowableTypes_6204026822016975623(thisNode);
+  }
+
+  public boolean virtual_isClosure_3262277503800835439(SNode thisNode) {
+    return IStatementListContainer_Behavior.virtual_isClosure_3262277503800835439(thisNode);
   }
 
   public boolean virtual_implicitThrows_4989157187872658723(SNode thisNode) {
