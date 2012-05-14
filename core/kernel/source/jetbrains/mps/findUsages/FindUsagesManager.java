@@ -51,14 +51,6 @@ public class FindUsagesManager implements CoreComponent {
     INSTANCE = null;
   }
 
-  //------------CacheHandler stuff----------------
-
-  private CacheHandler myCacheHandler = null;
-
-  public void setCacheHandler(CacheHandler cacheHandler) {
-    myCacheHandler = cacheHandler;
-  }
-
 //------------------API-------------------------
 
   public <T> Set<T> findUsages(Set<SNode> nodes, SearchType<T> type, IScope scope, @Nullable ProgressMonitor monitor) {
@@ -73,11 +65,7 @@ public class FindUsagesManager implements CoreComponent {
       }
     }
 
-    if (myCacheHandler != null) {
-      directSearch.addAll(type.findMatchingModelsInCache(nodes, cacheSearch, myCacheHandler, null));
-    } else {
-      directSearch.addAll(cacheSearch);
-    }
+    directSearch.addAll(type.findMatchingModelsInCache(nodes, cacheSearch, null));
 
     Set<T> result = new HashSet<T>();
     if (monitor == null) monitor = new EmptyProgressMonitor();

@@ -15,13 +15,16 @@
  */
 package jetbrains.mps.findUsages;
 
+import gnu.trove.THashMap;
+import gnu.trove.THashSet;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 public abstract class SearchType<T> {
@@ -33,15 +36,52 @@ public abstract class SearchType<T> {
 
   //--------intfc---------
 
-  public abstract Set<SModelDescriptor> findMatchingModelsInCache(Set<SNode> nodes, Set<SModelDescriptor> models, @NotNull CacheHandler handler, @Nullable Computable<Boolean> callback);
+  public abstract Set<SModelDescriptor> findMatchingModelsInCache(Set<SNode> nodes, Set<SModelDescriptor> models, @Nullable Computable<Boolean> callback);
 
   public abstract Set<T> findInModel(Set<SNode> nodes, Set<SModelDescriptor> models, @Nullable Computable<Boolean> callback);
+
+  protected static Map<FastFindSupport, Set<SModelDescriptor>> groupModels(Set<SModelDescriptor> models) {
+    Map<FastFindSupport, Set<SModelDescriptor>> result = new THashMap<FastFindSupport, Set<SModelDescriptor>>();
+    result.put(null, new THashSet<SModelDescriptor>());
+
+    for (SModelDescriptor model : models) {
+      if (!(model instanceof BaseSModelDescriptorWithSource)) {
+        result.get(null).add(model);
+        continue;
+      }
+
+      BaseSModelDescriptorWithSource mws = ((BaseSModelDescriptorWithSource) model);
+      if (!(mws.getSource() instanceof FastFindSupport)) {
+        result.get(null).add(model);
+        continue;
+      }
+
+      FastFindSupport ffs = ((FastFindSupport) mws.getSource());
+      Set<SModelDescriptor> descs = result.get(ffs);
+      if (descs == null) {
+        descs = new THashSet<SModelDescriptor>();
+        result.put(ffs, descs);
+      }
+      descs.add(model);
+    }
+    return result;
+  }
 
   //--------impl----------
 
   private static class UsagesSearchType extends SearchType<SReference> {
-    public Set<SModelDescriptor> findMatchingModelsInCache(Set<SNode> nodes, Set<SModelDescriptor> models, @NotNull CacheHandler handler, @Nullable Computable<Boolean> callback) {
-      return handler.findModelsWithPossibleUsages(models, nodes);
+    public Set<SModelDescriptor> findMatchingModelsInCache(Set<SNode> nodes, Set<SModelDescriptor> models, @Nullable Computable<Boolean> callback) {
+      THashSet<SModelDescriptor> result = new THashSet<SModelDescriptor>();
+      Map<FastFindSupport, Set<SModelDescriptor>> gm = groupModels(models);
+      for (Entry<FastFindSupport, Set<SModelDescriptor>> e : gm.entrySet()) {
+        if (e.getKey() == null) {
+          result.addAll(e.getValue());
+          continue;
+        }
+
+        result.addAll(e.getKey().findModelsWithPossibleUsages(e.getValue(), nodes));
+      }
+      return result;
     }
 
     public Set<SReference> findInModel(Set<SNode> nodes, Set<SModelDescriptor> models, @Nullable Computable<Boolean> callback) {
@@ -78,16 +118,26 @@ public abstract class SearchType<T> {
       myExact = exact;
     }
 
-    public Set<SModelDescriptor> findMatchingModelsInCache(Set<SNode> nodes, Set<SModelDescriptor> models, @NotNull CacheHandler handler, @Nullable Computable<Boolean> callback) {
-      Set<String> allNodes = new HashSet<String>();
+    public Set<SModelDescriptor> findMatchingModelsInCache(Set<SNode> nodes, Set<SModelDescriptor> models, @Nullable Computable<Boolean> callback) {
+      Set<String> conceptNames = new HashSet<String>();
       for (SNode node : nodes) {
-        allNodes.add(node.getName());
+        conceptNames.add(node.getName());
         if (!myExact) {
-          allNodes.addAll(LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(NameUtil.nodeFQName(node)));
+          conceptNames.addAll(LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(NameUtil.nodeFQName(node)));
         }
       }
 
-      return handler.findModelsWithPossibleInstances(models, allNodes);
+      THashSet<SModelDescriptor> result = new THashSet<SModelDescriptor>();
+      Map<FastFindSupport, Set<SModelDescriptor>> gm = groupModels(models);
+      for (Entry<FastFindSupport, Set<SModelDescriptor>> e : gm.entrySet()) {
+        if (e.getKey() == null) {
+          result.addAll(e.getValue());
+          continue;
+        }
+
+        result.addAll(e.getKey().findModelsWithPossibleInstances(e.getValue(), conceptNames));
+      }
+      return result;
     }
 
     public Set<SNode> findInModel(Set<SNode> nodes, Set<SModelDescriptor> models, @Nullable Computable<Boolean> callback) {

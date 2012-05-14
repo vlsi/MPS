@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.SNode;
 
 import java.util.Set;
 
-public interface CacheHandler {
+public interface FastFindSupport {
   //note that Set<String> is passed because we won't have concept nodes at runtime in future
   Set<SModelDescriptor> findModelsWithPossibleInstances(Set<SModelDescriptor> models, Set<String> concepts);
 

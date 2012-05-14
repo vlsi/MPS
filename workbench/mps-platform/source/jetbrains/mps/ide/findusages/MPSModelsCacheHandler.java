@@ -23,7 +23,7 @@ import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.sun.istack.Nullable;
-import jetbrains.mps.findUsages.CacheHandler;
+import jetbrains.mps.findUsages.FastFindSupport;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -37,7 +37,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
-public class MPSModelsCacheHandler implements ApplicationComponent, CacheHandler {
+public class MPSModelsCacheHandler implements ApplicationComponent, FastFindSupport {
   public void initComponent() {
     FindUsagesManager.getInstance().setCacheHandler(this);
   }
