@@ -560,6 +560,7 @@
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildString_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.util.Context" />
     <classNode dependClassName="jetbrains.mps.build.util.UnpackHelper" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

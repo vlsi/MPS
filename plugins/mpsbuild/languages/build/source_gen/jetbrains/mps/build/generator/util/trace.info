@@ -43,7 +43,7 @@
     <nodeInfo nodeId="8775597636506120693" fileName="JavaExternalLibraryHelper.java" startLine="99" startPosition="16" endLine="100" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8775597636506121293" fileName="JavaExternalLibraryHelper.java" startLine="103" startPosition="5" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8775597636506121297" fileName="JavaExternalLibraryHelper.java" startLine="104" startPosition="0" endLine="105" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5979287180587467520" fileName="JavaExternalLibraryHelper.java" startLine="106" startPosition="32" endLine="107" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5979287180587467520" fileName="JavaExternalLibraryHelper.java" startLine="106" startPosition="66" endLine="107" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5979287180587467531" fileName="JavaExternalLibraryHelper.java" startLine="108" startPosition="24" endLine="109" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5979287180587467543" fileName="JavaExternalLibraryHelper.java" startLine="109" startPosition="156" endLine="110" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="5979287180587467547" fileName="JavaExternalLibraryHelper.java" startLine="111" startPosition="7" endLine="112" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -181,7 +181,7 @@
     <scopeInfo nodeId="6853883513540407385" fileName="JavaExternalLibraryHelper.java" startLine="48" startPosition="107" endLine="55" endPosition="11">
       <varInfo nodeId="6853883513540407419" varName="jarArtifact" />
     </scopeInfo>
-    <scopeInfo nodeId="5979287180587467519" fileName="JavaExternalLibraryHelper.java" startLine="106" startPosition="32" endLine="114" endPosition="61">
+    <scopeInfo nodeId="5979287180587467519" fileName="JavaExternalLibraryHelper.java" startLine="106" startPosition="66" endLine="114" endPosition="61">
       <varInfo nodeId="5979287180587467548" varName="propertyNode" />
       <varInfo nodeId="5979287180587467521" varName="val" />
     </scopeInfo>

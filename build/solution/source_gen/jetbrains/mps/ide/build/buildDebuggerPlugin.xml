@@ -349,7 +349,6 @@
         <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
@@ -440,7 +439,6 @@
         <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />

@@ -6,24 +6,24 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.generator.template.TemplateQueryContext;
-import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.make.dependencies.graph.Graph;
+import java.util.Set;
+import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.build.workflow.util.XmlSignature;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.make.dependencies.graph.Graph;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.make.dependencies.graph.Graphs;
 import java.util.Collections;
-import java.util.Set;
-import java.util.HashSet;
 import java.util.Comparator;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.LinkedHashSet;
-import jetbrains.mps.build.workflow.util.XmlSignature;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.make.dependencies.graph.IVertex;
@@ -38,6 +38,24 @@ public class CycleHelper {
     this.genContext = genContext;
   }
 
+  public void optimizeDependencies(SNode m) {
+    final Set<String> seenDependencies = new HashSet<String>();
+    ListSequence.fromList(SLinkOperations.getTargets(m, "dependencies", true)).removeWhere(new IWhereFilter<SNode>() {
+      public boolean accept(SNode dep) {
+        if (!(SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath"))) {
+          return false;
+        }
+        SNode cp = SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath"), "classpath", true);
+        XmlSignature s = new XmlSignature().add(cp);
+        String id = (s.hasErrors() ?
+          "dep." + cp.getId() :
+          s.getResult()
+        );
+        return !(seenDependencies.add(id));
+      }
+    });
+  }
+
   public void processCycles() {
     List<SNode> modules = new ArrayList<SNode>();
     Graph<CycleHelper.Module> graph = new Graph();
@@ -50,6 +68,9 @@ public class CycleHelper {
         return SNodeOperations.cast(it, "jetbrains.mps.build.workflow.structure.BwfJavaModule");
       }
     }));
+    for (SNode m : ListSequence.fromList(modules)) {
+      optimizeDependencies(m);
+    }
     for (SNode jm : modules) {
       CycleHelper.Module module = new CycleHelper.Module(jm);
       map.put(jm, module);

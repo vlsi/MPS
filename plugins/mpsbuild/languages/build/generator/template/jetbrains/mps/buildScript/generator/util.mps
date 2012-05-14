@@ -915,8 +915,11 @@
               <link role="concept" roleId="tp25.1138405853777" targetNodeId="3ior.7128123785277710723" resolveInfo="BuildLayout_PathElement" />
             </node>
           </node>
-          <node role="iterable" roleId="tpee.1144226360166" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8775597636506121294">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8775597636506120628" resolveInfo="artifacts" />
+          <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2219920121494227200">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8775597636506121294">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8775597636506120628" resolveInfo="artifacts" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp2q.DistinctOperation" typeId="tp2q.1178894719932" id="2219920121494227206" />
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ForeachStatement" typeId="tpee.1144226303539" id="8775597636506121417">

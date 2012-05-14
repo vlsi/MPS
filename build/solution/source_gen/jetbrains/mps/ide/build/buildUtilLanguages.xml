@@ -1182,9 +1182,6 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.xml.deprecated" />
         <fileset file="${artifacts.IDEA}/lib/ant/lib/ant-launcher.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
@@ -1196,7 +1193,6 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
@@ -1234,9 +1230,6 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.generictasks" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.mpsdist" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.packaging" />
@@ -1255,8 +1248,6 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
@@ -1297,9 +1288,6 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.custommps" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-backend.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.generictasks" />
@@ -1319,8 +1307,6 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
@@ -1362,9 +1348,6 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.generictasks" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.buildlanguage" />
@@ -1411,9 +1394,6 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.xml.deprecated" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-backend.jar" />
         <fileset file="${artifacts.IDEA}/lib/ant/lib/ant.jar" />
@@ -1459,9 +1439,6 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.xml.deprecated" />
         <fileset file="${artifacts.IDEA}/lib/ant/lib/ant-launcher.jar" />
@@ -1511,7 +1488,6 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
@@ -1539,9 +1515,6 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.dependency" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-backend.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.generictasks" />
@@ -1558,8 +1531,6 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
@@ -1601,9 +1572,6 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.generictasks" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.packaging" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.property" />
@@ -1620,8 +1588,6 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
@@ -1662,9 +1628,6 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.xml.deprecated" />
         <fileset file="${artifacts.IDEA}/lib/ant/lib/ant-launcher.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
@@ -1676,7 +1639,6 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
@@ -1816,9 +1778,6 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.dates" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.dates.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.datesInternal" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <fileset file="${mps_home}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
@@ -2018,9 +1977,6 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -2109,9 +2065,6 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.ypath.runtime" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
@@ -2159,9 +2112,6 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
@@ -2422,9 +2372,6 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.quickQueryLanguage" />
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -2477,7 +2424,6 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
@@ -2519,7 +2465,6 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
