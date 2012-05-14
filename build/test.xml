@@ -14,11 +14,12 @@
   ~ limitations under the License.
   -->
 <project name="test" default="default">
+  <property name="mps.zip.path" value="artifacts"/>
   <property name="mps.zip" value="${build.number}.zip"/>
   <target name="default">
     <property name="dest" value="${mps_home}/build/temp.dst" />
     <fail unless="mps_home" message="Property mps_home unspecified."/>
-    <unzip src="${mps_home}/artifacts/${mps.zip}" dest="${dest}" />
+    <unzip src="${mps_home}/${mps.zip.path}/${mps.zip}" dest="${dest}" />
 
     <mkdir dir="${dest}/buildtests.tmp"/>
     <path id="tests.classpath">
