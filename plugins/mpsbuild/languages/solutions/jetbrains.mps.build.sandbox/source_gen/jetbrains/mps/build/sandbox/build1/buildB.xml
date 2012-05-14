@@ -3,7 +3,7 @@
   <property name="build.tmp" location="${build.dir}/tmp/buildB" />
   <property name="build.layout" location="${build.dir}/artifacts/buildB" />
   <property name="artifacts.buildA" location="../../build/artifacts/buildA" />
-  <property file="${artifacts.buildA}/variables.properties" prefix="import.buildA" />
+  <property file="${artifacts.buildA}/build.properties" prefix="import.buildA" />
   <property name="buildA.aver" value="${import.buildA.buildA.aver}" />
   
   <target name="assemble" depends="classes, fetchDependencies">
@@ -49,7 +49,7 @@
     <zip destfile="${build.layout}/importTest/importResultContent.zip">
       <fileset dir="${artifacts.buildA}/result" />
     </zip>
-    <echo file="${build.layout}/variables.properties">buildA.aver=${buildA.aver}</echo>
+    <echo file="${build.layout}/build.properties">buildA.aver=${buildA.aver}</echo>
   </target>
   
   <target name="buildDependents">

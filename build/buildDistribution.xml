@@ -3,7 +3,7 @@
   <property name="build.tmp" location="${build.dir}/tmp/buildDistribution" />
   <property name="build.layout" location="${build.dir}/artifacts/buildDistribution" />
   <property name="artifacts.buildMPS" location="${build.dir}/artifacts/buildMPS" />
-  <property file="${artifacts.buildMPS}/variables.properties" prefix="import.buildMPS" />
+  <property file="${artifacts.buildMPS}/build.properties" prefix="import.buildMPS" />
   <property name="buildMPS.build.number" value="${import.buildMPS.buildMPS.build.number}" />
   <property name="buildMPS.version" value="${import.buildMPS.buildMPS.version}" />
   <property name="buildMPS.build.vcs.number" value="${import.buildMPS.buildMPS.build.vcs.number}" />
@@ -161,7 +161,7 @@
       <zipfileset dir="${build.tmp}/default/_dl_{build.number}-macos.zip_f755" filemode="755" prefix="MPS ${buildMPS.version}.app" />
       <fileset dir="${build.tmp}/default/_dl_{build.number}-macos.zip" />
     </zip>
-    <echo file="${build.layout}/variables.properties">buildMPS.build.number=${buildMPS.build.number}${line.separator}buildMPS.version=${buildMPS.version}${line.separator}buildMPS.build.vcs.number=${buildMPS.build.vcs.number}${line.separator}buildMPS.teamcity.buildConfName=${buildMPS.teamcity.buildConfName}</echo>
+    <echo file="${build.layout}/build.properties">buildMPS.build.number=${buildMPS.build.number}${line.separator}buildMPS.version=${buildMPS.version}${line.separator}buildMPS.build.vcs.number=${buildMPS.build.vcs.number}${line.separator}buildMPS.teamcity.buildConfName=${buildMPS.teamcity.buildConfName}</echo>
   </target>
   
   <target name="buildDependents">

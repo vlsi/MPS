@@ -6,9 +6,9 @@
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
   <property name="artifacts.buildA" location="${build.dir}/artifacts/buildA" />
   <property name="artifacts.buildB" location="subprojects/buildB/build/artifacts/buildB" />
-  <property file="${artifacts.buildCore}/variables.properties" prefix="import.buildCore" />
-  <property file="${artifacts.buildA}/variables.properties" prefix="import.buildA" />
-  <property file="${artifacts.buildB}/variables.properties" prefix="import.buildB" />
+  <property file="${artifacts.buildCore}/build.properties" prefix="import.buildCore" />
+  <property file="${artifacts.buildA}/build.properties" prefix="import.buildA" />
+  <property file="${artifacts.buildB}/build.properties" prefix="import.buildB" />
   <property name="buildCore.build.number" value="${import.buildCore.buildCore.build.number}" />
   <property name="buildCore.ver" value="${import.buildCore.buildCore.ver}" />
   <property name="buildCore.MPS" value="${import.buildCore.buildCore.MPS}" />
@@ -19,7 +19,7 @@
     <aaa />
     <mkdir dir="${build.layout}/xx" />
     <jar destfile="${build.layout}/xx/xx" />
-    <echo file="${build.layout}/variables.properties">buildCore.build.number=${buildCore.build.number}${line.separator}buildCore.ver=${buildCore.ver}${line.separator}buildCore.MPS=${buildCore.MPS}${line.separator}buildA.aver1=${buildA.aver1}${line.separator}buildA.aver1=${buildA.aver1}</echo>
+    <echo file="${build.layout}/build.properties">buildCore.build.number=${buildCore.build.number}${line.separator}buildCore.ver=${buildCore.ver}${line.separator}buildCore.MPS=${buildCore.MPS}${line.separator}buildA.aver1=${buildA.aver1}${line.separator}buildA.aver1=${buildA.aver1}</echo>
   </target>
   
   <target name="buildDependents">

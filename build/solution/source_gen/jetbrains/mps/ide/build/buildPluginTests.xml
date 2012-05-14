@@ -6,7 +6,7 @@
   <property name="mps_home" location="${basedir}" />
   <property name="artifacts.buildPlugin" location="${build.dir}/artifacts/buildPlugin" />
   <property name="artifacts.IDEA" location="${idea_home}" />
-  <property file="${artifacts.buildPlugin}/variables.properties" prefix="import.buildPlugin" />
+  <property file="${artifacts.buildPlugin}/build.properties" prefix="import.buildPlugin" />
   <property name="buildPlugin.plugin.version" value="${import.buildPlugin.buildPlugin.plugin.version}" />
   
   <path id="path.javac2.classpath">
@@ -65,7 +65,7 @@
       <zipfileset file="${mps_home}/IdeaPlugin/tests/editorTests/models/test.mps" prefix="jetbrains/mps/idea/core/tests" />
       <fileset dir="${build.tmp}/default/mps-plugin-tests.jar" />
     </jar>
-    <echo file="${build.layout}/variables.properties">buildPlugin.plugin.version=${buildPlugin.plugin.version}</echo>
+    <echo file="${build.layout}/build.properties">buildPlugin.plugin.version=${buildPlugin.plugin.version}</echo>
   </target>
   
   <target name="buildDependents">
