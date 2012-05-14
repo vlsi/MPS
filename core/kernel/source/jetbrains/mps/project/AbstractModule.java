@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
 import jetbrains.mps.project.dependency.DependenciesManager;
@@ -286,7 +287,10 @@ public abstract class AbstractModule implements IModule {
 
       String suffix = descriptor.getCompileInMPS() ? "classes_gen" : "classes";
       if (canonicalPath.endsWith(suffix)) {
-        IFile parent = getDescriptorFile().getParent();
+        IFile parent = dd == null ? getDescriptorFile().getParent() : ModulesMiner.getRealDescriptorFile(getDescriptorFile().getPath(), dd);
+        if(dd != null && parent != null) {
+          parent = parent.getParent();
+        }
         IFile classes = parent != null ? parent.getDescendant(suffix) : null;
         addBundleAsModelRoot = classes != null && FileUtil.getCanonicalPath(classes.getPath()).equalsIgnoreCase(canonicalPath);
       } else if (FileUtil.getCanonicalPath(bundleHomeFile.getPath()).equalsIgnoreCase(canonicalPath)) {
@@ -304,15 +308,15 @@ public abstract class AbstractModule implements IModule {
     }
     descriptor.getModelRoots().removeAll(toRemove);
 
-    if (dd == null) {
-      if (addBundleAsModelRoot) {
-        ClassPathEntry jarEntry = new ClassPathEntry();
-        jarEntry.setPath(bundleHomeFile.getPath());
-        ModelRoot mr = jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(jarEntry);
-        if (!descriptor.getModelRoots().contains(mr)) {
-          descriptor.getModelRoots().add(mr);
-        }
+    if (addBundleAsModelRoot) {
+      ClassPathEntry jarEntry = new ClassPathEntry();
+      jarEntry.setPath(bundleHomeFile.getPath());
+      ModelRoot mr = jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(jarEntry);
+      if (!descriptor.getModelRoots().contains(mr)) {
+        descriptor.getModelRoots().add(mr);
       }
+    }
+    if (dd == null) {
       return;
     }
 
