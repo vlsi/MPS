@@ -78,7 +78,7 @@ public class FindUsagesManager implements CoreComponent {
     Set<T> result = new HashSet<T>();
     if (monitor == null) monitor = new EmptyProgressMonitor();
 
-    monitor.start("Finding usages...", changed.size() + notChanged.size());
+    monitor.start("Finding usages...", (myCacheHandler != null ? nodes.size() : 0) + notChanged.size());
 
     try {
       monitor.step("Finding in cache");

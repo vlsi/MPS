@@ -25,6 +25,7 @@ import com.intellij.util.indexing.FileBasedIndex;
 import com.sun.istack.Nullable;
 import jetbrains.mps.findUsages.CacheHandler;
 import jetbrains.mps.findUsages.FindUsagesManager;
+import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -33,49 +34,54 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-public class MPSModelsCacheHandler implements ApplicationComponent,CacheHandler {
+public class MPSModelsCacheHandler implements ApplicationComponent, CacheHandler {
   public Set<SReference> findUsagesOfNodeInCache(Set<SModelDescriptor> models, Set<SNode> nodes, @Nullable Computable<Boolean> callback) {
-    final Set<VirtualFile> scopeFiles = getScopeFiles(models);
-    String nodeId = node.getId();
-    final Set<VirtualFile> candidates = getCandidates(scopeFiles, nodeId);
     Set<SReference> result = new HashSet<SReference>();
-    for (VirtualFile file : candidates) {
-      SModelDescriptor sm = SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(file));
-      if (sm == null) continue;
-      sm.getSModel();
-      result.addAll(new ModelFindOperations(sm).findUsages(node));
+    for (SNode node : nodes) {
+      Set<VirtualFile> scopeFiles = getScopeFiles(models);
+      String nodeId = node.getId();
+      Set<VirtualFile> candidates = getCandidates(scopeFiles, nodeId);
+      for (VirtualFile file : candidates) {
+        SModelDescriptor sm = SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(file));
+        if (sm == null) continue;
+        result.addAll(SearchType.USAGES.findInChanged(Collections.singleton(node), Collections.singleton(sm), null));
+      }
+      if (!callback.compute()) return result;
     }
     return result;
   }
 
   public Set<SNode> findInstancesOfNodeInCache(Set<SModelDescriptor> models, Set<SNode> nodes, boolean isExact, @Nullable Computable<Boolean> callback) {
-    Set<VirtualFile> candidates = new HashSet<VirtualFile>();
-    final Set<VirtualFile> scopeFiles = getScopeFiles(models);
-    // quick fix for new persistence, todo: should be persistence dependent
-    //candidates.addAll(getCandidates(scopeFiles, NameUtil.nodeFQName(concept)));
-    if (concept != null) candidates.addAll(getCandidates(scopeFiles, concept.getName()));
-    if (!isExact) {
-      Set<String> fqNames = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(NameUtil.nodeFQName(concept));
-      for (String fqName : fqNames) {
-        candidates.addAll(getCandidates(scopeFiles, fqName.substring(fqName.lastIndexOf('.') + 1)));
-      }
-    }
     Set<SNode> result = new HashSet<SNode>();
-    for (VirtualFile file : candidates) {
-      SModelDescriptor sm = SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(file));
-      if (sm == null) continue;
-      sm.getSModel();
-      result.addAll(new ModelFindOperations(sm).findInstances(concept, isExact));
+    for (SNode concept : nodes) {
+      Set<VirtualFile> candidates = new HashSet<VirtualFile>();
+      final Set<VirtualFile> scopeFiles = getScopeFiles(models);
+      if (concept != null) candidates.addAll(getCandidates(scopeFiles, concept.getName()));
+      if (!isExact) {
+        Set<String> fqNames = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(NameUtil.nodeFQName(concept));
+        for (String fqName : fqNames) {
+          candidates.addAll(getCandidates(scopeFiles, fqName.substring(fqName.lastIndexOf('.') + 1)));
+        }
+      }
+      for (VirtualFile file : candidates) {
+        SModelDescriptor sm = SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(file));
+        if (sm == null) continue;
+
+        SearchType<SNode> st = isExact ? SearchType.EXACT_INSTANCES : SearchType.INSTANCES;
+        result.addAll(st.findInChanged(Collections.singleton(concept), Collections.singleton(sm), null));
+      }
+      if (!callback.compute()) return result;
     }
     return result;
   }
 
-  public Set<VirtualFile> getScopeFiles(IScope scope) {
+  public Set<VirtualFile> getScopeFiles(Set<SModelDescriptor> models) {
     final Set<VirtualFile> scopeFiles = new HashSet<VirtualFile>();
-    for (SModelDescriptor sm : scope.getModelDescriptors()) {
+    for (SModelDescriptor sm : models) {
       if (!(sm instanceof EditableSModelDescriptor)) continue;
       IFile modelFile = ((EditableSModelDescriptor) sm).getModelFile();
       if (modelFile == null) continue;
