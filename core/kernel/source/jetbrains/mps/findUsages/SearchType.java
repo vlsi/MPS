@@ -17,6 +17,8 @@ package jetbrains.mps.findUsages;
 
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
+import jetbrains.mps.findUsages.fastfind.FastFindSupport;
+import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
@@ -51,12 +53,18 @@ public abstract class SearchType<T> {
       }
 
       BaseSModelDescriptorWithSource mws = ((BaseSModelDescriptorWithSource) model);
-      if (!(mws.getSource() instanceof FastFindSupport)) {
+      if (!(mws.getSource() instanceof FastFindSupportProvider)) {
         result.get(null).add(model);
         continue;
       }
 
-      FastFindSupport ffs = ((FastFindSupport) mws.getSource());
+      FastFindSupportProvider ffsp = ((FastFindSupportProvider) mws.getSource());
+      FastFindSupport ffs = ffsp.getFastFindSupport();
+      if (ffs==null){
+        result.get(null).add(model);
+        continue;
+      }
+
       Set<SModelDescriptor> descs = result.get(ffs);
       if (descs == null) {
         descs = new THashSet<SModelDescriptor>();
