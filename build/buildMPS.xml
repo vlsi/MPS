@@ -141,9 +141,6 @@
     <zip destfile="${build.layout}/samples.zip">
       <zipfileset dir="${basedir}/samples" prefix="MPSSamples" />
     </zip>
-    <copy todir="${build.layout}">
-      <fileset dir="${basedir}" includes="help/**" />
-    </copy>
     <echo file="${build.layout}/build.number">build.number=${build.number}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}${line.separator}version=${version}</echo>
     <copy todir="${build.layout}">
       <fileset file="${basedir}/about.txt" />

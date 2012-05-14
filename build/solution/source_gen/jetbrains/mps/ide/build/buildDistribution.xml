@@ -25,12 +25,6 @@
         <exclude name="**/fsnotifier64" />
       </fileset>
     </copy>
-    <mkdir dir="${build.tmp}/default/_dl_{build.number}-linux.tar.gz/MPS ${buildMPS.version}/help" />
-    <copy todir="${build.tmp}/default/_dl_{build.number}-linux.tar.gz/MPS ${buildMPS.version}/help">
-      <fileset dir="${basedir}">
-        <include name="help/mpshelp.jar" />
-      </fileset>
-    </copy>
     <mkdir dir="${build.tmp}/default/_dl_{build.number}-linux.tar.gz_f755" />
     <copy todir="${build.tmp}/default/_dl_{build.number}-linux.tar.gz_f755">
       <fileset file="${basedir}/build/mps.sh" />
@@ -45,6 +39,7 @@
       <tarfileset file="${basedir}/bin/nix/idea.sh" prefix="MPS ${buildMPS.version}/bin" filemode="755" />
       <tarfileset file="${basedir}/bin/nix/inspect.sh" prefix="MPS ${buildMPS.version}/bin" filemode="755" />
       <tarfileset file="${basedir}/bin/nix/inspect_diff.sh" prefix="MPS ${buildMPS.version}/bin" filemode="755" />
+      <tarfileset file="${basedir}/help/mpshelp.jar" prefix="MPS ${buildMPS.version}/help" />
       <tarfileset dir="${build.tmp}/default/_dl_{build.number}-linux.tar.gz_f755" filemode="755" prefix="MPS ${buildMPS.version}" />
       <tarfileset dir="${build.tmp}/default/_dl_{build.number}-linux.tar.gz" />
     </tar>
@@ -75,12 +70,6 @@
       <fileset dir="${basedir}/bin/linux">
         <exclude name="**/fsnotifier" />
         <exclude name="**/fsnotifier64" />
-      </fileset>
-    </copy>
-    <mkdir dir="${build.tmp}/default/_dl_{build.number}.zip/MPS ${buildMPS.version}/help" />
-    <copy todir="${build.tmp}/default/_dl_{build.number}.zip/MPS ${buildMPS.version}/help">
-      <fileset dir="${basedir}">
-        <include name="help/mpshelp.jar" />
       </fileset>
     </copy>
     <mkdir dir="${build.tmp}/default/_dl_{build.number}.zip_f755" />
@@ -114,6 +103,7 @@
       <zipfileset file="${basedir}/bin/mac/libquaqua64.jnilib" prefix="MPS ${buildMPS.version}/bin/mac" filemode="755" />
       <zipfileset file="${basedir}/bin/mac/relaunch" prefix="MPS ${buildMPS.version}/bin/mac" filemode="755" />
       <zipfileset file="${basedir}/bin/mac/fsnotifier" prefix="MPS ${buildMPS.version}/bin/mac" filemode="755" />
+      <zipfileset file="${basedir}/help/mpshelp.jar" prefix="MPS ${buildMPS.version}/help" />
       <zipfileset dir="${build.tmp}/default/_dl_{build.number}.zip_f755" filemode="755" prefix="MPS ${buildMPS.version}" />
       <fileset dir="${build.tmp}/default/_dl_{build.number}.zip" />
     </zip>
@@ -139,6 +129,11 @@
       <filterchain>
         <fixcrlf eol="lf" eof="remove" />
       </filterchain>
+    </copy>
+    <mkdir dir="${build.tmp}/default/_dl_{build.number}-macos.zip/MPS ${buildMPS.version}.app/help" />
+    <copy todir="${build.tmp}/default/_dl_{build.number}-macos.zip/MPS ${buildMPS.version}.app/help">
+      <fileset file="${basedir}/help/mpshelp_mac.jar" />
+      <globmapper from="*" to="mpshelp.jar" />
     </copy>
     <mkdir dir="${build.tmp}/default/_dl_{build.number}-macos.zip_f755" />
     <copy todir="${build.tmp}/default/_dl_{build.number}-macos.zip_f755">
