@@ -36,18 +36,18 @@ public abstract class SearchType<T> {
 
   //--------intfc---------
 
-  public abstract Set<T> findInUnchanged(Set<SNode> nodes, Set<SModelDescriptor> models, @NotNull CacheHandler handler, @Nullable Computable<Boolean> callback);
+  public abstract Set<SModelDescriptor> findMatchingModelsInCache(Set<SNode> nodes, Set<SModelDescriptor> models, @NotNull CacheHandler handler, @Nullable Computable<Boolean> callback);
 
-  public abstract Set<T> findInChanged(Set<SNode> nodes, Set<SModelDescriptor> models, @Nullable Computable<Boolean> callback);
+  public abstract Set<T> findInModel(Set<SNode> nodes, Set<SModelDescriptor> models, @Nullable Computable<Boolean> callback);
 
   //--------impl----------
 
   private static class UsagesSearchType extends SearchType<SReference> {
-    public Set<SReference> findInUnchanged(Set<SNode> nodes, Set<SModelDescriptor> models, @NotNull CacheHandler handler, @Nullable Computable<Boolean> callback) {
-      return handler.findUsagesOfNodeInCache(models, nodes,callback);
+    public Set<SModelDescriptor> findMatchingModelsInCache(Set<SNode> nodes, Set<SModelDescriptor> models, @NotNull CacheHandler handler, @Nullable Computable<Boolean> callback) {
+      return handler.findModelsWithPossibleUsages(models, nodes);
     }
 
-    public Set<SReference> findInChanged(Set<SNode> nodes, Set<SModelDescriptor> models, @Nullable Computable<Boolean> callback) {
+    public Set<SReference> findInModel(Set<SNode> nodes, Set<SModelDescriptor> models, @Nullable Computable<Boolean> callback) {
       Set<SReference> result = new HashSet<SReference>();
       for (SModelDescriptor md : models) {
         SModel model = md.getSModel();
@@ -57,7 +57,7 @@ public abstract class SearchType<T> {
           addUsages(root, nodes, result);
         }
 
-        if (callback!=null && !callback.compute()) break;
+        if (callback != null && !callback.compute()) break;
       }
       return result;
     }
@@ -81,11 +81,11 @@ public abstract class SearchType<T> {
       myExact = exact;
     }
 
-    public Set<SNode> findInUnchanged(Set<SNode> nodes, Set<SModelDescriptor> models, @NotNull CacheHandler handler, @Nullable Computable<Boolean> callback) {
-      return handler.findInstancesOfNodeInCache(models, nodes, myExact,callback);
+    public Set<SModelDescriptor> findMatchingModelsInCache(Set<SNode> nodes, Set<SModelDescriptor> models, @NotNull CacheHandler handler, @Nullable Computable<Boolean> callback) {
+      return handler.findModelsWithPossibleInstances(models, nodes, myExact);
     }
 
-    public Set<SNode> findInChanged(Set<SNode> nodes, Set<SModelDescriptor> models, @Nullable Computable<Boolean> callback) {
+    public Set<SNode> findInModel(Set<SNode> nodes, Set<SModelDescriptor> models, @Nullable Computable<Boolean> callback) {
       Set<SNode> result = new HashSet<SNode>();
       for (SModelDescriptor md : models) {
         SModel model = md.getSModel();
@@ -95,7 +95,7 @@ public abstract class SearchType<T> {
           result.addAll(model.getFastNodeFinder().getNodes(NameUtil.nodeFQName(node), !myExact));
         }
 
-        if (callback!=null && !callback.compute()) break;
+        if (callback != null && !callback.compute()) break;
       }
       return result;
     }

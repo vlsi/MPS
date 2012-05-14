@@ -22,25 +22,24 @@ import com.intellij.psi.impl.cache.impl.id.IdIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
-import com.sun.istack.Nullable;
 import jetbrains.mps.findUsages.CacheHandler;
 import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
 public class MPSModelsCacheHandler implements ApplicationComponent, CacheHandler {
-  public Set<SReference> findUsagesOfNodeInCache(Set<SModelDescriptor> models, Set<SNode> nodes, @Nullable Computable<Boolean> callback) {
-    Set<SReference> result = new HashSet<SReference>();
+  public Set<SModelDescriptor> findModelsWithPossibleUsages(Set<SModelDescriptor> models, Set<SNode> nodes) {
+    Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
     for (SNode node : nodes) {
       Set<VirtualFile> scopeFiles = getScopeFiles(models);
       String nodeId = node.getId();
@@ -48,15 +47,14 @@ public class MPSModelsCacheHandler implements ApplicationComponent, CacheHandler
       for (VirtualFile file : candidates) {
         SModelDescriptor sm = SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(file));
         if (sm == null) continue;
-        result.addAll(SearchType.USAGES.findInChanged(Collections.singleton(node), Collections.singleton(sm), null));
+        result.add(sm);
       }
-      if (!callback.compute()) return result;
     }
     return result;
   }
 
-  public Set<SNode> findInstancesOfNodeInCache(Set<SModelDescriptor> models, Set<SNode> nodes, boolean isExact, @Nullable Computable<Boolean> callback) {
-    Set<SNode> result = new HashSet<SNode>();
+  public Set<SModelDescriptor> findModelsWithPossibleInstances(Set<SModelDescriptor> models, Set<SNode> nodes, boolean isExact) {
+    Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
     for (SNode concept : nodes) {
       Set<VirtualFile> candidates = new HashSet<VirtualFile>();
       final Set<VirtualFile> scopeFiles = getScopeFiles(models);
@@ -70,11 +68,8 @@ public class MPSModelsCacheHandler implements ApplicationComponent, CacheHandler
       for (VirtualFile file : candidates) {
         SModelDescriptor sm = SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(file));
         if (sm == null) continue;
-
-        SearchType<SNode> st = isExact ? SearchType.EXACT_INSTANCES : SearchType.INSTANCES;
-        result.addAll(st.findInChanged(Collections.singleton(concept), Collections.singleton(sm), null));
+        result.add(sm);
       }
-      if (!callback.compute()) return result;
     }
     return result;
   }

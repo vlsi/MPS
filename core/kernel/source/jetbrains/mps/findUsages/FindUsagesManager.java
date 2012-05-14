@@ -62,34 +62,28 @@ public class FindUsagesManager implements CoreComponent {
 //------------------API-------------------------
 
   public <T> Set<T> findUsages(Set<SNode> nodes, SearchType<T> type, IScope scope, @Nullable ProgressMonitor monitor) {
-    Set<SModelDescriptor> changed = new THashSet<SModelDescriptor>();
-    Set<SModelDescriptor> notChanged = new THashSet<SModelDescriptor>();
+    Set<SModelDescriptor> directSearch = new THashSet<SModelDescriptor>();
+    Set<SModelDescriptor> cacheSearch = new THashSet<SModelDescriptor>();
 
     for (SModelDescriptor model : scope.getModelDescriptors()) {
-      if (myCacheHandler == null) {
-        changed.add(model);
-      } else if ((model instanceof EditableSModelDescriptor) && ((EditableSModelDescriptor) model).isChanged()) {
-        changed.add(model);
+      if ((model instanceof EditableSModelDescriptor) && ((EditableSModelDescriptor) model).isChanged()) {
+        directSearch.add(model);
       } else {
-        notChanged.add(model);
+        cacheSearch.add(model);
       }
+    }
+
+    if (myCacheHandler != null) {
+      directSearch.addAll(type.findMatchingModelsInCache(nodes, cacheSearch, myCacheHandler, null));
+    } else {
+      directSearch.addAll(cacheSearch);
     }
 
     Set<T> result = new HashSet<T>();
     if (monitor == null) monitor = new EmptyProgressMonitor();
-
-    monitor.start("Finding usages...", (myCacheHandler != null ? nodes.size() : 0) + notChanged.size());
-
+    monitor.start("Finding usages...", directSearch.size());
     try {
-      monitor.step("Finding in cache");
-      Computable<Boolean> progressNotifier = new MyProgressNotifier(monitor);
-      if (myCacheHandler != null) {
-        result.addAll(type.findInUnchanged(nodes, notChanged, myCacheHandler, progressNotifier));
-      }
-      monitor.advance(nodes.size());
-
-      monitor.step("Finding in changed models");
-      result.addAll(type.findInChanged(nodes, changed, progressNotifier));
+      result.addAll(type.findInModel(nodes, directSearch, new MyProgressNotifier(monitor)));
     } finally {
       monitor.done();
     }

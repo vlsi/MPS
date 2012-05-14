@@ -24,7 +24,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Set;
 
 public interface CacheHandler {
-  Set<SNode> findInstancesOfNodeInCache(Set<SModelDescriptor> models, Set<SNode> nodes, boolean exact, @Nullable Computable<Boolean> callback);
+  Set<SModelDescriptor> findModelsWithPossibleInstances(Set<SModelDescriptor> models, Set<SNode> nodes, boolean exact);
 
-  Set<SReference> findUsagesOfNodeInCache(Set<SModelDescriptor> models, Set<SNode> nodes, @Nullable Computable<Boolean> callback);
+  Set<SModelDescriptor> findModelsWithPossibleUsages(Set<SModelDescriptor> models, Set<SNode> nodes);
 }
