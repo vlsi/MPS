@@ -18,6 +18,7 @@
     <ant antfile="buildBuildUI.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildMPS.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildDistribution.xml" inheritAll="true" useNativeBasedir="true" />
+    <ant antfile="buildExe.xml" inheritAll="true" useNativeBasedir="true" />
   </target>
   
   <target name="clean">
