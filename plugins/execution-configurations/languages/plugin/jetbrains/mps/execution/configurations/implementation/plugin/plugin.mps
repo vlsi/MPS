@@ -5295,7 +5295,7 @@
   </root>
   <root id="6062668769034023839">
     <node role="icon" roleId="uhxm.7966814097310618131" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="6062668769034023840">
-      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/languages/util/buildlanguage/languages/buildlanguage/icons/build.png" />
+      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/plugins/build-deprecated/languages/buildlanguage/icons/build.png" />
     </node>
   </root>
   <root id="6062668769034023841">
