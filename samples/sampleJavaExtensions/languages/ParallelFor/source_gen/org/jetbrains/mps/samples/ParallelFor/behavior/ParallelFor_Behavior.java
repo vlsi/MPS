@@ -12,6 +12,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.scopes.Scopes;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ParallelFor_Behavior {
   public static void init(SNode thisNode) {
@@ -27,5 +31,29 @@ public class ParallelFor_Behavior {
     }
 
     return ScopeProvider_Behavior.callSuper_getScope_3734116213129936182(thisNode, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", kind, child);
+  }
+
+  public static void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
+  }
+
+  public static Set<SNode> call_uncaughtThrowables_3331512479731115649(SNode thisNode, boolean ignoreMayBeThrowables) {
+    Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
+    return result;
+  }
+
+  public static List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
+    return new ArrayList<SNode>();
+  }
+
+  public static SNode virtual_getBody_1239354440022(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "body", true);
+  }
+
+  public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
+    return SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068581517677");
+  }
+
+  public static boolean virtual_implicitThrows_4989157187872658723(SNode thisNode) {
+    return true;
   }
 }

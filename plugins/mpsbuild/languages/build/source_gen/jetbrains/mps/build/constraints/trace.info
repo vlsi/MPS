@@ -346,7 +346,7 @@
     <nodeInfo nodeId="4993211115183387848" fileName="BuildLayout_Constraints.java" startLine="29" startPosition="51" endLine="30" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4993211115183387848" fileName="BuildLayout_Constraints.java" startLine="31" startPosition="5" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4993211115183387848" fileName="BuildLayout_Constraints.java" startLine="32" startPosition="0" endLine="33" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4993211115183387851" fileName="BuildLayout_Constraints.java" startLine="36" startPosition="148" endLine="37" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4993211115183387851" fileName="BuildLayout_Constraints.java" startLine="36" startPosition="148" endLine="37" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4993211115183387848" fileName="BuildLayout_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildLayout_Constraints#()V" />
     <nodeInfo nodeId="4993211115183387848" fileName="BuildLayout_Constraints.java" startLine="28" startPosition="0" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4993211115183387848" fileName="BuildLayout_Constraints.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
@@ -355,7 +355,7 @@
     <scopeInfo nodeId="4993211115183387848" fileName="BuildLayout_Constraints.java" startLine="16" startPosition="36" endLine="17" endPosition="55" />
     <scopeInfo nodeId="4993211115183387848" fileName="BuildLayout_Constraints.java" startLine="21" startPosition="43" endLine="22" endPosition="16" />
     <scopeInfo nodeId="4993211115183387848" fileName="BuildLayout_Constraints.java" startLine="29" startPosition="51" endLine="30" endPosition="67" />
-    <scopeInfo nodeId="4993211115183387850" fileName="BuildLayout_Constraints.java" startLine="36" startPosition="148" endLine="37" endPosition="98" />
+    <scopeInfo nodeId="4993211115183387850" fileName="BuildLayout_Constraints.java" startLine="36" startPosition="148" endLine="37" endPosition="174" />
     <scopeInfo nodeId="4993211115183387848" fileName="BuildLayout_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
     <scopeInfo nodeId="4993211115183387848" fileName="BuildLayout_Constraints.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="4993211115183387848" varName="childConcept" />

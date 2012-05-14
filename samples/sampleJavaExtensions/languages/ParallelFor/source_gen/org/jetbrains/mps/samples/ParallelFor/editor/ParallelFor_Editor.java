@@ -15,6 +15,7 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class ParallelFor_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -45,6 +46,8 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_p0t1np_a_0");
     editorCell.addEditorCell(this.createConstant_p0t1np_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_p0t1np_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_p0t1np_c0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_p0t1np_d0(editorContext, node));
     return editorCell;
   }
 
@@ -113,6 +116,13 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_p0t1np_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Nowait");
+    editorCell.setCellId("Constant_p0t1np_c0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createRefNode_p0t1np_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("loopVariable");
@@ -174,6 +184,28 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no threadPool>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createProperty_p0t1np_d0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("nowait");
+    provider.setNoTargetText("<no nowait>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_nowait");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

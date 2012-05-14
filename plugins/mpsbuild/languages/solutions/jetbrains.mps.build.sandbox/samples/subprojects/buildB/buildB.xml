@@ -21,15 +21,12 @@
       </filterchain>
     </copy>
     <mkdir dir="${build.layout}/result/A-${buildA.aver}" />
+    <mkdir dir="${build.layout}/result/A-${buildA.aver}/A" />
     <copy todir="${build.layout}/result/A-${buildA.aver}/A">
       <fileset dir="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/A" />
     </copy>
-    <copy todir="${build.layout}/result/A-${buildA.aver}">
-      <fileset file="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/module-A.jar" />
-    </copy>
-    <copy todir="${build.layout}/result/A-${buildA.aver}">
-      <fileset file="${build.tmp}/deps/buildA/abcde.zip/abcde.jar" />
-    </copy>
+    <copy file="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/module-A.jar" todir="${build.layout}/result/A-${buildA.aver}" />
+    <copy file="${build.tmp}/deps/buildA/abcde.zip/abcde.jar" todir="${build.layout}/result/A-${buildA.aver}" />
     <jar destfile="${build.layout}/result/A-${buildA.aver}/module-B.jar">
       <fileset dir="${build.tmp}/java/out/module-B" />
     </jar>
@@ -43,12 +40,10 @@
       </filterchain>
     </copy>
     <zip destfile="${build.layout}/importTest/importResult.zip">
-      <zipfileset dir="${artifacts.buildA}" filemode="754" dirmode="752">
-        <include name="result/**" />
-      </zipfileset>
       <zipfileset dir="${build.tmp}/deps/buildA/A-_dl_{aver}.zip" filemode="754" dirmode="752" />
       <zipfileset file="${basedir}/buildB.xml" filemode="754" />
       <zipfileset dir="${basedir}/moduleB/src/jetbrains/moduleB" filemode="754" dirmode="752" />
+      <zipfileset dir="${artifacts.buildA}/result" prefix="result" filemode="754" dirmode="752" />
       <zipfileset dir="${build.tmp}/default/importResult.zip_f754_d752" filemode="754" dirmode="752" />
     </zip>
     <zip destfile="${build.layout}/importTest/importResultContent.zip">

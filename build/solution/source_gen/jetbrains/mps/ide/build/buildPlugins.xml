@@ -17,9 +17,19 @@
     <mkdir dir="${build.layout}/plugins" />
     <mkdir dir="${build.layout}/plugins/mpsjava" />
     <mkdir dir="${build.layout}/plugins/mpsjava/lib" />
+    <mkdir dir="${build.tmp}/default/mpsjava.jar" />
+    <mkdir dir="${build.tmp}/default/mpsjava.jar/META-INF" />
+    <copy todir="${build.tmp}/default/mpsjava.jar/META-INF">
+      <fileset file="${mps_home}/plugins/mpsjava/META-INF/plugin.xml" />
+      <filterchain>
+        <tokenfilter>
+          <replaceregex pattern="../classes/jetbrains/" replace="../jetbrains/" flags="gi" />
+        </tokenfilter>
+      </filterchain>
+    </copy>
     <jar destfile="${build.layout}/plugins/mpsjava/lib/mpsjava.jar">
       <fileset dir="${build.tmp}/java/out/mps-java" />
-      <zipfileset file="${mps_home}/plugins/mpsjava/META-INF/plugin.xml" prefix="META-INF" />
+      <fileset dir="${build.tmp}/default/mpsjava.jar" />
     </jar>
     <mkdir dir="${build.layout}/plugins/mpsjava/languages" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.java.migration.jar" />
