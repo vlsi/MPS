@@ -17,14 +17,12 @@ package jetbrains.mps.findUsages;
 
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.util.Computable;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Set;
 
 public interface CacheHandler {
-  Set<SModelDescriptor> findModelsWithPossibleInstances(Set<SModelDescriptor> models, Set<SNode> nodes, boolean exact);
+  //note that Set<String> is passed because we won't have concept nodes at runtime in future
+  Set<SModelDescriptor> findModelsWithPossibleInstances(Set<SModelDescriptor> models, Set<String> concepts);
 
   Set<SModelDescriptor> findModelsWithPossibleUsages(Set<SModelDescriptor> models, Set<SNode> nodes);
 }

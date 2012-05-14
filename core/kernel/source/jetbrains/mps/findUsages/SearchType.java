@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.findUsages;
 
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
@@ -82,7 +79,15 @@ public abstract class SearchType<T> {
     }
 
     public Set<SModelDescriptor> findMatchingModelsInCache(Set<SNode> nodes, Set<SModelDescriptor> models, @NotNull CacheHandler handler, @Nullable Computable<Boolean> callback) {
-      return handler.findModelsWithPossibleInstances(models, nodes, myExact);
+      Set<String> allNodes = new HashSet<String>();
+      for (SNode node : nodes) {
+        allNodes.add(node.getName());
+        if (!myExact) {
+          allNodes.addAll(LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(NameUtil.nodeFQName(node)));
+        }
+      }
+
+      return handler.findModelsWithPossibleInstances(models, allNodes);
     }
 
     public Set<SNode> findInModel(Set<SNode> nodes, Set<SModelDescriptor> models, @Nullable Computable<Boolean> callback) {

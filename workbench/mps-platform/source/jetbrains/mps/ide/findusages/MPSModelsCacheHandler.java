@@ -22,15 +22,15 @@ import com.intellij.psi.impl.cache.impl.id.IdIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
+import com.sun.istack.Nullable;
 import jetbrains.mps.findUsages.CacheHandler;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.Mapper;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
@@ -38,34 +38,37 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class MPSModelsCacheHandler implements ApplicationComponent, CacheHandler {
+  public void initComponent() {
+    FindUsagesManager.getInstance().setCacheHandler(this);
+  }
+
+  public void disposeComponent() {
+    FindUsagesManager.getInstance().setCacheHandler(null);
+  }
+
+  @NotNull
+  public String getComponentName() {
+    return MPSModelsCacheHandler.class.getSimpleName();
+  }
+
   public Set<SModelDescriptor> findModelsWithPossibleUsages(Set<SModelDescriptor> models, Set<SNode> nodes) {
-    Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
-    for (SNode node : nodes) {
-      Set<VirtualFile> scopeFiles = getScopeFiles(models);
-      String nodeId = node.getId();
-      Set<VirtualFile> candidates = getCandidates(scopeFiles, nodeId);
-      for (VirtualFile file : candidates) {
-        SModelDescriptor sm = SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(file));
-        if (sm == null) continue;
-        result.add(sm);
+    return findModels(models, nodes, new Mapper<SNode, String>() {
+      public String value(SNode key) {
+        return key.getId();
       }
-    }
-    return result;
+    });
   }
 
-  public Set<SModelDescriptor> findModelsWithPossibleInstances(Set<SModelDescriptor> models, Set<SNode> nodes, boolean isExact) {
+  public Set<SModelDescriptor> findModelsWithPossibleInstances(Set<SModelDescriptor> models, Set<String> conceptNames) {
+    return findModels(models, conceptNames, null);
+  }
+
+  private <T> Set<SModelDescriptor> findModels(Set<SModelDescriptor> models, Set<T> elems, @Nullable Mapper<T, String> id) {
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
-    for (SNode concept : nodes) {
-      Set<VirtualFile> candidates = new HashSet<VirtualFile>();
+    for (T elem : elems) {
       final Set<VirtualFile> scopeFiles = getScopeFiles(models);
-      if (concept != null) candidates.addAll(getCandidates(scopeFiles, concept.getName()));
-      if (!isExact) {
-        Set<String> fqNames = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(NameUtil.nodeFQName(concept));
-        for (String fqName : fqNames) {
-          candidates.addAll(getCandidates(scopeFiles, fqName.substring(fqName.lastIndexOf('.') + 1)));
-        }
-      }
-      for (VirtualFile file : candidates) {
+      String nodeId = id == null ? elem.toString() : id.value(elem);
+      for (VirtualFile file : getCandidates(scopeFiles, nodeId)) {
         SModelDescriptor sm = SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(file));
         if (sm == null) continue;
         result.add(sm);
@@ -74,7 +77,7 @@ public class MPSModelsCacheHandler implements ApplicationComponent, CacheHandler
     return result;
   }
 
-  public Set<VirtualFile> getScopeFiles(Set<SModelDescriptor> models) {
+  private Set<VirtualFile> getScopeFiles(Set<SModelDescriptor> models) {
     final Set<VirtualFile> scopeFiles = new HashSet<VirtualFile>();
     for (SModelDescriptor sm : models) {
       if (!(sm instanceof EditableSModelDescriptor)) continue;
@@ -85,7 +88,7 @@ public class MPSModelsCacheHandler implements ApplicationComponent, CacheHandler
     return scopeFiles;
   }
 
-  public Set<VirtualFile> getCandidates(final Set<VirtualFile> scopeFiles, final String nodeId) {
+  private Set<VirtualFile> getCandidates(final Set<VirtualFile> scopeFiles, final String nodeId) {
     final Set<VirtualFile> candidates = new HashSet<VirtualFile>();
     FileBasedIndex.getInstance().processValues(IdIndex.NAME, new IdIndexEntry(nodeId, true), null,
       new FileBasedIndex.ValueProcessor<Integer>() {
@@ -112,18 +115,5 @@ public class MPSModelsCacheHandler implements ApplicationComponent, CacheHandler
       }
     );
     return candidates;
-  }
-
-  public void initComponent() {
-    FindUsagesManager.getInstance().setCacheHandler(this);
-  }
-
-  public void disposeComponent() {
-    FindUsagesManager.getInstance().setCacheHandler(null);
-  }
-
-  @NotNull
-  public String getComponentName() {
-    return MPSModelsCacheHandler.class.getSimpleName();
   }
 }
