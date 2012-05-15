@@ -6,11 +6,12 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
     <projectModules>
+      <modulePath path="${mps_langs}/mpsbuild/startup/startup.mpl" />
+      <modulePath path="${mps_langs}/util/bash/languages/bash/bash.mpl" />
       <modulePath path="${project}/build.mps/mps.mpl" folder="" />
       <modulePath path="${project}/build.workflow/workflow.mpl" folder="" />
       <modulePath path="${project}/build/build.mpl" />
       <modulePath path="${project}/solutions/jetbrains.mps.build.mps.pluginSolution/pluginSolution.msd" folder="" />
-      <modulePath path="${project}/solutions/jetbrains.mps.build.pluginSolution/pluginSolution.msd" folder="" />
       <modulePath path="${project}/solutions/jetbrains.mps.build.sandbox/sandbox.msd" />
       <modulePath path="${project}/solutions/jetbrains.mps.build.tests/tests.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/../../../build/solution/build.msd" />
