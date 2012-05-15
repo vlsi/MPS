@@ -33,7 +33,8 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.LinkedHashSet;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -62,7 +63,7 @@ public class RefactoringViewItemImpl implements RefactoringViewItem {
   }
 
   private void init(final RefactoringViewAction callback, SearchResults searchResults, String name, final boolean hasModelsToGenerate) {
-    Set<UsageTarget> usageTargets = new LinkedHashSet<UsageTarget>();
+    List<UsageTarget> usageTargets = new LinkedList<UsageTarget>();
     UsageViewManager viewManager = UsageViewManager.getInstance(myProject);
 
     myCallback = callback;
@@ -74,16 +75,18 @@ public class RefactoringViewItemImpl implements RefactoringViewItem {
       }
     }
 
-    Set<Usage> usages = new LinkedHashSet<Usage>();
+    List<Usage> usages = new LinkedList<Usage>();
+    Set<SNode> nodes = new HashSet<SNode>();
     for (SearchResult searchResult : (List<SearchResult>) searchResults.getAliveResults()) {
       Object usage = searchResult.getObject();
-      if (usage instanceof SNode) {
+      if (usage instanceof SNode && !(nodes.contains((SNode)usage))) {
+        nodes.add((SNode) usage);
         usages.add(new NodeUsage((SNode) usage, myProject, searchResult.getCategory()));
       }
     }
 
 
-    final UsageViewPresentation presentation = createPresentation(usages.toArray(new Usage[usages.size()]), usageTargets.toArray(new UsageTarget[usageTargets.size()]));
+    final UsageViewPresentation presentation = createPresentation(usageTargets.toArray(new UsageTarget[usageTargets.size()]));
 
     usageView = viewManager.showUsages(usageTargets.toArray(new UsageTarget[usageTargets.size()]), usages.toArray(new Usage[usages.size()]), presentation);
     String canNotMakeString = RefactoringBundle.message("usageView.need.reRun");
@@ -110,14 +113,10 @@ public class RefactoringViewItemImpl implements RefactoringViewItem {
     }
   }
 
-  private static UsageViewPresentation createPresentation(final Usage[] usages, final UsageTarget[] targets) {
+  private static UsageViewPresentation createPresentation(final UsageTarget[] targets) {
     UsageViewPresentation presentation = new UsageViewPresentation();
-    presentation.setTabText(RefactoringBundle.message("usageView.tabText"));
-    if (!(targets.length == 0) && targets[0] instanceof NodeUsageTarget) {
-      presentation.setTargetsNodeText("Searched nodes");
-    }
+    presentation.setTargetsNodeText("Searched nodes");
 
-    presentation.setShowReadOnlyStatusAsRed(true);
     presentation.setShowCancelButton(true);
     presentation.setUsagesString(RefactoringBundle.message("usageView.usagesText"));
 

@@ -21,23 +21,27 @@ import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.usages.Usage;
 import com.intellij.usages.UsageGroup;
 import com.intellij.usages.UsageView;
-import com.intellij.usages.rules.UsageGroupingRule;
+import com.intellij.usages.rules.OrderableUsageGroupingRule;
 import com.intellij.util.PlatformIcons;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 
-public class CategoryUsageGroupingRule implements UsageGroupingRule {
+public class CategoryUsageGroupingRule implements OrderableUsageGroupingRule {
 
   @Override
   public UsageGroup groupUsage(@NotNull Usage usage) {
     if (usage instanceof UsageByCategory) {
-      final UsageByCategory usageByCategory = (UsageByCategory) usage;
       final String category = ((UsageByCategory) usage).getCategory();
       return new CategoryUsageGroup(category);
     }
     return null;
+  }
+
+  @Override
+  public int getRank() {
+    return 1;
   }
 
   private static class CategoryUsageGroup implements UsageGroup {
@@ -60,7 +64,7 @@ public class CategoryUsageGroupingRule implements UsageGroupingRule {
 
     @Override
     public FileStatus getFileStatus() {
-      return FileStatus.NOT_CHANGED;
+      return null;
     }
 
     @Override
@@ -70,7 +74,7 @@ public class CategoryUsageGroupingRule implements UsageGroupingRule {
 
     @Override
     public void update() {
-      //To change body of implemented methods use File | Settings |
+
     }
 
     @Override

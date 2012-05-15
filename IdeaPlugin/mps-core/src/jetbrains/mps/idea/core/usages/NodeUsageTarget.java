@@ -63,14 +63,14 @@ public class NodeUsageTarget extends NodeUsageBase implements UsageTarget {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        myPresentation = myNode.getPresentation();
+        myTextPresentation = myNode.getPresentation();
       }
     });
   }
 
   @Override
   public String getName() {
-    return myPresentation;
+    return myTextPresentation;
   }
 
   public ItemPresentation getPresentation() {

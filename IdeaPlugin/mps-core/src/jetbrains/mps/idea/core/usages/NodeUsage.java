@@ -42,7 +42,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.Icon;
 import java.util.ArrayList;
 
-public class NodeUsage extends NodeUsageBase implements UsagePresentation, UsageInMPS, UsageInModule, MergeableUsage, UsageInRoot, UsageInModel, UsageByCategory {
+public class NodeUsage extends NodeUsageBase implements UsagePresentation, UsageInMPS, UsageInModule, MergeableUsage, UsageInRoot, UsageInModel, UsageByCategory, Comparable<NodeUsage> {
   private SModel myModel;
   private TextChunk[] myChunks;
   private boolean myIsValid;
@@ -117,7 +117,7 @@ public class NodeUsage extends NodeUsageBase implements UsagePresentation, Usage
     } else {
       attributes = SimpleTextAttributes.GRAY_ITALIC_ATTRIBUTES.toTextAttributes();
     }
-    result.add(new TextChunk(attributes, myPresentation));
+    result.add(new TextChunk(attributes, myTextPresentation));
     result.add(new TextChunk(attributes, " ("));
     result.add(new TextChunk(attributes, "role: "));
     result.add(new TextChunk(attributes, myRole));
@@ -131,7 +131,7 @@ public class NodeUsage extends NodeUsageBase implements UsagePresentation, Usage
   @NotNull
   @Override
   public String getPlainText() {
-    return myPresentation;
+    return myTextPresentation;
   }
 
   @Override
@@ -183,5 +183,13 @@ public class NodeUsage extends NodeUsageBase implements UsagePresentation, Usage
     return myCategory;
   }
 
-
+  @Override
+  public int compareTo(NodeUsage usage) {
+    VirtualFile myFile = getFile();
+    VirtualFile hisFile = usage.getFile();
+    if (!myFile.equals(hisFile)){
+      return myFile.getPresentableUrl().compareTo(hisFile.getPresentableUrl());
+    }
+    return myTextPresentation.compareTo(usage.myTextPresentation);
+  }
 }

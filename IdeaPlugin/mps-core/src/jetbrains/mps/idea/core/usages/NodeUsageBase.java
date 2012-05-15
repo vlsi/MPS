@@ -32,7 +32,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class NodeUsageBase implements Navigatable {
   protected SNode myNode;
-  protected String myPresentation;
+  protected String myTextPresentation;
   protected SNode myRootNode;
   protected Project myProject;
   protected VirtualFile myFile;
@@ -42,7 +42,7 @@ public class NodeUsageBase implements Navigatable {
     myNode = node;
     myProject = project;
     myItemPresentation = new NodePresentation(node);
-    myPresentation = myItemPresentation.getPresentableText();
+    myTextPresentation = myItemPresentation.getPresentableText();
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
@@ -74,7 +74,7 @@ public class NodeUsageBase implements Navigatable {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        result[0] = !myNode.isDeleted();
+        result[0] = !myNode.isDetached();
       }
     });
     return result[0];
