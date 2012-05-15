@@ -16,29 +16,14 @@
 package jetbrains.mps.ide.findusages;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.module.Module;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.psi.impl.cache.impl.id.IdIndex;
-import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
-import com.intellij.psi.search.GlobalSearchScope;
-import com.intellij.util.indexing.FileBasedIndex;
-import com.sun.istack.Nullable;
 import gnu.trove.THashSet;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
-import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.stubs.util.JavaStubModelDataSource;
-import jetbrains.mps.util.Mapper;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.HashSet;
 import java.util.Set;
 
 public class StubModelsFastFindSupport implements ApplicationComponent, FastFindSupport {

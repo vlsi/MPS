@@ -22,7 +22,6 @@ import com.intellij.psi.impl.cache.impl.id.IdIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
-import com.sun.istack.Nullable;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -34,6 +33,7 @@ import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.HashSet;
 import java.util.Set;
