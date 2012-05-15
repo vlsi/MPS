@@ -34,7 +34,7 @@ import java.util.List;
 public class DependenciesViewerTest extends BaseMPSTest {
   private static final String TEST_PROJECT = "testDependenciesViewer" + MPSExtentions.DOT_MPS_PROJECT;
   private static final String TEST_MODEL = "testDependenciesViewer.sandbox.first";
-  private static final String TARGET_MODEL = "testDependenciesViewer.sandbox.second";
+  private static final String TARGET_MODEL = "testDependenciesViewer.sandbox.target";
   private final static File sourceZip = new File("testbench/modules/testDependenciesViewer.zip");
   private final static File tempDir = new File(PathManager.getHomePath(), "TEST_DEPENDENCY");
 
