@@ -25,14 +25,17 @@ import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.util.Mapper;
+import jetbrains.mps.util.containers.ManyToManyMap;
+import jetbrains.mps.util.containers.MultiMap;
+import jetbrains.mps.util.containers.SetBasedMultiMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -50,7 +53,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FastFindS
     return MPSModelsFastFindSupport.class.getSimpleName();
   }
 
-  public Set<SModelDescriptor> findModelsWithPossibleUsages(Set<SModelDescriptor> models, Set<SNode> nodes) {
+  public MultiMap<SModelDescriptor, SNode> findModelsWithPossibleUsages(Set<SModelDescriptor> models, Set<SNode> nodes) {
     return findModels(models, nodes, new Mapper<SNode, String>() {
       public String value(SNode key) {
         return key.getId();
@@ -58,45 +61,36 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FastFindS
     });
   }
 
-  public Set<SModelDescriptor> findModelsWithPossibleInstances(Set<SModelDescriptor> models, Set<String> conceptNames) {
+  public MultiMap<SModelDescriptor, String> findModelsWithPossibleInstances(Set<SModelDescriptor> models, Set<String> conceptNames) {
     return findModels(models, conceptNames, null);
   }
 
-  private <T> Set<SModelDescriptor> findModels(Set<SModelDescriptor> models, Set<T> elems, @Nullable Mapper<T, String> id) {
-    Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
+  private <T> MultiMap<SModelDescriptor, T> findModels(Set<SModelDescriptor> models, Set<T> elems, @Nullable Mapper<T, String> id) {
+    MultiMap<SModelDescriptor, T> result = new SetBasedMultiMap<SModelDescriptor, T>();
     for (T elem : elems) {
-      final Set<VirtualFile> scopeFiles = getFilesForModels(models);
       String nodeId = id == null ? elem.toString() : id.value(elem);
-      for (VirtualFile file : getCandidates(scopeFiles, nodeId)) {
-        SModelDescriptor sm = SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(file));
-        if (sm == null) continue;
-        result.add(sm);
+
+      //get all files in scope
+      ManyToManyMap<SModelDescriptor, VirtualFile> scopeFiles = new ManyToManyMap<SModelDescriptor, VirtualFile>();
+      for (SModelDescriptor sm : models) {
+        assert sm instanceof DefaultSModelDescriptor : "a non-regular model is passed to FindSupport designed for regular models";
+        IFile modelFile = ((DefaultSModelDescriptor) sm).getSource().getFile();
+        if (modelFile == null) continue;
+
+        scopeFiles.addLink(sm, VirtualFileUtils.getVirtualFile(modelFile));
+      }
+
+      //filter files with usages
+      ConcreteFilesGlobalSearchScope allFiles = new ConcreteFilesGlobalSearchScope(scopeFiles.getSecond());
+      Collection<VirtualFile> matchingFiles = FileBasedIndex.getInstance().getContainingFiles(IdIndex.NAME, new IdIndexEntry(nodeId, true), allFiles);
+
+      //back-transform
+      for (VirtualFile file : matchingFiles) {
+        for (SModelDescriptor m:scopeFiles.getBySecond(file)){
+          result.putValue(m, elem);
+        }
       }
     }
     return result;
-  }
-
-  private Set<VirtualFile> getFilesForModels(Set<SModelDescriptor> models) {
-    final Set<VirtualFile> scopeFiles = new HashSet<VirtualFile>();
-    for (SModelDescriptor sm : models) {
-      assert sm instanceof DefaultSModelDescriptor: "a non-regular model is passed to FindSupport designed for regular models";
-      IFile modelFile = ((DefaultSModelDescriptor) sm).getSource().getFile();
-      if (modelFile == null) continue;
-      scopeFiles.add(VirtualFileUtils.getVirtualFile(modelFile));
-    }
-    return scopeFiles;
-  }
-
-  private Set<VirtualFile> getCandidates(final Set<VirtualFile> scopeFiles, final String nodeId) {
-    final Set<VirtualFile> candidates = new HashSet<VirtualFile>();
-    FileBasedIndex.getInstance().processValues(IdIndex.NAME, new IdIndexEntry(nodeId, true), null,
-      new FileBasedIndex.ValueProcessor<Integer>() {
-        public boolean process(final VirtualFile file, final Integer value) {
-          candidates.add(file);
-          return true;
-        }
-      }, new ConcreteFilesGlobalSearchScope(scopeFiles)
-    );
-    return candidates;
   }
 }

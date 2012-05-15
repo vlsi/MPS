@@ -20,12 +20,13 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.search.GlobalSearchScope;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collection;
 import java.util.Set;
 
 class ConcreteFilesGlobalSearchScope extends GlobalSearchScope {
-  private final Set<VirtualFile> myScopeFiles;
+  private final Collection<VirtualFile> myScopeFiles;
 
-  public ConcreteFilesGlobalSearchScope(Set<VirtualFile> scopeFiles) {
+  public ConcreteFilesGlobalSearchScope(Collection<VirtualFile> scopeFiles) {
     super(null);
     myScopeFiles = scopeFiles;
   }
