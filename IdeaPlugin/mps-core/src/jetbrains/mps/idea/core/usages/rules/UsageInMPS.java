@@ -17,5 +17,7 @@
 package jetbrains.mps.idea.core.usages.rules;
 
 
-public interface UsageInMPS {
+import com.intellij.usages.Usage;
+
+public interface UsageInMPS extends Usage {
 }

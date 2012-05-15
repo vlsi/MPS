@@ -17,8 +17,9 @@
 package jetbrains.mps.idea.core.usages.rules;
 
 
+import com.intellij.usages.Usage;
 import jetbrains.mps.smodel.SNode;
 
-public interface UsageInRoot {
+public interface UsageInRoot extends Usage {
   SNode getRoot();
 }

@@ -25,6 +25,7 @@ import com.intellij.psi.PsiFile;
 import com.intellij.usages.UsageTarget;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.choose.nodes.NodePresentation;
 import org.jetbrains.annotations.NotNull;
 
 public class NodeUsageTarget extends NodeUsageBase implements UsageTarget {
@@ -63,7 +64,8 @@ public class NodeUsageTarget extends NodeUsageBase implements UsageTarget {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        myTextPresentation = myNode.getPresentation();
+        myItemPresentation = new NodePresentation(myNode);
+        myTextPresentation = myItemPresentation.getPresentableText();
       }
     });
   }

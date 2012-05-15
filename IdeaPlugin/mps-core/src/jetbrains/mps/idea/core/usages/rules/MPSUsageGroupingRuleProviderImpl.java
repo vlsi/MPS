@@ -34,13 +34,13 @@ public class MPSUsageGroupingRuleProviderImpl implements UsageGroupingRuleProvid
   public UsageGroupingRule[] getActiveRules(Project project) {
     List<UsageGroupingRule> rules = new ArrayList<UsageGroupingRule>();
     rules.add(new MPSUsageGroupingRule());
-    if (UsageViewSettings.getInstance().GROUP_BY_USAGE_TYPE){
+    if (UsageViewSettings.getInstance().GROUP_BY_USAGE_TYPE) {
       rules.add(new CategoryUsageGroupingRule());
     }
-    if (UsageViewSettings.getInstance().GROUP_BY_PACKAGE){
-     rules.add(new ModelUsageGroupingRule(project));
+    if (UsageViewSettings.getInstance().GROUP_BY_PACKAGE) {
+      rules.add(new ModelUsageGroupingRule(project));
     }
-    if (UsageViewSettings.getInstance().GROUP_BY_FILE_STRUCTURE){
+    if (UsageViewSettings.getInstance().GROUP_BY_FILE_STRUCTURE) {
       rules.add(new RootNodeUsageGroupingRule(project));
     }
 

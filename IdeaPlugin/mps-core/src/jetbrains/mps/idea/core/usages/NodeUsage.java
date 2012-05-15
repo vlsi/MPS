@@ -187,7 +187,7 @@ public class NodeUsage extends NodeUsageBase implements UsagePresentation, Usage
   public int compareTo(NodeUsage usage) {
     VirtualFile myFile = getFile();
     VirtualFile hisFile = usage.getFile();
-    if (!myFile.equals(hisFile)){
+    if (!myFile.equals(hisFile)) {
       return myFile.getPresentableUrl().compareTo(hisFile.getPresentableUrl());
     }
     return myTextPresentation.compareTo(usage.myTextPresentation);

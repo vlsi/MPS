@@ -23,7 +23,7 @@ import com.intellij.usages.impl.rules.FileGroupingRule;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 
- class RootNodeUsageGroupingRule extends FileGroupingRule {
+class RootNodeUsageGroupingRule extends FileGroupingRule {
   private Project project;
 
   public RootNodeUsageGroupingRule(Project project) {

@@ -16,6 +16,8 @@
 
 package jetbrains.mps.idea.core.usages.rules;
 
-public interface UsageByCategory {
+import com.intellij.usages.Usage;
+
+public interface UsageByCategory extends Usage {
   String getCategory();
 }

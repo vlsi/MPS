@@ -119,6 +119,7 @@ public class RefactoringViewItemImpl implements RefactoringViewItem {
 
     presentation.setShowCancelButton(true);
     presentation.setUsagesString(RefactoringBundle.message("usageView.usagesText"));
+    presentation.setTabText(RefactoringBundle.message("usageView.tabText"));
 
     return presentation;
   }
