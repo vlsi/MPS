@@ -26,6 +26,8 @@ import jetbrains.mps.ide.platform.refactoring.RefactoringOptionsDialog;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.idea.core.usages.NodeUsage;
+import jetbrains.mps.idea.core.usages.NodeUsageTarget;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SNode;
