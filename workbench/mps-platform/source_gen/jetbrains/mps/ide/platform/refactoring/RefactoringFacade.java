@@ -95,13 +95,7 @@ public class RefactoringFacade {
         IRefactoring refactoring = refactoringContext.getRefactoring();
         Frame mainFrame = ProjectHelper.toMainFrame(refactoringContext.getCurrentOperationContext().getProject());
         List<SModel> modelsToGenerate = getModelsToGenerate(refactoring, refactoringContext);
-        RefactoringOptionsDialog dialog = new RefactoringOptionsDialog(mainFrame, refactoringContext, refactoring, !(modelsToGenerate.isEmpty()));
-        if (dialog.needToBeShown()) {
-          dialog.show();
-          cancelled[0] = dialog.isCancelled();
-        } else {
-          cancelled[0] = false;
-        }
+        cancelled[0] = RefactoringAccess.getInstance().showRefactoringDialog(mainFrame, refactoringContext, refactoring, !(modelsToGenerate.isEmpty()));
       }
     });
     if (cancelled[0]) {
