@@ -29,12 +29,16 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.stubs.util.JavaStubModelDataSource;
+import jetbrains.mps.stubs.util.JavaStubModelDescriptor;
 import jetbrains.mps.util.Mapper;
+import jetbrains.mps.util.containers.ManyToManyMap;
 import jetbrains.mps.util.containers.MultiMap;
+import jetbrains.mps.util.containers.SetBasedMultiMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -52,11 +56,44 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
     return StubModelsFastFindSupport.class.getSimpleName();
   }
 
-  public MultiMap<SModelDescriptor,SNode> findModelsWithPossibleUsages(Set<SModelDescriptor> models, Set<SNode> nodes) {
-    return null;
+  public MultiMap<SModelDescriptor, SNode> findModelsWithPossibleUsages(Set<SModelDescriptor> models, Set<SNode> nodes) {
+    return findModels(models, nodes, new Mapper<SNode, String>() {
+      public String value(SNode key) {
+        return key.getId();
+      }
+    });
   }
 
-  public MultiMap<SModelDescriptor,String> findModelsWithPossibleInstances(Set<SModelDescriptor> models, Set<String> conceptNames) {
-    return null;
+  public MultiMap<SModelDescriptor, String> findModelsWithPossibleInstances(Set<SModelDescriptor> models, Set<String> conceptNames) {
+    return findModels(models, conceptNames, null);
+  }
+
+  private <T> MultiMap<SModelDescriptor, T> findModels(Set<SModelDescriptor> models, Set<T> elems, @Nullable Mapper<T, String> id) {
+    MultiMap<SModelDescriptor, T> result = new SetBasedMultiMap<SModelDescriptor, T>();
+    for (T elem : elems) {
+      String nodeId = id == null ? elem.toString() : id.value(elem);
+
+      //get all files in scope
+      ManyToManyMap<SModelDescriptor, VirtualFile> scopeFiles = new ManyToManyMap<SModelDescriptor, VirtualFile>();
+      for (SModelDescriptor sm : models) {
+        assert sm instanceof JavaStubModelDescriptor : "a non-java-stub model is passed to FindSupport designed for java-stub models";
+        IFile modelFile = ((JavaStubModelDescriptor) sm).getSource().getFile();
+        if (modelFile == null) continue;
+
+        scopeFiles.addLink(sm, VirtualFileUtils.getVirtualFile(modelFile));
+      }
+
+      //filter files with usages
+      ConcreteFilesGlobalSearchScope allFiles = new ConcreteFilesGlobalSearchScope(scopeFiles.getSecond());
+      Collection<VirtualFile> matchingFiles = FileBasedIndex.getInstance().getContainingFiles(IdIndex.NAME, new IdIndexEntry(nodeId, true), allFiles);
+
+      //back-transform
+      for (VirtualFile file : matchingFiles) {
+        for (SModelDescriptor m:scopeFiles.getBySecond(file)){
+          result.putValue(m, elem);
+        }
+      }
+    }
+    return result;
   }
 }
