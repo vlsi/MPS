@@ -25,6 +25,7 @@ import com.intellij.util.indexing.FileBasedIndex;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNode;
@@ -81,7 +82,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FastFindS
   private Set<VirtualFile> getScopeFiles(Set<SModelDescriptor> models) {
     final Set<VirtualFile> scopeFiles = new HashSet<VirtualFile>();
     for (SModelDescriptor sm : models) {
-      if (!(sm instanceof EditableSModelDescriptor)) continue;
+      if (!(sm instanceof DefaultSModelDescriptor)) continue;
       IFile modelFile = ((EditableSModelDescriptor) sm).getModelFile();
       if (modelFile == null) continue;
       scopeFiles.add(VirtualFileUtils.getVirtualFile(modelFile));

@@ -16,14 +16,28 @@
 package jetbrains.mps.ide.findusages;
 
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.module.Module;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.psi.impl.cache.impl.id.IdIndex;
+import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
+import com.intellij.psi.search.GlobalSearchScope;
+import com.intellij.util.indexing.FileBasedIndex;
 import gnu.trove.THashSet;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.stubs.util.JavaStubModelDataSource;
+import jetbrains.mps.util.Mapper;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class StubModelsFastFindSupport implements ApplicationComponent, FastFindSupport {
@@ -41,10 +55,68 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
   }
 
   public Set<SModelDescriptor> findModelsWithPossibleUsages(Set<SModelDescriptor> models, Set<SNode> nodes) {
-    return new THashSet<SModelDescriptor>();
+    return findModels(models, nodes, new Mapper<SNode, String>() {
+      public String value(SNode key) {
+        return key.getId();
+      }
+    });
   }
 
   public Set<SModelDescriptor> findModelsWithPossibleInstances(Set<SModelDescriptor> models, Set<String> conceptNames) {
-    return new THashSet<SModelDescriptor>();
+    return findModels(models, conceptNames, null);
+  }
+
+  private <T> Set<SModelDescriptor> findModels(Set<SModelDescriptor> models, Set<T> elems, @Nullable Mapper<T, String> id) {
+    Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
+    for (T elem : elems) {
+      final Set<VirtualFile> scopeFiles = getScopeFiles(models);
+      String nodeId = id == null ? elem.toString() : id.value(elem);
+      for (VirtualFile file : getCandidates(scopeFiles, nodeId)) {
+        SModelDescriptor sm = SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(file));
+        if (sm == null) continue;
+        result.add(sm);
+      }
+    }
+    return result;
+  }
+
+  private Set<VirtualFile> getScopeFiles(Set<SModelDescriptor> models) {
+    final Set<VirtualFile> scopeFiles = new HashSet<VirtualFile>();
+    for (SModelDescriptor sm : models) {
+      if (!(sm instanceof DefaultSModelDescriptor)) continue;
+      IFile modelFile = ((EditableSModelDescriptor) sm).getModelFile();
+      if (modelFile == null) continue;
+      scopeFiles.add(VirtualFileUtils.getVirtualFile(modelFile));
+    }
+    return scopeFiles;
+  }
+
+  private Set<VirtualFile> getCandidates(final Set<VirtualFile> scopeFiles, final String nodeId) {
+    final Set<VirtualFile> candidates = new HashSet<VirtualFile>();
+    FileBasedIndex.getInstance().processValues(IdIndex.NAME, new IdIndexEntry(nodeId, true), null,
+      new FileBasedIndex.ValueProcessor<Integer>() {
+        public boolean process(final VirtualFile file, final Integer value) {
+          candidates.add(file);
+          return true;
+        }
+      }, new GlobalSearchScope(null) {
+        public boolean contains(VirtualFile file) {
+          return scopeFiles.contains(file);
+        }
+
+        public int compare(VirtualFile file1, VirtualFile file2) {
+          return file1.getPath().compareTo(file2.getPath());
+        }
+
+        public boolean isSearchInModuleContent(@NotNull Module aModule) {
+          return true;
+        }
+
+        public boolean isSearchInLibraries() {
+          return false;
+        }
+      }
+    );
+    return candidates;
   }
 }
