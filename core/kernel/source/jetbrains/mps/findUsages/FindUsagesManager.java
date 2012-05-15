@@ -24,6 +24,8 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.containers.MultiMap;
+import jetbrains.mps.util.containers.SetBasedMultiMap;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashSet;
@@ -53,25 +55,14 @@ public class FindUsagesManager implements CoreComponent {
 
 //------------------API-------------------------
 
-  public <T> Set<T> findUsages(Set<SNode> nodes, SearchType<T> type, IScope scope, @Nullable ProgressMonitor monitor) {
-    Set<SModelDescriptor> directSearch = new THashSet<SModelDescriptor>();
-    Set<SModelDescriptor> cacheSearch = new THashSet<SModelDescriptor>();
-
-    for (SModelDescriptor model : scope.getModelDescriptors()) {
-      if ((model instanceof EditableSModelDescriptor) && ((EditableSModelDescriptor) model).isChanged()) {
-        directSearch.add(model);
-      } else {
-        cacheSearch.add(model);
-      }
-    }
-
-    directSearch.addAll(type.findMatchingModelsInCache(nodes, cacheSearch, null));
+  public <T, R> Set<T> findUsages(Set<SNode> nodes, SearchType<T, R> type, IScope scope, @Nullable ProgressMonitor monitor) {
+    MultiMap<SModelDescriptor, R> directSearch = type.findMatchingModelsInCache(nodes, scope.getModelDescriptors(), null);
 
     Set<T> result = new HashSet<T>();
     if (monitor == null) monitor = new EmptyProgressMonitor();
     monitor.start("Finding usages...", directSearch.size());
     try {
-      result.addAll(type.findInModel(nodes, directSearch, new MyProgressNotifier(monitor)));
+      result.addAll(type.findInModel(directSearch, new MyProgressNotifier(monitor)));
     } finally {
       monitor.done();
     }
