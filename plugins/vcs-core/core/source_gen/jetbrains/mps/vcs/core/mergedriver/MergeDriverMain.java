@@ -4,6 +4,12 @@ package jetbrains.mps.vcs.core.mergedriver;
 
 import java.io.File;
 import jetbrains.mps.vcs.util.MergeDriverBackupUtil;
+import java.io.Reader;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -56,7 +62,30 @@ public class MergeDriverMain {
         new SimpleMerger()
       );
     }
-    System.exit(FileMerger.mergeFiles(merger, baseFile, currentFile, otherFile, conflictStart, conflictEnd, conflictSeparator, overwrite));
+
+    boolean convertCRLF = GIT_OPTION.equals(args[0]) && false;
+    int status = FileMerger.mergeFiles(merger, baseFile, currentFile, otherFile, conflictStart, conflictEnd, conflictSeparator, overwrite, convertCRLF);
+    System.exit(status);
+  }
+
+  public static boolean hasCRLF(File f) {
+    // getting directlry from the file, but can get from git core.autcrlf + core.eol 
+    Reader r = null;
+    try {
+      r = new BufferedReader(new FileReader(f));
+      for (int c = 0; c != -1; c = r.read()) {
+        if (c == '\r' && r.read() == '\n') {
+          return true;
+        }
+      }
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    } catch (IOException e) {
+      e.printStackTrace();
+    } finally {
+      FileUtil.closeFileSafe(r);
+    }
+    return false;
   }
 
   @Nullable
