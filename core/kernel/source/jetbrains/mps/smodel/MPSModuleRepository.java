@@ -26,7 +26,7 @@ import jetbrains.mps.project.ProjectManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.util.ManyToManyMap;
+import jetbrains.mps.util.containers.ManyToManyMap;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;

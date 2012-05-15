@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.util;
+package jetbrains.mps.util.containers;
 
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
