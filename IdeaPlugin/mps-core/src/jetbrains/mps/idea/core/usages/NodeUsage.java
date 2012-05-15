@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.ui;
+package jetbrains.mps.idea.core.usages;
 
 import com.intellij.openapi.editor.markup.TextAttributes;
 import com.intellij.openapi.fileEditor.FileEditor;
@@ -30,6 +30,10 @@ import com.intellij.usages.UsagePresentation;
 import com.intellij.usages.rules.MergeableUsage;
 import com.intellij.usages.rules.UsageInModule;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
+import jetbrains.mps.idea.core.usages.rules.UsageByCategory;
+import jetbrains.mps.idea.core.usages.rules.UsageInMPS;
+import jetbrains.mps.idea.core.usages.rules.UsageInModel;
+import jetbrains.mps.idea.core.usages.rules.UsageInRoot;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -38,7 +42,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.Icon;
 import java.util.ArrayList;
 
-public class NodeUsage extends NodeUsageBase implements UsagePresentation, UsageInModule, MergeableUsage, UsageInRoot, UsageInModel, UsageByCategory {
+public class NodeUsage extends NodeUsageBase implements UsagePresentation, UsageInMPS, UsageInModule, MergeableUsage, UsageInRoot, UsageInModel, UsageByCategory {
   private SModel myModel;
   private TextChunk[] myChunks;
   private boolean myIsValid;
@@ -178,4 +182,6 @@ public class NodeUsage extends NodeUsageBase implements UsagePresentation, Usage
   public String getCategory() {
     return myCategory;
   }
+
+
 }

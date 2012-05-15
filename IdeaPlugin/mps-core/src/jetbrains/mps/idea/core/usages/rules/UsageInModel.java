@@ -14,8 +14,11 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.ui;
+package jetbrains.mps.idea.core.usages.rules;
 
-public interface UsageByCategory {
-  String getCategory();
+
+import jetbrains.mps.smodel.SModel;
+
+public interface UsageInModel {
+  SModel getModel();
 }

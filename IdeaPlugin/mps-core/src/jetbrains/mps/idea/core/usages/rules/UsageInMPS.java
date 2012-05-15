@@ -14,11 +14,8 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.ui;
+package jetbrains.mps.idea.core.usages.rules;
 
 
-import jetbrains.mps.smodel.SModel;
-
-public interface UsageInModel {
-  SModel getModel();
+public interface UsageInMPS {
 }

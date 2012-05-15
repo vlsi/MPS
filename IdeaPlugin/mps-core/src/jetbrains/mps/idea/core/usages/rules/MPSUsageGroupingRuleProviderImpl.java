@@ -14,55 +14,43 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.ui;
+package jetbrains.mps.idea.core.usages.rules;
+
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.project.Project;
-import com.intellij.usages.Usage;
-import com.intellij.usages.UsageGroup;
 import com.intellij.usages.UsageView;
 import com.intellij.usages.UsageViewSettings;
-import com.intellij.usages.impl.rules.FileGroupingRule;
 import com.intellij.usages.rules.UsageGroupingRule;
 import com.intellij.usages.rules.UsageGroupingRuleProvider;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 
-public class RootNodeGroupingRuleProvider implements UsageGroupingRuleProvider {
+import java.util.ArrayList;
+import java.util.List;
 
-
+public class MPSUsageGroupingRuleProviderImpl implements UsageGroupingRuleProvider {
   @NotNull
   @Override
-  public UsageGroupingRule[] getActiveRules(@NotNull Project project) {
-    if (UsageViewSettings.getInstance().GROUP_BY_FILE_STRUCTURE){
-      return new UsageGroupingRule[]{new RootNodeUsageGroupingRule(project)};
+  public UsageGroupingRule[] getActiveRules(Project project) {
+    List<UsageGroupingRule> rules = new ArrayList<UsageGroupingRule>();
+    rules.add(new MPSUsageGroupingRule());
+    if (UsageViewSettings.getInstance().GROUP_BY_USAGE_TYPE){
+      rules.add(new CategoryUsageGroupingRule());
     }
-    return UsageGroupingRule.EMPTY_ARRAY;
+    if (UsageViewSettings.getInstance().GROUP_BY_PACKAGE){
+     rules.add(new ModelUsageGroupingRule(project));
+    }
+    if (UsageViewSettings.getInstance().GROUP_BY_FILE_STRUCTURE){
+      rules.add(new RootNodeUsageGroupingRule(project));
+    }
+
+
+    return rules.toArray(new UsageGroupingRule[rules.size()]);
   }
 
   @NotNull
   @Override
   public AnAction[] createGroupingActions(UsageView usageView) {
     return AnAction.EMPTY_ARRAY;
-  }
-
-  public static class RootNodeUsageGroupingRule extends FileGroupingRule {
-    private Project project;
-
-    public RootNodeUsageGroupingRule(Project project) {
-      super(project);
-      this.project = project;
-    }
-
-
-    @Override
-    public UsageGroup groupUsage(@NotNull Usage usage) {
-      if (usage instanceof UsageInRoot) {
-        return new FileUsageGroup(project, MPSNodesVirtualFileSystem.getInstance().getFileFor(((UsageInRoot) usage).getRoot()));
-      }
-      return null;
-    }
-
-
   }
 }

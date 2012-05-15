@@ -14,57 +14,36 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.ui;
+package jetbrains.mps.idea.core.usages.rules;
 
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.project.Project;
+
 import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.usages.Usage;
 import com.intellij.usages.UsageGroup;
 import com.intellij.usages.UsageView;
-import com.intellij.usages.UsageViewSettings;
 import com.intellij.usages.rules.UsageGroupingRule;
-import com.intellij.usages.rules.UsageGroupingRuleProvider;
 import com.intellij.util.PlatformIcons;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 
-public class CategoryGroupingRuleProvider implements UsageGroupingRuleProvider {
-  @NotNull
+public class CategoryUsageGroupingRule implements UsageGroupingRule {
+
   @Override
-  public UsageGroupingRule[] getActiveRules(Project project) {
-    if (UsageViewSettings.getInstance().GROUP_BY_USAGE_TYPE){
-      return new UsageGroupingRule[]{new CategoryUsageGroupingRule()};
+  public UsageGroup groupUsage(@NotNull Usage usage) {
+    if (usage instanceof UsageByCategory) {
+      final UsageByCategory usageByCategory = (UsageByCategory) usage;
+      final String category = ((UsageByCategory) usage).getCategory();
+      return new CategoryUsageGroup(category);
     }
-    return UsageGroupingRule.EMPTY_ARRAY;
+    return null;
   }
 
-  @NotNull
-  @Override
-  public AnAction[] createGroupingActions(UsageView usageView) {
-    return AnAction.EMPTY_ARRAY;
-  }
-
-  private static class CategoryUsageGroupingRule implements UsageGroupingRule {
-
-
-
-    @Override
-    public UsageGroup groupUsage(@NotNull Usage usage) {
-      if (usage instanceof UsageByCategory) {
-        final UsageByCategory usageByCategory = (UsageByCategory) usage;
-        final String category = ((UsageByCategory) usage).getCategory();
-        return new CategoryUsageGroup(category);
-      }
-      return null;
-    }
-  }
-
-  private static class CategoryUsageGroup implements UsageGroup{
+  private static class CategoryUsageGroup implements UsageGroup {
     private String myCategory;
-    public CategoryUsageGroup(String category){
+
+    public CategoryUsageGroup(String category) {
       myCategory = category;
     }
 
@@ -114,12 +93,13 @@ public class CategoryGroupingRuleProvider implements UsageGroupingRuleProvider {
       return false;
     }
 
-    public int hashCode(){
+    public int hashCode() {
       return myCategory.hashCode();
     }
 
-    public boolean equals(Object o){
-      return this == o || (o instanceof CategoryUsageGroup && myCategory.equals(((CategoryUsageGroup)o).myCategory));
+    public boolean equals(Object o) {
+      return this == o || (o instanceof CategoryUsageGroup && myCategory.equals(((CategoryUsageGroup) o).myCategory));
     }
   }
 }
+
