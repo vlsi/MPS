@@ -16,13 +16,10 @@
 package jetbrains.mps.ide.findusages;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.module.Module;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.impl.cache.impl.id.IdIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
-import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
-import gnu.trove.THashSet;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -72,6 +69,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
       final Set<VirtualFile> scopeFiles = getScopeFiles(models);
       String nodeId = id == null ? elem.toString() : id.value(elem);
       for (VirtualFile file : getCandidates(scopeFiles, nodeId)) {
+        //123//тут брать модель по файлу
         SModelDescriptor sm = SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(file));
         if (sm == null) continue;
         result.add(sm);
@@ -99,24 +97,9 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
           candidates.add(file);
           return true;
         }
-      }, new GlobalSearchScope(null) {
-        public boolean contains(VirtualFile file) {
-          return scopeFiles.contains(file);
-        }
-
-        public int compare(VirtualFile file1, VirtualFile file2) {
-          return file1.getPath().compareTo(file2.getPath());
-        }
-
-        public boolean isSearchInModuleContent(@NotNull Module aModule) {
-          return true;
-        }
-
-        public boolean isSearchInLibraries() {
-          return false;
-        }
-      }
+      }, new ConcreteFilesGlobalSearchScope(scopeFiles)
     );
     return candidates;
   }
+
 }

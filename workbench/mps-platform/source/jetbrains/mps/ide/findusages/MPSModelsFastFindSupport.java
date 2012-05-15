@@ -16,11 +16,9 @@
 package jetbrains.mps.ide.findusages;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.module.Module;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.impl.cache.impl.id.IdIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
-import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
@@ -29,7 +27,6 @@ import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.vfs.IFile;
@@ -68,7 +65,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FastFindS
   private <T> Set<SModelDescriptor> findModels(Set<SModelDescriptor> models, Set<T> elems, @Nullable Mapper<T, String> id) {
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
     for (T elem : elems) {
-      final Set<VirtualFile> scopeFiles = getScopeFiles(models);
+      final Set<VirtualFile> scopeFiles = getFilesForModels(models);
       String nodeId = id == null ? elem.toString() : id.value(elem);
       for (VirtualFile file : getCandidates(scopeFiles, nodeId)) {
         SModelDescriptor sm = SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(file));
@@ -79,11 +76,11 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FastFindS
     return result;
   }
 
-  private Set<VirtualFile> getScopeFiles(Set<SModelDescriptor> models) {
+  private Set<VirtualFile> getFilesForModels(Set<SModelDescriptor> models) {
     final Set<VirtualFile> scopeFiles = new HashSet<VirtualFile>();
     for (SModelDescriptor sm : models) {
-      if (!(sm instanceof DefaultSModelDescriptor)) continue;
-      IFile modelFile = ((EditableSModelDescriptor) sm).getModelFile();
+      assert sm instanceof DefaultSModelDescriptor: "a non-regular model is passed to FindSupport designed for regular models";
+      IFile modelFile = ((DefaultSModelDescriptor) sm).getSource().getFile();
       if (modelFile == null) continue;
       scopeFiles.add(VirtualFileUtils.getVirtualFile(modelFile));
     }
@@ -98,23 +95,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FastFindS
           candidates.add(file);
           return true;
         }
-      }, new GlobalSearchScope(null) {
-        public boolean contains(VirtualFile file) {
-          return scopeFiles.contains(file);
-        }
-
-        public int compare(VirtualFile file1, VirtualFile file2) {
-          return file1.getPath().compareTo(file2.getPath());
-        }
-
-        public boolean isSearchInModuleContent(@NotNull Module aModule) {
-          return true;
-        }
-
-        public boolean isSearchInLibraries() {
-          return false;
-        }
-      }
+      }, new ConcreteFilesGlobalSearchScope(scopeFiles)
     );
     return candidates;
   }

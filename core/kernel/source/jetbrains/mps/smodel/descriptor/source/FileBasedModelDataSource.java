@@ -25,6 +25,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * This is a base class for all data sources built on the top of file system
+ */
 public abstract class FileBasedModelDataSource implements ModelDataSource {
   private final Object LOCK = new Object();
   private List<ChangeListener> myListeners = new ArrayList<ChangeListener>();

@@ -34,7 +34,7 @@ import java.util.Map.Entry;
 
 public class StubModelsIndexer implements ApplicationComponent {
   public void initComponent() {
-    IdTableBuilding.registerIdIndexer(MPSFileTypeFactory.MODEL_FILE_TYPE, new MyFileTypeIdIndexer());
+    //IdTableBuilding.registerIdIndexer(MPSFileTypeFactory.MODEL_FILE_TYPE, new MyFileTypeIdIndexer());
 
   }
 
