@@ -39,8 +39,6 @@ public abstract class FileBasedModelDataSource implements ModelDataSource {
     return myOrigin;
   }
 
-  public abstract IFile getFile ();
-  
   public void startListening(ChangeListener l) {
     synchronized (LOCK) {
       if (myListeners.isEmpty()) {
