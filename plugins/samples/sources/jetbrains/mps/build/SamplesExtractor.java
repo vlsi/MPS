@@ -94,8 +94,8 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
   private int currentBuildNumberString() {
     BuildNumber buildNumber = myApplicationInfo.getBuild();
     String currentBuildNumberString = buildNumber.asString();
-    if (currentBuildNumberString.matches(".*[^\\d\\.].*")) {
-      // In "normal" build number only dots and digits allowed.
+    if (!currentBuildNumberString.matches("MPS[-\\.\\d]*.*")) {
+      // "Normal" build number starts with MPS, then goes some actual build number with numbers and dots and dashes, then goes some suffix like M1.
       // If build number looks like "11.snapshot", we consider it developers build and do not to extract samples.
       return MyState.DEFAULT;
     }

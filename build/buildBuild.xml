@@ -356,7 +356,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.build.startup" depends="fetchDependencies">
+  <target name="java.compile.jetbrains.mps.build.startup" depends="java.compile.jetbrains.mps.bash, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.startup" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.startup" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -371,6 +371,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.bash" />
         <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
