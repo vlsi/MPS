@@ -845,6 +845,17 @@
       <fileset dir="${base_dir}/build/solution/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
   </target>
+  <target name="pack.jetbrains.mps.build.deprecated.execution">
+    <fail unless="base_dir" message="Property base_dir unspecified." />
+    <mkdir dir="${deploy.dir}/MPS/plugins/build-deprecated/lib/build-deprecated.jar.tmp/modules/jetbrains.mps.build.deprecated.execution" />
+    <copy todir="${deploy.dir}/MPS/plugins/build-deprecated/lib/build-deprecated.jar.tmp/modules/jetbrains.mps.build.deprecated.execution">
+      <fileset file="${base_dir}/plugins/build-deprecated/languages/solutions/jetbrains.mps.buildlanguage.execution/execution.msd" />
+      <fileset dir="${base_dir}/plugins/build-deprecated/languages/solutions/jetbrains.mps.buildlanguage.execution" includes="icons/**, resources/**" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/plugins/build-deprecated/lib/build-deprecated.jar.tmp/modules/jetbrains.mps.build.deprecated.execution/models">
+      <fileset dir="${base_dir}/plugins/build-deprecated/languages/solutions/jetbrains.mps.buildlanguage.execution/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
   <target name="pack.jetbrains.mps.buildlanguage">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/plugins/build-deprecated/languages/buildlanguage/classes_gen" />
@@ -6934,6 +6945,7 @@
     <echoxml file="${deploy.dir}/MPS/languages/xml/jetbrains.mps.xmlUnitTest/jetbrains.mps.xmlUnitTest.runtime.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.xmlUnitTest.runtime" uuid="dce9f8b9-bf49-4dd4-b00e-fe98fdfa7f2c" type="solution">
         <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
           <module ref="dce9f8b9-bf49-4dd4-b00e-fe98fdfa7f2c(jetbrains.mps.xmlUnitTest.runtime)" />
         </dependencies>
         <sources jar="jetbrains.mps.xmlUnitTest.runtime-src.jar" descriptor="runtime.msd" />

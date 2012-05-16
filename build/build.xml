@@ -15,6 +15,7 @@
     <ant antfile="buildVcs.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildDebuggerPlugin.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildExecutionPlugin.xml" inheritAll="true" useNativeBasedir="true" />
+    <ant antfile="buildBuildlanguageDeprecated.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildBuildUI.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildMPS.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildDistribution.xml" inheritAll="true" useNativeBasedir="true" />
