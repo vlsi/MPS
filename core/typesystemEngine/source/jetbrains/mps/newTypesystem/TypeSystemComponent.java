@@ -55,6 +55,7 @@ class TypeSystemComponent extends CheckingComponent {
   private Set<SNode> myFullyCheckedNodes = new THashSet<SNode>(); //nodes which are checked with their children
   private Set<SNode> myPartlyCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
   private Set<SNode> myNodesDependentOnCaches = new THashSet<SNode>();
+  private Set<SNode> myAdditionalNodes = new HashSet<SNode>();
   private Stack<Set<SNode>> myCurrentFrontiers = new Stack<Set<SNode>>();
   private SNode myCurrentCheckedNode;
   private boolean myCurrentTypeAffected = false;
@@ -210,6 +211,8 @@ class TypeSystemComponent extends CheckingComponent {
   }
 
   protected void computeTypesSpecial(SNode nodeToCheck, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
+    additionalNodes.addAll(myAdditionalNodes);
+    myAdditionalNodes.clear();
     computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes, initialNode);
     if (typeCalculated(initialNode) != null) return;
     solveInequalitiesAndExpandTypes(finalExpansion);
@@ -450,6 +453,8 @@ class TypeSystemComponent extends CheckingComponent {
     }
     if (!myCurrentFrontiers.isEmpty()) {
       myCurrentFrontiers.peek().add(node);
+    } else {
+      myAdditionalNodes.add(node);
     }
   }
 
