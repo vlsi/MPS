@@ -1607,6 +1607,12 @@
                     </node>
                   </node>
                 </node>
+                <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="882295144563878735">
+                  <property name="attrName" nameId="iuxj.6666499814681447926" value="longfile" />
+                  <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="882295144563878743">
+                    <property name="text" nameId="iuxj.6666499814681541920" value="gnu" />
+                  </node>
+                </node>
                 <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8577651205286952551">
                   <property name="tagName" nameId="iuxj.6666499814681415862" value="tarfileset" />
                   <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />

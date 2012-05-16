@@ -32,7 +32,7 @@
         <fixcrlf eol="lf" eof="remove" />
       </filterchain>
     </copy>
-    <tar destfile="${build.layout}/${buildMPS.build.number}-linux.tar.gz" compression="gzip">
+    <tar destfile="${build.layout}/${buildMPS.build.number}-linux.tar.gz" compression="gzip" longfile="gnu">
       <tarfileset dir="${artifacts.buildMPS}" prefix="MPS ${buildMPS.version}" />
       <tarfileset file="${basedir}/bin/linux/fsnotifier" prefix="MPS ${buildMPS.version}/bin" filemode="755" />
       <tarfileset file="${basedir}/bin/linux/fsnotifier64" prefix="MPS ${buildMPS.version}/bin" filemode="755" />
