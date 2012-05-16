@@ -131,7 +131,7 @@ public class ProjectFactory {
     boolean opened = projectManager.openProject(myCreatedProject);
 
     if (opened) {
-      StartupManager.getInstance(myCreatedProject).runWhenProjectIsInitialized(new Runnable() {
+      StartupManager.getInstance(myCreatedProject).registerPostStartupActivity(new Runnable() {
         public void run() {
           ProjectPane.getInstance(myCreatedProject).activate();
         }
