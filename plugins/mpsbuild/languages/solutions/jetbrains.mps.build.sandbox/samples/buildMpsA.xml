@@ -20,7 +20,7 @@
       <zipfileset dir="${artifacts.buildMpsB}/X" prefix="AAA/X" />
       <fileset dir="${build.tmp}/default/zipfilesettest1.zip" />
     </zip>
-    <tar destfile="${build.layout}/temp/tarfilesettest1.tar">
+    <tar destfile="${build.layout}/temp/tarfilesettest1.tar" longfile="gnu">
       <tarfileset file="${build.tmp}/deps/buildMpsB/my.tar.gz/A2/A3/tests.msd" prefix="repack/none" />
       <tarfileset file="${build.tmp}/deps/buildMpsB/my.tar/A1/tests.msd" prefix="repack/gzip" />
       <tarfileset dir="${artifacts.buildMpsB}/X" prefix="QQQ/PPP" />
@@ -44,7 +44,7 @@
         <fixcrlf eol="crlf" />
       </filterchain>
     </copy>
-    <tar destfile="${build.layout}/temp/tarfilesettest2.tar.gz" compression="gzip">
+    <tar destfile="${build.layout}/temp/tarfilesettest2.tar.gz" compression="gzip" longfile="gnu">
       <tarfileset dir="${artifacts.buildMpsB}/X" prefix="prefix1/prefix2" filemode="640" dirmode="750" />
       <tarfileset file="${basedir}/jetbrains.mps.build.sandbox/sandbox.msd" prefix="prefix1/prefix2/prefix3" filemode="640" />
       <tarfileset dir="${build.tmp}/default/tarfilesettest2.tar.gz_f600" filemode="600" prefix="prefix1" />

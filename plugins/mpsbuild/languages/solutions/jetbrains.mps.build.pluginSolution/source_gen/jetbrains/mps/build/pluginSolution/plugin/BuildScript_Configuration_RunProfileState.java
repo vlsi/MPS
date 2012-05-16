@@ -64,7 +64,7 @@ public class BuildScript_Configuration_RunProfileState implements RunProfileStat
         SNode node = SNodeOperations.cast(myRunConfiguration.getNode().getNode(), "jetbrains.mps.build.structure.BuildProject");
         file.value = FileSystem.getInstance().getFileByPath(BuildProject_Behavior.call_getScriptsPath_4796668409958419284(node, Context.defaultContext()));
         // todo 
-        file.value = file.value.getDescendant(SPropertyOperations.getString(node, "name") + ".xml");
+        file.value = file.value.getDescendant(BuildProject_Behavior.call_getOutputFileName_4915877860351551360(node));
         // todo select task 
         mainTaskName.value = SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)", "7306485738221408315"), "parts", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {

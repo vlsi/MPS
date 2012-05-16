@@ -14,11 +14,13 @@
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="7926701909975931624">
       <property name="name" nameId="tpck.1169194664001" value="buildCore" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildCore.xml" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="2569834391839970845">
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
       <property name="name" nameId="tpck.1169194664001" value="buildWorkbench" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildWorkbench.xml" />
     </node>
     <node type="3ior.BuildExternalLayout" typeId="3ior.7181125477683216329" id="7181125477683264500">
       <property name="name" nameId="tpck.1169194664001" value="IDEA" />
@@ -27,85 +29,102 @@
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
       <property name="name" nameId="tpck.1169194664001" value="buildPlugin" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="plugin" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildPlugin.xml" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4301118715654497533">
-      <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
-      <property name="name" nameId="tpck.1169194664001" value="buildDistribution" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide" />
+      <property name="name" nameId="tpck.1169194664001" value="buildDistribution" />
+      <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildDistribution.xml" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4301118715654192646">
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
       <property name="name" nameId="tpck.1169194664001" value="buildMPS" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildMPS.xml" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4301118715654850396">
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
       <property name="name" nameId="tpck.1169194664001" value="buildExecution" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.languages" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildExecution.xml" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4301118715654819483">
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
       <property name="name" nameId="tpck.1169194664001" value="buildUtilLanguages" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.languages" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildUtilLanguages.xml" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="6391307088354381121">
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
       <property name="name" nameId="tpck.1169194664001" value="buildPlugins" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildPlugins.xml" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="8524659923334108558">
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
       <property name="name" nameId="tpck.1169194664001" value="buildBuild" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildBuild.xml" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="1545517825663017278">
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
       <property name="name" nameId="tpck.1169194664001" value="buildVcs" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildVcs.xml" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="8658995123701267517">
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
       <property name="name" nameId="tpck.1169194664001" value="buildPluginDist" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="plugin" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildPluginDist.xml" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="6164334420696839314">
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
       <property name="name" nameId="tpck.1169194664001" value="buildDebuggerPlugin" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildDebuggerPlugin.xml" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="6361939271669846483">
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
       <property name="name" nameId="tpck.1169194664001" value="buildExecutionPlugin" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildExecutionPlugin.xml" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="2075442863766408895">
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
       <property name="name" nameId="tpck.1169194664001" value="buildUiLanguages" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.languages" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildUiLanguages.xml" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="6503539749405386437">
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
       <property name="name" nameId="tpck.1169194664001" value="buildCoreEx" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildCoreEx.xml" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="8227093612176368028">
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
       <property name="name" nameId="tpck.1169194664001" value="buildBuildUI" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildBuildUI.xml" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="6977615362525216882">
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="plugin" />
       <property name="name" nameId="tpck.1169194664001" value="buildPluginTests" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildPluginTests.xml" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="5970299968953452763">
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide" />
       <property name="name" nameId="tpck.1169194664001" value="buildConnectorPlugin" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildConnectorPlugin.xml" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="5970299968953599871">
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.languages" />
       <property name="name" nameId="tpck.1169194664001" value="buildCoreUI" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildCoreUI.xml" />
     </node>
     <node type="s7om.MpsStartupScript" typeId="s7om.3885435385580582152" id="716066598061903713">
       <property name="name" nameId="tpck.1169194664001" value="mps" />

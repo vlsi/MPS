@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class GenerationUtil {
-  public static String SCRIPTS_DIR_PROPERTY = GenerationUtil.class.getPackage().getName() + ".scripts.dir";
+  public static String SCRIPTS_TARGET_PROPERTY = GenerationUtil.class.getPackage().getName() + ".scripts.dir";
 
   public GenerationUtil() {
   }
