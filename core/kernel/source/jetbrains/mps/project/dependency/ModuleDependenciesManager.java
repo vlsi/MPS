@@ -21,7 +21,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
 import java.util.HashSet;
@@ -64,19 +63,20 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
   //---------------util methods---NOTE THE SYMMETRY----------------
 
   protected void collectUsedLanguages(Set<Language> result, boolean includeExtended) {
-    result.addAll(ModuleUtil.refsToLanguages(myModule.getUsedLanguagesReferences()));
+    Set<Language> immediate = new HashSet<Language>();
+    immediate.addAll(ModuleUtil.refsToLanguages(myModule.getUsedLanguagesReferences()));
     for (DevKit dk : ModuleUtil.refsToDevkits(myModule.getUsedDevkitReferences())) {
-      result.addAll(dk.getAllExportedLanguages());
+      immediate.addAll(dk.getAllExportedLanguages());
     }
 
-    if (includeExtended) {
-      Set<Language> noExtended = new HashSet<Language>(result);
-      result.clear();
+    if (!includeExtended){
+      result.addAll(immediate);
+      return;
+    }
 
-      for (Language l : noExtended) {
-        if (result.contains(l)) continue;
-        l.getDependenciesManager().collectAllExtendedLanguages(result);
-      }
+    for (Language l : immediate) {
+      if (result.contains(l)) continue;
+      l.getDependenciesManager().collectAllExtendedLanguages(result);
     }
   }
 
