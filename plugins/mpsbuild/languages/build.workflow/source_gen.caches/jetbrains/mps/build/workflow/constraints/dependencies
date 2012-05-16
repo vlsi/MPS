@@ -10,7 +10,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.constraints.BwfPathElement_Constraints" file="BwfPathElement_Constraints.java">
+  <dependency className="jetbrains.mps.build.workflow.constraints.BwfJavaClassPath_Constraints" file="BwfJavaClassPath_Constraints.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
@@ -78,7 +78,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.build.workflow.constraints.BwfFileSet_Constraints" />
-    <classNode dependClassName="jetbrains.mps.build.workflow.constraints.BwfPathElement_Constraints" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.constraints.BwfJavaClassPath_Constraints" />
     <classNode dependClassName="jetbrains.mps.build.workflow.constraints.BwfSubTaskDependency_Constraints" />
     <classNode dependClassName="jetbrains.mps.build.workflow.constraints.BwfSubTask_Constraints" />
     <classNode dependClassName="jetbrains.mps.build.workflow.constraints.BwfTaskLibrary_Constraints" />

@@ -30,7 +30,7 @@ import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 
 public class QueriesGenerated {
   public static boolean nodeSubstituteActionsBuilder_Precondition_XmlBaseElement_7926701909975919246(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.workflow.structure.BwfJavaModule") || SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.workflow.structure.BwfFileSet") || SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.workflow.structure.BwfPathElement");
+    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.workflow.structure.BwfJavaModule") || SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.workflow.structure.BwfFileSet") || SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.workflow.structure.BwfJavaClassPath");
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BwfSubTask_3961775458390293278(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -123,13 +123,13 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_BwfJavaDependency_7926701909975917808(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfPathElement");
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfJavaClassPath");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlBaseElement");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           public SNode wrapNode(SNode nodeToWrap, SModel model) {
-            SNode cp = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfPathElement", null);
+            SNode cp = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath", null);
             SLinkOperations.setTarget(cp, "classpath", nodeToWrap, true);
             return cp;
           }

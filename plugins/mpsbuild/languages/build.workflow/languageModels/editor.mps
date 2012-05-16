@@ -82,8 +82,8 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="8xvf.6647099934206976110" resolveInfo="BwfJavaDependency" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6647099934206976121">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Types" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="8xvf.6647099934206976119" resolveInfo="BwfPathElement" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="8xvf.6647099934206976119" resolveInfo="BwfJavaClassPath" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6647099934207069203">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Types" />

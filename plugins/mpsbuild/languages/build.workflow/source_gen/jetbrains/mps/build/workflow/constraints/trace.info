@@ -348,37 +348,37 @@
     <unitInfo nodeId="7926701909975791098" fileName="BwfFileSet_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.workflow.constraints.BwfFileSet_Constraints" />
   </root>
   <root nodeId="7926701909975915317">
-    <nodeInfo nodeId="7926701909975915317" fileName="BwfPathElement_Constraints.java" startLine="13" startPosition="75" endLine="14" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeParentBreakingPoint" />
-    <nodeInfo nodeId="7926701909975915317" fileName="BwfPathElement_Constraints.java" startLine="16" startPosition="39" endLine="17" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7926701909975915317" fileName="BwfPathElement_Constraints.java" startLine="21" startPosition="44" endLine="22" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7926701909975915317" fileName="BwfPathElement_Constraints.java" startLine="26" startPosition="188" endLine="27" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7926701909975915317" fileName="BwfPathElement_Constraints.java" startLine="27" startPosition="96" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7926701909975915317" fileName="BwfPathElement_Constraints.java" startLine="29" startPosition="51" endLine="30" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7926701909975915317" fileName="BwfPathElement_Constraints.java" startLine="31" startPosition="5" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7926701909975915317" fileName="BwfPathElement_Constraints.java" startLine="32" startPosition="0" endLine="33" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7926701909975915320" fileName="BwfPathElement_Constraints.java" startLine="36" startPosition="148" endLine="37" endPosition="308" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7926701909975915317" fileName="BwfPathElement_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BwfPathElement_Constraints#()V" />
-    <nodeInfo nodeId="7926701909975915317" fileName="BwfPathElement_Constraints.java" startLine="28" startPosition="0" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7926701909975915317" fileName="BwfPathElement_Constraints.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAParent#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-    <nodeInfo nodeId="7926701909975915317" fileName="BwfPathElement_Constraints.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeParentMethod#()Z" />
-    <nodeInfo nodeId="7926701909975915317" fileName="BwfPathElement_Constraints.java" startLine="24" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeParent#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-    <scopeInfo nodeId="7926701909975915317" fileName="BwfPathElement_Constraints.java" startLine="16" startPosition="39" endLine="17" endPosition="67" />
-    <scopeInfo nodeId="7926701909975915317" fileName="BwfPathElement_Constraints.java" startLine="21" startPosition="44" endLine="22" endPosition="16" />
-    <scopeInfo nodeId="7926701909975915317" fileName="BwfPathElement_Constraints.java" startLine="29" startPosition="51" endLine="30" endPosition="68" />
-    <scopeInfo nodeId="7926701909975915319" fileName="BwfPathElement_Constraints.java" startLine="36" startPosition="148" endLine="37" endPosition="308" />
-    <scopeInfo nodeId="7926701909975915317" fileName="BwfPathElement_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
-    <scopeInfo nodeId="7926701909975915317" fileName="BwfPathElement_Constraints.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+    <nodeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="13" startPosition="77" endLine="14" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeParentBreakingPoint" />
+    <nodeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="16" startPosition="41" endLine="17" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="21" startPosition="44" endLine="22" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="26" startPosition="188" endLine="27" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="27" startPosition="96" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="29" startPosition="51" endLine="30" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="31" startPosition="5" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="32" startPosition="0" endLine="33" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7926701909975915320" fileName="BwfJavaClassPath_Constraints.java" startLine="36" startPosition="148" endLine="37" endPosition="308" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BwfJavaClassPath_Constraints#()V" />
+    <nodeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="28" startPosition="0" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAParent#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+    <nodeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeParentMethod#()Z" />
+    <nodeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="24" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeParent#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+    <scopeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="16" startPosition="41" endLine="17" endPosition="69" />
+    <scopeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="21" startPosition="44" endLine="22" endPosition="16" />
+    <scopeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="29" startPosition="51" endLine="30" endPosition="68" />
+    <scopeInfo nodeId="7926701909975915319" fileName="BwfJavaClassPath_Constraints.java" startLine="36" startPosition="148" endLine="37" endPosition="308" />
+    <scopeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="7926701909975915317" varName="childConcept" />
       <varInfo nodeId="7926701909975915317" varName="childNode" />
       <varInfo nodeId="7926701909975915317" varName="link" />
       <varInfo nodeId="7926701909975915317" varName="node" />
       <varInfo nodeId="7926701909975915317" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="7926701909975915317" fileName="BwfPathElement_Constraints.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="7926701909975915317" fileName="BwfPathElement_Constraints.java" startLine="26" startPosition="188" endLine="33" endPosition="18">
+    <scopeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="26" startPosition="188" endLine="33" endPosition="18">
       <varInfo nodeId="7926701909975915317" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7926701909975915317" fileName="BwfPathElement_Constraints.java" startLine="24" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="24" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="7926701909975915317" varName="checkingNodeContext" />
       <varInfo nodeId="7926701909975915317" varName="childConcept" />
       <varInfo nodeId="7926701909975915317" varName="childNode" />
@@ -386,7 +386,7 @@
       <varInfo nodeId="7926701909975915317" varName="node" />
       <varInfo nodeId="7926701909975915317" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="7926701909975915317" fileName="BwfPathElement_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.workflow.constraints.BwfPathElement_Constraints" />
+    <unitInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.workflow.constraints.BwfJavaClassPath_Constraints" />
   </root>
 </debugInfo>
 

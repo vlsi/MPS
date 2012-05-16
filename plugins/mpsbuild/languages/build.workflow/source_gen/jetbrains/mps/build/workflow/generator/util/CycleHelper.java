@@ -42,10 +42,10 @@ public class CycleHelper {
     final Set<String> seenDependencies = new HashSet<String>();
     ListSequence.fromList(SLinkOperations.getTargets(m, "dependencies", true)).removeWhere(new IWhereFilter<SNode>() {
       public boolean accept(SNode dep) {
-        if (!(SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.workflow.structure.BwfPathElement"))) {
+        if (!(SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath"))) {
           return false;
         }
-        SNode cp = SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.workflow.structure.BwfPathElement"), "classpath", true);
+        SNode cp = SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath"), "classpath", true);
         XmlSignature s = new XmlSignature().add(cp);
         String id = (s.hasErrors() ?
           "dep." + cp.getId() :
@@ -126,8 +126,8 @@ public class CycleHelper {
         for (SNode dep : SLinkOperations.getTargets(module, "dependencies", true)) {
           if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference")) {
             seenModules.add(SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference"), "target", false));
-          } else if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.workflow.structure.BwfPathElement")) {
-            SNode cp = SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.workflow.structure.BwfPathElement"), "classpath", true);
+          } else if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath")) {
+            SNode cp = SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath"), "classpath", true);
             XmlSignature s = new XmlSignature().add(cp);
             String id = (s.hasErrors() ?
               "dep." + cp.getId() :
@@ -164,7 +164,7 @@ public class CycleHelper {
         }
       }));
       for (SNode dep : deps) {
-        SNode cp = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfPathElement", null);
+        SNode cp = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath", null);
         SLinkOperations.setTarget(cp, "classpath", CopyUtil.copy(dep), true);
         ListSequence.fromList(SLinkOperations.getTargets(cycleX, "dependencies", true)).addElement(cp);
       }

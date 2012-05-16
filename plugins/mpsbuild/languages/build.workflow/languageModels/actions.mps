@@ -341,7 +341,7 @@
                 <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_parentNode" typeId="tpdg.1154465273778" id="7926701909975923803" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="7926701909975923811">
                   <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="7926701909975923813">
-                    <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="8xvf.6647099934206976119" resolveInfo="BwfPathElement" />
+                    <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="8xvf.6647099934206976119" resolveInfo="BwfJavaClassPath" />
                   </node>
                 </node>
               </node>
@@ -421,10 +421,10 @@
     <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="7926701909975917808">
       <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="8xvf.6647099934206976110" resolveInfo="BwfJavaDependency" />
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.RemovePart" typeId="tpdg.1177409831820" id="7926701909975918546">
-        <link role="conceptToRemove" roleId="tpdg.1177409838946" targetNodeId="8xvf.6647099934206976119" resolveInfo="BwfPathElement" />
+        <link role="conceptToRemove" roleId="tpdg.1177409838946" targetNodeId="8xvf.6647099934206976119" resolveInfo="BwfJavaClassPath" />
       </node>
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="7926701909975917809">
-        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="8xvf.6647099934206976119" resolveInfo="BwfPathElement" />
+        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="8xvf.6647099934206976119" resolveInfo="BwfJavaClassPath" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.WrapperSubstituteMenuPart" typeId="tpdg.1177402519659" id="7926701909975917811">
           <link role="wrappedConcept" roleId="tpdg.1177402731616" targetNodeId="iuxj.6666499814681299053" resolveInfo="XmlBaseElement" />
           <node role="wrapperBlock" roleId="tpdg.1177402719158" type="tpdg.QueryFunction_SubstituteWrapper" typeId="tpdg.1177402571666" id="7926701909975917812">
@@ -433,12 +433,12 @@
                 <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7926701909975917815">
                   <property name="name" nameId="tpck.1169194664001" value="cp" />
                   <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7926701909975917816">
-                    <link role="concept" roleId="tp25.1138405853777" targetNodeId="8xvf.6647099934206976119" resolveInfo="BwfPathElement" />
+                    <link role="concept" roleId="tp25.1138405853777" targetNodeId="8xvf.6647099934206976119" resolveInfo="BwfJavaClassPath" />
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7926701909975917821">
                     <node role="operand" roleId="tpee.1197027771414" type="tpcw.ConceptFunctionParameter_model" typeId="tpcw.1161622665029" id="7926701909975917818" />
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_CreateNewNodeOperation" typeId="tp25.1143235216708" id="7926701909975917827">
-                      <link role="concept" roleId="tp25.1143235391024" targetNodeId="8xvf.6647099934206976119" resolveInfo="BwfPathElement" />
+                      <link role="concept" roleId="tp25.1143235391024" targetNodeId="8xvf.6647099934206976119" resolveInfo="BwfJavaClassPath" />
                     </node>
                   </node>
                 </node>
