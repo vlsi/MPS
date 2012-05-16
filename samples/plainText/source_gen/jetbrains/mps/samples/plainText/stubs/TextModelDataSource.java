@@ -31,10 +31,6 @@ public class TextModelDataSource extends FileBasedModelDataSource {
     this.dir = file;
   }
 
-  public IFile getFile() {
-    return dir;
-  }
-
   public Collection<String> getFilesToListen() {
     return Collections.singleton(dir.getPath());
   }

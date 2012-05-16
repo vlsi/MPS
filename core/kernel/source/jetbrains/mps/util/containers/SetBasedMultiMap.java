@@ -13,17 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.findUsages.fastfind;
+package jetbrains.mps.util.containers;
 
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.containers.MultiMap;
-
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Map.Entry;
 import java.util.Set;
 
-public interface FastFindSupport {
-  //note that Set<String> is passed because we won't have concept nodes at runtime in future
-  MultiMap<SModelDescriptor,String> findModelsWithPossibleInstances(Set<SModelDescriptor> models, Set<String> concepts);
+public class SetBasedMultiMap<K, V> extends MultiMap<K, V> {
+  protected Collection<V> createCollection() {
+    return new HashSet<V>();
+  }
 
-  MultiMap<SModelDescriptor,SNode> findModelsWithPossibleUsages(Set<SModelDescriptor> models, Set<SNode> nodes);
+  protected Collection<V> createEmptyCollection() {
+    return Collections.emptySet();
+  }
 }

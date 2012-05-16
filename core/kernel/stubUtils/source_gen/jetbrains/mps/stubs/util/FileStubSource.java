@@ -40,10 +40,6 @@ public class FileStubSource extends FileBasedModelDataSource {
     this.ref = ref;
   }
 
-  public IFile getFile() {
-    return myFile;
-  }
-
   public Collection<String> getFilesToListen() {
     return Collections.singleton(myFile.getPath());
   }

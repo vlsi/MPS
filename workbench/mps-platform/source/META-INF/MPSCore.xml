@@ -25,6 +25,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.ide.findusages.StubModelsIndexer</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.ide.findusages.MPSModelsFastFindSupport</implementation-class>
     </component>
 
