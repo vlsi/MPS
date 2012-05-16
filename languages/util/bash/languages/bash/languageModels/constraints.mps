@@ -69,7 +69,6 @@
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="8474643070110067631">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="commandlist" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="u9e0.8474643070110067629" resolveInfo="AbstractFollowingCommandList" />
-      <link role="defaultConcreteConcept" roleId="tp1t.1213106917431" targetNodeId="u9e0.8474643070102636489" resolveInfo="FollowingCommandList" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="3905757829901542244">
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="u9e0.3905757829901343108" resolveInfo="Command" />

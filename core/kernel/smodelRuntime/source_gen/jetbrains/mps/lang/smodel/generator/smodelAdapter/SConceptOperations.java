@@ -12,11 +12,12 @@ import jetbrains.mps.smodel.SNodeUtil;
 import java.util.Collections;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IScope;
-import java.util.Set;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
-import jetbrains.mps.smodel.Language;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.findUsages.FindUsagesManager;
@@ -102,21 +103,24 @@ public final class SConceptOperations {
     return SModelUtil_new.getConceptAndSuperConcepts(conceptDeclarationNode);
   }
 
-  public static List<SNode> getAllSubConcepts(SNode conceptDeclarationNode, SModel model, IScope scope) {
+  public static List<SNode> getAllSubConcepts(SNode conceptDeclarationNode, Set<Language> availableLanguages) {
     if (conceptDeclarationNode == null) {
       return new ArrayList<SNode>();
     }
     Set<String> descendants = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(NameUtil.nodeFQName(conceptDeclarationNode));
-    Set<Language> availableLanguages = new HashSet<Language>(SModelOperations.getLanguages(model, scope));
     List<SNode> result = new ArrayList<SNode>();
     for (String descendant : descendants) {
       SNode declaration = SModelUtil.findConceptDeclaration(descendant, GlobalScope.getInstance());
       Language lang = SModelUtil.getDeclaringLanguage(declaration);
-      if (availableLanguages.contains(lang)) {
+      if (SetSequence.fromSet(availableLanguages).contains(lang)) {
         result.add(lang.findConceptDeclaration(NameUtil.shortNameFromLongName(descendant)));
       }
     }
     return result;
+  }
+
+  public static List<SNode> getAllSubConcepts(SNode conceptDeclarationNode, SModel model, IScope scope) {
+    return getAllSubConcepts(conceptDeclarationNode, new HashSet<Language>(SModelOperations.getLanguages(model, scope)));
   }
 
   public static List<SNode> findConceptInstances(SNode conceptDeclarationNode, IScope scope) {

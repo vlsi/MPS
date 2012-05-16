@@ -47,7 +47,7 @@ public class ModelReader7 implements IModelReader {
     Element rootElement = document.getRootElement();
 
     SModelReference modelReference = SModelReference.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
-    SModel model = new SModel(modelReference,new RegularNodeIdMap());
+    SModel model = new SModel(modelReference);
     model.setPersistenceVersion(getVersion());
     model.getSModelHeader().updateDefaults(header);
     model.getSModelHeader().setVersion(AttributeUtils.integerWithDefault(rootElement.getAttributeValue(SModelHeader.VERSION), -1));

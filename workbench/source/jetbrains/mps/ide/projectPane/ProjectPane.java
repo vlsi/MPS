@@ -174,6 +174,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   public ActionCallback updateFromRoot(boolean restoreExpandedPaths) {
     myUpdateQueue.queue(new Update(null) {
       public void run() {
+        if (getProject().isDisposed()) return;
         getTree().rebuildNow();
       }
     });
@@ -213,6 +214,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   public void rebuildTree() {
     myUpdateQueue.queue(new Update(null) {
       public void run() {
+        if (getProject().isDisposed()) return;
         getTree().rebuildNow();
         getTree().expandProjectNode();
       }
