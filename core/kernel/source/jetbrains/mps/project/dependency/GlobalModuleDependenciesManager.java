@@ -56,12 +56,10 @@ public class GlobalModuleDependenciesManager {
     Set<IModule> result = new HashSet<IModule>();
     Set<IModule> nonReexports = new HashSet<IModule>();
 
-    ModuleDependencyCollector collector = new ModuleDependencyCollector();
     for (IModule module : myModules) {
-      module.getDependenciesManager().collectModules(result, nonReexports, depType.runtimes, depType.reexportAll ? Reexports.DONT_RESPECT : Reexports.ALL_WITH_RESPECT, collector);
+      module.getDependenciesManager().collectModules(result, nonReexports, depType.runtimes, depType.reexportAll ? Reexports.DONT_RESPECT : Reexports.ALL_WITH_RESPECT);
     }
     result.addAll(nonReexports);
-//    System.out.println("*** "+depType.toString()+": "+myModules.toString()+"->"+result.toString());
     return result;
   }
 

@@ -16,40 +16,32 @@
 package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleUtil;
-import jetbrains.mps.project.dependency.ModuleDependencyCollector.Axis;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
-import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 public class GeneratorDependenciesManager extends ModuleDependenciesManager<Generator> {
   public GeneratorDependenciesManager(Generator gen) {
     super(gen);
   }
 
-  @Override
-  protected void collectUsedModules(Collection<IModule> reexported, Collection<IModule> nonReexported, ModuleDependencyCollector collector) {
-    super.collectUsedModules(reexported, nonReexported, collector);
-    collectGeneratorSpecificModules(nonReexported, collector);
-  }
-
-  @Override
-  protected void collectUsedModulesAndRuntimes(Collection<IModule> reexported, Collection<IModule> nonReexported, ModuleDependencyCollector collector) {
-    super.collectUsedModulesAndRuntimes(reexported, nonReexported, collector);
-    collectGeneratorSpecificModules(nonReexported, collector);
-  }
-
-  private void collectGeneratorSpecificModules(Collection<IModule> nonReexported, ModuleDependencyCollector collector) {
-    myModule.getSourceLanguage().getDependenciesManager().collectAllExtendedLanguages(nonReexported, collector);
-    nonReexported.addAll(collector.getCollected(LanguageDependenciesManager.EXTENDED_LANGUAGES));
-    nonReexported.addAll(ourDependentGeneratorsAxis.next(myModule));
-  }
-
-  public static final String DEPENDENT_GENERATORS = "dependentGenerators";
-  private static Axis<Generator> ourDependentGeneratorsAxis = new Axis<Generator>(DEPENDENT_GENERATORS) {
-    @Override
-    protected Collection<Generator> next(Generator module) {
-      return ModuleUtil.refsToModules(module.getReferencedGeneratorUIDs(), Generator.class);
+  protected void collectUsedModules(boolean runtimes, Set<IModule> reexported, Set<IModule> nonReexported) {
+    super.collectUsedModules(runtimes, reexported, nonReexported);
+    //generator sees all modules from source language as non-reexported
+    HashSet<Language> lang = new HashSet<Language>();
+    myModule.getSourceLanguage().getDependenciesManager().collectAllExtendedLanguages(lang);
+    nonReexported.addAll(lang);
+    //generator sees all dependent generators as non-reexport
+    for (ModuleReference refGenerator : myModule.getReferencedGeneratorUIDs()) {
+      IModule gm = ModuleRepositoryFacade.getInstance().getModule(refGenerator);
+      if (gm == null) continue;
+      nonReexported.add(gm);
     }
-  };
+  }
 }
