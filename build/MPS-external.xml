@@ -92,6 +92,9 @@
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsbuild/languages" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpsbuild" />
     <mkdir dir="${deploy.dir}/MPS/plugins/build-deprecated/META-INF" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/build-deprecated/lib/build-deprecated.jar.tmp/modules" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/build-deprecated/lib/build-deprecated.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/build-deprecated/lib" />
     <mkdir dir="${deploy.dir}/MPS/plugins/build-deprecated/languages" />
     <mkdir dir="${deploy.dir}/MPS/plugins/build-deprecated" />
     <mkdir dir="${deploy.dir}/MPS/plugins/svn4idea" />
@@ -531,6 +534,16 @@
     <copy todir="${deploy.dir}/MPS/plugins/build-deprecated/META-INF">
       <fileset dir="${mps_home}/plugins/build-deprecated/META-INF" excludes="**/*.zip, " includes="**/plugin.xml, " />
     </copy>
+    <copy todir="${deploy.dir}/MPS/plugins/build-deprecated/lib/build-deprecated.jar.tmp">
+      <fileset dir="${mps_home}/plugins/build-deprecated/classes" />
+    </copy>
+    <antcall target="MPS-languages.pack.jetbrains.mps.build.deprecated.execution" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/build-deprecated/lib/build-deprecated.jar.tmp/modules" />
+    <jar destfile="${deploy.dir}/MPS/plugins/build-deprecated/lib/build-deprecated.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/plugins/build-deprecated/lib/build-deprecated.jar.tmp" excludes="" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS/plugins/build-deprecated/lib/build-deprecated.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/build-deprecated/lib" />
     <antcall target="MPS-languages.pack.jetbrains.mps.buildlanguage" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.custommps" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.custommps.pluginSolution" />
@@ -917,6 +930,7 @@
     <delete dir="${deploy.dir}/MPS/plugins/samples.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/mpsjava/lib/mpsjava.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.ide.build.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/build-deprecated/lib/build-deprecated.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/debugger-api/lib/debugger-api.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/debugger-java/lib/debugger-java.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/debugger-java-customViewers.jar.tmp" />

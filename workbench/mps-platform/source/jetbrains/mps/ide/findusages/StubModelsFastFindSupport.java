@@ -16,13 +16,15 @@
 package jetbrains.mps.ide.findusages;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import gnu.trove.THashSet;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.stubs.util.JavaStubModelDataSource;
+import jetbrains.mps.util.Mapper;
+import jetbrains.mps.util.containers.MultiMap;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Set;
 
@@ -40,11 +42,19 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
     return StubModelsFastFindSupport.class.getSimpleName();
   }
 
-  public Set<SModelDescriptor> findModelsWithPossibleUsages(Set<SModelDescriptor> models, Set<SNode> nodes) {
-    return new THashSet<SModelDescriptor>();
+  public MultiMap<SModelDescriptor, SNode> findModelsWithPossibleUsages(Set<SModelDescriptor> models, Set<SNode> nodes) {
+    return findModels(models, nodes, new Mapper<SNode, String>() {
+      public String value(SNode key) {
+        return key.getId();
+      }
+    });
   }
 
-  public Set<SModelDescriptor> findModelsWithPossibleInstances(Set<SModelDescriptor> models, Set<String> conceptNames) {
-    return new THashSet<SModelDescriptor>();
+  public MultiMap<SModelDescriptor, String> findModelsWithPossibleInstances(Set<SModelDescriptor> models, Set<String> conceptNames) {
+    return findModels(models, conceptNames, null);
+  }
+
+  private <T> MultiMap<SModelDescriptor, T> findModels(Set<SModelDescriptor> models, Set<T> elems, @Nullable Mapper<T, String> id) {
+    return new MultiMap<SModelDescriptor, T>();
   }
 }

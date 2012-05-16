@@ -4,7 +4,6 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
 import java.util.List;
 import jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -18,17 +17,6 @@ public class Plugin_ApplicationPlugin extends BaseApplicationPlugin {
 
   public PluginId getId() {
     return myId;
-  }
-
-  public void createGroups() {
-    // actions w/o parameters 
-    addAction(new GenerateBuildAction_Action());
-    // groups 
-    addGroup(new ProjectPaneModelAddition_ActionGroup());
-  }
-
-  public void adjustRegularGroups() {
-    insertGroupIntoAnother(ProjectPaneModelAddition_ActionGroup.ID, ModelActions_ActionGroup.ID, null);
   }
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {

@@ -39,9 +39,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.typesystemEngine.util.LatticeUtil;
-import jetbrains.mps.util.ManyToManyMap;
+import jetbrains.mps.util.containers.ManyToManyMap;
 import jetbrains.mps.util.Pair;
 
 import java.util.*;

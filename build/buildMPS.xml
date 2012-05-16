@@ -21,6 +21,7 @@
   <property name="artifacts.buildVcs" location="${build.dir}/artifacts/buildVcs" />
   <property name="artifacts.buildDebuggerPlugin" location="${build.dir}/artifacts/buildDebuggerPlugin" />
   <property name="artifacts.buildExecutionPlugin" location="${build.dir}/artifacts/buildExecutionPlugin" />
+  <property name="artifacts.buildBuildlanguageDeprecated" location="${build.dir}/artifacts/buildBuildlanguageDeprecated" />
   <property name="artifacts.IDEA" location="${idea_home}" />
   
   <target name="assemble" depends="fetchDependencies">
@@ -122,6 +123,9 @@
     <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.buildExecutionPlugin}/plugins" />
     </copy>
+    <copy todir="${build.layout}/plugins">
+      <fileset dir="${artifacts.buildBuildlanguageDeprecated}/plugins" />
+    </copy>
     <mkdir dir="${build.layout}/plugins/cvsIntegration" />
     <copy todir="${build.layout}/plugins/cvsIntegration">
       <fileset dir="${basedir}/plugins/cvsIntegration" />
@@ -171,6 +175,7 @@
     <ant antfile="build/buildVcs.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildDebuggerPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildExecutionPlugin.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildBuildlanguageDeprecated.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies" />

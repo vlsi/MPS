@@ -38,11 +38,6 @@ public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCu
       configurationExtensionPoint.registerExtension(runConfigurationKind);
     }
     {
-      Ant_Kind runConfigurationKind = new Ant_Kind();
-      ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredKinds).addElement(runConfigurationKind);
-      configurationExtensionPoint.registerExtension(runConfigurationKind);
-    }
-    {
       MPS_Kind runConfigurationKind = new MPS_Kind();
       ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredKinds).addElement(runConfigurationKind);
       configurationExtensionPoint.registerExtension(runConfigurationKind);
@@ -83,36 +78,6 @@ public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCu
       ConfigurationType configurationType = ContainerUtil.findInstance(configurationExtensionPoint.getExtensions(), getClassFunction.invoke("jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitTests_Kind"));
       if (configurationType != null) {
         List<RuntimeConfigurationProducer> configurationProducers = JUnitTests_Producer.getProducers(configurationType);
-        ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredProducers).addSequence(ListSequence.fromList(configurationProducers));
-        for (RuntimeConfigurationProducer producer : ListSequence.fromList(configurationProducers)) {
-          producerExtensionPoint.registerExtension(producer);
-        }
-      }
-    }
-    {
-      ConfigurationType configurationType = ContainerUtil.findInstance(configurationExtensionPoint.getExtensions(), getClassFunction.invoke("jetbrains.mps.execution.configurations.implementation.plugin.plugin.Ant_Kind"));
-      if (configurationType != null) {
-        List<RuntimeConfigurationProducer> configurationProducers = PackagingBuildScript_Producer.getProducers(configurationType);
-        ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredProducers).addSequence(ListSequence.fromList(configurationProducers));
-        for (RuntimeConfigurationProducer producer : ListSequence.fromList(configurationProducers)) {
-          producerExtensionPoint.registerExtension(producer);
-        }
-      }
-    }
-    {
-      ConfigurationType configurationType = ContainerUtil.findInstance(configurationExtensionPoint.getExtensions(), getClassFunction.invoke("jetbrains.mps.execution.configurations.implementation.plugin.plugin.Ant_Kind"));
-      if (configurationType != null) {
-        List<RuntimeConfigurationProducer> configurationProducers = CustomMPSApplication_Producer.getProducers(configurationType);
-        ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredProducers).addSequence(ListSequence.fromList(configurationProducers));
-        for (RuntimeConfigurationProducer producer : ListSequence.fromList(configurationProducers)) {
-          producerExtensionPoint.registerExtension(producer);
-        }
-      }
-    }
-    {
-      ConfigurationType configurationType = ContainerUtil.findInstance(configurationExtensionPoint.getExtensions(), getClassFunction.invoke("jetbrains.mps.execution.configurations.implementation.plugin.plugin.Ant_Kind"));
-      if (configurationType != null) {
-        List<RuntimeConfigurationProducer> configurationProducers = BuildLanguageProject_Producer.getProducers(configurationType);
         ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredProducers).addSequence(ListSequence.fromList(configurationProducers));
         for (RuntimeConfigurationProducer producer : ListSequence.fromList(configurationProducers)) {
           producerExtensionPoint.registerExtension(producer);
