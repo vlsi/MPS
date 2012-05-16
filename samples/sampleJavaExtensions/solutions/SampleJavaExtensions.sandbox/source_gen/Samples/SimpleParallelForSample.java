@@ -33,6 +33,7 @@ public class SimpleParallelForSample {
             try {
               System.out.println("FooBar");
               SimpleParallelForSample.Logger.log("Current value: " + localA);
+
               // Notice there's no need to declare the InterruptedException on the main method 
               Thread.sleep(1000);
               value.length();

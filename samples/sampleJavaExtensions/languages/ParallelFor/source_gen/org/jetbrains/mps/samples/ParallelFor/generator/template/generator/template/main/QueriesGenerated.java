@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.ContinueStatement_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -21,6 +22,10 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_8923957828369629274(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable");
+  }
+
+  public static boolean baseMappingRule_Condition_4697196167065973042(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SNodeOperations.isInstanceOf(ContinueStatement_Behavior.call_getLoop_1213877346346(_context.getNode()), "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor");
   }
 
   public static Object propertyMacro_GetPropertyValue_5337045848190803509(final IOperationContext operationContext, final PropertyMacroContext _context) {
