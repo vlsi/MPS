@@ -8,35 +8,42 @@
   <import index="3ior" modelUID="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" version="2" implicit="yes" />
   <import index="tnlc" modelUID="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" version="-1" implicit="yes" />
   <import index="8xvf" modelUID="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" version="0" implicit="yes" />
-  <import index="iuxj" modelUID="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" version="-1" implicit="yes" />
+  <import index="iuxj" modelUID="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" version="2" implicit="yes" />
   <roots>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4129895186893541504">
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="samples" />
       <property name="name" nameId="tpck.1169194664001" value="buildA" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildA.xml" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4129895186893541508">
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="samples/subprojects/buildB" />
       <property name="name" nameId="tpck.1169194664001" value="buildB" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildB.xml" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4993211115183416028">
       <property name="name" nameId="tpck.1169194664001" value="buildPlugin" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="samples" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildPlugin.xml" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4993211115183387839">
       <property name="name" nameId="tpck.1169194664001" value="buildCore" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="samples" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildCore.xml" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="3364920969597702860">
       <property name="name" nameId="tpck.1169194664001" value="buildC" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="samples" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildC.xml" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="2569834391840042514">
       <property name="name" nameId="tpck.1169194664001" value="buildD" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="samples" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildD.xml" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="5610619299013213201">
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="samples" />
       <property name="name" nameId="tpck.1169194664001" value="buildE" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildE.xml" />
     </node>
   </roots>
   <root id="4129895186893541504">

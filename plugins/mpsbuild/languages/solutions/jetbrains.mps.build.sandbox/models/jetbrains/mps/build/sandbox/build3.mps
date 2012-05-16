@@ -8,10 +8,12 @@
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="5253498789149585672">
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value=".." />
       <property name="name" nameId="tpck.1169194664001" value="buildMpsA" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildMpsA.xml" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="6859736767834635843">
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value=".." />
       <property name="name" nameId="tpck.1169194664001" value="buildMpsB" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildMpsB.xml" />
     </node>
     <node type="3ior.BuildExternalLayout" typeId="3ior.7181125477683216329" id="5610619299014495717">
       <property name="name" nameId="tpck.1169194664001" value="JarFromA" />
@@ -19,10 +21,12 @@
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="5610619299014495733">
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value=".." />
       <property name="name" nameId="tpck.1169194664001" value="buildMpsC" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildMpsC.xml" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="8775597636506171310">
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value=".." />
       <property name="name" nameId="tpck.1169194664001" value="buildMpsD" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildMpsD.xml" />
     </node>
   </roots>
   <root id="5253498789149585672">

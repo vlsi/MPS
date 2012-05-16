@@ -11,6 +11,7 @@
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="8056730377013685541">
       <property name="name" nameId="tpck.1169194664001" value="buildTest" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value=".." />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildTest.xml" />
     </node>
   </roots>
   <root id="8056730377013685541">
