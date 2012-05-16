@@ -92,9 +92,9 @@ public class GlobalModuleDependenciesManager {
     public boolean runtimes;
     public boolean reexportAll;
 
-    Deptype(boolean runtimes, boolean reexportAll) {
+    Deptype(boolean runtimes, boolean respectReexport) {
       this.runtimes = runtimes;
-      this.reexportAll = !reexportAll;
+      this.reexportAll = !respectReexport;
     }
   }
 }
