@@ -136,6 +136,7 @@
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4197214709893771928">
       <property name="name" nameId="tpck.1169194664001" value="TargetChoosePanel" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
     </node>
     <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690968026150" />
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="6893245555985399815">
@@ -151,7 +152,7 @@
     </node>
     <node type="uhxm.RunConfigurationKind" typeId="uhxm.2401501559171345994" id="4197214709893781959">
       <property name="name" nameId="tpck.1169194664001" value="Ant" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="ant.common" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
     </node>
   </roots>
   <root id="4197214709893770034">
