@@ -40,11 +40,6 @@ public abstract class StubModelDataSource extends FileBasedModelDataSource {
     return "stub model data source"; //todo include filenames
   }
 
-  @Override
-  public IFile getFile() {
-    return null;
-  }
-
   public Collection<String> getFilesToListen() {
     return getStubPaths();
   }

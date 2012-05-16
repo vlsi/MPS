@@ -4,6 +4,7 @@ package jetbrains.mps.platform.conf.stubs;
 
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.stubs.util.MultiRootModelDataSource;
+import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
 import java.util.List;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -36,8 +37,9 @@ import org.jdom.JDOMException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.SModelFqName;
+import org.jetbrains.annotations.NotNull;
 
-public class ConfStubSource extends StubModelDataSource implements MultiRootModelDataSource {
+public class ConfStubSource extends StubModelDataSource implements MultiRootModelDataSource, FastFindSupportProvider {
   private List<ModelRoot> roots;
 
   public ConfStubSource(ModuleReference origin, ModelRoot root) {
@@ -115,5 +117,10 @@ public class ConfStubSource extends StubModelDataSource implements MultiRootMode
 
   public long getTimestamp() {
     return 0;
+  }
+
+  @NotNull
+  public String getFastFindSupportId() {
+    return "java_stub";
   }
 }

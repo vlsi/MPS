@@ -557,12 +557,12 @@ public class QueriesGenerated {
     try {
       String relative = new RelativePathHelper(((Tuples._2<Iterable<SNode>, String>) _context.getVariable("var:depsAndBasePath"))._1()).makeRelative(filePath);
       if ((relative == null || relative.length() == 0)) {
-        return SPropertyOperations.getString(script, "name") + ".xml";
+        return BuildProject_Behavior.call_getOutputFileName_4915877860351551360(script);
       }
       if (!(relative.endsWith("/"))) {
         relative += "/";
       }
-      return relative + SPropertyOperations.getString(script, "name") + ".xml";
+      return relative + BuildProject_Behavior.call_getOutputFileName_4915877860351551360(script);
     } catch (RelativePathHelper.PathException ex) {
       _context.showErrorMessage(_context.getNode(), "cannot calculate relative path: " + ex.getMessage());
       return "????";
@@ -1619,7 +1619,15 @@ public class QueriesGenerated {
 
   public static void mappingScript_CodeBlock_809559803149973643(final IOperationContext operationContext, final MappingScriptContext _context) {
     for (SNode buildProject : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.structure.BuildProject"))) {
-      buildProject.putUserObject(GenerationUtil.SCRIPTS_DIR_PROPERTY, BuildProject_Behavior.call_getScriptsPath_4796668409958419284(buildProject, Context.defaultContext(_context)));
+      String scriptsPath = BuildProject_Behavior.call_getScriptsPath_4796668409958419284(buildProject, Context.defaultContext(_context));
+      if (scriptsPath != null && scriptsPath.endsWith("/")) {
+        scriptsPath = scriptsPath.substring(0, scriptsPath.length() - 1);
+      }
+      String fileName = (scriptsPath == null ?
+        null :
+        scriptsPath + "/" + BuildProject_Behavior.call_getOutputFileName_4915877860351551360(buildProject)
+      );
+      buildProject.putUserObject(GenerationUtil.SCRIPTS_TARGET_PROPERTY, fileName);
     }
   }
 

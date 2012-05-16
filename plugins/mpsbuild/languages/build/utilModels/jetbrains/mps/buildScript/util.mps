@@ -3037,7 +3037,7 @@
       </node>
     </node>
     <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="809559803149870635">
-      <property name="name" nameId="tpck.1169194664001" value="SCRIPTS_DIR_PROPERTY" />
+      <property name="name" nameId="tpck.1169194664001" value="SCRIPTS_TARGET_PROPERTY" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="809559803149914577" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="809559803149870979" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="809559803149883981">

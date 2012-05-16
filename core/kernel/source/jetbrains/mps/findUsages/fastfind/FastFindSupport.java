@@ -17,12 +17,13 @@ package jetbrains.mps.findUsages.fastfind;
 
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.containers.MultiMap;
 
 import java.util.Set;
 
 public interface FastFindSupport {
   //note that Set<String> is passed because we won't have concept nodes at runtime in future
-  Set<SModelDescriptor> findModelsWithPossibleInstances(Set<SModelDescriptor> models, Set<String> concepts);
+  MultiMap<SModelDescriptor,String> findModelsWithPossibleInstances(Set<SModelDescriptor> models, Set<String> concepts);
 
-  Set<SModelDescriptor> findModelsWithPossibleUsages(Set<SModelDescriptor> models, Set<SNode> nodes);
+  MultiMap<SModelDescriptor,SNode> findModelsWithPossibleUsages(Set<SModelDescriptor> models, Set<SNode> nodes);
 }
