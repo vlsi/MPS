@@ -42,8 +42,8 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="8xvf.7926701909975416091" resolveInfo="BwfFileSet" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="7926701909975915317">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
-      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="8xvf.6647099934206976119" resolveInfo="BwfJavaClassPath" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Types" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="8xvf.6647099934206976119" resolveInfo="BwfPathElement" />
     </node>
   </roots>
   <root id="2769948622284605888">

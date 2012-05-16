@@ -88,8 +88,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6647099934206976119">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
-      <property name="name" nameId="tpck.1169194664001" value="BwfJavaClassPath" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Types" />
+      <property name="name" nameId="tpck.1169194664001" value="BwfPathElement" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="6647099934206976110" resolveInfo="BwfJavaDependency" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6647099934207069200">
@@ -405,12 +405,8 @@
   </root>
   <root id="6647099934206976119">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="6647099934206976130">
-      <property name="value" nameId="tpce.1105725733873" value="cp" />
+      <property name="value" nameId="tpce.1105725733873" value="path" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="6647099934206976132">
-      <property name="value" nameId="tpce.1105725733873" value="classpath value" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7926701909975791137">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />

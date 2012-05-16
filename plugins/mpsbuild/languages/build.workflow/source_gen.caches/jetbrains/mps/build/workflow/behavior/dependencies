@@ -7,13 +7,13 @@
     <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfAntTaskDeclaration_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfDependency_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfFileSet_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfJavaClassPath_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfJavaDescriptor_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfJavaModuleReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfJavaModule_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfMacroListImport_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfMacro_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfPathDeclaration_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfPathElement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfPathReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfProject_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfStatement_BehaviorDescriptor" />
@@ -58,12 +58,6 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.build.workflow.behavior.BwfJavaClassPath_BehaviorDescriptor" file="BwfJavaClassPath_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfJavaDependency_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.workflow.behavior.BwfJavaDependency_Behavior" file="BwfJavaDependency_Behavior.java">
@@ -144,6 +138,12 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.workflow.behavior.BwfPathElement_BehaviorDescriptor" file="BwfPathElement_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfJavaDependency_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.workflow.behavior.BwfPathReference_BehaviorDescriptor" file="BwfPathReference_BehaviorDescriptor.java">

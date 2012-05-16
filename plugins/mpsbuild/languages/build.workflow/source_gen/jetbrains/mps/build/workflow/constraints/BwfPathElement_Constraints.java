@@ -10,11 +10,11 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
-public class BwfJavaClassPath_Constraints extends BaseConstraintsDescriptor {
+public class BwfPathElement_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)", "7926701909975915318");
 
-  public BwfJavaClassPath_Constraints() {
-    super("jetbrains.mps.build.workflow.structure.BwfJavaClassPath");
+  public BwfPathElement_Constraints() {
+    super("jetbrains.mps.build.workflow.structure.BwfPathElement");
   }
 
   @Override
