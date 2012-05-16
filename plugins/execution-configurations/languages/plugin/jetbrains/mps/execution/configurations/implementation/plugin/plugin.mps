@@ -91,7 +91,7 @@
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="6893245555985399815">
       <property name="id" nameId="tp4k.5023285075122009366" value="jetbrains.mps.execution.configurations" />
       <property name="name" nameId="tpck.1169194664001" value="Execution Configurations" />
-      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Provides execution configurations and debugger support for languages in MPS" />
+      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Execution configurations and debugger support for languages in MPS" />
       <property name="version" nameId="tp4k.5023285075122009369" value="1.0" />
       <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
       <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
