@@ -424,7 +424,7 @@ public class QueriesGenerated {
     return BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildSource_JavaContentRoot"), "basePath", true)) + "/" + SPropertyOperations.getString(_context.getNode(), "relativePath");
   }
 
-  public static Object propertyMacro_GetPropertyValue_6647099934207255538(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_144710003695560915(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "java.library." + SPropertyOperations.getString(_context.getNode(), "name");
   }
 
@@ -887,7 +887,7 @@ public class QueriesGenerated {
     return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
   }
 
-  public static Object referenceMacro_GetReferent_4821808014881173680(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_144710003695561045(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(((SNode) _context.getVariable("library")), "javalibrary");
   }
 
@@ -1215,7 +1215,7 @@ public class QueriesGenerated {
     return ((JavaModulesClosure) _context.getVariable("var:depsClosure")).getInitial();
   }
 
-  public static SNode sourceNodeQuery_4821808014881265914(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_144710003695560994(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return ((JavaModulesClosure) _context.getVariable("var:depsClosure")).getInitial();
   }
 
@@ -1223,7 +1223,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "resset", true);
   }
 
-  public static SNode sourceNodeQuery_3717132724152951510(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_144710003695667202(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "classpath", true);
   }
 
@@ -1251,7 +1251,7 @@ public class QueriesGenerated {
     return (SNode) _context.getNode().getReferent("targetJar");
   }
 
-  public static Object templateArgumentQuery_4821808014881251899(final IOperationContext operationContext, final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_144710003695561027(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return (SNode) _context.getNode().getReferent("targetLibrary");
   }
 
@@ -1381,7 +1381,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static Iterable sourceNodesQuery_5979287180587467321(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_144710003695560909(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode library : ((JavaModulesClosure) _context.getVariable("var:depsClosure")).getLibraries()) {
       SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
@@ -1473,7 +1473,7 @@ public class QueriesGenerated {
     });
   }
 
-  public static Iterable sourceNodesQuery_6647099934207253927(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_144710003695560923(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "elements", true);
   }
 

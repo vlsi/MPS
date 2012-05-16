@@ -113,6 +113,7 @@ public class CycleHelper {
       Set<String> seenDependencies = new HashSet<String>();
       List<SNode> deps = new ArrayList<SNode>();
       Set<SNode> seenModules = new LinkedHashSet<SNode>();
+      Set<SNode> seenLibraries = new LinkedHashSet<SNode>();
 
       int heapSize = 0;
       for (CycleHelper.Module m : cycle) {
@@ -126,6 +127,8 @@ public class CycleHelper {
         for (SNode dep : SLinkOperations.getTargets(module, "dependencies", true)) {
           if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference")) {
             seenModules.add(SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference"), "target", false));
+          } else if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.workflow.structure.BwfJavaLibraryReference")) {
+            seenLibraries.add(SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.workflow.structure.BwfJavaLibraryReference"), "target", false));
           } else if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath")) {
             SNode cp = SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath"), "classpath", true);
             XmlSignature s = new XmlSignature().add(cp);
@@ -167,6 +170,11 @@ public class CycleHelper {
         SNode cp = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath", null);
         SLinkOperations.setTarget(cp, "classpath", CopyUtil.copy(dep), true);
         ListSequence.fromList(SLinkOperations.getTargets(cycleX, "dependencies", true)).addElement(cp);
+      }
+      for (SNode jl : seenLibraries) {
+        SNode mref = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfJavaLibraryReference", null);
+        SLinkOperations.setTarget(mref, "target", jl, false);
+        ListSequence.fromList(SLinkOperations.getTargets(cycleX, "dependencies", true)).addElement(mref);
       }
       for (SNode jm : seenModules) {
         SNode mref = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference", null);
