@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench.dialogs.project.newproject;
 
+import com.intellij.ide.startup.StartupManagerEx;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
@@ -131,11 +132,17 @@ public class ProjectFactory {
     boolean opened = projectManager.openProject(myCreatedProject);
 
     if (opened) {
-      StartupManager.getInstance(myCreatedProject).registerPostStartupActivity(new Runnable() {
+      StartupManagerEx startupManager = StartupManagerEx.getInstanceEx(myCreatedProject);
+      Runnable projectPaneActivator = new Runnable() {
         public void run() {
           ProjectPane.getInstance(myCreatedProject).activate();
         }
-      });
+      };
+      if (startupManager.postStartupActivityPassed()) {
+        startupManager.runWhenProjectIsInitialized(projectPaneActivator);
+      } else {
+        startupManager.registerPostStartupActivity(projectPaneActivator);
+      }
     }
   }
 
