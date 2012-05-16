@@ -27,12 +27,11 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class Ant_Command {
-  private SNode myTarget_NodeTargetDeclaration;
+  private SNode myTarget_NodeINamedConcept;
   private String myAntLocation_String = Ant_Command.getDefaultAntHome();
   private String myOptions_String;
   private String myTargetName_String;
@@ -45,7 +44,7 @@ public class Ant_Command {
   public Ant_Command setTarget(SNode target) {
     // this methods only exist to not make users regenerate their code 
     if (target != null) {
-      myTarget_NodeTargetDeclaration = target;
+      myTarget_NodeINamedConcept = target;
     }
     return this;
   }
@@ -80,9 +79,9 @@ public class Ant_Command {
     return this;
   }
 
-  public Ant_Command setTarget_NodeTargetDeclaration(SNode target) {
+  public Ant_Command setTarget_NodeINamedConcept(SNode target) {
     if (target != null) {
-      myTarget_NodeTargetDeclaration = target;
+      myTarget_NodeINamedConcept = target;
     }
     return this;
   }
@@ -109,7 +108,7 @@ public class Ant_Command {
   }
 
   public ProcessHandler createProcess(SNode project) throws ExecutionException {
-    String targetName = Ant_Command.getTargetName(myTarget_NodeTargetDeclaration);
+    String targetName = Ant_Command.getTargetName(myTarget_NodeINamedConcept);
     return new Ant_Command().setAntLocation_String(myAntLocation_String).setOptions_String(myOptions_String).setTargetName_String(targetName).createProcess(Ant_Command.getGeneratedFileName(project));
   }
 
@@ -169,7 +168,7 @@ public class Ant_Command {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         file.value = FileGenerationUtil.getDefaultOutputDir(SNodeOperations.getModel(project), FileSystem.getInstance().getFileByPath(SNodeOperations.getModel(project).getModelDescriptor().getModule().getGeneratorOutputPath()));
-        file.value = file.value.getDescendant(((String) BehaviorManager.getInstance().invoke(Object.class, project, "call_getFileName_1213877351819", new Class[]{SNode.class})));
+        file.value = file.value.getDescendant(SPropertyOperations.getString(project, "name") + ".xml");
       }
     });
     return file.value.getPath();
