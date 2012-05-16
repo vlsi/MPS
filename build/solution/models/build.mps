@@ -141,6 +141,7 @@
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
       <property name="name" nameId="tpck.1169194664001" value="buildBuildlanguageDeprecated" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildBuildlanguageDeprecated.xml" />
     </node>
   </roots>
   <root id="7926701909975931624">
