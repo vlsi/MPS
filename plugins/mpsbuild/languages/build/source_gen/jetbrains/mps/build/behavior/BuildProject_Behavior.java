@@ -59,6 +59,13 @@ public class BuildProject_Behavior {
     return BuildProject_Behavior.call_getBasePath_4959435991187146924(thisNode, context);
   }
 
+  public static String call_getOutputFileName_4915877860351551360(SNode thisNode) {
+    return ((SPropertyOperations.getString(thisNode, "fileName") == null || SPropertyOperations.getString(thisNode, "fileName").length() == 0) ?
+      "build.xml" :
+      SPropertyOperations.getString(thisNode, "fileName")
+    );
+  }
+
   public static String call_getBasePathRelativeToScriptsPath_5178006408628632053(SNode thisNode, Context context) {
     String scriptsPath = BuildProject_Behavior.call_getScriptsPath_4796668409958419284(thisNode, context);
     String basePath = BuildProject_Behavior.call_getBasePath_4959435991187146924(thisNode, context);
@@ -107,7 +114,7 @@ public class BuildProject_Behavior {
   public static Scope call_getBuildMacroScope_3767587139141108514(SNode thisNode, final SNode child) {
     Scope rootScope = ScopeUtil.simpleRoleScope(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "macros"));
     SNode containingProject = SNodeOperations.getAncestor(child, "jetbrains.mps.build.structure.BuildProject", false, false);
-    if (neq_save77_a0c0g(containingProject, thisNode)) {
+    if (neq_save77_a0c0h(containingProject, thisNode)) {
       // we are imported => give away only public macro 
       rootScope = ScopeUtil.where(rootScope, new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
         public Boolean invoke(SNode node) {
@@ -130,7 +137,7 @@ public class BuildProject_Behavior {
         // we can only see what was strictly before us 
         rootScope = ScopeUtil.where(rootScope, new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
           public Boolean invoke(SNode visibleNode) {
-            return !(ListSequence.fromList(SNodeOperations.getNextSiblings(definedMacro.value, false)).contains(visibleNode)) && !(eq_save77_a0a0a0a0a1a0b0c0d0g(definedMacro.value, visibleNode));
+            return !(ListSequence.fromList(SNodeOperations.getNextSiblings(definedMacro.value, false)).contains(visibleNode)) && !(eq_save77_a0a0a0a0a1a0b0c0d0h(definedMacro.value, visibleNode));
           }
         });
       }
@@ -147,14 +154,14 @@ public class BuildProject_Behavior {
     return true;
   }
 
-  private static boolean neq_save77_a0c0g(Object a, Object b) {
+  private static boolean neq_save77_a0c0h(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean eq_save77_a0a0a0a0a1a0b0c0d0g(Object a, Object b) {
+  private static boolean eq_save77_a0a0a0a0a1a0b0c0d0h(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
